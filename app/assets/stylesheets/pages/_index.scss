@@ -3,6 +3,8 @@
 
 @import "helpers/mixins";
 
+@import "components/table-of-contents";
+
 
 .motto {
 	@include center-block($size-minwidth);

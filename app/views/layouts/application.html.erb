@@ -7,10 +7,6 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%=
-    	# critical css, printed on all pages
-    	"<style>#{(Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application)).find_asset('helpers/critical')}</style>".html_safe    	
-		%>
     <%= javascript_include_tag 'application' %>
     <%= render 'application/favicon' %>
   </head>
