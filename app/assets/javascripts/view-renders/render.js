@@ -19,5 +19,5 @@ function parseAllViews() {
 //
 //	Turbolinks functions:
 //	--------------------
-document.addEventListener("turbolinks:load", parseAllViews);
+document.addEventListener("turbolinks:render", parseAllViews);
 document.addEventListener("turbolinks:before-cache", touchRespond.reset);
