@@ -11,5 +11,6 @@ function parseAllViews() {
 	__each(parseThese, function(fn) { fn(); });
 }
 
-// auto execute on dom ready
-document.addEventListener('DOMContentLoaded', parseAllViews);
+// auto execute on dom ready or immediately:
+if		(document.readyState === "complete") parseAllViews();
+else 	document.addEventListener('DOMContentLoaded', parseAllViews, false);
