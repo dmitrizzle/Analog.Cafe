@@ -107,7 +107,8 @@ $toc-breakpoint-s: 0 $size-minwidth * 2;
 				@include breakpoint($toc-breakpoint-s) {
 					display: block;
 					white-space: normal;
-					margin-top: 0.125em;
+					margin-top: 0.025em;
+					line-height: 1.185em;
 				}
 			}
 			& p {
@@ -156,7 +157,6 @@ $toc-breakpoint-s: 0 $size-minwidth * 2;
  				min-width: auto;
 				float: none;
 				clear: both;
-				text-align: center;
 				padding-top: $size-column--safety;
 			}
 			@include breakpoint(0 $size-minwidth) {
@@ -224,6 +224,7 @@ $toc-breakpoint-s: 0 $size-minwidth * 2;
 					float: none;
 					text-align: center;
 					padding-top: $size-column--safety;
+					@include breakpoint($toc-breakpoint-m) { margin: 0 auto; }
 				}
 			}
  			& .toc-cover { display: none; }
