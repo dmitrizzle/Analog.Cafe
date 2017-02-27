@@ -1,4 +1,4 @@
-<nav>
+<nav data-turbolinks-permanent>
 	<ul>
 		<li><%= link_to articles_path, class: 'button-articles' do %><span>Articles</span><% end %></li>
 		<li><%= link_to essays_path, class: 'button-essays' do %><span>Photo Essays</span><% end %></li>
@@ -17,7 +17,7 @@
 					<span>f</span>
 					<span>e</span>
 				</h1>
-				<%= link_to index_path, class: 'button' do inline_svg "branding/logo-lettering.svg", class: "logo", desc: "Analog.Cafe logo" end %>
+				<%= link_to root_path, class: 'button' do inline_svg "branding/logo-lettering.svg", class: "logo", desc: "Analog.Cafe logo" end %>
 			</div>
 		</li>
 		<li class="nav-important--left"><%= link_to favorites_path, class: 'button-favorites' do %><span data-label--prepend="My ">Favorites</span><% end %></li>
