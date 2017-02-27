@@ -2892,7 +2892,7 @@ article section > figure.feature {
   .table-of-contents li .toc-summary h2 {
     display: block;
     white-space: normal;
-    margin-top: 0.15em;
+    margin-top: 0.125em;
   }
 }
 /* line 113, /Users/dmitri/Documents/Analog.Cafe/app/assets/stylesheets/components/_table-of-contents.scss */
@@ -2916,10 +2916,13 @@ article section > figure.feature {
 @media (min-width: 0) and (max-width: 640px) {
   /* line 113, /Users/dmitri/Documents/Analog.Cafe/app/assets/stylesheets/components/_table-of-contents.scss */
   .table-of-contents li .toc-summary p {
-    height: auto;
     overflow: visible;
     margin-top: .3em;
     margin-bottom: 0;
+  }
+  /* line 125, /Users/dmitri/Documents/Analog.Cafe/app/assets/stylesheets/components/_table-of-contents.scss */
+  .table-of-contents li .toc-summary p, .fonts-loaded .table-of-contents li .toc-summary p {
+    height: auto;
   }
 }
 /* line 132, /Users/dmitri/Documents/Analog.Cafe/app/assets/stylesheets/components/_table-of-contents.scss */

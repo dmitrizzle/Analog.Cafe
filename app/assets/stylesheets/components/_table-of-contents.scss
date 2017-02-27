@@ -107,7 +107,7 @@ $toc-breakpoint-s: 0 $size-minwidth * 2;
 				@include breakpoint($toc-breakpoint-s) {
 					display: block;
 					white-space: normal;
-					margin-top: 0.15em;
+					margin-top: 0.125em;
 				}
 			}
 			& p {
@@ -122,7 +122,7 @@ $toc-breakpoint-s: 0 $size-minwidth * 2;
 				text-align: justify;
 				&::after, &::before { display: none; }
 				@include breakpoint($toc-breakpoint-s) {
-					height: auto;
+					&, .fonts-loaded & { height: auto; }
 					overflow: visible;
 					margin-top: .3em;
 					margin-bottom: 0;

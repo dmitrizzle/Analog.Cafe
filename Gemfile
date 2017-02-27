@@ -71,8 +71,3 @@ end
 
 # Bower
 gem 'bower-rails'
-
-# Production/assets for Heroku
-group :production do
-  gem 'rails_12factor'
-end
