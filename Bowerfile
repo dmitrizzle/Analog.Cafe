@@ -6,11 +6,7 @@
 	
 	# polyfills
 	asset 'es6-promise'
-	asset 'dcl', 							'git@github.com:WebReflection/DOMContentLoaded'
 	asset 'fontfaceobserver'
-	
-	# framework
-	asset 'react'
 	
 	# view mods and renderes
 	asset 'to-title-case-gouch'

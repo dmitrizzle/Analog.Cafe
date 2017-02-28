@@ -2,9 +2,7 @@
   "name": "dsl-generated-dependencies",
   "dependencies": {
     "es6-promise": "latest",
-    "dcl": "git@github.com:WebReflection/DOMContentLoaded",
     "fontfaceobserver": "latest",
-    "react": "latest",
     "to-title-case-gouch": "latest",
     "__q": "git@github.com:dmitrizzle/__q",
     "active-touch": "git@github.com:dmitrizzle/active-touch"
