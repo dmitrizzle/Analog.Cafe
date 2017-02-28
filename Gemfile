@@ -71,3 +71,6 @@ end
 
 # Bower
 gem 'bower-rails'
+
+# Turbolinks
+gem 'turbolinks', '~> 5.0.0'

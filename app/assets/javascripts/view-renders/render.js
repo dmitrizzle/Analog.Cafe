@@ -12,5 +12,12 @@ function parseAllViews() {
 }
 
 // auto execute on dom ready or immediately:
-if		(document.readyState === "complete") parseAllViews();
-else 	document.addEventListener('DOMContentLoaded', parseAllViews, false);
+// if		(document.readyState === "complete") parseAllViews();
+// else 	document.addEventListener('DOMContentLoaded', parseAllViews, false);
+//
+//
+//
+//	Turbolinks functions:
+//	--------------------
+document.addEventListener("turbolinks:render", parseAllViews);
+document.addEventListener("turbolinks:before-cache", touchRespond.reset);
