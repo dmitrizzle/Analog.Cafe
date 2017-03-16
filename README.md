@@ -1,29 +1,32 @@
 # Analog.Cafe
-## Analog.Cafe is a web publishing platform for film photographers.
-## Here on GitHub this is an "opinionated" CMS engine project.
-
-Here are some of the features that stand out:
-* Free-for-all signup process (anyone can become a contributor)
-* Shared asset library for select items (in this case, it's featured images)
-* Editor account(s) which decide what and when to go live and can edit the entries
-* Limited control over design and content for all publishing accounts
-* Offline-first web application
+## An open-source project for the "Remarkable Film Photography Blog"
+> You are free to use any code in this repository for your personal or business projects.
+> But please do not clone the design and content.
 
 ### Built with:
-* Ruby 2.3.0 & Rails 5.0.1
-* Angular 2
+* [Node.js](https://github.com/nodejs/node)
+* [React.js](https://github.com/facebook/react)
+    * [Create React App](https://github.com/facebookincubator/create-react-app)
+    * [Styled Components](https://github.com/styled-components/styled-components)
+    * (and more)
 
-The release is schedule for late summer 2017. For now, most of the work is done templating and styling (SASS). You can read more about features and browse documents in Analog.Cafe.wiki repo.
+### Why it's awesome:
+* Images can be re-published by contributing authors, natively. Those images share all the functions and features of original image, while giving appropriate credit to the author. Without having to save, re-upload or embed stuff.
+* "Features Library" that helps managing the above images for admins and contributors.
+* Separate View app (built with React) and Model/Controller JSON API coupled with a database to manage content.
+* All the expected user management controls, post scheduling, editing and reviews.
 
-## Getting started
-1. Make sure you got GIT working on your machine. Google is your friend.
-2. Make sure you got Ruby 2.3.0 or later running on your system. Type `ruby -v` to find out what you've got. OSX has it installed by default, but you may want to make sure you've got the latest version.
-3. You'll need Rails 5.0.1; if you already have the framework, you can type `rails -v` to see what version you've got. If not, `gem install rails`. You might wanna Google more detailed instructions for your system.
-4. Fork this repo and run `bundle install` from within the directory on your machine. This should install all the gems required for the project to work automatically.
-5. Run `rails s`. If everything is working as it should, http://localhost:3001 will get the homepage running in your browser.
+### How to contribute:
+If you are interested in contributing to this project - awesome! But first (if you wanna really understand how the code works), you'll need to get it working on your machine:
+1. [Get GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) working on your machine
+1. [Get Node.js](https://nodejs.org/en/download/package-manager/) on your machine
+1. [Clone](https://help.github.com/articles/cloning-a-repository/) this repo onto your machine
+1. Run `node install`
+1. Run `yarn start`
 
-### Notes
-* All development work is done in "develop" branch.
+If you got a general suggestion (code or no code), please feel free to contact [@dmitrizzle](https://twitter.com/dmitrizzle), [submit an issue](https://github.com/dmitrizzle/Analog.Cafe/issues) or [submit a PR](https://help.github.com/articles/about-pull-requests/) (use "develop" branch as a base).
 
-### Other resources
-Additional documentation, project strategy & philosophy is laid out on the [Wiki](https://github.com/dmitrizzle/Analog.Cafe/wiki).
+### Resources
+* [Wiki](https://github.com/dmitrizzle/Analog.Cafe/wiki) (developer-friendly info about this project)
+* [Website](http://analog.cafe) (the website!)
+* [Twitter](https://twitter.com/analog_cafe)
