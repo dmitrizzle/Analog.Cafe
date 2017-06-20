@@ -4,7 +4,7 @@ import React from "react"
 // components
 import HeaderEditor from "./components/HeaderEditor"
 import ContentEditor from "./components/ContentEditor"
-import { Composer } from "../../components/views/Submit"
+import { Composer } from "../../components/Views/Submit"
 
 
 // placeholders

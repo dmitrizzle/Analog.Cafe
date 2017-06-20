@@ -9,8 +9,8 @@ import Paper from "../themes/Paper"
 
 
 // views and components
-import { About, NotFound, Login, Publication } from "../components/views"
-import { Intro, Submit } from "../components/views/Submit"
+import { About, NotFound, Login, Publication } from "../components/Views"
+import { Intro, Submit } from "../components/Views/Submit"
 import Composer from "./Composer"
 import List from "./List"
 import Post from "./Post"
