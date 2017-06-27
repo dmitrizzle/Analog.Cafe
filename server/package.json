@@ -1,0 +1,31 @@
+{
+  "name": "analog-cafe-server",
+  "version": "0.0.1",
+  "description": "(Loosely) Collaborative Blogging App by Analog.Cafe (Server)",
+  "license": "MPL-2.0",
+  "private": true,
+  "engines": {
+    "node": "7.x",
+    "npm": "4.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmitrizzle/Analog.Cafe"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "passport": "^0.3.2",
+    "passport-twitter": "^1.0.4",
+    "sequelize": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "standard": "^10.0.2"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}
