@@ -17,9 +17,9 @@ var requestData = {
 
 // render
 export default props => {
-	return (
-		<Article>
-			<Composer requestData={ requestData } />
+	var modalDispatch = null
+	if(localStorage.getItem('token')){
+		modalDispatch = (
 			<ModalDispatch
 				with={{
 					request: {
@@ -33,6 +33,31 @@ export default props => {
 			>
 				<Button red>Send Submission <span role="img" aria-label="Rocket">🚀</span></Button>
 			</ModalDispatch>
+		)
+	}else{
+		modalDispatch = (
+			<ModalDispatch
+				wrapperElement="div"
+				with={{
+					info: {
+						title: "User are not sign in.",
+						text: "Please sign in to submit your article.",
+						buttons: [
+							{ to: '/sign-in', text: 'Yes', red: true },
+							{ to: '#', text: 'No' }
+						]
+					},
+					id: "footnotes/analog-cafe-inclusive"
+				}}
+			>
+				<Button red>Send Submission <span role="img" aria-label="Rocket">🚀</span></Button>
+			</ModalDispatch>
+		)
+	}
+	return (
+		<Article>
+			<Composer requestData={ requestData } />
+			{ modalDispatch }
 		</Article>
 	)
 }

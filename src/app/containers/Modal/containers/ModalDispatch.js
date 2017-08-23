@@ -10,10 +10,10 @@ import { fetchCard, setCard } from "../../../../actions/modalActions"
 class ModalDispatch extends React.Component {
   invokeModal = event => {
     event.preventDefault()
-    this.props.with.request.history = this.props.history
-    this.props.with.request ?
+    if(this.props.with.request){
+      this.props.with.request.history = this.props.history
       this.props.fetchCard(this.props.with.request)
-    :
+    }else{
       this.props.setCard(
         {
           status: "ok",
@@ -21,6 +21,7 @@ class ModalDispatch extends React.Component {
         },
         { url: this.props.with.id }
       )
+    }
   }
   render() {
     // Wrapper defaults to <a> link, however it could become *any* react component:

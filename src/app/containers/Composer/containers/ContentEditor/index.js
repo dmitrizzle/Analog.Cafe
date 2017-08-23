@@ -6,6 +6,8 @@ import { withRouter } from "react-router"
 
 // components
 import ImageButton from "./components/ImageButton"
+import { ModalDispatch } from "../../../../containers/Modal"
+import { fetchCard, setCard } from "../../../../../actions/modalActions"
 
 // helpers, plugins & schema
 import { plugins } from "./plugins"
@@ -66,7 +68,6 @@ class ContentEditor extends React.Component {
 	handleImageButton = e => {
     e.preventDefault()
     e.stopPropagation()
-
 		if(localStorage.getItem('token')) {
 			const resolvedState = this.state.state
 				.transform()
@@ -80,8 +81,6 @@ class ContentEditor extends React.Component {
 				cursorContext: { ...this.state.cursorContext, newLine: false	}
 			})
 			saveContent(this.state.state.document, resolvedState)
-		}else{
-			this.props.history.push('/sign-in')
 		}
   }
 
