@@ -80,21 +80,26 @@ export function fetchPage(request, appendItems = false) {
             )
       })
       .catch(error => {
-        console.log(error.response)
-        dispatch(
-          setCard(
-            {
-              status: "ok",
-              info: {
-                title:
-                  "Error: " +
-                  (error.response ? error.response.status : "no response"),
-                text: errorMessage.FAILED_LIST
-              }
-            },
-            { url: "errors/list" }
-          )
-        )
+        error.response && error.response.status === 404
+          ? dispatch(
+              initPage({
+                status: 404
+              })
+            )
+          : dispatch(
+              setCard(
+                {
+                  status: "ok",
+                  info: {
+                    title:
+                      "Error: " +
+                      (error.response ? error.response.status : "no response"),
+                    text: errorMessage.FAILED_LIST
+                  }
+                },
+                { url: "errors/list" }
+              )
+            )
       })
   }
 }

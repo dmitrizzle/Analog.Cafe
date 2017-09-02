@@ -19,6 +19,7 @@ import { ListDescription, ListHeader } from "../../components/ListDescription"
 import { LinkButton } from "../../components/Button"
 import { default as ListBlock } from "../../components/List"
 import { Section, Article } from "../../components/ArticleStyles"
+import NotFound from "../_screens-errors/NotFound"
 
 // helpers
 import { getListMeta } from "./helpers"
@@ -27,6 +28,11 @@ import { getListMeta } from "./helpers"
 class List extends React.Component {
   listAPI = this.props.private ? ROUTE_AUTHENTICATED_LIST_API : ROUTE_LIST_API
   fetchNewList = () => {
+    // do not do any fetching if the page is returning 404 error
+    // returning this error updates props and calls this function (fetchPage)
+    // this check below stops the infinite loop from happening
+    if (this.props.list.status === 404) return
+
     this.props.fetchPage(
       getListMeta(this.props.history.location.pathname, 1, this.listAPI).request
     )
@@ -52,83 +58,88 @@ class List extends React.Component {
   }
   render() {
     const renderedListMeta = getListMeta(this.props.location.pathname).meta
-    return (
-      <div>
-        <Helmet>
-          <title>
-            {renderedListMeta.title +
-              (this.props.list.filter.author
-                ? this.props.list.filter.author.name
-                : null)}
-          </title>
-          <meta name="description" content={renderedListMeta.description} />
-        </Helmet>
-        <ListDescription>
-          {this.props.header
-            ? this.props.header
-            : <ListHeader>
-                {this.props.list.filter.author
-                  ? <q>
-                      <em>
-                        {renderedListMeta.title}
-                        {this.props.list.filter.author.name ? " " : null}
-                        {this.props.list.filter.author.name
-                          ? <span>
-                              by{" "}
-                              <ModalDispatch
-                                with={{
-                                  request: {
-                                    url:
-                                      ROUTE_AUTHOR_API +
-                                      "/" +
-                                      this.props.list.filter.author.id
-                                  }
-                                }}
-                              >
-                                {this.props.list.filter.author.name}
-                              </ModalDispatch>
-                            </span>
-                          : this.props.location.pathname.includes("/author/") &&
-                            ".."}
-                      </em>.
-                    </q>
-                  : <q>
-                      <em>{renderedListMeta.title}</em>.
-                    </q>}
-                &nbsp;{this.props.list.filter.author &&
-                this.props.list.filter.author.name
-                  ? renderedListMeta.emoji
-                  : null}
-              </ListHeader>}
-        </ListDescription>
+    return this.props.list.status !== 404
+      ? <div>
+          <Helmet>
+            <title>
+              {renderedListMeta.title +
+                (this.props.list.filter.author
+                  ? this.props.list.filter.author.name
+                  : null)}
+            </title>
+            <meta name="description" content={renderedListMeta.description} />
+          </Helmet>
+          <ListDescription>
+            {this.props.header
+              ? this.props.header
+              : <ListHeader>
+                  {this.props.list.filter.author
+                    ? <q>
+                        <em>
+                          {renderedListMeta.title}
+                          {this.props.list.filter.author.name ? " " : null}
+                          {this.props.list.filter.author.name
+                            ? <span>
+                                by{" "}
+                                <ModalDispatch
+                                  with={{
+                                    request: {
+                                      url:
+                                        ROUTE_AUTHOR_API +
+                                        "/" +
+                                        this.props.list.filter.author.id
+                                    }
+                                  }}
+                                >
+                                  {this.props.list.filter.author.name}
+                                </ModalDispatch>
+                              </span>
+                            : this.props.location.pathname.includes(
+                                "/author/"
+                              ) && ".."}
+                        </em>.
+                      </q>
+                    : <q>
+                        <em>{renderedListMeta.title}</em>.
+                      </q>}
+                  &nbsp;{this.props.list.filter.author &&
+                  this.props.list.filter.author.name
+                    ? renderedListMeta.emoji
+                    : null}
+                </ListHeader>}
+          </ListDescription>
 
-        <ListBlock
-          status={this.props.list.status}
-          items={this.props.list.items}
-          nextArticleHeading={nextArticleHeading =>
-            this.props.setNextArticle({
-              title: nextArticleHeading.title,
-              subtitle: nextArticleHeading.subtitle,
-              author: nextArticleHeading.author,
-              slug: nextArticleHeading.slug,
-              poster: nextArticleHeading.poster
-            })}
-          private={this.props.private}
-        />
+          <ListBlock
+            status={this.props.list.status}
+            items={this.props.list.items}
+            nextArticleHeading={nextArticleHeading =>
+              this.props.setNextArticle({
+                title: nextArticleHeading.title,
+                subtitle: nextArticleHeading.subtitle,
+                author: nextArticleHeading.author,
+                slug: nextArticleHeading.slug,
+                poster: nextArticleHeading.poster
+              })}
+            private={this.props.private}
+          />
 
-        {parseInt(this.props.list.page.total, 0) > 1 &&
-        parseInt(this.props.list.page.total, 0) >
-          parseInt(this.props.list.page.current, 0)
-          ? <LinkButton to="#more" red onClick={this.handleLoadMore.bind(this)}>
-              Load More
-            </LinkButton>
-          : null}
+          {parseInt(this.props.list.page.total, 0) > 1 &&
+          parseInt(this.props.list.page.total, 0) >
+            parseInt(this.props.list.page.current, 0)
+            ? <LinkButton
+                to="#more"
+                red
+                onClick={this.handleLoadMore.bind(this)}
+              >
+                Load More
+              </LinkButton>
+            : null}
 
-        <Article>
-          <Section />
-        </Article>
-      </div>
-    )
+          <Article>
+            <Section />
+          </Article>
+        </div>
+      : <NotFound />
   }
 }
 

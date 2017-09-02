@@ -1,7 +1,7 @@
 // tools
 import axios from "axios"
-import { setCard } from "./modalActions"
 import errorMessage from "../constants/error-messages"
+import { setCard } from "./modalActions"
 import { axiosRequest } from "./helpers"
 
 import { ROUTE_ARTICLE_API } from "../constants/article"
@@ -62,21 +62,27 @@ export function fetchPage(request) {
               )
             )
       })
-      .catch(error =>
-        dispatch(
-          setCard(
-            {
-              status: "ok",
-              info: {
-                title:
-                  "Error: " +
-                  (error.response ? error.response.status : "no response"),
-                text: errorMessage.FAILED_ARTICLE
-              }
-            },
-            { url: "errors/article" }
-          )
-        )
-      )
+      .catch(error => {
+        error.response && error.response.status === 404
+          ? dispatch(
+              initPage({
+                status: 404
+              })
+            )
+          : dispatch(
+              setCard(
+                {
+                  status: "ok",
+                  info: {
+                    title:
+                      "Error: " +
+                      (error.response ? error.response.status : "no response"),
+                    text: errorMessage.FAILED_ARTICLE
+                  }
+                },
+                { url: "errors/article" }
+              )
+            )
+      })
   }
 }
