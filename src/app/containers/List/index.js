@@ -89,13 +89,16 @@ class List extends React.Component {
                               </ModalDispatch>
                             </span>
                           : this.props.location.pathname.includes("/author/") &&
-                            "␆"}
+                            ".."}
                       </em>.
                     </q>
                   : <q>
                       <em>{renderedListMeta.title}</em>.
                     </q>}
-                &nbsp;{renderedListMeta.emoji}
+                &nbsp;{this.props.list.filter.author &&
+                this.props.list.filter.author.name
+                  ? renderedListMeta.emoji
+                  : null}
               </ListHeader>}
         </ListDescription>
 

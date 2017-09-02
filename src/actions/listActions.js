@@ -54,6 +54,8 @@ export function fetchPage(request, appendItems = false) {
         })
       )
 
+    console.log(request.params.author)
+
     axios({
       method: request.method || "get",
       params: request.params || {},
