@@ -23,40 +23,52 @@ class NotFound extends React.PureComponent {
     })
   }
 
-  // clear all signals and error states associated with 404 NotFound
-  cleanState = () => {
+  // clear all 404 statuses from article and list stores & router state
+  resetStores = () => {
     // reset browser history state
     this.props.history.replace({
       state: {
         status: "200"
       }
     })
-    // reset redux state for article 404 status
-    this.props.resetArticle()
-    // redux state for list 404 status
-    this.props.resetList()
+
+    // empty delay necessary to wait for all dom render to complete
+    // (componentDidMount is still too early and render conficts with redux)
+    setTimeout(() => {
+      // reset redux store for article 404 status
+      this.props.resetArticle()
+      // redux store for list 404 status
+      this.props.resetList()
+    }, 0)
+  }
+
+  componentDidMount() {
+    this.unlisten = this.props.history.listen(location => this.resetStores())
   }
   componentWillUnmount() {
-    this.cleanState()
+    this.unlisten()
   }
 
   render() {
-    return (
-      <Article>
-        <Heading pageTitle="😨" pageSubtitle="Page Not Found&hellip;" />
-        <Section>
-          <p style={{ textAlign: "center" }}>
-            Click{" "}
-            <strong>
-              <Link to="/" onClick={this.cleanState}>
-                here
-              </Link>
-            </strong>{" "}
-            to go to homepage.
-          </p>
-        </Section>
-      </Article>
-    )
+    return this.props.history.location.state &&
+    this.props.history.location.state.status === "404"
+      ? <Article>
+          <Heading pageTitle="😨" pageSubtitle="Page Not Found&hellip;" />
+          <Section>
+            <p style={{ textAlign: "center" }}>
+              Click{" "}
+              <strong>
+                <Link to="/">here</Link>
+              </strong>{" "}
+              to go to homepage.
+            </p>
+          </Section>
+        </Article>
+      : <Article>
+          <Section>
+            <Heading pageSubtitle="One moment, please&hellip;" />
+          </Section>
+        </Article>
   }
 }
 

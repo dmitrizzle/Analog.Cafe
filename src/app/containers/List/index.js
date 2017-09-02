@@ -32,6 +32,7 @@ class List extends React.Component {
     // returning this error updates props and calls this function (fetchPage)
     // this check below stops the infinite loop from happening
     if (this.props.list.status === 404) return
+    // this state will be cleaned from within <NotFound/> component
 
     this.props.fetchPage(
       getListMeta(this.props.history.location.pathname, 1, this.listAPI).request

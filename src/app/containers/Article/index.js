@@ -37,12 +37,6 @@ class Article extends React.PureComponent {
     if (!this.props.history.location.pathname.includes(ROUTE_ARTICLE_DIR))
       return
 
-    // do not do any fetching if the page is returning 404 error
-    // returning this error updates props and calls this function (fetchPage)
-    // this check below stops the infinite loop from happening
-    if (this.props.article.status === 404) return
-    // this state will be cleaned from within <NotFound/> component
-
     this.props.fetchPage({
       url:
         ROUTE_ARTICLE_API +
@@ -57,7 +51,11 @@ class Article extends React.PureComponent {
     this.unlisten()
   }
   render() {
-    return this.props.article.status !== 404
+    return this.props.article.status !== 404 &&
+    !(
+      this.props.history.location.state &&
+      this.props.history.location.state.status === "404"
+    )
       ? <ArticleElement>
           <Helmet>
             <title>

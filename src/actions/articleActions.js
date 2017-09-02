@@ -43,7 +43,12 @@ export function fetchPage(request) {
           poster: articleState.poster
         })
       )
-    else dispatch(initPage())
+    else
+      dispatch(
+        initPage({
+          requested: request
+        })
+      )
 
     axios(axiosRequest(request))
       .then(response => {
@@ -65,6 +70,8 @@ export function fetchPage(request) {
       .catch(error => {
         error.response && error.response.status === 404
           ? dispatch(
+              // clear values & set status to 404,
+              // this will trigger mounting NotFound component
               initPage({
                 status: 404
               })

@@ -53,9 +53,6 @@ export function fetchPage(request, appendItems = false) {
           requested: request
         })
       )
-
-    console.log(request.params.author)
-
     axios({
       method: request.method || "get",
       params: request.params || {},
@@ -82,6 +79,8 @@ export function fetchPage(request, appendItems = false) {
       .catch(error => {
         error.response && error.response.status === 404
           ? dispatch(
+              // clear values & set status to 404,
+              // this will trigger mounting NotFound component
               initPage({
                 status: 404
               })
