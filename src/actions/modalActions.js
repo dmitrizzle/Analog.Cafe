@@ -58,24 +58,24 @@ export function fetchCard(request) {
             )
       })
       .catch(error => {
-        if (error.response.status === 401) {
-          request.history.push("/sign-in")
-        } else {
-          dispatch(
-            setCard(
-              {
-                status: "ok",
-                info: {
-                  title:
-                    "Error: " +
-                    (error.response ? error.response.status : "no response"),
-                  text: errorMessage.FAILED_CARD
-                }
-              },
-              { url: "errors/modal" }
-            )
+        // if (error.response.status === 401) {
+        //   request.history.push("/sign-in")
+        // } else {
+        dispatch(
+          setCard(
+            {
+              status: "ok",
+              info: {
+                title:
+                  "Error: " +
+                  (error.response ? error.response.status : "no response"),
+                text: errorMessage.FAILED_CARD
+              }
+            },
+            { url: "errors/modal" }
           )
-        }
+        )
+        //}
       })
   }
 }

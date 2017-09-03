@@ -53,7 +53,6 @@ export function fetchPage(request, appendItems = false) {
           requested: request
         })
       )
-
     axios({
       method: request.method || "get",
       params: request.params || {},
@@ -78,21 +77,28 @@ export function fetchPage(request, appendItems = false) {
             )
       })
       .catch(error => {
-        console.log(error.response)
-        dispatch(
-          setCard(
-            {
-              status: "ok",
-              info: {
-                title:
-                  "Error: " +
-                  (error.response ? error.response.status : "no response"),
-                text: errorMessage.FAILED_LIST
-              }
-            },
-            { url: "errors/list" }
-          )
-        )
+        error.response && error.response.status === 404
+          ? dispatch(
+              // clear values & set status to 404,
+              // this will trigger mounting NotFound component
+              initPage({
+                status: 404
+              })
+            )
+          : dispatch(
+              setCard(
+                {
+                  status: "ok",
+                  info: {
+                    title:
+                      "Error: " +
+                      (error.response ? error.response.status : "no response"),
+                    text: errorMessage.FAILED_LIST
+                  }
+                },
+                { url: "errors/list" }
+              )
+            )
       })
   }
 }
