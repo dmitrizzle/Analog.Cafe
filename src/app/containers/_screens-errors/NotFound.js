@@ -14,15 +14,6 @@ import { Section, Article } from "../../components/ArticleStyles"
 
 // render
 class NotFound extends React.PureComponent {
-  // set signal to the app that this is a 404 situation
-  componentWillMount() {
-    this.props.history.replace({
-      state: {
-        status: "404"
-      }
-    })
-  }
-
   // clear all 404 statuses from article and list stores & router state
   resetStores = () => {
     // reset browser history state
@@ -39,12 +30,21 @@ class NotFound extends React.PureComponent {
       this.props.resetArticle()
       // redux store for list 404 status
       this.props.resetList()
+
+      console.log("reset")
     }, 0)
   }
 
-  componentDidMount() {
+  // set signal to the app that this is a 404 situation
+  componentWillMount() {
+    this.props.history.replace({
+      state: {
+        status: "404"
+      }
+    })
     this.unlisten = this.props.history.listen(location => this.resetStores())
   }
+
   componentWillUnmount() {
     this.unlisten()
   }
@@ -58,7 +58,9 @@ class NotFound extends React.PureComponent {
             <p style={{ textAlign: "center" }}>
               Click{" "}
               <strong>
-                <Link to="/">here</Link>
+                <Link to="/" onClick={this.unlisten}>
+                  here
+                </Link>
               </strong>{" "}
               to go to homepage.
             </p>
