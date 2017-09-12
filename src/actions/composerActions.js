@@ -1,4 +1,4 @@
-export function setDraftStatus(status) {
+export const setDraftStatus = status => {
   return {
     type: "COMPOSER.SET_DRAFT_STATUS",
     payload: status

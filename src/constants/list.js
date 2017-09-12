@@ -1,18 +1,20 @@
 // related constants
 import { APP_DESCRIPTION, ROUTE_API_DOMAIN } from "./app"
 import emojis from "./emoji"
+import { ROUTE_AUTH_USER_LANDING } from "./user"
+
 export { ROUTE_ARTICLE_DIR } from "./article"
 export { SUMMARY_LENGTH_MAX } from "./input"
 
 // api endpoints
-export const ROUTE_LIST_API = ROUTE_API_DOMAIN + "/api/list"
-export const ROUTE_AUTHENTICATED_LIST_API = "/api/auth/list"
+export const ROUTE_LIST_API = ROUTE_API_DOMAIN + "/list"
+export const ROUTE_AUTHENTICATED_LIST_API = "/auth/list"
 
 // filter sets for particular view URLs/routes
 export const ROUTE_FILTERS = {
   "/photo-essays": "photo-essay",
   "/articles": "review:how-to:editorial:story",
-  "/me": "",
+  [ROUTE_AUTH_USER_LANDING]: "",
   "/": ""
 }
 

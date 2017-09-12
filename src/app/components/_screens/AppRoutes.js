@@ -11,6 +11,8 @@ import AppRoutesSubmit from "./AppRoutesSubmit"
 import AsyncListLoader from "./AsyncListLoader"
 import AsyncArticleLoader from "./AsyncArticleLoader"
 
+import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
+
 // async components
 // `/components/_screens/AppRoutes.js`
 // `/components/_screens/AppRoutesSubmit.js`
@@ -52,8 +54,12 @@ export default props => {
         <Route exact path="/articles" component={AsyncList} />
 
         {/* auth views */}
-        <Route exact path="/me" component={Me} />
-        <Route exact path="/me/edit" component={AsyncEditProfile} />
+        <Route exact path={ROUTE_AUTH_USER_LANDING} component={Me} />
+        <Route
+          exact
+          path={ROUTE_AUTH_USER_LANDING + "/edit"}
+          component={AsyncEditProfile}
+        />
         <Route exact path="/sign-in" component={SignIn} />
 
         {/* static views and urls */}

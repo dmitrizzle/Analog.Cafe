@@ -6,7 +6,7 @@ import errorMessage from "../constants/error-messages"
 import { ROUTE_LIST_API, ROUTE_AUTHENTICATED_LIST_API } from "../constants/list"
 
 // return
-export function setPage(page, appendItems) {
+export const setPage = (page, appendItems) => {
   if (appendItems === false)
     return {
       type: "LIST.SET_PAGE",
@@ -25,7 +25,7 @@ export function initPage(state) {
   }
 }
 
-export function fetchPage(request, appendItems = false) {
+export const fetchPage = (request, appendItems = false) => {
   return (dispatch, getState) => {
     // do not load anything outside of API scope
     if (

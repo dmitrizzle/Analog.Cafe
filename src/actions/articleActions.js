@@ -6,20 +6,20 @@ import { axiosRequest } from "./helpers"
 import { ROUTE_ARTICLE_API } from "../constants/article"
 
 // return
-export function setPage(page) {
+export const setPage = page => {
   return {
     type: "ARTICLE.SET_PAGE",
     payload: page
   }
 }
-export function initPage(state) {
+export const initPage = state => {
   return {
     type: "ARTICLE.INIT_PAGE",
     payload: state
   }
 }
 
-export function fetchPage(request) {
+export const fetchPage = request => {
   return (dispatch, getState) => {
     // do not load anything outside of API scope
     if (!request.url.includes(ROUTE_ARTICLE_API)) return

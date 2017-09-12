@@ -3,7 +3,7 @@
   "info": {
     "image": "/images/banners/image-suggestions-action.jpg",
     "title": "More Exposure?",
-    "text": "If you choose “Yes,” we may suggest other authors to feature your images within their articles. You will be credited every time. Your submission is accepted either way.",
+    "text": "If you choose “Yes,” we may suggest other authors to feature your images within their articles. You will be credited every time.",
     "buttons" : [
       {
         "to": "/submit/confirm-full-consent",

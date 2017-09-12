@@ -2,7 +2,6 @@
 import React from "react"
 import { Editor, Raw } from "slate"
 import getOffsets from "positions"
-import { withRouter } from "react-router"
 
 // components
 import ImageButton from "./components/ImageButton"
@@ -14,7 +13,7 @@ import { loadContent } from "../../helpers/loader"
 import { saveContent, setDraftStatusHelper } from "../../helpers/saver"
 
 // return
-class ContentEditor extends React.Component {
+export default class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.props.composerState.raw = loadContent()
@@ -102,5 +101,3 @@ class ContentEditor extends React.Component {
     )
   }
 }
-
-export default withRouter(ContentEditor)

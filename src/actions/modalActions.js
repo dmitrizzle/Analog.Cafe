@@ -4,13 +4,13 @@ import errorMessage from "../constants/error-messages"
 import { axiosRequest } from "./helpers"
 
 // return
-export function initCard(state) {
+export const initCard = state => {
   return {
     type: "MODAL.INIT_CARD",
     payload: state
   }
 }
-export function hideCard() {
+export const hideCard = () => {
   document.getElementById("ModalOverlay").scrollTop = 0 // scroll card to top
   return {
     type: "MODAL.HIDE_CARD",
@@ -18,7 +18,7 @@ export function hideCard() {
   }
 }
 
-export function setCard(info, request) {
+export const setCard = (info, request) => {
   return dispatch => {
     dispatch(
       initCard({
@@ -32,7 +32,7 @@ export function setCard(info, request) {
     })
   }
 }
-export function fetchCard(request) {
+export const fetchCard = request => {
   return dispatch => {
     dispatch(
       initCard({

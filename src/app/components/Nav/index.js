@@ -6,6 +6,8 @@ import Logo from "../Logo"
 import done from "../_icons/images/done.jpg"
 import { ModalDispatch } from "../../containers/Modal"
 
+import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
+
 // styles
 import { NavLink, NavIndexLink, NavItem } from "./styles"
 
@@ -41,7 +43,7 @@ export const CommonNav = props => {
       </NavItem>
       <NavItem prime right>
         {props.userStatus === "ok" ? (
-          <NavLink to={"/me"}>
+          <NavLink to={ROUTE_AUTH_USER_LANDING}>
             <span>My Stuff</span>
           </NavLink>
         ) : (

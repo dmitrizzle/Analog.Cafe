@@ -14,12 +14,17 @@ export const Card = props => {
   return (
     <CardElement style={props.style}>
       <CardHeader title={props.error && props.error}>
-        <h3 onClick={event => event.stopPropagation()}>
-          {props.title}
-        </h3>
-        <a href="#close" onClick={event => event.preventDefault()}>
-          ✕
-        </a>
+        <h3 onClick={event => event.stopPropagation()}>{props.title}</h3>
+        {// Stubborn popup shows no close button but requires buttons within
+        !(
+          props.stubborn &&
+          props.buttons &&
+          Object.keys(props.buttons).length !== 0
+        ) ? (
+          <a href="#close" onClick={event => event.preventDefault()}>
+            ✕
+          </a>
+        ) : null}
       </CardHeader>
       <figure onClick={event => event.stopPropagation()}>
         <img

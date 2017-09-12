@@ -84,7 +84,7 @@ export default class extends React.PureComponent {
               this.props.user.status === "ok" ? (
                 {
                   request: {
-                    url: "/api/author/" + this.props.user.info.author.id
+                    url: "/author/" + this.props.user.info.author.id
                   }
                 }
               ) : (

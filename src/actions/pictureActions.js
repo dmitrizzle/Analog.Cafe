@@ -25,7 +25,7 @@ const unknownAuthor = (id, error) => {
     }
   }
 }
-export function getInfo(src) {
+export const getInfo = src => {
   let id = imageSrcToPictureId(src)
   let request
   request = {

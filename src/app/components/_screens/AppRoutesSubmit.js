@@ -6,7 +6,7 @@ import { Switch, Route } from "react-router-dom"
 // components
 import SubmitSoon from "./SubmitSoon"
 import NotFound from "../../containers/_screens-errors/NotFound"
-import SubmitConfirm from "../../containers/_screens-auth/SubmitConfirm"
+import Upload from "../../containers/_screens-auth/Upload"
 import AsyncArticleLoader from "./AsyncArticleLoader"
 
 // async components
@@ -34,16 +34,8 @@ export default props => {
         <Route exact path="/submit/compose" component={AsyncComposer} />
 
         {/* Signin & upload submission */}
-        <Route
-          exact
-          path="/submit/confirm-full-consent"
-          component={SubmitConfirm}
-        />
-        <Route
-          exact
-          path="/submit/confirm-basic-consent"
-          component={SubmitConfirm}
-        />
+        <Route exact path="/submit/confirm-full-consent" component={Upload} />
+        <Route exact path="/submit/confirm-basic-consent" component={Upload} />
 
         {/* Not found routes */}
         <Route path="/submit/*" component={NotFound} />

@@ -9,6 +9,7 @@ import Heading from "../../components/ArticleHeading"
 import { Article, Section } from "../../components/ArticleStyles"
 
 import errorMessage from "../../../constants/error-messages"
+import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
 
 class AlreadyAuthenticated extends React.PureComponent {
   componentWillMount = () => {
@@ -40,7 +41,7 @@ class AlreadyAuthenticated extends React.PureComponent {
           <p style={{ textAlign: "center" }}>
             You are aloready signed in. Click{" "}
             <strong>
-              <Link to="/me">here</Link>
+              <Link to={ROUTE_AUTH_USER_LANDING}>here</Link>
             </strong>{" "}
             to see your stuff.
           </p>

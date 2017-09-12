@@ -9,6 +9,7 @@ import {
   ROUTE_APP_CURRENT_DOMAIN,
   ROUTE_APP_PRODUCTION_DOMAIN_NAME
 } from "../../../constants/app"
+import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
 
 // redux
 import { connect } from "react-redux"
@@ -64,8 +65,8 @@ class App extends React.PureComponent {
         this.props.setNavView("COMPOSER")
         this.props.setNavLocation({ bottom: false })
         break
-      case "/me/edit":
-      case "/me/edit/":
+      case ROUTE_AUTH_USER_LANDING + "/edit":
+      case ROUTE_AUTH_USER_LANDING + "/edit/":
         this.props.setNavLocation({ top: false, bottom: false })
         break
       case "/submit/confirm-full-consent":

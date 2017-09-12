@@ -10,6 +10,7 @@ import list from "./reducers/listReducer"
 import article from "./reducers/articleReducer"
 import pictures from "./reducers/pictureReducer"
 import user from "./reducers/userReducer"
+import upload from "./reducers/uploadReducer"
 
 export default createStore(
   combineReducers({
@@ -19,7 +20,8 @@ export default createStore(
     list,
     article,
     pictures,
-    user
+    user,
+    upload
   }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(/*logger(), promise(),*/ thunk)

@@ -11,6 +11,8 @@ import { LinkButton, ButtonGroup } from "../../../components/Button"
 import Link from "../../../components/Link"
 import AsyncArticleLoader from "../../../components/_screens/AsyncArticleLoader"
 
+import { ROUTE_AUTH_USER_LANDING } from "../../../../constants/user"
+
 // async components
 // `/components/_screens/AppRoutes.js`
 // `/components/_screens/AppRoutesSubmit.js`
@@ -27,7 +29,11 @@ const Me = props => {
     <AsyncList
       header={
         <ButtonGroup>
-          <LinkButton to="/me/edit" red style={{ margin: "0 auto" }}>
+          <LinkButton
+            to={ROUTE_AUTH_USER_LANDING + "/edit"}
+            red
+            style={{ margin: "0 auto" }}
+          >
             Edit Your Profile
           </LinkButton>
           <strong>

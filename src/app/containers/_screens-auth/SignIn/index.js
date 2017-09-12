@@ -18,31 +18,28 @@ import { TwitterButton } from "./styles"
 // constants & helpers
 import { rememberMe } from "./helpers"
 import { ROUTE_LOGIN_TWITTER_API } from "../../../../constants/login"
-import { WEBSOCKET_AUTHEN_TOKEN } from "../../../../constants/app"
-
-var socket = new WebSocket(WEBSOCKET_AUTHEN_TOKEN)
-var redirect_to = null
-var props = null
-
-// Listen for messages
-socket.addEventListener("message", function(event) {
-  rememberMe(event.data)
-  if (redirect_to && props) {
-    props.history.push(redirect_to)
-  }
-})
-
-function clickTwitterButton() {
-  window.open(ROUTE_LOGIN_TWITTER_API, "_blank", "height=600,width=500")
-}
+import { WEBSOCKET_AUTH_TOKEN } from "../../../../constants/user"
 
 // render
-class SignIn extends React.Component {
-  componentWillMount() {
-    if (this.props.location && this.props.location.state) {
-      redirect_to = this.props.location.state.redirect_to
-    }
-    props = this.props
+class SignIn extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.handleTwitterButton = this.handleTwitterButton.bind(this)
+  }
+
+  componentWillMount = () => {
+    // listen for login confirmation & redirect when successful
+    const socketAuth = new WebSocket(WEBSOCKET_AUTH_TOKEN)
+    socketAuth.addEventListener("message", event => {
+      rememberMe(event.data)
+      this.props.history.replace({
+        pathname: this.props.user.routes.success
+      })
+    })
+  }
+
+  handleTwitterButton = () => {
+    window.open(ROUTE_LOGIN_TWITTER_API, "_blank", "height=600,width=500")
   }
 
   render() {
@@ -56,7 +53,7 @@ class SignIn extends React.Component {
           <Heading pageTitle="Sign In" />
           <Section>
             <ButtonGroup>
-              <TwitterButton onClick={clickTwitterButton}>
+              <TwitterButton onClick={this.handleTwitterButton}>
                 Sign in With Twitter
               </TwitterButton>
               <p>

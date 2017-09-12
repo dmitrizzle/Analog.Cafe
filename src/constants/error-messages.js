@@ -22,6 +22,11 @@ export default {
     CARD: {
       title: "Info not available",
       text: "This card could not be loaded…"
+    },
+    SUBMISSION: {
+      title: "Submission failed",
+      text:
+        "Your submission did not go through. You can try sending it again, if you like."
     }
   },
   DISAMBIGUATION: {

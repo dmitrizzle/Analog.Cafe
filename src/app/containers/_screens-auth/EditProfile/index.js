@@ -15,6 +15,8 @@ import { Article } from "../../../components/ArticleStyles"
 // template for user profile button arrangement
 import { profileButtonsTemplate } from "./helpers"
 
+import { ROUTE_AUTH_USER_LANDING } from "../../../../constants/user"
+
 // render
 class EditProfile extends React.PureComponent {
   // init
@@ -134,7 +136,7 @@ class EditProfile extends React.PureComponent {
           onChange={this.handleFileUpload}
         />
 
-        <LinkButton to="/me" red>
+        <LinkButton to={ROUTE_AUTH_USER_LANDING} red>
           Done
         </LinkButton>
       </Article>
