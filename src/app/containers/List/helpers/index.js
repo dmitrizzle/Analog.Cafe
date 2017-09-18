@@ -55,3 +55,8 @@ export const getListMeta = (pathname = "/", page = 1, url = ROUTE_LIST_API) => {
 
   return { request, meta }
 }
+
+export const trimAuthorName = name => {
+  let firstName = name.split(" ")[0]
+  return firstName.length > 10 ? firstName.substr(0, 9) + "…" : firstName
+}

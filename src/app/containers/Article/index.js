@@ -1,7 +1,6 @@
 // tools
 import React from "react"
 import { Editor, Raw } from "slate"
-import { withRouter } from "react-router"
 import Helmet from "react-helmet"
 
 // redux & state
@@ -112,4 +111,5 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Article))
+export default connect(mapStateToProps, mapDispatchToProps)(Article)
+// NOTE: withRouter() props inherited from /components/_screens/AppRoutes

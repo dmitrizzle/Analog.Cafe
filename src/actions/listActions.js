@@ -53,7 +53,6 @@ export const fetchPage = (request, appendItems = false) => {
           requested: request
         })
       )
-    console.log("load list")
     axios(axiosRequest(request))
       .then(response => {
         if (response.data.page["items-total"] > 0)
