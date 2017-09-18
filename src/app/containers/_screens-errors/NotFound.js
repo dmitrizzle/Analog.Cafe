@@ -1,6 +1,5 @@
 // tools
 import React from "react"
-import { withRouter } from "react-router"
 import Link from "../../components/Link"
 import Helmet from "react-helmet"
 
@@ -11,7 +10,7 @@ import { Section, Article } from "../../components/ArticleStyles"
 import errorMessages from "../../../constants/messages/errors"
 
 // render
-class NotFound extends React.PureComponent {
+export default class extends React.PureComponent {
   componentWillMount = () => {
     this.props.history.replace({
       state: {
@@ -50,4 +49,4 @@ class NotFound extends React.PureComponent {
     )
   }
 }
-export default withRouter(NotFound)
+// NOTE: withRouter() props inherited from /components/_screens/AppRoutes

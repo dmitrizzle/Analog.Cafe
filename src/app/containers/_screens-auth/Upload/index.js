@@ -2,7 +2,6 @@
 import React from "react"
 import Helmet from "react-helmet"
 
-import { withRouter } from "react-router"
 import { connect } from "react-redux"
 
 import localForage from "localforage"
@@ -165,4 +164,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Upload))
+export default connect(mapStateToProps, mapDispatchToProps)(Upload)
+// NOTE: withRouter() props inherited from /containers/_screens/AppRoutesSubmit
