@@ -18,29 +18,28 @@ export const zigzagTopShim = 12
 const blockSafety = props => props.theme.size.block.column.safety
 const blockSpacing = props => props.theme.size.block.spacing
 const greyLine = props =>
-  Color(props.theme.color.foreground).alpha(props.theme.opacity.least).string()
+  Color(props.theme.color.foreground)
+    .alpha(props.theme.opacity.least)
+    .string()
 // const greyFade = props => Color(props.theme.color.foreground).alpha(0).string()
 
 const posterDimensions = css`
-	width: 	5.5em;
-	height: 9.33em;
+  width: 5.5em;
+  height: 9.33em;
 `
-const zigzagWidthShim = css`width: calc( ${zigzagWidth} + 3px);`
+const zigzagWidthShim = css`width: calc(${zigzagWidth} + 3px);`
 const zigzagFill = css`
-	position: absolute;
-	right: 		0;
-	top: 			0;
-	bottom: 	0;
-
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
 `
 const zigzagDimensions = css`
-	${zigzagWidthShim}
-	${zigzagFill}
-	display: 					block;
-	content: 					"";
-	z-index: 					${props => props.theme.layer.up};
-	pointer-events: 	none;
-	${props => props.theme.size.breakpoint.max.l`{ display: none !important; }`}
+  ${zigzagWidthShim} ${zigzagFill} display: block;
+  content: "";
+  z-index: ${props => props.theme.layer.up};
+  pointer-events: none;
+  ${props => props.theme.size.breakpoint.max.l`{ display: none !important; }`};
 `
 
 // return
@@ -144,6 +143,8 @@ export const Ul = styled.ul`
 				white-space: 			nowrap;
 				text-overflow: 		ellipsis;
 				max-width: 				11.5em;
+        max-height:       4.75em;
+        hyphens:          auto;
 				${props => props.theme.size.breakpoint.max.m`{
 					display: 			block;
 					white-space: 	normal;

@@ -21,7 +21,7 @@ import { default as ListBlock } from "../../components/List"
 import { Section, Article } from "../../components/ArticleStyles"
 
 // helpers
-import { getListMeta } from "./helpers"
+import { getListMeta, trimAuthorName } from "./helpers"
 
 // return
 class List extends React.PureComponent {
@@ -91,7 +91,7 @@ class List extends React.PureComponent {
                             }
                           }}
                         >
-                          {this.props.list.filter.author.name}
+                          {trimAuthorName(this.props.list.filter.author.name)}
                         </ModalDispatch>
                       </span>
                     ) : (
