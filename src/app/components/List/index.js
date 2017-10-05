@@ -80,21 +80,26 @@ export default props => {
                     <Stats {...props}>
                       {item.tag === "photo-essay" && item.stats.images === 1 ? (
                         "Single-Frame Narrative"
-                      ) : (
+                      ) : !props.private ? (
                         (item.tag + "")
                           .replace(/-/g, " ")
                           .replace(/\b\w/g, l => l.toUpperCase())
+                      ) : (
+                        "Submission"
                       )}
                       {item.type !== "placeholder" &&
-                        !props.private &&
-                        (item.tag !== "photo-essay"
-                          ? " | " +
-                            Math.round(item.stats.words / 200) +
-                            "-minute read"
-                          : " | " +
-                            item.stats.images +
-                            " Image" +
-                            (item.stats.images > 1 ? "s" : ""))}
+                      !props.private ? item.tag !== "photo-essay" ? (
+                        " | " +
+                        Math.round(item.stats.words / 200) +
+                        "-minute read"
+                      ) : (
+                        " | " +
+                        item.stats.images +
+                        " Image" +
+                        (item.stats.images > 1 ? "s" : "")
+                      ) : item.status === "pending" ? (
+                        " | Under Review"
+                      ) : null}
                     </Stats>
                     {!props.private ? (
                       <em>
