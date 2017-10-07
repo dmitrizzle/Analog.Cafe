@@ -66,21 +66,24 @@ export default class extends React.PureComponent {
   }
 
   // image button handler:
-  handleImageButton = e => {
-    e.preventDefault()
-    e.stopPropagation()
+  handleImageButton = event => {
+    if (!event) return
+    event.preventDefault()
+    event.stopPropagation()
+
+    const activeBlockKey = this.state.state.focusBlock.key
     const resolvedState = this.state.state
-      .transform()
+      .change()
       .insertBlock({
         type: "docket",
         isVoid: true
       })
-      .apply()
+      .state.change()
+      .removeNodeByKey(activeBlockKey)
     this.setState({
-      state: resolvedState,
+      state: resolvedState.state,
       cursorContext: { ...this.state.cursorContext, newLine: false }
     })
-    saveContent(this.state.state.document, resolvedState)
   }
 
   // render
