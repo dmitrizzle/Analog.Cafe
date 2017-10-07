@@ -5,7 +5,7 @@ import React from "react"
 import Picture from "../../../Picture"
 import PictureDocket from "../../../PictureDocket"
 import Link from "../../../../components/Link"
-import Placeholder from "./components/Placeholder"
+//import Placeholder from "./components/Placeholder"
 
 // helpers
 import { parseHref } from "../../../../../utils/link-builder"
@@ -15,7 +15,7 @@ export const schema = {
   nodes: {
     paragraph: props => (
       <p {...props.attributes} style={{ position: "relative" }}>
-        <Placeholder {...props}>Write your story...</Placeholder>
+        {/* <Placeholder {...props}>Write your story...</Placeholder> */}
         {props.children}
       </p>
     ),
