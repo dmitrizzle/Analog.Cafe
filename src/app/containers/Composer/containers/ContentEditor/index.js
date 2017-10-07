@@ -1,13 +1,14 @@
 // tools
 import React from "react"
-import { Editor, Raw } from "slate"
+import { Editor } from "slate-react"
+import { State } from "slate"
 import getOffsets from "positions"
 
 // components
 import ImageButton from "./components/ImageButton"
 
 // helpers, plugins & schema
-import { plugins } from "./plugins"
+// import { plugins } from "./plugins"
 import { schema } from "./schema"
 import { loadContent } from "../../../../../utils/composer-loader"
 import {
@@ -23,7 +24,7 @@ export default class extends React.PureComponent {
 
     // composerState is what appears by default in composer once the user opens the view
     this.state = {
-      state: Raw.deserialize(loadContent(), { terse: true }),
+      state: State.fromJSON(loadContent()),
       schema,
       author: this.props.author,
       cursorContext: {
@@ -35,7 +36,7 @@ export default class extends React.PureComponent {
   }
 
   handleChange = state => {
-    this.setState({ state: state })
+    this.setState({ state })
 
     // add information about cursor positions
     setTimeout(
@@ -62,7 +63,7 @@ export default class extends React.PureComponent {
   // content saver
   handleDocumentChange = (document, state) => {
     setDraftStatusHelper()
-    this.props.composerState.raw = JSON.stringify(Raw.serialize(state))
+    this.props.composerState.raw = JSON.stringify(state.toJSON())
     saveContent(document, state)
   }
 
@@ -93,7 +94,7 @@ export default class extends React.PureComponent {
           onClick={this.handleImageButton}
         />
         <Editor
-          plugins={plugins}
+          // plugins={plugins}
           schema={this.state.schema}
           state={this.state.state}
           onChange={this.handleChange}
