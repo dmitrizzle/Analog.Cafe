@@ -3343,10 +3343,6 @@ immutable@^3.8.1:
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
-import-inspector@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/import-inspector/-/import-inspector-2.0.0.tgz#ce75fdb6a277d2800effe097e2295bc8690b2923"
-
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
@@ -3707,10 +3703,6 @@ is-url@^1.2.2:
 is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
-
-is-webpack-bundle@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/is-webpack-bundle/-/is-webpack-bundle-1.0.0.tgz#576a50bb7c53d1d6a5c1647939c93ae2cbb90eea"
 
 is-window@^1.0.2:
   version "1.0.2"
@@ -5731,13 +5723,9 @@ react-lazyload@^2.2.7:
   dependencies:
     prop-types "^15.5.6"
 
-react-loadable@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-4.0.5.tgz#225eba40a0e67cc5698bcb5db6e783f0d3a9e729"
-  dependencies:
-    import-inspector "^2.0.0"
-    is-webpack-bundle "^1.0.0"
-    webpack-require-weak "^1.0.1"
+react-loadable@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.0.0.tgz#b99df8afd646069022fb3f5fc22402c0f47c317f"
 
 react-portal@^3.1.0:
   version "3.1.0"
@@ -7218,12 +7206,6 @@ webpack-manifest-plugin@1.2.1:
   dependencies:
     fs-extra "^0.30.0"
     lodash ">=3.5 <5"
-
-webpack-require-weak@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/webpack-require-weak/-/webpack-require-weak-1.0.1.tgz#a6a8e60871bebbe5b085a915ab0af633a412433f"
-  dependencies:
-    is-webpack-bundle "^1.0.0"
 
 webpack-sources@^1.0.1:
   version "1.0.1"
