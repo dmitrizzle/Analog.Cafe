@@ -66,26 +66,22 @@ class PictureDocketContainer extends React.PureComponent {
   }
 
   handleClose = event => {
-    console.log(this.props)
-    const { node, state } = this.props
+    const { node, state, editor } = this.props
+    let resolvedState
     if (event) {
       event.preventDefault()
       event.stopPropagation()
-      return state
+      resolvedState = state
         .change()
         .insertBlock({ type: "paragraph" })
         .state.change()
         .removeNodeByKey(node.key)
-    } else {
-      // handleClose without event means auto close on image insert:
-      return state.change().removeNodeByKey(node.key)
+      editor.onChange(resolvedState)
     }
 
     // this helps refresh the view and update inserted image...
     // ...i don't know why
     // window.scrollBy(0, 1)
-
-    // return true
   }
 
   // image upload handlers
@@ -107,31 +103,37 @@ class PictureDocketContainer extends React.PureComponent {
       })
   } // ⤵
   uploadRequest = file => {
-    const { editor } = this.props
+    const { state, editor } = this.props
     const key = uuidv1()
+    let resolvedState
     localForage.setItem(key, file)
-    editor.change.insertBlock({
+    resolvedState = state.change().insertBlock({
       type: "image",
       isVoid: true,
       data: { file, key: key, src: dot }
     })
     this.uploadHandlerTimeout = setTimeout(() => {
       this.handleClose()
-      return true
+      editor.onChange(resolvedState)
     }, 10)
   }
 
   // insert selected image suggesstion:
   handleImageSuggestion = src => {
-    const { editor } = this.props
-    editor.change.insertBlock({
-      type: "image",
-      isVoid: true,
-      data: { src }
-    })
+    const { state, editor, node } = this.props
+    let resolvedState
+    resolvedState = state
+      .change()
+      .insertBlock({
+        type: "image",
+        isVoid: true,
+        data: { src }
+      })
+      .state.change()
+      .removeNodeByKey(node.key)
     this.suggestionHandlerTimeout = setTimeout(() => {
       this.handleClose()
-      return true
+      editor.onChange(resolvedState)
     }, 10)
   }
 
