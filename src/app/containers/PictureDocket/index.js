@@ -66,30 +66,26 @@ class PictureDocketContainer extends React.PureComponent {
   }
 
   handleClose = event => {
-    const { node, editor } = this.props
-    let resolvedState
+    console.log(this.props)
+    const { node, state } = this.props
     if (event) {
       event.preventDefault()
       event.stopPropagation()
-      resolvedState = editor
-        .getState()
-        .transform()
+      return state
+        .change()
         .insertBlock({ type: "paragraph" })
+        .state.change()
         .removeNodeByKey(node.key)
-        .apply()
     } else {
       // handleClose without event means auto close on image insert:
-      resolvedState = editor
-        .getState()
-        .transform()
-        .removeNodeByKey(node.key)
-        .apply()
+      return state.change().removeNodeByKey(node.key)
     }
-    editor.onChange(resolvedState)
 
     // this helps refresh the view and update inserted image...
     // ...i don't know why
-    window.scrollBy(0, 1)
+    // window.scrollBy(0, 1)
+
+    // return true
   }
 
   // image upload handlers
@@ -111,41 +107,31 @@ class PictureDocketContainer extends React.PureComponent {
       })
   } // ⤵
   uploadRequest = file => {
+    const { editor } = this.props
     const key = uuidv1()
     localForage.setItem(key, file)
-    const { editor } = this.props
-    const resolvedState = editor
-      .getState()
-      .transform()
-      .insertBlock({
-        type: "image",
-        isVoid: true,
-        data: { file, key: key, src: dot }
-      })
-      .apply()
-
-    editor.onChange(resolvedState)
+    editor.change.insertBlock({
+      type: "image",
+      isVoid: true,
+      data: { file, key: key, src: dot }
+    })
     this.uploadHandlerTimeout = setTimeout(() => {
       this.handleClose()
+      return true
     }, 10)
   }
 
   // insert selected image suggesstion:
   handleImageSuggestion = src => {
     const { editor } = this.props
-    const resolvedState = editor
-      .getState()
-      .transform()
-      .insertBlock({
-        type: "image",
-        isVoid: true,
-        data: { src }
-      })
-      .apply()
-
+    editor.change.insertBlock({
+      type: "image",
+      isVoid: true,
+      data: { src }
+    })
     this.suggestionHandlerTimeout = setTimeout(() => {
-      editor.onChange(resolvedState)
       this.handleClose()
+      return true
     }, 10)
   }
 
