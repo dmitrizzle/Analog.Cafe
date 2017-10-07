@@ -66,18 +66,17 @@ class PictureDocketContainer extends React.PureComponent {
   }
 
   handleClose = event => {
+    if (!event) return
+    event.preventDefault()
+    event.stopPropagation()
+
     const { node, state, editor } = this.props
-    let resolvedState
-    if (event) {
-      event.preventDefault()
-      event.stopPropagation()
-      resolvedState = state
-        .change()
-        .insertBlock({ type: "paragraph" })
-        .state.change()
-        .removeNodeByKey(node.key)
-      editor.onChange(resolvedState)
-    }
+    const resolvedState = state
+      .change()
+      .insertBlock({ type: "paragraph" })
+      .state.change()
+      .removeNodeByKey(node.key)
+    editor.onChange(resolvedState)
 
     // this helps refresh the view and update inserted image...
     // ...i don't know why
@@ -103,17 +102,21 @@ class PictureDocketContainer extends React.PureComponent {
       })
   } // ⤵
   uploadRequest = file => {
-    const { state, editor } = this.props
+    const { state, editor, node } = this.props
     const key = uuidv1()
-    let resolvedState
     localForage.setItem(key, file)
-    resolvedState = state.change().insertBlock({
-      type: "image",
-      isVoid: true,
-      data: { file, key: key, src: dot }
-    })
+
+    const resolvedState = state
+      .change()
+      .insertBlock({
+        type: "image",
+        isVoid: true,
+        data: { file, key: key, src: dot }
+      })
+      // remove docket
+      .state.change()
+      .removeNodeByKey(node.key)
     this.uploadHandlerTimeout = setTimeout(() => {
-      this.handleClose()
       editor.onChange(resolvedState)
     }, 10)
   }
@@ -121,18 +124,17 @@ class PictureDocketContainer extends React.PureComponent {
   // insert selected image suggesstion:
   handleImageSuggestion = src => {
     const { state, editor, node } = this.props
-    let resolvedState
-    resolvedState = state
+    const resolvedState = state
       .change()
       .insertBlock({
         type: "image",
         isVoid: true,
         data: { src }
       })
+      // remove docket
       .state.change()
       .removeNodeByKey(node.key)
     this.suggestionHandlerTimeout = setTimeout(() => {
-      this.handleClose()
       editor.onChange(resolvedState)
     }, 10)
   }
