@@ -35,7 +35,7 @@ export default class extends React.PureComponent {
     }
   }
 
-  handleChange = state => {
+  handleChange = ({ state }) => {
     this.setState({ state })
 
     // add information about cursor positions
@@ -58,10 +58,8 @@ export default class extends React.PureComponent {
       }.bind(this),
       300
     )
-  }
 
-  // content saver
-  handleDocumentChange = (document, state) => {
+    // update draft status & save content to device
     setDraftStatusHelper()
     this.props.composerState.raw = JSON.stringify(state.toJSON())
     saveContent(document, state)
@@ -98,7 +96,6 @@ export default class extends React.PureComponent {
           schema={this.state.schema}
           state={this.state.state}
           onChange={this.handleChange}
-          onDocumentChange={this.handleDocumentChange}
           style={{ minHeight: "28em" }}
         />
       </div>
