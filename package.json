@@ -1,7 +1,8 @@
 {
   "name": "analog-cafe",
   "version": "0.6.2",
-  "description": "(Loosely) Collaborative Blogging App by Analog.Cafe",
+  "version": "0.6.1",
+  "description": "React-based View layer for Roast.Cloud",
   "license": "MPL-2.0",
   "private": true,
   "engines": {
