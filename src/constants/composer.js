@@ -11,7 +11,7 @@ export const DEFAULT_COMPOSER_EDITOR_STATE = {
             kind: "text",
             ranges: [
               {
-                text: "A line of text in a paragraph."
+                text: ""
               }
             ]
           }

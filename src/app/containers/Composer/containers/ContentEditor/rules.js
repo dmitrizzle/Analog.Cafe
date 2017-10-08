@@ -1,5 +1,6 @@
 // tools
-import { Html, Text } from "slate"
+import Html from "slate-html-serializer"
+import Plain from "slate-plain-serializer"
 import isUrl from "is-url"
 import toTitleCase from "titlecase"
 
@@ -66,7 +67,7 @@ const rules = [
             kind: "block",
             type: block,
             nodes: plainText(el)
-              ? [Text.createFromString(plainText(el))]
+              ? [Plain.createFromString(plainText(el))]
               : next(el.children)
           }
         }
@@ -75,7 +76,7 @@ const rules = [
             kind: "block",
             type: block,
             nodes: plainText(el)
-              ? [Text.createFromString(toTitleCase(plainText(el)))]
+              ? [Plain.createFromString(toTitleCase(plainText(el)))]
               : next(el.children)
           }
         }
@@ -97,7 +98,7 @@ const rules = [
               href: el.attribs.href
             },
             nodes: plainText(el)
-              ? [Text.createFromString(plainText(el))]
+              ? [Plain.createFromString(plainText(el))]
               : next(el.children)
           }
         }

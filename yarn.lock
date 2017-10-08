@@ -1844,10 +1844,6 @@ data-uri-regex@^0.1.2:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/data-uri-regex/-/data-uri-regex-0.1.4.tgz#1e1db6c8397eca8a48ecdb55ad1b927ec0bbac2e"
 
-data-uri-to-blob@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/data-uri-to-blob/-/data-uri-to-blob-0.0.4.tgz#087a7bff42f41a6cc0b2e2fb7312a7c29904fbaa"
-
 date-fns@^1.27.2:
   version "1.28.5"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.28.5.tgz#257cfc45d322df45ef5658665967ee841cd73faf"
@@ -6240,9 +6236,9 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
-slate-auto-replace@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/slate-auto-replace/-/slate-auto-replace-0.5.0.tgz#52ecbe4f5ba1838a4aaacc797caa8134118f8f7e"
+slate-auto-replace@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/slate-auto-replace/-/slate-auto-replace-0.6.3.tgz#7f1683e31945898cf47f09921caa789b19d1587a"
   dependencies:
     type-of "^2.0.1"
 
@@ -6250,25 +6246,32 @@ slate-base64-serializer@^0.1.10:
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.1.10.tgz#5fb7fe6de52ef56d2619dc34f8960fe81a866bfb"
 
-slate-dev-logger@^0.1.11:
+slate-dev-logger@^0.1.0, slate-dev-logger@^0.1.11:
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.11.tgz#740fd2e23b1dda1f4629419fc914eea91272b6f0"
 
-slate-drop-or-paste-images@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images/-/slate-drop-or-paste-images-0.5.0.tgz#c90367f9612f75abae0d1d6b8b2008108da02598"
+slate-drop-or-paste-images@^0.6.5:
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images/-/slate-drop-or-paste-images-0.6.5.tgz#af856682e9585a0386ea4a78f0517a4848467cc1"
   dependencies:
-    data-uri-to-blob "0.0.4"
     es6-promise "^4.0.5"
     image-to-data-uri "^1.0.0"
     is-data-uri "^0.1.0"
     is-image "^1.0.1"
     is-url "^1.2.2"
     mime-types "^2.1.11"
+    slate-dev-logger "^0.1.0"
 
-slate-edit-blockquote@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/slate-edit-blockquote/-/slate-edit-blockquote-0.2.0.tgz#5ec3fee12ba152bfbbc6fa25fd870b94ee77c3e3"
+slate-edit-blockquote@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/slate-edit-blockquote/-/slate-edit-blockquote-0.4.0.tgz#bc7cecdbf633e4f9c11940c390a0dcc7d74ea0aa"
+
+slate-html-serializer@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/slate-html-serializer/-/slate-html-serializer-0.1.13.tgz#82200c78807b4476baec5076ed6e7ea50876751f"
+  dependencies:
+    slate-dev-logger "^0.1.11"
+    type-of "^2.0.1"
 
 slate-plain-serializer@^0.1.11:
   version "0.1.11"

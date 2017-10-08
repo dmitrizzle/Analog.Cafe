@@ -8,7 +8,7 @@ import getOffsets from "positions"
 import ImageButton from "./components/ImageButton"
 
 // helpers, plugins & schema
-// import { plugins } from "./plugins"
+import { plugins } from "./plugins"
 import { schema } from "./schema"
 import { loadContent } from "../../../../../utils/composer-loader"
 import {
@@ -41,8 +41,6 @@ export default class extends React.PureComponent {
     // add information about cursor positions
     setTimeout(
       function() {
-        // const block = findDOMNode(state.document.getDescendant(state.focusBlock.key))
-        // findDOMNode returns error every time; instead we just need it to exit the function vv
         const nodeKey = state.focusBlock.key
         const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
         if (!block) return
@@ -95,7 +93,7 @@ export default class extends React.PureComponent {
           onClick={this.handleImageButton}
         />
         <Editor
-          // plugins={plugins}
+          plugins={plugins}
           schema={this.state.schema}
           state={this.state.state}
           onChange={this.handleChange}
