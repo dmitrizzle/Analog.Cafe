@@ -29,14 +29,14 @@ import TrailingBlock from "slate-trailing-block"
 // export
 export const plugins = [
   // general tools
-  Linkify({}),
-  Paste({ html }),
+  // Linkify({}),
+  // Paste({ html }),
 
   // hot keys
   MarkHotkey({ key: "b", type: "bold" }),
   MarkHotkey({ key: "i", type: "italic" }),
 
-  ToggleFeature({ key: "f", node: "image" }),
+  // ToggleFeature({ key: "f", node: "image" }),
 
   // markdown shortcuts
   AutoReplace({
@@ -154,18 +154,16 @@ export const plugins = [
   // ...that will also need an upload tool connected.
   InsertImages({
     extensions: ["png", "jpeg"],
-    applyTransform: (transform, file) => {
+    insertImage: (transform, file) => {
       imageSizeLimit(file.size)
         .then(() => {
           const key = uuidv1()
           localForage.setItem(key, file)
-          return transform
-            .insertBlock({
-              type: "image",
-              isVoid: true,
-              data: { file, src: dot, key }
-            })
-            .apply()
+          return transform.insertBlock({
+            type: "image",
+            isVoid: true,
+            data: { file, src: dot, key }
+          })
         })
         .catch(reason => {
           store.dispatch(
@@ -179,8 +177,8 @@ export const plugins = [
           )
         })
     }
-  }),
+  })
 
   // convenience plugins
-  TrailingBlock({ type: "paragraph" })
+  //TrailingBlock({ type: "paragraph" })
 ]
