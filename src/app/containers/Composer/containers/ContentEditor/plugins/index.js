@@ -30,7 +30,7 @@ import TrailingBlock from "slate-trailing-block"
 export const plugins = [
   // general tools
   // Linkify({}),
-  // Paste({ html }),
+  Paste({ html }),
 
   // hot keys
   MarkHotkey({ key: "b", type: "bold" }),
