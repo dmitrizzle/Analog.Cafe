@@ -39,7 +39,7 @@ export const plugins = [
   MarkHotkey({ key: "b", type: "bold" }),
   MarkHotkey({ key: "i", type: "italic" }),
 
-  // ToggleFeature({ key: "f", node: "image" }),
+  ToggleFeature({ key: "f", node: "image" }),
 
   // markdown shortcuts
   AutoReplace({
