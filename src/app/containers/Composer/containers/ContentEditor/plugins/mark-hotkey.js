@@ -8,7 +8,7 @@ export function MarkHotkey(options) {
 
   // Return our "plugin" object, containing the `onKeyDown` handler.
   return {
-    onKeyDown(event, data, state) {
+    onKeyDown(event, data, change) {
       // Check that the key pressed matches our `code` option.
       if (!event.metaKey || keycode(event.which) !== key) return
 
@@ -16,7 +16,8 @@ export function MarkHotkey(options) {
       event.preventDefault()
 
       // Toggle the mark `type`.
-      return state.transform().toggleMark(type).apply()
+      change.toggleMark(type)
+      return true
     }
   }
 }

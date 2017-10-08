@@ -124,13 +124,6 @@ export const plugins = [
   }),
 
   // auto-format rules
-  // AutoReplace({
-  //   trigger: "space",
-  //   before: /[ ]$/,
-  //   transform: (transform, e, data, matches) => {
-  //     return transform.deleteBackward(1).insertText(".") // double-space mutates to period (.)
-  //   }
-  // }),
   AutoReplace({
     trigger: "space",
     before: /( -)$/,
@@ -180,8 +173,8 @@ export const plugins = [
           )
         })
     }
-  })
+  }),
 
   // convenience plugins
-  //TrailingBlock({ type: "paragraph" })
+  TrailingBlock({ type: "paragraph" })
 ]

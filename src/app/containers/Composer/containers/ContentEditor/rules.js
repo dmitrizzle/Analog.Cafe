@@ -1,7 +1,6 @@
 // tools
 import Html from "slate-html-serializer"
 import isUrl from "is-url"
-import toTitleCase from "titlecase"
 
 // components
 
@@ -27,10 +26,8 @@ const MARK_TAGS = {
 }
 
 // extract just the text from node:
-const plainText = (el, title = false) => {
-  const textify = el => el.innerText || el.textContent
-  let text = title ? toTitleCase(textify(el)) : textify(el)
-  el.innerHTML = text
+const squish = el => {
+  el.innerHTML = el.innerText || el.textContent
   return el
 }
 
@@ -54,14 +51,14 @@ const rules = [
           return {
             kind: "block",
             type: "quote",
-            nodes: next(plainText(el).childNodes)
+            nodes: next(squish(el).childNodes)
           }
         }
         case "heading": {
           return {
             kind: "block",
             type: "heading",
-            nodes: next(plainText(el, true).childNodes)
+            nodes: next(squish(el).childNodes)
           }
         }
         case "image": {
@@ -81,7 +78,7 @@ const rules = [
             data: {
               href: el.getAttribute("href")
             },
-            nodes: next(plainText(el, true).childNodes)
+            nodes: next(squish(el).childNodes)
           }
         }
         default:
