@@ -33,7 +33,7 @@ import {
 const AsyncArticleActions = Loadable({
   loader: () => import("../../components/Card/components/ArticleActions"),
   loading: () => null,
-  delay: 1000
+  delay: 100
 })
 
 // render
@@ -144,7 +144,6 @@ class Article extends React.PureComponent {
                 nextArticle={this.props.article.nextArticle}
                 thisArticle={this.props.article.slug}
                 thisArticlePostDate={this.props.article["post-date"]}
-                // nextArticle={"23-days-in-myanmar-df7d"}
               />
             )}
         </Section>
