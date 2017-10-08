@@ -32,7 +32,7 @@ import {
 
 const AsyncArticleActions = Loadable({
   loader: () => import("../../components/Card/components/ArticleActions"),
-  loading: () => <div />,
+  loading: () => null,
   delay: 1000
 })
 
