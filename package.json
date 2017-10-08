@@ -44,6 +44,7 @@
     "slate-drop-or-paste-images": "^0.6.5",
     "slate-edit-blockquote": "^0.4.0",
     "slate-html-serializer": "^0.1.13",
+    "slate-paste-linkify": "^0.3.2",
     "slate-react": "^0.2.1",
     "slate-trailing-block": "^0.2.4",
     "styled-components": "^2.2.1",
