@@ -31,21 +31,7 @@ const plainText = (el, title = false) => {
   const textify = el => el.innerText || el.textContent
   let text = title ? toTitleCase(textify(el)) : textify(el)
   el.innerHTML = text
-  console.log(el)
   return el
-}
-
-// template for making text node
-const makeTextNode = text => {
-  return {
-    kind: "text",
-    ranges: [
-      {
-        kind: "range",
-        text: text
-      }
-    ]
-  }
 }
 
 // deserialize copy-paste html content

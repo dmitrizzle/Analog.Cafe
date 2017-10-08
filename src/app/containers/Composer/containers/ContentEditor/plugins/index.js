@@ -15,7 +15,7 @@ import { dot } from "../../../../../components/_icons/components/BlankDot"
 // Analog.Cafe plugins
 import { MarkHotkey } from "./mark-hotkey"
 import { ToggleFeature } from "./toggle-feature"
-import { Linkify } from "./linkify"
+// import { Linkify } from "./linkify"
 import { Paste } from "./paste-html"
 
 // plugins by others
@@ -23,14 +23,17 @@ import AutoReplace from "slate-auto-replace"
 import EditBlockquote from "slate-edit-blockquote"
 import InsertImages from "slate-drop-or-paste-images"
 import TrailingBlock from "slate-trailing-block"
+import PasteLinkify from "slate-paste-linkify"
 
 // components
 
 // export
 export const plugins = [
   // general tools
-  // Linkify({}),
   Paste({ html }),
+  PasteLinkify({
+    type: "link"
+  }),
 
   // hot keys
   MarkHotkey({ key: "b", type: "bold" }),
