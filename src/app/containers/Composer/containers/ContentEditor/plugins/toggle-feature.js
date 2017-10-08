@@ -2,11 +2,12 @@
 import keycode from "keycode"
 
 // return
-export function ToggleFeature(options) {
+export const ToggleFeature = options => {
   const { key } = options
 
   return {
-    onKeyDown(event, data, state) {
+    onKeyDown(event, data, change) {
+      const { state } = change
       if (!event.metaKey || keycode(event.which) !== key) return
       if (state.focusBlock.type !== "image") return
       event.preventDefault()
@@ -20,13 +21,11 @@ export function ToggleFeature(options) {
         caption: previousDataImmutable.get("caption")
       }
       let featureStatus = previousData.feature ? false : true
-      return state
-        .transform()
-        .setBlock({
-          type: "image",
-          data: { ...previousData, feature: featureStatus }
-        })
-        .apply()
+      change.setBlock({
+        type: "image",
+        data: { ...previousData, feature: featureStatus }
+      })
+      return true
     }
   }
 }
