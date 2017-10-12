@@ -1,5 +1,6 @@
 export default {
   STAR: "✦",
+  TITLE_SEPARATOR: "—",
   CHECKMARK: "✓",
   WTF: "ʕ⊙ᴥ⊙ʔ",
   JAKE: "(❍ᴥ❍ʋ)",

@@ -26,8 +26,8 @@ render(
     <BrowserRouter>
       <Paper>
         <Helmet
-          defaultTitle={APP_NAME + " " + emojis.STAR}
-          titleTemplate={"%s " + emojis.STAR + " " + APP_NAME}
+          defaultTitle={APP_NAME + " " + emojis.TITLE_SEPARATOR}
+          titleTemplate={"%s " + emojis.TITLE_SEPARATOR + " " + APP_NAME}
         />
         <App />
       </Paper>

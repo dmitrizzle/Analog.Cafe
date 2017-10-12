@@ -89,7 +89,7 @@ class List extends React.PureComponent {
           ) : (
             <ListHeader>
               {this.props.list.filter.author ? (
-                <q>
+                <span>
                   <em>
                     {this.props.list.error ? (
                       this.props.list.error.title
@@ -116,12 +116,12 @@ class List extends React.PureComponent {
                     ) : (
                       this.props.location.pathname.includes("/author/") && ".."
                     )}
-                  </em>.
-                </q>
+                  </em>
+                </span>
               ) : (
-                <q>
-                  <em>{renderedListMeta.title}</em>.
-                </q>
+                <span>
+                  <em>{renderedListMeta.title}</em>
+                </span>
               )}
               &nbsp;{this.props.list.filter.author &&
               this.props.list.filter.author.name ? (

@@ -8,6 +8,8 @@ import { LinkButton } from "../Button"
 // styles
 import { Sidenote } from "../CaptionStyles"
 
+import emojis from "../../../constants/messages/emojis"
+
 // css
 export const CardButtonStyles = css`
   max-width: 100%;
@@ -92,7 +94,7 @@ export const CardHeader = styled.header`
   h3,
   input {
     ${props => props.theme.size.font.auto} ${props =>
-        props.theme.typography.title.auto} white-space: nowrap;
+  props.theme.typography.title.auto} white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
@@ -100,7 +102,7 @@ export const CardHeader = styled.header`
   }
   h3::before,
   input::before {
-    content: "✦";
+    content: "${emojis.STAR}";
   }
   a {
     ${props => props.theme.size.font.auto} text-decoration:none;
