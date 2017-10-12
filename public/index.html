@@ -654,6 +654,16 @@
         font-weight: 600;
         line-height: 1.15em;
       }
+      .navMore::after {
+        content: "✦";
+        text-decoration: none;
+        font-style: normal;
+        display: inline-block;
+        vertical-align: super;
+        font-size: 0.5em;
+        margin-left: -.15em;
+        margin-top: -.5em;
+      }
       @media (min-width: 32.5625em){
         .appNav, .waitMessage {
           font-size: 20px;
@@ -850,8 +860,8 @@
               </div>
             </a>
           </li>
-          <li class="prime left"><a href="/about"><span>About</span></a></li>
           <li class="prime right"><a href="/submit"><span>Submit</span></a></li>
+          <li class="prime left"><a href="#more"><span class="navMore">More…</span></a></li>
         </ul>
       </nav>
       <div class="waitMessage">

@@ -36,18 +36,7 @@ export const CommonNav = props => {
           <Logo />
         </NavIndexLink>
       </NavItem>
-      <NavItem prime left className="prime left">
-        {props.userStatus === "ok" ? (
-          <NavLink to={ROUTE_AUTH_USER_LANDING}>
-            <span>My Stuff</span>
-          </NavLink>
-        ) : (
-          <NavLink to={"/about"}>
-            <span>About</span>
-          </NavLink>
-        )}
-      </NavItem>
-      <NavItem prime right className="prime right">
+      <NavItem prime right className="prime left">
         {props.userStatus === "ok" ? (
           <NavLink to={"/submit/compose"}>
             <span>Submit</span>
@@ -57,6 +46,14 @@ export const CommonNav = props => {
             <span>Submit</span>
           </NavLink>
         )}
+      </NavItem>
+      <NavItem prime left className="prime right">
+        <ModalDispatch
+          with={MESSAGE_HINT_AUTO_SAVE}
+          style={{ textDecoration: "none", paddingRight: ".25em" }}
+        >
+          <span>More…</span>
+        </ModalDispatch>
       </NavItem>
     </ul>
   )
@@ -84,9 +81,7 @@ export const ComposerNav = props => {
           with={MESSAGE_HINT_AUTO_SAVE}
           style={{ textDecoration: "none" }}
         >
-          <span>
-            {props.draftStatus}
-          </span>
+          <span>{props.draftStatus}</span>
         </ModalDispatch>
       </NavItem>
       <NavItem prime center className="prime center">
