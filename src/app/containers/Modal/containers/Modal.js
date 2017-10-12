@@ -1,6 +1,5 @@
 // tools
 import React from "react"
-import ReactGA from "react-ga"
 
 // redux
 import { connect } from "react-redux"
@@ -17,11 +16,14 @@ import {
 // return
 const Modal = props => {
   if (!props.modal.hidden && props.modal.status === "ok") {
-    ReactGA.modalview(
-      props.modal.requested.url
-        .replace(ROUTE_API_DOMAIN, "") // cut api domain from the middle of reported path
-        .replace(ROUTE_APP_CURRENT_DOMAIN, "") // cut app domain from the middle of reported path
-    ) // google analytics
+    // async load Google Analytics module
+    import("react-ga").then(ReactGA => {
+      ReactGA.modalview(
+        props.modal.requested.url
+          .replace(ROUTE_API_DOMAIN, "") // cut api domain from the middle of reported path
+          .replace(ROUTE_APP_CURRENT_DOMAIN, "") // cut app domain from the middle of reported path
+      ) // google analytics
+    })
   }
 
   // close card on escape keypress
