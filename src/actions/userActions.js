@@ -4,7 +4,7 @@ import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
 import { axiosRequest } from "../utils/axios-request"
 
-import { ROUTE_USER_API, ROUTE_UPDATE_PROFILE_API } from "../constants/user"
+import { ROUTE_USER_API } from "../constants/user"
 
 // error message
 const loginError = {
@@ -66,24 +66,8 @@ export const getInfo = () => {
   }
 }
 
-export const setInfo = user => {
+export const setInfo = request => {
   return dispatch => {
-    const data = new FormData()
-    data.append("title", user.title)
-    data.append("text", user.text)
-    data.append("buttons", JSON.stringify(user.buttons))
-    data.append("buttonText", user.buttonText)
-    data.append("image", user.imageUpload)
-
-    const request = {
-      method: "put",
-      headers: {
-        "content-type": "multipart/form-data",
-        Authorization: "JWT " + localStorage.getItem("token")
-      },
-      data,
-      url: ROUTE_UPDATE_PROFILE_API
-    }
     axios(axiosRequest(request))
       .then(response => {
         dispatch({
