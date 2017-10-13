@@ -19,12 +19,22 @@ import { ROUTE_ARTICLE_DIR, SUMMARY_LENGTH_MAX } from "../../../constants/list"
 // return
 const ListSubtitle = props => {
   return (
-    <span style={{ display: "block" }}>
-      {/* remove title case but capitalize first letter */
-      props.subtitle.charAt(0).toUpperCase() +
-        props.subtitle.substring(1).toLowerCase()}
-      {/* add a period if subtitle doesn't end with punctuation: */
-      !props.subtitle.match(/.[.,:!?]$/) && "."}
+    <span>
+      <span>
+        {props.title}
+        {/* add a period if subtitle doesn't end with punctuation: */
+        !props.title.match(/.[.,:!?]$/) && "."}
+        &nbsp;
+      </span>
+      {props.subtitle && (
+        <span>
+          {props.subtitle}
+          {/* add a period if subtitle doesn't end with punctuation: */
+          !props.subtitle.match(/.[.,:!?]$/) && "."}
+          &nbsp;
+        </span>
+      )}
+      ❡
     </span>
   )
 }
@@ -69,12 +79,10 @@ export default props => {
                   </figure>
                   <h2 title={item.title}>{item.title}</h2>
                   <Caption status={props.status}>
-                    {item.subtitle && <ListSubtitle subtitle={item.subtitle} />}
-                    {item.summary.length > SUMMARY_LENGTH_MAX ? (
-                      item.summary.substr(0, SUMMARY_LENGTH_MAX - 1) + "…"
-                    ) : (
-                      item.summary
-                    )}
+                    <ListSubtitle subtitle={item.subtitle} title={item.title} />
+                    <span style={{ opacity: "0.5" }}>
+                      {item.summary.substr(0, SUMMARY_LENGTH_MAX - 1) + "…"}
+                    </span>
                   </Caption>
                   <div>
                     <Stats {...props}>
