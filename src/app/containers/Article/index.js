@@ -3,7 +3,7 @@ import React from "react"
 import Loadable from "react-loadable"
 import { Editor } from "slate-react"
 import { State } from "slate"
-import Helmet from "../../components/_async/AsyncHelmet"
+import Helmet from "../../components/_async/Helmet"
 import { froth } from "../../../utils/image-froth"
 
 // redux & state
@@ -30,7 +30,7 @@ import {
   Byline
 } from "../../components/ArticleStyles"
 
-const AsyncArticleActions = Loadable({
+const ArticleActions = Loadable({
   loader: () => import("../../components/Card/components/ArticleActions"),
   loading: () => null,
   delay: 100
@@ -143,7 +143,7 @@ class Article extends React.PureComponent {
 
           {this.props.article.poster &&
             this.props.article.author && (
-              <AsyncArticleActions
+              <ArticleActions
                 shareOnFacebook={this.handleShareOnFacebook}
                 shareOnTwitter={this.handleShareOnTwitter}
                 nextArticle={this.props.article.nextArticle}

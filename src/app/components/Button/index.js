@@ -9,7 +9,7 @@ import Color from "color"
 // components
 import Link from "../Link"
 
-const AsyncLoader = Loadable({
+const Loader = Loadable({
   loader: () => import("../_icons/components/Loader"),
   loading: () => null,
   delay: 100
@@ -82,7 +82,7 @@ export const Button = styled(
       onClick={props.onClick}
       disabled={props.loading}
     >
-      <AsyncLoader style={props.loading ? null : { width: "0" }} />
+      <Loader style={props.loading ? null : { width: "0" }} />
       {props.children}
     </button>
   )

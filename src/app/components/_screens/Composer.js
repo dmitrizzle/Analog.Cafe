@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Helmet from "../_async/AsyncHelmet"
+import Helmet from "../_async/Helmet"
 
 // components
 import { Article, Section } from "../ArticleStyles"

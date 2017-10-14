@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 import { withRouter } from "react-router"
-import Helmet from "../../components/_async/AsyncHelmet"
+import Helmet from "../../components/_async/Helmet"
 
 // components
 import Link from "../../components/Link"

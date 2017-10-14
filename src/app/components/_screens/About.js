@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 import styled from "styled-components"
-import Helmet from "../_async/AsyncHelmet"
+import Helmet from "../_async/Helmet"
 
 // components
 import Heading from "../ArticleHeading"

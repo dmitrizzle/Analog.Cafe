@@ -2,7 +2,7 @@
 import React from "react"
 import { withRouter } from "react-router"
 import { ModalDispatch } from "../Modal"
-import Helmet from "../../components/_async/AsyncHelmet"
+import Helmet from "../../components/_async/Helmet"
 
 // redux & state
 import { connect } from "react-redux"

@@ -4,51 +4,51 @@ import Loadable from "react-loadable"
 import { Switch, Route } from "react-router-dom"
 
 // views
-import AsyncListLoader from "../_async/AsyncListLoader"
-import AsyncArticleLoader from "../_async/AsyncArticleLoader"
+import ListLoader from "../_async/ListLoader"
+import ArticleLoader from "../_async/ArticleLoader"
 
 import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
 
 // components
 import SignOut from "../../containers/_screens-auth/SignOut"
 
-const AsyncList = Loadable({
+const List = Loadable({
   loader: () => import("../../containers/List"),
-  loading: AsyncListLoader
+  loading: ListLoader
 })
-const AsyncArticle = Loadable({
+const Article = Loadable({
   loader: () => import("../../containers/Article"),
-  loading: AsyncArticleLoader,
+  loading: ArticleLoader,
   delay: 100
 })
-const AsyncEditProfile = Loadable({
+const EditProfile = Loadable({
   loader: () => import("../../containers/_screens-auth/EditProfile"),
-  loading: AsyncArticleLoader,
+  loading: ArticleLoader,
   delay: 100
 })
-const AsyncAbout = Loadable({
+const About = Loadable({
   loader: () => import("./About"),
-  loading: AsyncArticleLoader,
+  loading: ArticleLoader,
   delay: 100
 })
-const AsyncSignIn = Loadable({
+const SignIn = Loadable({
   loader: () => import("../../containers/_screens-auth/SignIn"),
-  loading: AsyncArticleLoader,
+  loading: ArticleLoader,
   delay: 100
 })
-const AsyncMe = Loadable({
+const Me = Loadable({
   loader: () => import("../../containers/_screens-auth/Me"),
-  loading: AsyncArticleLoader,
+  loading: ArticleLoader,
   delay: 100
 })
-const AsyncAppRoutesSubmit = Loadable({
+const AppRoutesSubmit = Loadable({
   loader: () => import("./AppRoutesSubmit"),
-  loading: AsyncArticleLoader,
+  loading: ArticleLoader,
   delay: 100
 })
-const AsyncNotFound = Loadable({
+const NotFound = Loadable({
   loader: () => import("../../containers/_screens-errors/NotFound"),
-  loading: AsyncArticleLoader,
+  loading: ArticleLoader,
   delay: 100
 })
 
@@ -58,34 +58,34 @@ export default props => {
     <main>
       <Switch>
         {/* dynamic urls and views */}
-        <Route exact path="/author" component={AsyncNotFound} />
-        <Route exact path="/zine" component={AsyncNotFound} />
-        <Route exact path="/author/*" component={AsyncList} />
-        <Route exact path="/zine/*" component={AsyncArticle} />
+        <Route exact path="/author" component={NotFound} />
+        <Route exact path="/zine" component={NotFound} />
+        <Route exact path="/author/*" component={List} />
+        <Route exact path="/zine/*" component={Article} />
 
         {/* dynamic views, static urls */}
-        <Route exact path="/" component={AsyncList} />
-        <Route exact path="/photo-essays" component={AsyncList} />
-        <Route exact path="/articles" component={AsyncList} />
-        <Route exact path="/stories" component={AsyncList} />
-        <Route exact path="/editorials" component={AsyncList} />
-        <Route exact path="/guides" component={AsyncList} />
-        <Route exact path="/reviews" component={AsyncList} />
+        <Route exact path="/" component={List} />
+        <Route exact path="/photo-essays" component={List} />
+        <Route exact path="/articles" component={List} />
+        <Route exact path="/stories" component={List} />
+        <Route exact path="/editorials" component={List} />
+        <Route exact path="/guides" component={List} />
+        <Route exact path="/reviews" component={List} />
 
         {/* auth views */}
-        <Route exact path={ROUTE_AUTH_USER_LANDING} component={AsyncMe} />
+        <Route exact path={ROUTE_AUTH_USER_LANDING} component={Me} />
         <Route
           exact
           path={ROUTE_AUTH_USER_LANDING + "/edit"}
-          component={AsyncEditProfile}
+          component={EditProfile}
         />
-        <Route exact path="/sign-in" component={AsyncSignIn} />
+        <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-out" component={SignOut} />
 
         {/* static views and urls */}
-        <Route exact path="/about" component={AsyncAbout} />
-        <Route path="/submit" component={AsyncAppRoutesSubmit} />
-        <Route state={{ status: "404" }} component={AsyncNotFound} />
+        <Route exact path="/about" component={About} />
+        <Route path="/submit" component={AppRoutesSubmit} />
+        <Route state={{ status: "404" }} component={NotFound} />
       </Switch>
     </main>
   )

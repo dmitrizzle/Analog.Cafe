@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 import { render } from "react-dom"
-import Helmet from "./app/components/_async/AsyncHelmet"
+import Helmet from "./app/components/_async/Helmet"
 import { APP_NAME } from "./constants/app"
 import emojis from "./constants/messages/emojis"
 // router
