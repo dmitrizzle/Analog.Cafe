@@ -69,7 +69,7 @@ export const CommonNav = props => {
                   : null,
                 props.userStatus === "ok"
                   ? {
-                      to: "/",
+                      to: "/sign-out",
                       text: "Sign Out",
                       black: true
                     }

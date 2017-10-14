@@ -43,7 +43,7 @@ export const Card = props => {
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {
-          return (
+          return button ? (
             <CardButton
               onClick={button.onClick}
               to={button.to}
@@ -53,7 +53,7 @@ export const Card = props => {
             >
               {button.text}
             </CardButton>
-          )
+          ) : null
         })}
     </CardElement>
   )

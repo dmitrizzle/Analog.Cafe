@@ -9,10 +9,9 @@ import AsyncArticleLoader from "./AsyncArticleLoader"
 
 import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
 
-// async components
-// `/components/_screens/AppRoutes.js`
-// `/components/_screens/AppRoutesSubmit.js`
-// `/containers/_screens-auth/Me/index.js`
+// components
+import SignOut from "../../containers/_screens-auth/SignOut"
+
 const AsyncList = Loadable({
   loader: () => import("../../containers/List"),
   loading: AsyncListLoader
@@ -77,6 +76,7 @@ export default props => {
           component={AsyncEditProfile}
         />
         <Route exact path="/sign-in" component={AsyncSignIn} />
+        <Route exact path="/sign-out" component={SignOut} />
 
         {/* static views and urls */}
         <Route exact path="/about" component={AsyncAbout} />

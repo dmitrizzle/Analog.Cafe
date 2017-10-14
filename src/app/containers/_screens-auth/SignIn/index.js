@@ -31,9 +31,11 @@ class SignIn extends React.PureComponent {
   constructor(props) {
     super(props)
     this.handleTwitterButton = this.handleTwitterButton.bind(this)
+    this.handleFacebookButton = this.handleFacebookButton.bind(this)
   }
 
   handleTwitterButton = event => {
+    event.stopPropagation()
     event.preventDefault()
     open(
       ROUTE_LOGIN_TWITTER_API,
@@ -54,6 +56,7 @@ class SignIn extends React.PureComponent {
     )
   }
   handleFacebookButton = event => {
+    event.stopPropagation()
     event.preventDefault()
     alert("Facebook login")
   }

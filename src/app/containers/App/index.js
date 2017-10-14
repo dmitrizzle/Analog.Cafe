@@ -51,7 +51,7 @@ class App extends React.PureComponent {
     import("react-ga").then(ReactGA => {
       console.log("ga")
       ReactGA.initialize(APP_TRACKING_GAID, {
-        debug: true,
+        debug: false,
         titleCase: true,
         gaOptions: {}
       })
