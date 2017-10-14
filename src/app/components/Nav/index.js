@@ -49,7 +49,55 @@ export const CommonNav = props => {
       </NavItem>
       <NavItem prime left className="prime right">
         <ModalDispatch
-          with={MESSAGE_HINT_AUTO_SAVE}
+          with={{
+            info: {
+              title: "More…",
+              buttons: [
+                props.userStatus === "ok"
+                  ? {
+                      to: "/me",
+                      text: "My Submissions",
+                      red: true
+                    }
+                  : null,
+                props.userStatus === "ok"
+                  ? {
+                      to: "/me/edit",
+                      text: "My Profile",
+                      red: true
+                    }
+                  : null,
+                props.userStatus === "ok"
+                  ? {
+                      to: "/",
+                      text: "Sign Out",
+                      black: true
+                    }
+                  : null,
+                {
+                  to: "/photo-essays",
+                  text: "Photo Essays"
+                },
+                {
+                  to: "/stories",
+                  text: "Stories"
+                },
+                {
+                  to: "/editorials",
+                  text: "Editorials"
+                },
+                {
+                  to: "/guides",
+                  text: "Guides"
+                },
+                {
+                  to: "/about",
+                  text: "About Analog.Cafe"
+                }
+              ]
+            },
+            id: "nav/more"
+          }}
           style={{ textDecoration: "none", paddingRight: ".25em" }}
         >
           <span>More…</span>

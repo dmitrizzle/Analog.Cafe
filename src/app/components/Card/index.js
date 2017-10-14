@@ -49,6 +49,7 @@ export const Card = props => {
               to={button.to}
               key={button.to}
               red={button.red ? true : null}
+              black={button.black ? true : null}
             >
               {button.text}
             </CardButton>
