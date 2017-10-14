@@ -45,101 +45,106 @@ export default props => {
         {props.items.map((item, index) => {
           // NOTE: index is used to show high quality image for first item
 
-          return (
-            <li key={item.id}>
-              <Link
-                to={item.slug && ROUTE_ARTICLE_DIR + "/" + item.slug}
-                onClick={() =>
-                  props.nextArticleHeading({
-                    title: item.title,
-                    subtitle: item.subtitle,
-                    author: item.author,
-                    slug: item.slug,
-                    poster: item.poster
-                  })}
-              >
-                <section>
-                  <figure>
-                    {item.type !== "placeholder" && (
-                      <div
-                        style={
-                          item.poster && {
-                            backgroundImage:
-                              "url(" +
-                              froth({
-                                src: item.poster,
-                                size: index ? "s" : "m"
-                              }).src +
-                              ")"
+          if (item.tag !== "hidden")
+            return (
+              <li key={item.id}>
+                <Link
+                  to={item.slug && ROUTE_ARTICLE_DIR + "/" + item.slug}
+                  onClick={() =>
+                    props.nextArticleHeading({
+                      title: item.title,
+                      subtitle: item.subtitle,
+                      author: item.author,
+                      slug: item.slug,
+                      poster: item.poster
+                    })}
+                >
+                  <section>
+                    <figure>
+                      {item.type !== "placeholder" && (
+                        <div
+                          style={
+                            item.poster && {
+                              backgroundImage:
+                                "url(" +
+                                froth({
+                                  src: item.poster,
+                                  size: index ? "s" : "m"
+                                }).src +
+                                ")"
+                            }
                           }
-                        }
-                        aria-label={item.title + " poster image"}
+                          aria-label={item.title + " poster image"}
+                        />
+                      )}
+                    </figure>
+                    <h2 title={item.title}>{item.title}</h2>
+                    <Caption status={props.status}>
+                      <ListSubtitle
+                        subtitle={item.subtitle}
+                        title={item.title}
                       />
-                    )}
-                  </figure>
-                  <h2 title={item.title}>{item.title}</h2>
-                  <Caption status={props.status}>
-                    <ListSubtitle subtitle={item.subtitle} title={item.title} />
-                    {/* Two versions of summary for different screens: long and short */}
-                    <span className="long">
-                      {item.summary.substr(0, SUMMARY_LENGTH_MAX - 1) + "…"}
-                    </span>
-                    <span className="short">
-                      {item.summary.substr(
-                        0,
-                        SUMMARY_LENGTH_MAX / 1.6 -
-                          (item.subtitle || "").length -
-                          item.title.length -
-                          1
-                      ) + "…"}
-                    </span>
-                  </Caption>
-                  <div>
-                    <Stats {...props}>
-                      {item.tag === "photo-essay" && item.stats.images === 1
-                        ? "Single-Frame Narrative"
-                        : (item.tag + "")
-                            .replace(/-/g, " ")
-                            .replace(/\b\w/g, l => l.toUpperCase())}
-                      {item.type !== "placeholder" &&
-                        !props.private &&
-                        (item.tag !== "photo-essay"
-                          ? " | " +
-                            Math.ceil(item.stats.words / 200) +
-                            "-minute read"
-                          : " | " +
-                            item.stats.images +
-                            " Image" +
-                            (item.stats.images > 1 ? "s" : ""))}
-                    </Stats>
-                    {!props.private ? (
-                      <em>
-                        {item.author.name}
+                      {/* Two versions of summary for different screens: long and short */}
+                      <span className="long">
+                        {item.summary.substr(0, SUMMARY_LENGTH_MAX - 1) + "…"}
+                      </span>
+                      <span className="short">
+                        {item.summary.substr(
+                          0,
+                          SUMMARY_LENGTH_MAX / 1.6 -
+                            (item.subtitle || "").length -
+                            item.title.length -
+                            1
+                        ) + "…"}
+                      </span>
+                    </Caption>
+                    <div>
+                      <Stats {...props}>
+                        {item.tag === "photo-essay" && item.stats.images === 1
+                          ? "Single-Frame Narrative"
+                          : (item.tag + "")
+                              .replace(/-/g, " ")
+                              .replace(/\b\w/g, l => l.toUpperCase())}
                         {item.type !== "placeholder" &&
-                          " · " + datestamp(item["post-date"])}
-                      </em>
-                    ) : (
-                      <em>
-                        {item["post-date"] && datestamp(item["post-date"])}
-                      </em>
-                    )}
-                  </div>
-                </section>
-                <ZigzagPicture
-                  style={
-                    item.type !== "placeholder" && item.poster
-                      ? {
-                          backgroundImage: `url(${froth({
-                            src: item.poster,
-                            size: index ? "s" : "m"
-                          }).src})`
-                        }
-                      : null
-                  }
-                />
-              </Link>
-            </li>
-          )
+                          !props.private &&
+                          (item.tag !== "photo-essay"
+                            ? " | " +
+                              Math.ceil(item.stats.words / 200) +
+                              "-minute read"
+                            : " | " +
+                              item.stats.images +
+                              " Image" +
+                              (item.stats.images > 1 ? "s" : ""))}
+                      </Stats>
+                      {!props.private ? (
+                        <em>
+                          {item.author.name}
+                          {item.type !== "placeholder" &&
+                            " · " + datestamp(item["post-date"])}
+                        </em>
+                      ) : (
+                        <em>
+                          {item["post-date"] && datestamp(item["post-date"])}
+                        </em>
+                      )}
+                    </div>
+                  </section>
+                  <ZigzagPicture
+                    style={
+                      item.type !== "placeholder" && item.poster
+                        ? {
+                            backgroundImage: `url(${froth({
+                              src: item.poster,
+                              size: index ? "s" : "m"
+                            }).src})`
+                          }
+                        : null
+                    }
+                  />
+                </Link>
+              </li>
+            )
+          else return null
         })}
       </Ul>
     </Bleed>
