@@ -76,7 +76,8 @@ export const CommonNav = props => {
                   : null,
                 {
                   to: "/photo-essays",
-                  text: "Photo Essays"
+                  text: "Photo Essays",
+                  responsiveMobileOnly: true
                 },
                 {
                   to: "/stories",

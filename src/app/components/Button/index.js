@@ -69,22 +69,24 @@ export const ButtonStyles = css`
 `
 
 // below line filter out prop "red" that isn't recognized by Link component
-export const LinkButton = styled(({ red, black, ...props }) => (
-  <Link {...props} />
-))`
+export const LinkButton = styled(
+  ({ red, black, responsiveMobileOnly, ...props }) => <Link {...props} />
+)`
   ${ButtonStyles};
 `
 // export non-a/link version of the button
-export const Button = styled(({ red, black, ...props }) => (
-  <button
-    className={props.className}
-    onClick={props.onClick}
-    disabled={props.loading}
-  >
-    <AsyncLoader style={props.loading ? null : { width: "0" }} />
-    {props.children}
-  </button>
-))`
+export const Button = styled(
+  ({ red, black, responsiveMobileOnly, ...props }) => (
+    <button
+      className={props.className}
+      onClick={props.onClick}
+      disabled={props.loading}
+    >
+      <AsyncLoader style={props.loading ? null : { width: "0" }} />
+      {props.children}
+    </button>
+  )
+)`
   box-sizing: content-box;
   background: inherit;
   border-width: 0;

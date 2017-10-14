@@ -50,6 +50,7 @@ export const Card = props => {
               key={button.to}
               red={button.red ? true : null}
               black={button.black ? true : null}
+              responsiveMobileOnly={button.responsiveMobileOnly ? true : null}
             >
               {button.text}
             </CardButton>

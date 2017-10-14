@@ -18,6 +18,9 @@ export const CardButtonStyles = css`
   &:active {
     box-shadow: 0 -1px 0 ${props => props.theme.color.foreground};
   }
+  ${props =>
+    props.responsiveMobileOnly &&
+    props.theme.size.breakpoint.min.l`display:none;`};
 `
 export const Card = styled.div`
   position: relative;
@@ -62,7 +65,9 @@ export const CardFlattened = styled(Card)`
           .string()};
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
 `
-export const CardButton = styled(LinkButton)`${CardButtonStyles};`
+export const CardButton = styled(LinkButton)`
+  ${CardButtonStyles};
+`
 
 export const CardCaptionStyles = css`
   text-align: left;
@@ -70,7 +75,9 @@ export const CardCaptionStyles = css`
     ${props => props.theme.size.block.column.safety}em;
   font-size: 1.075em !important;
 `
-export const CardCaption = styled(Sidenote)`${CardCaptionStyles};`
+export const CardCaption = styled(Sidenote)`
+  ${CardCaptionStyles};
+`
 
 export const CardHeader = styled.header`
   padding: ${props => props.theme.size.block.spacing / 4}em

@@ -67,6 +67,9 @@ export default props => {
         <Route exact path="/" component={AsyncList} />
         <Route exact path="/photo-essays" component={AsyncList} />
         <Route exact path="/articles" component={AsyncList} />
+        <Route exact path="/stories" component={AsyncList} />
+        <Route exact path="/editorials" component={AsyncList} />
+        <Route exact path="/guides" component={AsyncList} />
 
         {/* auth views */}
         <Route exact path={ROUTE_AUTH_USER_LANDING} component={AsyncMe} />
