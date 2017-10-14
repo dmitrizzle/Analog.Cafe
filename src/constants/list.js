@@ -12,9 +12,11 @@ export const ROUTE_AUTHENTICATED_LIST_API = ROUTE_API_DOMAIN + "/submissions"
 
 // filter sets for particular view URLs/routes
 export const ROUTE_FILTERS = {
+  "/me": "",
   "/stories": "story",
   "/editorials": "editorial",
   "/guides": "guide",
+  "/reviews": "review",
   "/photo-essays": "photo-essay",
   "/articles": "review:guide:editorial:story",
   [ROUTE_AUTH_USER_LANDING]: "",
@@ -23,56 +25,51 @@ export const ROUTE_FILTERS = {
 
 // meta info for filtered routes
 export const ROUTE_META = {
+  "/me": {
+    title: "Your submissions to Analog.Cafe"
+  },
+
   "/stories": {
-    title: "Stories",
-    description: "Stories.",
-    emoji: emojis.JAKE
-    // #photo-essay
+    title: "Stories of people & places",
+    description:
+      "Stories, essays and creative writing, beyond film photography."
   },
   "/editorials": {
-    title: "Editorials",
-    description: "Editorials.",
-    emoji: emojis.JAKE
-    // #photo-essay
+    title: "Notes from Analog.Cafe editors",
+    description:
+      "Announcements, notes and opinion pieces from Analog.Cafe editors."
   },
   "/guides": {
-    title: "Guides",
-    description: "Guides.",
-    emoji: emojis.JAKE
-    // #photo-essay
+    title: "Guides; theory & practice",
+    description:
+      "Guides, explainations and instructables on film photography, art and technology."
+  },
+  "/reviews": {
+    title: "Reviews; film, cameras & more",
+    description: "Film photography gear & other creative tool reviews."
   },
 
   "/photo-essays": {
-    title: "Stories told with images on film",
+    title: "Photo essays; shot on film",
     description:
-      "A collection of photo essays which were created with film (analog) cameras.",
-    emoji: emojis.JAKE
-    // #photo-essay
+      "A colleciton of photo essays created with analog (film) cameras."
   },
   "/articles": {
-    title: "Reads of interest",
+    title: "Stories, reviews guides & more",
     description:
-      "Stories, editorials, reviews, guides and other articles about art, inspiration and technology.",
-    // #story
-    // #editorial
-    // #review
-    // #guide
-    emoji: emojis.MONOCLE
+      "Stories, editorials, reviews, guides and other articles about art, inspiration and technology."
   },
   "/": {
     title: APP_DESCRIPTION,
     description:
       "Analog.Cafe is an inclusive creative outlet that publishes outstanding images and stories.",
-    emoji: emojis.HUG_LEFT,
     designation: "homepage"
   },
   "/author/*": {
-    title: "Images and stories",
-    description: "Published works and photography by Analog.Cafe authors.",
-    emoji: emojis.FISTBUMP_LEFT
+    title: "Images & stories",
+    description: "Published works and photography by Analog.Cafe author."
   },
   default: {
-    title: APP_DESCRIPTION,
-    emoji: emojis.IDUNNO
+    title: APP_DESCRIPTION
   }
 }

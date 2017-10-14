@@ -92,6 +92,10 @@ export const CommonNav = props => {
                   text: "Guides"
                 },
                 {
+                  to: "/reviews",
+                  text: "Reviews"
+                },
+                {
                   to: "/about",
                   text: "About Analog.Cafe"
                 }
