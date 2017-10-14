@@ -4281,9 +4281,9 @@ localforage@>=1.4.0:
   dependencies:
     lie "3.0.2"
 
-localforage@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.5.1.tgz#215e26204862857b83c545fc09714e84f19e80f1"
+localforage@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.5.2.tgz#bf873025aa0e4a827bc07c20039ae00e0ee9acae"
   dependencies:
     lie "3.0.2"
 
@@ -5615,9 +5615,9 @@ react-lazyload@^2.2.7:
   dependencies:
     prop-types "^15.5.6"
 
-react-loadable@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.1.0.tgz#91c5f8015982bca42bf79b8e61c7b78014792324"
+react-loadable@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.2.2.tgz#1a5ad75841cacb64be12b18a86ac0bc55ccb4dc7"
 
 react-portal@^3.1.0:
   version "3.1.0"
@@ -7181,9 +7181,9 @@ webpack@3.5.1:
     webpack-sources "^1.0.1"
     yargs "^8.0.2"
 
-webpack@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.6.0.tgz#a89a929fbee205d35a4fa2cc487be9cbec8898bc"
+webpack@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.7.1.tgz#6046b5c415ff7df7a0dc54c5b6b86098e8b952da"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"

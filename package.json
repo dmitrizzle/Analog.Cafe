@@ -1,6 +1,5 @@
 {
   "name": "analog-cafe",
-  "version": "0.6.2",
   "version": "0.6.1",
   "description": "React-based View layer for Roast.Cloud",
   "license": "MPL-2.0",
@@ -20,7 +19,7 @@
     "immutable": "^3.8.2",
     "is-url": "^1.2.2",
     "keycode": "^2.1.9",
-    "localforage": "^1.5.1",
+    "localforage": "^1.5.2",
     "localforage-getitems": "^1.4.0",
     "lodash": "^4.17.4",
     "oauth-open": "^1.0.3",
@@ -31,7 +30,7 @@
     "react-ga": "^2.3.5",
     "react-helmet": "^5.2.0",
     "react-lazyload": "^2.2.7",
-    "react-loadable": "^5.1.0",
+    "react-loadable": "^5.2.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-textarea-autosize": "^5.1.0",
@@ -51,7 +50,7 @@
     "typeface-exo-2": "0.0.36",
     "typeface-lora": "0.0.35",
     "uuid": "^3.1.0",
-    "webpack": "^3.6.0"
+    "webpack": "^3.7.1"
   },
   "devDependencies": {
     "babel-plugin-root-import": "^5.1.0",
