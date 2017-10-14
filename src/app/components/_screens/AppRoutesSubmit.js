@@ -8,15 +8,15 @@ import Submit from "./Submit"
 import SubmitSoon from "./SubmitSoon"
 import NotFound from "../../containers/_screens-errors/NotFound"
 import Upload from "../../containers/_screens-auth/Upload"
-import AsyncArticleLoader from "./AsyncArticleLoader"
+import ArticleLoader from "../_async/ArticleLoader"
 
 // async components
 // `/components/_screens/AppRoutes.js`
 // `/components/_screens/AppRoutesSubmit.js`
 // `/containers/_screens-auth/Me/index.js`
-const AsyncComposer = Loadable({
+const Composer = Loadable({
   loader: () => import("./Composer"),
-  loading: AsyncArticleLoader,
+  loading: ArticleLoader,
   delay: 100
 })
 
@@ -27,7 +27,7 @@ export default props => {
     return (
       <Switch>
         <Route exact path="/submit" component={Submit} />
-        <Route exact path="/submit/compose" component={AsyncComposer} />
+        <Route exact path="/submit/compose" component={Composer} />
 
         {/* Signin & upload submission */}
         <Route exact path="/submit/confirm-full-consent" component={Upload} />

@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Helmet from "react-helmet"
+import Helmet from "../_async/Helmet"
 
 import { froth } from "../../../utils/image-froth"
 
@@ -12,16 +12,17 @@ import Figure from "../Picture"
 import Link from "../Link"
 import { Section, Article } from "../ArticleStyles"
 
+const metaTitle = "Submit"
+const metaDescription =
+  "Submit film photography essays and articles to be featured on Analog.Cafe."
+
 // render
 export default props => {
   return (
     <Article>
       <Helmet>
-        <title>Submit</title>
-        <meta
-          name="description"
-          content="Submit film photography essays and articles to be featured on Analog.Cafe."
-        />
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
         <meta
           property="og:image"
           content={
@@ -31,6 +32,8 @@ export default props => {
             }).src
           }
         />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
       </Helmet>
 
       <Heading

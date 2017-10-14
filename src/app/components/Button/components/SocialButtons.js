@@ -48,7 +48,7 @@ const StyledInstagramLinkButton = styled(
 
 export const TwitterLinkButton = props => {
   return (
-    <StyledTwitterLinkButton to={props.to}>
+    <StyledTwitterLinkButton {...props}>
       <Twitter />
       &nbsp;{props.children}
     </StyledTwitterLinkButton>
@@ -56,7 +56,7 @@ export const TwitterLinkButton = props => {
 }
 export const FacebookLinkButton = props => {
   return (
-    <StyledFacebookLinkButton to={props.to}>
+    <StyledFacebookLinkButton {...props}>
       <Facebook />
       &nbsp;{props.children}
     </StyledFacebookLinkButton>
@@ -64,7 +64,7 @@ export const FacebookLinkButton = props => {
 }
 export const InstagramLinkButton = props => {
   return (
-    <StyledInstagramLinkButton to={props.to}>
+    <StyledInstagramLinkButton {...props}>
       <Instagram />
       &nbsp;&nbsp;{props.children}
     </StyledInstagramLinkButton>

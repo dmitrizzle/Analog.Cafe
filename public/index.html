@@ -12,16 +12,23 @@
     <meta
       property="og:image"
       content="https://www.analog.cafe/og-poster-1200x857.jpg"
+      data-react-helmet="true"
     />
-    <meta property="og:title" content="A Film Photography Publication" />
+    <meta
+      property="og:title"
+      content="A Film Photography Publication"
+      data-react-helmet="true"
+    />
     <meta
       property="og:description"
-      content="Analog.Cafe is an inclusive creative outlet that publishes outstanding images and stories." />
+      content="Analog.Cafe is an inclusive creative outlet that publishes outstanding images and stories."
+      data-react-helmet="true"
+    />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@analog_cafe" />
 
 
-    <title>Analog.Cafe ✦ A film photography publication</title>
+    <title>Analog.Cafe — A film photography publication</title>
 
     <!-- critical CSS drop-in -->
     <style type="text/css">
@@ -654,6 +661,16 @@
         font-weight: 600;
         line-height: 1.15em;
       }
+      .navMore::after {
+        content: "✦";
+        text-decoration: none;
+        font-style: normal;
+        display: inline-block;
+        vertical-align: super;
+        font-size: 0.5em;
+        margin-left: -.15em;
+        margin-top: -.5em;
+      }
       @media (min-width: 32.5625em){
         .appNav, .waitMessage {
           font-size: 20px;
@@ -850,8 +867,8 @@
               </div>
             </a>
           </li>
-          <li class="prime left"><a href="/about"><span>About</span></a></li>
-          <li class="prime right"><a href="/submit"><span>Submit</span></a></li>
+          <li class="prime left"><a href="/submit"><span>Submit</span></a></li>
+          <li class="prime right"><a href="#more"><span class="navMore">More…</span></a></li>
         </ul>
       </nav>
       <div class="waitMessage">

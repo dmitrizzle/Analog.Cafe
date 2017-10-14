@@ -43,16 +43,18 @@ export const Card = props => {
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {
-          return (
+          return button ? (
             <CardButton
               onClick={button.onClick}
               to={button.to}
               key={button.to}
               red={button.red ? true : null}
+              black={button.black ? true : null}
+              responsiveMobileOnly={button.responsiveMobileOnly ? true : null}
             >
               {button.text}
             </CardButton>
-          )
+          ) : null
         })}
     </CardElement>
   )

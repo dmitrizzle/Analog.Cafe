@@ -49,9 +49,8 @@ class App extends React.PureComponent {
 
     // async load Google Analytics module
     import("react-ga").then(ReactGA => {
-      console.log("ga")
       ReactGA.initialize(APP_TRACKING_GAID, {
-        debug: true,
+        debug: false,
         titleCase: true,
         gaOptions: {}
       })
@@ -66,6 +65,10 @@ class App extends React.PureComponent {
   handleRouteChnange = () => {
     // Google Analytics (if available)
     this.setView && this.setView()
+    console.log(
+      this.props.history.location.state &&
+        this.props.history.location.state.status
+    )
 
     // configure header/footer views depending on routes and HTTP status
     switch (this.props.history.location.pathname) {
