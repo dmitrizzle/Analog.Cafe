@@ -3,7 +3,7 @@ import React from "react"
 import Loadable from "react-loadable"
 import { Editor } from "slate-react"
 import { State } from "slate"
-import Helmet from "react-helmet"
+import Helmet from "../../components/_async/AsyncHelmet"
 import { froth } from "../../../utils/image-froth"
 
 // redux & state
@@ -102,6 +102,11 @@ class Article extends React.PureComponent {
         <Helmet>
           <title>{this.props.article.title}</title>
           <meta name="description" content={this.props.article.summary} />
+          <meta property="og:title" content={this.props.article.title} />
+          <meta
+            property="og:description"
+            content={this.props.article.summary}
+          />
           {this.props.article.poster && (
             <meta
               property="og:image"

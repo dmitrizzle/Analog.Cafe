@@ -4,8 +4,8 @@ import Loadable from "react-loadable"
 import { Switch, Route } from "react-router-dom"
 
 // views
-import AsyncListLoader from "./AsyncListLoader"
-import AsyncArticleLoader from "./AsyncArticleLoader"
+import AsyncListLoader from "../_async/AsyncListLoader"
+import AsyncArticleLoader from "../_async/AsyncArticleLoader"
 
 import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
 

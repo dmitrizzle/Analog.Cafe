@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Helmet from "react-helmet"
+import Helmet from "../../../components/_async/AsyncHelmet"
 import open from "oauth-open"
 
 // redux

@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 import { render } from "react-dom"
-import Helmet from "react-helmet"
+import Helmet from "./app/components/_async/AsyncHelmet"
 import { APP_NAME } from "./constants/app"
 import emojis from "./constants/messages/emojis"
 // router
@@ -26,7 +26,7 @@ render(
     <BrowserRouter>
       <Paper>
         <Helmet
-          defaultTitle={APP_NAME + " " + emojis.TITLE_SEPARATOR}
+          defaultTitle={APP_NAME}
           titleTemplate={"%s " + emojis.TITLE_SEPARATOR + " " + APP_NAME}
         />
         <App />

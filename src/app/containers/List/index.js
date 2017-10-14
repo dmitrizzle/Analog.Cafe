@@ -2,7 +2,7 @@
 import React from "react"
 import { withRouter } from "react-router"
 import { ModalDispatch } from "../Modal"
-import Helmet from "react-helmet"
+import Helmet from "../../components/_async/AsyncHelmet"
 
 // redux & state
 import { connect } from "react-redux"
@@ -71,17 +71,21 @@ class List extends React.PureComponent {
   }
   render = () => {
     const renderedListMeta = getListMeta(this.props.location.pathname).meta
+    const renderedListTitle =
+      renderedListMeta.title +
+      (this.props.list.filter.author && this.props.list.filter.author.name
+        ? this.props.list.filter.author.name
+        : "")
     return (
       <div>
         <Helmet>
-          <title>
-            {renderedListMeta.title +
-              (this.props.list.filter.author &&
-              this.props.list.filter.author.name
-                ? this.props.list.filter.author.name
-                : "")}
-          </title>
+          <title>{renderedListTitle}</title>
           <meta name="description" content={renderedListMeta.description} />
+          <meta property="og:title" content={renderedListTitle} />
+          <meta
+            property="og:description"
+            content={renderedListMeta.description}
+          />
         </Helmet>
         <ListDescription>
           <ListHeader>

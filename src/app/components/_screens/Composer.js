@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Helmet from "react-helmet"
+import Helmet from "../_async/AsyncHelmet"
 
 // components
 import { Article, Section } from "../ArticleStyles"
@@ -21,17 +21,19 @@ const composerState = {
   title: DEFAULT_COMPOSER_HEADER_STATE.title,
   subtitle: DEFAULT_COMPOSER_HEADER_STATE.subtitle
 }
+const metaTitle = "Composer"
+const metaDescription =
+  "A tool to upload, edit and submit your photo essays and stories."
 
 // render
 export default props => {
   return (
     <Article>
       <Helmet>
-        <title>Composer</title>
-        <meta
-          name="description"
-          content="A tool to upload, edit and submit your photo essays and stories."
-        />
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
       </Helmet>
       <Composer composerState={composerState} />
       <ModalDispatch

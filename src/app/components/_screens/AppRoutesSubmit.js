@@ -8,7 +8,7 @@ import Submit from "./Submit"
 import SubmitSoon from "./SubmitSoon"
 import NotFound from "../../containers/_screens-errors/NotFound"
 import Upload from "../../containers/_screens-auth/Upload"
-import AsyncArticleLoader from "./AsyncArticleLoader"
+import AsyncArticleLoader from "../_async/AsyncArticleLoader"
 
 // async components
 // `/components/_screens/AppRoutes.js`

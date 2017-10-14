@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Helmet from "react-helmet"
+import Helmet from "../../../components/_async/AsyncHelmet"
 
 // redux
 import { connect } from "react-redux"
@@ -150,11 +150,9 @@ class Upload extends React.PureComponent {
             You have requested
             <em>
               {this.props.history.location.pathname.includes("full-consent") ===
-              true ? (
-                " more exposure. "
-              ) : (
-                " no additional exposure. "
-              )}
+              true
+                ? " more exposure. "
+                : " no additional exposure. "}
             </em>
             Please wait while we process your submission&hellip;
           </p>
