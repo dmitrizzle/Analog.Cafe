@@ -79,10 +79,6 @@ export const CommonNav = props => {
                   responsiveMobileOnly: true
                 },
                 {
-                  to: "/stories",
-                  text: "Stories"
-                },
-                {
                   to: "/editorials",
                   text: "Editorials"
                 },
@@ -93,6 +89,10 @@ export const CommonNav = props => {
                 {
                   to: "/reviews",
                   text: "Reviews"
+                },
+                {
+                  to: "/stories",
+                  text: "Stories"
                 },
                 {
                   to: "/about",
