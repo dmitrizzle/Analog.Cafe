@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Helmet from "react-helmet"
+import Helmet from "../../../components/_async/Helmet"
 import open from "oauth-open"
 
 // redux
@@ -19,8 +19,8 @@ import AlreadyAuthenticated from "../../_screens-errors/AlreadyAuthenticated"
 // styles
 import { ButtonGroup } from "../../../components/Button"
 import {
-  TwitterButton,
-  FacebookButton
+  TwitterLinkButton,
+  FacebookLinkButton
 } from "../../../components/Button/components/SocialButtons"
 
 // constants & helpers
@@ -31,9 +31,12 @@ class SignIn extends React.PureComponent {
   constructor(props) {
     super(props)
     this.handleTwitterButton = this.handleTwitterButton.bind(this)
+    this.handleFacebookButton = this.handleFacebookButton.bind(this)
   }
 
-  handleTwitterButton = () => {
+  handleTwitterButton = event => {
+    event.stopPropagation()
+    event.preventDefault()
     open(
       ROUTE_LOGIN_TWITTER_API,
       {
@@ -52,7 +55,9 @@ class SignIn extends React.PureComponent {
       }
     )
   }
-  handleFacebookButton = () => {
+  handleFacebookButton = event => {
+    event.stopPropagation()
+    event.preventDefault()
     alert("Facebook login")
   }
 
@@ -70,13 +75,19 @@ class SignIn extends React.PureComponent {
               Sign in or create new account instantly. No passwords required!
             </p>
             <ButtonGroup>
-              <TwitterButton onClick={this.handleTwitterButton}>
+              <TwitterLinkButton
+                to="#twitter-sign-in"
+                onClick={this.handleTwitterButton}
+              >
                 Continue with Twitter
-              </TwitterButton>
+              </TwitterLinkButton>
 
-              <FacebookButton onClick={this.handleFacebookButton}>
+              <FacebookLinkButton
+                to="#facebook-sign-in"
+                onClick={this.handleFacebookButton}
+              >
                 Continue with Facebook
-              </FacebookButton>
+              </FacebookLinkButton>
               <p>
                 <em>- or -</em>
               </p>

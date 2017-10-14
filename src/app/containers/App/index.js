@@ -1,6 +1,5 @@
 // tools
 import React from "react"
-import ReactGA from "react-ga"
 import { withRouter } from "react-router"
 
 // constants & helpers
@@ -36,17 +35,6 @@ if (
   window["ga-disable-" + APP_TRACKING_GAID] = false
 }
 
-ReactGA.initialize(APP_TRACKING_GAID, {
-  debug: false,
-  titleCase: true,
-  gaOptions: {}
-})
-const trackView = () => {
-  ReactGA.set({ page: window.location.pathname + window.location.search })
-  ReactGA.pageview(window.location.pathname + window.location.search)
-  window.scrollTo(0, 0)
-}
-
 // render & route
 class App extends React.PureComponent {
   // manipulate nav view & GA tracking
@@ -58,10 +46,29 @@ class App extends React.PureComponent {
     // listen to route changes:
     this.handleRouteChnange()
     this.props.history.listen((location, action) => this.handleRouteChnange())
+
+    // async load Google Analytics module
+    import("react-ga").then(ReactGA => {
+      ReactGA.initialize(APP_TRACKING_GAID, {
+        debug: false,
+        titleCase: true,
+        gaOptions: {}
+      })
+      this.setView = () => {
+        ReactGA.set({ page: window.location.pathname + window.location.search })
+        ReactGA.pageview(window.location.pathname + window.location.search)
+        window.scrollTo(0, 0)
+      }
+      this.setView()
+    })
   }
   handleRouteChnange = () => {
-    // Google Analytics
-    trackView()
+    // Google Analytics (if available)
+    this.setView && this.setView()
+    console.log(
+      this.props.history.location.state &&
+        this.props.history.location.state.status
+    )
 
     // configure header/footer views depending on routes and HTTP status
     switch (this.props.history.location.pathname) {

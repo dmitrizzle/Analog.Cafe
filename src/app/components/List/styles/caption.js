@@ -22,13 +22,17 @@ export const Caption = styled(ListCaption)`
   &::before {
     display: none;
   }
-  mask-image: linear-gradient(
-    -45deg,
-    rgba(0, 0, 0, 1) 65%,
-    rgba(0, 0, 0, 0) 98%
-  );
 
+  .long,
+  .short {
+    opacity: ${props => props.theme.opacity.half};
+    display: none;
+  }
   ${props => props.theme.size.breakpoint.max.m`{
+    .long {display:inline}
+  }`} ${props => props.theme.size.breakpoint.min.l`{
+    .short {display:inline}
+  }`} ${props => props.theme.size.breakpoint.max.m`{
 		&, .fonts-loaded & {
 			height: auto !important;
 		}

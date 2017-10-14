@@ -1,8 +1,7 @@
 // tools
-import "babel-polyfill"
 import React from "react"
 import { render } from "react-dom"
-import Helmet from "react-helmet"
+import Helmet from "./app/components/_async/Helmet"
 import { APP_NAME } from "./constants/app"
 import emojis from "./constants/messages/emojis"
 // router
@@ -27,8 +26,8 @@ render(
     <BrowserRouter>
       <Paper>
         <Helmet
-          defaultTitle={APP_NAME + " " + emojis.STAR}
-          titleTemplate={"%s " + emojis.STAR + " " + APP_NAME}
+          defaultTitle={APP_NAME}
+          titleTemplate={"%s " + emojis.TITLE_SEPARATOR + " " + APP_NAME}
         />
         <App />
       </Paper>

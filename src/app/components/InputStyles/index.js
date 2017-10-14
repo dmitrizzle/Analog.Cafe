@@ -4,7 +4,8 @@ import styled from "styled-components"
 import { title, subtitle, textarea, reset } from "./styles"
 
 // tools
-import Textarea from "react-textarea-autosize"
+import Textarea from "../_async/Textarea"
+// import TextareaAutosize from "react-autosize-textarea"
 
 // return
 // remove `warning` props from style HOCs

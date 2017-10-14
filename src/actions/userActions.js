@@ -4,7 +4,7 @@ import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
 import { axiosRequest } from "../utils/axios-request"
 
-import { ROUTE_USER_API, ROUTE_UPDATE_PROFILE_API } from "../constants/user"
+import { ROUTE_USER_API } from "../constants/user"
 
 // error message
 const loginError = {
@@ -33,6 +33,7 @@ export const verify = () => {
 
 // remove token from local storage
 export const forget = () => {
+  console.log("forgot")
   return dispatch => {
     localStorage.removeItem("token")
     dispatch({
@@ -66,17 +67,8 @@ export const getInfo = () => {
   }
 }
 
-export const setInfo = user => {
+export const setInfo = request => {
   return dispatch => {
-    const token = localStorage.getItem("token")
-    const request = {
-      method: "put",
-      headers: {
-        Authorization: "JWT " + token
-      },
-      data: user,
-      url: ROUTE_UPDATE_PROFILE_API
-    }
     axios(axiosRequest(request))
       .then(response => {
         dispatch({

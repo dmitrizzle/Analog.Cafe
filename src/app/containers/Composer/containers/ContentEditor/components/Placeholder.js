@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import { Placeholder } from "slate"
+import { Placeholder } from "slate-react"
 
 // return
 export default props => {

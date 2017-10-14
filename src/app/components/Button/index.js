@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Loader from "../_icons/components/Loader"
+import Loadable from "react-loadable"
 
 // styles
 import styled, { css } from "styled-components"
@@ -8,6 +8,15 @@ import Color from "color"
 
 // components
 import Link from "../Link"
+
+const Loader = Loadable({
+  loader: () => import("../_icons/components/Loader"),
+  loading: () => null,
+  delay: 100
+})
+
+// NOTE: Button is much heavier than ButtonLink
+// since it includes a loader SVG animation.
 
 // css
 export const ButtonStyles = css`
@@ -60,22 +69,24 @@ export const ButtonStyles = css`
 `
 
 // below line filter out prop "red" that isn't recognized by Link component
-export const LinkButton = styled(({ red, black, ...props }) => (
-  <Link {...props} />
-))`
+export const LinkButton = styled(
+  ({ red, black, responsiveMobileOnly, ...props }) => <Link {...props} />
+)`
   ${ButtonStyles};
 `
 // export non-a/link version of the button
-export const Button = styled(({ red, black, ...props }) => (
-  <button
-    className={props.className}
-    onClick={props.onClick}
-    disabled={props.loading}
-  >
-    <Loader style={props.loading ? null : { width: "0" }} />
-    {props.children}
-  </button>
-))`
+export const Button = styled(
+  ({ red, black, responsiveMobileOnly, ...props }) => (
+    <button
+      className={props.className}
+      onClick={props.onClick}
+      disabled={props.loading}
+    >
+      <Loader style={props.loading ? null : { width: "0" }} />
+      {props.children}
+    </button>
+  )
+)`
   box-sizing: content-box;
   background: inherit;
   border-width: 0;

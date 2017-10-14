@@ -1,6 +1,7 @@
 // tools
 import React from "react"
-import { Editor, Raw } from "slate"
+import { Editor } from "slate-react"
+import { State } from "slate"
 import getOffsets from "positions"
 
 // components
@@ -23,7 +24,7 @@ export default class extends React.PureComponent {
 
     // composerState is what appears by default in composer once the user opens the view
     this.state = {
-      state: Raw.deserialize(loadContent(), { terse: true }),
+      state: State.fromJSON(loadContent()),
       schema,
       author: this.props.author,
       cursorContext: {
@@ -34,14 +35,12 @@ export default class extends React.PureComponent {
     }
   }
 
-  handleChange = state => {
-    this.setState({ state: state })
+  handleChange = ({ state }) => {
+    this.setState({ state })
 
     // add information about cursor positions
     setTimeout(
       function() {
-        // const block = findDOMNode(state.document.getDescendant(state.focusBlock.key))
-        // findDOMNode returns error every time; instead we just need it to exit the function vv
         const nodeKey = state.focusBlock.key
         const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
         if (!block) return
@@ -57,31 +56,32 @@ export default class extends React.PureComponent {
       }.bind(this),
       300
     )
-  }
 
-  // content saver
-  handleDocumentChange = (document, state) => {
+    // update draft status & save content to device
     setDraftStatusHelper()
-    this.props.composerState.raw = JSON.stringify(Raw.serialize(state))
+    this.props.composerState.raw = JSON.stringify(state.toJSON())
     saveContent(document, state)
   }
 
   // image button handler:
-  handleImageButton = e => {
-    e.preventDefault()
-    e.stopPropagation()
+  handleImageButton = event => {
+    if (!event) return
+    event.preventDefault()
+    event.stopPropagation()
+
+    const activeBlockKey = this.state.state.focusBlock.key
     const resolvedState = this.state.state
-      .transform()
+      .change()
       .insertBlock({
         type: "docket",
         isVoid: true
       })
-      .apply()
+      .state.change()
+      .removeNodeByKey(activeBlockKey)
     this.setState({
-      state: resolvedState,
+      state: resolvedState.state,
       cursorContext: { ...this.state.cursorContext, newLine: false }
     })
-    saveContent(this.state.state.document, resolvedState)
   }
 
   // render
@@ -97,7 +97,6 @@ export default class extends React.PureComponent {
           schema={this.state.schema}
           state={this.state.state}
           onChange={this.handleChange}
-          onDocumentChange={this.handleDocumentChange}
           style={{ minHeight: "28em" }}
         />
       </div>

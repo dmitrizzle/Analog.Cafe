@@ -1,8 +1,9 @@
 // tools
 import React from "react"
 import Loadable from "react-loadable"
-import { Editor, Raw } from "slate"
-import Helmet from "react-helmet"
+import { Editor } from "slate-react"
+import { State } from "slate"
+import Helmet from "../../components/_async/Helmet"
 import { froth } from "../../../utils/image-froth"
 
 // redux & state
@@ -29,10 +30,10 @@ import {
   Byline
 } from "../../components/ArticleStyles"
 
-const AsyncArticleActions = Loadable({
+const ArticleActions = Loadable({
   loader: () => import("../../components/Card/components/ArticleActions"),
-  loading: () => <div />,
-  delay: 1000
+  loading: () => null,
+  delay: 100
 })
 
 // render
@@ -65,7 +66,8 @@ class Article extends React.PureComponent {
   componentWillUnmount = () => {
     this.unlisten()
   }
-  handleShareOnFacebook = () => {
+  handleShareOnFacebook = event => {
+    event.preventDefault()
     window.open(
       "https://web.facebook.com/sharer.php?u=" +
         safeRoute(this.props.article.slug),
@@ -73,7 +75,8 @@ class Article extends React.PureComponent {
       "height=600,width=500"
     )
   }
-  handleShareOnTwitter = () => {
+  handleShareOnTwitter = event => {
+    event.preventDefault()
     window.open(
       "https://twitter.com/share?url=" +
         safeRoute(this.props.article.slug) +
@@ -99,12 +102,15 @@ class Article extends React.PureComponent {
         <Helmet>
           <title>{this.props.article.title}</title>
           <meta name="description" content={this.props.article.summary} />
+          <meta property="og:title" content={this.props.article.title} />
+          <meta
+            property="og:description"
+            content={this.props.article.summary}
+          />
           {this.props.article.poster && (
             <meta
               property="og:image"
-              content={
-                froth({ src: this.props.article.poster, size: "m" }).src
-              }
+              content={froth({ src: this.props.article.poster, size: "m" }).src}
             />
           )}
         </Helmet>
@@ -131,23 +137,20 @@ class Article extends React.PureComponent {
         <Section articleStatus={this.props.article.status}>
           <Editor
             readOnly={true}
-            state={Raw.deserialize(this.props.article.content.raw, {
-              terse: true
-            })}
+            state={State.fromJSON(this.props.article.content.raw)}
             schema={schema}
           />
 
           {this.props.article.poster &&
-          this.props.article.author && (
-            <AsyncArticleActions
-              shareOnFacebook={this.handleShareOnFacebook}
-              shareOnTwitter={this.handleShareOnTwitter}
-              nextArticle={this.props.article.nextArticle}
-              thisArticle={this.props.article.slug}
-              thisArticlePostDate={this.props.article["post-date"]}
-              // nextArticle={"23-days-in-myanmar-df7d"}
-            />
-          )}
+            this.props.article.author && (
+              <ArticleActions
+                shareOnFacebook={this.handleShareOnFacebook}
+                shareOnTwitter={this.handleShareOnTwitter}
+                nextArticle={this.props.article.nextArticle}
+                thisArticle={this.props.article.slug}
+                thisArticlePostDate={this.props.article["post-date"]}
+              />
+            )}
         </Section>
       </ArticleElement>
     )

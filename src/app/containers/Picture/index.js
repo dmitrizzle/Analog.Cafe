@@ -37,18 +37,15 @@ class Figure extends React.Component {
       .replace(/\b"/g, "”") // closing doubles
       .replace(/--/g, "—") // em-dashes
       .replace(/\b\.\.\./g, "…") // ellipsis
-    const { node, editor } = this.props
+    const { node, editor, state } = this.props
     const feature = node.data.get("feature")
     const src = node.data.get("src")
     const key = node.data.get("key") || false
     const file = node.data.get("file") || false
     const properties = { data: { caption, src, feature, key, file } }
-    const next = editor
-      .getState()
-      .transform()
-      .setNodeByKey(node.key, properties)
-      .apply()
-    editor.onChange(next) // have to use native onChange in editor (rather than handleChange)
+
+    const resolvedState = state.change().setNodeByKey(node.key, properties)
+    editor.onChange(resolvedState) // have to use native onChange in editor (rather than handleChange)
   }
   handleClick = event => {
     event.preventDefault()
@@ -80,6 +77,7 @@ class Figure extends React.Component {
       })
     }
   }
+
   render = () => {
     const { attributes, state, node } = this.props
     const { src } = this.state

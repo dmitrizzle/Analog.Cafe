@@ -38,7 +38,7 @@ export const MESSAGE_HINT_AUTO_SAVE = {
   info: {
     title: "Never Loose Your Work!",
     text:
-      "Your draft is saved automatically every 3 seconds onto your device. Even when you aren’t connected to the internet."
+      "Your draft is saved automatically every 3 seconds onto your device. Even if you’re offline!"
   },
   id: "hints/auto-save"
 }

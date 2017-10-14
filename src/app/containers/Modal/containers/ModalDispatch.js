@@ -6,6 +6,8 @@ import styled from "styled-components"
 import { connect } from "react-redux"
 import { fetchCard, setCard } from "../../../../actions/modalActions"
 
+import emojis from "../../../../constants/messages/emojis"
+
 // return
 const ModalDispatch = props => {
   const invokeModal = event => {
@@ -37,7 +39,7 @@ const ModalDispatch = props => {
   wrapperElement === "a"
     ? (ModalDispatchWrapper = styled(Wrapper)`
         &::after {
-          content: "✦";
+          content: "${emojis.STAR}";
           text-decoration: none;
           font-style: normal;
           display: inline-block;

@@ -20,7 +20,10 @@ import { Article } from "../../../components/ArticleStyles"
 // template for user profile button arrangement
 import { profileButtonsTemplate } from "../../../../utils/profile-button-labeler"
 
-import { ROUTE_AUTH_USER_LANDING } from "../../../../constants/user"
+import {
+  ROUTE_AUTH_USER_LANDING,
+  ROUTE_UPDATE_PROFILE_API
+} from "../../../../constants/user"
 import {
   SUMMARY_LENGTH_MAX,
   TITLE_LENGTH_MAX
@@ -134,12 +137,23 @@ class EditProfile extends React.PureComponent {
   }
 
   handleDone = () => {
-    this.props.setUserInfo({
-      title: this.state.title,
-      text: this.state.text,
-      image: this.state.image,
-      buttons: this.state.buttons
-    })
+    const data = new FormData()
+    data.append("title", this.state.title)
+    data.append("text", this.state.text)
+    data.append("buttons", JSON.stringify(this.state.buttons))
+    this.fileInput.value && data.append("image", this.fileInput.files[0])
+
+    const request = {
+      method: "put",
+      headers: {
+        "content-type": "multipart/form-data",
+        Authorization: "JWT " + localStorage.getItem("token")
+      },
+      data,
+      url: ROUTE_UPDATE_PROFILE_API
+    }
+    console.log(request)
+    this.props.setUserInfo(request)
     this.setState({
       setUserInfoPending: true
     })

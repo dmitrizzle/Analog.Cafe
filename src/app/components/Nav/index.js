@@ -5,7 +5,6 @@ import React from "react"
 import Logo from "../Logo"
 import { ModalDispatch } from "../../containers/Modal"
 
-import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
 import {
   MESSAGE_HINT_SUBMIT_CONSENT,
   MESSAGE_HINT_AUTO_SAVE
@@ -36,18 +35,7 @@ export const CommonNav = props => {
           <Logo />
         </NavIndexLink>
       </NavItem>
-      <NavItem prime left className="prime left">
-        {props.userStatus === "ok" ? (
-          <NavLink to={ROUTE_AUTH_USER_LANDING}>
-            <span>My Stuff</span>
-          </NavLink>
-        ) : (
-          <NavLink to={"/about"}>
-            <span>About</span>
-          </NavLink>
-        )}
-      </NavItem>
-      <NavItem prime right className="prime right">
+      <NavItem prime right className="prime left">
         {props.userStatus === "ok" ? (
           <NavLink to={"/submit/compose"}>
             <span>Submit</span>
@@ -57,6 +45,67 @@ export const CommonNav = props => {
             <span>Submit</span>
           </NavLink>
         )}
+      </NavItem>
+      <NavItem prime left className="prime right">
+        <ModalDispatch
+          with={{
+            info: {
+              title: "More…",
+              buttons: [
+                props.userStatus === "ok"
+                  ? {
+                      to: "/me",
+                      text: "My Submissions",
+                      red: true
+                    }
+                  : null,
+                props.userStatus === "ok"
+                  ? {
+                      to: "/me/edit",
+                      text: "My Profile",
+                      red: true
+                    }
+                  : null,
+                props.userStatus === "ok"
+                  ? {
+                      to: "/sign-out",
+                      text: "Sign Out",
+                      black: true
+                    }
+                  : null,
+                {
+                  to: "/photo-essays",
+                  text: "Photo Essays",
+                  responsiveMobileOnly: true
+                },
+                {
+                  to: "/editorials",
+                  text: "Editorials"
+                },
+                {
+                  to: "/guides",
+                  text: "Guides"
+                },
+                {
+                  to: "/reviews",
+                  text: "Reviews"
+                },
+                {
+                  to: "/stories",
+                  text: "Stories"
+                },
+                {
+                  to: "/about",
+                  text: "About Analog.Cafe"
+                }
+              ]
+            },
+            id: "nav/more"
+          }}
+          style={{ textDecoration: "none", paddingRight: ".25em" }}
+        >
+          <span>More…</span>
+        </ModalDispatch>
       </NavItem>
     </ul>
   )
@@ -84,9 +133,7 @@ export const ComposerNav = props => {
           with={MESSAGE_HINT_AUTO_SAVE}
           style={{ textDecoration: "none" }}
         >
-          <span>
-            {props.draftStatus}
-          </span>
+          <span>{props.draftStatus}</span>
         </ModalDispatch>
       </NavItem>
       <NavItem prime center className="prime center">

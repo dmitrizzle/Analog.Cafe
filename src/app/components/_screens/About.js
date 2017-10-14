@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 import styled from "styled-components"
-import Helmet from "react-helmet"
+import Helmet from "../_async/Helmet"
 
 // components
 import Heading from "../ArticleHeading"
@@ -28,17 +28,17 @@ const ThankYouList = styled(Quote)`
     content: "" !important;
   }
 `
+const metaTitle = "About"
+const metaDescription =
+  "Story, reason for existence, contributos and resources."
 
 // render
 export default props => {
   return (
     <Article>
       <Helmet>
-        <title>About</title>
-        <meta
-          name="description"
-          content="Story, reason for existence, contributos and resources."
-        />
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
         <meta
           property="og:image"
           content={
@@ -48,6 +48,8 @@ export default props => {
             }).src
           }
         />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
       </Helmet>
       <Heading
         pageTitle="Analog.Cafe"

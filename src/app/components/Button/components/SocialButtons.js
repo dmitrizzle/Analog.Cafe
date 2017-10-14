@@ -3,7 +3,7 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 // components
-import { Button, LinkButton } from "../../Button"
+import { LinkButton } from "../../Button"
 import Twitter from "../../_icons/components/Twitter"
 import Facebook from "../../_icons/components/Facebook"
 import Instagram from "../../_icons/components/Instagram"
@@ -35,63 +35,38 @@ const instagramButtonStyles = css`
   }
 `
 
-// styled buttons
-const StyledTwitterButton = styled(
-  Button
-)`${brandButtonStyles}${twitterButtonStyles}`
-const StyledFacebookButton = styled(
-  Button
-)`${brandButtonStyles}${facebookButtonStyles}`
-
-// styled links
-const StyledTwitterLink = styled(
+// styled button links
+const StyledTwitterLinkButton = styled(
   LinkButton
 )`${brandButtonStyles}${twitterButtonStyles}`
-const StyledFacebookLink = styled(
+const StyledFacebookLinkButton = styled(
   LinkButton
 )`${brandButtonStyles}${facebookButtonStyles}`
-const StyledInstagramLink = styled(
+const StyledInstagramLinkButton = styled(
   LinkButton
 )`${brandButtonStyles}${instagramButtonStyles}`
 
-export const TwitterButton = props => {
+export const TwitterLinkButton = props => {
   return (
-    <StyledTwitterButton onClick={props.onClick}>
+    <StyledTwitterLinkButton {...props}>
       <Twitter />
       &nbsp;{props.children}
-    </StyledTwitterButton>
+    </StyledTwitterLinkButton>
   )
 }
-export const FacebookButton = props => {
+export const FacebookLinkButton = props => {
   return (
-    <StyledFacebookButton onClick={props.onClick}>
+    <StyledFacebookLinkButton {...props}>
       <Facebook />
       &nbsp;{props.children}
-    </StyledFacebookButton>
+    </StyledFacebookLinkButton>
   )
 }
-
-export const TwitterLink = props => {
+export const InstagramLinkButton = props => {
   return (
-    <StyledTwitterLink to={props.to}>
-      <Twitter />
-      &nbsp;{props.children}
-    </StyledTwitterLink>
-  )
-}
-export const FacebookLink = props => {
-  return (
-    <StyledFacebookLink to={props.to}>
-      <Facebook />
-      &nbsp;{props.children}
-    </StyledFacebookLink>
-  )
-}
-export const InstagramLink = props => {
-  return (
-    <StyledInstagramLink to={props.to}>
+    <StyledInstagramLinkButton {...props}>
       <Instagram />
       &nbsp;&nbsp;{props.children}
-    </StyledInstagramLink>
+    </StyledInstagramLinkButton>
   )
 }
