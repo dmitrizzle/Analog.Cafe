@@ -1,6 +1,6 @@
 {
   "name": "analog-cafe",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "React-based View layer for Roast.Cloud",
   "license": "MPL-2.0",
   "private": true,
