@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Loader from "../_icons/components/Loader"
+import Loadable from "react-loadable"
 
 // styles
 import styled, { css } from "styled-components"
@@ -8,6 +8,15 @@ import Color from "color"
 
 // components
 import Link from "../Link"
+
+const AsyncLoader = Loadable({
+  loader: () => import("../_icons/components/Loader"),
+  loading: () => null,
+  delay: 100
+})
+
+// NOTE: Button is much heavier than ButtonLink
+// since it includes a loader SVG animation.
 
 // css
 export const ButtonStyles = css`
@@ -72,7 +81,7 @@ export const Button = styled(({ red, black, ...props }) => (
     onClick={props.onClick}
     disabled={props.loading}
   >
-    <Loader style={props.loading ? null : { width: "0" }} />
+    <AsyncLoader style={props.loading ? null : { width: "0" }} />
     {props.children}
   </button>
 ))`

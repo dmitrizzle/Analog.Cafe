@@ -6,11 +6,9 @@ import { TimeStamp } from "../../../ArticleStyles"
 import { CardFlattened } from "../../styles"
 import { LinkButton } from "../../../Button"
 import {
-  TwitterButton,
-  FacebookButton,
-  TwitterLink,
-  FacebookLink,
-  InstagramLink
+  TwitterLinkButton,
+  FacebookLinkButton,
+  InstagramLinkButton
 } from "../../../Button/components/SocialButtons"
 import slugToTitle from "../../../../../utils/slug-to-title"
 import { datestamp, lunar, percise } from "../../../../../utils/datestamp"
@@ -22,10 +20,18 @@ const ActionsCard = props => {
   if (props.thisArticle !== "thank-you-for-reading-87fv")
     return (
       <CardFlattened>
-        <FacebookButton onClick={props.shareOnFacebook}>
+        <FacebookLinkButton
+          to="https://facebook.com/analog8cafe"
+          onClick={props.shareOnFacebook}
+        >
           Share&nbsp;
-        </FacebookButton>
-        <TwitterButton onClick={props.shareOnTwitter}>Tweet</TwitterButton>
+        </FacebookLinkButton>
+        <TwitterLinkButton
+          to="https://twitter.com/analog_cafe"
+          onClick={props.shareOnTwitter}
+        >
+          Tweet
+        </TwitterLinkButton>
         {props.nextArticle && (
           <LinkButton
             to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle}
@@ -39,17 +45,17 @@ const ActionsCard = props => {
   else
     return (
       <CardFlattened>
-        <TwitterLink to="https://twitter.com/analog_cafe">
+        <TwitterLinkButton to="https://twitter.com/analog_cafe">
           Follow on Twitter
-        </TwitterLink>
+        </TwitterLinkButton>
 
-        <FacebookLink to="https://facebook.com/analog8cafe">
+        <FacebookLinkButton to="https://facebook.com/analog8cafe">
           Follow on Facebook
-        </FacebookLink>
+        </FacebookLinkButton>
 
-        <InstagramLink to="https://instagram.com/analog_cafe">
+        <InstagramLinkButton to="https://instagram.com/analog_cafe">
           Follow on Instagram
-        </InstagramLink>
+        </InstagramLinkButton>
       </CardFlattened>
     )
 }

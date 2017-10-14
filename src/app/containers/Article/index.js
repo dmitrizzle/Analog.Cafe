@@ -66,7 +66,8 @@ class Article extends React.PureComponent {
   componentWillUnmount = () => {
     this.unlisten()
   }
-  handleShareOnFacebook = () => {
+  handleShareOnFacebook = event => {
+    event.preventDefault()
     window.open(
       "https://web.facebook.com/sharer.php?u=" +
         safeRoute(this.props.article.slug),
@@ -74,7 +75,8 @@ class Article extends React.PureComponent {
       "height=600,width=500"
     )
   }
-  handleShareOnTwitter = () => {
+  handleShareOnTwitter = event => {
+    event.preventDefault()
     window.open(
       "https://twitter.com/share?url=" +
         safeRoute(this.props.article.slug) +
@@ -103,9 +105,7 @@ class Article extends React.PureComponent {
           {this.props.article.poster && (
             <meta
               property="og:image"
-              content={
-                froth({ src: this.props.article.poster, size: "m" }).src
-              }
+              content={froth({ src: this.props.article.poster, size: "m" }).src}
             />
           )}
         </Helmet>
