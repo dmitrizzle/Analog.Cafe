@@ -4,10 +4,6 @@ import Loadable from "react-loadable"
 import { Switch, Route } from "react-router-dom"
 
 // views
-import NotFound from "../../containers/_screens-errors/NotFound"
-import SignIn from "../../containers/_screens-auth/SignIn"
-import Me from "../../containers/_screens-auth/Me"
-import AppRoutesSubmit from "./AppRoutesSubmit"
 import AsyncListLoader from "./AsyncListLoader"
 import AsyncArticleLoader from "./AsyncArticleLoader"
 
@@ -36,6 +32,26 @@ const AsyncAbout = Loadable({
   loading: AsyncArticleLoader,
   delay: 100
 })
+const AsyncSignIn = Loadable({
+  loader: () => import("../../containers/_screens-auth/SignIn"),
+  loading: AsyncArticleLoader,
+  delay: 100
+})
+const AsyncMe = Loadable({
+  loader: () => import("../../containers/_screens-auth/Me"),
+  loading: AsyncArticleLoader,
+  delay: 100
+})
+const AsyncAppRoutesSubmit = Loadable({
+  loader: () => import("./AppRoutesSubmit"),
+  loading: AsyncArticleLoader,
+  delay: 100
+})
+const AsyncNotFound = Loadable({
+  loader: () => import("../../containers/_screens-errors/NotFound"),
+  loading: AsyncArticleLoader,
+  delay: 100
+})
 
 // render
 export default props => {
@@ -43,8 +59,8 @@ export default props => {
     <main>
       <Switch>
         {/* dynamic urls and views */}
-        <Route exact path="/author" component={NotFound} />
-        <Route exact path="/zine" component={NotFound} />
+        <Route exact path="/author" component={AsyncNotFound} />
+        <Route exact path="/zine" component={AsyncNotFound} />
         <Route exact path="/author/*" component={AsyncList} />
         <Route exact path="/zine/*" component={AsyncArticle} />
 
@@ -54,18 +70,18 @@ export default props => {
         <Route exact path="/articles" component={AsyncList} />
 
         {/* auth views */}
-        <Route exact path={ROUTE_AUTH_USER_LANDING} component={Me} />
+        <Route exact path={ROUTE_AUTH_USER_LANDING} component={AsyncMe} />
         <Route
           exact
           path={ROUTE_AUTH_USER_LANDING + "/edit"}
           component={AsyncEditProfile}
         />
-        <Route exact path="/sign-in" component={SignIn} />
+        <Route exact path="/sign-in" component={AsyncSignIn} />
 
         {/* static views and urls */}
         <Route exact path="/about" component={AsyncAbout} />
-        <Route path="/submit" component={AppRoutesSubmit} />
-        <Route state={{ status: "404" }} component={NotFound} />
+        <Route path="/submit" component={AsyncAppRoutesSubmit} />
+        <Route state={{ status: "404" }} component={AsyncNotFound} />
       </Switch>
     </main>
   )

@@ -1,7 +1,8 @@
 // tools
 import React from "react"
 import Loadable from "react-loadable"
-import { Editor, Raw } from "slate"
+import { Editor } from "slate-react"
+import { State } from "slate"
 import Helmet from "react-helmet"
 import { froth } from "../../../utils/image-froth"
 
@@ -31,8 +32,8 @@ import {
 
 const AsyncArticleActions = Loadable({
   loader: () => import("../../components/Card/components/ArticleActions"),
-  loading: () => <div />,
-  delay: 1000
+  loading: () => null,
+  delay: 100
 })
 
 // render
@@ -131,23 +132,20 @@ class Article extends React.PureComponent {
         <Section articleStatus={this.props.article.status}>
           <Editor
             readOnly={true}
-            state={Raw.deserialize(this.props.article.content.raw, {
-              terse: true
-            })}
+            state={State.fromJSON(this.props.article.content.raw)}
             schema={schema}
           />
 
           {this.props.article.poster &&
-          this.props.article.author && (
-            <AsyncArticleActions
-              shareOnFacebook={this.handleShareOnFacebook}
-              shareOnTwitter={this.handleShareOnTwitter}
-              nextArticle={this.props.article.nextArticle}
-              thisArticle={this.props.article.slug}
-              thisArticlePostDate={this.props.article["post-date"]}
-              // nextArticle={"23-days-in-myanmar-df7d"}
-            />
-          )}
+            this.props.article.author && (
+              <AsyncArticleActions
+                shareOnFacebook={this.handleShareOnFacebook}
+                shareOnTwitter={this.handleShareOnTwitter}
+                nextArticle={this.props.article.nextArticle}
+                thisArticle={this.props.article.slug}
+                thisArticlePostDate={this.props.article["post-date"]}
+              />
+            )}
         </Section>
       </ArticleElement>
     )

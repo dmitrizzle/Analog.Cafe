@@ -1,7 +1,6 @@
 // tools
-import { Html, Text } from "slate"
+import Html from "slate-html-serializer"
 import isUrl from "is-url"
-import toTitleCase from "titlecase"
 
 // components
 
@@ -27,66 +26,49 @@ const MARK_TAGS = {
 }
 
 // extract just the text from node:
-const plainText = el => {
-  let children = el.children
-  let plainText = ""
-  const aseemble = element =>
-    element.data ? (plainText += element.data) : null
-
-  // 0-level deep (no nested elements)
-  if (children[0] && children[0].data) children.forEach(aseemble)
-  else
-    // 1+ levels deep (get text from nested elements)
-    for (var property in children) {
-      if (children.hasOwnProperty(property)) {
-        if (children[property].children)
-          children[property].children.forEach(aseemble)
-      }
-    }
-
-  return plainText !== "" ? plainText : false
+const squish = el => {
+  el.innerHTML = el.innerText || el.textContent
+  return el
 }
 
 // deserialize copy-paste html content
 const rules = [
   {
     deserialize(el, next) {
-      const block = BLOCK_TAGS[el.tagName]
+      // cycle through block types
+      const block = BLOCK_TAGS[el.tagName.toLowerCase()]
       if (!block) return
+
       switch (block) {
         case "paragraph": {
           return {
             kind: "block",
-            type: block,
-            nodes: next(el.children)
+            type: "paragraph",
+            nodes: next(el.childNodes)
           }
         }
         case "quote": {
           return {
             kind: "block",
-            type: block,
-            nodes: plainText(el)
-              ? [Text.createFromString(plainText(el))]
-              : next(el.children)
+            type: "quote",
+            nodes: next(squish(el).childNodes)
           }
         }
         case "heading": {
           return {
             kind: "block",
-            type: block,
-            nodes: plainText(el)
-              ? [Text.createFromString(toTitleCase(plainText(el)))]
-              : next(el.children)
+            type: "heading",
+            nodes: next(squish(el).childNodes)
           }
         }
         case "image": {
-          let imageSrc = el.attribs.src || el.attribs.srcset
+          let imageSrc = el.getAttribute("src") || el.getAttribute("srcset")
           if (!isUrl(imageSrc)) return
           return {
             kind: "block",
             type: "image",
             isVoid: true,
-            data: { src: el.attribs.src || el.attribs.srcset } // this image needs to be uploaded
+            data: { src: el.getAttribute("src") || el.getAttribute("srcset") } // this image needs to be uploaded
           }
         }
         case "link": {
@@ -94,11 +76,9 @@ const rules = [
             kind: "inline",
             type: "link",
             data: {
-              href: el.attribs.href
+              href: el.getAttribute("href")
             },
-            nodes: plainText(el)
-              ? [Text.createFromString(plainText(el))]
-              : next(el.children)
+            nodes: next(squish(el).childNodes)
           }
         }
         default:
@@ -113,7 +93,7 @@ const rules = [
       return {
         kind: "mark",
         type: mark,
-        nodes: next(el.children)
+        nodes: next(el.childNodes)
       }
     }
   }

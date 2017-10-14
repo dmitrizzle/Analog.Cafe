@@ -1,5 +1,4 @@
 // tools
-import { Raw } from "slate"
 import throttle from "lodash/throttle"
 
 // redux
@@ -8,9 +7,9 @@ import { setDraftStatus } from "../actions/composerActions"
 
 // return
 export const saveContent = throttle((document, state) => {
-  const contentState = JSON.stringify(Raw.serialize(state))
+  const contentState = JSON.stringify(state.toJSON())
   localStorage.setItem("composer-content-state", contentState)
-  localStorage.setItem("composer-content-text", document.text)
+  localStorage.setItem("composer-content-text", state.document.text)
   // save completed status
   store.dispatch(setDraftStatus("Draft Saved"))
 }, 3000)
