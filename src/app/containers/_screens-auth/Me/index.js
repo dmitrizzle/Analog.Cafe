@@ -9,8 +9,6 @@ import { forget as forgetUser } from "../../../../actions/userActions"
 import List from "../../List"
 import Forbidden from "../../_screens-errors/Forbidden"
 
-import { ROUTE_AUTH_USER_LANDING } from "../../../../constants/user"
-
 // render
 const Me = props => {
   return props.user.status === "ok" ? <List private /> : <Forbidden />

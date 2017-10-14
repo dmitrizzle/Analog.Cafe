@@ -80,19 +80,27 @@ export default props => {
                   <h2 title={item.title}>{item.title}</h2>
                   <Caption status={props.status}>
                     <ListSubtitle subtitle={item.subtitle} title={item.title} />
-                    <span style={{ opacity: "0.5" }}>
+                    {/* Two versions of summary for different screens: long and short */}
+                    <span className="long">
                       {item.summary.substr(0, SUMMARY_LENGTH_MAX - 1) + "…"}
+                    </span>
+                    <span className="short">
+                      {item.summary.substr(
+                        0,
+                        SUMMARY_LENGTH_MAX / 1.6 -
+                          (item.subtitle || "").length -
+                          item.title.length -
+                          1
+                      ) + "…"}
                     </span>
                   </Caption>
                   <div>
                     <Stats {...props}>
-                      {item.tag === "photo-essay" && item.stats.images === 1 ? (
-                        "Single-Frame Narrative"
-                      ) : (
-                        (item.tag + "")
-                          .replace(/-/g, " ")
-                          .replace(/\b\w/g, l => l.toUpperCase())
-                      )}
+                      {item.tag === "photo-essay" && item.stats.images === 1
+                        ? "Single-Frame Narrative"
+                        : (item.tag + "")
+                            .replace(/-/g, " ")
+                            .replace(/\b\w/g, l => l.toUpperCase())}
                       {item.type !== "placeholder" &&
                         !props.private &&
                         (item.tag !== "photo-essay"
@@ -119,14 +127,14 @@ export default props => {
                 </section>
                 <ZigzagPicture
                   style={
-                    item.type !== "placeholder" && item.poster ? (
-                      {
-                        backgroundImage: `url(${froth({
-                          src: item.poster,
-                          size: index ? "s" : "m"
-                        }).src})`
-                      }
-                    ) : null
+                    item.type !== "placeholder" && item.poster
+                      ? {
+                          backgroundImage: `url(${froth({
+                            src: item.poster,
+                            size: index ? "s" : "m"
+                          }).src})`
+                        }
+                      : null
                   }
                 />
               </Link>

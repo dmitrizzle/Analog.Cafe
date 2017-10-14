@@ -1,6 +1,5 @@
 // related constants
 import { APP_DESCRIPTION, ROUTE_API_DOMAIN } from "./app"
-import emojis from "./messages/emojis"
 import { ROUTE_AUTH_USER_LANDING } from "./user"
 
 export { ROUTE_ARTICLE_DIR } from "./article"

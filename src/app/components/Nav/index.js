@@ -5,7 +5,6 @@ import React from "react"
 import Logo from "../Logo"
 import { ModalDispatch } from "../../containers/Modal"
 
-import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
 import {
   MESSAGE_HINT_SUBMIT_CONSENT,
   MESSAGE_HINT_AUTO_SAVE
