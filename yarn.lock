@@ -6872,13 +6872,13 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typeface-exo-2@0.0.36:
-  version "0.0.36"
-  resolved "https://registry.yarnpkg.com/typeface-exo-2/-/typeface-exo-2-0.0.36.tgz#8b876386eb63d17f2f3ee1d783b05d686815ad42"
+typeface-exo-2@^0.0.40:
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/typeface-exo-2/-/typeface-exo-2-0.0.40.tgz#6104c9f5117ff60fbd78083a172524f76a744f4f"
 
-typeface-lora@0.0.35:
-  version "0.0.35"
-  resolved "https://registry.yarnpkg.com/typeface-lora/-/typeface-lora-0.0.35.tgz#0acfec114d077eb867f9e066a06ba712c8d81e17"
+typeface-lora@^0.0.40:
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/typeface-lora/-/typeface-lora-0.0.40.tgz#b87b7ccf96d2ff66208f2f114ecc6c17ba881591"
 
 ua-parser-js@^0.7.9:
   version "0.7.14"
