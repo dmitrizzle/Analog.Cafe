@@ -16,6 +16,7 @@ import {
   GridContainer,
   GridRow,
   GridButton,
+  GridButtonCaption,
   GridCaption,
   AspectRatio
 } from "../../components/GridStyles"
@@ -26,16 +27,65 @@ import { dot } from "../../components/_icons/components/BlankDot"
 
 // constants
 import { MESSAGE_HINT_IMAGE_SUGGESTIONS } from "../../../constants/messages/hints"
+import { ROUTE_AUTHOR_API } from "../../../constants/author"
 import errorMessages from "../../../constants/messages/errors"
 const suggestions = [
-  "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
-  "image-froth_1546790_b5ff5d48edf8488387d39f64e18b2916",
-  "image-froth_1494432_2ed2035b7e154d6c88cb0280406f7193",
-  "image-froth_1522572_19174bdd522e4ab185e52d9d6fe9e868",
-  "image-froth_1542912_2fdd00455a0249c18bda84128470b341",
-  "image-froth_1515070_603a06c453204daa8983a81bbbeb2c63",
-  "image-froth_669104_8df1a40cea1746d79967ec4e694b59d9",
-  "image-froth_669104_a3b70899a1e74905bcb73b1e566943fc"
+  {
+    id: "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+    author: {
+      name: "dmitrizzle",
+      id: "dmitrizzle"
+    }
+  },
+  {
+    id: "image-froth_1546790_b5ff5d48edf8488387d39f64e18b2916",
+    author: {
+      name: "dmitrizzle",
+      id: "dmitrizzle"
+    }
+  },
+  {
+    id: "image-froth_1494432_2ed2035b7e154d6c88cb0280406f7193",
+    author: {
+      name: "dmitrizzle",
+      id: "dmitrizzle"
+    }
+  },
+  {
+    id: "image-froth_1522572_19174bdd522e4ab185e52d9d6fe9e868",
+    author: {
+      name: "dmitrizzle",
+      id: "dmitrizzle"
+    }
+  },
+  {
+    id: "image-froth_1542912_2fdd00455a0249c18bda84128470b341",
+    author: {
+      name: "dmitrizzle",
+      id: "dmitrizzle"
+    }
+  },
+  {
+    id: "image-froth_1515070_603a06c453204daa8983a81bbbeb2c63",
+    author: {
+      name: "dmitrizzle",
+      id: "dmitrizzle"
+    }
+  },
+  {
+    id: "image-froth_669104_8df1a40cea1746d79967ec4e694b59d9",
+    author: {
+      name: "dmitrizzle",
+      id: "dmitrizzle"
+    }
+  },
+  {
+    id: "image-froth_669104_a3b70899a1e74905bcb73b1e566943fc",
+    author: {
+      name: "dmitrizzle",
+      id: "dmitrizzle"
+    }
+  }
 ]
 
 const GridButtonImage = props => {
@@ -53,6 +103,17 @@ const GridButtonImage = props => {
           alt="Editor’s suggestion"
         />
       </AspectRatio>
+      <GridButtonCaption>
+        <ModalDispatch
+          with={{
+            request: {
+              url: ROUTE_AUTHOR_API + "/" + props.author.id
+            }
+          }}
+        >
+          {props.author.name}
+        </ModalDispatch>
+      </GridButtonCaption>
     </GridButton>
   )
 }
@@ -153,19 +214,27 @@ class PictureDocketContainer extends React.PureComponent {
             ✕
           </a>
         </CardHeader>
+        <GridCaption>
+          Create an{" "}
+          <ModalDispatch with={MESSAGE_HINT_IMAGE_SUGGESTIONS}>
+            instant collaboration
+          </ModalDispatch>.
+        </GridCaption>
+
         <GridContainer>
           <GridRow>
-            {suggestions.slice(0, 2).map(src => {
+            {suggestions.slice(0, 2).map(item => {
               return (
                 <GridButtonImage
-                  key={src}
-                  src={src}
+                  key={item.id}
+                  src={item.id}
+                  author={item.author}
                   add={this.handleImageSuggestion}
                 />
               )
             })}
             <GridButton onClick={this.initFileUpload} red>
-              <div style={{ margin: "0 auto" }}>
+              <div style={{ margin: "0 auto", paddingLeft: ".5em" }}>
                 ＋
                 <br />
                 Upload<span> New</span>
@@ -173,34 +242,30 @@ class PictureDocketContainer extends React.PureComponent {
             </GridButton>
           </GridRow>
           <GridRow>
-            {suggestions.slice(2, 5).map(src => {
+            {suggestions.slice(2, 5).map(item => {
               return (
                 <GridButtonImage
-                  key={src}
-                  src={src}
+                  key={item.id}
+                  src={item.id}
+                  author={item.author}
                   add={this.handleImageSuggestion}
                 />
               )
             })}
           </GridRow>
           <GridRow>
-            {suggestions.slice(5, 8).map(src => {
+            {suggestions.slice(5, 8).map(item => {
               return (
                 <GridButtonImage
-                  key={src}
-                  src={src}
+                  key={item.id}
+                  src={item.id}
+                  author={item.author}
                   add={this.handleImageSuggestion}
                 />
               )
             })}
           </GridRow>
         </GridContainer>
-        <GridCaption>
-          <ModalDispatch with={MESSAGE_HINT_IMAGE_SUGGESTIONS}>
-            Image suggestions
-          </ModalDispatch>{" "}
-          curated by Analog.Cafe editors.
-        </GridCaption>
         <input
           type="file"
           accept="image/x-png,image/jpeg"

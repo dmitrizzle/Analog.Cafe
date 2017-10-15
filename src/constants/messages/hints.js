@@ -9,9 +9,9 @@ export const MESSAGE_HINT_CHECK_EMAIL = email => {
 }
 export const MESSAGE_HINT_SUBMIT_CONSENT = {
   info: {
-    title: "More Exposure?",
+    title: "Open for Collaborations?",
     text:
-      "If you choose “Yes,” we may suggest other authors to feature your images (from this submission) within their articles. You will be credited every time.",
+      "Creating beautiful things together is easy. If you choose “Yes” your images may appear in other photo essays, stories, articles on Analog.Cafe. You and the authors that you collaborate with will be credited and listed under “collaborations” category. We take care of everything else.",
     buttons: [
       {
         to: "/submit/confirm-full-consent",
@@ -28,9 +28,9 @@ export const MESSAGE_HINT_SUBMIT_CONSENT = {
 }
 export const MESSAGE_HINT_IMAGE_SUGGESTIONS = {
   info: {
-    title: "Image Suggestions",
+    title: "Instant Collaboration",
     text:
-      "You can freely use these hand-picked film photographs by the editor within your submission. A credit to the original photographer will be added automatically. Of course you can still upload your own images!"
+      "Creating together is easy! Simply select a photograph that fits your submission. You and the photographer will be credited and listed under “collaborations” category."
   },
   id: "hints/image-suggestions"
 }
