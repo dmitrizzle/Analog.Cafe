@@ -45,7 +45,9 @@ class Figure extends React.Component {
     const properties = { data: { caption, src, feature, key, file } }
 
     const resolvedState = state.change().setNodeByKey(node.key, properties)
-    editor.onChange(resolvedState) // have to use native onChange in editor (rather than handleChange)
+    window.requestAnimationFrame(() => {
+      editor.onChange(resolvedState) // have to use native onChange in editor (rather than handleChange)
+    })
   }
   handleClick = event => {
     event.preventDefault()
