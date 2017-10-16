@@ -21,14 +21,14 @@ export const schema = {
     ),
     heading: props => <h3>{props.children}</h3>, // no links or style should be allowed in headings
     divider: props => {
-      const { node, state } = props
-      const focus = state.isFocused && state.selection.hasEdgeIn(node)
+      const { node, state, isSelected } = props
+      const focus = state.isFocused && isSelected
       const className = focus ? "focus" : "nofocus"
       return <hr className={className} />
     },
     quote: props => {
-      const { node, state } = props
-      const focus = state.isFocused && state.selection.hasEdgeIn(node)
+      const { node, state, isSelected } = props
+      const focus = state.isFocused && isSelected
       const className = focus ? "focus" : "nofocus"
       return (
         <blockquote {...props.attributes} className={className}>

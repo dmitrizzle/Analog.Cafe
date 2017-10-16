@@ -6240,17 +6240,17 @@ slate-auto-replace@^0.6.3:
   dependencies:
     type-of "^2.0.1"
 
-slate-base64-serializer@^0.1.14:
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.1.14.tgz#31e74c39bdff37d663bfde5b7cf3263558582677"
+slate-base64-serializer@^0.1.15:
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.1.15.tgz#50671696b90a344fb0b5458b72cfe0dee0532818"
 
 slate-dev-logger@^0.1.0:
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.11.tgz#740fd2e23b1dda1f4629419fc914eea91272b6f0"
 
-slate-dev-logger@^0.1.15:
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.15.tgz#6b4dce8801c2704fa0b3e4e4df60e686b6774c1d"
+slate-dev-logger@^0.1.16:
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.16.tgz#1faf49fb0c2399111174346a448f89e8f6a5df13"
 
 slate-drop-or-paste-images@^0.6.5:
   version "0.6.5"
@@ -6268,11 +6268,11 @@ slate-edit-blockquote@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/slate-edit-blockquote/-/slate-edit-blockquote-0.4.0.tgz#bc7cecdbf633e4f9c11940c390a0dcc7d74ea0aa"
 
-slate-html-serializer@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/slate-html-serializer/-/slate-html-serializer-0.2.0.tgz#fba674439ce83297715349d1778e6ef9d31698e2"
+slate-html-serializer@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/slate-html-serializer/-/slate-html-serializer-0.2.1.tgz#4eef1b80deae78952ecaa8c83ffa3d269a7980dc"
   dependencies:
-    slate-dev-logger "^0.1.15"
+    slate-dev-logger "^0.1.16"
     type-of "^2.0.1"
 
 slate-paste-linkify@^0.3.2:
@@ -6282,21 +6282,21 @@ slate-paste-linkify@^0.3.2:
     is-url "^1.2.2"
     to-pascal-case "^1.0.0"
 
-slate-plain-serializer@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/slate-plain-serializer/-/slate-plain-serializer-0.2.0.tgz#446df4ae1bee0a0bfa4dbd77bae505f997e6bfb4"
+slate-plain-serializer@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/slate-plain-serializer/-/slate-plain-serializer-0.2.1.tgz#086a06d118e1b46247177847d52a1a8473f95f07"
   dependencies:
-    slate-dev-logger "^0.1.15"
+    slate-dev-logger "^0.1.16"
 
-slate-prop-types@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.2.0.tgz#1c8b45b57a32b9a67ef234b6b53e1963a6e88027"
+slate-prop-types@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.2.1.tgz#80b891a4b609cfe8ea5a6f1e8eccc443944c3e31"
   dependencies:
-    slate-dev-logger "^0.1.15"
+    slate-dev-logger "^0.1.16"
 
-slate-react@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.4.0.tgz#e15c9034df5ea58fcb8a0c49c1cd159702296e0c"
+slate-react@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.5.0.tgz#82d294d07b93810267b72dbb920d07ee4872589a"
   dependencies:
     debug "^2.3.2"
     get-window "^1.1.1"
@@ -6307,18 +6307,18 @@ slate-react@^0.4.0:
     react-immutable-proptypes "^2.1.0"
     react-portal "^3.1.0"
     selection-is-backward "^1.0.0"
-    slate-base64-serializer "^0.1.14"
-    slate-dev-logger "^0.1.15"
-    slate-plain-serializer "^0.2.0"
-    slate-prop-types "^0.2.0"
+    slate-base64-serializer "^0.1.15"
+    slate-dev-logger "^0.1.16"
+    slate-plain-serializer "^0.2.1"
+    slate-prop-types "^0.2.1"
 
 slate-trailing-block@^0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/slate-trailing-block/-/slate-trailing-block-0.2.4.tgz#6ce9525fa15f9f098d810d9312a4267799cd0e12"
 
-slate@^0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.27.0.tgz#29216f8f488eee259ccd9d32564a0b2b79e3c5e6"
+slate@^0.27.1:
+  version "0.27.1"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.27.1.tgz#82d36de18f8ad242644a421ca7b0478952a1f95d"
   dependencies:
     debug "^2.3.2"
     direction "^0.1.5"
@@ -6327,7 +6327,7 @@ slate@^0.27.0:
     is-empty "^1.0.0"
     is-plain-object "^2.0.4"
     lodash "^4.17.4"
-    slate-dev-logger "^0.1.15"
+    slate-dev-logger "^0.1.16"
     type-of "^2.0.1"
 
 slice-ansi@0.0.4:
