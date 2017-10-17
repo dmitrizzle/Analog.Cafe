@@ -27,6 +27,5 @@ export const lunar = unix => {
 
 export const percise = unix => {
   let date = new Date(unix * 1000)
-  console.log(date.toISOString())
   return date.toISOString()
 }

@@ -6,7 +6,7 @@ export const ToggleFeature = options => {
   const { key } = options
 
   return {
-    onKeyDown(event, data, change) {
+    onKeyDown(event, change) {
       const { state } = change
       if (!event.metaKey || keycode(event.which) !== key) return
       if (state.focusBlock.type !== "image") return
