@@ -6238,9 +6238,9 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
-slate-auto-replace@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/slate-auto-replace/-/slate-auto-replace-0.7.0.tgz#09147849df96af634567e1315077bfdab95adc03"
+slate-auto-replace@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/slate-auto-replace/-/slate-auto-replace-0.8.1.tgz#c891d1978bd2c30400b956f9c40f33415c2b4a76"
   dependencies:
     is-hotkey "^0.0.3"
     type-of "^2.0.1"
@@ -6257,9 +6257,9 @@ slate-dev-logger@^0.1.17:
   version "0.1.17"
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.17.tgz#bbf20679ca1b29e04dcfc0d14448b71def6c3eea"
 
-slate-drop-or-paste-images@^0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images/-/slate-drop-or-paste-images-0.6.6.tgz#d9f034549f40888bed79258c3a5bc79bb8ed059a"
+slate-drop-or-paste-images@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/slate-drop-or-paste-images/-/slate-drop-or-paste-images-0.7.1.tgz#647da0b12ed4e95e39467e71ebb448b5052902c0"
   dependencies:
     es6-promise "^4.0.5"
     image-to-data-uri "^1.0.0"
@@ -6280,9 +6280,9 @@ slate-html-serializer@^0.2.2:
     slate-dev-logger "^0.1.17"
     type-of "^2.0.1"
 
-slate-paste-linkify@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/slate-paste-linkify/-/slate-paste-linkify-0.3.3.tgz#6ba9bef986f7485e38c855e794622fd9e6a9ed6b"
+slate-paste-linkify@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/slate-paste-linkify/-/slate-paste-linkify-0.4.1.tgz#78dc8a6de0c3a7a691d20398ca4c2f7217399373"
   dependencies:
     is-url "^1.2.2"
     to-pascal-case "^1.0.0"
@@ -7196,9 +7196,9 @@ webpack@3.5.1:
     webpack-sources "^1.0.1"
     yargs "^8.0.2"
 
-webpack@^3.8.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.8.0.tgz#36ed73aa62e86959fbc9b7b3a90f0f094e672708"
+webpack@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.8.1.tgz#b16968a81100abe61608b0153c9159ef8bb2bd83"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
