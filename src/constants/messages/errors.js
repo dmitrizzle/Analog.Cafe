@@ -48,7 +48,7 @@ export default {
       error: "Error: Viewing this content requires matching log in (403)"
     },
     CODE_401: {
-      error: "Error: You need to sign in to view this content (401)"
+      error: "Error: You need to sign in to access your account (401)"
     }
   }
 }

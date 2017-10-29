@@ -45,14 +45,14 @@ export const plugins = [
   AutoReplace({
     trigger: "space",
     before: /^(>)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.setBlock({ type: "quote" }) // quote
     }
   }),
   AutoReplace({
     trigger: "enter",
     before: /^(\*\*\*)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform
         .setBlock({ type: "divider", isVoid: true })
         .collapseToEndOfNextBlock()
@@ -62,7 +62,7 @@ export const plugins = [
   AutoReplace({
     trigger: "space",
     before: /^(#)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.setBlock({ type: "heading" }) // heading
     }
   }),
@@ -72,7 +72,7 @@ export const plugins = [
     trigger: "enter",
     before: /.+/,
     onlyIn: "heading",
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       let heading = matches.before[0]
       if (
         heading[heading.length - 1].search(/[^\w\s]|_/) === -1 // if no punctuation mark at the end of heading...
@@ -88,7 +88,7 @@ export const plugins = [
     trigger: "backspace",
     after: /./,
     onlyIn: "heading",
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.setBlock({ type: "paragraph" }) // cancel heading
     }
   }),
@@ -97,28 +97,28 @@ export const plugins = [
   AutoReplace({
     trigger: /(")/,
     before: /[^ ”]$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("”") // smart double quote (right)
     }
   }),
   AutoReplace({
     trigger: /(")/,
     before: /(^)|[ ]$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("“") // smart double quote (left)
     }
   }),
   AutoReplace({
     trigger: /(')/,
     before: /[^ ”]$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("’") // smart single quote (right)
     }
   }),
   AutoReplace({
     trigger: /(')/,
     before: /(^)|[ ]$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("‘") // smart single quote (left)
     }
   }),
@@ -127,19 +127,20 @@ export const plugins = [
   AutoReplace({
     trigger: "space",
     before: /( -)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText(" — ") // mdash
     }
   }),
   AutoReplace({
     trigger: "space",
     before: /(\.\.\.)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("… ") // elipsis
     }
   }),
 
   // special editor menu for quote
+  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   EditBlockquote({
     type: "quote",
     typeDefault: "paragraph"

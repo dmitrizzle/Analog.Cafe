@@ -15,6 +15,7 @@ import { datestamp } from "../../../utils/datestamp"
 
 // constants
 import { ROUTE_ARTICLE_DIR, SUMMARY_LENGTH_MAX } from "../../../constants/list"
+import emojis from "../../../constants/messages/emojis"
 
 // return
 const ListSubtitle = props => {
@@ -34,7 +35,7 @@ const ListSubtitle = props => {
           &nbsp;
         </span>
       )}
-      ❡
+      {emojis.PARAGRAPH}
     </span>
   )
 }
