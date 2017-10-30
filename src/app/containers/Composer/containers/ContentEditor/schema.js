@@ -19,9 +19,6 @@ export const schema = {
     heading: {
       nodes: [{ kinds: ["text"] }]
     },
-    quote: {
-      nodes: [{ types: ["paragraph"] }]
-    },
     link: {
       nodes: [{ kinds: ["text"] }]
     },

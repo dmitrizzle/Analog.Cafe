@@ -19,7 +19,6 @@ import { Paste } from "./paste-html"
 
 // plugins by others
 import AutoReplace from "slate-auto-replace"
-// import EditBlockquote from "slate-edit-blockquote"
 import InsertImages from "slate-drop-or-paste-images"
 // import TrailingBlock from "slate-trailing-block"
 import PasteLinkify from "slate-paste-linkify"
@@ -48,6 +47,23 @@ export const plugins = [
       return transform.setBlock({ type: "quote" }) // quote
     }
   }),
+  AutoReplace({
+    trigger: "enter",
+    before: /^.|$/,
+    onlyIn: "quote",
+    transform: (transform, event, matches) => {
+      return transform.splitBlock().setBlock({ type: "paragraph" }) // exit quote
+    }
+  }),
+  AutoReplace({
+    trigger: "backpsace",
+    after: /./,
+    onlyIn: "quote",
+    transform: (transform, event, matches) => {
+      return transform.setBlock({ type: "paragraph" }) // transform quote to paragraph
+    }
+  }),
+
   AutoReplace({
     trigger: "enter",
     before: /^(\*\*\*)$/,

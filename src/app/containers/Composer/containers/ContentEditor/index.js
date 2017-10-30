@@ -40,25 +40,25 @@ export default class extends React.PureComponent {
     this.setState({ value })
 
     // add information about cursor positions
-    // setTimeout(
-    //   function() {
-    //     const { focusBlock } = value
-    //     if(!focusBlock) return
-    //     const nodeKey = focusBlock.key
-    //     const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
-    //     if (!block) return
-    //
-    //     const cursorContext = {
-    //       firstEmptyLine:
-    //         value.document.isEmpty && value.document.nodes.size === 1,
-    //       newLine: value.focusBlock.isEmpty,
-    //       parentBlockOffsets: getOffsets(block, "top left", block, "top left"),
-    //       isFocused: this.state.cursorContext.isFocused
-    //     }
-    //     this.setState({ cursorContext })
-    //   }.bind(this),
-    //   300
-    // )
+    setTimeout(
+      function() {
+        const { focusBlock } = value
+        if (!focusBlock) return
+        const nodeKey = focusBlock.key
+        const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
+        if (!block) return
+
+        const cursorContext = {
+          firstEmptyLine:
+            value.document.isEmpty && value.document.nodes.size === 1,
+          newLine: value.focusBlock.isEmpty,
+          parentBlockOffsets: getOffsets(block, "top left", block, "top left"),
+          isFocused: this.state.cursorContext.isFocused
+        }
+        this.setState({ cursorContext })
+      }.bind(this),
+      300
+    )
 
     // update draft status & save content to device
     setDraftStatusHelper()
@@ -68,23 +68,23 @@ export default class extends React.PureComponent {
 
   // image button handler:
   handleImageButton = event => {
-    // if (!event) return
-    // event.preventDefault()
-    // event.stopPropagation()
-    //
-    // const activeBlockKey = this.state.value.focusBlock.key
-    // const resolvedState = this.state.value
-    //   .change()
-    //   .insertBlock({
-    //     type: "docket",
-    //     isVoid: true
-    //   })
-    //   .value.change()
-    //   .removeNodeByKey(activeBlockKey)
-    // this.setState({
-    //   value: resolvedState.value,
-    //   cursorContext: { ...this.state.cursorContext, newLine: false }
-    // })
+    if (!event) return
+    event.preventDefault()
+    event.stopPropagation()
+
+    const activeBlockKey = this.state.value.focusBlock.key
+    const resolvedState = this.state.value
+      .change()
+      .insertBlock({
+        type: "docket",
+        isVoid: true
+      })
+      .value.change()
+      .removeNodeByKey(activeBlockKey)
+    this.setState({
+      value: resolvedState.value,
+      cursorContext: { ...this.state.cursorContext, newLine: false }
+    })
   }
 
   // render
