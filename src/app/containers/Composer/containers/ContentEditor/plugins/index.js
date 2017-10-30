@@ -20,9 +20,9 @@ import { Paste } from "./paste-html"
 
 // plugins by others
 import AutoReplace from "slate-auto-replace"
-import EditBlockquote from "slate-edit-blockquote"
+// import EditBlockquote from "slate-edit-blockquote"
 import InsertImages from "slate-drop-or-paste-images"
-import TrailingBlock from "slate-trailing-block"
+// import TrailingBlock from "slate-trailing-block"
 import PasteLinkify from "slate-paste-linkify"
 
 // components
@@ -140,11 +140,10 @@ export const plugins = [
   }),
 
   // special editor menu for quote
-  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  EditBlockquote({
-    type: "quote",
-    typeDefault: "paragraph"
-  }),
+  // EditBlockquote({
+  //   type: "quote",
+  //   typeDefault: "paragraph"
+  // }),
 
   // image inserter
   // see uploadRequest() in ../index for the other image insert option...
@@ -174,8 +173,8 @@ export const plugins = [
           )
         })
     }
-  }),
+  })
 
   // convenience plugins
-  TrailingBlock({ type: "paragraph" })
+  // TrailingBlock({ type: "paragraph" })
 ]
