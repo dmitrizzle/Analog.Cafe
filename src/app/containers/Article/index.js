@@ -2,7 +2,7 @@
 import React from "react"
 import Loadable from "react-loadable"
 import { Editor } from "slate-react"
-import { State } from "slate"
+import { Value } from "slate"
 import Helmet from "../../components/_async/Helmet"
 import { froth } from "../../../utils/image-froth"
 
@@ -20,6 +20,7 @@ import {
 } from "../../../constants/app"
 
 import { schema } from "../Composer/containers/ContentEditor/schema"
+import { renderNode } from "../Composer/containers/ContentEditor/render"
 
 // components
 import Heading from "../../components/ArticleHeading"
@@ -137,8 +138,9 @@ class Article extends React.PureComponent {
         <Section articleStatus={this.props.article.status}>
           <Editor
             readOnly={true}
-            state={State.fromJSON(this.props.article.content.raw)}
+            value={Value.fromJSON(this.props.article.content.raw)}
             schema={schema}
+            renderNode={renderNode}
           />
 
           {this.props.article.poster &&

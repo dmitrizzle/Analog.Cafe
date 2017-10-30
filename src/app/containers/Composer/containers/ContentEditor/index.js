@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 import { Editor } from "slate-react"
-import { State } from "slate"
+import { Value } from "slate"
 import getOffsets from "positions"
 
 // components
@@ -9,6 +9,7 @@ import ImageButton from "./components/ImageButton"
 
 // helpers, plugins & schema
 import { plugins } from "./plugins"
+import { renderNode } from "./render"
 import { schema } from "./schema"
 import { loadContent } from "../../../../../utils/composer-loader"
 import {
@@ -24,7 +25,7 @@ export default class extends React.PureComponent {
 
     // composerState is what appears by default in composer once the user opens the view
     this.state = {
-      state: State.fromJSON(loadContent()),
+      value: Value.fromJSON(loadContent()),
       schema,
       author: this.props.author,
       cursorContext: {
@@ -35,20 +36,20 @@ export default class extends React.PureComponent {
     }
   }
 
-  handleChange = ({ state }) => {
-    this.setState({ state })
+  handleChange = ({ value }) => {
+    this.setState({ value })
 
     // add information about cursor positions
     setTimeout(
       function() {
-        const nodeKey = state.focusBlock.key
+        const nodeKey = value.focusBlock.key
         const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
         if (!block) return
 
         const cursorContext = {
           firstEmptyLine:
-            state.document.isEmpty && state.document.nodes.size === 1,
-          newLine: state.focusBlock.isEmpty,
+            value.document.isEmpty && value.document.nodes.size === 1,
+          newLine: value.focusBlock.isEmpty,
           parentBlockOffsets: getOffsets(block, "top left", block, "top left"),
           isFocused: this.state.cursorContext.isFocused
         }
@@ -59,8 +60,8 @@ export default class extends React.PureComponent {
 
     // update draft status & save content to device
     setDraftStatusHelper()
-    this.props.composerState.raw = JSON.stringify(state.toJSON())
-    saveContent(document, state)
+    this.props.composerState.raw = JSON.stringify(value.toJSON())
+    saveContent(document, value)
   }
 
   // image button handler:
@@ -69,17 +70,17 @@ export default class extends React.PureComponent {
     event.preventDefault()
     event.stopPropagation()
 
-    const activeBlockKey = this.state.state.focusBlock.key
-    const resolvedState = this.state.state
+    const activeBlockKey = this.state.value.focusBlock.key
+    const resolvedState = this.state.value
       .change()
       .insertBlock({
         type: "docket",
         isVoid: true
       })
-      .state.change()
+      .value.change()
       .removeNodeByKey(activeBlockKey)
     this.setState({
-      state: resolvedState.state,
+      value: resolvedState.value,
       cursorContext: { ...this.state.cursorContext, newLine: false }
     })
   }
@@ -94,8 +95,9 @@ export default class extends React.PureComponent {
         />
         <Editor
           plugins={plugins}
+          renderNode={renderNode}
           schema={this.state.schema}
-          state={this.state.state}
+          value={this.state.value}
           onChange={this.handleChange}
           style={{ minHeight: "28em" }}
         />

@@ -131,11 +131,11 @@ class PictureDocketContainer extends React.PureComponent {
     event.preventDefault()
     event.stopPropagation()
 
-    const { node, state, editor } = this.props
-    const resolvedState = state
+    const { node, value, editor } = this.props
+    const resolvedState = value
       .change()
       .insertBlock({ type: "paragraph" })
-      .state.change()
+      .value.change()
       .removeNodeByKey(node.key)
     editor.onChange(resolvedState)
 
@@ -163,11 +163,11 @@ class PictureDocketContainer extends React.PureComponent {
       })
   } // ⤵
   uploadRequest = file => {
-    const { state, editor, node } = this.props
+    const { value, editor, node } = this.props
     const key = uuidv1()
     localForage.setItem(key, file)
 
-    const resolvedState = state
+    const resolvedState = value
       .change()
       .insertBlock({
         type: "image",
@@ -175,7 +175,7 @@ class PictureDocketContainer extends React.PureComponent {
         data: { file, key: key, src: dot }
       })
       // remove docket
-      .state.change()
+      .value.change()
       .removeNodeByKey(node.key)
     this.uploadHandlerTimeout = setTimeout(() => {
       editor.onChange(resolvedState)
@@ -184,8 +184,8 @@ class PictureDocketContainer extends React.PureComponent {
 
   // insert selected image suggesstion:
   handleImageSuggestion = src => {
-    const { state, editor, node } = this.props
-    const resolvedState = state
+    const { value, editor, node } = this.props
+    const resolvedState = value
       .change()
       .insertBlock({
         type: "image",
@@ -193,7 +193,7 @@ class PictureDocketContainer extends React.PureComponent {
         data: { src }
       })
       // remove docket
-      .state.change()
+      .value.change()
       .removeNodeByKey(node.key)
     this.suggestionHandlerTimeout = setTimeout(() => {
       editor.onChange(resolvedState)

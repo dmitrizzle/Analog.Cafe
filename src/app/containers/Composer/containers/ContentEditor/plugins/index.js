@@ -15,7 +15,6 @@ import { dot } from "../../../../../components/_icons/components/BlankDot"
 // Analog.Cafe plugins
 import { MarkHotkey } from "./mark-hotkey"
 import { ToggleFeature } from "./toggle-feature"
-// import { Linkify } from "./linkify"
 import { Paste } from "./paste-html"
 
 // plugins by others
