@@ -7,12 +7,12 @@ export const ToggleFeature = options => {
 
   return {
     onKeyDown(event, change) {
-      const { state } = change
+      const { value } = change
       if (!event.metaKey || keycode(event.which) !== key) return
-      if (state.focusBlock.type !== "image") return
+      if (value.focusBlock.type !== "image") return
       event.preventDefault()
 
-      const previousDataImmutable = state.focusBlock.data
+      const previousDataImmutable = value.focusBlock.data
       const previousData = {
         feature: previousDataImmutable.get("feature"),
         file: previousDataImmutable.get("file"),

@@ -16,19 +16,18 @@ export const schema = {
     ]
   },
   blocks: {
-    paragraph: {
+    heading: {
       nodes: [{ kinds: ["text"] }]
     },
-    heading: {
+    quote: {
+      nodes: [{ types: ["paragraph"] }]
+    },
+    link: {
       nodes: [{ kinds: ["text"] }]
     },
     divider: {
       isVoid: true
     },
-    quote: {
-      nodes: [{ kinds: ["text"] }]
-    },
-
     image: {
       isVoid: true,
       data: {
@@ -37,9 +36,6 @@ export const schema = {
     },
     docket: {
       isVoid: true
-    },
-    link: {
-      nodes: [{ kinds: ["text"] }]
     }
   }
 }

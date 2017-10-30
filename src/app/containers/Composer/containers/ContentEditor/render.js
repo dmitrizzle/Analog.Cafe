@@ -10,18 +10,13 @@ import { parseHref } from "../../../../../utils/link-builder"
 // return
 
 export const renderNode = props => {
-  console.log(props)
   const { node, attributes, children, isSelected, editor } = props
   const focus = editor.value.isFocused && isSelected
   const focusClassName = focus ? "focus" : "nofocus"
 
   switch (node.type) {
     case "paragraph":
-      return (
-        <p {...attributes} style={{ position: "relative" }}>
-          {children}
-        </p>
-      )
+      return <p {...attributes}>{children}</p>
     case "heading":
       return <h3>{children}</h3>
     case "divider":
@@ -36,17 +31,28 @@ export const renderNode = props => {
       return <Picture {...props} />
     case "docket":
       return <PictureDocket {...props} />
-    case "link":
+    case "link": {
+      const { data } = node
+      const href = data.get("href")
       return (
-        <Link {...props} to={parseHref("href")}>
+        <Link {...attributes} to={parseHref(href)}>
           {children}
         </Link>
       )
+    }
     default:
-      return (
-        <p {...attributes} style={{ position: "relative" }}>
-          {children}
-        </p>
-      )
+      return <p {...attributes}>{children}</p>
+  }
+}
+
+export const renderMark = props => {
+  const { children, mark } = props
+  switch (mark.type) {
+    case "bold":
+      return <strong>{children}</strong>
+    case "italic":
+      return <em>{children}</em>
+    default:
+      return { children }
   }
 }

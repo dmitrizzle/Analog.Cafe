@@ -20,7 +20,10 @@ import {
 } from "../../../constants/app"
 
 import { schema } from "../Composer/containers/ContentEditor/schema"
-import { renderNode } from "../Composer/containers/ContentEditor/render"
+import {
+  renderNode,
+  renderMark
+} from "../Composer/containers/ContentEditor/render"
 
 // components
 import Heading from "../../components/ArticleHeading"
@@ -141,6 +144,7 @@ class Article extends React.PureComponent {
             value={Value.fromJSON(this.props.article.content.raw)}
             schema={schema}
             renderNode={renderNode}
+            renderMark={renderMark}
           />
 
           {this.props.article.poster &&
