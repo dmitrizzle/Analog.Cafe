@@ -55,7 +55,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
     "prettier": "^1.7.4",
-    "react-scripts": "^1.0.15",
+    "react-scripts": "^1.0.16",
     "source-map-explorer": "^1.5.0"
   },
   "lint-staged": {
