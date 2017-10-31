@@ -101,6 +101,7 @@ export default class extends React.PureComponent {
           renderMark={renderMark}
           validateNode={validateNode}
           schema={this.state.schema}
+          placeholder={"Write your story…"}
           value={this.state.value}
           onChange={this.handleChange}
           style={{ minHeight: "28em" }}
