@@ -62,7 +62,9 @@ export const validateNode = node => {
   if (node.kind !== "document") return
 
   const last = node.nodes.last()
-  if (last.type === "paragraph" || node.text.trim() === "") return
+  if (last && last.type === "paragraph") return
+
+  if (node.text.trim() === "") return
 
   const lastIndex = node.nodes.count()
   const block = Slate.Block.create({
