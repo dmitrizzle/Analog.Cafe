@@ -131,8 +131,8 @@ class PictureDocketContainer extends React.PureComponent {
     event.preventDefault()
     event.stopPropagation()
 
-    const { node, value, editor } = this.props
-    const resolvedState = value
+    const { node, editor } = this.props
+    const resolvedState = editor.value
       .change()
       .insertBlock({ type: "paragraph" })
       .value.change()
@@ -184,8 +184,8 @@ class PictureDocketContainer extends React.PureComponent {
 
   // insert selected image suggesstion:
   handleImageSuggestion = src => {
-    const { value, editor, node } = this.props
-    const resolvedState = value
+    const { editor, node } = this.props
+    const resolvedState = editor.value
       .change()
       .insertBlock({
         type: "image",

@@ -9,7 +9,7 @@ import ImageButton from "./components/ImageButton"
 
 // helpers, plugins & schema
 import { plugins } from "./plugins"
-import { renderNode, renderMark } from "./render"
+import { renderNode, renderMark, validateNode } from "./render"
 import { schema } from "./schema"
 import { loadContent } from "../../../../../utils/composer-loader"
 import {
@@ -99,6 +99,7 @@ export default class extends React.PureComponent {
           plugins={plugins}
           renderNode={renderNode}
           renderMark={renderMark}
+          validateNode={validateNode}
           schema={this.state.schema}
           value={this.state.value}
           onChange={this.handleChange}

@@ -27,19 +27,20 @@ import PasteLinkify from "slate-paste-linkify"
 
 // export
 export const plugins = [
-  // general tools
+  // pasting and links
   Paste({ html }),
   PasteLinkify({
     type: "link"
   }),
 
-  // hot keys
+  // marks
   MarkHotkey({ key: "b", type: "bold" }),
   MarkHotkey({ key: "i", type: "italic" }),
 
+  // image
   ToggleFeature({ key: "f", node: "image" }),
 
-  // markdown shortcuts
+  // quote
   AutoReplace({
     trigger: "space",
     before: /^(>)$/,
@@ -56,7 +57,7 @@ export const plugins = [
     }
   }),
   AutoReplace({
-    trigger: "backpsace",
+    trigger: "backspace",
     after: /./,
     onlyIn: "quote",
     transform: (transform, event, matches) => {
@@ -64,6 +65,7 @@ export const plugins = [
     }
   }),
 
+  // section separater
   AutoReplace({
     trigger: "enter",
     before: /^(\*\*\*)$/,
@@ -74,6 +76,8 @@ export const plugins = [
         .collapseToEndOfNextBlock() // page break
     }
   }),
+
+  // title/heading
   AutoReplace({
     trigger: "space",
     before: /^(#)$/,
@@ -81,8 +85,6 @@ export const plugins = [
       return transform.setBlock({ type: "heading" }) // heading
     }
   }),
-
-  // heading formatting
   AutoReplace({
     trigger: "enter",
     before: /.+/,
@@ -138,7 +140,7 @@ export const plugins = [
     }
   }),
 
-  // auto-format rules
+  // long dash and ellipsis
   AutoReplace({
     trigger: "space",
     before: /( -)$/,
@@ -153,12 +155,6 @@ export const plugins = [
       return transform.insertText("… ") // elipsis
     }
   }),
-
-  // special editor menu for quote
-  // EditBlockquote({
-  //   type: "quote",
-  //   typeDefault: "paragraph"
-  // }),
 
   // image inserter
   // see uploadRequest() in ../index for the other image insert option...
@@ -189,7 +185,4 @@ export const plugins = [
         })
     }
   })
-
-  // convenience plugins
-  // TrailingBlock({ type: "paragraph" })
 ]
