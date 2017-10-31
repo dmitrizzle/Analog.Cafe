@@ -20,6 +20,10 @@ import App from "./app/containers/App"
 // service worker
 import registerServiceWorker from "./registerServiceWorker"
 
+// polyfill
+import { arrayIncludes } from "./utils/polyfill"
+arrayIncludes()
+
 // launch!
 render(
   <Provider store={store}>

@@ -15,6 +15,7 @@ import { datestamp } from "../../../utils/datestamp"
 
 // constants
 import { ROUTE_ARTICLE_DIR, SUMMARY_LENGTH_MAX } from "../../../constants/list"
+import emojis from "../../../constants/messages/emojis"
 
 // return
 const ListSubtitle = props => {
@@ -22,19 +23,9 @@ const ListSubtitle = props => {
     <span>
       <span>
         {props.title}
-        {/* add a period if subtitle doesn't end with punctuation: */
-        !props.title.match(/.[.,:!?]$/) && "."}
         &nbsp;
       </span>
-      {props.subtitle && (
-        <span>
-          {props.subtitle}
-          {/* add a period if subtitle doesn't end with punctuation: */
-          !props.subtitle.match(/.[.,:!?]$/) && "."}
-          &nbsp;
-        </span>
-      )}
-      ❡
+      {props.subtitle && <span>({props.subtitle}) &nbsp;</span>}
     </span>
   )
 }
@@ -86,9 +77,15 @@ export default props => {
                       />
                       {/* Two versions of summary for different screens: long and short */}
                       <span className="long">
+                        <span style={{ fontStyle: "normal" }}>
+                          {emojis.PARAGRAPH}
+                        </span>
                         {item.summary.substr(0, SUMMARY_LENGTH_MAX - 1) + "…"}
                       </span>
                       <span className="short">
+                        <span style={{ fontStyle: "normal" }}>
+                          {emojis.PARAGRAPH}
+                        </span>
                         {item.summary.substr(
                           0,
                           SUMMARY_LENGTH_MAX / 1.6 -

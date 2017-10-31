@@ -63,7 +63,10 @@ export const getInfo = () => {
           payload: response.data.info
         })
       })
-      .catch(error => dispatch(setCard(loginError, { url: "errors/user" })))
+      .catch(error => {
+        if (error.response.status) localStorage.removeItem("token") // clean up broken token
+        dispatch(setCard(loginError, { url: "errors/user" }))
+      })
   }
 }
 

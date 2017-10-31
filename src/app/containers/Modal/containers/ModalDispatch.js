@@ -11,6 +11,7 @@ import emojis from "../../../../constants/messages/emojis"
 // return
 const ModalDispatch = props => {
   const invokeModal = event => {
+    event.stopPropagation()
     event.preventDefault()
     props.with.request
       ? props.fetchCard(props.with.request)

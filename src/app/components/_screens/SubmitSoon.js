@@ -17,7 +17,7 @@ export default props => {
         pageSubtitle="Film Photography, Essays & Articles"
       />
       <Section>
-        <h3>Submissions open on 09.17</h3>
+        <h3>Submissions winter 2017</h3>
         <p>
           This September we (the{" "}
           <Link to="https://github.com/dmitrizzle/Analog.Cafe/wiki/Contributors">

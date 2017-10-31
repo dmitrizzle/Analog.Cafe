@@ -37,14 +37,16 @@ class Figure extends React.Component {
       .replace(/\b"/g, "”") // closing doubles
       .replace(/--/g, "—") // em-dashes
       .replace(/\b\.\.\./g, "…") // ellipsis
-    const { node, editor, state } = this.props
+    const { node, editor } = this.props
     const feature = node.data.get("feature")
     const src = node.data.get("src")
     const key = node.data.get("key") || false
     const file = node.data.get("file") || false
     const properties = { data: { caption, src, feature, key, file } }
 
-    const resolvedState = state.change().setNodeByKey(node.key, properties)
+    const resolvedState = editor.value
+      .change()
+      .setNodeByKey(node.key, properties)
     editor.onChange(resolvedState) // have to use native onChange in editor (rather than handleChange)
   }
   handleClick = event => {
@@ -79,9 +81,9 @@ class Figure extends React.Component {
   }
 
   render = () => {
-    const { attributes, state, node } = this.props
+    const { attributes, node, isSelected, editor } = this.props
     const { src } = this.state
-    const focus = state.isFocused && state.selection.hasEdgeIn(node)
+    const focus = editor.value.isFocused && isSelected
     const className = focus ? "focus" : "nofocus"
     const feature = node.data.get("feature")
 

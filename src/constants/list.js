@@ -29,7 +29,7 @@ export const ROUTE_META = {
   },
 
   "/stories": {
-    title: "Stories of people & places",
+    title: "Stories: any medium, any topic",
     description:
       "Stories, essays and creative writing, beyond film photography."
   },
@@ -39,13 +39,14 @@ export const ROUTE_META = {
       "Announcements, notes and opinion pieces from Analog.Cafe editors."
   },
   "/guides": {
-    title: "Guides; theory & practice",
+    title: "Guides: learn, understand & DIY",
     description:
       "Guides, explainations and instructables on film photography, art and technology."
   },
   "/reviews": {
-    title: "Reviews; film, cameras & more",
-    description: "Film photography gear & other creative tool reviews."
+    title: "Reviews: tools, toys & places",
+    description:
+      "Film photography gear, creative tools, places & experiences that inspire."
   },
 
   "/photo-essays": {
@@ -54,9 +55,9 @@ export const ROUTE_META = {
       "A colleciton of photo essays created with analog (film) cameras."
   },
   "/articles": {
-    title: "Stories, reviews guides & more",
+    title: "Stories, reviews, guides & editorials",
     description:
-      "Stories, editorials, reviews, guides and other articles about art, inspiration and technology."
+      "A collection of articles about art, inspiration and technology."
   },
   "/": {
     title: APP_DESCRIPTION,

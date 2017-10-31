@@ -9,7 +9,7 @@ export const DEFAULT_COMPOSER_EDITOR_STATE = {
         nodes: [
           {
             kind: "text",
-            ranges: [
+            leaves: [
               {
                 text: ""
               }
