@@ -15,64 +15,81 @@ import { dot } from "../../../../../components/_icons/components/BlankDot"
 // Analog.Cafe plugins
 import { MarkHotkey } from "./mark-hotkey"
 import { ToggleFeature } from "./toggle-feature"
-// import { Linkify } from "./linkify"
 import { Paste } from "./paste-html"
 
 // plugins by others
 import AutoReplace from "slate-auto-replace"
-import EditBlockquote from "slate-edit-blockquote"
 import InsertImages from "slate-drop-or-paste-images"
-import TrailingBlock from "slate-trailing-block"
+// import TrailingBlock from "slate-trailing-block"
 import PasteLinkify from "slate-paste-linkify"
 
 // components
 
 // export
 export const plugins = [
-  // general tools
+  // pasting and links
   Paste({ html }),
   PasteLinkify({
     type: "link"
   }),
 
-  // hot keys
+  // marks
   MarkHotkey({ key: "b", type: "bold" }),
   MarkHotkey({ key: "i", type: "italic" }),
 
+  // image
   ToggleFeature({ key: "f", node: "image" }),
 
-  // markdown shortcuts
+  // quote
   AutoReplace({
     trigger: "space",
     before: /^(>)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.setBlock({ type: "quote" }) // quote
     }
   }),
   AutoReplace({
     trigger: "enter",
+    before: /^.|$/,
+    onlyIn: "quote",
+    transform: (transform, event, matches) => {
+      return transform.splitBlock().setBlock({ type: "paragraph" }) // exit quote
+    }
+  }),
+  AutoReplace({
+    trigger: "backspace",
+    after: /./,
+    onlyIn: "quote",
+    transform: (transform, event, matches) => {
+      return transform.setBlock({ type: "paragraph" }) // transform quote to paragraph
+    }
+  }),
+
+  // section separater
+  AutoReplace({
+    trigger: "enter",
     before: /^(\*\*\*)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform
         .setBlock({ type: "divider", isVoid: true })
         .collapseToEndOfNextBlock()
         .collapseToEndOfNextBlock() // page break
     }
   }),
+
+  // title/heading
   AutoReplace({
     trigger: "space",
     before: /^(#)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.setBlock({ type: "heading" }) // heading
     }
   }),
-
-  // heading formatting
   AutoReplace({
     trigger: "enter",
     before: /.+/,
     onlyIn: "heading",
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       let heading = matches.before[0]
       if (
         heading[heading.length - 1].search(/[^\w\s]|_/) === -1 // if no punctuation mark at the end of heading...
@@ -88,7 +105,7 @@ export const plugins = [
     trigger: "backspace",
     after: /./,
     onlyIn: "heading",
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.setBlock({ type: "paragraph" }) // cancel heading
     }
   }),
@@ -97,52 +114,46 @@ export const plugins = [
   AutoReplace({
     trigger: /(")/,
     before: /[^ ”]$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("”") // smart double quote (right)
     }
   }),
   AutoReplace({
     trigger: /(")/,
     before: /(^)|[ ]$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("“") // smart double quote (left)
     }
   }),
   AutoReplace({
     trigger: /(')/,
     before: /[^ ”]$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("’") // smart single quote (right)
     }
   }),
   AutoReplace({
     trigger: /(')/,
     before: /(^)|[ ]$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("‘") // smart single quote (left)
     }
   }),
 
-  // auto-format rules
+  // long dash and ellipsis
   AutoReplace({
     trigger: "space",
     before: /( -)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText(" — ") // mdash
     }
   }),
   AutoReplace({
     trigger: "space",
     before: /(\.\.\.)$/,
-    transform: (transform, e, data, matches) => {
+    transform: (transform, event, matches) => {
       return transform.insertText("… ") // elipsis
     }
-  }),
-
-  // special editor menu for quote
-  EditBlockquote({
-    type: "quote",
-    typeDefault: "paragraph"
   }),
 
   // image inserter
@@ -173,8 +184,5 @@ export const plugins = [
           )
         })
     }
-  }),
-
-  // convenience plugins
-  TrailingBlock({ type: "paragraph" })
+  })
 ]

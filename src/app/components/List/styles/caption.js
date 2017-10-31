@@ -2,10 +2,10 @@
 import styled from "styled-components"
 
 // components
-import { Caption as ListCaption } from "../../CaptionStyles"
+import { Sidenote } from "../../CaptionStyles"
 
 // css
-export const Caption = styled(ListCaption)`
+export const Caption = styled(Sidenote)`
   display: block !important;
   overflow: hidden;
   margin: 0;

@@ -99,4 +99,6 @@ export const TimeStamp = styled.time`
   font-size: ${props => props.theme.size.font.make.tiny}em;
   margin-top: -${props => props.theme.size.block.spacing}em;
 `
-export const Article = styled.article``
+export const Article = styled.article`
+  overflow-x: hidden;
+`

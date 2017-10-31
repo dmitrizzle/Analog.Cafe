@@ -45,6 +45,13 @@ export const GridButton = styled(Button)`
     border-radius: 		${props => props.theme.effects.borderRadius.small}em;
   `};
 `
+export const GridButtonCaption = styled(Caption)`
+  font-weight: 400;
+  color: ${props => props.theme.color.background};
+  bottom: 0;
+  position: absolute;
+  right: ${props => props.theme.size.block.spacing / 2}em;
+`
 export const AspectRatio = styled.div`
   padding-top: 100%;
   & > * {
@@ -60,5 +67,4 @@ export const GridCaption = styled(Caption)`
   padding: ${props => props.theme.size.block.spacing / 2}em
     ${props => props.theme.size.block.spacing}em
     ${props => props.theme.size.block.spacing * 2}em;
-  border-bottom: ${props => props.theme.elements.thickBorder};
 `

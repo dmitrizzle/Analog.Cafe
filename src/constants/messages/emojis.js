@@ -2,6 +2,7 @@ export default {
   STAR: "✦",
   TITLE_SEPARATOR: "—",
   CHECKMARK: "✓",
+  PARAGRAPH: "❡",
   WTF: "ʕ⊙ᴥ⊙ʔ",
   // JAKE: "(❍ᴥ❍ʋ)",
   // FISTBUMP_LEFT: "੧ʕ◕ᴥ◕ʔ",
