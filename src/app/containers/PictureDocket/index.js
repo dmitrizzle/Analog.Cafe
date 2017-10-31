@@ -177,9 +177,9 @@ class PictureDocketContainer extends React.PureComponent {
       // remove docket
       .value.change()
       .removeNodeByKey(node.key)
-    this.uploadHandlerTimeout = setTimeout(() => {
+    window.requestAnimationFrame(() => {
       editor.onChange(resolvedState)
-    }, 10)
+    })
   }
 
   // insert selected image suggesstion:
@@ -195,14 +195,9 @@ class PictureDocketContainer extends React.PureComponent {
       // remove docket
       .value.change()
       .removeNodeByKey(node.key)
-    this.suggestionHandlerTimeout = setTimeout(() => {
+    window.requestAnimationFrame(() => {
       editor.onChange(resolvedState)
-    }, 10)
-  }
-
-  componentWillUnmount = () => {
-    clearTimeout(this.suggestionHandlerTimeout)
-    clearTimeout(this.uploadHandlerTimeout)
+    })
   }
 
   render = () => {
