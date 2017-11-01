@@ -86,7 +86,9 @@ class Article extends React.PureComponent {
     this.setState({
       ...this.state,
       tag: {
-        name: slugToTitle(tag, { titleCase: false }),
+        name:
+          tag.charAt(0).toUpperCase() +
+          slugToTitle(tag, { titleCase: false }).slice(1),
         route: Object.keys(ROUTE_FILTERS).find(
           key => ROUTE_FILTERS[key] === tag
         )
@@ -151,7 +153,6 @@ class Article extends React.PureComponent {
         >
           {this.props.article.status === "published" && (
             <Byline>
-              A{" "}
               <Link
                 to={this.state.tag.route}
                 style={{ textDecoration: "none" }}
