@@ -24,7 +24,7 @@ export const Subtitle = styled.h2`
 export const Byline = styled.div`
   ${props => props.theme.typography.text.auto} font-size: ${props =>
       props.theme.size.font.make.smaller}em;
-  font-variant: small-caps;
+  font-style: italic;
   display: block;
   display: inline;
   ${"" /* & a {

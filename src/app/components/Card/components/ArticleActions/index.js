@@ -35,7 +35,7 @@ const ActionsCard = props => {
         {props.nextArticle && (
           <LinkButton
             to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle}
-            title={slugToTitle(props.nextArticle)}
+            title={slugToTitle(props.nextArticle, { trim: [0, -1] })}
           >
             Next Post <span>➢</span>
           </LinkButton>

@@ -5,6 +5,8 @@ import { Editor } from "slate-react"
 import { Value } from "slate"
 import Helmet from "../../components/_async/Helmet"
 import { froth } from "../../../utils/image-froth"
+import Link from "../../components/Link"
+import slugToTitle from "../../../utils/slug-to-title"
 
 // redux & state
 import { connect } from "react-redux"
@@ -18,6 +20,7 @@ import {
   ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL,
   ROUTE_APP_PRODUCTION_DOMAIN_NAME
 } from "../../../constants/app"
+import { ROUTE_FILTERS } from "../../../constants/list"
 
 import { schema } from "../Composer/containers/ContentEditor/schema"
 import {
@@ -51,6 +54,16 @@ const safeRoute = url => {
   )
 }
 class Article extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      tag: {
+        name: "Post",
+        route: "/"
+      }
+    }
+  }
+
   fetchPage = () => {
     // do not fetch pages unless they are located in /zine dir
     // otherwise on unmount the component will try to load any page, and return 404 errors
@@ -66,6 +79,19 @@ class Article extends React.PureComponent {
   componentDidMount = () => {
     this.unlisten = this.props.history.listen(location => this.fetchPage())
     this.fetchPage()
+  }
+  componentWillReceiveProps = nextProps => {
+    const tag = nextProps.article.tag
+    if (typeof tag === "undefined") return
+    this.setState({
+      ...this.state,
+      tag: {
+        name: slugToTitle(tag, { titleCase: false }),
+        route: Object.keys(ROUTE_FILTERS).find(
+          key => ROUTE_FILTERS[key] === tag
+        )
+      }
+    })
   }
   componentWillUnmount = () => {
     this.unlisten()
@@ -125,6 +151,13 @@ class Article extends React.PureComponent {
         >
           {this.props.article.status === "published" && (
             <Byline>
+              A{" "}
+              <Link
+                to={this.state.tag.route}
+                style={{ textDecoration: "none" }}
+              >
+                <strong>{this.state.tag.name}</strong>
+              </Link>{" "}
               by{" "}
               <ModalDispatch
                 with={{
@@ -134,7 +167,7 @@ class Article extends React.PureComponent {
                 }}
               >
                 {this.props.article.author.name}
-              </ModalDispatch>
+              </ModalDispatch>.
             </Byline>
           )}
         </Heading>
