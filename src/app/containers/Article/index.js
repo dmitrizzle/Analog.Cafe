@@ -197,7 +197,7 @@ class Article extends React.PureComponent {
   }
 }
 
-// connet with redux
+// connect with redux
 const mapStateToProps = state => {
   return {
     article: state.article

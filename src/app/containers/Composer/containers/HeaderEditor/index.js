@@ -59,7 +59,7 @@ export default class extends React.PureComponent {
           caution={this.headerData.title.length > TITLE_LENGTH_OPTIMAL}
           warning={this.headerData.title.length >= TITLE_LENGTH_MAX}
           maxLength={TITLE_LENGTH_MAX}
-          autoFocus={this.headerData.title == ""}
+          autoFocus={this.headerData.title === ""}
         />
         <TitleCase
           placeholder={this.props.pageSubtitle}

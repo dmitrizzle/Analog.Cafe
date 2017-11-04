@@ -131,7 +131,7 @@ class App extends React.PureComponent {
   }
 }
 
-// connet with redux
+// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     setNavView: view => {

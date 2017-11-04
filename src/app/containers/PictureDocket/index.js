@@ -275,7 +275,7 @@ class PictureDocketContainer extends React.PureComponent {
   }
 }
 
-// connet with redux
+// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     setCard: (info, request) => {

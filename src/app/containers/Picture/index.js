@@ -155,7 +155,7 @@ class Figure extends React.Component {
   }
 }
 
-// connet with redux
+// connect with redux
 const mapStateToProps = state => {
   return {
     pictures: state.pictures
