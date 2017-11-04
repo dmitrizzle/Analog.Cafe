@@ -21,7 +21,7 @@ export default props => {
         pageTitle={titlePlaceholder.title}
         pageSubtitle={titlePlaceholder.subtitle}
       />
-      <Section>
+      <Section onClick={() => alert("Focus on Editor")}>
         <ContentEditor
           composerState={props.composerState}
           ref={input => {

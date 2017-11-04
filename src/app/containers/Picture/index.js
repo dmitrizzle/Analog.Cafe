@@ -11,6 +11,8 @@ import { getInfo } from "../../../actions/pictureActions"
 import Picture from "../../components/Picture"
 import { PlainTextarea } from "../../components/InputStyles"
 
+import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
+
 // export
 // this doesn't work as well with PureComponent:
 // author links need to be clicked twice after first load to work...
@@ -20,7 +22,9 @@ class Figure extends React.Component {
     super(props)
     this.state = { caption: props.node.data.get("caption") }
     this.handleChange = this.handleChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.handleTextareaClick = this.handleTextareaClick.bind(this)
+    this.handleRemoveImage = this.handleRemoveImage.bind(this)
+    this.handleImageFeature = this.handleImageFeature.bind(this)
   }
   componentWillReceiveProps = nextProps => {
     const caption = nextProps.node.data.get("caption")
@@ -49,7 +53,7 @@ class Figure extends React.Component {
       .setNodeByKey(node.key, properties)
     editor.onChange(resolvedState) // have to use native onChange in editor (rather than handleChange)
   }
-  handleClick = event => {
+  handleTextareaClick = event => {
     event.preventDefault()
     event.stopPropagation()
   }
@@ -85,6 +89,26 @@ class Figure extends React.Component {
     }
   }
 
+  //
+  handleRemoveImage = () => {
+    const { node, editor } = this.props
+    const resolvedState = editor.value.change().removeNodeByKey(node.key)
+    editor.onChange(resolvedState)
+  }
+  handleImageFeature = () => {
+    const { node, editor } = this.props
+    const previousData = PICTURE_DATA_OBJECT(
+      editor.value.document.getChild(node.key).data
+    )
+    let featureStatus = previousData.feature ? false : true
+    editor.onChange(
+      editor.value.change().setNodeByKey(node.key, {
+        type: "image",
+        data: { ...previousData, feature: featureStatus }
+      })
+    )
+  }
+
   render = () => {
     const { attributes, node, isSelected, editor } = this.props
     const { src } = this.state
@@ -105,12 +129,19 @@ class Figure extends React.Component {
         composer={!this.props.readOnly}
         feature={feature}
       >
+        {!this.props.readOnly &&
+          focus && (
+            <div>
+              <span onClick={this.handleRemoveImage}>Remove Image</span>
+              <span onClick={this.handleImageFeature}>Feature</span>
+            </div>
+          )}
         {!this.props.readOnly ? (
           <PlainTextarea
             value={this.state.caption}
             placeholder="Add image title, location, camera, film&hellip;"
             onChange={this.handleChange}
-            onClick={this.handleClick}
+            onClick={this.handleTextareaClick}
           />
         ) : (
           <span>{this.state.caption}</span>
