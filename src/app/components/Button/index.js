@@ -107,3 +107,27 @@ export const ButtonGroup = styled.div`
   padding: ${props => props.theme.size.block.column.safety}em 0
     ${props => props.theme.size.block.spacing * 4}em;
 `
+
+export const TinyButtonStyles = styled(LinkButton)`
+  position: absolute;
+  z-index: ${props => props.theme.layer.up - 1};
+  padding: ${props => props.theme.size.block.spacing / 5}em
+    ${props => props.theme.size.block.spacing / 2}em;
+  margin-top: 2px;
+  width: 8em;
+  border-radius: ${props => props.theme.effects.borderRadius.small}em;
+
+  right: -${props => props.theme.size.block.column.safety}em;
+  ${props => props.theme.size.breakpoint.max.m`
+		right: 0;
+	`} ${props => props.theme.size.breakpoint.max.s`
+		right: -${props => props.theme.size.block.spacing}em;
+	`};
+`
+export const TinyButton = props => {
+  return (
+    <TinyButtonStyles onClick={props.onClick} style={props.style}>
+      {props.children}
+    </TinyButtonStyles>
+  )
+}
