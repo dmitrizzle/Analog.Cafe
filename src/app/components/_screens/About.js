@@ -97,20 +97,7 @@ export default props => {
           <strong>outstanding images and stories</strong>.
         </p>
         <p>
-          Analog.Cafe’s{" "}
-          <ModalDispatch
-            with={{
-              info: {
-                title: "Editors",
-                text:
-                  "Starting Fall 2017 Analog.Cafe will be expanding its editorial team. Until then it’s just me, “dmitrizzle”. Hello!"
-              },
-              id: "footnotes/analog-cafe-editors"
-            }}
-          >
-            editor(s)
-          </ModalDispatch>{" "}
-          favour works based on{" "}
+          Analog.Cafe’s editors favour works based on{" "}
           <strong>skill, imagination, innovation and diversity</strong>.
         </p>
 
