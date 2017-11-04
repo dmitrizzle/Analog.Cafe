@@ -4147,6 +4147,10 @@ keycode@^2.1.2, keycode@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.9.tgz#964a23c54e4889405b4861a5c9f0480d45141dfa"
 
+killable@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/killable/-/killable-1.0.0.tgz#da8b84bd47de5395878f95d64d02f2449fe05e6b"
+
 kind-of@^3.0.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -5714,9 +5718,9 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-scripts@^1.0.16:
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.0.16.tgz#0d3c7ec30925fb0017cd185b1056ee085065f92c"
+react-scripts@^1.0.17:
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.0.17.tgz#c30029123b561a060227af4d7797d50a222d3fbf"
   dependencies:
     autoprefixer "7.1.6"
     babel-core "6.26.0"
@@ -5751,7 +5755,7 @@ react-scripts@^1.0.16:
     sw-precache-webpack-plugin "0.11.4"
     url-loader "0.6.2"
     webpack "3.8.1"
-    webpack-dev-server "2.9.3"
+    webpack-dev-server "2.9.4"
     webpack-manifest-plugin "1.3.2"
     whatwg-fetch "2.0.3"
   optionalDependencies:
@@ -6331,9 +6335,9 @@ slate-auto-replace@^0.9.0:
     is-hotkey "^0.0.3"
     type-of "^2.0.1"
 
-slate-base64-serializer@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.2.4.tgz#6419c4425d454133caadac50d2c4d395702de1cf"
+slate-base64-serializer@^0.2.8:
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.2.8.tgz#fef19b2cb799f5bc5f6b987834048d662102a45a"
   dependencies:
     isomorphic-base64 "^1.0.2"
 
@@ -6341,9 +6345,9 @@ slate-dev-logger@^0.1.0:
   version "0.1.27"
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.27.tgz#9fc1756c6938c35604a934e51e424330437e5b4a"
 
-slate-dev-logger@^0.1.28:
-  version "0.1.28"
-  resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.28.tgz#41bd983ea60ece5ceeaf405f2d60a86ddf09e369"
+slate-dev-logger@^0.1.32:
+  version "0.1.32"
+  resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.32.tgz#76b73d75a149d0eac0cab134965aca14f7542888"
 
 slate-drop-or-paste-images@^0.8.0:
   version "0.8.0"
@@ -6357,11 +6361,11 @@ slate-drop-or-paste-images@^0.8.0:
     mime-types "^2.1.11"
     slate-dev-logger "^0.1.0"
 
-slate-html-serializer@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/slate-html-serializer/-/slate-html-serializer-0.4.2.tgz#b507fe2cf27903f66022dc4ba64f64181dfe780b"
+slate-html-serializer@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/slate-html-serializer/-/slate-html-serializer-0.4.6.tgz#f40de75c8428656e887f9272577d8483fbd98134"
   dependencies:
-    slate-dev-logger "^0.1.28"
+    slate-dev-logger "^0.1.32"
     type-of "^2.0.1"
 
 slate-paste-linkify@^0.5.0:
@@ -6371,21 +6375,21 @@ slate-paste-linkify@^0.5.0:
     is-url "^1.2.2"
     to-pascal-case "^1.0.0"
 
-slate-plain-serializer@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/slate-plain-serializer/-/slate-plain-serializer-0.4.2.tgz#41d9c293b4e3e39080dcd9bc5c40f70c022355a4"
+slate-plain-serializer@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/slate-plain-serializer/-/slate-plain-serializer-0.4.6.tgz#1fa04ff7c9fd74ed5cedcdfdad8120eb4c4cef6a"
   dependencies:
-    slate-dev-logger "^0.1.28"
+    slate-dev-logger "^0.1.32"
 
-slate-prop-types@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.4.2.tgz#6d4f3182c9219ab43f1b797a00f5893464cdfb2f"
+slate-prop-types@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.4.6.tgz#ff7927430d03fa30bfa44ead5367867b209e5985"
   dependencies:
-    slate-dev-logger "^0.1.28"
+    slate-dev-logger "^0.1.32"
 
-slate-react@^0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.10.3.tgz#b57011487001ad1d5db43cab38a38d1cf0afbf7c"
+slate-react@^0.10.11:
+  version "0.10.11"
+  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.10.11.tgz#5fbfbf0da2dd726df468d788d2bd81dd578a15a3"
   dependencies:
     debug "^2.3.2"
     get-window "^1.1.1"
@@ -6397,14 +6401,14 @@ slate-react@^0.10.3:
     react-immutable-proptypes "^2.1.0"
     react-portal "^3.1.0"
     selection-is-backward "^1.0.0"
-    slate-base64-serializer "^0.2.4"
-    slate-dev-logger "^0.1.28"
-    slate-plain-serializer "^0.4.2"
-    slate-prop-types "^0.4.2"
+    slate-base64-serializer "^0.2.8"
+    slate-dev-logger "^0.1.32"
+    slate-plain-serializer "^0.4.6"
+    slate-prop-types "^0.4.6"
 
-slate@^0.30.2:
-  version "0.30.2"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.30.2.tgz#b35ca119f52b68cdf8781082e86245d15d87128a"
+slate@^0.30.6:
+  version "0.30.6"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.30.6.tgz#32a02bbad3c44d9de9f1a17fa2fd831d2f4e7a99"
   dependencies:
     debug "^2.3.2"
     direction "^0.1.5"
@@ -6412,7 +6416,7 @@ slate@^0.30.2:
     is-empty "^1.0.0"
     is-plain-object "^2.0.4"
     lodash "^4.17.4"
-    slate-dev-logger "^0.1.28"
+    slate-dev-logger "^0.1.32"
     type-of "^2.0.1"
 
 slice-ansi@0.0.4:
@@ -7212,9 +7216,9 @@ webpack-dev-middleware@^1.11.0:
     range-parser "^1.0.3"
     time-stamp "^2.0.0"
 
-webpack-dev-server@2.9.3:
-  version "2.9.3"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.9.3.tgz#f0554e88d129e87796a6f74a016b991743ca6f81"
+webpack-dev-server@2.9.4:
+  version "2.9.4"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.9.4.tgz#7883e61759c6a4b33e9b19ec4037bd4ab61428d1"
   dependencies:
     ansi-html "0.0.7"
     array-includes "^3.0.3"
@@ -7230,6 +7234,7 @@ webpack-dev-server@2.9.3:
     import-local "^0.1.1"
     internal-ip "1.2.0"
     ip "^1.1.5"
+    killable "^1.0.0"
     loglevel "^1.4.1"
     opn "^5.1.0"
     portfinder "^1.0.9"
