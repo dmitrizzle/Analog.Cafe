@@ -71,9 +71,14 @@ class Figure extends React.Component {
         reader.addEventListener("load", () =>
           this.setState({ src: reader.result })
         )
-        if (Object.keys(file).length === 0 && file.constructor === Object) {
+        console.log(file)
+        if (
+          data &&
+          Object.keys(file).length === 0 &&
+          file.constructor === Object
+        ) {
           reader.readAsDataURL(data)
-        } else {
+        } else if (file.constructor !== Object) {
           reader.readAsDataURL(file)
         }
       })
