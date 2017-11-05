@@ -30,7 +30,7 @@ export const MESSAGE_HINT_IMAGE_SUGGESTIONS = {
   info: {
     title: "Instant Collaboration",
     text:
-      "Creating together is easy! Simply select a photograph that fits your submission. You and the photographer will be credited and listed under “collaborations” category."
+      "Creating together is easy! Simply select a photograph below that fits your work. You and the photographer will be credited and have links to your profiles on each post."
   },
   id: "hints/image-suggestions"
 }

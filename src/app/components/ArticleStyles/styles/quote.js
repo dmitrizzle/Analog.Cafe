@@ -76,7 +76,7 @@ const marks = css`
 export const Quote = css`
   ${base} ${content} ${marks};
   ${props => props.theme.size.breakpoint.min.l`
-  & > span {
+  &:not(.focus) > span {
     ${"" /* shim to ensure that first huge letter doesn't get sliced by Chrome */}
     display: block;
     min-height: 10.5em;

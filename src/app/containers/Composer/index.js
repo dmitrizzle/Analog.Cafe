@@ -1,6 +1,10 @@
 // tools
 import React from "react"
 
+// redux
+import { connect } from "react-redux"
+import { requestFocus as requestEditorFocus } from "../../../actions/composerActions"
+
 // components
 import HeaderEditor from "./containers/HeaderEditor"
 import ContentEditor from "./containers/ContentEditor"
@@ -13,7 +17,7 @@ const titlePlaceholder = {
 }
 
 // return
-export default props => {
+const Composer = props => {
   return (
     <div>
       <HeaderEditor
@@ -21,7 +25,7 @@ export default props => {
         pageTitle={titlePlaceholder.title}
         pageSubtitle={titlePlaceholder.subtitle}
       />
-      <Section>
+      <Section onClick={props.requestEditorFocus}>
         <ContentEditor
           composerState={props.composerState}
           ref={input => {
@@ -32,6 +36,16 @@ export default props => {
     </div>
   )
 }
+
+// connect with redux
+const mapDispatchToProps = dispatch => {
+  return {
+    requestEditorFocus: () => {
+      dispatch(requestEditorFocus())
+    }
+  }
+}
+export default connect(null, mapDispatchToProps)(Composer)
 
 // NOTE: this is a pure component but it's in the containers folder to help tie
 // everything together.

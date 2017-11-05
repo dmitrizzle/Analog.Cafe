@@ -102,7 +102,7 @@ class SignIn extends React.PureComponent {
   }
 }
 
-// connet with redux
+// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     verifyUser: () => {

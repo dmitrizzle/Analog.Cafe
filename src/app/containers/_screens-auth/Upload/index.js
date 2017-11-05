@@ -162,7 +162,7 @@ class Upload extends React.PureComponent {
   }
 }
 
-// connet with redux
+// connect with redux
 const mapStateToProps = state => {
   return {
     user: state.user,

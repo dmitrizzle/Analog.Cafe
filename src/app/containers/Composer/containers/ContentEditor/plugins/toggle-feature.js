@@ -1,5 +1,6 @@
 // tools
 import keycode from "keycode"
+import { PICTURE_DATA_OBJECT } from "../../../../../../constants/picture"
 
 // return
 export const ToggleFeature = options => {
@@ -12,14 +13,7 @@ export const ToggleFeature = options => {
       if (value.focusBlock.type !== "image") return
       event.preventDefault()
 
-      const previousDataImmutable = value.focusBlock.data
-      const previousData = {
-        feature: previousDataImmutable.get("feature"),
-        file: previousDataImmutable.get("file"),
-        src: previousDataImmutable.get("src"),
-        key: previousDataImmutable.get("key"),
-        caption: previousDataImmutable.get("caption")
-      }
+      const previousData = PICTURE_DATA_OBJECT(value.focusBlock.data)
       let featureStatus = previousData.feature ? false : true
       change.setBlock({
         type: "image",

@@ -61,6 +61,13 @@ export const froth = (options = {}) => {
         type
     }
   }
+  console.log({
+    src,
+    type,
+    ratio,
+    width,
+    height
+  })
   return {
     src,
     type,

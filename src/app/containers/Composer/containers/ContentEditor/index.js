@@ -4,6 +4,9 @@ import { Editor } from "slate-react"
 import { Value } from "slate"
 import getOffsets from "positions"
 
+// redux
+import { connect } from "react-redux"
+
 // components
 import ImageButton from "./components/ImageButton"
 
@@ -18,10 +21,12 @@ import {
 } from "../../../../../utils/composer-saver"
 
 // return
-export default class extends React.PureComponent {
+class ContentEditor extends React.PureComponent {
   constructor(props) {
     super(props)
     this.props.composerState.raw = loadContent()
+
+    this.handleClickPropagation = this.handleClickPropagation.bind(this)
 
     // composerState is what appears by default in composer once the user opens the view
     this.state = {
@@ -87,6 +92,17 @@ export default class extends React.PureComponent {
     })
   }
 
+  handleClickPropagation = event => {
+    event.stopPropagation()
+  }
+  componentWillReceiveProps = nextProps => {
+    if (
+      this.props.composer.editorFocusRequested <
+      nextProps.composer.editorFocusRequested
+    )
+      this.slateEditor.focus()
+  }
+
   // render
   render = () => {
     return (
@@ -104,9 +120,19 @@ export default class extends React.PureComponent {
           placeholder={"Write your story…"}
           value={this.state.value}
           onChange={this.handleChange}
+          onClick={this.handleClickPropagation}
           style={{ minHeight: "28em" }}
+          ref={input => (this.slateEditor = input)}
         />
       </div>
     )
   }
 }
+
+// connect with redux
+const mapStateToProps = state => {
+  return {
+    composer: state.composer
+  }
+}
+export default connect(mapStateToProps)(ContentEditor)

@@ -5,8 +5,6 @@ import React from "react"
 import Heading from "../ArticleHeading"
 import { Section, Article } from "../ArticleStyles"
 import SignInWithEmail from "../../containers/_forms/EmailReminder"
-import Figure from "../Picture"
-import Link from "../Link"
 
 // render
 export default props => {

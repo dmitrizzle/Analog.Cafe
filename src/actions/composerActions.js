@@ -4,3 +4,8 @@ export const setDraftStatus = status => {
     payload: status
   }
 }
+export const requestFocus = () => {
+  return {
+    type: "COMPOSER.REQUEST_FOCUS"
+  }
+}
