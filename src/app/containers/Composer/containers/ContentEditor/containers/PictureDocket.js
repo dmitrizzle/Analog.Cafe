@@ -31,7 +31,7 @@ import { ROUTE_AUTHOR_API } from "../../../../../../constants/author"
 import errorMessages from "../../../../../../constants/messages/errors"
 const suggestions = [
   {
-    id: "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+    id: "image-froth_658824_ry3-Wh3CZ",
     author: {
       name: "dmitrizzle",
       id: "dmitrizzle"
@@ -45,42 +45,42 @@ const suggestions = [
     }
   },
   {
-    id: "image-froth_615281_5882b729360a465491c07860f6ec32e5",
+    id: "image-froth_623086_BkbGYohCW",
     author: {
       name: "dmitrizzle",
       id: "dmitrizzle"
     }
   },
   {
-    id: "image-froth_1522572_19174bdd522e4ab185e52d9d6fe9e868",
+    id: "image-froth_664111_SynOy3n0b",
     author: {
       name: "dmitrizzle",
       id: "dmitrizzle"
     }
   },
   {
-    id: "image-froth_1542912_2fdd00455a0249c18bda84128470b341",
+    id: "image-froth_1493506_B1u2qi3CZ",
+    author: {
+      name: "Betty",
+      id: "betty"
+    }
+  },
+  {
+    id: "image-froth_660572_rkv4x2h0W",
     author: {
       name: "dmitrizzle",
       id: "dmitrizzle"
     }
   },
   {
-    id: "image-froth_1515070_603a06c453204daa8983a81bbbeb2c63",
+    id: "image-froth_701295_Sy1L0ohAW",
     author: {
       name: "dmitrizzle",
       id: "dmitrizzle"
     }
   },
   {
-    id: "image-froth_669104_8df1a40cea1746d79967ec4e694b59d9",
-    author: {
-      name: "dmitrizzle",
-      id: "dmitrizzle"
-    }
-  },
-  {
-    id: "image-froth_669104_a3b70899a1e74905bcb73b1e566943fc",
+    id: "image-froth_663121_HJILTj2RW",
     author: {
       name: "dmitrizzle",
       id: "dmitrizzle"
