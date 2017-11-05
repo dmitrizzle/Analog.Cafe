@@ -10,6 +10,7 @@ import { getInfo } from "../../../actions/pictureActions"
 // components
 import Picture from "../../components/Picture"
 import { PlainTextarea } from "../../components/InputStyles"
+import PictureMenu from "../Composer/containers/ContentEditor/components/PictureMenu"
 
 import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
 
@@ -23,8 +24,8 @@ class Figure extends React.Component {
     this.state = { caption: props.node.data.get("caption") }
     this.handleChange = this.handleChange.bind(this)
     this.handleTextareaClick = this.handleTextareaClick.bind(this)
-    this.handleRemoveImage = this.handleRemoveImage.bind(this)
-    this.handleImageFeature = this.handleImageFeature.bind(this)
+    this.handleRemovePicture = this.handleRemovePicture.bind(this)
+    this.handleFeaturePicture = this.handleFeaturePicture.bind(this)
   }
   componentWillReceiveProps = nextProps => {
     const caption = nextProps.node.data.get("caption")
@@ -75,7 +76,6 @@ class Figure extends React.Component {
         reader.addEventListener("load", () =>
           this.setState({ src: reader.result })
         )
-        console.log(file)
         if (
           data &&
           Object.keys(file).length === 0 &&
@@ -90,22 +90,25 @@ class Figure extends React.Component {
   }
 
   //
-  handleRemoveImage = () => {
+  handleRemovePicture = () => {
     const { node, editor } = this.props
     const resolvedState = editor.value.change().removeNodeByKey(node.key)
     editor.onChange(resolvedState)
   }
-  handleImageFeature = () => {
+  handleFeaturePicture = () => {
     const { node, editor } = this.props
     const previousData = PICTURE_DATA_OBJECT(
       editor.value.document.getChild(node.key).data
     )
     let featureStatus = previousData.feature ? false : true
     editor.onChange(
-      editor.value.change().setNodeByKey(node.key, {
-        type: "image",
-        data: { ...previousData, feature: featureStatus }
-      })
+      editor.value
+        .change()
+        .setNodeByKey(node.key, {
+          type: "image",
+          data: { ...previousData, feature: featureStatus }
+        })
+        .focus()
     )
   }
 
@@ -129,13 +132,13 @@ class Figure extends React.Component {
         composer={!this.props.readOnly}
         feature={feature}
       >
-        {!this.props.readOnly &&
-          focus && (
-            <div>
-              <span onClick={this.handleRemoveImage}>Remove Image</span>
-              <span onClick={this.handleImageFeature}>Feature</span>
-            </div>
-          )}
+        {!this.props.readOnly && (
+          <PictureMenu
+            focus={focus}
+            removePicture={this.handleRemovePicture}
+            featurePicture={this.handleFeaturePicture}
+          />
+        )}
         {!this.props.readOnly ? (
           <PlainTextarea
             value={this.state.caption}

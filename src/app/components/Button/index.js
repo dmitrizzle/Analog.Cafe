@@ -108,26 +108,30 @@ export const ButtonGroup = styled.div`
     ${props => props.theme.size.block.spacing * 4}em;
 `
 
-export const TinyButtonStyles = styled(LinkButton)`
-  position: absolute;
-  z-index: ${props => props.theme.layer.up - 1};
+export const TinyButtonStyles = styled(
+  ({ red, black, responsiveMobileOnly, followComposerCursor, ...props }) => (
+    <LinkButton {...props} />
+  )
+)`
   padding: ${props => props.theme.size.block.spacing / 5}em
     ${props => props.theme.size.block.spacing / 2}em;
-  margin-top: 2px;
   width: 8em;
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
 
-  right: -${props => props.theme.size.block.column.safety}em;
-  ${props => props.theme.size.breakpoint.max.m`
+  ${props =>
+    props.followComposerCursor &&
+    `
+  margin-top: 2px;
+  position: absolute;
+  z-index: ${props.theme.layer.up - 1};
+  right: -${props.theme.size.block.column.safety}em;
+  ${props.theme.size.breakpoint.max.m`
 		right: 0;
-	`} ${props => props.theme.size.breakpoint.max.s`
-		right: -${props => props.theme.size.block.spacing}em;
+	`} ${props.theme.size.breakpoint.max.s`
+		right: -${props.theme.size.block.spacing}em;
 	`};
+  `};
 `
 export const TinyButton = props => {
-  return (
-    <TinyButtonStyles onClick={props.onClick} style={props.style}>
-      {props.children}
-    </TinyButtonStyles>
-  )
+  return <TinyButtonStyles {...props}>{props.children}</TinyButtonStyles>
 }

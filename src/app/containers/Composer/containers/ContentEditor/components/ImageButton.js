@@ -6,9 +6,9 @@ import { TinyButton } from "../../../../../components/Button"
 
 // return
 export default props => {
-  console.log(props.cursorContext && props.cursorContext.parentBlockOffsets.top)
   return (
     <TinyButton
+      followComposerCursor
       style={{
         top: props.cursorContext
           ? props.cursorContext.parentBlockOffsets.top
