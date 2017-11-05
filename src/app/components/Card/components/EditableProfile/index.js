@@ -11,7 +11,6 @@ import {
   CardHeaderEditable
 } from "./styles"
 import { SubtitleInput } from "../../../InputStyles"
-import { dot } from "../../../_icons/components/BlankDot"
 
 // constants
 import {
@@ -36,7 +35,7 @@ export default props => {
       <figure>
         <PicturePlaceholder frothId={props.image}>
           <img
-            src={froth({ src: props.image, size: "s" }).src || dot}
+            src={froth({ src: props.image, size: "s" }).src}
             alt="Profile avatar"
             onClick={() => props.changeImage()}
             style={{ cursor: "pointer" }}

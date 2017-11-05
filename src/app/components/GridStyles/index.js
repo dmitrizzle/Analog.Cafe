@@ -1,7 +1,7 @@
 // tools
 import styled, { css } from "styled-components"
 import { Button } from "../Button"
-import { Caption } from "../CaptionStyles"
+import { Sidenote } from "../CaptionStyles"
 
 // css
 const squreWidth = css`
@@ -45,7 +45,7 @@ export const GridButton = styled(Button)`
     border-radius: 		${props => props.theme.effects.borderRadius.small}em;
   `};
 `
-export const GridButtonCaption = styled(Caption)`
+export const GridButtonCaption = styled(Sidenote)`
   font-weight: 400;
   color: ${props => props.theme.color.background};
   bottom: 0;
@@ -62,7 +62,7 @@ export const AspectRatio = styled.div`
     bottom: 0;
   }
 `
-export const GridCaption = styled(Caption)`
+export const GridCaption = styled(Sidenote)`
   text-align: center;
   padding: ${props => props.theme.size.block.spacing / 2}em
     ${props => props.theme.size.block.spacing}em

@@ -40,12 +40,12 @@ const suggestions = [
   {
     id: "image-froth_1546790_b5ff5d48edf8488387d39f64e18b2916",
     author: {
-      name: "dmitrizzle",
-      id: "dmitrizzle"
+      name: "Betty",
+      id: "betty"
     }
   },
   {
-    id: "image-froth_1494432_2ed2035b7e154d6c88cb0280406f7193",
+    id: "image-froth_615281_5882b729360a465491c07860f6ec32e5",
     author: {
       name: "dmitrizzle",
       id: "dmitrizzle"

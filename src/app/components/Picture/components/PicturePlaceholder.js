@@ -2,6 +2,7 @@
 import styled from "styled-components"
 import { froth } from "../../../../utils/image-froth"
 
+const isImage = src => {}
 export const PicturePlaceholder = styled.div`
   padding-bottom: ${props =>
     froth({ src: props.frothId }).ratio
@@ -11,9 +12,7 @@ export const PicturePlaceholder = styled.div`
   height: ${props =>
     froth({ src: props.frothId }).ratio ? "0 !important" : "initial"};
   position: relative !important;
-  display: ${props =>
-    !props.preserve &&
-    (froth({ src: props.frothId }).ratio ? "block" : "none")};
+  display: ${props => !props.preserve && (props.frothId ? "block" : "none")};
 
   & > :first-child {
     width: 100%;
