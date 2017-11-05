@@ -2,8 +2,9 @@
 import React from "react"
 import Slate from "slate"
 import Picture from "../../../Picture"
-import PictureDocket from "../../../PictureDocket"
+import PictureDocket from "./containers/PictureDocket"
 import Link from "../../../../components/Link"
+import { TinyButton } from "../../../../components/Button"
 
 // helpers
 import { parseHref } from "../../../../../utils/link-builder"
@@ -24,9 +25,19 @@ export const renderNode = props => {
       return <hr className={focusClassName} />
     case "quote":
       return (
-        <blockquote {...attributes} className={focusClassName}>
-          {children}
-        </blockquote>
+        <div>
+          <TinyButton
+            style={{
+              margin: "1em -1.5em -3em 0",
+              float: "right"
+            }}
+          >
+            Unquote
+          </TinyButton>
+          <blockquote {...attributes} className={focusClassName}>
+            {children}
+          </blockquote>
+        </div>
       )
     case "image":
       return <Picture {...props} />

@@ -28,7 +28,6 @@ export default props => {
           props.removePicture()
         }}
         style={{ width: "6em" }}
-        red
       >
         Delete
       </TinyButton>
@@ -38,6 +37,7 @@ export default props => {
           event.stopPropagation()
           props.featurePicture()
         }}
+        title="⌘ + F"
       >
         Change Size
       </TinyButton>

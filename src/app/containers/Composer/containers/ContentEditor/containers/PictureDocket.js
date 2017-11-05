@@ -2,16 +2,16 @@
 import React from "react"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
-import { froth } from "../../../utils/image-froth"
-import { imageSizeLimit } from "../../../utils/upload-utils"
+import { froth } from "../../../../../../utils/image-froth"
+import { imageSizeLimit } from "../../../../../../utils/upload-utils"
 
 // redux
 import { connect } from "react-redux"
-import { setCard } from "../../../actions/modalActions"
+import { setCard } from "../../../../../../actions/modalActions"
 
 // components
-import PictureDocket from "../../components/PictureDocket"
-import { CardHeader } from "../../components/Card/styles"
+import PictureDocket from "../../../../../components/PictureDocket"
+import { CardHeader } from "../../../../../components/Card/styles"
 import {
   GridContainer,
   GridRow,
@@ -19,16 +19,16 @@ import {
   GridButtonCaption,
   GridCaption,
   AspectRatio
-} from "../../components/GridStyles"
-import { ModalDispatch } from "../Modal"
+} from "../../../../../components/GridStyles"
+import { ModalDispatch } from "../../../../Modal"
 
 // styles
-import { dot } from "../../components/_icons/components/BlankDot"
+import { dot } from "../../../../../components/_icons/components/BlankDot"
 
 // constants
-import { MESSAGE_HINT_IMAGE_SUGGESTIONS } from "../../../constants/messages/hints"
-import { ROUTE_AUTHOR_API } from "../../../constants/author"
-import errorMessages from "../../../constants/messages/errors"
+import { MESSAGE_HINT_IMAGE_SUGGESTIONS } from "../../../../../../constants/messages/hints"
+import { ROUTE_AUTHOR_API } from "../../../../../../constants/author"
+import errorMessages from "../../../../../../constants/messages/errors"
 const suggestions = [
   {
     id: "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
