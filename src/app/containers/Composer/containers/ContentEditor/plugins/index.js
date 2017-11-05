@@ -59,6 +59,7 @@ export const plugins = [
   AutoReplace({
     trigger: "backspace",
     after: /./,
+    before: /^$/,
     onlyIn: "quote",
     transform: (transform, event, matches) => {
       return transform.setBlock({ type: "paragraph" }) // transform quote to paragraph
@@ -104,6 +105,7 @@ export const plugins = [
   AutoReplace({
     trigger: "backspace",
     after: /./,
+    before: /^$/,
     onlyIn: "heading",
     transform: (transform, event, matches) => {
       return transform.setBlock({ type: "paragraph" }) // cancel heading

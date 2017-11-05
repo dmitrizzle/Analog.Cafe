@@ -26,14 +26,33 @@ export const renderNode = props => {
     case "quote":
       return (
         <div>
-          <TinyButton
-            style={{
-              margin: "1em -1.5em -3em 0",
-              float: "right"
-            }}
-          >
-            Unquote
-          </TinyButton>
+          {!props.readOnly &&
+            focus && (
+              <TinyButton
+                style={{
+                  width: "6em",
+                  margin: "1.35em -1.5em -3.35em 0px",
+                  float: "right",
+                  position: "relative",
+                  zIndex: "1"
+                }}
+                contentEditable="false"
+                suppressContentEditableWarning
+                onClick={event => {
+                  event.preventDefault()
+                  editor.onChange(
+                    editor.value
+                      .change()
+                      .setNodeByKey(attributes["data-key"], {
+                        type: "paragraph"
+                      })
+                      .focus()
+                  )
+                }}
+              >
+                Unquote
+              </TinyButton>
+            )}
           <blockquote {...attributes} className={focusClassName}>
             {children}
           </blockquote>
