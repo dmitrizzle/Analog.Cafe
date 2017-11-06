@@ -154,6 +154,7 @@ class ContentEditor extends React.PureComponent {
       }.bind(this),
       false
     )
+    // cancel highlights when drag intent has finished
     document.addEventListener(
       "dragleave",
       function() {
@@ -166,6 +167,16 @@ class ContentEditor extends React.PureComponent {
       function(event) {
         event.preventDefault()
         this.handleDragEnd()
+      }.bind(this),
+      false
+    )
+    // blur editor on Esc (remove highlights and guides for preview)
+    document.addEventListener(
+      "keydown",
+      function(event) {
+        if (event.keyCode == 27) {
+          this.slateEditor.blur()
+        }
       }.bind(this),
       false
     )
