@@ -101,6 +101,10 @@ const GridButtonImage = props => {
             }).src
           }
           alt="Editor’s suggestion"
+          onDragStart={event => {
+            event.preventDefault()
+            event.stopPropagation()
+          }}
         />
       </AspectRatio>
       <GridButtonCaption>
