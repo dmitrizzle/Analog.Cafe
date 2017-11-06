@@ -174,7 +174,7 @@ class ContentEditor extends React.PureComponent {
     document.addEventListener(
       "keydown",
       function(event) {
-        if (event.keyCode == 27) {
+        if (event.keyCode === 27) {
           this.slateEditor.blur()
         }
       }.bind(this),
