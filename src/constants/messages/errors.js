@@ -48,7 +48,11 @@ export default {
       error: "Error: Viewing this content requires matching log in (403)"
     },
     CODE_401: {
-      error: "Error: You need to sign in to access your account (401)"
+      error: "Error: You need to sign in to access your account (401)",
+      TokenExpiredError:
+        "You have been automatically signed out, please sign in again (401)",
+      JsonWebTokenError:
+        "You will need to sign in again should you want to submit or edit your account (401) "
     }
   }
 }

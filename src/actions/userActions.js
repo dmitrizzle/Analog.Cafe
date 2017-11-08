@@ -7,11 +7,13 @@ import { axiosRequest } from "../utils/axios-request"
 import { ROUTE_USER_API } from "../constants/user"
 
 // error message
-const loginError = {
-  status: "ok",
-  info: {
-    title: errorMessages.VIEW_TEMPLATE.CARD.title,
-    text: errorMessages.DISAMBIGUATION.CODE_401.error
+const loginError = (type = "error") => {
+  return {
+    status: "ok",
+    info: {
+      title: errorMessages.VIEW_TEMPLATE.CARD.title,
+      text: errorMessages.DISAMBIGUATION.CODE_401[type]
+    }
   }
 }
 
@@ -64,8 +66,13 @@ export const getInfo = () => {
         })
       })
       .catch(error => {
-        if (error.response.status) localStorage.removeItem("token") // clean up broken token
-        dispatch(setCard(loginError, { url: "errors/user" }))
+        localStorage.removeItem("token") // clean up broken/old token
+        if (!error.response.data) return
+        dispatch(
+          setCard(loginError(error.response.data.message), {
+            url: "errors/user"
+          })
+        )
       })
   }
 }
