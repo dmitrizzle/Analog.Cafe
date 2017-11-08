@@ -10,6 +10,7 @@ const Menu = styled.div`
   width: 10em;
   position: absolute;
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
+  z-index: ${props => props.theme.layer.up};
 `
 const Item = styled(({ left, right, script, ...props }) => (
   <TinyButton {...props} />
@@ -39,14 +40,14 @@ const Item = styled(({ left, right, script, ...props }) => (
 export default props => {
   return (
     <Menu innerRef={props.menuRef}>
-      <Item left style={{ textShadow: "2px 2px rgba(44, 44, 44, 0.5)" }}>
+      <Item red left style={{ textShadow: "2px 2px rgba(255, 255, 255, 0.5)" }}>
         T
       </Item>
-      <Item>❝</Item>
-      <Item script>
+      <Item red>❝</Item>
+      <Item script red>
         <strong style={{ fontWeight: "700 !important" }}>bold</strong>
       </Item>
-      <Item right script>
+      <Item right script red>
         <em>italic</em>
       </Item>
     </Menu>

@@ -109,7 +109,7 @@ export const ButtonGroup = styled.div`
 `
 
 export const TinyButtonStyles = styled(
-  ({ red, black, responsiveMobileOnly, followComposerCursor, ...props }) => (
+  ({ responsiveMobileOnly, followComposerCursor, ...props }) => (
     <LinkButton {...props} />
   )
 )`
