@@ -9,6 +9,7 @@ import { connect } from "react-redux"
 
 // components
 import ImageButton from "./components/ImageButton"
+import Menu from "./components/FormatMenu"
 
 // helpers, plugins & schema
 import { plugins } from "./plugins"
@@ -129,6 +130,37 @@ class ContentEditor extends React.PureComponent {
     })
   }
 
+  // hover menu
+  componentDidMount = () => {
+    this.updateMenu()
+  }
+  componentDidUpdate = () => {
+    this.updateMenu()
+  }
+  updateMenu = () => {
+    const { value } = this.state
+    const menu = this.menu
+    if (!menu) return
+    if (window.getSelection().rangeCount <= 0) return
+
+    const selection = window.getSelection()
+    const range = selection.getRangeAt(0)
+    const rect = range.getBoundingClientRect()
+    if (value.isBlurred || value.isEmpty) {
+      menu.style.display = "none"
+      return
+    }
+    menu.style.display = ""
+    menu.style.top = `${rect.top + window.scrollY - menu.offsetHeight + 3}px`
+    menu.style.left = `${rect.left +
+      window.scrollX -
+      menu.offsetWidth / 2 +
+      rect.width / 2}px`
+  }
+  menuRef = menu => {
+    this.menu = menu
+  }
+
   // render
   render = () => {
     window.ondragover = function() {
@@ -182,31 +214,39 @@ class ContentEditor extends React.PureComponent {
     )
 
     return (
-      <div style={{ position: "relative" }}>
-        <ImageButton
-          cursorContext={this.state.cursorContext}
-          onClick={this.handleImageButton}
-        />
-        <Editor
-          plugins={plugins}
-          renderNode={renderNode}
-          renderMark={renderMark}
-          validateNode={validateNode}
-          schema={this.state.schema}
-          placeholder={"Write your story…"}
-          value={this.state.value}
+      <div>
+        <div style={{ position: "relative" }}>
+          <ImageButton
+            cursorContext={this.state.cursorContext}
+            onClick={this.handleImageButton}
+          />
+          <Editor
+            plugins={plugins}
+            renderNode={renderNode}
+            renderMark={renderMark}
+            validateNode={validateNode}
+            schema={this.state.schema}
+            placeholder={"Write your story…"}
+            value={this.state.value}
+            onChange={this.handleChange}
+            onClick={this.handleClickPropagation}
+            onBlur={this.handleBlur}
+            onFocus={this.handleFocus}
+            style={{
+              minHeight: "28em",
+              boxShadow: this.state.editorFocus
+                ? "0 1px 0 0 rgba(44,44,44,.15)"
+                : "",
+              background: this.state.dragOver ? "rgba(44,44,44,.15)" : ""
+            }}
+            ref={input => (this.slateEditor = input)}
+          />
+        </div>
+
+        <Menu
+          menuRef={this.menuRef}
           onChange={this.handleChange}
-          onClick={this.handleClickPropagation}
-          onBlur={this.handleBlur}
-          onFocus={this.handleFocus}
-          style={{
-            minHeight: "28em",
-            boxShadow: this.state.editorFocus
-              ? "0 1px 0 0 rgba(44,44,44,.15)"
-              : "",
-            background: this.state.dragOver ? "rgba(44,44,44,.15)" : ""
-          }}
-          ref={input => (this.slateEditor = input)}
+          value={this.state.value}
         />
       </div>
     )

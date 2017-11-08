@@ -23,6 +23,10 @@ export const Paper = {
     }
   },
   typography: {
+    font: {
+      sans: "'Exo 2'",
+      serif: "Lora"
+    },
     title: {
       auto: css`
         font-family: Arial, sans-serif;
@@ -36,7 +40,7 @@ export const Paper = {
         }
       `,
       fontsLoaded: css`
-        font-family: "Exo 2", Arial, sans-serif;
+        font-family: ${() => Paper.typography.font.sans}, Arial, sans-serif;
         letter-spacing: 0.025em;
         font-weight: 600;
       `,
@@ -52,7 +56,7 @@ export const Paper = {
         }
       `,
       fontsLoaded: css`
-        font-family: Lora, Georgia, serif;
+        font-family: ${() => Paper.typography.font.serif}, Georgia, serif;
         letter-spacing: 0.025em;
       `,
       lineHeight: 1.75 // base: multiplier
