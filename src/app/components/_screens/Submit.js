@@ -42,7 +42,14 @@ export default props => {
       />
       <Section>
         <div style={{ textAlign: "center" }}>
-          <LinkButton to="/submit/compose" red>
+          <LinkButton
+            to={
+              process.env.NODE_ENV === "development"
+                ? "/submit/compose"
+                : "/beta/compose"
+            }
+            red
+          >
             Submit Now
           </LinkButton>
           <p>
@@ -215,18 +222,34 @@ export default props => {
             <small>
               <strong>
                 By using the Analog.Cafe{" "}
-                <Link to="/submit/compose">Composer</Link> tool you certify that
-                the you are the owner of the copyrights or have a permission to
-                use in this context all the images, text, files or other
-                intellectual property that you submit to Analog.Cafe, and that
-                you agree to the above terms, conditions and benifits.
+                <Link
+                  to={
+                    process.env.NODE_ENV === "development"
+                      ? "/submit/compose"
+                      : "/beta/compose"
+                  }
+                >
+                  Composer
+                </Link>{" "}
+                tool you certify that the you are the owner of the copyrights or
+                have a permission to use in this context all the images, text,
+                files or other intellectual property that you submit to
+                Analog.Cafe, and that you agree to the above terms, conditions
+                and benifits.
               </strong>
             </small>
           </p>
         </Caption>
 
         <ButtonGroup>
-          <LinkButton to="/submit/compose" red>
+          <LinkButton
+            to={
+              process.env.NODE_ENV === "development"
+                ? "/submit/compose"
+                : "/beta/compose"
+            }
+            red
+          >
             Submit Now
           </LinkButton>
           <p>
