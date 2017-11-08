@@ -11,7 +11,7 @@ export const MESSAGE_HINT_SUBMIT_CONSENT = {
   info: {
     title: "Open for Collaborations?",
     text:
-      "Creating beautiful things together is easy. If you choose “Yes” your images may appear in other photo essays, stories, articles on Analog.Cafe. You and the authors that you collaborate with will be credited and listed under “collaborations” category. We take care of everything else.",
+      "Creating beautiful things together is easy. If you choose “Yes” your images may appear in other photo essays, stories, articles on Analog.Cafe. You and the authors that you collaborate with will be credited and have links to your profiles on each post. We take care of everything else.",
     buttons: [
       {
         to: "/submit/confirm-full-consent",

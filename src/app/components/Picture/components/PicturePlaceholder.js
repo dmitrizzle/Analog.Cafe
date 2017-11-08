@@ -2,7 +2,6 @@
 import styled from "styled-components"
 import { froth } from "../../../../utils/image-froth"
 
-const isImage = src => {}
 export const PicturePlaceholder = styled.div`
   padding-bottom: ${props =>
     froth({ src: props.frothId }).ratio

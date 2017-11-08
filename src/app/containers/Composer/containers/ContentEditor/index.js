@@ -37,7 +37,9 @@ class ContentEditor extends React.PureComponent {
         isFocused: false,
         newLine: false,
         parentBlockOffsets: { top: 0, left: 0 }
-      }
+      },
+      dragOver: false,
+      editorFocus: false
     }
   }
 
@@ -99,12 +101,86 @@ class ContentEditor extends React.PureComponent {
     if (
       this.props.composer.editorFocusRequested <
       nextProps.composer.editorFocusRequested
-    )
+    ) {
       this.slateEditor.focus()
+      this.setState({
+        editorFocus: true
+      })
+    }
+  }
+  handleBlur = () => {
+    this.setState({
+      editorFocus: false
+    })
+  }
+  handleFocus = () => {
+    this.setState({
+      editorFocus: true
+    })
+  }
+  handleDragOver = () => {
+    this.setState({
+      dragOver: true
+    })
+  }
+  handleDragEnd = () => {
+    this.setState({
+      dragOver: false
+    })
   }
 
   // render
   render = () => {
+    window.ondragover = function() {
+      this.handleDragOver()
+    }.bind(this)
+    window.ondrop = function() {
+      this.handleDragEnd()
+    }.bind(this)
+
+    // prevent default to allow drop
+    document.addEventListener(
+      "dragover",
+      event => {
+        event.preventDefault()
+      },
+      false
+    )
+    // highlight potential drop target when the draggable element enters it
+    document.addEventListener(
+      "dragenter",
+      function(event) {
+        this.handleDragOver()
+      }.bind(this),
+      false
+    )
+    // cancel highlights when drag intent has finished
+    document.addEventListener(
+      "dragleave",
+      function() {
+        this.handleDragEnd()
+      }.bind(this),
+      false
+    )
+    document.addEventListener(
+      "drop",
+      function(event) {
+        event.preventDefault()
+        this.handleDragEnd()
+      }.bind(this),
+      false
+    )
+    // blur editor on Esc (remove highlights and guides for preview)
+    document.addEventListener(
+      "keydown",
+      function(event) {
+        if (event.keyCode === 27) {
+          this.slateEditor.blur()
+        }
+      }.bind(this),
+      false
+    )
+
     return (
       <div style={{ position: "relative" }}>
         <ImageButton
@@ -121,7 +197,15 @@ class ContentEditor extends React.PureComponent {
           value={this.state.value}
           onChange={this.handleChange}
           onClick={this.handleClickPropagation}
-          style={{ minHeight: "28em" }}
+          onBlur={this.handleBlur}
+          onFocus={this.handleFocus}
+          style={{
+            minHeight: "28em",
+            boxShadow: this.state.editorFocus
+              ? "0 1px 0 0 rgba(44,44,44,.15)"
+              : "",
+            background: this.state.dragOver ? "rgba(44,44,44,.15)" : ""
+          }}
           ref={input => (this.slateEditor = input)}
         />
       </div>
