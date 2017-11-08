@@ -37,7 +37,13 @@ export const CommonNav = props => {
       </NavItem>
       <NavItem prime right className="prime left">
         {props.userStatus === "ok" ? (
-          <NavLink to={"/submit/compose"}>
+          <NavLink
+            to={
+              process.env.NODE_ENV === "development"
+                ? "/submit/compose"
+                : "/beta/compose"
+            }
+          >
             <span>Submit</span>
           </NavLink>
         ) : (

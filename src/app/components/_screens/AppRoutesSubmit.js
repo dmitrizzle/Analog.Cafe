@@ -35,13 +35,12 @@ export default props => {
 
         {/* Not found routes */}
         <Route path="/submit/*" component={NotFound} />
+        <Route path="/beta*" component={NotFound} />
       </Switch>
     )
   else
     return (
       <Switch>
-        <Route exact path="/submit" component={SubmitSoon} />
-
         {/* For beta testers */}
         <Route exact path="/beta" component={Submit} />
         <Route exact path="/beta/compose" component={Composer} />
@@ -49,7 +48,9 @@ export default props => {
         {/* Signin & upload submission */}
         <Route exact path="/beta/confirm-full-consent" component={Upload} />
         <Route exact path="/beta/confirm-basic-consent" component={Upload} />
+        <Route path="/beta/*" component={NotFound} />
 
+        <Route exact path="/submit" component={SubmitSoon} />
         {/* Not found routes */}
         <Route path="/submit/*" component={NotFound} />
       </Switch>

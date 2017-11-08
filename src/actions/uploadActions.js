@@ -54,7 +54,10 @@ export const send = request => {
                         red: true
                       },
                       {
-                        to: "/submit/compose",
+                        to:
+                          process.env.NODE_ENV === "development"
+                            ? "/submit/compose"
+                            : "/beta/compose",
                         text: "Cancel"
                       }
                     ]
