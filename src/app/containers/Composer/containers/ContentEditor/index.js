@@ -207,6 +207,20 @@ class ContentEditor extends React.PureComponent {
           value: resolvedState.value
         })
         break
+      case "toggle_link":
+        const hasLinks = value.inlines.some(inline => inline.type === "link")
+        if (hasLinks) resolvedState = value.change().unwrapInline("link")
+        else {
+          const href = window.prompt("Enter the URL of the link:")
+          resolvedState = value.change().wrapInline({
+            type: "link",
+            data: { href }
+          }).value.change().collapseToEnd()
+        }
+        this.setState({
+          value: resolvedState.value
+        })
+        break
       default:
         return false
     }

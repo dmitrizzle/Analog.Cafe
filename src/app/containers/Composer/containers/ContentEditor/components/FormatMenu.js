@@ -94,7 +94,16 @@ export default props => {
           >
             ❝
           </Item>
-          <Item red script title="Add a link">
+          <Item
+            red
+            script
+            title="Add a link"
+            onMouseDown={event => event.preventDefault()}
+            onMouseUp={event => {
+              event.preventDefault()
+              props.formatCommand("toggle_link")
+            }}
+          >
             ␥
           </Item>
           <Item
