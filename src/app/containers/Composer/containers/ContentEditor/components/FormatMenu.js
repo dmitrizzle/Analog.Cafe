@@ -6,7 +6,11 @@ import { TinyButton } from "../../../../../components/Button"
 
 import styled from "styled-components"
 const Menu = styled.div`
-  display: flex;
+  display: none;
+  & > div {
+    display: flex;
+    margin: 0;
+  }
   width: 10em;
   position: absolute;
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
@@ -38,18 +42,62 @@ const Item = styled(({ left, right, script, ...props }) => (
 
 // render
 export default props => {
+  console.log(
+    props.value.blocks.some(
+      node => node.type === "paragraph" && node.text === ""
+    )
+  )
+  // quotes have no hover menu
+  if (props.value.blocks.some(node => node.type === "quote")) return null
+  // selecting text containing paragraphs and heading has no menu
+  // (selecting just a heading does have special menu, see below)
+  if (
+    props.value.blocks.some(node => node.type === "heading") &&
+    // if selection has a heading and an empty paragraph, heading menu is OK:
+    props.value.blocks.some(
+      node => node.type === "paragraph" && node.text !== ""
+    )
+  )
+    return null
   return (
     <Menu innerRef={props.menuRef}>
-      <Item red left style={{ textShadow: "2px 2px rgba(255, 255, 255, 0.5)" }}>
-        T
-      </Item>
-      <Item red>❝</Item>
-      <Item script red>
-        <strong style={{ fontWeight: "700 !important" }}>bold</strong>
-      </Item>
-      <Item right script red>
-        <em>italic</em>
-      </Item>
+      {props.value.blocks.some(node => node.type === "heading") ? (
+        <div style={{ marginBottom: "-1em" }}>
+          <TinyButton>Undo Heading</TinyButton>
+        </div>
+      ) : (
+        <div>
+          <Item
+            red
+            left
+            style={{ textShadow: "2px 2px rgba(255, 255, 255, 0.5)" }}
+            title="Make a heading"
+          >
+            T
+          </Item>
+          <Item red title="Make a quote">
+            ❝
+          </Item>
+          <Item red script title="Add a link">
+            ␥
+          </Item>
+          <Item
+            script
+            red={!props.value.activeMarks.some(mark => mark.type === "bold")}
+            black={props.value.activeMarks.some(mark => mark.type === "bold")}
+          >
+            <strong style={{ fontWeight: "700 !important" }}>bold</strong>
+          </Item>
+          <Item
+            script
+            red={!props.value.activeMarks.some(mark => mark.type === "italic")}
+            black={props.value.activeMarks.some(mark => mark.type === "italic")}
+            right
+          >
+            <em>italic</em>
+          </Item>
+        </div>
+      )}
     </Menu>
   )
 }

@@ -147,10 +147,10 @@ class ContentEditor extends React.PureComponent {
     const range = selection.getRangeAt(0)
     const rect = range.getBoundingClientRect()
     if (value.isBlurred || value.isEmpty) {
-      menu.style.display = "none"
+      menu.style.display = ""
       return
     }
-    menu.style.display = ""
+    menu.style.display = "block"
     menu.style.top = `${rect.top + window.scrollY - menu.offsetHeight + 3}px`
     menu.style.left = `${rect.left +
       window.scrollX -
@@ -242,7 +242,6 @@ class ContentEditor extends React.PureComponent {
             ref={input => (this.slateEditor = input)}
           />
         </div>
-
         <Menu
           menuRef={this.menuRef}
           onChange={this.handleChange}
