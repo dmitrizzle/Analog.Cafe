@@ -13,7 +13,7 @@ import Menu from "./components/FormatMenu"
 
 // helpers, plugins & schema
 import { plugins } from "./plugins"
-import { renderNode, renderMark, validateNode } from "./render"
+import { renderNode, renderMark } from "./render"
 import { schema } from "./schema"
 import { loadContent } from "../../../../../utils/composer-loader"
 import {
@@ -274,7 +274,6 @@ class ContentEditor extends React.PureComponent {
             plugins={plugins}
             renderNode={renderNode}
             renderMark={renderMark}
-            validateNode={validateNode}
             schema={this.state.schema}
             placeholder={"Write your story…"}
             value={this.state.value}

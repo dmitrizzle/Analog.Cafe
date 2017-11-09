@@ -1,6 +1,5 @@
 // components & tools
 import React from "react"
-import Slate from "slate"
 import Picture from "../../../Picture"
 import PictureDocket from "./containers/PictureDocket"
 import Link from "../../../../components/Link"
@@ -86,21 +85,4 @@ export const renderMark = props => {
     default:
       return { children }
   }
-}
-
-export const validateNode = node => {
-  if (node.kind !== "document") return
-
-  const last = node.nodes.last()
-  if (last && last.type === "paragraph") return
-
-  if (node.text.trim() === "") return
-
-  const lastIndex = node.nodes.count()
-  const block = Slate.Block.create({
-    type: "paragraph",
-    nodes: [Slate.Text.create()]
-  })
-  console.log(last.type)
-  return change => change.insertNodeByKey(node.key, lastIndex, block)
 }

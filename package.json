@@ -43,6 +43,7 @@
     "slate-html-serializer": "^0.4.6",
     "slate-paste-linkify": "^0.5.0",
     "slate-react": "^0.10.11",
+    "slate-trailing-block": "^0.4.0",
     "styled-components": "^2.2.3",
     "titlecase": "^1.1.2",
     "typeface-exo-2": "^0.0.43",
