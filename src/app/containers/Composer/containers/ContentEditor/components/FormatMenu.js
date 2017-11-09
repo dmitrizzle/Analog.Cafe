@@ -23,20 +23,23 @@ const Item = styled(({ left, right, script, ...props }) => (
   border-radius: 0;
   ${props =>
     props.left
-      ? `border-radius: ${props.theme.effects.borderRadius.small}em 0 0 ${props
-          .theme.effects.borderRadius.small}em`
+      ? `border-radius: ${props.theme.effects.borderRadius.small}em 0 0 ${
+          props.theme.effects.borderRadius.small
+        }em`
       : null};
 
   ${props =>
     props.right
-      ? `border-radius: 0 ${props.theme.effects.borderRadius.small}em ${props
-          .theme.effects.borderRadius.small}em 0`
+      ? `border-radius: 0 ${props.theme.effects.borderRadius.small}em ${
+          props.theme.effects.borderRadius.small
+        }em 0`
       : null};
 
   ${props =>
     props.script
-      ? `font-family: ${props.theme.typography.font
-          .serif} !important;font-weight: 400 !important;`
+      ? `font-family: ${
+          props.theme.typography.font.serif
+        } !important;font-weight: 400 !important;`
       : null};
 `
 
@@ -95,8 +98,9 @@ export default props => {
             ❝
           </Item>
           <Item
-            red
             script
+            red={!props.value.inlines.some(node => node.type === "link")}
+            black={props.value.inlines.some(node => node.type === "link")}
             title="Add a link"
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {

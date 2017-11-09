@@ -215,7 +215,7 @@ class ContentEditor extends React.PureComponent {
           resolvedState = value.change().wrapInline({
             type: "link",
             data: { href }
-          }).value.change().collapseToEnd()
+          })
         }
         this.setState({
           value: resolvedState.value
