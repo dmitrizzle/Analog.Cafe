@@ -160,7 +160,57 @@ class ContentEditor extends React.PureComponent {
   menuRef = menu => {
     this.menu = menu
   }
+  formatCommand = type => {
+    const { value } = this.state
+    let resolvedState
 
+    switch (type) {
+      case "undo_heading":
+        resolvedState = value.change().setBlock({ type: "paragraph" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      case "make_heading":
+        resolvedState = value
+          .change()
+          .removeMark("bold")
+          .value.change()
+          .removeMark("italic")
+          .value.change()
+          .setBlock({ type: "heading" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      case "make_quote":
+        resolvedState = value
+          .change()
+          .removeMark("bold")
+          .value.change()
+          .removeMark("italic")
+          .value.change()
+          .setBlock({ type: "quote" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      case "toggle_bold":
+        resolvedState = value.change().toggleMark({ type: "bold" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      case "toggle_italic":
+        resolvedState = value.change().toggleMark({ type: "italic" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      default:
+        return false
+    }
+  }
   // render
   render = () => {
     window.ondragover = function() {
@@ -246,6 +296,7 @@ class ContentEditor extends React.PureComponent {
           menuRef={this.menuRef}
           onChange={this.handleChange}
           value={this.state.value}
+          formatCommand={this.formatCommand}
         />
       </div>
     )

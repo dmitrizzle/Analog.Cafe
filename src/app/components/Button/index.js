@@ -40,6 +40,7 @@ export const ButtonStyles = css`
   margin-top: ${props => props.theme.size.block.spacing}em;
   margin-bottom: ${props => props.theme.size.block.spacing}em;
   cursor: pointer;
+  user-select: none;
 
   box-shadow: 0 1px 1px
       ${props =>

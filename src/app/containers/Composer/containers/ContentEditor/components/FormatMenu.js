@@ -42,11 +42,6 @@ const Item = styled(({ left, right, script, ...props }) => (
 
 // render
 export default props => {
-  console.log(
-    props.value.blocks.some(
-      node => node.type === "paragraph" && node.text === ""
-    )
-  )
   // quotes have no hover menu
   if (props.value.blocks.some(node => node.type === "quote")) return null
   // selecting text containing paragraphs and heading has no menu
@@ -63,7 +58,15 @@ export default props => {
     <Menu innerRef={props.menuRef}>
       {props.value.blocks.some(node => node.type === "heading") ? (
         <div style={{ marginBottom: "-1em" }}>
-          <TinyButton>Undo Heading</TinyButton>
+          <TinyButton
+            onMouseDown={event => event.preventDefault()}
+            onMouseUp={event => {
+              event.preventDefault()
+              props.formatCommand("undo_heading")
+            }}
+          >
+            Undo Heading
+          </TinyButton>
         </div>
       ) : (
         <div>
@@ -72,10 +75,23 @@ export default props => {
             left
             style={{ textShadow: "2px 2px rgba(255, 255, 255, 0.5)" }}
             title="Make a heading"
+            onMouseDown={event => event.preventDefault()}
+            onMouseUp={event => {
+              event.preventDefault()
+              props.formatCommand("make_heading")
+            }}
           >
             T
           </Item>
-          <Item red title="Make a quote">
+          <Item
+            red
+            title="Make a quote"
+            // selection will be collapsed when quote is made
+            onMouseUp={event => {
+              event.preventDefault()
+              props.formatCommand("make_quote")
+            }}
+          >
             ❝
           </Item>
           <Item red script title="Add a link">
@@ -85,6 +101,12 @@ export default props => {
             script
             red={!props.value.activeMarks.some(mark => mark.type === "bold")}
             black={props.value.activeMarks.some(mark => mark.type === "bold")}
+            onClick={event => event.preventDefault()}
+            onMouseDown={event => event.preventDefault()}
+            onMouseUp={event => {
+              event.preventDefault()
+              props.formatCommand("toggle_bold")
+            }}
           >
             <strong style={{ fontWeight: "700 !important" }}>bold</strong>
           </Item>
@@ -93,6 +115,12 @@ export default props => {
             red={!props.value.activeMarks.some(mark => mark.type === "italic")}
             black={props.value.activeMarks.some(mark => mark.type === "italic")}
             right
+            onClick={event => event.preventDefault()}
+            onMouseDown={event => event.preventDefault()}
+            onMouseUp={event => {
+              event.preventDefault()
+              props.formatCommand("toggle_italic")
+            }}
           >
             <em>italic</em>
           </Item>
