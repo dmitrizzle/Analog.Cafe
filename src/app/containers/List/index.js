@@ -162,7 +162,7 @@ class List extends React.PureComponent {
   }
 }
 
-// connet with redux
+// connect with redux
 const mapStateToProps = state => {
   return {
     list: state.list

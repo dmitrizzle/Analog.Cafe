@@ -215,7 +215,7 @@ class EditProfile extends React.PureComponent {
 }
 //to={ROUTE_AUTH_USER_LANDING}
 
-// connet with redux
+// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     getUserInfo: () => {

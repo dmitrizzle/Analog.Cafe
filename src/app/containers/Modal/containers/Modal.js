@@ -57,7 +57,7 @@ const Modal = props => {
   )
 }
 
-// connet with redux
+// connect with redux
 const mapStateToProps = state => {
   return {
     modal: state.modal

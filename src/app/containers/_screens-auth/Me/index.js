@@ -14,7 +14,7 @@ const Me = props => {
   return props.user.status === "ok" ? <List private /> : <Forbidden />
 }
 
-// connet with redux
+// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     forgetUser: () => {

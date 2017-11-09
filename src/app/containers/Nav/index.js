@@ -25,7 +25,7 @@ const Nav = props => {
   )
 }
 
-// connet with redux
+// connect with redux
 const mapStateToProps = state => {
   return {
     nav: state.nav,

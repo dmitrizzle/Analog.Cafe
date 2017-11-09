@@ -11,15 +11,21 @@ export const MESSAGE_HINT_SUBMIT_CONSENT = {
   info: {
     title: "Open for Collaborations?",
     text:
-      "Creating beautiful things together is easy. If you choose “Yes” your images may appear in other photo essays, stories, articles on Analog.Cafe. You and the authors that you collaborate with will be credited and listed under “collaborations” category. We take care of everything else.",
+      "Creating beautiful things together is easy. If you choose “Yes” your images may appear in other photo essays, stories, articles on Analog.Cafe. You and the authors who feature your work will be credited and have links to your profiles. We take care of everything else.",
     buttons: [
       {
-        to: "/submit/confirm-full-consent",
+        to:
+          process.env.NODE_ENV === "development"
+            ? "/submit/confirm-full-consent"
+            : "/beta/confirm-full-consent",
         text: "Yes",
         red: true
       },
       {
-        to: "/submit/confirm-basic-consent",
+        to:
+          process.env.NODE_ENV === "development"
+            ? "/submit/confirm-basic-consent"
+            : "/beta/confirm-basic-consent",
         text: "No"
       }
     ]
@@ -30,7 +36,7 @@ export const MESSAGE_HINT_IMAGE_SUGGESTIONS = {
   info: {
     title: "Instant Collaboration",
     text:
-      "Creating together is easy! Simply select a photograph that fits your submission. You and the photographer will be credited and listed under “collaborations” category."
+      "Creating together is easy! Simply select a photograph below that fits your work. You and the photographer will be credited and have links to your profiles on each post."
   },
   id: "hints/image-suggestions"
 }

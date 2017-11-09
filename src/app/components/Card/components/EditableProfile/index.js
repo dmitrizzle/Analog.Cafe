@@ -1,5 +1,7 @@
 // tools
 import React from "react"
+import { froth } from "../../../../../utils/image-froth"
+import { PicturePlaceholder } from "../../../../components/Picture/components/PicturePlaceholder"
 
 // styles
 import {
@@ -9,7 +11,6 @@ import {
   CardHeaderEditable
 } from "./styles"
 import { SubtitleInput } from "../../../InputStyles"
-import { dot } from "../../../_icons/components/BlankDot"
 
 // constants
 import {
@@ -32,12 +33,14 @@ export default props => {
         />
       </CardHeaderEditable>
       <figure>
-        <img
-          src={props.image || dot}
-          alt="Profile avatar"
-          onClick={() => props.changeImage()}
-          style={{ cursor: "pointer" }}
-        />
+        <PicturePlaceholder frothId={props.image}>
+          <img
+            src={froth({ src: props.image, size: "s" }).src}
+            alt="Profile avatar"
+            onClick={() => props.changeImage()}
+            style={{ cursor: "pointer" }}
+          />
+        </PicturePlaceholder>
         <figcaption>
           <CardCaptionEditable
             maxLength={SUMMARY_LENGTH_MAX}

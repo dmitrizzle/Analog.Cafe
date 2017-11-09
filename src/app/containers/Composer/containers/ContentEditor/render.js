@@ -1,9 +1,9 @@
 // components & tools
 import React from "react"
-import Slate from "slate"
 import Picture from "../../../Picture"
-import PictureDocket from "../../../PictureDocket"
+import PictureDocket from "./containers/PictureDocket"
 import Link from "../../../../components/Link"
+import { TinyButton } from "../../../../components/Button"
 
 // helpers
 import { parseHref } from "../../../../../utils/link-builder"
@@ -24,9 +24,38 @@ export const renderNode = props => {
       return <hr className={focusClassName} />
     case "quote":
       return (
-        <blockquote {...attributes} className={focusClassName}>
-          {children}
-        </blockquote>
+        <div>
+          {!props.readOnly &&
+            focus && (
+              <TinyButton
+                style={{
+                  width: "6em",
+                  margin: "1.35em -1.5em -3.35em 0px",
+                  float: "right",
+                  position: "relative",
+                  zIndex: "1"
+                }}
+                contentEditable="false"
+                suppressContentEditableWarning
+                onClick={event => {
+                  event.preventDefault()
+                  editor.onChange(
+                    editor.value
+                      .change()
+                      .setNodeByKey(attributes["data-key"], {
+                        type: "paragraph"
+                      })
+                      .focus()
+                  )
+                }}
+              >
+                Unquote
+              </TinyButton>
+            )}
+          <blockquote {...attributes} className={focusClassName}>
+            {children}
+          </blockquote>
+        </div>
       )
     case "image":
       return <Picture {...props} />
@@ -56,21 +85,4 @@ export const renderMark = props => {
     default:
       return { children }
   }
-}
-
-export const validateNode = node => {
-  if (node.kind !== "document") return
-
-  const last = node.nodes.last()
-  if (last && last.type === "paragraph") return
-
-  if (node.text.trim() === "") return
-
-  const lastIndex = node.nodes.count()
-  const block = Slate.Block.create({
-    type: "paragraph",
-    nodes: [Slate.Text.create()]
-  })
-  console.log(last.type)
-  return change => change.insertNodeByKey(node.key, lastIndex, block)
 }

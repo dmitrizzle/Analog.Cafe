@@ -10,6 +10,9 @@ import { getInfo } from "../../../actions/pictureActions"
 // components
 import Picture from "../../components/Picture"
 import { PlainTextarea } from "../../components/InputStyles"
+import PictureMenu from "../Composer/containers/ContentEditor/components/PictureMenu"
+
+import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
 
 // export
 // this doesn't work as well with PureComponent:
@@ -20,7 +23,9 @@ class Figure extends React.Component {
     super(props)
     this.state = { caption: props.node.data.get("caption") }
     this.handleChange = this.handleChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.handleTextareaClick = this.handleTextareaClick.bind(this)
+    this.handleRemovePicture = this.handleRemovePicture.bind(this)
+    this.handleFeaturePicture = this.handleFeaturePicture.bind(this)
   }
   componentWillReceiveProps = nextProps => {
     const caption = nextProps.node.data.get("caption")
@@ -49,7 +54,7 @@ class Figure extends React.Component {
       .setNodeByKey(node.key, properties)
     editor.onChange(resolvedState) // have to use native onChange in editor (rather than handleChange)
   }
-  handleClick = event => {
+  handleTextareaClick = event => {
     event.preventDefault()
     event.stopPropagation()
   }
@@ -71,13 +76,40 @@ class Figure extends React.Component {
         reader.addEventListener("load", () =>
           this.setState({ src: reader.result })
         )
-        if (Object.keys(file).length === 0 && file.constructor === Object) {
+        if (
+          data &&
+          Object.keys(file).length === 0 &&
+          file.constructor === Object
+        ) {
           reader.readAsDataURL(data)
-        } else {
+        } else if (file.constructor !== Object) {
           reader.readAsDataURL(file)
         }
       })
     }
+  }
+
+  //
+  handleRemovePicture = () => {
+    const { node, editor } = this.props
+    const resolvedState = editor.value.change().removeNodeByKey(node.key)
+    editor.onChange(resolvedState)
+  }
+  handleFeaturePicture = () => {
+    const { node, editor } = this.props
+    const previousData = PICTURE_DATA_OBJECT(
+      editor.value.document.getChild(node.key).data
+    )
+    let featureStatus = previousData.feature ? false : true
+    editor.onChange(
+      editor.value
+        .change()
+        .setNodeByKey(node.key, {
+          type: "image",
+          data: { ...previousData, feature: featureStatus }
+        })
+        .focus()
+    )
   }
 
   render = () => {
@@ -100,12 +132,19 @@ class Figure extends React.Component {
         composer={!this.props.readOnly}
         feature={feature}
       >
+        {!this.props.readOnly && (
+          <PictureMenu
+            focus={focus}
+            removePicture={this.handleRemovePicture}
+            featurePicture={this.handleFeaturePicture}
+          />
+        )}
         {!this.props.readOnly ? (
           <PlainTextarea
             value={this.state.caption}
             placeholder="Add image title, location, camera, film&hellip;"
             onChange={this.handleChange}
-            onClick={this.handleClick}
+            onClick={this.handleTextareaClick}
           />
         ) : (
           <span>{this.state.caption}</span>
@@ -119,7 +158,7 @@ class Figure extends React.Component {
   }
 }
 
-// connet with redux
+// connect with redux
 const mapStateToProps = state => {
   return {
     pictures: state.pictures

@@ -12,7 +12,7 @@ const SignOut = props => {
   return null
 }
 
-// connet with redux
+// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     forgetUser: () => {
