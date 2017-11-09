@@ -216,6 +216,7 @@ class ContentEditor extends React.PureComponent {
         if (hasLinks) resolvedState = value.change().unwrapInline("link")
         else {
           const href = window.prompt("Enter the URL of the link:")
+          if (!href) return
           resolvedState = value.change().wrapInline({
             type: "link",
             data: { href }
