@@ -174,6 +174,8 @@ class ContentEditor extends React.PureComponent {
       case "make_heading":
         resolvedState = value
           .change()
+          .unwrapInline("link")
+          .value.change()
           .removeMark("bold")
           .value.change()
           .removeMark("italic")
@@ -186,6 +188,8 @@ class ContentEditor extends React.PureComponent {
       case "make_quote":
         resolvedState = value
           .change()
+          .unwrapInline("link")
+          .value.change()
           .removeMark("bold")
           .value.change()
           .removeMark("italic")
