@@ -217,7 +217,8 @@ class PictureDocketContainer extends React.PureComponent {
           Create an{" "}
           <ModalDispatch with={MESSAGE_HINT_IMAGE_SUGGESTIONS}>
             instant collaboration
-          </ModalDispatch>.
+          </ModalDispatch>{" "}
+          or upload new image.
         </GridCaption>
 
         <GridContainer>

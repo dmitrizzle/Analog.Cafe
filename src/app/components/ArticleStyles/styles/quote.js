@@ -79,6 +79,6 @@ export const Quote = css`
   &:not(.focus) > span {
     ${"" /* shim to ensure that first huge letter doesn't get sliced by Chrome */}
     display: block;
-    min-height: 10.5em;
+    min-height: 13em;
   }`};
 `

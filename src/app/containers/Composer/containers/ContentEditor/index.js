@@ -9,10 +9,11 @@ import { connect } from "react-redux"
 
 // components
 import ImageButton from "./components/ImageButton"
+import Menu from "./components/FormatMenu"
 
 // helpers, plugins & schema
 import { plugins } from "./plugins"
-import { renderNode, renderMark, validateNode } from "./render"
+import { renderNode, renderMark } from "./render"
 import { schema } from "./schema"
 import { loadContent } from "../../../../../utils/composer-loader"
 import {
@@ -129,6 +130,105 @@ class ContentEditor extends React.PureComponent {
     })
   }
 
+  // hover menu
+  componentDidMount = () => {
+    this.updateMenu()
+  }
+  componentDidUpdate = () => {
+    this.updateMenu()
+  }
+  updateMenu = () => {
+    const { value } = this.state
+    const menu = this.menu
+    if (!menu) return
+    if (window.getSelection().rangeCount <= 0) return
+
+    const selection = window.getSelection()
+    const range = selection.getRangeAt(0)
+    const rect = range.getBoundingClientRect()
+    if (value.isBlurred || value.isEmpty) {
+      menu.style.display = ""
+      return
+    }
+    menu.style.display = "block"
+    menu.style.top = `${rect.top + window.scrollY - menu.offsetHeight + 3}px`
+    menu.style.left = `${rect.left +
+      window.scrollX -
+      menu.offsetWidth / 2 +
+      rect.width / 2}px`
+  }
+  menuRef = menu => {
+    this.menu = menu
+  }
+  formatCommand = type => {
+    const { value } = this.state
+    let resolvedState
+
+    switch (type) {
+      case "undo_heading":
+        resolvedState = value.change().setBlock({ type: "paragraph" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      case "make_heading":
+        resolvedState = value
+          .change()
+          .unwrapInline("link")
+          .value.change()
+          .removeMark("bold")
+          .value.change()
+          .removeMark("italic")
+          .value.change()
+          .setBlock({ type: "heading" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      case "make_quote":
+        resolvedState = value
+          .change()
+          .unwrapInline("link")
+          .value.change()
+          .removeMark("bold")
+          .value.change()
+          .removeMark("italic")
+          .value.change()
+          .setBlock({ type: "quote" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      case "toggle_bold":
+        resolvedState = value.change().toggleMark({ type: "bold" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      case "toggle_italic":
+        resolvedState = value.change().toggleMark({ type: "italic" })
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      case "toggle_link":
+        const hasLinks = value.inlines.some(inline => inline.type === "link")
+        if (hasLinks) resolvedState = value.change().unwrapInline("link")
+        else {
+          const href = window.prompt("Enter the URL of the link:")
+          resolvedState = value.change().wrapInline({
+            type: "link",
+            data: { href }
+          })
+        }
+        this.setState({
+          value: resolvedState.value
+        })
+        break
+      default:
+        return false
+    }
+  }
   // render
   render = () => {
     window.ondragover = function() {
@@ -182,31 +282,38 @@ class ContentEditor extends React.PureComponent {
     )
 
     return (
-      <div style={{ position: "relative" }}>
-        <ImageButton
-          cursorContext={this.state.cursorContext}
-          onClick={this.handleImageButton}
-        />
-        <Editor
-          plugins={plugins}
-          renderNode={renderNode}
-          renderMark={renderMark}
-          validateNode={validateNode}
-          schema={this.state.schema}
-          placeholder={"Write your story…"}
-          value={this.state.value}
+      <div>
+        <div style={{ position: "relative" }}>
+          <ImageButton
+            cursorContext={this.state.cursorContext}
+            onClick={this.handleImageButton}
+          />
+          <Editor
+            plugins={plugins}
+            renderNode={renderNode}
+            renderMark={renderMark}
+            schema={this.state.schema}
+            placeholder={"Write your story…"}
+            value={this.state.value}
+            onChange={this.handleChange}
+            onClick={this.handleClickPropagation}
+            onBlur={this.handleBlur}
+            onFocus={this.handleFocus}
+            style={{
+              minHeight: "28em",
+              boxShadow: this.state.editorFocus
+                ? "0 1px 0 0 rgba(44,44,44,.15)"
+                : "",
+              background: this.state.dragOver ? "rgba(44,44,44,.15)" : ""
+            }}
+            ref={input => (this.slateEditor = input)}
+          />
+        </div>
+        <Menu
+          menuRef={this.menuRef}
           onChange={this.handleChange}
-          onClick={this.handleClickPropagation}
-          onBlur={this.handleBlur}
-          onFocus={this.handleFocus}
-          style={{
-            minHeight: "28em",
-            boxShadow: this.state.editorFocus
-              ? "0 1px 0 0 rgba(44,44,44,.15)"
-              : "",
-            background: this.state.dragOver ? "rgba(44,44,44,.15)" : ""
-          }}
-          ref={input => (this.slateEditor = input)}
+          value={this.state.value}
+          formatCommand={this.formatCommand}
         />
       </div>
     )

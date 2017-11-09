@@ -20,8 +20,7 @@ import { Paste } from "./paste-html"
 // plugins by others
 import AutoReplace from "slate-auto-replace"
 import InsertImages from "slate-drop-or-paste-images"
-// import TrailingBlock from "slate-trailing-block"
-import PasteLinkify from "slate-paste-linkify"
+import TrailingBlock from "slate-trailing-block"
 
 // components
 
@@ -29,9 +28,6 @@ import PasteLinkify from "slate-paste-linkify"
 export const plugins = [
   // pasting and links
   Paste({ html }),
-  PasteLinkify({
-    type: "link"
-  }),
 
   // marks
   MarkHotkey({ key: "b", type: "bold" }),
@@ -186,5 +182,8 @@ export const plugins = [
           )
         })
     }
-  })
+  }),
+
+  // trailing block (make sure to always have content editable)
+  TrailingBlock({ type: 'paragraph' })
 ]

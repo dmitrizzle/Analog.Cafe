@@ -40,6 +40,7 @@ export const ButtonStyles = css`
   margin-top: ${props => props.theme.size.block.spacing}em;
   margin-bottom: ${props => props.theme.size.block.spacing}em;
   cursor: pointer;
+  user-select: none;
 
   box-shadow: 0 1px 1px
       ${props =>
@@ -109,7 +110,7 @@ export const ButtonGroup = styled.div`
 `
 
 export const TinyButtonStyles = styled(
-  ({ red, black, responsiveMobileOnly, followComposerCursor, ...props }) => (
+  ({ responsiveMobileOnly, followComposerCursor, ...props }) => (
     <LinkButton {...props} />
   )
 )`
