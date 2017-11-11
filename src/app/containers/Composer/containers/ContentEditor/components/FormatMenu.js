@@ -108,7 +108,7 @@ export default props => {
               props.formatCommand("toggle_link")
             }}
           >
-            ␥
+            ☍
           </Item>
           <Item
             script
