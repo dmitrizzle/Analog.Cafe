@@ -15,6 +15,16 @@ const Menu = styled.div`
   position: absolute;
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
   z-index: ${props => props.theme.layer.up};
+
+  ${props => props.theme.size.breakpoint.max.s`
+    width: 100vw;
+    position: fixed
+    border-radius: 0;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: initial !important;
+  `};
 `
 const Item = styled(({ left, right, script, ...props }) => (
   <TinyButton {...props} />
@@ -41,6 +51,11 @@ const Item = styled(({ left, right, script, ...props }) => (
           props.theme.typography.font.serif
         } !important;font-weight: 400 !important;`
       : null};
+
+  ${props => props.theme.size.breakpoint.max.s`
+    border-radius: 0;
+    padding: 1em;
+  `};
 `
 
 // render
