@@ -50,7 +50,7 @@ class App extends React.PureComponent {
     // async load Google Analytics module
     import("react-ga").then(ReactGA => {
       ReactGA.initialize(APP_TRACKING_GAID, {
-        debug: true,
+        debug: false,
         titleCase: true,
         gaOptions: {}
       })
