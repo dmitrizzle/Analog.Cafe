@@ -48,7 +48,7 @@ class ContentEditor extends React.PureComponent {
     this.setState({ value })
 
     // add information about cursor positions
-    setTimeout(
+    const cursorContextDelay = setTimeout(
       function() {
         const { focusBlock } = value
         if (!focusBlock) return
@@ -64,6 +64,7 @@ class ContentEditor extends React.PureComponent {
           isFocused: this.state.cursorContext.isFocused
         }
         this.setState({ cursorContext })
+        clearTimeout(cursorContextDelay)
       }.bind(this),
       300
     )
@@ -150,12 +151,14 @@ class ContentEditor extends React.PureComponent {
       menu.style.display = ""
       return
     }
+
     menu.style.display = "block"
-    menu.style.top = `${rect.top + window.scrollY - menu.offsetHeight + 3}px`
-    menu.style.left = `${rect.left +
-      window.scrollX -
-      menu.offsetWidth / 2 +
-      rect.width / 2}px`
+
+    const leftOffset =
+      rect.left + window.scrollX - menu.offsetWidth / 2 + rect.width / 2
+    const topOffset = rect.top + window.scrollY - menu.offsetHeight + 3
+    menu.style.top = `${topOffset}px`
+    menu.style.left = `${leftOffset >= 0 ? leftOffset : 5}px`
   }
   menuRef = menu => {
     this.menu = menu
