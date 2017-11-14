@@ -4,11 +4,22 @@ import Picture from "../../../Picture"
 import PictureDocket from "./containers/PictureDocket"
 import Link from "../../../../components/Link"
 import { TinyButton } from "../../../../components/Button"
+import styled from "styled-components"
 
 // helpers
 import { parseHref } from "../../../../../utils/link-builder"
 
 // return
+const UnquoteButton = styled(TinyButton)`
+  width: 6em;
+  margin: 1.35em -${props => props.theme.size.block.column.safety}em -3.35em 0;
+  float: right;
+  position: relative;
+  z-index: ${props => props.theme.layer.up};
+  ${props => props.theme.size.breakpoint.max.m`
+    right: ${props => props.theme.size.block.spacing / 2}em;
+  `};
+`
 
 export const renderNode = props => {
   const { node, attributes, children, isSelected, editor } = props
@@ -27,14 +38,7 @@ export const renderNode = props => {
         <div>
           {!props.readOnly &&
             focus && (
-              <TinyButton
-                style={{
-                  width: "6em",
-                  margin: "1.35em -1.5em -3.35em 0px",
-                  float: "right",
-                  position: "relative",
-                  zIndex: "1"
-                }}
+              <UnquoteButton
                 contentEditable="false"
                 suppressContentEditableWarning
                 onClick={event => {
@@ -50,7 +54,7 @@ export const renderNode = props => {
                 }}
               >
                 Unquote
-              </TinyButton>
+              </UnquoteButton>
             )}
           <blockquote {...attributes} className={focusClassName}>
             {children}

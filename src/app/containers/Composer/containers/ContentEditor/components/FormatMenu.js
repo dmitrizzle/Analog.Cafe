@@ -15,6 +15,16 @@ const Menu = styled.div`
   position: absolute;
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
   z-index: ${props => props.theme.layer.up};
+
+  ${props => props.theme.size.breakpoint.max.s`
+    width: 100vw;
+    border-radius: 0;
+    left: 0 !important;
+    top: initial !important;
+  `};
+  ${props => props.theme.size.breakpoint.min.m`
+    bottom: initial !important;
+  `};
 `
 const Item = styled(({ left, right, script, ...props }) => (
   <TinyButton {...props} />
@@ -41,6 +51,11 @@ const Item = styled(({ left, right, script, ...props }) => (
           props.theme.typography.font.serif
         } !important;font-weight: 400 !important;`
       : null};
+
+  ${props => props.theme.size.breakpoint.max.s`
+    border-radius: 0;
+    padding: 1em;
+  `};
 `
 
 // render
@@ -108,7 +123,7 @@ export default props => {
               props.formatCommand("toggle_link")
             }}
           >
-            ␥
+            ☍
           </Item>
           <Item
             script
