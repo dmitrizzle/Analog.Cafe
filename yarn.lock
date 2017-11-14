@@ -5639,8 +5639,8 @@ react-dev-utils@^4.2.1:
     text-table "0.2.0"
 
 react-dom@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0.tgz#9cc3079c3dcd70d4c6e01b84aab2a7e34c303f58"
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.1.1.tgz#b2e331b6d752faf1a2d31399969399a41d8d45f8"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -5777,8 +5777,8 @@ react-textarea-autosize@^5.1.0:
     prop-types "^15.6.0"
 
 react@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0.tgz#ce7df8f1941b036f02b2cca9dbd0cb1f0e855e2d"
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.1.1.tgz#d5c4ef795507e3012282dd51261ff9c0e824fe1f"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -6946,13 +6946,13 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typeface-exo-2@^0.0.43:
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/typeface-exo-2/-/typeface-exo-2-0.0.43.tgz#53b0c668f904eb2e4ca478191f83cfec69fa579d"
+typeface-exo-2@0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/typeface-exo-2/-/typeface-exo-2-0.0.44.tgz#56e304894f8928dda0c5fbd2718553c5afbd49db"
 
-typeface-lora@^0.0.43:
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/typeface-lora/-/typeface-lora-0.0.43.tgz#84ece44cef8cf2efb460dc72a6c158b216933c2e"
+typeface-lora@0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/typeface-lora/-/typeface-lora-0.0.44.tgz#8e29f62e15c294d7cb0e677f8ca1c731fa3135fa"
 
 ua-parser-js@^0.7.9:
   version "0.7.17"
