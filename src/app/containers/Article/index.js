@@ -117,7 +117,7 @@ class Article extends React.PureComponent {
           "“" +
             this.props.article.title +
             (this.props.article.subtitle
-              ? ": " + this.props.article.subtitle
+              ? " (" + this.props.article.subtitle + ")"
               : "") +
             "” by " +
             this.props.article.author.name

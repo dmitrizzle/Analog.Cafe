@@ -14,6 +14,7 @@ import { froth } from "../../../utils/image-froth"
 
 // styles
 import { Section, Article, Quote } from "../ArticleStyles"
+import ArticleActions from "../Card/components/ArticleActions"
 
 const ThankYouList = styled(Quote)`
   font-style: normal !important;
@@ -166,12 +167,9 @@ export default props => {
         <h3>Connect, contact & get involved.</h3>
         <p>
           If you have a question, suggestion or just want to chat, feel free to
-          follow and message on{" "}
-          <Link to="https://twitter.com/analog_cafe">Twitter</Link>,{" "}
-          <Link to="https://facebook.com/analog8cafe">Facebook</Link> or{" "}
-          <Link to="https://instagram.com/analog_cafe">Instagram</Link>.
-          Otherwise you can email <Email />
+          follow, message, or email <Email />
         </p>
+        <ArticleActions mode="follow" />
       </Section>
     </Article>
   )
