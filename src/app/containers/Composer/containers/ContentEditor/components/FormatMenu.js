@@ -18,12 +18,12 @@ const Menu = styled.div`
 
   ${props => props.theme.size.breakpoint.max.s`
     width: 100vw;
-    position: fixed
     border-radius: 0;
-    bottom: 0 !important;
     left: 0 !important;
-    right: 0 !important;
     top: initial !important;
+  `};
+  ${props => props.theme.size.breakpoint.min.m`
+    bottom: initial !important;
   `};
 `
 const Item = styled(({ left, right, script, ...props }) => (
