@@ -55,6 +55,14 @@ class List extends React.PureComponent {
     this.setState({
       loadMorePending: true
     })
+
+    // async load Google Analytics module
+    import("react-ga").then(ReactGA => {
+      ReactGA.event({
+        category: "Navigation",
+        action: "List.load_more"
+      })
+    })
   }
   componentWillReceiveProps = () => {
     // reset loading indicator
@@ -138,7 +146,8 @@ class List extends React.PureComponent {
               author: nextArticleHeading.author,
               slug: nextArticleHeading.slug,
               poster: nextArticleHeading.poster
-            })}
+            })
+          }
           private={this.props.private}
         />
 

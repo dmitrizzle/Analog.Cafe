@@ -17,18 +17,39 @@ import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
 
 // return
 const ActionsCard = props => {
-  if (props.thisArticle !== "thank-you-for-reading-87fv")
+  if (
+    props.thisArticle !== "thank-you-for-reading-87fv" &&
+    props.mode !== "follow"
+  )
     return (
       <CardFlattened>
         <FacebookLinkButton
           to="https://facebook.com/analog8cafe"
-          onClick={props.shareOnFacebook}
+          onClick={event => {
+            props.shareOnFacebook(event)
+            // async load Google Analytics module
+            import("react-ga").then(ReactGA => {
+              ReactGA.event({
+                category: "Campaign",
+                action: "ActionsCard.share_facebook"
+              })
+            })
+          }}
         >
           Share&nbsp;
         </FacebookLinkButton>
         <TwitterLinkButton
           to="https://twitter.com/analog_cafe"
-          onClick={props.shareOnTwitter}
+          onClick={event => {
+            props.shareOnTwitter(event)
+            // async load Google Analytics module
+            import("react-ga").then(ReactGA => {
+              ReactGA.event({
+                category: "Campaign",
+                action: "ActionsCard.share_twitter"
+              })
+            })
+          }}
         >
           Tweet
         </TwitterLinkButton>
@@ -36,6 +57,15 @@ const ActionsCard = props => {
           <LinkButton
             to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle}
             title={slugToTitle(props.nextArticle, { trim: [0, -1] })}
+            onClick={() => {
+              // async load Google Analytics module
+              import("react-ga").then(ReactGA => {
+                ReactGA.event({
+                  category: "Navigation",
+                  action: "ActionsCard.next_article"
+                })
+              })
+            }}
           >
             Next Post <span>➢</span>
           </LinkButton>
@@ -45,15 +75,48 @@ const ActionsCard = props => {
   else
     return (
       <CardFlattened>
-        <TwitterLinkButton to="https://twitter.com/analog_cafe">
+        <TwitterLinkButton
+          to="https://twitter.com/analog_cafe"
+          onClick={() => {
+            // async load Google Analytics module
+            import("react-ga").then(ReactGA => {
+              ReactGA.event({
+                category: "Campaign",
+                action: "ActionsCard.follow_twitter"
+              })
+            })
+          }}
+        >
           Follow on Twitter
         </TwitterLinkButton>
 
-        <FacebookLinkButton to="https://facebook.com/analog8cafe">
+        <FacebookLinkButton
+          to="https://facebook.com/analog8cafe"
+          onClick={() => {
+            // async load Google Analytics module
+            import("react-ga").then(ReactGA => {
+              ReactGA.event({
+                category: "Campaign",
+                action: "ActionsCard.follow_facebook"
+              })
+            })
+          }}
+        >
           Follow on Facebook
         </FacebookLinkButton>
 
-        <InstagramLinkButton to="https://instagram.com/analog_cafe">
+        <InstagramLinkButton
+          to="https://instagram.com/analog_cafe"
+          onClick={() => {
+            // async load Google Analytics module
+            import("react-ga").then(ReactGA => {
+              ReactGA.event({
+                category: "Campaign",
+                action: "ActionsCard.follow_instagram"
+              })
+            })
+          }}
+        >
           Follow on Instagram
         </InstagramLinkButton>
       </CardFlattened>
