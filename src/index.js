@@ -21,8 +21,9 @@ import App from "./app/containers/App"
 import registerServiceWorker from "./registerServiceWorker"
 
 // polyfill
-import { arrayIncludes } from "./utils/polyfill"
+import { arrayIncludes, arrayFind } from "./utils/polyfill"
 arrayIncludes()
+arrayFind()
 
 // launch!
 render(
