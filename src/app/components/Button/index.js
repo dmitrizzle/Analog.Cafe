@@ -80,6 +80,7 @@ export const Button = styled(
   ({ red, black, responsiveMobileOnly, ...props }) => (
     <button
       className={props.className}
+      style={props.style}
       onClick={props.onClick}
       disabled={props.loading}
     >

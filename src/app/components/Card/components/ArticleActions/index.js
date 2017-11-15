@@ -1,19 +1,23 @@
 // tools
 import React from "react"
+import { froth } from "../../../../../utils/image-froth"
+import { PicturePlaceholder } from "../../../Picture/components/PicturePlaceholder"
+import { datestamp, lunar, percise } from "../../../../../utils/datestamp"
+
+import MailChimpPrefill from "../../../../containers/_forms/MailChimpPrefill"
+import { Sidenote } from "../../../CaptionStyles"
+import Link from "../../../Link"
+import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
 
 // styles
 import { TimeStamp } from "../../../ArticleStyles"
-import { CardFlattened } from "../../styles"
-import { LinkButton } from "../../../Button"
+import { CardFlattened, CardCaption, CardHeader } from "../../styles"
+import { LinkButton, Button } from "../../../Button"
 import {
   TwitterLinkButton,
   FacebookLinkButton,
   InstagramLinkButton
 } from "../../../Button/components/SocialButtons"
-import slugToTitle from "../../../../../utils/slug-to-title"
-import { datestamp, lunar, percise } from "../../../../../utils/datestamp"
-
-import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
 
 // return
 const ActionsCard = props => {
@@ -22,55 +26,132 @@ const ActionsCard = props => {
     props.mode !== "follow"
   )
     return (
-      <CardFlattened>
-        <FacebookLinkButton
-          to="https://facebook.com/analog8cafe"
-          onClick={event => {
-            props.shareOnFacebook(event)
-            // async load Google Analytics module
-            import("react-ga").then(ReactGA => {
-              ReactGA.event({
-                category: "Campaign",
-                action: "ActionsCard.share_facebook"
-              })
-            })
-          }}
-        >
-          Share&nbsp;
-        </FacebookLinkButton>
-        <TwitterLinkButton
-          to="https://twitter.com/analog_cafe"
-          onClick={event => {
-            props.shareOnTwitter(event)
-            // async load Google Analytics module
-            import("react-ga").then(ReactGA => {
-              ReactGA.event({
-                category: "Campaign",
-                action: "ActionsCard.share_twitter"
-              })
-            })
-          }}
-        >
-          Tweet
-        </TwitterLinkButton>
-        {props.nextArticle && (
-          <LinkButton
-            to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle}
-            title={slugToTitle(props.nextArticle, { trim: [0, -1] })}
-            onClick={() => {
+      <div>
+        <Sidenote style={!props.subscribeForm ? { display: "none" } : null}>
+          Weekly emails are sent every Tuesday. We never share or sell your
+          personal information.
+        </Sidenote>
+        <CardFlattened>
+          <Button
+            red
+            style={props.subscribeForm ? { display: "none" } : null}
+            onClick={event => {
+              event.preventDefault()
+              event.stopPropagation()
+              props.revealSubscribeForm(event)
               // async load Google Analytics module
               import("react-ga").then(ReactGA => {
                 ReactGA.event({
-                  category: "Navigation",
-                  action: "ActionsCard.next_article"
+                  category: "Campaign",
+                  action: "ActionsCard.subscribe"
                 })
               })
             }}
           >
-            Next Post <span>➢</span>
-          </LinkButton>
+            Subscribe ❤︎
+          </Button>
+          {props.subscribeForm ? (
+            <MailChimpPrefill buttonText="Submit ❤︎" withinGroup />
+          ) : null}
+
+          <FacebookLinkButton
+            style={!props.shareButtons ? { display: "none" } : null}
+            to="https://facebook.com/analog8cafe"
+            onClick={event => {
+              props.shareOnFacebook(event)
+              // async load Google Analytics module
+              import("react-ga").then(ReactGA => {
+                ReactGA.event({
+                  category: "Campaign",
+                  action: "ActionsCard.share_facebook"
+                })
+              })
+            }}
+          >
+            Share&nbsp;
+          </FacebookLinkButton>
+          <TwitterLinkButton
+            style={!props.shareButtons ? { display: "none" } : null}
+            to="https://twitter.com/analog_cafe"
+            onClick={event => {
+              props.shareOnTwitter(event)
+              // async load Google Analytics module
+              import("react-ga").then(ReactGA => {
+                ReactGA.event({
+                  category: "Campaign",
+                  action: "ActionsCard.share_twitter"
+                })
+              })
+            }}
+          >
+            Tweet
+          </TwitterLinkButton>
+          <Button onClick={props.revealShareButtons}>Share ⤴</Button>
+        </CardFlattened>
+        {props.nextArticle && (
+          <CardFlattened>
+            <figure>
+              <Link
+                to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle.slug}
+                onClick={() => {
+                  // async load Google Analytics module
+                  import("react-ga").then(ReactGA => {
+                    ReactGA.event({
+                      category: "Navigation",
+                      action: "ActionsCard.next_article_picture"
+                    })
+                  })
+                }}
+              >
+                <PicturePlaceholder frothId={props.nextArticle.poster}>
+                  <img
+                    src={
+                      froth({ src: props.nextArticle.poster, size: "s" }).src
+                    }
+                    alt={props.nextArticle.title}
+                  />
+                </PicturePlaceholder>
+              </Link>
+              <figcaption>
+                <CardCaption>
+                  <span
+                    style={{
+                      display: "block",
+                      fontSize: "0.8em",
+                      lineHeight: "1.5em"
+                    }}
+                  >
+                    <span style={{ opacity: "0.5" }}>Up next:</span>{" "}
+                    <q>
+                      {props.nextArticle.title}
+                      {props.nextArticle.subtitle
+                        ? " (" + props.nextArticle.subtitle + ")"
+                        : null}
+                    </q>{" "}
+                    – a {props.nextArticle.tag.replace(/-/g, " ")} by{" "}
+                    {props.nextArticle.authorName}.
+                  </span>
+                </CardCaption>
+              </figcaption>
+            </figure>
+            <LinkButton
+              style={{ margin: 0 }}
+              to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle.slug}
+              onClick={() => {
+                // async load Google Analytics module
+                import("react-ga").then(ReactGA => {
+                  ReactGA.event({
+                    category: "Navigation",
+                    action: "ActionsCard.next_article_button"
+                  })
+                })
+              }}
+            >
+              Continue Reading <span>➢</span>
+            </LinkButton>
+          </CardFlattened>
         )}
-      </CardFlattened>
+      </div>
     )
   else
     return (

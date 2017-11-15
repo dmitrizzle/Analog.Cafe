@@ -3,7 +3,7 @@ import React from "react"
 
 // components
 import { Button } from "../../components/Button"
-import { SubtitleInput } from "../../components/InputStyles"
+import EmailInput from "./components/EmailInput"
 
 // styles
 import { Form } from "../../components/FormStyles"
@@ -17,7 +17,10 @@ export default class extends React.Component {
     super(props)
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.state = { email: "", warning: false }
+    this.state = {
+      email: "",
+      warning: false
+    }
   }
   handleEmailChange = event => {
     this.setState({ email: event.target.value || "", warning: false })
@@ -27,21 +30,26 @@ export default class extends React.Component {
     event.preventDefault()
     validateEmail(this.state.email)
       ? window.open(
-          "https://cafe.us4.list-manage.com/subscribe/post?u=256339f7eafa36f2f466aca44&id=12d8a644fa&MERGE0=" +
-            this.state.email
+          (this.props.formUrl ||
+            "https://cafe.us4.list-manage.com/subscribe/post?u=256339f7eafa36f2f466aca44&id=f43e54afe2&MERGE0=") +
+            this.state.email,
+          "_blank",
+          "height=450,width=600"
         )
       : this.setState({ warning: true })
   }
   render = () => {
     return (
-      <Form warning={this.state.warning}>
-        <SubtitleInput
-          placeholder="@Your Email"
+      <Form
+        style={this.props.style || null}
+        withinGroup={this.props.withinGroup}
+      >
+        <EmailInput
           onChange={this.handleEmailChange}
-          required
+          warning={this.state.warning}
         />
         <Button onClick={this.handleSubmit} red>
-          Yes, Remind Me
+          {this.props.buttonText || "Subscribe"}
         </Button>
       </Form>
     )

@@ -57,6 +57,8 @@ class Article extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
+      shareButtons: false,
+      subscribeForm: false,
       tag: {
         name: "Post",
         route: "/"
@@ -98,6 +100,19 @@ class Article extends React.PureComponent {
   componentWillUnmount = () => {
     this.unlisten()
   }
+
+  handleRevealSubscribeForm = () => {
+    this.setState({
+      subscribeForm: !this.state.subscribeForm,
+      shareButtons: false
+    })
+  }
+  handleRevealShareButtons = () => {
+    this.setState({
+      shareButtons: !this.state.shareButtons,
+      subscribeForm: false
+    })
+  }
   handleShareOnFacebook = event => {
     event.preventDefault()
     window.open(
@@ -127,7 +142,6 @@ class Article extends React.PureComponent {
       "height=600,width=500"
     )
   }
-  handleNextArticle = () => {}
   render = () => {
     return (
       <ArticleElement>
@@ -184,9 +198,13 @@ class Article extends React.PureComponent {
           {this.props.article.poster &&
             this.props.article.author && (
               <ArticleActions
+                shareButtons={this.state.shareButtons}
+                subscribeForm={this.state.subscribeForm}
+                revealShareButtons={this.handleRevealShareButtons}
+                revealSubscribeForm={this.handleRevealSubscribeForm}
                 shareOnFacebook={this.handleShareOnFacebook}
                 shareOnTwitter={this.handleShareOnTwitter}
-                nextArticle={this.props.article.nextArticle}
+                nextArticle={this.props.article.next}
                 thisArticle={this.props.article.slug}
                 thisArticlePostDate={this.props.article["post-date"]}
               />

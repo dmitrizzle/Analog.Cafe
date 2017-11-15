@@ -4,7 +4,7 @@ import React from "react"
 // components
 import { ModalDispatch } from "../Modal"
 import { Button } from "../../components/Button"
-import { SubtitleInput } from "../../components/InputStyles"
+import EmailInput from "./components/EmailInput"
 
 // styles
 import { Form } from "../../components/FormStyles"
@@ -34,11 +34,8 @@ export default class extends React.PureComponent {
   render = () => {
     return (
       <Form>
-        <SubtitleInput
-          placeholder="Your Email"
+        <EmailInput
           onChange={this.handleEmailChange}
-          required
-          maxLength="200"
           warning={this.state.warning}
         />
 
