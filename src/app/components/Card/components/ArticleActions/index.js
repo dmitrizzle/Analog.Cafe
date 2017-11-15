@@ -11,7 +11,7 @@ import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
 
 // styles
 import { TimeStamp } from "../../../ArticleStyles"
-import { CardFlattened, CardCaption, CardHeader } from "../../styles"
+import { CardFlattened, CardCaption } from "../../styles"
 import { LinkButton, Button } from "../../../Button"
 import {
   TwitterLinkButton,
@@ -27,9 +27,15 @@ const ActionsCard = props => {
   )
     return (
       <div>
-        <Sidenote style={!props.subscribeForm ? { display: "none" } : null}>
-          Weekly emails are sent every Tuesday. We never share or sell your
-          personal information.
+        <Sidenote
+          style={{
+            display: !props.subscribeForm ? "none" : null,
+            textAlign: "center"
+          }}
+        >
+          A neat summary of the latest articles is sent out every Tuesday. To
+          get it, fill out your email below and click “Submit.” We never share
+          or sell your personal information.
         </Sidenote>
         <CardFlattened>
           <Button
