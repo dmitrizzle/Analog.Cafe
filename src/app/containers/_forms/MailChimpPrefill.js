@@ -48,7 +48,20 @@ export default class extends React.Component {
           onChange={this.handleEmailChange}
           warning={this.state.warning}
         />
-        <Button onClick={this.handleSubmit} red>
+        <Button
+          red
+          onClick={event => {
+            this.props.handleSubmit(event)
+
+            // async load Google Analytics module
+            import("react-ga").then(ReactGA => {
+              ReactGA.event({
+                category: "Campaign",
+                action: "MailChimpForm.subscribe"
+              })
+            })
+          }}
+        >
           {this.props.buttonText || "Subscribe"}
         </Button>
       </Form>

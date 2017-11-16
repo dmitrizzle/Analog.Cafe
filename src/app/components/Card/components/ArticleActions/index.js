@@ -8,6 +8,7 @@ import MailChimpPrefill from "../../../../containers/_forms/MailChimpPrefill"
 import { Sidenote } from "../../../CaptionStyles"
 import Link from "../../../Link"
 import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
+import { SubscribeToWeekly } from "../../../_rt-snippets"
 
 // styles
 import { TimeStamp } from "../../../ArticleStyles"
@@ -33,23 +34,7 @@ const ActionsCard = props => {
               textAlign: "center"
             }}
           >
-            A neat summary (<Link
-              onClick={() => {
-                // async load Google Analytics module
-                import("react-ga").then(ReactGA => {
-                  ReactGA.event({
-                    category: "Campaign",
-                    action: "ActionsCard.subscribe_example"
-                  })
-                })
-              }}
-              to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
-            >
-              example
-            </Link>) of the latest article(s) is sent out every Tuesday. To get
-            it, fill out your email below and click “Submit{" "}
-            <span style={{ fontStyle: "normal" }}>❤︎”</span> We never share or
-            sell your personal information.
+            <SubscribeToWeekly />
           </Sidenote>
         ) : null}
         <CardFlattened>
@@ -158,7 +143,7 @@ const ActionsCard = props => {
                         ? " (" + props.nextArticle.subtitle + ")"
                         : null}
                     </q>{" "}
-                    – a {props.nextArticle.tag.replace(/-/g, " ")} by{" "}
+                    – {props.nextArticle.tag.replace(/-/g, " ")} by{" "}
                     {props.nextArticle.authorName}.
                   </span>
                 </CardCaption>
