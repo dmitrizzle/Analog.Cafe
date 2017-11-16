@@ -170,7 +170,7 @@ export default props => {
         <p>
           <SubscribeToWeekly />
         </p>
-        <MailChimpPrefill buttonText="Submit ❤︎" />
+        <MailChimpPrefill buttonText="Subscribe ❤︎" />
 
         <ArticleActions mode="follow" />
         <p>

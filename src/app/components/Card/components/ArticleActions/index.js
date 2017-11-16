@@ -22,10 +22,7 @@ import {
 
 // return
 const ActionsCard = props => {
-  if (
-    props.thisArticle !== "thank-you-for-reading-87fv" &&
-    props.mode !== "follow"
-  )
+  if (props.mode !== "follow")
     return (
       <div>
         {props.subscribeForm ? (
@@ -103,69 +100,70 @@ const ActionsCard = props => {
             </span>
           </Button>
         </CardFlattened>
-        {props.nextArticle && (
-          <CardFlattened>
-            <figure>
-              <Link
+        {props.nextArticle &&
+          props.nextArticle.slug && (
+            <CardFlattened>
+              <figure>
+                <Link
+                  to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle.slug}
+                  onClick={() => {
+                    // async load Google Analytics module
+                    import("react-ga").then(ReactGA => {
+                      ReactGA.event({
+                        category: "Navigation",
+                        action: "ActionsCard.next_article_picture"
+                      })
+                    })
+                  }}
+                >
+                  <PicturePlaceholder frothId={props.nextArticle.poster}>
+                    <img
+                      src={
+                        froth({ src: props.nextArticle.poster, size: "s" }).src
+                      }
+                      alt={props.nextArticle.title}
+                    />
+                  </PicturePlaceholder>
+                </Link>
+                <figcaption>
+                  <CardCaption>
+                    <span
+                      style={{
+                        display: "block",
+                        fontSize: "0.8em",
+                        lineHeight: "1.5em"
+                      }}
+                    >
+                      <span style={{ opacity: "0.5" }}>Up next:</span>{" "}
+                      <q>
+                        {props.nextArticle.title}
+                        {props.nextArticle.subtitle
+                          ? " (" + props.nextArticle.subtitle + ")"
+                          : null}
+                      </q>{" "}
+                      – {props.nextArticle.tag.replace(/-/g, " ")} by{" "}
+                      {props.nextArticle.authorName}.
+                    </span>
+                  </CardCaption>
+                </figcaption>
+              </figure>
+              <LinkButton
+                style={{ margin: 0 }}
                 to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle.slug}
                 onClick={() => {
                   // async load Google Analytics module
                   import("react-ga").then(ReactGA => {
                     ReactGA.event({
                       category: "Navigation",
-                      action: "ActionsCard.next_article_picture"
+                      action: "ActionsCard.next_article_button"
                     })
                   })
                 }}
               >
-                <PicturePlaceholder frothId={props.nextArticle.poster}>
-                  <img
-                    src={
-                      froth({ src: props.nextArticle.poster, size: "s" }).src
-                    }
-                    alt={props.nextArticle.title}
-                  />
-                </PicturePlaceholder>
-              </Link>
-              <figcaption>
-                <CardCaption>
-                  <span
-                    style={{
-                      display: "block",
-                      fontSize: "0.8em",
-                      lineHeight: "1.5em"
-                    }}
-                  >
-                    <span style={{ opacity: "0.5" }}>Up next:</span>{" "}
-                    <q>
-                      {props.nextArticle.title}
-                      {props.nextArticle.subtitle
-                        ? " (" + props.nextArticle.subtitle + ")"
-                        : null}
-                    </q>{" "}
-                    – {props.nextArticle.tag.replace(/-/g, " ")} by{" "}
-                    {props.nextArticle.authorName}.
-                  </span>
-                </CardCaption>
-              </figcaption>
-            </figure>
-            <LinkButton
-              style={{ margin: 0 }}
-              to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle.slug}
-              onClick={() => {
-                // async load Google Analytics module
-                import("react-ga").then(ReactGA => {
-                  ReactGA.event({
-                    category: "Navigation",
-                    action: "ActionsCard.next_article_button"
-                  })
-                })
-              }}
-            >
-              Continue Reading <span>➢</span>
-            </LinkButton>
-          </CardFlattened>
-        )}
+                Continue Reading <span>➢</span>
+              </LinkButton>
+            </CardFlattened>
+          )}
       </div>
     )
   else
@@ -220,10 +218,7 @@ const ActionsCard = props => {
 }
 
 const DatePublished = props => {
-  if (
-    props.thisArticlePostDate &&
-    props.thisArticle !== "thank-you-for-reading-87fv"
-  )
+  if (props.thisArticlePostDate)
     return (
       <TimeStamp
         dateTime={percise(props.thisArticlePostDate)}
@@ -233,11 +228,7 @@ const DatePublished = props => {
         {lunar(props.thisArticlePostDate)}
       </TimeStamp>
     )
-  else if (
-    props.thisArticlePostDate &&
-    props.thisArticle === "thank-you-for-reading-87fv"
-  )
-    return null
+  else if (props.thisArticlePostDate) return null
   else return null
 }
 
