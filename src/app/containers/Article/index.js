@@ -77,6 +77,12 @@ class Article extends React.PureComponent {
         ROUTE_ARTICLE_API +
         this.props.history.location.pathname.replace(ROUTE_ARTICLE_DIR, "")
     })
+
+    // reset article actions menu
+    this.setState({
+      shareButtons: false,
+      subscribeForm: false
+    })
   }
   componentDidMount = () => {
     this.unlisten = this.props.history.listen(location => this.fetchPage())
