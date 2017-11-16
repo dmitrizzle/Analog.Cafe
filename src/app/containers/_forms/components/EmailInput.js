@@ -9,6 +9,7 @@ export default props => {
       placeholder="Your Email"
       onChange={props.onChange}
       required
+      autoFocus
       maxLength="200"
       warning={props.warning}
     />

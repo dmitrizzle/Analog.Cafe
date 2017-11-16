@@ -27,72 +27,96 @@ const ActionsCard = props => {
   )
     return (
       <div>
-        <Sidenote
-          style={{
-            display: !props.subscribeForm ? "none" : null,
-            textAlign: "center"
-          }}
-        >
-          A neat summary of the latest articles is sent out every Tuesday. To
-          get it, fill out your email below and click “Submit.” We never share
-          or sell your personal information.
-        </Sidenote>
-        <CardFlattened>
-          <Button
-            red
-            style={props.subscribeForm ? { display: "none" } : null}
-            onClick={event => {
-              event.preventDefault()
-              event.stopPropagation()
-              props.revealSubscribeForm(event)
-              // async load Google Analytics module
-              import("react-ga").then(ReactGA => {
-                ReactGA.event({
-                  category: "Campaign",
-                  action: "ActionsCard.subscribe"
-                })
-              })
+        {props.subscribeForm ? (
+          <Sidenote
+            style={{
+              textAlign: "center"
             }}
           >
-            Subscribe ❤︎
-          </Button>
+            A neat summary (<Link
+              onClick={() => {
+                // async load Google Analytics module
+                import("react-ga").then(ReactGA => {
+                  ReactGA.event({
+                    category: "Campaign",
+                    action: "ActionsCard.subscribe_example"
+                  })
+                })
+              }}
+              to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
+            >
+              example
+            </Link>) of the latest article(s) is sent out every Tuesday. To get
+            it, fill out your email below and click “Submit{" "}
+            <span style={{ fontStyle: "normal" }}>❤︎”</span> We never share or
+            sell your personal information.
+          </Sidenote>
+        ) : null}
+        <CardFlattened>
+          {!props.subscribeForm ? (
+            <Button
+              red
+              onClick={event => {
+                props.revealSubscribeForm(event)
+
+                // async load Google Analytics module
+                import("react-ga").then(ReactGA => {
+                  ReactGA.event({
+                    category: "Campaign",
+                    action: "ActionsCard.subscribe"
+                  })
+                })
+              }}
+            >
+              Subscribe ❤︎
+            </Button>
+          ) : null}
           {props.subscribeForm ? (
             <MailChimpPrefill buttonText="Submit ❤︎" withinGroup />
           ) : null}
 
-          <FacebookLinkButton
-            style={!props.shareButtons ? { display: "none" } : null}
-            to="https://facebook.com/analog8cafe"
-            onClick={event => {
-              props.shareOnFacebook(event)
-              // async load Google Analytics module
-              import("react-ga").then(ReactGA => {
-                ReactGA.event({
-                  category: "Campaign",
-                  action: "ActionsCard.share_facebook"
+          {props.shareButtons ? (
+            <FacebookLinkButton
+              to="https://facebook.com/analog8cafe"
+              onClick={event => {
+                props.shareOnFacebook(event)
+                // async load Google Analytics module
+                import("react-ga").then(ReactGA => {
+                  ReactGA.event({
+                    category: "Campaign",
+                    action: "ActionsCard.share_facebook"
+                  })
                 })
-              })
-            }}
-          >
-            Share&nbsp;
-          </FacebookLinkButton>
-          <TwitterLinkButton
-            style={!props.shareButtons ? { display: "none" } : null}
-            to="https://twitter.com/analog_cafe"
-            onClick={event => {
-              props.shareOnTwitter(event)
-              // async load Google Analytics module
-              import("react-ga").then(ReactGA => {
-                ReactGA.event({
-                  category: "Campaign",
-                  action: "ActionsCard.share_twitter"
+              }}
+            >
+              Share&nbsp;
+            </FacebookLinkButton>
+          ) : null}
+          {props.shareButtons ? (
+            <TwitterLinkButton
+              to="https://twitter.com/analog_cafe"
+              onClick={event => {
+                props.shareOnTwitter(event)
+                // async load Google Analytics module
+                import("react-ga").then(ReactGA => {
+                  ReactGA.event({
+                    category: "Campaign",
+                    action: "ActionsCard.share_twitter"
+                  })
                 })
-              })
-            }}
-          >
-            Tweet
-          </TwitterLinkButton>
-          <Button onClick={props.revealShareButtons}>Share ⤴</Button>
+              }}
+            >
+              Tweet
+            </TwitterLinkButton>
+          ) : null}
+          <Button onClick={props.revealShareButtons} black={props.shareButtons}>
+            Share{" "}
+            <span
+              style={{ transform: "rotate(90deg)", display: "inline-block" }}
+            >
+              ⎋
+            </span>
+          </Button>
         </CardFlattened>
         {props.nextArticle && (
           <CardFlattened>

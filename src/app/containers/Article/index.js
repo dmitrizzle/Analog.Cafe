@@ -101,7 +101,8 @@ class Article extends React.PureComponent {
     this.unlisten()
   }
 
-  handleRevealSubscribeForm = () => {
+  handleRevealSubscribeForm = event => {
+    event.preventDefault()
     this.setState({
       subscribeForm: !this.state.subscribeForm,
       shareButtons: false
