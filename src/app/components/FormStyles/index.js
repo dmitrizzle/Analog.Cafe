@@ -4,7 +4,9 @@ import Color from "color"
 
 // return
 const shadowGrey = props =>
-  Color(props.theme.color.foreground).alpha(props.theme.opacity.least).string()
+  Color(props.theme.color.foreground)
+    .alpha(props.theme.opacity.least)
+    .string()
 const shadowGrey2 = props =>
   Color(props.theme.color.foreground)
     .alpha(props.theme.opacity.least * 2)
@@ -36,5 +38,15 @@ export const Form = styled.form`
       margin-left: -${props =>
         props.theme.size.block.column.safety}em !important;
     }
+  `};
+
+  ${props =>
+    props.withinGroup &&
+    `
+    border-radius: 0 !important;
+    border-bottom: ${props.theme.size.block.border}px solid ${
+      props.theme.color.foreground
+    };
+
   `};
 `
