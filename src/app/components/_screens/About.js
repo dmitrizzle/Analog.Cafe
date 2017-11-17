@@ -9,12 +9,14 @@ import Figure from "../Picture"
 import Link from "../Link"
 import { ModalDispatch } from "../../containers/Modal"
 import Email from "../Email"
+import MailChimpPrefill from "../../containers/_forms/MailChimpPrefill"
+import ArticleActions from "../Card/components/ArticleActions"
+import { SubscribeToWeekly } from "../_rt-snippets"
 
 import { froth } from "../../../utils/image-froth"
 
 // styles
 import { Section, Article, Quote } from "../ArticleStyles"
-import ArticleActions from "../Card/components/ArticleActions"
 
 const ThankYouList = styled(Quote)`
   font-style: normal !important;
@@ -166,10 +168,15 @@ export default props => {
 
         <h3>Connect, contact & get involved.</h3>
         <p>
+          <SubscribeToWeekly />
+        </p>
+        <MailChimpPrefill buttonText="Subscribe ❤︎" />
+
+        <ArticleActions mode="follow" />
+        <p>
           If you have a question, suggestion or just want to chat, feel free to
           follow, message, or email <Email />
         </p>
-        <ArticleActions mode="follow" />
       </Section>
     </Article>
   )

@@ -4,7 +4,7 @@ import React from "react"
 // components
 import Heading from "../ArticleHeading"
 import { Section, Article } from "../ArticleStyles"
-import SignInWithEmail from "../../containers/_forms/EmailReminder"
+import MailChimpPrefill from "../../containers/_forms/MailChimpPrefill"
 
 // render
 export default props => {
@@ -21,7 +21,10 @@ export default props => {
           like a reminder when this happens?
         </p>
 
-        <SignInWithEmail />
+        <MailChimpPrefill
+          formUrl="https://cafe.us4.list-manage.com/subscribe/post?u=256339f7eafa36f2f466aca44&id=12d8a644fa&MERGE0="
+          buttonText="Yes, Remind Me"
+        />
       </Section>
     </Article>
   )

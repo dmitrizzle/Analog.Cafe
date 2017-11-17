@@ -21,7 +21,10 @@ class Figure extends React.Component {
   // state for caption & selection
   constructor(props) {
     super(props)
-    this.state = { caption: props.node.data.get("caption") }
+    this.state = {
+      caption: props.node.data.get("caption"),
+      src: props.node.data.get("src")
+    }
     this.handleChange = this.handleChange.bind(this)
     this.handleTextareaClick = this.handleTextareaClick.bind(this)
     this.handleRemovePicture = this.handleRemovePicture.bind(this)
@@ -53,6 +56,7 @@ class Figure extends React.Component {
       .change()
       .setNodeByKey(node.key, properties)
     editor.onChange(resolvedState) // have to use native onChange in editor (rather than handleChange)
+    this.setState({ src })
   }
   handleTextareaClick = event => {
     event.preventDefault()

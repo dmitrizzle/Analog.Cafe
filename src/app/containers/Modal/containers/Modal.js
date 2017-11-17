@@ -38,7 +38,7 @@ const Modal = props => {
 
   return (
     <ModalOverlay
-      id="ModalOverlay"
+      id="modal-overlay"
       style={{
         display: props.modal.hidden ? "none" : "block"
       }}
