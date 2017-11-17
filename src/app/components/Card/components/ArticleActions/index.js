@@ -54,7 +54,7 @@ const ActionsCard = props => {
             </Button>
           ) : null}
           {props.subscribeForm ? (
-            <MailChimpPrefill buttonText="Submit ❤︎" withinGroup />
+            <MailChimpPrefill buttonText="Submit ❤︎" withinGroup autoFocus />
           ) : null}
 
           {props.shareButtons ? (

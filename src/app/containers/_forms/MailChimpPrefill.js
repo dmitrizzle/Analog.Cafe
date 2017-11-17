@@ -47,6 +47,7 @@ export default class extends React.Component {
         <EmailInput
           onChange={this.handleEmailChange}
           warning={this.state.warning}
+          autoFocus={this.props.autoFocus}
         />
         <Button
           red
