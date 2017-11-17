@@ -51,7 +51,7 @@ export default class extends React.Component {
         <Button
           red
           onClick={event => {
-            this.props.handleSubmit(event)
+            this.handleSubmit(event)
 
             // async load Google Analytics module
             import("react-ga").then(ReactGA => {
