@@ -126,14 +126,12 @@ class App extends React.PureComponent {
   }
 
   render = () => {
-    return (
-      <div>
-        <Nav top />
-        <AppRoutes userStatus={this.props.user.status} />
-        <Nav bottom />
-        <Modal />
-      </div>
-    )
+    return [
+      <Nav top key="App_Nav_top" />,
+      <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
+      <Nav bottom key="App_Nav_bottom" />,
+      <Modal key="App_Modal" />
+    ]
   }
 }
 

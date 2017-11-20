@@ -18,23 +18,22 @@ const titlePlaceholder = {
 
 // return
 const Composer = props => {
-  return (
-    <div>
-      <HeaderEditor
+  return [
+    <HeaderEditor
+      composerState={props.composerState}
+      pageTitle={titlePlaceholder.title}
+      pageSubtitle={titlePlaceholder.subtitle}
+      key="Composer_HeaderEditor"
+    />,
+    <Section onClick={props.requestEditorFocus} key="Composer_Section">
+      <ContentEditor
         composerState={props.composerState}
-        pageTitle={titlePlaceholder.title}
-        pageSubtitle={titlePlaceholder.subtitle}
+        ref={input => {
+          this.contentEditor = input
+        }}
       />
-      <Section onClick={props.requestEditorFocus}>
-        <ContentEditor
-          composerState={props.composerState}
-          ref={input => {
-            this.contentEditor = input
-          }}
-        />
-      </Section>
-    </div>
-  )
+    </Section>
+  ]
 }
 
 // connect with redux

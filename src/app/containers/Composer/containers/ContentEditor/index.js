@@ -291,42 +291,41 @@ class ContentEditor extends React.PureComponent {
       false
     )
 
-    return (
-      <div>
-        <div style={{ position: "relative" }}>
-          <ImageButton
-            cursorContext={this.state.cursorContext}
-            onClick={this.handleImageButton}
-          />
-          <Editor
-            plugins={plugins}
-            renderNode={renderNode}
-            renderMark={renderMark}
-            schema={this.state.schema}
-            placeholder={"Write your story…"}
-            value={this.state.value}
-            onChange={this.handleChange}
-            onClick={this.handleClickPropagation}
-            onBlur={this.handleBlur}
-            onFocus={this.handleFocus}
-            style={{
-              minHeight: "28em",
-              boxShadow: this.state.editorFocus
-                ? "0 1px 0 0 rgba(44,44,44,.15)"
-                : "",
-              background: this.state.dragOver ? "rgba(44,44,44,.15)" : ""
-            }}
-            ref={input => (this.slateEditor = input)}
-          />
-        </div>
-        <Menu
-          menuRef={this.menuRef}
-          onChange={this.handleChange}
-          value={this.state.value}
-          formatCommand={this.formatCommand}
+    return [
+      <div style={{ position: "relative" }} key="ContentEditor_div">
+        <ImageButton
+          cursorContext={this.state.cursorContext}
+          onClick={this.handleImageButton}
         />
-      </div>
-    )
+        <Editor
+          plugins={plugins}
+          renderNode={renderNode}
+          renderMark={renderMark}
+          schema={this.state.schema}
+          placeholder={"Write your story…"}
+          value={this.state.value}
+          onChange={this.handleChange}
+          onClick={this.handleClickPropagation}
+          onBlur={this.handleBlur}
+          onFocus={this.handleFocus}
+          style={{
+            minHeight: "28em",
+            boxShadow: this.state.editorFocus
+              ? "0 1px 0 0 rgba(44,44,44,.15)"
+              : "",
+            background: this.state.dragOver ? "rgba(44,44,44,.15)" : ""
+          }}
+          ref={input => (this.slateEditor = input)}
+        />
+      </div>,
+      <Menu
+        menuRef={this.menuRef}
+        onChange={this.handleChange}
+        value={this.state.value}
+        formatCommand={this.formatCommand}
+        key="ContentEditor_Menu"
+      />
+    ]
   }
 }
 
