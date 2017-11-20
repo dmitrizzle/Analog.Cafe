@@ -16,6 +16,9 @@ import { plugins } from "./plugins"
 import { renderNode, renderMark } from "./render"
 import { schema } from "./schema"
 import { loadContent } from "../../../../../utils/composer-loader"
+import { menuPosition } from "../../../../../utils/composer-menu-position"
+import { formatCommand } from "../../../../../utils/composer-menu-format-commands"
+import { focusEvents } from "../../../../../utils/composer-focus-events"
 import {
   saveContent,
   setDraftStatusHelper
@@ -138,158 +141,15 @@ class ContentEditor extends React.PureComponent {
   componentDidUpdate = () => {
     this.updateMenu()
   }
-  updateMenu = () => {
-    const { value } = this.state
-    const menu = this.menu
-    if (!menu) return
-    if (window.getSelection().rangeCount <= 0) return
-
-    const selection = window.getSelection()
-    const range = selection.getRangeAt(0)
-    const rect = range.getBoundingClientRect()
-    if (value.isBlurred || value.isEmpty) {
-      menu.style.display = ""
-      return
-    }
-
-    menu.style.display = "block"
-
-    const leftOffset =
-      rect.left + window.scrollX - menu.offsetWidth / 2 + rect.width / 2
-    const topOffset = rect.top + window.scrollY - menu.offsetHeight + 3
-    const bottomOffset =
-      -(rect.bottom + window.scrollY) +
-      window.innerHeight -
-      menu.offsetHeight -
-      10
-    menu.style.top = `${topOffset}px`
-    menu.style.bottom = `${bottomOffset}px`
-    menu.style.left = `${leftOffset >= 0 ? leftOffset : 5}px`
-  }
   menuRef = menu => {
     this.menu = menu
   }
-  formatCommand = type => {
-    const { value } = this.state
-    let resolvedState
+  formatCommand = type => formatCommand(type, this)
+  updateMenu = () => menuPosition(this)
 
-    switch (type) {
-      case "undo_heading":
-        resolvedState = value.change().setBlock({ type: "paragraph" })
-        this.setState({
-          value: resolvedState.value
-        })
-        break
-      case "make_heading":
-        resolvedState = value
-          .change()
-          .unwrapInline("link")
-          .value.change()
-          .removeMark("bold")
-          .value.change()
-          .removeMark("italic")
-          .value.change()
-          .setBlock({ type: "heading" })
-        this.setState({
-          value: resolvedState.value
-        })
-        break
-      case "make_quote":
-        resolvedState = value
-          .change()
-          .unwrapInline("link")
-          .value.change()
-          .removeMark("bold")
-          .value.change()
-          .removeMark("italic")
-          .value.change()
-          .setBlock({ type: "quote" })
-        this.setState({
-          value: resolvedState.value
-        })
-        break
-      case "toggle_bold":
-        resolvedState = value.change().toggleMark({ type: "bold" })
-        this.setState({
-          value: resolvedState.value
-        })
-        break
-      case "toggle_italic":
-        resolvedState = value.change().toggleMark({ type: "italic" })
-        this.setState({
-          value: resolvedState.value
-        })
-        break
-      case "toggle_link":
-        const hasLinks = value.inlines.some(inline => inline.type === "link")
-        if (hasLinks) resolvedState = value.change().unwrapInline("link")
-        else {
-          const href = window.prompt("Enter the URL of the link:")
-          if (!href) return
-          resolvedState = value.change().wrapInline({
-            type: "link",
-            data: { href }
-          })
-        }
-        this.setState({
-          value: resolvedState.value
-        })
-        break
-      default:
-        return false
-    }
-  }
   // render
   render = () => {
-    window.ondragover = function() {
-      this.handleDragOver()
-    }.bind(this)
-    window.ondrop = function() {
-      this.handleDragEnd()
-    }.bind(this)
-
-    // prevent default to allow drop
-    document.addEventListener(
-      "dragover",
-      event => {
-        event.preventDefault()
-      },
-      false
-    )
-    // highlight potential drop target when the draggable element enters it
-    document.addEventListener(
-      "dragenter",
-      function(event) {
-        this.handleDragOver()
-      }.bind(this),
-      false
-    )
-    // cancel highlights when drag intent has finished
-    document.addEventListener(
-      "dragleave",
-      function() {
-        this.handleDragEnd()
-      }.bind(this),
-      false
-    )
-    document.addEventListener(
-      "drop",
-      function(event) {
-        event.preventDefault()
-        this.handleDragEnd()
-      }.bind(this),
-      false
-    )
-    // blur editor on Esc (remove highlights and guides for preview)
-    document.addEventListener(
-      "keydown",
-      function(event) {
-        if (event.keyCode === 27) {
-          this.slateEditor.blur()
-        }
-      }.bind(this),
-      false
-    )
+    focusEvents(this)
 
     return [
       <div style={{ position: "relative" }} key="ContentEditor_div">
