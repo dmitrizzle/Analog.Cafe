@@ -39,7 +39,6 @@ export const menuPosition = _this => {
   const menu = _this.menu
   if (!menu) return
   if (window.getSelection().rangeCount <= 0) return
-
   const selection = window.getSelection()
   const range = selection.getRangeAt(0)
   const rect = range.getBoundingClientRect()
@@ -47,9 +46,7 @@ export const menuPosition = _this => {
     menu.style.display = ""
     return
   }
-
   menu.style.display = "block"
-
   const leftOffset =
     rect.left + window.scrollX - menu.offsetWidth / 2 + rect.width / 2
   const topOffset = rect.top + window.scrollY - menu.offsetHeight + 3
@@ -63,6 +60,15 @@ export const menuPosition = _this => {
   menu.style.left = `${leftOffset >= 0 ? leftOffset : 5}px`
 }
 
+//
+export const addLink = value => {
+  const href = window.prompt("Enter the URL for the link:")
+  if (!href) return
+  return value.change().wrapInline({
+    type: "link",
+    data: { href }
+  })
+}
 export const formatCommand = (type, _this) => {
   const { value } = _this.state
   let resolvedState
@@ -117,14 +123,7 @@ export const formatCommand = (type, _this) => {
     case "toggle_link":
       const hasLinks = value.inlines.some(inline => inline.type === "link")
       if (hasLinks) resolvedState = value.change().unwrapInline("link")
-      else {
-        const href = window.prompt("Enter the URL of the link:")
-        if (!href) return
-        resolvedState = value.change().wrapInline({
-          type: "link",
-          data: { href }
-        })
-      }
+      else resolvedState = addLink(value)
       _this.setState({
         value: resolvedState.value
       })

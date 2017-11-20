@@ -29,11 +29,23 @@ export default props => {
         {props.children}
       </a>
     )
-  else
+  else if (address.startsWith("/"))
     // internal links
     return (
       <NavLink exact to={address} {...props}>
         {props.children}
       </NavLink>
+    )
+  else
+    // fix invalid links
+    return (
+      <a
+        href={"http://" + address}
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        {...props}
+      >
+        {props.children}
+      </a>
     )
 }
