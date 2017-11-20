@@ -10,7 +10,10 @@ import slugToTitle from "../../../utils/slug-to-title"
 
 // redux & state
 import { connect } from "react-redux"
-import { fetchPage } from "../../../actions/articleActions"
+import {
+  fetchPage,
+  setPage as setNextArticle
+} from "../../../actions/articleActions"
 import {
   ROUTE_ARTICLE_API,
   ROUTE_ARTICLE_DIR
@@ -155,6 +158,7 @@ class Article extends React.PureComponent {
     )
   }
   render = () => {
+    console.log(this.props.article)
     return (
       <ArticleElement>
         <Helmet>
@@ -177,26 +181,33 @@ class Article extends React.PureComponent {
           pageSubtitle={this.props.article.subtitle}
           title={this.props.article.error && this.props.article.error}
         >
-          {this.props.article.status === "published" && (
-            <Byline>
-              <Link
-                to={this.state.tag.route}
-                style={{ textDecoration: "none" }}
-              >
-                <strong>{this.state.tag.name}</strong>
-              </Link>{" "}
-              by{" "}
-              <ModalDispatch
-                with={{
-                  request: {
-                    url: ROUTE_AUTHOR_API + "/" + this.props.article.author.id
-                  }
-                }}
-              >
-                {this.props.article.author.name}
-              </ModalDispatch>.
-            </Byline>
-          )}
+          {this.props.article.author &&
+            this.props.article.author.name &&
+            this.props.article.tag && (
+              <Byline>
+                <Link
+                  to={this.state.tag.route}
+                  style={{ textDecoration: "none" }}
+                >
+                  <strong>{this.state.tag.name}</strong>
+                </Link>{" "}
+                by{" "}
+                {this.props.article.author.id ? (
+                  <ModalDispatch
+                    with={{
+                      request: {
+                        url:
+                          ROUTE_AUTHOR_API + "/" + this.props.article.author.id
+                      }
+                    }}
+                  >
+                    {this.props.article.author.name}
+                  </ModalDispatch>
+                ) : (
+                  this.props.article.author.name
+                )}.
+              </Byline>
+            )}
         </Heading>
         <Section articleStatus={this.props.article.status}>
           <Editor
@@ -219,6 +230,16 @@ class Article extends React.PureComponent {
                 nextArticle={this.props.article.next}
                 thisArticle={this.props.article.slug}
                 thisArticlePostDate={this.props.article["post-date"]}
+                nextArticleHeading={nextArticleHeading =>
+                  this.props.setNextArticle({
+                    title: nextArticleHeading.title,
+                    subtitle: nextArticleHeading.subtitle,
+                    author: nextArticleHeading.author,
+                    slug: nextArticleHeading.slug,
+                    poster: nextArticleHeading.poster,
+                    tag: nextArticleHeading.tag
+                  })
+                }
               />
             )}
         </Section>
@@ -237,6 +258,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchPage: request => {
       dispatch(fetchPage(request))
+    },
+    setNextArticle: nextArticle => {
+      dispatch(setNextArticle(nextArticle))
     }
   }
 }
