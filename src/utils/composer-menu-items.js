@@ -61,13 +61,15 @@ export const menuPosition = _this => {
 }
 
 //
-export const addLink = value => {
+export const addLink = (value, returnType = "value") => {
   const href = window.prompt("Enter the URL for the link:")
   if (!href) return
-  return value.change().wrapInline({
-    type: "link",
-    data: { href }
-  })
+  if (returnType === "value")
+    return value.change().wrapInline({
+      type: "link",
+      data: { href }
+    })
+  else if (returnType === "data") return href
 }
 export const formatCommand = (type, _this) => {
   const { value } = _this.state

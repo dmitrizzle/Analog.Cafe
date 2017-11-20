@@ -17,6 +17,7 @@ export default props => {
         href={address}
         target="_blank"
         rel="nofollow noopener noreferrer"
+        title={address}
         {...props}
       >
         {props.children}
@@ -25,14 +26,14 @@ export default props => {
   else if (address.includes("#"))
     // anchor tags
     return (
-      <a href={address} {...props}>
+      <a href={address} title={address} {...props}>
         {props.children}
       </a>
     )
   else if (address.startsWith("/"))
     // internal links
     return (
-      <NavLink exact to={address} {...props}>
+      <NavLink exact to={address} title={address} {...props}>
         {props.children}
       </NavLink>
     )
@@ -43,6 +44,7 @@ export default props => {
         href={"http://" + address}
         target="_blank"
         rel="nofollow noopener noreferrer"
+        title={"http://" + address}
         {...props}
       >
         {props.children}
