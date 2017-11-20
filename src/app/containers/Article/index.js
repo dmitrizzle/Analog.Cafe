@@ -84,12 +84,9 @@ class Article extends React.PureComponent {
       subscribeForm: false
     })
   }
-  componentDidMount = () => {
-    this.unlisten = this.props.history.listen(location => this.fetchPage())
-    this.fetchPage()
-  }
-  componentWillReceiveProps = nextProps => {
-    const tag = nextProps.article.tag
+
+  makeTag = props => {
+    const tag = props.article.tag
     if (typeof tag === "undefined") return
     this.setState({
       ...this.state,
@@ -102,6 +99,14 @@ class Article extends React.PureComponent {
         )
       }
     })
+  }
+  componentDidMount = () => {
+    this.unlisten = this.props.history.listen(location => this.fetchPage())
+    this.fetchPage()
+    this.makeTag(this.props)
+  }
+  componentWillReceiveProps = nextProps => {
+    this.makeTag(nextProps)
   }
   componentWillUnmount = () => {
     this.unlisten()

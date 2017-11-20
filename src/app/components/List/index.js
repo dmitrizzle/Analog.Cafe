@@ -46,7 +46,8 @@ export default props => {
                     subtitle: item.subtitle,
                     author: item.author,
                     slug: item.slug,
-                    poster: item.poster
+                    poster: item.poster,
+                    tag: item.tag
                   })
                 }
               >
