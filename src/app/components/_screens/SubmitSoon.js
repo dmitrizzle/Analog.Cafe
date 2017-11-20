@@ -24,6 +24,7 @@ export default props => {
         <MailChimpPrefill
           formUrl="https://cafe.us4.list-manage.com/subscribe/post?u=256339f7eafa36f2f466aca44&id=12d8a644fa&MERGE0="
           buttonText="Yes, Remind Me"
+          autoFocus
         />
       </Section>
     </Article>

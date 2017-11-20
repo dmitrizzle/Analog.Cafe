@@ -14,6 +14,7 @@ import { dot } from "../../../../../components/_icons/components/BlankDot"
 
 // Analog.Cafe plugins
 import { MarkHotkey } from "./mark-hotkey"
+import { LinkHotkey } from "./link-hotkey"
 import { ToggleFeature } from "./toggle-feature"
 import { Paste } from "./paste-html"
 
@@ -28,6 +29,7 @@ import TrailingBlock from "slate-trailing-block"
 export const plugins = [
   // pasting and links
   Paste({ html }),
+  LinkHotkey({ key: "k" }),
 
   // marks
   MarkHotkey({ key: "b", type: "bold" }),
@@ -185,5 +187,5 @@ export const plugins = [
   }),
 
   // trailing block (make sure to always have content editable)
-  TrailingBlock({ type: 'paragraph' })
+  TrailingBlock({ type: "paragraph" })
 ]
