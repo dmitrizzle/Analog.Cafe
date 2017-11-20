@@ -143,6 +143,7 @@ class List extends React.PureComponent {
             this.props.setNextArticle({
               title: nextArticleHeading.title,
               subtitle: nextArticleHeading.subtitle,
+              tag: nextArticleHeading.tag,
               author: nextArticleHeading.author,
               slug: nextArticleHeading.slug,
               poster: nextArticleHeading.poster

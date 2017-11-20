@@ -31,9 +31,9 @@ export default props => {
       </a>
     )
   else if (address.startsWith("/"))
-    // internal links
+    // internal links (no title attribute necessary)
     return (
-      <NavLink exact to={address} title={address} {...props}>
+      <NavLink exact to={address} {...props}>
         {props.children}
       </NavLink>
     )

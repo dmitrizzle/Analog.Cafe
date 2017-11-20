@@ -39,7 +39,8 @@ export const fetchPage = request => {
           title: articleState.title,
           subtitle: articleState.subtitle,
           author: articleState.author,
-          poster: articleState.poster
+          poster: articleState.poster,
+          tag: articleState.tag
         })
       )
     else dispatch(initPage())

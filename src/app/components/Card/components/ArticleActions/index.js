@@ -20,6 +20,17 @@ import {
   InstagramLinkButton
 } from "../../../Button/components/SocialButtons"
 
+const nextArticlePreload = nextArticle => {
+  return {
+    title: nextArticle.title,
+    subtitle: nextArticle.subtitle,
+    author: { name: nextArticle.authorName },
+    slug: nextArticle.slug,
+    poster: nextArticle.poster,
+    tag: nextArticle.tag
+  }
+}
+
 // return
 const ActionsCard = props => {
   if (props.mode !== "follow")
@@ -107,6 +118,10 @@ const ActionsCard = props => {
                 <Link
                   to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle.slug}
                   onClick={() => {
+                    props.nextArticleHeading(
+                      nextArticlePreload(props.nextArticle)
+                    )
+
                     // async load Google Analytics module
                     import("react-ga").then(ReactGA => {
                       ReactGA.event({
@@ -151,6 +166,10 @@ const ActionsCard = props => {
                 style={{ margin: 0 }}
                 to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle.slug}
                 onClick={() => {
+                  props.nextArticleHeading(
+                    nextArticlePreload(props.nextArticle)
+                  )
+
                   // async load Google Analytics module
                   import("react-ga").then(ReactGA => {
                     ReactGA.event({
