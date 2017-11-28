@@ -35,7 +35,8 @@ import {
 } from "../../../../actions/userActions"
 import {
   send as sendUpload,
-  initStatus as resetUploadStatus
+  initStatus as resetUploadStatus,
+  getSubmissionProgress
 } from "../../../../actions/uploadActions"
 
 // render
@@ -128,14 +129,19 @@ class Upload extends React.PureComponent {
 
   componentWillReceiveProps = nextProps => {
     if (nextProps.upload.status === "ok") {
-      // clear submissions content and image in storage
-      localStorage.removeItem("composer-content-state")
-      localStorage.removeItem("composer-header-state")
-      localForage.clear()
-      // reset upload state
-      nextProps.resetUploadStatus()
-      // redirect after submission complete
-      nextProps.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+      if (nextProps.upload.progressReq !== "loading") {
+        nextProps.getSubmissionProgress(nextProps.upload.data.id)
+      }
+      if (Number(nextProps.upload.progress) === 100) {
+        // clear submissions content and image in storage
+        localStorage.removeItem("composer-content-state")
+        localStorage.removeItem("composer-header-state")
+        localForage.clear()
+        // reset upload state
+        nextProps.resetUploadStatus()
+        // redirect after submission complete
+        nextProps.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+      }
     } else if (nextProps.upload.status === "unauthorized") {
       // if user is unauthorized, redirect to sign in page
       redirectToSignIn(nextProps)
@@ -145,12 +151,19 @@ class Upload extends React.PureComponent {
   }
 
   render = () => {
+    const progress =
+      this.props.upload && this.props.upload.progress
+        ? ` ${this.props.upload.progress}%`
+        : ""
     return (
       <Article>
         <Helmet>
-          <title>Uploading Submission…</title>
+          <title>Uploading Submission…{progress}</title>
         </Helmet>
-        <Heading pageTitle={emojis.NEONCAT} pageSubtitle="Sending…" />
+        <Heading
+          pageTitle={emojis.NEONCAT}
+          pageSubtitle={`Sending…${progress}`}
+        />
         <Section>
           <p>
             You have marked your submission as
@@ -179,6 +192,9 @@ const mapDispatchToProps = dispatch => {
   return {
     sendUpload: request => {
       dispatch(sendUpload(request))
+    },
+    getSubmissionProgress: submissionId => {
+      dispatch(getSubmissionProgress(submissionId))
     },
     resetUploadStatus: () => {
       dispatch(resetUploadStatus())

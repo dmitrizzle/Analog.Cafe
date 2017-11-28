@@ -2,6 +2,8 @@
 import axios from "axios"
 import { axiosRequest } from "../utils/axios-request"
 
+import { ROUTE_SUBMISSION_PROGRESS_API } from "../constants/submission"
+
 import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
 
@@ -17,6 +19,29 @@ export const initStatus = () => {
   }
 }
 
+export const getSubmissionProgress = submissionId => {
+  const request = {
+    url: `${ROUTE_SUBMISSION_PROGRESS_API}/${submissionId}`
+  }
+  return dispatch => {
+    dispatch(
+      setStatus({
+        status: "ok",
+        progressReq: "loading"
+      })
+    )
+    axios(axiosRequest(request)).then(response => {
+      dispatch(
+        setStatus({
+          status: "ok",
+          progressReq: null,
+          progress: response.data.progress
+        })
+      )
+    })
+  }
+}
+
 export const send = request => {
   return dispatch => {
     dispatch(initStatus())
@@ -24,7 +49,8 @@ export const send = request => {
       .then(response => {
         dispatch(
           setStatus({
-            status: "ok"
+            status: "ok",
+            data: response.data
           })
         )
       })
