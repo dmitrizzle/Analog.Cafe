@@ -25,6 +25,12 @@ export const schema = {
     divider: {
       isVoid: true
     },
+    quote: {
+      nodes: [{ kinds: ["text"] }]
+    },
+    paragraph: {
+      nodes: [{ kinds: ["text", "link"] }]
+    },
     image: {
       isVoid: true,
       data: {
