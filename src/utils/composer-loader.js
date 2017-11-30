@@ -16,6 +16,10 @@ export const loadContent = () => {
   }
 }
 
+export const loadTextContent = () => {
+  return localStorage.getItem("composer-content-text") || ""
+}
+
 export const loadHeader = () => {
   let local = localStorage.getItem("composer-header-state")
   try {

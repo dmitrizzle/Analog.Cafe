@@ -14,7 +14,11 @@ import Heading from "../../../components/ArticleHeading"
 import { Article, Section } from "../../../components/ArticleStyles"
 
 // constants & helpers
-import { loadContent, loadHeader } from "../../../../utils/composer-loader"
+import {
+  loadContent,
+  loadHeader,
+  loadTextContent
+} from "../../../../utils/composer-loader"
 import { ROUTE_REDIRECT_AFTER_SUBMIT } from "../../../../constants/submission"
 import emojis from "../../../../constants/messages/emojis"
 import errorMessages from "../../../../constants/messages/errors"
@@ -66,6 +70,7 @@ class Upload extends React.PureComponent {
       )
       const content = loadContent()
       const header = loadHeader()
+      const textContent = loadTextContent()
       if (!(content && content.document && content.document.nodes)) {
         return this.handleEmptySubmission()
       }
@@ -74,6 +79,7 @@ class Upload extends React.PureComponent {
       let data = new FormData()
       data.append("content", JSON.stringify(content))
       data.append("header", JSON.stringify(header))
+      data.append("textContent", textContent)
       data.append("isFullConsent", submissionConsent)
 
       // get filename keys for the saved images in the submission
