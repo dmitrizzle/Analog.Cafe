@@ -18,6 +18,7 @@ import { loadContent, loadHeader } from "../../../../utils/composer-loader"
 import { ROUTE_REDIRECT_AFTER_SUBMIT } from "../../../../constants/submission"
 import emojis from "../../../../constants/messages/emojis"
 import errorMessages from "../../../../constants/messages/errors"
+import throttle from "lodash/throttle"
 
 import {
   redirectToSignIn,
@@ -32,7 +33,7 @@ import {
 import {
   send as sendUpload,
   initStatus as resetUploadStatus,
-  getSubmissionProgress
+  fetchProgressStatus
 } from "../../../../actions/uploadActions"
 
 // render
@@ -122,9 +123,13 @@ class Upload extends React.PureComponent {
   }
 
   componentWillReceiveProps = nextProps => {
+    const throttledUploadStatusUpdate = throttle(
+      nextProps => nextProps.fetchProgressStatus(nextProps.upload.data.id),
+      1000
+    )
     if (nextProps.upload.status === "ok") {
-      if (nextProps.upload.progressReq !== "loading") {
-        nextProps.getSubmissionProgress(nextProps.upload.data.id)
+      if (nextProps.upload.progressReq !== "fetching") {
+        throttledUploadStatusUpdate(nextProps)
       }
       if (Number(nextProps.upload.progress) === 100) {
         // clear submissions content and image in storage
@@ -187,8 +192,8 @@ const mapDispatchToProps = dispatch => {
     sendUpload: request => {
       dispatch(sendUpload(request))
     },
-    getSubmissionProgress: submissionId => {
-      dispatch(getSubmissionProgress(submissionId))
+    fetchProgressStatus: submissionId => {
+      dispatch(fetchProgressStatus(submissionId))
     },
     resetUploadStatus: () => {
       dispatch(resetUploadStatus())
