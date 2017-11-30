@@ -26,9 +26,9 @@ export const sendSubmission = (data, props) => {
   })
 }
 
-export const imageSizeLimit = size => {
+export const imageSizeLimit = (size, max = 10) => {
   return new Promise((resolve, reject) => {
-    if (size / 1000000 <= 10) resolve()
+    if (size / 1000000 <= max) resolve()
     else reject()
   })
 }
