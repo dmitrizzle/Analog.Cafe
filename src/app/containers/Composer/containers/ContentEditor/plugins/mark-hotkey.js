@@ -9,6 +9,9 @@ export function MarkHotkey(options) {
   // Return our "plugin" object, containing the `onKeyDown` handler.
   return {
     onKeyDown(event, change) {
+      // marks are only allowed in paragraphs
+      if (change.value.focusBlock.type !== "paragraph") return
+
       // Check that the key pressed matches our `code` option.
       if (!event.metaKey || keycode(event.which) !== key) return
 

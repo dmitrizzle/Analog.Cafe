@@ -12,6 +12,9 @@ export function LinkHotkey(options) {
     onKeyDown(event, change) {
       const { value } = change
 
+      // links are only allowed in paragraphs
+      if (value.focusBlock.type !== "paragraph") return
+
       // Check that the key pressed matches our `code` option.
       if (!event.metaKey || keycode(event.which) !== key) return
 
