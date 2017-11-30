@@ -56,7 +56,7 @@ class Figure extends React.Component {
       .change()
       .setNodeByKey(node.key, properties)
     editor.onChange(resolvedState) // have to use native onChange in editor (rather than handleChange)
-    this.setState({ src })
+    //this.setState({ src })
   }
   handleTextareaClick = event => {
     event.preventDefault()
