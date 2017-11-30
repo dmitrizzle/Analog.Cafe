@@ -69,7 +69,7 @@ export const addLink = (value, returnType = "value") => {
       type: "link",
       data: { href }
     })
-  else if (returnType === "data") return href
+  else if (returnType === "data") return { href }
 }
 export const formatCommand = (type, _this) => {
   const { value } = _this.state
