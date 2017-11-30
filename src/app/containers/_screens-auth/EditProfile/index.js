@@ -111,12 +111,7 @@ class EditProfile extends React.PureComponent {
         this.props.setCard(
           {
             status: "ok",
-            info: {
-              title: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE.title,
-              text: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE.text
-                .replace("10MB", "5MB")
-                .replace("Your images need", "Your image needs")
-            }
+            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE_5
           },
           { url: "errors/upload" }
         )

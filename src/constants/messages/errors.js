@@ -32,15 +32,16 @@ export default {
       text:
         "Please make sure that you’ve added a title, text and image(s) to your submission."
     },
-
-    // NOTE that changing the structure of this error message may alter how
-    // ./app/containers/_screens-auth/EditoProfile/index.js works
-    UPLOAD_IMAGE_SIZE: {
+    UPLOAD_IMAGE_SIZE_10: {
       title: "File is Too Large!",
       text:
-        "Your images need to be 10MB or less in size. Try selecting another PNG or JPG file."
+        "Your image needs to be 10MB or less in size. Try selecting another PNG or JPG file."
+    },
+    UPLOAD_IMAGE_SIZE_5: {
+      title: "File is Too Large!",
+      text:
+        "Your image needs to be 5MB or less in size. Try selecting another PNG or JPG file."
     }
-    //
   },
   DISAMBIGUATION: {
     CODE_103: { error: "Error: User already authenticated (103)" },

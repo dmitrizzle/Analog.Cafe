@@ -160,7 +160,7 @@ class PictureDocketContainer extends React.PureComponent {
         this.props.setCard(
           {
             status: "ok",
-            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE
+            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE_10
           },
           { url: "errors/upload" }
         )
