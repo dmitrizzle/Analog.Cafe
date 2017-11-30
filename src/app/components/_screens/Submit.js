@@ -80,14 +80,12 @@ export default props => {
           nocaption
         />
         <p>
-          <strong>Image Suggestions</strong> &mdash; when you upload your
-          images, you will see <em>Image Suggestions:</em> hand-picked
-          photographs that you can use freely in your submission.
-        </p>
-        <p>
-          You can choose whether you want your photographs to be considered for
-          Image Suggestions or not when you see “More Exposure?” question upon
-          sending your submission.
+          <strong>Instant Collaborations!</strong> Analog.Cafe Composer gives
+          you an option to include images created by others in your work. This
+          is an oportunity to add depth and diversity to your submission. You
+          can apply to have your personal images marked as “open for
+          collaborations” as well. All collaborative works are always
+          approriately credited and are added to all parties’ portfolios.
         </p>
 
         <h3>How to get accepted.</h3>

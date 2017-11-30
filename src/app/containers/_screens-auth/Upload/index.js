@@ -153,12 +153,12 @@ class Upload extends React.PureComponent {
         <Heading pageTitle={emojis.NEONCAT} pageSubtitle="Sending…" />
         <Section>
           <p>
-            You have requested
+            You have marked your submission as
             <em>
               {this.props.history.location.pathname.includes("full-consent") ===
               true
-                ? " more exposure. "
-                : " no additional exposure. "}
+                ? " open for collaborations. "
+                : " closed to collaborations. "}
             </em>
             Please wait while we process your submission&hellip;
           </p>
