@@ -16,20 +16,11 @@ export const schema = {
     ]
   },
   blocks: {
-    heading: {
-      nodes: [{ kinds: ["text"] }]
-    },
     link: {
       nodes: [{ kinds: ["text"] }]
     },
     divider: {
       isVoid: true
-    },
-    quote: {
-      nodes: [{ kinds: ["text"] }]
-    },
-    paragraph: {
-      nodes: [{ kinds: ["text", "link"] }]
     },
     image: {
       isVoid: true,
@@ -39,6 +30,17 @@ export const schema = {
     },
     docket: {
       isVoid: true
+    }
+  },
+  inlines: {
+    quote: {
+      nodes: [{ types: ["text"] }]
+    },
+    paragraph: {
+      nodes: [{ types: ["text", "link"] }]
+    },
+    heading: {
+      nodes: [{ types: ["text"] }]
     }
   }
 }
