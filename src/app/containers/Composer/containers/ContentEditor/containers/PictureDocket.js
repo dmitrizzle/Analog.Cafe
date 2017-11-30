@@ -167,11 +167,11 @@ class PictureDocketContainer extends React.PureComponent {
       })
   } // ⤵
   uploadRequest = file => {
-    const { value, editor, node } = this.props
+    const { editor, node } = this.props
     const key = uuidv1()
     localForage.setItem(key, file)
 
-    const resolvedState = value
+    const resolvedState = editor.value
       .change()
       .insertBlock({
         type: "image",

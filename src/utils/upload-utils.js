@@ -1,5 +1,4 @@
 import { ROUTE_SUBMISSION_API } from "../constants/submission"
-import errorMessages from "../constants/messages/errors"
 
 // this function kicks user to sign-in scdreen but rembers where to come back to
 export const redirectToSignIn = props => {
@@ -29,7 +28,7 @@ export const sendSubmission = (data, props) => {
 
 export const imageSizeLimit = size => {
   return new Promise((resolve, reject) => {
-    if (size / 1000000 <= 10) resolve("ok")
-    else reject(errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE.text)
+    if (size / 1000000 <= 10) resolve()
+    else reject()
   })
 }
