@@ -1,6 +1,7 @@
 // tools
 import React from "react"
 import { withRouter } from "react-router"
+import Loadable from "react-loadable"
 
 // constants & helpers
 import {
@@ -35,6 +36,17 @@ if (
   window["ga-disable-" + APP_TRACKING_GAID] = false
 }
 
+// preload for List component
+const ListPreloader = Loadable({
+  loader: () => import("../List"),
+  loading: () => null
+})
+// preload for Article component
+const ArticlePreloader = Loadable({
+  loader: () => import("../Article"),
+  loading: () => null
+})
+
 // render & route
 class App extends React.PureComponent {
   // manipulate nav view & GA tracking
@@ -61,6 +73,18 @@ class App extends React.PureComponent {
       }
       this.setView()
     })
+  }
+  componentWillReceiveProps = nextProps => {
+    switch (nextProps.user.intent.load) {
+      case "Article":
+        ArticlePreloader.preload()
+        break
+      case "List":
+        ListPreloader.preload()
+        break
+      default:
+        return false
+    }
   }
   handleRouteChnange = () => {
     // Google Analytics (if available)

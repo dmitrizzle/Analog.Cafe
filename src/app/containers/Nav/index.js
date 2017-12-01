@@ -3,6 +3,7 @@ import React from "react"
 
 // redux
 import { connect } from "react-redux"
+import { setIntent as setUserIntent } from "../../../actions/userActions"
 
 // components
 import { CommonNav, ComposerNav, NavWrapper } from "../../components/Nav"
@@ -19,7 +20,13 @@ const Nav = props => {
           userStatus={props.user.status}
         />
       ) : (
-        <CommonNav userStatus={props.user.status} />
+        <CommonNav
+          userStatus={props.user.status}
+          userIntent={() => {
+            props.user.intent.load !== "List" &&
+              props.setUserIntent({ load: "List" })
+          }}
+        />
       )}
     </NavWrapper>
   )
@@ -33,5 +40,12 @@ const mapStateToProps = state => {
     user: state.user
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    setUserIntent: intent => {
+      dispatch(setUserIntent(intent))
+    }
+  }
+}
 
-export default connect(mapStateToProps)(Nav)
+export default connect(mapStateToProps, mapDispatchToProps)(Nav)

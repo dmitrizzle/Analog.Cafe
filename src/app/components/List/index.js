@@ -45,7 +45,7 @@ export default props => {
               height={"100%"}
               key={item.id}
             >
-              <li onMouseOver={props.listItemMouseOver}>
+              <li>
                 <Link
                   to={item.slug && ROUTE_ARTICLE_DIR + "/" + item.slug}
                   onClick={() =>
@@ -58,6 +58,7 @@ export default props => {
                       tag: item.tag
                     })
                   }
+                  onMouseOver={props.userIntent}
                 >
                   <section>
                     <figure>

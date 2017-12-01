@@ -1,6 +1,5 @@
 // tools
 import React from "react"
-import Loadable from "react-loadable"
 
 // components
 import Logo from "../Logo"
@@ -17,16 +16,10 @@ import { NavLink, NavIndexLink, NavItem } from "./styles"
 // NOTE: components' `className` props are used in index.html and aren't required
 // if styles from `./styles.js` have the comments removed
 
-// preload for List component
-const ListPreloader = Loadable({
-  loader: () => import("../../containers/List"),
-  loading: () => null
-})
-
 // return
 export const CommonNav = props => {
   return (
-    <ul onMouseOver={ListPreloader.preload}>
+    <ul onMouseOver={props.userIntent}>
       <NavItem>
         <NavLink to={"/photo-essays"}>
           <span>Photo Essays</span>

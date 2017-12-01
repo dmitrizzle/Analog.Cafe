@@ -3,12 +3,13 @@ import React from "react"
 import { withRouter } from "react-router"
 import { ModalDispatch } from "../Modal"
 import Helmet from "../../components/_async/Helmet"
-import Loadable from "react-loadable"
 
 // redux & state
 import { connect } from "react-redux"
 import { fetchPage } from "../../../actions/listActions"
 import { setPage as setNextArticle } from "../../../actions/articleActions"
+import { setIntent as setUserIntent } from "../../../actions/userActions"
+
 import {
   ROUTE_LIST_API,
   ROUTE_AUTHENTICATED_LIST_API
@@ -23,12 +24,6 @@ import { Section, Article } from "../../components/ArticleStyles"
 
 // helpers
 import { getListMeta, trimAuthorName } from "../../../utils/list-utils"
-
-// preload for Article component
-const ArticlePreloader = Loadable({
-  loader: () => import("../../containers/Article"),
-  loading: () => null
-})
 
 // return
 class List extends React.PureComponent {
@@ -71,8 +66,9 @@ class List extends React.PureComponent {
       })
     })
   }
-  handArticlePreload = () => {
-    ArticlePreloader.preload()
+  handleUserIntent = () => {
+    if (this.props.list.status === "loading") return
+    this.props.setUserIntent({ load: "Article" })
   }
   componentWillReceiveProps = () => {
     // reset loading indicator
@@ -160,7 +156,7 @@ class List extends React.PureComponent {
             })
           }
           private={this.props.private}
-          listItemMouseOver={this.handArticlePreload}
+          userIntent={this.handleUserIntent}
         />
 
         {parseInt(this.props.list.page.total, 0) > 1 &&
@@ -196,6 +192,9 @@ const mapDispatchToProps = dispatch => {
     },
     setNextArticle: nextArticle => {
       dispatch(setNextArticle(nextArticle))
+    },
+    setUserIntent: intent => {
+      dispatch(setUserIntent(intent))
     }
   }
 }
