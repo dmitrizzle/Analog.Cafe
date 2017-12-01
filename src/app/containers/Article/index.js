@@ -1,6 +1,5 @@
 // tools
 import React from "react"
-import Loadable from "react-loadable"
 import { Editor } from "slate-react"
 import { Value } from "slate"
 import Helmet from "../../components/_async/Helmet"
@@ -39,12 +38,7 @@ import {
   Article as ArticleElement,
   Byline
 } from "../../components/ArticleStyles"
-
-const ArticleActions = Loadable({
-  loader: () => import("../../components/Card/components/ArticleActions"),
-  loading: () => null,
-  delay: 100
-})
+import ArticleActions from "../../components/Card/components/ArticleActions"
 
 // render
 const safeRoute = url => {
@@ -158,7 +152,6 @@ class Article extends React.PureComponent {
     )
   }
   render = () => {
-    console.log(this.props.article)
     return (
       <ArticleElement>
         <Helmet>

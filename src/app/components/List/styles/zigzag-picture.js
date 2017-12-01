@@ -23,6 +23,5 @@ export const ZigzagPicture = styled.div`
   }
   ${"" /* li:first-child & {
 		border-top-width: calc(4.85em + ${ props => props.theme.size.block.border }px);
-	} */} -webkit-filter: grayscale(95%) contrast(65%);
-  filter: grayscale(95%) contrast(65%);
+	} */} ${"" /* -webkit-filter: grayscale(95%) contrast(65%); */} filter: grayscale(100%);
 `

@@ -8,6 +8,8 @@ import Helmet from "../../components/_async/Helmet"
 import { connect } from "react-redux"
 import { fetchPage } from "../../../actions/listActions"
 import { setPage as setNextArticle } from "../../../actions/articleActions"
+import { setIntent as setUserIntent } from "../../../actions/userActions"
+
 import {
   ROUTE_LIST_API,
   ROUTE_AUTHENTICATED_LIST_API
@@ -63,6 +65,10 @@ class List extends React.PureComponent {
         action: "List.load_more"
       })
     })
+  }
+  handleUserIntent = () => {
+    if (this.props.list.status === "loading") return
+    this.props.setUserIntent({ load: "Article" })
   }
   componentWillReceiveProps = () => {
     // reset loading indicator
@@ -150,6 +156,7 @@ class List extends React.PureComponent {
             })
           }
           private={this.props.private}
+          userIntent={this.handleUserIntent}
         />
 
         {parseInt(this.props.list.page.total, 0) > 1 &&
@@ -185,6 +192,9 @@ const mapDispatchToProps = dispatch => {
     },
     setNextArticle: nextArticle => {
       dispatch(setNextArticle(nextArticle))
+    },
+    setUserIntent: intent => {
+      dispatch(setUserIntent(intent))
     }
   }
 }

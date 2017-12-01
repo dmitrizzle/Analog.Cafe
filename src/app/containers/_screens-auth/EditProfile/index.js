@@ -1,5 +1,6 @@
 // tools
 import React from "react"
+import { imageSizeLimit } from "../../../../utils/upload-utils"
 
 // redux
 import { connect } from "react-redux"
@@ -8,6 +9,7 @@ import {
   setInfo as setUserInfo,
   acceptInfo as acceptUserInfo
 } from "../../../../actions/userActions"
+import { setCard } from "../../../../actions/modalActions"
 
 // components
 import Forbidden from "../../_screens-errors/Forbidden"
@@ -28,6 +30,7 @@ import {
   SUMMARY_LENGTH_MAX,
   TITLE_LENGTH_MAX
 } from "../../../../constants/input"
+import errorMessages from "../../../../constants/messages/errors"
 
 // render
 class EditProfile extends React.PureComponent {
@@ -102,7 +105,17 @@ class EditProfile extends React.PureComponent {
   }
   handleFileUpload = event => {
     const file = event.target.files[0]
-    this.uploadRequest(file)
+    imageSizeLimit(file.size, 5)
+      .then(() => this.uploadRequest(file))
+      .catch(reason => {
+        this.props.setCard(
+          {
+            status: "ok",
+            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE_5
+          },
+          { url: "errors/upload" }
+        )
+      })
   } // ⤵
   uploadRequest = file => {
     const reader = new FileReader()
@@ -226,6 +239,9 @@ const mapDispatchToProps = dispatch => {
     },
     acceptUserInfo: () => {
       dispatch(acceptUserInfo())
+    },
+    setCard: (info, request) => {
+      dispatch(setCard(info, request))
     }
   }
 }

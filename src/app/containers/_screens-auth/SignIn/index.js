@@ -24,7 +24,10 @@ import {
 } from "../../../components/Button/components/SocialButtons"
 
 // constants & helpers
-import { ROUTE_LOGIN_TWITTER_API } from "../../../../constants/login"
+import {
+  ROUTE_LOGIN_TWITTER_API,
+  ROUTE_LOGIN_FACEBOOK_API
+} from "../../../../constants/login"
 
 // render
 class SignIn extends React.PureComponent {
@@ -58,7 +61,23 @@ class SignIn extends React.PureComponent {
   handleFacebookButton = event => {
     event.stopPropagation()
     event.preventDefault()
-    alert("Facebook login")
+    open(
+      ROUTE_LOGIN_FACEBOOK_API,
+      {
+        name: "Sign in with Facebook",
+        width: 500,
+        height: 600
+      },
+      (err, code) => {
+        if (err) console.error(err)
+        localStorage.setItem("token", code.token)
+        this.props.verifyUser()
+        this.props.getUserInfo()
+        this.props.history.replace({
+          pathname: this.props.user.routes.success
+        })
+      }
+    )
   }
 
   render() {
