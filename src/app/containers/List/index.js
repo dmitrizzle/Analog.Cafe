@@ -3,6 +3,7 @@ import React from "react"
 import { withRouter } from "react-router"
 import { ModalDispatch } from "../Modal"
 import Helmet from "../../components/_async/Helmet"
+import Loadable from "react-loadable"
 
 // redux & state
 import { connect } from "react-redux"
@@ -22,6 +23,12 @@ import { Section, Article } from "../../components/ArticleStyles"
 
 // helpers
 import { getListMeta, trimAuthorName } from "../../../utils/list-utils"
+
+// preload for Article component
+const ArticlePreloader = Loadable({
+  loader: () => import("../../containers/Article"),
+  loading: () => null
+})
 
 // return
 class List extends React.PureComponent {
@@ -63,6 +70,9 @@ class List extends React.PureComponent {
         action: "List.load_more"
       })
     })
+  }
+  handArticlePreload = () => {
+    ArticlePreloader.preload()
   }
   componentWillReceiveProps = () => {
     // reset loading indicator
@@ -150,6 +160,7 @@ class List extends React.PureComponent {
             })
           }
           private={this.props.private}
+          listItemMouseOver={this.handArticlePreload}
         />
 
         {parseInt(this.props.list.page.total, 0) > 1 &&

@@ -110,6 +110,12 @@ class Article extends React.PureComponent {
   }
   componentWillReceiveProps = nextProps => {
     this.makeTag(nextProps)
+
+    // article loaded, load articleActions
+    if (nextProps.article.status !== "loading")
+      this.setState({
+        showArticleActions: true
+      })
   }
   componentWillUnmount = () => {
     this.unlisten()
@@ -158,7 +164,6 @@ class Article extends React.PureComponent {
     )
   }
   render = () => {
-    console.log(this.props.article)
     return (
       <ArticleElement>
         <Helmet>
@@ -218,7 +223,8 @@ class Article extends React.PureComponent {
             renderMark={renderMark}
           />
 
-          {this.props.article.poster &&
+          {this.state.showArticleActions &&
+            this.props.article.poster &&
             this.props.article.author && (
               <ArticleActions
                 shareButtons={this.state.shareButtons}

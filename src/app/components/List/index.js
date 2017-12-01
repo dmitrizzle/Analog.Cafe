@@ -38,8 +38,14 @@ export default props => {
           // NOTE: index is used to show high quality image for first item
 
           return (
-            <LazyLoad unmountIfInvisible once offset={300} height={"100%"}>
-              <li key={item.id}>
+            <LazyLoad
+              unmountIfInvisible
+              once
+              offset={300}
+              height={"100%"}
+              key={item.id}
+            >
+              <li onMouseOver={props.listItemMouseOver}>
                 <Link
                   to={item.slug && ROUTE_ARTICLE_DIR + "/" + item.slug}
                   onClick={() =>
