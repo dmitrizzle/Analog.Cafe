@@ -9,5 +9,6 @@ export default {
   MONOCLE: "(╭ರ_•́)",
   NEONCAT: "(◕⌂◕⊃⊃)",
   // HUG_LEFT: "⊂ʕ•ᴥ•⊂ʔ",
-  HUG_RIGHT: "ʕっ•ᴥ•ʔっ"
+  HUG_RIGHT: "ʕっ•ᴥ•ʔっ",
+  WARNING: "⚠️"
 }
