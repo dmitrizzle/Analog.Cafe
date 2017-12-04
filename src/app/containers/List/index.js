@@ -44,9 +44,18 @@ class List extends React.PureComponent {
     }
   }
   fetchNewList = () => {
-    this.props.fetchPage(
-      getListMeta(this.props.history.location.pathname, 1, this.listAPI).request
-    )
+    // a timeout waits to ensure there's no crowding for requests
+    // for example, a request can be initiated through URL change and
+    // user interaction at the same time, creating bugs
+    // this timeout ensures that all events have been registered and only the
+    // final one is followed through
+    const controlledFetch = setTimeout(() => {
+      this.props.fetchPage(
+        getListMeta(this.props.history.location.pathname, 1, this.listAPI)
+          .request
+      )
+      clearTimeout(controlledFetch)
+    }, 50)
   }
   handleLoadMore = event => {
     event.preventDefault()
@@ -85,6 +94,7 @@ class List extends React.PureComponent {
   }
   componentDidMount = () => {
     this.fetchNewList()
+
     this.unlisten = this.props.history.listen(this.fetchNewList)
   }
   componentWillUnmount = () => {
