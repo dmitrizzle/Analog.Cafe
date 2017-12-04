@@ -64,7 +64,13 @@ export const fetchPage = (request, appendItems = false) => {
       .then(response => {
         if (response.data.page["items-total"] > 0)
           dispatch(setPage(response.data, appendItems))
-        else {
+        else if (request.url.includes(ROUTE_AUTHENTICATED_LIST_API)) {
+          dispatch(
+            initPage({
+              error: errorMessages.VIEW_TEMPLATE.SUBMISSIONS_LIST
+            })
+          )
+        } else {
           dispatch(
             initPage({
               error: errorMessages.VIEW_TEMPLATE.LIST

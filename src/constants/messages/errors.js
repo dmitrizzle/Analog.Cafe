@@ -9,6 +9,10 @@ export default {
       title: "List not available",
       emoji: emojis.WTF
     },
+    SUBMISSIONS_LIST: {
+      title: "You haven’t submitted anything yet",
+      emoji: emojis.NEONCAT
+    },
     PICTURE: {
       name: "Unknown Author",
       title: "Info not available",

@@ -3,6 +3,7 @@ import React from "react"
 import { withRouter } from "react-router"
 import { ModalDispatch } from "../Modal"
 import Helmet from "../../components/_async/Helmet"
+import Loadable from "react-loadable"
 
 // redux & state
 import { connect } from "react-redux"
@@ -25,6 +26,12 @@ import { Section, Article } from "../../components/ArticleStyles"
 // helpers
 import { getListMeta, trimAuthorName } from "../../../utils/list-utils"
 
+// fetch placeholder component
+const HowToSubmit = Loadable({
+  loader: () => import("./components/HowToSubmit"),
+  loading: () => null
+})
+
 // return
 class List extends React.PureComponent {
   constructor(props) {
@@ -37,9 +44,18 @@ class List extends React.PureComponent {
     }
   }
   fetchNewList = () => {
-    this.props.fetchPage(
-      getListMeta(this.props.history.location.pathname, 1, this.listAPI).request
-    )
+    // a timeout waits to ensure there's no crowding for requests
+    // for example, a request can be initiated through URL change and
+    // user interaction at the same time, creating bugs
+    // this timeout ensures that all events have been registered and only the
+    // final one is followed through
+    const controlledFetch = setTimeout(() => {
+      this.props.fetchPage(
+        getListMeta(this.props.history.location.pathname, 1, this.listAPI)
+          .request
+      )
+      clearTimeout(controlledFetch)
+    }, 50)
   }
   handleLoadMore = event => {
     event.preventDefault()
@@ -78,6 +94,7 @@ class List extends React.PureComponent {
   }
   componentDidMount = () => {
     this.fetchNewList()
+
     this.unlisten = this.props.history.listen(this.fetchNewList)
   }
   componentWillUnmount = () => {
@@ -142,22 +159,26 @@ class List extends React.PureComponent {
           </ListHeader>
         </ListDescription>
 
-        <ListBlock
-          status={this.props.list.status}
-          items={this.props.list.items}
-          nextArticleHeading={nextArticleHeading =>
-            this.props.setNextArticle({
-              title: nextArticleHeading.title,
-              subtitle: nextArticleHeading.subtitle,
-              tag: nextArticleHeading.tag,
-              author: nextArticleHeading.author,
-              slug: nextArticleHeading.slug,
-              poster: nextArticleHeading.poster
-            })
-          }
-          private={this.props.private}
-          userIntent={this.handleUserIntent}
-        />
+        {this.props.list.error && this.props.placeholder === "HowToSubmit" ? (
+          <HowToSubmit />
+        ) : (
+          <ListBlock
+            status={this.props.list.status}
+            items={this.props.list.items}
+            nextArticleHeading={nextArticleHeading =>
+              this.props.setNextArticle({
+                title: nextArticleHeading.title,
+                subtitle: nextArticleHeading.subtitle,
+                tag: nextArticleHeading.tag,
+                author: nextArticleHeading.author,
+                slug: nextArticleHeading.slug,
+                poster: nextArticleHeading.poster
+              })
+            }
+            private={this.props.private}
+            userIntent={this.handleUserIntent}
+          />
+        )}
 
         {parseInt(this.props.list.page.total, 0) > 1 &&
         parseInt(this.props.list.page.total, 0) >
