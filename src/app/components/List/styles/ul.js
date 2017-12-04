@@ -28,7 +28,7 @@ const posterDimensions = css`
   height: 9.33em;
 `
 const zigzagWidthShim = css`
-  width: calc(${zigzagWidth} + 3px);
+  width: calc(${zigzagWidth} + 0px);
 `
 const zigzagFill = css`
   position: absolute;
@@ -58,8 +58,7 @@ export const Ul = styled.ul`
 	padding: 				0;
 	&::after {
 		${zigzagDimensions}
-		filter: 						drop-shadow(1px 0 0 ${greyLine});
-		background-size: 		15em 33em;
+		background-size: 		4em 16em;
 		background-image: 	${zigZagDataUri};
 		background-repeat: 	repeat-y;
 	}

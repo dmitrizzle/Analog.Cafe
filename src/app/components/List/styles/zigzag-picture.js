@@ -17,11 +17,27 @@ export const ZigzagPicture = styled.div`
     margin-top: -${zigzagTopShim + 4.5}em;
   }
 
-  border-top: ${props => props.theme.elements.thickBorder};
-  li:last-child & {
-    border-bottom: ${props => props.theme.elements.thickBorder};
+  clip-path: polygon(
+    40% 0,
+    73% 4%,
+    100% 0,
+    100% 96%,
+    73% 100%,
+    40% 96%,
+    0 100%,
+    0% 4%
+  );
+  ul:first-child li:first-child & {
+    clip-path: polygon(
+      40% 0,
+      73% 4%,
+      100% 0,
+      100% 98%,
+      73% 100%,
+      40% 98%,
+      0 100%,
+      0% 4%
+    );
   }
-  ${"" /* li:first-child & {
-		border-top-width: calc(4.85em + ${ props => props.theme.size.block.border }px);
-	} */} ${"" /* -webkit-filter: grayscale(95%) contrast(65%); */} filter: grayscale(100%);
+  filter: grayscale(100%);
 `
