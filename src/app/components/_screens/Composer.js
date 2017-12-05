@@ -4,7 +4,6 @@ import Helmet from "../_async/Helmet"
 
 // components
 import { Article, Section } from "../ArticleStyles"
-import { Button } from "../Button"
 import { ModalDispatch } from "../../containers/Modal"
 import Composer from "../../containers/Composer"
 import Email from "../Email"
@@ -38,10 +37,10 @@ export default props => {
       <Composer composerState={composerState} />
       <ModalDispatch
         with={MESSAGE_HINT_SUBMIT_CONSENT}
-        style={{ textDecoration: "none" }}
-        wrapperElement="div"
+        wrapperElement="Button"
+        red
       >
-        <Button red>Send Submission {emojis.CHECKMARK}</Button>
+        Send Submission {emojis.CHECKMARK}
       </ModalDispatch>
       <Section plain>
         <p style={{ textAlign: "center" }}>

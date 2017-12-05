@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { connect } from "react-redux"
 import { fetchCard, setCard } from "../../../../actions/modalActions"
 
+import { Button } from "../../../components/Button"
 import emojis from "../../../../constants/messages/emojis"
 
 // return
@@ -37,8 +38,9 @@ const ModalDispatch = props => {
   const Wrapper = wrapperElement
   let ModalDispatchWrapper
 
-  wrapperElement === "a"
-    ? (ModalDispatchWrapper = styled(Wrapper)`
+  switch (wrapperElement) {
+    case "a":
+      ModalDispatchWrapper = styled(Wrapper)`
         &::after {
           content: "${emojis.STAR}";
           text-decoration: none;
@@ -50,8 +52,18 @@ const ModalDispatch = props => {
           margin-left: -.15em;
           margin-top: -.5em;
         }
-      `)
-    : (ModalDispatchWrapper = Wrapper)
+      `
+      break
+    case "Button":
+      ModalDispatchWrapper = () => (
+        <Button {...props} onClick={invokeModal.bind(this)}>
+          {props.children}
+        </Button>
+      )
+      break
+    default:
+      ModalDispatchWrapper = Wrapper
+  }
 
   return (
     <ModalDispatchWrapper
