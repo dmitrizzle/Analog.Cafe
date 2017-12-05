@@ -74,6 +74,7 @@ export default props => {
 
         {/* auth views */}
         <Route exact path={ROUTE_AUTH_USER_LANDING} component={Me} />
+        <Route exact path="/submissions/*" component={Article} />
         <Route
           exact
           path={ROUTE_AUTH_USER_LANDING + "/edit"}

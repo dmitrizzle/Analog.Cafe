@@ -15,7 +15,11 @@ import { ZigzagPicture } from "./styles/zigzag-picture"
 import { datestamp } from "../../../utils/datestamp"
 
 // constants
-import { ROUTE_ARTICLE_DIR, SUMMARY_LENGTH_MAX } from "../../../constants/list"
+import {
+  ROUTE_ARTICLE_DIR,
+  ROUTE_SUBMISSIONS_DIR,
+  SUMMARY_LENGTH_MAX
+} from "../../../constants/list"
 import emojis from "../../../constants/messages/emojis"
 
 // return
@@ -31,6 +35,7 @@ const ListSubtitle = props => {
   )
 }
 export default props => {
+  console.log()
   return (
     <Bleed>
       <Ul status={props.status}>
@@ -47,7 +52,14 @@ export default props => {
             >
               <li>
                 <Link
-                  to={item.slug && ROUTE_ARTICLE_DIR + "/" + item.slug}
+                  to={
+                    item.slug &&
+                    (props.private
+                      ? ROUTE_SUBMISSIONS_DIR
+                      : ROUTE_ARTICLE_DIR) +
+                      "/" +
+                      item.slug
+                  }
                   onClick={() =>
                     props.nextArticleHeading({
                       title: item.title,
@@ -107,11 +119,16 @@ export default props => {
                     </Caption>
                     <div>
                       <Stats {...props}>
-                        {item.tag === "photo-essay" && item.stats.images === 1
-                          ? "Single-Frame Narrative"
-                          : (item.tag + "")
-                              .replace(/-/g, " ")
-                              .replace(/\b\w/g, l => l.toUpperCase())}
+                        {item.tag
+                          ? item.tag === "photo-essay" &&
+                            item.stats.images === 1
+                            ? "Single-Frame Narrative"
+                            : (item.tag + "")
+                                .replace(/-/g, " ")
+                                .replace(/\b\w/g, l => l.toUpperCase())
+                          : item.status === "pending"
+                            ? emojis.MONOCLE + " Pending Editorial Review"
+                            : item.status.toUpperCase()}
                         {item.type !== "placeholder" &&
                           !props.private &&
                           (item.tag !== "photo-essay"
