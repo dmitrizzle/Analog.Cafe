@@ -123,12 +123,18 @@ class Upload extends React.PureComponent {
   }
 
   componentWillReceiveProps = nextProps => {
-    const throttledUploadStatusUpdate = throttle(
-      nextProps => nextProps.fetchProgressStatus(nextProps.upload.data.id),
-      1000
-    )
-    if (nextProps.upload.status === "ok") {
+    const throttledUploadStatusUpdate = throttle(nextProps => {
+      console.log(nextProps.upload)
+      //nextProps.fetchProgressStatus(nextProps.upload.data.id)
+    }, 1000)
+    console.log(nextProps.upload.status)
+    if (
+      nextProps.upload.status === "ok" ||
+      nextProps.upload.status === "pending"
+    ) {
+      console.log("invoke1")
       if (nextProps.upload.progressReq !== "fetching") {
+        console.log("invoke2")
         throttledUploadStatusUpdate(nextProps)
       }
       if (Number(nextProps.upload.progress) === 100) {
