@@ -160,18 +160,18 @@ class PictureDocketContainer extends React.PureComponent {
         this.props.setCard(
           {
             status: "ok",
-            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE
+            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE_10
           },
           { url: "errors/upload" }
         )
       })
   } // ⤵
   uploadRequest = file => {
-    const { value, editor, node } = this.props
+    const { editor, node } = this.props
     const key = uuidv1()
     localForage.setItem(key, file)
 
-    const resolvedState = value
+    const resolvedState = editor.value
       .change()
       .insertBlock({
         type: "image",

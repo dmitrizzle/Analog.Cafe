@@ -1,6 +1,5 @@
 // tools
 import React from "react"
-import Loadable from "react-loadable"
 import { Editor } from "slate-react"
 import { Value } from "slate"
 import Helmet from "../../components/_async/Helmet"
@@ -16,7 +15,9 @@ import {
 } from "../../../actions/articleActions"
 import {
   ROUTE_ARTICLE_API,
-  ROUTE_ARTICLE_DIR
+  ROUTE_ARTICLE_DIR,
+  ROUTE_SUBMISSION_API,
+  ROUTE_SUBMISSIONS_DIR
 } from "../../../constants/article"
 import { ROUTE_AUTHOR_API } from "../../../constants/author"
 import {
@@ -24,6 +25,7 @@ import {
   ROUTE_APP_PRODUCTION_DOMAIN_NAME
 } from "../../../constants/app"
 import { ROUTE_FILTERS } from "../../../constants/list"
+import emojis from "../../../constants/messages/emojis"
 
 import { schema } from "../Composer/containers/ContentEditor/schema"
 import {
@@ -39,23 +41,32 @@ import {
   Article as ArticleElement,
   Byline
 } from "../../components/ArticleStyles"
+import ArticleActions from "../../components/Card/components/ArticleActions"
 
-const ArticleActions = Loadable({
-  loader: () => import("../../components/Card/components/ArticleActions"),
-  loading: () => null,
-  delay: 100
-})
+// return path type for submissions vs published works
+const locate = locationPathname => {
+  return {
+    pathname: locationPathname.includes(ROUTE_SUBMISSIONS_DIR)
+      ? ROUTE_SUBMISSIONS_DIR
+      : ROUTE_ARTICLE_DIR,
+    apiRoute: locationPathname.includes(ROUTE_SUBMISSIONS_DIR)
+      ? ROUTE_SUBMISSION_API
+      : ROUTE_ARTICLE_API
+  }
+}
 
-// render
-const safeRoute = url => {
+// generate complete url path for social sharing
+const completeUrlPath = (route, slug) => {
   return encodeURI(
     ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL +
       ROUTE_APP_PRODUCTION_DOMAIN_NAME +
-      ROUTE_ARTICLE_DIR +
+      route +
       "/" +
-      url
+      slug
   )
 }
+
+// render
 class Article extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -70,15 +81,23 @@ class Article extends React.PureComponent {
   }
 
   fetchPage = () => {
-    // do not fetch pages unless they are located in /zine dir
+    // do not fetch pages unless they are located in /zine or /submissions dir
     // otherwise on unmount the component will try to load any page, and return 404 errors
-    if (!this.props.history.location.pathname.includes(ROUTE_ARTICLE_DIR))
+    if (
+      !this.props.history.location.pathname.includes(ROUTE_ARTICLE_DIR) &&
+      !this.props.history.location.pathname.includes(ROUTE_SUBMISSIONS_DIR)
+    )
       return
+
+    console.log(locate(this.props.history.location.pathname))
 
     this.props.fetchPage({
       url:
-        ROUTE_ARTICLE_API +
-        this.props.history.location.pathname.replace(ROUTE_ARTICLE_DIR, "")
+        locate(this.props.history.location.pathname).apiRoute +
+        this.props.history.location.pathname.replace(
+          locate(this.props.history.location.pathname).pathname,
+          ""
+        )
     })
 
     // reset article actions menu
@@ -132,7 +151,10 @@ class Article extends React.PureComponent {
     event.preventDefault()
     window.open(
       "https://web.facebook.com/sharer.php?u=" +
-        safeRoute(this.props.article.slug),
+        completeUrlPath(
+          locate(this.props.history.location.pathname).pathname,
+          this.props.article.slug
+        ),
       "_blank",
       "height=600,width=500"
     )
@@ -141,7 +163,10 @@ class Article extends React.PureComponent {
     event.preventDefault()
     window.open(
       "https://twitter.com/share?url=" +
-        safeRoute(this.props.article.slug) +
+        completeUrlPath(
+          locate(this.props.history.location.pathname).pathname,
+          this.props.article.slug
+        ) +
         "&text=" +
         encodeURI(
           "“" +
@@ -158,7 +183,6 @@ class Article extends React.PureComponent {
     )
   }
   render = () => {
-    console.log(this.props.article)
     return (
       <ArticleElement>
         <Helmet>
@@ -206,6 +230,14 @@ class Article extends React.PureComponent {
                 ) : (
                   this.props.article.author.name
                 )}.
+              </Byline>
+            )}
+          {this.props.article.author &&
+            this.props.article.status !== "published" &&
+            this.props.article.status !== "loading" && (
+              <Byline>
+                <span style={{ fontStyle: "normal" }}>{emojis.WARNING}</span>{" "}
+                This article is only visible to you and the Analog.Cafe Editors.
               </Byline>
             )}
         </Heading>

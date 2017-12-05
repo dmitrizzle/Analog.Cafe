@@ -27,7 +27,9 @@ const posterDimensions = css`
   width: 5.5em;
   height: 9.33em;
 `
-const zigzagWidthShim = css`width: calc(${zigzagWidth} + 3px);`
+const zigzagWidthShim = css`
+  width: calc(${zigzagWidth} + 0px);
+`
 const zigzagFill = css`
   position: absolute;
   right: 0;
@@ -56,8 +58,7 @@ export const Ul = styled.ul`
 	padding: 				0;
 	&::after {
 		${zigzagDimensions}
-		filter: 						drop-shadow(1px 0 0 ${greyLine});
-		background-size: 		15em 33em;
+		background-size: 		4em 16em;
 		background-image: 	${zigZagDataUri};
 		background-repeat: 	repeat-y;
 	}
@@ -113,12 +114,12 @@ export const Ul = styled.ul`
 					position: 						relative;
 					background-size: 			cover;
 					background-position: 	center;
-					-webkit-filter: 			sepia(75%) hue-rotate(-12deg);
+					${"" /* -webkit-filter: 			sepia(75%) hue-rotate(-12deg);
 					filter: 							sepia(75%) hue-rotate(-12deg);
 					${props => props.theme.size.breakpoint.max.l`{
 						-webkit-filter: 		grayscale(95%);
 						filter: 						grayscale(95%);
-					}`}
+					}`} */}
 				}
 
 				${props => props.theme.size.breakpoint.max.m`{

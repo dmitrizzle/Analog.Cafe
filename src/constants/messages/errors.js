@@ -9,6 +9,10 @@ export default {
       title: "List not available",
       emoji: emojis.WTF
     },
+    SUBMISSIONS_LIST: {
+      title: "You haven’t submitted anything yet",
+      emoji: emojis.NEONCAT
+    },
     PICTURE: {
       name: "Unknown Author",
       title: "Info not available",
@@ -32,10 +36,15 @@ export default {
       text:
         "Please make sure that you’ve added a title, text and image(s) to your submission."
     },
-    UPLOAD_IMAGE_SIZE: {
+    UPLOAD_IMAGE_SIZE_10: {
       title: "File is Too Large!",
       text:
-        "Your images need to be 10MB or less in size. Try selecting another PNG or JPG file."
+        "Your image needs to be 10MB or less in size. Try selecting another PNG or JPG file."
+    },
+    UPLOAD_IMAGE_SIZE_5: {
+      title: "File is Too Large!",
+      text:
+        "Your image needs to be 5MB or less in size. Try selecting another PNG or JPG file."
     }
   },
   DISAMBIGUATION: {

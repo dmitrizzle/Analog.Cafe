@@ -5,7 +5,8 @@ const INITIAL_STATE = {
   info: {},
   routes: {
     success: ROUTE_AUTH_USER_LANDING
-  }
+  },
+  intent: {}
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -20,6 +21,13 @@ export default (state = INITIAL_STATE, action) => {
       state = {
         ...state,
         status: action.payload
+      }
+      break
+
+    case "USER.SET_INTENT":
+      state = {
+        ...state,
+        intent: action.payload
       }
       break
     case "USER.SET_ROUTES":

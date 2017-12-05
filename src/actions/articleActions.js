@@ -3,7 +3,7 @@ import axios from "axios"
 import errorMessages from "../constants/messages/errors"
 import { axiosRequest } from "../utils/axios-request"
 
-import { ROUTE_ARTICLE_API } from "../constants/article"
+import { ROUTE_ARTICLE_API, ROUTE_SUBMISSION_API } from "../constants/article"
 
 // return
 export const setPage = page => {
@@ -22,7 +22,11 @@ export const initPage = state => {
 export const fetchPage = request => {
   return (dispatch, getState) => {
     // do not load anything outside of API scope
-    if (!request.url.includes(ROUTE_ARTICLE_API)) return
+    if (
+      !request.url.includes(ROUTE_ARTICLE_API) &&
+      !request.url.includes(ROUTE_SUBMISSION_API)
+    )
+      return
 
     // get current state from store
     let articleState = getState().article
@@ -44,6 +48,14 @@ export const fetchPage = request => {
         })
       )
     else dispatch(initPage())
+
+    // add token to request, if available;
+    // this is for viewing pending submissions
+    const token = localStorage.getItem("token")
+    if (token)
+      request.headers = {
+        Authorization: "JWT " + token
+      }
 
     axios(axiosRequest(request))
       .then(response => {

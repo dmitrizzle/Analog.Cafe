@@ -14,7 +14,11 @@ import Heading from "../../../components/ArticleHeading"
 import { Article, Section } from "../../../components/ArticleStyles"
 
 // constants & helpers
-import { loadContent, loadHeader } from "../../../../utils/composer-loader"
+import {
+  loadContent,
+  loadHeader,
+  loadTextContent
+} from "../../../../utils/composer-loader"
 import { ROUTE_REDIRECT_AFTER_SUBMIT } from "../../../../constants/submission"
 import emojis from "../../../../constants/messages/emojis"
 import errorMessages from "../../../../constants/messages/errors"
@@ -68,6 +72,7 @@ class Upload extends React.PureComponent {
       )
       const content = loadContent()
       const header = loadHeader()
+      const textContent = loadTextContent()
       if (!(content && content.document && content.document.nodes)) {
         return this.handleEmptySubmission()
       }
@@ -76,6 +81,7 @@ class Upload extends React.PureComponent {
       let data = new FormData()
       data.append("content", JSON.stringify(content))
       data.append("header", JSON.stringify(header))
+      data.append("textContent", textContent)
       data.append("isFullConsent", submissionConsent)
 
       // get filename keys for the saved images in the submission
@@ -171,12 +177,12 @@ class Upload extends React.PureComponent {
         />
         <Section>
           <p>
-            You have requested
+            You have marked your submission as
             <em>
               {this.props.history.location.pathname.includes("full-consent") ===
               true
-                ? " more exposure. "
-                : " no additional exposure. "}
+                ? " open for collaborations. "
+                : " closed to collaborations. "}
             </em>
             Please wait while we process your submission&hellip;
           </p>

@@ -11,7 +11,11 @@ import Forbidden from "../../_screens-errors/Forbidden"
 
 // render
 const Me = props => {
-  return props.user.status === "ok" ? <List private /> : <Forbidden />
+  return props.user.status === "ok" ? (
+    <List private placeholder="HowToSubmit" />
+  ) : (
+    <Forbidden />
+  )
 }
 
 // connect with redux

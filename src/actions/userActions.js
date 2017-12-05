@@ -112,3 +112,11 @@ export const resetRoutes = () => {
     type: "USER.RESET_ROUTES"
   }
 }
+
+// set user intent (i.e. user is about to use this part of the app)
+export const setIntent = intent => {
+  return {
+    type: "USER.SET_INTENT",
+    payload: intent
+  }
+}
