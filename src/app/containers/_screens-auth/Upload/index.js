@@ -96,6 +96,9 @@ class Upload extends React.PureComponent {
           keys.forEach(k => {
             data.append("images[" + k + "]", results[k])
           })
+          content.document.nodes
+            .filter(node => !!(node.data && node.data.src))
+            .forEach(node => (node.data.src = null))
           sendSubmission(data, this.props)
         })
       } else {
