@@ -9,15 +9,10 @@ export const redirectToSignIn = props => {
 }
 
 export const sendSubmission = (data, props) => {
-  props.sendUpload({
+  console.log("Submission data", data)
+  props.uploadSubmissionData({
     method: "post",
     data,
-    onUploadProgress: progressEvent => {
-      const percentCompleted = Math.round(
-        progressEvent.loaded * 100 / progressEvent.total
-      )
-      console.log("Upload percent complete: " + percentCompleted)
-    },
     headers: {
       "content-type": "multipart/form-data",
       Authorization: "JWT " + localStorage.getItem("token")

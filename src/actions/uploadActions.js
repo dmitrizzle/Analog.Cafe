@@ -19,8 +19,8 @@ export const initStatus = () => {
   }
 }
 
-export const fetchProgressStatus = submissionId => {
-  console.log("progress report")
+export const fetchUploadProgress = submissionId => {
+  console.log("progress report requested")
   const request = {
     url: `${ROUTE_SUBMISSION_PROGRESS_API}/${submissionId}`
   }
@@ -32,7 +32,7 @@ export const fetchProgressStatus = submissionId => {
       })
     )
     axios(axiosRequest(request)).then(response => {
-      console.log(response.data.progress)
+      console.log("progress report response", response.data)
       dispatch(
         setStatus({
           status: "ok",
@@ -44,7 +44,7 @@ export const fetchProgressStatus = submissionId => {
   }
 }
 
-export const send = request => {
+export const uploadData = request => {
   return dispatch => {
     dispatch(initStatus())
     console.log("send")

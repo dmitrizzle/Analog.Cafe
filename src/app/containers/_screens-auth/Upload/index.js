@@ -35,9 +35,9 @@ import {
   resetRoutes as resetLoginRedirectRoutes
 } from "../../../../actions/userActions"
 import {
-  send as sendUpload,
+  uploadData as uploadSubmissionData,
   initStatus as resetUploadStatus,
-  fetchProgressStatus
+  fetchUploadProgress
 } from "../../../../actions/uploadActions"
 
 // render
@@ -98,7 +98,11 @@ class Upload extends React.PureComponent {
           keys.forEach(k => {
             data.append("images[" + k + "]", results[k])
           })
-          sendSubmission(data, this.props)
+          //console.log(data.entries())
+          for (var en of data.entries()) {
+            console.log(en)
+          }
+          //sendSubmission(data, this.props)
         })
       } else {
         // images added as URLs or no images
@@ -111,7 +115,7 @@ class Upload extends React.PureComponent {
             { url: "errors/submissions" }
           )
           this.props.history.replace({ pathname: "/submit/compose" })
-        } else sendSubmission(data, this.props)
+        } // else sendSubmission(data, this.props)
       }
     }
   }
@@ -129,36 +133,37 @@ class Upload extends React.PureComponent {
   }
 
   componentWillReceiveProps = nextProps => {
-    const throttledUploadStatusUpdate = throttle(nextProps => {
-      console.log(nextProps.upload)
-      //nextProps.fetchProgressStatus(nextProps.upload.data.id)
-    }, 1000)
-    console.log(nextProps.upload.status)
-    if (
-      nextProps.upload.status === "ok" ||
-      nextProps.upload.status === "pending"
-    ) {
-      console.log("invoke1")
-      if (nextProps.upload.progressReq !== "fetching") {
-        console.log("invoke2")
-        throttledUploadStatusUpdate(nextProps)
-      }
-      if (Number(nextProps.upload.progress) === 100) {
-        // clear submissions content and image in storage
-        localStorage.removeItem("composer-content-state")
-        localStorage.removeItem("composer-header-state")
-        localForage.clear()
-        // reset upload state
-        nextProps.resetUploadStatus()
-        // redirect after submission complete
-        nextProps.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
-      }
-    } else if (nextProps.upload.status === "unauthorized") {
-      // if user is unauthorized, redirect to sign in page
-      redirectToSignIn(nextProps)
-    } else if (nextProps.upload.status !== "pending") {
-      // submission not in progress
-    }
+    // const throttledUploadStatusUpdate = throttle(nextProps => {
+    //   console.log("fetchProgressStatus()")
+    //   if(!nextProps.upload.data) return
+    //   nextProps.fetchProgressStatus(nextProps.upload.data.id)
+    // }, 1000)
+    // console.log(nextProps.upload.status)
+    // if (
+    //   nextProps.upload.status === "ok" ||
+    //   nextProps.upload.status === "pending"
+    // ) {
+    //   console.log("invoke1")
+    //   if (nextProps.upload.progressReq !== "fetching") {
+    //     console.log("invoke2")
+    //     throttledUploadStatusUpdate(nextProps)
+    //   }
+    //   if (Number(nextProps.upload.progress) === 100) {
+    //     // clear submissions content and image in storage
+    //     localStorage.removeItem("composer-content-state")
+    //     localStorage.removeItem("composer-header-state")
+    //     localForage.clear()
+    //     // reset upload state
+    //     nextProps.resetUploadStatus()
+    //     // redirect after submission complete
+    //     nextProps.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+    //   }
+    // } else if (nextProps.upload.status === "unauthorized") {
+    //   // if user is unauthorized, redirect to sign in page
+    //   redirectToSignIn(nextProps)
+    // } else if (nextProps.upload.status !== "pending") {
+    //   // submission not in progress
+    // }
   }
 
   render = () => {
@@ -201,11 +206,11 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    sendUpload: request => {
-      dispatch(sendUpload(request))
+    uploadSubmissionData: request => {
+      dispatch(uploadSubmissionData(request))
     },
-    fetchProgressStatus: submissionId => {
-      dispatch(fetchProgressStatus(submissionId))
+    fetchUploadProgress: submissionId => {
+      dispatch(fetchUploadProgress(submissionId))
     },
     resetUploadStatus: () => {
       dispatch(resetUploadStatus())
