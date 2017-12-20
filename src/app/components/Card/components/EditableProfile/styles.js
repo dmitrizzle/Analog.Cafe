@@ -20,6 +20,7 @@ export const CardCaptionEditable = styled(TextareaWithHighlights)`
 `
 export const CardButtonEditable = styled.input`
   ${ButtonStyles} ${CardButtonStyles} border: 0;
+  user-select: text;
   outline: 0;
   width: 100%;
   cursor: text;

@@ -86,14 +86,12 @@ class EditProfile extends React.PureComponent {
   // process changes to title and bio
   handleTitleChange = event => {
     this.setState({
-      ...this.state,
       title: event.target.value,
       warningTitle: event.target.value.length >= TITLE_LENGTH_MAX
     })
   }
   handleTextChange = event => {
     this.setState({
-      ...this.state,
       text: event.target.value,
       warningText: event.target.value.length >= SUMMARY_LENGTH_MAX
     })
@@ -128,7 +126,6 @@ class EditProfile extends React.PureComponent {
   // process changes to user's link button
   handleButtonChange = event => {
     this.setState({
-      ...this.state,
       buttons: profileButtonsTemplate(
         this.props.user.info.id,
         event.target.value
@@ -138,13 +135,11 @@ class EditProfile extends React.PureComponent {
   }
   handleButtonFocus = () => {
     this.setState({
-      ...this.state,
       buttonText: this.state.buttons[1].to
     })
   }
   handleButtonBlur = () => {
     this.setState({
-      ...this.state,
       buttonText: this.state.buttons[1].text
     })
   }
