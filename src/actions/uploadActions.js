@@ -19,8 +19,7 @@ export const initStatus = () => {
   }
 }
 
-export const fetchUploadProgress = submissionId => {
-  console.log("progress report requested")
+export const syncStatus = submissionId => {
   const request = {
     url: `${ROUTE_SUBMISSION_PROGRESS_API}/${submissionId}`
   }
@@ -32,7 +31,6 @@ export const fetchUploadProgress = submissionId => {
       })
     )
     axios(axiosRequest(request)).then(response => {
-      console.log("progress report response", response.data)
       dispatch(
         setStatus({
           status: "ok",
@@ -47,10 +45,8 @@ export const fetchUploadProgress = submissionId => {
 export const uploadData = request => {
   return dispatch => {
     dispatch(initStatus())
-    console.log("send")
     axios(axiosRequest(request))
       .then(response => {
-        console.log(response.data)
         dispatch(
           setStatus({
             status: "ok",
@@ -59,7 +55,6 @@ export const uploadData = request => {
         )
       })
       .catch(error => {
-        console.log(error.response)
         error.response && error.response.status === 401
           ? dispatch(
               setStatus({

@@ -89,8 +89,6 @@ class Article extends React.PureComponent {
     )
       return
 
-    console.log(locate(this.props.history.location.pathname))
-
     this.props.fetchPage({
       url:
         locate(this.props.history.location.pathname).apiRoute +

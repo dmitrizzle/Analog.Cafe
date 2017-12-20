@@ -1,10 +1,7 @@
 // tools
 import React from "react"
 import Helmet from "../../../components/_async/Helmet"
-
-// redux
-import { connect } from "react-redux"
-import { setCard } from "../../../../actions/modalActions"
+//import throttle from "lodash/throttle"
 
 import localForage from "localforage"
 import "localforage-getitems"
@@ -19,10 +16,8 @@ import {
   loadHeader,
   loadTextContent
 } from "../../../../utils/composer-loader"
-import { ROUTE_REDIRECT_AFTER_SUBMIT } from "../../../../constants/submission"
-import emojis from "../../../../constants/messages/emojis"
 import errorMessages from "../../../../constants/messages/errors"
-import throttle from "lodash/throttle"
+import { ROUTE_REDIRECT_AFTER_SUBMIT } from "../../../../constants/submission"
 
 import {
   redirectToSignIn,
@@ -30,6 +25,8 @@ import {
 } from "../../../../utils/upload-utils"
 
 // redux actions
+import { connect } from "react-redux"
+import { setCard } from "../../../../actions/modalActions"
 import {
   setRoutes as setLoginRedirectRoutes,
   resetRoutes as resetLoginRedirectRoutes
@@ -37,7 +34,7 @@ import {
 import {
   uploadData as uploadSubmissionData,
   initStatus as resetUploadStatus,
-  fetchUploadProgress
+  syncStatus as syncUploadStatus
 } from "../../../../actions/uploadActions"
 
 // render
@@ -98,11 +95,7 @@ class Upload extends React.PureComponent {
           keys.forEach(k => {
             data.append("images[" + k + "]", results[k])
           })
-          //console.log(data.entries())
-          for (var en of data.entries()) {
-            console.log(en)
-          }
-          //sendSubmission(data, this.props)
+          sendSubmission(data, this.props)
         })
       } else {
         // images added as URLs or no images
@@ -115,10 +108,55 @@ class Upload extends React.PureComponent {
             { url: "errors/submissions" }
           )
           this.props.history.replace({ pathname: "/submit/compose" })
-        } // else sendSubmission(data, this.props)
+        }
+        //
+        //
+        //
+        // submit with image urls, not uploads
+        // else sendSubmission(data, this.props) << this needs to be mod'd
+        //
+        //
+        //
       }
     }
   }
+  componentWillReceiveProps = nextProps => {
+    // redirect users who aren't logged in
+    if (this.props.upload.status === "unauthorized") {
+      redirectToSignIn(this.props)
+      return
+    }
+
+    // get progress status from the server
+    if (
+      nextProps.upload.status === "ok" ||
+      nextProps.upload.status === "pending"
+    ) {
+      if (this.props.upload.status === nextProps.upload.status) return
+      // "fetching" indicates that submission request is submitted but
+      // server hasn't returned the details along with the id, which
+      // is required to track progress
+      if (nextProps.upload.progressReq === "fetching" || !nextProps.upload.data)
+        return
+      const periodical = setInterval(() => {
+        // download status from api
+        nextProps.syncUploadStatus(nextProps.upload.data.id)
+        // upload complete
+        if (parseFloat(this.props.upload.progress) === 100) {
+          clearInterval(periodical)
+          // clear submissions content and image in storage
+          localStorage.removeItem("composer-content-state")
+          localStorage.removeItem("composer-header-state")
+          localForage.clear()
+          // reset upload state
+          this.props.resetUploadStatus()
+          // redirect after submission complete
+          this.props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+        }
+      }, 1000)
+    }
+  }
+
   handleEmptySubmission = () => {
     this.props.setCard(
       {
@@ -132,54 +170,17 @@ class Upload extends React.PureComponent {
     })
   }
 
-  componentWillReceiveProps = nextProps => {
-    // const throttledUploadStatusUpdate = throttle(nextProps => {
-    //   console.log("fetchProgressStatus()")
-    //   if(!nextProps.upload.data) return
-    //   nextProps.fetchProgressStatus(nextProps.upload.data.id)
-    // }, 1000)
-    // console.log(nextProps.upload.status)
-    // if (
-    //   nextProps.upload.status === "ok" ||
-    //   nextProps.upload.status === "pending"
-    // ) {
-    //   console.log("invoke1")
-    //   if (nextProps.upload.progressReq !== "fetching") {
-    //     console.log("invoke2")
-    //     throttledUploadStatusUpdate(nextProps)
-    //   }
-    //   if (Number(nextProps.upload.progress) === 100) {
-    //     // clear submissions content and image in storage
-    //     localStorage.removeItem("composer-content-state")
-    //     localStorage.removeItem("composer-header-state")
-    //     localForage.clear()
-    //     // reset upload state
-    //     nextProps.resetUploadStatus()
-    //     // redirect after submission complete
-    //     nextProps.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
-    //   }
-    // } else if (nextProps.upload.status === "unauthorized") {
-    //   // if user is unauthorized, redirect to sign in page
-    //   redirectToSignIn(nextProps)
-    // } else if (nextProps.upload.status !== "pending") {
-    //   // submission not in progress
-    // }
-  }
-
   render = () => {
     const progress =
       this.props.upload && this.props.upload.progress
-        ? ` ${this.props.upload.progress}%`
-        : ""
+        ? ` ${parseFloat(this.props.upload.progress)}%`
+        : "0%"
     return (
       <Article>
         <Helmet>
           <title>Uploading Submission…{progress}</title>
         </Helmet>
-        <Heading
-          pageTitle={emojis.NEONCAT}
-          pageSubtitle={`Sending…${progress}`}
-        />
+        <Heading pageTitle={progress} pageSubtitle={"Sending…"} />
         <Section>
           <p>
             You have marked your submission as
@@ -209,8 +210,8 @@ const mapDispatchToProps = dispatch => {
     uploadSubmissionData: request => {
       dispatch(uploadSubmissionData(request))
     },
-    fetchUploadProgress: submissionId => {
-      dispatch(fetchUploadProgress(submissionId))
+    syncUploadStatus: submissionId => {
+      dispatch(syncUploadStatus(submissionId))
     },
     resetUploadStatus: () => {
       dispatch(resetUploadStatus())
