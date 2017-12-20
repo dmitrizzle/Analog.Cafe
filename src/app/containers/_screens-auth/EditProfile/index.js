@@ -160,7 +160,6 @@ class EditProfile extends React.PureComponent {
       data,
       url: ROUTE_UPDATE_PROFILE_API
     }
-    console.log(request)
     this.props.setUserInfo(request)
     this.setState({
       setUserInfoPending: true
