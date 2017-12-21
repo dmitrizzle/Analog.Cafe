@@ -111,15 +111,10 @@ class Upload extends React.PureComponent {
             { url: "errors/submissions" }
           )
           this.props.history.replace({ pathname: "/submit/compose" })
+        } else {
+          // images are URLs from the web
+          sendSubmission(data, this.props)
         }
-        //
-        //
-        //
-        // submit with image urls, not uploads
-        // else sendSubmission(data, this.props) << this needs to be mod'd
-        //
-        //
-        //
       }
     }
   }
@@ -150,11 +145,19 @@ class Upload extends React.PureComponent {
           // clear submissions content and image in storage
           localStorage.removeItem("composer-content-state")
           localStorage.removeItem("composer-header-state")
+          localStorage.removeItem("composer-content-text")
           localForage.clear()
           // reset upload state
           this.props.resetUploadStatus()
           // redirect after submission complete
-          this.props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+          const delayedRedirect = setTimeout(
+            props => {
+              props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+              clearTimeout(delayedRedirect)
+            },
+            1000, // wait a second to make sure the list of contributions has been updated
+            this.props
+          )
         }
       }, 1000)
     }
