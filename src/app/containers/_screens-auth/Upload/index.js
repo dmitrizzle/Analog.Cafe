@@ -1,14 +1,18 @@
 // tools
 import React from "react"
 import Helmet from "../../../components/_async/Helmet"
-//import throttle from "lodash/throttle"
-
+import CountUp from "react-countup"
 import localForage from "localforage"
 import "localforage-getitems"
 
 // components
-import Heading from "../../../components/ArticleHeading"
-import { Article, Section } from "../../../components/ArticleStyles"
+import {
+  Article,
+  Section,
+  Header,
+  Title,
+  Subtitle
+} from "../../../components/ArticleStyles"
 
 // constants & helpers
 import {
@@ -37,8 +41,18 @@ import {
   syncStatus as syncUploadStatus
 } from "../../../../actions/uploadActions"
 
+// settings
+const serverSyncDelay = 1000
+
 // render
 class Upload extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      progress: 0
+    }
+  }
+
   componentDidMount = () => {
     // no title present
     if (
@@ -120,6 +134,13 @@ class Upload extends React.PureComponent {
     }
   }
   componentWillReceiveProps = nextProps => {
+    this.props.upload &&
+      this.props.upload.progress &&
+      parseFloat(this.props.upload.progress) > this.state.progress &&
+      this.setState({
+        progress: parseFloat(this.props.upload.progress)
+      })
+
     // redirect users who aren't logged in
     if (this.props.upload.status === "unauthorized") {
       redirectToSignIn(this.props)
@@ -160,7 +181,7 @@ class Upload extends React.PureComponent {
             this.props
           )
         }
-      }, 1000)
+      }, serverSyncDelay)
     }
   }
 
@@ -178,17 +199,22 @@ class Upload extends React.PureComponent {
   }
 
   render = () => {
-    const progress = `${
-      this.props.upload && this.props.upload.progress
-        ? parseFloat(this.props.upload.progress)
-        : 0
-    }%`
     return (
       <Article>
         <Helmet>
           <title>Sending…</title>
         </Helmet>
-        <Heading pageTitle={progress} pageSubtitle={"Sending…"} />
+        <Header>
+          <Title>
+            <CountUp
+              start={0}
+              end={this.state.progress}
+              duration={serverSyncDelay / 1000}
+            />%
+          </Title>
+          <Subtitle>Sending…</Subtitle>
+        </Header>
+
         <Section>
           <p>
             You have marked your submission as

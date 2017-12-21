@@ -26,6 +26,7 @@
     "positions": "^1.6.1",
     "query-string": "^5.0.1",
     "react": "^16.0.0",
+    "react-countup": "^3.0.2",
     "react-dom": "^16.0.0",
     "react-ga": "^2.3.5",
     "react-helmet": "^5.2.0",
