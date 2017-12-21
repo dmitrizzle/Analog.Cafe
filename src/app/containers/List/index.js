@@ -105,7 +105,7 @@ class List extends React.PureComponent {
     const renderedListTitle =
       renderedListMeta.title +
       (this.props.list.filter.author && this.props.list.filter.author.name
-        ? this.props.list.filter.author.name
+        ? " by " + this.props.list.filter.author.name
         : "")
     return (
       <div>
