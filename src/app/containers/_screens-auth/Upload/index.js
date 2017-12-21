@@ -114,6 +114,7 @@ class Upload extends React.PureComponent {
         } else {
           // images are URLs from the web
           sendSubmission(data, this.props)
+          console.log("Uploading with images as URLs")
         }
       }
     }
@@ -177,14 +178,15 @@ class Upload extends React.PureComponent {
   }
 
   render = () => {
-    const progress =
+    const progress = `${
       this.props.upload && this.props.upload.progress
-        ? ` ${parseFloat(this.props.upload.progress)}%`
-        : "0%"
+        ? parseFloat(this.props.upload.progress)
+        : 0
+    }%`
     return (
       <Article>
         <Helmet>
-          <title>Uploading Submission…{progress}</title>
+          <title>Sending…</title>
         </Helmet>
         <Heading pageTitle={progress} pageSubtitle={"Sending…"} />
         <Section>
@@ -196,7 +198,10 @@ class Upload extends React.PureComponent {
                 ? " open for collaborations. "
                 : " closed to collaborations. "}
             </em>
-            Please wait while we process your submission&hellip;
+          </p>
+          <p>
+            Please keep this page open and do not refresh while your submission
+            is sending (uploading).
           </p>
         </Section>
       </Article>

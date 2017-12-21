@@ -35,7 +35,7 @@ export const syncStatus = submissionId => {
         setStatus({
           status: "ok",
           progressQueue: "available",
-          progress: response.data.progress
+          progress: parseFloat(response.data.progress) * 0.88 + 12
         })
       )
     })
