@@ -35,7 +35,8 @@ export const syncStatus = submissionId => {
         setStatus({
           status: "ok",
           progressQueue: "available",
-          progress: response.data.progress
+          // 12% will be counted as soon as submission request has been received
+          progress: parseFloat(response.data.progress) * 0.88 + 12
         })
       )
     })

@@ -1,14 +1,18 @@
 // tools
 import React from "react"
 import Helmet from "../../../components/_async/Helmet"
-//import throttle from "lodash/throttle"
-
+import CountUp from "react-countup"
 import localForage from "localforage"
 import "localforage-getitems"
 
 // components
-import Heading from "../../../components/ArticleHeading"
-import { Article, Section } from "../../../components/ArticleStyles"
+import {
+  Article,
+  Section,
+  Header,
+  Title,
+  Subtitle
+} from "../../../components/ArticleStyles"
 
 // constants & helpers
 import {
@@ -37,8 +41,18 @@ import {
   syncStatus as syncUploadStatus
 } from "../../../../actions/uploadActions"
 
+// settings
+const serverSyncDelay = 1000
+
 // render
 class Upload extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      progress: 0
+    }
+  }
+
   componentDidMount = () => {
     // no title present
     if (
@@ -111,19 +125,22 @@ class Upload extends React.PureComponent {
             { url: "errors/submissions" }
           )
           this.props.history.replace({ pathname: "/submit/compose" })
+        } else {
+          // images are URLs from the web
+          sendSubmission(data, this.props)
+          console.log("Uploading with images as URLs")
         }
-        //
-        //
-        //
-        // submit with image urls, not uploads
-        // else sendSubmission(data, this.props) << this needs to be mod'd
-        //
-        //
-        //
       }
     }
   }
   componentWillReceiveProps = nextProps => {
+    this.props.upload &&
+      this.props.upload.progress &&
+      parseFloat(this.props.upload.progress) > this.state.progress &&
+      this.setState({
+        progress: parseFloat(this.props.upload.progress)
+      })
+
     // redirect users who aren't logged in
     if (this.props.upload.status === "unauthorized") {
       redirectToSignIn(this.props)
@@ -150,13 +167,21 @@ class Upload extends React.PureComponent {
           // clear submissions content and image in storage
           localStorage.removeItem("composer-content-state")
           localStorage.removeItem("composer-header-state")
+          localStorage.removeItem("composer-content-text")
           localForage.clear()
           // reset upload state
           this.props.resetUploadStatus()
           // redirect after submission complete
-          this.props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+          const delayedRedirect = setTimeout(
+            props => {
+              props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+              clearTimeout(delayedRedirect)
+            },
+            1000, // wait a second to make sure the list of contributions has been updated
+            this.props
+          )
         }
-      }, 1000)
+      }, serverSyncDelay)
     }
   }
 
@@ -174,16 +199,22 @@ class Upload extends React.PureComponent {
   }
 
   render = () => {
-    const progress =
-      this.props.upload && this.props.upload.progress
-        ? ` ${parseFloat(this.props.upload.progress)}%`
-        : "0%"
     return (
       <Article>
         <Helmet>
-          <title>Uploading Submission…{progress}</title>
+          <title>Sending…</title>
         </Helmet>
-        <Heading pageTitle={progress} pageSubtitle={"Sending…"} />
+        <Header>
+          <Title>
+            <CountUp
+              start={0}
+              end={this.state.progress}
+              duration={serverSyncDelay / 1000}
+            />%
+          </Title>
+          <Subtitle>Sending…</Subtitle>
+        </Header>
+
         <Section>
           <p>
             You have marked your submission as
@@ -193,7 +224,10 @@ class Upload extends React.PureComponent {
                 ? " open for collaborations. "
                 : " closed to collaborations. "}
             </em>
-            Please wait while we process your submission&hellip;
+          </p>
+          <p>
+            Please keep this page open and do not refresh while your submission
+            is sending (uploading).
           </p>
         </Section>
       </Article>
