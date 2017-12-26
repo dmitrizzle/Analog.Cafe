@@ -168,7 +168,7 @@ export default props => {
 
         <h3>Connect, contact & get involved.</h3>
         <p>
-          <SubscribeToWeekly />
+          <SubscribeToWeekly buttonTextNoIcon="Subscribe" />
         </p>
         <MailChimpPrefill buttonText="Subscribe ❤︎" />
 

@@ -12,8 +12,9 @@ import { Image, Figure, Caption } from "./styles"
 
 // return
 export default props => {
+  const { src, ...select } = props
   return (
-    <Figure {...props}>
+    <Figure {...select}>
       <Image
         {...props}
         protected={
@@ -30,7 +31,7 @@ export default props => {
         }
       >
         {props.author ? (
-          <Caption {...props}>
+          <Caption>
             {props.children}
             {props.readOnly ? (
               <span style={{ color: "#2c2c2c" }}>
@@ -41,22 +42,20 @@ export default props => {
                 >
                   <ModalDispatch
                     with={
-                      props.author.id !== "unknown" ? (
-                        {
-                          request: {
-                            url: ROUTE_AUTHOR_API + "/" + props.author.id
+                      props.author.id !== "unknown"
+                        ? {
+                            request: {
+                              url: ROUTE_AUTHOR_API + "/" + props.author.id
+                            }
                           }
-                        }
-                      ) : (
-                        {
-                          info: {
-                            title: errorMessages.VIEW_TEMPLATE.PICTURE.title,
-                            text: errorMessages.VIEW_TEMPLATE.PICTURE.text,
-                            error: props.author.error
-                          },
-                          id: "errors/author"
-                        }
-                      )
+                        : {
+                            info: {
+                              title: errorMessages.VIEW_TEMPLATE.PICTURE.title,
+                              text: errorMessages.VIEW_TEMPLATE.PICTURE.text,
+                              error: props.author.error
+                            },
+                            id: "errors/author"
+                          }
                     }
                   >
                     {props.author.name}
@@ -69,9 +68,9 @@ export default props => {
           <Caption {...props}>
             {props.children}
             {!props.noAuthor &&
-            props.readOnly && (
-              <span style={{ color: "#2c2c2c" }}> Finding image author…</span>
-            )}
+              props.readOnly && (
+                <span style={{ color: "#2c2c2c" }}> Finding image author…</span>
+              )}
           </Caption>
         )}
       </figcaption>

@@ -1,17 +1,18 @@
 // tools
 import React from "react"
 import Helmet from "../../../components/_async/Helmet"
-
-// redux
-import { connect } from "react-redux"
-import { setCard } from "../../../../actions/modalActions"
-
+import CountUp from "react-countup"
 import localForage from "localforage"
 import "localforage-getitems"
 
 // components
-import Heading from "../../../components/ArticleHeading"
-import { Article, Section } from "../../../components/ArticleStyles"
+import {
+  Article,
+  Section,
+  Header,
+  Title,
+  Subtitle
+} from "../../../components/ArticleStyles"
 
 // constants & helpers
 import {
@@ -19,9 +20,8 @@ import {
   loadHeader,
   loadTextContent
 } from "../../../../utils/composer-loader"
-import { ROUTE_REDIRECT_AFTER_SUBMIT } from "../../../../constants/submission"
-import emojis from "../../../../constants/messages/emojis"
 import errorMessages from "../../../../constants/messages/errors"
+import { ROUTE_REDIRECT_AFTER_SUBMIT } from "../../../../constants/submission"
 
 import {
   redirectToSignIn,
@@ -29,17 +29,30 @@ import {
 } from "../../../../utils/upload-utils"
 
 // redux actions
+import { connect } from "react-redux"
+import { setCard } from "../../../../actions/modalActions"
 import {
   setRoutes as setLoginRedirectRoutes,
   resetRoutes as resetLoginRedirectRoutes
 } from "../../../../actions/userActions"
 import {
-  send as sendUpload,
-  initStatus as resetUploadStatus
+  uploadData as uploadSubmissionData,
+  initStatus as resetUploadStatus,
+  syncStatus as syncUploadStatus
 } from "../../../../actions/uploadActions"
+
+// settings
+const serverSyncDelay = 1000
 
 // render
 class Upload extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      progress: 0
+    }
+  }
+
   componentDidMount = () => {
     // no title present
     if (
@@ -96,6 +109,9 @@ class Upload extends React.PureComponent {
           keys.forEach(k => {
             data.append("images[" + k + "]", results[k])
           })
+          content.document.nodes
+            .filter(node => !!(node.data && node.data.src))
+            .forEach(node => (node.data.src = null))
           sendSubmission(data, this.props)
         })
       } else {
@@ -109,10 +125,66 @@ class Upload extends React.PureComponent {
             { url: "errors/submissions" }
           )
           this.props.history.replace({ pathname: "/submit/compose" })
-        } else sendSubmission(data, this.props)
+        } else {
+          // images are URLs from the web
+          sendSubmission(data, this.props)
+          console.log("Uploading with images as URLs")
+        }
       }
     }
   }
+  componentWillReceiveProps = nextProps => {
+    this.props.upload &&
+      this.props.upload.progress &&
+      parseFloat(this.props.upload.progress) > this.state.progress &&
+      this.setState({
+        progress: parseFloat(this.props.upload.progress)
+      })
+
+    // redirect users who aren't logged in
+    if (this.props.upload.status === "unauthorized") {
+      redirectToSignIn(this.props)
+      return
+    }
+
+    // get progress status from the server
+    if (
+      nextProps.upload.status === "ok" ||
+      nextProps.upload.status === "pending"
+    ) {
+      if (this.props.upload.status === nextProps.upload.status) return
+      // "fetching" indicates that submission request is submitted but
+      // server hasn't returned the details along with the id, which
+      // is required to track progress
+      if (nextProps.upload.progressReq === "fetching" || !nextProps.upload.data)
+        return
+      const periodical = setInterval(() => {
+        // download status from api
+        nextProps.syncUploadStatus(nextProps.upload.data.id)
+        // upload complete
+        if (parseFloat(this.props.upload.progress) === 100) {
+          clearInterval(periodical)
+          // clear submissions content and image in storage
+          localStorage.removeItem("composer-content-state")
+          localStorage.removeItem("composer-header-state")
+          localStorage.removeItem("composer-content-text")
+          localForage.clear()
+          // reset upload state
+          this.props.resetUploadStatus()
+          // redirect after submission complete
+          const delayedRedirect = setTimeout(
+            props => {
+              props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+              clearTimeout(delayedRedirect)
+            },
+            1000, // wait a second to make sure the list of contributions has been updated
+            this.props
+          )
+        }
+      }, serverSyncDelay)
+    }
+  }
+
   handleEmptySubmission = () => {
     this.props.setCard(
       {
@@ -126,31 +198,23 @@ class Upload extends React.PureComponent {
     })
   }
 
-  componentWillReceiveProps = nextProps => {
-    if (nextProps.upload.status === "ok") {
-      // clear submissions content and image in storage
-      localStorage.removeItem("composer-content-state")
-      localStorage.removeItem("composer-header-state")
-      localForage.clear()
-      // reset upload state
-      nextProps.resetUploadStatus()
-      // redirect after submission complete
-      nextProps.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
-    } else if (nextProps.upload.status === "unauthorized") {
-      // if user is unauthorized, redirect to sign in page
-      redirectToSignIn(nextProps)
-    } else if (nextProps.upload.status !== "pending") {
-      // submission not in progress
-    }
-  }
-
   render = () => {
     return (
       <Article>
         <Helmet>
-          <title>Uploading Submission…</title>
+          <title>Sending…</title>
         </Helmet>
-        <Heading pageTitle={emojis.NEONCAT} pageSubtitle="Sending…" />
+        <Header>
+          <Title>
+            <CountUp
+              start={0}
+              end={this.state.progress}
+              duration={serverSyncDelay / 1000}
+            />%
+          </Title>
+          <Subtitle>Sending…</Subtitle>
+        </Header>
+
         <Section>
           <p>
             You have marked your submission as
@@ -160,7 +224,10 @@ class Upload extends React.PureComponent {
                 ? " open for collaborations. "
                 : " closed to collaborations. "}
             </em>
-            Please wait while we process your submission&hellip;
+          </p>
+          <p>
+            Please keep this page open and do not refresh while your submission
+            is sending (uploading).
           </p>
         </Section>
       </Article>
@@ -177,8 +244,11 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    sendUpload: request => {
-      dispatch(sendUpload(request))
+    uploadSubmissionData: request => {
+      dispatch(uploadSubmissionData(request))
+    },
+    syncUploadStatus: submissionId => {
+      dispatch(syncUploadStatus(submissionId))
     },
     resetUploadStatus: () => {
       dispatch(resetUploadStatus())

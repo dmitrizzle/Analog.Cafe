@@ -2,6 +2,8 @@
 import axios from "axios"
 import { axiosRequest } from "../utils/axios-request"
 
+import { ROUTE_SUBMISSION_PROGRESS_API } from "../constants/submission"
+
 import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
 
@@ -17,14 +19,39 @@ export const initStatus = () => {
   }
 }
 
-export const send = request => {
+export const syncStatus = submissionId => {
+  const request = {
+    url: `${ROUTE_SUBMISSION_PROGRESS_API}/${submissionId}`
+  }
+  return dispatch => {
+    dispatch(
+      setStatus({
+        status: "ok",
+        progressQueue: "fetching"
+      })
+    )
+    axios(axiosRequest(request)).then(response => {
+      dispatch(
+        setStatus({
+          status: "ok",
+          progressQueue: "available",
+          // 12% will be counted as soon as submission request has been received
+          progress: parseFloat(response.data.progress) * 0.88 + 12
+        })
+      )
+    })
+  }
+}
+
+export const uploadData = request => {
   return dispatch => {
     dispatch(initStatus())
     axios(axiosRequest(request))
       .then(response => {
         dispatch(
           setStatus({
-            status: "ok"
+            status: "ok",
+            data: response.data
           })
         )
       })
