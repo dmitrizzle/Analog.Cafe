@@ -107,10 +107,10 @@ class SignIn extends React.PureComponent {
               >
                 Continue with Facebook
               </FacebookLinkButton>
-              <p>
+              {/* <p>
                 <em>- or -</em>
               </p>
-              <SignInWithEmail />
+              <SignInWithEmail /> */}
             </ButtonGroup>
           </Section>
         </Article>

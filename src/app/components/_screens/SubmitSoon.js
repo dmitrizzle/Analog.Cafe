@@ -4,7 +4,7 @@ import React from "react"
 // components
 import Heading from "../ArticleHeading"
 import { Section, Article } from "../ArticleStyles"
-import MailChimpPrefill from "../../containers/_forms/MailChimpPrefill"
+// import MailChimpPrefill from "../../containers/_forms/MailChimpPrefill"
 
 // render
 export default props => {
@@ -15,17 +15,16 @@ export default props => {
         pageSubtitle="Film Photography, Essays & Articles"
       />
       <Section>
-        <h3>Submissions start winter ‘17</h3>
         <p>
-          This December we are opening submissions to Analog.Cafe. Would you
-          like a reminder when this happens?
+          We are <em>almost</em> ready to accept your submissions! For advanced
+          access please email d [at] analog [dot] cafe.
         </p>
 
-        <MailChimpPrefill
+        {/* <MailChimpPrefill
           formUrl="https://cafe.us4.list-manage.com/subscribe/post?u=256339f7eafa36f2f466aca44&id=12d8a644fa&MERGE0="
           buttonText="Yes, Remind Me"
           autoFocus
-        />
+        /> */}
       </Section>
     </Article>
   )
