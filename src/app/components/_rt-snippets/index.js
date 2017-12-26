@@ -19,8 +19,9 @@ export const SubscribeToWeekly = props => {
       >
         example
       </Link>) is sent out every Tuesday. To get it, fill out your email below
-      and click “Submit <span style={{ fontStyle: "normal" }}>❤︎</span>.” We
-      never share or sell your personal information.
+      and click “{props.buttonTextNoIcon ? props.buttonTextNoIcon : "Submit"}{" "}
+      <span style={{ fontStyle: "normal" }}>❤︎</span>.” We never share or sell
+      your personal information.
     </span>
   )
 }
