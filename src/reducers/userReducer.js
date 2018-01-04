@@ -6,7 +6,8 @@ const INITIAL_STATE = {
   routes: {
     success: ROUTE_AUTH_USER_LANDING
   },
-  intent: {}
+  intent: {},
+  timeoutEmailLogin: 0
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -24,6 +25,12 @@ export default (state = INITIAL_STATE, action) => {
       }
       break
 
+    case "USER.SET_EMAIL_LOGIN_TIMEOUT":
+      state = {
+        ...state,
+        timeoutEmailLogin: action.payload
+      }
+      break
     case "USER.SET_INTENT":
       state = {
         ...state,

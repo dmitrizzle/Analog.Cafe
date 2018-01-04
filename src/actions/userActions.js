@@ -2,6 +2,7 @@
 import axios from "axios"
 import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
+import { ROUTE_LOGIN_WITH_EMAIL } from "../constants/login"
 import { axiosRequest } from "../utils/axios-request"
 
 import { ROUTE_USER_API } from "../constants/user"
@@ -14,6 +15,34 @@ const loginError = (type = "error") => {
       title: errorMessages.VIEW_TEMPLATE.CARD.title,
       text: errorMessages.DISAMBIGUATION.CODE_401[type]
     }
+  }
+}
+
+// log in with email
+export const loginWithEmail = validatedEmail => {
+  return dispatch => {
+    axios(
+      axiosRequest({
+        url: ROUTE_LOGIN_WITH_EMAIL,
+        data: { email: validatedEmail }
+      })
+    )
+      .then(response => {
+        alert(response.status)
+        dispatch({
+          type: "USER.SET_EMAIL_LOGIN_TIMEOUT",
+          payload: new Date().getTime()
+        })
+      })
+      .catch(error => {
+        dispatch(
+          setCard({
+            status: "ok",
+            info: errorMessages.VIEW_TEMPLATE.EMAIL_LOGIN,
+            requested: { url: "errors/email-login" }
+          })
+        )
+      })
   }
 }
 
