@@ -24,7 +24,8 @@ export const loginWithEmail = validatedEmail => {
     axios(
       axiosRequest({
         url: ROUTE_LOGIN_WITH_EMAIL,
-        data: { email: validatedEmail }
+        data: { email: validatedEmail },
+        method: "post"
       })
     )
       .then(response => {
