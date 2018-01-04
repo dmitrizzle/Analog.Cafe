@@ -8,7 +8,7 @@ export const trimAuthorName = (name, maxlength = 10) => {
 
 // Compile author list for a post
 export const authorNameList = (authors, options = {}) => {
-  if (!authors) return null
+  if (!authors) return ""
 
   const namesTotal = options.ommitLeadAuthor
     ? authors.length - 1

@@ -142,9 +142,10 @@ export default props => {
                       </Stats>
                       {!props.private ? (
                         <em>
-                          {authorNameList(item.authors, { trim: true })}
-                          {item.type !== "placeholder" &&
-                            " · " + datestamp(item["post-date"])}
+                          {`${authorNameList(item.authors, { trim: true })} · `}
+                          {item.type !== "placeholder" && (
+                            <small>{datestamp(item["post-date"])}</small>
+                          )}
                         </em>
                       ) : (
                         <em>

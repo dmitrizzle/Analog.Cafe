@@ -271,7 +271,7 @@ class Article extends React.PureComponent {
                   this.props.setNextArticle({
                     title: nextArticleHeading.title,
                     subtitle: nextArticleHeading.subtitle,
-                    author: nextArticleHeading.author,
+                    authors: nextArticleHeading.authors,
                     slug: nextArticleHeading.slug,
                     poster: nextArticleHeading.poster,
                     tag: nextArticleHeading.tag
