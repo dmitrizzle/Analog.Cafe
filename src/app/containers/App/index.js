@@ -2,6 +2,7 @@
 import React from "react"
 import { withRouter } from "react-router"
 import Loadable from "react-loadable"
+import queryString from "query-string"
 
 // constants & helpers
 import {
@@ -51,6 +52,14 @@ const ArticlePreloader = Loadable({
 class App extends React.PureComponent {
   // manipulate nav view & GA tracking
   componentDidMount = () => {
+    // set user token
+    if (queryString.parse(this.props.location.search).token) {
+      localStorage.setItem(
+        "token",
+        queryString.parse(this.props.location.search).token
+      )
+    }
+
     // verify user status
     this.props.verifyUser()
     this.props.getUserInfo()
