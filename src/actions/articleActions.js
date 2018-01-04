@@ -42,7 +42,7 @@ export const fetchPage = request => {
           requested: request,
           title: articleState.title,
           subtitle: articleState.subtitle,
-          author: articleState.author,
+          authors: articleState.authors,
           poster: articleState.poster,
           tag: articleState.tag
         })

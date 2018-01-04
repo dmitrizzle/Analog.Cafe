@@ -13,6 +13,7 @@ import { ZigzagPicture } from "./styles/zigzag-picture"
 
 // helper
 import { datestamp } from "../../../utils/datestamp"
+import { authorNameList } from "../../../utils/authorship"
 
 // constants
 import {
@@ -35,7 +36,6 @@ const ListSubtitle = props => {
   )
 }
 export default props => {
-  console.log()
   return (
     <Bleed>
       <Ul status={props.status}>
@@ -64,7 +64,7 @@ export default props => {
                     props.nextArticleHeading({
                       title: item.title,
                       subtitle: item.subtitle,
-                      author: item.author,
+                      authors: item.authors,
                       slug: item.slug,
                       poster: item.poster,
                       tag: item.tag
@@ -142,9 +142,10 @@ export default props => {
                       </Stats>
                       {!props.private ? (
                         <em>
-                          {item.author.name}
-                          {item.type !== "placeholder" &&
-                            " · " + datestamp(item["post-date"])}
+                          {`${authorNameList(item.authors, { trim: true })} · `}
+                          {item.type !== "placeholder" && (
+                            <small>{datestamp(item["post-date"])}</small>
+                          )}
                         </em>
                       ) : (
                         <em>
