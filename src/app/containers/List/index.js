@@ -24,7 +24,8 @@ import { default as ListBlock } from "../../components/List"
 import { Section, Article } from "../../components/ArticleStyles"
 
 // helpers
-import { getListMeta, trimAuthorName } from "../../../utils/list-utils"
+import { getListMeta } from "../../../utils/list-utils"
+import { trimAuthorName } from "../../../utils/authorship"
 
 // fetch placeholder component
 const HowToSubmit = Loadable({
@@ -170,7 +171,7 @@ class List extends React.PureComponent {
                 title: nextArticleHeading.title,
                 subtitle: nextArticleHeading.subtitle,
                 tag: nextArticleHeading.tag,
-                author: nextArticleHeading.author,
+                authors: nextArticleHeading.authors,
                 slug: nextArticleHeading.slug,
                 poster: nextArticleHeading.poster
               })

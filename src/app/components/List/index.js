@@ -13,7 +13,7 @@ import { ZigzagPicture } from "./styles/zigzag-picture"
 
 // helper
 import { datestamp } from "../../../utils/datestamp"
-import { authorNameList } from "../../../utils/list-utils"
+import { authorNameList } from "../../../utils/authorship"
 
 // constants
 import {
@@ -64,7 +64,6 @@ export default props => {
                     props.nextArticleHeading({
                       title: item.title,
                       subtitle: item.subtitle,
-                      author: item.author,
                       authors: item.authors,
                       slug: item.slug,
                       poster: item.poster,
@@ -143,7 +142,7 @@ export default props => {
                       </Stats>
                       {!props.private ? (
                         <em>
-                          {authorNameList(item.authors, 2)}
+                          {authorNameList(item.authors, { trim: true })}
                           {item.type !== "placeholder" &&
                             " · " + datestamp(item["post-date"])}
                         </em>
