@@ -170,6 +170,7 @@ class EditProfile extends React.PureComponent {
   profileUpdated = () => {
     this.props.acceptUserInfo()
     this.props.history.push(ROUTE_AUTH_USER_LANDING)
+    //this.props.history.goBack()
   }
 
   render = () => {
