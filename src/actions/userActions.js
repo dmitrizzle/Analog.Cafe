@@ -3,6 +3,7 @@ import axios from "axios"
 import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
 import { ROUTE_LOGIN_WITH_EMAIL } from "../constants/login"
+import { MESSAGE_HINT_CHECK_EMAIL } from "../constants/messages/hints"
 import { axiosRequest } from "../utils/axios-request"
 
 import { ROUTE_USER_API } from "../constants/user"
@@ -21,6 +22,14 @@ const loginError = (type = "error") => {
 // log in with email
 export const loginWithEmail = validatedEmail => {
   return dispatch => {
+    dispatch({
+      type: "USER.SET_EMAIL_LOGIN_TIMEOUT",
+      payload: Date.now() + 60 * 1000
+    })
+    dispatch({
+      type: "USER.SET_EMAIL_LOGIN_STATUS",
+      payload: "pending"
+    })
     axios(
       axiosRequest({
         url: ROUTE_LOGIN_WITH_EMAIL,
@@ -29,10 +38,10 @@ export const loginWithEmail = validatedEmail => {
       })
     )
       .then(response => {
-        alert(response.status)
+        dispatch(setCard(MESSAGE_HINT_CHECK_EMAIL(validatedEmail)))
         dispatch({
-          type: "USER.SET_EMAIL_LOGIN_TIMEOUT",
-          payload: new Date().getTime()
+          type: "USER.SET_EMAIL_LOGIN_STATUS",
+          payload: "ok"
         })
       })
       .catch(error => {
@@ -43,6 +52,10 @@ export const loginWithEmail = validatedEmail => {
             requested: { url: "errors/email-login" }
           })
         )
+        dispatch({
+          type: "USER.SET_EMAIL_LOGIN_STATUS",
+          payload: "ok"
+        })
       })
   }
 }

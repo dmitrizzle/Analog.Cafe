@@ -8,12 +8,14 @@ import EmailInput from "./components/EmailInput"
 // redux
 import { connect } from "react-redux"
 import { loginWithEmail } from "../../../actions/userActions"
+import { setCard } from "../../../actions/modalActions"
 
 // styles
 import { Form } from "../../components/FormStyles"
 
 // helpers
 import validateEmail from "../../../utils/email-validator"
+import errorMessages from "../../../constants/messages/errors"
 
 // render
 class SigninWithEmail extends React.PureComponent {
@@ -30,7 +32,19 @@ class SigninWithEmail extends React.PureComponent {
     event.stopPropagation()
     event.preventDefault()
     if (validateEmail(this.state.email)) {
-      this.props.loginWithEmail(this.state.email)
+      if (
+        !this.props.user.emailLogin.timeout ||
+        Date.now() > this.props.user.emailLogin.timeout
+      )
+        this.props.loginWithEmail(this.state.email)
+      else
+        this.props.setCard({
+          status: "ok",
+          info: errorMessages.VIEW_TEMPLATE.EMAIL_LOGIN_TIMEOUT(
+            Math.floor((this.props.user.emailLogin.timeout - Date.now()) / 1000)
+          ),
+          requested: { url: "errors/email-login-wait" }
+        })
       return
     }
 
@@ -44,7 +58,12 @@ class SigninWithEmail extends React.PureComponent {
           warning={this.state.warning}
         />
 
-        <Button onClick={this.handleSubmit}>Continue</Button>
+        <Button
+          onClick={this.handleSubmit}
+          loading={this.props.user.emailLogin.status === "pending"}
+        >
+          Continue
+        </Button>
       </Form>
     )
   }
@@ -55,6 +74,9 @@ const mapDispatchToProps = dispatch => {
   return {
     loginWithEmail: validatedEmail => {
       dispatch(loginWithEmail(validatedEmail))
+    },
+    setCard: (info, request) => {
+      dispatch(setCard(info, request))
     }
   }
 }

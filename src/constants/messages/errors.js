@@ -51,10 +51,12 @@ export default {
       text:
         "For some reason an email with sign in link couldn’t be sent. Please try again or consider using Twitter or Facebook buttons."
     },
-    EMAIL_LOGIN_TIMEOUT: {
-      title: "Please Try in a Bit",
-      text:
-        "Please wait 20 seconds before requesting another login link to be sent to your email."
+    EMAIL_LOGIN_TIMEOUT: remaining => {
+      return {
+        title: "Please Try in a Bit",
+        text: `Please wait ${remaining ||
+          60} seconds before requesting another login link to be sent to your email.`
+      }
     }
   },
   DISAMBIGUATION: {
