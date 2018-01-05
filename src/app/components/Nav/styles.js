@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 import styled from "styled-components"
-// import Color from "color"
+import Color from "color"
 
 // components
 import Link from "../Link"
@@ -73,3 +73,32 @@ export const NavItem = styled.li`
             .string()
         : null}; */};
 `
+
+// styles for tiny profile icon
+export const TinyImageInline = styled.span`
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  margin: 0 0 -0.075em;
+  overflow: hidden;
+  display: inline-block;
+
+  background: ${props =>
+    Color(props.theme.color.foreground)
+      .alpha(props.theme.opacity.least)
+      .string()};
+  box-shadow: 0 0 0 1px
+    ${props =>
+      Color(props.theme.color.foreground)
+        .alpha(props.theme.opacity.half / 2)
+        .string()}
+    inset;
+
+  & > img {
+    width: 100%;
+    display: block;
+  }
+`
+
+// eeeeee
+// c3c3c3

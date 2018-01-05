@@ -12,7 +12,7 @@ import {
 } from "../../../constants/messages/hints"
 
 // styles
-import { NavLink, NavIndexLink, NavItem } from "./styles"
+import { NavLink, NavIndexLink, NavItem, TinyImageInline } from "./styles"
 
 // NOTE: components' `className` props are used in index.html and aren't required
 // if styles from `./styles.js` have the comments removed
@@ -22,28 +22,12 @@ import { NavLink, NavIndexLink, NavItem } from "./styles"
 // tiny profile image icon for logged-in users
 const TinyImage = props => {
   return (
-    <span
-      style={{
-        width: "1em",
-        height: "1em",
-        borderRadius: "1em",
-        margin: "0 0 -.075em",
-        overflow: "hidden",
-        display: "inline-block",
-
-        background: "#eeeeee",
-        boxShadow: "0 0 0 1px #c3c3c3 inset"
-      }}
-    >
+    <TinyImageInline>
       <img
         src={froth({ src: props.image, size: "i" }).src}
         alt="Profile avatar"
-        style={{
-          width: "100%",
-          display: "block"
-        }}
       />
-    </span>
+    </TinyImageInline>
   )
 }
 
