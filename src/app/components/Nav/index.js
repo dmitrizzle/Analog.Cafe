@@ -1,5 +1,6 @@
 // tools
 import React from "react"
+import { froth } from "../../../utils/image-froth"
 
 // components
 import Logo from "../Logo"
@@ -17,6 +18,36 @@ import { NavLink, NavIndexLink, NavItem } from "./styles"
 // if styles from `./styles.js` have the comments removed
 
 // return
+
+// tiny profile image icon for logged-in users
+const TinyImage = props => {
+  return (
+    <span
+      style={{
+        width: "1em",
+        height: "1em",
+        borderRadius: "1em",
+        margin: "0 0 -.075em",
+        overflow: "hidden",
+        display: "inline-block",
+
+        background: "#eeeeee",
+        boxShadow: "0 0 0 1px #c3c3c3 inset"
+      }}
+    >
+      <img
+        src={froth({ src: props.image, size: "i" }).src}
+        alt="Profile avatar"
+        style={{
+          width: "100%",
+          display: "block"
+        }}
+      />
+    </span>
+  )
+}
+
+// Nav components
 export const CommonNav = props => {
   return (
     <ul onMouseOver={props.userIntent}>
@@ -110,7 +141,10 @@ export const CommonNav = props => {
           }}
           style={{ textDecoration: "none", paddingRight: ".25em" }}
         >
-          <span>More…</span>
+          <span>
+            More…{" "}
+            {props.userStatus === "ok" && <TinyImage image={props.userImage} />}
+          </span>
         </ModalDispatch>
       </NavItem>
     </ul>
