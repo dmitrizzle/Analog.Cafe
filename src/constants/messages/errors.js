@@ -57,6 +57,11 @@ export default {
         text: `Please wait ${remaining ||
           60} seconds before requesting another login link to be sent to your email.`
       }
+    },
+    EMAIL_LOGIN_BAD_TOKEN: {
+      title: "Couldn’t Sign In",
+      text:
+        "Sorry, we couldn’t sign you in. Perhaps link has expired. Try signing in with your email again."
     }
   },
   DISAMBIGUATION: {
