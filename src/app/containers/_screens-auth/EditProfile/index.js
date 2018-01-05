@@ -69,7 +69,9 @@ class EditProfile extends React.PureComponent {
     this.setState({
       title: this.props.user.info.title,
       text: this.props.user.info.text,
-      image: this.props.user.info.image,
+      image: this.props.user.info.image
+        ? this.props.user.info.image
+        : "image-froth_1000000_ry31Fw1l4",
       buttons: profileButtonsTemplate(
         this.props.user.info.id,
         this.props.user.info.buttons && this.props.user.info.buttons[1]
