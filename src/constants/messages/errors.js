@@ -45,6 +45,18 @@ export default {
       title: "File is Too Large!",
       text:
         "Your image needs to be 5MB or less in size. Try selecting another PNG or JPG file."
+    },
+    EMAIL_LOGIN: {
+      title: "Couldn’t Send Email",
+      text:
+        "For some reason an email with sign in link couldn’t be sent. Please try again or consider using Twitter or Facebook buttons."
+    },
+    EMAIL_LOGIN_TIMEOUT: remaining => {
+      return {
+        title: "Please Try in a Bit",
+        text: `Please wait ${remaining ||
+          60} seconds before requesting another login link to be sent to your email.`
+      }
     }
   },
   DISAMBIGUATION: {
@@ -54,7 +66,7 @@ export default {
       error: "Error: This view or data for this view does not exist (404)"
     },
     CODE_403: {
-      error: "Error: Viewing this content requires matching log in (403)"
+      error: "Error: Viewing this content requires you to sign in (403)"
     },
     CODE_401: {
       error: "Error: You need to sign in to access your account (401)",

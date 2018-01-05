@@ -35,6 +35,11 @@ export const ButtonStyles = css`
   color: ${props => (props.black ? props.theme.color.background : null)}
     ${props => (props.red ? props.theme.color.background : null)} !important;
 
+  ${"" /* for non-coloured buttons the animation SVG should have a foreground-colored fill */} & svg > path {
+    stroke: ${props =>
+      !props.black && !props.red ? props.theme.color.foreground : null};
+  }
+
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
   padding: ${props => props.theme.size.block.spacing / 1.25}em 0;
   margin-top: ${props => props.theme.size.block.spacing}em;
