@@ -44,7 +44,7 @@
     "slate-html-serializer": "^0.4.6",
     "slate-react": "^0.10.11",
     "slate-trailing-block": "^0.4.0",
-    "styled-components": "^2.2.3",
+    "styled-components": "^2.4.0",
     "titlecase": "^1.1.2",
     "typeface-exo-2": "0.0.44",
     "typeface-lora": "0.0.44",
