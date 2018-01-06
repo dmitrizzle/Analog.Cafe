@@ -17,7 +17,7 @@ export const schema = {
   },
   blocks: {
     link: {
-      nodes: [{ kinds: ["text"] }]
+      nodes: [{ objects: ["text"] }]
     },
     divider: {
       isVoid: true

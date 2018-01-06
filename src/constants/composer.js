@@ -4,11 +4,11 @@ export const DEFAULT_COMPOSER_EDITOR_STATE = {
   document: {
     nodes: [
       {
-        kind: "block",
+        object: "block",
         type: "paragraph",
         nodes: [
           {
-            kind: "text",
+            object: "text",
             leaves: [
               {
                 text: ""

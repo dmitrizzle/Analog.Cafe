@@ -42,21 +42,21 @@ const rules = [
       switch (block) {
         case "paragraph": {
           return {
-            kind: "block",
+            object: "block",
             type: "paragraph",
             nodes: next(el.childNodes)
           }
         }
         case "quote": {
           return {
-            kind: "block",
+            object: "block",
             type: "quote",
             nodes: next(squish(el).childNodes)
           }
         }
         case "heading": {
           return {
-            kind: "block",
+            object: "block",
             type: "heading",
             nodes: next(squish(el).childNodes)
           }
@@ -65,7 +65,7 @@ const rules = [
           let imageSrc = el.getAttribute("src") || el.getAttribute("srcset")
           if (!isUrl(imageSrc)) return
           return {
-            kind: "block",
+            object: "block",
             type: "image",
             isVoid: true,
             data: { src: el.getAttribute("src") || el.getAttribute("srcset") } // this image needs to be uploaded
@@ -73,7 +73,7 @@ const rules = [
         }
         case "link": {
           return {
-            kind: "inline",
+            object: "inline",
             type: "link",
             data: {
               href: el.getAttribute("href")
@@ -91,7 +91,7 @@ const rules = [
       const mark = MARK_TAGS[el.tagName]
       if (!mark) return
       return {
-        kind: "mark",
+        object: "mark",
         type: mark,
         nodes: next(el.childNodes)
       }

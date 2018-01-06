@@ -184,8 +184,8 @@ export const plugins = [
           )
         })
     }
-  }),
+  })
 
   // trailing block (make sure to always have content editable)
-  TrailingBlock({ type: "paragraph" })
+  // TrailingBlock({ type: "paragraph" })
 ]
