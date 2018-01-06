@@ -28,7 +28,7 @@
     "react": "^16.0.0",
     "react-countup": "^3.0.2",
     "react-dom": "^16.0.0",
-    "react-ga": "^2.3.5",
+    "react-ga": "^2.4.0",
     "react-helmet": "^5.2.0",
     "react-lazyload": "^2.3.0",
     "react-loadable": "^5.3.1",
