@@ -21,7 +21,7 @@ import { Paste } from "./paste-html"
 // plugins by others
 import AutoReplace from "slate-auto-replace"
 import InsertImages from "slate-drop-or-paste-images"
-import TrailingBlock from "slate-trailing-block"
+// import TrailingBlock from "slate-trailing-block"
 
 // components
 
