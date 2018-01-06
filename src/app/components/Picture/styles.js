@@ -9,12 +9,12 @@ import { Caption as PictureCaption, CaptionStyles } from "../CaptionStyles"
 
 // css
 // remove `style` prop from Picture HOC
-export const Image = styled(({ style, ...props }) =>
+export const Image = styled(({ style, ...props }) => (
   <Picture
     {...props}
     onContextMenu={event => props.protected && event.preventDefault()}
   />
-)`
+))`
   width: 100%;
   height: auto;
   display: block;
@@ -50,20 +50,20 @@ const bleed = css`
   ${props =>
     props.theme.size.breakpoint.min.l`margin-top: ${props =>
       props.theme.size.block.spacing}em;`} ${props =>
-  props.feature
-    ? props => props.theme.size.breakpoint.min.l`
+      props.feature
+        ? props => props.theme.size.breakpoint.min.l`
 		margin-left:	calc(( -100vw + ${props =>
       props.theme.size.block.column.maxwidth.m}px )/2 - ${props =>
-        props.theme.size.block.column.safety}em );
+            props.theme.size.block.column.safety}em );
 	`
-    : null} ${props =>
-  props.feature
-    ? props => props.theme.size.breakpoint.min.xxl`
+        : null} ${props =>
+      props.feature
+        ? props => props.theme.size.breakpoint.min.xxl`
 		margin-left:	calc(( -100vw + ${props =>
       props.theme.size.block.column.maxwidth.l}px )/2 - ${props =>
-        props.theme.size.block.column.safety}em );
+            props.theme.size.block.column.safety}em );
 	`
-    : null} ${props => props.theme.size.breakpoint.max.m`
+        : null} ${props => props.theme.size.breakpoint.max.m`
 		margin-top: 0;
 	`};
 `
@@ -152,6 +152,9 @@ export const Caption = styled(PictureCaption)`
       props.theme.size.font.make.smaller}em
     ${props => props.theme.size.block.column.safety * 1.25}em;
   text-align: center;
+
+  max-width: ${props => props.theme.size.block.column.maxwidth.m}px;
+  margin: 0 auto;
 
   div,
   textarea {
