@@ -17,7 +17,7 @@ import { MarkHotkey } from "./mark-hotkey"
 import { LinkHotkey } from "./link-hotkey"
 import { ToggleFeature } from "./toggle-feature"
 import { Paste } from "./paste-html"
-import { TrailingBlock } from "./trailing-block"
+// import { LeadingBlock } from "./leading-block"
 
 // plugins by others
 import AutoReplace from "slate-auto-replace"
@@ -184,8 +184,10 @@ export const plugins = [
           )
         })
     }
-  }),
+  })
 
   // trailing block (make sure to always have content editable)
-  TrailingBlock({ type: "paragraph" })
+  // see schema.js
+
+  // LeadingBlock({})
 ]

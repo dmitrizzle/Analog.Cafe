@@ -1,3 +1,5 @@
+import { Block } from "slate"
+
 // return
 export const schema = {
   document: {
@@ -13,7 +15,18 @@ export const schema = {
           "link"
         ]
       }
-    ]
+    ],
+    last: { types: ["paragraph"] },
+    normalize: (change, reason, { node, child }) => {
+      switch (reason) {
+        case "last_child_type_invalid": {
+          const paragraph = Block.create("paragraph")
+          return change.insertNodeByKey(node.key, node.nodes.size, paragraph)
+        }
+        default:
+          return null
+      }
+    }
   },
   blocks: {
     link: {
