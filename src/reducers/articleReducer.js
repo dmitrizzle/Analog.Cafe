@@ -9,11 +9,11 @@ const INITIAL_STATE = {
       document: {
         nodes: [
           {
-            kind: "block",
+            object: "block",
             type: "paragraph",
             nodes: [
               {
-                kind: "text",
+                object: "text",
                 leaves: [
                   {
                     text:
