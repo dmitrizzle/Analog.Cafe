@@ -13,7 +13,7 @@ export default props => {
       <Section plain>
         <h3>How to submit your work.</h3>
         <p>
-          Analog.Cafe lets you compose and edit your submission using a tool
+          Analog.Cafe lets you create and edit your submission using a tool
           called <em>Composer</em>.
         </p>
         <p>
@@ -40,15 +40,22 @@ export default props => {
         </p>
         <p>
           When inserting images into your post you may also choose one of the
-          recommendations. These are photographs created by another author on
-          Analog.Cafe who has opened their work for collaborations. Both you and
-          the author will be credited appropriately with links to your profiles.
+          recommended photographs that show up in a grid when you click the “Add
+          Image” button. They’ve been created by other Analog.Cafe contributors
+          and selected by the editor. Should you choose to use one, both of you
+          will be credited appropriately with links to your profiles. You will
+          also be listed under “Collaborations” catogory on the website.
         </p>
+        <Figure
+          src="image-froth_1498127_rJE9bhJNG"
+          nocaption
+          alt="Instant Collaborations"
+        />
         <p>
           If you would like to offer your images up for being displayed in other
-          authors’ publications click “Yes” for “Instant Collaborations” when
-          you are submitting your work and we may include it in the image
-          suggestions grid for you.
+          authors’ publications click “Yes” for{" "}
+          <strong>“Instant Collaborations”</strong> when you are submitting your
+          work and we may include it in the image suggestions grid for you.
         </p>
         <p>
           You may also edit your profile image, bio and a link to your website
