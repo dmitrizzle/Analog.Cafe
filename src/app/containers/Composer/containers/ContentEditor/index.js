@@ -93,6 +93,7 @@ class ContentEditor extends React.PureComponent {
     this.setState({
       editorFocus: false
     })
+    this.menu.style.display = ""
   }
   handleFocus = () => {
     this.setState({
