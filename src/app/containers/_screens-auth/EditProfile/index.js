@@ -148,8 +148,8 @@ class EditProfile extends React.PureComponent {
 
   handleDone = () => {
     const data = new FormData()
-    data.append("title", this.state.title)
-    data.append("text", this.state.text)
+    data.append("title", this.state.title || this.props.user.info.id)
+    data.append("text", this.state.text || "")
     data.append("buttons", JSON.stringify(this.state.buttons))
     this.fileInput.value && data.append("image", this.fileInput.files[0])
 
@@ -182,7 +182,7 @@ class EditProfile extends React.PureComponent {
           // logged-in user info
 
           // author's name
-          title={this.state.title}
+          title={this.state.title || ""}
           changeTitle={this.handleTitleChange}
           warningTitle={this.state.warningTitle}
           // author's bio
