@@ -26,7 +26,7 @@ const Menu = styled.div`
       height: 57px;
       margin-left: calc(5em - 1px);
       margin-top: 2px;
-      border: 1px dashed #ee246d;
+      border: 1px dashed ${props => props.theme.color.brand};
       z-index: -1;
     }`};
   }
