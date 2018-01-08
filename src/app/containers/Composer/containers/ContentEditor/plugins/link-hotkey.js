@@ -27,10 +27,13 @@ export function LinkHotkey(options) {
         change.unwrapInline("link")
         return
       }
-      change.wrapInline({
-        type: "link",
-        data: addLink(value, "data")
-      })
+      const link = addLink(value, "data")
+      if (!link.href) change.unwrapInline("link")
+      else
+        change.wrapInline({
+          type: "link",
+          data: link
+        })
     }
   }
 }

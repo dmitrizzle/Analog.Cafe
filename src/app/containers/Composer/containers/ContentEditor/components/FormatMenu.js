@@ -119,7 +119,7 @@ export default props => {
             title="Add a link"
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
-              event.preventDefault()
+              //event.preventDefault()
               props.formatCommand("toggle_link")
             }}
           >

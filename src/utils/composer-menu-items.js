@@ -63,7 +63,7 @@ export const menuPosition = _this => {
 //
 export const addLink = (value, returnType = "value") => {
   const href = window.prompt("Enter the URL for the link:")
-  if (!href) return
+  if (!href) return value.change().unwrapInline("link")
   if (returnType === "value")
     return value.change().wrapInline({
       type: "link",
@@ -71,6 +71,7 @@ export const addLink = (value, returnType = "value") => {
     })
   else if (returnType === "data") return { href }
 }
+
 export const formatCommand = (type, _this) => {
   const { value } = _this.state
   let resolvedState
