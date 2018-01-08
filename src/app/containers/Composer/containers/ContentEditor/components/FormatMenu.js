@@ -13,17 +13,29 @@ const Menu = styled.div`
   }
   width: 10em;
   position: absolute;
-  border-radius: ${props => props.theme.effects.borderRadius.small}em;
+  bottom: initial !important;
   z-index: ${props => props.theme.layer.up};
 
+  &.touch {
+    margin-top: -65px;
+    ${props => props.theme.size.breakpoint.min.m`
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 57px;
+      margin-left: calc(5em - 1px);
+      margin-top: 2px;
+      border: 1px dashed #ee246d;
+      z-index: -1;
+    }`};
+  }
   ${props => props.theme.size.breakpoint.max.s`
     width: 100vw;
-    border-radius: 0;
     left: 0 !important;
-    top: initial !important;
-  `};
-  ${props => props.theme.size.breakpoint.min.m`
-    bottom: initial !important;
+    &.touch {
+      margin-top: -55px;
+    }
   `};
 `
 const Item = styled(({ left, right, script, ...props }) => (
