@@ -148,7 +148,7 @@ class ContentEditor extends React.PureComponent {
           style={{
             minHeight: "28em",
             boxShadow: this.state.editorFocus
-              ? "0 1px 0 0 rgba(44,44,44,.1), 1px 0 0 0 rgba(44,44,44,.05), -1px 0 0 0 rgba(44,44,44,.05)"
+              ? "1px 1px 0 0 rgba(44,44,44,.1)"
               : "",
             background: this.state.dragOver ? "rgba(44,44,44,.05)" : ""
           }}

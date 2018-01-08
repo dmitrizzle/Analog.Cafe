@@ -104,7 +104,7 @@ export default props => {
           <Item
             red
             title="Make a quote"
-            // selection will be collapsed when quote is made
+            onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
               event.preventDefault()
               props.formatCommand("make_quote")

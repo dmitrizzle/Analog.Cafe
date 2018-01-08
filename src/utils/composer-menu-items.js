@@ -42,11 +42,6 @@ export const menuPosition = _this => {
   const selection = window.getSelection()
   const range = selection.getRangeAt(0)
   const rect = range.getBoundingClientRect()
-  // if (!_this.state.editorFocus) {
-  //   menu.style.display = ""
-  //   return
-  // }
-  console.log(_this.state.editorFocus)
   if (value.isBlurred || value.isEmpty) {
     menu.style.display = ""
     return
