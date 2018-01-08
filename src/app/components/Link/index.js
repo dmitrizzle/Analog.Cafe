@@ -10,8 +10,8 @@ export default props => {
   // all links within analog.cafe domain should become relative
   let address = parseHref(props.to)
 
-  // external links
   if (address.includes("http"))
+    // external links
     return (
       <a
         href={address}
@@ -20,6 +20,13 @@ export default props => {
         title={address}
         {...props}
       >
+        {props.children}
+      </a>
+    )
+  else if (address === "#")
+    // empty link
+    return (
+      <a title={address} {...props}>
         {props.children}
       </a>
     )
