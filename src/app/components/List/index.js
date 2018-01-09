@@ -70,7 +70,11 @@ export default props => {
                       tag: item.tag
                     })
                   }
-                  onMouseOver={props.userIntent}
+                  onMouseOver={
+                    "ontouchstart" in document.documentElement
+                      ? null
+                      : props.userIntent
+                  }
                 >
                   <section>
                     <figure>

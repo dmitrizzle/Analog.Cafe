@@ -19,7 +19,11 @@ import { NavLink, NavIndexLink, NavItem } from "./styles"
 // return
 export const CommonNav = props => {
   return (
-    <ul onMouseOver={props.userIntent}>
+    <ul
+      onMouseOver={
+        "ontouchstart" in document.documentElement ? null : props.userIntent
+      }
+    >
       <NavItem>
         <NavLink to={"/photo-essays"}>
           <span>Photo Essays</span>
