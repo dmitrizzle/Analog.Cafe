@@ -139,6 +139,11 @@ class PictureDocketContainer extends React.PureComponent {
     }
 
     const { node, editor } = this.props
+
+    // the event listener for Esc key will remain, however this node will be gone
+    // so we check if it exists first
+    if (!editor.value.document.getNode(node.key)) return
+
     const resolvedState = editor.value
       .change({ save: false })
       .insertBlock({ type: "paragraph" })
@@ -154,7 +159,7 @@ class PictureDocketContainer extends React.PureComponent {
   componentDidMount = () => {
     document.addEventListener("keydown", event => {
       if (keycode(event) !== "esc") return
-      this.handleClose("keyboard")
+      this.handleClose(event)
     })
   }
 
