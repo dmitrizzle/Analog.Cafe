@@ -132,6 +132,7 @@ class ContentEditor extends React.PureComponent {
       <div style={{ position: "relative" }} key="ContentEditor_div">
         <ImageButton
           cursorContext={this.state.cursorContext}
+          editorFocus={this.state.editorFocus}
           onClick={this.handleImageButton}
         />
         <Editor

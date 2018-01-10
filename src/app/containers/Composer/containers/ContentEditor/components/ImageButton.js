@@ -13,7 +13,8 @@ export default props => {
         top: props.cursorContext
           ? props.cursorContext.parentBlockOffsets.top
           : 0,
-        display: props.cursorContext.newLine ? "block" : "none"
+        display: props.cursorContext.newLine ? "block" : "none",
+        opacity: props.editorFocus ? "1" : "0"
       }}
       onClick={props.onClick}
     >
