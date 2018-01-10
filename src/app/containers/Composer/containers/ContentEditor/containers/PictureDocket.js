@@ -4,6 +4,7 @@ import localForage from "localforage"
 import uuidv1 from "uuid/v1"
 import { froth } from "../../../../../../utils/image-froth"
 import { imageSizeLimit } from "../../../../../../utils/upload-utils"
+import keycode from "keycode"
 
 // redux
 import { connect } from "react-redux"
@@ -132,8 +133,10 @@ class PictureDocketContainer extends React.PureComponent {
 
   handleClose = event => {
     if (!event) return
-    event.preventDefault()
-    event.stopPropagation()
+    if (event !== "keyboard") {
+      event.preventDefault()
+      event.stopPropagation()
+    }
 
     const { node, editor } = this.props
     const resolvedState = editor.value
@@ -146,6 +149,13 @@ class PictureDocketContainer extends React.PureComponent {
     // this helps refresh the view and update inserted image...
     // ...i don't know why
     // window.scrollBy(0, 1)
+  }
+
+  componentDidMount = () => {
+    document.addEventListener("keydown", event => {
+      if (keycode(event) !== "esc") return
+      this.handleClose("keyboard")
+    })
   }
 
   // image upload handlers
