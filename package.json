@@ -46,7 +46,7 @@
     "styled-components": "^2.4.0",
     "titlecase": "^1.1.2",
     "typeface-exo-2": "0.0.44",
-    "typeface-lora": "0.0.44",
+    "typeface-lora": "0.0.46",
     "uuid": "^3.1.0",
     "webpack": "^3.8.1"
   },
