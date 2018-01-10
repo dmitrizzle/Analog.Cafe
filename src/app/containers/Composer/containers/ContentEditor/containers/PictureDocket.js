@@ -140,9 +140,9 @@ class PictureDocketContainer extends React.PureComponent {
 
     const { node, editor } = this.props
     const resolvedState = editor.value
-      .change()
+      .change({ save: false })
       .insertBlock({ type: "paragraph" })
-      .value.change()
+      .value.change({ save: false })
       .removeNodeByKey(node.key)
     editor.onChange(resolvedState)
 
@@ -207,7 +207,7 @@ class PictureDocketContainer extends React.PureComponent {
         data: { src }
       })
       // remove docket
-      .value.change()
+      .value.change({ save: false })
       .removeNodeByKey(node.key)
     window.requestAnimationFrame(() => {
       editor.onChange(resolvedState)

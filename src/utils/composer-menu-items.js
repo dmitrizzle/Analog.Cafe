@@ -19,12 +19,12 @@ export const handleImageButton = (event, _this) => {
 
   const activeBlockKey = _this.state.value.focusBlock.key
   const resolvedState = _this.state.value
-    .change()
+    .change({ save: false })
     .insertBlock({
       type: "docket",
       isVoid: true
     })
-    .value.change()
+    .value.change({ save: false })
     .removeNodeByKey(activeBlockKey)
   _this.setState({
     value: resolvedState.value,
