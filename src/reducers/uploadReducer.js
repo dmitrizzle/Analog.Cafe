@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   status: "pending",
-  progress: 0,
+  progress: 3,
   progressQueue: null
 }
 

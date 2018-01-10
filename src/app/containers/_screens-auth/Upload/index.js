@@ -13,6 +13,7 @@ import {
   Title,
   Subtitle
 } from "../../../components/ArticleStyles"
+import Dots from "../../../components/_icons/components/Dots"
 
 // constants & helpers
 import {
@@ -49,7 +50,7 @@ class Upload extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      progress: 0
+      progress: 3
     }
   }
 
@@ -212,7 +213,9 @@ class Upload extends React.PureComponent {
               duration={serverSyncDelay / 1000}
             />%
           </Title>
-          <Subtitle>Sending…</Subtitle>
+          <Subtitle>
+            <Dots>Sending</Dots>
+          </Subtitle>
         </Header>
 
         <Section>
