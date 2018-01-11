@@ -36,7 +36,7 @@ export const focusEvents = _this => {
   document.addEventListener(
     "keydown",
     event => {
-      if (event.keyCode === 27) {
+      if (event.keyCode === 27 && _this.slateEditor) {
         _this.slateEditor.blur()
       }
     },

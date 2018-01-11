@@ -13,6 +13,7 @@ import {
 
 // return
 export const Card = props => {
+  console.log(props)
   return (
     <CardElement style={props.style}>
       <CardHeader title={props.error && props.error}>

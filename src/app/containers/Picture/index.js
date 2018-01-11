@@ -87,7 +87,7 @@ class Figure extends React.Component {
           file.constructor === Object
         ) {
           reader.readAsDataURL(data)
-        } else if (file.constructor !== Object) {
+        } else if (file && file.constructor !== Object) {
           reader.readAsDataURL(file)
         }
       })

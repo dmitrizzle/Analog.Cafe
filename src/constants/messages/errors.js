@@ -6,7 +6,7 @@ export default {
       subtitle: "Page Not Available"
     },
     LIST: {
-      title: "List not available",
+      title: "Nothing here yet",
       emoji: emojis.WTF
     },
     SUBMISSIONS_LIST: {
@@ -21,6 +21,9 @@ export default {
     CARD: {
       title: "Info Not Available",
       text: "This card could not be loaded…"
+    },
+    CARD_NO_AUTHOR_INFO: {
+      text: "Author hasn’t shared any details about her- or himself yet."
     },
     SUBMISSION: {
       title: "Submission Failed",
