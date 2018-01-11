@@ -78,7 +78,6 @@ export const verify = () => {
 
 // remove token from local storage
 export const forget = () => {
-  console.log("forgot")
   return dispatch => {
     localStorage.removeItem("token")
     dispatch({
@@ -110,7 +109,7 @@ export const getInfo = () => {
       })
       .catch(error => {
         localStorage.removeItem("token") // clean up broken/old token
-        if (!error.response.data) return
+        if (!error.response || !error.response.data) return
         dispatch(
           setCard(loginError(error.response.data.message), {
             url: "errors/user"

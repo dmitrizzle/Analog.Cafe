@@ -2,6 +2,7 @@
 import React from "react"
 import { saveHeader } from "../../../../../utils/composer-saver"
 import { loadHeader } from "../../../../../utils/composer-loader"
+import keycode from "keycode"
 
 // components
 import TitleCase from "../../../TitleCase"
@@ -48,6 +49,10 @@ export default class extends React.PureComponent {
     //^^
     this.forceUpdate()
   }
+  handleKeypress = event => {
+    // disallow multiple lines in titles
+    if (keycode(event.which) === "enter") event.preventDefault()
+  }
   render = () => {
     return (
       <Header>
@@ -60,6 +65,7 @@ export default class extends React.PureComponent {
           warning={this.headerData.title.length >= TITLE_LENGTH_MAX}
           maxLength={TITLE_LENGTH_MAX}
           autoFocus={this.headerData.title === ""}
+          onKeyPress={this.handleKeypress}
         />
         <TitleCase
           placeholder={this.props.pageSubtitle}
@@ -69,6 +75,7 @@ export default class extends React.PureComponent {
           caution={this.headerData.subtitle.length > SUBTITLE_LENGTH_OPTIMAL}
           warning={this.headerData.subtitle.length >= SUBTITLE_LENGTH_MAX}
           maxLength={SUBTITLE_LENGTH_MAX}
+          onKeyPress={this.handleKeypress}
         />
         <Byline>
           Link to{" "}

@@ -2,6 +2,7 @@
 import React from "react"
 import { getFroth } from "../../../utils/image-froth"
 import localForage from "localforage"
+import keycode from "keycode"
 
 // redux
 import { connect } from "react-redux"
@@ -86,7 +87,7 @@ class Figure extends React.Component {
           file.constructor === Object
         ) {
           reader.readAsDataURL(data)
-        } else if (file.constructor !== Object) {
+        } else if (file && file.constructor !== Object) {
           reader.readAsDataURL(file)
         }
       })
@@ -114,6 +115,10 @@ class Figure extends React.Component {
         })
         .focus()
     )
+  }
+  handleKeypress = event => {
+    // disallow multiple lines in titles
+    if (keycode(event.which) === "enter") event.preventDefault()
   }
 
   render = () => {
@@ -149,6 +154,7 @@ class Figure extends React.Component {
             placeholder="Add image title, location, camera, film&hellip;"
             onChange={this.handleChange}
             onClick={this.handleTextareaClick}
+            onKeyPress={this.handleKeypress}
           />
         ) : (
           <span>{this.state.caption}</span>

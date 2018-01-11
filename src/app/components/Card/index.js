@@ -13,6 +13,7 @@ import {
 
 // return
 export const Card = props => {
+  console.log(props)
   return (
     <CardElement style={props.style}>
       <CardHeader title={props.error && props.error}>
@@ -43,7 +44,7 @@ export const Card = props => {
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {
-          return button ? (
+          return button && button.to && button.text ? (
             <CardButton
               onClick={button.onClick}
               to={button.to}
