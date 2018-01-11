@@ -229,8 +229,11 @@ class Upload extends React.PureComponent {
             </em>
           </p>
           <p>
-            Please keep this page open and do not refresh while your submission
-            is sending (uploading).
+            <strong>
+              Please keep this page open, do not refresh and do not click your
+              browser’s “back” button
+            </strong>{" "}
+            while your submission is sending (uploading).
           </p>
         </Section>
       </Article>

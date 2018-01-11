@@ -179,7 +179,7 @@ class Article extends React.PureComponent {
               ? " (" + this.props.article.subtitle + ")"
               : "") +
             "” by " +
-            this.props.article.author.name
+            authorNameList(this.props.article.authors)
         ) +
         "&via=analog_cafe",
       "_blank",
