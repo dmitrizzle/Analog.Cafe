@@ -35,6 +35,11 @@ export const uploadData = request => {
     // dispatch data upload
     axios(axiosRequestWithProgress).catch(error => {
       dispatch(
+        setStatus({
+          progress: -1
+        })
+      )
+      dispatch(
         setCard(
           {
             status: "ok",

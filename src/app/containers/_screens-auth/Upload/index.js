@@ -12,7 +12,8 @@ import {
   Title,
   Subtitle
 } from "../../../components/ArticleStyles"
-import Dots from "../../../components/_icons/components/Dots"
+import Link from "../../../components/Link"
+import { LinkButton } from "../../../components/Button"
 
 // constants & helpers
 import {
@@ -21,7 +22,6 @@ import {
   loadTextContent
 } from "../../../../utils/composer-loader"
 import errorMessages from "../../../../constants/messages/errors"
-import { ROUTE_REDIRECT_AFTER_SUBMIT } from "../../../../constants/submission"
 
 import {
   redirectToSignIn,
@@ -40,8 +40,23 @@ import {
   initStatus as resetUploadStatus
 } from "../../../../actions/uploadActions"
 
+// constants
+const STATUS_MESSAGES = {
+  pending: "Sending…",
+  complete: "Done!",
+  error: "Error"
+}
+
 // render
 class Upload extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      progress: 0,
+      status: "pending"
+    }
+  }
+
   componentDidMount = () => {
     // no title present
     if (
@@ -117,27 +132,40 @@ class Upload extends React.PureComponent {
         } else {
           // images are URLs from the web
           sendSubmission(data, this.props)
-          console.log("Uploading with images as URLs")
         }
       }
     }
   }
   componentWillReceiveProps = nextProps => {
-    console.log(nextProps.upload.progress)
+    // set progress state
+    if (nextProps.upload.progress >= 0)
+      this.setState({
+        progress:
+          nextProps.upload.progress > 0
+            ? nextProps.upload.progress
+            : this.state.progress
+      }) // server connection error
+    else
+      this.setState({
+        status: "error"
+      })
 
     // upload complete
-    if (parseFloat(this.props.upload.progress) === 100) {
-      // reset upload state
-      this.props.resetUploadStatus()
-
+    if (nextProps.upload.progress === 100) {
       // clear submissions content and image in storage
       localStorage.removeItem("composer-content-state")
       localStorage.removeItem("composer-header-state")
       localStorage.removeItem("composer-content-text")
       localForage.clear()
-      // redirect after submission complete
 
-      alert("done")
+      // reset upload state
+      this.props.resetUploadStatus()
+
+      // user-facing messages
+      this.setState({
+        status: "complete"
+      })
+
       // const delayedRedirect = setTimeout(
       //   props => {
       //     props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
@@ -169,10 +197,8 @@ class Upload extends React.PureComponent {
           <title>Sending…</title>
         </Helmet>
         <Header>
-          <Title>{this.props.upload.progress}%</Title>
-          <Subtitle>
-            <Dots>Sending</Dots>
-          </Subtitle>
+          <Title>{this.state.progress}%</Title>
+          <Subtitle>{STATUS_MESSAGES[this.state.status]}</Subtitle>
         </Header>
 
         <Section>
@@ -185,13 +211,55 @@ class Upload extends React.PureComponent {
                 : " closed to collaborations. "}
             </em>
           </p>
-          <p>
-            <strong>
-              Please keep this page open, do not refresh and do not click your
-              browser’s “back” button
-            </strong>{" "}
-            while your submission is sending (uploading).
-          </p>
+          {this.state.status === "pending" && (
+            <p>
+              <strong>
+                <span role="img" aria-label="Warning">
+                  ⚠️
+                </span>{" "}
+                Please keep this page open, do not refresh and do not click your
+                browser’s “back” button
+              </strong>{" "}
+              while your submission is sending (uploading).
+            </p>
+          )}
+          {this.state.status === "error" && (
+            <p>
+              <strong>{errorMessages.VIEW_TEMPLATE.SUBMISSION.text}</strong>{" "}
+              <a
+                href="#reload"
+                onClick={event => {
+                  event.preventDefault()
+                  window.location.reload()
+                }}
+              >
+                Try again
+              </a>{" "}
+              or{" "}
+              <Link
+                to={
+                  process.env.NODE_ENV === "development"
+                    ? "/submit/compose"
+                    : "/beta/compose"
+                }
+              >
+                go back
+              </Link>.
+            </p>
+          )}
+          {this.state.status === "complete" && (
+            <div>
+              <p>
+                We’ve received your submission. It’ll take couple minutes to
+                process the images – after that you should be able to see your
+                submisson <Link to="/me">here</Link>.
+              </p>
+              <p>Thank you so much for your contribution!</p>
+              <LinkButton red to="/me">
+                My Submissions
+              </LinkButton>
+            </div>
+          )}
         </Section>
       </Article>
     )
