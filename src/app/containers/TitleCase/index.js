@@ -33,6 +33,7 @@ export default class extends React.PureComponent {
         warning={this.props.warning}
         caution={this.props.caution}
         maxLength={this.props.maxLength}
+        onKeyPress={this.props.onKeyPress}
       />
     )
   }
