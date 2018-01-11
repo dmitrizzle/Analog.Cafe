@@ -2,7 +2,9 @@
 import axios from "axios"
 import { axiosRequest } from "../utils/axios-request"
 
-import { ROUTE_SUBMISSION_PROGRESS_API } from "../constants/submission"
+// this is where the server status displayed for uploading images to
+// Cloudinary - leaving here for futher reference
+// import { ROUTE_SUBMISSION_PROGRESS_API } from "../constants/submission"
 
 import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
@@ -19,82 +21,52 @@ export const initStatus = () => {
   }
 }
 
-export const syncStatus = submissionId => {
-  const request = {
-    url: `${ROUTE_SUBMISSION_PROGRESS_API}/${submissionId}`
-  }
+export const uploadData = request => {
+  let axiosRequestWithProgress = axiosRequest(request)
   return dispatch => {
-    dispatch(
-      setStatus({
-        status: "ok",
-        progressQueue: "fetching"
-      })
-    )
-    axios(axiosRequest(request)).then(response => {
+    // register upload progress
+    axiosRequestWithProgress.onUploadProgress = progressEvent =>
       dispatch(
         setStatus({
-          status: "ok",
-          progressQueue: "available",
-          // 12% will be counted as soon as submission request has been received
-          progress: parseFloat(response.data.progress) * 0.88 + 12
+          progress: Math.round(progressEvent.loaded * 100 / progressEvent.total)
         })
       )
-    })
-  }
-}
 
-export const uploadData = request => {
-  return dispatch => {
-    dispatch(initStatus())
-    axios(axiosRequest(request))
-      .then(response => {
-        dispatch(
-          setStatus({
+    // dispatch data upload
+    axios(axiosRequestWithProgress).catch(error => {
+      dispatch(
+        setCard(
+          {
             status: "ok",
-            data: response.data
-          })
-        )
-      })
-      .catch(error => {
-        error.response && error.response.status === 401
-          ? dispatch(
-              setStatus({
-                status: "unauthorized"
-              })
-            )
-          : dispatch(
-              setCard(
+            info: {
+              title: errorMessages.VIEW_TEMPLATE.SUBMISSION.title,
+              text: errorMessages.VIEW_TEMPLATE.SUBMISSION.text,
+              error,
+              stubborn: true,
+              buttons: [
                 {
-                  status: "ok",
-                  info: {
-                    title: errorMessages.VIEW_TEMPLATE.SUBMISSION.title,
-                    text: errorMessages.VIEW_TEMPLATE.SUBMISSION.text,
-                    error,
-                    stubborn: true,
-                    buttons: [
-                      {
-                        to: "#try-again",
-                        onClick: () => {
-                          window.location.reload()
-                        },
-                        text: "Try Again",
-                        red: true
-                      },
-                      {
-                        to:
-                          process.env.NODE_ENV === "development"
-                            ? "/submit/compose"
-                            : "/beta/compose",
-                        text: "Cancel"
-                      }
-                    ]
-                  }
+                  to: "#try-again",
+                  onClick: () => {
+                    window.location.reload()
+                  },
+                  text: "Try Again",
+                  red: true
                 },
                 {
-                  url: "errors/upload"
+                  to:
+                    process.env.NODE_ENV === "development"
+                      ? "/submit/compose"
+                      : "/beta/compose",
+                  text: "Cancel"
                 }
-              )
-            )
-      })
+              ]
+            }
+          },
+          {
+            url: "errors/upload"
+          }
+        )
+      )
+    })
   }
 }

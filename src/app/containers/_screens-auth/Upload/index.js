@@ -1,7 +1,6 @@
 // tools
 import React from "react"
 import Helmet from "../../../components/_async/Helmet"
-import CountUp from "react-countup"
 import localForage from "localforage"
 import "localforage-getitems"
 
@@ -38,22 +37,11 @@ import {
 } from "../../../../actions/userActions"
 import {
   uploadData as uploadSubmissionData,
-  initStatus as resetUploadStatus,
-  syncStatus as syncUploadStatus
+  initStatus as resetUploadStatus
 } from "../../../../actions/uploadActions"
-
-// settings
-const serverSyncDelay = 1000
 
 // render
 class Upload extends React.PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-      progress: 3
-    }
-  }
-
   componentDidMount = () => {
     // no title present
     if (
@@ -135,54 +123,29 @@ class Upload extends React.PureComponent {
     }
   }
   componentWillReceiveProps = nextProps => {
-    this.props.upload &&
-      this.props.upload.progress &&
-      parseFloat(this.props.upload.progress) > this.state.progress &&
-      this.setState({
-        progress: parseFloat(this.props.upload.progress)
-      })
+    console.log(nextProps.upload.progress)
 
-    // redirect users who aren't logged in
-    if (this.props.upload.status === "unauthorized") {
-      redirectToSignIn(this.props)
-      return
-    }
+    // upload complete
+    if (parseFloat(this.props.upload.progress) === 100) {
+      // reset upload state
+      this.props.resetUploadStatus()
 
-    // get progress status from the server
-    if (
-      nextProps.upload.status === "ok" ||
-      nextProps.upload.status === "pending"
-    ) {
-      if (this.props.upload.status === nextProps.upload.status) return
-      // "fetching" indicates that submission request is submitted but
-      // server hasn't returned the details along with the id, which
-      // is required to track progress
-      if (nextProps.upload.progressReq === "fetching" || !nextProps.upload.data)
-        return
-      const periodical = setInterval(() => {
-        // download status from api
-        nextProps.syncUploadStatus(nextProps.upload.data.id)
-        // upload complete
-        if (parseFloat(this.props.upload.progress) === 100) {
-          clearInterval(periodical)
-          // clear submissions content and image in storage
-          localStorage.removeItem("composer-content-state")
-          localStorage.removeItem("composer-header-state")
-          localStorage.removeItem("composer-content-text")
-          localForage.clear()
-          // reset upload state
-          this.props.resetUploadStatus()
-          // redirect after submission complete
-          const delayedRedirect = setTimeout(
-            props => {
-              props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
-              clearTimeout(delayedRedirect)
-            },
-            1000, // wait a second to make sure the list of contributions has been updated
-            this.props
-          )
-        }
-      }, serverSyncDelay)
+      // clear submissions content and image in storage
+      localStorage.removeItem("composer-content-state")
+      localStorage.removeItem("composer-header-state")
+      localStorage.removeItem("composer-content-text")
+      localForage.clear()
+      // redirect after submission complete
+
+      alert("done")
+      // const delayedRedirect = setTimeout(
+      //   props => {
+      //     props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+      //     clearTimeout(delayedRedirect)
+      //   },
+      //   1000, // wait a second to make sure the list of contributions has been updated
+      //   this.props
+      // )
     }
   }
 
@@ -206,13 +169,7 @@ class Upload extends React.PureComponent {
           <title>Sending…</title>
         </Helmet>
         <Header>
-          <Title>
-            <CountUp
-              start={0}
-              end={this.state.progress}
-              duration={serverSyncDelay / 1000}
-            />%
-          </Title>
+          <Title>{this.props.upload.progress}%</Title>
           <Subtitle>
             <Dots>Sending</Dots>
           </Subtitle>
@@ -252,9 +209,6 @@ const mapDispatchToProps = dispatch => {
   return {
     uploadSubmissionData: request => {
       dispatch(uploadSubmissionData(request))
-    },
-    syncUploadStatus: submissionId => {
-      dispatch(syncUploadStatus(submissionId))
     },
     resetUploadStatus: () => {
       dispatch(resetUploadStatus())
