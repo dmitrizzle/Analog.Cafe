@@ -78,7 +78,6 @@ export const verify = () => {
 
 // remove token from local storage
 export const forget = () => {
-  console.log("forgot")
   return dispatch => {
     localStorage.removeItem("token")
     dispatch({

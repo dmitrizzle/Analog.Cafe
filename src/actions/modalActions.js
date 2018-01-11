@@ -42,7 +42,9 @@ export const fetchCard = request => {
     )
     axios(axiosRequest(request))
       .then(response => {
-        response.data.info.title && response.data.info.text
+        // every card should have a title and text body or an image
+        response.data.info.title &&
+        (response.data.info.text || response.data.info.image)
           ? dispatch(setCard(response.data, request))
           : dispatch(
               setCard(
