@@ -256,6 +256,7 @@ class Article extends React.PureComponent {
           {this.props.article.poster &&
             this.props.article.author && (
               <ArticleActions
+                hideShareButtons={this.props.article.status !== "published"}
                 shareButtons={this.state.shareButtons}
                 subscribeForm={this.state.subscribeForm}
                 revealShareButtons={this.handleRevealShareButtons}

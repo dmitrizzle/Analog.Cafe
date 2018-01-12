@@ -103,14 +103,19 @@ const ActionsCard = props => {
               Tweet
             </TwitterLinkButton>
           ) : null}
-          <Button onClick={props.revealShareButtons} black={props.shareButtons}>
-            Share{" "}
-            <span
-              style={{ transform: "rotate(90deg)", display: "inline-block" }}
+          {!props.hideShareButtons && (
+            <Button
+              onClick={props.revealShareButtons}
+              black={props.shareButtons}
             >
-              ⎋
-            </span>
-          </Button>
+              Share{" "}
+              <span
+                style={{ transform: "rotate(90deg)", display: "inline-block" }}
+              >
+                ⎋
+              </span>
+            </Button>
+          )}
         </CardFlattened>
         {props.nextArticle &&
           props.nextArticle.slug && (
