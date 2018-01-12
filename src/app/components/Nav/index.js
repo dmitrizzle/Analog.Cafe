@@ -119,6 +119,16 @@ export const CommonNav = props => {
                   to: "/stories",
                   text: "Stories"
                 },
+                { divider: true },
+                {
+                  to: "/collaborations",
+                  text: "Collaborations"
+                },
+                {
+                  to: "/solo-projects",
+                  text: "Solo Projects"
+                },
+                { divider: true },
                 {
                   to: "/about",
                   text: "About Analog.Cafe"

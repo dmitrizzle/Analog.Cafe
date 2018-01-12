@@ -109,11 +109,6 @@ export const Button = styled(
   }
   ${ButtonStyles};
 `
-export const ButtonGroup = styled.div`
-  text-align: center;
-  padding: ${props => props.theme.size.block.column.safety}em 0
-    ${props => props.theme.size.block.spacing * 4}em;
-`
 
 export const TinyButtonStyles = styled(
   ({ responsiveMobileOnly, followComposerCursor, ...props }) => (

@@ -9,8 +9,8 @@ export { SUMMARY_LENGTH_MAX } from "./input"
 export const ROUTE_LIST_API = ROUTE_API_DOMAIN + "/list"
 export const ROUTE_AUTHENTICATED_LIST_API = ROUTE_API_DOMAIN + "/submissions"
 
-// filter sets for particular view URLs/routes
-export const ROUTE_FILTERS = {
+// tag sets for particular view URLs/routes
+export const ROUTE_TAGS = {
   "/me": "",
   "/stories": "story",
   "/editorials": "editorial",
@@ -20,6 +20,11 @@ export const ROUTE_FILTERS = {
   "/articles": "review:guide:editorial:story",
   [ROUTE_AUTH_USER_LANDING]: "",
   "/": ""
+}
+// filtering content by composition type
+export const AUTHORSHIP_FILTERS = {
+  "/collaborations": "collaboration",
+  "/solo-projects": "solo"
 }
 
 // meta info for filtered routes
@@ -59,6 +64,18 @@ export const ROUTE_META = {
     description:
       "A collection of articles about art, inspiration and technology."
   },
+
+  "/collaborations": {
+    title: "Collaborations",
+    description:
+      "Collaborations are written pieces with images created by multiple artists and photographers."
+  },
+  "/solo-projects": {
+    title: "Solo projects",
+    description:
+      "Solo projects are written pieces with images created by a single author."
+  },
+
   "/": {
     title: APP_DESCRIPTION,
     description:

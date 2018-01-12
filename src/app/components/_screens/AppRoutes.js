@@ -60,6 +60,7 @@ export default props => {
         {/* dynamic urls and views */}
         <Route exact path="/author" component={NotFound} />
         <Route exact path="/zine" component={NotFound} />
+
         <Route exact path="/author/*" component={List} />
         <Route exact path="/zine/*" component={Article} />
 
@@ -71,6 +72,9 @@ export default props => {
         <Route exact path="/editorials" component={List} />
         <Route exact path="/guides" component={List} />
         <Route exact path="/reviews" component={List} />
+
+        <Route exact path="/collaborations" component={List} />
+        <Route exact path="/solo-projects" component={List} />
 
         {/* auth views */}
         <Route exact path={ROUTE_AUTH_USER_LANDING} component={Me} />
