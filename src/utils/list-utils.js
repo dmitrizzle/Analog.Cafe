@@ -1,4 +1,9 @@
-import { ROUTE_FILTERS, ROUTE_META, ROUTE_LIST_API } from "../constants/list"
+import {
+  ROUTE_TAGS,
+  AUTHORSHIP_FILTERS,
+  ROUTE_META,
+  ROUTE_LIST_API
+} from "../constants/list"
 
 export const getListMeta = (pathname = "/", page = 1, url = ROUTE_LIST_API) => {
   let request
@@ -20,7 +25,10 @@ export const getListMeta = (pathname = "/", page = 1, url = ROUTE_LIST_API) => {
     meta = ROUTE_META[pathname] ? ROUTE_META[pathname] : ROUTE_META.default
     request = {
       params: {
-        tag: ROUTE_FILTERS[pathname] ? ROUTE_FILTERS[pathname] : "",
+        tag: ROUTE_TAGS[pathname] ? ROUTE_TAGS[pathname] : "",
+        authorship: AUTHORSHIP_FILTERS[pathname]
+          ? AUTHORSHIP_FILTERS[pathname]
+          : "",
         page
       },
       url

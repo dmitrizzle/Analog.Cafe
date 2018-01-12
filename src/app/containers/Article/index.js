@@ -23,7 +23,7 @@ import {
   ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL,
   ROUTE_APP_PRODUCTION_DOMAIN_NAME
 } from "../../../constants/app"
-import { ROUTE_FILTERS } from "../../../constants/list"
+import { ROUTE_TAGS } from "../../../constants/list"
 import emojis from "../../../constants/messages/emojis"
 
 // Slate stuff
@@ -120,9 +120,7 @@ class Article extends React.PureComponent {
         name:
           tag.charAt(0).toUpperCase() +
           slugToTitle(tag, { titleCase: false }).slice(1),
-        route: Object.keys(ROUTE_FILTERS).find(
-          key => ROUTE_FILTERS[key] === tag
-        )
+        route: Object.keys(ROUTE_TAGS).find(key => ROUTE_TAGS[key] === tag)
       }
     })
   }

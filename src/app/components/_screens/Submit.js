@@ -6,7 +6,8 @@ import { froth } from "../../../utils/image-froth"
 
 // components
 import Heading from "../ArticleHeading"
-import { LinkButton, ButtonGroup } from "../Button"
+import { LinkButton } from "../Button"
+import { ButtonGroup } from "../Button/components/ButtonGroup"
 import { Caption } from "../CaptionStyles"
 import Figure from "../Picture"
 import Link from "../Link"
