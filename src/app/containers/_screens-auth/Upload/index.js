@@ -251,8 +251,8 @@ class Upload extends React.PureComponent {
             <div>
               <p>
                 We’ve received your work. It’ll take a couple of minutes to
-                process the images – after that, you should be able to see your
-                it <Link to="/me">here</Link>.
+                process the images – after that, you should be able to see it{" "}
+                <Link to="/me">here</Link>.
               </p>
               <p>Thank you so much for your contribution!</p>
               <LinkButton red to="/me">
