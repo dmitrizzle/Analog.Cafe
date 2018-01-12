@@ -69,7 +69,9 @@ class EditProfile extends React.PureComponent {
     this.setState({
       title: this.props.user.info.title,
       text: this.props.user.info.text,
-      image: this.props.user.info.image,
+      image: this.props.user.info.image
+        ? this.props.user.info.image
+        : "image-froth_1000000_ry31Fw1l4",
       buttons: profileButtonsTemplate(
         this.props.user.info.id,
         this.props.user.info.buttons && this.props.user.info.buttons[1]
@@ -146,8 +148,16 @@ class EditProfile extends React.PureComponent {
 
   handleDone = () => {
     const data = new FormData()
-    data.append("title", this.state.title)
-    data.append("text", this.state.text)
+    data.append(
+      "title",
+      this.state.title || this.props.user.info.id.split("-", 1)[0]
+      // if user leaves their name blank, it'll default to their user ID
+      // if their user ID has a dash in it, we take the first part, before the
+      // dash; this is especially useful for users created via email login
+      // method where we use their email handle without the domain and add
+      // a randomly generated string after a dash to ensure for uniqueness
+    )
+    data.append("text", this.state.text || "")
     data.append("buttons", JSON.stringify(this.state.buttons))
     this.fileInput.value && data.append("image", this.fileInput.files[0])
 
@@ -168,6 +178,7 @@ class EditProfile extends React.PureComponent {
   profileUpdated = () => {
     this.props.acceptUserInfo()
     this.props.history.push(ROUTE_AUTH_USER_LANDING)
+    //this.props.history.goBack()
   }
 
   render = () => {
@@ -179,7 +190,7 @@ class EditProfile extends React.PureComponent {
           // logged-in user info
 
           // author's name
-          title={this.state.title}
+          title={this.state.title || ""}
           changeTitle={this.handleTitleChange}
           warningTitle={this.state.warningTitle}
           // author's bio

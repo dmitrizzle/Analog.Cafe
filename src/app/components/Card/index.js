@@ -10,6 +10,7 @@ import {
   CardCaption,
   CardHeader
 } from "./styles"
+import { ButtonGroupDivider } from "../Button/components/ButtonGroupDivider"
 
 // return
 export const Card = props => {
@@ -43,7 +44,7 @@ export const Card = props => {
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {
-          return button ? (
+          return button && button.to && button.text ? (
             <CardButton
               onClick={button.onClick}
               to={button.to}
@@ -54,6 +55,8 @@ export const Card = props => {
             >
               {button.text}
             </CardButton>
+          ) : button && button.divider ? (
+            <ButtonGroupDivider key={i} />
           ) : null
         })}
     </CardElement>

@@ -22,6 +22,7 @@ const Nav = props => {
       ) : (
         <CommonNav
           userStatus={props.user.status}
+          userImage={props.user.info.image}
           userIntent={() => {
             props.user.intent.load !== "List" &&
               props.setUserIntent({ load: "List" })

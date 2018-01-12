@@ -42,21 +42,37 @@ export const fetchCard = request => {
     )
     axios(axiosRequest(request))
       .then(response => {
-        response.data.info.title && response.data.info.text
-          ? dispatch(setCard(response.data, request))
-          : dispatch(
-              setCard(
-                {
-                  status: "ok",
-                  info: {
-                    title: errorMessages.VIEW_TEMPLATE.CARD.title,
-                    text: errorMessages.VIEW_TEMPLATE.CARD.text,
-                    error: errorMessages.DISAMBIGUATION.CODE_204.error
-                  }
-                },
-                { url: "errors/card" }
-              )
+        console.log(response.data)
+        // every card should have a title and text body or an image
+        // if it's an author's card it could be blank though
+        if (
+          response.data.info.title &&
+          (response.data.info.text ||
+            response.data.info.image ||
+            response.data.info.role)
+        ) {
+          if (
+            !response.data.info.text &&
+            !response.data.info.image &&
+            response.data.info.role
+          )
+            response.data.info.text =
+              errorMessages.VIEW_TEMPLATE.CARD_NO_AUTHOR_INFO.text
+          dispatch(setCard(response.data, request))
+        } else
+          dispatch(
+            setCard(
+              {
+                status: "ok",
+                info: {
+                  title: errorMessages.VIEW_TEMPLATE.CARD.title,
+                  text: errorMessages.VIEW_TEMPLATE.CARD.text,
+                  error: errorMessages.DISAMBIGUATION.CODE_204.error
+                }
+              },
+              { url: "errors/card" }
             )
+          )
       })
       .catch(error => {
         error.response && error.response.status && error.response.status === 401

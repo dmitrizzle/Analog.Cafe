@@ -6,7 +6,7 @@ export default {
       subtitle: "Page Not Available"
     },
     LIST: {
-      title: "List not available",
+      title: "Nothing here yet",
       emoji: emojis.WTF
     },
     SUBMISSIONS_LIST: {
@@ -21,6 +21,9 @@ export default {
     CARD: {
       title: "Info Not Available",
       text: "This card could not be loaded…"
+    },
+    CARD_NO_AUTHOR_INFO: {
+      text: "Author hasn’t shared any details about her- or himself yet."
     },
     SUBMISSION: {
       title: "Submission Failed",
@@ -45,6 +48,23 @@ export default {
       title: "File is Too Large!",
       text:
         "Your image needs to be 5MB or less in size. Try selecting another PNG or JPG file."
+    },
+    EMAIL_LOGIN: {
+      title: "Couldn’t Send Email",
+      text:
+        "For some reason an email with sign in link couldn’t be sent. Please try again or consider using Twitter or Facebook buttons."
+    },
+    EMAIL_LOGIN_TIMEOUT: remaining => {
+      return {
+        title: "Please Try in a Bit",
+        text: `Please wait ${remaining ||
+          60} seconds before requesting another login link to be sent to your email.`
+      }
+    },
+    EMAIL_LOGIN_BAD_TOKEN: {
+      title: "Couldn’t Sign In",
+      text:
+        "Sorry, we couldn’t sign you in. Perhaps link has expired. Try signing in with your email again."
     }
   },
   DISAMBIGUATION: {
@@ -54,7 +74,7 @@ export default {
       error: "Error: This view or data for this view does not exist (404)"
     },
     CODE_403: {
-      error: "Error: Viewing this content requires matching log in (403)"
+      error: "Error: Viewing this content requires you to sign in (403)"
     },
     CODE_401: {
       error: "Error: You need to sign in to access your account (401)",

@@ -17,7 +17,7 @@ import { Article, Section } from "../../../components/ArticleStyles"
 import AlreadyAuthenticated from "../../_screens-errors/AlreadyAuthenticated"
 
 // styles
-import { ButtonGroup } from "../../../components/Button"
+import { ButtonGroup } from "../../../components/Button/components/ButtonGroup"
 import {
   TwitterLinkButton,
   FacebookLinkButton
@@ -107,10 +107,10 @@ class SignIn extends React.PureComponent {
               >
                 Continue with Facebook
               </FacebookLinkButton>
-              {/* <p>
+              <p>
                 <em>- or -</em>
               </p>
-              <SignInWithEmail /> */}
+              <SignInWithEmail />
             </ButtonGroup>
           </Section>
         </Article>

@@ -1,7 +1,5 @@
 const INITIAL_STATE = {
-  status: "pending",
-  progress: 0,
-  progressQueue: null
+  progress: 0
 }
 
 export default (state = INITIAL_STATE, action) => {

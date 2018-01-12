@@ -2,10 +2,6 @@
 import React from "react"
 import { Editor } from "slate-react"
 import { Value } from "slate"
-import Helmet from "../../components/_async/Helmet"
-import { froth } from "../../../utils/image-froth"
-import Link from "../../components/Link"
-import slugToTitle from "../../../utils/slug-to-title"
 
 // redux & state
 import { connect } from "react-redux"
@@ -13,6 +9,9 @@ import {
   fetchPage,
   setPage as setNextArticle
 } from "../../../actions/articleActions"
+import ArticleActions from "../../components/Card/components/ArticleActions"
+
+// constants
 import {
   ROUTE_ARTICLE_API,
   ROUTE_ARTICLE_DIR,
@@ -24,9 +23,10 @@ import {
   ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL,
   ROUTE_APP_PRODUCTION_DOMAIN_NAME
 } from "../../../constants/app"
-import { ROUTE_FILTERS } from "../../../constants/list"
+import { ROUTE_TAGS } from "../../../constants/list"
 import emojis from "../../../constants/messages/emojis"
 
+// Slate stuff
 import { schema } from "../Composer/containers/ContentEditor/schema"
 import {
   renderNode,
@@ -34,6 +34,8 @@ import {
 } from "../Composer/containers/ContentEditor/render"
 
 // components
+import Helmet from "../../components/_async/Helmet"
+import Link from "../../components/Link"
 import Heading from "../../components/ArticleHeading"
 import { ModalDispatch } from "../Modal"
 import {
@@ -41,7 +43,11 @@ import {
   Article as ArticleElement,
   Byline
 } from "../../components/ArticleStyles"
-import ArticleActions from "../../components/Card/components/ArticleActions"
+
+// helpers
+import { froth } from "../../../utils/image-froth"
+import slugToTitle from "../../../utils/slug-to-title"
+import { getLeadAuthor, authorNameList } from "../../../utils/authorship"
 
 // return path type for submissions vs published works
 const locate = locationPathname => {
@@ -114,9 +120,7 @@ class Article extends React.PureComponent {
         name:
           tag.charAt(0).toUpperCase() +
           slugToTitle(tag, { titleCase: false }).slice(1),
-        route: Object.keys(ROUTE_FILTERS).find(
-          key => ROUTE_FILTERS[key] === tag
-        )
+        route: Object.keys(ROUTE_TAGS).find(key => ROUTE_TAGS[key] === tag)
       }
     })
   }
@@ -173,7 +177,7 @@ class Article extends React.PureComponent {
               ? " (" + this.props.article.subtitle + ")"
               : "") +
             "” by " +
-            this.props.article.author.name
+            authorNameList(this.props.article.authors)
         ) +
         "&via=analog_cafe",
       "_blank",
@@ -203,31 +207,32 @@ class Article extends React.PureComponent {
           pageSubtitle={this.props.article.subtitle}
           title={this.props.article.error && this.props.article.error}
         >
-          {this.props.article.author &&
-            this.props.article.author.name &&
+          {this.props.article.authors &&
+            this.props.article.authors[0].name &&
             this.props.article.tag && (
               <Byline>
-                <Link
-                  to={this.state.tag.route}
-                  style={{ textDecoration: "none" }}
-                >
-                  <strong>{this.state.tag.name}</strong>
-                </Link>{" "}
-                by{" "}
-                {this.props.article.author.id ? (
+                <Link to={this.state.tag.route}>{this.state.tag.name}</Link> by{" "}
+                {getLeadAuthor(this.props.article.authors).id ? (
                   <ModalDispatch
                     with={{
                       request: {
                         url:
-                          ROUTE_AUTHOR_API + "/" + this.props.article.author.id
+                          ROUTE_AUTHOR_API +
+                          "/" +
+                          getLeadAuthor(this.props.article.authors).id
                       }
                     }}
                   >
-                    {this.props.article.author.name}
+                    {getLeadAuthor(this.props.article.authors).name}
                   </ModalDispatch>
                 ) : (
-                  this.props.article.author.name
-                )}.
+                  getLeadAuthor(this.props.article.authors).name
+                )}
+                {this.props.article.authors.length > 1 &&
+                  ` with images by ${authorNameList(
+                    this.props.article.authors,
+                    { ommitLeadAuthor: true, keepFullNames: true }
+                  )}`}.
               </Byline>
             )}
           {this.props.article.author &&
@@ -251,6 +256,7 @@ class Article extends React.PureComponent {
           {this.props.article.poster &&
             this.props.article.author && (
               <ArticleActions
+                hideShareButtons={this.props.article.status !== "published"}
                 shareButtons={this.state.shareButtons}
                 subscribeForm={this.state.subscribeForm}
                 revealShareButtons={this.handleRevealShareButtons}
@@ -264,7 +270,7 @@ class Article extends React.PureComponent {
                   this.props.setNextArticle({
                     title: nextArticleHeading.title,
                     subtitle: nextArticleHeading.subtitle,
-                    author: nextArticleHeading.author,
+                    authors: nextArticleHeading.authors,
                     slug: nextArticleHeading.slug,
                     poster: nextArticleHeading.poster,
                     tag: nextArticleHeading.tag

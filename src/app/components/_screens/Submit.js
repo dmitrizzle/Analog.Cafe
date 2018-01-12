@@ -6,7 +6,8 @@ import { froth } from "../../../utils/image-froth"
 
 // components
 import Heading from "../ArticleHeading"
-import { LinkButton, ButtonGroup } from "../Button"
+import { LinkButton } from "../Button"
+import { ButtonGroup } from "../Button/components/ButtonGroup"
 import { Caption } from "../CaptionStyles"
 import Figure from "../Picture"
 import Link from "../Link"
@@ -71,21 +72,54 @@ export default props => {
 
         <h3>How to submit.</h3>
         <p>
-          It&rsquo;s very easy to use the <strong>Analog.Cafe Composer</strong>.
-          You can insert your images and edit text with ease. The Composer tool
-          will do all the formatting and beautification for you.
+          Analog.Cafe lets you create and edit your submission using a tool
+          called <em>Composer</em>.
+        </p>
+        <p>
+          It’s recommended that you use latest Google Chrome, Safari or Firefox
+          browser on your desktop computer to compose your submission.
+        </p>
+        <p>
+          We review and edit all works before publishing. As with most
+          publications, not all submissions can be accepted.
         </p>
         <Figure
           src="image-froth_1076479_8f0a0ec6c4794688a66d79935fab2ca3.gif"
           nocaption
+          alt="Analog.Cafe Composer in action"
         />
         <p>
-          <strong>Instant Collaborations!</strong> Analog.Cafe Composer gives
-          you an option to include images created by others in your work. This
-          is an oportunity to add depth and diversity to your submission. You
-          can apply to have your personal images marked as “open for
-          collaborations” as well. All collaborative works are always
-          approriately credited and are added to all parties’ portfolios.
+          While composing your submission keep in mind that it needs to have a
+          concise and descriptive title and at least one image. You can add text
+          formatting to your entry (such as <strong>bold</strong> and{" "}
+          <em>italics</em>), links headings, and quotes. You can also move the
+          images around, choose to have them full-screen or float left for the
+          desired effect.
+        </p>
+        <p>
+          When inserting images into your post you may also choose one of the
+          recommended photographs that show up in a grid when you click the “Add
+          Image” button. They’ve been created by other Analog.Cafe contributors
+          and selected by the editor. Should you choose to use one, both of you
+          will be credited appropriately with links to your profiles. You will
+          also be listed under “Collaborations” catogory on the website.
+        </p>
+
+        <Figure
+          src="image-froth_1498127_rJE9bhJNG"
+          nocaption
+          alt="Instant Collaborations"
+        />
+        <p>
+          If you would like to offer your images up for being displayed in other
+          authors’ publications click “Yes” for{" "}
+          <strong>“Instant Collaborations”</strong> when you are submitting your
+          work and we may include it in the image suggestions grid for you.
+        </p>
+        <p>
+          You may also edit your profile image, bio and a link to your website
+          or social media page. Just click on “More…” in the naviagation bar to
+          find what you need.
         </p>
 
         <h3>How to get accepted.</h3>
@@ -116,7 +150,7 @@ export default props => {
         </ul>
 
         <p>
-          For images, JPG and PNG formats are accepted, maximum 5MB per file.
+          For images, JPG and PNG formats are accepted, maximum 10MB per file.
           Please make sure the quality is good enough to display on large
           screens.
         </p>
@@ -164,7 +198,7 @@ export default props => {
               All copy-editing and touch-up work is done at Analog.Cafe editors’
               discretion. We may or may not accept your edit requests; all edits
               are done for the benefit of a good overall presentation of the
-              whole publication, rather than just one pice. Analog.Cafe staff
+              whole publication, rather than just one piece. Analog.Cafe staff
               has limited time and resources, please keep that in mind when you
               make your requests.
             </small>
@@ -212,7 +246,7 @@ export default props => {
               editor. Meaning that tasteful, well-designed (this is up to
               Analog.Cafe editor’s discretion) watermarks are welcome;
               badly-designed, obstructive (this is up to Analog.Cafe editor’s
-              discretion) watermarks might deminish your works’s chances to be
+              discretion) watermarks might diminish your works’s chances to be
               accepted.
             </small>
           </p>
@@ -233,7 +267,7 @@ export default props => {
                 have a permission to use in this context all the images, text,
                 files or other intellectual property that you submit to
                 Analog.Cafe, and that you agree to the above terms, conditions
-                and benifits.
+                and benefits.
               </strong>
             </small>
           </p>

@@ -19,12 +19,12 @@ export const handleImageButton = (event, _this) => {
 
   const activeBlockKey = _this.state.value.focusBlock.key
   const resolvedState = _this.state.value
-    .change()
+    .change({ save: false })
     .insertBlock({
       type: "docket",
       isVoid: true
     })
-    .value.change()
+    .value.change({ save: false })
     .removeNodeByKey(activeBlockKey)
   _this.setState({
     value: resolvedState.value,
@@ -50,27 +50,29 @@ export const menuPosition = _this => {
   const leftOffset =
     rect.left + window.scrollX - menu.offsetWidth / 2 + rect.width / 2
   const topOffset = rect.top + window.scrollY - menu.offsetHeight + 3
-  const bottomOffset =
-    -(rect.bottom + window.scrollY) +
-    window.innerHeight -
-    menu.offsetHeight -
-    10
   menu.style.top = `${topOffset}px`
-  menu.style.bottom = `${bottomOffset}px`
   menu.style.left = `${leftOffset >= 0 ? leftOffset : 5}px`
+
+  // devices with touch screens will have edit menu considerably above the
+  // selected text to give way to the native hover menu
+  "ontouchstart" in document.documentElement
+    ? menu.classList.add("touch")
+    : menu.classList.remove("touch")
 }
 
 //
 export const addLink = (value, returnType = "value") => {
   const href = window.prompt("Enter the URL for the link:")
-  if (!href) return
-  if (returnType === "value")
+
+  if (returnType === "value") {
+    if (!href) return value.change().unwrapInline("link")
     return value.change().wrapInline({
       type: "link",
       data: { href }
     })
-  else if (returnType === "data") return { href }
+  } else if (returnType === "data") return { href }
 }
+
 export const formatCommand = (type, _this) => {
   const { value } = _this.state
   let resolvedState

@@ -1,5 +1,6 @@
 // tools
 import React from "react"
+import { froth } from "../../../utils/image-froth"
 
 // components
 import Logo from "../Logo"
@@ -11,12 +12,26 @@ import {
 } from "../../../constants/messages/hints"
 
 // styles
-import { NavLink, NavIndexLink, NavItem } from "./styles"
+import { NavLink, NavIndexLink, NavItem, TinyImageInline } from "./styles"
 
 // NOTE: components' `className` props are used in index.html and aren't required
 // if styles from `./styles.js` have the comments removed
 
 // return
+
+// tiny profile image icon for logged-in users
+const TinyImage = props => {
+  return (
+    <TinyImageInline>
+      <img
+        src={froth({ src: props.image, size: "i" }).src}
+        alt="Profile avatar"
+      />
+    </TinyImageInline>
+  )
+}
+
+// Nav components
 export const CommonNav = props => {
   return (
     <ul
@@ -104,6 +119,16 @@ export const CommonNav = props => {
                   to: "/stories",
                   text: "Stories"
                 },
+                { divider: true },
+                {
+                  to: "/collaborations",
+                  text: "Collaborations"
+                },
+                {
+                  to: "/solo-projects",
+                  text: "Solo Projects"
+                },
+                { divider: true },
                 {
                   to: "/about",
                   text: "About Analog.Cafe"
@@ -114,7 +139,10 @@ export const CommonNav = props => {
           }}
           style={{ textDecoration: "none", paddingRight: ".25em" }}
         >
-          <span>More…</span>
+          <span>
+            More…{" "}
+            {props.userStatus === "ok" && <TinyImage image={props.userImage} />}
+          </span>
         </ModalDispatch>
       </NavItem>
     </ul>

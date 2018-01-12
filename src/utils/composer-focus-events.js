@@ -11,13 +11,7 @@ export const focusEvents = _this => {
     "dragover",
     event => {
       event.preventDefault()
-    },
-    false
-  )
-  // highlight potential drop target when the draggable element enters it
-  document.addEventListener(
-    "dragenter",
-    event => {
+      // highlight potential drop target when the draggable element enters it
       _this.handleDragOver()
     },
     false
@@ -42,7 +36,7 @@ export const focusEvents = _this => {
   document.addEventListener(
     "keydown",
     event => {
-      if (event.keyCode === 27) {
+      if (event.keyCode === 27 && _this.slateEditor) {
         _this.slateEditor.blur()
       }
     },

@@ -9,6 +9,7 @@ import { Sidenote } from "../../../CaptionStyles"
 import Link from "../../../Link"
 import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
 import { SubscribeToWeekly } from "../../../_rt-snippets"
+import { authorNameList } from "../../../../../utils/authorship"
 
 // styles
 import { TimeStamp } from "../../../ArticleStyles"
@@ -24,7 +25,7 @@ const nextArticlePreload = nextArticle => {
   return {
     title: nextArticle.title,
     subtitle: nextArticle.subtitle,
-    author: { name: nextArticle.authorName },
+    authors: nextArticle.authors,
     slug: nextArticle.slug,
     poster: nextArticle.poster,
     tag: nextArticle.tag
@@ -102,14 +103,19 @@ const ActionsCard = props => {
               Tweet
             </TwitterLinkButton>
           ) : null}
-          <Button onClick={props.revealShareButtons} black={props.shareButtons}>
-            Share{" "}
-            <span
-              style={{ transform: "rotate(90deg)", display: "inline-block" }}
+          {!props.hideShareButtons && (
+            <Button
+              onClick={props.revealShareButtons}
+              black={props.shareButtons}
             >
-              ⎋
-            </span>
-          </Button>
+              Share{" "}
+              <span
+                style={{ transform: "rotate(90deg)", display: "inline-block" }}
+              >
+                ⎋
+              </span>
+            </Button>
+          )}
         </CardFlattened>
         {props.nextArticle &&
           props.nextArticle.slug && (
@@ -157,7 +163,7 @@ const ActionsCard = props => {
                           : null}
                       </q>{" "}
                       – {props.nextArticle.tag.replace(/-/g, " ")} by{" "}
-                      {props.nextArticle.authorName}.
+                      {authorNameList(props.nextArticle.authors)}.
                     </span>
                   </CardCaption>
                 </figcaption>

@@ -1,7 +1,6 @@
 // tools
 import React from "react"
 import Helmet from "../../../components/_async/Helmet"
-import CountUp from "react-countup"
 import localForage from "localforage"
 import "localforage-getitems"
 
@@ -13,6 +12,8 @@ import {
   Title,
   Subtitle
 } from "../../../components/ArticleStyles"
+import Link from "../../../components/Link"
+import { LinkButton } from "../../../components/Button"
 
 // constants & helpers
 import {
@@ -21,7 +22,6 @@ import {
   loadTextContent
 } from "../../../../utils/composer-loader"
 import errorMessages from "../../../../constants/messages/errors"
-import { ROUTE_REDIRECT_AFTER_SUBMIT } from "../../../../constants/submission"
 
 import {
   redirectToSignIn,
@@ -37,19 +37,23 @@ import {
 } from "../../../../actions/userActions"
 import {
   uploadData as uploadSubmissionData,
-  initStatus as resetUploadStatus,
-  syncStatus as syncUploadStatus
+  initStatus as resetUploadStatus
 } from "../../../../actions/uploadActions"
 
-// settings
-const serverSyncDelay = 1000
+// constants
+const STATUS_MESSAGES = {
+  pending: "Sending…",
+  complete: "Done!",
+  error: "Error"
+}
 
 // render
 class Upload extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      progress: 0
+      progress: 0,
+      status: "pending"
     }
   }
 
@@ -128,60 +132,48 @@ class Upload extends React.PureComponent {
         } else {
           // images are URLs from the web
           sendSubmission(data, this.props)
-          console.log("Uploading with images as URLs")
         }
       }
     }
   }
   componentWillReceiveProps = nextProps => {
-    this.props.upload &&
-      this.props.upload.progress &&
-      parseFloat(this.props.upload.progress) > this.state.progress &&
+    // set progress state
+    if (nextProps.upload.progress >= 0)
       this.setState({
-        progress: parseFloat(this.props.upload.progress)
+        progress:
+          nextProps.upload.progress > 0
+            ? nextProps.upload.progress
+            : this.state.progress
+      }) // server connection error
+    else
+      this.setState({
+        status: "error"
       })
 
-    // redirect users who aren't logged in
-    if (this.props.upload.status === "unauthorized") {
-      redirectToSignIn(this.props)
-      return
-    }
+    // upload complete
+    if (nextProps.upload.progress === 100) {
+      // clear submissions content and image in storage
+      localStorage.removeItem("composer-content-state")
+      localStorage.removeItem("composer-header-state")
+      localStorage.removeItem("composer-content-text")
+      localForage.clear()
 
-    // get progress status from the server
-    if (
-      nextProps.upload.status === "ok" ||
-      nextProps.upload.status === "pending"
-    ) {
-      if (this.props.upload.status === nextProps.upload.status) return
-      // "fetching" indicates that submission request is submitted but
-      // server hasn't returned the details along with the id, which
-      // is required to track progress
-      if (nextProps.upload.progressReq === "fetching" || !nextProps.upload.data)
-        return
-      const periodical = setInterval(() => {
-        // download status from api
-        nextProps.syncUploadStatus(nextProps.upload.data.id)
-        // upload complete
-        if (parseFloat(this.props.upload.progress) === 100) {
-          clearInterval(periodical)
-          // clear submissions content and image in storage
-          localStorage.removeItem("composer-content-state")
-          localStorage.removeItem("composer-header-state")
-          localStorage.removeItem("composer-content-text")
-          localForage.clear()
-          // reset upload state
-          this.props.resetUploadStatus()
-          // redirect after submission complete
-          const delayedRedirect = setTimeout(
-            props => {
-              props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
-              clearTimeout(delayedRedirect)
-            },
-            1000, // wait a second to make sure the list of contributions has been updated
-            this.props
-          )
-        }
-      }, serverSyncDelay)
+      // reset upload state
+      this.props.resetUploadStatus()
+
+      // user-facing messages
+      this.setState({
+        status: "complete"
+      })
+
+      // const delayedRedirect = setTimeout(
+      //   props => {
+      //     props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
+      //     clearTimeout(delayedRedirect)
+      //   },
+      //   1000, // wait a second to make sure the list of contributions has been updated
+      //   this.props
+      // )
     }
   }
 
@@ -205,14 +197,8 @@ class Upload extends React.PureComponent {
           <title>Sending…</title>
         </Helmet>
         <Header>
-          <Title>
-            <CountUp
-              start={0}
-              end={this.state.progress}
-              duration={serverSyncDelay / 1000}
-            />%
-          </Title>
-          <Subtitle>Sending…</Subtitle>
+          <Title>{this.state.progress}%</Title>
+          <Subtitle>{STATUS_MESSAGES[this.state.status]}</Subtitle>
         </Header>
 
         <Section>
@@ -225,10 +211,55 @@ class Upload extends React.PureComponent {
                 : " closed to collaborations. "}
             </em>
           </p>
-          <p>
-            Please keep this page open and do not refresh while your submission
-            is sending (uploading).
-          </p>
+          {this.state.status === "pending" && (
+            <p>
+              <strong>
+                <span role="img" aria-label="Warning">
+                  ⚠️
+                </span>{" "}
+                Please keep this page open, do not refresh and do not click your
+                browser’s “back” button
+              </strong>{" "}
+              while your submission is sending (uploading).
+            </p>
+          )}
+          {this.state.status === "error" && (
+            <p>
+              <strong>{errorMessages.VIEW_TEMPLATE.SUBMISSION.text}</strong>{" "}
+              <a
+                href="#reload"
+                onClick={event => {
+                  event.preventDefault()
+                  window.location.reload()
+                }}
+              >
+                Try again
+              </a>{" "}
+              or{" "}
+              <Link
+                to={
+                  process.env.NODE_ENV === "development"
+                    ? "/submit/compose"
+                    : "/beta/compose"
+                }
+              >
+                go back
+              </Link>.
+            </p>
+          )}
+          {this.state.status === "complete" && (
+            <div>
+              <p>
+                We’ve received your work. It’ll take a couple of minutes to
+                process the images – after that, you should be able to see it{" "}
+                <Link to="/me">here</Link>.
+              </p>
+              <p>Thank you so much for your contribution!</p>
+              <LinkButton red to="/me">
+                My Submissions
+              </LinkButton>
+            </div>
+          )}
         </Section>
       </Article>
     )
@@ -246,9 +277,6 @@ const mapDispatchToProps = dispatch => {
   return {
     uploadSubmissionData: request => {
       dispatch(uploadSubmissionData(request))
-    },
-    syncUploadStatus: submissionId => {
-      dispatch(syncUploadStatus(submissionId))
     },
     resetUploadStatus: () => {
       dispatch(resetUploadStatus())

@@ -2,6 +2,7 @@
 import React from "react"
 import { withRouter } from "react-router"
 import Loadable from "react-loadable"
+import queryString from "query-string"
 
 // constants & helpers
 import {
@@ -10,6 +11,7 @@ import {
   ROUTE_APP_PRODUCTION_DOMAIN_NAME
 } from "../../../constants/app"
 import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
+import errorMessages from "../../../constants/messages/errors"
 
 // redux
 import { connect } from "react-redux"
@@ -21,7 +23,9 @@ import {
   verify as verifyUser,
   getInfo as getUserInfo
 } from "../../../actions/userActions"
+import { setCard as setModalCard } from "../../../actions/modalActions"
 
+// components
 import { Modal } from "../Modal"
 import Nav from "../Nav"
 import AppRoutes from "../../components/_screens/AppRoutes"
@@ -51,6 +55,28 @@ const ArticlePreloader = Loadable({
 class App extends React.PureComponent {
   // manipulate nav view & GA tracking
   componentDidMount = () => {
+    // log in user with the token they received via email
+    if (queryString.parse(this.props.location.search).token) {
+      localStorage.setItem(
+        "token",
+        queryString.parse(this.props.location.search).token
+      )
+    }
+    // show message for expired tokens
+    if (
+      queryString.parse(this.props.location.search).error &&
+      queryString.parse(this.props.location.search).error ===
+        "INVALID_OR_EXPIRED"
+    ) {
+      this.props.setModalCard(
+        {
+          status: "ok",
+          info: errorMessages.VIEW_TEMPLATE.EMAIL_LOGIN_BAD_TOKEN
+        },
+        { url: "errors/email-login" }
+      )
+    }
+
     // verify user status
     this.props.verifyUser()
     this.props.getUserInfo()
@@ -173,6 +199,9 @@ const mapDispatchToProps = dispatch => {
     },
     getUserInfo: () => {
       dispatch(getUserInfo())
+    },
+    setModalCard: (info, request) => {
+      dispatch(setModalCard(info, request))
     }
   }
 }

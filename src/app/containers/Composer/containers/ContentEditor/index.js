@@ -93,6 +93,7 @@ class ContentEditor extends React.PureComponent {
     this.setState({
       editorFocus: false
     })
+    this.menu.style.display = ""
   }
   handleFocus = () => {
     this.setState({
@@ -131,6 +132,7 @@ class ContentEditor extends React.PureComponent {
       <div style={{ position: "relative" }} key="ContentEditor_div">
         <ImageButton
           cursorContext={this.state.cursorContext}
+          editorFocus={this.state.editorFocus}
           onClick={this.handleImageButton}
         />
         <Editor
@@ -147,9 +149,9 @@ class ContentEditor extends React.PureComponent {
           style={{
             minHeight: "28em",
             boxShadow: this.state.editorFocus
-              ? "0 1px 0 0 rgba(44,44,44,.15)"
+              ? "1px 1px 0 0 rgba(44,44,44,.1)"
               : "",
-            background: this.state.dragOver ? "rgba(44,44,44,.15)" : ""
+            background: this.state.dragOver ? "rgba(44,44,44,.05)" : ""
           }}
           ref={input => (this.slateEditor = input)}
         />

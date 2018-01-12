@@ -2,6 +2,8 @@
 import axios from "axios"
 import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
+import { ROUTE_LOGIN_WITH_EMAIL } from "../constants/login"
+import { MESSAGE_HINT_CHECK_EMAIL } from "../constants/messages/hints"
 import { axiosRequest } from "../utils/axios-request"
 
 import { ROUTE_USER_API } from "../constants/user"
@@ -14,6 +16,47 @@ const loginError = (type = "error") => {
       title: errorMessages.VIEW_TEMPLATE.CARD.title,
       text: errorMessages.DISAMBIGUATION.CODE_401[type]
     }
+  }
+}
+
+// log in with email
+export const loginWithEmail = validatedEmail => {
+  return dispatch => {
+    dispatch({
+      type: "USER.SET_EMAIL_LOGIN_TIMEOUT",
+      payload: Date.now() + 60 * 1000
+    })
+    dispatch({
+      type: "USER.SET_EMAIL_LOGIN_STATUS",
+      payload: "pending"
+    })
+    axios(
+      axiosRequest({
+        url: ROUTE_LOGIN_WITH_EMAIL,
+        data: { email: validatedEmail },
+        method: "post"
+      })
+    )
+      .then(response => {
+        dispatch(setCard(MESSAGE_HINT_CHECK_EMAIL(validatedEmail)))
+        dispatch({
+          type: "USER.SET_EMAIL_LOGIN_STATUS",
+          payload: "ok"
+        })
+      })
+      .catch(error => {
+        dispatch(
+          setCard({
+            status: "ok",
+            info: errorMessages.VIEW_TEMPLATE.EMAIL_LOGIN,
+            requested: { url: "errors/email-login" }
+          })
+        )
+        dispatch({
+          type: "USER.SET_EMAIL_LOGIN_STATUS",
+          payload: "ok"
+        })
+      })
   }
 }
 
@@ -35,7 +78,6 @@ export const verify = () => {
 
 // remove token from local storage
 export const forget = () => {
-  console.log("forgot")
   return dispatch => {
     localStorage.removeItem("token")
     dispatch({
@@ -67,7 +109,7 @@ export const getInfo = () => {
       })
       .catch(error => {
         localStorage.removeItem("token") // clean up broken/old token
-        if (!error.response.data) return
+        if (!error.response || !error.response.data) return
         dispatch(
           setCard(loginError(error.response.data.message), {
             url: "errors/user"
