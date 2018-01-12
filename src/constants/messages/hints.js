@@ -11,7 +11,7 @@ export const MESSAGE_HINT_SUBMIT_CONSENT = {
   info: {
     title: "Open for Collaborations?",
     text:
-      "Creating beautiful things together is easy. If you choose “Yes” your images may appear in other photo essays, stories, articles on Analog.Cafe. You and the authors who feature your work will be credited and have links to your profiles. We take care of everything else.",
+      "If you choose “Yes” your images may appear in others’ published works on Analog.Cafe. You may also be featured in the “Collaborations” section. We’ll let you know once that happens.",
     buttons: [
       {
         to:
@@ -36,7 +36,7 @@ export const MESSAGE_HINT_IMAGE_SUGGESTIONS = {
   info: {
     title: "Instant Collaboration",
     text:
-      "Creating together is easy! Simply select a photograph below that fits your work. You and the photographer will be credited and have links to your profiles on each post."
+      "Creating together is easy! Simply select a photo below that fits your work. You and the photographer will share the credit and may be listed in the “Collaborations” section on Analog.Cafe."
   },
   id: "hints/image-suggestions"
 }

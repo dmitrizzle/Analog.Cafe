@@ -250,9 +250,9 @@ class Upload extends React.PureComponent {
           {this.state.status === "complete" && (
             <div>
               <p>
-                We’ve received your submission. It’ll take couple minutes to
-                process the images – after that you should be able to see your
-                submisson <Link to="/me">here</Link>.
+                We’ve received your work. It’ll take a couple of minutes to
+                process the images – after that, you should be able to see your
+                it <Link to="/me">here</Link>.
               </p>
               <p>Thank you so much for your contribution!</p>
               <LinkButton red to="/me">
