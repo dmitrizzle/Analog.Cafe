@@ -62,6 +62,7 @@ class App extends React.PureComponent {
         queryString.parse(this.props.location.search).token
       )
     }
+
     // show message for expired tokens
     if (
       queryString.parse(this.props.location.search).error &&

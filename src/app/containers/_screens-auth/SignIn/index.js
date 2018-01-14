@@ -7,7 +7,8 @@ import open from "oauth-open"
 import { connect } from "react-redux"
 import {
   verify as verifyUser,
-  getInfo as getUserInfo
+  getInfo as getUserInfo,
+  setSessionInfo
 } from "../../../../actions/userActions"
 
 // components
@@ -48,13 +49,17 @@ class SignIn extends React.PureComponent {
         height: 600
       },
       (err, code) => {
-        if (err) console.error(err)
+        if (err) {
+          console.error(err)
+          return
+        }
         localStorage.setItem("token", code.token)
         this.props.verifyUser()
         this.props.getUserInfo()
         this.props.history.replace({
           pathname: this.props.user.routes.success
         })
+        this.props.setSessionInfo("Twtitter")
       }
     )
   }
@@ -69,13 +74,17 @@ class SignIn extends React.PureComponent {
         height: 600
       },
       (err, code) => {
-        if (err) console.error(err)
+        if (err) {
+          console.error(err)
+          return
+        }
         localStorage.setItem("token", code.token)
         this.props.verifyUser()
         this.props.getUserInfo()
         this.props.history.replace({
           pathname: this.props.user.routes.success
         })
+        this.props.setSessionInfo("Facebook")
       }
     )
   }
@@ -91,7 +100,7 @@ class SignIn extends React.PureComponent {
           <Heading pageTitle="Sign In" />
           <Section>
             <p style={{ textAlign: "center" }}>
-              Sign in or create new account instantly. No passwords required!
+              Sign in or create new account instantly & without passwords.
             </p>
             <ButtonGroup>
               <TwitterLinkButton
@@ -129,6 +138,9 @@ const mapDispatchToProps = dispatch => {
     },
     getUserInfo: () => {
       dispatch(getUserInfo())
+    },
+    setSessionInfo: (method, id) => {
+      dispatch(setSessionInfo(method, id))
     }
   }
 }
