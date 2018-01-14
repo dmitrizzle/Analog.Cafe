@@ -2,7 +2,7 @@
 export const imageButtonPosition = (value, parentOffsets, _this) => {
   const { focusBlock } = value
   if (!focusBlock) return
-  if (focusBlock.type !== "paragraph") return
+  if (focusBlock.type !== "paragraph" && focusBlock.type !== "heading") return
   const cursorContext = {
     firstEmptyLine: value.document.isEmpty && value.document.nodes.size === 1,
     newLine: value.focusBlock.isEmpty,
