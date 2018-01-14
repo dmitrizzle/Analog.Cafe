@@ -8,7 +8,8 @@ import { connect } from "react-redux"
 import {
   verify as verifyUser,
   getInfo as getUserInfo,
-  setSessionInfo
+  setSessionInfo,
+  refreshSessionInfo
 } from "../../../../actions/userActions"
 
 // components
@@ -36,6 +37,27 @@ class SignIn extends React.PureComponent {
     super(props)
     this.handleTwitterButton = this.handleTwitterButton.bind(this)
     this.handleFacebookButton = this.handleFacebookButton.bind(this)
+    this.state = {
+      sessionInfo: {
+        method: this.props.user.sessionInfo.method,
+        id: this.props.user.sessionInfo.id,
+        login: this.props.user.sessionInfo.login
+      }
+    }
+  }
+
+  componentDidMount = () => {
+    this.props.refreshSessionInfo()
+  }
+  componentWillReceiveProps = nextProps => {
+    console.log(nextProps.user.sessionInfo)
+    this.setState({
+      sessionInfo: {
+        method: nextProps.user.sessionInfo.method,
+        id: nextProps.user.sessionInfo.id,
+        login: nextProps.user.sessionInfo.login
+      }
+    })
   }
 
   handleTwitterButton = event => {
@@ -99,9 +121,22 @@ class SignIn extends React.PureComponent {
 
           <Heading pageTitle="Sign In" />
           <Section>
-            <p style={{ textAlign: "center" }}>
-              Sign in or create new account instantly & without passwords.
+            <p style={{ textAlign: "center", marginBottom: "0" }}>
+              Sign in or create new account instantly, without passwords.
+              <br />
+              <small>
+                {this.state.sessionInfo.login &&
+                this.state.sessionInfo.method ? (
+                  <em>
+                    Hint: last time you used {this.state.sessionInfo.id}{" "}
+                    {this.state.sessionInfo.method}.
+                  </em>
+                ) : (
+                  <span>&nbsp;</span>
+                )}
+              </small>
             </p>
+
             <ButtonGroup>
               <TwitterLinkButton
                 to="#twitter-sign-in"
@@ -141,6 +176,9 @@ const mapDispatchToProps = dispatch => {
     },
     setSessionInfo: (method, id) => {
       dispatch(setSessionInfo(method, id))
+    },
+    refreshSessionInfo: () => {
+      dispatch(refreshSessionInfo())
     }
   }
 }

@@ -1,8 +1,10 @@
 import { ROUTE_AUTH_USER_LANDING } from "../constants/user"
 
-const localSessionInfo = localStorage.getItem("session-info")
-  ? JSON.parse(localStorage.getItem("session-info"))
-  : {}
+const getLocalSessionInfo = () =>
+  localStorage.getItem("session-info")
+    ? JSON.parse(localStorage.getItem("session-info"))
+    : {}
+const localSessionInfo = getLocalSessionInfo()
 const INITIAL_STATE = {
   status: "forbidden",
   info: {},
@@ -72,11 +74,25 @@ export default (state = INITIAL_STATE, action) => {
       localStorage.setItem("session-info", JSON.stringify(state.sessionInfo))
       break
     case "USER.RESET_SESSION_INFO":
+      localStorage.removeItem("session-info")
       state = {
         ...state,
         sessionInfo: INITIAL_STATE.sessionInfo
       }
-      localStorage.removeItem("session-info")
+      break
+    case "USER.REFRESH_SESSION_INFO":
+      state = {
+        ...state,
+        sessionInfo: {
+          method: getLocalSessionInfo().method
+            ? getLocalSessionInfo().method
+            : "",
+          id: getLocalSessionInfo().id ? getLocalSessionInfo().id : "",
+          login: getLocalSessionInfo().login
+            ? getLocalSessionInfo().login
+            : false
+        }
+      }
       break
 
     case "USER.SET_INTENT":

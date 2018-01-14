@@ -28,6 +28,9 @@ export const setSessionInfo = (method, id = "") => {
       payload: { method, id }
     })
 }
+export const refreshSessionInfo = () => {
+  return dispatch => dispatch({ type: "USER.REFRESH_SESSION_INFO" })
+}
 
 // log in with email
 export const loginWithEmail = validatedEmail => {
@@ -88,8 +91,13 @@ export const verify = () => {
         type: "USER.SET_STATUS",
         payload: "ok"
       })
+
       // confirm that the session info saved in localStorage actually went through
-      dispatch({ type: "USER.CONFIRM_SESSION_INFO" })
+      // after 1 second - to ensure this fires AFTER setting the session info
+      const delaySessionInfoConfirmation = setTimeout(() => {
+        dispatch({ type: "USER.CONFIRM_SESSION_INFO" })
+        clearTimeout(delaySessionInfoConfirmation)
+      }, 1000)
     }
   }
 }
