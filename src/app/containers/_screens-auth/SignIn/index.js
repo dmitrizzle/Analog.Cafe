@@ -50,7 +50,6 @@ class SignIn extends React.PureComponent {
     this.props.refreshSessionInfo()
   }
   componentWillReceiveProps = nextProps => {
-    console.log(nextProps.user.sessionInfo)
     this.setState({
       sessionInfo: {
         method: nextProps.user.sessionInfo.method,

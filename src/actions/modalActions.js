@@ -42,7 +42,6 @@ export const fetchCard = request => {
     )
     axios(axiosRequest(request))
       .then(response => {
-        console.log(response.data)
         // every card should have a title and text body or an image
         // if it's an author's card it could be blank though
         if (
