@@ -1,5 +1,10 @@
 import { ROUTE_AUTH_USER_LANDING } from "../constants/user"
 
+const getLocalSessionInfo = () =>
+  localStorage.getItem("session-info")
+    ? JSON.parse(localStorage.getItem("session-info"))
+    : {}
+const localSessionInfo = getLocalSessionInfo()
 const INITIAL_STATE = {
   status: "forbidden",
   info: {},
@@ -10,6 +15,11 @@ const INITIAL_STATE = {
   emailLogin: {
     timeout: 0,
     status: "ok"
+  },
+  sessionInfo: {
+    method: localSessionInfo.method ? localSessionInfo.method : "",
+    id: localSessionInfo.id ? localSessionInfo.id : "",
+    login: localSessionInfo.login ? localSessionInfo.login : false
   }
 }
 
@@ -27,7 +37,6 @@ export default (state = INITIAL_STATE, action) => {
         status: action.payload
       }
       break
-
     case "USER.SET_EMAIL_LOGIN_TIMEOUT":
       state = {
         ...state,
@@ -46,6 +55,46 @@ export default (state = INITIAL_STATE, action) => {
         }
       }
       break
+
+    case "USER.SET_SESSION_INFO":
+      state = {
+        ...state,
+        sessionInfo: action.payload
+      }
+      localStorage.setItem("session-info", JSON.stringify(state.sessionInfo))
+      break
+    case "USER.CONFIRM_SESSION_INFO":
+      state = {
+        ...state,
+        sessionInfo: {
+          ...state.sessionInfo,
+          login: true
+        }
+      }
+      localStorage.setItem("session-info", JSON.stringify(state.sessionInfo))
+      break
+    case "USER.RESET_SESSION_INFO":
+      localStorage.removeItem("session-info")
+      state = {
+        ...state,
+        sessionInfo: INITIAL_STATE.sessionInfo
+      }
+      break
+    case "USER.REFRESH_SESSION_INFO":
+      state = {
+        ...state,
+        sessionInfo: {
+          method: getLocalSessionInfo().method
+            ? getLocalSessionInfo().method
+            : "",
+          id: getLocalSessionInfo().id ? getLocalSessionInfo().id : "",
+          login: getLocalSessionInfo().login
+            ? getLocalSessionInfo().login
+            : false
+        }
+      }
+      break
+
     case "USER.SET_INTENT":
       state = {
         ...state,

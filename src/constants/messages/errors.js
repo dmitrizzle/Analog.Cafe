@@ -57,8 +57,9 @@ export default {
     EMAIL_LOGIN_TIMEOUT: remaining => {
       return {
         title: "Please Try in a Bit",
-        text: `Please wait ${remaining ||
-          60} seconds before requesting another login link to be sent to your email.`
+        text: `Please wait ${
+          remaining > 59 ? "a minute" : remaining + " seconds" || 60
+        } before requesting another login link to be sent to your email.`
       }
     },
     EMAIL_LOGIN_BAD_TOKEN: {

@@ -9,7 +9,7 @@ import EmailInput from "./components/EmailInput"
 import { Form } from "../../components/FormStyles"
 
 // helpers
-import validateEmail from "../../../utils/email-validator"
+import { validateEmail } from "../../../utils/email-utils"
 
 // render
 export default class extends React.Component {
