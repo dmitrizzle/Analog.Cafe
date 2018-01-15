@@ -1,7 +1,11 @@
 const INITIAL_STATE = {
   draftStatus: "Draft",
   editorFocusRequested: 0,
-  uploadProgress: 0
+  uploadProgress: 0,
+  instantCollaborations: {
+    status: "loading",
+    items: []
+  }
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -28,6 +32,12 @@ export default (state = INITIAL_STATE, action) => {
       state = {
         ...state,
         editorFocusRequested: state.editorFocusRequested + 1
+      }
+      break
+    case "COMPOSER.SET_INSTANT_COLLABORATIONS":
+      state = {
+        ...state,
+        instantCollaborations: action.payload
       }
       break
     default:

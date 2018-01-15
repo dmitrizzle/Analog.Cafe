@@ -1,14 +1,10 @@
 // tools
 import axios from "axios"
 import { axiosRequest } from "../utils/axios-request"
-
-// this is where the server status displayed for uploading images to
-// Cloudinary - leaving here for futher reference
-// import { ROUTE_SUBMISSION_PROGRESS_API } from "../constants/submission"
-
 import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
 
+// monitor upload status and percentage
 export const setStatus = state => {
   return {
     type: "UPLOAD.SET_STATUS",
@@ -20,6 +16,10 @@ export const initStatus = () => {
     type: "UPLOAD.INIT_STATUS"
   }
 }
+
+// this is where the server status displayed for uploading images to
+// Cloudinary - leaving here for futher reference
+// import { ROUTE_SUBMISSION_PROGRESS_API } from "../constants/submission"
 
 export const uploadData = request => {
   let axiosRequestWithProgress = axiosRequest(request)
