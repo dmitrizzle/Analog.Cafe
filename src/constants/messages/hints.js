@@ -56,3 +56,23 @@ export const MESSAGE_HINT_YOUR_PROFILE = {
   },
   id: "hints/your-profile"
 }
+
+export const MESSAGE_HINT_OVERWRITE_DRAFT = {
+  info: {
+    title: "Overwrite Warning",
+    text:
+      "Looks like you are currently editing another draft on this device. Do you want to overwrite it by editing this article instead? This can not be undone.",
+    buttons: [
+      {
+        to: "/submit/compose",
+        text: "See My Current Draft",
+        red: true
+      },
+      {
+        to: "#overwrite",
+        text: "⚠️ Overwrite"
+      }
+    ]
+  },
+  requested: { url: "hints/text-in-compsoer" }
+}

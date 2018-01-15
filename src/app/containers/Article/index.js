@@ -75,7 +75,7 @@ const completeUrlPath = (route, slug) => {
 
 // admin controls loader
 const AdminControls = Loadable({
-  loader: () => import("./components/AdminControls"),
+  loader: () => import("./containers/AdminControls"),
   loading: () => null
 })
 
@@ -89,7 +89,8 @@ class Article extends React.PureComponent {
       tag: {
         name: "Post",
         route: "/"
-      }
+      },
+      publicationStatus: this.props.article.status
     }
   }
 
@@ -115,7 +116,7 @@ class Article extends React.PureComponent {
     this.setState({
       shareButtons: false,
       subscribeForm: false,
-      adminControls: false
+      publicationStatus: this.props.article.status
     })
   }
 
@@ -136,11 +137,15 @@ class Article extends React.PureComponent {
     this.unlisten = this.props.history.listen(location => this.fetchPage())
     this.fetchPage()
     this.makeTag(this.props)
+    this.setState({
+      adminControls: this.props.user.info.role === "admin"
+    })
   }
   componentWillReceiveProps = nextProps => {
     this.makeTag(nextProps)
     this.setState({
-      adminControls: this.props.user.info.role === "admin"
+      adminControls: nextProps.user.info.role === "admin",
+      publicationStatus: nextProps.article.status
     })
   }
   componentWillUnmount = () => {
@@ -254,7 +259,12 @@ class Article extends React.PureComponent {
                 This article is only visible to you and the Analog.Cafe Editors.
               </Byline>
             )}
-          {this.state.adminControls && <AdminControls />}
+          {this.state.adminControls && (
+            <AdminControls
+              publicationStatus={this.state.publicationStatus}
+              article={this.props.article}
+            />
+          )}
         </Heading>
         <Section articleStatus={this.props.article.status}>
           <Editor
