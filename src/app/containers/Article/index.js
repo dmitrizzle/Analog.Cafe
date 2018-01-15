@@ -140,7 +140,7 @@ class Article extends React.PureComponent {
   componentWillReceiveProps = nextProps => {
     this.makeTag(nextProps)
     this.setState({
-      adminControls: this.props.user.info.role
+      adminControls: this.props.user.info.role === "admin"
     })
   }
   componentWillUnmount = () => {

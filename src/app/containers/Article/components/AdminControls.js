@@ -1,15 +1,20 @@
 // tools
 import React from "react"
-import styled from "styled-components"
 
 // components
-import { TinyButton } from "../../../components/_controls/Button"
+import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
 
 export default props => {
   return (
-    <div>
-      <TinyButton>Edit</TinyButton>
-      <TinyButton>Publish</TinyButton>
-    </div>
+    <ButtonStrip
+      style={{
+        margin: "1em auto 0"
+      }}
+    >
+      <div>
+        <Item left>Edit</Item>
+        <Item right>Publish</Item>
+      </div>
+    </ButtonStrip>
   )
 }
