@@ -38,7 +38,7 @@ import {
 import {
   uploadData as uploadSubmissionData,
   initStatus as resetUploadStatus
-} from "../../../../actions/uploadActions"
+} from "../../../../actions/composerActions"
 
 // constants
 const STATUS_MESSAGES = {
