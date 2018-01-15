@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Color from "color"
 
 // components
-import Logo from "../_icons/AnalogCafe"
+import Logo from "../AnalogCafe"
 
 // css
 export const LogoOutline = styled.div`

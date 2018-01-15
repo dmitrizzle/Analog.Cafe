@@ -3,7 +3,7 @@ import React from "react"
 import { froth } from "../../../../utils/image-froth"
 
 // components
-import Logo from "../../Logo"
+import Logo from "../../_icons/Logo"
 import { ModalDispatch } from "../../../containers/Modal"
 
 import {
