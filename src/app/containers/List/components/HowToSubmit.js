@@ -4,7 +4,7 @@ import React from "react"
 // components
 import { Section, Article } from "../../../components/ArticleStyles"
 import Figure from "../../../components/Picture"
-import { LinkButton } from "../../../components/Button"
+import { LinkButton } from "../../../components/_controls/Button"
 
 // render
 export default props => {

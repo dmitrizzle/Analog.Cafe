@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 // components
-import { TinyButton } from "../../../../../components/Button"
+import { TinyButton } from "../../../../../components/_controls/Button"
 
 const PictureMenu = styled.div`
   font-variant: normal;

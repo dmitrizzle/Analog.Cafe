@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 import Color from "color"
 
 // components
-import { LinkButton } from "../Button"
+import { LinkButton } from "../_controls/Button"
 
 // styles
 import { Sidenote } from "../CaptionStyles"

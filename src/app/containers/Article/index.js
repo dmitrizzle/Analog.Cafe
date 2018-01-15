@@ -2,6 +2,7 @@
 import React from "react"
 import { Editor } from "slate-react"
 import { Value } from "slate"
+import Loadable from "react-loadable"
 
 // redux & state
 import { connect } from "react-redux"
@@ -35,7 +36,7 @@ import {
 
 // components
 import Helmet from "../../components/_async/Helmet"
-import Link from "../../components/Link"
+import Link from "../../components/_controls/Link"
 import Heading from "../../components/ArticleHeading"
 import { ModalDispatch } from "../Modal"
 import {
@@ -71,6 +72,12 @@ const completeUrlPath = (route, slug) => {
       slug
   )
 }
+
+// admin controls loader
+const AdminControls = Loadable({
+  loader: () => import("./components/AdminControls"),
+  loading: () => null
+})
 
 // render
 class Article extends React.PureComponent {
@@ -247,10 +254,7 @@ class Article extends React.PureComponent {
                 This article is only visible to you and the Analog.Cafe Editors.
               </Byline>
             )}
-          {this.state.adminControls &&
-            import("./components/AdminControls").then(AdminControls => {
-              ;<AdminControls />
-            })}
+          {this.state.adminControls && <AdminControls />}
         </Heading>
         <Section articleStatus={this.props.article.status}>
           <Editor

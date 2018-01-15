@@ -6,7 +6,11 @@ import { connect } from "react-redux"
 import { setIntent as setUserIntent } from "../../../actions/userActions"
 
 // components
-import { CommonNav, ComposerNav, NavWrapper } from "../../components/Nav"
+import {
+  CommonNav,
+  ComposerNav,
+  NavWrapper
+} from "../../components/_controls/Nav"
 
 // render
 const Nav = props => {

@@ -29,14 +29,14 @@ export const reset = css`
 `
 export const title = css`
   ${reset} ${props => props.theme.typography.title.auto} font-size: ${props =>
-      props.theme.size.font.make.larger}em;
+  props.theme.size.font.make.larger}em;
   text-align: center;
   overflow: hidden;
   ${caution} ${warning};
 `
 export const subtitle = css`
   ${reset} ${props => props.theme.typography.title.auto} font-size: ${props =>
-      props.theme.size.font.make.larger / 2}em;
+  props.theme.size.font.make.larger / 2}em;
   text-align: center;
   overflow: hidden;
   ${caution} ${warning};

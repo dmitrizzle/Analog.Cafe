@@ -3,9 +3,9 @@ import styled from "styled-components"
 
 // styles
 import { CardCaptionStyles, CardButtonStyles, CardHeader } from "../../styles"
-import { TextareaWithHighlights } from "../../../InputStyles"
+import { TextareaWithHighlights } from "../../../_controls/InputStyles"
 import { CaptionStyles } from "../../../CaptionStyles"
-import { ButtonStyles } from "../../../Button"
+import { ButtonStyles } from "../../../_controls/Button"
 
 export { CardFlattened } from "../../styles"
 export const CardHeaderEditable = styled(CardHeader)`

@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Link from "../../components/Link"
+import Link from "../../components/_controls/Link"
 import Helmet from "../../components/_async/Helmet"
 
 // components

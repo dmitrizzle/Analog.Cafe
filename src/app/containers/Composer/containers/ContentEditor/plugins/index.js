@@ -10,7 +10,7 @@ import store from "../../../../../../store"
 import { setCard } from "../../../../../../actions/modalActions"
 
 // styles
-import { dot } from "../../../../../components/_icons/components/BlankDot"
+import { dot } from "../../../../../components/_icons/BlankDot"
 
 // Analog.Cafe plugins
 import { MarkHotkey } from "./mark-hotkey"

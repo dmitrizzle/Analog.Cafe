@@ -6,7 +6,7 @@ import Helmet from "../_async/Helmet"
 import { Article, Section } from "../ArticleStyles"
 import { ModalDispatch } from "../../containers/Modal"
 import Composer from "../../containers/Composer"
-import Email from "../Email"
+import { Email } from "../_rt-snippets"
 
 import {
   DEFAULT_COMPOSER_EDITOR_STATE,

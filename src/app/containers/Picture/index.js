@@ -10,7 +10,7 @@ import { getInfo } from "../../../actions/pictureActions"
 
 // components
 import Picture from "../../components/Picture"
-import { PlainTextarea } from "../../components/InputStyles"
+import { PlainTextarea } from "../../components/_controls/InputStyles"
 import PictureMenu from "../Composer/containers/ContentEditor/components/PictureMenu"
 
 import { PICTURE_DATA_OBJECT } from "../../../constants/picture"

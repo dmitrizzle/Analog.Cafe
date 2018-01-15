@@ -4,7 +4,7 @@ import { withRouter } from "react-router"
 import Helmet from "../../components/_async/Helmet"
 
 // components
-import Link from "../../components/Link"
+import Link from "../../components/_controls/Link"
 import Heading from "../../components/ArticleHeading"
 import { Article, Section } from "../../components/ArticleStyles"
 

@@ -6,11 +6,11 @@ import { froth } from "../../../utils/image-froth"
 
 // components
 import Heading from "../ArticleHeading"
-import { LinkButton } from "../Button"
-import { ButtonGroup } from "../Button/components/ButtonGroup"
+import { LinkButton } from "../_controls/Button"
+import { ButtonGroup } from "../_controls/Button/components/ButtonGroup"
 import { Caption } from "../CaptionStyles"
 import Figure from "../Picture"
-import Link from "../Link"
+import Link from "../_controls/Link"
 import { Section, Article } from "../ArticleStyles"
 
 const metaTitle = "Submit"

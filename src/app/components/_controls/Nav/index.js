@@ -1,15 +1,15 @@
 // tools
 import React from "react"
-import { froth } from "../../../utils/image-froth"
+import { froth } from "../../../../utils/image-froth"
 
 // components
-import Logo from "../Logo"
-import { ModalDispatch } from "../../containers/Modal"
+import Logo from "../../Logo"
+import { ModalDispatch } from "../../../containers/Modal"
 
 import {
   MESSAGE_HINT_SUBMIT_CONSENT,
   MESSAGE_HINT_AUTO_SAVE
-} from "../../../constants/messages/hints"
+} from "../../../../constants/messages/hints"
 
 // styles
 import { NavLink, NavIndexLink, NavItem, TinyImageInline } from "./styles"

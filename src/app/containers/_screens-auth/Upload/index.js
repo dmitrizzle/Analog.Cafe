@@ -12,8 +12,8 @@ import {
   Title,
   Subtitle
 } from "../../../components/ArticleStyles"
-import Link from "../../../components/Link"
-import { LinkButton } from "../../../components/Button"
+import Link from "../../../components/_controls/Link"
+import { LinkButton } from "../../../components/_controls/Button"
 
 // constants & helpers
 import {

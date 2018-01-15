@@ -2,8 +2,8 @@
 import React from "react"
 import Picture from "../../../Picture"
 import PictureDocket from "./containers/PictureDocket"
-import Link from "../../../../components/Link"
-import { TinyButton } from "../../../../components/Button"
+import Link from "../../../../components/_controls/Link"
+import { TinyButton } from "../../../../components/_controls/Button"
 import styled from "styled-components"
 
 // helpers

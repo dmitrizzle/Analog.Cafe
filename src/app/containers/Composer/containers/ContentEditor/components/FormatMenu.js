@@ -1,10 +1,10 @@
 // tools
 import React from "react"
+import styled from "styled-components"
 
 // components
-import { TinyButton } from "../../../../../components/Button"
+import { TinyButton } from "../../../../../components/_controls/Button"
 
-import styled from "styled-components"
 const Menu = styled.div`
   display: none;
   & > div {

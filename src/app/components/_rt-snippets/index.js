@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Link from "../Link"
+import Link from "../_controls/Link"
 
 export const SubscribeToWeekly = props => {
   return (
@@ -23,5 +23,15 @@ export const SubscribeToWeekly = props => {
       <span style={{ fontStyle: "normal" }}>❤︎</span>.” We never share or sell
       your personal information.
     </span>
+  )
+}
+
+export const Email = () => {
+  return (
+    <strong style={{ display: "inline-block" }}>
+      d<span style={{ fontStyle: "normal" }} role="img" aria-label="Envelope">
+        📨
+      </span>analog.cafe
+    </strong>
   )
 }
