@@ -107,7 +107,8 @@ class Article extends React.PureComponent {
     // reset article actions menu
     this.setState({
       shareButtons: false,
-      subscribeForm: false
+      subscribeForm: false,
+      adminControls: false
     })
   }
 
@@ -131,6 +132,9 @@ class Article extends React.PureComponent {
   }
   componentWillReceiveProps = nextProps => {
     this.makeTag(nextProps)
+    this.setState({
+      adminControls: this.props.user.info.role
+    })
   }
   componentWillUnmount = () => {
     this.unlisten()
@@ -243,6 +247,10 @@ class Article extends React.PureComponent {
                 This article is only visible to you and the Analog.Cafe Editors.
               </Byline>
             )}
+          {this.state.adminControls &&
+            import("./components/AdminControls").then(AdminControls => {
+              ;<AdminControls />
+            })}
         </Heading>
         <Section articleStatus={this.props.article.status}>
           <Editor
@@ -287,7 +295,8 @@ class Article extends React.PureComponent {
 // connect with redux
 const mapStateToProps = state => {
   return {
-    article: state.article
+    article: state.article,
+    user: state.user
   }
 }
 const mapDispatchToProps = dispatch => {
