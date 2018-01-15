@@ -4,6 +4,8 @@ import { axiosRequest } from "../utils/axios-request"
 import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
 
+import { ROUTE_IMAGE_API } from "../constants/picture"
+
 // monitor upload status and percentage
 export const setStatus = state => {
   return {
@@ -86,5 +88,34 @@ export const setDraftStatus = status => {
 export const requestFocus = () => {
   return {
     type: "COMPOSER.REQUEST_FOCUS"
+  }
+}
+
+// query instant collaboration items
+export const fetchCollabFeatures = () => {
+  return dispatch => {
+    const token = localStorage.getItem("token")
+    if (!token) return // show "need to login message"
+    const request = {
+      url: ROUTE_IMAGE_API,
+      params: {
+        fullConsent: "true",
+        featured: "true"
+      },
+      headers: {
+        Authorization: "JWT " + token
+      }
+    }
+
+    axios(axiosRequest(request))
+      .then(response => {
+        dispatch({
+          type: "COMPOSER.SET_COLLAB_FEATURES",
+          payload: response.data.items
+        })
+      })
+      .catch(error => {
+        // error
+      })
   }
 }

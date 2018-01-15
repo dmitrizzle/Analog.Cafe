@@ -61,6 +61,9 @@ export const AspectRatio = styled.div`
     left: 0;
     bottom: 0;
   }
+  & > img {
+    background-color: rgba(44, 44, 44, 0.125);
+  }
 `
 export const GridCaption = styled(Sidenote)`
   text-align: center;

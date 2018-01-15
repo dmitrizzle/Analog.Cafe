@@ -9,6 +9,7 @@ import keycode from "keycode"
 // redux
 import { connect } from "react-redux"
 import { setCard } from "../../../../../../actions/modalActions"
+import { fetchCollabFeatures } from "../../../../../../actions/composerActions"
 
 // components
 import PictureDocket from "../../../../../components/PictureDocket"
@@ -27,76 +28,20 @@ import { ModalDispatch } from "../../../../Modal"
 import { dot } from "../../../../../components/_icons/components/BlankDot"
 
 // constants
-import { MESSAGE_HINT_IMAGE_SUGGESTIONS } from "../../../../../../constants/messages/hints"
+import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/messages/hints"
 import { ROUTE_AUTHOR_API } from "../../../../../../constants/author"
 import errorMessages from "../../../../../../constants/messages/errors"
-const suggestions = [
-  {
-    id: "image-froth_658824_ry3-Wh3CZ",
-    author: {
-      name: "dmitrizzle",
-      id: "dmitrizzle"
-    }
-  },
-  {
-    id: "image-froth_1546790_b5ff5d48edf8488387d39f64e18b2916",
-    author: {
-      name: "Betty",
-      id: "betty"
-    }
-  },
-  {
-    id: "image-froth_623086_BkbGYohCW",
-    author: {
-      name: "dmitrizzle",
-      id: "dmitrizzle"
-    }
-  },
-  {
-    id: "image-froth_664111_SynOy3n0b",
-    author: {
-      name: "dmitrizzle",
-      id: "dmitrizzle"
-    }
-  },
-  {
-    id: "image-froth_1493506_B1u2qi3CZ",
-    author: {
-      name: "Betty",
-      id: "betty"
-    }
-  },
-  {
-    id: "image-froth_660572_rkv4x2h0W",
-    author: {
-      name: "dmitrizzle",
-      id: "dmitrizzle"
-    }
-  },
-  {
-    id: "image-froth_701295_Sy1L0ohAW",
-    author: {
-      name: "dmitrizzle",
-      id: "dmitrizzle"
-    }
-  },
-  {
-    id: "image-froth_663121_HJILTj2RW",
-    author: {
-      name: "dmitrizzle",
-      id: "dmitrizzle"
-    }
-  }
-]
 
 const GridButtonImage = props => {
   return (
-    <GridButton onClick={() => props.add(props.src)}>
+    <GridButton
+      onClick={() => (props.status === "ok" ? props.add(props.src) : null)}
+    >
       <AspectRatio>
         <img
           src={
             froth({
-              src: props.src,
+              src: props.status === "ok" ? props.src : null,
               size: "t",
               crop: "square"
             }).src
@@ -108,17 +53,19 @@ const GridButtonImage = props => {
           }}
         />
       </AspectRatio>
-      <GridButtonCaption>
-        <ModalDispatch
-          with={{
-            request: {
-              url: ROUTE_AUTHOR_API + "/" + props.author.id
-            }
-          }}
-        >
-          {props.author.name}
-        </ModalDispatch>
-      </GridButtonCaption>
+      {props.author && (
+        <GridButtonCaption>
+          <ModalDispatch
+            with={{
+              request: {
+                url: ROUTE_AUTHOR_API + "/" + props.author.id
+              }
+            }}
+          >
+            {props.author.name}
+          </ModalDispatch>
+        </GridButtonCaption>
+      )}
     </GridButton>
   )
 }
@@ -161,6 +108,9 @@ class PictureDocketContainer extends React.PureComponent {
       if (keycode(event) !== "esc") return
       this.handleClose(event)
     })
+
+    // get featured collab images
+    this.props.fetchCollabFeatures()
   }
 
   // image upload handlers
@@ -230,7 +180,7 @@ class PictureDocketContainer extends React.PureComponent {
         </CardHeader>
         <GridCaption>
           Create an{" "}
-          <ModalDispatch with={MESSAGE_HINT_IMAGE_SUGGESTIONS}>
+          <ModalDispatch with={MESSAGE_HINT_IMAGE_COLLAB_FEATURES}>
             instant collaboration
           </ModalDispatch>{" "}
           or upload new image.
@@ -238,13 +188,22 @@ class PictureDocketContainer extends React.PureComponent {
 
         <GridContainer>
           <GridRow>
-            {suggestions.slice(0, 2).map(item => {
+            {this.props.composer.collabFeatures.items.slice(0, 2).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  author={item.author}
-                  add={this.handleImageSuggestion}
+                  status={this.props.composer.collabFeatures.status}
+                  author={
+                    this.props.composer.collabFeatures.items[1]
+                      ? item.author
+                      : null
+                  }
+                  add={
+                    this.props.composer.collabFeatures.items[1]
+                      ? this.handleImageSuggestion
+                      : null
+                  }
                 />
               )
             })}
@@ -257,11 +216,12 @@ class PictureDocketContainer extends React.PureComponent {
             </GridButton>
           </GridRow>
           <GridRow>
-            {suggestions.slice(2, 5).map(item => {
+            {this.props.composer.collabFeatures.items.slice(2, 5).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
+                  status={this.props.composer.collabFeatures.status}
                   author={item.author}
                   add={this.handleImageSuggestion}
                 />
@@ -269,11 +229,12 @@ class PictureDocketContainer extends React.PureComponent {
             })}
           </GridRow>
           <GridRow>
-            {suggestions.slice(5, 8).map(item => {
+            {this.props.composer.collabFeatures.items.slice(5, 8).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
+                  status={this.props.composer.collabFeatures.status}
                   author={item.author}
                   add={this.handleImageSuggestion}
                 />
@@ -300,7 +261,17 @@ const mapDispatchToProps = dispatch => {
   return {
     setCard: (info, request) => {
       dispatch(setCard(info, request))
+    },
+    fetchCollabFeatures: () => {
+      dispatch(fetchCollabFeatures())
     }
   }
 }
-export default connect(null, mapDispatchToProps)(PictureDocketContainer)
+const mapStateToProps = state => {
+  return {
+    composer: state.composer
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(
+  PictureDocketContainer
+)

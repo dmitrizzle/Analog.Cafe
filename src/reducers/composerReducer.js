@@ -1,10 +1,16 @@
+// set placeholders for collabFeatures grid:
+let collabFeaturesDefaults = []
+for (var o = 0; o < 8; o++) {
+  collabFeaturesDefaults[o] = { id: o }
+}
+
 const INITIAL_STATE = {
   draftStatus: "Draft",
   editorFocusRequested: 0,
   uploadProgress: 0,
-  instantCollaborations: {
+  collabFeatures: {
     status: "loading",
-    items: []
+    items: collabFeaturesDefaults
   }
 }
 
@@ -34,10 +40,13 @@ export default (state = INITIAL_STATE, action) => {
         editorFocusRequested: state.editorFocusRequested + 1
       }
       break
-    case "COMPOSER.SET_INSTANT_COLLABORATIONS":
+    case "COMPOSER.SET_COLLAB_FEATURES":
       state = {
         ...state,
-        instantCollaborations: action.payload
+        collabFeatures: {
+          status: "ok",
+          items: action.payload
+        }
       }
       break
     default:

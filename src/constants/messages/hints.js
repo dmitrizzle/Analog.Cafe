@@ -32,7 +32,7 @@ export const MESSAGE_HINT_SUBMIT_CONSENT = {
   },
   id: "hints/submit-consent"
 }
-export const MESSAGE_HINT_IMAGE_SUGGESTIONS = {
+export const MESSAGE_HINT_IMAGE_COLLAB_FEATURES = {
   info: {
     title: "Instant Collaboration",
     text:
