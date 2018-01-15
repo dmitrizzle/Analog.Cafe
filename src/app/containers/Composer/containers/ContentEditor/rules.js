@@ -38,6 +38,9 @@ const rules = [
       // cycle through block types
       const block = BLOCK_TAGS[el.tagName.toLowerCase()]
       if (!block) return
+      if (block === "div") {
+        return next(el.childNodes)
+      }
 
       switch (block) {
         case "paragraph": {
