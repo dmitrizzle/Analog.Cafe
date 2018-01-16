@@ -11,7 +11,8 @@ const INITIAL_STATE = {
   collabFeatures: {
     status: "loading",
     items: collabFeaturesDefaults
-  }
+  },
+  submissinId: ""
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -26,6 +27,18 @@ export default (state = INITIAL_STATE, action) => {
       state = {
         ...state,
         uploadProgress: INITIAL_STATE.uploadProgress
+      }
+      break
+    case "COMPOSER.SET_SUBMISSION_ID":
+      state = {
+        ...state,
+        submisssionId: action.payload
+      }
+      break
+    case "COMPOSER.RESET_SUBMISSION_ID":
+      state = {
+        ...state,
+        submisssionId: INITIAL_STATE.submisssionId
       }
       break
     case "COMPOSER.SET_DRAFT_STATUS":

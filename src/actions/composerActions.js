@@ -6,6 +6,14 @@ import errorMessages from "../constants/messages/errors"
 
 import { ROUTE_IMAGE_API } from "../constants/picture"
 
+// track submission id -> none if this is a new submission or
+// an id of an edited submission
+export const setSubmissionId = id => {
+  return {
+    //
+  }
+}
+
 // monitor upload status and percentage
 export const setStatus = state => {
   return {
