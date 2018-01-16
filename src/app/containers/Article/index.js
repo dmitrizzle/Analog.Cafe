@@ -50,6 +50,8 @@ import { froth } from "../../../utils/image-froth"
 import slugToTitle from "../../../utils/slug-to-title"
 import { getLeadAuthor, authorNameList } from "../../../utils/authorship"
 
+console.log("Article")
+
 // return path type for submissions vs published works
 const locate = locationPathname => {
   return {
@@ -76,7 +78,8 @@ const completeUrlPath = (route, slug) => {
 // admin controls loader
 const AdminControls = Loadable({
   loader: () => import("./containers/AdminControls"),
-  loading: () => null
+  loading: () => null,
+  delay: 100
 })
 
 // render

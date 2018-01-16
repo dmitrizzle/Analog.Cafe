@@ -1,13 +1,21 @@
 // components & tools
 import React from "react"
 import Picture from "../../../Picture"
-import PictureDocket from "./containers/PictureDocket"
+// import PictureDocket from "./containers/PictureDocket"
 import Link from "../../../../components/_controls/Link"
 import { TinyButton } from "../../../../components/_controls/Button"
 import styled from "styled-components"
+import Loadable from "react-loadable"
 
 // helpers
 import { parseHref } from "../../../../../utils/link-builder"
+
+// lazy-load PictureDocket (shouldn't have to be imported in to Article.js)
+const PictureDocket = Loadable({
+  loader: () => import("./containers/PictureDocket"),
+  loading: () => null,
+  delay: 100
+})
 
 // return
 const UnquoteButton = styled(TinyButton)`
@@ -22,6 +30,9 @@ const UnquoteButton = styled(TinyButton)`
 `
 
 export const renderNode = props => {
+  // preload PictureDocket panel
+  !props.readOnly && PictureDocket.preload()
+
   const { node, attributes, children, isSelected, editor } = props
   const focus = editor.value.isFocused && isSelected
   const focusClassName = focus ? "focus" : "nofocus"
