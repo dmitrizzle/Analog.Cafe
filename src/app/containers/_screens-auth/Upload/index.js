@@ -37,7 +37,8 @@ import {
 } from "../../../../actions/userActions"
 import {
   uploadData as uploadSubmissionData,
-  initStatus as resetUploadStatus
+  initStatus as resetUploadStatus,
+  resetSubmissionId
 } from "../../../../actions/composerActions"
 
 // constants
@@ -138,11 +139,11 @@ class Upload extends React.PureComponent {
   }
   componentWillReceiveProps = nextProps => {
     // set progress state
-    if (nextProps.upload.progress >= 0)
+    if (nextProps.composer.uploadProgress >= 0)
       this.setState({
         progress:
-          nextProps.upload.progress > 0
-            ? nextProps.upload.progress
+          nextProps.composer.uploadProgress > 0
+            ? nextProps.composer.uploadProgress
             : this.state.progress
       }) // server connection error
     else
@@ -151,7 +152,7 @@ class Upload extends React.PureComponent {
       })
 
     // upload complete
-    if (nextProps.upload.progress === 100) {
+    if (nextProps.composer.uploadProgress === 100) {
       // clear submissions content and image in storage
       localStorage.removeItem("composer-content-state")
       localStorage.removeItem("composer-header-state")
@@ -160,6 +161,9 @@ class Upload extends React.PureComponent {
 
       // reset upload state
       this.props.resetUploadStatus()
+
+      // remove working submission id
+      this.props.resetSubmissionId()
 
       // user-facing messages
       this.setState({
@@ -269,8 +273,7 @@ class Upload extends React.PureComponent {
 // connect with redux
 const mapStateToProps = state => {
   return {
-    user: state.user,
-    upload: state.upload
+    composer: state.composer
   }
 }
 const mapDispatchToProps = dispatch => {
@@ -280,6 +283,9 @@ const mapDispatchToProps = dispatch => {
     },
     resetUploadStatus: () => {
       dispatch(resetUploadStatus())
+    },
+    resetSubmissionId: () => {
+      dispatch(resetSubmissionId())
     },
     setLoginRedirectRoutes: routes => {
       dispatch(setLoginRedirectRoutes(routes))

@@ -4,13 +4,14 @@ import { withRouter } from "react-router"
 
 // redux
 import { connect } from "react-redux"
+import { setCard } from "../../../../actions/modalActions"
+import { setSubmissionId } from "../../../../actions/composerActions"
 
 // components
 import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
 
 // utils
 import { loadTextContent } from "../../../../utils/composer-loader"
-import { setCard } from "../../../../actions/modalActions"
 import { MESSAGE_HINT_OVERWRITE_DRAFT } from "../../../../constants/messages/hints"
 import {
   storeContentState,
@@ -52,6 +53,11 @@ class AdminControls extends React.PureComponent {
       title: this.props.article.title || "",
       subtitle: this.props.article.subtitle || ""
     })
+
+    // set submission id so that the correct article would be updated with upload
+    this.props.setSubmissionId(this.props.article.id)
+
+    // redirect to Composer
     this.props.history.push("/submit/compose")
   }
   render = () => {
@@ -80,6 +86,9 @@ const mapDispatchToProps = dispatch => {
   return {
     setCard: (info, request) => {
       dispatch(setCard(info, request))
+    },
+    setSubmissionId: id => {
+      dispatch(setSubmissionId(id))
     }
   }
 }

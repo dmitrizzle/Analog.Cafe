@@ -4,6 +4,13 @@ for (var o = 0; o < 8; o++) {
   collabFeaturesDefaults[o] = { id: o }
 }
 
+// storing submissionId in localStorage along with all contnet
+const getLocalSubmissionId = () =>
+  localStorage.getItem("composer-submission-id")
+    ? localStorage.getItem("composer-submission-id")
+    : ""
+const localSubmissionId = getLocalSubmissionId()
+
 const INITIAL_STATE = {
   draftStatus: "Draft",
   editorFocusRequested: 0,
@@ -12,7 +19,7 @@ const INITIAL_STATE = {
     status: "loading",
     items: collabFeaturesDefaults
   },
-  submissinId: ""
+  submissionId: localSubmissionId ? localSubmissionId : ""
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -32,14 +39,16 @@ export default (state = INITIAL_STATE, action) => {
     case "COMPOSER.SET_SUBMISSION_ID":
       state = {
         ...state,
-        submisssionId: action.payload
+        submissionId: action.payload
       }
+      localStorage.setItem("composer-submission-id", state.submissionId)
       break
     case "COMPOSER.RESET_SUBMISSION_ID":
       state = {
         ...state,
-        submisssionId: INITIAL_STATE.submisssionId
+        submissionId: INITIAL_STATE.submissionId
       }
+      localStorage.removeItem("composer-submission-id")
       break
     case "COMPOSER.SET_DRAFT_STATUS":
       state = {

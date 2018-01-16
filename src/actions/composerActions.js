@@ -10,7 +10,13 @@ import { ROUTE_IMAGE_API } from "../constants/picture"
 // an id of an edited submission
 export const setSubmissionId = id => {
   return {
-    //
+    type: "COMPOSER.SET_SUBMISSION_ID",
+    payload: id
+  }
+}
+export const resetSubmissionId = id => {
+  return {
+    type: "COMPOSER.RESET_SUBMISSION_ID"
   }
 }
 
@@ -55,7 +61,12 @@ export const uploadData = request => {
             status: "ok",
             info: {
               title: errorMessages.VIEW_TEMPLATE.SUBMISSION.title,
-              text: errorMessages.VIEW_TEMPLATE.SUBMISSION.text,
+              text:
+                error.response && error.response.data
+                  ? `${
+                      errorMessages.VIEW_TEMPLATE.SUBMISSION.text
+                    } Possible reason: “${error.response.data.message}.”`
+                  : errorMessages.VIEW_TEMPLATE.SUBMISSION.text,
               error,
               stubborn: true,
               buttons: [
