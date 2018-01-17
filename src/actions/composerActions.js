@@ -41,12 +41,16 @@ export const uploadData = request => {
   let axiosRequestWithProgress = axiosRequest(request)
   return dispatch => {
     // register upload progress
-    axiosRequestWithProgress.onUploadProgress = progressEvent =>
+    axiosRequestWithProgress.onUploadProgress = progressEvent => {
+      console.log(Math.round(progressEvent.loaded * 100 / progressEvent.total))
       dispatch(
         setStatus({
-          progress: Math.round(progressEvent.loaded * 100 / progressEvent.total)
+          uploadProgress: Math.round(
+            progressEvent.loaded * 100 / progressEvent.total
+          )
         })
       )
+    }
 
     // dispatch data upload
     axios(axiosRequestWithProgress).catch(error => {
@@ -79,10 +83,7 @@ export const uploadData = request => {
                   red: true
                 },
                 {
-                  to:
-                    process.env.NODE_ENV === "development"
-                      ? "/submit/compose"
-                      : "/beta/compose",
+                  to: "/submit/compose",
                   text: "Cancel"
                 }
               ]

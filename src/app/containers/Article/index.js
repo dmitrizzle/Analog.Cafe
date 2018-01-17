@@ -50,8 +50,6 @@ import { froth } from "../../../utils/image-froth"
 import slugToTitle from "../../../utils/slug-to-title"
 import { getLeadAuthor, authorNameList } from "../../../utils/authorship"
 
-console.log("Article")
-
 // return path type for submissions vs published works
 const locate = locationPathname => {
   return {

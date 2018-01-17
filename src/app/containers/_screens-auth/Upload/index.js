@@ -239,16 +239,7 @@ class Upload extends React.PureComponent {
               >
                 Try again
               </a>{" "}
-              or{" "}
-              <Link
-                to={
-                  process.env.NODE_ENV === "development"
-                    ? "/submit/compose"
-                    : "/beta/compose"
-                }
-              >
-                go back
-              </Link>.
+              or <Link to={"/submit/compose"}>go back</Link>.
             </p>
           )}
           {this.state.status === "complete" && (
