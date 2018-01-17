@@ -41,8 +41,7 @@ export const uploadData = request => {
   let axiosRequestWithProgress = axiosRequest(request)
   return dispatch => {
     // register upload progress
-    axiosRequestWithProgress.onUploadProgress = progressEvent => {
-      console.log(Math.round(progressEvent.loaded * 100 / progressEvent.total))
+    axiosRequestWithProgress.onUploadProgress = progressEvent =>
       dispatch(
         setStatus({
           uploadProgress: Math.round(
@@ -50,7 +49,6 @@ export const uploadData = request => {
           )
         })
       )
-    }
 
     // dispatch data upload
     axios(axiosRequestWithProgress).catch(error => {
