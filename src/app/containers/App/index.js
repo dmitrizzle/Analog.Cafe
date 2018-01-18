@@ -62,6 +62,7 @@ class App extends React.PureComponent {
         queryString.parse(this.props.location.search).token
       )
     }
+
     // show message for expired tokens
     if (
       queryString.parse(this.props.location.search).error &&
@@ -120,8 +121,6 @@ class App extends React.PureComponent {
     switch (this.props.history.location.pathname) {
       case "/submit/compose":
       case "/submit/compose/":
-      case "/beta/compose":
-      case "/beta/compose/":
         this.props.setNavView("COMPOSER")
         this.props.setNavLocation({ bottom: false })
         break
@@ -133,10 +132,6 @@ class App extends React.PureComponent {
       case "/submit/confirm-full-consent/":
       case "/submit/confirm-basic-consent/":
       case "/submit/confirm-basic-consent":
-      case "/beta/confirm-full-consent":
-      case "/beta/confirm-full-consent/":
-      case "/beta/confirm-basic-consent/":
-      case "/beta/confirm-basic-consent":
         this.props.setNavLocation({
           top: false,
           bottom: false

@@ -2,14 +2,14 @@
 import React from "react"
 
 // components
-import { Button } from "../../components/Button"
+import { Button } from "../../components/_controls/Button"
 import EmailInput from "./components/EmailInput"
 
 // styles
-import { Form } from "../../components/FormStyles"
+import { Form } from "../../components/_controls/FormStyles"
 
 // helpers
-import validateEmail from "../../../utils/email-validator"
+import { validateEmail } from "../../../utils/email-utils"
 
 // render
 export default class extends React.Component {

@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Link from "../Link"
+import Link from "../_controls/Link"
 import { froth } from "../../../utils/image-froth"
 import LazyLoad from "react-lazyload"
 

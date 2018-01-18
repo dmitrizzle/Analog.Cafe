@@ -1,7 +1,7 @@
 // tools
 import styled, { css } from "styled-components"
-import { Button } from "../Button"
-import { Sidenote } from "../CaptionStyles"
+import { Button } from "../../_controls/Button"
+import { Sidenote } from "../../CaptionStyles"
 
 // css
 const squreWidth = css`
@@ -60,6 +60,9 @@ export const AspectRatio = styled.div`
     right: 0;
     left: 0;
     bottom: 0;
+  }
+  & > img {
+    background-color: rgba(44, 44, 44, 0.125);
   }
 `
 export const GridCaption = styled(Sidenote)`

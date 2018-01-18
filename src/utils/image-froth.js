@@ -1,5 +1,5 @@
 // tools
-import { dot } from "../app/components/_icons/components/BlankDot"
+import { dot } from "../app/components/_icons/BlankDot"
 
 const IMAGE_FROTH_SERVER =
   "https://res.cloudinary.com/analog-cafe/image/upload/"

@@ -19,7 +19,7 @@ import { ROUTE_AUTHOR_API } from "../../../constants/author"
 
 // components
 import { ListDescription, ListHeader } from "../../components/ListDescription"
-import { Button } from "../../components/Button"
+import { Button } from "../../components/_controls/Button"
 import { default as ListBlock } from "../../components/List"
 import { Section, Article } from "../../components/ArticleStyles"
 

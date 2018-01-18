@@ -25,7 +25,7 @@ const Composer = props => {
       pageSubtitle={titlePlaceholder.subtitle}
       key="Composer_HeaderEditor"
     />,
-    <Section onClick={props.requestEditorFocus} key="Composer_Section">
+    <Section onClick={() => props.requestEditorFocus()} key="Composer_Section">
       <ContentEditor
         composerState={props.composerState}
         ref={input => {

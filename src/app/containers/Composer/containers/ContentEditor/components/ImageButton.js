@@ -2,7 +2,7 @@
 import React from "react"
 
 // components
-import { TinyButton } from "../../../../../components/Button"
+import { TinyButton } from "../../../../../components/_controls/Button"
 
 // return
 export default props => {

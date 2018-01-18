@@ -10,7 +10,7 @@ import {
   CardButtonEditable,
   CardHeaderEditable
 } from "./styles"
-import { SubtitleInput } from "../../../InputStyles"
+import { SubtitleInput } from "../../../_controls/InputStyles"
 
 // constants
 import {

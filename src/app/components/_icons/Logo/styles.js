@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Color from "color"
 
 // components
-import Logo from "../_icons/components/AnalogCafe"
+import Logo from "../AnalogCafe"
 
 // css
 export const LogoOutline = styled.div`
@@ -20,19 +20,21 @@ export const LogoOutline = styled.div`
   width: 5em;
 `
 export const LogoWithDownstate = styled(Logo)`
-	background: ${props =>
+  background: ${props =>
     props.stamp
       ? props.theme.color.brand
       : props => props.theme.color.foreground};
-	box-shadow: 0 1px 1px ${props =>
-    Color(props.theme.color.foreground)
-      .alpha(props.theme.opacity.least * 2)
-      .string()};
+  box-shadow: 0 1px 1px
+    ${props =>
+      Color(props.theme.color.foreground)
+        .alpha(props.theme.opacity.least * 2)
+        .string()};
 
-  a.active &, a:active & {
-  	background: ${props => props.theme.color.brand};
+  a.active &,
+  a:active & {
+    background: ${props => props.theme.color.brand};
   }
   a:active & {
-  	box-shadow: 0 0 ${props => props.theme.color.foreground} inset;
+    box-shadow: 0 0 ${props => props.theme.color.foreground} inset;
   }
 `

@@ -1,8 +1,11 @@
+// tools
+import { fixHangingSelection } from "./HACKS"
+
 // "Add Image" button functions:
 export const imageButtonPosition = (value, parentOffsets, _this) => {
   const { focusBlock } = value
   if (!focusBlock) return
-  if (focusBlock.type !== "paragraph") return
+  if (focusBlock.type !== "paragraph" && focusBlock.type !== "heading") return
   const cursorContext = {
     firstEmptyLine: value.document.isEmpty && value.document.nodes.size === 1,
     newLine: value.focusBlock.isEmpty,
@@ -37,6 +40,9 @@ export const handleImageButton = (event, _this) => {
 export const menuPosition = _this => {
   const { value } = _this.state
   const menu = _this.menu
+
+  fixHangingSelection(_this, value.change())
+
   if (!menu) return
   if (window.getSelection().rangeCount <= 0) return
   const selection = window.getSelection()

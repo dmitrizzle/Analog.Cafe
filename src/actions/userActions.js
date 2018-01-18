@@ -5,6 +5,7 @@ import errorMessages from "../constants/messages/errors"
 import { ROUTE_LOGIN_WITH_EMAIL } from "../constants/login"
 import { MESSAGE_HINT_CHECK_EMAIL } from "../constants/messages/hints"
 import { axiosRequest } from "../utils/axios-request"
+import { anonymizeEmail } from "../utils/email-utils"
 
 import { ROUTE_USER_API } from "../constants/user"
 
@@ -19,17 +20,33 @@ const loginError = (type = "error") => {
   }
 }
 
+// remember sesion user and method
+export const setSessionInfo = (method, id = "") => {
+  return {
+    type: "USER.SET_SESSION_INFO",
+    payload: { method, id }
+  }
+}
+export const refreshSessionInfo = () => {
+  return { type: "USER.REFRESH_SESSION_INFO" }
+}
+
 // log in with email
 export const loginWithEmail = validatedEmail => {
   return dispatch => {
+    // 60 second timeout block for email logins
     dispatch({
       type: "USER.SET_EMAIL_LOGIN_TIMEOUT",
-      payload: Date.now() + 60 * 1000
+      payload: Date.now() + 61 * 1000
     })
     dispatch({
       type: "USER.SET_EMAIL_LOGIN_STATUS",
       payload: "pending"
     })
+    // remember anonymized email
+    dispatch(setSessionInfo("email", anonymizeEmail(validatedEmail)))
+
+    // send request
     axios(
       axiosRequest({
         url: ROUTE_LOGIN_WITH_EMAIL,
@@ -68,11 +85,19 @@ export const verify = () => {
         type: "USER.SET_STATUS",
         payload: "forbidden"
       })
-    else
+    else {
       dispatch({
         type: "USER.SET_STATUS",
         payload: "ok"
       })
+
+      // confirm that the session info saved in localStorage actually went through
+      // after 1 second - to ensure this fires AFTER setting the session info
+      const delaySessionInfoConfirmation = setTimeout(() => {
+        dispatch({ type: "USER.CONFIRM_SESSION_INFO" })
+        clearTimeout(delaySessionInfoConfirmation)
+      }, 1000)
+    }
   }
 }
 

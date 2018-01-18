@@ -2,7 +2,7 @@
 import React from "react"
 
 // components
-import { Button } from "../../components/Button"
+import { Button } from "../../components/_controls/Button"
 import EmailInput from "./components/EmailInput"
 
 // redux
@@ -11,10 +11,10 @@ import { loginWithEmail } from "../../../actions/userActions"
 import { setCard } from "../../../actions/modalActions"
 
 // styles
-import { Form } from "../../components/FormStyles"
+import { Form } from "../../components/_controls/FormStyles"
 
 // helpers
-import validateEmail from "../../../utils/email-validator"
+import { validateEmail } from "../../../utils/email-utils"
 import errorMessages from "../../../constants/messages/errors"
 
 // render
@@ -41,7 +41,9 @@ class SigninWithEmail extends React.PureComponent {
         this.props.setCard({
           status: "ok",
           info: errorMessages.VIEW_TEMPLATE.EMAIL_LOGIN_TIMEOUT(
-            Math.floor((this.props.user.emailLogin.timeout - Date.now()) / 1000)
+            Math.floor(
+              (this.props.user.emailLogin.timeout - Date.now()) / 1000 + 1
+            )
           ),
           requested: { url: "errors/email-login-wait" }
         })

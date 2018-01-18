@@ -7,7 +7,9 @@ import open from "oauth-open"
 import { connect } from "react-redux"
 import {
   verify as verifyUser,
-  getInfo as getUserInfo
+  getInfo as getUserInfo,
+  setSessionInfo,
+  refreshSessionInfo
 } from "../../../../actions/userActions"
 
 // components
@@ -17,11 +19,11 @@ import { Article, Section } from "../../../components/ArticleStyles"
 import AlreadyAuthenticated from "../../_screens-errors/AlreadyAuthenticated"
 
 // styles
-import { ButtonGroup } from "../../../components/Button/components/ButtonGroup"
+import { ButtonGroup } from "../../../components/_controls/Button/components/ButtonGroup"
 import {
   TwitterLinkButton,
   FacebookLinkButton
-} from "../../../components/Button/components/SocialButtons"
+} from "../../../components/_controls/Button/components/SocialButtons"
 
 // constants & helpers
 import {
@@ -35,6 +37,26 @@ class SignIn extends React.PureComponent {
     super(props)
     this.handleTwitterButton = this.handleTwitterButton.bind(this)
     this.handleFacebookButton = this.handleFacebookButton.bind(this)
+    this.state = {
+      sessionInfo: {
+        method: this.props.user.sessionInfo.method,
+        id: this.props.user.sessionInfo.id,
+        login: this.props.user.sessionInfo.login
+      }
+    }
+  }
+
+  componentDidMount = () => {
+    this.props.refreshSessionInfo()
+  }
+  componentWillReceiveProps = nextProps => {
+    this.setState({
+      sessionInfo: {
+        method: nextProps.user.sessionInfo.method,
+        id: nextProps.user.sessionInfo.id,
+        login: nextProps.user.sessionInfo.login
+      }
+    })
   }
 
   handleTwitterButton = event => {
@@ -48,13 +70,17 @@ class SignIn extends React.PureComponent {
         height: 600
       },
       (err, code) => {
-        if (err) console.error(err)
+        if (err) {
+          console.error(err)
+          return
+        }
         localStorage.setItem("token", code.token)
         this.props.verifyUser()
         this.props.getUserInfo()
         this.props.history.replace({
           pathname: this.props.user.routes.success
         })
+        this.props.setSessionInfo("Twtitter")
       }
     )
   }
@@ -69,13 +95,17 @@ class SignIn extends React.PureComponent {
         height: 600
       },
       (err, code) => {
-        if (err) console.error(err)
+        if (err) {
+          console.error(err)
+          return
+        }
         localStorage.setItem("token", code.token)
         this.props.verifyUser()
         this.props.getUserInfo()
         this.props.history.replace({
           pathname: this.props.user.routes.success
         })
+        this.props.setSessionInfo("Facebook")
       }
     )
   }
@@ -90,9 +120,22 @@ class SignIn extends React.PureComponent {
 
           <Heading pageTitle="Sign In" />
           <Section>
-            <p style={{ textAlign: "center" }}>
-              Sign in or create new account instantly. No passwords required!
+            <p style={{ textAlign: "center", marginBottom: "0" }}>
+              Sign in or create new account instantly, without passwords.
+              <br />
+              <small>
+                {this.state.sessionInfo.login &&
+                this.state.sessionInfo.method ? (
+                  <em>
+                    Hint: last time you used {this.state.sessionInfo.id}{" "}
+                    {this.state.sessionInfo.method}.
+                  </em>
+                ) : (
+                  <span>&nbsp;</span>
+                )}
+              </small>
             </p>
+
             <ButtonGroup>
               <TwitterLinkButton
                 to="#twitter-sign-in"
@@ -129,6 +172,12 @@ const mapDispatchToProps = dispatch => {
     },
     getUserInfo: () => {
       dispatch(getUserInfo())
+    },
+    setSessionInfo: (method, id) => {
+      dispatch(setSessionInfo(method, id))
+    },
+    refreshSessionInfo: () => {
+      dispatch(refreshSessionInfo())
     }
   }
 }
