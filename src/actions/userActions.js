@@ -22,14 +22,13 @@ const loginError = (type = "error") => {
 
 // remember sesion user and method
 export const setSessionInfo = (method, id = "") => {
-  return dispatch =>
-    dispatch({
-      type: "USER.SET_SESSION_INFO",
-      payload: { method, id }
-    })
+  return {
+    type: "USER.SET_SESSION_INFO",
+    payload: { method, id }
+  }
 }
 export const refreshSessionInfo = () => {
-  return dispatch => dispatch({ type: "USER.REFRESH_SESSION_INFO" })
+  return { type: "USER.REFRESH_SESSION_INFO" }
 }
 
 // log in with email
@@ -44,7 +43,7 @@ export const loginWithEmail = validatedEmail => {
       type: "USER.SET_EMAIL_LOGIN_STATUS",
       payload: "pending"
     })
-
+    // remember anonymized email
     dispatch(setSessionInfo("email", anonymizeEmail(validatedEmail)))
 
     // send request

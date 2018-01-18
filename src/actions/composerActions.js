@@ -6,6 +6,20 @@ import errorMessages from "../constants/messages/errors"
 
 import { ROUTE_IMAGE_API } from "../constants/picture"
 
+// track submission id -> none if this is a new submission or
+// an id of an edited submission
+export const setSubmissionId = id => {
+  return {
+    type: "COMPOSER.SET_SUBMISSION_ID",
+    payload: id
+  }
+}
+export const resetSubmissionId = id => {
+  return {
+    type: "COMPOSER.RESET_SUBMISSION_ID"
+  }
+}
+
 // monitor upload status and percentage
 export const setStatus = state => {
   return {
@@ -30,7 +44,9 @@ export const uploadData = request => {
     axiosRequestWithProgress.onUploadProgress = progressEvent =>
       dispatch(
         setStatus({
-          progress: Math.round(progressEvent.loaded * 100 / progressEvent.total)
+          uploadProgress: Math.round(
+            progressEvent.loaded * 100 / progressEvent.total
+          )
         })
       )
 
@@ -47,7 +63,12 @@ export const uploadData = request => {
             status: "ok",
             info: {
               title: errorMessages.VIEW_TEMPLATE.SUBMISSION.title,
-              text: errorMessages.VIEW_TEMPLATE.SUBMISSION.text,
+              text:
+                error.response && error.response.data
+                  ? `${
+                      errorMessages.VIEW_TEMPLATE.SUBMISSION.text
+                    } Possible reason: “${error.response.data.message}.”`
+                  : errorMessages.VIEW_TEMPLATE.SUBMISSION.text,
               error,
               stubborn: true,
               buttons: [
@@ -60,10 +81,7 @@ export const uploadData = request => {
                   red: true
                 },
                 {
-                  to:
-                    process.env.NODE_ENV === "development"
-                      ? "/submit/compose"
-                      : "/beta/compose",
+                  to: "/submit/compose",
                   text: "Cancel"
                 }
               ]

@@ -10,7 +10,7 @@ import Color from "color"
 import Link from "../Link"
 
 const Loader = Loadable({
-  loader: () => import("../_icons/components/Loader"),
+  loader: () => import("../../_icons/Loader"),
   loading: () => null,
   delay: 100
 })

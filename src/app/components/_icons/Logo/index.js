@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 
-import { APP_NAME } from "../../../constants/app"
+import { APP_NAME } from "../../../../constants/app"
 
 // styles
 import { LogoOutline, LogoWithDownstate } from "./styles"

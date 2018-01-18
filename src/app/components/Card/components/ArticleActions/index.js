@@ -6,7 +6,7 @@ import { datestamp, lunar, percise } from "../../../../../utils/datestamp"
 
 import MailChimpPrefill from "../../../../containers/_forms/MailChimpPrefill"
 import { Sidenote } from "../../../CaptionStyles"
-import Link from "../../../Link"
+import Link from "../../../_controls/Link"
 import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
 import { SubscribeToWeekly } from "../../../_rt-snippets"
 import { authorNameList } from "../../../../../utils/authorship"
@@ -14,12 +14,12 @@ import { authorNameList } from "../../../../../utils/authorship"
 // styles
 import { TimeStamp } from "../../../ArticleStyles"
 import { CardFlattened, CardCaption } from "../../styles"
-import { LinkButton, Button } from "../../../Button"
+import { LinkButton, Button } from "../../../_controls/Button"
 import {
   TwitterLinkButton,
   FacebookLinkButton,
   InstagramLinkButton
-} from "../../../Button/components/SocialButtons"
+} from "../../../_controls/Button/components/SocialButtons"
 
 const nextArticlePreload = nextArticle => {
   return {

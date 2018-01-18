@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { title, subtitle, textarea, reset } from "./styles"
 
 // tools
-import Textarea from "../_async/Textarea"
+import Textarea from "../../_async/Textarea"
 // import TextareaAutosize from "react-autosize-textarea"
 
 // return

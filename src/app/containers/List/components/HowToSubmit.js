@@ -4,7 +4,7 @@ import React from "react"
 // components
 import { Section, Article } from "../../../components/ArticleStyles"
 import Figure from "../../../components/Picture"
-import { LinkButton } from "../../../components/Button"
+import { LinkButton } from "../../../components/_controls/Button"
 
 // render
 export default props => {
@@ -62,14 +62,7 @@ export default props => {
           or social media page. Just click on “More…” in the naviagation bar to
           find what you need.
         </p>
-        <LinkButton
-          to={
-            process.env.NODE_ENV === "development"
-              ? "/submit/compose"
-              : "/beta/compose"
-          }
-          red
-        >
+        <LinkButton to={"/submit/compose"} red>
           Submit Now
         </LinkButton>
       </Section>

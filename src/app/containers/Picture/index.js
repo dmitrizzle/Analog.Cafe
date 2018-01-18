@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 import { getFroth } from "../../../utils/image-froth"
-import localForage from "localforage"
+//import localForage from "localforage"
 import keycode from "keycode"
 
 // redux
@@ -10,7 +10,7 @@ import { getInfo } from "../../../actions/pictureActions"
 
 // components
 import Picture from "../../components/Picture"
-import { PlainTextarea } from "../../components/InputStyles"
+import { PlainTextarea } from "../../components/_controls/InputStyles"
 import PictureMenu from "../Composer/containers/ContentEditor/components/PictureMenu"
 
 import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
@@ -76,20 +76,22 @@ class Figure extends React.Component {
       // get image author
       this.props.readOnly && this.props.getInfo(src)
     } else {
-      localForage.getItem(key).then(data => {
-        const reader = new FileReader()
-        reader.addEventListener("load", () =>
-          this.setState({ src: reader.result })
-        )
-        if (
-          data &&
-          Object.keys(file).length === 0 &&
-          file.constructor === Object
-        ) {
-          reader.readAsDataURL(data)
-        } else if (file && file.constructor !== Object) {
-          reader.readAsDataURL(file)
-        }
+      import("localforage").then(localForage => {
+        localForage.getItem(key).then(data => {
+          const reader = new FileReader()
+          reader.addEventListener("load", () =>
+            this.setState({ src: reader.result })
+          )
+          if (
+            data &&
+            Object.keys(file).length === 0 &&
+            file.constructor === Object
+          ) {
+            reader.readAsDataURL(data)
+          } else if (file && file.constructor !== Object) {
+            reader.readAsDataURL(file)
+          }
+        })
       })
     }
   }

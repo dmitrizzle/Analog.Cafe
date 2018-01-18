@@ -12,8 +12,8 @@ import { setCard } from "../../../../../../actions/modalActions"
 import { fetchCollabFeatures } from "../../../../../../actions/composerActions"
 
 // components
-import PictureDocket from "../../../../../components/PictureDocket"
 import { CardHeader } from "../../../../../components/Card/styles"
+import PictureDocket from "../../../../../components/_controls/PictureDocket"
 import {
   GridContainer,
   GridRow,
@@ -21,11 +21,11 @@ import {
   GridButtonCaption,
   GridCaption,
   AspectRatio
-} from "../../../../../components/GridStyles"
+} from "../../../../../components/_controls/PictureDocket/styles"
 import { ModalDispatch } from "../../../../Modal"
 
 // styles
-import { dot } from "../../../../../components/_icons/components/BlankDot"
+import { dot } from "../../../../../components/_icons/BlankDot"
 
 // constants
 import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/messages/hints"

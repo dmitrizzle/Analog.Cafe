@@ -2,6 +2,7 @@
 import React from "react"
 import { Editor } from "slate-react"
 import { Value } from "slate"
+import Loadable from "react-loadable"
 
 // redux & state
 import { connect } from "react-redux"
@@ -35,7 +36,7 @@ import {
 
 // components
 import Helmet from "../../components/_async/Helmet"
-import Link from "../../components/Link"
+import Link from "../../components/_controls/Link"
 import Heading from "../../components/ArticleHeading"
 import { ModalDispatch } from "../Modal"
 import {
@@ -72,6 +73,13 @@ const completeUrlPath = (route, slug) => {
   )
 }
 
+// admin controls loader
+const AdminControls = Loadable({
+  loader: () => import("./containers/AdminControls"),
+  loading: () => null,
+  delay: 100
+})
+
 // render
 class Article extends React.PureComponent {
   constructor(props) {
@@ -82,7 +90,8 @@ class Article extends React.PureComponent {
       tag: {
         name: "Post",
         route: "/"
-      }
+      },
+      publicationStatus: this.props.article.status
     }
   }
 
@@ -107,7 +116,8 @@ class Article extends React.PureComponent {
     // reset article actions menu
     this.setState({
       shareButtons: false,
-      subscribeForm: false
+      subscribeForm: false,
+      publicationStatus: this.props.article.status
     })
   }
 
@@ -128,9 +138,16 @@ class Article extends React.PureComponent {
     this.unlisten = this.props.history.listen(location => this.fetchPage())
     this.fetchPage()
     this.makeTag(this.props)
+    this.setState({
+      adminControls: this.props.user.info.role === "admin"
+    })
   }
   componentWillReceiveProps = nextProps => {
     this.makeTag(nextProps)
+    this.setState({
+      adminControls: nextProps.user.info.role === "admin",
+      publicationStatus: nextProps.article.status
+    })
   }
   componentWillUnmount = () => {
     this.unlisten()
@@ -243,6 +260,12 @@ class Article extends React.PureComponent {
                 This article is only visible to you and the Analog.Cafe Editors.
               </Byline>
             )}
+          {this.state.adminControls && (
+            <AdminControls
+              publicationStatus={this.state.publicationStatus}
+              article={this.props.article}
+            />
+          )}
         </Heading>
         <Section articleStatus={this.props.article.status}>
           <Editor
@@ -287,7 +310,8 @@ class Article extends React.PureComponent {
 // connect with redux
 const mapStateToProps = state => {
   return {
-    article: state.article
+    article: state.article,
+    user: state.user
   }
 }
 const mapDispatchToProps = dispatch => {

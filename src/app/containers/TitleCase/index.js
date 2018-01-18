@@ -3,7 +3,10 @@ import React from "react"
 import toTitleCase from "titlecase"
 
 // components
-import { TitleTextarea, SubtitleTextarea } from "../../components/InputStyles"
+import {
+  TitleTextarea,
+  SubtitleTextarea
+} from "../../components/_controls/InputStyles"
 
 // return
 const components = {

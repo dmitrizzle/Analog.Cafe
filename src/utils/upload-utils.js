@@ -18,13 +18,20 @@ export const redirectToSignIn = props => {
 
 // convenience function that sends all form data to server
 export const sendSubmission = (data, props) => {
+  let url = ROUTE_SUBMISSION_API
+  let method = "post"
+  if (props.composer.submissionId) {
+    url += "/" + props.composer.submissionId
+    method = "put"
+  }
+
   props.uploadSubmissionData({
-    method: "post",
+    method,
     data,
     headers: {
       "content-type": "multipart/form-data",
       Authorization: "JWT " + localStorage.getItem("token")
     },
-    url: ROUTE_SUBMISSION_API
+    url
   })
 }
