@@ -16,7 +16,8 @@ const BLOCK_TAGS = {
   h3: "heading",
   h4: "heading",
   a: "link",
-  img: "image"
+  img: "image",
+  div: "div"
 }
 const MARK_TAGS = {
   em: "italic",
@@ -38,9 +39,12 @@ const rules = [
       // cycle through block types
       const block = BLOCK_TAGS[el.tagName.toLowerCase()]
       if (!block) return
-      if (block === "div") {
-        return next(el.childNodes)
-      }
+
+      // an attempt to unwrap divs (doesn't work)
+      // if (block === "div") {
+      //   console.log(block);
+      //   return next(el.childNodes)
+      // }
 
       switch (block) {
         case "paragraph": {
