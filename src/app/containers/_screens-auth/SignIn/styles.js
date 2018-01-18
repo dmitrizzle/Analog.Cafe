@@ -3,9 +3,9 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 // components
-import { Button } from "../../../components/Button"
-import Twitter from "../../../components/_icons/components/Twitter"
-import Facebook from "../../../components/_icons/components/Facebook"
+import { Button } from "../../../components/_controls/Button"
+import Twitter from "../../../components/_icons/Twitter"
+import Facebook from "../../../components/_icons/Facebook"
 
 // css
 const brandButtonStyles = css`

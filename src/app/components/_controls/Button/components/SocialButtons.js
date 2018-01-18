@@ -4,9 +4,9 @@ import styled, { css } from "styled-components"
 
 // components
 import { LinkButton } from "../../Button"
-import Twitter from "../../_icons/components/Twitter"
-import Facebook from "../../_icons/components/Facebook"
-import Instagram from "../../_icons/components/Instagram"
+import Twitter from "../../../_icons/Twitter"
+import Facebook from "../../../_icons/Facebook"
+import Instagram from "../../../_icons/Instagram"
 
 // css
 const brandButtonStyles = css`

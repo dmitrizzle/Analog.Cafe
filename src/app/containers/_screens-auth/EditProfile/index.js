@@ -16,7 +16,7 @@ import Forbidden from "../../_screens-errors/Forbidden"
 import { CardEditableProfile } from "../../../components/Card"
 
 import Heading from "../../../components/ArticleHeading"
-import { Button } from "../../../components/Button"
+import { Button } from "../../../components/_controls/Button"
 import { Article } from "../../../components/ArticleStyles"
 
 // template for user profile button arrangement

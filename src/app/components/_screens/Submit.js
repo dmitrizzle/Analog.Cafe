@@ -6,11 +6,11 @@ import { froth } from "../../../utils/image-froth"
 
 // components
 import Heading from "../ArticleHeading"
-import { LinkButton } from "../Button"
-import { ButtonGroup } from "../Button/components/ButtonGroup"
+import { LinkButton } from "../_controls/Button"
+import { ButtonGroup } from "../_controls/Button/components/ButtonGroup"
 import { Caption } from "../CaptionStyles"
 import Figure from "../Picture"
-import Link from "../Link"
+import Link from "../_controls/Link"
 import { Section, Article } from "../ArticleStyles"
 
 const metaTitle = "Submit"
@@ -43,14 +43,7 @@ export default props => {
       />
       <Section>
         <div style={{ textAlign: "center" }}>
-          <LinkButton
-            to={
-              process.env.NODE_ENV === "development"
-                ? "/submit/compose"
-                : "/beta/compose"
-            }
-            red
-          >
+          <LinkButton to={"/submit/compose"} red>
             Submit Now
           </LinkButton>
           <p>
@@ -254,34 +247,18 @@ export default props => {
             <small>
               <strong>
                 By using the Analog.Cafe{" "}
-                <Link
-                  to={
-                    process.env.NODE_ENV === "development"
-                      ? "/submit/compose"
-                      : "/beta/compose"
-                  }
-                >
-                  Composer
-                </Link>{" "}
-                tool you certify that the you are the owner of the copyrights or
-                have a permission to use in this context all the images, text,
-                files or other intellectual property that you submit to
-                Analog.Cafe, and that you agree to the above terms, conditions
-                and benefits.
+                <Link to={"/submit/compose"}>Composer</Link> tool you certify
+                that the you are the owner of the copyrights or have a
+                permission to use in this context all the images, text, files or
+                other intellectual property that you submit to Analog.Cafe, and
+                that you agree to the above terms, conditions and benefits.
               </strong>
             </small>
           </p>
         </Caption>
 
         <ButtonGroup>
-          <LinkButton
-            to={
-              process.env.NODE_ENV === "development"
-                ? "/submit/compose"
-                : "/beta/compose"
-            }
-            red
-          >
+          <LinkButton to={"/submit/compose"} red>
             Submit Now
           </LinkButton>
           <p>

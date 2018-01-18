@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { connect } from "react-redux"
 import { fetchCard, setCard } from "../../../../actions/modalActions"
 
-import { Button } from "../../../components/Button"
+import { Button } from "../../../components/_controls/Button"
 import emojis from "../../../../constants/messages/emojis"
 
 // return

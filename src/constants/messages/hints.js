@@ -14,18 +14,12 @@ export const MESSAGE_HINT_SUBMIT_CONSENT = {
       "If you choose “Yes” your images may appear in others’ published works on Analog.Cafe. You may also be featured in the “Collaborations” section. We’ll let you know once that happens.",
     buttons: [
       {
-        to:
-          process.env.NODE_ENV === "development"
-            ? "/submit/confirm-full-consent"
-            : "/beta/confirm-full-consent",
+        to: "/submit/confirm-full-consent",
         text: "Yes",
         red: true
       },
       {
-        to:
-          process.env.NODE_ENV === "development"
-            ? "/submit/confirm-basic-consent"
-            : "/beta/confirm-basic-consent",
+        to: "/submit/confirm-basic-consent",
         text: "No"
       }
     ]
@@ -55,4 +49,24 @@ export const MESSAGE_HINT_YOUR_PROFILE = {
       "You can create, view or update your profile after you send your submission."
   },
   id: "hints/your-profile"
+}
+
+export const MESSAGE_HINT_OVERWRITE_DRAFT = {
+  info: {
+    title: "Overwrite Warning",
+    text:
+      "Looks like you are currently editing another draft on this device. Do you want to overwrite it by editing this article instead? This can not be undone.",
+    buttons: [
+      {
+        to: "/submit/compose",
+        text: "See My Current Draft",
+        red: true
+      },
+      {
+        to: "#overwrite",
+        text: "⚠️ Overwrite"
+      }
+    ]
+  },
+  requested: { url: "hints/text-in-compsoer" }
 }

@@ -1,17 +1,17 @@
 // tools
 import React from "react"
+import styled from "styled-components"
 
 // components
-import { TinyButton } from "../../../../../components/Button"
+import { TinyButton } from "../../../../../components/_controls/Button"
+import {
+  ButtonStrip,
+  Item
+} from "../../../../../components/_controls/ButtonStrip"
 
-import styled from "styled-components"
-const Menu = styled.div`
+const Menu = styled(ButtonStrip)`
   display: none;
-  & > div {
-    display: flex;
-    margin: 0;
-  }
-  width: 10em;
+
   position: absolute;
   bottom: initial !important;
   z-index: ${props => props.theme.layer.up};
@@ -36,37 +36,6 @@ const Menu = styled.div`
     &.touch {
       margin-top: -55px;
     }
-  `};
-`
-const Item = styled(({ left, right, script, ...props }) => (
-  <TinyButton {...props} />
-))`
-  margin: 0;
-  border-radius: 0;
-  ${props =>
-    props.left
-      ? `border-radius: ${props.theme.effects.borderRadius.small}em 0 0 ${
-          props.theme.effects.borderRadius.small
-        }em`
-      : null};
-
-  ${props =>
-    props.right
-      ? `border-radius: 0 ${props.theme.effects.borderRadius.small}em ${
-          props.theme.effects.borderRadius.small
-        }em 0`
-      : null};
-
-  ${props =>
-    props.script
-      ? `font-family: ${
-          props.theme.typography.font.serif
-        } !important;font-weight: 400 !important;`
-      : null};
-
-  ${props => props.theme.size.breakpoint.max.s`
-    border-radius: 0;
-    padding: 1em;
   `};
 `
 

@@ -19,11 +19,11 @@ import { Article, Section } from "../../../components/ArticleStyles"
 import AlreadyAuthenticated from "../../_screens-errors/AlreadyAuthenticated"
 
 // styles
-import { ButtonGroup } from "../../../components/Button/components/ButtonGroup"
+import { ButtonGroup } from "../../../components/_controls/Button/components/ButtonGroup"
 import {
   TwitterLinkButton,
   FacebookLinkButton
-} from "../../../components/Button/components/SocialButtons"
+} from "../../../components/_controls/Button/components/SocialButtons"
 
 // constants & helpers
 import {

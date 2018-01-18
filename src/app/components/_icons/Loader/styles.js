@@ -7,6 +7,6 @@ export const LoaderContainer = styled.div`
   height: ${props => props.theme.size.block.spacing}em;
   margin: -0.1em 0 0em -${props => props.theme.size.block.spacing / 2}em;
   svg {
-    margin-top: -.25em;
+    margin-top: -0.25em;
   }
 `

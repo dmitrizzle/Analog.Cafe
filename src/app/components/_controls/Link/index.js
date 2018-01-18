@@ -3,7 +3,7 @@ import React from "react"
 import { NavLink } from "react-router-dom"
 
 // helpers
-import { parseHref } from "../../../utils/link-builder"
+import { parseHref } from "../../../../utils/link-builder"
 
 // return
 export default props => {

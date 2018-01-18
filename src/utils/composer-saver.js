@@ -6,9 +6,18 @@ import store from "../store"
 import { setDraftStatus } from "../actions/composerActions"
 
 // return
-export const saveContent = throttle((document, state) => {
-  const contentState = JSON.stringify(state.toJSON())
+export const storeContentState = json => {
+  const contentState = JSON.stringify(json)
   localStorage.setItem("composer-content-state", contentState)
+}
+export const storeHeaderState = header => {
+  const headerState = JSON.stringify(header)
+  localStorage.setItem("composer-header-state", headerState)
+}
+
+export const saveContent = throttle((document, state) => {
+  storeContentState(state.toJSON())
+  // save text version
   localStorage.setItem("composer-content-text", state.document.text)
   // save completed status
   store.dispatch(setDraftStatus("Draft Saved"))
@@ -17,7 +26,4 @@ export const saveContent = throttle((document, state) => {
 export const setDraftStatusHelper = () =>
   store.dispatch(setDraftStatus("Saving…"))
 
-export const saveHeader = throttle(header => {
-  const headerState = JSON.stringify(header)
-  localStorage.setItem("composer-header-state", headerState)
-}, 3000)
+export const saveHeader = throttle(header => storeHeaderState(header), 3000)

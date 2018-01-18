@@ -89,10 +89,7 @@ export default props => {
 
         {/* static views and urls */}
         <Route exact path="/about" component={About} />
-
         <Route path="/submit" component={AppRoutesSubmit} />
-        <Route path="/beta" component={AppRoutesSubmit} />
-
         <Route state={{ status: "404" }} component={NotFound} />
       </Switch>
     </main>

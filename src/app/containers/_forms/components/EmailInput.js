@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import { SubtitleInput } from "../../../components/InputStyles"
+import { SubtitleInput } from "../../../components/_controls/InputStyles"
 
 // render
 export default props => {

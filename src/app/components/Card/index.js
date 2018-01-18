@@ -10,7 +10,7 @@ import {
   CardCaption,
   CardHeader
 } from "./styles"
-import { ButtonGroupDivider } from "../Button/components/ButtonGroupDivider"
+import { ButtonGroupDivider } from "../_controls/Button/components/ButtonGroupDivider"
 
 // return
 export const Card = props => {
