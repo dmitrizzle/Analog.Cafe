@@ -112,16 +112,11 @@ export const requestFocus = () => {
 // query instant collaboration items
 export const fetchCollabFeatures = () => {
   return dispatch => {
-    const token = localStorage.getItem("token")
-    if (!token) return // show "need to login message"
     const request = {
       url: ROUTE_IMAGE_API,
       params: {
         fullConsent: "true",
         featured: "true"
-      },
-      headers: {
-        Authorization: "JWT " + token
       }
     }
 
