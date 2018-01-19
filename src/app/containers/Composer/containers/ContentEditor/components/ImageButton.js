@@ -1,13 +1,20 @@
 // tools
 import React from "react"
+import styled from "styled-components"
 
 // components
 import { TinyButton } from "../../../../../components/_controls/Button"
 
+const ImageButton = styled(TinyButton)`
+  ${props => props.theme.size.breakpoint.max.m`
+    right: -${props => props.theme.size.block.spacing}em;
+  `};
+`
+
 // return
 export default props => {
   return (
-    <TinyButton
+    <ImageButton
       followComposerCursor
       style={{
         top: props.cursorContext
@@ -19,6 +26,6 @@ export default props => {
       onClick={props.onClick}
     >
       ↫ Add Image
-    </TinyButton>
+    </ImageButton>
   )
 }
