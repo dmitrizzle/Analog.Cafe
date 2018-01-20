@@ -144,18 +144,14 @@ export default props => {
                               " Image" +
                               (item.stats.images > 1 ? "s" : ""))}
                       </Stats>
-                      {!props.private ? (
-                        <AuthorAndDate>
-                          {`${authorNameList(item.authors, { trim: true })} · `}
-                          {item.type !== "placeholder" && (
-                            <small>{datestamp(item["post-date"])}</small>
-                          )}
-                        </AuthorAndDate>
-                      ) : (
-                        <AuthorAndDate>
-                          {item["post-date"] && datestamp(item["post-date"])}
-                        </AuthorAndDate>
-                      )}
+                      <AuthorAndDate>
+                        {!props.private || props.isAdmin
+                          ? `${authorNameList(item.authors, { trim: true })} · `
+                          : null}
+                        {item.type !== "placeholder" && (
+                          <small>{datestamp(item["post-date"])}</small>
+                        )}
+                      </AuthorAndDate>
                     </div>
                   </section>
                   <ZigzagPicture

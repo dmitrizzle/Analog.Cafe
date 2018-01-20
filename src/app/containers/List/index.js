@@ -177,6 +177,7 @@ class List extends React.PureComponent {
               })
             }
             private={this.props.private}
+            isAdmin={this.props.isAdmin}
             userIntent={this.handleUserIntent}
           />
         )}
