@@ -148,7 +148,9 @@ export default props => {
                         <em>
                           {`${authorNameList(item.authors, { trim: true })} · `}
                           {item.type !== "placeholder" && (
-                            <small>{datestamp(item["post-date"])}</small>
+                            <small style={{ display: "inline-block" }}>
+                              {datestamp(item["post-date"])}
+                            </small>
                           )}
                         </em>
                       ) : (
