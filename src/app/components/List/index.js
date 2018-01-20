@@ -6,7 +6,7 @@ import LazyLoad from "react-lazyload"
 
 // styles
 import { Bleed } from "./styles/bleed"
-import { Ul } from "./styles/ul"
+import { Ul, AuthorAndDate } from "./styles/ul"
 import { Stats } from "./styles/stats"
 import { Caption } from "./styles/caption"
 import { ZigzagPicture } from "./styles/zigzag-picture"
@@ -145,18 +145,16 @@ export default props => {
                               (item.stats.images > 1 ? "s" : ""))}
                       </Stats>
                       {!props.private ? (
-                        <em>
+                        <AuthorAndDate>
                           {`${authorNameList(item.authors, { trim: true })} · `}
                           {item.type !== "placeholder" && (
-                            <small style={{ display: "inline-block" }}>
-                              {datestamp(item["post-date"])}
-                            </small>
+                            <small>{datestamp(item["post-date"])}</small>
                           )}
-                        </em>
+                        </AuthorAndDate>
                       ) : (
-                        <em>
+                        <AuthorAndDate>
                           {item["post-date"] && datestamp(item["post-date"])}
-                        </em>
+                        </AuthorAndDate>
                       )}
                     </div>
                   </section>
