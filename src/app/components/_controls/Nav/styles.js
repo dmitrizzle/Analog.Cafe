@@ -6,7 +6,7 @@ import Color from "color"
 // components
 import Link from "../Link"
 
-// NOTE: all CSS has bee copied into /public/index.html
+// NOTE: *most* CSS has bee copied into /public/index.html
 // for faster critical path loading times.
 // some actionable CSS remains here.
 
@@ -72,6 +72,10 @@ export const NavItem = styled.li`
             .alpha(props.theme.opacity.half)
             .string()
         : null}; */};
+
+  overflow: hidden;
+  height: ${props =>
+    props.theme.size.block.spacing / props.theme.size.font.make.smaller}em;
 `
 
 // styles for tiny profile icon

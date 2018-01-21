@@ -46,7 +46,7 @@ export default (state = INITIAL_STATE, action) => {
     case "COMPOSER.RESET_SUBMISSION_ID":
       state = {
         ...state,
-        submissionId: INITIAL_STATE.submissionId
+        submissionId: ""
       }
       localStorage.removeItem("composer-submission-id")
       break

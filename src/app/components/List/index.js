@@ -48,7 +48,7 @@ export default props => {
               once
               offset={300}
               height={"100%"}
-              key={item.id}
+              key={item._id || item.id}
             >
               <li>
                 <Link

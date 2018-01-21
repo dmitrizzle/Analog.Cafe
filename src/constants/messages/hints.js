@@ -51,6 +51,7 @@ export const MESSAGE_HINT_YOUR_PROFILE = {
   id: "hints/your-profile"
 }
 
+// messages for editors:
 export const MESSAGE_HINT_OVERWRITE_DRAFT = {
   info: {
     title: "Overwrite Warning",
@@ -69,4 +70,19 @@ export const MESSAGE_HINT_OVERWRITE_DRAFT = {
     ]
   },
   requested: { url: "hints/text-in-compsoer" }
+}
+export const MESSAGE_HINT_SUBMIT_EDITORS = {
+  info: {
+    title: "Notes for Editors",
+    text:
+      "All image authorships and consent settings will remain as the original uploader/author has requested on submission. Article authorship will remain with original uploader. Note that if you upload a new image (which may include making edits to original images and re-uploading them) its authorship will belog to you, the editor. All new image uploads will default to “NOT open for collaborations.”",
+    buttons: [
+      {
+        to: "/submit/confirm-basic-consent",
+        text: "Apply Edits",
+        red: true
+      }
+    ]
+  },
+  id: "hints/submit-editors"
 }

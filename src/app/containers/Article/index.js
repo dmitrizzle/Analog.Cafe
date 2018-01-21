@@ -256,7 +256,7 @@ class Article extends React.PureComponent {
             this.props.article.status !== "published" &&
             this.props.article.status !== "loading" && (
               <Byline>
-                <span style={{ fontStyle: "normal" }}>{emojis.WARNING}</span>{" "}
+                <span style={{ fontStyle: "normal" }}> {emojis.WARNING}</span>{" "}
                 This article is only visible to you and the Analog.Cafe Editors.
               </Byline>
             )}

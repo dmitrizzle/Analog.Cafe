@@ -7,6 +7,11 @@ import keycode from "keycode"
 // components
 import TitleCase from "../../../TitleCase"
 import { ModalDispatch } from "../../../Modal"
+import Link from "../../../../components/_controls/Link"
+
+// redux
+import { connect } from "react-redux"
+import { resetSubmissionId } from "../../../../../actions/composerActions"
 
 // styles
 import { Header, Byline } from "../../../../components/ArticleStyles"
@@ -21,7 +26,7 @@ import {
 import { MESSAGE_HINT_YOUR_PROFILE } from "../../../../../constants/messages/hints"
 
 // return
-export default class extends React.PureComponent {
+class HeaderEditor extends React.PureComponent {
   constructor(props) {
     super(props)
     this.props.composerState.title = loadHeader().title
@@ -53,6 +58,11 @@ export default class extends React.PureComponent {
     // disallow multiple lines in titles
     if (keycode(event.which) === "enter") event.preventDefault()
   }
+
+  // unlink submission
+  handleUnlinkSubmission = () => {
+    this.props.resetSubmissionId()
+  }
   render = () => {
     return (
       <Header>
@@ -77,14 +87,41 @@ export default class extends React.PureComponent {
           maxLength={SUBTITLE_LENGTH_MAX}
           onKeyPress={this.handleKeypress}
         />
-        <Byline>
-          Link to{" "}
-          <ModalDispatch with={MESSAGE_HINT_YOUR_PROFILE}>
-            Your Profile
-          </ModalDispatch>{" "}
-          will appear here.
-        </Byline>
+        {this.props.user.info.role === "admin" &&
+        this.props.composer.submissionId ? (
+          <Byline>
+            Submission under edit:{" "}
+            <strong>{this.props.composer.submissionId}</strong>{" "}
+            <Link to="#unlink" onClick={this.handleUnlinkSubmission}>
+              unlink
+            </Link>.
+          </Byline>
+        ) : (
+          <Byline>
+            Link to{" "}
+            <ModalDispatch with={MESSAGE_HINT_YOUR_PROFILE}>
+              Your Profile
+            </ModalDispatch>{" "}
+            will appear here.
+          </Byline>
+        )}
       </Header>
     )
   }
 }
+
+// connect with redux
+const mapStateToProps = state => {
+  return {
+    composer: state.composer,
+    user: state.user
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    resetSubmissionId: () => {
+      dispatch(resetSubmissionId())
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderEditor)

@@ -14,7 +14,7 @@ export const setSubmissionId = id => {
     payload: id
   }
 }
-export const resetSubmissionId = id => {
+export const resetSubmissionId = () => {
   return {
     type: "COMPOSER.RESET_SUBMISSION_ID"
   }

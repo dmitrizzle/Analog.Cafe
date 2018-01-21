@@ -21,6 +21,7 @@ const Nav = props => {
       {props.nav.view === "COMPOSER" ? (
         <ComposerNav
           draftStatus={props.composer.draftStatus}
+          submissionId={props.composer.submissionId}
           userStatus={props.user.status}
         />
       ) : (

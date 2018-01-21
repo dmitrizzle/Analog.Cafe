@@ -8,6 +8,7 @@ import { ModalDispatch } from "../../../containers/Modal"
 
 import {
   MESSAGE_HINT_SUBMIT_CONSENT,
+  MESSAGE_HINT_SUBMIT_EDITORS,
   MESSAGE_HINT_AUTO_SAVE
 } from "../../../../constants/messages/hints"
 
@@ -149,7 +150,11 @@ const NavLinkSendLabel = () => {
 const NavLinkSend = props => {
   return (
     <ModalDispatch
-      with={MESSAGE_HINT_SUBMIT_CONSENT}
+      with={
+        props.submissionId
+          ? MESSAGE_HINT_SUBMIT_EDITORS
+          : MESSAGE_HINT_SUBMIT_CONSENT
+      }
       style={{ textDecoration: "none" }}
     >
       <NavLinkSendLabel />
@@ -174,7 +179,10 @@ export const ComposerNav = props => {
         </NavIndexLink>
       </NavItem>
       <NavItem prime right className="prime right">
-        <NavLinkSend userStatus={props.userStatus} />
+        <NavLinkSend
+          userStatus={props.userStatus}
+          submissionId={props.submissionId}
+        />
       </NavItem>
     </ul>
   )
