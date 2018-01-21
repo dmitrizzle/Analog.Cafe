@@ -8,6 +8,8 @@ import { setCard } from "../../../../actions/modalActions"
 import { setSubmissionId } from "../../../../actions/composerActions"
 
 // components
+import { Button } from "../../../components/_controls/Button"
+import { CardFlattened } from "../../../components/Card/styles"
 import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
 
 // utils
@@ -18,11 +20,21 @@ import {
   storeHeaderState
 } from "../../../../utils/composer-saver"
 
+const TAGS = {
+  story: "Story",
+  editorial: "Editorial",
+  guide: "Guide",
+  review: "Review",
+  "photo-essay": "Photo Essay"
+}
+
 class AdminControls extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      allowOverwrite: window.location.hash
+      allowOverwrite: window.location.hash,
+      publishControls: false,
+      publishAs: ""
     }
   }
   componentDidMount = () => {
@@ -60,12 +72,27 @@ class AdminControls extends React.PureComponent {
     // redirect to Composer
     this.props.history.push("/submit/compose")
   }
+
+  // publish conntrols
+  handlePblishControls = event => {
+    event.preventDefault()
+    this.setState({
+      publishControls: !this.state.publishControls
+    })
+  }
+  handlePublishTag = (event, tag) => {
+    event.preventDefault()
+    this.setState({
+      publishAs: tag === this.state.publishAs ? "" : tag
+    })
+  }
   render = () => {
-    return (
+    return [
       <ButtonStrip
         style={{
           margin: "1em auto 0"
         }}
+        key="controls"
       >
         <div>
           <Item left red={this.state.allowOverwrite} onClick={this.handleEdit}>
@@ -74,11 +101,58 @@ class AdminControls extends React.PureComponent {
           {this.props.publicationStatus === "published" ? (
             <Item right>Unpublish</Item>
           ) : (
-            <Item right>Publish</Item>
+            <Item
+              right
+              black={this.state.publishControls}
+              onClick={this.handlePblishControls}
+            >
+              Publish
+            </Item>
           )}
         </div>
-      </ButtonStrip>
-    )
+      </ButtonStrip>,
+      <div
+        key="scheduler"
+        style={{ display: this.state.publishControls ? "block" : "none" }}
+      >
+        <ButtonStrip
+          style={{
+            margin: "1.5em auto 0",
+            width: "auto",
+            overflow: "scroll",
+            padding: "1px 1px 3px"
+          }}
+        >
+          <div>
+            {Object.keys(TAGS).map((key, i) => {
+              let last = i === Object.keys(TAGS).length - 1
+              return (
+                <Item
+                  left={i === 0}
+                  right={last}
+                  key={key}
+                  onClick={event => this.handlePublishTag(event, key)}
+                  style={key === "photo-essay" ? { minWidth: "7.5em" } : {}}
+                  black={this.state.publishAs === key}
+                  to={`#${key}`}
+                >
+                  {TAGS[key]}
+                </Item>
+              )
+            })}
+          </div>
+        </ButtonStrip>
+        <CardFlattened
+          style={{
+            marginBottom: 0,
+            display: this.state.publishAs ? "block" : "none"
+          }}
+        >
+          <Button red>Add to Queue</Button>
+          <Button>Publish Now</Button>
+        </CardFlattened>
+      </div>
+    ]
   }
 }
 
