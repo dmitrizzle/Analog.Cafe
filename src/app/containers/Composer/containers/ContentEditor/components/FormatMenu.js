@@ -38,6 +38,12 @@ const Menu = styled(ButtonStrip)`
     }
   `};
 `
+const MenuItem = styled(Item)`
+  ${props => props.theme.size.breakpoint.max.s`
+  border-radius: 0;
+  padding: 1em;
+`};
+`
 
 // render
 export default props => {
@@ -69,7 +75,7 @@ export default props => {
         </div>
       ) : (
         <div>
-          <Item
+          <MenuItem
             red
             left
             style={{ textShadow: "2px 2px rgba(255, 255, 255, 0.5)" }}
@@ -81,8 +87,8 @@ export default props => {
             }}
           >
             T
-          </Item>
-          <Item
+          </MenuItem>
+          <MenuItem
             red
             title="Make a quote"
             onMouseDown={event => event.preventDefault()}
@@ -92,8 +98,8 @@ export default props => {
             }}
           >
             ❝
-          </Item>
-          <Item
+          </MenuItem>
+          <MenuItem
             script
             red={!props.value.inlines.some(node => node.type === "link")}
             black={props.value.inlines.some(node => node.type === "link")}
@@ -105,8 +111,8 @@ export default props => {
             }}
           >
             ☍
-          </Item>
-          <Item
+          </MenuItem>
+          <MenuItem
             script
             red={
               props.value.activeMarks &&
@@ -124,8 +130,8 @@ export default props => {
             }}
           >
             <strong style={{ fontWeight: "700 !important" }}>bold</strong>
-          </Item>
-          <Item
+          </MenuItem>
+          <MenuItem
             script
             red={
               props.value.activeMarks &&
@@ -144,7 +150,7 @@ export default props => {
             }}
           >
             <em>italic</em>
-          </Item>
+          </MenuItem>
         </div>
       )}
     </Menu>
