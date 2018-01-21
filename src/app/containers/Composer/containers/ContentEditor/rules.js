@@ -17,6 +17,7 @@ const BLOCK_TAGS = {
   h4: "heading",
   a: "link",
   img: "image",
+
   div: "div"
 }
 const MARK_TAGS = {

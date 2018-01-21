@@ -11,7 +11,6 @@ import Forbidden from "../../_screens-errors/Forbidden"
 
 // render
 const Me = props => {
-  console.log(props.user.info.role)
   return props.user.status === "ok" ? (
     <List
       private

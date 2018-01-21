@@ -108,8 +108,14 @@ export default props => {
           </Item>
           <Item
             script
-            red={!props.value.activeMarks.some(mark => mark.type === "bold")}
-            black={props.value.activeMarks.some(mark => mark.type === "bold")}
+            red={
+              props.value.activeMarks &&
+              !props.value.activeMarks.some(mark => mark.type === "bold")
+            }
+            black={
+              props.value.activeMarks &&
+              props.value.activeMarks.some(mark => mark.type === "bold")
+            }
             onClick={event => event.preventDefault()}
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
@@ -121,8 +127,14 @@ export default props => {
           </Item>
           <Item
             script
-            red={!props.value.activeMarks.some(mark => mark.type === "italic")}
-            black={props.value.activeMarks.some(mark => mark.type === "italic")}
+            red={
+              props.value.activeMarks &&
+              !props.value.activeMarks.some(mark => mark.type === "italic")
+            }
+            black={
+              props.value.activeMarks &&
+              props.value.activeMarks.some(mark => mark.type === "italic")
+            }
             right
             onClick={event => event.preventDefault()}
             onMouseDown={event => event.preventDefault()}
