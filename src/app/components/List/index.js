@@ -123,6 +123,13 @@ export default props => {
                     </Caption>
                     <div>
                       <Stats {...props}>
+                        {/* has this work ever been published? */}
+                        {item.type !== "placeholder" &&
+                          props.private &&
+                          item.tag &&
+                          "Published as a(n) "}
+
+                        {/* item category tag */}
                         {item.tag
                           ? item.tag === "photo-essay" &&
                             item.stats.images === 1
@@ -130,19 +137,24 @@ export default props => {
                             : (item.tag + "")
                                 .replace(/-/g, " ")
                                 .replace(/\b\w/g, l => l.toUpperCase())
-                          : item.status === "pending"
-                            ? emojis.MONOCLE + " Pending Editorial Review"
-                            : item.status.toUpperCase()}
+                          : "Submitted"}
+
+                        {/* item read time or # of images */}
                         {item.type !== "placeholder" &&
                           !props.private &&
                           (item.tag !== "photo-essay"
-                            ? " | " +
-                              Math.ceil(item.stats.words / 200) +
-                              "-minute read"
-                            : " | " +
-                              item.stats.images +
-                              " Image" +
-                              (item.stats.images > 1 ? "s" : ""))}
+                            ? ` | ${Math.ceil(
+                                item.stats.words / 200
+                              )}-minute read`
+                            : ` | ${item.stats.images} Image${
+                                item.stats.images > 1 ? "s" : ""
+                              }`)}
+
+                        {/* status of the submission */}
+                        {item.type !== "placeholder" &&
+                          props.private &&
+                          ` ↝ ${item.status}`}
+                        {/* emojis.MONOCLE + " Pending Editorial Review" */}
                       </Stats>
                       <AuthorAndDate>
                         {!props.private || props.isAdmin
