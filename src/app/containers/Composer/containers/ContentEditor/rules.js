@@ -16,9 +16,7 @@ const BLOCK_TAGS = {
   h3: "heading",
   h4: "heading",
   a: "link",
-  img: "image",
-
-  div: "div"
+  img: "image"
 }
 const MARK_TAGS = {
   em: "italic",
@@ -90,7 +88,11 @@ const rules = [
           }
         }
         default:
-          return null
+          return {
+            object: "block",
+            type: "paragraph",
+            nodes: next(el.childNodes)
+          }
       }
     }
   },
