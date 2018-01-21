@@ -94,6 +94,8 @@ class PictureDocketContainer extends React.PureComponent {
     const resolvedState = editor.value
       .change({ save: false })
       .insertBlock({ type: "paragraph" })
+      .value.change()
+      .focus()
       .value.change({ save: false })
       .removeNodeByKey(node.key)
     editor.onChange(resolvedState)

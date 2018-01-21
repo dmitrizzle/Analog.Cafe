@@ -20,7 +20,8 @@ export const GridRow = styled.div`
 `
 export const GridButton = styled(Button)`
   ${squreWidth} position: relative;
-  padding: 0;
+  min-height: 5em;
+  ${"" /* for FireFox */} padding: 0;
   overflow: visible;
   margin: 0 ${props => props.theme.size.block.border}px
     ${props => props.theme.size.block.border}px 0;
@@ -28,10 +29,11 @@ export const GridButton = styled(Button)`
   justify-content: center;
   text-align: center;
   align-items: center;
+  overflow: hidden;
 
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: ${props => props.theme.effects.borderRadius.small}em;
   }
   &:last-child {

@@ -60,6 +60,12 @@ class ContentEditor extends React.PureComponent {
     const cursorContextDelay = setTimeout(() => {
       const nodeKey = value.focusBlock.key
       const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
+
+      value.isFocused &&
+        this.setState({
+          editorFocus: true
+        })
+
       imageButtonPosition(
         value,
         block ? getOffsets(block, "top left", block, "top left") : {},

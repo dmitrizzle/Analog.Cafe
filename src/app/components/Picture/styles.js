@@ -50,20 +50,20 @@ const bleed = css`
   ${props =>
     props.theme.size.breakpoint.min.l`margin-top: ${props =>
       props.theme.size.block.spacing}em;`} ${props =>
-      props.feature
-        ? props => props.theme.size.breakpoint.min.l`
+  props.feature
+    ? props => props.theme.size.breakpoint.min.l`
 		margin-left:	calc(( -100vw + ${props =>
       props.theme.size.block.column.maxwidth.m}px )/2 - ${props =>
-            props.theme.size.block.column.safety}em );
+        props.theme.size.block.column.safety}em );
 	`
-        : null} ${props =>
-      props.feature
-        ? props => props.theme.size.breakpoint.min.xxl`
+    : null} ${props =>
+  props.feature
+    ? props => props.theme.size.breakpoint.min.xxl`
 		margin-left:	calc(( -100vw + ${props =>
       props.theme.size.block.column.maxwidth.l}px )/2 - ${props =>
-            props.theme.size.block.column.safety}em );
+        props.theme.size.block.column.safety}em );
 	`
-        : null} ${props => props.theme.size.breakpoint.max.m`
+    : null} ${props => props.theme.size.breakpoint.max.m`
 		margin-top: 0;
 	`};
 `
@@ -73,7 +73,8 @@ export const Figure = styled.figure`
   padding: 0;
   margin: ${props => props.theme.size.block.spacing / 2}em
     ${props => props.theme.size.block.spacing}em
-    ${props => props.theme.size.block.spacing}em -${props => props.theme.size.block.column.maxwidth.m / 4}px;
+    ${props => props.theme.size.block.spacing}em -${props =>
+  props.theme.size.block.column.maxwidth.m / 4}px;
   z-index: ${props => props.theme.layer.up};
   width: 85%;
   float: left;
@@ -85,27 +86,27 @@ export const Figure = styled.figure`
 		margin-left: 	-${props => props.theme.size.block.column.maxwidth.l / 2.75}px;
 		margin-right: ${props => props.theme.size.block.spacing}em;
 	`} ${props =>
-      !props.feature &&
-      props.theme.size.breakpoint.max.l`
+  !props.feature &&
+  props.theme.size.breakpoint.max.l`
 		//--> Larger figure borders (for figures that aren't featured and are on mobile screens)
 		float: none;
 		margin: ${props => props.theme.size.block.spacing / 2}em 0 ${props =>
-        props.theme.size.block.column.safety}em  -${props =>
-        props.theme.size.block.column.safety}em !important;
+    props.theme.size.block.column.safety}em  -${props =>
+    props.theme.size.block.column.safety}em !important;
 		width: 75% !important;
 		max-width: 66vw !important;
 		min-width: ${props => props.theme.size.block.minFigureWIdth}px;
 	`} ${props =>
-      props.feature
-        ? bleed
-        : props => props.theme.size.breakpoint.max.m`
+  props.feature
+    ? bleed
+    : props => props.theme.size.breakpoint.max.m`
 
 		margin-left: 0 !important;
 		border-radius:	${props => props.theme.effects.borderRadius.small}em;
 	`} ${props =>
-      props.feature
-        ? bleed
-        : props => props.theme.size.breakpoint.max.s`
+  props.feature
+    ? bleed
+    : props => props.theme.size.breakpoint.max.s`
 		${bleed}
 		//--> Non-featured figures on small screens are not edge-to-edge:
 		width: 100% !important;
@@ -116,7 +117,8 @@ export const Figure = styled.figure`
 	`} &.focus {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    box-shadow: 0 -${props => props.theme.size.block.border}px 0 ${props => props.theme.color.highlight};
+    box-shadow: 0 -${props => props.theme.size.block.border}px 0 ${props =>
+  props.theme.color.highlight};
     figcaption {
       box-shadow: 0 ${props => props.theme.size.block.border}px 0
         ${props => props.theme.color.highlight} inset;
@@ -167,4 +169,8 @@ export const Caption = styled(PictureCaption)`
     font-variant: small-caps;
   }
   ${props => props.feature && captionBlock};
+`
+export const CaptionAuthor = styled.span`
+  color: ${props => props.theme.color.foreground};
+  display: inline-block;
 `

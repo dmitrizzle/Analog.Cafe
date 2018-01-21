@@ -38,9 +38,4 @@ export const Item = styled(({ left, right, script, ...props }) => (
           props.theme.typography.font.serif
         } !important;font-weight: 400 !important;`
       : null};
-
-  ${props => props.theme.size.breakpoint.max.s`
-    border-radius: 0;
-    padding: 1em;
-  `};
 `

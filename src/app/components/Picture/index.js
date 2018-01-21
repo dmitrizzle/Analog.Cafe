@@ -8,7 +8,7 @@ import { ROUTE_AUTHOR_API } from "../../../constants/author"
 import { ModalDispatch } from "../../containers/Modal"
 
 // styles
-import { Image, Figure, Caption } from "./styles"
+import { Image, Figure, Caption, CaptionAuthor } from "./styles"
 
 // return
 export default props => {
@@ -34,7 +34,7 @@ export default props => {
           <Caption>
             {props.children}
             {props.readOnly ? (
-              <span style={{ color: "#2c2c2c" }}>
+              <CaptionAuthor>
                 {" "}
                 Image by{" "}
                 <span
@@ -61,7 +61,7 @@ export default props => {
                     {props.author.name}
                   </ModalDispatch>.
                 </span>
-              </span>
+              </CaptionAuthor>
             ) : null}
           </Caption>
         ) : (
@@ -69,7 +69,7 @@ export default props => {
             {props.children}
             {!props.noAuthor &&
               props.readOnly && (
-                <span style={{ color: "#2c2c2c" }}> Finding image author…</span>
+                <CaptionAuthor> Finding image author…</CaptionAuthor>
               )}
           </Caption>
         )}
