@@ -36,7 +36,7 @@ class SigninWithEmail extends React.PureComponent {
         !this.props.user.emailLogin.timeout ||
         Date.now() > this.props.user.emailLogin.timeout
       )
-        this.props.loginWithEmail(this.state.email)
+        this.props.loginWithEmail(this.state.email.toLowerCase())
       else
         this.props.setCard({
           status: "ok",
