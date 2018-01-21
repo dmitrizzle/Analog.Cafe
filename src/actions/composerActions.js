@@ -5,6 +5,7 @@ import { setCard } from "./modalActions"
 import errorMessages from "../constants/messages/errors"
 
 import { ROUTE_IMAGE_API } from "../constants/picture"
+import { ROUTE_SUBMISSION_API } from "../constants/article"
 
 // track submission id -> none if this is a new submission or
 // an id of an edited submission
@@ -132,3 +133,46 @@ export const fetchCollabFeatures = () => {
       })
   }
 }
+
+// reject submission
+export const rejectSubmission = submissionId => {
+  return dispatch => {
+    const request = {
+      url: `${ROUTE_SUBMISSION_API}/${submissionId}/reject`,
+      method: "post",
+      headers: {
+        Authorization: "JWT " + localStorage.getItem("token")
+      }
+    }
+
+    axios(axiosRequest(request))
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+}
+
+// publish submission
+// export const publishSubmission = submissionId => {
+//   return dispatch => {
+//     const request = {
+//       url: ROUTE_SUBMISSION_API,
+//       method: "post",
+//       params: {
+//         submissionId
+//       },
+//       headers:{
+//         Authorization: "JWT " + localStorage.getItem("token")
+//       }
+//     }
+//
+//     axios(axiosRequest(request)).then(response => {
+//       console.log(response);
+//     }).catch(error=> {
+//       console.log(error);
+//     })
+//   }
+// }

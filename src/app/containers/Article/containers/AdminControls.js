@@ -5,7 +5,10 @@ import { withRouter } from "react-router"
 // redux
 import { connect } from "react-redux"
 import { setCard } from "../../../../actions/modalActions"
-import { setSubmissionId } from "../../../../actions/composerActions"
+import {
+  setSubmissionId,
+  rejectSubmission
+} from "../../../../actions/composerActions"
 
 // components
 import { Button } from "../../../components/_controls/Button"
@@ -14,7 +17,10 @@ import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
 
 // utils
 import { loadTextContent } from "../../../../utils/composer-loader"
-import { MESSAGE_HINT_OVERWRITE_DRAFT } from "../../../../constants/messages/hints"
+import {
+  MESSAGE_HINT_OVERWRITE_DRAFT,
+  MESSAGE_HINT_REJECT_SUBMISSION
+} from "../../../../constants/messages/hints"
 import {
   storeContentState,
   storeHeaderState
@@ -32,7 +38,8 @@ class AdminControls extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      allowOverwrite: window.location.hash,
+      allowOverwrite: window.location.hash === "#overwrite",
+      allowReject: window.location.hash === "#reject",
       publishControls: false,
       publishAs: ""
     }
@@ -46,7 +53,8 @@ class AdminControls extends React.PureComponent {
   componentWillReceiveProps = nextProps => {
     // if #overwrite hash is present, "unlock" edit button in overwrite mode
     this.setState({
-      allowOverwrite: window.location.hash
+      allowOverwrite: window.location.hash === "#overwrite",
+      allowReject: window.location.hash === "#reject"
     })
   }
   handleEdit = event => {
@@ -86,28 +94,60 @@ class AdminControls extends React.PureComponent {
       publishAs: tag === this.state.publishAs ? "" : tag
     })
   }
+
+  // mark as rejected
+  handleRejection = event => {
+    event.preventDefault()
+
+    // warn about overwriting existing draft
+    if (!this.state.allowReject) {
+      this.props.setCard(MESSAGE_HINT_REJECT_SUBMISSION)
+      return
+    }
+
+    // send request to reject the submission
+    this.props.rejectSubmission(this.props.article.id)
+  }
+
   render = () => {
     return [
       <ButtonStrip
         style={{
-          margin: "1em auto 0"
+          margin: "1em auto 0",
+          width: "16em"
         }}
         key="controls"
       >
         <div>
-          <Item left red={this.state.allowOverwrite} onClick={this.handleEdit}>
+          <Item left onClick={this.handleEdit} style={{ minWidth: "5em" }}>
+            <span role="img" aria-label="(Un)Locked button">
+              {this.state.allowOverwrite ? "🔓" : "🔐"}
+            </span>{" "}
             Edit
           </Item>
           {this.props.publicationStatus === "published" ? (
             <Item right>Unpublish</Item>
           ) : (
-            <Item
-              right
-              black={this.state.publishControls}
-              onClick={this.handlePblishControls}
-            >
-              Publish
-            </Item>
+            [
+              <Item
+                key="reject"
+                onClick={this.handleRejection}
+                style={{ minWidth: "6em" }}
+              >
+                <span role="img" aria-label="(Un)Locked button">
+                  {this.state.allowReject ? "🔓" : "🔐"}
+                </span>{" "}
+                Reject
+              </Item>,
+              <Item
+                right
+                black={this.state.publishControls}
+                onClick={this.handlePblishControls}
+                key="publish"
+              >
+                Publish
+              </Item>
+            ]
           )}
         </div>
       </ButtonStrip>,
@@ -163,6 +203,9 @@ const mapDispatchToProps = dispatch => {
     },
     setSubmissionId: id => {
       dispatch(setSubmissionId(id))
+    },
+    rejectSubmission: id => {
+      dispatch(rejectSubmission(id))
     }
   }
 }

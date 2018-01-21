@@ -64,6 +64,12 @@ export const CardFlattened = styled(Card)`
           .alpha(props.theme.opacity.least)
           .string()};
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
+
+  ${props => props.theme.size.breakpoint.max.xs`
+		border-radius: 0;
+    width: 100vw;
+    margin-left: -${props => props.theme.size.block.column.safety}em;
+	`};
 `
 export const CardButton = styled(LinkButton)`
   ${CardButtonStyles};

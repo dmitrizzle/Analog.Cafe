@@ -65,11 +65,30 @@ export const MESSAGE_HINT_OVERWRITE_DRAFT = {
       },
       {
         to: "#overwrite",
-        text: "⚠️ Overwrite"
+        text: "🔑 Overwrite"
       }
     ]
   },
   requested: { url: "hints/text-in-compsoer" }
+}
+export const MESSAGE_HINT_REJECT_SUBMISSION = {
+  info: {
+    title: "Are You Sure?",
+    text:
+      "Once you reject this submission the author will get an email notifying them of this event. Someone’s gonna be disappointed!",
+    buttons: [
+      {
+        to: "#",
+        text: "Nevermind",
+        red: true
+      },
+      {
+        to: "#reject",
+        text: "🔑 Reject Submission"
+      }
+    ]
+  },
+  requested: { url: "hints/reject-submission" }
 }
 export const MESSAGE_HINT_SUBMIT_EDITORS = {
   info: {
