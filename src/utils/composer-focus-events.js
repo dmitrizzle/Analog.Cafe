@@ -1,11 +1,14 @@
 export const focusEvents = _this => {
-  // prevent default to allow drop
-  window.addEventListener(
+  // highlight potential drop target when the draggable element enters it
+  document.addEventListener(
     "dragover",
     event => {
       event.preventDefault()
-      // highlight potential drop target when the draggable element enters it
-      _this.handleDragOver()
+      if (_this.state.dragOver) return
+      const delayDragEvent = setTimeout(() => {
+        _this.handleDragOver()
+        clearTimeout(delayDragEvent)
+      }, 100)
     },
     false
   )
@@ -13,7 +16,11 @@ export const focusEvents = _this => {
     "drop",
     event => {
       // event.preventDefault()
-      _this.handleDragEnd()
+      if (!_this.state.dragOver) return
+      const delayDragEvent = setTimeout(() => {
+        _this.handleDragEnd()
+        clearTimeout(delayDragEvent)
+      }, 100)
     },
     false
   )

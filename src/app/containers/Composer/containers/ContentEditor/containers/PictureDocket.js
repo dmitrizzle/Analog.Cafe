@@ -143,7 +143,7 @@ class PictureDocketContainer extends React.PureComponent {
       .insertBlock({
         type: "image",
         isVoid: true,
-        data: { file, key: key, src: dot }
+        data: { file, key, src: dot }
       })
       // remove docket
       .value.change()

@@ -50,16 +50,15 @@ class ContentEditor extends React.PureComponent {
 
   handleChange = ({ value }) => {
     this.setState({ value })
+    console.log("change")
 
     // add information about cursor positions
     const cursorContextDelay = setTimeout(() => {
       const nodeKey = value.focusBlock.key
       const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
-
       this.setState({
         editorFocus: value.isFocused
       })
-
       imageButtonPosition(
         value,
         block ? getOffsets(block, "top left", block, "top left") : {},
@@ -101,17 +100,12 @@ class ContentEditor extends React.PureComponent {
   }
 
   // hover menu
-  componentDidMount = () => {
-    this.updateMenu()
-  }
-  componentDidUpdate = () => {
-    this.updateMenu()
-  }
+  componentDidMount = () => menuPosition(this)
+  componentDidUpdate = () => menuPosition(this)
   menuRef = menu => {
     this.menu = menu
   }
   formatCommand = type => formatCommand(type, this)
-  updateMenu = () => menuPosition(this)
 
   // render
   render = () => {
