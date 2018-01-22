@@ -50,7 +50,7 @@ class ContentEditor extends React.PureComponent {
   }
 
   handleChange = ({ value }) => {
-    // this.props.setValueForDocument((value.toJSON()))
+    this.props.setValueForDocument(value)
 
     // add information about cursor positions
     const cursorContextDelay = setTimeout(() => {
@@ -69,11 +69,10 @@ class ContentEditor extends React.PureComponent {
       )
       clearTimeout(cursorContextDelay)
     }, 300)
-
-    // update draft status & save content to device
-    setDraftStatusHelper()
-    this.props.composer.editorValues.document
-    saveContent(document, value)
+    //
+    // // update draft status & save content to device
+    // setDraftStatusHelper()
+    // saveContent(document, value)
   }
 
   // image button handler:
@@ -125,8 +124,17 @@ class ContentEditor extends React.PureComponent {
   menuRef = menu => {
     this.menu = menu
   }
-  formatCommand = type => formatCommand(type, this)
-  updateMenu = () => menuPosition(this)
+  formatCommand = type =>
+    formatCommand(
+      type,
+      Value.fromJSON(this.props.composer.editorValues.document),
+      this.props.setValueForDocument
+    )
+  updateMenu = () =>
+    menuPosition(
+      this,
+      Value.fromJSON(this.props.composer.editorValues.document)
+    )
 
   // render
   render = () => {

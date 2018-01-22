@@ -37,8 +37,7 @@ export const handleImageButton = (event, _this) => {
 
 // format menu functions:
 
-export const menuPosition = _this => {
-  const { value } = _this.state
+export const menuPosition = (_this, value) => {
   const menu = _this.menu
 
   fixHangingSelection(_this, value.change())
@@ -79,64 +78,47 @@ export const addLink = (value, returnType = "value") => {
   } else if (returnType === "data") return { href }
 }
 
-export const formatCommand = (type, _this) => {
-  const { value } = _this.state
-  let resolvedState
-
+export const formatCommand = (type, value, store) => {
   switch (type) {
     case "undo_heading":
-      resolvedState = value.change().setBlock({ type: "paragraph" })
-      _this.setState({
-        value: resolvedState.value
-      })
+      store(value.change().setBlock({ type: "paragraph" }).value)
       break
     case "make_heading":
-      resolvedState = value
-        .change()
-        .unwrapInline("link")
-        .value.change()
-        .removeMark("bold")
-        .value.change()
-        .removeMark("italic")
-        .value.change()
-        .setBlock({ type: "heading" })
-      _this.setState({
-        value: resolvedState.value
-      })
+      store(
+        value
+          .change()
+          .unwrapInline("link")
+          .value.change()
+          .removeMark("bold")
+          .value.change()
+          .removeMark("italic")
+          .value.change()
+          .setBlock({ type: "heading" }).value
+      )
       break
     case "make_quote":
-      resolvedState = value
-        .change()
-        .unwrapInline("link")
-        .value.change()
-        .removeMark("bold")
-        .value.change()
-        .removeMark("italic")
-        .value.change()
-        .setBlock({ type: "quote" })
-      _this.setState({
-        value: resolvedState.value
-      })
+      store(
+        value
+          .change()
+          .unwrapInline("link")
+          .value.change()
+          .removeMark("bold")
+          .value.change()
+          .removeMark("italic")
+          .value.change()
+          .setBlock({ type: "quote" }).value
+      )
       break
     case "toggle_bold":
-      resolvedState = value.change().toggleMark({ type: "bold" })
-      _this.setState({
-        value: resolvedState.value
-      })
+      store(value.change().toggleMark({ type: "bold" }).value)
       break
     case "toggle_italic":
-      resolvedState = value.change().toggleMark({ type: "italic" })
-      _this.setState({
-        value: resolvedState.value
-      })
+      store(value.change().toggleMark({ type: "italic" }).value)
       break
     case "toggle_link":
       const hasLinks = value.inlines.some(inline => inline.type === "link")
-      if (hasLinks) resolvedState = value.change().unwrapInline("link")
-      else resolvedState = addLink(value)
-      _this.setState({
-        value: resolvedState.value
-      })
+      if (hasLinks) store(value.change().unwrapInline("link").value)
+      else store(addLink(value).value)
       break
     default:
       return false
