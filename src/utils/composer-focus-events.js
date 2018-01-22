@@ -1,12 +1,22 @@
 export const focusEvents = _this => {
-  window.ondragover = event => {
-    event.preventDefault()
-    _this.handleDragOver()
-  }
-  document.ondrop = event => {
-    event.preventDefault()
-    _this.handleDragEnd()
-  }
+  // prevent default to allow drop
+  window.addEventListener(
+    "dragover",
+    event => {
+      event.preventDefault()
+      // highlight potential drop target when the draggable element enters it
+      _this.handleDragOver()
+    },
+    false
+  )
+  document.addEventListener(
+    "drop",
+    event => {
+      // event.preventDefault()
+      _this.handleDragEnd()
+    },
+    false
+  )
 
   // blur editor on Esc (remove highlights and guides for preview)
   document.addEventListener(

@@ -140,7 +140,7 @@ class ContentEditor extends React.PureComponent {
             boxShadow: this.state.editorFocus
               ? "1px 1px 0 0 rgba(44,44,44,.1)"
               : "",
-            background: this.state.dragOver ? "rgba(44,44,44,.05)" : ""
+            background: this.state.dragOver ? "rgba(44,44,44,.075)" : ""
           }}
           ref={input => (this.slateEditor = input)}
         />
