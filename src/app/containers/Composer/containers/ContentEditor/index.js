@@ -34,17 +34,12 @@ import {
 class ContentEditor extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.props.composerState.raw = loadContent()
-
     this.handleClickPropagation = this.handleClickPropagation.bind(this)
-
-    // composerState is what appears by default in composer once the user opens the view
     this.state = {
       value: Value.fromJSON(loadContent()),
       schema,
       author: this.props.author,
       cursorContext: {
-        isFocused: false,
         newLine: false,
         parentBlockOffsets: { top: 0, left: 0 }
       },
@@ -61,10 +56,9 @@ class ContentEditor extends React.PureComponent {
       const nodeKey = value.focusBlock.key
       const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
 
-      value.isFocused &&
-        this.setState({
-          editorFocus: true
-        })
+      this.setState({
+        editorFocus: value.isFocused
+      })
 
       imageButtonPosition(
         value,
@@ -76,7 +70,6 @@ class ContentEditor extends React.PureComponent {
 
     // update draft status & save content to device
     setDraftStatusHelper()
-    this.props.composerState.raw = JSON.stringify(value.toJSON())
     saveContent(document, value)
   }
 
@@ -92,22 +85,10 @@ class ContentEditor extends React.PureComponent {
       nextProps.composer.editorFocusRequested
     ) {
       this.slateEditor.focus()
-      this.setState({
-        editorFocus: true
-      })
     }
   }
-  handleBlur = () => {
-    this.setState({
-      editorFocus: false
-    })
-    this.menu.style.display = ""
-  }
-  handleFocus = () => {
-    this.setState({
-      editorFocus: true
-    })
-  }
+  handleBlur = () => {}
+  handleFocus = () => {}
   handleDragOver = () => {
     this.setState({
       dragOver: true
@@ -170,6 +151,7 @@ class ContentEditor extends React.PureComponent {
         value={this.state.value}
         formatCommand={this.formatCommand}
         key="ContentEditor_Menu"
+        style={{ display: this.state.editorFocus ? "block" : "none" }}
       />
     ]
   }

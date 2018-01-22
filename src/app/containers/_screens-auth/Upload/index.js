@@ -38,6 +38,7 @@ import {
 import {
   uploadData as uploadSubmissionData,
   initStatus as resetUploadStatus,
+  resetAllValues as resetComposerValues,
   resetSubmissionStatus
 } from "../../../../actions/composerActions"
 
@@ -151,13 +152,19 @@ class Upload extends React.PureComponent {
         status: "error"
       })
 
+    //
+    //
+    //
+    //
+    //
     // upload complete
     if (nextProps.composer.uploadProgress === 100) {
       // clear submissions content and image in storage
-      localStorage.removeItem("composer-content-state")
-      localStorage.removeItem("composer-header-state")
       localStorage.removeItem("composer-content-text")
       localForage.clear()
+
+      // clear store for Composer values
+      this.props.resetComposerValues()
 
       // reset upload state
       this.props.resetUploadStatus()
@@ -169,16 +176,13 @@ class Upload extends React.PureComponent {
       this.setState({
         status: "complete"
       })
-
-      // const delayedRedirect = setTimeout(
-      //   props => {
-      //     props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
-      //     clearTimeout(delayedRedirect)
-      //   },
-      //   1000, // wait a second to make sure the list of contributions has been updated
-      //   this.props
-      // )
     }
+    //
+    //
+    //
+    //
+    //
+    //
   }
 
   handleEmptySubmission = () => {
@@ -283,6 +287,9 @@ const mapDispatchToProps = dispatch => {
     },
     resetLoginRedirectRoutes: () => {
       dispatch(resetLoginRedirectRoutes())
+    },
+    resetComposerValues: () => {
+      dispatch(resetComposerValues())
     },
     setCard: (info, request) => {
       dispatch(setCard(info, request))

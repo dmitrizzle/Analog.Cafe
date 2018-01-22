@@ -8,7 +8,8 @@ import { setCard } from "../../../../actions/modalActions"
 import {
   setSubmissionStatus,
   rejectSubmission,
-  publishSubmission
+  publishSubmission,
+  setHeadingValues
 } from "../../../../actions/composerActions"
 
 // components
@@ -74,12 +75,16 @@ class AdminControls extends React.PureComponent {
       return
     }
 
-    // replace localStorage drafts with current article content
-    storeContentState(this.props.article.content.raw)
-    storeHeaderState({
+    // replace redux store values for header
+    const headingValues = {
       title: this.props.article.title || "",
       subtitle: this.props.article.subtitle || ""
-    })
+    }
+    this.props.setHeadingValues(headingValues)
+
+    // replace localStorage drafts with current article content
+    storeHeaderState(headingValues)
+    storeContentState(this.props.article.content.raw)
 
     // set submission id so that the correct article would be updated with upload
     this.props.setSubmissionStatus(
@@ -163,7 +168,7 @@ class AdminControls extends React.PureComponent {
           ) : (
             [
               <Item
-                key="reject"
+                key="ButtonStrip_Item_reject"
                 onClick={this.handleRejection}
                 style={{
                   minWidth: "6em",
@@ -192,7 +197,7 @@ class AdminControls extends React.PureComponent {
                     ? this.handlePblishControls
                     : null
                 }
-                key="publish"
+                key="ButtonStrip_Item_publish"
               >
                 {this.props.publicationStatus !== "scheduled"
                   ? "Publish"
@@ -203,7 +208,7 @@ class AdminControls extends React.PureComponent {
         </div>
       </ButtonStrip>,
       <Byline
-        key="rejected"
+        key="Byline_rejected"
         style={{
           display:
             this.props.publicationStatus === "rejected" ? "block" : "none"
@@ -215,7 +220,7 @@ class AdminControls extends React.PureComponent {
         This submission has been REJECTED and can not be published or edited.
       </Byline>,
       <Byline
-        key="scheduled"
+        key="Byline_scheduled"
         style={{
           display:
             this.props.publicationStatus === "scheduled" ? "block" : "none",
@@ -228,7 +233,7 @@ class AdminControls extends React.PureComponent {
         This submission has been SCHEDULED and can not be edited.
       </Byline>,
       <div
-        key="scheduler"
+        key="div_scheduler"
         style={{ display: this.state.publishControls ? "block" : "none" }}
       >
         <ButtonStrip
@@ -284,6 +289,9 @@ const mapDispatchToProps = dispatch => {
     },
     rejectSubmission: id => {
       dispatch(rejectSubmission(id))
+    },
+    setHeadingValues: value => {
+      dispatch(setHeadingValues(value))
     },
     publishSubmission: (id, scheduleOrder, tag) => {
       dispatch(publishSubmission(id, scheduleOrder, tag))

@@ -20,14 +20,12 @@ const titlePlaceholder = {
 const Composer = props => {
   return [
     <HeaderEditor
-      composerState={props.composerState}
       pageTitle={titlePlaceholder.title}
       pageSubtitle={titlePlaceholder.subtitle}
       key="Composer_HeaderEditor"
     />,
     <Section onClick={() => props.requestEditorFocus()} key="Composer_Section">
       <ContentEditor
-        composerState={props.composerState}
         ref={input => {
           this.contentEditor = input
         }}

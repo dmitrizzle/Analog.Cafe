@@ -27,9 +27,6 @@ export const sendSubmission = (data, props) => {
     else if (props.composer.submissionStatus.type === "published")
       url = ROUTE_ARTICLE_API + "/" + props.composer.submissionStatus.id
   }
-
-  console.log(url)
-
   props.uploadSubmissionData({
     method,
     data,

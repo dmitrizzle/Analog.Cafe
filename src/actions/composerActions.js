@@ -7,6 +7,22 @@ import errorMessages from "../constants/messages/errors"
 import { ROUTE_IMAGE_API } from "../constants/picture"
 import { ROUTE_SUBMISSION_API } from "../constants/article"
 
+// manage Composer state
+// note that Slate Editor state must be manage separately from within
+// Editor component and React's {state}
+export const setHeadingValues = value => {
+  return {
+    type: "COMPOSER.SET_HEADING_VALUES",
+    payload: value
+  }
+}
+export const resetAllValues = () => {
+  return {
+    type: "COMPOSER.RESET_ALL_VALUES",
+    payload: null
+  }
+}
+
 // track submission id -> none if this is a new submission or
 // an id of an edited submission
 export const setSubmissionStatus = (id, type) => {
