@@ -96,8 +96,8 @@ class HeaderEditor extends React.PureComponent {
               unlink
             </Link>.{this.props.composer.submissionStatus.type ===
               "published" && [
-              <br />,
-              <span>
+              <br key="linebreak" />,
+              <span key="note">
                 You are editing a published article. New submission will be
                 created which (only editors can see) you will need to publish to
                 replace the current article that’s live.

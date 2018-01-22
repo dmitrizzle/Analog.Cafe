@@ -1,4 +1,4 @@
-import { ROUTE_SUBMISSION_API } from "../constants/submission"
+import { ROUTE_ARTICLE_API, ROUTE_SUBMISSION_API } from "../constants/article"
 
 // image size limit for user uploads
 export const imageSizeLimit = (size, max = 10) => {
@@ -20,15 +20,15 @@ export const redirectToSignIn = props => {
 export const sendSubmission = (data, props) => {
   let url = ROUTE_SUBMISSION_API
   let method = "post"
-  if (props.composer.submission.id) {
-    if (props.composer.submission.type === "unpublished") {
-      url += "/" + props.composer.submissionId
-      method = "put"
-    } else if (props.composer.submission.type === "published") {
-      alert("published")
-      return
-    }
+  if (props.composer.submissionStatus.id) {
+    method = "put"
+    if (props.composer.submissionStatus.type === "unpublished")
+      url += "/" + props.composer.submissionStatus.id
+    else if (props.composer.submissionStatus.type === "published")
+      url = ROUTE_ARTICLE_API + "/" + props.composer.submissionStatus.id
   }
+
+  console.log(url)
 
   props.uploadSubmissionData({
     method,
