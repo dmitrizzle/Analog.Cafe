@@ -12,8 +12,7 @@ import Link from "../../../../components/_controls/Link"
 import { connect } from "react-redux"
 import {
   resetSubmissionStatus,
-  setValueForTitle,
-  setValueForSubtitle
+  setHeadingValues
 } from "../../../../../actions/composerActions"
 
 // styles
@@ -36,19 +35,18 @@ class HeaderEditor extends React.PureComponent {
     this.handleSubtitleChange = this.handleSubtitleChange.bind(this)
   }
   handleTitleChange = event => {
-    this.props.setValueForTitle(event)
-    saveHeader(this.props.composer.editorValues)
-
-    // instead state management we're forcing update for all textfields
-    // which in turn triggers `warning` and `caution` label re-calculation
-    this.forceUpdate()
+    this.props.setHeadingValues({
+      title: event,
+      subtitle: this.props.composer.headingValues.subtitle
+    })
+    saveHeader(this.props.composer.headingValues)
   }
   handleSubtitleChange = event => {
-    this.props.setValueForSubtitle(event)
-    saveHeader(this.props.composer.editorValues)
-
-    //^^
-    this.forceUpdate()
+    this.props.setHeadingValues({
+      title: this.props.composer.headingValues.title,
+      subtitle: event
+    })
+    saveHeader(this.props.composer.headingValues)
   }
   handleKeypress = event => {
     // disallow multiple lines in titles
@@ -56,7 +54,8 @@ class HeaderEditor extends React.PureComponent {
   }
 
   // unlink submission
-  handleUnlinkSubmission = () => {
+  handleUnlinkSubmission = event => {
+    event.preventDefault()
     this.props.resetSubmissionStatus()
   }
   render = () => {
@@ -65,26 +64,31 @@ class HeaderEditor extends React.PureComponent {
         <TitleCase
           placeholder={this.props.pageTitle}
           onChange={this.handleTitleChange}
-          value={this.props.composer.editorValues.title}
+          value={this.props.composer.headingValues.title}
           inputDesignation="title"
           caution={
-            this.props.composer.editorValues.title > TITLE_LENGTH_OPTIMAL
+            this.props.composer.headingValues.title.length >
+            TITLE_LENGTH_OPTIMAL
           }
-          warning={this.props.composer.editorValues.title >= TITLE_LENGTH_MAX}
+          warning={
+            this.props.composer.headingValues.title.length >= TITLE_LENGTH_MAX
+          }
           maxLength={TITLE_LENGTH_MAX}
-          autoFocus={this.props.composer.editorValues.title === ""}
+          autoFocus={this.props.composer.headingValues.title === ""}
           onKeyPress={this.handleKeypress}
         />
         <TitleCase
           placeholder={this.props.pageSubtitle}
           onChange={this.handleSubtitleChange}
-          value={this.props.composer.editorValues.subtitle}
+          value={this.props.composer.headingValues.subtitle}
           inputDesignation="subtitle"
           caution={
-            this.props.composer.editorValues.subtitleh > SUBTITLE_LENGTH_OPTIMAL
+            this.props.composer.headingValues.subtitle.length >
+            SUBTITLE_LENGTH_OPTIMAL
           }
           warning={
-            this.props.composer.editorValues.subtitle >= SUBTITLE_LENGTH_MAX
+            this.props.composer.headingValues.subtitle.length >=
+            SUBTITLE_LENGTH_MAX
           }
           maxLength={SUBTITLE_LENGTH_MAX}
           onKeyPress={this.handleKeypress}
@@ -132,11 +136,8 @@ const mapDispatchToProps = dispatch => {
     resetSubmissionStatus: () => {
       dispatch(resetSubmissionStatus())
     },
-    setValueForTitle: value => {
-      dispatch(setValueForTitle(value))
-    },
-    setValueForSubtitle: value => {
-      dispatch(setValueForSubtitle(value))
+    setHeadingValues: value => {
+      dispatch(setHeadingValues(value))
     }
   }
 }

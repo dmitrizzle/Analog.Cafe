@@ -8,7 +8,8 @@ import { setCard } from "../../../../actions/modalActions"
 import {
   setSubmissionStatus,
   rejectSubmission,
-  publishSubmission
+  publishSubmission,
+  setHeadingValues
 } from "../../../../actions/composerActions"
 
 // components
@@ -74,12 +75,16 @@ class AdminControls extends React.PureComponent {
       return
     }
 
-    // replace localStorage drafts with current article content
-    storeContentState(this.props.article.content.raw)
-    storeHeaderState({
+    // replace redux store values for header
+    const headingValues = {
       title: this.props.article.title || "",
       subtitle: this.props.article.subtitle || ""
-    })
+    }
+    this.props.setHeadingValues(headingValues)
+
+    // replace localStorage drafts with current article content
+    storeHeaderState(headingValues)
+    storeContentState(this.props.article.content.raw)
 
     // set submission id so that the correct article would be updated with upload
     this.props.setSubmissionStatus(
@@ -284,6 +289,9 @@ const mapDispatchToProps = dispatch => {
     },
     rejectSubmission: id => {
       dispatch(rejectSubmission(id))
+    },
+    setHeadingValues: value => {
+      dispatch(setHeadingValues(value))
     },
     publishSubmission: (id, scheduleOrder, tag) => {
       dispatch(publishSubmission(id, scheduleOrder, tag))

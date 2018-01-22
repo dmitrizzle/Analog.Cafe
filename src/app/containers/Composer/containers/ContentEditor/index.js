@@ -6,7 +6,6 @@ import getOffsets from "positions"
 
 // redux
 import { connect } from "react-redux"
-import { setValueForDocument } from "../../../../../actions/composerActions"
 
 // components
 import ImageButton from "./components/ImageButton"
@@ -16,6 +15,7 @@ import Menu from "./components/FormatMenu"
 import { plugins } from "./plugins"
 import { renderNode, renderMark } from "./render"
 import { schema } from "./schema"
+import { loadContent } from "../../../../../utils/composer-loader"
 
 import {
   menuPosition,
@@ -34,13 +34,12 @@ import {
 class ContentEditor extends React.PureComponent {
   constructor(props) {
     super(props)
-
     this.handleClickPropagation = this.handleClickPropagation.bind(this)
     this.state = {
+      value: Value.fromJSON(loadContent()),
       schema,
       author: this.props.author,
       cursorContext: {
-        isFocused: false,
         newLine: false,
         parentBlockOffsets: { top: 0, left: 0 }
       },
@@ -50,17 +49,16 @@ class ContentEditor extends React.PureComponent {
   }
 
   handleChange = ({ value }) => {
-    this.props.setValueForDocument(value)
+    this.setState({ value })
 
     // add information about cursor positions
     const cursorContextDelay = setTimeout(() => {
       const nodeKey = value.focusBlock.key
       const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
 
-      value.isFocused &&
-        this.setState({
-          editorFocus: true
-        })
+      this.setState({
+        editorFocus: value.isFocused
+      })
 
       imageButtonPosition(
         value,
@@ -69,10 +67,10 @@ class ContentEditor extends React.PureComponent {
       )
       clearTimeout(cursorContextDelay)
     }, 300)
-    //
-    // // update draft status & save content to device
-    // setDraftStatusHelper()
-    // saveContent(document, value)
+
+    // update draft status & save content to device
+    setDraftStatusHelper()
+    saveContent(document, value)
   }
 
   // image button handler:
@@ -87,22 +85,10 @@ class ContentEditor extends React.PureComponent {
       nextProps.composer.editorFocusRequested
     ) {
       this.slateEditor.focus()
-      this.setState({
-        editorFocus: true
-      })
     }
   }
-  handleBlur = () => {
-    this.setState({
-      editorFocus: false
-    })
-    this.menu.style.display = ""
-  }
-  handleFocus = () => {
-    this.setState({
-      editorFocus: true
-    })
-  }
+  handleBlur = () => {}
+  handleFocus = () => {}
   handleDragOver = () => {
     this.setState({
       dragOver: true
@@ -124,21 +110,13 @@ class ContentEditor extends React.PureComponent {
   menuRef = menu => {
     this.menu = menu
   }
-  formatCommand = type =>
-    formatCommand(
-      type,
-      Value.fromJSON(this.props.composer.editorValues.document),
-      this.props.setValueForDocument
-    )
-  updateMenu = () =>
-    menuPosition(
-      this,
-      Value.fromJSON(this.props.composer.editorValues.document)
-    )
+  formatCommand = type => formatCommand(type, this)
+  updateMenu = () => menuPosition(this)
 
   // render
   render = () => {
     focusEvents(this)
+
     return [
       <div style={{ position: "relative" }} key="ContentEditor_div">
         <ImageButton
@@ -152,7 +130,7 @@ class ContentEditor extends React.PureComponent {
           renderMark={renderMark}
           schema={this.state.schema}
           placeholder={"Write your story…"}
-          value={Value.fromJSON(this.props.composer.editorValues.document)}
+          value={this.state.value}
           onChange={this.handleChange}
           onClick={this.handleClickPropagation}
           onBlur={this.handleBlur}
@@ -170,9 +148,10 @@ class ContentEditor extends React.PureComponent {
       <Menu
         menuRef={this.menuRef}
         onChange={this.handleChange}
-        value={Value.fromJSON(this.props.composer.editorValues.document)}
+        value={this.state.value}
         formatCommand={this.formatCommand}
         key="ContentEditor_Menu"
+        style={{ display: this.state.editorFocus ? "block" : "none" }}
       />
     ]
   }
@@ -184,12 +163,4 @@ const mapStateToProps = state => {
     composer: state.composer
   }
 }
-// connect with redux
-const mapDispatchToProps = dispatch => {
-  return {
-    setValueForDocument: value => {
-      dispatch(setValueForDocument(value))
-    }
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(ContentEditor)
+export default connect(mapStateToProps)(ContentEditor)

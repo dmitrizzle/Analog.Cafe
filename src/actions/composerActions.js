@@ -8,27 +8,17 @@ import { ROUTE_IMAGE_API } from "../constants/picture"
 import { ROUTE_SUBMISSION_API } from "../constants/article"
 
 // manage Composer state
-export const setValueForDocument = value => {
+// note that Slate Editor state must be manage separately from within
+// Editor component and React's {state}
+export const setHeadingValues = value => {
   return {
-    type: "COMPOSER.SET_VALUE_DOCUMENT",
+    type: "COMPOSER.SET_HEADING_VALUES",
     payload: value
   }
 }
-export const setValueForTitle = value => {
+export const resetAllValues = () => {
   return {
-    type: "COMPOSER.SET_VALUE_TITLE",
-    payload: value
-  }
-}
-export const setValueForSubtitle = value => {
-  return {
-    type: "COMPOSER.SET_VALUE_SUBTITLE",
-    payload: value
-  }
-}
-export const resetValues = () => {
-  return {
-    type: "COMPOSER.RESET_VALUES",
+    type: "COMPOSER.RESET_ALL_VALUES",
     payload: null
   }
 }

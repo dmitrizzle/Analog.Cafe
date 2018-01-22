@@ -38,7 +38,7 @@ import {
 import {
   uploadData as uploadSubmissionData,
   initStatus as resetUploadStatus,
-  resetValues as resetComposerValues,
+  resetAllValues as resetComposerValues,
   resetSubmissionStatus
 } from "../../../../actions/composerActions"
 

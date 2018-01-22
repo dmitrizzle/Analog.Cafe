@@ -1,5 +1,6 @@
 // tools
-import { loadHeader, loadContent } from "../utils/composer-loader"
+import { loadHeader } from "../utils/composer-loader"
+import { DEFAULT_COMPOSER_HEADER_STATE } from "../constants/composer"
 
 // set placeholders for collabFeatures grid:
 let collabFeaturesDefaults = []
@@ -16,8 +17,7 @@ const getLocalSubmissionStatus = () =>
 const INITIAL_STATE = {
   draftStatus: "Draft",
   editorFocusRequested: 0,
-  editorValues: {
-    document: loadContent(),
+  headingValues: {
     title: loadHeader().title,
     subtitle: loadHeader().subtitle
   },
@@ -35,40 +35,19 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     // track state for composer document
-    case "COMPOSER.SET_VALUE_DOCUMENT":
+    case "COMPOSER.SET_HEADING_VALUES":
       state = {
         ...state,
-        editorValues: {
-          ...state.editorValues,
-          document: action.payload
-        }
+        headingValues: action.payload
       }
       break
-    case "COMPOSER.SET_VALUE_TITLE":
-      state = {
-        ...state,
-        editorValues: {
-          ...state.editorValues,
-          title: action.payload
-        }
-      }
-      break
-    case "COMPOSER.SET_VALUE_SUBTITLE":
-      state = {
-        ...state,
-        editorValues: {
-          ...state.editorValues,
-          subtitle: action.payload
-        }
-      }
-      break
-    case "COMPOSER.RESET_VALUES":
+    case "COMPOSER.RESET_ALL_VALUES":
       localStorage.removeItem("composer-header-state")
       localStorage.removeItem("composer-content-state")
 
       state = {
         ...state,
-        editorValues: INITIAL_STATE.editorValues
+        headingValues: DEFAULT_COMPOSER_HEADER_STATE
       }
       break
 
@@ -101,7 +80,10 @@ export default (state = INITIAL_STATE, action) => {
       localStorage.removeItem("composer-submission-status")
       state = {
         ...state,
-        submissionStatus: INITIAL_STATE.submissionStatus
+        submissionStatus: {
+          id: "",
+          type: "unpublished"
+        }
       }
       break
 
