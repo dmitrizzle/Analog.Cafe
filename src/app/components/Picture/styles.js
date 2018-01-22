@@ -96,6 +96,24 @@ export const Figure = styled.figure`
 		width: 75% !important;
 		max-width: 66vw !important;
 		min-width: ${props => props.theme.size.block.minFigureWIdth}px;
+
+    // this helper graphic hints on tablet-sized devices that no text is going
+    // to be float to the right of the image:
+    &.focus {
+      overflow: visible;
+      &::after {
+        content: "";
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: ${props =>
+          Color(props.theme.color.foreground)
+            .alpha(props.theme.opacity.least / 3)
+            .string()};
+        z-index: ${props => props.theme.layer.tuck};
+      }
+    }
 	`} ${props =>
   props.feature
     ? bleed
@@ -143,7 +161,19 @@ const captionBlock = css`
 	`};
 `
 export const Caption = styled(PictureCaption)`
-  border-bottom: ${props => props.theme.elements.thickBorder};
+  ${props =>
+    !props.feature &&
+    `
+    // for helper graphic that shows grey to the right of figures
+    // the background for caption needs to be white
+    // and highlight needs to be above
+    background: ${props.theme.color.background};
+    .focus & {
+      box-shadow: 0 ${props.theme.size.block.border}px 0 ${
+      props.theme.color.highlight
+    } inset;
+    }
+  `} border-bottom: ${props => props.theme.elements.thickBorder};
   color: ${props =>
     Color(props.theme.color.foreground)
       .alpha(props.theme.opacity.half)
