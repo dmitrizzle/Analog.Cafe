@@ -11,7 +11,7 @@ import Link from "../../../../components/_controls/Link"
 
 // redux
 import { connect } from "react-redux"
-import { resetSubmissionId } from "../../../../../actions/composerActions"
+import { resetSubmissionStatus } from "../../../../../actions/composerActions"
 
 // styles
 import { Header, Byline } from "../../../../components/ArticleStyles"
@@ -61,7 +61,7 @@ class HeaderEditor extends React.PureComponent {
 
   // unlink submission
   handleUnlinkSubmission = () => {
-    this.props.resetSubmissionId()
+    this.props.resetSubmissionStatus()
   }
   render = () => {
     return (
@@ -88,13 +88,21 @@ class HeaderEditor extends React.PureComponent {
           onKeyPress={this.handleKeypress}
         />
         {this.props.user.info.role === "admin" &&
-        this.props.composer.submissionId ? (
+        this.props.composer.submissionStatus.id ? (
           <Byline>
             Submission under edit:{" "}
-            <strong>{this.props.composer.submissionId}</strong>{" "}
+            <strong>{this.props.composer.submissionStatus.id}</strong>{" "}
             <Link to="#unlink" onClick={this.handleUnlinkSubmission}>
               unlink
-            </Link>.
+            </Link>.{this.props.composer.submissionStatus.type ===
+              "published" && [
+              <br />,
+              <span>
+                You are editing a published article. New submission will be
+                created which (only editors can see) you will need to publish to
+                replace the current article that’s live.
+              </span>
+            ]}
           </Byline>
         ) : (
           <Byline>
@@ -119,8 +127,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    resetSubmissionId: () => {
-      dispatch(resetSubmissionId())
+    resetSubmissionStatus: () => {
+      dispatch(resetSubmissionStatus())
     }
   }
 }

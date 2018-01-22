@@ -9,15 +9,15 @@ import { ROUTE_SUBMISSION_API } from "../constants/article"
 
 // track submission id -> none if this is a new submission or
 // an id of an edited submission
-export const setSubmissionId = id => {
+export const setSubmissionStatus = (id, type) => {
   return {
-    type: "COMPOSER.SET_SUBMISSION_ID",
-    payload: id
+    type: "COMPOSER.SET_SUBMISSION_STATUS",
+    payload: { id, type }
   }
 }
-export const resetSubmissionId = () => {
+export const resetSubmissionStatus = () => {
   return {
-    type: "COMPOSER.RESET_SUBMISSION_ID"
+    type: "COMPOSER.RESET_SUBMISSION_STATUS"
   }
 }
 
@@ -156,23 +156,26 @@ export const rejectSubmission = submissionId => {
 }
 
 // publish submission
-// export const publishSubmission = submissionId => {
-//   return dispatch => {
-//     const request = {
-//       url: ROUTE_SUBMISSION_API,
-//       method: "post",
-//       params: {
-//         submissionId
-//       },
-//       headers:{
-//         Authorization: "JWT " + localStorage.getItem("token")
-//       }
-//     }
-//
-//     axios(axiosRequest(request)).then(response => {
-//       console.log(response);
-//     }).catch(error=> {
-//       console.log(error);
-//     })
-//   }
-// }
+export const publishSubmission = (submissionId, scheduleOrder, tag) => {
+  return dispatch => {
+    const request = {
+      url: `${ROUTE_SUBMISSION_API}/${submissionId}/approve`,
+      method: "post",
+      params: {
+        scheduleOrder,
+        tag
+      },
+      headers: {
+        Authorization: "JWT " + localStorage.getItem("token")
+      }
+    }
+
+    axios(axiosRequest(request))
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+}

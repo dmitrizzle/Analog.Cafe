@@ -20,9 +20,14 @@ export const redirectToSignIn = props => {
 export const sendSubmission = (data, props) => {
   let url = ROUTE_SUBMISSION_API
   let method = "post"
-  if (props.composer.submissionId) {
-    url += "/" + props.composer.submissionId
-    method = "put"
+  if (props.composer.submission.id) {
+    if (props.composer.submission.type === "unpublished") {
+      url += "/" + props.composer.submissionId
+      method = "put"
+    } else if (props.composer.submission.type === "published") {
+      alert("published")
+      return
+    }
   }
 
   props.uploadSubmissionData({

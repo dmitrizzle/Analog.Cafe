@@ -38,7 +38,7 @@ import {
 import {
   uploadData as uploadSubmissionData,
   initStatus as resetUploadStatus,
-  resetSubmissionId
+  resetSubmissionStatus
 } from "../../../../actions/composerActions"
 
 // constants
@@ -163,7 +163,7 @@ class Upload extends React.PureComponent {
       this.props.resetUploadStatus()
 
       // remove working submission id
-      this.props.resetSubmissionId()
+      this.props.resetSubmissionStatus()
 
       // user-facing messages
       this.setState({
@@ -275,8 +275,8 @@ const mapDispatchToProps = dispatch => {
     resetUploadStatus: () => {
       dispatch(resetUploadStatus())
     },
-    resetSubmissionId: () => {
-      dispatch(resetSubmissionId())
+    resetSubmissionStatus: () => {
+      dispatch(resetSubmissionStatus())
     },
     setLoginRedirectRoutes: routes => {
       dispatch(setLoginRedirectRoutes(routes))

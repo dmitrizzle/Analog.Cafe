@@ -6,20 +6,23 @@ import { withRouter } from "react-router"
 import { connect } from "react-redux"
 import { setCard } from "../../../../actions/modalActions"
 import {
-  setSubmissionId,
-  rejectSubmission
+  setSubmissionStatus,
+  rejectSubmission,
+  publishSubmission
 } from "../../../../actions/composerActions"
 
 // components
 import { Button } from "../../../components/_controls/Button"
 import { CardFlattened } from "../../../components/Card/styles"
 import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
+import { Byline } from "../../../components/ArticleStyles"
 
 // utils
 import { loadTextContent } from "../../../../utils/composer-loader"
 import {
   MESSAGE_HINT_OVERWRITE_DRAFT,
-  MESSAGE_HINT_REJECT_SUBMISSION
+  MESSAGE_HINT_REJECT_SUBMISSION,
+  MESSAGE_HINT_PUBLISH_SUBMISSION
 } from "../../../../constants/messages/hints"
 import {
   storeContentState,
@@ -38,8 +41,10 @@ class AdminControls extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      allowOverwrite: window.location.hash === "#overwrite",
+      allowOverwrite:
+        window.location.hash === "#overwrite" || !loadTextContent().length > 0,
       allowReject: window.location.hash === "#reject",
+      allowPublish: window.location.hash === "#publish",
       publishControls: false,
       publishAs: ""
     }
@@ -53,8 +58,10 @@ class AdminControls extends React.PureComponent {
   componentWillReceiveProps = nextProps => {
     // if #overwrite hash is present, "unlock" edit button in overwrite mode
     this.setState({
-      allowOverwrite: window.location.hash === "#overwrite",
-      allowReject: window.location.hash === "#reject"
+      allowOverwrite:
+        window.location.hash === "#overwrite" || !loadTextContent().length > 0,
+      allowReject: window.location.hash === "#reject",
+      allowPublish: window.location.hash === "#publish"
     })
   }
   handleEdit = event => {
@@ -75,7 +82,10 @@ class AdminControls extends React.PureComponent {
     })
 
     // set submission id so that the correct article would be updated with upload
-    this.props.setSubmissionId(this.props.article.id)
+    this.props.setSubmissionStatus(
+      this.props.article.id,
+      this.props.publicationStatus !== "published" ? "unpublished" : "published"
+    )
 
     // redirect to Composer
     this.props.history.push("/submit/compose")
@@ -109,17 +119,40 @@ class AdminControls extends React.PureComponent {
     this.props.rejectSubmission(this.props.article.id)
   }
 
+  // publish immediately
+  handlePublishNow = event => {
+    event.preventDefault()
+
+    // warn about immediate publication
+    if (!this.state.allowPublish) {
+      this.props.setCard(MESSAGE_HINT_PUBLISH_SUBMISSION)
+      return
+    }
+
+    this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
+  }
+
   render = () => {
     return [
       <ButtonStrip
         style={{
           margin: "1em auto 0",
-          width: "16em"
+          width: this.props.publicationStatus !== "scheduled" ? "16em" : null,
+          display:
+            this.props.publicationStatus !== "rejected" ? "block" : "none"
         }}
         key="controls"
       >
         <div>
-          <Item left onClick={this.handleEdit} style={{ minWidth: "5em" }}>
+          <Item
+            left
+            onClick={this.handleEdit}
+            style={{
+              minWidth: "5em",
+              display:
+                this.props.publicationStatus !== "scheduled" ? "block" : "none"
+            }}
+          >
             <span role="img" aria-label="(Un)Locked button">
               {this.state.allowOverwrite ? "🔓" : "🔐"}
             </span>{" "}
@@ -132,7 +165,13 @@ class AdminControls extends React.PureComponent {
               <Item
                 key="reject"
                 onClick={this.handleRejection}
-                style={{ minWidth: "6em" }}
+                style={{
+                  minWidth: "6em",
+                  display:
+                    this.props.publicationStatus !== "scheduled"
+                      ? "block"
+                      : "none"
+                }}
               >
                 <span role="img" aria-label="(Un)Locked button">
                   {this.state.allowReject ? "🔓" : "🔐"}
@@ -141,16 +180,53 @@ class AdminControls extends React.PureComponent {
               </Item>,
               <Item
                 right
+                left={this.props.publicationStatus === "scheduled"}
                 black={this.state.publishControls}
-                onClick={this.handlePblishControls}
+                style={
+                  this.props.publicationStatus === "scheduled"
+                    ? { minWidth: "8em" }
+                    : {}
+                }
+                onClick={
+                  this.props.publicationStatus !== "scheduled"
+                    ? this.handlePblishControls
+                    : null
+                }
                 key="publish"
               >
-                Publish
+                {this.props.publicationStatus !== "scheduled"
+                  ? "Publish"
+                  : "Edit Schedule"}
               </Item>
             ]
           )}
         </div>
       </ButtonStrip>,
+      <Byline
+        key="rejected"
+        style={{
+          display:
+            this.props.publicationStatus === "rejected" ? "block" : "none"
+        }}
+      >
+        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
+          ❌
+        </span>{" "}
+        This submission has been REJECTED and can not be published or edited.
+      </Byline>,
+      <Byline
+        key="scheduled"
+        style={{
+          display:
+            this.props.publicationStatus === "scheduled" ? "block" : "none",
+          paddingTop: "1em"
+        }}
+      >
+        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
+          ❌
+        </span>{" "}
+        This submission has been SCHEDULED and can not be edited.
+      </Byline>,
       <div
         key="scheduler"
         style={{ display: this.state.publishControls ? "block" : "none" }}
@@ -189,7 +265,9 @@ class AdminControls extends React.PureComponent {
           }}
         >
           <Button red>Add to Queue</Button>
-          <Button>Publish Now</Button>
+          <Button onClick={this.handlePublishNow}>
+            {this.state.allowPublish ? "🔓" : "🔐"} Publish Now
+          </Button>
         </CardFlattened>
       </div>
     ]
@@ -201,11 +279,14 @@ const mapDispatchToProps = dispatch => {
     setCard: (info, request) => {
       dispatch(setCard(info, request))
     },
-    setSubmissionId: id => {
-      dispatch(setSubmissionId(id))
+    setSubmissionStatus: (id, type) => {
+      dispatch(setSubmissionStatus(id, type))
     },
     rejectSubmission: id => {
       dispatch(rejectSubmission(id))
+    },
+    publishSubmission: (id, scheduleOrder, tag) => {
+      dispatch(publishSubmission(id, scheduleOrder, tag))
     }
   }
 }

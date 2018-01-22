@@ -4,12 +4,12 @@ for (var o = 0; o < 8; o++) {
   collabFeaturesDefaults[o] = { id: o }
 }
 
-// storing submissionId in localStorage along with all contnet
-const getLocalSubmissionId = () =>
-  localStorage.getItem("composer-submission-id")
-    ? localStorage.getItem("composer-submission-id")
-    : ""
-const localSubmissionId = getLocalSubmissionId()
+// storing submission status in localStorage along with all contnet
+const getLocalSubmissionStatus = () =>
+  localStorage.getItem("composer-submission-status")
+    ? JSON.parse(localStorage.getItem("composer-submission-status"))
+    : {}
+const localSubmissionStatus = getLocalSubmissionStatus()
 
 const INITIAL_STATE = {
   draftStatus: "Draft",
@@ -19,7 +19,10 @@ const INITIAL_STATE = {
     status: "loading",
     items: collabFeaturesDefaults
   },
-  submissionId: localSubmissionId ? localSubmissionId : ""
+  submissionStatus: {
+    id: localSubmissionStatus.id || "",
+    type: localSubmissionStatus.type || "unpublished"
+  }
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -36,19 +39,22 @@ export default (state = INITIAL_STATE, action) => {
         uploadProgress: INITIAL_STATE.uploadProgress
       }
       break
-    case "COMPOSER.SET_SUBMISSION_ID":
+    case "COMPOSER.SET_SUBMISSION_STATUS":
       state = {
         ...state,
-        submissionId: action.payload
+        submissionStatus: action.payload
       }
-      localStorage.setItem("composer-submission-id", state.submissionId)
+      localStorage.setItem(
+        "composer-submission-status",
+        JSON.stringify(state.submissionStatus)
+      )
       break
-    case "COMPOSER.RESET_SUBMISSION_ID":
+    case "COMPOSER.RESET_SUBMISSION_STATUS":
+      localStorage.removeItem("composer-submission-status")
       state = {
         ...state,
-        submissionId: ""
+        submissionStatus: INITIAL_STATE.submissionStatus
       }
-      localStorage.removeItem("composer-submission-id")
       break
     case "COMPOSER.SET_DRAFT_STATUS":
       state = {

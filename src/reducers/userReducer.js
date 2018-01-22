@@ -17,9 +17,9 @@ const INITIAL_STATE = {
     status: "ok"
   },
   sessionInfo: {
-    method: localSessionInfo.method ? localSessionInfo.method : "",
-    id: localSessionInfo.id ? localSessionInfo.id : "",
-    login: localSessionInfo.login ? localSessionInfo.login : false
+    method: localSessionInfo.method || "",
+    id: localSessionInfo.id || "",
+    login: localSessionInfo.login || false
   }
 }
 
