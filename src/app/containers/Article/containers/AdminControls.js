@@ -163,7 +163,7 @@ class AdminControls extends React.PureComponent {
           ) : (
             [
               <Item
-                key="reject"
+                key="ButtonStrip_Item_reject"
                 onClick={this.handleRejection}
                 style={{
                   minWidth: "6em",
@@ -192,7 +192,7 @@ class AdminControls extends React.PureComponent {
                     ? this.handlePblishControls
                     : null
                 }
-                key="publish"
+                key="ButtonStrip_Item_publish"
               >
                 {this.props.publicationStatus !== "scheduled"
                   ? "Publish"
@@ -203,7 +203,7 @@ class AdminControls extends React.PureComponent {
         </div>
       </ButtonStrip>,
       <Byline
-        key="rejected"
+        key="Byline_rejected"
         style={{
           display:
             this.props.publicationStatus === "rejected" ? "block" : "none"
@@ -215,7 +215,7 @@ class AdminControls extends React.PureComponent {
         This submission has been REJECTED and can not be published or edited.
       </Byline>,
       <Byline
-        key="scheduled"
+        key="Byline_scheduled"
         style={{
           display:
             this.props.publicationStatus === "scheduled" ? "block" : "none",
@@ -228,7 +228,7 @@ class AdminControls extends React.PureComponent {
         This submission has been SCHEDULED and can not be edited.
       </Byline>,
       <div
-        key="scheduler"
+        key="div_scheduler"
         style={{ display: this.state.publishControls ? "block" : "none" }}
       >
         <ButtonStrip

@@ -7,6 +7,32 @@ import errorMessages from "../constants/messages/errors"
 import { ROUTE_IMAGE_API } from "../constants/picture"
 import { ROUTE_SUBMISSION_API } from "../constants/article"
 
+// manage Composer state
+export const setValueForDocument = value => {
+  return {
+    type: "COMPOSER.SET_VALUE_DOCUMENT",
+    payload: value
+  }
+}
+export const setValueForTitle = value => {
+  return {
+    type: "COMPOSER.SET_VALUE_TITLE",
+    payload: value
+  }
+}
+export const setValueForSubtitle = value => {
+  return {
+    type: "COMPOSER.SET_VALUE_SUBTITLE",
+    payload: value
+  }
+}
+export const resetValues = () => {
+  return {
+    type: "COMPOSER.RESET_VALUES",
+    payload: null
+  }
+}
+
 // track submission id -> none if this is a new submission or
 // an id of an edited submission
 export const setSubmissionStatus = (id, type) => {

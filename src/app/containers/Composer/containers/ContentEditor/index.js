@@ -6,6 +6,7 @@ import getOffsets from "positions"
 
 // redux
 import { connect } from "react-redux"
+import { setValueForDocument } from "../../../../../actions/composerActions"
 
 // components
 import ImageButton from "./components/ImageButton"
@@ -15,7 +16,6 @@ import Menu from "./components/FormatMenu"
 import { plugins } from "./plugins"
 import { renderNode, renderMark } from "./render"
 import { schema } from "./schema"
-import { loadContent } from "../../../../../utils/composer-loader"
 
 import {
   menuPosition,
@@ -34,13 +34,9 @@ import {
 class ContentEditor extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.props.composerState.raw = loadContent()
 
     this.handleClickPropagation = this.handleClickPropagation.bind(this)
-
-    // composerState is what appears by default in composer once the user opens the view
     this.state = {
-      value: Value.fromJSON(loadContent()),
       schema,
       author: this.props.author,
       cursorContext: {
@@ -54,7 +50,7 @@ class ContentEditor extends React.PureComponent {
   }
 
   handleChange = ({ value }) => {
-    this.setState({ value })
+    // this.props.setValueForDocument((value.toJSON()))
 
     // add information about cursor positions
     const cursorContextDelay = setTimeout(() => {
@@ -76,7 +72,7 @@ class ContentEditor extends React.PureComponent {
 
     // update draft status & save content to device
     setDraftStatusHelper()
-    this.props.composerState.raw = JSON.stringify(value.toJSON())
+    this.props.composer.editorValues.document
     saveContent(document, value)
   }
 
@@ -135,7 +131,6 @@ class ContentEditor extends React.PureComponent {
   // render
   render = () => {
     focusEvents(this)
-
     return [
       <div style={{ position: "relative" }} key="ContentEditor_div">
         <ImageButton
@@ -149,7 +144,7 @@ class ContentEditor extends React.PureComponent {
           renderMark={renderMark}
           schema={this.state.schema}
           placeholder={"Write your story…"}
-          value={this.state.value}
+          value={Value.fromJSON(this.props.composer.editorValues.document)}
           onChange={this.handleChange}
           onClick={this.handleClickPropagation}
           onBlur={this.handleBlur}
@@ -167,7 +162,7 @@ class ContentEditor extends React.PureComponent {
       <Menu
         menuRef={this.menuRef}
         onChange={this.handleChange}
-        value={this.state.value}
+        value={Value.fromJSON(this.props.composer.editorValues.document)}
         formatCommand={this.formatCommand}
         key="ContentEditor_Menu"
       />
@@ -181,4 +176,12 @@ const mapStateToProps = state => {
     composer: state.composer
   }
 }
-export default connect(mapStateToProps)(ContentEditor)
+// connect with redux
+const mapDispatchToProps = dispatch => {
+  return {
+    setValueForDocument: value => {
+      dispatch(setValueForDocument(value))
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ContentEditor)

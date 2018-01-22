@@ -18,7 +18,6 @@ export const schema = {
     ],
     last: { types: ["paragraph"] },
     normalize: (change, reason, { node, child }) => {
-      console.log(1)
       switch (reason) {
         // case "child_type_invalid": {
         //   change.setNodeByKey(child.key, { type: "paragraph" })
