@@ -14,8 +14,19 @@ const loginError = (type = "error") => {
   return {
     status: "ok",
     info: {
-      title: errorMessages.VIEW_TEMPLATE.CARD.title,
-      text: errorMessages.DISAMBIGUATION.CODE_401[type]
+      title: errorMessages.VIEW_TEMPLATE.AUTHENICATION.title,
+      text: errorMessages.DISAMBIGUATION.CODE_401[type],
+      buttons: [
+        {
+          to: "/sign-in",
+          text: "Sign In",
+          red: true
+        },
+        {
+          to: "/",
+          text: "Nevermind"
+        }
+      ]
     }
   }
 }
@@ -164,7 +175,19 @@ export const setInfo = request => {
           payload: "updated"
         })
       })
-      .catch(error => dispatch(setCard(loginError, { url: "errors/user" })))
+      .catch(error => {
+        dispatch(
+          setCard(loginError(error.response.data.message), {
+            url: "errors/user"
+          })
+        )
+
+        // register in Redux store
+        dispatch({
+          type: "USER.SET_STATUS",
+          payload: "forbidden"
+        })
+      })
   }
 }
 export const acceptInfo = () => {

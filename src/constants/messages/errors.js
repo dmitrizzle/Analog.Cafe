@@ -30,6 +30,9 @@ export default {
       text:
         "Your submission did not go through. You can try sending it again, if you like."
     },
+    AUTHENICATION: {
+      title: "You’re Signed Out"
+    },
     SUBMISSION_NO_IMAGES: {
       title: "Forgot to Add Images?",
       text: "Please include at least one photograph or illustration."

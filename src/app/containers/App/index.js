@@ -91,7 +91,8 @@ class App extends React.PureComponent {
       ReactGA.initialize(APP_TRACKING_GAID, {
         debug: false,
         titleCase: true,
-        gaOptions: {}
+        gaOptions: {},
+        gaAddress: "/analytics.js"
       })
       this.setView = () => {
         ReactGA.set({ page: window.location.pathname + window.location.search })
