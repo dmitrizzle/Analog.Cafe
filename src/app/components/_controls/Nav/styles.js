@@ -76,6 +76,8 @@ export const NavItem = styled.li`
   ${props =>
     props.draftStatus &&
     `
+    // for "Draft Saved" button we need to set some trims because on very small
+    // screens it breaks design
     overflow: hidden;
     height: ${props.theme.size.block.spacing /
       props.theme.size.font.make.smaller}em;
