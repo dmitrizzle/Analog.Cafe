@@ -92,7 +92,7 @@ class App extends React.PureComponent {
         debug: false,
         titleCase: true,
         gaOptions: {},
-        gaAddress: "/analytics.js"
+        gaAddress: process.env.PUBLIC_URL + "/analytics-20181123452.js"
       })
       this.setView = () => {
         ReactGA.set({ page: window.location.pathname + window.location.search })
