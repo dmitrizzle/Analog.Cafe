@@ -37,7 +37,7 @@ import {
 } from "../../../../actions/userActions"
 import {
   uploadData as uploadSubmissionData,
-  initStatus as resetUploadStatus,
+  initUploadProgress,
   resetAllValues as resetComposerValues,
   resetSubmissionStatus
 } from "../../../../actions/composerActions"
@@ -167,7 +167,7 @@ class Upload extends React.PureComponent {
       this.props.resetComposerValues()
 
       // reset upload state
-      this.props.resetUploadStatus()
+      this.props.initUploadProgress()
 
       // remove working submission id
       this.props.resetSubmissionStatus()
@@ -276,8 +276,8 @@ const mapDispatchToProps = dispatch => {
     uploadSubmissionData: request => {
       dispatch(uploadSubmissionData(request))
     },
-    resetUploadStatus: () => {
-      dispatch(resetUploadStatus())
+    initUploadProgress: () => {
+      dispatch(initUploadProgress())
     },
     resetSubmissionStatus: () => {
       dispatch(resetSubmissionStatus())

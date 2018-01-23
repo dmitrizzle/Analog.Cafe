@@ -134,6 +134,13 @@ export const getInfo = () => {
       })
       .catch(error => {
         localStorage.removeItem("token") // clean up broken/old token
+
+        // register in Redux store
+        dispatch({
+          type: "USER.SET_STATUS",
+          payload: "forbidden"
+        })
+
         if (!error.response || !error.response.data) return
         dispatch(
           setCard(loginError(error.response.data.message), {

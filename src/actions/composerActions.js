@@ -38,15 +38,15 @@ export const resetSubmissionStatus = () => {
 }
 
 // monitor upload status and percentage
-export const setStatus = state => {
+export const setUploadProgress = state => {
   return {
-    type: "UPLOAD.SET_STATUS",
+    type: "UPLOAD.SET_PROGRESS",
     payload: state
   }
 }
-export const initStatus = () => {
+export const initUploadProgress = () => {
   return {
-    type: "UPLOAD.INIT_STATUS"
+    type: "UPLOAD.INIT_PORGRESS"
   }
 }
 
@@ -60,7 +60,7 @@ export const uploadData = request => {
     // register upload progress
     axiosRequestWithProgress.onUploadProgress = progressEvent =>
       dispatch(
-        setStatus({
+        setUploadProgress({
           uploadProgress: Math.round(
             progressEvent.loaded * 100 / progressEvent.total
           )
@@ -70,7 +70,7 @@ export const uploadData = request => {
     // dispatch data upload
     axios(axiosRequestWithProgress).catch(error => {
       dispatch(
-        setStatus({
+        setUploadProgress({
           uploadProgress: -1
         })
       )

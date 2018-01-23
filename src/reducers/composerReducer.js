@@ -52,13 +52,13 @@ export default (state = INITIAL_STATE, action) => {
       break
 
     // upload reducers
-    case "UPLOAD.SET_STATUS":
+    case "UPLOAD.SET_PROGRESS":
       state = {
         ...state,
         uploadProgress: action.payload.uploadProgress
       }
       break
-    case "UPLOAD.INIT_STATUS":
+    case "UPLOAD.INIT_PROGRESS":
       state = {
         ...state,
         uploadProgress: INITIAL_STATE.uploadProgress
