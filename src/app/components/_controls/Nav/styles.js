@@ -73,9 +73,13 @@ export const NavItem = styled.li`
             .string()
         : null}; */};
 
-  overflow: hidden;
-  height: ${props =>
-    props.theme.size.block.spacing / props.theme.size.font.make.smaller}em;
+  ${props =>
+    props.draftStatus &&
+    `
+    overflow: hidden;
+    height: ${props.theme.size.block.spacing /
+      props.theme.size.font.make.smaller}em;
+  `};
 `
 
 // styles for tiny profile icon

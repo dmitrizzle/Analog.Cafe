@@ -18,13 +18,16 @@ import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
 // export
 // this doesn't work as well with PureComponent:
 // author links need to be clicked twice after first load to work...
+
+let localForageCache
 class Figure extends React.Component {
   // state for caption & selection
   constructor(props) {
     super(props)
     this.state = {
       caption: props.node.data.get("caption"),
-      src: props.node.data.get("src")
+      src: props.node.data.get("src"),
+      key: ""
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleTextareaClick = this.handleTextareaClick.bind(this)
@@ -56,8 +59,10 @@ class Figure extends React.Component {
     const resolvedState = editor.value
       .change()
       .setNodeByKey(node.key, properties)
-    editor.onChange(resolvedState) // have to use native onChange in editor (rather than handleChange)
-    //this.setState({ src })
+    editor.onChange(resolvedState)
+
+    // store DB key if available
+    this.setState({ key })
   }
   handleTextareaClick = event => {
     event.preventDefault()
@@ -67,8 +72,20 @@ class Figure extends React.Component {
     const { node } = this.props
     const { data } = node
     const caption = data.get("caption")
+    const key = data.get("key")
     this.setState({ caption })
-    this.loadImage(data.get("file"), data.get("key"), data.get("src"))
+    this.loadImage(data.get("file"), key, data.get("src"))
+
+    // store DB key if available
+    this.setState({ key })
+  }
+  componentWillUnmount = () => {
+    // remove item from localForage when deleted from editor
+    // ... if localForage is available (otherwise it's better to keep
+    // it in DB and wait for user to submit instead of creating a while
+    // new bundle)
+    if (this.state.key && localForageCache.removeItem)
+      localForageCache.removeItem(this.state.key)
   }
   loadImage = (file, key, src) => {
     if (!key) {
@@ -77,6 +94,7 @@ class Figure extends React.Component {
       this.props.readOnly && this.props.getInfo(src)
     } else {
       import("localforage").then(localForage => {
+        localForageCache = localForage
         localForage.getItem(key).then(data => {
           const reader = new FileReader()
           reader.addEventListener("load", () =>
@@ -93,6 +111,9 @@ class Figure extends React.Component {
           }
         })
       })
+
+      // store DB key if available
+      this.setState({ key })
     }
   }
 

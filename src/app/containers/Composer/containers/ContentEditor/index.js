@@ -50,7 +50,6 @@ class ContentEditor extends React.PureComponent {
 
   handleChange = ({ value }) => {
     this.setState({ value })
-    console.log("change")
 
     // add information about cursor positions
     const cursorContextDelay = setTimeout(() => {

@@ -165,7 +165,7 @@ const NavLinkSend = props => {
 export const ComposerNav = props => {
   return (
     <ul>
-      <NavItem indicator prime left className="prime left">
+      <NavItem draftStatus prime left className="prime left">
         <ModalDispatch
           with={MESSAGE_HINT_AUTO_SAVE}
           style={{ textDecoration: "none" }}
