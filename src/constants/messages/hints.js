@@ -102,7 +102,7 @@ export const MESSAGE_HINT_PUBLISH_SUBMISSION = {
   info: {
     title: "Are You Sure?",
     text:
-      "Please confirm that you want this article to go live. This will trigger an immediate RSS feed update which will send an update to various channels and eventually email list. This can not be undone. You can un-publish this article later, but the message will be already out.",
+      "Please confirm that you want this article to go live. This will trigger an immediate RSS feed update which will send an update to various channels and eventually the email list. This can not be undone. You can un-publish this article later, but the message will be already out.",
     buttons: [
       {
         to: "#",

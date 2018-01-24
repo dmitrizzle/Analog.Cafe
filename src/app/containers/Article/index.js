@@ -197,8 +197,7 @@ class Article extends React.PureComponent {
           title={this.props.article.error && this.props.article.error}
         >
           {this.props.article.authors &&
-            this.props.article.authors[0].name &&
-            this.props.article.tag && (
+            this.props.article.authors[0].name && (
               <Byline>
                 <Link to={this.state.tag.route}>{this.state.tag.name}</Link> by{" "}
                 {getLeadAuthor(this.props.article.authors).id ? (
@@ -228,7 +227,11 @@ class Article extends React.PureComponent {
             this.props.article.status !== "published" &&
             this.props.article.status !== "loading" && (
               <Byline>
-                <span style={{ fontStyle: "normal" }}> {emojis.WARNING}</span>{" "}
+                <br />
+                <span style={{ fontStyle: "normal" }}>
+                  {" "}
+                  {emojis.WARNING}
+                </span>{" "}
                 This submission is only visible to you and the Analog.Cafe
                 Editors.
               </Byline>

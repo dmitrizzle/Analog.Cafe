@@ -166,6 +166,17 @@ class AdminControls extends React.PureComponent {
 
   render = () => {
     return [
+      <Byline
+        key="Byline_scheduled"
+        style={{
+          display: this.props.article.status === "scheduled" ? "block" : "none"
+        }}
+      >
+        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
+          ❌
+        </span>{" "}
+        This submission has been SCHEDULED and can not be edited.
+      </Byline>,
       <ButtonStrip
         style={{
           margin: "1em auto 0",
@@ -246,25 +257,13 @@ class AdminControls extends React.PureComponent {
         </span>{" "}
         This submission has been REJECTED and can not be published or edited.
       </Byline>,
-      <Byline
-        key="Byline_scheduled"
-        style={{
-          display: this.props.article.status === "scheduled" ? "block" : "none",
-          paddingTop: "1em"
-        }}
-      >
-        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          ❌
-        </span>{" "}
-        This submission has been SCHEDULED and can not be edited.
-      </Byline>,
       <div
         key="div_scheduler"
         style={{ display: this.state.publishControls ? "block" : "none" }}
       >
         <ButtonStrip
           style={{
-            margin: "1.5em auto 0",
+            margin: "0.5em auto 0",
             width: "auto",
             overflow: "scroll",
             padding: "1px 1px 3px"
@@ -292,6 +291,7 @@ class AdminControls extends React.PureComponent {
         <CardFlattened
           style={{
             marginBottom: 0,
+            marginTop: "0.5em",
             display: this.state.publishAs ? "block" : "none"
           }}
         >
