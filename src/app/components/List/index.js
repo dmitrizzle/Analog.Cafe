@@ -19,7 +19,8 @@ import { authorNameList } from "../../../utils/authorship"
 import {
   ROUTE_ARTICLE_DIR,
   ROUTE_SUBMISSIONS_DIR,
-  SUMMARY_LENGTH_MAX
+  SUMMARY_LENGTH_MAX,
+  STATUS_TAGS_DISAMBIGUATION
 } from "../../../constants/list"
 import emojis from "../../../constants/messages/emojis"
 
@@ -77,7 +78,11 @@ export default props => {
                   }
                 >
                   <section>
-                    <figure>
+                    <figure
+                      style={
+                        item.status === "rejected" ? { opacity: "0.25" } : null
+                      }
+                    >
                       {item.type !== "placeholder" && (
                         <div
                           style={
@@ -95,8 +100,20 @@ export default props => {
                         />
                       )}
                     </figure>
-                    <h2 title={item.title}>{item.title}</h2>
-                    <Caption status={props.status}>
+                    <h2
+                      title={item.title}
+                      style={
+                        item.status === "rejected" ? { opacity: "0.25" } : null
+                      }
+                    >
+                      {item.title}
+                    </h2>
+                    <Caption
+                      status={props.status}
+                      style={
+                        item.status === "rejected" ? { opacity: "0.25" } : null
+                      }
+                    >
                       <ListSubtitle
                         subtitle={item.subtitle}
                         title={item.title}
@@ -153,7 +170,7 @@ export default props => {
                         {/* status of the submission */}
                         {item.type !== "placeholder" &&
                           props.private &&
-                          ` ↝ ${item.status}`}
+                          ` ↝ ${STATUS_TAGS_DISAMBIGUATION[item.status]}`}
                         {/* emojis.MONOCLE + " Pending Editorial Review" */}
                       </Stats>
                       <AuthorAndDate>
@@ -175,7 +192,8 @@ export default props => {
                                 src: item.poster,
                                 size: index ? "s" : "m"
                               }).src
-                            })`
+                            })`,
+                            opacity: item.status === "rejected" ? "0.25" : null
                           }
                         : null
                     }

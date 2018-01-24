@@ -84,6 +84,7 @@ export const Ul = styled.ul`
 		}
 		section {
 			position: 				relative;
+      width:            100%;
 			max-width: 				61.5%;
 			padding: 					calc(${blockSpacing}em * 6) ${blockSafety}em ${props =>
   props.theme.size.block.spacing}em ${blockSafety}em;
