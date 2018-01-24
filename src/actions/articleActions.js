@@ -80,3 +80,29 @@ export const fetchPage = request => {
       })
   }
 }
+
+export const updateStatus = request => {
+  console.log(request)
+  return dispatch => {
+    // add token to request, if available;
+    // this is for viewing pending submissions
+    const token = localStorage.getItem("token")
+    if (token)
+      request.headers = {
+        Authorization: "JWT " + token
+      }
+
+    axios(axiosRequest(request))
+      .then(response => {
+        response.data.status
+          ? dispatch({
+              type: "ARTICLE.SET_STATUS",
+              payload: response.data.status
+            })
+          : console.log("Failed updating article status")
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+}

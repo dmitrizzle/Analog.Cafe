@@ -29,11 +29,55 @@ const INITIAL_STATE = {
   submissionStatus: {
     id: getLocalSubmissionStatus().id || "",
     type: getLocalSubmissionStatus().type || "unpublished"
+  },
+  submissionAdmin: {
+    reject: {
+      id: "",
+      status: ""
+    },
+    publish: {
+      id: "",
+      status: ""
+    }
   }
 }
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    // upload reducers
+    case "UPLOAD.SET_PROGRESS":
+      state = {
+        ...state,
+        uploadProgress: action.payload.uploadProgress
+      }
+      break
+    case "UPLOAD.INIT_PROGRESS":
+      state = {
+        ...state,
+        uploadProgress: INITIAL_STATE.uploadProgress
+      }
+      break
+
+    // submission reducers
+    case "SUBMISSION.ADMIN_PUBLISH":
+      state = {
+        ...state,
+        submissionAdmin: {
+          ...state.submissionAdmin,
+          publish: action.payload
+        }
+      }
+      break
+    case "SUBMISSION.ADMIN_REJECT":
+      state = {
+        ...state,
+        submissionAdmin: {
+          ...state.submissionAdmin,
+          reject: action.payload
+        }
+      }
+      break
+
     // track state for composer document
     case "COMPOSER.SET_HEADING_VALUES":
       state = {
@@ -48,20 +92,6 @@ export default (state = INITIAL_STATE, action) => {
       state = {
         ...state,
         headingValues: DEFAULT_COMPOSER_HEADER_STATE
-      }
-      break
-
-    // upload reducers
-    case "UPLOAD.SET_PROGRESS":
-      state = {
-        ...state,
-        uploadProgress: action.payload.uploadProgress
-      }
-      break
-    case "UPLOAD.INIT_PROGRESS":
-      state = {
-        ...state,
-        uploadProgress: INITIAL_STATE.uploadProgress
       }
       break
 

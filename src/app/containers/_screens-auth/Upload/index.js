@@ -139,6 +139,11 @@ class Upload extends React.PureComponent {
     }
   }
   componentWillReceiveProps = nextProps => {
+    if (
+      nextProps.composer.uploadProgress === this.props.composer.uploadProgress
+    )
+      return
+
     // set progress state
     if (nextProps.composer.uploadProgress >= 0)
       this.setState({

@@ -47,6 +47,12 @@ export default (state = INITIAL_STATE, action) => {
         ...action.payload
       }
       break
+    case "ARTICLE.SET_STATUS":
+      state = {
+        ...state,
+        status: action.payload
+      }
+      break
     default:
       return state
   }

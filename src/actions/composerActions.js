@@ -7,6 +7,11 @@ import errorMessages from "../constants/messages/errors"
 import { ROUTE_IMAGE_API } from "../constants/picture"
 import { ROUTE_SUBMISSION_API } from "../constants/article"
 
+import {
+  MESSAGE_HINT_REJECT_SUBMISSION_SUCCESS,
+  MESSAGE_HINT_PUBLISH_SUBMISSION_SUCCESS
+} from "../constants/messages/hints"
+
 // manage Composer state
 // note that Slate Editor state must be manage separately from within
 // Editor component and React's {state}
@@ -113,7 +118,7 @@ export const uploadData = request => {
   }
 }
 
-// monitor draft status and show in header nav
+// monitor draft (save) status and show in header nav
 export const setDraftStatus = status => {
   return {
     type: "COMPOSER.SET_DRAFT_STATUS",
@@ -145,7 +150,7 @@ export const fetchCollabFeatures = () => {
         })
       })
       .catch(error => {
-        // error
+        console.log(error)
       })
   }
 }
@@ -160,10 +165,16 @@ export const rejectSubmission = submissionId => {
         Authorization: "JWT " + localStorage.getItem("token")
       }
     }
-
     axios(axiosRequest(request))
       .then(response => {
-        console.log(response)
+        dispatch(setCard(MESSAGE_HINT_REJECT_SUBMISSION_SUCCESS))
+        dispatch({
+          type: "SUBMISSION.ADMIN_REJECT",
+          payload: {
+            id: submissionId,
+            status: response.status
+          }
+        })
       })
       .catch(error => {
         console.log(error)
@@ -188,7 +199,14 @@ export const publishSubmission = (submissionId, scheduleOrder, tag) => {
 
     axios(axiosRequest(request))
       .then(response => {
-        console.log(response)
+        dispatch(setCard(MESSAGE_HINT_PUBLISH_SUBMISSION_SUCCESS))
+        dispatch({
+          type: "SUBMISSION.ADMIN_PUBLISH",
+          payload: {
+            id: submissionId,
+            status: response.data.status
+          }
+        })
       })
       .catch(error => {
         console.log(error)

@@ -11,6 +11,7 @@ import {
   publishSubmission,
   setHeadingValues
 } from "../../../../actions/composerActions"
+import { updateStatus as updateArticleStatus } from "../../../../actions/articleActions"
 
 // components
 import { Button } from "../../../components/_controls/Button"
@@ -30,6 +31,8 @@ import {
   storeHeaderState
 } from "../../../../utils/composer-saver"
 
+import { locate } from "../../../../utils/article-utils"
+
 const TAGS = {
   story: "Story",
   editorial: "Editorial",
@@ -44,10 +47,12 @@ class AdminControls extends React.PureComponent {
     this.state = {
       allowOverwrite:
         window.location.hash === "#overwrite" || !loadTextContent().length > 0,
-      allowReject: window.location.hash === "#reject",
-      allowPublish: window.location.hash === "#publish",
       publishControls: false,
-      publishAs: ""
+      publishAs: "",
+
+      // URL hashtag flags that unlock dangerous functions
+      allowReject: window.location.hash === "#reject",
+      allowPublish: window.location.hash === "#publish"
     }
   }
   componentDidMount = () => {
@@ -63,6 +68,27 @@ class AdminControls extends React.PureComponent {
         window.location.hash === "#overwrite" || !loadTextContent().length > 0,
       allowReject: window.location.hash === "#reject",
       allowPublish: window.location.hash === "#publish"
+    })
+
+    // refresh status & controls:
+    if (
+      this.props.composer.submissionAdmin.reject.status ===
+        nextProps.composer.submissionAdmin.reject.status &&
+      this.props.composer.submissionAdmin.publish.status ===
+        nextProps.composer.submissionAdmin.publish.status
+    )
+      return
+    this.props.updateArticleStatus({
+      url:
+        locate(this.props.history.location.pathname).apiRoute +
+        this.props.history.location.pathname.replace(
+          locate(this.props.history.location.pathname).pathname,
+          ""
+        )
+    })
+    this.setState({
+      publishControls: false,
+      publishAs: ""
     })
   }
   handleEdit = event => {
@@ -89,7 +115,7 @@ class AdminControls extends React.PureComponent {
     // set submission id so that the correct article would be updated with upload
     this.props.setSubmissionStatus(
       this.props.article.id,
-      this.props.publicationStatus !== "published" ? "unpublished" : "published"
+      this.props.article.status !== "published" ? "unpublished" : "published"
     )
 
     // redirect to Composer
@@ -111,6 +137,7 @@ class AdminControls extends React.PureComponent {
   }
 
   // mark as rejected
+  // (request to server)
   handleRejection = event => {
     event.preventDefault()
 
@@ -125,6 +152,7 @@ class AdminControls extends React.PureComponent {
   }
 
   // publish immediately
+  // (request to server)
   handlePublishNow = event => {
     event.preventDefault()
 
@@ -133,7 +161,6 @@ class AdminControls extends React.PureComponent {
       this.props.setCard(MESSAGE_HINT_PUBLISH_SUBMISSION)
       return
     }
-
     this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
   }
 
@@ -142,9 +169,8 @@ class AdminControls extends React.PureComponent {
       <ButtonStrip
         style={{
           margin: "1em auto 0",
-          width: this.props.publicationStatus !== "scheduled" ? "16em" : null,
-          display:
-            this.props.publicationStatus !== "rejected" ? "block" : "none"
+          width: this.props.article.status !== "scheduled" ? "16em" : null,
+          display: this.props.article.status !== "rejected" ? "block" : "none"
         }}
         key="controls"
       >
@@ -155,7 +181,7 @@ class AdminControls extends React.PureComponent {
             style={{
               minWidth: "5em",
               display:
-                this.props.publicationStatus !== "scheduled" ? "block" : "none"
+                this.props.article.status !== "scheduled" ? "block" : "none"
             }}
           >
             <span role="img" aria-label="(Un)Locked button">
@@ -163,19 +189,21 @@ class AdminControls extends React.PureComponent {
             </span>{" "}
             Edit
           </Item>
-          {this.props.publicationStatus === "published" ? (
+          {this.props.article.status === "published" ? (
             <Item right>Unpublish</Item>
           ) : (
             [
               <Item
                 key="ButtonStrip_Item_reject"
                 onClick={this.handleRejection}
+                black={
+                  this.props.composer.submissionAdmin.reject.id ===
+                  this.props.article.id
+                }
                 style={{
                   minWidth: "6em",
                   display:
-                    this.props.publicationStatus !== "scheduled"
-                      ? "block"
-                      : "none"
+                    this.props.article.status !== "scheduled" ? "block" : "none"
                 }}
               >
                 <span role="img" aria-label="(Un)Locked button">
@@ -185,21 +213,21 @@ class AdminControls extends React.PureComponent {
               </Item>,
               <Item
                 right
-                left={this.props.publicationStatus === "scheduled"}
+                left={this.props.article.status === "scheduled"}
                 black={this.state.publishControls}
                 style={
-                  this.props.publicationStatus === "scheduled"
+                  this.props.article.status === "scheduled"
                     ? { minWidth: "8em" }
                     : {}
                 }
                 onClick={
-                  this.props.publicationStatus !== "scheduled"
+                  this.props.article.status !== "scheduled"
                     ? this.handlePblishControls
                     : null
                 }
                 key="ButtonStrip_Item_publish"
               >
-                {this.props.publicationStatus !== "scheduled"
+                {this.props.article.status !== "scheduled"
                   ? "Publish"
                   : "Edit Schedule"}
               </Item>
@@ -210,8 +238,7 @@ class AdminControls extends React.PureComponent {
       <Byline
         key="Byline_rejected"
         style={{
-          display:
-            this.props.publicationStatus === "rejected" ? "block" : "none"
+          display: this.props.article.status === "rejected" ? "block" : "none"
         }}
       >
         <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
@@ -222,8 +249,7 @@ class AdminControls extends React.PureComponent {
       <Byline
         key="Byline_scheduled"
         style={{
-          display:
-            this.props.publicationStatus === "scheduled" ? "block" : "none",
+          display: this.props.article.status === "scheduled" ? "block" : "none",
           paddingTop: "1em"
         }}
       >
@@ -270,8 +296,17 @@ class AdminControls extends React.PureComponent {
           }}
         >
           <Button red>Add to Queue</Button>
-          <Button onClick={this.handlePublishNow}>
-            {this.state.allowPublish ? "🔓" : "🔐"} Publish Now
+          <Button
+            onClick={this.handlePublishNow}
+            loading={
+              this.props.composer.submissionAdmin.publish.id ===
+              this.props.article.id
+            }
+          >
+            {this.props.composer.submissionAdmin.publish.id !==
+              this.props.article.id &&
+              (this.state.allowPublish ? "🔓" : "🔐")}{" "}
+            Publish Now
           </Button>
         </CardFlattened>
       </div>
@@ -279,6 +314,12 @@ class AdminControls extends React.PureComponent {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    composer: state.composer,
+    article: state.article
+  }
+}
 const mapDispatchToProps = dispatch => {
   return {
     setCard: (info, request) => {
@@ -295,8 +336,13 @@ const mapDispatchToProps = dispatch => {
     },
     publishSubmission: (id, scheduleOrder, tag) => {
       dispatch(publishSubmission(id, scheduleOrder, tag))
+    },
+    updateArticleStatus: request => {
+      dispatch(updateArticleStatus(request))
     }
   }
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(AdminControls))
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(AdminControls)
+)

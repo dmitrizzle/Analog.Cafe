@@ -14,16 +14,10 @@ import ArticleActions from "../../components/Card/components/ArticleActions"
 
 // constants
 import {
-  ROUTE_ARTICLE_API,
   ROUTE_ARTICLE_DIR,
-  ROUTE_SUBMISSION_API,
   ROUTE_SUBMISSIONS_DIR
 } from "../../../constants/article"
 import { ROUTE_AUTHOR_API } from "../../../constants/author"
-import {
-  ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL,
-  ROUTE_APP_PRODUCTION_DOMAIN_NAME
-} from "../../../constants/app"
 import { ROUTE_TAGS } from "../../../constants/list"
 import emojis from "../../../constants/messages/emojis"
 
@@ -49,29 +43,7 @@ import {
 import { froth } from "../../../utils/image-froth"
 import slugToTitle from "../../../utils/slug-to-title"
 import { getLeadAuthor, authorNameList } from "../../../utils/authorship"
-
-// return path type for submissions vs published works
-const locate = locationPathname => {
-  return {
-    pathname: locationPathname.includes(ROUTE_SUBMISSIONS_DIR)
-      ? ROUTE_SUBMISSIONS_DIR
-      : ROUTE_ARTICLE_DIR,
-    apiRoute: locationPathname.includes(ROUTE_SUBMISSIONS_DIR)
-      ? ROUTE_SUBMISSION_API
-      : ROUTE_ARTICLE_API
-  }
-}
-
-// generate complete url path for social sharing
-const completeUrlPath = (route, slug) => {
-  return encodeURI(
-    ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL +
-      ROUTE_APP_PRODUCTION_DOMAIN_NAME +
-      route +
-      "/" +
-      slug
-  )
-}
+import { locate, completeUrlPath } from "../../../utils/article-utils"
 
 // admin controls loader
 const AdminControls = Loadable({
@@ -261,12 +233,7 @@ class Article extends React.PureComponent {
                 Editors.
               </Byline>
             )}
-          {this.state.adminControls && (
-            <AdminControls
-              publicationStatus={this.state.publicationStatus}
-              article={this.props.article}
-            />
-          )}
+          {this.state.adminControls && <AdminControls />}
         </Heading>
         <Section articleStatus={this.props.article.status}>
           <Editor

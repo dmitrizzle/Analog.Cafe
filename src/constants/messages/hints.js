@@ -90,6 +90,14 @@ export const MESSAGE_HINT_REJECT_SUBMISSION = {
   },
   requested: { url: "hints/reject-submission" }
 }
+export const MESSAGE_HINT_REJECT_SUBMISSION_SUCCESS = {
+  info: {
+    title: "Successfuly Rejected Submission",
+    text:
+      "Done. Submission rejected. It will be marked as such in the database and the author should be receiving a notification shortly."
+  },
+  requested: { url: "hints/reject-submission" }
+}
 export const MESSAGE_HINT_PUBLISH_SUBMISSION = {
   info: {
     title: "Are You Sure?",
@@ -106,6 +114,14 @@ export const MESSAGE_HINT_PUBLISH_SUBMISSION = {
         text: "🔑 Publish Now"
       }
     ]
+  },
+  requested: { url: "hints/publish-submission" }
+}
+export const MESSAGE_HINT_PUBLISH_SUBMISSION_SUCCESS = {
+  info: {
+    title: "Submission Scheduled",
+    text:
+      "The submission has been scheduled for the future time slot or to be published immediately. Please check the scheduling tool to confirm when it’s gonna go live."
   },
   requested: { url: "hints/publish-submission" }
 }
