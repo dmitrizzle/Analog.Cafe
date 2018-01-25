@@ -13,5 +13,6 @@ export default {
   WARNING: "⚠️",
   STOP: "❌",
   LOCKED: "🔓",
-  UNLOCKED: "🔐"
+  UNLOCKED: "🔐",
+  KEY: "🔑"
 }

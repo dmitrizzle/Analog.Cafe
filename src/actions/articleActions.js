@@ -82,7 +82,6 @@ export const fetchPage = request => {
 }
 
 export const updateStatus = request => {
-  console.log(request)
   return dispatch => {
     // add token to request, if available;
     // this is for viewing pending submissions

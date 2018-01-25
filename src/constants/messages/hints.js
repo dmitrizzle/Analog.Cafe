@@ -1,5 +1,5 @@
 // constants
-import emijis from "./emojis"
+import emojis from "./emojis"
 
 export const MESSAGE_HINT_CHECK_EMAIL = email => {
   return {
@@ -68,7 +68,7 @@ export const MESSAGE_HINT_OVERWRITE_DRAFT = {
       },
       {
         to: "#overwrite",
-        text: "emojis.KEY Overwrite"
+        text: emojis.KEY + " Overwrite"
       }
     ]
   },
@@ -87,7 +87,7 @@ export const MESSAGE_HINT_REJECT_SUBMISSION = {
       },
       {
         to: "#reject",
-        text: "emojis.KEY Reject Submission"
+        text: emojis.KEY + " Reject Submission"
       }
     ]
   },
@@ -114,7 +114,7 @@ export const MESSAGE_HINT_PUBLISH_SUBMISSION = {
       },
       {
         to: "#publish",
-        text: "emojis.KEY Publish Now"
+        text: emojis.KEY + " Publish Now"
       }
     ]
   },
