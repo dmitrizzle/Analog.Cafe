@@ -101,14 +101,19 @@ class HeaderEditor extends React.PureComponent {
             <Link to="#unlink" onClick={this.handleUnlinkSubmission}>
               unlink
             </Link>.{this.props.composer.submissionStatus.type ===
-              "published" && [
-              <br key="Byline_linebreak" />,
-              <span key="BYline_note">
-                You are editing a published article. New submission will be
-                created which (only editors can see) you will need to publish to
-                replace the current article that’s live.
-              </span>
-            ]}
+              "published" ||
+            this.props.composer.submissionStatus.type === "scheduled"
+              ? [
+                  <br key="Byline_linebreak" />,
+                  <span key="BYline_note">
+                    You are editing a{" "}
+                    <strong>{this.props.composer.submissionStatus.type}</strong>{" "}
+                    article.{this.props.composer.submissionStatus.type ===
+                      "published" &&
+                      " You will need to publish your changes to update the publication."}
+                  </span>
+                ]
+              : null}
           </Byline>
         ) : (
           <Byline>

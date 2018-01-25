@@ -11,5 +11,7 @@ export default {
   // HUG_LEFT: "⊂ʕ•ᴥ•⊂ʔ",
   HUG_RIGHT: "ʕっ•ᴥ•ʔっ",
   WARNING: "⚠️",
-  STOP: "❌"
+  STOP: "❌",
+  LOCKED: "🔓",
+  UNLOCKED: "🔐"
 }

@@ -15,6 +15,7 @@ import { updateStatus as updateArticleStatus } from "../../../../actions/article
 
 // components
 import { Button } from "../../../components/_controls/Button"
+import Link from "../../../components/_controls/Link"
 import { CardFlattened } from "../../../components/Card/styles"
 import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
 import { Byline } from "../../../components/ArticleStyles"
@@ -26,6 +27,7 @@ import {
   MESSAGE_HINT_REJECT_SUBMISSION,
   MESSAGE_HINT_PUBLISH_SUBMISSION
 } from "../../../../constants/messages/hints"
+import { ROUTE_ARTICLE_DIR } from "../../../../constants/article"
 import emojis from "../../../../constants/messages/emojis"
 import {
   storeContentState,
@@ -170,18 +172,41 @@ class AdminControls extends React.PureComponent {
       <Byline
         key="Byline_scheduled"
         style={{
-          display: this.props.article.status === "scheduled" ? "block" : "none"
+          display:
+            // differentiating submissions from articles:
+
+            // > only submissions can be scheduled
+            this.props.article.status === "scheduled" ||
+            // > published and has `articleId` association with published article
+            // > means that it is a submission, rather than Article itself
+            (this.props.article.status === "published" &&
+              this.props.article.articleId)
+              ? "block"
+              : "none"
         }}
       >
         <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          {emojis.STOP}
+          {emojis.WARNING}
         </span>{" "}
-        This submission has been SCHEDULED and can not be edited.
+        {this.props.article.status === "scheduled" &&
+          "This is a SCHEDULED submission that you can edit while it is in the queue."}
+        {this.props.article.status === "published" && (
+          <span>
+            This is an original submission associated with a{" "}
+            <Link to={`${ROUTE_ARTICLE_DIR}/${this.props.article.slug}`}>
+              PUBLISHED
+            </Link>{" "}
+            article. You can edit it and then push your changes to the live
+            version.
+          </span>
+        )}{" "}
+        Original author will see your edits in their own submission.
       </Byline>,
+
       <ButtonStrip
         style={{
           margin: "1em auto 0",
-          width: this.props.article.status !== "scheduled" ? "16em" : null,
+          width: "16em",
           display: this.props.article.status !== "rejected" ? "block" : "none"
         }}
         key="controls"
@@ -191,13 +216,11 @@ class AdminControls extends React.PureComponent {
             left
             onClick={this.handleEdit}
             style={{
-              minWidth: "5em",
-              display:
-                this.props.article.status !== "scheduled" ? "block" : "none"
+              minWidth: "5em"
             }}
           >
             <span role="img" aria-label="(Un)Locked button">
-              {this.state.allowOverwrite ? "🔓" : "🔐"}
+              {this.state.allowOverwrite ? emojis.LOCKED : emojis.UNLOCKED}
             </span>{" "}
             Edit
           </Item>
@@ -219,13 +242,12 @@ class AdminControls extends React.PureComponent {
                 }}
               >
                 <span role="img" aria-label="(Un)Locked button">
-                  {this.state.allowReject ? "🔓" : "🔐"}
+                  {this.state.allowReject ? emojis.LOCKED : emojis.UNLOCKED}
                 </span>{" "}
                 Reject
               </Item>,
               <Item
                 right
-                left={this.props.article.status === "scheduled"}
                 black={this.state.publishControls}
                 style={
                   this.props.article.status === "scheduled"
@@ -306,7 +328,7 @@ class AdminControls extends React.PureComponent {
           >
             {this.props.composer.submissionAdmin.publish.id !==
               this.props.article.id &&
-              (this.state.allowPublish ? "🔓" : "🔐")}{" "}
+              (this.state.allowPublish ? emojis.LOCKED : emojis.UNLOCKED)}{" "}
             Publish Now
           </Button>
         </CardFlattened>
