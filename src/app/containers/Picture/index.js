@@ -2,7 +2,6 @@
 import React from "react"
 import { getFroth } from "../../../utils/image-froth"
 //import localForage from "localforage"
-import keycode from "keycode"
 
 // redux
 import { connect } from "react-redux"
@@ -20,13 +19,13 @@ import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
 // author links need to be clicked twice after first load to work...
 
 let localForageCache
-class Figure extends React.Component {
+class Figure extends React.PureComponent {
   // state for caption & selection
   constructor(props) {
     super(props)
     this.state = {
       caption: props.node.data.get("caption"),
-      src: props.node.data.get("src"),
+      src: props.node.data.get("src") || "",
       key: ""
     }
     this.handleChange = this.handleChange.bind(this)
@@ -34,6 +33,8 @@ class Figure extends React.Component {
     this.handleRemovePicture = this.handleRemovePicture.bind(this)
     this.handleFeaturePicture = this.handleFeaturePicture.bind(this)
   }
+
+  // listeners
   componentWillReceiveProps = nextProps => {
     const caption = nextProps.node.data.get("caption")
     if (caption !== this.state.caption) {
@@ -68,6 +69,8 @@ class Figure extends React.Component {
     event.preventDefault()
     event.stopPropagation()
   }
+
+  // init
   componentDidMount = () => {
     const { node } = this.props
     const { data } = node
@@ -78,14 +81,6 @@ class Figure extends React.Component {
 
     // store DB key if available
     this.setState({ key })
-  }
-  componentWillUnmount = () => {
-    // remove item from localForage when deleted from editor
-    // ... if localForage is available (otherwise it's better to keep
-    // it in DB and wait for user to submit instead of creating a while
-    // new bundle)
-    if (this.state.key && localForageCache.removeItem)
-      localForageCache.removeItem(this.state.key)
   }
   loadImage = (file, key, src) => {
     if (!key) {
@@ -117,11 +112,17 @@ class Figure extends React.Component {
     }
   }
 
-  //
   handleRemovePicture = () => {
     const { node, editor } = this.props
-    const resolvedState = editor.value.change().removeNodeByKey(node.key)
-    editor.onChange(resolvedState)
+    if (!editor.value.document.getDescendant(node.key)) return
+    editor.onChange(editor.value.change().removeNodeByKey(node.key))
+
+    // remove item from localForage when deleted from editor
+    // ... if localForage is available (otherwise it's better to keep
+    // it in DB and wait for user to submit instead of creating a while
+    // new bundle)
+    localForageCache.removeItem(this.state.key)
+    console.log("removed image from database")
   }
   handleFeaturePicture = () => {
     const { node, editor } = this.props
@@ -139,10 +140,6 @@ class Figure extends React.Component {
         .focus()
     )
   }
-  handleKeypress = event => {
-    // disallow multiple lines in titles
-    if (keycode(event.which) === "enter") event.preventDefault()
-  }
 
   render = () => {
     const { attributes, node, isSelected, editor } = this.props
@@ -151,7 +148,7 @@ class Figure extends React.Component {
     const className = focus ? "focus" : "nofocus"
     const feature = node.data.get("feature")
 
-    return src ? (
+    return (
       <Picture
         {...attributes}
         readOnly={this.props.readOnly}
@@ -177,17 +174,19 @@ class Figure extends React.Component {
             placeholder="Add image title, location, camera, film&hellip;"
             onChange={this.handleChange}
             onClick={this.handleTextareaClick}
-            onKeyPress={this.handleKeypress}
           />
         ) : (
           <span>{this.state.caption}</span>
         )}
       </Picture>
-    ) : (
-      <Picture {...attributes} src="" className={className}>
-        Loading image…
-      </Picture>
     )
+
+    //
+    // return src ? <Picture /> : (
+    //   <Picture {...attributes} src="" className={className}>
+    //     Loading image…
+    //   </Picture>
+    // )
   }
 }
 
