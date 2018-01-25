@@ -183,13 +183,13 @@ export const rejectSubmission = submissionId => {
 }
 
 // publish submission
-export const publishSubmission = (submissionId, scheduleOrder, tag) => {
+export const publishSubmission = (submissionId, scheduledOrder, tag) => {
   return dispatch => {
     const request = {
       url: `${ROUTE_SUBMISSION_API}/${submissionId}/approve`,
       method: "post",
-      params: {
-        scheduleOrder,
+      data: {
+        scheduledOrder,
         tag
       },
       headers: {

@@ -22,6 +22,7 @@ import {
   loadTextContent
 } from "../../../../utils/composer-loader"
 import errorMessages from "../../../../constants/messages/errors"
+import emojis from "../../../../constants/messages/emojis"
 
 import {
   redirectToSignIn,
@@ -228,7 +229,7 @@ class Upload extends React.PureComponent {
             <p>
               <strong>
                 <span role="img" aria-label="Warning">
-                  ⚠️
+                  {emojis.WARNING}
                 </span>{" "}
                 Please keep this page open, do not refresh and do not click your
                 browser’s “back” button

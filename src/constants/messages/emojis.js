@@ -10,5 +10,6 @@ export default {
   NEONCAT: "(◕⌂◕⊃⊃)",
   // HUG_LEFT: "⊂ʕ•ᴥ•⊂ʔ",
   HUG_RIGHT: "ʕっ•ᴥ•ʔっ",
-  WARNING: "⚠️"
+  WARNING: "⚠️",
+  STOP: "❌"
 }

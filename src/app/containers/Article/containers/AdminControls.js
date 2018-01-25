@@ -26,6 +26,7 @@ import {
   MESSAGE_HINT_REJECT_SUBMISSION,
   MESSAGE_HINT_PUBLISH_SUBMISSION
 } from "../../../../constants/messages/hints"
+import emojis from "../../../../constants/messages/emojis"
 import {
   storeContentState,
   storeHeaderState
@@ -173,7 +174,7 @@ class AdminControls extends React.PureComponent {
         }}
       >
         <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          ❌
+          {emojis.STOP}
         </span>{" "}
         This submission has been SCHEDULED and can not be edited.
       </Byline>,
@@ -253,7 +254,7 @@ class AdminControls extends React.PureComponent {
         }}
       >
         <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          ❌
+          {emojis.STOP}
         </span>{" "}
         This submission has been REJECTED and can not be published or edited.
       </Byline>,
@@ -334,8 +335,8 @@ const mapDispatchToProps = dispatch => {
     setHeadingValues: value => {
       dispatch(setHeadingValues(value))
     },
-    publishSubmission: (id, scheduleOrder, tag) => {
-      dispatch(publishSubmission(id, scheduleOrder, tag))
+    publishSubmission: (id, scheduledOrder, tag) => {
+      dispatch(publishSubmission(id, scheduledOrder, tag))
     },
     updateArticleStatus: request => {
       dispatch(updateArticleStatus(request))
