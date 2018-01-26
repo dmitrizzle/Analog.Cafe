@@ -10,10 +10,10 @@ import { anonymizeEmail } from "../utils/email-utils"
 import { ROUTE_USER_API } from "../constants/user"
 
 // manage connectivity
-export const setConnection = connection => {
+export const setConnectionStatus = connection => {
   return dispatch => {
     dispatch({
-      type: "USER.SET_CONNECTION",
+      type: "USER.SET_CONNECTION_STATUS",
       payload: connection
     })
   }

@@ -7,7 +7,7 @@ import { connect } from "react-redux"
 import { fetchCard, setCard } from "../../../../actions/modalActions"
 
 import { Button } from "../../../components/_controls/Button"
-import emojis from "../../../../constants/messages/emojis"
+import InlineStarIcon from "../../../components/_icons/InlineStarIcon"
 
 // return
 const ModalDispatch = props => {
@@ -42,15 +42,7 @@ const ModalDispatch = props => {
     case "a":
       ModalDispatchWrapper = styled(Wrapper)`
         &::after {
-          content: "${emojis.STAR}";
-          text-decoration: none;
-          font-style: normal;
-          display: inline-block;
-          vertical-align: super;
-          font-size: 0.5em;
-          margin-right: -.25em;
-          margin-left: -.15em;
-          margin-top: -.5em;
+          ${InlineStarIcon};
         }
       `
       break

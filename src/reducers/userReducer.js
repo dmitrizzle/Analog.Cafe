@@ -9,7 +9,9 @@ const getLocalSessionInfo = () =>
 
 const INITIAL_STATE = {
   status: "forbidden",
-  connection: "",
+  connection: {
+    status: ""
+  },
   info: {},
   routes: {
     success: ROUTE_AUTH_USER_LANDING
@@ -28,10 +30,13 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case "USER.SET_CONNECTION":
+    case "USER.SET_CONNECTION_STATUS":
       state = {
         ...state,
-        connection: action.payload
+        connection: {
+          ...state.connection,
+          status: action.payload
+        }
       }
       break
     case "USER.SET_INFO":

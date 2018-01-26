@@ -22,7 +22,7 @@ import {
 import {
   verify as verifyUser,
   getInfo as getUserInfo,
-  setConnection
+  setConnectionStatus
 } from "../../../actions/userActions"
 import { setCard as setModalCard } from "../../../actions/modalActions"
 
@@ -106,12 +106,12 @@ class App extends React.PureComponent {
     // track connection (online/offline) status for user
     // listener
     const updateConnectionStatus = event => {
-      this.props.setConnection(navigator.onLine ? "online" : "offline")
+      this.props.setConnectionStatus(navigator.onLine ? "online" : "offline")
     }
     window.addEventListener("online", updateConnectionStatus)
     window.addEventListener("offline", updateConnectionStatus)
     // check on lanuch
-    navigator.onLine === false && this.props.setConnection("offline")
+    navigator.onLine === false && this.props.setConnectionStatus("offline")
   }
   componentWillReceiveProps = nextProps => {
     switch (nextProps.user.intent.load) {
@@ -207,8 +207,8 @@ const mapDispatchToProps = dispatch => {
     getUserInfo: () => {
       dispatch(getUserInfo())
     },
-    setConnection: connection => {
-      dispatch(setConnection(connection))
+    setConnectionStatus: connection => {
+      dispatch(setConnectionStatus(connection))
     },
     setModalCard: (info, request) => {
       dispatch(setModalCard(info, request))
