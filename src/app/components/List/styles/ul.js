@@ -4,7 +4,6 @@ import { renderToStaticMarkup } from "react-dom/server"
 
 // styles
 import styled, { css } from "styled-components"
-import Color from "color"
 
 // images
 import ZigZag from "../components/ZigZag"
@@ -18,10 +17,7 @@ export const zigzagTopShim = 12
 const blockSafety = props => props.theme.size.block.column.safety
 const blockSpacing = props => props.theme.size.block.spacing
 const greyLine = props =>
-  Color(props.theme.color.foreground)
-    .alpha(props.theme.opacity.least)
-    .string()
-// const greyFade = props => Color(props.theme.color.foreground).alpha(0).string()
+  props.theme.color.alpha.foreground(props.theme.opacity.least)
 
 const posterDimensions = css`
   width: 5.5em;
@@ -101,9 +97,7 @@ export const Ul = styled.ul`
 
 				${"" /* styles borrowed from Picture component */}
 				box-shadow: 0 0 .5em ${props =>
-          Color(props.theme.color.foreground)
-            .alpha(props.theme.opacity.least)
-            .string()};
+          props.theme.color.alpha.foreground(props.theme.opacity.least)};
 				${props => props.theme.size.breakpoint.max.m`
 					border-radius:	${props => props.theme.effects.borderRadius.small}em;
 				`}

@@ -1,6 +1,5 @@
 // styles
 import { css } from "styled-components"
-import Color from "color"
 
 // components
 
@@ -9,17 +8,13 @@ const warning = css`
   ${props =>
     props.warning &&
     `background:` +
-      Color(props.theme.color.brand)
-        .alpha(props.theme.opacity.least * 2)
-        .string()};
+      props.theme.color.alpha.brand(props.theme.opacity.least * 2)};
 `
 const caution = css`
   ${props =>
     props.caution &&
     `background: ` +
-      Color(props.theme.color.highlight)
-        .alpha(props.theme.opacity.least * 2)
-        .string()};
+      props.theme.color.alpha.highlight(props.theme.opacity.least * 2)};
 `
 export const reset = css`
   width: 100%;

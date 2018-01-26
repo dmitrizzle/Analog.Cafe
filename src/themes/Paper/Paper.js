@@ -8,7 +8,18 @@ export const Paper = {
     brand: "#ed236e",
     foreground: "#2c2c2c",
     background: "#fff",
-    highlight: "#fff200"
+    highlight: "#fff200",
+    alpha: {
+      foreground: alpha => {
+        return `rgba(44, 44, 44, ${alpha})`
+      },
+      brand: alpha => {
+        return `rgba(237, 35, 110, ${alpha})`
+      },
+      highlight: alpha => {
+        return `rgba(255, 242, 0, ${alpha})`
+      }
+    }
   },
   opacity: {
     most: 0.85,
@@ -89,9 +100,9 @@ export const Paper = {
       auto: css`
         ${min.m`font-size: 	${() =>
           Paper.size.font.m}px;`} ${max.s`font-size: 	${() =>
-            Paper.size.font.s}px;`} ${max.xs`font-size: 	${() =>
-            Paper.size.font.xs}px;`} ${min.xxl`font-size:	${() =>
-            Paper.size.font.l}px;`};
+        Paper.size.font.s}px;`} ${max.xs`font-size: 	${() =>
+        Paper.size.font.xs}px;`} ${min.xxl`font-size:	${() =>
+        Paper.size.font.l}px;`};
       `
     },
     block: {

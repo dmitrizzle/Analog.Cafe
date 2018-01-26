@@ -1,6 +1,5 @@
 // styles
 import styled, { css } from "styled-components"
-import Color from "color"
 import { Quote } from "./quote"
 
 // css
@@ -27,9 +26,7 @@ const sectionBreak = css`
   padding: ${props => props.theme.size.block.column.safety * 2}em 0
     ${props => props.theme.size.block.spacing * 4}em;
   color: ${props =>
-    Color(props.theme.color.foreground)
-      .alpha(props.theme.opacity.half)
-      .string()};
+    props.theme.color.alpha.foreground(props.theme.opacity.half)};
   border: 0;
   margin: 0;
   clear: both;

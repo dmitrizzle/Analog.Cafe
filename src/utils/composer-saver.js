@@ -27,4 +27,4 @@ export const saveContent = throttle((document, state) => {
 export const setDraftStatusHelper = () =>
   store.dispatch(setDraftStatus("Saving…"))
 
-export const saveHeader = throttle(header => storeHeaderState(header), 100)
+export const saveHeader = throttle(header => storeHeaderState(header), 3000)

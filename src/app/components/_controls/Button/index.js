@@ -4,7 +4,6 @@ import Loadable from "react-loadable"
 
 // styles
 import styled, { css } from "styled-components"
-import Color from "color"
 
 // components
 import Link from "../Link"
@@ -49,14 +48,9 @@ export const ButtonStyles = css`
 
   box-shadow: 0 1px 1px
       ${props =>
-        Color(props.theme.color.foreground)
-          .alpha(props.theme.opacity.least * 2)
-          .string()},
+        props.theme.color.alpha.foreground(props.theme.opacity.least * 2)},
     0 0 0 1px
-      ${props =>
-        Color(props.theme.color.foreground)
-          .alpha(props.theme.opacity.least)
-          .string()};
+      ${props => props.theme.color.alpha.foreground(props.theme.opacity.least)};
 
   &:active {
     background: ${props => props.theme.color.foreground} !important;

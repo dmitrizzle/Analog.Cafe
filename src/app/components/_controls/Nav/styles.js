@@ -1,7 +1,6 @@
 // tools
 import React from "react"
 import styled from "styled-components"
-import Color from "color"
 
 // components
 import Link from "../Link"
@@ -68,9 +67,7 @@ export const NavItem = styled.li`
         : props => props.theme.size.breakpoint.max.m`display:none;`} ${props =>
       props.indicator
         ? `color: ` +
-          Color(props.theme.color.foreground)
-            .alpha(props.theme.opacity.half)
-            .string()
+          props.theme.color.alpha.foreground(props.theme.opacity.half)
         : null}; */};
 
   ${props =>
@@ -94,14 +91,9 @@ export const TinyImageInline = styled.span`
   display: inline-block;
 
   background: ${props =>
-    Color(props.theme.color.foreground)
-      .alpha(props.theme.opacity.least)
-      .string()};
+    props.theme.color.alpha.foreground(props.theme.opacity.least)};
   box-shadow: 0 0 0 1px
-    ${props =>
-      Color(props.theme.color.foreground)
-        .alpha(props.theme.opacity.half / 2)
-        .string()}
+    ${props => props.theme.color.alpha.foreground(props.theme.opacity.half / 2)}
     inset;
 
   & > img {

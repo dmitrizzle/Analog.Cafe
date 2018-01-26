@@ -1,6 +1,5 @@
 // tools
 import styled, { css } from "styled-components"
-import Color from "color"
 
 // components
 import { LinkButton } from "../_controls/Button"
@@ -32,10 +31,7 @@ export const Card = styled.div`
   border-radius: ${props => props.theme.effects.borderRadius.med}em;
   box-shadow: 0 ${props => props.theme.size.block.spacing / 2}em
     ${props => props.theme.size.block.spacing * 2}em
-    ${props =>
-      Color(props.theme.color.foreground)
-        .alpha(props.theme.opacity.half)
-        .string()};
+    ${props => props.theme.color.alpha.foreground(props.theme.opacity.half)};
 
   ${props => props.theme.size.breakpoint.max.xs`
 		border-radius: 0;
@@ -55,14 +51,9 @@ export const CardFlattened = styled(Card)`
   margin: ${props => props.theme.size.block.column.safety}em auto;
   box-shadow: 0 1px 1px
       ${props =>
-        Color(props.theme.color.foreground)
-          .alpha(props.theme.opacity.least * 2)
-          .string()},
+        props.theme.color.alpha.foreground(props.theme.opacity.least * 2)},
     0 0 0 1px
-      ${props =>
-        Color(props.theme.color.foreground)
-          .alpha(props.theme.opacity.least)
-          .string()};
+      ${props => props.theme.color.alpha.foreground(props.theme.opacity.least)};
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
 
   ${props => props.theme.size.breakpoint.max.xs`
@@ -95,14 +86,9 @@ export const CardHeader = styled.header`
   position: relative;
   box-shadow: 0 1px 1px
       ${props =>
-        Color(props.theme.color.foreground)
-          .alpha(props.theme.opacity.least * 2)
-          .string()},
+        props.theme.color.alpha.foreground(props.theme.opacity.least * 2)},
     0 0 0 1px
-      ${props =>
-        Color(props.theme.color.foreground)
-          .alpha(props.theme.opacity.least)
-          .string()};
+      ${props => props.theme.color.alpha.foreground(props.theme.opacity.least)};
 
   h3,
   input {
