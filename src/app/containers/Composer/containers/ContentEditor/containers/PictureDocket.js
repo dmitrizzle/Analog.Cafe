@@ -3,7 +3,7 @@ import React from "react"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
 import { froth } from "../../../../../../utils/image-froth"
-import { imageSizeLimit } from "../../../../../../utils/upload-utils"
+import { forceImageRestrictions } from "../../../../../../utils/upload-utils"
 import keycode from "keycode"
 
 // redux
@@ -31,6 +31,7 @@ import { dot } from "../../../../../components/_icons/BlankDot"
 import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/messages/hints"
 import { ROUTE_AUTHOR_API } from "../../../../../../constants/author"
 import errorMessages from "../../../../../../constants/messages/errors"
+import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../../../../../../constants/picture"
 
 const GridButtonImage = props => {
   return (
@@ -121,13 +122,13 @@ class PictureDocketContainer extends React.PureComponent {
   }
   handleFileUpload = event => {
     const file = event.target.files[0]
-    imageSizeLimit(file.size)
+    forceImageRestrictions(file.size, file.type)
       .then(() => this.uploadRequest(file))
       .catch(reason => {
         this.props.setCard(
           {
             status: "ok",
-            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE_10
+            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE(10)
           },
           { url: "errors/upload" }
         )
@@ -246,7 +247,7 @@ class PictureDocketContainer extends React.PureComponent {
         </GridContainer>
         <input
           type="file"
-          accept="image/x-png,image/jpeg"
+          accept={PICTURE_ACCEPTED_UPLOAD_MIME.toString()}
           style={{ display: "none" }}
           ref={input => {
             this.fileInput = input

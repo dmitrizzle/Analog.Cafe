@@ -1,4 +1,7 @@
+// constants
 import emojis from "./emojis"
+import { PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN } from "../picture"
+
 export default {
   VIEW_TEMPLATE: {
     ARTICLE: {
@@ -42,15 +45,11 @@ export default {
       text:
         "Please make sure that you’ve added a title, text and image(s) to your submission."
     },
-    UPLOAD_IMAGE_SIZE_10: {
-      title: "File is Too Large!",
-      text:
-        "Your image needs to be 10MB or less in size. Try selecting another PNG or JPG file."
-    },
-    UPLOAD_IMAGE_SIZE_5: {
-      title: "File is Too Large!",
-      text:
-        "Your image needs to be 5MB or less in size. Try selecting another PNG or JPG file."
+    UPLOAD_IMAGE_SIZE: size => {
+      return {
+        title: "Can’t Upload This Image",
+        text: `Your image needs to be a ${PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN}, maximum ${size}MB in size. Try selecting another file.`
+      }
     },
     EMAIL_LOGIN: {
       title: "Couldn’t Send Email",
