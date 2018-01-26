@@ -35,18 +35,20 @@ class HeaderEditor extends React.PureComponent {
     this.handleSubtitleChange = this.handleSubtitleChange.bind(this)
   }
   handleTitleChange = event => {
-    this.props.setHeadingValues({
+    const headingValues = {
       title: event,
       subtitle: this.props.composer.headingValues.subtitle
-    })
-    saveHeader(this.props.composer.headingValues)
+    }
+    this.props.setHeadingValues(headingValues)
+    saveHeader(headingValues)
   }
   handleSubtitleChange = event => {
-    this.props.setHeadingValues({
+    const headingValues = {
       title: this.props.composer.headingValues.title,
       subtitle: event
-    })
-    saveHeader(this.props.composer.headingValues)
+    }
+    this.props.setHeadingValues(headingValues)
+    saveHeader(headingValues)
   }
   handleKeypress = event => {
     // disallow multiple lines in titles
