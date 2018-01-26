@@ -4,6 +4,9 @@ import { Editor } from "slate-react"
 import { Value } from "slate"
 import getOffsets from "positions"
 
+import localForage from "localforage"
+import "localforage-getitems"
+
 // redux
 import { connect } from "react-redux"
 
@@ -98,8 +101,45 @@ class ContentEditor extends React.PureComponent {
     })
   }
 
-  // hover menu
-  componentDidMount = () => menuPosition(this)
+  componentDidMount = () => {
+    // clean up browser database of stored images
+    if (!this.slateEditor.state.value.hasUndos) {
+      // find all used image keys in the document
+      const contentImageKeys = this.slateEditor.state.value
+        .toJSON()
+        .document.nodes.filter(node => !!(node.data && node.data.key))
+        .map(node => node.data.key)
+      // find all recorded images in browser's database
+      localForage.getItems().then(storedImageKeys => {
+        let unusedImageKeys = []
+
+        // create an array of unused image keys
+        Object.keys(storedImageKeys).forEach((storedKey, index) => {
+          let unused = true
+          contentImageKeys.forEach(usedKey => {
+            if (storedKey === usedKey) {
+              unused = false
+            }
+          })
+          unused && unusedImageKeys.push(storedKey)
+        })
+
+        // go through all unused keys and remove them from database
+        unusedImageKeys.forEach((imageKey, index) => {
+          localForage.removeItem(imageKey)
+        })
+        unusedImageKeys.length > 0 &&
+          console.log(
+            `Removed ${
+              unusedImageKeys.length
+            } unused image(s) from browser's database.`
+          )
+      })
+    }
+
+    // hover menu (below, onwards until `formatCommand()`)
+    menuPosition(this)
+  }
   componentDidUpdate = () => menuPosition(this)
   menuRef = menu => {
     this.menu = menu

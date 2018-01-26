@@ -15,10 +15,7 @@ import PictureMenu from "../Composer/containers/ContentEditor/components/Picture
 import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
 
 // export
-// this doesn't work as well with PureComponent:
-// author links need to be clicked twice after first load to work...
-
-let localForageCache
+// let localForageCache
 class Figure extends React.PureComponent {
   // state for caption & selection
   constructor(props) {
@@ -89,7 +86,7 @@ class Figure extends React.PureComponent {
       this.props.readOnly && this.props.getInfo(src)
     } else {
       import("localforage").then(localForage => {
-        localForageCache = localForage
+        // localForageCache = localForage
         localForage.getItem(key).then(data => {
           const reader = new FileReader()
           reader.addEventListener("load", () =>
@@ -116,13 +113,6 @@ class Figure extends React.PureComponent {
     const { node, editor } = this.props
     if (!editor.value.document.getDescendant(node.key)) return
     editor.onChange(editor.value.change().removeNodeByKey(node.key))
-
-    // remove item from localForage when deleted from editor
-    // ... if localForage is available (otherwise it's better to keep
-    // it in DB and wait for user to submit instead of creating a while
-    // new bundle)
-    localForageCache.removeItem(this.state.key)
-    console.log("removed image from database")
   }
   handleFeaturePicture = () => {
     const { node, editor } = this.props
