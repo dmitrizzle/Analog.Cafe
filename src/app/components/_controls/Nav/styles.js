@@ -41,12 +41,24 @@ const StyledLink = styled(Link)`
     background: ${props => props.theme.color.foreground};
     position: absolute;
   }
+  ${props =>
+    props.connectionStatus === "offline"
+      ? `
+    opacity: ${props.theme.opacity.half}
+  `
+      : null};
 `
 export const NavLink = props => {
   return <StyledLink {...props} activeClassName="active" />
 }
 export const NavIndexLink = props => {
-  return <Link {...props} activeClassName="active" />
+  return (
+    <Link
+      {...props}
+      activeClassName="active"
+      style={props.connectionStatus === "offline" ? { opacity: 0.5 } : {}}
+    />
+  )
 }
 
 export const NavItem = styled.li`
@@ -102,5 +114,18 @@ export const TinyImageInline = styled.span`
   }
 `
 
-// eeeeee
-// c3c3c3
+// styles for connectivity indicator
+export const Connection = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: ${props => props.theme.size.block.spacing / 4}em
+    ${props => props.theme.size.block.spacing / 2}em
+    ${props => props.theme.size.block.spacing / 3}em
+    ${props => props.theme.size.block.column.safety / 2}em;
+  ${props => props.theme.typography.title.auto} font-size: ${props =>
+      props.theme.size.font.make.smaller}em;
+  background: ${props => props.theme.color.brand};
+  color: ${props => props.theme.color.background};
+  border-bottom-left-radius: ${props => props.theme.size.block.spacing / 2}em;
+`

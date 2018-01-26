@@ -41,17 +41,21 @@ export const CommonNav = props => {
       }
     >
       <NavItem>
-        <NavLink to={"/photo-essays"}>
+        <NavLink to={"/photo-essays"} connectionStatus={props.connectionStatus}>
           <span>Photo Essays</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink to={"/articles"}>
+        <NavLink to={"/articles"} connectionStatus={props.connectionStatus}>
           <span>Articles</span>
         </NavLink>
       </NavItem>
       <NavItem prime center className="prime center">
-        <NavIndexLink to={"/"} className="indexRouteLink">
+        <NavIndexLink
+          to={"/"}
+          className="indexRouteLink"
+          connectionStatus={props.connectionStatus}
+        >
           <Logo />
         </NavIndexLink>
       </NavItem>
@@ -72,14 +76,16 @@ export const CommonNav = props => {
             info: {
               title: "More…",
               buttons: [
-                props.userStatus === "ok"
+                props.userStatus === "ok" &&
+                props.connectionStatus !== "offline"
                   ? {
                       to: "/me",
                       text: "My Submissions",
                       red: true
                     }
                   : null,
-                props.userStatus === "ok"
+                props.userStatus === "ok" &&
+                props.connectionStatus !== "offline"
                   ? {
                       to: "/me/edit",
                       text: "My Profile",
@@ -93,37 +99,37 @@ export const CommonNav = props => {
                       black: true
                     }
                   : null,
-                {
+                props.connectionStatus !== "offline" && {
                   to: "/photo-essays",
                   text: "Photo Essays",
                   responsiveMobileOnly: true
                 },
-                {
+                props.connectionStatus !== "offline" && {
                   to: "/editorials",
                   text: "Editorials"
                 },
-                {
+                props.connectionStatus !== "offline" && {
                   to: "/guides",
                   text: "Guides"
                 },
-                {
+                props.connectionStatus !== "offline" && {
                   to: "/reviews",
                   text: "Reviews"
                 },
-                {
+                props.connectionStatus !== "offline" && {
                   to: "/stories",
                   text: "Stories"
                 },
-                { divider: true },
-                {
+                { divider: props.connectionStatus !== "offline" },
+                props.connectionStatus !== "offline" && {
                   to: "/collaborations",
                   text: "Collaborations"
                 },
-                {
+                props.connectionStatus !== "offline" && {
                   to: "/solo-projects",
                   text: "Solo Projects"
                 },
-                { divider: true },
+                { divider: props.connectionStatus !== "offline" },
                 {
                   to: "/about",
                   text: "About Analog.Cafe"
@@ -189,3 +195,4 @@ export const ComposerNav = props => {
 }
 
 export { NavWrapper } from "./styles"
+export { Connection } from "./styles"

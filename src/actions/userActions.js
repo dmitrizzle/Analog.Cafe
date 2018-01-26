@@ -9,6 +9,16 @@ import { anonymizeEmail } from "../utils/email-utils"
 
 import { ROUTE_USER_API } from "../constants/user"
 
+// manage connectivity
+export const setConnection = connection => {
+  return dispatch => {
+    dispatch({
+      type: "USER.SET_CONNECTION",
+      payload: connection
+    })
+  }
+}
+
 // error message
 const loginError = (type = "error") => {
   return {
