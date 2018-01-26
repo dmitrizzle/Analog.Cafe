@@ -9,6 +9,7 @@ import "localforage-getitems"
 
 // redux
 import { connect } from "react-redux"
+import { addAvailableComponent } from "../../../../../actions/userActions"
 
 // components
 import ImageButton from "./components/ImageButton"
@@ -139,6 +140,11 @@ class ContentEditor extends React.PureComponent {
 
     // hover menu (below, onwards until `formatCommand()`)
     menuPosition(this)
+
+    // register that the Composer component
+    // (and presumably the entiere package required to render Component)
+    // has successfully loaded into browser's cache:
+    this.props.addAvailableComponent("Composer")
   }
   componentDidUpdate = () => menuPosition(this)
   menuRef = menu => {
@@ -191,9 +197,16 @@ class ContentEditor extends React.PureComponent {
 }
 
 // connect with redux
+const mapDispatchToProps = dispatch => {
+  return {
+    addAvailableComponent: componentName => {
+      dispatch(addAvailableComponent(componentName))
+    }
+  }
+}
 const mapStateToProps = state => {
   return {
     composer: state.composer
   }
 }
-export default connect(mapStateToProps)(ContentEditor)
+export default connect(mapStateToProps, mapDispatchToProps)(ContentEditor)

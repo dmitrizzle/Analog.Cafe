@@ -10,7 +10,8 @@ const getLocalSessionInfo = () =>
 const INITIAL_STATE = {
   status: "forbidden",
   connection: {
-    status: ""
+    status: "",
+    availableComponents: []
   },
   info: {},
   routes: {
@@ -38,6 +39,9 @@ export default (state = INITIAL_STATE, action) => {
           status: action.payload
         }
       }
+      break
+    case "USER.ADD_AVAILABLE_COMPONENT":
+      state.connection.availableComponents.push(action.payload)
       break
     case "USER.SET_INFO":
       state = {

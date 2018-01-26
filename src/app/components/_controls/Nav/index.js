@@ -48,21 +48,17 @@ export const CommonNav = props => {
       }
     >
       <NavItem>
-        <NavLink to={"/photo-essays"} connectionStatus={props.connectionStatus}>
+        <NavLink to={"/photo-essays"}>
           <span>Photo Essays</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink to={"/articles"} connectionStatus={props.connectionStatus}>
+        <NavLink to={"/articles"}>
           <span>Articles</span>
         </NavLink>
       </NavItem>
       <NavItem prime center className="prime center">
-        <NavIndexLink
-          to={"/"}
-          className="indexRouteLink"
-          connectionStatus={props.connectionStatus}
-        >
+        <NavIndexLink to={"/"} className="indexRouteLink">
           <Logo />
         </NavIndexLink>
       </NavItem>
@@ -77,87 +73,79 @@ export const CommonNav = props => {
           </NavLink>
         )}
       </NavItem>
-      <NavItem
-        prime
-        left
-        className="prime right"
-        style={props.connectionStatus === "offline" ? { opacity: 0.5 } : {}}
-      >
-        {props.connectionStatus !== "offline" ? (
-          <ModalDispatch
-            with={{
-              info: {
-                title: "More…",
-                buttons: [
-                  props.userStatus === "ok" &&
-                  props.connectionStatus !== "offline"
-                    ? {
-                        to: "/me",
-                        text: "My Submissions",
-                        red: true
-                      }
-                    : null,
-                  props.userStatus === "ok" &&
-                  props.connectionStatus !== "offline"
-                    ? {
-                        to: "/me/edit",
-                        text: "My Profile",
-                        red: true
-                      }
-                    : null,
-                  props.userStatus === "ok"
-                    ? {
-                        to: "/sign-out",
-                        text: "Sign Out",
-                        black: true
-                      }
-                    : null,
-                  props.connectionStatus !== "offline" && {
-                    to: "/photo-essays",
-                    text: "Photo Essays",
-                    responsiveMobileOnly: true
-                  },
-                  props.connectionStatus !== "offline" && {
-                    to: "/editorials",
-                    text: "Editorials"
-                  },
-                  props.connectionStatus !== "offline" && {
-                    to: "/guides",
-                    text: "Guides"
-                  },
-                  props.connectionStatus !== "offline" && {
-                    to: "/reviews",
-                    text: "Reviews"
-                  },
-                  props.connectionStatus !== "offline" && {
-                    to: "/stories",
-                    text: "Stories"
-                  },
-                  { divider: props.connectionStatus !== "offline" },
-                  props.connectionStatus !== "offline" && {
-                    to: "/collaborations",
-                    text: "Collaborations"
-                  },
-                  props.connectionStatus !== "offline" && {
-                    to: "/solo-projects",
-                    text: "Solo Projects"
-                  },
-                  { divider: props.connectionStatus !== "offline" },
-                  {
-                    to: "/about",
-                    text: "About Analog.Cafe"
-                  }
-                ]
-              },
-              id: "nav/more"
-            }}
-            style={{ textDecoration: "none", paddingRight: ".25em" }}
-          >
-            <NavLinkLabelMore />
-          </ModalDispatch>
-        ) : (
-          <NavLinkLabelMore />
-        )}
+      <NavItem prime left className="prime right">
+        <ModalDispatch
+          with={{
+            info: {
+              title: "More…",
+              buttons: [
+                props.userStatus === "ok"
+                  ? {
+                      to: "/me",
+                      text: "My Submissions",
+                      red: true
+                    }
+                  : null,
+                props.userStatus === "ok"
+                  ? {
+                      to: "/me/edit",
+                      text: "My Profile",
+                      red: true
+                    }
+                  : null,
+                props.userStatus === "ok"
+                  ? {
+                      to: "/sign-out",
+                      text: "Sign Out",
+                      black: true
+                    }
+                  : null,
+                {
+                  to: "/photo-essays",
+                  text: "Photo Essays",
+                  responsiveMobileOnly: true
+                },
+                {
+                  to: "/editorials",
+                  text: "Editorials"
+                },
+                {
+                  to: "/guides",
+                  text: "Guides"
+                },
+                {
+                  to: "/reviews",
+                  text: "Reviews"
+                },
+                {
+                  to: "/stories",
+                  text: "Stories"
+                },
+                { divider: true },
+                {
+                  to: "/collaborations",
+                  text: "Collaborations"
+                },
+                {
+                  to: "/solo-projects",
+                  text: "Solo Projects"
+                },
+                { divider: true },
+                {
+                  to: "/about",
+                  text: "About Analog.Cafe"
+                }
+              ]
+            },
+            id: "nav/more"
+          }}
+          style={{ textDecoration: "none", paddingRight: ".25em" }}
+        >
+          <NavLinkLabelMore
+            userStatus={props.userStatus}
+            userImage={props.userImage}
+          />
+        </ModalDispatch>
       </NavItem>
     </ul>
   )

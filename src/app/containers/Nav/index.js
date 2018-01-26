@@ -32,12 +32,10 @@ const Nav = props => {
           draftStatus={props.composer.draftStatus}
           submissionStatus={props.composer.submissionStatus}
           userStatus={props.user.status}
-          connectionStatus={props.user.connection.status}
         />
       ) : (
         <CommonNav
           userStatus={props.user.status}
-          connectionStatus={props.user.connection.status}
           userImage={props.user.info.image}
           userIntent={() => {
             props.user.intent.load !== "List" &&

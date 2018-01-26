@@ -22,7 +22,8 @@ import {
 import {
   verify as verifyUser,
   getInfo as getUserInfo,
-  setConnectionStatus
+  setConnectionStatus,
+  setIntent as setUserIntent
 } from "../../../actions/userActions"
 import { setCard as setModalCard } from "../../../actions/modalActions"
 
@@ -206,6 +207,9 @@ const mapDispatchToProps = dispatch => {
     },
     getUserInfo: () => {
       dispatch(getUserInfo())
+    },
+    setUserIntent: intent => {
+      dispatch(setUserIntent(intent))
     },
     setConnectionStatus: connection => {
       dispatch(setConnectionStatus(connection))

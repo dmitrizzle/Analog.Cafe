@@ -12,6 +12,10 @@ export default {
       title: "Nothing here yet",
       emoji: emojis.WTF
     },
+    LIST_OFFLINE: {
+      title: "You aren’t connected to the internet",
+      emoji: emojis.WTF
+    },
     SUBMISSIONS_LIST: {
       title: "You haven’t submitted anything yet",
       emoji: emojis.NEONCAT

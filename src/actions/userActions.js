@@ -11,11 +11,15 @@ import { ROUTE_USER_API } from "../constants/user"
 
 // manage connectivity
 export const setConnectionStatus = connection => {
-  return dispatch => {
-    dispatch({
-      type: "USER.SET_CONNECTION_STATUS",
-      payload: connection
-    })
+  return {
+    type: "USER.SET_CONNECTION_STATUS",
+    payload: connection
+  }
+}
+export const addAvailableComponent = componentName => {
+  return {
+    type: "USER.ADD_AVAILABLE_COMPONENT",
+    payload: componentName
   }
 }
 

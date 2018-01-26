@@ -52,13 +52,7 @@ export const NavLink = props => {
   return <StyledLink {...props} activeClassName="active" />
 }
 export const NavIndexLink = props => {
-  return (
-    <Link
-      {...props}
-      activeClassName="active"
-      style={props.connectionStatus === "offline" ? { opacity: 0.5 } : {}}
-    />
-  )
+  return <Link {...props} activeClassName="active" />
 }
 
 export const NavItem = styled.li`
