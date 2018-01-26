@@ -18,21 +18,27 @@ class EnableOffline extends React.PureComponent {
       .catch(error => console.log(error))
   }
   render = () => {
-    return (
-      <small style={{ opacity: "0.5" }}>
-        {this.props.user.connection.availableComponents.indexOf("Composer") ===
-        -1 ? (
-          <span>
-            <Link to="#download" onClick={this.handleClick}>
-              Enable
-            </Link>{" "}
-            offline editing.
-          </span>
-        ) : (
-          <span>You can now edit while offline.</span>
-        )}
-      </small>
+    if (
+      this.props.user.connection.status !== "offline" ||
+      this.props.user.connection.availableComponents.indexOf("Composer") !== -1
     )
+      return (
+        <small style={{ opacity: "0.5" }}>
+          {this.props.user.connection.availableComponents.indexOf(
+            "Composer"
+          ) === -1 ? (
+            <span>
+              <Link to="#download" onClick={this.handleClick}>
+                Enable
+              </Link>{" "}
+              offline editing.
+            </span>
+          ) : (
+            <span>You can now edit while offline.</span>
+          )}
+        </small>
+      )
+    else return null
   }
 }
 
