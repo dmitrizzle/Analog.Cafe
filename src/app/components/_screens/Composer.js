@@ -6,7 +6,6 @@ import Helmet from "../_async/Helmet"
 import { Article, Section } from "../ArticleStyles"
 import { Caption } from "../CaptionStyles"
 import Composer from "../../containers/Composer"
-import { Email } from "../_rt-snippets"
 
 const metaTitle = "Composer"
 const metaDescription =
@@ -36,11 +35,6 @@ export default props => {
             </small>
           </p>
         </Caption>
-        <p style={{ textAlign: "center" }}>
-          <em>
-            If you’re having trouble using this tool, please email <Email />
-          </em>
-        </p>
       </Section>
     </Article>
   )

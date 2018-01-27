@@ -15,7 +15,7 @@ const getLocalSubmissionStatus = () =>
     : {}
 
 const INITIAL_STATE = {
-  draftStatus: "Draft",
+  draftStatus: "",
   editorFocusRequested: 0,
   headingValues: {
     title: loadHeader().title,
