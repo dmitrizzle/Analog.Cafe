@@ -1,6 +1,5 @@
 // styles
 import styled from "styled-components"
-import Color from "color"
 
 // components
 import Logo from "../AnalogCafe"
@@ -26,9 +25,7 @@ export const LogoWithDownstate = styled(Logo)`
       : props => props.theme.color.foreground};
   box-shadow: 0 1px 1px
     ${props =>
-      Color(props.theme.color.foreground)
-        .alpha(props.theme.opacity.least * 2)
-        .string()};
+      props.theme.color.alpha.foreground(props.theme.opacity.least * 2)};
 
   a.active &,
   a:active & {

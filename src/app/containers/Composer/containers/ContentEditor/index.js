@@ -4,8 +4,13 @@ import { Editor } from "slate-react"
 import { Value } from "slate"
 import getOffsets from "positions"
 
+import localForage from "localforage"
+import "localforage-getitems"
+
 // redux
 import { connect } from "react-redux"
+import { setCard } from "../../../../../actions/modalActions"
+import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/messages/hints"
 
 // components
 import ImageButton from "./components/ImageButton"
@@ -34,17 +39,12 @@ import {
 class ContentEditor extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.props.composerState.raw = loadContent()
-
     this.handleClickPropagation = this.handleClickPropagation.bind(this)
-
-    // composerState is what appears by default in composer once the user opens the view
     this.state = {
       value: Value.fromJSON(loadContent()),
       schema,
       author: this.props.author,
       cursorContext: {
-        isFocused: false,
         newLine: false,
         parentBlockOffsets: { top: 0, left: 0 }
       },
@@ -60,12 +60,9 @@ class ContentEditor extends React.PureComponent {
     const cursorContextDelay = setTimeout(() => {
       const nodeKey = value.focusBlock.key
       const block = window.document.querySelector(`[data-key="${nodeKey}"]`)
-
-      value.isFocused &&
-        this.setState({
-          editorFocus: true
-        })
-
+      this.setState({
+        editorFocus: value.isFocused
+      })
       imageButtonPosition(
         value,
         block ? getOffsets(block, "top left", block, "top left") : {},
@@ -76,7 +73,6 @@ class ContentEditor extends React.PureComponent {
 
     // update draft status & save content to device
     setDraftStatusHelper()
-    this.props.composerState.raw = JSON.stringify(value.toJSON())
     saveContent(document, value)
   }
 
@@ -87,27 +83,25 @@ class ContentEditor extends React.PureComponent {
     event.stopPropagation()
   }
   componentWillReceiveProps = nextProps => {
+    // manage
     if (
       this.props.composer.editorFocusRequested <
       nextProps.composer.editorFocusRequested
     ) {
       this.slateEditor.focus()
-      this.setState({
-        editorFocus: true
-      })
+    }
+
+    // internet connection trouble message
+    if (
+      !this.state.connectionMessageShown &&
+      nextProps.user.connection.status === "offline"
+    ) {
+      this.props.setCard(MESSAGE_HINT_CONNECTION_OFFLINE)
+      this.setState({ connectionMessageShown: true })
     }
   }
-  handleBlur = () => {
-    this.setState({
-      editorFocus: false
-    })
-    this.menu.style.display = ""
-  }
-  handleFocus = () => {
-    this.setState({
-      editorFocus: true
-    })
-  }
+  handleBlur = () => {}
+  handleFocus = () => {}
   handleDragOver = () => {
     this.setState({
       dragOver: true
@@ -119,18 +113,50 @@ class ContentEditor extends React.PureComponent {
     })
   }
 
-  // hover menu
   componentDidMount = () => {
-    this.updateMenu()
+    // clean up browser database of stored images
+    if (!this.slateEditor.state.value.hasUndos) {
+      // find all used image keys in the document
+      const contentImageKeys = this.slateEditor.state.value
+        .toJSON()
+        .document.nodes.filter(node => !!(node.data && node.data.key))
+        .map(node => node.data.key)
+      // find all recorded images in browser's database
+      localForage.getItems().then(storedImageKeys => {
+        let unusedImageKeys = []
+
+        // create an array of unused image keys
+        Object.keys(storedImageKeys).forEach((storedKey, index) => {
+          let unused = true
+          contentImageKeys.forEach(usedKey => {
+            if (storedKey === usedKey) {
+              unused = false
+            }
+          })
+          unused && unusedImageKeys.push(storedKey)
+        })
+
+        // go through all unused keys and remove them from database
+        unusedImageKeys.forEach((imageKey, index) => {
+          localForage.removeItem(imageKey)
+        })
+        unusedImageKeys.length > 0 &&
+          console.log(
+            `Removed ${
+              unusedImageKeys.length
+            } unused image(s) from browser's database.`
+          )
+      })
+    }
+
+    // hover menu (below, onwards until `formatCommand()`)
+    menuPosition(this)
   }
-  componentDidUpdate = () => {
-    this.updateMenu()
-  }
+  componentDidUpdate = () => menuPosition(this)
   menuRef = menu => {
     this.menu = menu
   }
   formatCommand = type => formatCommand(type, this)
-  updateMenu = () => menuPosition(this)
 
   // render
   render = () => {
@@ -159,7 +185,7 @@ class ContentEditor extends React.PureComponent {
             boxShadow: this.state.editorFocus
               ? "1px 1px 0 0 rgba(44,44,44,.1)"
               : "",
-            background: this.state.dragOver ? "rgba(44,44,44,.05)" : ""
+            background: this.state.dragOver ? "rgba(44,44,44,.075)" : ""
           }}
           ref={input => (this.slateEditor = input)}
         />
@@ -170,15 +196,24 @@ class ContentEditor extends React.PureComponent {
         value={this.state.value}
         formatCommand={this.formatCommand}
         key="ContentEditor_Menu"
+        style={{ display: this.state.editorFocus ? "block" : "none" }}
       />
     ]
   }
 }
 
 // connect with redux
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => {
   return {
-    composer: state.composer
+    setCard: (info, request) => {
+      dispatch(setCard(info, request))
+    }
   }
 }
-export default connect(mapStateToProps)(ContentEditor)
+const mapStateToProps = state => {
+  return {
+    composer: state.composer,
+    user: state.user
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ContentEditor)

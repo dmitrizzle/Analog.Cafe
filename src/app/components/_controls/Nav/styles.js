@@ -1,12 +1,11 @@
 // tools
 import React from "react"
 import styled from "styled-components"
-import Color from "color"
 
 // components
 import Link from "../Link"
 
-// NOTE: all CSS has bee copied into /public/index.html
+// NOTE: *most* CSS has bee copied into /public/index.html
 // for faster critical path loading times.
 // some actionable CSS remains here.
 
@@ -42,6 +41,12 @@ const StyledLink = styled(Link)`
     background: ${props => props.theme.color.foreground};
     position: absolute;
   }
+  ${props =>
+    props.connectionStatus === "offline"
+      ? `
+    opacity: ${props.theme.opacity.half}
+  `
+      : null};
 `
 export const NavLink = props => {
   return <StyledLink {...props} activeClassName="active" />
@@ -68,10 +73,18 @@ export const NavItem = styled.li`
         : props => props.theme.size.breakpoint.max.m`display:none;`} ${props =>
       props.indicator
         ? `color: ` +
-          Color(props.theme.color.foreground)
-            .alpha(props.theme.opacity.half)
-            .string()
+          props.theme.color.alpha.foreground(props.theme.opacity.half)
         : null}; */};
+
+  ${props =>
+    props.draftStatus &&
+    `
+    // for "Draft Saved" button we need to set some trims because on very small
+    // screens it breaks design
+    overflow: hidden;
+    height: ${props.theme.size.block.spacing /
+      props.theme.size.font.make.smaller}em;
+  `};
 `
 
 // styles for tiny profile icon
@@ -84,14 +97,9 @@ export const TinyImageInline = styled.span`
   display: inline-block;
 
   background: ${props =>
-    Color(props.theme.color.foreground)
-      .alpha(props.theme.opacity.least)
-      .string()};
+    props.theme.color.alpha.foreground(props.theme.opacity.least)};
   box-shadow: 0 0 0 1px
-    ${props =>
-      Color(props.theme.color.foreground)
-        .alpha(props.theme.opacity.half / 2)
-        .string()}
+    ${props => props.theme.color.alpha.foreground(props.theme.opacity.half / 2)}
     inset;
 
   & > img {
@@ -100,5 +108,18 @@ export const TinyImageInline = styled.span`
   }
 `
 
-// eeeeee
-// c3c3c3
+// styles for connectivity indicator
+export const Connection = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: ${props => props.theme.size.block.spacing / 4}em
+    ${props => props.theme.size.block.spacing / 2}em
+    ${props => props.theme.size.block.spacing / 3}em
+    ${props => props.theme.size.block.column.safety / 2}em;
+  ${props => props.theme.typography.title.auto} font-size: ${props =>
+      props.theme.size.font.make.smaller}em;
+  background: ${props => props.theme.color.brand};
+  color: ${props => props.theme.color.background};
+  border-bottom-left-radius: ${props => props.theme.size.block.spacing / 2}em;
+`

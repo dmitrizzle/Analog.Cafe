@@ -1,37 +1,30 @@
 export const focusEvents = _this => {
-  window.ondragover = function() {
-    _this.handleDragOver()
-  }
-  window.ondrop = function() {
-    _this.handleDragEnd()
-  }
-
-  // prevent default to allow drop
+  // highlight potential drop target when the draggable element enters it
   document.addEventListener(
     "dragover",
     event => {
       event.preventDefault()
-      // highlight potential drop target when the draggable element enters it
-      _this.handleDragOver()
-    },
-    false
-  )
-  // cancel highlights when drag intent has finished
-  document.addEventListener(
-    "dragleave",
-    () => {
-      _this.handleDragEnd()
+      if (_this.state.dragOver) return
+      const delayDragEvent = setTimeout(() => {
+        _this.handleDragOver()
+        clearTimeout(delayDragEvent)
+      }, 100)
     },
     false
   )
   document.addEventListener(
     "drop",
     event => {
-      event.preventDefault()
-      _this.handleDragEnd()
+      // event.preventDefault()
+      if (!_this.state.dragOver) return
+      const delayDragEvent = setTimeout(() => {
+        _this.handleDragEnd()
+        clearTimeout(delayDragEvent)
+      }, 100)
     },
     false
   )
+
   // blur editor on Esc (remove highlights and guides for preview)
   document.addEventListener(
     "keydown",

@@ -4,7 +4,6 @@ import Picture from "./components/PictureElement"
 
 // styles
 import styled, { css } from "styled-components"
-import Color from "color"
 import { Caption as PictureCaption, CaptionStyles } from "../CaptionStyles"
 
 // css
@@ -32,10 +31,7 @@ export const Image = styled(({ style, ...props }) => (
 
 const shadow = css`
   box-shadow: 0 0 ${props => props.theme.size.block.spacing / 2}em
-    ${props =>
-      Color(props.theme.color.foreground)
-        .alpha(props.theme.opacity.least)
-        .string()};
+    ${props => props.theme.color.alpha.foreground(props.theme.opacity.least)};
 `
 const bleed = css`
   float: none;
@@ -96,6 +92,25 @@ export const Figure = styled.figure`
 		width: 75% !important;
 		max-width: 66vw !important;
 		min-width: ${props => props.theme.size.block.minFigureWIdth}px;
+
+    // this helper graphic hints on tablet-sized devices that no text is going
+    // to be float to the right of the image:
+    &.focus {
+      overflow: visible;
+      &::after {
+        content: "";
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background:
+            ${props =>
+              props.theme.color.alpha.foreground(
+                props.theme.opacity.least / 3
+              )};
+        z-index: ${props => props.theme.layer.tuck};
+      }
+    }
 	`} ${props =>
   props.feature
     ? bleed
@@ -143,11 +158,21 @@ const captionBlock = css`
 	`};
 `
 export const Caption = styled(PictureCaption)`
-  border-bottom: ${props => props.theme.elements.thickBorder};
+  ${props =>
+    !props.feature &&
+    `
+    // for helper graphic that shows grey to the right of figures
+    // the background for caption needs to be white
+    // and highlight needs to be above
+    background: ${props.theme.color.background};
+    .focus & {
+      box-shadow: 0 ${props.theme.size.block.border}px 0 ${
+      props.theme.color.highlight
+    } inset;
+    }
+  `} border-bottom: ${props => props.theme.elements.thickBorder};
   color: ${props =>
-    Color(props.theme.color.foreground)
-      .alpha(props.theme.opacity.half)
-      .string()};
+    props.theme.color.alpha.foreground(props.theme.opacity.half)};
   padding: ${props => props.theme.size.block.column.safety / 2}em
     ${props =>
       props.theme.size.block.column.safety /

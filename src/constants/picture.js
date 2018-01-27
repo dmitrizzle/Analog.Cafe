@@ -16,3 +16,8 @@ export const PICTURE_DATA_OBJECT = previousDataImmutable => {
   }
   return previousData
 }
+
+// accepted upload file types
+export const PICTURE_ACCEPTED_UPLOAD_MIME = ["image/png", "image/jpeg"]
+// write the above in human language for warnign boxes
+export const PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN = "PNG or JPEG"

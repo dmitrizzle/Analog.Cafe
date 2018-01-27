@@ -13,6 +13,7 @@ export const storeContentState = json => {
 export const storeHeaderState = header => {
   const headerState = JSON.stringify(header)
   localStorage.setItem("composer-header-state", headerState)
+  //console.log(header.title);
 }
 
 export const saveContent = throttle((document, state) => {
