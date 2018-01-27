@@ -10,11 +10,13 @@ import HeaderEditor from "./containers/HeaderEditor"
 import ContentEditor from "./containers/ContentEditor"
 import { Section } from "../../components/ArticleStyles"
 import { ModalDispatch } from "../Modal"
+import DraftStatusText from "./containers/ContentEditor/components/DraftStatusText"
 
 import emojis from "../../../constants/messages/emojis"
 import {
   MESSAGE_HINT_SUBMIT_CONSENT,
-  MESSAGE_HINT_SUBMIT_EDITORS
+  MESSAGE_HINT_SUBMIT_EDITORS,
+  MESSAGE_HINT_AUTO_SAVE
 } from "../../../constants/messages/hints"
 
 // placeholders
@@ -39,6 +41,7 @@ const Composer = props => {
       />
     </Section>,
     <ModalDispatch
+      style={{ marginBottom: "0.25em" }}
       key="Composer_Send"
       with={
         props.composer.submissionStatus.id && props.user.info.role === "admin"
@@ -49,7 +52,11 @@ const Composer = props => {
       red
     >
       Send Submission {emojis.CHECKMARK}
-    </ModalDispatch>
+    </ModalDispatch>,
+    <DraftStatusText key={"Composer_DraftStatus"}>
+      Your draft is{" "}
+      <ModalDispatch with={MESSAGE_HINT_AUTO_SAVE}>saved</ModalDispatch>.
+    </DraftStatusText>
   ]
 }
 
