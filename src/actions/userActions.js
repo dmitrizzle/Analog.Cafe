@@ -16,12 +16,6 @@ export const setConnectionStatus = connection => {
     payload: connection
   }
 }
-export const addAvailableComponent = componentName => {
-  return {
-    type: "USER.ADD_AVAILABLE_COMPONENT",
-    payload: componentName
-  }
-}
 
 // error message
 const loginError = (type = "error") => {

@@ -9,7 +9,8 @@ import "localforage-getitems"
 
 // redux
 import { connect } from "react-redux"
-import { addAvailableComponent } from "../../../../../actions/userActions"
+import { setCard } from "../../../../../actions/modalActions"
+import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/messages/hints"
 
 // components
 import ImageButton from "./components/ImageButton"
@@ -82,11 +83,21 @@ class ContentEditor extends React.PureComponent {
     event.stopPropagation()
   }
   componentWillReceiveProps = nextProps => {
+    // manage
     if (
       this.props.composer.editorFocusRequested <
       nextProps.composer.editorFocusRequested
     ) {
       this.slateEditor.focus()
+    }
+
+    // internet connection trouble message
+    if (
+      !this.state.connectionMessageShown &&
+      nextProps.user.connection.status === "offline"
+    ) {
+      this.props.setCard(MESSAGE_HINT_CONNECTION_OFFLINE)
+      this.setState({ connectionMessageShown: true })
     }
   }
   handleBlur = () => {}
@@ -140,11 +151,6 @@ class ContentEditor extends React.PureComponent {
 
     // hover menu (below, onwards until `formatCommand()`)
     menuPosition(this)
-
-    // register that the Composer component
-    // (and presumably the entiere package required to render Component)
-    // has successfully loaded into browser's cache:
-    this.props.addAvailableComponent("Composer")
   }
   componentDidUpdate = () => menuPosition(this)
   menuRef = menu => {
@@ -199,14 +205,15 @@ class ContentEditor extends React.PureComponent {
 // connect with redux
 const mapDispatchToProps = dispatch => {
   return {
-    addAvailableComponent: componentName => {
-      dispatch(addAvailableComponent(componentName))
+    setCard: (info, request) => {
+      dispatch(setCard(info, request))
     }
   }
 }
 const mapStateToProps = state => {
   return {
-    composer: state.composer
+    composer: state.composer,
+    user: state.user
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ContentEditor)

@@ -143,3 +143,13 @@ export const MESSAGE_HINT_SUBMIT_EDITORS = {
   },
   id: "hints/submit-editors"
 }
+
+// internet connection
+export const MESSAGE_HINT_CONNECTION_OFFLINE = {
+  info: {
+    title: "Connection Trouble 🔌",
+    text:
+      "You got disconnected from the internet. Don’t worry: you will not lose any of your work."
+  },
+  id: "hints/connection"
+}

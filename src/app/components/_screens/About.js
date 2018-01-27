@@ -13,8 +13,6 @@ import MailChimpPrefill from "../../containers/_forms/MailChimpPrefill"
 import ArticleActions from "../Card/components/ArticleActions"
 import { SubscribeToWeekly } from "../_rt-snippets"
 
-import EnableOffline from "../../containers/App/Offline"
-
 import { froth } from "../../../utils/image-froth"
 
 // styles
@@ -178,9 +176,6 @@ export default props => {
         <p>
           If you have a question, suggestion or just want to chat, feel free to
           follow, message, or email <Email />
-        </p>
-        <p style={{ textAlign: "center" }}>
-          <EnableOffline />
         </p>
       </Section>
     </Article>
