@@ -158,7 +158,7 @@ const NavLinkSend = props => {
   return (
     <ModalDispatch
       with={
-        props.submissionStatus.id
+        props.submissionStatus.id && props.userRole === "admin"
           ? MESSAGE_HINT_SUBMIT_EDITORS
           : MESSAGE_HINT_SUBMIT_CONSENT
       }
@@ -188,6 +188,7 @@ export const ComposerNav = props => {
       <NavItem prime right className="prime right">
         <NavLinkSend
           userStatus={props.userStatus}
+          userRole={props.userRole}
           submissionStatus={props.submissionStatus}
         />
       </NavItem>

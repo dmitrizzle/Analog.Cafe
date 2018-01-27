@@ -164,7 +164,10 @@ class Upload extends React.PureComponent {
     //
     //
     // upload complete
-    if (nextProps.composer.uploadProgress === 100) {
+    if (
+      this.props.composer.uploadProgress >= 0 &&
+      nextProps.composer.uploadProgress === 100
+    ) {
       // clear submissions content and image in storage
       localStorage.removeItem("composer-content-text")
       localForage.clear()
@@ -274,7 +277,8 @@ class Upload extends React.PureComponent {
 // connect with redux
 const mapStateToProps = state => {
   return {
-    composer: state.composer
+    composer: state.composer,
+    user: state.user
   }
 }
 const mapDispatchToProps = dispatch => {

@@ -26,7 +26,7 @@ export const redirectToSignIn = props => {
 export const sendSubmission = (data, props) => {
   let url = ROUTE_SUBMISSION_API
   let method = "post"
-  if (props.composer.submissionStatus.id) {
+  if (props.composer.submissionStatus.id && props.user.info.role === "admin") {
     method = "put"
     if (props.composer.submissionStatus.type === "unpublished")
       url += "/" + props.composer.submissionStatus.id

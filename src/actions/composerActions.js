@@ -51,7 +51,7 @@ export const setUploadProgress = state => {
 }
 export const initUploadProgress = () => {
   return {
-    type: "UPLOAD.INIT_PORGRESS"
+    type: "UPLOAD.INIT_PROGRESS"
   }
 }
 

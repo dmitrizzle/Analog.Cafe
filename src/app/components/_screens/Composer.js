@@ -5,12 +5,8 @@ import Helmet from "../_async/Helmet"
 // components
 import { Article, Section } from "../ArticleStyles"
 import { Caption } from "../CaptionStyles"
-import { ModalDispatch } from "../../containers/Modal"
 import Composer from "../../containers/Composer"
 import { Email } from "../_rt-snippets"
-
-import emojis from "../../../constants/messages/emojis"
-import { MESSAGE_HINT_SUBMIT_CONSENT } from "../../../constants/messages/hints"
 
 const metaTitle = "Composer"
 const metaDescription =
@@ -27,13 +23,6 @@ export default props => {
         <meta property="og:description" content={metaDescription} />
       </Helmet>
       <Composer />
-      <ModalDispatch
-        with={MESSAGE_HINT_SUBMIT_CONSENT}
-        wrapperElement="Button"
-        red
-      >
-        Send Submission {emojis.CHECKMARK}
-      </ModalDispatch>
       <Section plain>
         <Caption style={{ fontVariant: "normal" }}>
           <p>

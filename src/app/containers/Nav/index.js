@@ -32,6 +32,7 @@ const Nav = props => {
           draftStatus={props.composer.draftStatus}
           submissionStatus={props.composer.submissionStatus}
           userStatus={props.user.status}
+          userRole={props.user.info.role}
         />
       ) : (
         <CommonNav
