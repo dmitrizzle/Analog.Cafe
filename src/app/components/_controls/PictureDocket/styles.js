@@ -29,9 +29,19 @@ export const GridButton = styled(Button)`
   text-align: center;
   align-items: center;
 
+  ${"" /* for FireFox */}
+  min-height: 5em;
+  ${props => props.theme.size.breakpoint.min.m`min-height: 7em;`}
+  ${props => props.theme.size.breakpoint.min.l`min-height: 11.5em;`}
+  ${"" /* HACK: */}
+  @-moz-document url-prefix() {
+    overflow: hidden;
+  }
+
+
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: ${props => props.theme.effects.borderRadius.small}em;
   }
   &:last-child {

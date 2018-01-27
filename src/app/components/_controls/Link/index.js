@@ -7,8 +7,10 @@ import { parseHref } from "../../../../utils/link-builder"
 
 // return
 export default props => {
+  // filter out invalid props
+  const { activeClassName, connectionStatus, ...validProps } = props
   // all links within analog.cafe domain should become relative
-  let address = parseHref(props.to)
+  let address = parseHref(validProps.to)
 
   if (address.includes("http"))
     // external links
@@ -18,33 +20,33 @@ export default props => {
         target="_blank"
         rel="nofollow noopener noreferrer"
         title={address}
-        {...props}
+        {...validProps}
       >
-        {props.children}
+        {validProps.children}
       </a>
     )
   else if (address === "#")
     // empty link
     return (
-      <a title={address} {...props}>
-        {props.children}
+      <a title={address} {...validProps}>
+        {validProps.children}
       </a>
     )
   else if (address.includes("#"))
     // anchor tags
     return (
-      <a href={address} title={address} {...props}>
-        {props.children}
+      <a href={address} title={address} {...validProps}>
+        {validProps.children}
       </a>
     )
   else if (address.startsWith("/"))
     // internal links (no title attribute necessary)
     return (
-      <NavLink exact to={address} {...props}>
-        {props.children}
+      <NavLink exact to={address} {...validProps}>
+        {validProps.children}
       </NavLink>
     )
-  else
+  else {
     // fix invalid links
     return (
       <a
@@ -52,9 +54,10 @@ export default props => {
         target="_blank"
         rel="nofollow noopener noreferrer"
         title={"http://" + address}
-        {...props}
+        {...validProps}
       >
-        {props.children}
+        {validProps.children}
       </a>
     )
+  }
 }

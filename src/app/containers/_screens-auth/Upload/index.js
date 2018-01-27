@@ -22,6 +22,7 @@ import {
   loadTextContent
 } from "../../../../utils/composer-loader"
 import errorMessages from "../../../../constants/messages/errors"
+import emojis from "../../../../constants/messages/emojis"
 
 import {
   redirectToSignIn,
@@ -37,8 +38,9 @@ import {
 } from "../../../../actions/userActions"
 import {
   uploadData as uploadSubmissionData,
-  initStatus as resetUploadStatus,
-  resetSubmissionId
+  initUploadProgress,
+  resetAllValues as resetComposerValues,
+  resetSubmissionStatus
 } from "../../../../actions/composerActions"
 
 // constants
@@ -138,6 +140,11 @@ class Upload extends React.PureComponent {
     }
   }
   componentWillReceiveProps = nextProps => {
+    if (
+      nextProps.composer.uploadProgress === this.props.composer.uploadProgress
+    )
+      return
+
     // set progress state
     if (nextProps.composer.uploadProgress >= 0)
       this.setState({
@@ -151,34 +158,40 @@ class Upload extends React.PureComponent {
         status: "error"
       })
 
+    //
+    //
+    //
+    //
+    //
     // upload complete
-    if (nextProps.composer.uploadProgress === 100) {
+    if (
+      this.props.composer.uploadProgress >= 0 &&
+      nextProps.composer.uploadProgress === 100
+    ) {
       // clear submissions content and image in storage
-      localStorage.removeItem("composer-content-state")
-      localStorage.removeItem("composer-header-state")
       localStorage.removeItem("composer-content-text")
       localForage.clear()
 
+      // clear store for Composer values
+      this.props.resetComposerValues()
+
       // reset upload state
-      this.props.resetUploadStatus()
+      this.props.initUploadProgress()
 
       // remove working submission id
-      this.props.resetSubmissionId()
+      this.props.resetSubmissionStatus()
 
       // user-facing messages
       this.setState({
         status: "complete"
       })
-
-      // const delayedRedirect = setTimeout(
-      //   props => {
-      //     props.history.replace({ pathname: ROUTE_REDIRECT_AFTER_SUBMIT })
-      //     clearTimeout(delayedRedirect)
-      //   },
-      //   1000, // wait a second to make sure the list of contributions has been updated
-      //   this.props
-      // )
     }
+    //
+    //
+    //
+    //
+    //
+    //
   }
 
   handleEmptySubmission = () => {
@@ -219,7 +232,7 @@ class Upload extends React.PureComponent {
             <p>
               <strong>
                 <span role="img" aria-label="Warning">
-                  ⚠️
+                  {emojis.WARNING}
                 </span>{" "}
                 Please keep this page open, do not refresh and do not click your
                 browser’s “back” button
@@ -264,7 +277,8 @@ class Upload extends React.PureComponent {
 // connect with redux
 const mapStateToProps = state => {
   return {
-    composer: state.composer
+    composer: state.composer,
+    user: state.user
   }
 }
 const mapDispatchToProps = dispatch => {
@@ -272,17 +286,20 @@ const mapDispatchToProps = dispatch => {
     uploadSubmissionData: request => {
       dispatch(uploadSubmissionData(request))
     },
-    resetUploadStatus: () => {
-      dispatch(resetUploadStatus())
+    initUploadProgress: () => {
+      dispatch(initUploadProgress())
     },
-    resetSubmissionId: () => {
-      dispatch(resetSubmissionId())
+    resetSubmissionStatus: () => {
+      dispatch(resetSubmissionStatus())
     },
     setLoginRedirectRoutes: routes => {
       dispatch(setLoginRedirectRoutes(routes))
     },
     resetLoginRedirectRoutes: () => {
       dispatch(resetLoginRedirectRoutes())
+    },
+    resetComposerValues: () => {
+      dispatch(resetComposerValues())
     },
     setCard: (info, request) => {
       dispatch(setCard(info, request))

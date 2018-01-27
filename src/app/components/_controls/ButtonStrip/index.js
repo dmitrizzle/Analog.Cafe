@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 // components
 import { TinyButton } from "../Button"
@@ -13,24 +13,23 @@ export const ButtonStrip = styled.div`
   width: 10em;
 `
 
+const tinyButtonBorderRadious = css`
+  ${props => props.theme.effects.borderRadius.small};
+`
 export const Item = styled(({ left, right, script, ...props }) => (
   <TinyButton {...props} />
 ))`
   margin: 0;
-  border-radius: 0;
-  ${props =>
-    props.left
-      ? `border-radius: ${props.theme.effects.borderRadius.small}em 0 0 ${
-          props.theme.effects.borderRadius.small
-        }em`
-      : null};
 
-  ${props =>
-    props.right
-      ? `border-radius: 0 ${props.theme.effects.borderRadius.small}em ${
-          props.theme.effects.borderRadius.small
-        }em 0`
-      : null};
+  border-top-left-radius: ${props =>
+    props.left ? `${tinyButtonBorderRadious}em` : 0};
+  border-bottom-left-radius: ${props =>
+    props.left ? `${tinyButtonBorderRadious}em` : 0};
+
+  border-top-right-radius: ${props =>
+    props.right ? `${tinyButtonBorderRadious}em` : 0};
+  border-bottom-right-radius: ${props =>
+    props.right ? `${tinyButtonBorderRadious}em` : 0};
 
   ${props =>
     props.script
@@ -38,9 +37,4 @@ export const Item = styled(({ left, right, script, ...props }) => (
           props.theme.typography.font.serif
         } !important;font-weight: 400 !important;`
       : null};
-
-  ${props => props.theme.size.breakpoint.max.s`
-    border-radius: 0;
-    padding: 1em;
-  `};
 `

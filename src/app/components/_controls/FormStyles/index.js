@@ -1,16 +1,11 @@
 // tools
 import styled from "styled-components"
-import Color from "color"
 
 // return
 const shadowGrey = props =>
-  Color(props.theme.color.foreground)
-    .alpha(props.theme.opacity.least)
-    .string()
+  props.theme.color.alpha.foreground(props.theme.opacity.least)
 const shadowGrey2 = props =>
-  Color(props.theme.color.foreground)
-    .alpha(props.theme.opacity.least * 2)
-    .string()
+  props.theme.color.alpha.foreground(props.theme.opacity.least * 2)
 
 export const Form = styled.form`
   max-width: ${props => props.theme.size.breakpoint.stops.min}px;

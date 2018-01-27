@@ -1,9 +1,15 @@
-import { ROUTE_SUBMISSION_API } from "../constants/submission"
+// constants
+import { ROUTE_ARTICLE_API, ROUTE_SUBMISSION_API } from "../constants/article"
+import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../constants/picture"
 
 // image size limit for user uploads
-export const imageSizeLimit = (size, max = 10) => {
+export const forceImageRestrictions = (size, type, max = 10) => {
+  let correctFileType = false
+  PICTURE_ACCEPTED_UPLOAD_MIME.forEach(acceptedFiletype => {
+    if (acceptedFiletype === type) correctFileType = true
+  })
   return new Promise((resolve, reject) => {
-    if (size / 1000000 <= max) resolve()
+    if (size / 1000000 <= max && correctFileType) resolve()
     else reject()
   })
 }
@@ -20,11 +26,13 @@ export const redirectToSignIn = props => {
 export const sendSubmission = (data, props) => {
   let url = ROUTE_SUBMISSION_API
   let method = "post"
-  if (props.composer.submissionId) {
-    url += "/" + props.composer.submissionId
+  if (props.composer.submissionStatus.id && props.user.info.role === "admin") {
     method = "put"
+    if (props.composer.submissionStatus.type === "unpublished")
+      url += "/" + props.composer.submissionStatus.id
+    else if (props.composer.submissionStatus.type === "published")
+      url = ROUTE_ARTICLE_API + "/" + props.composer.submissionStatus.id
   }
-
   props.uploadSubmissionData({
     method,
     data,

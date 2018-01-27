@@ -2,7 +2,7 @@
 import { html } from "../rules"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
-import { imageSizeLimit } from "../../../../../../utils/upload-utils"
+import { forceImageRestrictions } from "../../../../../../utils/upload-utils"
 import errorMessages from "../../../../../../constants/messages/errors"
 
 // redux
@@ -156,20 +156,17 @@ export const plugins = [
     }
   }),
 
-  // image inserter
-  // see uploadRequest() in ../index for the other image insert option...
-  // ...that will also need an upload tool connected.
+  // drag & drop image inserter tool
   InsertImages({
-    extensions: ["png", "jpeg"],
     insertImage: (transform, file) => {
-      imageSizeLimit(file.size)
+      return forceImageRestrictions(file.size, file.type)
         .then(() => {
           const key = uuidv1()
           localForage.setItem(key, file)
           return transform.insertBlock({
             type: "image",
             isVoid: true,
-            data: { file, src: dot, key }
+            data: { file, key, src: dot }
           })
         })
         .catch(reason => {
@@ -177,7 +174,7 @@ export const plugins = [
             setCard(
               {
                 status: "ok",
-                info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE_10
+                info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE(10)
               },
               { url: "errors/upload" }
             )
@@ -186,8 +183,7 @@ export const plugins = [
     }
   })
 
-  // trailing block (make sure to always have content editable)
-  // see schema.js
-
+  // TBD: LeadingBlock - a plugin that will let users add text above the
+  // images at the very top of the document
   // LeadingBlock({})
 ]

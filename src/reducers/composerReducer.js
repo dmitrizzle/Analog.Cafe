@@ -1,61 +1,131 @@
+// tools
+import { loadHeader } from "../utils/composer-loader"
+import { DEFAULT_COMPOSER_HEADER_STATE } from "../constants/composer"
+
 // set placeholders for collabFeatures grid:
 let collabFeaturesDefaults = []
 for (var o = 0; o < 8; o++) {
   collabFeaturesDefaults[o] = { id: o }
 }
 
-// storing submissionId in localStorage along with all contnet
-const getLocalSubmissionId = () =>
-  localStorage.getItem("composer-submission-id")
-    ? localStorage.getItem("composer-submission-id")
-    : ""
-const localSubmissionId = getLocalSubmissionId()
+// get submission status from localStorage
+const getLocalSubmissionStatus = () =>
+  localStorage.getItem("composer-submission-status")
+    ? JSON.parse(localStorage.getItem("composer-submission-status"))
+    : {}
 
 const INITIAL_STATE = {
-  draftStatus: "Draft",
+  draftStatus: "",
   editorFocusRequested: 0,
+  headingValues: {
+    title: loadHeader().title,
+    subtitle: loadHeader().subtitle
+  },
   uploadProgress: 0,
   collabFeatures: {
     status: "loading",
     items: collabFeaturesDefaults
   },
-  submissionId: localSubmissionId ? localSubmissionId : ""
+  submissionStatus: {
+    id: getLocalSubmissionStatus().id || "",
+    type: getLocalSubmissionStatus().type || "unpublished"
+  },
+  submissionAdmin: {
+    reject: {
+      id: "",
+      status: ""
+    },
+    publish: {
+      id: "",
+      status: ""
+    }
+  }
 }
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case "UPLOAD.SET_STATUS":
+    // upload reducers
+    case "UPLOAD.SET_PROGRESS":
       state = {
         ...state,
         uploadProgress: action.payload.uploadProgress
       }
       break
-    case "UPLOAD.INIT_STATUS":
+    case "UPLOAD.INIT_PROGRESS":
       state = {
         ...state,
         uploadProgress: INITIAL_STATE.uploadProgress
       }
       break
-    case "COMPOSER.SET_SUBMISSION_ID":
+
+    // submission reducers
+    case "SUBMISSION.ADMIN_PUBLISH":
       state = {
         ...state,
-        submissionId: action.payload
+        submissionAdmin: {
+          ...state.submissionAdmin,
+          publish: action.payload
+        }
       }
-      localStorage.setItem("composer-submission-id", state.submissionId)
       break
-    case "COMPOSER.RESET_SUBMISSION_ID":
+    case "SUBMISSION.ADMIN_REJECT":
       state = {
         ...state,
-        submissionId: INITIAL_STATE.submissionId
+        submissionAdmin: {
+          ...state.submissionAdmin,
+          reject: action.payload
+        }
       }
-      localStorage.removeItem("composer-submission-id")
       break
+
+    // track state for composer document
+    case "COMPOSER.SET_HEADING_VALUES":
+      state = {
+        ...state,
+        headingValues: action.payload
+      }
+      break
+    case "COMPOSER.RESET_ALL_VALUES":
+      localStorage.removeItem("composer-header-state")
+      localStorage.removeItem("composer-content-state")
+
+      state = {
+        ...state,
+        headingValues: DEFAULT_COMPOSER_HEADER_STATE
+      }
+      break
+
+    // for editing submissions
+    case "COMPOSER.SET_SUBMISSION_STATUS":
+      state = {
+        ...state,
+        submissionStatus: action.payload
+      }
+      localStorage.setItem(
+        "composer-submission-status",
+        JSON.stringify(state.submissionStatus)
+      )
+      break
+    case "COMPOSER.RESET_SUBMISSION_STATUS":
+      localStorage.removeItem("composer-submission-status")
+      state = {
+        ...state,
+        submissionStatus: {
+          id: "",
+          type: "unpublished"
+        }
+      }
+      break
+
+    // notification for saving everything locally
     case "COMPOSER.SET_DRAFT_STATUS":
       state = {
         ...state,
         draftStatus: action.payload
       }
       break
+
+    // additional reducers for Composer internals
     case "COMPOSER.REQUEST_FOCUS":
       state = {
         ...state,

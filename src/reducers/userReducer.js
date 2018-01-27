@@ -1,12 +1,17 @@
+// constatns
 import { ROUTE_AUTH_USER_LANDING } from "../constants/user"
 
+// retrieve previous session's stats
 const getLocalSessionInfo = () =>
   localStorage.getItem("session-info")
     ? JSON.parse(localStorage.getItem("session-info"))
     : {}
-const localSessionInfo = getLocalSessionInfo()
+
 const INITIAL_STATE = {
   status: "forbidden",
+  connection: {
+    status: ""
+  },
   info: {},
   routes: {
     success: ROUTE_AUTH_USER_LANDING
@@ -17,14 +22,23 @@ const INITIAL_STATE = {
     status: "ok"
   },
   sessionInfo: {
-    method: localSessionInfo.method ? localSessionInfo.method : "",
-    id: localSessionInfo.id ? localSessionInfo.id : "",
-    login: localSessionInfo.login ? localSessionInfo.login : false
+    method: getLocalSessionInfo().method || "",
+    id: getLocalSessionInfo().id || "",
+    login: getLocalSessionInfo().login || false
   }
 }
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case "USER.SET_CONNECTION_STATUS":
+      state = {
+        ...state,
+        connection: {
+          ...state.connection,
+          status: action.payload
+        }
+      }
+      break
     case "USER.SET_INFO":
       state = {
         ...state,
@@ -84,13 +98,9 @@ export default (state = INITIAL_STATE, action) => {
       state = {
         ...state,
         sessionInfo: {
-          method: getLocalSessionInfo().method
-            ? getLocalSessionInfo().method
-            : "",
-          id: getLocalSessionInfo().id ? getLocalSessionInfo().id : "",
-          login: getLocalSessionInfo().login
-            ? getLocalSessionInfo().login
-            : false
+          method: getLocalSessionInfo().method || "",
+          id: getLocalSessionInfo().id || "",
+          login: getLocalSessionInfo().login || false
         }
       }
       break

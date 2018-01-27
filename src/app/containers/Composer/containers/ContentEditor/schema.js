@@ -19,6 +19,10 @@ export const schema = {
     last: { types: ["paragraph"] },
     normalize: (change, reason, { node, child }) => {
       switch (reason) {
+        // case "child_type_invalid": {
+        //   change.setNodeByKey(child.key, { type: "paragraph" })
+        //   return
+        // }
         case "last_child_type_invalid": {
           const paragraph = Block.create("paragraph")
           return change.insertNodeByKey(node.key, node.nodes.size, paragraph)

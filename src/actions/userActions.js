@@ -9,13 +9,32 @@ import { anonymizeEmail } from "../utils/email-utils"
 
 import { ROUTE_USER_API } from "../constants/user"
 
+// manage connectivity
+export const setConnectionStatus = connection => {
+  return {
+    type: "USER.SET_CONNECTION_STATUS",
+    payload: connection
+  }
+}
+
 // error message
 const loginError = (type = "error") => {
   return {
     status: "ok",
     info: {
-      title: errorMessages.VIEW_TEMPLATE.CARD.title,
-      text: errorMessages.DISAMBIGUATION.CODE_401[type]
+      title: errorMessages.VIEW_TEMPLATE.AUTHENICATION.title,
+      text: errorMessages.DISAMBIGUATION.CODE_401[type],
+      buttons: [
+        {
+          to: "/sign-in",
+          text: "Sign In",
+          red: true
+        },
+        {
+          to: "/",
+          text: "Nevermind"
+        }
+      ]
     }
   }
 }
@@ -134,6 +153,13 @@ export const getInfo = () => {
       })
       .catch(error => {
         localStorage.removeItem("token") // clean up broken/old token
+
+        // register in Redux store
+        dispatch({
+          type: "USER.SET_STATUS",
+          payload: "forbidden"
+        })
+
         if (!error.response || !error.response.data) return
         dispatch(
           setCard(loginError(error.response.data.message), {
@@ -157,7 +183,19 @@ export const setInfo = request => {
           payload: "updated"
         })
       })
-      .catch(error => dispatch(setCard(loginError, { url: "errors/user" })))
+      .catch(error => {
+        dispatch(
+          setCard(loginError(error.response.data.message), {
+            url: "errors/user"
+          })
+        )
+
+        // register in Redux store
+        dispatch({
+          type: "USER.SET_STATUS",
+          payload: "forbidden"
+        })
+      })
   }
 }
 export const acceptInfo = () => {
