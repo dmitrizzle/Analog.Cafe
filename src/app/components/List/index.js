@@ -178,7 +178,7 @@ export default props => {
                           ? `${authorNameList(item.authors, { trim: true })} · `
                           : null}
                         {item.type !== "placeholder" && (
-                          <small>{datestamp(item["post-date"])}</small>
+                          <small>{datestamp(item.date.published)}</small>
                         )}
                       </AuthorAndDate>
                     </div>
