@@ -144,7 +144,7 @@ export default props => {
                         {item.type !== "placeholder" &&
                           props.private &&
                           item.tag &&
-                          "Published as a(n) "}
+                          ""}
 
                         {/* item category tag */}
                         {item.tag
