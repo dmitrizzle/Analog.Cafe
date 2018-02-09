@@ -144,7 +144,7 @@ export default props => {
                         {item.type !== "placeholder" &&
                           props.private &&
                           item.tag &&
-                          ""}
+                          "#"}
 
                         {/* item category tag */}
                         {item.tag
@@ -161,9 +161,9 @@ export default props => {
                           !props.private &&
                           (item.tag !== "photo-essay"
                             ? ` | ${Math.ceil(
-                                item.stats.words / 200
+                                (item.stats.words + 101) / 200
                               )}-minute read`
-                            : ` | ${item.stats.images} Image${
+                            : ` | ${item.stats.images} image${
                                 item.stats.images > 1 ? "s" : ""
                               }`)}
 
