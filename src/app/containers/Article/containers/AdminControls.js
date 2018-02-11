@@ -193,9 +193,12 @@ class AdminControls extends React.PureComponent {
           display: "block"
         }}
       >
-        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          {emojis.WARNING}
-        </span>{" "}
+        {(this.props.article.status === "scheduled" ||
+          this.props.article.status === "published") && (
+          <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
+            {emojis.WARNING}
+          </span>
+        )}{" "}
         {this.props.article.status === "scheduled" &&
           "This is a SCHEDULED submission that you can edit while it is in the queue."}
         {this.props.article.status === "published" &&
