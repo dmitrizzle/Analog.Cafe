@@ -27,11 +27,7 @@ export default props => {
     )
   else if (address === "#")
     // empty link
-    return (
-      <a title={address} {...validProps}>
-        {validProps.children}
-      </a>
-    )
+    return <a {...validProps}>{validProps.children}</a>
   else if (address.includes("#"))
     // anchor tags
     return (

@@ -120,6 +120,25 @@ export const MESSAGE_HINT_PUBLISH_SUBMISSION = {
   },
   requested: { url: "hints/publish-submission" }
 }
+export const MESSAGE_HINT_SYNC_SUBMISSION = {
+  info: {
+    title: "Are You Sure?",
+    text:
+      "This will update the published article’s content with the linked submission. This can not be undone.",
+    buttons: [
+      {
+        to: "#",
+        text: "Nevermind",
+        red: true
+      },
+      {
+        to: "#sync",
+        text: emojis.KEY + " Sync"
+      }
+    ]
+  },
+  requested: { url: "hints/sync-submission" }
+}
 export const MESSAGE_HINT_PUBLISH_SUBMISSION_SUCCESS = {
   info: {
     title: "Submission Scheduled",
