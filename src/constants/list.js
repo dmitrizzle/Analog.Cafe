@@ -11,7 +11,7 @@ export const ROUTE_AUTHENTICATED_LIST_API = ROUTE_API_DOMAIN + "/submissions"
 
 // better copy for status keywords
 export const STATUS_TAGS_DISAMBIGUATION = {
-  pending: "Pending Review",
+  pending: "In Queue",
   rejected: "Not Published",
   scheduled: "Scheduled",
   published: "Published"

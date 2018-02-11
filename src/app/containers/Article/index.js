@@ -259,7 +259,9 @@ class Article extends React.PureComponent {
                 shareOnTwitter={this.handleShareOnTwitter}
                 nextArticle={this.props.article.next}
                 thisArticle={this.props.article.slug}
-                thisArticlePostDate={this.props.article["post-date"]}
+                thisArticlePostDate={
+                  this.props.article.date && this.props.article.date.published
+                }
                 nextArticleHeading={nextArticleHeading =>
                   this.props.setNextArticle({
                     title: nextArticleHeading.title,
