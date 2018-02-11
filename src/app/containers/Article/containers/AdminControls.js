@@ -25,9 +25,13 @@ import { loadTextContent } from "../../../../utils/composer-loader"
 import {
   MESSAGE_HINT_OVERWRITE_DRAFT,
   MESSAGE_HINT_REJECT_SUBMISSION,
-  MESSAGE_HINT_PUBLISH_SUBMISSION
+  MESSAGE_HINT_PUBLISH_SUBMISSION,
+  MESSAGE_HINT_SYNC_SUBMISSION
 } from "../../../../constants/messages/hints"
-import { ROUTE_ARTICLE_DIR } from "../../../../constants/article"
+import {
+  ROUTE_ARTICLE_DIR,
+  ROUTE_SUBMISSIONS_DIR
+} from "../../../../constants/article"
 import emojis from "../../../../constants/messages/emojis"
 import {
   storeContentState,
@@ -48,14 +52,15 @@ class AdminControls extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      allowOverwrite:
-        window.location.hash === "#overwrite" || !loadTextContent().length > 0,
       publishControls: false,
       publishAs: "",
 
       // URL hashtag flags that unlock dangerous functions
+      allowOverwrite:
+        window.location.hash === "#overwrite" || !loadTextContent().length > 0,
       allowReject: window.location.hash === "#reject",
-      allowPublish: window.location.hash === "#publish"
+      allowPublish: window.location.hash === "#publish",
+      allowSync: window.location.hash === "#sync"
     }
   }
   componentDidMount = () => {
@@ -70,7 +75,8 @@ class AdminControls extends React.PureComponent {
       allowOverwrite:
         window.location.hash === "#overwrite" || !loadTextContent().length > 0,
       allowReject: window.location.hash === "#reject",
-      allowPublish: window.location.hash === "#publish"
+      allowPublish: window.location.hash === "#publish",
+      allowSync: window.location.hash === "#sync"
     })
 
     // refresh status & controls:
@@ -167,22 +173,24 @@ class AdminControls extends React.PureComponent {
     this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
   }
 
+  // sync published article with submission
+  handleSync = event => {
+    event.preventDefault()
+
+    // warn about immediate publication
+    if (!this.state.allowSync) {
+      this.props.setCard(MESSAGE_HINT_SYNC_SUBMISSION)
+      return
+    }
+    this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
+  }
+
   render = () => {
     return [
       <Byline
         key="Byline_scheduled"
         style={{
-          display:
-            // differentiating submissions from articles:
-
-            // > only submissions can be scheduled
-            this.props.article.status === "scheduled" ||
-            // > published and has `articleId` association with published article
-            // > means that it is a submission, rather than Article itself
-            (this.props.article.status === "published" &&
-              this.props.article.articleId)
-              ? "block"
-              : "none"
+          display: "block"
         }}
       >
         <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
@@ -190,17 +198,26 @@ class AdminControls extends React.PureComponent {
         </span>{" "}
         {this.props.article.status === "scheduled" &&
           "This is a SCHEDULED submission that you can edit while it is in the queue."}
-        {this.props.article.status === "published" && (
-          <span>
-            This is an original submission associated with a{" "}
-            <Link to={`${ROUTE_ARTICLE_DIR}/${this.props.article.slug}`}>
-              PUBLISHED
-            </Link>{" "}
-            article. You can edit it and then push your changes to the live
-            version.
-          </span>
-        )}{" "}
-        Original author will see your edits in their own submission.
+        {this.props.article.status === "published" &&
+          this.props.article.articleId && (
+            <span>
+              This is an <strong>original submission</strong>, linked with{" "}
+              <Link to={`${ROUTE_ARTICLE_DIR}/${this.props.article.slug}`}>
+                this published article
+              </Link>. You can edit it and then sync your changes to that
+              published article.
+            </span>
+          )}
+        {this.props.article.status === "published" &&
+          !this.props.article.articleId && (
+            <span>
+              This is a <strong>published article</strong>, linked with{" "}
+              <Link to={`${ROUTE_SUBMISSIONS_DIR}/${this.props.article.slug}`}>
+                this submission
+              </Link>. Your edits will be applied to that submission that you
+              can then sync with this article.
+            </span>
+          )}
       </Byline>,
 
       <ButtonStrip
@@ -224,49 +241,59 @@ class AdminControls extends React.PureComponent {
             </span>{" "}
             Edit
           </Item>
-          {this.props.article.status === "published" ? (
-            <Item right>Unpublish</Item>
-          ) : (
-            [
-              <Item
-                key="ButtonStrip_Item_reject"
-                onClick={this.handleRejection}
-                black={
-                  this.props.composer.submissionAdmin.reject.id ===
-                  this.props.article.id
-                }
-                style={{
-                  minWidth: "6em",
-                  display:
-                    this.props.article.status !== "scheduled" ? "block" : "none"
-                }}
-              >
-                <span role="img" aria-label="(Un)Locked button">
-                  {this.state.allowReject ? emojis.LOCKED : emojis.UNLOCKED}
-                </span>{" "}
-                Reject
-              </Item>,
-              <Item
-                right
-                black={this.state.publishControls}
-                style={
-                  this.props.article.status === "scheduled"
-                    ? { minWidth: "8em" }
-                    : {}
-                }
-                onClick={
-                  this.props.article.status !== "scheduled"
-                    ? this.handlePblishControls
-                    : null
-                }
-                key="ButtonStrip_Item_publish"
-              >
-                {this.props.article.status !== "scheduled"
-                  ? "Publish"
-                  : "Edit Schedule"}
-              </Item>
-            ]
-          )}
+          {this.props.article.status === "published"
+            ? [
+                <Item key="ButtonStrip_Item_update" onClick={this.handleSync}>
+                  <span role="img" aria-label="(Un)Locked button">
+                    {this.state.allowSync ? emojis.LOCKED : emojis.UNLOCKED}
+                  </span>{" "}
+                  Sync
+                </Item>,
+                <Item key="ButtonStrip_Item_unpublish" right>
+                  Unpublish
+                </Item>
+              ]
+            : [
+                <Item
+                  key="ButtonStrip_Item_reject"
+                  onClick={this.handleRejection}
+                  black={
+                    this.props.composer.submissionAdmin.reject.id ===
+                    this.props.article.id
+                  }
+                  style={{
+                    minWidth: "6em",
+                    display:
+                      this.props.article.status !== "scheduled"
+                        ? "block"
+                        : "none"
+                  }}
+                >
+                  <span role="img" aria-label="(Un)Locked button">
+                    {this.state.allowReject ? emojis.LOCKED : emojis.UNLOCKED}
+                  </span>{" "}
+                  Reject
+                </Item>,
+                <Item
+                  right
+                  black={this.state.publishControls}
+                  style={
+                    this.props.article.status === "scheduled"
+                      ? { minWidth: "8em" }
+                      : {}
+                  }
+                  onClick={
+                    this.props.article.status !== "scheduled"
+                      ? this.handlePblishControls
+                      : null
+                  }
+                  key="ButtonStrip_Item_publish"
+                >
+                  {this.props.article.status !== "scheduled"
+                    ? "Publish"
+                    : "Edit Schedule"}
+                </Item>
+              ]}
         </div>
       </ButtonStrip>,
       <Byline
