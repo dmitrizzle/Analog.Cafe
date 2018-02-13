@@ -5,10 +5,16 @@ import { fixHangingSelection } from "./HACKS"
 export const imageButtonPosition = (value, parentOffsets, _this) => {
   const { focusBlock } = value
   if (!focusBlock) return
-  if (focusBlock.type !== "paragraph" && focusBlock.type !== "heading") return
+  if (
+    focusBlock.type !== "paragraph" &&
+    focusBlock.type !== "heading" &&
+    focusBlock.type !== "image"
+  )
+    return
   const cursorContext = {
     firstEmptyLine: value.document.isEmpty && value.document.nodes.size === 1,
-    newLine: value.focusBlock.isEmpty,
+    // if user is focusing on image, "Add Image" button should disappear
+    newLine: focusBlock.type === "image" ? false : value.focusBlock.isEmpty,
     parentBlockOffsets: parentOffsets
   }
   _this.setState({ cursorContext })
