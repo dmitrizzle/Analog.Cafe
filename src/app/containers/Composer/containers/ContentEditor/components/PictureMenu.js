@@ -3,44 +3,55 @@ import React from "react"
 import styled from "styled-components"
 
 // components
-import { TinyButton } from "../../../../../components/_controls/Button"
+import {
+  ButtonStrip,
+  Item
+} from "../../../../../components/_controls/ButtonStrip"
 
 const PictureMenu = styled.div`
-  font-variant: normal;
-  display: flex !important;
-  width: calc(8em * 2 + 1em);
-  margin: -4.175em auto 0;
-  z-index: ${props => props.theme.layer.up};
-  position: relative;
-  & >  {
-    margin: 0 !important;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  margin-top: ${props => props.theme.size.block.spacing}em;
+  z-index: ${props => props.theme.layer.up + 2};
+
+  & a:first-child {
+    border-right: 1px solid
+      ${props => props.theme.color.alpha.background(props.theme.opacity.least)};
   }
 `
 
 // return
 export default props => {
   return (
-    <PictureMenu style={{ opacity: props.focus ? "1" : "0" }}>
-      <TinyButton
-        onClick={event => {
-          event.preventDefault()
-          event.stopPropagation()
-          props.removePicture()
-        }}
-        style={{ width: "6em" }}
-      >
-        Delete
-      </TinyButton>
-      <TinyButton
-        onClick={event => {
-          event.preventDefault()
-          event.stopPropagation()
-          props.featurePicture()
-        }}
-        title="⌘ + F"
-      >
-        Change Size
-      </TinyButton>
+    <PictureMenu style={{ display: props.focus ? "block" : "none" }}>
+      <ButtonStrip style={{ margin: "0 auto" }}>
+        <div>
+          <Item
+            onClick={event => {
+              event.preventDefault()
+              event.stopPropagation()
+              props.focus && props.removePicture()
+            }}
+            left
+            black
+          >
+            Delete
+          </Item>
+          <Item
+            onClick={event => {
+              event.preventDefault()
+              event.stopPropagation()
+              props.focus && props.featurePicture()
+            }}
+            title="⌘ + F"
+            right
+            black
+          >
+            Resize
+          </Item>
+        </div>
+      </ButtonStrip>
     </PictureMenu>
   )
 }

@@ -14,7 +14,7 @@ const Menu = styled(ButtonStrip)`
 
   position: absolute;
   bottom: initial !important;
-  z-index: ${props => props.theme.layer.up};
+  z-index: ${props => props.theme.layer.up + 1};
 
   &.touch {
     margin-top: -65px;
@@ -69,16 +69,21 @@ export default props => {
               event.preventDefault()
               props.formatCommand("undo_heading")
             }}
+            red
+            script
+            style={{
+              width: "2em"
+            }}
           >
-            Undo Heading
+            𝒶
           </TinyButton>
         </div>
       ) : (
         <div>
           <MenuItem
             red
+            script
             left
-            style={{ textShadow: "2px 2px rgba(255, 255, 255, 0.5)" }}
             title="Make a heading"
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
@@ -86,7 +91,7 @@ export default props => {
               props.formatCommand("make_heading")
             }}
           >
-            T
+            𝒜
           </MenuItem>
           <MenuItem
             red
@@ -115,10 +120,12 @@ export default props => {
           <MenuItem
             script
             red={
+              props.value &&
               props.value.activeMarks &&
               !props.value.activeMarks.some(mark => mark.type === "bold")
             }
             black={
+              props.value &&
               props.value.activeMarks &&
               props.value.activeMarks.some(mark => mark.type === "bold")
             }
@@ -134,10 +141,12 @@ export default props => {
           <MenuItem
             script
             red={
+              props.value &&
               props.value.activeMarks &&
               !props.value.activeMarks.some(mark => mark.type === "italic")
             }
             black={
+              props.value &&
               props.value.activeMarks &&
               props.value.activeMarks.some(mark => mark.type === "italic")
             }

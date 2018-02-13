@@ -23,6 +23,9 @@ export const Paper = {
       },
       highlight: alpha => {
         return `rgba(255, 242, 0, ${alpha})`
+      },
+      background: alpha => {
+        return `rgba(255, 255, 255, ${alpha})`
       }
     }
   },

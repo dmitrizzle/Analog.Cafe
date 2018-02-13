@@ -63,8 +63,9 @@ export const renderNode = props => {
                       .focus()
                   )
                 }}
+                red
               >
-                Unquote
+                Unqoute
               </UnquoteButton>
             )}
           <blockquote {...attributes} className={focusClassName}>
