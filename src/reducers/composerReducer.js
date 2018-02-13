@@ -86,8 +86,17 @@ export default (state = INITIAL_STATE, action) => {
       }
       break
     case "COMPOSER.RESET_ALL_VALUES":
-      localStorage.removeItem("composer-header-state")
-      localStorage.removeItem("composer-content-state")
+      const lsHeader = "composer-header-state"
+      const lsContent = "composer-content-state"
+      // store back-ups just in case
+      localStorage.setItem(`backup-${lsHeader}`, localStorage.getItem(lsHeader))
+      localStorage.setItem(
+        `backup-${lsContent}`,
+        localStorage.getItem(lsContent)
+      )
+      // remove active LS
+      localStorage.removeItem(lsHeader)
+      localStorage.removeItem(lsContent)
 
       state = {
         ...state,
