@@ -36,6 +36,10 @@ const Menu = styled(ButtonStrip)`
     &.touch {
       margin-top: -55px;
     }
+    & > div {
+      background: ${props =>
+        props.theme.color.alpha.foreground(props.theme.opacity.most)};
+    }
   `};
 `
 const MenuItem = styled(Item)`
