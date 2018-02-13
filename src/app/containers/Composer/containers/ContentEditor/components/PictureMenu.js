@@ -24,14 +24,13 @@ const PictureMenu = styled.div`
 // return
 export default props => {
   return (
-    <PictureMenu style={{ display: props.focus ? "block" : "none" }}>
+    <PictureMenu>
       <ButtonStrip style={{ margin: "0 auto" }}>
         <div>
           <Item
-            onClick={event => {
+            onMouseDown={event => {
               event.preventDefault()
-              event.stopPropagation()
-              props.focus && props.removePicture()
+              props.removePicture()
             }}
             left
             black
@@ -39,10 +38,9 @@ export default props => {
             Delete
           </Item>
           <Item
-            onClick={event => {
+            onMouseDown={event => {
               event.preventDefault()
-              event.stopPropagation()
-              props.focus && props.featurePicture()
+              props.featurePicture()
             }}
             title="⌘ + F"
             right

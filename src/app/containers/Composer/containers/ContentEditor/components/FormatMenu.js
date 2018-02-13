@@ -74,12 +74,12 @@ export default props => {
               props.formatCommand("undo_heading")
             }}
             red
-            script
             style={{
               width: "2em"
             }}
+            title="Undo heading"
           >
-            𝒶
+            𝐚
           </TinyButton>
         </div>
       ) : (

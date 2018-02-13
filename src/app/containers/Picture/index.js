@@ -139,10 +139,9 @@ class Figure extends React.PureComponent {
     const feature = node.data.get("feature")
 
     return [
-      !this.props.readOnly ? (
+      !this.props.readOnly && focus ? (
         <PictureMenu
           key="PictureMenu"
-          focus={focus}
           removePicture={this.handleRemovePicture}
           featurePicture={this.handleFeaturePicture}
         />
