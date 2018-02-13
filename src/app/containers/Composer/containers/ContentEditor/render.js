@@ -46,7 +46,7 @@ export const renderNode = props => {
       return <hr className={focusClassName} />
     case "quote":
       return (
-        <div>
+        <div style={{ clear: "both" }}>
           {!props.readOnly &&
             focus && (
               <UnquoteButton

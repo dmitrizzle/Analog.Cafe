@@ -108,14 +108,14 @@ export default props => {
             script
             red={!props.value.inlines.some(node => node.type === "link")}
             black={props.value.inlines.some(node => node.type === "link")}
-            title="Add a link"
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
               event.preventDefault()
               props.formatCommand("toggle_link")
             }}
+            style={{ borderLeft: "4px solid #2c2c2c" }}
           >
-            ☍
+            <u>link</u>
           </MenuItem>
           <MenuItem
             script
