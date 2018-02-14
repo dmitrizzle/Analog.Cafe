@@ -75,7 +75,7 @@ export default props => {
             }}
             red
             style={{
-              width: "2em"
+              width: "1.55em"
             }}
             title="Undo heading"
           >

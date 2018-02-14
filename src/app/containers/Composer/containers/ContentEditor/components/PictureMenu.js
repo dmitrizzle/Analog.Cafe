@@ -24,8 +24,8 @@ const PictureMenu = styled.div`
 // return
 export default props => {
   return (
-    <PictureMenu>
-      <ButtonStrip style={{ margin: "0 auto" }}>
+    <PictureMenu style={{ pointerEvents: "none" }}>
+      <ButtonStrip style={{ margin: "0 auto", pointerEvents: "auto" }}>
         <div>
           <Item
             onMouseDown={event => {
