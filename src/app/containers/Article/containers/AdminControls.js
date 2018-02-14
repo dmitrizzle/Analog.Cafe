@@ -207,7 +207,7 @@ class AdminControls extends React.PureComponent {
               This is an <strong>original submission</strong>, linked with{" "}
               <Link to={`${ROUTE_ARTICLE_DIR}/${this.props.article.slug}`}>
                 this published article
-              </Link>. You can edit it and then sync your changes to that
+              </Link>. You can edit it and then sync your changes to the
               published article.
             </span>
           )}
@@ -217,7 +217,7 @@ class AdminControls extends React.PureComponent {
               This is a <strong>published article</strong>, linked with{" "}
               <Link to={`${ROUTE_SUBMISSIONS_DIR}/${this.props.article.slug}`}>
                 this submission
-              </Link>. Your edits will be applied to that submission that you
+              </Link>. Your edits will be applied to that submission, which you
               can then sync with this article.
             </span>
           )}
