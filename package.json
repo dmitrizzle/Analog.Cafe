@@ -13,6 +13,7 @@
     "url": "https://github.com/dmitrizzle/Analog.Cafe"
   },
   "dependencies": {
+    "@roast-cms/image-froth": "^0.1.0",
     "axios": "^0.17.0",
     "fontfaceobserver": "^2.0.13",
     "immutable": "^3.8.2",
