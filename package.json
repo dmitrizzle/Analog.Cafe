@@ -17,7 +17,7 @@
     "@roast-cms/react-button-beans": "^0.1.1",
     "@roast-cms/react-link-filter": "^0.1.0",
     "@roast-cms/react-sugar-styled": "^0.1.0",
-    "axios": "^0.17.0",
+    "axios": "0.18.0",
     "fontfaceobserver": "^2.0.13",
     "immutable": "^3.8.2",
     "is-url": "^1.2.2",
@@ -34,7 +34,7 @@
     "react-helmet": "^5.2.0",
     "react-lazyload": "^2.3.0",
     "react-loadable": "^5.3.1",
-    "react-redux": "^5.0.6",
+    "react-redux": "5.0.7",
     "react-router-dom": "^4.2.2",
     "react-textarea-autosize": "^5.1.0",
     "redux": "^3.7.2",
@@ -55,9 +55,9 @@
   "devDependencies": {
     "babel-plugin-root-import": "^5.1.0",
     "husky": "^0.14.3",
-    "lint-staged": "6.1.0",
+    "lint-staged": "6.1.1",
     "prettier": "^1.9.2",
-    "react-scripts": "^1.0.17",
+    "react-scripts": "1.1.1",
     "source-map-explorer": "^1.5.0"
   },
   "lint-staged": {
