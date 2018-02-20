@@ -6,6 +6,10 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@roast-cms/image-froth/-/image-froth-0.1.0.tgz#9ccd272b95b57d6724ed084d5b7dd41c3d1b56fa"
 
+"@roast-cms/react-link-filter@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@roast-cms/react-link-filter/-/react-link-filter-0.1.0.tgz#24d22caf594911c8c5aecc772b4b961d59f9cf91"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
