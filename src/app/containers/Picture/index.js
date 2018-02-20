@@ -138,8 +138,16 @@ class Figure extends React.PureComponent {
     const className = focus ? "focus" : "nofocus"
     const feature = node.data.get("feature")
 
-    return (
+    return [
+      !this.props.readOnly && focus ? (
+        <PictureMenu
+          key="PictureMenu"
+          removePicture={this.handleRemovePicture}
+          featurePicture={this.handleFeaturePicture}
+        />
+      ) : null,
       <Picture
+        key="Picture"
         {...attributes}
         readOnly={this.props.readOnly}
         src={src}
@@ -151,13 +159,6 @@ class Figure extends React.PureComponent {
         composer={!this.props.readOnly}
         feature={feature}
       >
-        {!this.props.readOnly && (
-          <PictureMenu
-            focus={focus}
-            removePicture={this.handleRemovePicture}
-            featurePicture={this.handleFeaturePicture}
-          />
-        )}
         {!this.props.readOnly ? (
           <PlainTextarea
             value={this.state.caption}
@@ -169,7 +170,7 @@ class Figure extends React.PureComponent {
           <span>{this.state.caption}</span>
         )}
       </Picture>
-    )
+    ]
 
     //
     // return src ? <Picture /> : (

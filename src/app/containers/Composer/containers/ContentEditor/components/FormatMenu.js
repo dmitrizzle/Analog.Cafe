@@ -14,7 +14,7 @@ const Menu = styled(ButtonStrip)`
 
   position: absolute;
   bottom: initial !important;
-  z-index: ${props => props.theme.layer.up};
+  z-index: ${props => props.theme.layer.up + 1};
 
   &.touch {
     margin-top: -65px;
@@ -35,6 +35,10 @@ const Menu = styled(ButtonStrip)`
     left: 0 !important;
     &.touch {
       margin-top: -55px;
+    }
+    & > div {
+      background: ${props =>
+        props.theme.color.alpha.foreground(props.theme.opacity.most)};
     }
   `};
 `
@@ -69,16 +73,21 @@ export default props => {
               event.preventDefault()
               props.formatCommand("undo_heading")
             }}
+            red
+            style={{
+              width: "1.55em"
+            }}
+            title="Undo heading"
           >
-            Undo Heading
+            𝐚
           </TinyButton>
         </div>
       ) : (
         <div>
           <MenuItem
             red
+            script
             left
-            style={{ textShadow: "2px 2px rgba(255, 255, 255, 0.5)" }}
             title="Make a heading"
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
@@ -86,7 +95,7 @@ export default props => {
               props.formatCommand("make_heading")
             }}
           >
-            T
+            𝒜
           </MenuItem>
           <MenuItem
             red
@@ -103,22 +112,24 @@ export default props => {
             script
             red={!props.value.inlines.some(node => node.type === "link")}
             black={props.value.inlines.some(node => node.type === "link")}
-            title="Add a link"
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
               event.preventDefault()
               props.formatCommand("toggle_link")
             }}
+            style={{ borderLeft: "4px solid #2c2c2c" }}
           >
-            ☍
+            <u>link</u>
           </MenuItem>
           <MenuItem
             script
             red={
+              props.value &&
               props.value.activeMarks &&
               !props.value.activeMarks.some(mark => mark.type === "bold")
             }
             black={
+              props.value &&
               props.value.activeMarks &&
               props.value.activeMarks.some(mark => mark.type === "bold")
             }
@@ -134,10 +145,12 @@ export default props => {
           <MenuItem
             script
             red={
+              props.value &&
               props.value.activeMarks &&
               !props.value.activeMarks.some(mark => mark.type === "italic")
             }
             black={
+              props.value &&
               props.value.activeMarks &&
               props.value.activeMarks.some(mark => mark.type === "italic")
             }
