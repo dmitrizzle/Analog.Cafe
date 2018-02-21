@@ -8,6 +8,7 @@ import {
   ButtonStrip,
   Item
 } from "../../../../../components/_controls/ButtonStrip"
+import { Capital, Lower } from "../../../../../components/_icons/HeaderGlyphs"
 
 const Menu = styled(ButtonStrip)`
   display: none;
@@ -79,7 +80,7 @@ export default props => {
             }}
             title="Undo heading"
           >
-            𝐚
+            <Lower />
           </TinyButton>
         </div>
       ) : (
@@ -95,7 +96,7 @@ export default props => {
               props.formatCommand("make_heading")
             }}
           >
-            𝒜
+            <Capital />
           </MenuItem>
           <MenuItem
             red
