@@ -1,6 +1,11 @@
 // style
 import { css } from "styled-components"
-import { exact, min, max, breakpoints } from "./helpers/breakpoint-generator"
+import {
+  exact,
+  min,
+  max,
+  breakpoints
+} from "@roast-cms/react-sugar-styled/dist/utils"
 
 // theme css schema
 export const Paper = {
@@ -18,6 +23,9 @@ export const Paper = {
       },
       highlight: alpha => {
         return `rgba(255, 242, 0, ${alpha})`
+      },
+      background: alpha => {
+        return `rgba(255, 255, 255, ${alpha})`
       }
     }
   },

@@ -139,44 +139,38 @@ class Figure extends React.PureComponent {
     const feature = node.data.get("feature")
 
     return (
-      <Picture
-        {...attributes}
-        readOnly={this.props.readOnly}
-        src={src}
-        className={className}
-        author={
-          this.props.pictures[getFroth(src)] &&
-          this.props.pictures[getFroth(src)].info.author
-        }
-        composer={!this.props.readOnly}
-        feature={feature}
-      >
-        {!this.props.readOnly && (
+      <div style={{ clear: "both" }}>
+        {!this.props.readOnly && focus ? (
           <PictureMenu
-            focus={focus}
             removePicture={this.handleRemovePicture}
             featurePicture={this.handleFeaturePicture}
           />
-        )}
-        {!this.props.readOnly ? (
-          <PlainTextarea
-            value={this.state.caption}
-            placeholder="Add image title, location, camera, film&hellip;"
-            onChange={this.handleChange}
-            onClick={this.handleTextareaClick}
-          />
-        ) : (
-          <span>{this.state.caption}</span>
-        )}
-      </Picture>
+        ) : null}
+        <Picture
+          {...attributes}
+          readOnly={this.props.readOnly}
+          src={src}
+          className={className}
+          author={
+            this.props.pictures[getFroth(src)] &&
+            this.props.pictures[getFroth(src)].info.author
+          }
+          composer={!this.props.readOnly}
+          feature={feature}
+        >
+          {!this.props.readOnly ? (
+            <PlainTextarea
+              value={this.state.caption}
+              placeholder="Add image title, location, camera, film&hellip;"
+              onChange={this.handleChange}
+              onClick={this.handleTextareaClick}
+            />
+          ) : (
+            <span>{this.state.caption}</span>
+          )}
+        </Picture>
+      </div>
     )
-
-    //
-    // return src ? <Picture /> : (
-    //   <Picture {...attributes} src="" className={className}>
-    //     Loading image…
-    //   </Picture>
-    // )
   }
 }
 

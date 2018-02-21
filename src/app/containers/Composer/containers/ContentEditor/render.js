@@ -8,7 +8,7 @@ import styled from "styled-components"
 import Loadable from "react-loadable"
 
 // helpers
-import { parseHref } from "../../../../../utils/link-builder"
+import { makeRelative } from "../../../../../utils/links"
 
 // lazy-load PictureDocket (shouldn't have to be imported in to Article.js)
 const PictureDocket = Loadable({
@@ -46,7 +46,7 @@ export const renderNode = props => {
       return <hr className={focusClassName} />
     case "quote":
       return (
-        <div>
+        <div style={{ clear: "both" }}>
           {!props.readOnly &&
             focus && (
               <UnquoteButton
@@ -63,8 +63,9 @@ export const renderNode = props => {
                       .focus()
                   )
                 }}
+                red
               >
-                Unquote
+                Unqoute
               </UnquoteButton>
             )}
           <blockquote {...attributes} className={focusClassName}>
@@ -80,7 +81,7 @@ export const renderNode = props => {
       const { data } = node
       const href = data.get("href")
       return (
-        <Link {...attributes} to={parseHref(href)}>
+        <Link {...attributes} to={makeRelative(href)}>
           {children}
         </Link>
       )

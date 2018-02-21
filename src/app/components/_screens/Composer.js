@@ -6,6 +6,7 @@ import Helmet from "../_async/Helmet"
 import { Article, Section } from "../ArticleStyles"
 import { Caption } from "../CaptionStyles"
 import Composer from "../../containers/Composer"
+import Link from "../_controls/Link"
 
 const metaTitle = "Composer"
 const metaDescription =
@@ -30,8 +31,9 @@ export default props => {
               Your content may be cut, rearranged, or modified (with care and
               respect towards your voice as an artist). Please also note that{" "}
               <strong style={{ textTransform: "uppercase" }}>
-                you will not be able to edit your submission after you send it
-              </strong>.
+                you won’t be able to edit your submission after you send it
+              </strong>. Please also be aware of the{" "}
+              <Link to="/submit">rules</Link>.
             </small>
           </p>
         </Caption>

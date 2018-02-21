@@ -7,6 +7,9 @@
 // where selection on tripple-click would select more than necessary and carry
 // the changes onto the next paragraph
 // logged in https://github.com/dmitrizzle/Analog.Cafe/issues/712
+
+// as soon as this fix is released, this hack could be closed:
+// https://github.com/ianstormtaylor/slate/pull/1605
 export const fixHangingSelection = (_this, change) => {
   try {
     var value = change.value
