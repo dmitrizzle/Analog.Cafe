@@ -55,8 +55,8 @@
   "devDependencies": {
     "babel-plugin-root-import": "^5.1.0",
     "husky": "^0.14.3",
-    "lint-staged": "6.1.1",
-    "prettier": "^1.9.2",
+    "lint-staged": "7.0.0",
+    "prettier": "1.11.0",
     "react-scripts": "1.1.1",
     "source-map-explorer": "^1.5.0"
   },
