@@ -1,7 +1,7 @@
 {
   "name": "analog-cafe",
   "version": "0.11.3",
-  "description": "React-based View layer for Roast.Cloud",
+  "description": "A film photography publication",
   "license": "MPL-2.0",
   "private": true,
   "engines": {
