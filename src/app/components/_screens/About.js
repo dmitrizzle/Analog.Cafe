@@ -11,7 +11,6 @@ import { ModalDispatch } from "../../containers/Modal"
 import { Email } from "../_rt-snippets"
 import MailChimpPrefill from "../../containers/_forms/MailChimpPrefill"
 import ArticleActions from "../Card/components/ArticleActions"
-import { SubscribeToWeekly } from "../_rt-snippets"
 
 import { froth } from "../../../utils/image-froth"
 import { KEYWORD_SUBSCRIBE } from "../../../constants/messages/keywords"
@@ -169,7 +168,24 @@ export default props => {
 
         <h3>Connect, contact & get involved.</h3>
         <p>
-          <SubscribeToWeekly buttonTextNoIcon="Subscribe" />
+          <span>
+            To get lovely updates (<Link
+              onClick={() => {
+                // async load Google Analytics module
+                import("react-ga").then(ReactGA => {
+                  ReactGA.event({
+                    category: "Campaign",
+                    action: "ActionsCard.subscribe_example"
+                  })
+                })
+              }}
+              to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
+            >
+              like this one
+            </Link>) every Tuesday, fill out your email below and click “{
+              KEYWORD_SUBSCRIBE
+            }” We never share or sell your personal information.
+          </span>
         </p>
         <MailChimpPrefill buttonText={KEYWORD_SUBSCRIBE} />
 
