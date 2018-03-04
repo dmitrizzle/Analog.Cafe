@@ -78,6 +78,7 @@ export const CommonNav = props => {
           with={{
             info: {
               title: "More…",
+              subscribeForm: props.userStatus !== "ok",
               buttons: [
                 props.userStatus === "ok"
                   ? {

@@ -52,6 +52,7 @@ const Modal = props => {
         error={props.modal.info.error && props.modal.info.error}
         stubborn={props.modal.info.stubborn}
         buttons={props.modal.info.buttons}
+        subscribeForm={props.modal.info.subscribeForm}
       />
     </ModalOverlay>
   )

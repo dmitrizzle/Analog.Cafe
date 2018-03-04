@@ -3,6 +3,8 @@ import React from "react"
 import { froth } from "../../../utils/image-froth"
 import { PicturePlaceholder } from "../Picture/components/PicturePlaceholder"
 
+import { QuickSubscribe } from "../../containers/_forms/QuickSubscribe"
+
 // styles
 import {
   Card as CardElement,
@@ -41,6 +43,9 @@ export const Card = props => {
           </CardCaption>
         </figcaption>
       </figure>
+      {props.subscribeForm && (
+        <QuickSubscribe onClick={event => event.stopPropagation()} />
+      )}
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {

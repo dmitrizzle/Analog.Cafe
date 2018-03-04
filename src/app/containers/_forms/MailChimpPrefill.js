@@ -17,6 +17,7 @@ export default class extends React.Component {
     super(props)
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleInputClick = this.handleInputClick.bind(this)
     this.state = {
       email: "",
       warning: false
@@ -37,6 +38,10 @@ export default class extends React.Component {
           "height=450,width=600"
         )
       : this.setState({ warning: true })
+    this.props.submitCallback && this.props.submitCallback(this.state.email)
+  }
+  handleInputClick = event => {
+    event.stopPropagation()
   }
   render = () => {
     return (
@@ -48,6 +53,7 @@ export default class extends React.Component {
           onChange={this.handleEmailChange}
           warning={this.state.warning}
           autoFocus={this.props.autoFocus}
+          onClick={this.handleInputClick}
         />
         <Button
           red
