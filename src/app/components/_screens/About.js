@@ -14,6 +14,7 @@ import ArticleActions from "../Card/components/ArticleActions"
 import { SubscribeToWeekly } from "../_rt-snippets"
 
 import { froth } from "../../../utils/image-froth"
+import { KEYWORD_SUBSCRIBE } from "../../../constants/messages/keywords"
 
 // styles
 import { Section, Article, Quote } from "../ArticleStyles"
@@ -170,7 +171,7 @@ export default props => {
         <p>
           <SubscribeToWeekly buttonTextNoIcon="Subscribe" />
         </p>
-        <MailChimpPrefill buttonText="Subscribe ❤︎" />
+        <MailChimpPrefill buttonText={KEYWORD_SUBSCRIBE} />
 
         <ArticleActions mode="follow" />
         <p>

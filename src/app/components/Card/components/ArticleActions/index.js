@@ -8,6 +8,7 @@ import MailChimpPrefill from "../../../../containers/_forms/MailChimpPrefill"
 import { Sidenote } from "../../../CaptionStyles"
 import Link from "../../../_controls/Link"
 import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
+import { KEYWORD_SUBSCRIBE } from "../../../../../constants/messages/keywords"
 import { SubscribeToWeekly } from "../../../_rt-snippets"
 import { authorNameList } from "../../../../../utils/authorship"
 
@@ -62,7 +63,7 @@ const ActionsCard = props => {
                 })
               }}
             >
-              Subscribe ❤︎
+              {KEYWORD_SUBSCRIBE}
             </Button>
           ) : null}
           {props.subscribeForm ? (

@@ -11,6 +11,7 @@ import {
   MESSAGE_HINT_SUBMIT_EDITORS,
   MESSAGE_HINT_AUTO_SAVE
 } from "../../../../constants/messages/hints"
+import { KEYWORD_SUBSCRIBE } from "../../../../constants/messages/keywords"
 
 // styles
 import { NavLink, NavIndexLink, NavItem, TinyImageInline } from "./styles"
@@ -79,6 +80,15 @@ export const CommonNav = props => {
             info: {
               title: "More…",
               buttons: [
+                props.userStatus !== "ok"
+                  ? {
+                      to:
+                        "https://mailchi.mp/7643cdae9e9c/this-week-on-analogcafe",
+                      text: KEYWORD_SUBSCRIBE,
+                      red: true
+                    }
+                  : null,
+                { divider: true },
                 props.userStatus === "ok"
                   ? {
                       to: "/me",
