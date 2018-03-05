@@ -43,9 +43,13 @@ export const Card = props => {
           </CardCaption>
         </figcaption>
       </figure>
-      {props.subscribeForm && (
-        <QuickSubscribe onClick={event => event.stopPropagation()} />
-      )}
+      {props.subscribeForm && [
+        <QuickSubscribe
+          key="CardQuickSubscribe"
+          onClick={event => event.stopPropagation()}
+        />,
+        <ButtonGroupDivider key="CardQuickSubscribeDivider" />
+      ]}
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {

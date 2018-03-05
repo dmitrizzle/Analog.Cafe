@@ -15,7 +15,7 @@ export const ToggleFeature = options => {
 
       const previousData = PICTURE_DATA_OBJECT(value.focusBlock.data)
       let featureStatus = previousData.feature ? false : true
-      change.setBlock({
+      change.setBlocks({
         type: "image",
         data: { ...previousData, feature: featureStatus }
       })

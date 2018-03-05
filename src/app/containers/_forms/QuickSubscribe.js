@@ -59,7 +59,6 @@ export class QuickSubscribe extends React.PureComponent {
         ) : (
           <MailChimpPrefill
             buttonText={KEYWORD_SUBSCRIBE_SUBMIT}
-            withinGroup
             autoFocus
             submitCallback={this.handleSubmitCallback}
           />
