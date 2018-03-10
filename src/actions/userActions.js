@@ -28,7 +28,7 @@ const loginError = (type = "error") => {
         {
           to: "/sign-in",
           text: "Sign In",
-          red: true
+          branded: true
         },
         {
           to: "/",

@@ -263,7 +263,7 @@ class Upload extends React.PureComponent {
                 <Link to="/me">here</Link>.
               </p>
               <p>Thank you so much for your contribution!</p>
-              <LinkButton red to="/me">
+              <LinkButton branded to="/me">
                 My Submissions
               </LinkButton>
             </div>

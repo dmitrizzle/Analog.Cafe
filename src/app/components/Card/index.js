@@ -43,9 +43,13 @@ export const Card = props => {
           </CardCaption>
         </figcaption>
       </figure>
-      {props.subscribeForm && (
-        <QuickSubscribe onClick={event => event.stopPropagation()} />
-      )}
+      {props.subscribeForm && [
+        <QuickSubscribe
+          key="CardQuickSubscribe"
+          onClick={event => event.stopPropagation()}
+        />,
+        <ButtonGroupDivider key="CardQuickSubscribeDivider" />
+      ]}
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {
@@ -54,8 +58,8 @@ export const Card = props => {
               onClick={button.onClick}
               to={button.to}
               key={button.to}
-              red={button.red ? true : null}
-              black={button.black ? true : null}
+              branded={button.branded ? true : null}
+              inverse={button.inverse ? true : null}
               responsiveMobileOnly={button.responsiveMobileOnly ? true : null}
             >
               {button.text}

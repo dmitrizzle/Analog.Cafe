@@ -33,7 +33,7 @@ export default props => {
               props.removePicture()
             }}
             left
-            black
+            inverse
           >
             Delete
           </Item>
@@ -44,7 +44,7 @@ export default props => {
             }}
             title="⌘ + F"
             right
-            black
+            inverse
           >
             Resize
           </Item>

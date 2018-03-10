@@ -63,7 +63,7 @@ export const renderNode = props => {
                       .focus()
                   )
                 }}
-                red
+                branded
               >
                 Unqoute
               </UnquoteButton>

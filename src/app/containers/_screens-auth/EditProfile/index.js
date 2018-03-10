@@ -220,7 +220,7 @@ class EditProfile extends React.PureComponent {
 
         <Button
           onClick={this.handleDone}
-          red
+          branded
           loading={this.state.setUserInfoPending ? true : false}
         >
           Done

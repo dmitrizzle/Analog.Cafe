@@ -90,7 +90,7 @@ export const formatCommand = (type, _this) => {
 
   switch (type) {
     case "undo_heading":
-      resolvedState = value.change().setBlock({ type: "paragraph" })
+      resolvedState = value.change().setBlocks({ type: "paragraph" })
       _this.setState({
         value: resolvedState.value
       })
@@ -104,7 +104,7 @@ export const formatCommand = (type, _this) => {
         .value.change()
         .removeMark("italic")
         .value.change()
-        .setBlock({ type: "heading" })
+        .setBlocks({ type: "heading" })
       _this.setState({
         value: resolvedState.value
       })
@@ -118,7 +118,7 @@ export const formatCommand = (type, _this) => {
         .value.change()
         .removeMark("italic")
         .value.change()
-        .setBlock({ type: "quote" })
+        .setBlocks({ type: "quote" })
       _this.setState({
         value: resolvedState.value
       })

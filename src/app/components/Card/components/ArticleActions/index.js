@@ -78,7 +78,7 @@ const ActionsCard = props => {
           {!props.hideShareButtons && (
             <Button
               onClick={props.revealShareButtons}
-              black={props.shareButtons}
+              inverse={props.shareButtons}
             >
               Share{" "}
               <span

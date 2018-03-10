@@ -210,7 +210,7 @@ class PictureDocketContainer extends React.PureComponent {
                 />
               )
             })}
-            <GridButton onClick={this.initFileUpload} red>
+            <GridButton onClick={this.initFileUpload} branded>
               <div style={{ margin: "0 auto", paddingLeft: ".5em" }}>
                 ＋
                 <br />

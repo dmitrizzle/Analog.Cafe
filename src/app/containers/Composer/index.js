@@ -49,7 +49,7 @@ const Composer = props => {
           : MESSAGE_HINT_SUBMIT_CONSENT
       }
       wrapperElement="Button"
-      red
+      branded
     >
       Send Submission {emojis.CHECKMARK}
     </ModalDispatch>,

@@ -43,7 +43,7 @@ export const plugins = [
     trigger: "space",
     before: /^(>)$/,
     transform: (transform, event, matches) => {
-      return transform.setBlock({ type: "quote" }) // quote
+      return transform.setBlocks({ type: "quote" }) // quote
     }
   }),
   AutoReplace({
@@ -51,7 +51,7 @@ export const plugins = [
     before: /^.|$/,
     onlyIn: "quote",
     transform: (transform, event, matches) => {
-      return transform.splitBlock().setBlock({ type: "paragraph" }) // exit quote
+      return transform.splitBlock().setBlocks({ type: "paragraph" }) // exit quote
     }
   }),
   AutoReplace({
@@ -60,7 +60,7 @@ export const plugins = [
     before: /^$/,
     onlyIn: "quote",
     transform: (transform, event, matches) => {
-      return transform.setBlock({ type: "paragraph" }) // transform quote to paragraph
+      return transform.setBlocks({ type: "paragraph" }) // transform quote to paragraph
     }
   }),
 
@@ -70,7 +70,7 @@ export const plugins = [
     before: /^(\*\*\*)$/,
     transform: (transform, event, matches) => {
       return transform
-        .setBlock({ type: "divider", isVoid: true })
+        .setBlocks({ type: "divider", isVoid: true })
         .collapseToEndOfNextBlock()
         .collapseToEndOfNextBlock() // page break
     }
@@ -81,7 +81,7 @@ export const plugins = [
     trigger: "space",
     before: /^(#)$/,
     transform: (transform, event, matches) => {
-      return transform.setBlock({ type: "heading" }) // heading
+      return transform.setBlocks({ type: "heading" }) // heading
     }
   }),
   AutoReplace({
@@ -96,8 +96,8 @@ export const plugins = [
         return transform
           .insertText(".") // add a period.
           .splitBlock()
-          .setBlock({ type: "paragraph" })
-      else return transform.splitBlock().setBlock({ type: "paragraph" })
+          .setBlocks({ type: "paragraph" })
+      else return transform.splitBlock().setBlocks({ type: "paragraph" })
     }
   }),
   AutoReplace({
@@ -106,7 +106,7 @@ export const plugins = [
     before: /^$/,
     onlyIn: "heading",
     transform: (transform, event, matches) => {
-      return transform.setBlock({ type: "paragraph" }) // cancel heading
+      return transform.setBlocks({ type: "paragraph" }) // cancel heading
     }
   }),
 

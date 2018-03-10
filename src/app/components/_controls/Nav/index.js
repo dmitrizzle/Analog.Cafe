@@ -84,21 +84,21 @@ export const CommonNav = props => {
                   ? {
                       to: "/me",
                       text: "My Submissions",
-                      red: true
+                      branded: true
                     }
                   : null,
                 props.userStatus === "ok"
                   ? {
                       to: "/me/edit",
                       text: "My Profile",
-                      red: true
+                      branded: true
                     }
                   : null,
                 props.userStatus === "ok"
                   ? {
                       to: "/sign-out",
                       text: "Sign Out",
-                      black: true
+                      inverse: true
                     }
                   : null,
                 {
