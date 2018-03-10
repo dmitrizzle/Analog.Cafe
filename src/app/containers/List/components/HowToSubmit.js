@@ -62,7 +62,7 @@ export default props => {
           or social media page. Just click on “More…” in the naviagation bar to
           find what you need.
         </p>
-        <LinkButton to={"/submit/compose"} red>
+        <LinkButton to={"/submit/compose"} branded>
           Submit Now
         </LinkButton>
       </Section>

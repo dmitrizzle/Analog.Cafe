@@ -74,7 +74,7 @@ export default props => {
               event.preventDefault()
               props.formatCommand("undo_heading")
             }}
-            red
+            branded
             style={{
               width: "1.55em"
             }}
@@ -86,7 +86,7 @@ export default props => {
       ) : (
         <div>
           <MenuItem
-            red
+            branded
             script
             left
             title="Make a heading"
@@ -99,7 +99,7 @@ export default props => {
             <Capital />
           </MenuItem>
           <MenuItem
-            red
+            branded
             title="Make a quote"
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
@@ -111,8 +111,8 @@ export default props => {
           </MenuItem>
           <MenuItem
             script
-            red={!props.value.inlines.some(node => node.type === "link")}
-            black={props.value.inlines.some(node => node.type === "link")}
+            branded={!props.value.inlines.some(node => node.type === "link")}
+            inverse={props.value.inlines.some(node => node.type === "link")}
             onMouseDown={event => event.preventDefault()}
             onMouseUp={event => {
               event.preventDefault()
@@ -124,12 +124,12 @@ export default props => {
           </MenuItem>
           <MenuItem
             script
-            red={
+            branded={
               props.value &&
               props.value.activeMarks &&
               !props.value.activeMarks.some(mark => mark.type === "bold")
             }
-            black={
+            inverse={
               props.value &&
               props.value.activeMarks &&
               props.value.activeMarks.some(mark => mark.type === "bold")
@@ -145,12 +145,12 @@ export default props => {
           </MenuItem>
           <MenuItem
             script
-            red={
+            branded={
               props.value &&
               props.value.activeMarks &&
               !props.value.activeMarks.some(mark => mark.type === "italic")
             }
-            black={
+            inverse={
               props.value &&
               props.value.activeMarks &&
               props.value.activeMarks.some(mark => mark.type === "italic")

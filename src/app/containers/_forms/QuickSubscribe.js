@@ -53,7 +53,7 @@ export class QuickSubscribe extends React.PureComponent {
     return (
       <div>
         {!this.state.subscribeForm ? (
-          <CardButton red onClick={this.handleRevealSubscribeForm}>
+          <CardButton branded onClick={this.handleRevealSubscribeForm}>
             {KEYWORD_SUBSCRIBE}
           </CardButton>
         ) : (

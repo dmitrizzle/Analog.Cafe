@@ -30,7 +30,7 @@ export const profileButtonsTemplate = (id = "unknown", link = "") => {
     {
       to: "/author/" + id,
       text: "More on Analog.Cafe",
-      red: true
+      branded: true
     },
     {
       to: fixLinks(link),

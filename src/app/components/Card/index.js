@@ -58,8 +58,8 @@ export const Card = props => {
               onClick={button.onClick}
               to={button.to}
               key={button.to}
-              red={button.red ? true : null}
-              black={button.black ? true : null}
+              branded={button.branded ? true : null}
+              inverse={button.inverse ? true : null}
               responsiveMobileOnly={button.responsiveMobileOnly ? true : null}
             >
               {button.text}

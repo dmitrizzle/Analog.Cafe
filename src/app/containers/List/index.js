@@ -199,7 +199,7 @@ class List extends React.PureComponent {
         parseInt(this.props.list.page.total, 0) >
           parseInt(this.props.list.page.current, 0) ? (
           <Button
-            red
+            branded
             onClick={this.handleLoadMore.bind(this)}
             loading={this.state.loadMorePending ? true : false}
           >

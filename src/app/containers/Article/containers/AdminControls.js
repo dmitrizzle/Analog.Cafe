@@ -260,7 +260,7 @@ class AdminControls extends React.PureComponent {
                 <Item
                   key="ButtonStrip_Item_reject"
                   onClick={this.handleRejection}
-                  black={
+                  inverse={
                     this.props.composer.submissionAdmin.reject.id ===
                     this.props.article.id
                   }
@@ -279,7 +279,7 @@ class AdminControls extends React.PureComponent {
                 </Item>,
                 <Item
                   right
-                  black={this.state.publishControls}
+                  inverse={this.state.publishControls}
                   style={
                     this.props.article.status === "scheduled"
                       ? { minWidth: "8em" }
@@ -332,7 +332,7 @@ class AdminControls extends React.PureComponent {
                   key={key}
                   onClick={event => this.handlePublishTag(event, key)}
                   style={key === "photo-essay" ? { minWidth: "7.5em" } : {}}
-                  black={this.state.publishAs === key}
+                  inverse={this.state.publishAs === key}
                   to={`#${key}`}
                 >
                   {TAGS[key]}
@@ -348,7 +348,7 @@ class AdminControls extends React.PureComponent {
             display: this.state.publishAs ? "block" : "none"
           }}
         >
-          <Button red>Add to Queue</Button>
+          <Button branded>Add to Queue</Button>
           <Button
             onClick={this.handlePublishNow}
             loading={
