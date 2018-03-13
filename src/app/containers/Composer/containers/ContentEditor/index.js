@@ -9,7 +9,9 @@ import PictureDocket from "./containers/PictureDocket"
 import { connect } from "react-redux"
 import { setCard } from "../../../../../actions/modalActions"
 import { setDraftStatus } from "../../../../../actions/composerActions"
-// import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/messages/hints"
+import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/messages/hints"
+
+import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../../constants/app"
 
 import { Capital, Lower } from "../../../../components/_icons/HeaderGlyphs"
 
@@ -53,6 +55,37 @@ const ContentEditor = props => {
         //
         // button label for image upload control
         UploadImage: () => <span>↫ Add Image</span>
+      }}
+      //
+      options={{
+        //
+        // domain prop helps rendering links better; for example, absolute
+        // links like `domain.com/page` can be automatically converted into
+        // `/page`
+        domain: ROUTE_APP_PRODUCTION_DOMAIN_NAME
+      }}
+      //
+      // this prop will call a function with error name and additional info
+      // that you may like to display within your own dialogue box or interface;
+      // i.e.: "Image is too large!"
+      callbackError={(error, reason) => {
+        console.log(error, reason)
+      }}
+      editorRef={editorRef => {
+        // manage
+        // if (
+        //   props.composer.editorFocusRequested <
+        //   nextProps.composer.editorFocusRequested
+        // ) {
+        //   this.slateEditor.focus()
+        // }
+        // if (
+        //   !this.state.connectionMessageShown &&
+        //   nextProps.user.connection.status === "offline"
+        // ) {
+        //   props.setCard(MESSAGE_HINT_CONNECTION_OFFLINE)
+        //   _this.setState({ connectionMessageShown: true })
+        // }
       }}
     />
   )
