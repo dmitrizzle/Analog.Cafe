@@ -7,12 +7,12 @@ const base = css`
   font-style: italic;
   position: relative;
   margin: -${props => props.theme.size.block.border}px -${props =>
-      props.theme.size.block.column.safety * 1.16666666666666666}em
+      props.theme.size.block.padding * 1.16666666666666666}em
     0;
   overflow: hidden;
   clear: both;
-  padding: ${props => props.theme.size.block.column.safety * 2}em
-    ${props => props.theme.size.block.column.safety}em;
+  padding: ${props => props.theme.size.block.padding * 2}em
+    ${props => props.theme.size.block.padding}em;
   border-top: ${props => props.theme.elements.thickBorder};
   border-bottom: ${props => props.theme.elements.thickBorder};
 `
@@ -25,18 +25,18 @@ const content = css`
       float: left;
       margin: 0.3em 0.075em 0.075em 0;
       ::selection {
-        background: ${props => props.theme.color.highlight};
+        background: ${props => props.theme.color.highlight()};
       }
     }
     ${props => props.theme.size.breakpoint.min.l`
 				column-count: 2;
-				column-gap: ${props => props.theme.size.block.column.safety * 2}em;
+				column-gap: ${props => props.theme.size.block.padding * 2}em;
 			`};
   }
   &.focus {
-    box-shadow: 0 -${props => props.theme.size.block.border}px 0 ${props => props.theme.color.highlight},
+    box-shadow: 0 -${props => props.theme.size.block.border}px 0 ${props => props.theme.color.highlight()},
       0 ${props => props.theme.size.block.border}px 0
-        ${props => props.theme.color.highlight};
+        ${props => props.theme.color.highlight()};
   }
   p {
     margin: 0;
@@ -77,7 +77,9 @@ export const Quote = css`
   ${base} ${content} ${marks};
   ${props => props.theme.size.breakpoint.min.l`
   &:not(.focus) > span {
-    ${"" /* shim to ensure that first huge letter doesn't get sliced by Chrome */}
+    ${
+      "" /* shim to ensure that first huge letter doesn't get sliced by Chrome */
+    }
     display: block;
     min-height: 13em;
   }`};

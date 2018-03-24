@@ -57,7 +57,7 @@ export const GridButton = styled(Button)`
 `
 export const GridButtonCaption = styled(Sidenote)`
   font-weight: 400;
-  color: ${props => props.theme.color.background};
+  color: ${props => props.theme.color.background()};
   bottom: 0;
   position: absolute;
   right: ${props => props.theme.size.block.spacing / 2}em;

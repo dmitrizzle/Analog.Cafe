@@ -15,7 +15,7 @@ export const CardButtonStyles = css`
   margin: 0;
   border-radius: 0;
   &:active {
-    box-shadow: 0 -1px 0 ${props => props.theme.color.foreground};
+    box-shadow: 0 -1px 0 ${props => props.theme.color.foreground()};
   }
   ${props =>
     props.responsiveMobileOnly &&
@@ -24,14 +24,14 @@ export const CardButtonStyles = css`
 export const Card = styled.div`
   position: relative;
   display: block;
-  background: ${props => props.theme.color.background};
+  background: ${props => props.theme.color.background()};
   overflow: hidden;
   max-width: ${props => props.theme.size.breakpoint.stops.min}px;
 
   border-radius: ${props => props.theme.effects.borderRadius.med}em;
   box-shadow: 0 ${props => props.theme.size.block.spacing / 2}em
     ${props => props.theme.size.block.spacing * 2}em
-    ${props => props.theme.color.alpha.foreground(props.theme.opacity.half)};
+    ${props => props.theme.color.foreground(props.theme.opacity.half)};
 
   ${props => props.theme.size.breakpoint.max.xs`
 		border-radius: 0;
@@ -48,18 +48,17 @@ export const Card = styled.div`
   }
 `
 export const CardFlattened = styled(Card)`
-  margin: ${props => props.theme.size.block.column.safety}em auto;
+  margin: ${props => props.theme.size.block.padding}em auto;
   box-shadow: 0 1px 1px
-      ${props =>
-        props.theme.color.alpha.foreground(props.theme.opacity.least * 2)},
+      ${props => props.theme.color.foreground(props.theme.opacity.least * 2)},
     0 0 0 1px
-      ${props => props.theme.color.alpha.foreground(props.theme.opacity.least)};
+      ${props => props.theme.color.foreground(props.theme.opacity.least)};
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
 
   ${props => props.theme.size.breakpoint.max.xs`
 		border-radius: 0;
     width: 100vw;
-    margin-left: -${props => props.theme.size.block.column.safety}em;
+    margin-left: -${props => props.theme.size.block.padding}em;
 	`};
 `
 export const CardButton = styled(LinkButton)`
@@ -69,7 +68,7 @@ export const CardButton = styled(LinkButton)`
 export const CardCaptionStyles = css`
   text-align: left;
   padding: ${props => props.theme.size.block.spacing}em
-    ${props => props.theme.size.block.column.safety}em;
+    ${props => props.theme.size.block.padding}em;
   font-size: 1.075em !important;
 `
 export const CardCaption = styled(Sidenote)`
@@ -85,10 +84,9 @@ export const CardHeader = styled.header`
 
   position: relative;
   box-shadow: 0 1px 1px
-      ${props =>
-        props.theme.color.alpha.foreground(props.theme.opacity.least * 2)},
+      ${props => props.theme.color.foreground(props.theme.opacity.least * 2)},
     0 0 0 1px
-      ${props => props.theme.color.alpha.foreground(props.theme.opacity.least)};
+      ${props => props.theme.color.foreground(props.theme.opacity.least)};
 
   h3,
   input {
@@ -107,11 +105,8 @@ export const CardHeader = styled.header`
     ${props => props.theme.size.font.auto} text-decoration:none;
     &:active {
       background: 0 0;
-      color: ${props => props.theme.color.brand};
+      color: ${props => props.theme.color.brand()};
     }
   }
 
-  .fonts-loaded-headers & h3 {
-    ${props => props.theme.typography.title.fontsLoaded};
-  }
 `
