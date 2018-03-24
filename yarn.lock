@@ -30,9 +30,9 @@
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@roast-cms/react-link-filter/-/react-link-filter-0.1.2.tgz#0ac36ca11a288d120f05bd830af82720be800818"
 
-"@roast-cms/react-sugar-styled@^0.1.0":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@roast-cms/react-sugar-styled/-/react-sugar-styled-0.1.1.tgz#d48c1a0c37ea15ffbee5a39af9ddadaeb2b8bac3"
+"@roast-cms/react-sugar-styled@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@roast-cms/react-sugar-styled/-/react-sugar-styled-1.0.1.tgz#75a64aa3f4ebf7f9a128a33f74f8411b5928d7a0"
 
 abab@^1.0.3, abab@^1.0.4:
   version "1.0.4"
