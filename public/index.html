@@ -636,8 +636,84 @@
 
     <style type="text/css">
 
-      /* <Nav/> CSS
-         ========================================================================== */
+      /* lora-400normal - latin */
+      @font-face {
+        font-family: 'Lora';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src:
+          local('Lora Regular '),
+          local('Lora-Regular'),
+          url(%PUBLIC_URL%/fonts/lora-latin-400.woff2) format('woff2'),
+          url(%PUBLIC_URL%/fonts/lora-latin-400.woff) format('woff'); /* Modern Browsers */
+      }
+
+      /* lora-400italic - latin */
+      @font-face {
+        font-family: 'Lora';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 400;
+        src:
+          local('Lora Regular italic'),
+          local('Lora-Regularitalic'),
+          url(%PUBLIC_URL%/fonts/lora-latin-400italic.woff2) format('woff2'),
+          url(%PUBLIC_URL%/fonts/lora-latin-400italic.woff) format('woff'); /* Modern Browsers */
+      }
+
+      /* lora-700normal - latin */
+      @font-face {
+        font-family: 'Lora';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 700;
+        src:
+          local('Lora Bold '),
+          local('Lora-Bold'),
+          url(%PUBLIC_URL%/fonts/lora-latin-700.woff2) format('woff2'),
+          url(%PUBLIC_URL%/fonts/lora-latin-700.woff) format('woff'); /* Modern Browsers */
+      }
+
+      /* lora-700italic - latin */
+      @font-face {
+        font-family: 'Lora';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 700;
+        src:
+          local('Lora Bold italic'),
+          local('Lora-Bolditalic'),
+          url(%PUBLIC_URL%/fonts/lora-latin-700italic.woff2) format('woff2'),
+          url(%PUBLIC_URL%/fonts/lora-latin-700italic.woff) format('woff'); /* Modern Browsers */
+      }
+
+      /* exo-2-600normal - latin */
+      @font-face {
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 600;
+        src:
+          local('Exo 2 SemiBold '),
+          local('Exo 2-SemiBold'),
+          url(%PUBLIC_URL%/fonts/exo-2-latin-600.woff2) format('woff2'),
+          url(%PUBLIC_URL%/fonts/exo-2-latin-600.woff) format('woff'); /* Modern Browsers */
+      }
+
+      /* exo-2-600italic - latin */
+      @font-face {
+        font-family: 'Exo 2';
+        font-style: italic;
+        font-display: swap;
+        font-weight: 600;
+        src:
+          local('Exo 2 SemiBold italic'),
+          local('Exo 2-SemiBolditalic'),
+          url(%PUBLIC_URL%/fonts/exo-2-latin-600italic.woff2) format('woff2'),
+          url(%PUBLIC_URL%/fonts/exo-2-latin-600italic.woff) format('woff'); /* Modern Browsers */
+      }
+
 
       .appNav {
         margin: 0;
@@ -647,12 +723,6 @@
         margin-bottom: 2.5em;
       }
       .appNav, .waitMessage {
-        font-family: Arial,sans-serif;
-        letter-spacing: 0.005em;
-        line-height: 1.15em;
-        font-weight: 700;
-      }
-      .fonts-loaded-headers .appNav, .fonts-loaded-headers .waitMessage {
         font-family: "Exo 2",Arial, sans-serif;
         letter-spacing: 0.025em;
         font-weight: 600;
@@ -758,88 +828,6 @@
       }
       .appLogo svg path {
         fill: #fff;
-      }
-
-
-      /* `typefaces` select font imports
-         ========================================================================== */
-
-      /* lora-400normal - latin */
-      @font-face {
-        font-family: 'Lora';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
-        src:
-          local('Lora Regular '),
-          local('Lora-Regular'),
-          url(%PUBLIC_URL%/fonts/lora-latin-400.woff2) format('woff2'),
-          url(%PUBLIC_URL%/fonts/lora-latin-400.woff) format('woff'); /* Modern Browsers */
-      }
-
-      /* lora-400italic - latin */
-      @font-face {
-        font-family: 'Lora';
-        font-style: italic;
-        font-display: swap;
-        font-weight: 400;
-        src:
-          local('Lora Regular italic'),
-          local('Lora-Regularitalic'),
-          url(%PUBLIC_URL%/fonts/lora-latin-400italic.woff2) format('woff2'),
-          url(%PUBLIC_URL%/fonts/lora-latin-400italic.woff) format('woff'); /* Modern Browsers */
-      }
-
-      /* lora-700normal - latin */
-      @font-face {
-        font-family: 'Lora';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 700;
-        src:
-          local('Lora Bold '),
-          local('Lora-Bold'),
-          url(%PUBLIC_URL%/fonts/lora-latin-700.woff2) format('woff2'),
-          url(%PUBLIC_URL%/fonts/lora-latin-700.woff) format('woff'); /* Modern Browsers */
-      }
-
-      /* lora-700italic - latin */
-      @font-face {
-        font-family: 'Lora';
-        font-style: italic;
-        font-display: swap;
-        font-weight: 700;
-        src:
-          local('Lora Bold italic'),
-          local('Lora-Bolditalic'),
-          url(%PUBLIC_URL%/fonts/lora-latin-700italic.woff2) format('woff2'),
-          url(%PUBLIC_URL%/fonts/lora-latin-700italic.woff) format('woff'); /* Modern Browsers */
-      }
-
-      /* exo-2-600normal - latin */
-      @font-face {
-        font-family: 'Exo 2';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 600;
-        src:
-          local('Exo 2 SemiBold '),
-          local('Exo 2-SemiBold'),
-          url(%PUBLIC_URL%/fonts/exo-2-latin-600.woff2) format('woff2'),
-          url(%PUBLIC_URL%/fonts/exo-2-latin-600.woff) format('woff'); /* Modern Browsers */
-      }
-
-      /* exo-2-600italic - latin */
-      @font-face {
-        font-family: 'Exo 2';
-        font-style: italic;
-        font-display: swap;
-        font-weight: 600;
-        src:
-          local('Exo 2 SemiBold italic'),
-          local('Exo 2-SemiBolditalic'),
-          url(%PUBLIC_URL%/fonts/exo-2-latin-600italic.woff2) format('woff2'),
-          url(%PUBLIC_URL%/fonts/exo-2-latin-600italic.woff) format('woff'); /* Modern Browsers */
       }
     </style>
     <!-- end critical CSS drop-in -->

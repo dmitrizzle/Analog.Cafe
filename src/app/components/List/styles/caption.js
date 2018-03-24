@@ -11,7 +11,7 @@ export const Caption = styled(Sidenote)`
   margin: 0;
   margin-bottom: 0.7em;
   height: ${1.5 * 3 + 0.1}em;
-  max-width: ${props => props.theme.size.block.column.maxwidth.m}px;
+  max-width: ${props => props.theme.size.block.column.m}px;
 
   .fonts-loaded & {
     height: ${1.5 * 3 + 0.1}em;

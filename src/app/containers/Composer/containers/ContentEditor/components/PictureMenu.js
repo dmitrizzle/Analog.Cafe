@@ -17,7 +17,7 @@ const PictureMenu = styled.div`
 
   & a:first-child {
     border-right: 1px solid
-      ${props => props.theme.color.alpha.background(props.theme.opacity.least)};
+      ${props => props.theme.color.background(props.theme.opacity.least)};
   }
 `
 

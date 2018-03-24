@@ -20,7 +20,7 @@ const PictureDocket = Loadable({
 // return
 const UnquoteButton = styled(TinyButton)`
   width: 6em;
-  margin: 1.35em -${props => props.theme.size.block.column.safety}em -3.35em 0;
+  margin: 1.35em -${props => props.theme.size.block.padding}em -3.35em 0;
   float: right;
   position: relative;
   z-index: ${props => props.theme.layer.up};

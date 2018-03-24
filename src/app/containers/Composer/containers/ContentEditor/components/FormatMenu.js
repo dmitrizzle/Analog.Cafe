@@ -27,7 +27,7 @@ const Menu = styled(ButtonStrip)`
       height: 57px;
       margin-left: calc(5em - 1px);
       margin-top: 2px;
-      border: 1px dashed ${props => props.theme.color.brand};
+      border: 1px dashed ${props => props.theme.color.brand()};
       z-index: -1;
     }`};
   }
@@ -39,7 +39,7 @@ const Menu = styled(ButtonStrip)`
     }
     & > div {
       background: ${props =>
-        props.theme.color.alpha.foreground(props.theme.opacity.most)};
+        props.theme.color.foreground(props.theme.opacity.most)};
     }
   `};
 `

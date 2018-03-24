@@ -14,10 +14,10 @@ const zigZagDataUri = `url("data:image/svg+xml,${zigZagSVG}")`
 export const zigzagWidth = "33%"
 export const zigzagTopShim = 12
 
-const blockSafety = props => props.theme.size.block.column.safety
+const blockSafety = props => props.theme.size.block.padding
 const blockSpacing = props => props.theme.size.block.spacing
 const greyLine = props =>
-  props.theme.color.alpha.foreground(props.theme.opacity.least)
+  props.theme.color.foreground(props.theme.opacity.least)
 
 const posterDimensions = css`
   width: 5.5em;
@@ -74,7 +74,7 @@ export const Ul = styled.ul`
 				background: 0 0;
 				section figure {
 					box-shadow:	none;
-					border-bottom-color: ${props => props.theme.color.highlight};
+					border-bottom-color: ${props => props.theme.color.highlight()};
 				}
 			}
 		}
@@ -97,7 +97,7 @@ export const Ul = styled.ul`
 
 				${"" /* styles borrowed from Picture component */}
 				box-shadow: 0 0 .5em ${props =>
-          props.theme.color.alpha.foreground(props.theme.opacity.least)};
+          props.theme.color.foreground(props.theme.opacity.least)};
 				${props => props.theme.size.breakpoint.max.m`
 					border-radius:	${props => props.theme.effects.borderRadius.small}em;
 				`}
@@ -126,7 +126,9 @@ export const Ul = styled.ul`
 
 				/* placeholder style */
 				background-color: ${props =>
-          props.status === "loading" ? props.theme.color.foreground : greyLine};
+          props.status === "loading"
+            ? props.theme.color.foreground()
+            : greyLine};
 				border-bottom: ${props => props.theme.elements.thickBorder};
 
 			}

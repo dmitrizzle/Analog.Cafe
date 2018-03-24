@@ -10,7 +10,7 @@ import Instagram from "../../../_icons/Instagram"
 
 // css
 const brandButtonStyles = css`
-  color: ${props => props.theme.color.background} !important;
+  color: ${props => props.theme.color.background()} !important;
   svg {
     height: 2em;
   }
