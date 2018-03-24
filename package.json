@@ -18,7 +18,6 @@
     "@roast-cms/react-link-filter": "^0.1.0",
     "@roast-cms/react-sugar-styled": "^1.0.1",
     "axios": "0.18.0",
-    "fontfaceobserver": "^2.0.13",
     "immutable": "^3.8.2",
     "is-url": "^1.2.2",
     "keycode": "^2.1.9",

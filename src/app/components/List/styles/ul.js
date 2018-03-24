@@ -205,8 +205,6 @@ export const Ul = styled.ul`
 		padding-top: ${zigzagTopShim}em;
 		:before { display: none; }
 	}
-	.fonts-loaded-headers & h2 { ${props =>
-    props.theme.typography.title.fontsLoaded} }
 `
 
 export const AuthorAndDate = styled.em`

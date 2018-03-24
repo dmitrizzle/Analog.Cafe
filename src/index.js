@@ -15,6 +15,10 @@ import { Provider } from "react-redux"
 import styled, { ThemeProvider } from "styled-components"
 import { Sugar } from "@roast-cms/react-sugar-styled"
 
+// fonts are loading from within index.html
+// import "typeface-exo-2"
+// import "typeface-lora"
+
 // components
 import App from "./app/containers/App"
 

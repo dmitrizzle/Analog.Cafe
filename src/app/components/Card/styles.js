@@ -109,7 +109,4 @@ export const CardHeader = styled.header`
     }
   }
 
-  .fonts-loaded-headers & h3 {
-    ${props => props.theme.typography.title.fontsLoaded};
-  }
 `
