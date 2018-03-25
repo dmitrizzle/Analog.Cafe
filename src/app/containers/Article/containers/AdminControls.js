@@ -34,10 +34,8 @@ import {
   ROUTE_SUBMISSIONS_DIR
 } from "../../../../constants/article"
 import emojis from "../../../../constants/messages/emojis"
-import {
-  storeContentState,
-  storeHeaderState
-} from "../../../../utils/composer-saver"
+import { storeContentState } from "@roast-cms/french-press-editor/dist/utils/browser-storage"
+import { storeHeaderState } from "../../../../utils/composer-saver"
 
 import { locate } from "../../../../utils/article-utils"
 
