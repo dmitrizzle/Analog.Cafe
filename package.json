@@ -13,7 +13,7 @@
     "url": "https://github.com/dmitrizzle/Analog.Cafe"
   },
   "dependencies": {
-    "@roast-cms/french-press-editor": "^0.3.0",
+    "@roast-cms/french-press-editor": "^0.5.3",
     "@roast-cms/image-froth": "^0.1.0",
     "@roast-cms/react-button-beans": "^1.0.2",
     "@roast-cms/react-link-filter": "^0.1.0",
