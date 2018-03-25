@@ -35,7 +35,7 @@ import {
 } from "../../../../constants/article"
 import emojis from "../../../../constants/messages/emojis"
 import { storeContentState } from "@roast-cms/french-press-editor/dist/utils/browser-storage"
-import { storeHeaderState } from "../../../../utils/composer-saver"
+import { storeHeaderState } from "../../../../utils/browser-storage"
 
 import { locate } from "../../../../utils/article-utils"
 

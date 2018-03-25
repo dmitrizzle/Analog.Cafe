@@ -42,15 +42,14 @@
     "titlecase": "^1.1.2",
     "typeface-exo-2": "^0.0.54",
     "typeface-lora": "^0.0.54",
-    "uuid": "^3.1.0",
-    "webpack": "4.2.0"
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "babel-plugin-root-import": "^5.1.0",
     "husky": "^0.14.3",
     "lint-staged": "7.0.0",
     "prettier": "1.11.1",
-    "react-scripts": "1.1.1",
+    "react-scripts": "^2.0.0-next.b2fd8db8",
     "source-map-explorer": "^1.5.0"
   },
   "lint-staged": {
@@ -67,5 +66,18 @@
     "deploy": "npm run build && aws s3 sync build/ s3://analog.cafe && aws s3 cp s3://analog.cafe/ s3://analog.cafe/ --exclude '*' --include '*.jpg' --include '*.png' --include '*.svg' --include '*.js'  --include '*.eot' --include '*.mtd' --include '*.woff' --include '*.woff2' --include '*.ico' --recursive --metadata-directive REPLACE --expires 2034-01-01T00:00:00Z --acl public-read --cache-control max-age=2592000,public",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   }
 }

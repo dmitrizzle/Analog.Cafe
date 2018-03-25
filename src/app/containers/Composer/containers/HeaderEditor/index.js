@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import { saveHeader } from "../../../../../utils/composer-saver"
+import { saveHeader } from "../../../../../utils/browser-storage"
 import keycode from "keycode"
 
 // components
