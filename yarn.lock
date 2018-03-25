@@ -16,13 +16,13 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@roast-cms/french-press-editor@^0.5.3":
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/@roast-cms/french-press-editor/-/french-press-editor-0.5.6.tgz#6095be62f128f99bec9afaacf690e1f3f6b3d0ae"
+"@roast-cms/french-press-editor@^0.6.0":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@roast-cms/french-press-editor/-/french-press-editor-0.6.1.tgz#8316b888ba919270fd3bd8d9e5fe20e4cda1c977"
   dependencies:
-    "@roast-cms/react-button-beans" "^1.0.2"
+    "@roast-cms/react-button-beans" "^1.1.3"
     "@roast-cms/react-link-filter" "*"
-    "@roast-cms/react-sugar-styled" "^1.0.3"
+    "@roast-cms/react-sugar-styled" "^1.0.4"
     "@roast-cms/slate-drop-or-paste-images" "^0.8.1"
     is-url "^1.2.2"
     keycode "^2.1.9"
@@ -41,19 +41,19 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@roast-cms/image-froth/-/image-froth-0.1.0.tgz#9ccd272b95b57d6724ed084d5b7dd41c3d1b56fa"
 
-"@roast-cms/react-button-beans@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@roast-cms/react-button-beans/-/react-button-beans-1.0.2.tgz#d2b068cdc0573d51939f4264b6578dec7af9417f"
+"@roast-cms/react-button-beans@1.1.3", "@roast-cms/react-button-beans@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@roast-cms/react-button-beans/-/react-button-beans-1.1.3.tgz#c8c199606bd01d21f1c320eeb1023350d6a7dc34"
 
-"@roast-cms/react-link-filter@*", "@roast-cms/react-link-filter@^0.1.0":
+"@roast-cms/react-link-filter@*", "@roast-cms/react-link-filter@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@roast-cms/react-link-filter/-/react-link-filter-0.1.2.tgz#0ac36ca11a288d120f05bd830af82720be800818"
 
-"@roast-cms/react-sugar-styled@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@roast-cms/react-sugar-styled/-/react-sugar-styled-1.0.3.tgz#6385d94e0bfd3c1783a8490b7e8971f0595269ad"
+"@roast-cms/react-sugar-styled@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@roast-cms/react-sugar-styled/-/react-sugar-styled-1.0.4.tgz#cd51b29ee126212e7c6bce66605d119bcac01d07"
 
-"@roast-cms/slate-drop-or-paste-images@*", "@roast-cms/slate-drop-or-paste-images@^0.8.1":
+"@roast-cms/slate-drop-or-paste-images@^0.8.1":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@roast-cms/slate-drop-or-paste-images/-/slate-drop-or-paste-images-0.8.1.tgz#bf0082b8b6bbaf31a840fd18b894be9846842831"
   dependencies:
@@ -7244,12 +7244,6 @@ slate-auto-replace@^0.9.0:
     is-hotkey "^0.0.3"
     type-of "^2.0.1"
 
-slate-base64-serializer@^0.2.25:
-  version "0.2.25"
-  resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.2.25.tgz#da5032a5e36d49dbd5630a8c634fe61146bf2fd4"
-  dependencies:
-    isomorphic-base64 "^1.0.2"
-
 slate-base64-serializer@^0.2.28:
   version "0.2.28"
   resolved "https://registry.yarnpkg.com/slate-base64-serializer/-/slate-base64-serializer-0.2.28.tgz#141a93654b58203e82ee24c4068107a67b72aff8"
@@ -7261,27 +7255,15 @@ slate-dev-logger@^0.1.0, slate-dev-logger@^0.1.39:
   resolved "https://registry.yarnpkg.com/slate-dev-logger/-/slate-dev-logger-0.1.39.tgz#744a69b85034244713e6de51483af5713c345af4"
 
 slate-html-serializer@^0.5.0:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/slate-html-serializer/-/slate-html-serializer-0.5.6.tgz#458fef3354299240ce4ebe9268c5622cef618db4"
+  version "0.5.9"
+  resolved "https://registry.yarnpkg.com/slate-html-serializer/-/slate-html-serializer-0.5.9.tgz#3925cbc459b222ddc75ff11eb5bbb3bed65c3a8e"
   dependencies:
     slate-dev-logger "^0.1.39"
     type-of "^2.0.1"
 
-slate-plain-serializer@^0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/slate-plain-serializer/-/slate-plain-serializer-0.5.6.tgz#8a40e94017d37c532a65163f1df17543ec9cae93"
-  dependencies:
-    slate-dev-logger "^0.1.39"
-
 slate-plain-serializer@^0.5.9:
   version "0.5.9"
   resolved "https://registry.yarnpkg.com/slate-plain-serializer/-/slate-plain-serializer-0.5.9.tgz#dc6ac5d10c46cac1bfa8d9af36f5e76d766fd57e"
-  dependencies:
-    slate-dev-logger "^0.1.39"
-
-slate-prop-types@^0.4.23:
-  version "0.4.23"
-  resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.4.23.tgz#8278a133fdce898d5c9d64ac1b3b002de335b9de"
   dependencies:
     slate-dev-logger "^0.1.39"
 
@@ -7290,26 +7272,6 @@ slate-prop-types@^0.4.26:
   resolved "https://registry.yarnpkg.com/slate-prop-types/-/slate-prop-types-0.4.26.tgz#72ef2b6fded5893a2a0a273f679b92c4eee99e73"
   dependencies:
     slate-dev-logger "^0.1.39"
-
-slate-react@0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/slate-react/-/slate-react-0.12.0.tgz#20b5cce1f02f069ff8a385f9d4382d1a9d6de049"
-  dependencies:
-    debug "^2.3.2"
-    get-window "^1.1.1"
-    is-hotkey "^0.1.1"
-    is-in-browser "^1.1.3"
-    is-window "^1.0.2"
-    keycode "^2.1.2"
-    lodash "^4.1.1"
-    prop-types "^15.5.8"
-    react-immutable-proptypes "^2.1.0"
-    react-portal "^3.1.0"
-    selection-is-backward "^1.0.0"
-    slate-base64-serializer "^0.2.25"
-    slate-dev-logger "^0.1.39"
-    slate-plain-serializer "^0.5.6"
-    slate-prop-types "^0.4.23"
 
 slate-react@^0.12.0:
   version "0.12.3"
@@ -7331,27 +7293,9 @@ slate-react@^0.12.0:
     slate-plain-serializer "^0.5.9"
     slate-prop-types "^0.4.26"
 
-slate-schema-violations@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/slate-schema-violations/-/slate-schema-violations-0.1.4.tgz#f87ad4091f72c66edf32f418a33d80e5e87ad5e8"
-
 slate-schema-violations@^0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/slate-schema-violations/-/slate-schema-violations-0.1.7.tgz#cf2c6156eaf545f4d1985d3d1b94c50d6d273a08"
-
-slate@0.33.0:
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.33.0.tgz#6a4e084aa3a55dc5b09bce1b7037f284396b9160"
-  dependencies:
-    debug "^2.3.2"
-    direction "^0.1.5"
-    esrever "^0.2.0"
-    is-empty "^1.0.0"
-    is-plain-object "^2.0.4"
-    lodash "^4.17.4"
-    slate-dev-logger "^0.1.39"
-    slate-schema-violations "^0.1.4"
-    type-of "^2.0.1"
 
 slate@^0.33.0:
   version "0.33.3"
