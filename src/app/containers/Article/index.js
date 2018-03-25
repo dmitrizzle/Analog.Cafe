@@ -166,6 +166,7 @@ class Article extends React.PureComponent {
     )
   }
   render = () => {
+    console.log(this.props.article)
     return (
       <ArticleElement>
         <Helmet>
@@ -215,7 +216,7 @@ class Article extends React.PureComponent {
                   )}`}.
               </Byline>
             )}
-          {this.props.article.author &&
+          {this.props.article.submittedBy &&
             this.props.article.status !== "published" &&
             this.props.article.status !== "loading" && (
               <Byline>
@@ -242,7 +243,7 @@ class Article extends React.PureComponent {
           />
 
           {this.props.article.poster &&
-            this.props.article.author && (
+            this.props.article.submittedBy && (
               <ArticleActions
                 subscribeFormCallback={this.handleSubscribeFormCallback}
                 revealShareButtons={this.handleRevealShareButtons}
