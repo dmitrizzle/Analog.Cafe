@@ -21,7 +21,8 @@ import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
 import { Byline } from "../../../components/ArticleStyles"
 
 // utils
-import { loadTextContent } from "../../../../utils/composer-loader"
+import { loadTextContent } from "@roast-cms/french-press-editor"
+
 import {
   MESSAGE_HINT_OVERWRITE_DRAFT,
   MESSAGE_HINT_REJECT_SUBMISSION,

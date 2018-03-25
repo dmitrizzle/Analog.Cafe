@@ -8,7 +8,7 @@ import Heading from "../ArticleHeading"
 import Figure from "../Picture"
 import Link from "../_controls/Link"
 import { ModalDispatch } from "../../containers/Modal"
-import { Email } from "../_rt-snippets"
+import { Email } from "../_jsx-snippets"
 import MailChimpPrefill from "../../containers/_forms/MailChimpPrefill"
 import ArticleActions from "../Card/components/ArticleActions"
 
