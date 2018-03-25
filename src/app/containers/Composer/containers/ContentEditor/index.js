@@ -27,7 +27,7 @@ class ContentEditor extends React.PureComponent {
   editorRef = editor => {
     this.editor = editor
   }
-  handleEditorError = (error, reason) => {
+  handleEditorError = error => {
     if (error === "insert_image") {
       this.props.setCard(
         {

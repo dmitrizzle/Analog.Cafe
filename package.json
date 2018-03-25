@@ -53,17 +53,15 @@
     "source-map-explorer": "^1.5.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --no-semi --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier --no-semi --write", "git add"]
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
     "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "npm run build && aws s3 sync build/ s3://analog.cafe && aws s3 cp s3://analog.cafe/ s3://analog.cafe/ --exclude '*' --include '*.jpg' --include '*.png' --include '*.svg' --include '*.js'  --include '*.eot' --include '*.mtd' --include '*.woff' --include '*.woff2' --include '*.ico' --recursive --metadata-directive REPLACE --expires 2034-01-01T00:00:00Z --acl public-read --cache-control max-age=2592000,public",
+    "deploy":
+      "npm run build && aws s3 sync build/ s3://analog.cafe && aws s3 cp s3://analog.cafe/ s3://analog.cafe/ --exclude '*' --include '*.jpg' --include '*.png' --include '*.svg' --include '*.js'  --include '*.eot' --include '*.mtd' --include '*.woff' --include '*.woff2' --include '*.ico' --recursive --metadata-directive REPLACE --expires 2034-01-01T00:00:00Z --acl public-read --cache-control max-age=2592000,public",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -74,10 +72,13 @@
       "last 2 edge versions"
     ],
     "production": [
-      ">1%",
-      "last 4 versions",
-      "Firefox ESR",
-      "not ie < 11"
+      "Chrome >= 41",
+      "last 2 Safari versions",
+      "last 2 FireFox versions",
+      "last 1 Edge versions",
+      "not dead",
+      "last 2 iOS versions",
+      "last 2 Android versions"
     ]
   }
 }

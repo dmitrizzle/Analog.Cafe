@@ -101,7 +101,7 @@ class Article extends React.PureComponent {
     })
   }
   componentDidMount = () => {
-    this.unlisten = this.props.history.listen(location => this.fetchPage())
+    this.unlisten = this.props.history.listen(() => this.fetchPage())
     this.fetchPage()
     this.makeTag(this.props)
     this.setState({

@@ -4,7 +4,7 @@ import React from "react"
 // styles
 
 // return
-export const Capital = props => {
+export const Capital = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ export const Capital = props => {
   )
 }
 
-export const Lower = props => {
+export const Lower = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

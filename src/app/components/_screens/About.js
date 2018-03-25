@@ -36,7 +36,7 @@ const metaDescription =
   "Story, reason for existence, contributos and resources."
 
 // render
-export default props => {
+export default () => {
   return (
     <Article>
       <Helmet>

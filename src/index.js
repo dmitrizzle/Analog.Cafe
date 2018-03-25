@@ -26,9 +26,9 @@ import App from "./app/containers/App"
 import registerServiceWorker from "./registerServiceWorker"
 
 // polyfill
-import { arrayIncludes, arrayFind } from "./utils/polyfill"
-arrayIncludes()
-arrayFind()
+// import { arrayIncludes, arrayFind } from "./utils/polyfill"
+// arrayIncludes()
+// arrayFind()
 
 const GlobalStyles = styled.div`
   color: ${props => props.theme.color.foreground()};

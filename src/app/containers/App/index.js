@@ -86,7 +86,8 @@ class App extends React.PureComponent {
 
     // listen to route changes:
     this.handleRouteChnange()
-    this.props.history.listen((location, action) => this.handleRouteChnange())
+    // this.props.history.listen((location, action) => this.handleRouteChnange())
+    this.props.history.listen(() => this.handleRouteChnange())
 
     // async load Google Analytics module
     import("react-ga").then(ReactGA => {
@@ -106,7 +107,7 @@ class App extends React.PureComponent {
 
     // track connection (online/offline) status for user
     // listener
-    const updateConnectionStatus = event => {
+    const updateConnectionStatus = () => {
       this.props.setConnectionStatus(navigator.onLine ? "online" : "offline")
     }
     window.addEventListener("online", updateConnectionStatus)

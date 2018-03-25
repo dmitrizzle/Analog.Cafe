@@ -7,7 +7,7 @@ import Figure from "../../../components/Picture"
 import { LinkButton } from "../../../components/_controls/Button"
 
 // render
-export default props => {
+export default () => {
   return (
     <Article>
       <Section plain>
