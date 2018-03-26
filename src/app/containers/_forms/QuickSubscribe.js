@@ -34,7 +34,7 @@ export class QuickSubscribe extends React.PureComponent {
       })
     })
   }
-  handleSubmitCallback = email => {
+  handleSubmitCallback = () => {
     this.setState({
       subscribeForm: !this.state.subscribeForm
     })

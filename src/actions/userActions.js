@@ -73,14 +73,14 @@ export const loginWithEmail = validatedEmail => {
         method: "post"
       })
     )
-      .then(response => {
+      .then(() => {
         dispatch(setCard(MESSAGE_HINT_CHECK_EMAIL(validatedEmail)))
         dispatch({
           type: "USER.SET_EMAIL_LOGIN_STATUS",
           payload: "ok"
         })
       })
-      .catch(error => {
+      .catch(() => {
         dispatch(
           setCard({
             status: "ok",

@@ -1,8 +1,7 @@
 // tools
 import React from "react"
-import { Editor } from "slate-react"
-import { Value } from "slate"
 import Loadable from "react-loadable"
+import { Reader } from "@roast-cms/french-press-editor/dist/components/Reader"
 
 // redux & state
 import { connect } from "react-redux"
@@ -13,6 +12,7 @@ import {
 import ArticleActions from "../../components/Card/components/ArticleActions"
 
 // constants
+import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../constants/app"
 import {
   ROUTE_ARTICLE_DIR,
   ROUTE_SUBMISSIONS_DIR
@@ -20,13 +20,6 @@ import {
 import { ROUTE_AUTHOR_API } from "../../../constants/author"
 import { ROUTE_TAGS } from "../../../constants/list"
 import emojis from "../../../constants/messages/emojis"
-
-// Slate stuff
-import { schema } from "../Composer/containers/ContentEditor/schema"
-import {
-  renderNode,
-  renderMark
-} from "../Composer/containers/ContentEditor/render"
 
 // components
 import Helmet from "../../components/_async/Helmet"
@@ -38,6 +31,7 @@ import {
   Article as ArticleElement,
   Byline
 } from "../../components/ArticleStyles"
+import Picture from "../Picture"
 
 // helpers
 import { froth } from "../../../utils/image-froth"
@@ -107,7 +101,7 @@ class Article extends React.PureComponent {
     })
   }
   componentDidMount = () => {
-    this.unlisten = this.props.history.listen(location => this.fetchPage())
+    this.unlisten = this.props.history.listen(() => this.fetchPage())
     this.fetchPage()
     this.makeTag(this.props)
     this.setState({
@@ -221,7 +215,7 @@ class Article extends React.PureComponent {
                   )}`}.
               </Byline>
             )}
-          {this.props.article.author &&
+          {this.props.article.submittedBy &&
             this.props.article.status !== "published" &&
             this.props.article.status !== "loading" && (
               <Byline>
@@ -237,16 +231,18 @@ class Article extends React.PureComponent {
           {this.state.adminControls && <AdminControls />}
         </Heading>
         <Section articleStatus={this.props.article.status}>
-          <Editor
-            readOnly={true}
-            value={Value.fromJSON(this.props.article.content.raw)}
-            schema={schema}
-            renderNode={renderNode}
-            renderMark={renderMark}
+          <Reader
+            value={this.props.article.content.raw}
+            options={{
+              domain: ROUTE_APP_PRODUCTION_DOMAIN_NAME
+            }}
+            components={{
+              Picture
+            }}
           />
 
           {this.props.article.poster &&
-            this.props.article.author && (
+            this.props.article.submittedBy && (
               <ArticleActions
                 subscribeFormCallback={this.handleSubscribeFormCallback}
                 revealShareButtons={this.handleRevealShareButtons}

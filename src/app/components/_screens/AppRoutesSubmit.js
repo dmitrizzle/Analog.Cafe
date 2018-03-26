@@ -20,7 +20,7 @@ const Composer = Loadable({
 })
 
 // render
-export default props => {
+export default () => {
   return (
     <Switch>
       <Route exact path="/submit" component={Submit} />

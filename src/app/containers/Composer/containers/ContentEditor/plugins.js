@@ -1,6 +1,6 @@
 // tools
 import keycode from "keycode"
-import { PICTURE_DATA_OBJECT } from "../../../../../../constants/picture"
+import { PICTURE_DATA_OBJECT } from "../../../../../constants/picture"
 
 // return
 export const ToggleFeature = options => {

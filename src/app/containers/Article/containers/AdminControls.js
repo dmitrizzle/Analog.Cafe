@@ -21,7 +21,8 @@ import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
 import { Byline } from "../../../components/ArticleStyles"
 
 // utils
-import { loadTextContent } from "../../../../utils/composer-loader"
+import { loadTextContent } from "@roast-cms/french-press-editor"
+
 import {
   MESSAGE_HINT_OVERWRITE_DRAFT,
   MESSAGE_HINT_REJECT_SUBMISSION,
@@ -33,10 +34,8 @@ import {
   ROUTE_SUBMISSIONS_DIR
 } from "../../../../constants/article"
 import emojis from "../../../../constants/messages/emojis"
-import {
-  storeContentState,
-  storeHeaderState
-} from "../../../../utils/composer-saver"
+import { storeContentState } from "@roast-cms/french-press-editor/dist/utils/browser-storage"
+import { storeHeaderState } from "../../../../utils/browser-storage"
 
 import { locate } from "../../../../utils/article-utils"
 

@@ -18,7 +18,7 @@ const metaDescription =
   "Submit film photography essays and articles to be featured on Analog.Cafe."
 
 // render
-export default props => {
+export default () => {
   return (
     <Article>
       <Helmet>
