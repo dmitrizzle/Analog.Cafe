@@ -166,7 +166,6 @@ class Article extends React.PureComponent {
     )
   }
   render = () => {
-    console.log(this.props.article)
     return (
       <ArticleElement>
         <Helmet>

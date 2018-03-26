@@ -2,18 +2,20 @@
 import React from "react"
 import { FrenchPress } from "@roast-cms/french-press-editor"
 
-import Picture from "../../../Picture"
-import PictureDocket from "./containers/PictureDocket"
-
 // redux
 import { connect } from "react-redux"
 import { setCard } from "../../../../../actions/modalActions"
 import { setDraftStatus } from "../../../../../actions/composerActions"
 import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/messages/hints"
 
+// editor tools
 import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../../constants/app"
 import errorMessages from "../../../../../constants/messages/errors"
+// import { ToggleFeature } from "./plugins"
 
+// editor components
+import Picture from "../../../Picture"
+import PictureDocket from "./containers/PictureDocket"
 import { Capital, Lower } from "../../../../components/_icons/HeaderGlyphs"
 
 // return
@@ -110,6 +112,9 @@ class ContentEditor extends React.PureComponent {
         // i.e.: "Image is too large!"
         callbackError={this.handleEditorError}
         editorRef={this.editorRef}
+        //
+        // plugins specific for Analog.Cafe
+        //slatePlugins={[ToggleFeature({ key: "f", node: "image" })]}
       />
     )
   }

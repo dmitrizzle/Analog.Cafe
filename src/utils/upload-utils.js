@@ -1,6 +1,8 @@
 // constants
 import { ROUTE_ARTICLE_API, ROUTE_SUBMISSION_API } from "../constants/article"
-export { forceImageRestrictions } from "@roast-cms/french-press-editor"
+export {
+  forceImageRestrictions
+} from "@roast-cms/french-press-editor/dist/utils/image-rules"
 
 // this function kicks user to sign-in scdreen but rembers where to come back to
 export const redirectToSignIn = props => {
