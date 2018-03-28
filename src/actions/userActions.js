@@ -40,6 +40,7 @@ const loginError = (type = "error") => {
 }
 
 // remember sesion user and method
+// helpful when showing to user how they logged in last time
 export const setSessionInfo = (method, id = "") => {
   return {
     type: "USER.SET_SESSION_INFO",

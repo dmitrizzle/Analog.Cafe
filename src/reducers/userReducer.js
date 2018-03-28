@@ -7,15 +7,23 @@ const getLocalSessionInfo = () =>
     ? JSON.parse(localStorage.getItem("session-info"))
     : {}
 
+// retrieve previous session's routes
+// this is useful for redirecting users to correct page
+// after they logged in via email
+const getLocalRoutes = () =>
+  localStorage.getItem("routes")
+    ? JSON.parse(localStorage.getItem("routes"))
+    : {
+        success: ROUTE_AUTH_USER_LANDING
+      }
+
 const INITIAL_STATE = {
   status: "forbidden",
   connection: {
     status: ""
   },
   info: {},
-  routes: {
-    success: ROUTE_AUTH_USER_LANDING
-  },
+  routes: getLocalRoutes(),
   intent: {},
   emailLogin: {
     timeout: 0,
@@ -116,8 +124,10 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         routes: action.payload
       }
+      localStorage.setItem("routes", JSON.stringify(state.routes))
       break
     case "USER.RESET_ROUTES":
+      localStorage.removeItem("routes")
       state = {
         ...state,
         routes: INITIAL_STATE.routes

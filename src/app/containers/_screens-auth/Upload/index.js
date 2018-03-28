@@ -16,7 +16,10 @@ import Link from "../../../components/_controls/Link"
 import { LinkButton } from "../../../components/_controls/Button"
 
 // constants & helpers
-import { loadTextContent, loadContent } from "@roast-cms/french-press-editor"
+import {
+  loadTextContent,
+  loadContent
+} from "@roast-cms/french-press-editor/dist/utils/browser-storage"
 import { loadHeader } from "../../../../utils/browser-storage"
 import errorMessages from "../../../../constants/messages/errors"
 import emojis from "../../../../constants/messages/emojis"
