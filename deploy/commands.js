@@ -1,6 +1,6 @@
 // constants
 const AWS_REGION = "ca-central-1"
-const AWS_BUCKET = "analog.cafe.test"
+const AWS_BUCKET = "analog.cafe"
 //
 const COMMAND = "yarn s3-deploy"
 const DIR = "./build"
