@@ -107,7 +107,7 @@ class EditProfile extends React.PureComponent {
     const file = event.target.files[0]
     forceImageRestrictions(file.size, file.type, 5)
       .then(() => this.uploadRequest(file))
-      .catch(reason => {
+      .catch(() => {
         this.props.setCard(
           {
             status: "ok",
@@ -220,7 +220,7 @@ class EditProfile extends React.PureComponent {
 
         <Button
           onClick={this.handleDone}
-          red
+          branded
           loading={this.state.setUserInfoPending ? true : false}
         >
           Done

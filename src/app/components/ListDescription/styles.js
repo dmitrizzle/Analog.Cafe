@@ -4,11 +4,11 @@ import styled from "styled-components"
 // css
 export const ListDescription = styled.div`
   ${props => props.theme.typography.text.auto} ${props =>
-      props.theme.size.font.auto} height: 7.5em;
+    props.theme.size.font.auto} height: 7.5em;
   overflow: hidden;
-  margin: -.5em auto 0;
+  margin: -0.5em auto 0;
 
-  max-width: ${props => props.theme.size.block.column.maxwidth.m}px;
+  max-width: ${props => props.theme.size.block.column.m}px;
   position: relative;
   z-index: ${props => props.theme.layer.card};
 `
@@ -23,10 +23,10 @@ export const ListHeader = styled.div`
   font-size: ${props => props.theme.size.font.make.smaller}em;
   height: ${props => props.theme.typography.text.lineHeight}em;
   margin: ${props => props.theme.size.block.spacing * 2}em
-    ${props => props.theme.size.block.column.safety / 3}em
-    ${props => props.theme.size.block.column.safety}em;
+    ${props => props.theme.size.block.padding / 3}em
+    ${props => props.theme.size.block.padding}em;
   overflow: hidden;
   q {
-    background: ${props => props.theme.color.background};
+    background: ${props => props.theme.color.background()};
   }
 `

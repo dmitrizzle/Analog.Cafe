@@ -7,7 +7,7 @@ import Logo from "../AnalogCafe"
 // css
 export const LogoOutline = styled.div`
   position: ${props => (props.stamp ? "relative" : "absolute")};
-  top: -${props => props.theme.size.block.column.safety / 2 + 1}em;
+  top: -${props => props.theme.size.block.padding / 2 + 1}em;
   left: calc(
     50% -
       ${props =>
@@ -21,17 +21,16 @@ export const LogoOutline = styled.div`
 export const LogoWithDownstate = styled(Logo)`
   background: ${props =>
     props.stamp
-      ? props.theme.color.brand
-      : props => props.theme.color.foreground};
+      ? props.theme.color.brand()
+      : props => props.theme.color.foreground()};
   box-shadow: 0 1px 1px
-    ${props =>
-      props.theme.color.alpha.foreground(props.theme.opacity.least * 2)};
+    ${props => props.theme.color.foreground(props.theme.opacity.least * 2)};
 
   a.active &,
   a:active & {
-    background: ${props => props.theme.color.brand};
+    background: ${props => props.theme.color.brand()};
   }
   a:active & {
-    box-shadow: 0 0 ${props => props.theme.color.foreground} inset;
+    box-shadow: 0 0 ${props => props.theme.color.foreground()} inset;
   }
 `

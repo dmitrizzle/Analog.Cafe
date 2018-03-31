@@ -21,7 +21,6 @@ import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
 import { Byline } from "../../../components/ArticleStyles"
 
 // utils
-import { loadTextContent } from "../../../../utils/composer-loader"
 import {
   MESSAGE_HINT_OVERWRITE_DRAFT,
   MESSAGE_HINT_REJECT_SUBMISSION,
@@ -35,8 +34,9 @@ import {
 import emojis from "../../../../constants/messages/emojis"
 import {
   storeContentState,
-  storeHeaderState
-} from "../../../../utils/composer-saver"
+  loadTextContent
+} from "@roast-cms/french-press-editor/dist/utils/browser-storage"
+import { storeHeaderState } from "../../../../utils/browser-storage"
 
 import { locate } from "../../../../utils/article-utils"
 
@@ -260,7 +260,7 @@ class AdminControls extends React.PureComponent {
                 <Item
                   key="ButtonStrip_Item_reject"
                   onClick={this.handleRejection}
-                  black={
+                  inverse={
                     this.props.composer.submissionAdmin.reject.id ===
                     this.props.article.id
                   }
@@ -279,7 +279,7 @@ class AdminControls extends React.PureComponent {
                 </Item>,
                 <Item
                   right
-                  black={this.state.publishControls}
+                  inverse={this.state.publishControls}
                   style={
                     this.props.article.status === "scheduled"
                       ? { minWidth: "8em" }
@@ -332,7 +332,7 @@ class AdminControls extends React.PureComponent {
                   key={key}
                   onClick={event => this.handlePublishTag(event, key)}
                   style={key === "photo-essay" ? { minWidth: "7.5em" } : {}}
-                  black={this.state.publishAs === key}
+                  inverse={this.state.publishAs === key}
                   to={`#${key}`}
                 >
                   {TAGS[key]}
@@ -348,7 +348,7 @@ class AdminControls extends React.PureComponent {
             display: this.state.publishAs ? "block" : "none"
           }}
         >
-          <Button red>Add to Queue</Button>
+          <Button branded>Add to Queue</Button>
           <Button
             onClick={this.handlePublishNow}
             loading={

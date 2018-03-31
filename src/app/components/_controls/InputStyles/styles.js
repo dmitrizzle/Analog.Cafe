@@ -7,14 +7,13 @@ import { css } from "styled-components"
 const warning = css`
   ${props =>
     props.warning &&
-    `background:` +
-      props.theme.color.alpha.brand(props.theme.opacity.least * 2)};
+    `background:` + props.theme.color.brand(props.theme.opacity.least * 2)};
 `
 const caution = css`
   ${props =>
     props.caution &&
     `background: ` +
-      props.theme.color.alpha.highlight(props.theme.opacity.least * 2)};
+      props.theme.color.highlight(props.theme.opacity.least * 2)};
 `
 export const reset = css`
   width: 100%;

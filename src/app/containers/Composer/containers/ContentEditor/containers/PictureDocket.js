@@ -117,14 +117,14 @@ class PictureDocketContainer extends React.PureComponent {
   }
 
   // image upload handlers
-  initFileUpload = event => {
+  initFileUpload = () => {
     this.fileInput.click()
   }
   handleFileUpload = event => {
     const file = event.target.files[0]
     forceImageRestrictions(file.size, file.type)
       .then(() => this.uploadRequest(file))
-      .catch(reason => {
+      .catch(() => {
         this.props.setCard(
           {
             status: "ok",
@@ -210,7 +210,7 @@ class PictureDocketContainer extends React.PureComponent {
                 />
               )
             })}
-            <GridButton onClick={this.initFileUpload} red>
+            <GridButton onClick={this.initFileUpload} branded>
               <div style={{ margin: "0 auto", paddingLeft: ".5em" }}>
                 ＋
                 <br />

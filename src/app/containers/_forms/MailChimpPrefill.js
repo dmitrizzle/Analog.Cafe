@@ -56,7 +56,7 @@ export default class extends React.Component {
           onClick={this.handleInputClick}
         />
         <Button
-          red
+          branded
           onClick={event => {
             this.handleSubmit(event)
 

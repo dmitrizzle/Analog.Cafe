@@ -17,10 +17,10 @@ import { LinkButton } from "../../../components/_controls/Button"
 
 // constants & helpers
 import {
-  loadContent,
-  loadHeader,
-  loadTextContent
-} from "../../../../utils/composer-loader"
+  loadTextContent,
+  loadContent
+} from "@roast-cms/french-press-editor/dist/utils/browser-storage"
+import { loadHeader } from "../../../../utils/browser-storage"
 import errorMessages from "../../../../constants/messages/errors"
 import emojis from "../../../../constants/messages/emojis"
 
@@ -263,7 +263,7 @@ class Upload extends React.PureComponent {
                 <Link to="/me">here</Link>.
               </p>
               <p>Thank you so much for your contribution!</p>
-              <LinkButton red to="/me">
+              <LinkButton branded to="/me">
                 My Submissions
               </LinkButton>
             </div>

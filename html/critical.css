@@ -1,0 +1,127 @@
+.appNav {
+  margin: 0;
+  position: relative;
+  z-index: 20;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+.appNav, .waitMessage {
+  font-family: "Exo 2", Arial, sans-serif;
+  letter-spacing: 0.025em;
+  font-weight: 600;
+  line-height: 1.15em;
+}
+.navMore::after {
+  content: "✦";
+  text-decoration: none;
+  font-style: normal;
+  display: inline-block;
+  vertical-align: super;
+  font-size: 0.5em;
+  margin-left: -.15em;
+  margin-top: -.5em;
+}
+@media (min-width: 32.5625em){
+  .appNav, .waitMessage {
+    font-size: 20px;
+  }
+}
+@media (max-width: 20em){
+  .appNav, .waitMessage {
+    font-size: 17px;
+  }
+}
+@media (max-width: 32.5em){
+  .appNav, .waitMessage {
+    font-size: 18px;
+  }
+}
+@media (min-width: 100.0625em){
+  .appNav, .waitMessage {
+    font-size: 23px;
+  }
+}
+.waitMessage {
+  margin: -.65em auto 0;
+  text-align: center;
+}
+.waitMessage span {
+  font-size: 0.85em;
+}
+.appNav ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: #2c2c2c;
+}
+.appNav li {
+  display: block;
+  text-align: center;
+  width: 7em;
+}
+@media (max-width: 46.875em){
+  .appNav li:not(.prime) {
+    display: none;
+  }
+  .appNav li.prime.center {
+    order: 1;
+  }
+  .appNav li.prime.left {
+    order: 0;
+  }
+  .appNav li.prime.right {
+    order: 2;
+  }
+}
+.appNav a {
+  color: inherit;
+  text-decoration-skip: ink;
+  background: #fff;
+  text-decoration: none;
+  position: relative;
+}
+a.indexRouteLink {
+  position: static;
+}
+.appLogo {
+  position: absolute;
+  top: -1.75em;
+  left: calc( 50% - 2.5em );
+  z-index: 10;
+  padding: 1em;
+  width: 5em;
+}
+.appLogo > div {
+  background: #2c2c2c;
+  box-shadow: 0 1px 1px rgba(44,44,44,0.25);
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  transform: rotate(45deg);
+}
+.appLogo svg {
+  transform: rotate(-45deg);
+  height: 100%;
+  width: 100%;
+}
+.appLogo svg path {
+  fill: #fff;
+}
+
+.bodyFontLoader {
+  color: rgba(44,44,44,0.25);
+  font-family: "Lora", Georgia, serif;
+  letter-spacing: 0.025em;
+  line-height: 1.75em;
+  margin: 1.5em 0;
+  text-align: center;
+  font-size: 20px;
+}
+.bodyFontLoader > span {
+  font-size: 0.85em;
+}

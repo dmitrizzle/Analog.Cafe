@@ -9,7 +9,7 @@ export const Bleed = styled.div`
   clear: both;
   position: relative;
   margin-top: calc(
-    -${zigzagTopShim}em - ${props => props.theme.size.block.column.safety}em
+    -${zigzagTopShim}em - ${props => props.theme.size.block.padding}em
   );
-  margin-bottom: ${props => props.theme.size.block.column.safety}em;
+  margin-bottom: ${props => props.theme.size.block.padding}em;
 `

@@ -34,7 +34,7 @@ export class QuickSubscribe extends React.PureComponent {
       })
     })
   }
-  handleSubmitCallback = email => {
+  handleSubmitCallback = () => {
     this.setState({
       subscribeForm: !this.state.subscribeForm
     })
@@ -53,13 +53,12 @@ export class QuickSubscribe extends React.PureComponent {
     return (
       <div>
         {!this.state.subscribeForm ? (
-          <CardButton red onClick={this.handleRevealSubscribeForm}>
+          <CardButton branded onClick={this.handleRevealSubscribeForm}>
             {KEYWORD_SUBSCRIBE}
           </CardButton>
         ) : (
           <MailChimpPrefill
             buttonText={KEYWORD_SUBSCRIBE_SUBMIT}
-            withinGroup
             autoFocus
             submitCallback={this.handleSubmitCallback}
           />

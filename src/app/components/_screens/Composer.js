@@ -13,7 +13,7 @@ const metaDescription =
   "A tool to upload, edit and submit your photo essays and stories."
 
 // render
-export default props => {
+export default () => {
   return (
     <Article>
       <Helmet>

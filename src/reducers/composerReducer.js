@@ -1,5 +1,5 @@
 // tools
-import { loadHeader } from "../utils/composer-loader"
+import { loadHeader } from "../utils/browser-storage"
 import { DEFAULT_COMPOSER_HEADER_STATE } from "../constants/composer"
 
 // set placeholders for collabFeatures grid:

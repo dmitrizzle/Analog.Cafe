@@ -11,7 +11,7 @@ const ScreenSlicer = styled.div`
   max-width: 100vw;
   margin: ${props => props.theme.size.block.spacing}em 0;
   clear: both;
-  background: ${props => props.theme.color.background};
+  background: ${props => props.theme.color.background()};
 
   & aside {
     border-bottom: ${props => props.theme.elements.thickBorder};
@@ -19,7 +19,7 @@ const ScreenSlicer = styled.div`
       padding: ${props => props.theme.size.block.spacing}em 0 0 0;
       ${props => props.theme.size.breakpoint.max.m`
       padding: ${props => props.theme.size.block.spacing}em 0
-        0 ${props => props.theme.size.block.column.safety}em !important;
+        0 ${props => props.theme.size.block.padding}em !important;
         `} box-shadow: none;
       margin-bottom: ${props => props.theme.size.block.spacing}em;
       border-bottom: ${props => props.theme.elements.thickBorder};
@@ -29,7 +29,7 @@ const ScreenSlicer = styled.div`
         bottom: 0;
         top: inherit;
         ${props => props.theme.size.breakpoint.max.m`
-        right: ${props => props.theme.size.block.column.safety}em !important;
+        right: ${props => props.theme.size.block.padding}em !important;
           `};
       }
       & > h3 {
@@ -43,30 +43,30 @@ const ScreenSlicer = styled.div`
   }
 
   ${props => props.theme.size.breakpoint.max.m`
-    margin-left:  -${props => props.theme.size.block.column.safety}em;
+    margin-left:  -${props => props.theme.size.block.padding}em;
     & aside > header {
       padding: ${props => props.theme.size.block.spacing}em ${props =>
-    props.theme.size.block.column.safety}em ${props =>
-    props.theme.size.block.column.safety}em;
+    props.theme.size.block.padding}em ${props =>
+    props.theme.size.block.padding}em;
       & > a {
         right: ${props => props.theme.size.block.spacing}em;
       }
     }
   `} ${props => props.theme.size.breakpoint.min.l`
     margin-left:	calc(( -100vw + ${props =>
-      props.theme.size.block.column.maxwidth.m}px )/2 - ${props =>
-  props.theme.size.block.column.safety}em );
+      props.theme.size.block.column.m}px )/2 - ${props =>
+  props.theme.size.block.padding}em );
     & > aside {
       margin: 0 auto;
-      max-width: ${props => props.theme.size.block.column.maxwidth.m}px;
+      max-width: ${props => props.theme.size.block.column.m}px;
     }
   `} ${props => props.theme.size.breakpoint.min.xxl`
     margin-left:	calc(( -100vw + ${props =>
-      props.theme.size.block.column.maxwidth.l}px )/2 - ${props =>
-  props.theme.size.block.column.safety}em );
+      props.theme.size.block.column.l}px )/2 - ${props =>
+  props.theme.size.block.padding}em );
     & > aside {
       margin: 0 auto;
-      max-width: ${props => props.theme.size.block.column.maxwidth.l}px;
+      max-width: ${props => props.theme.size.block.column.l}px;
     }
   `};
 `

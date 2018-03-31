@@ -100,7 +100,7 @@ export const uploadData = request => {
                     window.location.reload()
                   },
                   text: "Try Again",
-                  red: true
+                  branded: true
                 },
                 {
                   to: "/submit/compose",

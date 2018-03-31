@@ -28,7 +28,7 @@ const loginError = (type = "error") => {
         {
           to: "/sign-in",
           text: "Sign In",
-          red: true
+          branded: true
         },
         {
           to: "/",
@@ -40,6 +40,7 @@ const loginError = (type = "error") => {
 }
 
 // remember sesion user and method
+// helpful when showing to user how they logged in last time
 export const setSessionInfo = (method, id = "") => {
   return {
     type: "USER.SET_SESSION_INFO",
@@ -73,14 +74,14 @@ export const loginWithEmail = validatedEmail => {
         method: "post"
       })
     )
-      .then(response => {
+      .then(() => {
         dispatch(setCard(MESSAGE_HINT_CHECK_EMAIL(validatedEmail)))
         dispatch({
           type: "USER.SET_EMAIL_LOGIN_STATUS",
           payload: "ok"
         })
       })
-      .catch(error => {
+      .catch(() => {
         dispatch(
           setCard({
             status: "ok",

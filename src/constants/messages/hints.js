@@ -19,7 +19,7 @@ export const MESSAGE_HINT_SUBMIT_CONSENT = {
       {
         to: "/submit/confirm-full-consent",
         text: "Yes",
-        red: true
+        branded: true
       },
       {
         to: "/submit/confirm-basic-consent",
@@ -64,7 +64,7 @@ export const MESSAGE_HINT_OVERWRITE_DRAFT = {
       {
         to: "/submit/compose",
         text: "See My Current Draft",
-        red: true
+        branded: true
       },
       {
         to: "#overwrite",
@@ -83,7 +83,7 @@ export const MESSAGE_HINT_REJECT_SUBMISSION = {
       {
         to: "#",
         text: "Nevermind",
-        red: true
+        branded: true
       },
       {
         to: "#reject",
@@ -110,7 +110,7 @@ export const MESSAGE_HINT_PUBLISH_SUBMISSION = {
       {
         to: "#",
         text: "Nevermind",
-        red: true
+        branded: true
       },
       {
         to: "#publish",
@@ -129,7 +129,7 @@ export const MESSAGE_HINT_SYNC_SUBMISSION = {
       {
         to: "#",
         text: "Nevermind",
-        red: true
+        branded: true
       },
       {
         to: "#sync",
@@ -156,7 +156,7 @@ export const MESSAGE_HINT_SUBMIT_EDITORS = {
       {
         to: "/submit/confirm-basic-consent",
         text: "Apply Edits",
-        red: true
+        branded: true
       }
     ]
   },

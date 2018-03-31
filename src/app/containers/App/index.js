@@ -63,6 +63,10 @@ class App extends React.PureComponent {
         "token",
         queryString.parse(this.props.location.search).token
       )
+      // redirect user to their /me page as with all other login methods
+      this.props.history.replace({
+        pathname: this.props.user.routes.success
+      })
     }
 
     // show message for expired tokens
@@ -86,7 +90,8 @@ class App extends React.PureComponent {
 
     // listen to route changes:
     this.handleRouteChnange()
-    this.props.history.listen((location, action) => this.handleRouteChnange())
+    // this.props.history.listen((location, action) => this.handleRouteChnange())
+    this.props.history.listen(() => this.handleRouteChnange())
 
     // async load Google Analytics module
     import("react-ga").then(ReactGA => {
@@ -106,7 +111,7 @@ class App extends React.PureComponent {
 
     // track connection (online/offline) status for user
     // listener
-    const updateConnectionStatus = event => {
+    const updateConnectionStatus = () => {
       this.props.setConnectionStatus(navigator.onLine ? "online" : "offline")
     }
     window.addEventListener("online", updateConnectionStatus)
