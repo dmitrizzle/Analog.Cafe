@@ -2,5 +2,6 @@
 // are in this array; this is written specifically for "typefaces"
 // packages
 exports.fonts = [
-  "typeface-exo-2", "typeface-lora"
+  "typeface-exo-2",
+  "typeface-lora"
 ]
