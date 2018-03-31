@@ -18,10 +18,11 @@
     "@roast-cms/react-button-beans": "^1.1.3",
     "@roast-cms/react-link-filter": "^0.1.2",
     "@roast-cms/react-sugar-styled": "^1.0.4",
+    "add": "2.0.6",
     "axios": "^0.18.0",
     "immutable": "^3.8.2",
     "keycode": "^2.2.0",
-    "localforage": "^1.6.0",
+    "localforage": "^1.7.1",
     "localforage-getitems": "^1.4.1",
     "lodash": "^4.17.4",
     "oauth-open": "^1.0.3",
@@ -37,20 +38,22 @@
     "react-textarea-autosize": "^6.0.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "sanitize.css": "^5.0.0",
     "styled-components": "^3.2.3",
     "titlecase": "^1.1.2",
     "typeface-exo-2": "^0.0.54",
     "typeface-lora": "^0.0.54",
-    "uuid": "^3.1.0"
+    "uuid": "^3.1.0",
+    "yarn": "1.5.1"
   },
   "devDependencies": {
-    "aws-sdk": "^2.216.1",
+    "copy": "^0.3.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
-    "react-scripts": "^1.1.1",
+    "react-scripts": "1.1.1",
+    "replace-in-file": "^3.4.0",
     "s3-deploy": "^0.10.0",
+    "sanitize.css": "^5.0.0",
     "source-map-explorer": "^1.5.0"
   },
   "lint-staged": {
@@ -61,10 +64,10 @@
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
-    "precommit": "lint-staged",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "deploy": "node deploy",
+    "precommit": "node precompile && lint-staged",
+    "start": "node precompile && react-scripts start",
+    "build": "node precompile && react-scripts build",
+    "deploy": "node precompile && node deploy",
     "test": "react-scripts test --env=jsdom"
   },
   "browserslist": {
