@@ -64,7 +64,7 @@
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
-    "precommit": "node precompile && lint-staged",
+    "precommit": "lint-staged",
     "start": "node precompile && react-scripts start",
     "build": "node precompile && react-scripts build",
     "deploy": "node precompile && node deploy",
