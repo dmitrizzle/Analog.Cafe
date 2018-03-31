@@ -4,9 +4,9 @@ const commands = require("./commands")
 shell.series(
   [
     // images
-    commands.uploadImmutableAssets("*.png"),
-    commands.uploadImmutableAssets("*.jpg"),
+    commands.uploadStaticAssets("*.png"),
     commands.uploadStaticAssets("*.ico"),
+    commands.uploadImmutableAssets("*.jpg"),
     // analytics file
     commands.uploadImmutableAssets("analytics*.js"),
     // json files
