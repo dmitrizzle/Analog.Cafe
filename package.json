@@ -50,7 +50,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
-    "react-scripts": "1.1.1",
+    "react-scripts": "^1.1.2",
     "replace-in-file": "^3.4.0",
     "s3-deploy": "^0.10.0",
     "sanitize.css": "^5.0.0",
