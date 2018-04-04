@@ -94,6 +94,13 @@ export const CommonNav = props => {
                       branded: true
                     }
                   : null,
+                props.userRole === "admin"
+                  ? {
+                      to: "/me/admin",
+                      text: "Admin",
+                      branded: true
+                    }
+                  : null,
                 props.userStatus === "ok"
                   ? {
                       to: "/sign-out",
