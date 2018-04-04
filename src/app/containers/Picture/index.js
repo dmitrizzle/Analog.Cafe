@@ -13,6 +13,7 @@ import { PlainTextarea } from "../../components/_controls/InputStyles"
 import PictureMenu from "../Composer/containers/ContentEditor/components/PictureMenu"
 
 import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
+import { INPUT_AUTO_FORMAT } from "../../../constants/input"
 
 // export
 // let localForageCache
@@ -39,14 +40,16 @@ class Figure extends React.PureComponent {
     }
   }
   handleChange = event => {
+    // preserve caret position
+    const caret = event.target.selectionStart
+    const element = event.target
+    window.requestAnimationFrame(() => {
+      element.selectionStart = caret
+      element.selectionEnd = caret
+    })
+
     // format caption text
-    let caption = event.target.value
-      .replace(/'\b/g, "‘") // opening singles
-      .replace(/\b'/g, "’") // closing singles
-      .replace(/"\b/g, "“") // opening doubles
-      .replace(/\b"/g, "”") // closing doubles
-      .replace(/--/g, "—") // em-dashes
-      .replace(/\b\.\.\./g, "…") // ellipsis
+    let caption = INPUT_AUTO_FORMAT(element.value)
     const { node, editor } = this.props
     const feature = node.data.get("feature")
     const src = node.data.get("src")
