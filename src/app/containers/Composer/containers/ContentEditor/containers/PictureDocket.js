@@ -17,11 +17,10 @@ import PictureDocket from "../../../../../components/_controls/PictureDocket"
 import {
   GridContainer,
   GridRow,
-  GridButton,
-  GridButtonCaption,
   GridCaption,
-  AspectRatio
-} from "../../../../../components/_controls/PictureDocket/styles"
+  GridButton,
+  GridButtonImage
+} from "../../../../../components/Grid"
 import { ModalDispatch } from "../../../../Modal"
 
 // styles
@@ -32,44 +31,6 @@ import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/
 import { ROUTE_AUTHOR_API } from "../../../../../../constants/author"
 import errorMessages from "../../../../../../constants/messages/errors"
 import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../../../../../../constants/picture"
-
-const GridButtonImage = props => {
-  return (
-    <GridButton
-      onClick={() => (props.status === "ok" ? props.add(props.src) : null)}
-    >
-      <AspectRatio>
-        <img
-          src={
-            froth({
-              src: props.status === "ok" ? props.src : null,
-              size: "t",
-              crop: "square"
-            }).src
-          }
-          alt="Editor’s suggestion"
-          onDragStart={event => {
-            event.preventDefault()
-            event.stopPropagation()
-          }}
-        />
-      </AspectRatio>
-      {props.author && (
-        <GridButtonCaption>
-          <ModalDispatch
-            with={{
-              request: {
-                url: ROUTE_AUTHOR_API + "/" + props.author.id
-              }
-            }}
-          >
-            {props.author.name}
-          </ModalDispatch>
-        </GridButtonCaption>
-      )}
-    </GridButton>
-  )
-}
 
 // return
 class PictureDocketContainer extends React.PureComponent {

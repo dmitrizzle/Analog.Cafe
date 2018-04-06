@@ -41,6 +41,11 @@ const Me = Loadable({
   loading: ArticleLoader,
   delay: 100
 })
+const Admin = Loadable({
+  loader: () => import("../../containers/_screens-auth/Admin"),
+  loading: ArticleLoader,
+  delay: 100
+})
 const AppRoutesSubmit = Loadable({
   loader: () => import("./AppRoutesSubmit"),
   loading: ArticleLoader,
@@ -78,6 +83,11 @@ export default () => {
 
         {/* auth views */}
         <Route exact path={ROUTE_AUTH_USER_LANDING} component={Me} />
+        <Route
+          exact
+          path={`${ROUTE_AUTH_USER_LANDING}/admin`}
+          component={Admin}
+        />
         <Route exact path="/submissions/*" component={Article} />
         <Route
           exact
