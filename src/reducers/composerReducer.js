@@ -2,10 +2,10 @@
 import { loadHeader } from "../utils/browser-storage"
 import { DEFAULT_COMPOSER_HEADER_STATE } from "../constants/composer"
 
-// set placeholders for collabFeatures grid:
-let collabFeaturesDefaults = []
+// set placeholders for imageList grid:
+let imageListDefaults = []
 for (var o = 0; o < 8; o++) {
-  collabFeaturesDefaults[o] = { id: o }
+  imageListDefaults[o] = { id: o }
 }
 
 // get submission status from localStorage
@@ -22,9 +22,9 @@ const INITIAL_STATE = {
     subtitle: loadHeader().subtitle
   },
   uploadProgress: 0,
-  collabFeatures: {
+  imageList: {
     status: "loading",
-    items: collabFeaturesDefaults
+    items: imageListDefaults
   },
   submissionStatus: {
     id: getLocalSubmissionStatus().id || "",
@@ -141,15 +141,24 @@ export default (state = INITIAL_STATE, action) => {
         editorFocusRequested: state.editorFocusRequested + 1
       }
       break
-    case "COMPOSER.SET_COLLAB_FEATURES":
+
+    // image grid
+    case "IMAGES.SET_PAGE":
       state = {
         ...state,
-        collabFeatures: {
-          status: "ok",
-          items: action.payload
+        imageList: action.payload
+      }
+      break
+    case "IMAGES.ADD_PAGE":
+      state = {
+        ...state,
+        imageList: {
+          ...state.imageList,
+          items: [...state.imageList.items, ...action.payload.items]
         }
       }
       break
+
     default:
       return state
   }

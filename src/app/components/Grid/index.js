@@ -14,7 +14,8 @@ export const GridButtonImage = props => {
   return (
     <GridButton
       style={props.noShim ? { minHeight: 0 } : null}
-      highlight={props.highlight}
+      label={props.label}
+      span={props.span}
       onClick={() => (props.status === "ok" ? props.add(props.src) : null)}
     >
       <AspectRatio>

@@ -2,14 +2,13 @@
 import React from "react"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
-import { froth } from "../../../../../../utils/image-froth"
 import { forceImageRestrictions } from "../../../../../../utils/upload-utils"
 import keycode from "keycode"
 
 // redux
 import { connect } from "react-redux"
 import { setCard } from "../../../../../../actions/modalActions"
-import { fetchCollabFeatures } from "../../../../../../actions/composerActions"
+import { fetchImageList } from "../../../../../../actions/composerActions"
 
 // components
 import { CardHeader } from "../../../../../components/Card/styles"
@@ -28,7 +27,6 @@ import { dot } from "../../../../../components/_icons/BlankDot"
 
 // constants
 import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/messages/hints"
-import { ROUTE_AUTHOR_API } from "../../../../../../constants/author"
 import errorMessages from "../../../../../../constants/messages/errors"
 import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../../../../../../constants/picture"
 
@@ -74,7 +72,7 @@ class PictureDocketContainer extends React.PureComponent {
     })
 
     // get featured collab images
-    this.props.fetchCollabFeatures()
+    this.props.fetchImageList()
   }
 
   // image upload handlers
@@ -152,19 +150,17 @@ class PictureDocketContainer extends React.PureComponent {
 
         <GridContainer>
           <GridRow>
-            {this.props.composer.collabFeatures.items.slice(0, 2).map(item => {
+            {this.props.composer.imageList.items.slice(0, 2).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  status={this.props.composer.collabFeatures.status}
+                  status={this.props.composer.imageList.status}
                   author={
-                    this.props.composer.collabFeatures.items[1]
-                      ? item.author
-                      : null
+                    this.props.composer.imageList.items[1] ? item.author : null
                   }
                   add={
-                    this.props.composer.collabFeatures.items[1]
+                    this.props.composer.imageList.items[1]
                       ? this.handleImageSuggestion
                       : null
                   }
@@ -180,12 +176,12 @@ class PictureDocketContainer extends React.PureComponent {
             </GridButton>
           </GridRow>
           <GridRow>
-            {this.props.composer.collabFeatures.items.slice(2, 5).map(item => {
+            {this.props.composer.imageList.items.slice(2, 5).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  status={this.props.composer.collabFeatures.status}
+                  status={this.props.composer.imageList.status}
                   author={item.author}
                   add={this.handleImageSuggestion}
                 />
@@ -193,12 +189,12 @@ class PictureDocketContainer extends React.PureComponent {
             })}
           </GridRow>
           <GridRow>
-            {this.props.composer.collabFeatures.items.slice(5, 8).map(item => {
+            {this.props.composer.imageList.items.slice(5, 8).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  status={this.props.composer.collabFeatures.status}
+                  status={this.props.composer.imageList.status}
                   author={item.author}
                   add={this.handleImageSuggestion}
                 />
@@ -226,8 +222,8 @@ const mapDispatchToProps = dispatch => {
     setCard: (info, request) => {
       dispatch(setCard(info, request))
     },
-    fetchCollabFeatures: () => {
-      dispatch(fetchCollabFeatures())
+    fetchImageList: () => {
+      dispatch(fetchImageList())
     }
   }
 }
