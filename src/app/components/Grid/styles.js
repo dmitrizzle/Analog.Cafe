@@ -5,7 +5,10 @@ import { Sidenote } from "../CaptionStyles"
 
 // css
 const squreWidth = css`
-  width: calc(100% / 3 - ${props => props.theme.size.block.border / 1.5}px);
+  width: calc(
+    100% / ${props => props.span || 3} -
+      ${props => props.theme.size.block.border / 1.5}px
+  );
 `
 export const GridContainer = styled.div`
   padding: 0;
@@ -39,14 +42,14 @@ export const GridButton = styled(Button)`
   }
 
   ${props =>
-    props.highlight &&
+    props.label &&
     `
     &::after {
-      content: "Featured";
+      content: "${props.label}";
       font-size: ${props.theme.size.font.make.tiny}em;
       height: ${props.theme.size.block.spacing * 1.5}em;
-      padding: ${props.theme.size.block.padding / 8}em ${props.theme.size.block
-      .padding / 4}em;
+      padding: 0 ${props.theme.size.block.padding / 4}em ${props.theme.size
+      .block.padding / 8}em;
       background: ${props.theme.color.brand()};
       color: ${props.theme.color.background()};
       position: absolute;

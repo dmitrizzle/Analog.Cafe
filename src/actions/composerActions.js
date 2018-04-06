@@ -132,12 +132,12 @@ export const requestFocus = () => {
 }
 
 // query instant collaboration items
-export const fetchCollabFeatures = (level = {}) => {
-  console.log(level)
+export const fetchImageList = (options = {}, page = 1, appendItems = false) => {
   const params = {
-    featured: level.featured === false ? undefined : true,
-    fullConsent: level.fullConsent === false ? undefined : true,
-    "items-per-page": 100
+    featured: options.featured === false ? undefined : true,
+    fullConsent: options.fullConsent === false ? undefined : true,
+    "items-per-page": options.itemsPerPage || undefined,
+    page
   }
   return dispatch => {
     const request = {
@@ -147,9 +147,10 @@ export const fetchCollabFeatures = (level = {}) => {
 
     axios(axiosRequest(request))
       .then(response => {
+        console.log(page, appendItems)
         dispatch({
-          type: "COMPOSER.SET_COLLAB_FEATURES",
-          payload: response.data.items
+          type: appendItems ? "IMAGES.ADD_PAGE" : "IMAGES.SET_PAGE",
+          payload: response.data
         })
       })
       .catch(error => {
