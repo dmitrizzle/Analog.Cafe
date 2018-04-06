@@ -3,13 +3,13 @@ import React from "react"
 
 // redux
 import { connect } from "react-redux"
-import { fetchCollabFeatures } from "../../../../actions/composerActions"
+import { fetchImageList } from "../../../../actions/composerActions"
 
 // components
 import Forbidden from "../../_screens-errors/Forbidden"
 
 import Heading from "../../../components/ArticleHeading"
-//import { Button } from "../../../components/_controls/Button"
+import { Button } from "../../../components/_controls/Button"
 import { Article, Section } from "../../../components/ArticleStyles"
 
 import {
@@ -19,17 +19,58 @@ import {
 } from "../../../components/Grid"
 
 const IMAGES_PER_ROW = 4
-const ROWS = 25
+const IMAGES_PER_PAGE = 16
 let rows = []
-for (let row = 0; row < ROWS; row++) {
-  rows[row] = row
-}
 
 // render
 class Admin extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      imageList: {
+        page: 2,
+        options: {
+          featured: false,
+          fullConsent: false,
+          itemsPerPage: IMAGES_PER_PAGE
+        }
+      }
+    }
+  }
   componentDidMount = () => {
     // get featured collab images
-    this.props.fetchCollabFeatures({ featured: false })
+    this.props.fetchImageList(this.state.imageList.options)
+  }
+  handleLoadMore = () => {
+    this.incrementPage() &&
+      this.props.fetchImageList(
+        this.state.imageList.options,
+        this.state.imageList.page,
+        true
+      )
+  }
+  componentDidUpdate = () => {
+    for (
+      let row = 0;
+      row < IMAGES_PER_PAGE / IMAGES_PER_ROW * this.state.imageList.page;
+      row++
+    ) {
+      rows[row] = row
+    }
+  }
+  incrementPage = () => {
+    if (
+      this.props.composer.imageList.page &&
+      this.props.composer.imageList.page.total >= this.state.imageList.page
+    ) {
+      this.setState({
+        imageList: {
+          ...this.state.imageList,
+          page: this.state.imageList.page + 1
+        }
+      })
+      return true
+    } else return false
   }
   render = () => {
     return this.props.user.status === "ok" &&
@@ -39,25 +80,26 @@ class Admin extends React.PureComponent {
 
         <Section style={{ padding: "1.5em 0" }}>
           <div style={{ padding: "0 1.5em" }}>
-            <h3>Collab pool:</h3>
+            <h3>Images.</h3>
           </div>
           <GridContainer>
             {rows.map(row => (
-              <GridRow>
-                {this.props.composer.collabFeatures.items
+              <GridRow key={row}>
+                {this.props.composer.imageList.items
                   .slice(
                     row * IMAGES_PER_ROW,
                     row * IMAGES_PER_ROW + IMAGES_PER_ROW
                   )
                   .map(item => (
                     <GridButtonImage
-                      highlight={item.featured}
+                      label={item.featured && "Featured"}
+                      span={4}
                       noShim
                       key={item.id}
                       src={item.id}
-                      status={this.props.composer.collabFeatures.status}
+                      status={this.props.composer.imageList.status}
                       author={
-                        this.props.composer.collabFeatures.items[1]
+                        this.props.composer.imageList.items[1]
                           ? item.author
                           : null
                       }
@@ -67,6 +109,19 @@ class Admin extends React.PureComponent {
               </GridRow>
             ))}
           </GridContainer>
+
+          {this.props.composer.imageList.page &&
+            this.props.composer.imageList.page.total >=
+              this.state.imageList.page && (
+              <Button onClick={this.handleLoadMore}>
+                Load{" "}
+                {Math.min(
+                  this.state.imageList.page * IMAGES_PER_PAGE,
+                  this.props.composer.imageList.page["items-total"]
+                )}{" "}
+                of {this.props.composer.imageList.page["items-total"]}
+              </Button>
+            )}
 
           <div style={{ padding: "0 1.5em" }}>
             <h3>Available for collaborations:</h3>
@@ -82,8 +137,8 @@ class Admin extends React.PureComponent {
 // connect with redux
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCollabFeatures: featured => {
-      dispatch(fetchCollabFeatures(featured))
+    fetchImageList: (options, page, appendItems) => {
+      dispatch(fetchImageList(options, page, appendItems))
     }
   }
 }
