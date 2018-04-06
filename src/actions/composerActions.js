@@ -132,14 +132,17 @@ export const requestFocus = () => {
 }
 
 // query instant collaboration items
-export const fetchCollabFeatures = () => {
+export const fetchCollabFeatures = (level = {}) => {
+  console.log(level)
+  const params = {
+    featured: level.featured === false ? undefined : true,
+    fullConsent: level.fullConsent === false ? undefined : true,
+    "items-per-page": 100
+  }
   return dispatch => {
     const request = {
       url: ROUTE_IMAGE_API,
-      params: {
-        fullConsent: "true",
-        featured: "true"
-      }
+      params
     }
 
     axios(axiosRequest(request))

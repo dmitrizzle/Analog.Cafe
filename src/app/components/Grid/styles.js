@@ -1,7 +1,7 @@
 // tools
 import styled, { css } from "styled-components"
-import { Button } from "../../_controls/Button"
-import { Sidenote } from "../../CaptionStyles"
+import { Button } from "../_controls/Button"
+import { Sidenote } from "../CaptionStyles"
 
 // css
 const squreWidth = css`
@@ -38,6 +38,27 @@ export const GridButton = styled(Button)`
     overflow: hidden;
   }
 
+  ${props =>
+    props.highlight &&
+    `
+    &::after {
+      content: "Featured";
+      font-size: ${props.theme.size.font.make.tiny}em;
+      height: ${props.theme.size.block.spacing * 1.5}em;
+      padding: ${props.theme.size.block.padding / 8}em ${props.theme.size.block
+      .padding / 4}em;
+      background: ${props.theme.color.brand()};
+      color: ${props.theme.color.background()};
+      position: absolute;
+      top: ${props.theme.size.block.padding / 8}em;
+      right: ${props.theme.size.block.padding / 8}em;
+      border-radius: ${props.theme.effects.borderRadius.small()}em;
+      box-shadow: 0 1px 1px
+          ${props.theme.color.foreground(props.theme.opacity.least * 2)},
+        0 0 0 1px
+          ${props.theme.color.foreground(props.theme.opacity.least)};
+    }
+  `}
 
   img {
     width: 100%;
