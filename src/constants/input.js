@@ -8,3 +8,12 @@ export const SUBTITLE_LENGTH_OPTIMAL = 52
 
 // summary input constants
 export const SUMMARY_LENGTH_MAX = 250
+
+export const INPUT_AUTO_FORMAT = value =>
+  value
+    .replace(/'\b/g, "‘") // opening singles
+    .replace(/\b'/g, "’") // closing singles
+    .replace(/"\b/g, "“") // opening doubles
+    .replace(/\b"/g, "”") // closing doubles
+    .replace(/ - /g, " — ") // em-dashes
+    .replace(/\b\.\./g, "… ") // ellipsis

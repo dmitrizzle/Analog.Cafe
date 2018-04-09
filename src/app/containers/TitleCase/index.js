@@ -2,6 +2,8 @@
 import React from "react"
 import toTitleCase from "titlecase"
 
+import { INPUT_AUTO_FORMAT } from "../../../constants/input"
+
 // components
 import {
   TitleTextarea,
@@ -21,13 +23,23 @@ export default class extends React.PureComponent {
     this.handleChange = this.handleChange.bind(this)
   }
   handleChange = event => {
-    this.setState({ value: toTitleCase(event.target.value) })
+    // preserve caret position
+    const caret = event.target.selectionEnd
+    const element = event.target
+    window.requestAnimationFrame(() => {
+      element.selectionStart = caret
+      element.selectionEnd = caret
+    })
+    this.setState({
+      value: INPUT_AUTO_FORMAT(toTitleCase(event.target.value))
+    })
     this.props.onChange(event.target.value)
   }
   render = () => {
     const InputElement = components[this.props.inputDesignation]
     return (
       <InputElement
+        ref="input"
         autoFocus={this.props.autoFocus}
         value={this.state.value}
         onChange={this.handleChange}

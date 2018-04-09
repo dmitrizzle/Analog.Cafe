@@ -11,7 +11,7 @@ import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/messag
 // editor tools
 import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../../constants/app"
 import errorMessages from "../../../../../constants/messages/errors"
-// import { ToggleFeature } from "./plugins"
+import { ToggleFeature } from "./plugins"
 
 // editor components
 import Picture from "../../../Picture"
@@ -114,7 +114,7 @@ class ContentEditor extends React.PureComponent {
         editorRef={this.editorRef}
         //
         // plugins specific for Analog.Cafe
-        //slatePlugins={[ToggleFeature({ key: "f", node: "image" })]}
+        slatePlugins={[ToggleFeature({ key: "f", node: "image" })]}
       />
     )
   }
