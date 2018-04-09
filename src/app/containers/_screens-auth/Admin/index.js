@@ -10,6 +10,7 @@ import Forbidden from "../../_screens-errors/Forbidden"
 
 import Heading from "../../../components/ArticleHeading"
 import { Button } from "../../../components/_controls/Button"
+import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
 import { Article, Section } from "../../../components/ArticleStyles"
 
 import {
@@ -37,11 +38,13 @@ class Admin extends React.PureComponent {
       }
     }
   }
+
+  // load images list
   componentDidMount = () => {
     // get featured collab images
     this.props.fetchImageList(this.state.imageList.options)
   }
-  handleLoadMore = () => {
+  handleImagesLoadMore = () => {
     this.incrementPage() &&
       this.props.fetchImageList(
         this.state.imageList.options,
@@ -58,6 +61,8 @@ class Admin extends React.PureComponent {
       rows[row] = row
     }
   }
+
+  // images list pagination
   incrementPage = () => {
     if (
       this.props.composer.imageList.page &&
@@ -72,6 +77,55 @@ class Admin extends React.PureComponent {
       return true
     } else return false
   }
+
+  // change image list display
+  handleImagesSwitchView = view => {
+    switch (view) {
+      case "all":
+        this.setState({
+          imageList: {
+            ...this.state.imageList,
+            options: {
+              ...this.state.imageList.options,
+              featured: false,
+              fullConsent: false
+            }
+          }
+        })
+        break
+      case "open":
+        this.setState({
+          imageList: {
+            ...this.state.imageList,
+            options: {
+              ...this.state.imageList.options,
+              featured: false,
+              fullConsent: true
+            }
+          }
+        })
+        break
+      case "feature":
+        this.setState({
+          imageList: {
+            ...this.state.imageList,
+            options: {
+              ...this.state.imageList.options,
+              featured: true,
+              fullConsent: true
+            }
+          }
+        })
+        break
+      default:
+    }
+    window.requestAnimationFrame(() => {
+      this.props.fetchImageList(this.state.imageList.options)
+      this.forceUpdate()
+    })
+  }
+
+  // render
   render = () => {
     return this.props.user.status === "ok" &&
       this.props.user.info.role === "admin" ? (
@@ -81,6 +135,39 @@ class Admin extends React.PureComponent {
         <Section style={{ padding: "1.5em 0" }}>
           <div style={{ padding: "0 1.5em" }}>
             <h3>Images.</h3>
+            <ButtonStrip style={{ margin: ".5em auto" }}>
+              <div>
+                <Item
+                  left
+                  inverse={
+                    !this.state.imageList.options.featured &&
+                    !this.state.imageList.options.fullConsent
+                  }
+                  onClick={view => this.handleImagesSwitchView("all")}
+                >
+                  All
+                </Item>
+                <Item
+                  inverse={
+                    !this.state.imageList.options.featured &&
+                    this.state.imageList.options.fullConsent
+                  }
+                  onClick={view => this.handleImagesSwitchView("open")}
+                >
+                  Open
+                </Item>
+                <Item
+                  right
+                  inverse={
+                    this.state.imageList.options.featured &&
+                    this.state.imageList.options.fullConsent
+                  }
+                  onClick={view => this.handleImagesSwitchView("feature")}
+                >
+                  Featured
+                </Item>
+              </div>
+            </ButtonStrip>
           </div>
           <GridContainer>
             {rows.map(row => (
@@ -113,13 +200,8 @@ class Admin extends React.PureComponent {
           {this.props.composer.imageList.page &&
             this.props.composer.imageList.page.total >=
               this.state.imageList.page && (
-              <Button onClick={this.handleLoadMore}>
-                Load{" "}
-                {Math.min(
-                  this.state.imageList.page * IMAGES_PER_PAGE,
-                  this.props.composer.imageList.page["items-total"]
-                )}{" "}
-                of {this.props.composer.imageList.page["items-total"]}
+              <Button onClick={this.handleImagesLoadMore}>
+                Load More ({this.props.composer.imageList.page["items-total"]})
               </Button>
             )}
 
