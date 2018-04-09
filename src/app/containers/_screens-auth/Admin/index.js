@@ -44,7 +44,7 @@ class Admin extends React.PureComponent {
     // get featured collab images
     this.props.fetchImageList(this.state.imageList.options)
   }
-  handleLoadMore = () => {
+  handleImagesLoadMore = () => {
     this.incrementPage() &&
       this.props.fetchImageList(
         this.state.imageList.options,
@@ -61,6 +61,8 @@ class Admin extends React.PureComponent {
       rows[row] = row
     }
   }
+
+  // images list pagination
   incrementPage = () => {
     if (
       this.props.composer.imageList.page &&
@@ -213,13 +215,8 @@ class Admin extends React.PureComponent {
           {this.props.composer.imageList.page &&
             this.props.composer.imageList.page.total >=
               this.state.imageList.page && (
-              <Button onClick={this.handleLoadMore}>
-                Load{" "}
-                {Math.min(
-                  this.state.imageList.page * IMAGES_PER_PAGE,
-                  this.props.composer.imageList.page["items-total"]
-                )}{" "}
-                of {this.props.composer.imageList.page["items-total"]}
+              <Button onClick={this.handleImagesLoadMore}>
+                Load More ({this.props.composer.imageList.page["items-total"]})
               </Button>
             )}
 
