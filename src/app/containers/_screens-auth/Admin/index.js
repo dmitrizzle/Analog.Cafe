@@ -121,7 +121,6 @@ class Admin extends React.PureComponent {
     }
     window.requestAnimationFrame(() => {
       this.props.fetchImageList(this.state.imageList.options)
-      this.forceUpdate()
     })
   }
 
