@@ -121,7 +121,7 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
                   "utf8",
                   function(err, data) {
                     if (err) throw err
-                    cssFontImports = cssFontImports + data.replace(
+                    cssFontImports += data.replace(
                       /\.\/files/g,
                       "%PUBLIC_URL%/fonts"
                     )
