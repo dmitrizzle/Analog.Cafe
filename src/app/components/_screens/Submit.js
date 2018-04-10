@@ -18,7 +18,7 @@ const metaDescription =
   "Submit film photography essays and articles to be featured on Analog.Cafe."
 
 // render
-export default props => {
+export default () => {
   return (
     <Article>
       <Helmet>
@@ -43,7 +43,7 @@ export default props => {
       />
       <Section>
         <div style={{ textAlign: "center" }}>
-          <LinkButton to={"/submit/compose"} red>
+          <LinkButton to={"/submit/compose"} branded>
             Submit Now
           </LinkButton>
           <p>
@@ -258,7 +258,7 @@ export default props => {
         </Caption>
 
         <ButtonGroup>
-          <LinkButton to={"/submit/compose"} red>
+          <LinkButton to={"/submit/compose"} branded>
             Submit Now
           </LinkButton>
           <p>

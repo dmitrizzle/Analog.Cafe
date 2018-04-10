@@ -9,6 +9,14 @@ export { SUMMARY_LENGTH_MAX } from "./input"
 export const ROUTE_LIST_API = ROUTE_API_DOMAIN + "/list"
 export const ROUTE_AUTHENTICATED_LIST_API = ROUTE_API_DOMAIN + "/submissions"
 
+// better copy for status keywords
+export const STATUS_TAGS_DISAMBIGUATION = {
+  pending: "In Queue",
+  rejected: "Not Published",
+  scheduled: "Scheduled",
+  published: "Published"
+}
+
 // tag sets for particular view URLs/routes
 export const ROUTE_TAGS = {
   "/me": "",

@@ -1,3 +1,6 @@
+// constants
+import emojis from "./emojis"
+
 export const MESSAGE_HINT_CHECK_EMAIL = email => {
   return {
     info: {
@@ -16,7 +19,7 @@ export const MESSAGE_HINT_SUBMIT_CONSENT = {
       {
         to: "/submit/confirm-full-consent",
         text: "Yes",
-        red: true
+        branded: true
       },
       {
         to: "/submit/confirm-basic-consent",
@@ -51,6 +54,7 @@ export const MESSAGE_HINT_YOUR_PROFILE = {
   id: "hints/your-profile"
 }
 
+// messages for editors:
 export const MESSAGE_HINT_OVERWRITE_DRAFT = {
   info: {
     title: "Overwrite Warning",
@@ -60,13 +64,111 @@ export const MESSAGE_HINT_OVERWRITE_DRAFT = {
       {
         to: "/submit/compose",
         text: "See My Current Draft",
-        red: true
+        branded: true
       },
       {
         to: "#overwrite",
-        text: "⚠️ Overwrite"
+        text: emojis.KEY + " Overwrite"
       }
     ]
   },
   requested: { url: "hints/text-in-compsoer" }
+}
+export const MESSAGE_HINT_REJECT_SUBMISSION = {
+  info: {
+    title: "Are You Sure?",
+    text:
+      "Once you reject this submission the author will get an email notifying them of this event. Someone’s gonna be disappointed!",
+    buttons: [
+      {
+        to: "#",
+        text: "Nevermind",
+        branded: true
+      },
+      {
+        to: "#reject",
+        text: emojis.KEY + " Reject Submission"
+      }
+    ]
+  },
+  requested: { url: "hints/reject-submission" }
+}
+export const MESSAGE_HINT_REJECT_SUBMISSION_SUCCESS = {
+  info: {
+    title: "Successfuly Rejected Submission",
+    text:
+      "Done. Submission rejected. It will be marked as such in the database and the author should be receiving a notification shortly."
+  },
+  requested: { url: "hints/reject-submission" }
+}
+export const MESSAGE_HINT_PUBLISH_SUBMISSION = {
+  info: {
+    title: "Are You Sure?",
+    text:
+      "Please confirm that you want this article to go live. This will trigger an immediate RSS feed update which will send an update to various channels and eventually the email list. This can not be undone. You can un-publish this article later, but the message will be already out.",
+    buttons: [
+      {
+        to: "#",
+        text: "Nevermind",
+        branded: true
+      },
+      {
+        to: "#publish",
+        text: emojis.KEY + " Publish Now"
+      }
+    ]
+  },
+  requested: { url: "hints/publish-submission" }
+}
+export const MESSAGE_HINT_SYNC_SUBMISSION = {
+  info: {
+    title: "Are You Sure?",
+    text:
+      "This will update the published article’s content with the linked submission. This can not be undone.",
+    buttons: [
+      {
+        to: "#",
+        text: "Nevermind",
+        branded: true
+      },
+      {
+        to: "#sync",
+        text: emojis.KEY + " Sync"
+      }
+    ]
+  },
+  requested: { url: "hints/sync-submission" }
+}
+export const MESSAGE_HINT_PUBLISH_SUBMISSION_SUCCESS = {
+  info: {
+    title: "Submission Scheduled",
+    text:
+      "The submission has been scheduled for the future time slot or to be published immediately. Please check the scheduling tool to confirm when it’s gonna go live."
+  },
+  requested: { url: "hints/publish-submission" }
+}
+export const MESSAGE_HINT_SUBMIT_EDITORS = {
+  info: {
+    title: "Notes for Editors",
+    text:
+      "All image authorships and consent settings will remain as the original uploader/author has requested on submission. Article authorship will remain with original uploader. Note that if you upload a new image (which may include making edits to original images and re-uploading them) its authorship will belog to you, the editor. All new image uploads will default to “NOT open for collaborations.”",
+    buttons: [
+      {
+        to: "/submit/confirm-basic-consent",
+        text: "Apply Edits",
+        branded: true
+      }
+    ]
+  },
+  id: "hints/submit-editors"
+}
+
+// internet connection
+export const MESSAGE_HINT_CONNECTION_OFFLINE = {
+  info: {
+    title: "Connection Trouble 🔌",
+    text:
+      "You got disconnected from the internet. Don’t worry: you will not lose any of your work."
+  },
+  id: "hints/connection"
 }

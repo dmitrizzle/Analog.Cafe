@@ -16,6 +16,7 @@ import {
   ROUTE_AUTHENTICATED_LIST_API
 } from "../../../constants/list"
 import { ROUTE_AUTHOR_API } from "../../../constants/author"
+import errors from "../../../constants/messages/errors"
 
 // components
 import { ListDescription, ListHeader } from "../../components/ListDescription"
@@ -120,47 +121,59 @@ class List extends React.PureComponent {
           />
         </Helmet>
         <ListDescription>
-          <ListHeader>
-            {this.props.list.filter.author ? (
-              <span>
-                <em>
-                  {this.props.list.error
-                    ? this.props.list.error.title
-                    : renderedListMeta.title}
-                  {this.props.list.filter.author.name ? " " : null}
-                  {this.props.list.filter.author.name ? (
-                    <span>
-                      by{" "}
-                      <ModalDispatch
-                        with={{
-                          request: {
-                            url:
-                              ROUTE_AUTHOR_API +
-                              "/" +
-                              this.props.list.filter.author.id
-                          }
-                        }}
-                      >
-                        {trimAuthorName(this.props.list.filter.author.name)}
-                      </ModalDispatch>
-                    </span>
-                  ) : (
-                    this.props.location.pathname.includes("/author/") && ".."
-                  )}
-                </em>
-              </span>
-            ) : (
-              <span>
-                <em>{renderedListMeta.title}</em>
-              </span>
-            )}
-            {this.props.list.filter.author && this.props.list.filter.author.name
-              ? "."
-              : this.props.list.error ? " " + this.props.list.error.emoji : "."}
-          </ListHeader>
+          {this.props.user.connection.status !== "offline" ? (
+            <ListHeader>
+              {this.props.list.filter.author ? (
+                <span>
+                  <em>
+                    {this.props.list.error
+                      ? this.props.list.error.title
+                      : renderedListMeta.title}
+                    {this.props.list.filter.author.name ? " " : null}
+                    {this.props.list.filter.author.name ? (
+                      <span>
+                        by{" "}
+                        <ModalDispatch
+                          with={{
+                            request: {
+                              url:
+                                ROUTE_AUTHOR_API +
+                                "/" +
+                                this.props.list.filter.author.id
+                            }
+                          }}
+                        >
+                          {trimAuthorName(this.props.list.filter.author.name)}
+                        </ModalDispatch>
+                      </span>
+                    ) : (
+                      this.props.location.pathname.includes("/author/") && ".."
+                    )}
+                  </em>
+                </span>
+              ) : (
+                <span>
+                  <em>{renderedListMeta.title}</em>
+                </span>
+              )}
+              {this.props.list.filter.author &&
+              this.props.list.filter.author.name
+                ? "."
+                : this.props.list.error
+                  ? " " + this.props.list.error.emoji
+                  : "."}
+            </ListHeader>
+          ) : (
+            <ListHeader>
+              <em>{errors.VIEW_TEMPLATE.LIST_OFFLINE.title}</em>{" "}
+              {errors.VIEW_TEMPLATE.LIST_OFFLINE.emoji}
+            </ListHeader>
+          )}
         </ListDescription>
 
-        {this.props.list.error && this.props.placeholder === "HowToSubmit" ? (
+        {this.props.user.connection.status !== "offline" &&
+        this.props.list.error &&
+        this.props.placeholder === "HowToSubmit" ? (
           <HowToSubmit />
         ) : (
           <ListBlock
@@ -177,6 +190,7 @@ class List extends React.PureComponent {
               })
             }
             private={this.props.private}
+            isAdmin={this.props.isAdmin}
             userIntent={this.handleUserIntent}
           />
         )}
@@ -185,7 +199,7 @@ class List extends React.PureComponent {
         parseInt(this.props.list.page.total, 0) >
           parseInt(this.props.list.page.current, 0) ? (
           <Button
-            red
+            branded
             onClick={this.handleLoadMore.bind(this)}
             loading={this.state.loadMorePending ? true : false}
           >
@@ -204,7 +218,8 @@ class List extends React.PureComponent {
 // connect with redux
 const mapStateToProps = state => {
   return {
-    list: state.list
+    list: state.list,
+    user: state.user
   }
 }
 const mapDispatchToProps = dispatch => {

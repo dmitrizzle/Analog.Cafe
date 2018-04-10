@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import { imageSizeLimit } from "../../../../utils/upload-utils"
+import { forceImageRestrictions } from "../../../../utils/upload-utils"
 
 // redux
 import { connect } from "react-redux"
@@ -105,13 +105,13 @@ class EditProfile extends React.PureComponent {
   }
   handleFileUpload = event => {
     const file = event.target.files[0]
-    imageSizeLimit(file.size, 5)
+    forceImageRestrictions(file.size, file.type, 5)
       .then(() => this.uploadRequest(file))
-      .catch(reason => {
+      .catch(() => {
         this.props.setCard(
           {
             status: "ok",
-            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE_5
+            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE(5)
           },
           { url: "errors/upload" }
         )
@@ -220,7 +220,7 @@ class EditProfile extends React.PureComponent {
 
         <Button
           onClick={this.handleDone}
-          red
+          branded
           loading={this.state.setUserInfoPending ? true : false}
         >
           Done

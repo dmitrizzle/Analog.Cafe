@@ -1,4 +1,7 @@
+// constants
 import emojis from "./emojis"
+import { PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN } from "../picture"
+
 export default {
   VIEW_TEMPLATE: {
     ARTICLE: {
@@ -7,6 +10,10 @@ export default {
     },
     LIST: {
       title: "Nothing here yet",
+      emoji: emojis.WTF
+    },
+    LIST_OFFLINE: {
+      title: "You aren’t connected to the internet",
       emoji: emojis.WTF
     },
     SUBMISSIONS_LIST: {
@@ -30,6 +37,9 @@ export default {
       text:
         "Your submission did not go through. You can try sending it again, if you like."
     },
+    AUTHENICATION: {
+      title: "You’re Signed Out"
+    },
     SUBMISSION_NO_IMAGES: {
       title: "Forgot to Add Images?",
       text: "Please include at least one photograph or illustration."
@@ -39,15 +49,11 @@ export default {
       text:
         "Please make sure that you’ve added a title, text and image(s) to your submission."
     },
-    UPLOAD_IMAGE_SIZE_10: {
-      title: "File is Too Large!",
-      text:
-        "Your image needs to be 10MB or less in size. Try selecting another PNG or JPG file."
-    },
-    UPLOAD_IMAGE_SIZE_5: {
-      title: "File is Too Large!",
-      text:
-        "Your image needs to be 5MB or less in size. Try selecting another PNG or JPG file."
+    UPLOAD_IMAGE_SIZE: size => {
+      return {
+        title: "Can’t Upload This Image",
+        text: `Your image needs to be a ${PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN}, maximum ${size}MB in size. Try selecting another file.`
+      }
     },
     EMAIL_LOGIN: {
       title: "Couldn’t Send Email",
@@ -69,20 +75,20 @@ export default {
     }
   },
   DISAMBIGUATION: {
-    CODE_103: { error: "Error: User already authenticated (103)" },
-    CODE_204: { error: "Error: Malformed or no data received (204)" },
+    CODE_103: { error: "Error: User already authenticated. (103)" },
+    CODE_204: { error: "Error: Malformed or no data received. (204)" },
     CODE_404: {
-      error: "Error: This view or data for this view does not exist (404)"
+      error: "Error: This view or data for this view does not exist. (404)"
     },
     CODE_403: {
-      error: "Error: Viewing this content requires you to sign in (403)"
+      error: "Error: Viewing this content requires you to sign in. (403)"
     },
     CODE_401: {
-      error: "Error: You need to sign in to access your account (401)",
+      error: "Error: You need to sign in to access your account. (401)",
       TokenExpiredError:
-        "You have been automatically signed out, please sign in again (401)",
+        "You have been automatically signed out, please sign in again. (401)",
       JsonWebTokenError:
-        "You will need to sign in again should you want to submit or edit your account (401) "
+        "You will need to sign in again should you want to submit or edit your account. (401) "
     }
   }
 }

@@ -1,60 +1,11 @@
 // tools
 import React from "react"
-import { NavLink } from "react-router-dom"
-
-// helpers
-import { parseHref } from "../../../../utils/link-builder"
+import LinkFilter from "@roast-cms/react-link-filter"
+import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../constants/app"
 
 // return
-export default props => {
-  // all links within analog.cafe domain should become relative
-  let address = parseHref(props.to)
-
-  if (address.includes("http"))
-    // external links
-    return (
-      <a
-        href={address}
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-        title={address}
-        {...props}
-      >
-        {props.children}
-      </a>
-    )
-  else if (address === "#")
-    // empty link
-    return (
-      <a title={address} {...props}>
-        {props.children}
-      </a>
-    )
-  else if (address.includes("#"))
-    // anchor tags
-    return (
-      <a href={address} title={address} {...props}>
-        {props.children}
-      </a>
-    )
-  else if (address.startsWith("/"))
-    // internal links (no title attribute necessary)
-    return (
-      <NavLink exact to={address} {...props}>
-        {props.children}
-      </NavLink>
-    )
-  else
-    // fix invalid links
-    return (
-      <a
-        href={"http://" + address}
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-        title={"http://" + address}
-        {...props}
-      >
-        {props.children}
-      </a>
-    )
-}
+export default props => (
+  <LinkFilter domain={ROUTE_APP_PRODUCTION_DOMAIN_NAME} {...props}>
+    {props.children}
+  </LinkFilter>
+)

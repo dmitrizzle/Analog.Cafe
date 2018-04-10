@@ -53,7 +53,7 @@ const NotFound = Loadable({
 })
 
 // render
-export default props => {
+export default () => {
   return (
     <main>
       <Switch>

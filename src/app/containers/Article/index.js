@@ -1,8 +1,7 @@
 // tools
 import React from "react"
-import { Editor } from "slate-react"
-import { Value } from "slate"
 import Loadable from "react-loadable"
+import { Reader } from "@roast-cms/french-press-editor/dist/components/Reader"
 
 // redux & state
 import { connect } from "react-redux"
@@ -13,26 +12,14 @@ import {
 import ArticleActions from "../../components/Card/components/ArticleActions"
 
 // constants
+import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../constants/app"
 import {
-  ROUTE_ARTICLE_API,
   ROUTE_ARTICLE_DIR,
-  ROUTE_SUBMISSION_API,
   ROUTE_SUBMISSIONS_DIR
 } from "../../../constants/article"
 import { ROUTE_AUTHOR_API } from "../../../constants/author"
-import {
-  ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL,
-  ROUTE_APP_PRODUCTION_DOMAIN_NAME
-} from "../../../constants/app"
 import { ROUTE_TAGS } from "../../../constants/list"
 import emojis from "../../../constants/messages/emojis"
-
-// Slate stuff
-import { schema } from "../Composer/containers/ContentEditor/schema"
-import {
-  renderNode,
-  renderMark
-} from "../Composer/containers/ContentEditor/render"
 
 // components
 import Helmet from "../../components/_async/Helmet"
@@ -44,34 +31,13 @@ import {
   Article as ArticleElement,
   Byline
 } from "../../components/ArticleStyles"
+import Picture from "../Picture"
 
 // helpers
 import { froth } from "../../../utils/image-froth"
 import slugToTitle from "../../../utils/slug-to-title"
 import { getLeadAuthor, authorNameList } from "../../../utils/authorship"
-
-// return path type for submissions vs published works
-const locate = locationPathname => {
-  return {
-    pathname: locationPathname.includes(ROUTE_SUBMISSIONS_DIR)
-      ? ROUTE_SUBMISSIONS_DIR
-      : ROUTE_ARTICLE_DIR,
-    apiRoute: locationPathname.includes(ROUTE_SUBMISSIONS_DIR)
-      ? ROUTE_SUBMISSION_API
-      : ROUTE_ARTICLE_API
-  }
-}
-
-// generate complete url path for social sharing
-const completeUrlPath = (route, slug) => {
-  return encodeURI(
-    ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL +
-      ROUTE_APP_PRODUCTION_DOMAIN_NAME +
-      route +
-      "/" +
-      slug
-  )
-}
+import { locate, completeUrlPath } from "../../../utils/article-utils"
 
 // admin controls loader
 const AdminControls = Loadable({
@@ -135,7 +101,7 @@ class Article extends React.PureComponent {
     })
   }
   componentDidMount = () => {
-    this.unlisten = this.props.history.listen(location => this.fetchPage())
+    this.unlisten = this.props.history.listen(() => this.fetchPage())
     this.fetchPage()
     this.makeTag(this.props)
     this.setState({
@@ -152,12 +118,10 @@ class Article extends React.PureComponent {
   componentWillUnmount = () => {
     this.unlisten()
   }
-
-  handleRevealSubscribeForm = event => {
-    event.preventDefault()
+  handleSubscribeFormCallback = value => {
     this.setState({
-      subscribeForm: !this.state.subscribeForm,
-      shareButtons: false
+      shareButtons: value,
+      subscribeForm: !value
     })
   }
   handleRevealShareButtons = () => {
@@ -225,8 +189,7 @@ class Article extends React.PureComponent {
           title={this.props.article.error && this.props.article.error}
         >
           {this.props.article.authors &&
-            this.props.article.authors[0].name &&
-            this.props.article.tag && (
+            this.props.article.authors[0].name && (
               <Byline>
                 <Link to={this.state.tag.route}>{this.state.tag.name}</Link> by{" "}
                 {getLeadAuthor(this.props.article.authors).id ? (
@@ -252,43 +215,47 @@ class Article extends React.PureComponent {
                   )}`}.
               </Byline>
             )}
-          {this.props.article.author &&
+          {this.props.article.submittedBy &&
             this.props.article.status !== "published" &&
             this.props.article.status !== "loading" && (
               <Byline>
-                <span style={{ fontStyle: "normal" }}>{emojis.WARNING}</span>{" "}
-                This article is only visible to you and the Analog.Cafe Editors.
+                <br />
+                <span style={{ fontStyle: "normal" }}>
+                  {" "}
+                  {emojis.WARNING}
+                </span>{" "}
+                This submission is only visible to you and the Analog.Cafe
+                Editors.
               </Byline>
             )}
-          {this.state.adminControls && (
-            <AdminControls
-              publicationStatus={this.state.publicationStatus}
-              article={this.props.article}
-            />
-          )}
+          {this.state.adminControls && <AdminControls />}
         </Heading>
         <Section articleStatus={this.props.article.status}>
-          <Editor
-            readOnly={true}
-            value={Value.fromJSON(this.props.article.content.raw)}
-            schema={schema}
-            renderNode={renderNode}
-            renderMark={renderMark}
+          <Reader
+            value={this.props.article.content.raw}
+            options={{
+              domain: ROUTE_APP_PRODUCTION_DOMAIN_NAME
+            }}
+            components={{
+              Picture
+            }}
           />
 
           {this.props.article.poster &&
-            this.props.article.author && (
+            this.props.article.submittedBy && (
               <ArticleActions
-                hideShareButtons={this.props.article.status !== "published"}
-                shareButtons={this.state.shareButtons}
-                subscribeForm={this.state.subscribeForm}
+                subscribeFormCallback={this.handleSubscribeFormCallback}
                 revealShareButtons={this.handleRevealShareButtons}
-                revealSubscribeForm={this.handleRevealSubscribeForm}
+                subscribeForm={this.state.subscribeForm}
+                shareButtons={this.state.shareButtons}
+                hideShareButtons={this.props.article.status !== "published"}
                 shareOnFacebook={this.handleShareOnFacebook}
                 shareOnTwitter={this.handleShareOnTwitter}
                 nextArticle={this.props.article.next}
                 thisArticle={this.props.article.slug}
-                thisArticlePostDate={this.props.article["post-date"]}
+                thisArticlePostDate={
+                  this.props.article.date && this.props.article.date.published
+                }
                 nextArticleHeading={nextArticleHeading =>
                   this.props.setNextArticle({
                     title: nextArticleHeading.title,

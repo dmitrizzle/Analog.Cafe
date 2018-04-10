@@ -10,14 +10,9 @@ export const Caption = styled(Sidenote)`
   overflow: hidden;
   margin: 0;
   margin-bottom: 0.7em;
+  max-width: ${props => props.theme.size.block.column.m}px;
   height: ${1.5 * 3 + 0.1}em;
-  max-width: ${props => props.theme.size.block.column.maxwidth.m}px;
-
-  .fonts-loaded & {
-    height: ${1.5 * 3 + 0.1}em;
-    ${props => props.status === "loading" && `height: 4em;`};
-  }
-
+  ${props => props.status === "loading" && `height: 4em;`};
   &::after,
   &::before {
     display: none;
@@ -33,11 +28,9 @@ export const Caption = styled(Sidenote)`
   }`} ${props => props.theme.size.breakpoint.min.l`{
     .short {display:inline}
   }`} ${props => props.theme.size.breakpoint.max.m`{
-		&, .fonts-loaded & {
-			height: auto !important;
-		}
-		overflow: 						visible;
-		margin-top: 					.3em;
-		margin-bottom: 				0;
+		height: auto !important;
+		overflow: visible;
+		margin-top: .3em;
+		margin-bottom: 0;
 	}`};
 `

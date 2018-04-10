@@ -9,18 +9,38 @@ import { anonymizeEmail } from "../utils/email-utils"
 
 import { ROUTE_USER_API } from "../constants/user"
 
+// manage connectivity
+export const setConnectionStatus = connection => {
+  return {
+    type: "USER.SET_CONNECTION_STATUS",
+    payload: connection
+  }
+}
+
 // error message
 const loginError = (type = "error") => {
   return {
     status: "ok",
     info: {
-      title: errorMessages.VIEW_TEMPLATE.CARD.title,
-      text: errorMessages.DISAMBIGUATION.CODE_401[type]
+      title: errorMessages.VIEW_TEMPLATE.AUTHENICATION.title,
+      text: errorMessages.DISAMBIGUATION.CODE_401[type],
+      buttons: [
+        {
+          to: "/sign-in",
+          text: "Sign In",
+          branded: true
+        },
+        {
+          to: "/",
+          text: "Nevermind"
+        }
+      ]
     }
   }
 }
 
 // remember sesion user and method
+// helpful when showing to user how they logged in last time
 export const setSessionInfo = (method, id = "") => {
   return {
     type: "USER.SET_SESSION_INFO",
@@ -54,14 +74,14 @@ export const loginWithEmail = validatedEmail => {
         method: "post"
       })
     )
-      .then(response => {
+      .then(() => {
         dispatch(setCard(MESSAGE_HINT_CHECK_EMAIL(validatedEmail)))
         dispatch({
           type: "USER.SET_EMAIL_LOGIN_STATUS",
           payload: "ok"
         })
       })
-      .catch(error => {
+      .catch(() => {
         dispatch(
           setCard({
             status: "ok",
@@ -134,6 +154,13 @@ export const getInfo = () => {
       })
       .catch(error => {
         localStorage.removeItem("token") // clean up broken/old token
+
+        // register in Redux store
+        dispatch({
+          type: "USER.SET_STATUS",
+          payload: "forbidden"
+        })
+
         if (!error.response || !error.response.data) return
         dispatch(
           setCard(loginError(error.response.data.message), {
@@ -157,7 +184,19 @@ export const setInfo = request => {
           payload: "updated"
         })
       })
-      .catch(error => dispatch(setCard(loginError, { url: "errors/user" })))
+      .catch(error => {
+        dispatch(
+          setCard(loginError(error.response.data.message), {
+            url: "errors/user"
+          })
+        )
+
+        // register in Redux store
+        dispatch({
+          type: "USER.SET_STATUS",
+          payload: "forbidden"
+        })
+      })
   }
 }
 export const acceptInfo = () => {

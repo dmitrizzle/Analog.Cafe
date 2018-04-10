@@ -79,7 +79,7 @@ export const fetchPage = (request, appendItems = false) => {
           )
         }
       })
-      .catch(error => {
+      .catch(() => {
         dispatch(
           initPage({
             error: errorMessages.VIEW_TEMPLATE.LIST

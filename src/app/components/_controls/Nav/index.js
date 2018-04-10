@@ -8,6 +8,7 @@ import { ModalDispatch } from "../../../containers/Modal"
 
 import {
   MESSAGE_HINT_SUBMIT_CONSENT,
+  MESSAGE_HINT_SUBMIT_EDITORS,
   MESSAGE_HINT_AUTO_SAVE
 } from "../../../../constants/messages/hints"
 
@@ -32,6 +33,13 @@ const TinyImage = props => {
 }
 
 // Nav components
+const NavLinkLabelMore = props => {
+  return (
+    <span>
+      More… {props.userStatus === "ok" && <TinyImage image={props.userImage} />}
+    </span>
+  )
+}
 export const CommonNav = props => {
   return (
     <ul
@@ -70,26 +78,27 @@ export const CommonNav = props => {
           with={{
             info: {
               title: "More…",
+              subscribeForm: props.userStatus !== "ok",
               buttons: [
                 props.userStatus === "ok"
                   ? {
                       to: "/me",
                       text: "My Submissions",
-                      red: true
+                      branded: true
                     }
                   : null,
                 props.userStatus === "ok"
                   ? {
                       to: "/me/edit",
                       text: "My Profile",
-                      red: true
+                      branded: true
                     }
                   : null,
                 props.userStatus === "ok"
                   ? {
                       to: "/sign-out",
                       text: "Sign Out",
-                      black: true
+                      inverse: true
                     }
                   : null,
                 {
@@ -133,10 +142,10 @@ export const CommonNav = props => {
           }}
           style={{ textDecoration: "none", paddingRight: ".25em" }}
         >
-          <span>
-            More…{" "}
-            {props.userStatus === "ok" && <TinyImage image={props.userImage} />}
-          </span>
+          <NavLinkLabelMore
+            userStatus={props.userStatus}
+            userImage={props.userImage}
+          />
         </ModalDispatch>
       </NavItem>
     </ul>
@@ -149,7 +158,11 @@ const NavLinkSendLabel = () => {
 const NavLinkSend = props => {
   return (
     <ModalDispatch
-      with={MESSAGE_HINT_SUBMIT_CONSENT}
+      with={
+        props.submissionStatus.id && props.userRole === "admin"
+          ? MESSAGE_HINT_SUBMIT_EDITORS
+          : MESSAGE_HINT_SUBMIT_CONSENT
+      }
       style={{ textDecoration: "none" }}
     >
       <NavLinkSendLabel />
@@ -160,12 +173,14 @@ const NavLinkSend = props => {
 export const ComposerNav = props => {
   return (
     <ul>
-      <NavItem indicator prime left className="prime left">
+      <NavItem draftStatus prime left className="prime left">
         <ModalDispatch
           with={MESSAGE_HINT_AUTO_SAVE}
           style={{ textDecoration: "none" }}
         >
-          <span>{props.draftStatus}</span>
+          {props.draftStatus === "ok" && <span>Draft Saved</span>}
+          {props.draftStatus === "pending" && <span>Saving…</span>}
+          {!props.draftStatus && <span>Draft</span>}
         </ModalDispatch>
       </NavItem>
       <NavItem prime center className="prime center">
@@ -174,10 +189,15 @@ export const ComposerNav = props => {
         </NavIndexLink>
       </NavItem>
       <NavItem prime right className="prime right">
-        <NavLinkSend userStatus={props.userStatus} />
+        <NavLinkSend
+          userStatus={props.userStatus}
+          userRole={props.userRole}
+          submissionStatus={props.submissionStatus}
+        />
       </NavItem>
     </ul>
   )
 }
 
 export { NavWrapper } from "./styles"
+export { Connection } from "./styles"

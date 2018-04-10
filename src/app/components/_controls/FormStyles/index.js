@@ -1,16 +1,11 @@
 // tools
 import styled from "styled-components"
-import Color from "color"
 
 // return
 const shadowGrey = props =>
-  Color(props.theme.color.foreground)
-    .alpha(props.theme.opacity.least)
-    .string()
+  props.theme.color.foreground(props.theme.opacity.least)
 const shadowGrey2 = props =>
-  Color(props.theme.color.foreground)
-    .alpha(props.theme.opacity.least * 2)
-    .string()
+  props.theme.color.foreground(props.theme.opacity.least * 2)
 
 export const Form = styled.form`
   max-width: ${props => props.theme.size.breakpoint.stops.min}px;
@@ -35,8 +30,7 @@ export const Form = styled.form`
     max-width: 100vw;
     border-radius: 0 !important;
     section & {
-      margin-left: -${props =>
-        props.theme.size.block.column.safety}em !important;
+      margin-left: -${props => props.theme.size.block.padding}em !important;
     }
   `};
 
@@ -44,9 +38,9 @@ export const Form = styled.form`
     props.withinGroup &&
     `
     border-radius: 0 !important;
-    border-bottom: ${props.theme.size.block.border}px solid ${
-      props.theme.color.foreground
-    };
+    border-bottom: ${
+      props.theme.size.block.border
+    }px solid ${props.theme.color.foreground()};
 
   `};
 `

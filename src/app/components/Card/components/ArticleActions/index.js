@@ -4,11 +4,9 @@ import { froth } from "../../../../../utils/image-froth"
 import { PicturePlaceholder } from "../../../Picture/components/PicturePlaceholder"
 import { datestamp, lunar, percise } from "../../../../../utils/datestamp"
 
-import MailChimpPrefill from "../../../../containers/_forms/MailChimpPrefill"
-import { Sidenote } from "../../../CaptionStyles"
+import { QuickSubscribe } from "../../../../containers/_forms/QuickSubscribe"
 import Link from "../../../_controls/Link"
 import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
-import { SubscribeToWeekly } from "../../../_rt-snippets"
 import { authorNameList } from "../../../../../utils/authorship"
 
 // styles
@@ -37,37 +35,11 @@ const ActionsCard = props => {
   if (props.mode !== "follow")
     return (
       <div>
-        {props.subscribeForm ? (
-          <Sidenote
-            style={{
-              textAlign: "center"
-            }}
-          >
-            <SubscribeToWeekly />
-          </Sidenote>
-        ) : null}
         <CardFlattened>
-          {!props.subscribeForm ? (
-            <Button
-              red
-              onClick={event => {
-                props.revealSubscribeForm(event)
-
-                // async load Google Analytics module
-                import("react-ga").then(ReactGA => {
-                  ReactGA.event({
-                    category: "Campaign",
-                    action: "ActionsCard.subscribe"
-                  })
-                })
-              }}
-            >
-              Subscribe ❤︎
-            </Button>
-          ) : null}
-          {props.subscribeForm ? (
-            <MailChimpPrefill buttonText="Submit ❤︎" withinGroup autoFocus />
-          ) : null}
+          <QuickSubscribe
+            subscribeFormCallback={props.subscribeFormCallback}
+            stateOverwrite={props.subscribeForm}
+          />
 
           {props.shareButtons ? (
             <FacebookLinkButton
@@ -106,7 +78,7 @@ const ActionsCard = props => {
           {!props.hideShareButtons && (
             <Button
               onClick={props.revealShareButtons}
-              black={props.shareButtons}
+              inverse={props.shareButtons}
             >
               Share{" "}
               <span

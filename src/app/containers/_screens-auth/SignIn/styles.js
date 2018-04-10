@@ -9,7 +9,7 @@ import Facebook from "../../../components/_icons/Facebook"
 
 // css
 const brandButtonStyles = css`
-  color: ${props => props.theme.color.background} !important;
+  color: ${props => props.theme.color.background()} !important;
   svg {
     height: 2em;
   }

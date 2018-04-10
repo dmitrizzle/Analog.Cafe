@@ -1,12 +1,11 @@
 // styles
 import styled, { css } from "styled-components"
-import Color from "color"
 import { Quote } from "./quote"
 
 // css
 const sectionHeading = css`
   ${props => props.theme.typography.title.auto} font-size: ${props =>
-      props.theme.size.font.make.larger / 1.5}em;
+  props.theme.size.font.make.larger / 1.5}em;
   padding-top: ${props => props.theme.size.block.spacing}em;
   margin-bottom: ${props => props.theme.size.block.spacing / 4}em;
   clear: both;
@@ -24,12 +23,9 @@ const paragraph = css`
 `
 const sectionBreak = css`
   text-align: center;
-  padding: ${props => props.theme.size.block.column.safety * 2}em 0
+  padding: ${props => props.theme.size.block.padding * 2}em 0
     ${props => props.theme.size.block.spacing * 4}em;
-  color: ${props =>
-    Color(props.theme.color.foreground)
-      .alpha(props.theme.opacity.half)
-      .string()};
+  color: ${props => props.theme.color.foreground(props.theme.opacity.half)};
   border: 0;
   margin: 0;
   clear: both;
@@ -39,19 +35,19 @@ const sectionBreak = css`
     display: block;
   }
   &.focus:before {
-    background-color: ${props => props.theme.color.highlight};
+    background-color: ${props => props.theme.color.highlight()};
   }
 `
 
 // return
 export const Section = styled.section`
   ${props => props.theme.size.font.auto} ${props =>
-      props.theme.typography.text.auto} margin: 0 auto;
-  max-width: ${props => props.theme.size.block.column.maxwidth.m}px;
+    props.theme.typography.text.auto} margin: 0 auto;
+  max-width: ${props => props.theme.size.block.column.m}px;
   ${props =>
     props.theme.size.breakpoint.min.xxl`max-width: ${props =>
-      props.theme.size.block.column.maxwidth.l}px;`};
-  padding: 0 ${props => props.theme.size.block.column.safety}em;
+      props.theme.size.block.column.l}px;`};
+  padding: 0 ${props => props.theme.size.block.padding}em;
 
   ${props =>
     !props.plain
@@ -65,11 +61,11 @@ export const Section = styled.section`
     ${paragraph};
   }
   ul {
-    margin: 0 ${props => props.theme.size.block.column.safety}em 0;
+    margin: 0 ${props => props.theme.size.block.padding}em 0;
     ${props => props.theme.size.breakpoint.max.xs`
 			margin:		0 !important;
 		`} li {
-      line-height: ${props => props.theme.size.block.column.safety}em;
+      line-height: ${props => props.theme.size.block.padding}em;
       padding-bottom: ${props => props.theme.size.block.spacing}em;
     }
   }
@@ -81,11 +77,6 @@ export const Section = styled.section`
   h3,
   h4 {
     ${sectionHeading};
-  }
-  .fonts-loaded-headers & h2,
-  .fonts-loaded-headers & h3,
-  .fonts-loaded-headers & h4 {
-    ${props => props.theme.typography.title.fontsLoaded};
   }
   hr {
     ${sectionBreak};
