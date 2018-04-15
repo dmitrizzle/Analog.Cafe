@@ -13,7 +13,7 @@ import { setCard } from "../../../../actions/modalActions"
 
 // components
 import Forbidden from "../../_screens-errors/Forbidden"
-import { CardEditableProfile } from "../../../components/Card"
+import CardEditableProfile from "../../../components/Card/components/EditableProfile"
 
 import Heading from "../../../components/ArticleHeading"
 import { Button } from "../../../components/_controls/Button"
@@ -56,9 +56,9 @@ class EditProfile extends React.PureComponent {
       Object.keys(this.props.user.info).length === 0
     ) {
       this.props.getUserInfo()
-    } else
-      // or populate all profile fields with current info
-      this.populateEditableProfile()
+    }
+    // or populate all profile fields with current info
+    else this.populateEditableProfile()
   }
   componentWillReceiveProps = () => {
     this.props.user.status !== "updated"

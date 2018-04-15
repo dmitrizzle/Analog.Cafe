@@ -73,4 +73,3 @@ export const Card = props => {
 }
 
 export { CardModal, ModalOverlay } from "./components/Modal"
-export { default as CardEditableProfile } from "./components/EditableProfile"
