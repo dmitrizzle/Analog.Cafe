@@ -4,6 +4,12 @@ import React from "react"
 // redux
 import { connect } from "react-redux"
 import { fetchImageList } from "../../../../actions/composerActions"
+import { setCard } from "../../../../actions/modalActions"
+import {
+  deleteRecord as deleteImageRecord,
+  feature as featureImage,
+  unfeature as unfeatureImage
+} from "../../../../actions/pictureActions"
 
 // components
 import Forbidden from "../../_screens-errors/Forbidden"
@@ -60,6 +66,33 @@ class Admin extends React.PureComponent {
       row++
     ) {
       rows[row] = row
+    }
+  }
+
+  componentWillReceiveProps = newProps => {
+    const hash = window.location.hash
+    const id = hash
+      .replace("#delete:", "")
+      .replace("#feature:", "")
+      .replace("#unfeature:", "")
+
+    // delete image records
+    if (hash.includes("#delete")) {
+      this.props.history.replace("/me/admin")
+      const confirmDelete = prompt(
+        `WARNING!\n\nThis will remove the document with this image's data from the database. This can not be undone. The image file itself will need to be deleted from Cloudinary separately. Type\n\n${id}\n\nto confirm.`
+      )
+      if (confirmDelete === id) {
+        this.props.deleteImageRecord(id)
+      }
+    }
+    if (hash.includes("#feature")) {
+      this.props.history.replace("/me/admin")
+      this.props.featureImage(id)
+    }
+    if (hash.includes("#unfeature")) {
+      this.props.history.replace("/me/admin")
+      this.props.unfeatureImage(id)
     }
   }
 
@@ -222,7 +255,38 @@ class Admin extends React.PureComponent {
                           ? item.author
                           : null
                       }
-                      add={src => alert(src)}
+                      add={src =>
+                        this.props.setCard({
+                          info: {
+                            title: src,
+                            image: src,
+                            buttons: [
+                              {
+                                to: `https://cloudinary.com/console/media_library/asset/image/upload/${src}`,
+                                text: "View on Cloudinary"
+                              },
+                              {
+                                to: `#delete:${src}`,
+                                text: "Delete from Database"
+                              },
+                              this.state.imageList.options.fullConsent &&
+                              !item.featured
+                                ? {
+                                    to: `#feature:${src}`,
+                                    text: "Add to Featured List"
+                                  }
+                                : null,
+                              this.state.imageList.options.fullConsent &&
+                              item.featured
+                                ? {
+                                    to: `#unfeature:${src}`,
+                                    text: "Remove from Featured List"
+                                  }
+                                : null
+                            ]
+                          }
+                        })
+                      }
                     />
                   ))}
               </GridRow>
@@ -236,10 +300,6 @@ class Admin extends React.PureComponent {
                 Load More ({this.props.composer.imageList.page["items-total"]})
               </Button>
             )}
-
-          <div style={{ padding: "0 1.5em" }}>
-            <h3>Available for collaborations:</h3>
-          </div>
         </Section>
       </Article>
     ) : (
@@ -253,6 +313,18 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchImageList: (options, page, appendItems) => {
       dispatch(fetchImageList(options, page, appendItems))
+    },
+    setCard: (info, request) => {
+      dispatch(setCard(info, request))
+    },
+    deleteImageRecord: id => {
+      dispatch(deleteImageRecord(id))
+    },
+    featureImage: id => {
+      dispatch(featureImage(id))
+    },
+    unfeatureImage: id => {
+      dispatch(unfeatureImage(id))
     }
   }
 }

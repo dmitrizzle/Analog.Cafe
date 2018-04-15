@@ -51,16 +51,16 @@ const TAGS = {
 class AdminControls extends React.PureComponent {
   constructor(props) {
     super(props)
+    const hash = window.location.hash
     this.state = {
       publishControls: false,
       publishAs: "",
 
       // URL hashtag flags that unlock dangerous functions
-      allowOverwrite:
-        window.location.hash === "#overwrite" || !loadTextContent().length > 0,
-      allowReject: window.location.hash === "#reject",
-      allowPublish: window.location.hash === "#publish",
-      allowSync: window.location.hash === "#sync"
+      allowOverwrite: hash === "#overwrite" || !loadTextContent().length > 0,
+      allowReject: hash === "#reject",
+      allowPublish: hash === "#publish",
+      allowSync: hash === "#sync"
     }
   }
   componentDidMount = () => {
@@ -71,12 +71,12 @@ class AdminControls extends React.PureComponent {
   }
   componentWillReceiveProps = nextProps => {
     // if #overwrite hash is present, "unlock" edit button in overwrite mode
+    const hash = window.location.hash
     this.setState({
-      allowOverwrite:
-        window.location.hash === "#overwrite" || !loadTextContent().length > 0,
-      allowReject: window.location.hash === "#reject",
-      allowPublish: window.location.hash === "#publish",
-      allowSync: window.location.hash === "#sync"
+      allowOverwrite: hash === "#overwrite" || !loadTextContent().length > 0,
+      allowReject: hash === "#reject",
+      allowPublish: hash === "#publish",
+      allowSync: hash === "#sync"
     })
 
     // refresh status & controls:

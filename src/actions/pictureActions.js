@@ -53,3 +53,73 @@ export const getInfo = src => {
       .catch(error => dispatch(unknownAuthor(id, error)))
   }
 }
+
+// admin stuff
+export const deleteRecord = id => {
+  let request
+  request = {
+    url: `${ROUTE_IMAGE_API}/${id}/delete`,
+    method: "PUT",
+    headers: {
+      Authorization: "JWT " + localStorage.getItem("token")
+    }
+  }
+  return dispatch => {
+    console.log(id)
+    axios(axiosRequest(request))
+      .then(response => {
+        response.data.status === "ok"
+          ? alert(
+              `Deleted ${id} from database. It will be gone from cache in couple of minutes.`
+            )
+          : alert(`Failed to delete image record.`)
+      })
+      .catch(error => alert(`Error: ${error}`))
+  }
+}
+
+export const feature = id => {
+  let request
+  request = {
+    url: `${ROUTE_IMAGE_API}/${id}/feature`,
+    method: "PUT",
+    headers: {
+      Authorization: "JWT " + localStorage.getItem("token")
+    }
+  }
+  return dispatch => {
+    console.log(id)
+    axios(axiosRequest(request))
+      .then(response => {
+        response.data.status === "ok"
+          ? alert(
+              `Featured ${id}! The cache will take a couple of minutes to update.`
+            )
+          : alert(`Failed to feature image record.`)
+      })
+      .catch(error => alert(`Error: ${error}`))
+  }
+}
+
+export const unfeature = id => {
+  let request
+  request = {
+    url: `${ROUTE_IMAGE_API}/${id}/unfeature`,
+    method: "PUT",
+    headers: {
+      Authorization: "JWT " + localStorage.getItem("token")
+    }
+  }
+  return dispatch => {
+    console.log(id)
+    axios(axiosRequest(request))
+      .then(response => {
+        response.data.status === "ok"
+          ? alert(
+              `Removed ${id} from featured list. The cache will take a couple of minutes to update.`
+            )
+          : alert(`Failed to unfeature image record.`)
+      })
+      .catch(error => alert(`Error: ${error}`))
+  }
+}
