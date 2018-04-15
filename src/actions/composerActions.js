@@ -132,21 +132,25 @@ export const requestFocus = () => {
 }
 
 // query instant collaboration items
-export const fetchCollabFeatures = () => {
+export const fetchImageList = (options = {}, page = 1, appendItems = false) => {
+  const params = {
+    featured: options.featured === false ? undefined : true,
+    fullConsent: options.fullConsent === false ? undefined : true,
+    "items-per-page": options.itemsPerPage || undefined,
+    page
+  }
   return dispatch => {
     const request = {
       url: ROUTE_IMAGE_API,
-      params: {
-        fullConsent: "true",
-        featured: "true"
-      }
+      params
     }
 
     axios(axiosRequest(request))
       .then(response => {
+        console.log(page, appendItems)
         dispatch({
-          type: "COMPOSER.SET_COLLAB_FEATURES",
-          payload: response.data.items
+          type: appendItems ? "IMAGES.ADD_PAGE" : "IMAGES.SET_PAGE",
+          payload: response.data
         })
       })
       .catch(error => {
