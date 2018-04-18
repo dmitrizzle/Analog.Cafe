@@ -36,14 +36,13 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-textarea-autosize": "^6.0.0",
-    "redux": "^3.7.2",
+    "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "styled-components": "^3.2.3",
     "titlecase": "^1.1.2",
     "typeface-exo-2": "^0.0.54",
     "typeface-lora": "^0.0.54",
-    "uuid": "^3.1.0",
-    "yarn": "1.5.1"
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "copy": "^0.3.1",
