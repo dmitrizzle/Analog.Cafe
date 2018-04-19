@@ -147,7 +147,6 @@ export const fetchImageList = (options = {}, page = 1, appendItems = false) => {
 
     axios(axiosRequest(request))
       .then(response => {
-        console.log(page, appendItems)
         dispatch({
           type: appendItems ? "IMAGES.ADD_PAGE" : "IMAGES.SET_PAGE",
           payload: response.data

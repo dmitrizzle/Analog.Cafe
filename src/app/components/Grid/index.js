@@ -16,7 +16,11 @@ export const GridButtonImage = props => {
       style={props.noShim ? { minHeight: 0 } : null}
       label={props.label}
       span={props.span}
-      onClick={() => (props.status === "ok" ? props.add(props.src) : null)}
+      onClick={() =>
+        props.status === "ok"
+          ? props.add(props.src, props.author || null)
+          : null
+      }
     >
       <AspectRatio>
         <img

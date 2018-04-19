@@ -1,6 +1,12 @@
 // constatns
 import { ROUTE_AUTH_USER_LANDING } from "../constants/user"
 
+// set placeholders for accountList grid:
+let accountListDefaults = []
+for (var o = 0; o < 8; o++) {
+  accountListDefaults[o] = { id: o }
+}
+
 // retrieve previous session's stats
 const getLocalSessionInfo = () =>
   localStorage.getItem("session-info")
@@ -33,6 +39,11 @@ const INITIAL_STATE = {
     method: getLocalSessionInfo().method || "",
     id: getLocalSessionInfo().id || "",
     login: getLocalSessionInfo().login || false
+  },
+
+  accountList: {
+    status: "loading",
+    items: accountListDefaults
   }
 }
 
@@ -136,6 +147,24 @@ export default (state = INITIAL_STATE, action) => {
     case "USER.RESET_STATE":
       state = INITIAL_STATE
       break
+
+    // Admin
+    case "ACCOUNTS.SET_PAGE":
+      state = {
+        ...state,
+        accountList: action.payload
+      }
+      break
+    case "ACCOUNTS.ADD_PAGE":
+      state = {
+        ...state,
+        accountList: {
+          ...state.accountList,
+          items: [...state.accountList.items, ...action.payload.items]
+        }
+      }
+      break
+
     default:
       return state
   }

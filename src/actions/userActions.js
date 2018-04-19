@@ -7,7 +7,7 @@ import { MESSAGE_HINT_CHECK_EMAIL } from "../constants/messages/hints"
 import { axiosRequest } from "../utils/axios-request"
 import { anonymizeEmail } from "../utils/email-utils"
 
-import { ROUTE_USER_API } from "../constants/user"
+import { ROUTE_USER_API, ROUTE_USER_ADMIN } from "../constants/user"
 
 // manage connectivity
 export const setConnectionStatus = connection => {
@@ -224,5 +224,34 @@ export const setIntent = intent => {
   return {
     type: "USER.SET_INTENT",
     payload: intent
+  }
+}
+
+// admin functions
+
+export const fetchUserList = (options = {}, page = 1, appendItems = false) => {
+  const params = {
+    "items-per-page": options.itemsPerPage || undefined,
+    page
+  }
+  return dispatch => {
+    const request = {
+      url: ROUTE_USER_ADMIN,
+      params,
+      headers: {
+        Authorization: "JWT " + localStorage.getItem("token")
+      }
+    }
+
+    axios(axiosRequest(request))
+      .then(response => {
+        dispatch({
+          type: appendItems ? "ACCOUNTS.ADD_PAGE" : "ACCOUNTS.SET_PAGE",
+          payload: response.data
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 }
