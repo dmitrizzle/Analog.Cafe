@@ -74,31 +74,22 @@ class Admin extends React.PureComponent {
     }
   }
 
-  componentWillReceiveProps = newProps => {
-    const hash = window.location.hash
-    const id = hash
-      .replace("#delete:", "")
-      .replace("#feature:", "")
-      .replace("#unfeature:", "")
-
-    // delete image records
-    if (hash.includes("#delete")) {
-      this.props.history.replace("/me/admin")
-      const confirmDelete = prompt(
-        `WARNING!\n\nThis will remove the document with this image's data from the database. This can not be undone. The image file itself will need to be deleted from Cloudinary separately. Type\n\n${id}\n\nto confirm.`
-      )
-      if (confirmDelete === id) {
-        this.props.deleteImageRecord(id)
-      }
+  handleImageDelete = (id, event) => {
+    event.preventDefault()
+    const confirmDelete = prompt(
+      `WARNING!\n\nThis will remove the document with this image's data from the database. This can not be undone. The image file itself will need to be deleted from Cloudinary separately. Type\n\n${id}\n\nto confirm.`
+    )
+    if (confirmDelete === id) {
+      this.props.deleteImageRecord(id)
     }
-    if (hash.includes("#feature")) {
-      this.props.history.replace("/me/admin")
-      this.props.featureImage(id)
-    }
-    if (hash.includes("#unfeature")) {
-      this.props.history.replace("/me/admin")
-      this.props.unfeatureImage(id)
-    }
+  }
+  handleImageFeature = (id, event) => {
+    event.preventDefault()
+    this.props.featureImage(id)
+  }
+  handleImageUnfeature = (id, event) => {
+    event.preventDefault()
+    this.props.unfeatureImage(id)
   }
 
   // images list pagination
@@ -271,20 +262,26 @@ class Admin extends React.PureComponent {
                                 text: "View on Cloudinary"
                               },
                               {
-                                to: `#delete:${src}`,
+                                to: "#image-delete",
+                                onClick: event =>
+                                  this.handleImageDelete(src, event),
                                 text: "Delete from Database"
                               },
                               this.state.imageList.options.fullConsent &&
                               !item.featured
                                 ? {
-                                    to: `#feature:${src}`,
+                                    to: "#image-feature",
+                                    onClick: event =>
+                                      this.handleImageFeature(src, event),
                                     text: "Add to Featured List"
                                   }
                                 : null,
                               this.state.imageList.options.fullConsent &&
                               item.featured
                                 ? {
-                                    to: `#unfeature:${src}`,
+                                    to: "#image-unfeature",
+                                    onClick: event =>
+                                      this.handleImageUnfeature(src, event),
                                     text: "Remove from Featured List"
                                   }
                                 : null
@@ -341,7 +338,8 @@ class Admin extends React.PureComponent {
                                 text: "Contact via Email"
                               },
                               {
-                                to: `#suspend:${author.id}`,
+                                to: "#user-suspend",
+                                onClick: () => alert("suspend"),
                                 text: "Suspend user"
                               }
                             ]
