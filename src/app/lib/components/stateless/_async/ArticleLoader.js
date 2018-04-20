@@ -14,12 +14,16 @@ export default props => {
       <Heading
         pageTitle={
           props.isLoading
-            ? props.pastDelay ? emojis.HUG_RIGHT : ""
+            ? props.pastDelay
+              ? emojis.HUG_RIGHT
+              : ""
             : errorMessages.VIEW_TEMPLATE.ARTICLE.title
         }
         pageSubtitle={
           props.isLoading
-            ? props.pastDelay ? "Loading…" : ""
+            ? props.pastDelay
+              ? "Loading…"
+              : ""
             : errorMessages.VIEW_TEMPLATE.ARTICLE.subtitle
         }
       />

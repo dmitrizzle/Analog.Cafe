@@ -22,9 +22,8 @@ export const authorNameList = (authors, options = {}) => {
     } else if (namesTotal === 2 && count < namesTotal - 1)
       // if there are just two names in the list, simply add "and" between them
       return " and "
-    else
-      // if there's just one name, nothing needs to be added
-      return ""
+    // if there's just one name, nothing needs to be added
+    else return ""
   }
   const nameFormat = name => {
     // trim author names (or not)
@@ -51,9 +50,10 @@ export const authorNameList = (authors, options = {}) => {
     for (let count = 0; count < namesTotal; count++) {
       compiledNameList += names[count] // add name
       compiledNameList += punctuation(namesTotal, count) // add punctuation
-    } // `trim` means only the first one or two names will be shown +count
+    }
+  // `trim` means only the first one or two names will be shown +count
+  // of remaining names
   else
-    // of remaining names
     compiledNameList +=
       names[0] +
       (namesTotal > 1 ? ` and ${names[1]}` : "") + // names

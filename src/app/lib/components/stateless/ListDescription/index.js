@@ -11,9 +11,7 @@ export { ListHeader } from "./styles"
 export const ListDescription = props => {
   return (
     <ListDescriptionStyles {...props}>
-      <BrandName>
-        {APP_NAME}
-      </BrandName>
+      <BrandName>{APP_NAME}</BrandName>
       {props.children}
     </ListDescriptionStyles>
   )

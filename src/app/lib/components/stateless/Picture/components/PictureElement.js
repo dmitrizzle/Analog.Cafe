@@ -33,32 +33,32 @@ export default props => {
         */}
 
         {!src.includes("data:image") &&
-        froth({ src, size: "s", type: "webp" }).type === "webp" && (
-          <source
-            // mobile image size
-            srcSet={froth({ src, size: "s", type: "webp" }).src}
-            media="(max-width: 480px)"
-            type="image/webp"
-          />
-        )}
+          froth({ src, size: "s", type: "webp" }).type === "webp" && (
+            <source
+              // mobile image size
+              srcSet={froth({ src, size: "s", type: "webp" }).src}
+              media="(max-width: 480px)"
+              type="image/webp"
+            />
+          )}
         {!src.includes("data:image") &&
-        froth({ src, size: "s", type: "webp" }).type === "webp" && (
-          <source
-            // medium image size, largest for all images that aren't "features"
-            srcSet={froth({ src, size: "m", type: "webp" }).src}
-            media="(max-width: 1200px)"
-            type="image/webp"
-          />
-        )}
+          froth({ src, size: "s", type: "webp" }).type === "webp" && (
+            <source
+              // medium image size, largest for all images that aren't "features"
+              srcSet={froth({ src, size: "m", type: "webp" }).src}
+              media="(max-width: 1200px)"
+              type="image/webp"
+            />
+          )}
         {!src.includes("data:image") &&
-        froth({ src, size: "s", type: "webp" }).type === "webp" && (
-          <source
-            // max image size, extra large only if it's a "feature"
-            srcSet={froth({ src, size: largestSize, type: "webp" }).src}
-            media="(min-width: 1201px)"
-            type="image/webp"
-          />
-        )}
+          froth({ src, size: "s", type: "webp" }).type === "webp" && (
+            <source
+              // max image size, extra large only if it's a "feature"
+              srcSet={froth({ src, size: largestSize, type: "webp" }).src}
+              media="(min-width: 1201px)"
+              type="image/webp"
+            />
+          )}
 
         {/* JPG */}
         {!src.includes("data:image") && (

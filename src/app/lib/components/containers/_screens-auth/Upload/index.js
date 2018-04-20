@@ -152,7 +152,8 @@ class Upload extends React.PureComponent {
           nextProps.composer.uploadProgress > 0
             ? nextProps.composer.uploadProgress
             : this.state.progress
-      }) // server connection error
+      })
+    // server connection error
     else
       this.setState({
         status: "error"
