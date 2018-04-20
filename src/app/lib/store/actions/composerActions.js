@@ -1,16 +1,16 @@
 // tools
 import axios from "axios"
-import { axiosRequest } from "../utils/axios-request"
+import { axiosRequest } from "../../utils/axios-request"
 import { setCard } from "./modalActions"
-import errorMessages from "../constants/messages/errors"
+import errorMessages from "../../constants/messages/errors"
 
-import { ROUTE_IMAGE_API } from "../constants/picture"
-import { ROUTE_SUBMISSION_API } from "../constants/article"
+import { ROUTE_IMAGE_API } from "../../constants/picture"
+import { ROUTE_SUBMISSION_API } from "../../constants/article"
 
 import {
   MESSAGE_HINT_REJECT_SUBMISSION_SUCCESS,
   MESSAGE_HINT_PUBLISH_SUBMISSION_SUCCESS
-} from "../constants/messages/hints"
+} from "../../constants/messages/hints"
 
 // manage Composer state
 // note that Slate Editor state must be manage separately from within

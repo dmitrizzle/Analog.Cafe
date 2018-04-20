@@ -1,11 +1,11 @@
 // tools
 import React from "react"
-import Link from "../../components/_controls/Link"
-import Helmet from "../../components/_async/Helmet"
+import Link from "../../stateless/_controls/Link"
+import Helmet from "../../stateless/_async/Helmet"
 
 // components
-import Heading from "../../components/ArticleHeading"
-import { Section, Article } from "../../components/ArticleStyles"
+import Heading from "../../stateless/ArticleHeading"
+import { Section, Article } from "../../stateless/ArticleStyles"
 
 import errorMessages from "../../../constants/messages/errors"
 

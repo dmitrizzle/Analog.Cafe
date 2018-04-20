@@ -2,14 +2,14 @@
 import React from "react"
 import { withRouter } from "react-router"
 import { ModalDispatch } from "../Modal"
-import Helmet from "../../components/_async/Helmet"
+import Helmet from "../../stateless/_async/Helmet"
 import Loadable from "react-loadable"
 
 // redux & state
 import { connect } from "react-redux"
-import { fetchPage } from "../../../actions/listActions"
-import { setPage as setNextArticle } from "../../../actions/articleActions"
-import { setIntent as setUserIntent } from "../../../actions/userActions"
+import { fetchPage } from "../../../store/actions/listActions"
+import { setPage as setNextArticle } from "../../../store/actions/articleActions"
+import { setIntent as setUserIntent } from "../../../store/actions/userActions"
 
 import {
   ROUTE_LIST_API,
@@ -19,10 +19,10 @@ import { ROUTE_AUTHOR_API } from "../../../constants/author"
 import errors from "../../../constants/messages/errors"
 
 // components
-import { ListDescription, ListHeader } from "../../components/ListDescription"
-import { Button } from "../../components/_controls/Button"
-import { default as ListBlock } from "../../components/List"
-import { Section, Article } from "../../components/ArticleStyles"
+import { ListDescription, ListHeader } from "../../stateless/ListDescription"
+import { Button } from "../../stateless/_controls/Button"
+import { default as ListBlock } from "../../stateless/List"
+import { Section, Article } from "../../stateless/ArticleStyles"
 
 // helpers
 import { getListMeta } from "../../../utils/list-utils"

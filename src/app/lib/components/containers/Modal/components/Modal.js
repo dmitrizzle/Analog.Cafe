@@ -3,10 +3,10 @@ import React from "react"
 
 // redux
 import { connect } from "react-redux"
-import { hideCard } from "../../../../actions/modalActions"
+import { hideCard } from "../../../../store/actions/modalActions"
 
 // components
-import { CardModal, ModalOverlay } from "../../../components/Card"
+import { CardModal, ModalOverlay } from "../../../stateless/Card"
 
 import {
   ROUTE_APP_CURRENT_DOMAIN,

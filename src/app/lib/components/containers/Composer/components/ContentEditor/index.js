@@ -4,8 +4,8 @@ import { FrenchPress } from "@roast-cms/french-press-editor"
 
 // redux
 import { connect } from "react-redux"
-import { setCard } from "../../../../../actions/modalActions"
-import { setDraftStatus } from "../../../../../actions/composerActions"
+import { setCard } from "../../../../../store/actions/modalActions"
+import { setDraftStatus } from "../../../../../store/actions/composerActions"
 import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/messages/hints"
 
 // editor tools
@@ -15,8 +15,8 @@ import { ToggleFeature } from "./plugins"
 
 // editor components
 import Picture from "../../../Picture"
-import PictureDocket from "./containers/PictureDocket"
-import { Capital, Lower } from "../../../../components/_icons/HeaderGlyphs"
+import PictureDocket from "./components/PictureDocket"
+import { Capital, Lower } from "../../../../stateless/_icons/HeaderGlyphs"
 
 // return
 class ContentEditor extends React.PureComponent {

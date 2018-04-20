@@ -8,8 +8,8 @@ import { connect } from "react-redux"
 import {
   fetchPage,
   setPage as setNextArticle
-} from "../../../actions/articleActions"
-import ArticleActions from "../../components/Card/components/ArticleActions"
+} from "../../../store/actions/articleActions"
+import ArticleActions from "../../stateless/Card/components/ArticleActions"
 
 // constants
 import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../constants/app"
@@ -22,15 +22,15 @@ import { ROUTE_TAGS } from "../../../constants/list"
 import emojis from "../../../constants/messages/emojis"
 
 // components
-import Helmet from "../../components/_async/Helmet"
-import Link from "../../components/_controls/Link"
-import Heading from "../../components/ArticleHeading"
+import Helmet from "../../stateless/_async/Helmet"
+import Link from "../../stateless/_controls/Link"
+import Heading from "../../stateless/ArticleHeading"
 import { ModalDispatch } from "../Modal"
 import {
   Section,
   Article as ArticleElement,
   Byline
-} from "../../components/ArticleStyles"
+} from "../../stateless/ArticleStyles"
 import Picture from "../Picture"
 
 // helpers
@@ -41,7 +41,7 @@ import { locate, completeUrlPath } from "../../../utils/article-utils"
 
 // admin controls loader
 const AdminControls = Loadable({
-  loader: () => import("./containers/AdminControls"),
+  loader: () => import("./components/AdminControls"),
   loading: () => null,
   delay: 100
 })

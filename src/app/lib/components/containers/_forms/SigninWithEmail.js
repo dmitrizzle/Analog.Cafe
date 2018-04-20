@@ -2,16 +2,16 @@
 import React from "react"
 
 // components
-import { Button } from "../../components/_controls/Button"
+import { Button } from "../../stateless/_controls/Button"
 import EmailInput from "./components/EmailInput"
 
 // redux
 import { connect } from "react-redux"
-import { loginWithEmail } from "../../../actions/userActions"
-import { setCard } from "../../../actions/modalActions"
+import { loginWithEmail } from "../../../store/actions/userActions"
+import { setCard } from "../../../store/actions/modalActions"
 
 // styles
-import { Form } from "../../components/_controls/FormStyles"
+import { Form } from "../../stateless/_controls/FormStyles"
 
 // helpers
 import { validateEmail } from "../../../utils/email-utils"

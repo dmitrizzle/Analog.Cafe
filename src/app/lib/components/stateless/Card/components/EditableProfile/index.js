@@ -1,7 +1,7 @@
 // tools
 import React from "react"
 import { froth } from "../../../../../utils/image-froth"
-import { PicturePlaceholder } from "../../../../components/Picture/components/PicturePlaceholder"
+import { PicturePlaceholder } from "../../../Picture/components/PicturePlaceholder"
 
 // styles
 import {

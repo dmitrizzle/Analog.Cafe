@@ -1,4 +1,4 @@
-import emojis from "../constants/messages/emojis"
+import emojis from "../../constants/messages/emojis"
 
 const INITIAL_STATE = {
   status: "loading",

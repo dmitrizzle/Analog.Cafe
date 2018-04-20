@@ -2,11 +2,11 @@
 import React from "react"
 
 // components
-import { Button } from "../../components/_controls/Button"
+import { Button } from "../../stateless/_controls/Button"
 import EmailInput from "./components/EmailInput"
 
 // styles
-import { Form } from "../../components/_controls/FormStyles"
+import { Form } from "../../stateless/_controls/FormStyles"
 
 // helpers
 import { validateEmail } from "../../../utils/email-utils"

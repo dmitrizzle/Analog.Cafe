@@ -3,7 +3,7 @@
 
 // redux
 import { connect } from "react-redux"
-import { forget as forgetUser } from "../../../../actions/userActions"
+import { forget as forgetUser } from "../../../../store/actions/userActions"
 
 // render
 const SignOut = props => {

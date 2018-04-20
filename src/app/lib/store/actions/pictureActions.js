@@ -1,9 +1,9 @@
 // tools
 import axios from "axios"
-import { ROUTE_IMAGE_API } from "../constants/picture"
-import errorMessages from "../constants/messages/errors"
-import { getFroth } from "../utils/image-froth"
-import { axiosRequest } from "../utils/axios-request"
+import { ROUTE_IMAGE_API } from "../../constants/picture"
+import errorMessages from "../../constants/messages/errors"
+import { getFroth } from "../../utils/image-froth"
+import { axiosRequest } from "../../utils/axios-request"
 
 // return
 const unknownAuthor = (id, error) => {

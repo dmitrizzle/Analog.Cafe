@@ -6,7 +6,7 @@ import styled from "styled-components"
 import {
   ButtonStrip,
   Item
-} from "../../../../../components/_controls/ButtonStrip"
+} from "../../../../../stateless/_controls/ButtonStrip"
 
 const PictureMenu = styled.div`
   width: 100%;

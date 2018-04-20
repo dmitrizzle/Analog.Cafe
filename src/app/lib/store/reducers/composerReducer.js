@@ -1,6 +1,6 @@
 // tools
-import { loadHeader } from "../utils/browser-storage"
-import { DEFAULT_COMPOSER_HEADER_STATE } from "../constants/composer"
+import { loadHeader } from "../../utils/browser-storage"
+import { DEFAULT_COMPOSER_HEADER_STATE } from "../../constants/composer"
 
 // set placeholders for imageList grid:
 let imageListDefaults = []

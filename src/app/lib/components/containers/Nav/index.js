@@ -3,7 +3,7 @@ import React from "react"
 
 // redux
 import { connect } from "react-redux"
-import { setIntent as setUserIntent } from "../../../actions/userActions"
+import { setIntent as setUserIntent } from "../../../store/actions/userActions"
 
 // components
 import {
@@ -11,7 +11,7 @@ import {
   ComposerNav,
   NavWrapper,
   Connection
-} from "../../components/_controls/Nav"
+} from "../../stateless/_controls/Nav"
 
 // render
 const Nav = props => {

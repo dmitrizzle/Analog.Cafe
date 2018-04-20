@@ -3,7 +3,7 @@ import React from "react"
 
 // redux
 import { connect } from "react-redux"
-import { forget as forgetUser } from "../../../../actions/userActions"
+import { forget as forgetUser } from "../../../../store/actions/userActions"
 
 // components
 import List from "../../List"

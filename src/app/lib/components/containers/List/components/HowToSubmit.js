@@ -2,9 +2,9 @@
 import React from "react"
 
 // components
-import { Section, Article } from "../../../components/ArticleStyles"
-import Figure from "../../../components/Picture"
-import { LinkButton } from "../../../components/_controls/Button"
+import { Section, Article } from "../../../stateless/ArticleStyles"
+import Figure from "../../../stateless/Picture"
+import { LinkButton } from "../../../stateless/_controls/Button"
 
 // render
 export default () => {

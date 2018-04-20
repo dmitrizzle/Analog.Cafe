@@ -3,14 +3,14 @@ import React from "react"
 
 // redux
 import { connect } from "react-redux"
-import { requestFocus as requestEditorFocus } from "../../../actions/composerActions"
+import { requestFocus as requestEditorFocus } from "../../../store/actions/composerActions"
 
 // components
-import HeaderEditor from "./containers/HeaderEditor"
-import ContentEditor from "./containers/ContentEditor"
-import { Section } from "../../components/ArticleStyles"
+import HeaderEditor from "./components/HeaderEditor"
+import ContentEditor from "./components/ContentEditor"
+import { Section } from "../../stateless/ArticleStyles"
 import { ModalDispatch } from "../Modal"
-import DraftStatusText from "./containers/ContentEditor/components/DraftStatusText"
+import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"
 
 import emojis from "../../../constants/messages/emojis"
 import {

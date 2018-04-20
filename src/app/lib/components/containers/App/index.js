@@ -18,19 +18,19 @@ import { connect } from "react-redux"
 import {
   setView as setNavView,
   setLocation as setNavLocation
-} from "../../../actions/navActions"
+} from "../../../store/actions/navActions"
 import {
   verify as verifyUser,
   getInfo as getUserInfo,
   setConnectionStatus,
   setIntent as setUserIntent
-} from "../../../actions/userActions"
-import { setCard as setModalCard } from "../../../actions/modalActions"
+} from "../../../store/actions/userActions"
+import { setCard as setModalCard } from "../../../store/actions/modalActions"
 
 // components
 import { Modal } from "../Modal"
 import Nav from "../Nav"
-import AppRoutes from "../../components/_screens/AppRoutes"
+import AppRoutes from "../../stateless/_screens/AppRoutes"
 
 // init GA tracking
 if (

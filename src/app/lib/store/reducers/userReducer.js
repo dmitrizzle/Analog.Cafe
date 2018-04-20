@@ -1,5 +1,5 @@
 // constatns
-import { ROUTE_AUTH_USER_LANDING } from "../constants/user"
+import { ROUTE_AUTH_USER_LANDING } from "../../constants/user"
 
 // set placeholders for accountList grid:
 let accountListDefaults = []

@@ -1,9 +1,12 @@
 // tools
 import axios from "axios"
-import errorMessages from "../constants/messages/errors"
-import { axiosRequest } from "../utils/axios-request"
+import errorMessages from "../../constants/messages/errors"
+import { axiosRequest } from "../../utils/axios-request"
 
-import { ROUTE_ARTICLE_API, ROUTE_SUBMISSION_API } from "../constants/article"
+import {
+  ROUTE_ARTICLE_API,
+  ROUTE_SUBMISSION_API
+} from "../../constants/article"
 
 // return
 export const setPage = page => {

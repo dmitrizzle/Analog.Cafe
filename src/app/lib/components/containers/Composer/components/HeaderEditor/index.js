@@ -6,17 +6,17 @@ import keycode from "keycode"
 // components
 import TitleCase from "../../../TitleCase"
 import { ModalDispatch } from "../../../Modal"
-import Link from "../../../../components/_controls/Link"
+import Link from "../../../../stateless/_controls/Link"
 
 // redux
 import { connect } from "react-redux"
 import {
   resetSubmissionStatus,
   setHeadingValues
-} from "../../../../../actions/composerActions"
+} from "../../../../../store/actions/composerActions"
 
 // styles
-import { Header, Byline } from "../../../../components/ArticleStyles"
+import { Header, Byline } from "../../../../stateless/ArticleStyles"
 
 // constants
 import {

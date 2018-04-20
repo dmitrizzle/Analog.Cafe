@@ -1,13 +1,13 @@
 // tools
 import axios from "axios"
 import { setCard } from "./modalActions"
-import errorMessages from "../constants/messages/errors"
-import { ROUTE_LOGIN_WITH_EMAIL } from "../constants/login"
-import { MESSAGE_HINT_CHECK_EMAIL } from "../constants/messages/hints"
-import { axiosRequest } from "../utils/axios-request"
-import { anonymizeEmail } from "../utils/email-utils"
+import errorMessages from "../../constants/messages/errors"
+import { ROUTE_LOGIN_WITH_EMAIL } from "../../constants/login"
+import { MESSAGE_HINT_CHECK_EMAIL } from "../../constants/messages/hints"
+import { axiosRequest } from "../../utils/axios-request"
+import { anonymizeEmail } from "../../utils/email-utils"
 
-import { ROUTE_USER_API, ROUTE_USER_ADMIN } from "../constants/user"
+import { ROUTE_USER_API, ROUTE_USER_ADMIN } from "../../constants/user"
 
 // manage connectivity
 export const setConnectionStatus = connection => {

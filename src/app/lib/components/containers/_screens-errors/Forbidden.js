@@ -1,12 +1,12 @@
 // tools
 import React from "react"
 import { withRouter } from "react-router"
-import Helmet from "../../components/_async/Helmet"
+import Helmet from "../../stateless/_async/Helmet"
 
 // components
-import Link from "../../components/_controls/Link"
-import Heading from "../../components/ArticleHeading"
-import { Article, Section } from "../../components/ArticleStyles"
+import Link from "../../stateless/_controls/Link"
+import Heading from "../../stateless/ArticleHeading"
+import { Article, Section } from "../../stateless/ArticleStyles"
 
 import errorMessages from "../../../constants/messages/errors"
 

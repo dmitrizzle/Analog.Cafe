@@ -1,15 +1,13 @@
 import { createStore, combineReducers, applyMiddleware } from "redux"
-// import logger from "redux-logger"
 import thunk from "redux-thunk"
-// import promise from "redux-promise-middleware"
 
-import composer from "./reducers/composerReducer"
-import nav from "./reducers/navReducer"
-import modal from "./reducers/modalReducer"
-import list from "./reducers/listReducer"
-import article from "./reducers/articleReducer"
-import pictures from "./reducers/pictureReducer"
-import user from "./reducers/userReducer"
+import composer from "./app/lib/store/reducers/composerReducer"
+import nav from "./app/lib/store/reducers/navReducer"
+import modal from "./app/lib/store/reducers/modalReducer"
+import list from "./app/lib/store/reducers/listReducer"
+import article from "./app/lib/store/reducers/articleReducer"
+import pictures from "./app/lib/store/reducers/pictureReducer"
+import user from "./app/lib/store/reducers/userReducer"
 
 export default createStore(
   combineReducers({

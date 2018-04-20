@@ -3,29 +3,29 @@ import React from "react"
 
 // redux
 import { connect } from "react-redux"
-import { fetchImageList } from "../../../../actions/composerActions"
-import { setCard } from "../../../../actions/modalActions"
-import { fetchUserList } from "../../../../actions/userActions"
+import { fetchImageList } from "../../../../store/actions/composerActions"
+import { setCard } from "../../../../store/actions/modalActions"
+import { fetchUserList } from "../../../../store/actions/userActions"
 import {
   deleteRecord as deleteImageRecord,
   feature as featureImage,
   unfeature as unfeatureImage
-} from "../../../../actions/pictureActions"
+} from "../../../../store/actions/pictureActions"
 
 // components
 import Forbidden from "../../_screens-errors/Forbidden"
 
-import Heading from "../../../components/ArticleHeading"
-import { Button } from "../../../components/_controls/Button"
-import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
+import Heading from "../../../stateless/ArticleHeading"
+import { Button } from "../../../stateless/_controls/Button"
+import { ButtonStrip, Item } from "../../../stateless/_controls/ButtonStrip"
 
-import { Article, Section } from "../../../components/ArticleStyles"
+import { Article, Section } from "../../../stateless/ArticleStyles"
 
 import {
   GridButtonImage,
   GridContainer,
   GridRow
-} from "../../../components/Grid"
+} from "../../../stateless/Grid"
 
 const IMAGES_PER_ROW = 4
 const IMAGES_PER_PAGE = 16

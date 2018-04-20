@@ -7,23 +7,23 @@ import keycode from "keycode"
 
 // redux
 import { connect } from "react-redux"
-import { setCard } from "../../../../../../actions/modalActions"
-import { fetchImageList } from "../../../../../../actions/composerActions"
+import { setCard } from "../../../../../../store/actions/modalActions"
+import { fetchImageList } from "../../../../../../store/actions/composerActions"
 
 // components
-import { CardHeader } from "../../../../../components/Card/styles"
-import PictureDocket from "../../../../../components/_controls/PictureDocket"
+import { CardHeader } from "../../../../../stateless/Card/styles"
+import PictureDocket from "../../../../../stateless/_controls/PictureDocket"
 import {
   GridContainer,
   GridRow,
   GridCaption,
   GridButton,
   GridButtonImage
-} from "../../../../../components/Grid"
+} from "../../../../../stateless/Grid"
 import { ModalDispatch } from "../../../../Modal"
 
 // styles
-import { dot } from "../../../../../components/_icons/BlankDot"
+import { dot } from "../../../../../stateless/_icons/BlankDot"
 
 // constants
 import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/messages/hints"

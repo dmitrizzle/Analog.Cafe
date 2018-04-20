@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Helmet from "../../../components/_async/Helmet"
+import Helmet from "../../../stateless/_async/Helmet"
 import localForage from "localforage"
 import "localforage-getitems"
 
@@ -11,9 +11,9 @@ import {
   Header,
   Title,
   Subtitle
-} from "../../../components/ArticleStyles"
-import Link from "../../../components/_controls/Link"
-import { LinkButton } from "../../../components/_controls/Button"
+} from "../../../stateless/ArticleStyles"
+import Link from "../../../stateless/_controls/Link"
+import { LinkButton } from "../../../stateless/_controls/Button"
 
 // constants & helpers
 import {
@@ -31,17 +31,17 @@ import {
 
 // redux actions
 import { connect } from "react-redux"
-import { setCard } from "../../../../actions/modalActions"
+import { setCard } from "../../../../store/actions/modalActions"
 import {
   setRoutes as setLoginRedirectRoutes,
   resetRoutes as resetLoginRedirectRoutes
-} from "../../../../actions/userActions"
+} from "../../../../store/actions/userActions"
 import {
   uploadData as uploadSubmissionData,
   initUploadProgress,
   resetAllValues as resetComposerValues,
   resetSubmissionStatus
-} from "../../../../actions/composerActions"
+} from "../../../../store/actions/composerActions"
 
 // constants
 const STATUS_MESSAGES = {

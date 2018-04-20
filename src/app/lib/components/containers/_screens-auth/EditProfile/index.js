@@ -8,16 +8,16 @@ import {
   getInfo as getUserInfo,
   setInfo as setUserInfo,
   acceptInfo as acceptUserInfo
-} from "../../../../actions/userActions"
-import { setCard } from "../../../../actions/modalActions"
+} from "../../../../store/actions/userActions"
+import { setCard } from "../../../../store/actions/modalActions"
 
 // components
 import Forbidden from "../../_screens-errors/Forbidden"
-import CardEditableProfile from "../../../components/Card/components/EditableProfile"
+import CardEditableProfile from "../../../stateless/Card/components/EditableProfile"
 
-import Heading from "../../../components/ArticleHeading"
-import { Button } from "../../../components/_controls/Button"
-import { Article } from "../../../components/ArticleStyles"
+import Heading from "../../../stateless/ArticleHeading"
+import { Button } from "../../../stateless/_controls/Button"
+import { Article } from "../../../stateless/ArticleStyles"
 
 // template for user profile button arrangement
 import { profileButtonsTemplate } from "../../../../utils/profile-button-labeler"

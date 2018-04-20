@@ -4,21 +4,21 @@ import { withRouter } from "react-router"
 
 // redux
 import { connect } from "react-redux"
-import { setCard } from "../../../../actions/modalActions"
+import { setCard } from "../../../../store/actions/modalActions"
 import {
   setSubmissionStatus,
   rejectSubmission,
   publishSubmission,
   setHeadingValues
-} from "../../../../actions/composerActions"
-import { updateStatus as updateArticleStatus } from "../../../../actions/articleActions"
+} from "../../../../store/actions/composerActions"
+import { updateStatus as updateArticleStatus } from "../../../../store/actions/articleActions"
 
 // components
-import { Button } from "../../../components/_controls/Button"
-import Link from "../../../components/_controls/Link"
-import { CardFlattened } from "../../../components/Card/styles"
-import { ButtonStrip, Item } from "../../../components/_controls/ButtonStrip"
-import { Byline } from "../../../components/ArticleStyles"
+import { Button } from "../../../stateless/_controls/Button"
+import Link from "../../../stateless/_controls/Link"
+import { CardFlattened } from "../../../stateless/Card/styles"
+import { ButtonStrip, Item } from "../../../stateless/_controls/ButtonStrip"
+import { Byline } from "../../../stateless/ArticleStyles"
 
 // utils
 import {

@@ -5,12 +5,12 @@ import { getFroth } from "../../../utils/image-froth"
 
 // redux
 import { connect } from "react-redux"
-import { getInfo } from "../../../actions/pictureActions"
+import { getInfo } from "../../../store/actions/pictureActions"
 
 // components
-import Picture from "../../components/Picture"
-import { PlainTextarea } from "../../components/_controls/InputStyles"
-import PictureMenu from "../Composer/containers/ContentEditor/components/PictureMenu"
+import Picture from "../../stateless/Picture"
+import { PlainTextarea } from "../../stateless/_controls/InputStyles"
+import PictureMenu from "../Composer/components/ContentEditor/components/PictureMenu"
 
 import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
 import { INPUT_AUTO_FORMAT } from "../../../constants/input"

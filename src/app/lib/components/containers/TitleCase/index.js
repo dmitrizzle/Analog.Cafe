@@ -8,7 +8,7 @@ import { INPUT_AUTO_FORMAT } from "../../../constants/input"
 import {
   TitleTextarea,
   SubtitleTextarea
-} from "../../components/_controls/InputStyles"
+} from "../../stateless/_controls/InputStyles"
 
 // return
 const components = {

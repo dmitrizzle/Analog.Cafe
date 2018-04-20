@@ -1,9 +1,9 @@
 // tools
 import React from "react"
 import { render } from "react-dom"
-import Helmet from "./app/components/_async/Helmet"
-import { APP_NAME } from "./constants/app"
-import emojis from "./constants/messages/emojis"
+import Helmet from "./app/lib/components/stateless/_async/Helmet"
+import { APP_NAME } from "./app/lib/constants/app"
+import emojis from "./app/lib/constants/messages/emojis"
 // router
 import { BrowserRouter } from "react-router-dom"
 
@@ -15,18 +15,14 @@ import { Provider } from "react-redux"
 import styled, { ThemeProvider } from "styled-components"
 import { Sugar } from "@roast-cms/react-sugar-styled"
 
-// fonts are loading from within index.html
-// import "typeface-exo-2"
-// import "typeface-lora"
-
 // components
-import App from "./app/containers/App"
+import App from "./app/lib/components/containers/App"
 
 // service worker
 import registerServiceWorker from "./registerServiceWorker"
 
 // polyfill
-import { arrayIncludes, arrayFind } from "./utils/polyfill"
+import { arrayIncludes, arrayFind } from "./app/lib/utils/polyfill"
 arrayIncludes()
 arrayFind()
 

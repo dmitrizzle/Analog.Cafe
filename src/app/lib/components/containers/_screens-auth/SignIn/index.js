@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import Helmet from "../../../components/_async/Helmet"
+import Helmet from "../../../stateless/_async/Helmet"
 import open from "oauth-open"
 
 // redux
@@ -10,20 +10,20 @@ import {
   getInfo as getUserInfo,
   setSessionInfo,
   refreshSessionInfo
-} from "../../../../actions/userActions"
+} from "../../../../store/actions/userActions"
 
 // components
 import SignInWithEmail from "../../_forms/SigninWithEmail"
-import Heading from "../../../components/ArticleHeading"
-import { Article, Section } from "../../../components/ArticleStyles"
+import Heading from "../../../stateless/ArticleHeading"
+import { Article, Section } from "../../../stateless/ArticleStyles"
 import AlreadyAuthenticated from "../../_screens-errors/AlreadyAuthenticated"
 
 // styles
-import { ButtonGroup } from "../../../components/_controls/Button/components/ButtonGroup"
+import { ButtonGroup } from "../../../stateless/_controls/Button/components/ButtonGroup"
 import {
   TwitterLinkButton,
   FacebookLinkButton
-} from "../../../components/_controls/Button/components/SocialButtons"
+} from "../../../stateless/_controls/Button/components/SocialButtons"
 
 // constants & helpers
 import {

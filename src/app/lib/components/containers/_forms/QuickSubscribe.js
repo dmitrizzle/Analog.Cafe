@@ -2,7 +2,7 @@
 import React from "react"
 
 import MailChimpPrefill from "./MailChimpPrefill"
-import { CardButton } from "../../components/Card/styles"
+import { CardButton } from "../../stateless/Card/styles"
 
 import {
   KEYWORD_SUBSCRIBE,
