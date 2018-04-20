@@ -5,6 +5,7 @@ import React from "react"
 import { connect } from "react-redux"
 import { fetchImageList } from "../../../../actions/composerActions"
 import { setCard } from "../../../../actions/modalActions"
+import { fetchUserList } from "../../../../actions/userActions"
 import {
   deleteRecord as deleteImageRecord,
   feature as featureImage,
@@ -50,6 +51,10 @@ class Admin extends React.PureComponent {
   componentDidMount = () => {
     // get featured collab images
     this.props.fetchImageList(this.state.imageList.options)
+
+    this.props.fetchUserList({
+      itemsPerPage: 100
+    })
   }
   handleImagesLoadMore = () => {
     this.incrementPage() &&
@@ -300,6 +305,54 @@ class Admin extends React.PureComponent {
                 Load More ({this.props.composer.imageList.page["items-total"]})
               </Button>
             )}
+
+          <div style={{ padding: "0 1.5em" }}>
+            <h3>Users.</h3>
+          </div>
+          <GridContainer>
+            {rows.map(row => (
+              <GridRow key={row}>
+                {this.props.user.accountList.items
+                  .slice(
+                    row * IMAGES_PER_ROW,
+                    row * IMAGES_PER_ROW + IMAGES_PER_ROW
+                  )
+                  .map(item => (
+                    <GridButtonImage
+                      label={item.role}
+                      span={4}
+                      noShim
+                      key={item.id}
+                      src={item.image}
+                      status={this.props.user.accountList.status}
+                      author={{
+                        name: item.title,
+                        id: item.id,
+                        email: item.email
+                      }}
+                      add={(src, author) =>
+                        this.props.setCard({
+                          info: {
+                            title: author.title || author.id,
+                            text: `${author.email}`,
+                            buttons: [
+                              {
+                                to: `mailto:${author.email}`,
+                                text: "Contact via Email"
+                              },
+                              {
+                                to: `#suspend:${author.id}`,
+                                text: "Suspend user"
+                              }
+                            ]
+                          }
+                        })
+                      }
+                    />
+                  ))}
+              </GridRow>
+            ))}
+          </GridContainer>
         </Section>
       </Article>
     ) : (
@@ -313,6 +366,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchImageList: (options, page, appendItems) => {
       dispatch(fetchImageList(options, page, appendItems))
+    },
+    fetchUserList: (options, page, appendItems) => {
+      dispatch(fetchUserList(options, page, appendItems))
     },
     setCard: (info, request) => {
       dispatch(setCard(info, request))
