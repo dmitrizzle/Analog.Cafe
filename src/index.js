@@ -1,9 +1,9 @@
 // tools
 import React from "react"
 import { render } from "react-dom"
-import Helmet from "./app/lib/components/stateless/_async/Helmet"
-import { APP_NAME } from "./app/lib/constants/app"
-import emojis from "./app/lib/constants/messages/emojis"
+import Helmet from "./app/core/components/stateless/_async/Helmet"
+import { APP_NAME } from "./app/core/constants/app"
+import emojis from "./app/core/constants/messages/emojis"
 // router
 import { BrowserRouter } from "react-router-dom"
 
@@ -16,13 +16,13 @@ import styled, { ThemeProvider } from "styled-components"
 import { Sugar } from "@roast-cms/react-sugar-styled"
 
 // components
-import App from "./app/lib/components/containers/App"
+import App from "./app/core/components/containers/App"
 
 // service worker
 import registerServiceWorker from "./registerServiceWorker"
 
 // polyfill
-import { arrayIncludes, arrayFind } from "./app/lib/utils/polyfill"
+import { arrayIncludes, arrayFind } from "./app/core/utils/polyfill"
 arrayIncludes()
 arrayFind()
 

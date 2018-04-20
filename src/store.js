@@ -1,13 +1,13 @@
 import { createStore, combineReducers, applyMiddleware } from "redux"
 import thunk from "redux-thunk"
 
-import composer from "./app/lib/store/reducers/composerReducer"
-import nav from "./app/lib/store/reducers/navReducer"
-import modal from "./app/lib/store/reducers/modalReducer"
-import list from "./app/lib/store/reducers/listReducer"
-import article from "./app/lib/store/reducers/articleReducer"
-import pictures from "./app/lib/store/reducers/pictureReducer"
-import user from "./app/lib/store/reducers/userReducer"
+import composer from "./app/core/store/reducers/composerReducer"
+import nav from "./app/core/store/reducers/navReducer"
+import modal from "./app/core/store/reducers/modalReducer"
+import list from "./app/core/store/reducers/listReducer"
+import article from "./app/core/store/reducers/articleReducer"
+import pictures from "./app/core/store/reducers/pictureReducer"
+import user from "./app/core/store/reducers/userReducer"
 
 export default createStore(
   combineReducers({
