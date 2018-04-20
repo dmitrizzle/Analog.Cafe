@@ -1,0 +1,36 @@
+// styles
+import styled from "styled-components"
+
+// components
+import { Sidenote } from "../../CaptionStyles"
+
+// css
+export const Caption = styled(Sidenote)`
+  display: block !important;
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: 0.7em;
+  max-width: ${props => props.theme.size.block.column.m}px;
+  height: ${1.5 * 3 + 0.1}em;
+  ${props => props.status === "loading" && `height: 4em;`};
+  &::after,
+  &::before {
+    display: none;
+  }
+
+  .long,
+  .short {
+    opacity: ${props => props.theme.opacity.half};
+    display: none;
+  }
+  ${props => props.theme.size.breakpoint.max.m`{
+    .long {display:inline}
+  }`} ${props => props.theme.size.breakpoint.min.l`{
+    .short {display:inline}
+  }`} ${props => props.theme.size.breakpoint.max.m`{
+		height: auto !important;
+		overflow: visible;
+		margin-top: .3em;
+		margin-bottom: 0;
+	}`};
+`
