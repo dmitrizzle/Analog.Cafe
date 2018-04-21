@@ -7,7 +7,7 @@ import { LinkButton } from "../_controls/Button"
 // styles
 import { Sidenote } from "../CaptionStyles"
 
-import emojis from "../../../constants/messages/emojis"
+import emojis from "../../../constants/emojis"
 
 // css
 export const CardButtonStyles = css`

@@ -1,20 +1,19 @@
 // tools
-import React from "react"
-import { withRouter } from "react-router"
+import { connect } from "react-redux"
 import Loadable from "react-loadable"
+import React from "react"
 import queryString from "query-string"
 
-// constants & helpers
+import { withRouter } from "react-router"
+
 import {
   APP_TRACKING_GAID,
   ROUTE_APP_CURRENT_DOMAIN,
   ROUTE_APP_PRODUCTION_DOMAIN_NAME
 } from "../../../constants/app"
-import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
-import errorMessages from "../../../constants/messages/errors"
-
-// redux
-import { connect } from "react-redux"
+import { Modal } from "../Modal"
+import { ROUTE_AUTH_USER_LANDING } from "../../../../user/constants/user"
+import { setCard as setModalCard } from "../../../store/actions/modalActions"
 import {
   setView as setNavView,
   setLocation as setNavLocation
@@ -24,13 +23,10 @@ import {
   getInfo as getUserInfo,
   setConnectionStatus,
   setIntent as setUserIntent
-} from "../../../store/actions/userActions"
-import { setCard as setModalCard } from "../../../store/actions/modalActions"
-
-// components
-import { Modal } from "../Modal"
-import Nav from "../Nav"
+} from "../../../../user/store/actions/userActions"
 import AppRoutes from "../../stateless/_screens/AppRoutes"
+import Nav from "../Nav"
+import errorMessages from "../../../../user/constants/errors"
 
 // init GA tracking
 if (

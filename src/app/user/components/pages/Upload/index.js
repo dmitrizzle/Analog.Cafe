@@ -1,47 +1,39 @@
 // tools
-import React from "react"
-import Helmet from "../../../stateless/_async/Helmet"
-import localForage from "localforage"
 import "localforage-getitems"
 
-// components
-import {
-  Article,
-  Section,
-  Header,
-  Title,
-  Subtitle
-} from "../../../stateless/ArticleStyles"
-import Link from "../../../stateless/_controls/Link"
-import { LinkButton } from "../../../stateless/_controls/Button"
-
-// constants & helpers
+import { connect } from "react-redux"
 import {
   loadTextContent,
   loadContent
 } from "@roast-cms/french-press-editor/dist/utils/browser-storage"
-import { loadHeader } from "../../../../utils/browser-storage"
-import errorMessages from "../../../../constants/messages/errors"
-import emojis from "../../../../constants/messages/emojis"
+import React from "react"
+import localForage from "localforage"
 
 import {
-  redirectToSignIn,
-  sendSubmission
-} from "../../../../utils/upload-utils"
-
-// redux actions
-import { connect } from "react-redux"
-import { setCard } from "../../../../store/actions/modalActions"
+  Article,
+  Header,
+  Section,
+  Subtitle,
+  Title
+} from "../../../../core/components/stateless/ArticleStyles"
+import { LinkButton } from "../../../../core/components/stateless/_controls/Button"
+import { loadHeader } from "../../../utils/browser-storage"
+import { redirectToSignIn, sendSubmission } from "../../../utils/upload-utils"
+import { setCard } from "../../../../core/store/actions/modalActions"
 import {
   setRoutes as setLoginRedirectRoutes,
   resetRoutes as resetLoginRedirectRoutes
-} from "../../../../store/actions/userActions"
+} from "../../../store/actions/userActions"
 import {
   uploadData as uploadSubmissionData,
   initUploadProgress,
   resetAllValues as resetComposerValues,
   resetSubmissionStatus
-} from "../../../../store/actions/composerActions"
+} from "../../../store/actions/composerActions"
+import Helmet from "../../../../core/components/stateless/_async/Helmet"
+import Link from "../../../../core/components/stateless/_controls/Link"
+import emojis from "../../../../core/constants/emojis"
+import errorMessages from "../../../constants/errors"
 
 // constants
 const STATUS_MESSAGES = {

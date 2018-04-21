@@ -1,26 +1,17 @@
 // tools
+import { connect } from "react-redux"
+import {
+  storeContentState,
+  loadTextContent
+} from "@roast-cms/french-press-editor/dist/utils/browser-storage"
 import React from "react"
+
 import { withRouter } from "react-router"
 
-// redux
-import { connect } from "react-redux"
-import { setCard } from "../../../../store/actions/modalActions"
-import {
-  setSubmissionStatus,
-  rejectSubmission,
-  publishSubmission,
-  setHeadingValues
-} from "../../../../store/actions/composerActions"
-import { updateStatus as updateArticleStatus } from "../../../../store/actions/articleActions"
-
-// components
 import { Button } from "../../../stateless/_controls/Button"
-import Link from "../../../stateless/_controls/Link"
-import { CardFlattened } from "../../../stateless/Card/styles"
 import { ButtonStrip, Item } from "../../../stateless/_controls/ButtonStrip"
 import { Byline } from "../../../stateless/ArticleStyles"
-
-// utils
+import { CardFlattened } from "../../../stateless/Card/styles"
 import {
   MESSAGE_HINT_OVERWRITE_DRAFT,
   MESSAGE_HINT_REJECT_SUBMISSION,
@@ -31,14 +22,18 @@ import {
   ROUTE_ARTICLE_DIR,
   ROUTE_SUBMISSIONS_DIR
 } from "../../../../constants/article"
-import emojis from "../../../../constants/emojis"
-import {
-  storeContentState,
-  loadTextContent
-} from "@roast-cms/french-press-editor/dist/utils/browser-storage"
-import { storeHeaderState } from "../../../../utils/browser-storage"
-
 import { locate } from "../../../../utils/article-utils"
+import { setCard } from "../../../../store/actions/modalActions"
+import {
+  setSubmissionStatus,
+  rejectSubmission,
+  publishSubmission,
+  setHeadingValues
+} from "../../../../../user/store/actions/composerActions"
+import { storeHeaderState } from "../../../../../user/utils/browser-storage"
+import { updateStatus as updateArticleStatus } from "../../../../store/actions/articleActions"
+import Link from "../../../stateless/_controls/Link"
+import emojis from "../../../../constants/emojis"
 
 const TAGS = {
   story: "Story",

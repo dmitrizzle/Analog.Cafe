@@ -1,6 +1,6 @@
 // tools
 import axios from "axios"
-import errorMessages from "../../constants/messages/errors"
+import errorMessages from "../../../user/constants/errors"
 import { axiosRequest } from "../../utils/axios-request"
 
 import {

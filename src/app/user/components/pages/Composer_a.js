@@ -1,12 +1,14 @@
 // tools
 import React from "react"
-import Helmet from "../_async/Helmet"
 
-// components
-import { Article, Section } from "../ArticleStyles"
-import { Caption } from "../CaptionStyles"
-import Composer from "../../containers/Composer"
-import Link from "../_controls/Link"
+import {
+  Article,
+  Section
+} from "../../../core/components/stateless/ArticleStyles"
+import { Caption } from "../../../core/components/stateless/CaptionStyles"
+import Composer from "./Composer"
+import Helmet from "../../../core/components/stateless/_async/Helmet"
+import Link from "../../../core/components/stateless/_controls/Link"
 
 const metaTitle = "Composer"
 const metaDescription =

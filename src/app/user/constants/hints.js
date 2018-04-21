@@ -1,5 +1,6 @@
 // constants
-import emojis from "./emojis"
+
+import emojis from "../../core/constants/emojis"
 
 export const MESSAGE_HINT_CHECK_EMAIL = email => {
   return {

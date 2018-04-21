@@ -1,36 +1,26 @@
 // tools
-import React from "react"
-import { forceImageRestrictions } from "../../../../utils/upload-utils"
-
-// redux
 import { connect } from "react-redux"
+import React from "react"
+
+import { Article } from "../../../../core/components/stateless/ArticleStyles"
+import { Button } from "../../../../core/components/stateless/_controls/Button"
+import {
+  ROUTE_AUTH_USER_LANDING,
+  ROUTE_UPDATE_PROFILE_API
+} from "../../../constants/user"
+import { SUMMARY_LENGTH_MAX, TITLE_LENGTH_MAX } from "../../../constants/input"
+import { forceImageRestrictions } from "../../../utils/upload-utils"
 import {
   getInfo as getUserInfo,
   setInfo as setUserInfo,
   acceptInfo as acceptUserInfo
-} from "../../../../store/actions/userActions"
-import { setCard } from "../../../../store/actions/modalActions"
-
-// components
-import Forbidden from "../../_screens-errors/Forbidden"
-import CardEditableProfile from "../../../stateless/Card/components/EditableProfile"
-
-import Heading from "../../../stateless/ArticleHeading"
-import { Button } from "../../../stateless/_controls/Button"
-import { Article } from "../../../stateless/ArticleStyles"
-
-// template for user profile button arrangement
-import { profileButtonsTemplate } from "../../../../utils/profile-button-labeler"
-
-import {
-  ROUTE_AUTH_USER_LANDING,
-  ROUTE_UPDATE_PROFILE_API
-} from "../../../../constants/user"
-import {
-  SUMMARY_LENGTH_MAX,
-  TITLE_LENGTH_MAX
-} from "../../../../constants/input"
-import errorMessages from "../../../../constants/messages/errors"
+} from "../../../store/actions/userActions"
+import { profileButtonsTemplate } from "../../../../core/utils/profile-button-labeler"
+import { setCard } from "../../../../core/store/actions/modalActions"
+import CardEditableProfile from "../../../../core/components/stateless/Card/components/EditableProfile"
+import Forbidden from "../../../../core/components/containers/_screens-errors/Forbidden"
+import Heading from "../../../../core/components/stateless/ArticleHeading"
+import errorMessages from "../../../constants/errors"
 
 // render
 class EditProfile extends React.PureComponent {

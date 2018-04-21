@@ -1,31 +1,27 @@
 // tools
+import { connect } from "react-redux"
 import React from "react"
-import { saveHeader } from "../../../../../utils/browser-storage"
 import keycode from "keycode"
 
-// components
-import TitleCase from "../../../TitleCase"
-import { ModalDispatch } from "../../../Modal"
-import Link from "../../../../stateless/_controls/Link"
-
-// redux
-import { connect } from "react-redux"
+import {
+  Byline,
+  Header
+} from "../../../../../../core/components/stateless/ArticleStyles"
+import { MESSAGE_HINT_YOUR_PROFILE } from "../../../../../constants/hints"
+import { ModalDispatch } from "../../../../../../core/components/containers/Modal"
+import {
+  SUBTITLE_LENGTH_MAX,
+  SUBTITLE_LENGTH_OPTIMAL,
+  TITLE_LENGTH_MAX,
+  TITLE_LENGTH_OPTIMAL
+} from "../../../../../constants/input"
 import {
   resetSubmissionStatus,
   setHeadingValues
 } from "../../../../../store/actions/composerActions"
-
-// styles
-import { Header, Byline } from "../../../../stateless/ArticleStyles"
-
-// constants
-import {
-  TITLE_LENGTH_MAX,
-  TITLE_LENGTH_OPTIMAL,
-  SUBTITLE_LENGTH_MAX,
-  SUBTITLE_LENGTH_OPTIMAL
-} from "../../../../../constants/input"
-import { MESSAGE_HINT_YOUR_PROFILE } from "../../../../../constants/messages/hints"
+import { saveHeader } from "../../../../../utils/browser-storage"
+import Link from "../../../../../../core/components/stateless/_controls/Link"
+import TitleCase from "../../../../../../core/components/containers/TitleCase"
 
 // return
 class HeaderEditor extends React.PureComponent {

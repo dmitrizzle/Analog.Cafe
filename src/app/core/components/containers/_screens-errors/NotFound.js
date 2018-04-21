@@ -7,7 +7,7 @@ import Helmet from "../../stateless/_async/Helmet"
 import Heading from "../../stateless/ArticleHeading"
 import { Section, Article } from "../../stateless/ArticleStyles"
 
-import errorMessages from "../../../constants/messages/errors"
+import errorMessages from "../../../../user/constants/errors"
 
 // render
 export default class extends React.PureComponent {

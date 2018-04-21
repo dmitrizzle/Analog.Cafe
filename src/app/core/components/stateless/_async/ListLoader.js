@@ -1,11 +1,10 @@
 // tools
 import React from "react"
 
-// styles
 import { ListDescription, ListHeader } from "../ListDescription"
 import { Section, Article } from "../ArticleStyles"
-import emojis from "../../../constants/messages/emojis"
-import errorMessages from "../../../constants/messages/errors"
+import emojis from "../../../constants/emojis"
+import errorMessages from "../../../../user/constants/errors"
 
 // return
 export default props => {

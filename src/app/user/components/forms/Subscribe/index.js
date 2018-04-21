@@ -1,13 +1,12 @@
 // tools
 import React from "react"
 
-import MailChimpPrefill from "./MailChimpPrefill"
-import { CardButton } from "../../stateless/Card/styles"
-
+import { CardButton } from "../../../../core/components/stateless/Card/styles"
 import {
   KEYWORD_SUBSCRIBE,
   KEYWORD_SUBSCRIBE_SUBMIT
-} from "../../../constants/messages/keywords"
+} from "../../../../core/constants/keywords"
+import MailChimpPrefill from "./components/MailChimpPrefill"
 
 export class QuickSubscribe extends React.PureComponent {
   constructor(props) {

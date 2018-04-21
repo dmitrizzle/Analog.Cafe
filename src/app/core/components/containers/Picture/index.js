@@ -1,19 +1,14 @@
 // tools
-import React from "react"
-import { getFroth } from "../../../utils/image-froth"
-//import localForage from "localforage"
-
-// redux
 import { connect } from "react-redux"
-import { getInfo } from "../../../store/actions/pictureActions"
+import React from "react"
 
-// components
-import Picture from "../../stateless/Picture"
-import { PlainTextarea } from "../../stateless/_controls/InputStyles"
-import PictureMenu from "../Composer/components/ContentEditor/components/PictureMenu"
-
+import { INPUT_AUTO_FORMAT } from "../../../../user/constants/input"
 import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
-import { INPUT_AUTO_FORMAT } from "../../../constants/input"
+import { PlainTextarea } from "../../stateless/_controls/InputStyles"
+import { getFroth } from "../../../utils/image-froth"
+import { getInfo } from "../../../store/actions/pictureActions"
+import Picture from "../../stateless/Picture"
+import PictureMenu from "../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"
 
 // export
 // let localForageCache

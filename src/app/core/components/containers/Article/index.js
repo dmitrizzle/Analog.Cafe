@@ -1,17 +1,10 @@
 // tools
-import React from "react"
-import Loadable from "react-loadable"
 import { Reader } from "@roast-cms/french-press-editor/dist/components/Reader"
-
-// redux & state
 import { connect } from "react-redux"
-import {
-  fetchPage,
-  setPage as setNextArticle
-} from "../../../store/actions/articleActions"
-import ArticleActions from "../../stateless/Card/components/ArticleActions"
+import Loadable from "react-loadable"
+import React from "react"
 
-// constants
+import { ModalDispatch } from "../Modal"
 import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../constants/app"
 import {
   ROUTE_ARTICLE_DIR,
@@ -19,25 +12,25 @@ import {
 } from "../../../constants/article"
 import { ROUTE_AUTHOR_API } from "../../../constants/author"
 import { ROUTE_TAGS } from "../../../constants/list"
-import emojis from "../../../constants/messages/emojis"
-
-// components
-import Helmet from "../../stateless/_async/Helmet"
-import Link from "../../stateless/_controls/Link"
-import Heading from "../../stateless/ArticleHeading"
-import { ModalDispatch } from "../Modal"
 import {
   Section,
   Article as ArticleElement,
   Byline
 } from "../../stateless/ArticleStyles"
-import Picture from "../Picture"
-
-// helpers
+import {
+  fetchPage,
+  setPage as setNextArticle
+} from "../../../store/actions/articleActions"
 import { froth } from "../../../utils/image-froth"
-import slugToTitle from "../../../utils/slug-to-title"
 import { getLeadAuthor, authorNameList } from "../../../utils/authorship"
 import { locate, completeUrlPath } from "../../../utils/article-utils"
+import ArticleActions from "../../stateless/Card/components/ArticleActions"
+import Heading from "../../stateless/ArticleHeading"
+import Helmet from "../../stateless/_async/Helmet"
+import Link from "../../stateless/_controls/Link"
+import Picture from "../Picture"
+import emojis from "../../../constants/emojis"
+import slugToTitle from "../../../utils/slug-to-title"
 
 // admin controls loader
 const AdminControls = Loadable({

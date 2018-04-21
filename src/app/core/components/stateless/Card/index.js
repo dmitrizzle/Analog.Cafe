@@ -1,18 +1,16 @@
 // tools
 import React from "react"
-import { froth } from "../../../utils/image-froth"
-import { PicturePlaceholder } from "../Picture/components/PicturePlaceholder"
 
-import { QuickSubscribe } from "../../containers/_forms/QuickSubscribe"
-
-// styles
+import { ButtonGroupDivider } from "../_controls/Button/components/ButtonGroupDivider"
 import {
   Card as CardElement,
   CardButton,
   CardCaption,
   CardHeader
 } from "./styles"
-import { ButtonGroupDivider } from "../_controls/Button/components/ButtonGroupDivider"
+import { PicturePlaceholder } from "../Picture/components/PicturePlaceholder"
+import { QuickSubscribe } from "../../../../user/components/forms/Subscribe"
+import { froth } from "../../../utils/image-froth"
 
 // return
 export const Card = props => {

@@ -1,5 +1,6 @@
 // api endpoint
-import { ROUTE_API_DOMAIN } from "./app"
+import { ROUTE_API_DOMAIN } from "../../core/constants/app"
+
 export const ROUTE_USER_API = ROUTE_API_DOMAIN + "/auth/user"
 export const ROUTE_UPDATE_PROFILE_API = ROUTE_API_DOMAIN + "/users/me"
 

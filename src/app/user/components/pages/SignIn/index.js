@@ -1,35 +1,31 @@
 // tools
+import { connect } from "react-redux"
 import React from "react"
-import Helmet from "../../../stateless/_async/Helmet"
 import open from "oauth-open"
 
-// redux
-import { connect } from "react-redux"
+import {
+  Article,
+  Section
+} from "../../../../core/components/stateless/ArticleStyles"
+import { ButtonGroup } from "../../../../core/components/stateless/_controls/Button/components/ButtonGroup"
+import {
+  FacebookLinkButton,
+  TwitterLinkButton
+} from "../../../../core/components/stateless/_controls/Button/components/SocialButtons"
+import {
+  ROUTE_LOGIN_FACEBOOK_API,
+  ROUTE_LOGIN_TWITTER_API
+} from "../../../constants/login"
 import {
   verify as verifyUser,
   getInfo as getUserInfo,
   setSessionInfo,
   refreshSessionInfo
-} from "../../../../store/actions/userActions"
-
-// components
-import SignInWithEmail from "../../_forms/SigninWithEmail"
-import Heading from "../../../stateless/ArticleHeading"
-import { Article, Section } from "../../../stateless/ArticleStyles"
-import AlreadyAuthenticated from "../../_screens-errors/AlreadyAuthenticated"
-
-// styles
-import { ButtonGroup } from "../../../stateless/_controls/Button/components/ButtonGroup"
-import {
-  TwitterLinkButton,
-  FacebookLinkButton
-} from "../../../stateless/_controls/Button/components/SocialButtons"
-
-// constants & helpers
-import {
-  ROUTE_LOGIN_TWITTER_API,
-  ROUTE_LOGIN_FACEBOOK_API
-} from "../../../../constants/login"
+} from "../../../store/actions/userActions"
+import AlreadyAuthenticated from "../Error/AlreadyAuthenticated"
+import Heading from "../../../../core/components/stateless/ArticleHeading"
+import Helmet from "../../../../core/components/stateless/_async/Helmet"
+import SignInWithEmail from "../../forms/SigninWithEmail"
 
 // render
 class SignIn extends React.PureComponent {

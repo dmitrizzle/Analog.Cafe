@@ -1,17 +1,18 @@
 // tools
 import React from "react"
-import Helmet from "../_async/Helmet"
 
-import { froth } from "../../../utils/image-froth"
-
-// components
-import Heading from "../ArticleHeading"
-import { LinkButton } from "../_controls/Button"
-import { ButtonGroup } from "../_controls/Button/components/ButtonGroup"
-import { Caption } from "../CaptionStyles"
-import Figure from "../Picture"
-import Link from "../_controls/Link"
-import { Section, Article } from "../ArticleStyles"
+import {
+  Article,
+  Section
+} from "../../../../core/components/stateless/ArticleStyles"
+import { ButtonGroup } from "../../../../core/components/stateless/_controls/Button/components/ButtonGroup"
+import { Caption } from "../../../../core/components/stateless/CaptionStyles"
+import { Figure } from "../../../../core/components/stateless/Picture/styles"
+import { LinkButton } from "../../../../core/components/stateless/_controls/Button"
+import { froth } from "../../../../core/utils/image-froth"
+import Heading from "../../../../core/components/stateless/ArticleHeading"
+import Helmet from "../../../../core/components/stateless/_async/Helmet"
+import Link from "../../../../core/components/stateless/_controls/Link"
 
 const metaTitle = "Submit"
 const metaDescription =

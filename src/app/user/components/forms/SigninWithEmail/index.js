@@ -1,21 +1,14 @@
 // tools
+import { connect } from "react-redux"
 import React from "react"
 
-// components
-import { Button } from "../../stateless/_controls/Button"
-import EmailInput from "./components/EmailInput"
-
-// redux
-import { connect } from "react-redux"
+import { Button } from "../../../../core/components/stateless/_controls/Button"
+import { Form } from "../../../../core/components/stateless/_controls/FormStyles"
 import { loginWithEmail } from "../../../store/actions/userActions"
-import { setCard } from "../../../store/actions/modalActions"
-
-// styles
-import { Form } from "../../stateless/_controls/FormStyles"
-
-// helpers
+import { setCard } from "../../../../core/store/actions/modalActions"
 import { validateEmail } from "../../../utils/email-utils"
-import errorMessages from "../../../constants/messages/errors"
+import EmailInput from "../EmailInput"
+import errorMessages from "../../../constants/errors"
 
 // render
 class SigninWithEmail extends React.PureComponent {

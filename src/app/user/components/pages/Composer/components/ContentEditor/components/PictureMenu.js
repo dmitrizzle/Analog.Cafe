@@ -2,11 +2,12 @@
 import React from "react"
 import styled from "styled-components"
 
-// components
 import {
   ButtonStrip,
   Item
-} from "../../../../../stateless/_controls/ButtonStrip"
+} from "../../../../../../../core/components/stateless/_controls/ButtonStrip"
+
+// components
 
 const PictureMenu = styled.div`
   width: 100%;

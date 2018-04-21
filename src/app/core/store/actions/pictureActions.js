@@ -1,7 +1,7 @@
 // tools
 import axios from "axios"
 import { ROUTE_IMAGE_API } from "../../constants/picture"
-import errorMessages from "../../constants/messages/errors"
+import errorMessages from "../../../user/constants/errors"
 import { getFroth } from "../../utils/image-froth"
 import { axiosRequest } from "../../utils/axios-request"
 

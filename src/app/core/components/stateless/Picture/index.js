@@ -1,6 +1,6 @@
 // tools
 import React from "react"
-import errorMessages from "../../../constants/messages/errors"
+import errorMessages from "../../../../user/constants/errors"
 
 import { ROUTE_AUTHOR_API } from "../../../constants/author"
 

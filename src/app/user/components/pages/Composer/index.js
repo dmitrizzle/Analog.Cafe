@@ -1,23 +1,19 @@
 // tools
+import { connect } from "react-redux"
 import React from "react"
 
-// redux
-import { connect } from "react-redux"
-import { requestFocus as requestEditorFocus } from "../../../store/actions/composerActions"
-
-// components
-import HeaderEditor from "./components/HeaderEditor"
-import ContentEditor from "./components/ContentEditor"
-import { Section } from "../../stateless/ArticleStyles"
-import { ModalDispatch } from "../Modal"
-import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"
-
-import emojis from "../../../constants/messages/emojis"
 import {
+  MESSAGE_HINT_AUTO_SAVE,
   MESSAGE_HINT_SUBMIT_CONSENT,
-  MESSAGE_HINT_SUBMIT_EDITORS,
-  MESSAGE_HINT_AUTO_SAVE
-} from "../../../constants/messages/hints"
+  MESSAGE_HINT_SUBMIT_EDITORS
+} from "../../../constants/hints"
+import { ModalDispatch } from "../../../../core/components/containers/Modal"
+import { Section } from "../../../../core/components/stateless/ArticleStyles"
+import { requestFocus as requestEditorFocus } from "../../../store/actions/composerActions"
+import ContentEditor from "./components/ContentEditor"
+import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"
+import HeaderEditor from "./components/HeaderEditor"
+import emojis from "../../../../core/constants/emojis"
 
 // placeholders
 const titlePlaceholder = {

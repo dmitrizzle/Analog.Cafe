@@ -2,12 +2,10 @@
 import React from "react"
 import toTitleCase from "titlecase"
 
-import { INPUT_AUTO_FORMAT } from "../../../constants/input"
-
-// components
+import { INPUT_AUTO_FORMAT } from "../../../../user/constants/input"
 import {
-  TitleTextarea,
-  SubtitleTextarea
+  SubtitleTextarea,
+  TitleTextarea
 } from "../../stateless/_controls/InputStyles"
 
 // return

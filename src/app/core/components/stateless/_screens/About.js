@@ -1,22 +1,18 @@
 // tools
 import React from "react"
 import styled from "styled-components"
-import Helmet from "../_async/Helmet"
 
-// components
-import Heading from "../ArticleHeading"
-import Figure from "../Picture"
-import Link from "../_controls/Link"
-import { ModalDispatch } from "../../containers/Modal"
 import { Email } from "../_jsx-snippets"
-import MailChimpPrefill from "../../containers/_forms/MailChimpPrefill"
-import ArticleActions from "../Card/components/ArticleActions"
-
-import { froth } from "../../../utils/image-froth"
-import { KEYWORD_SUBSCRIBE } from "../../../constants/messages/keywords"
-
-// styles
+import { KEYWORD_SUBSCRIBE } from "../../../constants/keywords"
+import { ModalDispatch } from "../../containers/Modal"
 import { Section, Article, Quote } from "../ArticleStyles"
+import { froth } from "../../../utils/image-froth"
+import ArticleActions from "../Card/components/ArticleActions"
+import Figure from "../Picture"
+import Heading from "../ArticleHeading"
+import Helmet from "../_async/Helmet"
+import Link from "../_controls/Link"
+import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 
 const ThankYouList = styled(Quote)`
   font-style: normal !important;

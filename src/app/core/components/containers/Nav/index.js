@@ -3,7 +3,7 @@ import React from "react"
 
 // redux
 import { connect } from "react-redux"
-import { setIntent as setUserIntent } from "../../../store/actions/userActions"
+import { setIntent as setUserIntent } from "../../../../user/store/actions/userActions"
 
 // components
 import {

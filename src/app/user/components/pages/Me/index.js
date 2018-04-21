@@ -1,13 +1,10 @@
 // tools
+import { connect } from "react-redux"
 import React from "react"
 
-// redux
-import { connect } from "react-redux"
-import { forget as forgetUser } from "../../../../store/actions/userActions"
-
-// components
-import List from "../../List"
-import Forbidden from "../../_screens-errors/Forbidden"
+import { forget as forgetUser } from "../../../store/actions/userActions"
+import Forbidden from "../../../../core/components/containers/_screens-errors/Forbidden"
+import List from "../../../../core/components/containers/List"
 
 // render
 const Me = props => {

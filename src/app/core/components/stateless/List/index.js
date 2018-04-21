@@ -1,28 +1,23 @@
 // tools
-import React from "react"
-import Link from "../_controls/Link"
-import { froth } from "../../../utils/image-froth"
 import LazyLoad from "react-lazyload"
+import React from "react"
 
-// styles
 import { Bleed } from "./styles/bleed"
-import { Ul, AuthorAndDate } from "./styles/ul"
-import { Stats } from "./styles/stats"
 import { Caption } from "./styles/caption"
-import { ZigzagPicture } from "./styles/zigzag-picture"
-
-// helper
-import { datestamp } from "../../../utils/datestamp"
-import { authorNameList } from "../../../utils/authorship"
-
-// constants
 import {
   ROUTE_ARTICLE_DIR,
   ROUTE_SUBMISSIONS_DIR,
   SUMMARY_LENGTH_MAX,
   STATUS_TAGS_DISAMBIGUATION
 } from "../../../constants/list"
-import emojis from "../../../constants/messages/emojis"
+import { Stats } from "./styles/stats"
+import { Ul, AuthorAndDate } from "./styles/ul"
+import { ZigzagPicture } from "./styles/zigzag-picture"
+import { authorNameList } from "../../../utils/authorship"
+import { datestamp } from "../../../utils/datestamp"
+import { froth } from "../../../utils/image-froth"
+import Link from "../_controls/Link"
+import emojis from "../../../constants/emojis"
 
 // return
 const ListSubtitle = props => {
@@ -37,6 +32,7 @@ const ListSubtitle = props => {
   )
 }
 export default props => {
+  console.log(props.items, props.status)
   return (
     <Bleed>
       <Ul status={props.status}>

@@ -1,22 +1,19 @@
 // tools
 import React from "react"
-import { froth } from "../../../../../utils/image-froth"
-import { PicturePlaceholder } from "../../../Picture/components/PicturePlaceholder"
 
-// styles
 import {
   CardFlattened,
   CardCaptionEditable,
   CardButtonEditable,
   CardHeaderEditable
 } from "./styles"
-import { SubtitleInput } from "../../../_controls/InputStyles"
-
-// constants
+import { PicturePlaceholder } from "../../../Picture/components/PicturePlaceholder"
 import {
   SUMMARY_LENGTH_MAX,
   TITLE_LENGTH_MAX
-} from "../../../../../constants/input"
+} from "../../../../../../user/constants/input"
+import { SubtitleInput } from "../../../_controls/InputStyles"
+import { froth } from "../../../../../utils/image-froth"
 
 // return
 export default props => {

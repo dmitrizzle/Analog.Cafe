@@ -1,11 +1,10 @@
 // tools
 import React from "react"
 
-// styles
-import Heading from "../ArticleHeading"
 import { Section, Article } from "../ArticleStyles"
-import emojis from "../../../constants/messages/emojis"
-import errorMessages from "../../../constants/messages/errors"
+import Heading from "../ArticleHeading"
+import emojis from "../../../constants/emojis"
+import errorMessages from "../../../../user/constants/errors"
 
 // return
 export default props => {

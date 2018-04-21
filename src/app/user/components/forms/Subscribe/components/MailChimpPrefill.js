@@ -1,15 +1,12 @@
 // tools
 import React from "react"
 
-// components
-import { Button } from "../../stateless/_controls/Button"
-import EmailInput from "./components/EmailInput"
-
-// styles
-import { Form } from "../../stateless/_controls/FormStyles"
+import { Button } from "../../../../../core/components/stateless/_controls/Button"
+import { Form } from "../../../../../core/components/stateless/_controls/FormStyles"
+import { validateEmail } from "../../../../utils/email-utils"
+import EmailInput from "../../EmailInput"
 
 // helpers
-import { validateEmail } from "../../../utils/email-utils"
 
 // render
 export default class extends React.Component {

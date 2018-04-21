@@ -1,9 +1,9 @@
 // related constants
 import { APP_DESCRIPTION, ROUTE_API_DOMAIN } from "./app"
-import { ROUTE_AUTH_USER_LANDING } from "./user"
+import { ROUTE_AUTH_USER_LANDING } from "../../user/constants/user"
 
 export { ROUTE_ARTICLE_DIR, ROUTE_SUBMISSIONS_DIR } from "./article"
-export { SUMMARY_LENGTH_MAX } from "./input"
+export { SUMMARY_LENGTH_MAX } from "../../user/constants/input"
 
 // api endpoints
 export const ROUTE_LIST_API = ROUTE_API_DOMAIN + "/list"

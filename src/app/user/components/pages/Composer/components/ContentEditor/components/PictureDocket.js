@@ -1,34 +1,27 @@
 // tools
+import { connect } from "react-redux"
 import React from "react"
+import keycode from "keycode"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
-import { forceImageRestrictions } from "../../../../../../utils/upload-utils"
-import keycode from "keycode"
 
-// redux
-import { connect } from "react-redux"
-import { setCard } from "../../../../../../store/actions/modalActions"
-import { fetchImageList } from "../../../../../../store/actions/composerActions"
-
-// components
-import { CardHeader } from "../../../../../stateless/Card/styles"
-import PictureDocket from "../../../../../stateless/_controls/PictureDocket"
+import { CardHeader } from "../../../../../../../core/components/stateless/Card/styles"
 import {
-  GridContainer,
-  GridRow,
-  GridCaption,
   GridButton,
-  GridButtonImage
-} from "../../../../../stateless/Grid"
-import { ModalDispatch } from "../../../../Modal"
-
-// styles
-import { dot } from "../../../../../stateless/_icons/BlankDot"
-
-// constants
-import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/messages/hints"
-import errorMessages from "../../../../../../constants/messages/errors"
-import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../../../../../../constants/picture"
+  GridButtonImage,
+  GridCaption,
+  GridContainer,
+  GridRow
+} from "../../../../../../../core/components/stateless/Grid"
+import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/hints"
+import { ModalDispatch } from "../../../../../../../core/components/containers/Modal"
+import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../../../../../../../core/constants/picture"
+import { dot } from "../../../../../../../core/components/stateless/_icons/BlankDot"
+import { fetchImageList } from "../../../../../../store/actions/composerActions"
+import { forceImageRestrictions } from "../../../../../../utils/upload-utils"
+import { setCard } from "../../../../../../../core/store/actions/modalActions"
+import PictureDocket from "../../../../../../../core/components/stateless/_controls/PictureDocket"
+import errorMessages from "../../../../../../constants/errors"
 
 // return
 class PictureDocketContainer extends React.PureComponent {

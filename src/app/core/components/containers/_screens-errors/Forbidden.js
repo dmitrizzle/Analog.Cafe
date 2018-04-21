@@ -8,7 +8,7 @@ import Link from "../../stateless/_controls/Link"
 import Heading from "../../stateless/ArticleHeading"
 import { Article, Section } from "../../stateless/ArticleStyles"
 
-import errorMessages from "../../../constants/messages/errors"
+import errorMessages from "../../../../user/constants/errors"
 
 class NotFound extends React.PureComponent {
   componentWillMount = () => {

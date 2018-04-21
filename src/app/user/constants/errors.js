@@ -1,6 +1,6 @@
 // constants
-import emojis from "./emojis"
-import { PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN } from "../picture"
+import { PICTURE_ACCEPTED_UPLOAD_MIME_HUMAN } from "../../core/constants/picture"
+import emojis from "../../core/constants/emojis"
 
 export default {
   VIEW_TEMPLATE: {

@@ -1,32 +1,27 @@
 // tools
-import React from "react"
-import { withRouter } from "react-router"
-import { ModalDispatch } from "../Modal"
-import Helmet from "../../stateless/_async/Helmet"
-import Loadable from "react-loadable"
-
-// redux & state
 import { connect } from "react-redux"
-import { fetchPage } from "../../../store/actions/listActions"
-import { setPage as setNextArticle } from "../../../store/actions/articleActions"
-import { setIntent as setUserIntent } from "../../../store/actions/userActions"
+import Loadable from "react-loadable"
+import React from "react"
 
+import { withRouter } from "react-router"
+
+import { Button } from "../../stateless/_controls/Button"
+import { default as ListBlock } from "../../stateless/List"
+import { ListDescription, ListHeader } from "../../stateless/ListDescription"
+import { ModalDispatch } from "../Modal"
+import { ROUTE_AUTHOR_API } from "../../../constants/author"
 import {
   ROUTE_LIST_API,
   ROUTE_AUTHENTICATED_LIST_API
 } from "../../../constants/list"
-import { ROUTE_AUTHOR_API } from "../../../constants/author"
-import errors from "../../../constants/messages/errors"
-
-// components
-import { ListDescription, ListHeader } from "../../stateless/ListDescription"
-import { Button } from "../../stateless/_controls/Button"
-import { default as ListBlock } from "../../stateless/List"
 import { Section, Article } from "../../stateless/ArticleStyles"
-
-// helpers
+import { fetchPage } from "../../../store/actions/listActions"
 import { getListMeta } from "../../../utils/list-utils"
+import { setPage as setNextArticle } from "../../../store/actions/articleActions"
+import { setIntent as setUserIntent } from "../../../../user/store/actions/userActions"
 import { trimAuthorName } from "../../../utils/authorship"
+import Helmet from "../../stateless/_async/Helmet"
+import errors from "../../../../user/constants/errors"
 
 // fetch placeholder component
 const HowToSubmit = Loadable({
@@ -103,6 +98,7 @@ class List extends React.PureComponent {
     this.unlisten()
   }
   render = () => {
+    console.log(this.props.list)
     const renderedListMeta = getListMeta(this.props.location.pathname).meta
     const renderedListTitle =
       renderedListMeta.title +

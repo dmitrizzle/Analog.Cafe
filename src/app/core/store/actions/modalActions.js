@@ -1,8 +1,8 @@
 // tools
 import axios from "axios"
-import errorMessages from "../../constants/messages/errors"
-import { axiosRequest } from "../../utils/axios-request"
 
+import { axiosRequest } from "../../utils/axios-request"
+import errorMessages from "../../../user/constants/errors"
 // return
 export const initCard = state => {
   return {

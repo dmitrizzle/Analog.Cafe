@@ -1,15 +1,17 @@
 // tools
 import React from "react"
+
 import { withRouter } from "react-router"
-import Helmet from "../../stateless/_async/Helmet"
 
-// components
-import Link from "../../stateless/_controls/Link"
-import Heading from "../../stateless/ArticleHeading"
-import { Article, Section } from "../../stateless/ArticleStyles"
-
-import errorMessages from "../../../constants/messages/errors"
+import {
+  Article,
+  Section
+} from "../../../../core/components/stateless/ArticleStyles"
 import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
+import Heading from "../../../../core/components/stateless/ArticleHeading"
+import Helmet from "../../../../core/components/stateless/_async/Helmet"
+import Link from "../../../../core/components/stateless/_controls/Link"
+import errorMessages from "../../../constants/errors"
 
 class AlreadyAuthenticated extends React.PureComponent {
   componentWillMount = () => {

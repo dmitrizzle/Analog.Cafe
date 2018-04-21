@@ -3,9 +3,9 @@ import React from "react"
 
 // redux
 import { connect } from "react-redux"
-import { fetchImageList } from "../../../../store/actions/composerActions"
+import { fetchImageList } from "../../../../../user/store/actions/composerActions"
 import { setCard } from "../../../../store/actions/modalActions"
-import { fetchUserList } from "../../../../store/actions/userActions"
+import { fetchUserList } from "../../../../../user/store/actions/userActions"
 import {
   deleteRecord as deleteImageRecord,
   feature as featureImage,

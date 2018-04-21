@@ -1,22 +1,20 @@
 // tools
-import React from "react"
 import { FrenchPress } from "@roast-cms/french-press-editor"
-
-// redux
 import { connect } from "react-redux"
-import { setCard } from "../../../../../store/actions/modalActions"
-import { setDraftStatus } from "../../../../../store/actions/composerActions"
-import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/messages/hints"
+import React from "react"
 
-// editor tools
-import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../../constants/app"
-import errorMessages from "../../../../../constants/messages/errors"
+import {
+  Capital,
+  Lower
+} from "../../../../../../core/components/stateless/_icons/HeaderGlyphs"
+import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/hints"
+import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../../../core/constants/app"
 import { ToggleFeature } from "./plugins"
-
-// editor components
-import Picture from "../../../Picture"
+import { setCard } from "../../../../../../core/store/actions/modalActions"
+import { setDraftStatus } from "../../../../../store/actions/composerActions"
+import Picture from "../../../../../../core/components/containers/Picture"
 import PictureDocket from "./components/PictureDocket"
-import { Capital, Lower } from "../../../../stateless/_icons/HeaderGlyphs"
+import errorMessages from "../../../../../constants/errors"
 
 // return
 class ContentEditor extends React.PureComponent {
