@@ -10,7 +10,7 @@ import {
   ROUTE_APP_CURRENT_DOMAIN,
   ROUTE_APP_PRODUCTION_DOMAIN_NAME
 } from "./core/constants/app"
-import { Modal } from "./core/components/containers/Modal"
+import { Modal } from "./core/components/controls/Modal"
 import { ROUTE_AUTH_USER_LANDING } from "./user/constants/user"
 import { setCard as setModalCard } from "./core/store/actions/modalActions"
 import {
@@ -23,8 +23,8 @@ import {
   setConnectionStatus,
   setIntent as setUserIntent
 } from "./user/store/actions/userActions"
-import AppRoutes from "./core/components/stateless/_screens/AppRoutes"
-import Nav from "./core/components/containers/Nav"
+import AppRoutes from "./core/components/routes/App"
+import Nav from "./core/components/controls/Nav_c"
 import errorMessages from "./user/constants/errors"
 
 // init GA tracking
@@ -39,12 +39,12 @@ if (
 
 // preload for List component
 const ListPreloader = Loadable({
-  loader: () => import("./core/components/containers/List"),
+  loader: () => import("./core/components/pages/List"),
   loading: () => null
 })
 // preload for Article component
 const ArticlePreloader = Loadable({
-  loader: () => import("./core/components/containers/Article"),
+  loader: () => import("./core/components/pages/Article"),
   loading: () => null
 })
 

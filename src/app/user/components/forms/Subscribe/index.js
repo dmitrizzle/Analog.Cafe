@@ -1,6 +1,6 @@
 import React from "react"
 
-import { CardButton } from "../../../../core/components/stateless/Card/styles"
+import { CardButton } from "../../../../core/components/controls/Card/styles"
 import {
   KEYWORD_SUBSCRIBE,
   KEYWORD_SUBSCRIBE_SUBMIT

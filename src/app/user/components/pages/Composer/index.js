@@ -6,8 +6,8 @@ import {
   MESSAGE_HINT_SUBMIT_CONSENT,
   MESSAGE_HINT_SUBMIT_EDITORS
 } from "../../../constants/hints"
-import { ModalDispatch } from "../../../../core/components/containers/Modal"
-import { Section } from "../../../../core/components/stateless/ArticleStyles"
+import { ModalDispatch } from "../../../../core/components/controls/Modal"
+import { Section } from "../../../../core/components/styles/ArticleStyles"
 import { requestFocus as requestEditorFocus } from "../../../store/actions/composerActions"
 import ContentEditor from "./components/ContentEditor"
 import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"

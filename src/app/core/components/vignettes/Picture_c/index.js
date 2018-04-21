@@ -3,10 +3,10 @@ import React from "react"
 
 import { INPUT_AUTO_FORMAT } from "../../../../user/constants/input"
 import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
-import { PlainTextarea } from "../../stateless/_controls/InputStyles"
+import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
 import { getFroth } from "../../../utils/image-froth"
 import { getInfo } from "../../../store/actions/pictureActions"
-import Picture from "../../stateless/Picture"
+import Picture from "../Picture"
 import PictureMenu from "../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"
 
 // export

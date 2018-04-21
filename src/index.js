@@ -6,12 +6,12 @@ import React from "react"
 import styled, { ThemeProvider } from "styled-components"
 
 import { APP_NAME } from "./app/core/constants/app"
-import { arrayIncludes, arrayFind } from "./app/core/utils/polyfill"
+import { arrayFind, arrayIncludes } from "./app/core/utils/polyfill"
 import App from "./app"
-import Helmet from "./app/core/components/stateless/_async/Helmet"
+import Helmet from "./app/core/components/vignettes/Helmet"
 import emojis from "./app/core/constants/emojis"
 import registerServiceWorker from "./registerServiceWorker"
-import store from "./store"
+import store from "./app/store"
 
 arrayIncludes()
 arrayFind()

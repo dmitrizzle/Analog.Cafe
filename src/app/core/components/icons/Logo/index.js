@@ -1,8 +1,6 @@
 import React from "react"
 
-import { APP_NAME } from "../../../../constants/app"
-
-// styles
+import { APP_NAME } from "../../../constants/app"
 import { LogoOutline, LogoWithDownstate } from "./styles"
 
 export default props => {

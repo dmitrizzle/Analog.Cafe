@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 
-import emojis from "../../../constants/emojis"
+import emojis from "../../constants/emojis"
 
 export default css`
 content: "${emojis.STAR}";

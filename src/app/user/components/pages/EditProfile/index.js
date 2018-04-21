@@ -1,8 +1,8 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { Article } from "../../../../core/components/stateless/ArticleStyles"
-import { Button } from "../../../../core/components/stateless/_controls/Button"
+import { Article } from "../../../../core/components/styles/ArticleStyles"
+import { Button } from "../../../../core/components/controls/Button"
 import {
   ROUTE_AUTH_USER_LANDING,
   ROUTE_UPDATE_PROFILE_API
@@ -16,9 +16,10 @@ import {
 } from "../../../store/actions/userActions"
 import { profileButtonsTemplate } from "../../../../core/utils/profile-button-labeler"
 import { setCard } from "../../../../core/store/actions/modalActions"
-import CardEditableProfile from "../../../../core/components/stateless/Card/components/EditableProfile"
-import Forbidden from "../../../../core/components/containers/_screens-errors/Forbidden"
-import Heading from "../../../../core/components/stateless/ArticleHeading"
+
+import CardEditableProfile from "../../../../core/components/controls/Card/components/EditableProfile"
+import Forbidden from "../../../../core/components/pages/Forbidden"
+import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import errorMessages from "../../../constants/errors"
 
 class EditProfile extends React.PureComponent {

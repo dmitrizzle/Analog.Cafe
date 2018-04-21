@@ -6,12 +6,12 @@ import {
   CardButtonEditable,
   CardHeaderEditable
 } from "./styles"
-import { PicturePlaceholder } from "../../../Picture/components/PicturePlaceholder"
+import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
 import {
   SUMMARY_LENGTH_MAX,
   TITLE_LENGTH_MAX
 } from "../../../../../../user/constants/input"
-import { SubtitleInput } from "../../../_controls/InputStyles"
+import { SubtitleInput } from "../../../../../../user/components/forms/InputStyles"
 import { froth } from "../../../../../utils/image-froth"
 
 // return

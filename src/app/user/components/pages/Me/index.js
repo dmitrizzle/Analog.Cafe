@@ -2,8 +2,8 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { forget as forgetUser } from "../../../store/actions/userActions"
-import Forbidden from "../../../../core/components/containers/_screens-errors/Forbidden"
-import List from "../../../../core/components/containers/List"
+import Forbidden from "../../../../core/components/pages/Forbidden"
+import List from "../../../../core/components/pages/List"
 
 const Me = props => {
   return props.user.status === "ok" ? (

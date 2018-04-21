@@ -3,7 +3,12 @@ import { connect } from "react-redux"
 import Loadable from "react-loadable"
 import React from "react"
 
-import { ModalDispatch } from "../Modal"
+import {
+  Byline,
+  Section,
+  Article as ArticleElement
+} from "../../styles/ArticleStyles"
+import { ModalDispatch } from "../../controls/Modal"
 import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../constants/app"
 import {
   ROUTE_ARTICLE_DIR,
@@ -12,22 +17,17 @@ import {
 import { ROUTE_AUTHOR_API } from "../../../constants/author"
 import { ROUTE_TAGS } from "../../../constants/list"
 import {
-  Section,
-  Article as ArticleElement,
-  Byline
-} from "../../stateless/ArticleStyles"
-import {
   fetchPage,
   setPage as setNextArticle
 } from "../../../store/actions/articleActions"
 import { froth } from "../../../utils/image-froth"
 import { getLeadAuthor, authorNameList } from "../../../utils/authorship"
 import { locate, completeUrlPath } from "../../../utils/article-utils"
-import ArticleActions from "../../stateless/Card/components/ArticleActions"
-import Heading from "../../stateless/ArticleHeading"
-import Helmet from "../../stateless/_async/Helmet"
-import Link from "../../stateless/_controls/Link"
-import Picture from "../Picture"
+import ArticleActions from "../../controls/Card/components/ArticleActions"
+import Heading from "../../vignettes/ArticleHeading"
+import Helmet from "../../vignettes/Helmet"
+import Link from "../../controls/Link"
+import Picture from "../../vignettes/Picture_c"
 import emojis from "../../../constants/emojis"
 import slugToTitle from "../../../utils/slug-to-title"
 

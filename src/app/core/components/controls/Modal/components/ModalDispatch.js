@@ -1,12 +1,10 @@
+import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
-// redux
-import { connect } from "react-redux"
+import { Button } from "../../Button"
 import { fetchCard, setCard } from "../../../../store/actions/modalActions"
-
-import { Button } from "../../../stateless/_controls/Button"
-import InlineStarIcon from "../../../stateless/_icons/InlineStarIcon"
+import InlineStarIcon from "../../../icons/InlineStarIcon"
 
 // return
 const ModalDispatch = props => {

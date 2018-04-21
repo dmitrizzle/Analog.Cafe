@@ -1,11 +1,7 @@
 import styled, { css } from "styled-components"
 
-// components
-import { LinkButton } from "../_controls/Button"
-
-// styles
-import { Sidenote } from "../CaptionStyles"
-
+import { LinkButton } from "../Button"
+import { Sidenote } from "../../styles/CaptionStyles"
 import emojis from "../../../constants/emojis"
 
 // css

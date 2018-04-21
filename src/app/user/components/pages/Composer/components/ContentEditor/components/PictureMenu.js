@@ -4,7 +4,7 @@ import styled from "styled-components"
 import {
   ButtonStrip,
   Item
-} from "../../../../../../../core/components/stateless/_controls/ButtonStrip"
+} from "../../../../../../../core/components/controls/ButtonStrip"
 
 // components
 

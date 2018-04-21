@@ -1,13 +1,13 @@
 import React from "react"
 
-import { ButtonGroupDivider } from "../_controls/Button/components/ButtonGroupDivider"
+import { ButtonGroupDivider } from "../Button/components/ButtonGroupDivider"
 import {
   Card as CardElement,
   CardButton,
   CardCaption,
   CardHeader
 } from "./styles"
-import { PicturePlaceholder } from "../Picture/components/PicturePlaceholder"
+import { PicturePlaceholder } from "../../vignettes/Picture/components/PicturePlaceholder"
 import { QuickSubscribe } from "../../../../user/components/forms/Subscribe"
 import { froth } from "../../../utils/image-froth"
 

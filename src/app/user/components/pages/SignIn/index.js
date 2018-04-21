@@ -5,12 +5,12 @@ import open from "oauth-open"
 import {
   Article,
   Section
-} from "../../../../core/components/stateless/ArticleStyles"
-import { ButtonGroup } from "../../../../core/components/stateless/_controls/Button/components/ButtonGroup"
+} from "../../../../core/components/styles/ArticleStyles"
+import { ButtonGroup } from "../../../../core/components/controls/Button/components/ButtonGroup"
 import {
   FacebookLinkButton,
   TwitterLinkButton
-} from "../../../../core/components/stateless/_controls/Button/components/SocialButtons"
+} from "../../../../core/components/controls/Button/components/SocialButtons"
 import {
   ROUTE_LOGIN_FACEBOOK_API,
   ROUTE_LOGIN_TWITTER_API
@@ -22,8 +22,8 @@ import {
   refreshSessionInfo
 } from "../../../store/actions/userActions"
 import AlreadyAuthenticated from "../Error/AlreadyAuthenticated"
-import Heading from "../../../../core/components/stateless/ArticleHeading"
-import Helmet from "../../../../core/components/stateless/_async/Helmet"
+import Heading from "../../../../core/components/vignettes/ArticleHeading"
+import Helmet from "../../../../core/components/vignettes/Helmet"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
 class SignIn extends React.PureComponent {

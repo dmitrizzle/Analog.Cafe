@@ -1,12 +1,9 @@
 import React from "react"
-import { froth } from "../../../utils/image-froth"
 
-import { ROUTE_AUTHOR_API } from "../../../constants/author"
-
-// components
-import { ModalDispatch } from "../../containers/Modal"
-
-import { GridButton, AspectRatio, GridButtonCaption } from "./styles"
+import { AspectRatio, GridButton, GridButtonCaption } from "./styles"
+import { ModalDispatch } from "../../../../core/components/controls/Modal"
+import { ROUTE_AUTHOR_API } from "../../../../core/constants/author"
+import { froth } from "../../../../core/utils/image-froth"
 
 // exports
 export const GridButtonImage = props => {

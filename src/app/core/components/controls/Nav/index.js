@@ -1,18 +1,14 @@
 import React from "react"
-import { froth } from "../../../../utils/image-froth"
-
-// components
-import Logo from "../../_icons/Logo"
-import { ModalDispatch } from "../../../containers/Modal"
 
 import {
+  MESSAGE_HINT_AUTO_SAVE,
   MESSAGE_HINT_SUBMIT_CONSENT,
-  MESSAGE_HINT_SUBMIT_EDITORS,
-  MESSAGE_HINT_AUTO_SAVE
-} from "../../../../../user/constants/hints"
-
-// styles
-import { NavLink, NavIndexLink, NavItem, TinyImageInline } from "./styles"
+  MESSAGE_HINT_SUBMIT_EDITORS
+} from "../../../../user/constants/hints"
+import { ModalDispatch } from "../Modal"
+import { NavIndexLink, NavItem, NavLink, TinyImageInline } from "./styles"
+import { froth } from "../../../utils/image-froth"
+import Logo from "../../icons/Logo"
 
 // NOTE: components' `className` props are used in index.html and aren't required
 // if styles from `./styles.js` have the comments removed

@@ -1,13 +1,9 @@
 import React from "react"
-import errorMessages from "../../../../user/constants/errors"
 
-import { ROUTE_AUTHOR_API } from "../../../constants/author"
-
-// components
-import { ModalDispatch } from "../../containers/Modal"
-
-// styles
 import { Image, Figure, Caption, CaptionAuthor } from "./styles"
+import { ModalDispatch } from "../../controls/Modal"
+import { ROUTE_AUTHOR_API } from "../../../constants/author"
+import errorMessages from "../../../../user/constants/errors"
 
 // return
 export default props => {

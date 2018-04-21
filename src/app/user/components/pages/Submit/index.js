@@ -3,15 +3,15 @@ import React from "react"
 import {
   Article,
   Section
-} from "../../../../core/components/stateless/ArticleStyles"
-import { ButtonGroup } from "../../../../core/components/stateless/_controls/Button/components/ButtonGroup"
-import { Caption } from "../../../../core/components/stateless/CaptionStyles"
-import { Figure } from "../../../../core/components/stateless/Picture/styles"
-import { LinkButton } from "../../../../core/components/stateless/_controls/Button"
+} from "../../../../core/components/styles/ArticleStyles"
+import { ButtonGroup } from "../../../../core/components/controls/Button/components/ButtonGroup"
+import { Caption } from "../../../../core/components/styles/CaptionStyles"
+import { Figure } from "../../../../core/components/vignettes/Picture/styles"
+import { LinkButton } from "../../../../core/components/controls/Button"
 import { froth } from "../../../../core/utils/image-froth"
-import Heading from "../../../../core/components/stateless/ArticleHeading"
-import Helmet from "../../../../core/components/stateless/_async/Helmet"
-import Link from "../../../../core/components/stateless/_controls/Link"
+import Heading from "../../../../core/components/vignettes/ArticleHeading"
+import Helmet from "../../../../core/components/vignettes/Helmet"
+import Link from "../../../../core/components/controls/Link"
 
 const metaTitle = "Submit"
 const metaDescription =

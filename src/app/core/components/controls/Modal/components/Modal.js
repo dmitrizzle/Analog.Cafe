@@ -1,16 +1,12 @@
+import { connect } from "react-redux"
 import React from "react"
 
-// redux
-import { connect } from "react-redux"
-import { hideCard } from "../../../../store/actions/modalActions"
-
-// components
-import { CardModal, ModalOverlay } from "../../../stateless/Card"
-
+import { CardModal, ModalOverlay } from "../../Card"
 import {
   ROUTE_APP_CURRENT_DOMAIN,
   ROUTE_API_DOMAIN
 } from "../../../../constants/app"
+import { hideCard } from "../../../../store/actions/modalActions"
 
 // return
 const Modal = props => {

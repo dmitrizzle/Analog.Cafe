@@ -5,11 +5,11 @@ import { withRouter } from "react-router"
 import {
   Article,
   Section
-} from "../../../../core/components/stateless/ArticleStyles"
+} from "../../../../core/components/styles/ArticleStyles"
 import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
-import Heading from "../../../../core/components/stateless/ArticleHeading"
-import Helmet from "../../../../core/components/stateless/_async/Helmet"
-import Link from "../../../../core/components/stateless/_controls/Link"
+import Helmet from "../../../../core/components/vignettes/Helmet"
+import Link from "../../../../core/components/controls/Link"
+import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import errorMessages from "../../../constants/errors"
 
 class AlreadyAuthenticated extends React.PureComponent {

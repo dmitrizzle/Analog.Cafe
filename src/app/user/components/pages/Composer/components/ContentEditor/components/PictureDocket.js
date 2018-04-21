@@ -4,22 +4,22 @@ import keycode from "keycode"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
 
-import { CardHeader } from "../../../../../../../core/components/stateless/Card/styles"
+import { CardHeader } from "../../../../../../../core/components/controls/Card/styles"
 import {
   GridButton,
   GridButtonImage,
   GridCaption,
   GridContainer,
   GridRow
-} from "../../../../../../../core/components/stateless/Grid"
+} from "../../../../../controls/Grid"
 import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/hints"
-import { ModalDispatch } from "../../../../../../../core/components/containers/Modal"
+import { ModalDispatch } from "../../../../../../../core/components/controls/Modal"
 import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../../../../../../../core/constants/picture"
-import { dot } from "../../../../../../../core/components/stateless/_icons/BlankDot"
+import { dot } from "../../../../../../../core/components/icons/BlankDot"
 import { fetchImageList } from "../../../../../../store/actions/composerActions"
 import { forceImageRestrictions } from "../../../../../../utils/upload-utils"
 import { setCard } from "../../../../../../../core/store/actions/modalActions"
-import PictureDocket from "../../../../../../../core/components/stateless/_controls/PictureDocket"
+import PictureDocket from "../../../../../controls/PictureDocket"
 import errorMessages from "../../../../../../constants/errors"
 
 // return

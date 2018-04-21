@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components"
-import { Button } from "../_controls/Button"
-import { Sidenote } from "../CaptionStyles"
+
+import { Button } from "../../../../core/components/controls/Button"
+import { Sidenote } from "../../../../core/components/styles/CaptionStyles"
 
 // css
 const squreWidth = css`

@@ -1,22 +1,20 @@
 import React from "react"
-import { froth } from "../../../../../utils/image-froth"
-import { PicturePlaceholder } from "../../../Picture/components/PicturePlaceholder"
-import { datestamp, lunar, percise } from "../../../../../utils/datestamp"
 
-import { QuickSubscribe } from "../../../../../../user/components/forms/Subscribe"
-import Link from "../../../_controls/Link"
-import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
-import { authorNameList } from "../../../../../utils/authorship"
-
-// styles
-import { TimeStamp } from "../../../ArticleStyles"
+import { Button, LinkButton } from "../../../Button"
 import { CardFlattened, CardCaption } from "../../styles"
-import { LinkButton, Button } from "../../../_controls/Button"
 import {
-  TwitterLinkButton,
   FacebookLinkButton,
-  InstagramLinkButton
-} from "../../../_controls/Button/components/SocialButtons"
+  InstagramLinkButton,
+  TwitterLinkButton
+} from "../../../Button/components/SocialButtons"
+import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
+import { QuickSubscribe } from "../../../../../../user/components/forms/Subscribe"
+import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
+import { TimeStamp } from "../../../../styles/ArticleStyles"
+import { authorNameList } from "../../../../../utils/authorship"
+import { datestamp, lunar, percise } from "../../../../../utils/datestamp"
+import { froth } from "../../../../../utils/image-froth"
+import Link from "../../../Link"
 
 const nextArticlePreload = nextArticle => {
   return {

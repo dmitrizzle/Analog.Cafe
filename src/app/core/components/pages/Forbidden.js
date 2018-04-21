@@ -1,13 +1,12 @@
 import React from "react"
+
 import { withRouter } from "react-router"
-import Helmet from "../../stateless/_async/Helmet"
 
-// components
-import Link from "../../stateless/_controls/Link"
-import Heading from "../../stateless/ArticleHeading"
-import { Article, Section } from "../../stateless/ArticleStyles"
-
-import errorMessages from "../../../../user/constants/errors"
+import { Article, Section } from "../styles/ArticleStyles"
+import Helmet from "../vignettes/Helmet"
+import Link from "../controls/Link"
+import errorMessages from "../../../user/constants/errors"
+import Heading from "../vignettes/ArticleHeading"
 
 class NotFound extends React.PureComponent {
   componentWillMount = () => {

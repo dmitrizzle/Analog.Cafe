@@ -1,7 +1,7 @@
 import React from "react"
 
-import { Button } from "../../../../../core/components/stateless/_controls/Button"
-import { Form } from "../../../../../core/components/stateless/_controls/FormStyles"
+import { Button } from "../../../../../core/components/controls/Button"
+import { Form } from "../../FormStyles"
 import { validateEmail } from "../../../../utils/email-utils"
 import EmailInput from "../../EmailInput"
 

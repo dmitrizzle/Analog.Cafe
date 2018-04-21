@@ -1,30 +1,30 @@
+import { connect } from "react-redux"
 import React from "react"
 
-// redux
-import { connect } from "react-redux"
-import { fetchImageList } from "../../../../../user/store/actions/composerActions"
-import { setCard } from "../../../../store/actions/modalActions"
-import { fetchUserList } from "../../../../../user/store/actions/userActions"
 import {
-  deleteRecord as deleteImageRecord,
-  feature as featureImage,
-  unfeature as unfeatureImage
-} from "../../../../store/actions/pictureActions"
-
-// components
-import Forbidden from "../../_screens-errors/Forbidden"
-
-import Heading from "../../../stateless/ArticleHeading"
-import { Button } from "../../../stateless/_controls/Button"
-import { ButtonStrip, Item } from "../../../stateless/_controls/ButtonStrip"
-
-import { Article, Section } from "../../../stateless/ArticleStyles"
-
+  Article,
+  Section
+} from "../../../../core/components/styles/ArticleStyles"
+import { Button } from "../../../../core/components/controls/Button"
+import {
+  ButtonStrip,
+  Item
+} from "../../../../core/components/controls/ButtonStrip"
 import {
   GridButtonImage,
   GridContainer,
   GridRow
-} from "../../../stateless/Grid"
+} from "../../../../user/components/controls/Grid"
+import {
+  deleteRecord as deleteImageRecord,
+  feature as featureImage,
+  unfeature as unfeatureImage
+} from "../../../../core/store/actions/pictureActions"
+import { fetchImageList } from "../../../../user/store/actions/composerActions"
+import { fetchUserList } from "../../../../user/store/actions/userActions"
+import { setCard } from "../../../../core/store/actions/modalActions"
+import Forbidden from "../../../../core/components/pages/Forbidden"
+import Heading from "../../../../core/components/vignettes/ArticleHeading"
 
 const IMAGES_PER_ROW = 4
 const IMAGES_PER_PAGE = 16

@@ -1,12 +1,10 @@
 import React from "react"
-import Link from "../../stateless/_controls/Link"
-import Helmet from "../../stateless/_async/Helmet"
 
-// components
-import Heading from "../../stateless/ArticleHeading"
-import { Section, Article } from "../../stateless/ArticleStyles"
-
-import errorMessages from "../../../../user/constants/errors"
+import { Article, Section } from "../styles/ArticleStyles"
+import Heading from "../vignettes/ArticleHeading"
+import Helmet from "../vignettes/Helmet"
+import Link from "../controls/Link"
+import errorMessages from "../../../user/constants/errors"
 
 export default class extends React.PureComponent {
   componentWillMount = () => {

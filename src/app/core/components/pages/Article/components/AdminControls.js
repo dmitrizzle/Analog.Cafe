@@ -7,14 +7,14 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
-import { Button } from "../../../stateless/_controls/Button"
-import { ButtonStrip, Item } from "../../../stateless/_controls/ButtonStrip"
-import { Byline } from "../../../stateless/ArticleStyles"
-import { CardFlattened } from "../../../stateless/Card/styles"
+import { Button } from "../../../controls/Button"
+import { ButtonStrip, Item } from "../../../controls/ButtonStrip"
+import { Byline } from "../../../styles/ArticleStyles"
+import { CardFlattened } from "../../../controls/Card/styles"
 import {
   MESSAGE_HINT_OVERWRITE_DRAFT,
-  MESSAGE_HINT_REJECT_SUBMISSION,
   MESSAGE_HINT_PUBLISH_SUBMISSION,
+  MESSAGE_HINT_REJECT_SUBMISSION,
   MESSAGE_HINT_SYNC_SUBMISSION
 } from "../../../../../user/constants/hints"
 import {
@@ -31,7 +31,7 @@ import {
 } from "../../../../../user/store/actions/composerActions"
 import { storeHeaderState } from "../../../../../user/utils/browser-storage"
 import { updateStatus as updateArticleStatus } from "../../../../store/actions/articleActions"
-import Link from "../../../stateless/_controls/Link"
+import Link from "../../../controls/Link"
 import emojis from "../../../../constants/emojis"
 
 const TAGS = {

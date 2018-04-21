@@ -1,8 +1,8 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { Button } from "../../../../core/components/stateless/_controls/Button"
-import { Form } from "../../../../core/components/stateless/_controls/FormStyles"
+import { Button } from "../../../../core/components/controls/Button"
+import { Form } from "../FormStyles"
 import { loginWithEmail } from "../../../store/actions/userActions"
 import { setCard } from "../../../../core/store/actions/modalActions"
 import { validateEmail } from "../../../utils/email-utils"

@@ -1,9 +1,8 @@
 import React from "react"
 
-// components
-import { Section, Article } from "../../../stateless/ArticleStyles"
-import Figure from "../../../stateless/Picture"
-import { LinkButton } from "../../../stateless/_controls/Button"
+import { Article, Section } from "../../../styles/ArticleStyles"
+import { Figure } from "../../../vignettes/Picture/styles"
+import { LinkButton } from "../../../controls/Button"
 
 export default () => {
   return (

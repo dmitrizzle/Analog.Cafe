@@ -1,5 +1,7 @@
 import { froth as frothInit } from "@roast-cms/image-froth"
-import { dot } from "../components/stateless/_icons/BlankDot"
+
+import { dot } from "../components/icons/BlankDot"
+import { getFroth } from "./image-froth"
 
 const FROTH_CONSTANTS = {
   // cloudinary server and subfolder location

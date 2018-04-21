@@ -1,19 +1,18 @@
-import React from "react"
-import Loadable from "react-loadable"
 import {
   Button as ButtonInit,
   TinyButton as TinyButtonInit,
   LinkButton as LinkButtonInit
 } from "@roast-cms/react-button-beans"
+import Loadable from "react-loadable"
+import React from "react"
 
-// components
 import Link from "../Link"
 
 // direct exports
 export { ButtonStyles } from "@roast-cms/react-button-beans"
 
 const Loader = Loadable({
-  loader: () => import("../../_icons/Loader"),
+  loader: () => import("../../icons/Loader"),
   loading: () => null,
   delay: 100
 })

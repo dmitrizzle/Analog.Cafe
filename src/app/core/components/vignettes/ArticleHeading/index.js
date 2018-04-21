@@ -1,8 +1,9 @@
 import React from "react"
 import toTitleCase from "titlecase"
 
+import { Header, Subtitle, Title } from "../../styles/ArticleStyles"
+
 // styles
-import { Header, Title, Subtitle } from "../ArticleStyles"
 
 // return
 export default props => {

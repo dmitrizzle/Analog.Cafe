@@ -1,10 +1,14 @@
 import styled from "styled-components"
 
-// styles
-import { CardCaptionStyles, CardButtonStyles, CardHeader } from "../../styles"
-import { TextareaWithHighlights } from "../../../_controls/InputStyles"
-import { CaptionStyles } from "../../../CaptionStyles"
-import { ButtonStyles } from "../../../_controls/Button"
+import { ButtonStyles } from "../../../Button"
+import { CaptionStyles } from "../../../../styles/CaptionStyles"
+import {
+  CardButtonStyles,
+  CardCaptionStyles,
+  CardFlattened,
+  CardHeader
+} from "../../styles"
+import { TextareaWithHighlights } from "../../../../../../user/components/forms/InputStyles"
 
 export { CardFlattened } from "../../styles"
 export const CardHeaderEditable = styled(CardHeader)`

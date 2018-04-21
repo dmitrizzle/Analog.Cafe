@@ -5,13 +5,13 @@ import React from "react"
 import {
   Capital,
   Lower
-} from "../../../../../../core/components/stateless/_icons/HeaderGlyphs"
+} from "../../../../../../core/components/icons/HeaderGlyphs"
 import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/hints"
 import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../../../core/constants/app"
 import { ToggleFeature } from "./plugins"
 import { setCard } from "../../../../../../core/store/actions/modalActions"
 import { setDraftStatus } from "../../../../../store/actions/composerActions"
-import Picture from "../../../../../../core/components/containers/Picture"
+import Picture from "../../../../../../core/components/vignettes/Picture_c"
 import PictureDocket from "./components/PictureDocket"
 import errorMessages from "../../../../../constants/errors"
 

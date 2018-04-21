@@ -14,8 +14,8 @@ import {
   Section,
   Subtitle,
   Title
-} from "../../../../core/components/stateless/ArticleStyles"
-import { LinkButton } from "../../../../core/components/stateless/_controls/Button"
+} from "../../../../core/components/styles/ArticleStyles"
+import { LinkButton } from "../../../../core/components/controls/Button"
 import { loadHeader } from "../../../utils/browser-storage"
 import { redirectToSignIn, sendSubmission } from "../../../utils/upload-utils"
 import { setCard } from "../../../../core/store/actions/modalActions"
@@ -29,8 +29,8 @@ import {
   resetAllValues as resetComposerValues,
   resetSubmissionStatus
 } from "../../../store/actions/composerActions"
-import Helmet from "../../../../core/components/stateless/_async/Helmet"
-import Link from "../../../../core/components/stateless/_controls/Link"
+import Helmet from "../../../../core/components/vignettes/Helmet"
+import Link from "../../../../core/components/controls/Link"
 import emojis from "../../../../core/constants/emojis"
 import errorMessages from "../../../constants/errors"
 

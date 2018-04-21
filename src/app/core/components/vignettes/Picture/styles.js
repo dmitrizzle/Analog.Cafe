@@ -1,9 +1,11 @@
 import React from "react"
-import Picture from "./components/PictureElement"
-
-// styles
 import styled, { css } from "styled-components"
-import { Caption as PictureCaption, CaptionStyles } from "../CaptionStyles"
+
+import {
+  Caption as PictureCaption,
+  CaptionStyles
+} from "../../styles/CaptionStyles"
+import Picture from "./components/PictureElement"
 
 // css
 // remove `style` prop from Picture HOC

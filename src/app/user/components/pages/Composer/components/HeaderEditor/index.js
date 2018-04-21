@@ -5,9 +5,9 @@ import keycode from "keycode"
 import {
   Byline,
   Header
-} from "../../../../../../core/components/stateless/ArticleStyles"
+} from "../../../../../../core/components/styles/ArticleStyles"
 import { MESSAGE_HINT_YOUR_PROFILE } from "../../../../../constants/hints"
-import { ModalDispatch } from "../../../../../../core/components/containers/Modal"
+import { ModalDispatch } from "../../../../../../core/components/controls/Modal"
 import {
   SUBTITLE_LENGTH_MAX,
   SUBTITLE_LENGTH_OPTIMAL,
@@ -19,8 +19,8 @@ import {
   setHeadingValues
 } from "../../../../../store/actions/composerActions"
 import { saveHeader } from "../../../../../utils/browser-storage"
-import Link from "../../../../../../core/components/stateless/_controls/Link"
-import TitleCase from "../../../../../../core/components/containers/TitleCase"
+import Link from "../../../../../../core/components/controls/Link"
+import TitleCase from "../../../../forms/TitleCase"
 
 // return
 class HeaderEditor extends React.PureComponent {

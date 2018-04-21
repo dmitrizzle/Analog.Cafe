@@ -5,12 +5,7 @@ import { connect } from "react-redux"
 import { setIntent as setUserIntent } from "../../../../user/store/actions/userActions"
 
 // components
-import {
-  CommonNav,
-  ComposerNav,
-  NavWrapper,
-  Connection
-} from "../../stateless/_controls/Nav"
+import { CommonNav, ComposerNav, NavWrapper, Connection } from "../Nav"
 
 const Nav = props => {
   if (props.top && !props.nav.location.top) return null

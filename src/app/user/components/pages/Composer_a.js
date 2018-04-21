@@ -1,13 +1,10 @@
 import React from "react"
 
-import {
-  Article,
-  Section
-} from "../../../core/components/stateless/ArticleStyles"
-import { Caption } from "../../../core/components/stateless/CaptionStyles"
+import { Article, Section } from "../../../core/components/styles/ArticleStyles"
+import { Caption } from "../../../core/components/styles/CaptionStyles"
 import Composer from "./Composer"
-import Helmet from "../../../core/components/stateless/_async/Helmet"
-import Link from "../../../core/components/stateless/_controls/Link"
+import Helmet from "../../../core/components/vignettes/Helmet"
+import Link from "../../../core/components/controls/Link"
 
 const metaTitle = "Composer"
 const metaDescription =

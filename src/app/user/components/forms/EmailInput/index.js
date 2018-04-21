@@ -1,6 +1,6 @@
 import React from "react"
 
-import { SubtitleInput } from "../../../../core/components/stateless/_controls/InputStyles"
+import { SubtitleInput } from "../InputStyles"
 
 export default props => {
   return (
