@@ -1,7 +1,7 @@
 import LinkFilter from "@roast-cms/react-link-filter"
 import React from "react"
 
-import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../constants/app"
+import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../constants"
 
 // return
 export default props => (

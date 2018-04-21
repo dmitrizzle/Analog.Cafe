@@ -1,9 +1,8 @@
 import React from "react"
 
-import { APP_NAME } from "../../../constants/app"
-
-// styles
+import { APP_NAME } from "../../../../constants"
 import { ListDescription as ListDescriptionStyles, BrandName } from "./styles"
+
 export { ListHeader } from "./styles"
 
 // return

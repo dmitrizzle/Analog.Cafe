@@ -9,7 +9,7 @@ import {
   Article as ArticleElement
 } from "../../styles/ArticleStyles"
 import { ModalDispatch } from "../../controls/Modal"
-import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../constants/app"
+import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../constants"
 import {
   ROUTE_ARTICLE_DIR,
   ROUTE_SUBMISSIONS_DIR

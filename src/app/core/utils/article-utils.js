@@ -1,14 +1,14 @@
 // constants
 import {
+  ROUTE_APP_PRODUCTION_DOMAIN_NAME,
+  ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL
+} from "../../constants"
+import {
   ROUTE_SUBMISSIONS_DIR,
   ROUTE_ARTICLE_DIR,
   ROUTE_SUBMISSION_API,
   ROUTE_ARTICLE_API
 } from "../constants/article"
-import {
-  ROUTE_APP_PRODUCTION_DOMAIN_PROTOCOL,
-  ROUTE_APP_PRODUCTION_DOMAIN_NAME
-} from "../constants/app"
 
 // return path type for submissions vs published works
 export const locate = locationPathname => {

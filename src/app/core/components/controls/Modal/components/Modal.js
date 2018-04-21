@@ -3,9 +3,9 @@ import React from "react"
 
 import { CardModal, ModalOverlay } from "../../Card"
 import {
-  ROUTE_APP_CURRENT_DOMAIN,
-  ROUTE_API_DOMAIN
-} from "../../../../constants/app"
+  ROUTE_API_DOMAIN,
+  ROUTE_APP_CURRENT_DOMAIN
+} from "../../../../../constants"
 import { hideCard } from "../../../../store/actions/modalActions"
 
 // return

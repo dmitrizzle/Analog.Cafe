@@ -1,7 +1,8 @@
 // related constants
-import { ROUTE_API_DOMAIN } from "./app"
 
 // api endpoint
+import { ROUTE_API_DOMAIN } from "../../constants"
+
 export const ROUTE_IMAGE_API = ROUTE_API_DOMAIN + "/images"
 
 // data structure for Picture object in Slate <Editor/>

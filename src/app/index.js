@@ -9,7 +9,7 @@ import {
   APP_TRACKING_GAID,
   ROUTE_APP_CURRENT_DOMAIN,
   ROUTE_APP_PRODUCTION_DOMAIN_NAME
-} from "./core/constants/app"
+} from "./constants"
 import { Modal } from "./core/components/controls/Modal"
 import { ROUTE_AUTH_USER_LANDING } from "./user/constants/user"
 import { setCard as setModalCard } from "./core/store/actions/modalActions"

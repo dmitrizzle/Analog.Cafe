@@ -7,7 +7,7 @@ import {
   Lower
 } from "../../../../../../core/components/icons/HeaderGlyphs"
 import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/hints"
-import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../../../core/constants/app"
+import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../../../constants"
 import { ToggleFeature } from "./plugins"
 import { setCard } from "../../../../../../core/store/actions/modalActions"
 import { setDraftStatus } from "../../../../../store/actions/composerActions"

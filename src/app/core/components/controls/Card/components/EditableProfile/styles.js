@@ -2,12 +2,7 @@ import styled from "styled-components"
 
 import { ButtonStyles } from "../../../Button"
 import { CaptionStyles } from "../../../../styles/CaptionStyles"
-import {
-  CardButtonStyles,
-  CardCaptionStyles,
-  CardFlattened,
-  CardHeader
-} from "../../styles"
+import { CardButtonStyles, CardCaptionStyles, CardHeader } from "../../styles"
 import { TextareaWithHighlights } from "../../../../../../user/components/forms/InputStyles"
 
 export { CardFlattened } from "../../styles"

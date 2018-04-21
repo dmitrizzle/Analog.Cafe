@@ -1,5 +1,5 @@
 // related constants
-import { APP_DESCRIPTION, ROUTE_API_DOMAIN } from "./app"
+import { APP_DESCRIPTION, ROUTE_API_DOMAIN } from "../../constants"
 import { ROUTE_AUTH_USER_LANDING } from "../../user/constants/user"
 
 export { ROUTE_ARTICLE_DIR, ROUTE_SUBMISSIONS_DIR } from "./article"
