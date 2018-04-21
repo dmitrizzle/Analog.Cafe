@@ -1,4 +1,3 @@
-// tools
 import axios from "axios"
 
 import { axiosRequest } from "../../utils/axios-request"

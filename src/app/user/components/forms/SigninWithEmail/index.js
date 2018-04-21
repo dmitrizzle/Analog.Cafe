@@ -1,4 +1,3 @@
-// tools
 import { connect } from "react-redux"
 import React from "react"
 
@@ -10,7 +9,6 @@ import { validateEmail } from "../../../utils/email-utils"
 import EmailInput from "../EmailInput"
 import errorMessages from "../../../constants/errors"
 
-// render
 class SigninWithEmail extends React.PureComponent {
   constructor(props) {
     super(props)

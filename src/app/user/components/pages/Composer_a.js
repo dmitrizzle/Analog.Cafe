@@ -1,4 +1,3 @@
-// tools
 import React from "react"
 
 import {
@@ -14,7 +13,6 @@ const metaTitle = "Composer"
 const metaDescription =
   "A tool to upload, edit and submit your photo essays and stories."
 
-// render
 export default () => {
   return (
     <Article>

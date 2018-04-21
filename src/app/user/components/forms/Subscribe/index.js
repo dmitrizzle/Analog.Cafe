@@ -1,4 +1,3 @@
-// tools
 import React from "react"
 
 import { CardButton } from "../../../../core/components/stateless/Card/styles"

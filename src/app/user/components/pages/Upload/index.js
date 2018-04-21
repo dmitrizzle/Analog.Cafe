@@ -1,4 +1,3 @@
-// tools
 import "localforage-getitems"
 
 import { connect } from "react-redux"
@@ -42,7 +41,6 @@ const STATUS_MESSAGES = {
   error: "Error"
 }
 
-// render
 class Upload extends React.PureComponent {
   constructor(props) {
     super(props)

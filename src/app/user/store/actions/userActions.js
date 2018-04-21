@@ -1,4 +1,3 @@
-// tools
 import axios from "axios"
 
 import { MESSAGE_HINT_CHECK_EMAIL } from "../../constants/hints"

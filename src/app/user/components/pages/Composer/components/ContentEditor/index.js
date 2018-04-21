@@ -1,4 +1,3 @@
-// tools
 import { FrenchPress } from "@roast-cms/french-press-editor"
 import { connect } from "react-redux"
 import React from "react"
@@ -71,7 +70,7 @@ class ContentEditor extends React.PureComponent {
         // editor's localStorage save status (see above)
         callbackStatus={this.props.setDraftStatus}
         //
-        // render components within user controls; you may substitute them
+        // components within user controls; you may substitute them
         // for images, SVG animations, or whatever else you may fancy
         controls={{
           //

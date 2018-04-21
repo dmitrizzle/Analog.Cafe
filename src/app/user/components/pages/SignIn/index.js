@@ -1,4 +1,3 @@
-// tools
 import { connect } from "react-redux"
 import React from "react"
 import open from "oauth-open"
@@ -27,7 +26,6 @@ import Heading from "../../../../core/components/stateless/ArticleHeading"
 import Helmet from "../../../../core/components/stateless/_async/Helmet"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
-// render
 class SignIn extends React.PureComponent {
   constructor(props) {
     super(props)

@@ -1,4 +1,3 @@
-// tools
 import { BrowserRouter } from "react-router-dom"
 import { Provider } from "react-redux"
 import { Sugar } from "@roast-cms/react-sugar-styled"
@@ -8,7 +7,7 @@ import styled, { ThemeProvider } from "styled-components"
 
 import { APP_NAME } from "./app/core/constants/app"
 import { arrayIncludes, arrayFind } from "./app/core/utils/polyfill"
-import App from "./app/core/components/containers/App"
+import App from "./app"
 import Helmet from "./app/core/components/stateless/_async/Helmet"
 import emojis from "./app/core/constants/emojis"
 import registerServiceWorker from "./registerServiceWorker"

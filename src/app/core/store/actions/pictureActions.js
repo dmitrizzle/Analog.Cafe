@@ -1,4 +1,3 @@
-// tools
 import axios from "axios"
 import { ROUTE_IMAGE_API } from "../../constants/picture"
 import errorMessages from "../../../user/constants/errors"
@@ -65,7 +64,6 @@ export const deleteRecord = id => {
     }
   }
   return dispatch => {
-    console.log(id)
     axios(axiosRequest(request))
       .then(response => {
         response.data.status === "ok"

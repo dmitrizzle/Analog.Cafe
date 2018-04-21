@@ -1,4 +1,3 @@
-// tools
 import React from "react"
 
 import { Button } from "../../../../../core/components/stateless/_controls/Button"
@@ -8,7 +7,6 @@ import EmailInput from "../../EmailInput"
 
 // helpers
 
-// render
 export default class extends React.Component {
   constructor(props) {
     super(props)

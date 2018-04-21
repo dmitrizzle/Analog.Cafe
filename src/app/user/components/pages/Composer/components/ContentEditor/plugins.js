@@ -1,4 +1,3 @@
-// tools
 import keycode from "keycode"
 
 import { PICTURE_DATA_OBJECT } from "../../../../../../core/constants/picture"

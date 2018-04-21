@@ -3,7 +3,6 @@ import {
   ROUTE_ARTICLE_API,
   ROUTE_SUBMISSION_API
 } from "../../core/constants/article"
-import { forceImageRestrictions } from "./upload-utils"
 
 export {
   forceImageRestrictions

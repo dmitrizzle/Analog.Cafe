@@ -1,4 +1,3 @@
-// tools
 import React from "react"
 
 import {
@@ -18,7 +17,6 @@ const metaTitle = "Submit"
 const metaDescription =
   "Submit film photography essays and articles to be featured on Analog.Cafe."
 
-// render
 export default () => {
   return (
     <Article>

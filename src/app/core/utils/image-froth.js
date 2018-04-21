@@ -1,4 +1,3 @@
-// tools
 import { froth as frothInit } from "@roast-cms/image-froth"
 import { dot } from "../components/stateless/_icons/BlankDot"
 

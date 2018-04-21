@@ -1,4 +1,3 @@
-// tools
 import { Switch, Route } from "react-router-dom"
 import Loadable from "react-loadable"
 import React from "react"
@@ -18,7 +17,6 @@ const Composer = Loadable({
   delay: 100
 })
 
-// render
 export default () => {
   return (
     <Switch>

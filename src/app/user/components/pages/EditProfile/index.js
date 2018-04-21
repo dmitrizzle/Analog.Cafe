@@ -1,4 +1,3 @@
-// tools
 import { connect } from "react-redux"
 import React from "react"
 
@@ -22,7 +21,6 @@ import Forbidden from "../../../../core/components/containers/_screens-errors/Fo
 import Heading from "../../../../core/components/stateless/ArticleHeading"
 import errorMessages from "../../../constants/errors"
 
-// render
 class EditProfile extends React.PureComponent {
   // init
   constructor(props) {
