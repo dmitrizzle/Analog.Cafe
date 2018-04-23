@@ -8,14 +8,14 @@ import {
   Section,
   Article as ArticleElement
 } from "../../styles/ArticleStyles"
+import { HOST_PROD, TEXT_EMOJIS } from "../../../../constants"
 import { ModalDispatch } from "../../controls/Modal"
-import { HOST_PROD } from "../../../../constants"
 import {
+  ROUTE_API_AUTHORS,
   ROUTE_URL_ARTICLES,
   ROUTE_URL_SUBMISSIONS
-} from "../../../constants/article"
-import { ROUTE_API_AUTHORS } from "../../../constants/author"
-import { ROUTE_LIST_TAGS } from "../../../constants/list"
+} from "../../../constants/routes-article"
+import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
   fetchPage,
   setPage as setNextArticle
@@ -28,12 +28,12 @@ import Heading from "../../vignettes/ArticleHeading"
 import Helmet from "../../vignettes/Helmet"
 import Link from "../../controls/Link"
 import Picture from "../../vignettes/Picture_c"
-import EMOJI from "../../../constants/EMOJI"
 import slugToTitle from "../../../utils/slug-to-title"
 
 // admin controls loader
 const AdminControls = Loadable({
-  loader: () => import("./components/AdminControls"),
+  loader: () =>
+    import("../../../../admin/components/vignettes/ArticleControls"),
   loading: () => null,
   delay: 100
 })
@@ -87,9 +87,7 @@ class Article extends React.PureComponent {
         name:
           tag.charAt(0).toUpperCase() +
           slugToTitle(tag, { titleCase: false }).slice(1),
-        route: Object.keys(ROUTE_LIST_TAGS).find(
-          key => ROUTE_LIST_TAGS[key] === tag
-        )
+        route: Object.keys(ROUTE_TAGS).find(key => ROUTE_TAGS[key] === tag)
       }
     })
   }
@@ -215,7 +213,7 @@ class Article extends React.PureComponent {
                 <br />
                 <span style={{ fontStyle: "normal" }}>
                   {" "}
-                  {EMOJI.WARNING}
+                  {TEXT_EMOJIS.WARNING}
                 </span>{" "}
                 This submission is only visible to you and the Analog.Cafe
                 Editors.

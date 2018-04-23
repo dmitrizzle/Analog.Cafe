@@ -5,11 +5,10 @@ import { render } from "react-dom"
 import React from "react"
 import styled, { ThemeProvider } from "styled-components"
 
-import { APP_NAME } from "./app/constants"
+import { APP_NAME, TEXT_EMOJIS } from "./app/constants"
 import { arrayFind, arrayIncludes } from "./app/core/utils/polyfill"
 import App from "./app"
 import Helmet from "./app/core/components/vignettes/Helmet"
-import EMOJI from "./app/core/constants/EMOJI"
 import registerServiceWorker from "./registerServiceWorker"
 import store from "./app/store"
 
@@ -83,7 +82,7 @@ render(
         <GlobalStyles>
           <Helmet
             defaultTitle={APP_NAME}
-            titleTemplate={"%s " + EMOJI.TITLE_SEPARATOR + " " + APP_NAME}
+            titleTemplate={"%s " + TEXT_EMOJIS.TITLE_SEPARATOR + " " + APP_NAME}
           />
           <App />
         </GlobalStyles>

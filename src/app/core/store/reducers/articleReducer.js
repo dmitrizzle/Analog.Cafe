@@ -1,8 +1,8 @@
-import EMOJI from "../../constants/EMOJI"
+import { TEXT_EMOJIS } from "../../../constants"
 
 const INITIAL_STATE = {
   status: "loading",
-  title: EMOJI.HUG_RIGHT,
+  title: TEXT_EMOJIS.HUG_RIGHT,
   subtitle: "Loading…",
   content: {
     raw: {

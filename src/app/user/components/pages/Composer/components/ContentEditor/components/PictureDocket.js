@@ -4,6 +4,10 @@ import keycode from "keycode"
 import localForage from "localforage"
 import uuidv1 from "uuid/v1"
 
+import {
+  CARD_ALERTS,
+  CARD_ERRORS
+} from "../../../../../../constants/messages-submissions"
 import { CardHeader } from "../../../../../../../core/components/controls/Card/styles"
 import {
   GridButton,
@@ -12,7 +16,6 @@ import {
   GridContainer,
   GridRow
 } from "../../../../../controls/Grid"
-import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/hints"
 import { MIME_PICTURES } from "../../../../../../constants/rules-submissions"
 import { ModalDispatch } from "../../../../../../../core/components/controls/Modal"
 import { dot } from "../../../../../../../core/components/icons/BlankDot"
@@ -20,7 +23,6 @@ import { fetchImageList } from "../../../../../../store/actions/composerActions"
 import { forceImageRestrictions } from "../../../../../../utils/upload-utils"
 import { setCard } from "../../../../../../../core/store/actions/modalActions"
 import PictureDocket from "../../../../../controls/PictureDocket"
-import errorMessages from "../../../../../../constants/errors"
 
 // return
 class PictureDocketContainer extends React.PureComponent {
@@ -134,7 +136,7 @@ class PictureDocketContainer extends React.PureComponent {
         </CardHeader>
         <GridCaption>
           Create an{" "}
-          <ModalDispatch with={MESSAGE_HINT_IMAGE_COLLAB_FEATURES}>
+          <ModalDispatch with={CARD_ALERTS.COLLABORATIONS}>
             instant collaboration
           </ModalDispatch>{" "}
           or upload new image.

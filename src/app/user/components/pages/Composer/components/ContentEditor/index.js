@@ -2,18 +2,17 @@ import { FrenchPress } from "@roast-cms/french-press-editor"
 import { connect } from "react-redux"
 import React from "react"
 
+import { CARD_ERRORS } from "../../../../../constants/messages-submissions"
 import {
   Capital,
   Lower
 } from "../../../../../../core/components/icons/HeaderGlyphs"
-import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/hints"
 import { HOST_PROD } from "../../../../../../constants"
 import { ToggleFeature } from "./plugins"
 import { setCard } from "../../../../../../core/store/actions/modalActions"
 import { setDraftStatus } from "../../../../../store/actions/composerActions"
 import Picture from "../../../../../../core/components/vignettes/Picture_c"
 import PictureDocket from "./components/PictureDocket"
-import errorMessages from "../../../../../constants/errors"
 
 // return
 class ContentEditor extends React.PureComponent {
@@ -51,7 +50,7 @@ class ContentEditor extends React.PureComponent {
       !this.state.connectionMessageShown &&
       nextProps.user.connection.status === "offline"
     ) {
-      this.props.setCard(MESSAGE_HINT_CONNECTION_OFFLINE)
+      this.props.setCard(CARD_ERRORS.CONNECTION_OFFLINE)
       this.setState({ connectionMessageShown: true })
     }
   }

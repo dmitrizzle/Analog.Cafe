@@ -2,12 +2,12 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { Button } from "../../../../core/components/controls/Button"
+import { CARD_ERRORS } from "../../../constants/messages-session"
 import { Form } from "../FormStyles"
 import { loginWithEmail } from "../../../store/actions/userActions"
 import { setCard } from "../../../../core/store/actions/modalActions"
 import { validateEmail } from "../../../utils/email-utils"
 import EmailInput from "../EmailInput"
-import errorMessages from "../../../constants/errors"
 
 class SigninWithEmail extends React.PureComponent {
   constructor(props) {
@@ -31,7 +31,7 @@ class SigninWithEmail extends React.PureComponent {
       else
         this.props.setCard({
           status: "ok",
-          info: errorMessages.VIEW_TEMPLATE.EMAIL_LOGIN_TIMEOUT(
+          info: CARD_ERRORS.SESSION_LOGIN_EMAIL_TIMEOUT(
             Math.floor(
               (this.props.user.emailLogin.timeout - Date.now()) / 1000 + 1
             )

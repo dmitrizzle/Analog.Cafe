@@ -1,12 +1,15 @@
 import axios from "axios"
 
-import { MESSAGE_HINT_CHECK_EMAIL } from "../../constants/hints"
-import { ROUTE_API_LOGIN_EMAIL } from "../../constants/login"
-import { ROUTE_API_USER, ROUTE_API_USERS } from "../../constants/user"
+import { CARD_ALERTS, CARD_ERRORS } from "../../constants/messages-session"
+import {
+  ROUTE_API_LOGIN_EMAIL,
+  ROUTE_API_USER
+} from "../../constants/routes-session"
+import { ROUTE_API_USERS } from "../../../admin/constants/routes-admin"
+import { TEXT_ERRORS } from "../../../core/constants/messages-"
 import { anonymizeEmail } from "../../utils/email-utils"
 import { axiosRequest } from "../../../core/utils/axios-request"
 import { setCard } from "../../../core/store/actions/modalActions"
-import errorMessages from "../../constants/errors"
 
 // manage connectivity
 export const setConnectionStatus = connection => {
@@ -21,8 +24,8 @@ const loginError = (type = "error") => {
   return {
     status: "ok",
     info: {
-      title: errorMessages.VIEW_TEMPLATE.AUTHENICATION.title,
-      text: errorMessages.DISAMBIGUATION.CODE_401[type],
+      title: CARD_ERRORS.AUTHENICATION.title,
+      text: TEXT_ERRORS.CODE_401[type],
       buttons: [
         {
           to: "/sign-in",
@@ -74,7 +77,7 @@ export const loginWithEmail = validatedEmail => {
       })
     )
       .then(() => {
-        dispatch(setCard(MESSAGE_HINT_CHECK_EMAIL(validatedEmail)))
+        dispatch(setCard(CARD_ALERTS.LOGIN_EMAIL(validatedEmail)))
         dispatch({
           type: "USER.SET_EMAIL_LOGIN_STATUS",
           payload: "ok"
@@ -84,7 +87,7 @@ export const loginWithEmail = validatedEmail => {
         dispatch(
           setCard({
             status: "ok",
-            info: errorMessages.VIEW_TEMPLATE.EMAIL_LOGIN,
+            info: CARD_ERRORS.LOGIN_EMAIL,
             requested: { url: "errors/email-login" }
           })
         )

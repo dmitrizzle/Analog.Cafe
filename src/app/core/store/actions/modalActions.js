@@ -1,7 +1,8 @@
 import axios from "axios"
 
+import { CARD_ERRORS, TEXT_ERRORS } from "../../constants/messages-"
 import { axiosRequest } from "../../utils/axios-request"
-import errorMessages from "../../../user/constants/errors"
+
 // return
 export const initCard = state => {
   return {
@@ -54,8 +55,7 @@ export const fetchCard = request => {
             !response.data.info.image &&
             response.data.info.role
           )
-            response.data.info.text =
-              errorMessages.VIEW_TEMPLATE.CARD_NO_AUTHOR_INFO.text
+            response.data.info.text = CARD_ERRORS.AUTHOR.text
           dispatch(setCard(response.data, request))
         } else
           dispatch(
@@ -63,9 +63,9 @@ export const fetchCard = request => {
               {
                 status: "ok",
                 info: {
-                  title: errorMessages.VIEW_TEMPLATE.CARD.title,
-                  text: errorMessages.VIEW_TEMPLATE.CARD.text,
-                  error: errorMessages.DISAMBIGUATION.CODE_204.error
+                  title: CARD_ERRORS.CARD.title,
+                  text: CARD_ERRORS.CARD.text,
+                  error: TEXT_ERRORS.CODE_204.error
                 }
               },
               { url: "errors/card" }
@@ -79,9 +79,9 @@ export const fetchCard = request => {
                 {
                   status: "ok",
                   info: {
-                    title: errorMessages.VIEW_TEMPLATE.CARD.title,
-                    text: errorMessages.VIEW_TEMPLATE.CARD.text,
-                    error: errorMessages.DISAMBIGUATION.CODE_401.error
+                    title: CARD_ERRORS.CARD.title,
+                    text: CARD_ERRORS.CARD.text,
+                    error: TEXT_ERRORS.CODE_401.error
                   }
                 },
                 { url: "errors/card" }
@@ -92,8 +92,8 @@ export const fetchCard = request => {
                 {
                   status: "ok",
                   info: {
-                    title: errorMessages.VIEW_TEMPLATE.CARD.title,
-                    text: errorMessages.VIEW_TEMPLATE.CARD.text,
+                    title: CARD_ERRORS.CARD.title,
+                    text: CARD_ERRORS.CARD.text,
                     error
                   }
                 },

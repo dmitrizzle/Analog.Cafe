@@ -1,11 +1,11 @@
 import axios from "axios"
-import errorMessages from "../../../user/constants/errors"
-import { axiosRequest } from "../../utils/axios-request"
 
+import { CARD_ERRORS, TEXT_ERRORS } from "../../constants/messages-"
 import {
   ROUTE_API_ARTICLES,
   ROUTE_API_SUBMISSIONS
-} from "../../constants/article"
+} from "../../constants/routes-article"
+import { axiosRequest } from "../../utils/axios-request"
 
 // return
 export const setPage = page => {
@@ -65,17 +65,17 @@ export const fetchPage = request => {
           ? dispatch(setPage(response.data))
           : dispatch(
               initPage({
-                title: errorMessages.VIEW_TEMPLATE.ARTICLE.title,
-                subtitle: errorMessages.VIEW_TEMPLATE.ARTICLE.subtitle,
-                error: errorMessages.DISAMBIGUATION.CODE_204.error
+                title: CARD_ERRORS.ARTICLE.title,
+                subtitle: CARD_ERRORS.ARTICLE.subtitle,
+                error: TEXT_ERRORS.CODE_204.error
               })
             )
       })
       .catch(error => {
         dispatch(
           initPage({
-            title: errorMessages.VIEW_TEMPLATE.ARTICLE.title,
-            subtitle: errorMessages.VIEW_TEMPLATE.ARTICLE.subtitle,
+            title: CARD_ERRORS.ARTICLE.title,
+            subtitle: CARD_ERRORS.ARTICLE.subtitle,
             error
           })
         )

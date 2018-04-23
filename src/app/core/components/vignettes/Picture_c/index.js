@@ -1,8 +1,10 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { INPUT_FORMAT } from "../../../../user/constants/input"
-import { OBJECT_SLATE_PICTURE_FROM_IMMUTABLE } from "../../../constants/picture"
+import {
+  INPUT_FORMAT,
+  OBJECT_SLATE_PICTURE_FROM_IMMUTABLE
+} from "../../../../user/constants/rules-submissions"
 import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
 import { getFroth } from "../../../utils/image-froth"
 import { getInfo } from "../../../store/actions/pictureActions"

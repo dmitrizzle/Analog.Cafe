@@ -1,11 +1,12 @@
 import axios from "axios"
-import errorMessages from "../../../user/constants/errors"
-import { axiosRequest } from "../../utils/axios-request"
 
+import { CARD_ERRORS } from "../../constants/messages-"
+import { CARD_ERRORS as CARD_ERRORS_SUBMISSIONS } from "../../../user/constants/messages-submissions"
 import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
-} from "../../constants/list"
+} from "../../constants/routes-list"
+import { axiosRequest } from "../../utils/axios-request"
 
 // return
 export const setPage = (page, appendItems) => {
@@ -70,13 +71,13 @@ export const fetchPage = (request, appendItems = false) => {
         else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
           dispatch(
             initPage({
-              error: errorMessages.VIEW_TEMPLATE.SUBMISSIONS_LIST
+              error: CARD_ERRORS_SUBMISSIONS.LIST
             })
           )
         } else {
           dispatch(
             initPage({
-              error: errorMessages.VIEW_TEMPLATE.LIST
+              error: CARD_ERRORS.LIST
             })
           )
         }
@@ -84,7 +85,7 @@ export const fetchPage = (request, appendItems = false) => {
       .catch(() => {
         dispatch(
           initPage({
-            error: errorMessages.VIEW_TEMPLATE.LIST
+            error: CARD_ERRORS.LIST
           })
         )
       })

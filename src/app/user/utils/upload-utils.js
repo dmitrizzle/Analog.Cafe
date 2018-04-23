@@ -1,8 +1,8 @@
-// constants
 import {
   ROUTE_API_ARTICLES,
   ROUTE_API_SUBMISSIONS
-} from "../../core/constants/article"
+} from "../../core/constants/routes-article"
+import { forceImageRestrictions } from "./upload-utils"
 
 export {
   forceImageRestrictions

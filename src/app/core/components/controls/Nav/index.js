@@ -1,10 +1,10 @@
 import React from "react"
 
 import {
-  MESSAGE_HINT_AUTO_SAVE,
-  MESSAGE_HINT_SUBMIT_CONSENT,
-  MESSAGE_HINT_SUBMIT_EDITORS
-} from "../../../../user/constants/hints"
+  CARD_ALERTS,
+  CARD_DIALOGUES
+} from "../../../../user/constants/messages-submissions"
+import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/constants/messages-admin"
 import { ModalDispatch } from "../Modal"
 import { NavIndexLink, NavItem, NavLink, TinyImageInline } from "./styles"
 import { froth } from "../../../utils/image-froth"
@@ -162,8 +162,8 @@ const NavLinkSend = props => {
     <ModalDispatch
       with={
         props.submissionStatus.id && props.userRole === "admin"
-          ? MESSAGE_HINT_SUBMIT_EDITORS
-          : MESSAGE_HINT_SUBMIT_CONSENT
+          ? CARD_DIALOGUES_ADMIN.OVERWRITE_DRAFT
+          : CARD_DIALOGUES.CONSENT
       }
       style={{ textDecoration: "none" }}
     >
@@ -177,7 +177,7 @@ export const ComposerNav = props => {
     <ul>
       <NavItem draftStatus prime left className="prime left">
         <ModalDispatch
-          with={MESSAGE_HINT_AUTO_SAVE}
+          with={CARD_ALERTS.AUTO_SAVE}
           style={{ textDecoration: "none" }}
         >
           {props.draftStatus === "ok" && <span>Draft Saved</span>}

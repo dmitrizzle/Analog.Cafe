@@ -4,19 +4,19 @@ import React from "react"
 import { AuthorAndDate, Ul } from "./styles/ul"
 import { Bleed } from "./styles/bleed"
 import { Caption } from "./styles/caption"
+import { INPUT_SUMMARY_LIMIT } from "../../../../user/constants/rules-submissions"
 import {
   ROUTE_URL_ARTICLES,
-  ROUTE_URL_SUBMISSIONS,
-  MESSAGE_TEXT_LIST_ITEM_STATUS,
-  INPUT_SUMMARY_LIMIT
-} from "../../../constants/list"
+  ROUTE_URL_SUBMISSIONS
+} from "../../../constants/routes-article"
 import { Stats } from "./styles/stats"
+import { TEXT_EMOJIS } from "../../../../constants"
+import { TEXT_LABELS } from "../../../constants/messages-list"
 import { ZigzagPicture } from "./styles/zigzag-picture"
 import { authorNameList } from "../../../utils/authorship"
 import { datestamp } from "../../../utils/datestamp"
 import { froth } from "../../../utils/image-froth"
 import Link from "../../controls/Link"
-import EMOJI from "../../../constants/EMOJI"
 
 // return
 const ListSubtitle = props => {
@@ -115,13 +115,13 @@ export default props => {
                       {/* Two versions of summary for different screens: long and short */}
                       <span className="long">
                         <span style={{ fontStyle: "normal" }}>
-                          {EMOJI.PARAGRAPH}
+                          {TEXT_EMOJIS.PARAGRAPH}
                         </span>
                         {item.summary.substr(0, INPUT_SUMMARY_LIMIT - 1) + "…"}
                       </span>
                       <span className="short">
                         <span style={{ fontStyle: "normal" }}>
-                          {EMOJI.PARAGRAPH}
+                          {TEXT_EMOJIS.PARAGRAPH}
                         </span>
                         {item.summary.substr(
                           0,
@@ -164,8 +164,8 @@ export default props => {
                         {/* status of the submission */}
                         {item.type !== "placeholder" &&
                           props.private &&
-                          ` ↝ ${MESSAGE_TEXT_LIST_ITEM_STATUS[item.status]}`}
-                        {/* EMOJI.MONOCLE + " Pending Editorial Review" */}
+                          ` ↝ ${TEXT_LABELS[item.status]}`}
+                        {/* TEXT_EMOJIS.MONOCLE + " Pending Editorial Review" */}
                       </Stats>
                       <AuthorAndDate>
                         {!props.private || props.isAdmin

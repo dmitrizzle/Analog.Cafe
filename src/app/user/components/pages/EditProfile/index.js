@@ -3,14 +3,15 @@ import React from "react"
 
 import { Article } from "../../../../core/components/styles/ArticleStyles"
 import { Button } from "../../../../core/components/controls/Button"
-import {
-  ROUTE_URL_USER_LANDING,
-  ROUTE_API_USER_PROFILE
-} from "../../../constants/user"
+import { CARD_ERRORS } from "../../../constants/messages-submissions"
 import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
-} from "../../../constants/input"
+} from "../../../constants/rules-submissions"
+import {
+  ROUTE_API_USER_PROFILE,
+  ROUTE_URL_USER_LANDING
+} from "../../../constants/routes-session"
 import { forceImageRestrictions } from "../../../utils/upload-utils"
 import {
   getInfo as getUserInfo,
@@ -19,11 +20,9 @@ import {
 } from "../../../store/actions/userActions"
 import { profileButtonsTemplate } from "../../../../core/utils/profile-button-labeler"
 import { setCard } from "../../../../core/store/actions/modalActions"
-
 import CardEditableProfile from "../../../../core/components/controls/Card/components/EditableProfile"
 import Forbidden from "../../../../core/components/pages/Forbidden"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
-import errorMessages from "../../../constants/errors"
 
 class EditProfile extends React.PureComponent {
   // init

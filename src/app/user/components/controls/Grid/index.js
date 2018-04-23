@@ -2,7 +2,7 @@ import React from "react"
 
 import { AspectRatio, GridButton, GridButtonCaption } from "./styles"
 import { ModalDispatch } from "../../../../core/components/controls/Modal"
-import { ROUTE_API_AUTHORS } from "../../../../core/constants/author"
+import { ROUTE_API_AUTHORS } from "../../../../core/constants/routes-article"
 import { froth } from "../../../../core/utils/image-froth"
 
 // exports

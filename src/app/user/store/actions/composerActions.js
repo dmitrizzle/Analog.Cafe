@@ -1,14 +1,13 @@
 import axios from "axios"
 
+import { CARD_ALERTS } from "../../../admin/constants/messages-admin"
+import { CARD_ERRORS } from "../../constants/messages-submissions"
 import {
-  MESSAGE_HINT_REJECT_SUBMISSION_SUCCESS,
-  MESSAGE_HINT_PUBLISH_SUBMISSION_SUCCESS
-} from "../../constants/hints"
-import { ROUTE_API_IMAGES } from "../../../core/constants/picture"
-import { ROUTE_API_SUBMISSIONS } from "../../../core/constants/article"
+  ROUTE_API_IMAGES,
+  ROUTE_API_SUBMISSIONS
+} from "../../constants/routes-submissions"
 import { axiosRequest } from "../../../core/utils/axios-request"
 import { setCard } from "../../../core/store/actions/modalActions"
-import errorMessages from "../../constants/errors"
 
 // manage Composer state
 // note that Slate Editor state must be manage separately from within
@@ -82,13 +81,13 @@ export const uploadData = request => {
           {
             status: "ok",
             info: {
-              title: errorMessages.VIEW_TEMPLATE.SUBMISSION.title,
+              title: CARD_ERRORS.SEND.title,
               text:
                 error.response && error.response.data
-                  ? `${
-                      errorMessages.VIEW_TEMPLATE.SUBMISSION.text
-                    } Possible reason: “${error.response.data.message}.”`
-                  : errorMessages.VIEW_TEMPLATE.SUBMISSION.text,
+                  ? `${CARD_ERRORS.SEND.text} Possible reason: “${
+                      error.response.data.message
+                    }.”`
+                  : CARD_ERRORS.SEND.text,
               error,
               stubborn: true,
               buttons: [
@@ -168,7 +167,7 @@ export const rejectSubmission = submissionId => {
     }
     axios(axiosRequest(request))
       .then(response => {
-        dispatch(setCard(MESSAGE_HINT_REJECT_SUBMISSION_SUCCESS))
+        dispatch(setCard(CARD_ALERTS.REJECTED_SUCCESSFULLY))
         dispatch({
           type: "SUBMISSION.ADMIN_REJECT",
           payload: {
@@ -200,7 +199,7 @@ export const publishSubmission = (submissionId, scheduledOrder, tag) => {
 
     axios(axiosRequest(request))
       .then(response => {
-        dispatch(setCard(MESSAGE_HINT_PUBLISH_SUBMISSION_SUCCESS))
+        dispatch(setCard(CARD_ALERTS.SCHEDULED))
         dispatch({
           type: "SUBMISSION.ADMIN_PUBLISH",
           payload: {

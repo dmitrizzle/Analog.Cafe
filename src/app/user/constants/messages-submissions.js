@@ -1,20 +1,17 @@
-import { EMOJI } from "../../constants"
-import { MIME_PICTURES_HUMAN } from "../../core/constants/picture"
+import { MIME_PICTURES_HUMAN } from "./rules-submissions"
+import { TEXT_EMOJIS } from "../../constants"
 
 export const CARD_ERRORS = {
   LIST: {
     title: "You haven’t submitted anything yet",
-    emoji: EMOJI.NEONCAT
+    emoji: TEXT_EMOJIS.NEONCAT
   },
   SEND: {
     title: "Submission Failed",
     text:
       "Your submission did not go through. You can try sending it again, if you like."
   },
-  AUTHENICATION: {
-    title: "You’re Signed Out"
-  },
-  SEND_CONTENT_REQUIRED: {
+  SEND_IMAGES_MISSING: {
     title: "Forgot to Add Images?",
     text: "Please include at least one photograph or illustration."
   },

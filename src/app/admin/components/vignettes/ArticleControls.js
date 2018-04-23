@@ -7,32 +7,30 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
-import { Button } from "../../../controls/Button"
-import { ButtonStrip, Item } from "../../../controls/ButtonStrip"
-import { Byline } from "../../../styles/ArticleStyles"
-import { CardFlattened } from "../../../controls/Card/styles"
+import { Button } from "../../../core/components/controls/Button"
 import {
-  MESSAGE_HINT_OVERWRITE_DRAFT,
-  MESSAGE_HINT_PUBLISH_SUBMISSION,
-  MESSAGE_HINT_REJECT_SUBMISSION,
-  MESSAGE_HINT_SYNC_SUBMISSION
-} from "../../../../../user/constants/hints"
+  ButtonStrip,
+  Item
+} from "../../../core/components/controls/ButtonStrip"
+import { Byline } from "../../../core/components/styles/ArticleStyles"
+import { CARD_DIALOGUES } from "../../constants/messages-admin"
+import { CardFlattened } from "../../../core/components/controls/Card/styles"
 import {
   ROUTE_URL_ARTICLES,
   ROUTE_URL_SUBMISSIONS
-} from "../../../../constants/article"
-import { locate } from "../../../../utils/article-utils"
-import { setCard } from "../../../../store/actions/modalActions"
+} from "../../../core/constants/routes-article"
+import { TEXT_EMOJIS } from "../../../constants"
+import { locate } from "../../../core/utils/article-utils"
 import {
-  setSubmissionStatus,
-  rejectSubmission,
   publishSubmission,
-  setHeadingValues
-} from "../../../../../user/store/actions/composerActions"
-import { storeHeaderState } from "../../../../../user/utils/browser-storage"
-import { updateStatus as updateArticleStatus } from "../../../../store/actions/articleActions"
-import Link from "../../../controls/Link"
-import EMOJI from "../../../../constants/EMOJI"
+  rejectSubmission,
+  setHeadingValues,
+  setSubmissionStatus
+} from "../../../user/store/actions/composerActions"
+import { setCard } from "../../../core/store/actions/modalActions"
+import { storeHeaderState } from "../../../user/utils/browser-storage"
+import { updateStatus as updateArticleStatus } from "../../../core/store/actions/articleActions"
+import Link from "../../../core/components/controls/Link"
 
 const TAGS = {
   story: "Story",
@@ -100,7 +98,7 @@ class AdminControls extends React.PureComponent {
     // warn about overwriting existing draft
     const isComposerEmpty = !loadTextContent().length > 0
     if (!isComposerEmpty && !this.state.allowOverwrite) {
-      this.props.setCard(MESSAGE_HINT_OVERWRITE_DRAFT)
+      this.props.setCard(CARD_DIALOGUES.OVERWRITE_DRAFT)
       return
     }
 
@@ -146,7 +144,7 @@ class AdminControls extends React.PureComponent {
 
     // warn about overwriting existing draft
     if (!this.state.allowReject) {
-      this.props.setCard(MESSAGE_HINT_REJECT_SUBMISSION)
+      this.props.setCard(CARD_DIALOGUES.REJECT)
       return
     }
 
@@ -161,7 +159,7 @@ class AdminControls extends React.PureComponent {
 
     // warn about immediate publication
     if (!this.state.allowPublish) {
-      this.props.setCard(MESSAGE_HINT_PUBLISH_SUBMISSION)
+      this.props.setCard(CARD_DIALOGUES.PUBLISH)
       return
     }
     this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
@@ -171,12 +169,12 @@ class AdminControls extends React.PureComponent {
   handleSync = event => {
     event.preventDefault()
 
-    // warn about immediate publication
-    if (!this.state.allowSync) {
-      this.props.setCard(MESSAGE_HINT_SYNC_SUBMISSION)
-      return
-    }
-    this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
+    // // warn about immediate publication
+    // if (!this.state.allowSync) {
+    //   this.props.setCard(MESSAGE_HINT_SYNC_SUBMISSION)
+    //   return
+    // }
+    // this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
   }
 
   render = () => {
@@ -190,7 +188,7 @@ class AdminControls extends React.PureComponent {
         {(this.props.article.status === "scheduled" ||
           this.props.article.status === "published") && (
           <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-            {EMOJI.WARNING}
+            {TEXT_EMOJIS.WARNING}
           </span>
         )}{" "}
         {this.props.article.status === "scheduled" &&
@@ -234,7 +232,9 @@ class AdminControls extends React.PureComponent {
             }}
           >
             <span role="img" aria-label="(Un)Locked button">
-              {this.state.allowOverwrite ? EMOJI.LOCKED : EMOJI.UNLOCKED}
+              {this.state.allowOverwrite
+                ? TEXT_EMOJIS.LOCKED
+                : TEXT_EMOJIS.UNLOCKED}
             </span>{" "}
             Edit
           </Item>
@@ -242,7 +242,9 @@ class AdminControls extends React.PureComponent {
             ? [
                 <Item key="ButtonStrip_Item_update" onClick={this.handleSync}>
                   <span role="img" aria-label="(Un)Locked button">
-                    {this.state.allowSync ? EMOJI.LOCKED : EMOJI.UNLOCKED}
+                    {this.state.allowSync
+                      ? TEXT_EMOJIS.LOCKED
+                      : TEXT_EMOJIS.UNLOCKED}
                   </span>{" "}
                   Sync
                 </Item>,
@@ -267,7 +269,9 @@ class AdminControls extends React.PureComponent {
                   }}
                 >
                   <span role="img" aria-label="(Un)Locked button">
-                    {this.state.allowReject ? EMOJI.LOCKED : EMOJI.UNLOCKED}
+                    {this.state.allowReject
+                      ? TEXT_EMOJIS.LOCKED
+                      : TEXT_EMOJIS.UNLOCKED}
                   </span>{" "}
                   Reject
                 </Item>,
@@ -300,7 +304,7 @@ class AdminControls extends React.PureComponent {
         }}
       >
         <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          {EMOJI.STOP}
+          {TEXT_EMOJIS.STOP}
         </span>{" "}
         This submission has been REJECTED and can not be published or edited.
       </Byline>,
@@ -352,7 +356,9 @@ class AdminControls extends React.PureComponent {
           >
             {this.props.composer.submissionAdmin.publish.id !==
               this.props.article.id &&
-              (this.state.allowPublish ? EMOJI.LOCKED : EMOJI.UNLOCKED)}{" "}
+              (this.state.allowPublish
+                ? TEXT_EMOJIS.LOCKED
+                : TEXT_EMOJIS.UNLOCKED)}{" "}
             Publish Now
           </Button>
         </CardFlattened>

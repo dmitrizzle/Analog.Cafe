@@ -1,8 +1,9 @@
 import axios from "axios"
-import { ROUTE_API_IMAGES } from "../../constants/picture"
-import errorMessages from "../../../user/constants/errors"
-import { getFroth } from "../../utils/image-froth"
+
+import { CARD_ERRORS, TEXT_ERRORS } from "../../constants/messages-"
+import { ROUTE_API_IMAGES } from "../../../user/constants/routes-submissions"
 import { axiosRequest } from "../../utils/axios-request"
+import { getFroth } from "../../utils/image-froth"
 
 // return
 const unknownAuthor = (id, error) => {
@@ -11,11 +12,11 @@ const unknownAuthor = (id, error) => {
     payload: {
       info: {
         author: {
-          name: errorMessages.VIEW_TEMPLATE.PICTURE.name,
+          name: CARD_ERRORS.PICTURE_AUTHOR.name,
           id: "unknown",
           error:
             !error.response || !error.response.status
-              ? errorMessages.DISAMBIGUATION.CODE_204.error
+              ? TEXT_ERRORS.CODE_204.error
               : error
         }
       },

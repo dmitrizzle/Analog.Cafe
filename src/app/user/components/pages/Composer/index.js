@@ -2,17 +2,17 @@ import { connect } from "react-redux"
 import React from "react"
 
 import {
-  MESSAGE_HINT_AUTO_SAVE,
-  MESSAGE_HINT_SUBMIT_CONSENT,
-  MESSAGE_HINT_SUBMIT_EDITORS
-} from "../../../constants/hints"
+  CARD_ALERTS,
+  CARD_DIALOGUES
+} from "../../../constants/messages-submissions"
+import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/constants/messages-admin"
 import { ModalDispatch } from "../../../../core/components/controls/Modal"
 import { Section } from "../../../../core/components/styles/ArticleStyles"
+import { TEXT_EMOJIS } from "../../../../constants"
 import { requestFocus as requestEditorFocus } from "../../../store/actions/composerActions"
 import ContentEditor from "./components/ContentEditor"
 import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"
 import HeaderEditor from "./components/HeaderEditor"
-import EMOJI from "../../../../core/constants/EMOJI"
 
 // placeholders
 const titlePlaceholder = {
@@ -40,17 +40,17 @@ const Composer = props => {
       key="Composer_Send"
       with={
         props.composer.submissionStatus.id && props.user.info.role === "admin"
-          ? MESSAGE_HINT_SUBMIT_EDITORS
-          : MESSAGE_HINT_SUBMIT_CONSENT
+          ? CARD_DIALOGUES_ADMIN.OVERWRITE_DRAFT
+          : CARD_DIALOGUES.CONSENT
       }
       wrapperElement="Button"
       branded
     >
-      Send Submission {EMOJI.CHECKMARK}
+      Send Submission {TEXT_EMOJIS.CHECKMARK}
     </ModalDispatch>,
     <DraftStatusText key={"Composer_DraftStatus"}>
       Your draft is{" "}
-      <ModalDispatch with={MESSAGE_HINT_AUTO_SAVE}>saved</ModalDispatch>.
+      <ModalDispatch with={CARD_ALERTS.AUTO_SAVE}>saved</ModalDispatch>.
     </DraftStatusText>
   ]
 }

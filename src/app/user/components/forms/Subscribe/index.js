@@ -1,10 +1,7 @@
 import React from "react"
 
 import { CardButton } from "../../../../core/components/controls/Card/styles"
-import {
-  MESSAGE_TEXT_SUBSCRIBE,
-  MESSAGE_TEXT_SUBMIT
-} from "../../../../core/constants/keywords"
+import { TEXT_LABELS } from "../../../../core/constants/messages-"
 import MailChimpPrefill from "./components/MailChimpPrefill"
 
 export class QuickSubscribe extends React.PureComponent {
@@ -52,11 +49,11 @@ export class QuickSubscribe extends React.PureComponent {
       <div>
         {!this.state.subscribeForm ? (
           <CardButton branded onClick={this.handleRevealSubscribeForm}>
-            {MESSAGE_TEXT_SUBSCRIBE}
+            {TEXT_LABELS.SUBSCRIBE}
           </CardButton>
         ) : (
           <MailChimpPrefill
-            buttonText={MESSAGE_TEXT_SUBMIT}
+            buttonText={TEXT_LABELS.SUBMIT}
             autoFocus
             submitCallback={this.handleSubmitCallback}
           />

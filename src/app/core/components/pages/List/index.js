@@ -6,14 +6,14 @@ import { withRouter } from "react-router"
 
 import { Article, Section } from "../../styles/ArticleStyles"
 import { Button } from "../../controls/Button"
-
+import { CARD_ERRORS } from "../../../constants/messages-"
 import { ListDescription, ListHeader } from "../../vignettes/ListDescription"
 import { ModalDispatch } from "../../controls/Modal"
+import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import {
-  ROUTE_API_LIST_SUBMISSIONS,
-  ROUTE_API_LIST
-} from "../../../constants/list"
-import { ROUTE_API_AUTHORS } from "../../../constants/author"
+  ROUTE_API_LIST,
+  ROUTE_API_LIST_SUBMISSIONS
+} from "../../../constants/routes-list"
 import { fetchPage } from "../../../store/actions/listActions"
 import { getListMeta } from "../../../utils/list-utils"
 import { setPage as setNextArticle } from "../../../store/actions/articleActions"
@@ -21,7 +21,6 @@ import { setIntent as setUserIntent } from "../../../../user/store/actions/userA
 import { trimAuthorName } from "../../../utils/authorship"
 import Helmet from "../../vignettes/Helmet"
 import ListBlock from "../../styles/List"
-import errors from "../../../../user/constants/errors"
 
 // fetch placeholder component
 const HowToSubmit = Loadable({
@@ -160,8 +159,8 @@ class List extends React.PureComponent {
             </ListHeader>
           ) : (
             <ListHeader>
-              <em>{errors.VIEW_TEMPLATE.LIST_OFFLINE.title}</em>{" "}
-              {errors.VIEW_TEMPLATE.LIST_OFFLINE.emoji}
+              <em>{CARD_ERRORS.LIST_OFFLINE.title}</em>{" "}
+              {CARD_ERRORS.LIST_OFFLINE.emoji}
             </ListHeader>
           )}
         </ListDescription>

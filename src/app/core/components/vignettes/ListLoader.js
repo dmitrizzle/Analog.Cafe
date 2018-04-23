@@ -1,9 +1,9 @@
 import React from "react"
 
 import { Article, Section } from "../styles/ArticleStyles"
+import { CARD_ERRORS } from "../../constants/messages-"
 import { ListDescription, ListHeader } from "./ListDescription"
-import EMOJI from "../../constants/EMOJI"
-import errorMessages from "../../../user/constants/errors"
+import { TEXT_EMOJIS } from "../../../constants"
 
 // return
 export default props => {
@@ -12,15 +12,9 @@ export default props => {
       {props.pastDelay && (
         <ListHeader>
           <q>
-            <em>
-              {props.isLoading
-                ? "Loading…"
-                : errorMessages.VIEW_TEMPLATE.LIST.title}
-            </em>
+            <em>{props.isLoading ? "Loading…" : CARD_ERRORS.LIST.title}</em>
           </q>{" "}
-          {props.isLoading
-            ? EMOJI.HUG_RIGHT
-            : errorMessages.VIEW_TEMPLATE.LIST.emoji}
+          {props.isLoading ? TEXT_EMOJIS.HUG_RIGHT : CARD_ERRORS.LIST.emoji}
         </ListHeader>
       )}
     </ListDescription>,

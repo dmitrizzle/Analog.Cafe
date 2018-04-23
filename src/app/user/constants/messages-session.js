@@ -7,12 +7,15 @@ export const CARD_ERRORS = {
     },
     id: "hints/connection"
   },
-  SESSION_LOGIN_EMAIL: {
+  AUTHENICATION: {
+    title: "You’re Signed Out"
+  },
+  LOGIN_EMAIL: {
     title: "Couldn’t Send Email",
     text:
       "For some reason an email with sign in link couldn’t be sent. Please try again or consider using Twitter or Facebook buttons."
   },
-  SESSION_LOGIN_EMAIL_TIMEOUT: remaining => {
+  LOGIN_EMAIL_TIMEOUT: remaining => {
     return {
       title: "Please Try in a Bit",
       text: `Please wait ${
@@ -20,7 +23,7 @@ export const CARD_ERRORS = {
       } before requesting another login link to be sent to your email.`
     }
   },
-  SESSION_LOGIN_BAD_TOKEN: {
+  LOGIN_BAD_TOKEN: {
     title: "Couldn’t Sign In",
     text:
       "Sorry, we couldn’t sign you in. Perhaps link has expired. Try signing in with your email again."

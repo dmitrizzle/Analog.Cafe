@@ -6,11 +6,11 @@ import {
   Article,
   Section
 } from "../../../../core/components/styles/ArticleStyles"
-import { ROUTE_URL_USER_LANDING } from "../../../constants/user"
+import { CARD_ERRORS, TEXT_ERRORS } from "../../../../core/constants/messages-"
+import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
+import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
-import Heading from "../../../../core/components/vignettes/ArticleHeading"
-import errorMessages from "../../../constants/errors"
 
 class AlreadyAuthenticated extends React.PureComponent {
   componentWillMount = () => {
@@ -31,12 +31,12 @@ class AlreadyAuthenticated extends React.PureComponent {
     return (
       <Article>
         <Helmet>
-          <title>{errorMessages.VIEW_TEMPLATE.ARTICLE.title}</title>
+          <title>{CARD_ERRORS.ARTICLE.title}</title>
         </Helmet>
         <Heading
-          pageTitle={errorMessages.VIEW_TEMPLATE.ARTICLE.title}
-          pageSubtitle={errorMessages.VIEW_TEMPLATE.ARTICLE.subtitle}
-          title={errorMessages.DISAMBIGUATION.CODE_103.error}
+          pageTitle={CARD_ERRORS.ARTICLE.title}
+          pageSubtitle={CARD_ERRORS.ARTICLE.subtitle}
+          title={TEXT_ERRORS.CODE_103.error}
         />
         <Section>
           <p style={{ textAlign: "center" }}>

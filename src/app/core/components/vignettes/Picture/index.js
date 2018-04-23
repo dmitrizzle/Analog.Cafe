@@ -1,9 +1,9 @@
 import React from "react"
 
+import { CARD_ERRORS } from "../../../constants/messages-"
 import { Image, Figure, Caption, CaptionAuthor } from "./styles"
 import { ModalDispatch } from "../../controls/Modal"
-import { ROUTE_API_AUTHORS } from "../../../constants/author"
-import errorMessages from "../../../../user/constants/errors"
+import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 
 // return
 export default props => {
@@ -45,8 +45,8 @@ export default props => {
                           }
                         : {
                             info: {
-                              title: errorMessages.VIEW_TEMPLATE.PICTURE.title,
-                              text: errorMessages.VIEW_TEMPLATE.PICTURE.text,
+                              title: CARD_ERRORS.PICTURE_AUTHOR.title,
+                              text: CARD_ERRORS.PICTURE_AUTHOR.text,
                               error: props.author.error
                             },
                             id: "errors/author"

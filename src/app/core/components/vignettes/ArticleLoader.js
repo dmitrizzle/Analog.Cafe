@@ -1,9 +1,9 @@
 import React from "react"
 
 import { Article, Section } from "../styles/ArticleStyles"
+import { CARD_ERRORS } from "../../constants/messages-"
+import { TEXT_EMOJIS } from "../../../constants"
 import Heading from "./ArticleHeading"
-import EMOJI from "../../constants/EMOJI"
-import errorMessages from "../../../user/constants/errors"
 
 // return
 export default props => {
@@ -13,16 +13,16 @@ export default props => {
         pageTitle={
           props.isLoading
             ? props.pastDelay
-              ? EMOJI.HUG_RIGHT
+              ? TEXT_EMOJIS.HUG_RIGHT
               : ""
-            : errorMessages.VIEW_TEMPLATE.ARTICLE.title
+            : CARD_ERRORS.ARTICLE.title
         }
         pageSubtitle={
           props.isLoading
             ? props.pastDelay
               ? "Loading…"
               : ""
-            : errorMessages.VIEW_TEMPLATE.ARTICLE.subtitle
+            : CARD_ERRORS.ARTICLE.subtitle
         }
       />
       <Section style={{ paddingTop: "100vh" }} />

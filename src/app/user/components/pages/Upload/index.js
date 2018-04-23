@@ -15,7 +15,9 @@ import {
   Subtitle,
   Title
 } from "../../../../core/components/styles/ArticleStyles"
+import { CARD_ERRORS } from "../../../constants/messages-submissions"
 import { LinkButton } from "../../../../core/components/controls/Button"
+import { TEXT_EMOJIS } from "../../../../constants"
 import { loadHeader } from "../../../utils/browser-storage"
 import { redirectToSignIn, sendSubmission } from "../../../utils/upload-utils"
 import { setCard } from "../../../../core/store/actions/modalActions"
@@ -31,8 +33,6 @@ import {
 } from "../../../store/actions/composerActions"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
-import EMOJI from "../../../../core/constants/EMOJI"
-import errorMessages from "../../../constants/errors"
 
 // constants
 const STATUS_MESSAGES = {
@@ -117,7 +117,7 @@ class Upload extends React.PureComponent {
           this.props.setCard(
             {
               status: "ok",
-              info: errorMessages.VIEW_TEMPLATE.SUBMISSION_NO_IMAGES
+              info: CARD_ERRORS.SEND_IMAGES_MISSING
             },
             { url: "errors/submissions" }
           )
@@ -189,7 +189,7 @@ class Upload extends React.PureComponent {
     this.props.setCard(
       {
         status: "ok",
-        info: errorMessages.VIEW_TEMPLATE.SUBMISSION_NO_CONTENT
+        info: CARD_ERRORS.SEND_CONTENT_EMPTY
       },
       { url: "errors/submissions" }
     )
@@ -223,7 +223,7 @@ class Upload extends React.PureComponent {
             <p>
               <strong>
                 <span role="img" aria-label="Warning">
-                  {EMOJI.WARNING}
+                  {TEXT_EMOJIS.WARNING}
                 </span>{" "}
                 Please keep this page open, do not refresh and do not click your
                 browser’s “back” button
@@ -233,7 +233,7 @@ class Upload extends React.PureComponent {
           )}
           {this.state.status === "error" && (
             <p>
-              <strong>{errorMessages.VIEW_TEMPLATE.SUBMISSION.text}</strong>{" "}
+              <strong>{CARD_ERRORS.SEND}</strong>{" "}
               <a
                 href="#reload"
                 onClick={event => {

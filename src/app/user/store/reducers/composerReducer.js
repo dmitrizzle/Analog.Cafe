@@ -1,5 +1,5 @@
+import { INPUT_HEADER_DEFAULTS } from "../../constants/rules-submissions"
 import { loadHeader } from "../../utils/browser-storage"
-import { STATE_COMPOSER_HEADER_DEFAULT } from "../../constants/composer"
 
 // set placeholders for imageList grid:
 let imageListDefaults = []
@@ -99,7 +99,7 @@ export default (state = INITIAL_STATE, action) => {
 
       state = {
         ...state,
-        headingValues: STATE_COMPOSER_HEADER_DEFAULT
+        headingValues: INPUT_HEADER_DEFAULTS
       }
       break
 

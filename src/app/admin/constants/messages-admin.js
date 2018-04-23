@@ -1,4 +1,4 @@
-import { EMOJI } from "../../constants"
+import { TEXT_EMOJIS } from "../../constants"
 
 export const CARD_DIALOGUES = {
   OVERWRITE_DRAFT: {
@@ -14,7 +14,7 @@ export const CARD_DIALOGUES = {
         },
         {
           to: "#overwrite",
-          text: EMOJI.KEY + " Overwrite"
+          text: TEXT_EMOJIS.KEY + " Overwrite"
         }
       ]
     },
@@ -33,7 +33,7 @@ export const CARD_DIALOGUES = {
         },
         {
           to: "#reject",
-          text: EMOJI.KEY + " Reject Submission"
+          text: TEXT_EMOJIS.KEY + " Reject Submission"
         }
       ]
     },
@@ -52,7 +52,7 @@ export const CARD_DIALOGUES = {
         },
         {
           to: "#publish",
-          text: EMOJI.KEY + " Publish Now"
+          text: TEXT_EMOJIS.KEY + " Publish Now"
         }
       ]
     },

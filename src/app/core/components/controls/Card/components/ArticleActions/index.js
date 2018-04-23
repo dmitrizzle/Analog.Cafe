@@ -9,7 +9,7 @@ import {
 } from "../../../Button/components/SocialButtons"
 import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
 import { QuickSubscribe } from "../../../../../../user/components/forms/Subscribe"
-import { ROUTE_URL_ARTICLES } from "../../../../../constants/article"
+import { ROUTE_URL_ARTICLES } from "../../../../../constants/routes-article"
 import { TimeStamp } from "../../../../styles/ArticleStyles"
 import { authorNameList } from "../../../../../utils/authorship"
 import { datestamp, lunar, percise } from "../../../../../utils/datestamp"

@@ -14,7 +14,7 @@ import {
 import {
   ROUTE_API_LOGIN_FACEBOOK,
   ROUTE_API_LOGIN_TWITTER
-} from "../../../constants/login"
+} from "../../../constants/routes-session"
 import {
   verify as verifyUser,
   getInfo as getUserInfo,

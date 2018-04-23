@@ -6,14 +6,14 @@ import {
   Byline,
   Header
 } from "../../../../../../core/components/styles/ArticleStyles"
-import { MESSAGE_HINT_YOUR_PROFILE } from "../../../../../constants/hints"
-import { ModalDispatch } from "../../../../../../core/components/controls/Modal"
+import { CARD_ALERTS } from "../../../../../constants/messages-submissions"
 import {
   INPUT_SUBTITLE_LIMIT,
   INPUT_SUBTITLE_WARNING,
   INPUT_TITLE_LIMIT,
   INPUT_TITLE_WARNING
-} from "../../../../../constants/input"
+} from "../../../../../constants/rules-submissions"
+import { ModalDispatch } from "../../../../../../core/components/controls/Modal"
 import {
   resetSubmissionStatus,
   setHeadingValues
@@ -114,7 +114,7 @@ class HeaderEditor extends React.PureComponent {
         ) : (
           <Byline>
             Link to{" "}
-            <ModalDispatch with={MESSAGE_HINT_YOUR_PROFILE}>
+            <ModalDispatch with={CARD_ALERTS.YOUR_PROFILE}>
               Your Profile
             </ModalDispatch>{" "}
             will appear here.

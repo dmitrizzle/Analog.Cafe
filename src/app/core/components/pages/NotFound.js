@@ -1,10 +1,10 @@
 import React from "react"
 
 import { Article, Section } from "../styles/ArticleStyles"
+import { CARD_ERRORS, TEXT_ERRORS } from "../../constants/messages-"
 import Heading from "../vignettes/ArticleHeading"
 import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"
-import errorMessages from "../../../user/constants/errors"
 
 export default class extends React.PureComponent {
   componentWillMount = () => {
@@ -25,12 +25,12 @@ export default class extends React.PureComponent {
     return (
       <Article>
         <Helmet>
-          <title>{errorMessages.VIEW_TEMPLATE.ARTICLE.title}</title>
+          <title>{CARD_ERRORS.ARTICLE.title}</title>
         </Helmet>
         <Heading
-          pageTitle={errorMessages.VIEW_TEMPLATE.ARTICLE.title}
-          pageSubtitle={errorMessages.VIEW_TEMPLATE.ARTICLE.subtitle}
-          title={errorMessages.DISAMBIGUATION.CODE_403.error}
+          pageTitle={CARD_ERRORS.ARTICLE.title}
+          pageSubtitle={CARD_ERRORS.ARTICLE.subtitle}
+          title={TEXT_ERRORS.CODE_403.error}
         />
         <Section>
           <p style={{ textAlign: "center" }}>

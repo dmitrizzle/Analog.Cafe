@@ -6,11 +6,11 @@ import {
   CardButtonEditable,
   CardHeaderEditable
 } from "./styles"
-import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
 import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
-} from "../../../../../../user/constants/input"
+} from "../../../../../../user/constants/rules-submissions"
+import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
 import { SubtitleInput } from "../../../../../../user/components/forms/InputStyles"
 import { froth } from "../../../../../utils/image-froth"
 

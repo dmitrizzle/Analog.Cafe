@@ -4,8 +4,8 @@ import styled from "styled-components"
 import { Article, Quote, Section } from "../styles/ArticleStyles"
 import { Email } from "../vignettes/EmailSnippet"
 import { Figure } from "../vignettes/Picture/styles"
-import { MESSAGE_TEXT_SUBSCRIBE } from "../../constants/keywords"
 import { ModalDispatch } from "../controls/Modal"
+import { TEXT_LABELS } from "../../constants/messages-"
 import { froth } from "../../utils/image-froth"
 import ArticleActions from "../controls/Card/components/ArticleActions"
 import Heading from "../vignettes/ArticleHeading"
@@ -177,11 +177,11 @@ export default () => {
             >
               like this one
             </Link>) every Tuesday, fill out your email below and click “{
-              MESSAGE_TEXT_SUBSCRIBE
+              TEXT_LABELS.SUBSCRIBE
             }” We never share or sell your personal information.
           </span>
         </p>
-        <MailChimpPrefill buttonText={MESSAGE_TEXT_SUBSCRIBE} />
+        <MailChimpPrefill buttonText={TEXT_LABELS.SUBSCRIBE} />
 
         <ArticleActions mode="follow" />
         <p>

@@ -1,7 +1,7 @@
 import React from "react"
 import toTitleCase from "titlecase"
 
-import { INPUT_FORMAT } from "../../../constants/input"
+import { INPUT_FORMAT } from "../../../constants/rules-submissions"
 import { SubtitleTextarea, TitleTextarea } from "../InputStyles"
 
 // return

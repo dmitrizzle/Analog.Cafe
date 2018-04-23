@@ -5,9 +5,10 @@ import queryString from "query-string"
 
 import { withRouter } from "react-router"
 
+import { CARD_ERRORS } from "./user/constants/messages-session"
 import { DATA_GA_ID, HOST_RUNTIME, HOST_PROD } from "./constants"
 import { Modal } from "./core/components/controls/Modal"
-import { ROUTE_URL_USER_LANDING } from "./user/constants/user"
+import { ROUTE_URL_USER_LANDING } from "./user/constants/routes-session"
 import { setCard as setModalCard } from "./core/store/actions/modalActions"
 import {
   setView as setNavView,
@@ -21,7 +22,6 @@ import {
 } from "./user/store/actions/userActions"
 import AppRoutes from "./core/components/routes/App"
 import Nav from "./core/components/controls/Nav_c"
-import errorMessages from "./user/constants/errors"
 
 // init GA tracking
 if (process.env.NODE_ENV === "development" || HOST_RUNTIME !== HOST_PROD) {
@@ -65,7 +65,7 @@ class App extends React.PureComponent {
       this.props.setModalCard(
         {
           status: "ok",
-          info: errorMessages.VIEW_TEMPLATE.EMAIL_LOGIN_BAD_TOKEN
+          info: CARD_ERRORS.LOGIN_EMAIL_BAD_TOKEN
         },
         { url: "errors/email-login" }
       )
