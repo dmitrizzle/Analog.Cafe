@@ -6,7 +6,7 @@ import {
   Article,
   Section
 } from "../../../../core/components/styles/ArticleStyles"
-import { ROUTE_AUTH_USER_LANDING } from "../../../constants/user"
+import { ROUTE_URL_USER_LANDING } from "../../../constants/user"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
@@ -42,7 +42,7 @@ class AlreadyAuthenticated extends React.PureComponent {
           <p style={{ textAlign: "center" }}>
             You are aloready signed in. Click{" "}
             <strong>
-              <Link to={ROUTE_AUTH_USER_LANDING}>here</Link>
+              <Link to={ROUTE_URL_USER_LANDING}>here</Link>
             </strong>{" "}
             to see your stuff.
           </p>

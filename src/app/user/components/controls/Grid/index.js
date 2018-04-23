@@ -2,7 +2,7 @@ import React from "react"
 
 import { AspectRatio, GridButton, GridButtonCaption } from "./styles"
 import { ModalDispatch } from "../../../../core/components/controls/Modal"
-import { ROUTE_AUTHOR_API } from "../../../../core/constants/author"
+import { ROUTE_API_AUTHORS } from "../../../../core/constants/author"
 import { froth } from "../../../../core/utils/image-froth"
 
 // exports
@@ -39,7 +39,7 @@ export const GridButtonImage = props => {
           <ModalDispatch
             with={{
               request: {
-                url: ROUTE_AUTHOR_API + "/" + props.author.id
+                url: ROUTE_API_AUTHORS + "/" + props.author.id
               }
             }}
           >

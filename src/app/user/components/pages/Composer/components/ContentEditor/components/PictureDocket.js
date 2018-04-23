@@ -13,8 +13,8 @@ import {
   GridRow
 } from "../../../../../controls/Grid"
 import { MESSAGE_HINT_IMAGE_COLLAB_FEATURES } from "../../../../../../constants/hints"
+import { MIME_PICTURES } from "../../../../../../constants/rules-submissions"
 import { ModalDispatch } from "../../../../../../../core/components/controls/Modal"
-import { PICTURE_ACCEPTED_UPLOAD_MIME } from "../../../../../../../core/constants/picture"
 import { dot } from "../../../../../../../core/components/icons/BlankDot"
 import { fetchImageList } from "../../../../../../store/actions/composerActions"
 import { forceImageRestrictions } from "../../../../../../utils/upload-utils"
@@ -79,7 +79,7 @@ class PictureDocketContainer extends React.PureComponent {
         this.props.setCard(
           {
             status: "ok",
-            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE(10)
+            info: CARD_ERRORS.IMAGE_SIZE(10)
           },
           { url: "errors/upload" }
         )
@@ -196,7 +196,7 @@ class PictureDocketContainer extends React.PureComponent {
         </GridContainer>
         <input
           type="file"
-          accept={PICTURE_ACCEPTED_UPLOAD_MIME.toString()}
+          accept={MIME_PICTURES.toString()}
           style={{ display: "none" }}
           ref={input => {
             this.fileInput = input

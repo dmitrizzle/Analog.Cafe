@@ -12,8 +12,8 @@ import {
   TwitterLinkButton
 } from "../../../../core/components/controls/Button/components/SocialButtons"
 import {
-  ROUTE_LOGIN_FACEBOOK_API,
-  ROUTE_LOGIN_TWITTER_API
+  ROUTE_API_LOGIN_FACEBOOK,
+  ROUTE_API_LOGIN_TWITTER
 } from "../../../constants/login"
 import {
   verify as verifyUser,
@@ -57,7 +57,7 @@ class SignIn extends React.PureComponent {
     event.stopPropagation()
     event.preventDefault()
     open(
-      ROUTE_LOGIN_TWITTER_API,
+      ROUTE_API_LOGIN_TWITTER,
       {
         name: "Sign in with Twitter",
         width: 500,
@@ -82,7 +82,7 @@ class SignIn extends React.PureComponent {
     event.stopPropagation()
     event.preventDefault()
     open(
-      ROUTE_LOGIN_FACEBOOK_API,
+      ROUTE_API_LOGIN_FACEBOOK,
       {
         name: "Sign in with Facebook",
         width: 500,

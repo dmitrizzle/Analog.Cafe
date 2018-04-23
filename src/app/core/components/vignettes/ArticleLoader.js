@@ -2,7 +2,7 @@ import React from "react"
 
 import { Article, Section } from "../styles/ArticleStyles"
 import Heading from "./ArticleHeading"
-import emojis from "../../constants/emojis"
+import EMOJI from "../../constants/EMOJI"
 import errorMessages from "../../../user/constants/errors"
 
 // return
@@ -13,7 +13,7 @@ export default props => {
         pageTitle={
           props.isLoading
             ? props.pastDelay
-              ? emojis.HUG_RIGHT
+              ? EMOJI.HUG_RIGHT
               : ""
             : errorMessages.VIEW_TEMPLATE.ARTICLE.title
         }

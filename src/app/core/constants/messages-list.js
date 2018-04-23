@@ -1,46 +1,15 @@
-// related constants
-import { APP_DESCRIPTION, ROUTE_API_DOMAIN } from "../../constants"
-import { ROUTE_AUTH_USER_LANDING } from "../../user/constants/user"
+import { APP_DESCRIPTION } from "../../constants"
 
-export { ROUTE_ARTICLE_DIR, ROUTE_SUBMISSIONS_DIR } from "./article"
-export { SUMMARY_LENGTH_MAX } from "../../user/constants/input"
-
-// api endpoints
-export const ROUTE_LIST_API = ROUTE_API_DOMAIN + "/list"
-export const ROUTE_AUTHENTICATED_LIST_API = ROUTE_API_DOMAIN + "/submissions"
-
-// better copy for status keywords
-export const STATUS_TAGS_DISAMBIGUATION = {
+export const TEXT_LABELS = {
   pending: "In Queue",
   rejected: "Not Published",
   scheduled: "Scheduled",
   published: "Published"
 }
-
-// tag sets for particular view URLs/routes
-export const ROUTE_TAGS = {
-  "/me": "",
-  "/stories": "story",
-  "/editorials": "editorial",
-  "/guides": "guide",
-  "/reviews": "review",
-  "/photo-essays": "photo-essay",
-  "/articles": "review:guide:editorial:story",
-  [ROUTE_AUTH_USER_LANDING]: "",
-  "/": ""
-}
-// filtering content by composition type
-export const AUTHORSHIP_FILTERS = {
-  "/collaborations": "collaboration",
-  "/solo-projects": "solo"
-}
-
-// meta info for filtered routes
-export const ROUTE_META = {
+export const META_URLS = {
   "/me": {
     title: "Your submissions to Analog.Cafe"
   },
-
   "/stories": {
     title: "Stories: any medium, any topic",
     description:
@@ -61,7 +30,6 @@ export const ROUTE_META = {
     description:
       "Film photography gear, creative tools, places & experiences that inspire."
   },
-
   "/photo-essays": {
     title: "Photo essays; shot on film",
     description:
@@ -72,7 +40,6 @@ export const ROUTE_META = {
     description:
       "A collection of articles about art, inspiration and technology."
   },
-
   "/collaborations": {
     title: "Collaborations",
     description:
@@ -83,7 +50,6 @@ export const ROUTE_META = {
     description:
       "Solo projects are written pieces with images created by a single author."
   },
-
   "/": {
     title: APP_DESCRIPTION,
     description:

@@ -1,7 +1,7 @@
 // constants
 import {
-  ROUTE_ARTICLE_API,
-  ROUTE_SUBMISSION_API
+  ROUTE_API_ARTICLES,
+  ROUTE_API_SUBMISSIONS
 } from "../../core/constants/article"
 
 export {
@@ -18,14 +18,14 @@ export const redirectToSignIn = props => {
 
 // convenience function that sends all form data to server
 export const sendSubmission = (data, props) => {
-  let url = ROUTE_SUBMISSION_API
+  let url = ROUTE_API_SUBMISSIONS
   let method = "post"
   if (props.composer.submissionStatus.id && props.user.info.role === "admin") {
     method = "put"
     if (props.composer.submissionStatus.type === "unpublished")
       url += "/" + props.composer.submissionStatus.id
     else if (props.composer.submissionStatus.type === "published")
-      url = ROUTE_ARTICLE_API + "/" + props.composer.submissionStatus.id
+      url = ROUTE_API_ARTICLES + "/" + props.composer.submissionStatus.id
   }
   props.uploadSubmissionData({
     method,

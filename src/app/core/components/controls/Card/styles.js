@@ -2,7 +2,7 @@ import styled, { css } from "styled-components"
 
 import { LinkButton } from "../Button"
 import { Sidenote } from "../../styles/CaptionStyles"
-import emojis from "../../../constants/emojis"
+import EMOJI from "../../../constants/EMOJI"
 
 // css
 export const CardButtonStyles = css`
@@ -94,7 +94,7 @@ export const CardHeader = styled.header`
   }
   h3::before,
   input::before {
-    content: "${emojis.STAR}";
+    content: "${EMOJI.STAR}";
   }
   a {
     ${props => props.theme.size.font.auto} text-decoration:none;

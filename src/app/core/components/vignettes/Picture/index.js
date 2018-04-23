@@ -2,7 +2,7 @@ import React from "react"
 
 import { Image, Figure, Caption, CaptionAuthor } from "./styles"
 import { ModalDispatch } from "../../controls/Modal"
-import { ROUTE_AUTHOR_API } from "../../../constants/author"
+import { ROUTE_API_AUTHORS } from "../../../constants/author"
 import errorMessages from "../../../../user/constants/errors"
 
 // return
@@ -40,7 +40,7 @@ export default props => {
                       props.author.id !== "unknown"
                         ? {
                             request: {
-                              url: ROUTE_AUTHOR_API + "/" + props.author.id
+                              url: ROUTE_API_AUTHORS + "/" + props.author.id
                             }
                           }
                         : {

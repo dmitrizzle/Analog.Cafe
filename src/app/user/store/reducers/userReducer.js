@@ -1,5 +1,5 @@
 // constatns
-import { ROUTE_AUTH_USER_LANDING } from "../../constants/user"
+import { ROUTE_URL_USER_LANDING } from "../../constants/user"
 
 // set placeholders for accountList grid:
 let accountListDefaults = []
@@ -20,7 +20,7 @@ const getLocalRoutes = () =>
   localStorage.getItem("routes")
     ? JSON.parse(localStorage.getItem("routes"))
     : {
-        success: ROUTE_AUTH_USER_LANDING
+        success: ROUTE_URL_USER_LANDING
       }
 
 const INITIAL_STATE = {

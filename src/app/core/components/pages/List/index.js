@@ -10,10 +10,10 @@ import { Button } from "../../controls/Button"
 import { ListDescription, ListHeader } from "../../vignettes/ListDescription"
 import { ModalDispatch } from "../../controls/Modal"
 import {
-  ROUTE_AUTHENTICATED_LIST_API,
-  ROUTE_LIST_API
+  ROUTE_API_LIST_SUBMISSIONS,
+  ROUTE_API_LIST
 } from "../../../constants/list"
-import { ROUTE_AUTHOR_API } from "../../../constants/author"
+import { ROUTE_API_AUTHORS } from "../../../constants/author"
 import { fetchPage } from "../../../store/actions/listActions"
 import { getListMeta } from "../../../utils/list-utils"
 import { setPage as setNextArticle } from "../../../store/actions/articleActions"
@@ -34,8 +34,8 @@ class List extends React.PureComponent {
   constructor(props) {
     super(props)
     this.listAPI = this.props.private
-      ? ROUTE_AUTHENTICATED_LIST_API
-      : ROUTE_LIST_API
+      ? ROUTE_API_LIST_SUBMISSIONS
+      : ROUTE_API_LIST
     this.state = {
       loadMorePending: false
     }
@@ -132,7 +132,7 @@ class List extends React.PureComponent {
                           with={{
                             request: {
                               url:
-                                ROUTE_AUTHOR_API +
+                                ROUTE_API_AUTHORS +
                                 "/" +
                                 this.props.list.filter.author.id
                             }

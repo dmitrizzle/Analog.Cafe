@@ -9,7 +9,7 @@ import { APP_NAME } from "./app/constants"
 import { arrayFind, arrayIncludes } from "./app/core/utils/polyfill"
 import App from "./app"
 import Helmet from "./app/core/components/vignettes/Helmet"
-import emojis from "./app/core/constants/emojis"
+import EMOJI from "./app/core/constants/EMOJI"
 import registerServiceWorker from "./registerServiceWorker"
 import store from "./app/store"
 
@@ -83,7 +83,7 @@ render(
         <GlobalStyles>
           <Helmet
             defaultTitle={APP_NAME}
-            titleTemplate={"%s " + emojis.TITLE_SEPARATOR + " " + APP_NAME}
+            titleTemplate={"%s " + EMOJI.TITLE_SEPARATOR + " " + APP_NAME}
           />
           <App />
         </GlobalStyles>

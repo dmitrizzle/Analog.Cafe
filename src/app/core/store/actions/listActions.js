@@ -3,8 +3,8 @@ import errorMessages from "../../../user/constants/errors"
 import { axiosRequest } from "../../utils/axios-request"
 
 import {
-  ROUTE_LIST_API,
-  ROUTE_AUTHENTICATED_LIST_API
+  ROUTE_API_LIST,
+  ROUTE_API_LIST_SUBMISSIONS
 } from "../../constants/list"
 
 // return
@@ -31,8 +31,8 @@ export const fetchPage = (request, appendItems = false) => {
   return (dispatch, getState) => {
     // do not load anything outside of API scope
     if (
-      !request.url.includes(ROUTE_LIST_API) &&
-      !request.url.includes(ROUTE_AUTHENTICATED_LIST_API)
+      !request.url.includes(ROUTE_API_LIST) &&
+      !request.url.includes(ROUTE_API_LIST_SUBMISSIONS)
     )
       return
 
@@ -51,7 +51,7 @@ export const fetchPage = (request, appendItems = false) => {
 
     // authenticate user should they want to see protected content
     // (i.e. thieir submissions)
-    if (request.url.includes(ROUTE_AUTHENTICATED_LIST_API))
+    if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
       request.headers = {
         Authorization: "JWT " + localStorage.getItem("token")
       }
@@ -67,7 +67,7 @@ export const fetchPage = (request, appendItems = false) => {
       .then(response => {
         if (response.data.page["items-total"] > 0)
           dispatch(setPage(response.data, appendItems))
-        else if (request.url.includes(ROUTE_AUTHENTICATED_LIST_API)) {
+        else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
           dispatch(
             initPage({
               error: errorMessages.VIEW_TEMPLATE.SUBMISSIONS_LIST

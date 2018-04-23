@@ -1,7 +1,7 @@
 import React from "react"
 import toTitleCase from "titlecase"
 
-import { INPUT_AUTO_FORMAT } from "../../../constants/input"
+import { INPUT_FORMAT } from "../../../constants/input"
 import { SubtitleTextarea, TitleTextarea } from "../InputStyles"
 
 // return
@@ -25,7 +25,7 @@ export default class extends React.PureComponent {
       element.selectionEnd = caret
     })
     this.setState({
-      value: INPUT_AUTO_FORMAT(toTitleCase(event.target.value))
+      value: INPUT_FORMAT(toTitleCase(event.target.value))
     })
     this.props.onChange(event.target.value)
   }

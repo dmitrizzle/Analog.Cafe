@@ -9,7 +9,7 @@ import {
 } from "../../../Button/components/SocialButtons"
 import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
 import { QuickSubscribe } from "../../../../../../user/components/forms/Subscribe"
-import { ROUTE_ARTICLE_DIR } from "../../../../../constants/article"
+import { ROUTE_URL_ARTICLES } from "../../../../../constants/article"
 import { TimeStamp } from "../../../../styles/ArticleStyles"
 import { authorNameList } from "../../../../../utils/authorship"
 import { datestamp, lunar, percise } from "../../../../../utils/datestamp"
@@ -91,7 +91,7 @@ const ActionsCard = props => {
             <CardFlattened>
               <figure>
                 <Link
-                  to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle.slug}
+                  to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
                   onClick={() => {
                     props.nextArticleHeading(
                       nextArticlePreload(props.nextArticle)
@@ -139,7 +139,7 @@ const ActionsCard = props => {
               </figure>
               <LinkButton
                 style={{ margin: 0 }}
-                to={ROUTE_ARTICLE_DIR + "/" + props.nextArticle.slug}
+                to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
                 onClick={() => {
                   props.nextArticleHeading(
                     nextArticlePreload(props.nextArticle)

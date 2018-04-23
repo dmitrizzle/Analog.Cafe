@@ -3,8 +3,8 @@ import errorMessages from "../../../user/constants/errors"
 import { axiosRequest } from "../../utils/axios-request"
 
 import {
-  ROUTE_ARTICLE_API,
-  ROUTE_SUBMISSION_API
+  ROUTE_API_ARTICLES,
+  ROUTE_API_SUBMISSIONS
 } from "../../constants/article"
 
 // return
@@ -25,8 +25,8 @@ export const fetchPage = request => {
   return (dispatch, getState) => {
     // do not load anything outside of API scope
     if (
-      !request.url.includes(ROUTE_ARTICLE_API) &&
-      !request.url.includes(ROUTE_SUBMISSION_API)
+      !request.url.includes(ROUTE_API_ARTICLES) &&
+      !request.url.includes(ROUTE_API_SUBMISSIONS)
     )
       return
 

@@ -1,18 +1,18 @@
 import {
-  ROUTE_TAGS,
-  AUTHORSHIP_FILTERS,
-  ROUTE_META,
-  ROUTE_LIST_API
+  ROUTE_LIST_TAGS,
+  ROUTE_LIST_FILTERS,
+  MESSAGE_META_LIST_URLS,
+  ROUTE_API_LIST
 } from "../constants/list"
 
-export const getListMeta = (pathname = "/", page = 1, url = ROUTE_LIST_API) => {
+export const getListMeta = (pathname = "/", page = 1, url = ROUTE_API_LIST) => {
   let request
   let meta
   page = parseInt(page, 0)
 
   // filter by author name
   if (pathname.includes("/author/")) {
-    meta = ROUTE_META["/author/*"]
+    meta = MESSAGE_META_LIST_URLS["/author/*"]
     request = {
       params: {
         author: pathname.match(/\/author\/(.*)/)[1],
@@ -22,12 +22,14 @@ export const getListMeta = (pathname = "/", page = 1, url = ROUTE_LIST_API) => {
     }
   } else {
     // filter by tags
-    meta = ROUTE_META[pathname] ? ROUTE_META[pathname] : ROUTE_META.default
+    meta = MESSAGE_META_LIST_URLS[pathname]
+      ? MESSAGE_META_LIST_URLS[pathname]
+      : MESSAGE_META_LIST_URLS.default
     request = {
       params: {
-        tag: ROUTE_TAGS[pathname] ? ROUTE_TAGS[pathname] : "",
-        authorship: AUTHORSHIP_FILTERS[pathname]
-          ? AUTHORSHIP_FILTERS[pathname]
+        tag: ROUTE_LIST_TAGS[pathname] ? ROUTE_LIST_TAGS[pathname] : "",
+        authorship: ROUTE_LIST_FILTERS[pathname]
+          ? ROUTE_LIST_FILTERS[pathname]
           : "",
         page
       },

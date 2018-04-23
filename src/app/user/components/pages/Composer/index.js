@@ -12,7 +12,7 @@ import { requestFocus as requestEditorFocus } from "../../../store/actions/compo
 import ContentEditor from "./components/ContentEditor"
 import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"
 import HeaderEditor from "./components/HeaderEditor"
-import emojis from "../../../../core/constants/emojis"
+import EMOJI from "../../../../core/constants/EMOJI"
 
 // placeholders
 const titlePlaceholder = {
@@ -46,7 +46,7 @@ const Composer = props => {
       wrapperElement="Button"
       branded
     >
-      Send Submission {emojis.CHECKMARK}
+      Send Submission {EMOJI.CHECKMARK}
     </ModalDispatch>,
     <DraftStatusText key={"Composer_DraftStatus"}>
       Your draft is{" "}

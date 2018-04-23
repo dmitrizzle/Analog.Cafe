@@ -1,9 +1,9 @@
 import { css } from "styled-components"
 
-import emojis from "../../constants/emojis"
+import EMOJI from "../../constants/EMOJI"
 
 export default css`
-content: "${emojis.STAR}";
+content: "${EMOJI.STAR}";
 text-decoration: none;
 font-style: normal;
 display: inline-block;

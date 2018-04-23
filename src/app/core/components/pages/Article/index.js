@@ -9,13 +9,13 @@ import {
   Article as ArticleElement
 } from "../../styles/ArticleStyles"
 import { ModalDispatch } from "../../controls/Modal"
-import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../constants"
+import { HOST_PROD } from "../../../../constants"
 import {
-  ROUTE_ARTICLE_DIR,
-  ROUTE_SUBMISSIONS_DIR
+  ROUTE_URL_ARTICLES,
+  ROUTE_URL_SUBMISSIONS
 } from "../../../constants/article"
-import { ROUTE_AUTHOR_API } from "../../../constants/author"
-import { ROUTE_TAGS } from "../../../constants/list"
+import { ROUTE_API_AUTHORS } from "../../../constants/author"
+import { ROUTE_LIST_TAGS } from "../../../constants/list"
 import {
   fetchPage,
   setPage as setNextArticle
@@ -28,7 +28,7 @@ import Heading from "../../vignettes/ArticleHeading"
 import Helmet from "../../vignettes/Helmet"
 import Link from "../../controls/Link"
 import Picture from "../../vignettes/Picture_c"
-import emojis from "../../../constants/emojis"
+import EMOJI from "../../../constants/EMOJI"
 import slugToTitle from "../../../utils/slug-to-title"
 
 // admin controls loader
@@ -56,8 +56,8 @@ class Article extends React.PureComponent {
     // do not fetch pages unless they are located in /zine or /submissions dir
     // otherwise on unmount the component will try to load any page, and return 404 errors
     if (
-      !this.props.history.location.pathname.includes(ROUTE_ARTICLE_DIR) &&
-      !this.props.history.location.pathname.includes(ROUTE_SUBMISSIONS_DIR)
+      !this.props.history.location.pathname.includes(ROUTE_URL_ARTICLES) &&
+      !this.props.history.location.pathname.includes(ROUTE_URL_SUBMISSIONS)
     )
       return
 
@@ -87,7 +87,9 @@ class Article extends React.PureComponent {
         name:
           tag.charAt(0).toUpperCase() +
           slugToTitle(tag, { titleCase: false }).slice(1),
-        route: Object.keys(ROUTE_TAGS).find(key => ROUTE_TAGS[key] === tag)
+        route: Object.keys(ROUTE_LIST_TAGS).find(
+          key => ROUTE_LIST_TAGS[key] === tag
+        )
       }
     })
   }
@@ -188,7 +190,7 @@ class Article extends React.PureComponent {
                     with={{
                       request: {
                         url:
-                          ROUTE_AUTHOR_API +
+                          ROUTE_API_AUTHORS +
                           "/" +
                           getLeadAuthor(this.props.article.authors).id
                       }
@@ -213,7 +215,7 @@ class Article extends React.PureComponent {
                 <br />
                 <span style={{ fontStyle: "normal" }}>
                   {" "}
-                  {emojis.WARNING}
+                  {EMOJI.WARNING}
                 </span>{" "}
                 This submission is only visible to you and the Analog.Cafe
                 Editors.
@@ -225,7 +227,7 @@ class Article extends React.PureComponent {
           <Reader
             value={this.props.article.content.raw}
             options={{
-              domain: ROUTE_APP_PRODUCTION_DOMAIN_NAME
+              domain: HOST_PROD
             }}
             components={{
               Picture

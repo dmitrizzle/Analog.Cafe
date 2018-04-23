@@ -2,10 +2,7 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { CardModal, ModalOverlay } from "../../Card"
-import {
-  ROUTE_API_DOMAIN,
-  ROUTE_APP_CURRENT_DOMAIN
-} from "../../../../../constants"
+import { HOST_API, HOST_RUNTIME } from "../../../../../constants"
 import { hideCard } from "../../../../store/actions/modalActions"
 
 // return
@@ -15,8 +12,8 @@ const Modal = props => {
     import("react-ga").then(ReactGA => {
       ReactGA.modalview(
         props.modal.requested.url
-          .replace(ROUTE_API_DOMAIN, "") // cut api domain from the middle of reported path
-          .replace(ROUTE_APP_CURRENT_DOMAIN, "") // cut app domain from the middle of reported path
+          .replace(HOST_API, "") // cut api domain from the middle of reported path
+          .replace(HOST_RUNTIME, "") // cut app domain from the middle of reported path
       ) // google analytics
     })
   }

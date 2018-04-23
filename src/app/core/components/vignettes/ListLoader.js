@@ -2,7 +2,7 @@ import React from "react"
 
 import { Article, Section } from "../styles/ArticleStyles"
 import { ListDescription, ListHeader } from "./ListDescription"
-import emojis from "../../constants/emojis"
+import EMOJI from "../../constants/EMOJI"
 import errorMessages from "../../../user/constants/errors"
 
 // return
@@ -19,7 +19,7 @@ export default props => {
             </em>
           </q>{" "}
           {props.isLoading
-            ? emojis.HUG_RIGHT
+            ? EMOJI.HUG_RIGHT
             : errorMessages.VIEW_TEMPLATE.LIST.emoji}
         </ListHeader>
       )}

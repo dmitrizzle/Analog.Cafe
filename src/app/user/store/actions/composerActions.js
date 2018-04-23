@@ -4,8 +4,8 @@ import {
   MESSAGE_HINT_REJECT_SUBMISSION_SUCCESS,
   MESSAGE_HINT_PUBLISH_SUBMISSION_SUCCESS
 } from "../../constants/hints"
-import { ROUTE_IMAGE_API } from "../../../core/constants/picture"
-import { ROUTE_SUBMISSION_API } from "../../../core/constants/article"
+import { ROUTE_API_IMAGES } from "../../../core/constants/picture"
+import { ROUTE_API_SUBMISSIONS } from "../../../core/constants/article"
 import { axiosRequest } from "../../../core/utils/axios-request"
 import { setCard } from "../../../core/store/actions/modalActions"
 import errorMessages from "../../constants/errors"
@@ -139,7 +139,7 @@ export const fetchImageList = (options = {}, page = 1, appendItems = false) => {
   }
   return dispatch => {
     const request = {
-      url: ROUTE_IMAGE_API,
+      url: ROUTE_API_IMAGES,
       params
     }
 
@@ -160,7 +160,7 @@ export const fetchImageList = (options = {}, page = 1, appendItems = false) => {
 export const rejectSubmission = submissionId => {
   return dispatch => {
     const request = {
-      url: `${ROUTE_SUBMISSION_API}/${submissionId}/reject`,
+      url: `${ROUTE_API_SUBMISSIONS}/${submissionId}/reject`,
       method: "post",
       headers: {
         Authorization: "JWT " + localStorage.getItem("token")
@@ -187,7 +187,7 @@ export const rejectSubmission = submissionId => {
 export const publishSubmission = (submissionId, scheduledOrder, tag) => {
   return dispatch => {
     const request = {
-      url: `${ROUTE_SUBMISSION_API}/${submissionId}/approve`,
+      url: `${ROUTE_API_SUBMISSIONS}/${submissionId}/approve`,
       method: "post",
       data: {
         scheduledOrder,

@@ -1,8 +1,8 @@
 import axios from "axios"
 
 import { MESSAGE_HINT_CHECK_EMAIL } from "../../constants/hints"
-import { ROUTE_LOGIN_WITH_EMAIL } from "../../constants/login"
-import { ROUTE_USER_API, ROUTE_USER_ADMIN } from "../../constants/user"
+import { ROUTE_API_LOGIN_EMAIL } from "../../constants/login"
+import { ROUTE_API_USER, ROUTE_API_USERS } from "../../constants/user"
 import { anonymizeEmail } from "../../utils/email-utils"
 import { axiosRequest } from "../../../core/utils/axios-request"
 import { setCard } from "../../../core/store/actions/modalActions"
@@ -68,7 +68,7 @@ export const loginWithEmail = validatedEmail => {
     // send request
     axios(
       axiosRequest({
-        url: ROUTE_LOGIN_WITH_EMAIL,
+        url: ROUTE_API_LOGIN_EMAIL,
         data: { email: validatedEmail },
         method: "post"
       })
@@ -142,7 +142,7 @@ export const getInfo = () => {
       headers: {
         Authorization: "JWT " + token
       },
-      url: ROUTE_USER_API
+      url: ROUTE_API_USER
     }
     axios(axiosRequest(request))
       .then(response => {
@@ -235,7 +235,7 @@ export const fetchUserList = (options = {}, page = 1, appendItems = false) => {
   }
   return dispatch => {
     const request = {
-      url: ROUTE_USER_ADMIN,
+      url: ROUTE_API_USERS,
       params,
       headers: {
         Authorization: "JWT " + localStorage.getItem("token")

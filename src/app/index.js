@@ -5,13 +5,9 @@ import queryString from "query-string"
 
 import { withRouter } from "react-router"
 
-import {
-  APP_TRACKING_GAID,
-  ROUTE_APP_CURRENT_DOMAIN,
-  ROUTE_APP_PRODUCTION_DOMAIN_NAME
-} from "./constants"
+import { DATA_GA_ID, HOST_RUNTIME, HOST_PROD } from "./constants"
 import { Modal } from "./core/components/controls/Modal"
-import { ROUTE_AUTH_USER_LANDING } from "./user/constants/user"
+import { ROUTE_URL_USER_LANDING } from "./user/constants/user"
 import { setCard as setModalCard } from "./core/store/actions/modalActions"
 import {
   setView as setNavView,
@@ -28,13 +24,10 @@ import Nav from "./core/components/controls/Nav_c"
 import errorMessages from "./user/constants/errors"
 
 // init GA tracking
-if (
-  process.env.NODE_ENV === "development" ||
-  ROUTE_APP_CURRENT_DOMAIN !== ROUTE_APP_PRODUCTION_DOMAIN_NAME
-) {
-  window["ga-disable-" + APP_TRACKING_GAID] = true
+if (process.env.NODE_ENV === "development" || HOST_RUNTIME !== HOST_PROD) {
+  window["ga-disable-" + DATA_GA_ID] = true
 } else {
-  window["ga-disable-" + APP_TRACKING_GAID] = false
+  window["ga-disable-" + DATA_GA_ID] = false
 }
 
 // preload for List component
@@ -89,7 +82,7 @@ class App extends React.PureComponent {
 
     // async load Google Analytics module
     import("react-ga").then(ReactGA => {
-      ReactGA.initialize(APP_TRACKING_GAID, {
+      ReactGA.initialize(DATA_GA_ID, {
         debug: false,
         titleCase: true,
         gaOptions: {},
@@ -136,8 +129,8 @@ class App extends React.PureComponent {
         this.props.setNavView("COMPOSER")
         this.props.setNavLocation({ bottom: false })
         break
-      case ROUTE_AUTH_USER_LANDING + "/edit":
-      case ROUTE_AUTH_USER_LANDING + "/edit/":
+      case ROUTE_URL_USER_LANDING + "/edit":
+      case ROUTE_URL_USER_LANDING + "/edit/":
         this.props.setNavLocation({ top: false, bottom: false })
         break
       case "/submit/confirm-full-consent":

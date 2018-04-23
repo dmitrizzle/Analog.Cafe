@@ -18,8 +18,8 @@ import {
   MESSAGE_HINT_SYNC_SUBMISSION
 } from "../../../../../user/constants/hints"
 import {
-  ROUTE_ARTICLE_DIR,
-  ROUTE_SUBMISSIONS_DIR
+  ROUTE_URL_ARTICLES,
+  ROUTE_URL_SUBMISSIONS
 } from "../../../../constants/article"
 import { locate } from "../../../../utils/article-utils"
 import { setCard } from "../../../../store/actions/modalActions"
@@ -32,7 +32,7 @@ import {
 import { storeHeaderState } from "../../../../../user/utils/browser-storage"
 import { updateStatus as updateArticleStatus } from "../../../../store/actions/articleActions"
 import Link from "../../../controls/Link"
-import emojis from "../../../../constants/emojis"
+import EMOJI from "../../../../constants/EMOJI"
 
 const TAGS = {
   story: "Story",
@@ -190,7 +190,7 @@ class AdminControls extends React.PureComponent {
         {(this.props.article.status === "scheduled" ||
           this.props.article.status === "published") && (
           <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-            {emojis.WARNING}
+            {EMOJI.WARNING}
           </span>
         )}{" "}
         {this.props.article.status === "scheduled" &&
@@ -199,7 +199,7 @@ class AdminControls extends React.PureComponent {
           this.props.article.articleId && (
             <span>
               This is an <strong>original submission</strong>, linked with{" "}
-              <Link to={`${ROUTE_ARTICLE_DIR}/${this.props.article.slug}`}>
+              <Link to={`${ROUTE_URL_ARTICLES}/${this.props.article.slug}`}>
                 this published article
               </Link>. You can edit it and then sync your changes to the
               published article.
@@ -209,7 +209,7 @@ class AdminControls extends React.PureComponent {
           !this.props.article.articleId && (
             <span>
               This is a <strong>published article</strong>, linked with{" "}
-              <Link to={`${ROUTE_SUBMISSIONS_DIR}/${this.props.article.slug}`}>
+              <Link to={`${ROUTE_URL_SUBMISSIONS}/${this.props.article.slug}`}>
                 this submission
               </Link>. Your edits will be applied to that submission, which you
               can then sync with this article.
@@ -234,7 +234,7 @@ class AdminControls extends React.PureComponent {
             }}
           >
             <span role="img" aria-label="(Un)Locked button">
-              {this.state.allowOverwrite ? emojis.LOCKED : emojis.UNLOCKED}
+              {this.state.allowOverwrite ? EMOJI.LOCKED : EMOJI.UNLOCKED}
             </span>{" "}
             Edit
           </Item>
@@ -242,7 +242,7 @@ class AdminControls extends React.PureComponent {
             ? [
                 <Item key="ButtonStrip_Item_update" onClick={this.handleSync}>
                   <span role="img" aria-label="(Un)Locked button">
-                    {this.state.allowSync ? emojis.LOCKED : emojis.UNLOCKED}
+                    {this.state.allowSync ? EMOJI.LOCKED : EMOJI.UNLOCKED}
                   </span>{" "}
                   Sync
                 </Item>,
@@ -267,7 +267,7 @@ class AdminControls extends React.PureComponent {
                   }}
                 >
                   <span role="img" aria-label="(Un)Locked button">
-                    {this.state.allowReject ? emojis.LOCKED : emojis.UNLOCKED}
+                    {this.state.allowReject ? EMOJI.LOCKED : EMOJI.UNLOCKED}
                   </span>{" "}
                   Reject
                 </Item>,
@@ -300,7 +300,7 @@ class AdminControls extends React.PureComponent {
         }}
       >
         <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          {emojis.STOP}
+          {EMOJI.STOP}
         </span>{" "}
         This submission has been REJECTED and can not be published or edited.
       </Byline>,
@@ -352,7 +352,7 @@ class AdminControls extends React.PureComponent {
           >
             {this.props.composer.submissionAdmin.publish.id !==
               this.props.article.id &&
-              (this.state.allowPublish ? emojis.LOCKED : emojis.UNLOCKED)}{" "}
+              (this.state.allowPublish ? EMOJI.LOCKED : EMOJI.UNLOCKED)}{" "}
             Publish Now
           </Button>
         </CardFlattened>

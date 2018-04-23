@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ROUTE_IMAGE_API } from "../../constants/picture"
+import { ROUTE_API_IMAGES } from "../../constants/picture"
 import errorMessages from "../../../user/constants/errors"
 import { getFroth } from "../../utils/image-froth"
 import { axiosRequest } from "../../utils/axios-request"
@@ -28,7 +28,7 @@ export const getInfo = src => {
   let id = getFroth(src)
   let request
   request = {
-    url: ROUTE_IMAGE_API + "/" + id
+    url: ROUTE_API_IMAGES + "/" + id
   }
 
   return (dispatch, getState) => {
@@ -57,7 +57,7 @@ export const getInfo = src => {
 export const deleteRecord = id => {
   let request
   request = {
-    url: `${ROUTE_IMAGE_API}/${id}/delete`,
+    url: `${ROUTE_API_IMAGES}/${id}/delete`,
     method: "PUT",
     headers: {
       Authorization: "JWT " + localStorage.getItem("token")
@@ -79,7 +79,7 @@ export const deleteRecord = id => {
 export const feature = id => {
   let request
   request = {
-    url: `${ROUTE_IMAGE_API}/${id}/feature`,
+    url: `${ROUTE_API_IMAGES}/${id}/feature`,
     method: "PUT",
     headers: {
       Authorization: "JWT " + localStorage.getItem("token")
@@ -102,7 +102,7 @@ export const feature = id => {
 export const unfeature = id => {
   let request
   request = {
-    url: `${ROUTE_IMAGE_API}/${id}/unfeature`,
+    url: `${ROUTE_API_IMAGES}/${id}/unfeature`,
     method: "PUT",
     headers: {
       Authorization: "JWT " + localStorage.getItem("token")

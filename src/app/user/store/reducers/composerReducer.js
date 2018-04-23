@@ -1,5 +1,5 @@
 import { loadHeader } from "../../utils/browser-storage"
-import { DEFAULT_COMPOSER_HEADER_STATE } from "../../constants/composer"
+import { STATE_COMPOSER_HEADER_DEFAULT } from "../../constants/composer"
 
 // set placeholders for imageList grid:
 let imageListDefaults = []
@@ -99,7 +99,7 @@ export default (state = INITIAL_STATE, action) => {
 
       state = {
         ...state,
-        headingValues: DEFAULT_COMPOSER_HEADER_STATE
+        headingValues: STATE_COMPOSER_HEADER_DEFAULT
       }
       break
 

@@ -31,7 +31,7 @@ import {
 } from "../../../store/actions/composerActions"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
-import emojis from "../../../../core/constants/emojis"
+import EMOJI from "../../../../core/constants/EMOJI"
 import errorMessages from "../../../constants/errors"
 
 // constants
@@ -223,7 +223,7 @@ class Upload extends React.PureComponent {
             <p>
               <strong>
                 <span role="img" aria-label="Warning">
-                  {emojis.WARNING}
+                  {EMOJI.WARNING}
                 </span>{" "}
                 Please keep this page open, do not refresh and do not click your
                 browser’s “back” button

@@ -4,10 +4,13 @@ import React from "react"
 import { Article } from "../../../../core/components/styles/ArticleStyles"
 import { Button } from "../../../../core/components/controls/Button"
 import {
-  ROUTE_AUTH_USER_LANDING,
-  ROUTE_UPDATE_PROFILE_API
+  ROUTE_URL_USER_LANDING,
+  ROUTE_API_USER_PROFILE
 } from "../../../constants/user"
-import { SUMMARY_LENGTH_MAX, TITLE_LENGTH_MAX } from "../../../constants/input"
+import {
+  INPUT_SUMMARY_LIMIT,
+  INPUT_TITLE_LIMIT
+} from "../../../constants/input"
 import { forceImageRestrictions } from "../../../utils/upload-utils"
 import {
   getInfo as getUserInfo,
@@ -78,13 +81,13 @@ class EditProfile extends React.PureComponent {
   handleTitleChange = event => {
     this.setState({
       title: event.target.value,
-      warningTitle: event.target.value.length >= TITLE_LENGTH_MAX
+      warningTitle: event.target.value.length >= INPUT_TITLE_LIMIT
     })
   }
   handleTextChange = event => {
     this.setState({
       text: event.target.value,
-      warningText: event.target.value.length >= SUMMARY_LENGTH_MAX
+      warningText: event.target.value.length >= INPUT_SUMMARY_LIMIT
     })
   }
 
@@ -100,7 +103,7 @@ class EditProfile extends React.PureComponent {
         this.props.setCard(
           {
             status: "ok",
-            info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE(5)
+            info: CARD_ERRORS.IMAGE_SIZE(5)
           },
           { url: "errors/upload" }
         )
@@ -157,7 +160,7 @@ class EditProfile extends React.PureComponent {
         Authorization: "JWT " + localStorage.getItem("token")
       },
       data,
-      url: ROUTE_UPDATE_PROFILE_API
+      url: ROUTE_API_USER_PROFILE
     }
     this.props.setUserInfo(request)
     this.setState({
@@ -166,7 +169,7 @@ class EditProfile extends React.PureComponent {
   }
   profileUpdated = () => {
     this.props.acceptUserInfo()
-    this.props.history.push(ROUTE_AUTH_USER_LANDING)
+    this.props.history.push(ROUTE_URL_USER_LANDING)
     //this.props.history.goBack()
   }
 
@@ -220,7 +223,7 @@ class EditProfile extends React.PureComponent {
     )
   }
 }
-//to={ROUTE_AUTH_USER_LANDING}
+//to={ROUTE_URL_USER_LANDING}
 
 // connect with redux
 const mapDispatchToProps = dispatch => {

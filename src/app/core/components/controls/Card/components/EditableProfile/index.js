@@ -8,8 +8,8 @@ import {
 } from "./styles"
 import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
 import {
-  SUMMARY_LENGTH_MAX,
-  TITLE_LENGTH_MAX
+  INPUT_SUMMARY_LIMIT,
+  INPUT_TITLE_LIMIT
 } from "../../../../../../user/constants/input"
 import { SubtitleInput } from "../../../../../../user/components/forms/InputStyles"
 import { froth } from "../../../../../utils/image-froth"
@@ -22,7 +22,7 @@ export default props => {
         <SubtitleInput
           placeholder="Your Name"
           value={props.title || ""}
-          maxLength={TITLE_LENGTH_MAX}
+          maxLength={INPUT_TITLE_LIMIT}
           autoFocus
           onChange={event => props.changeTitle(event)}
           warning={props.warningTitle}
@@ -39,7 +39,7 @@ export default props => {
         </PicturePlaceholder>
         <figcaption>
           <CardCaptionEditable
-            maxLength={SUMMARY_LENGTH_MAX}
+            maxLength={INPUT_SUMMARY_LIMIT}
             placeholder="Your short author bio goes here."
             onChange={event => props.changeText(event)}
             value={props.text || ""}
@@ -50,7 +50,7 @@ export default props => {
       <CardButtonEditable
         value={props.buttonText || ""}
         placeholder="Website"
-        maxLength={SUMMARY_LENGTH_MAX}
+        maxLength={INPUT_SUMMARY_LIMIT}
         onChange={event => props.changeButton(event)}
         onFocus={() => props.focusButton()}
         onBlur={() => props.blurButton()}

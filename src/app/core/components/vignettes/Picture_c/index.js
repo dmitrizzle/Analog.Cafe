@@ -1,8 +1,8 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { INPUT_AUTO_FORMAT } from "../../../../user/constants/input"
-import { PICTURE_DATA_OBJECT } from "../../../constants/picture"
+import { INPUT_FORMAT } from "../../../../user/constants/input"
+import { OBJECT_SLATE_PICTURE_FROM_IMMUTABLE } from "../../../constants/picture"
 import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
 import { getFroth } from "../../../utils/image-froth"
 import { getInfo } from "../../../store/actions/pictureActions"
@@ -43,7 +43,7 @@ class Figure extends React.PureComponent {
     })
 
     // format caption text
-    let caption = INPUT_AUTO_FORMAT(element.value)
+    let caption = INPUT_FORMAT(element.value)
     const { node, editor } = this.props
     const feature = node.data.get("feature")
     const src = node.data.get("src")
@@ -113,7 +113,7 @@ class Figure extends React.PureComponent {
   }
   handleFeaturePicture = () => {
     const { node, editor } = this.props
-    const previousData = PICTURE_DATA_OBJECT(
+    const previousData = OBJECT_SLATE_PICTURE_FROM_IMMUTABLE(
       editor.value.document.getChild(node.key).data
     )
     let featureStatus = previousData.feature ? false : true

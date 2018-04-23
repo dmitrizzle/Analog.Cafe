@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Article, Quote, Section } from "../styles/ArticleStyles"
 import { Email } from "../vignettes/EmailSnippet"
 import { Figure } from "../vignettes/Picture/styles"
-import { KEYWORD_SUBSCRIBE } from "../../constants/keywords"
+import { MESSAGE_TEXT_SUBSCRIBE } from "../../constants/keywords"
 import { ModalDispatch } from "../controls/Modal"
 import { froth } from "../../utils/image-froth"
 import ArticleActions from "../controls/Card/components/ArticleActions"
@@ -177,11 +177,11 @@ export default () => {
             >
               like this one
             </Link>) every Tuesday, fill out your email below and click “{
-              KEYWORD_SUBSCRIBE
+              MESSAGE_TEXT_SUBSCRIBE
             }” We never share or sell your personal information.
           </span>
         </p>
-        <MailChimpPrefill buttonText={KEYWORD_SUBSCRIBE} />
+        <MailChimpPrefill buttonText={MESSAGE_TEXT_SUBSCRIBE} />
 
         <ArticleActions mode="follow" />
         <p>

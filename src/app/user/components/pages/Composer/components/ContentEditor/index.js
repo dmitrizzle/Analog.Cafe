@@ -7,7 +7,7 @@ import {
   Lower
 } from "../../../../../../core/components/icons/HeaderGlyphs"
 import { MESSAGE_HINT_CONNECTION_OFFLINE } from "../../../../../constants/hints"
-import { ROUTE_APP_PRODUCTION_DOMAIN_NAME } from "../../../../../../constants"
+import { HOST_PROD } from "../../../../../../constants"
 import { ToggleFeature } from "./plugins"
 import { setCard } from "../../../../../../core/store/actions/modalActions"
 import { setDraftStatus } from "../../../../../store/actions/composerActions"
@@ -31,7 +31,7 @@ class ContentEditor extends React.PureComponent {
       this.props.setCard(
         {
           status: "ok",
-          info: errorMessages.VIEW_TEMPLATE.UPLOAD_IMAGE_SIZE(10)
+          info: CARD_ERRORS.IMAGE_SIZE(10)
         },
         { url: "errors/upload" }
       )
@@ -101,7 +101,7 @@ class ContentEditor extends React.PureComponent {
           // domain prop helps rendering links better; for example, absolute
           // links like `domain.com/page` can be automatically converted into
           // `/page`
-          domain: ROUTE_APP_PRODUCTION_DOMAIN_NAME
+          domain: HOST_PROD
         }}
         //
         // this prop will call a function with error name and additional info

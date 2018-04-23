@@ -2,7 +2,7 @@ import { Switch, Route } from "react-router-dom"
 import Loadable from "react-loadable"
 import React from "react"
 
-import { ROUTE_AUTH_USER_LANDING } from "../../../user/constants/user"
+import { ROUTE_URL_USER_LANDING } from "../../../user/constants/user"
 import ArticleLoader from "../vignettes/ArticleLoader"
 import ListLoader from "../vignettes/ListLoader"
 import SignOut from "../../../user/components/pages/SignOut"
@@ -76,16 +76,16 @@ export default () => {
         <Route exact path="/solo-projects" component={List} />
 
         {/* auth views */}
-        <Route exact path={ROUTE_AUTH_USER_LANDING} component={Me} />
+        <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
         <Route
           exact
-          path={`${ROUTE_AUTH_USER_LANDING}/admin`}
+          path={`${ROUTE_URL_USER_LANDING}/admin`}
           component={Admin}
         />
         <Route exact path="/submissions/*" component={Article} />
         <Route
           exact
-          path={ROUTE_AUTH_USER_LANDING + "/edit"}
+          path={ROUTE_URL_USER_LANDING + "/edit"}
           component={EditProfile}
         />
         <Route exact path="/sign-in" component={SignIn} />

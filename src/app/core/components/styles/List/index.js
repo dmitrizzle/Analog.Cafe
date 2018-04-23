@@ -5,10 +5,10 @@ import { AuthorAndDate, Ul } from "./styles/ul"
 import { Bleed } from "./styles/bleed"
 import { Caption } from "./styles/caption"
 import {
-  ROUTE_ARTICLE_DIR,
-  ROUTE_SUBMISSIONS_DIR,
-  STATUS_TAGS_DISAMBIGUATION,
-  SUMMARY_LENGTH_MAX
+  ROUTE_URL_ARTICLES,
+  ROUTE_URL_SUBMISSIONS,
+  MESSAGE_TEXT_LIST_ITEM_STATUS,
+  INPUT_SUMMARY_LIMIT
 } from "../../../constants/list"
 import { Stats } from "./styles/stats"
 import { ZigzagPicture } from "./styles/zigzag-picture"
@@ -16,7 +16,7 @@ import { authorNameList } from "../../../utils/authorship"
 import { datestamp } from "../../../utils/datestamp"
 import { froth } from "../../../utils/image-froth"
 import Link from "../../controls/Link"
-import emojis from "../../../constants/emojis"
+import EMOJI from "../../../constants/EMOJI"
 
 // return
 const ListSubtitle = props => {
@@ -50,8 +50,8 @@ export default props => {
                   to={
                     item.slug &&
                     (props.private
-                      ? ROUTE_SUBMISSIONS_DIR
-                      : ROUTE_ARTICLE_DIR) +
+                      ? ROUTE_URL_SUBMISSIONS
+                      : ROUTE_URL_ARTICLES) +
                       "/" +
                       item.slug
                   }
@@ -115,17 +115,17 @@ export default props => {
                       {/* Two versions of summary for different screens: long and short */}
                       <span className="long">
                         <span style={{ fontStyle: "normal" }}>
-                          {emojis.PARAGRAPH}
+                          {EMOJI.PARAGRAPH}
                         </span>
-                        {item.summary.substr(0, SUMMARY_LENGTH_MAX - 1) + "…"}
+                        {item.summary.substr(0, INPUT_SUMMARY_LIMIT - 1) + "…"}
                       </span>
                       <span className="short">
                         <span style={{ fontStyle: "normal" }}>
-                          {emojis.PARAGRAPH}
+                          {EMOJI.PARAGRAPH}
                         </span>
                         {item.summary.substr(
                           0,
-                          SUMMARY_LENGTH_MAX / 1.6 -
+                          INPUT_SUMMARY_LIMIT / 1.6 -
                             (item.subtitle || "").length -
                             item.title.length -
                             1
@@ -164,8 +164,8 @@ export default props => {
                         {/* status of the submission */}
                         {item.type !== "placeholder" &&
                           props.private &&
-                          ` ↝ ${STATUS_TAGS_DISAMBIGUATION[item.status]}`}
-                        {/* emojis.MONOCLE + " Pending Editorial Review" */}
+                          ` ↝ ${MESSAGE_TEXT_LIST_ITEM_STATUS[item.status]}`}
+                        {/* EMOJI.MONOCLE + " Pending Editorial Review" */}
                       </Stats>
                       <AuthorAndDate>
                         {!props.private || props.isAdmin

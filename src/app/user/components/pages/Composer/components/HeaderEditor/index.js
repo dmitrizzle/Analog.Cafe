@@ -9,10 +9,10 @@ import {
 import { MESSAGE_HINT_YOUR_PROFILE } from "../../../../../constants/hints"
 import { ModalDispatch } from "../../../../../../core/components/controls/Modal"
 import {
-  SUBTITLE_LENGTH_MAX,
-  SUBTITLE_LENGTH_OPTIMAL,
-  TITLE_LENGTH_MAX,
-  TITLE_LENGTH_OPTIMAL
+  INPUT_SUBTITLE_LIMIT,
+  INPUT_SUBTITLE_WARNING,
+  INPUT_TITLE_LIMIT,
+  INPUT_TITLE_WARNING
 } from "../../../../../constants/input"
 import {
   resetSubmissionStatus,
@@ -64,13 +64,12 @@ class HeaderEditor extends React.PureComponent {
           value={this.props.composer.headingValues.title}
           inputDesignation="title"
           caution={
-            this.props.composer.headingValues.title.length >
-            TITLE_LENGTH_OPTIMAL
+            this.props.composer.headingValues.title.length > INPUT_TITLE_WARNING
           }
           warning={
-            this.props.composer.headingValues.title.length >= TITLE_LENGTH_MAX
+            this.props.composer.headingValues.title.length >= INPUT_TITLE_LIMIT
           }
-          maxLength={TITLE_LENGTH_MAX}
+          maxLength={INPUT_TITLE_LIMIT}
           autoFocus={this.props.composer.headingValues.title === ""}
           onKeyPress={this.handleKeypress}
         />
@@ -81,13 +80,13 @@ class HeaderEditor extends React.PureComponent {
           inputDesignation="subtitle"
           caution={
             this.props.composer.headingValues.subtitle.length >
-            SUBTITLE_LENGTH_OPTIMAL
+            INPUT_SUBTITLE_WARNING
           }
           warning={
             this.props.composer.headingValues.subtitle.length >=
-            SUBTITLE_LENGTH_MAX
+            INPUT_SUBTITLE_LIMIT
           }
-          maxLength={SUBTITLE_LENGTH_MAX}
+          maxLength={INPUT_SUBTITLE_LIMIT}
           onKeyPress={this.handleKeypress}
         />
         {this.props.user.info.role === "admin" &&

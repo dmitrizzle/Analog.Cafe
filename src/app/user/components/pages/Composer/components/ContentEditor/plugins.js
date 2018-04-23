@@ -1,6 +1,6 @@
 import keycode from "keycode"
 
-import { PICTURE_DATA_OBJECT } from "../../../../../../core/constants/picture"
+import { OBJECT_SLATE_PICTURE_FROM_IMMUTABLE } from "../../../../../../core/constants/picture"
 
 // return
 export const ToggleFeature = options => {
@@ -13,7 +13,9 @@ export const ToggleFeature = options => {
       if (value.focusBlock.type !== "image") return
       event.preventDefault()
 
-      const previousData = PICTURE_DATA_OBJECT(value.focusBlock.data)
+      const previousData = OBJECT_SLATE_PICTURE_FROM_IMMUTABLE(
+        value.focusBlock.data
+      )
       let featureStatus = previousData.feature ? false : true
       change.setBlocks({
         type: "image",
