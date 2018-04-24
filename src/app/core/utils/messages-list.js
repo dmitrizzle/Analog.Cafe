@@ -10,7 +10,6 @@ export const getListMeta = (pathname = "/", page = 1, url = ROUTE_API_LIST) => {
   let meta
   page = parseInt(page, 0)
 
-  // filter by author name
   if (pathname.includes("/author/")) {
     meta = TEXT_ROUTE_LABELS["/author/*"]
     request = {
@@ -21,7 +20,6 @@ export const getListMeta = (pathname = "/", page = 1, url = ROUTE_API_LIST) => {
       url
     }
   } else {
-    // filter by tags
     meta = TEXT_ROUTE_LABELS[pathname]
       ? TEXT_ROUTE_LABELS[pathname]
       : TEXT_ROUTE_LABELS.default
@@ -34,6 +32,5 @@ export const getListMeta = (pathname = "/", page = 1, url = ROUTE_API_LIST) => {
       url
     }
   }
-
   return { request, meta }
 }

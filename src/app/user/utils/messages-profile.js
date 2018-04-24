@@ -24,7 +24,7 @@ const fixLinks = link => {
   return !link.match(/^[a-zA-Z]+:\/\//) ? "http://" + link : link
 }
 
-export const profileButtonsTemplate = (id = "unknown", link = "") => {
+export const getProfileButtons = (id = "unknown", link = "") => {
   let template
   template = [
     {

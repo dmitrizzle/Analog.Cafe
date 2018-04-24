@@ -1,22 +1,15 @@
+import throttle from "lodash/throttle"
+
+import { INPUT_HEADER_DEFAULTS } from "../constants/rules-submissions"
 import {
   ROUTE_API_ARTICLES,
   ROUTE_API_SUBMISSIONS
 } from "../../core/constants/routes-article"
-import { forceImageRestrictions } from "./upload-utils"
 
 export {
   forceImageRestrictions
 } from "@roast-cms/french-press-editor/dist/utils/image-rules"
 
-// this function kicks user to sign-in scdreen but rembers where to come back to
-export const redirectToSignIn = props => {
-  props.setLoginRedirectRoutes({ success: props.history.location.pathname })
-  props.history.replace({
-    pathname: "/sign-in"
-  })
-}
-
-// convenience function that sends all form data to server
 export const sendSubmission = (data, props) => {
   let url = ROUTE_API_SUBMISSIONS
   let method = "post"
@@ -36,4 +29,14 @@ export const sendSubmission = (data, props) => {
     },
     url
   })
+}
+export const storeHeaderState = header => {
+  const headerState = JSON.stringify(header)
+  localStorage.setItem("composer-header-state", headerState)
+}
+export const saveHeader = throttle(header => storeHeaderState(header), 3000)
+
+export const loadHeader = () => {
+  let local = localStorage.getItem("composer-header-state")
+  return local ? JSON.parse(local) : INPUT_HEADER_DEFAULTS
 }

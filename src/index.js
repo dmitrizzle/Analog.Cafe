@@ -6,14 +6,17 @@ import React from "react"
 import styled, { ThemeProvider } from "styled-components"
 
 import { APP_NAME, TEXT_EMOJIS } from "./app/constants"
-import { arrayFind, arrayIncludes } from "./app/core/utils/polyfill"
+import {
+  polyfillArrayFind,
+  polyfillArrayIncludes
+} from "./app/core/utils/polyfill"
 import App from "./app"
 import Helmet from "./app/core/components/vignettes/Helmet"
 import registerServiceWorker from "./registerServiceWorker"
 import store from "./app/store"
 
-arrayIncludes()
-arrayFind()
+polyfillArrayIncludes()
+polyfillArrayFind()
 
 const GlobalStyles = styled.div`
   color: ${props => props.theme.color.foreground()};

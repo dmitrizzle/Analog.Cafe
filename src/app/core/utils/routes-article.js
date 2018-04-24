@@ -7,8 +7,7 @@ import {
   ROUTE_URL_SUBMISSIONS
 } from "../constants/routes-article"
 
-// return path type for submissions vs published works
-export const locate = locationPathname => {
+export const getSubmissionOrArticleRoute = locationPathname => {
   return {
     pathname: locationPathname.includes(ROUTE_URL_SUBMISSIONS)
       ? ROUTE_URL_SUBMISSIONS
@@ -19,7 +18,6 @@ export const locate = locationPathname => {
   }
 }
 
-// generate complete url path for social sharing
-export const completeUrlPath = (route, slug) => {
+export const getAbsoluteURLPath = (route, slug) => {
   return encodeURI(HOST_PROTOCOL + HOST_PROD + route + "/" + slug)
 }

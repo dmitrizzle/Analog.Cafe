@@ -22,7 +22,7 @@ import {
 } from "../../../store/actions/articleActions"
 import { froth } from "../../../utils/image-froth"
 import { getLeadAuthor, authorNameList } from "../../../utils/authorship"
-import { locate, completeUrlPath } from "../../../utils/article-utils"
+import { locate, getAbsoluteURLPath } from "../../../utils/article-utils"
 import ArticleActions from "../../controls/Card/components/ArticleActions"
 import Heading from "../../vignettes/ArticleHeading"
 import Helmet from "../../vignettes/Helmet"
@@ -125,7 +125,7 @@ class Article extends React.PureComponent {
     event.preventDefault()
     window.open(
       "https://web.facebook.com/sharer.php?u=" +
-        completeUrlPath(
+        getAbsoluteURLPath(
           locate(this.props.history.location.pathname).pathname,
           this.props.article.slug
         ),
@@ -137,7 +137,7 @@ class Article extends React.PureComponent {
     event.preventDefault()
     window.open(
       "https://twitter.com/share?url=" +
-        completeUrlPath(
+        getAbsoluteURLPath(
           locate(this.props.history.location.pathname).pathname,
           this.props.article.slug
         ) +

@@ -20,7 +20,7 @@ import {
   ROUTE_URL_SUBMISSIONS
 } from "../../../core/constants/routes-article"
 import { TEXT_EMOJIS } from "../../../constants"
-import { locate } from "../../../core/utils/article-utils"
+import { routeSubmissionOrArticle } from "../../../core/utils/article-utils"
 import {
   publishSubmission,
   rejectSubmission,
@@ -81,9 +81,11 @@ class AdminControls extends React.PureComponent {
       return
     this.props.updateArticleStatus({
       url:
-        locate(this.props.history.location.pathname).apiRoute +
+        routeSubmissionOrArticle(this.props.history.location.pathname)
+          .apiRoute +
         this.props.history.location.pathname.replace(
-          locate(this.props.history.location.pathname).pathname,
+          routeSubmissionOrArticle(this.props.history.location.pathname)
+            .pathname,
           ""
         )
     })
