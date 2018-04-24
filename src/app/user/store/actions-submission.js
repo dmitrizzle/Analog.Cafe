@@ -2,16 +2,12 @@ import axios from "axios"
 
 import { CARD_ALERTS } from "../../admin/constants/messages-admin"
 import { CARD_ERRORS } from "../constants/messages-submission"
-import {
-  ROUTE_API_IMAGES,
-  ROUTE_API_SUBMISSIONS
-} from "../constants/routes-submission"
+import { ROUTE_API_SUBMISSIONS } from "../constants/routes-submission"
 import { makeAPIRequest } from "../../utils"
 import { setCard } from "../../core/store/actions-modal"
 
-// manage Composer state
-// note that Slate Editor state must be manage separately from within
-// Editor component and React's {state}
+// Slate Editor state can not be managed via Redux
+
 export const setHeadingValues = value => {
   return {
     type: "COMPOSER.SET_HEADING_VALUES",
@@ -24,9 +20,6 @@ export const resetAllValues = () => {
     payload: null
   }
 }
-
-// track submission id -> none if this is a new submission or
-// an id of an edited submission
 export const setSubmissionStatus = (id, type) => {
   return {
     type: "COMPOSER.SET_SUBMISSION_STATUS",
@@ -125,33 +118,6 @@ export const setDraftStatus = status => {
 export const requestFocus = () => {
   return {
     type: "COMPOSER.REQUEST_FOCUS"
-  }
-}
-
-// query instant collaboration items
-export const fetchImageList = (options = {}, page = 1, appendItems = false) => {
-  const params = {
-    featured: options.featured === false ? undefined : true,
-    fullConsent: options.fullConsent === false ? undefined : true,
-    "items-per-page": options.itemsPerPage || undefined,
-    page
-  }
-  return dispatch => {
-    const request = {
-      url: ROUTE_API_IMAGES,
-      params
-    }
-
-    axios(makeAPIRequest(request))
-      .then(response => {
-        dispatch({
-          type: appendItems ? "IMAGES.ADD_PAGE" : "IMAGES.SET_PAGE",
-          payload: response.data
-        })
-      })
-      .catch(error => {
-        console.log(error)
-      })
   }
 }
 

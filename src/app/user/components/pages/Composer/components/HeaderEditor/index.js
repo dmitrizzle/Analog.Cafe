@@ -17,7 +17,7 @@ import { ModalDispatch } from "../../../../../../core/components/controls/Modal"
 import {
   resetSubmissionStatus,
   setHeadingValues
-} from "../../../../../store/actions-composer"
+} from "../../../../../store/actions-submission"
 import { saveHeader } from "../../../../../utils/actions-submission"
 import Link from "../../../../../../core/components/controls/Link"
 import TitleCase from "../../../../forms/TitleCase"

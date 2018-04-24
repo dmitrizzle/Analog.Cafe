@@ -20,7 +20,7 @@ import {
   feature as featureImage,
   unfeature as unfeatureImage
 } from "../../../../core/store/actions-picture"
-import { fetchImageList } from "../../../../user/store/actions-composer"
+import { fetchImageLib } from "../../../../user/store/actions-imagelib"
 import { fetchUserList } from "../../../../user/store/actions-user"
 import { setCard } from "../../../../core/store/actions-modal"
 import Forbidden from "../../../../core/components/pages/Forbidden"
@@ -48,7 +48,7 @@ class Admin extends React.PureComponent {
   // load images list
   componentDidMount = () => {
     // get featured collab images
-    this.props.fetchImageList(this.state.imageList.options)
+    this.props.fetchImageLib(this.state.imageList.options)
 
     this.props.fetchUserList({
       itemsPerPage: 100
@@ -56,7 +56,7 @@ class Admin extends React.PureComponent {
   }
   handleImagesLoadMore = () => {
     this.incrementPage() &&
-      this.props.fetchImageList(
+      this.props.fetchImageLib(
         this.state.imageList.options,
         this.state.imageList.page,
         true
@@ -180,7 +180,7 @@ class Admin extends React.PureComponent {
       default:
     }
     window.requestAnimationFrame(() => {
-      this.props.fetchImageList(this.state.imageList.options)
+      this.props.fetchImageLib(this.state.imageList.options)
     })
   }
 
@@ -359,8 +359,8 @@ class Admin extends React.PureComponent {
 // connect with redux
 const mapDispatchToProps = dispatch => {
   return {
-    fetchImageList: (options, page, appendItems) => {
-      dispatch(fetchImageList(options, page, appendItems))
+    fetchImageLib: (options, page, appendItems) => {
+      dispatch(fetchImageLib(options, page, appendItems))
     },
     fetchUserList: (options, page, appendItems) => {
       dispatch(fetchUserList(options, page, appendItems))

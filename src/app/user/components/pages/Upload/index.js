@@ -30,7 +30,7 @@ import {
   initUploadProgress,
   resetAllValues as resetComposerValues,
   resetSubmissionStatus
-} from "../../../store/actions-composer"
+} from "../../../store/actions-submission"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
 

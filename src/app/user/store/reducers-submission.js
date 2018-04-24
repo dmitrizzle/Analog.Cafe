@@ -1,13 +1,6 @@
 import { INPUT_HEADER_DEFAULTS } from "../constants/rules-submission"
 import { loadHeader } from "../utils/actions-submission"
 
-// set placeholders for imageList grid:
-let imageListDefaults = []
-for (var o = 0; o < 8; o++) {
-  imageListDefaults[o] = { id: o }
-}
-
-// get submission status from localStorage
 const getLocalSubmissionStatus = () =>
   localStorage.getItem("composer-submission-status")
     ? JSON.parse(localStorage.getItem("composer-submission-status"))
@@ -21,10 +14,6 @@ const INITIAL_STATE = {
     subtitle: loadHeader().subtitle
   },
   uploadProgress: 0,
-  imageList: {
-    status: "loading",
-    items: imageListDefaults
-  },
   submissionStatus: {
     id: getLocalSubmissionStatus().id || "",
     type: getLocalSubmissionStatus().type || "unpublished"
@@ -138,23 +127,6 @@ export default (state = INITIAL_STATE, action) => {
       state = {
         ...state,
         editorFocusRequested: state.editorFocusRequested + 1
-      }
-      break
-
-    // image grid
-    case "IMAGES.SET_PAGE":
-      state = {
-        ...state,
-        imageList: action.payload
-      }
-      break
-    case "IMAGES.ADD_PAGE":
-      state = {
-        ...state,
-        imageList: {
-          ...state.imageList,
-          items: [...state.imageList.items, ...action.payload.items]
-        }
       }
       break
 

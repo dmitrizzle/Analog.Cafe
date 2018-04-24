@@ -19,7 +19,7 @@ import {
 import { MIME_PICTURES } from "../../../../../../constants/rules-submission"
 import { ModalDispatch } from "../../../../../../../core/components/controls/Modal"
 import { dot } from "../../../../../../../core/components/icons/BlankDot"
-import { fetchImageList } from "../../../../../../store/actions-composer"
+import { fetchImageLib } from "../../../../../../store/actions-imagelib"
 import { forceImageRestrictions } from "../../../../../../utils/actions-submission"
 import { setCard } from "../../../../../../../core/store/actions-modal"
 import PictureDocket from "../../../../../controls/PictureDocket"
@@ -66,7 +66,7 @@ class PictureDocketContainer extends React.PureComponent {
     })
 
     // get featured collab images
-    this.props.fetchImageList()
+    this.props.fetchImageLib()
   }
 
   // image upload handlers
@@ -216,8 +216,8 @@ const mapDispatchToProps = dispatch => {
     setCard: (info, request) => {
       dispatch(setCard(info, request))
     },
-    fetchImageList: () => {
-      dispatch(fetchImageList())
+    fetchImageLib: () => {
+      dispatch(fetchImageLib())
     }
   }
 }

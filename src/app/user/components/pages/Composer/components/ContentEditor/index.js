@@ -10,7 +10,7 @@ import {
 import { HOST_PROD } from "../../../../../../constants"
 import { ToggleFeature } from "./plugins"
 import { setCard } from "../../../../../../core/store/actions-modal"
-import { setDraftStatus } from "../../../../../store/actions-composer"
+import { setDraftStatus } from "../../../../../store/actions-submission"
 import Picture from "../../../../../../core/components/vignettes/Picture_c"
 import PictureDocket from "./components/PictureDocket"
 

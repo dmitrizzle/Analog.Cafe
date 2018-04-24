@@ -26,7 +26,7 @@ import {
   rejectSubmission,
   setHeadingValues,
   setSubmissionStatus
-} from "../../../user/store/actions-composer"
+} from "../../../user/store/actions-submission"
 import { setCard } from "../../../core/store/actions-modal"
 import { storeHeaderState } from "../../../user/utils/actions-submission"
 import { updateStatus as updateArticleStatus } from "../../../core/store/actions-article"
