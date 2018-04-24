@@ -13,12 +13,12 @@ import {
   ROUTE_URL_USER_LANDING
 } from "../../../constants/routes-session"
 import { forceImageRestrictions } from "../../../utils/upload-utils"
+import { getProfileButtons } from "../../../utils/messages-profile"
 import {
   getInfo as getUserInfo,
   setInfo as setUserInfo,
   acceptInfo as acceptUserInfo
 } from "../../../store/actions/userActions"
-import { profileButtonsTemplate } from "../../../../core/utils/profile-button-labeler"
 import { setCard } from "../../../../core/store/actions/modalActions"
 import CardEditableProfile from "../../../../core/components/controls/Card/components/EditableProfile"
 import Forbidden from "../../../../core/components/pages/Forbidden"
@@ -63,7 +63,7 @@ class EditProfile extends React.PureComponent {
       image: this.props.user.info.image
         ? this.props.user.info.image
         : "image-froth_1000000_ry31Fw1l4",
-      buttons: profileButtonsTemplate(
+      buttons: getProfileButtons(
         this.props.user.info.id,
         this.props.user.info.buttons && this.props.user.info.buttons[1]
           ? this.props.user.info.buttons[1].to
@@ -119,10 +119,7 @@ class EditProfile extends React.PureComponent {
   // process changes to user's link button
   handleButtonChange = event => {
     this.setState({
-      buttons: profileButtonsTemplate(
-        this.props.user.info.id,
-        event.target.value
-      ),
+      buttons: getProfileButtons(this.props.user.info.id, event.target.value),
       buttonText: event.target.value
     })
   }

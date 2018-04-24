@@ -11,9 +11,13 @@ import { PicturePlaceholder } from "../../../../vignettes/Picture/components/Pic
 import { QuickSubscribe } from "../../../../../../user/components/forms/Subscribe"
 import { ROUTE_URL_ARTICLES } from "../../../../../constants/routes-article"
 import { TimeStamp } from "../../../../styles/ArticleStyles"
-import { authorNameList } from "../../../../../utils/authorship"
-import { datestamp, lunar, percise } from "../../../../../utils/datestamp"
-import { froth } from "../../../../../utils/image-froth"
+import { froth } from "../../../../../../utils"
+import { getAuthorListStringFromArray } from "../../../../../utils/messages-authors"
+import {
+  getHumanDatestamp,
+  getISODatestamp,
+  getLunarDatestamp
+} from "../../../../../utils/messages-"
 import Link from "../../../Link"
 
 const nextArticlePreload = nextArticle => {
@@ -132,7 +136,7 @@ const ActionsCard = props => {
                           : null}
                       </q>{" "}
                       – {props.nextArticle.tag.replace(/-/g, " ")} by{" "}
-                      {authorNameList(props.nextArticle.authors)}.
+                      {getAuthorListStringFromArray(props.nextArticle.authors)}.
                     </span>
                   </CardCaption>
                 </figcaption>
@@ -215,11 +219,13 @@ const DatePublished = props => {
   if (props.thisArticlePostDate)
     return (
       <TimeStamp
-        dateTime={percise(props.thisArticlePostDate)}
+        dateTime={getISODatestamp(props.thisArticlePostDate)}
         itemprop="datePublished"
-        title={"Published on " + datestamp(props.thisArticlePostDate) + "."}
+        title={
+          "Published on " + getHumanDatestamp(props.thisArticlePostDate) + "."
+        }
       >
-        {lunar(props.thisArticlePostDate)}
+        {getLunarDatestamp(props.thisArticlePostDate)}
       </TimeStamp>
     )
   else if (props.thisArticlePostDate) return null

@@ -7,10 +7,10 @@ import {
 import { ButtonGroup } from "../../../../core/components/controls/Button/components/ButtonGroup"
 import { Caption } from "../../../../core/components/styles/CaptionStyles"
 import { LinkButton } from "../../../../core/components/controls/Button"
-import { froth } from "../../../../core/utils/image-froth"
+import { froth } from "../../../../utils"
+import Figure from "../../../../core/components/vignettes/Picture"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import Helmet from "../../../../core/components/vignettes/Helmet"
-import Figure from "../../../../core/components/vignettes/Picture"
 import Link from "../../../../core/components/controls/Link"
 
 const metaTitle = "Submit"

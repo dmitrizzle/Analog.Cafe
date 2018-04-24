@@ -18,7 +18,7 @@ import {
   resetSubmissionStatus,
   setHeadingValues
 } from "../../../../../store/actions/composerActions"
-import { saveHeader } from "../../../../../utils/browser-storage"
+import { saveHeader } from "../../../../../utils/actions-submissions"
 import Link from "../../../../../../core/components/controls/Link"
 import TitleCase from "../../../../forms/TitleCase"
 

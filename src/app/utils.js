@@ -1,6 +1,8 @@
 import { froth as frothInit } from "@roast-cms/image-froth"
 import { dot } from "../components/icons/BlankDot"
 
+// METHODS AND FUNCTIONS STILL NEED RENAMING HERE
+
 const FROTH_CONSTANTS = {
   server: "https://res.cloudinary.com/analog-cafe/image/upload/",
   transformations: "c_scale,fl_progressive",

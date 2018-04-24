@@ -17,7 +17,7 @@ export const getAuthorListStringFromArray = (authors, options = {}) => {
     else return ""
   }
   const nameFormat = name => {
-    if (!options.keepFullNames) return trimAuthorName(name, 15)
+    if (!options.keepFullNames) return getFirstNameFromFull(name, 15)
     else return name
   }
 

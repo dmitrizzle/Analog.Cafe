@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { froth } from "../../../../utils/image-froth"
+
+import { froth } from "../../../../../utils"
 
 export const PicturePlaceholder = styled.div`
   padding-bottom: ${props =>

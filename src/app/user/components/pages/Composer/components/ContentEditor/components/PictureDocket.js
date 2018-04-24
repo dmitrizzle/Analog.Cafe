@@ -20,7 +20,7 @@ import { MIME_PICTURES } from "../../../../../../constants/rules-submissions"
 import { ModalDispatch } from "../../../../../../../core/components/controls/Modal"
 import { dot } from "../../../../../../../core/components/icons/BlankDot"
 import { fetchImageList } from "../../../../../../store/actions/composerActions"
-import { forceImageRestrictions } from "../../../../../../utils/upload-utils"
+import { forceImageRestrictions } from "../../../../../../utils/actions-submissions"
 import { setCard } from "../../../../../../../core/store/actions/modalActions"
 import PictureDocket from "../../../../../controls/PictureDocket"
 

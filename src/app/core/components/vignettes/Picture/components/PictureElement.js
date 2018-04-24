@@ -2,7 +2,7 @@ import LazyLoad from "react-lazyload"
 import React from "react"
 
 import { PicturePlaceholder } from "./PicturePlaceholder"
-import { froth } from "../../../../utils/image-froth"
+import { froth } from "../../../../../utils"
 
 // return
 export default props => {

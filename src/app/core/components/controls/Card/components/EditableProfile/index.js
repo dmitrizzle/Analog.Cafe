@@ -12,7 +12,7 @@ import {
 } from "../../../../../../user/constants/rules-submissions"
 import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
 import { SubtitleInput } from "../../../../../../user/components/forms/InputStyles"
-import { froth } from "../../../../../utils/image-froth"
+import { froth } from "../../../../../../utils"
 
 // return
 export default props => {

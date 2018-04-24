@@ -2,7 +2,7 @@ import React from "react"
 
 import { Button } from "../../../../../core/components/controls/Button"
 import { Form } from "../../FormStyles"
-import { validateEmail } from "../../../../utils/email-utils"
+import { validateEmail } from "../../../../utils/messages-session"
 import EmailInput from "../../EmailInput"
 
 // helpers
