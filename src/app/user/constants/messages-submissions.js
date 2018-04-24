@@ -2,10 +2,6 @@ import { MIME_PICTURES_HUMAN } from "./rules-submissions"
 import { TEXT_EMOJIS } from "../../constants"
 
 export const CARD_ERRORS = {
-  LIST: {
-    title: "You haven’t submitted anything yet",
-    emoji: TEXT_EMOJIS.NEONCAT
-  },
   SEND: {
     title: "Submission Failed",
     text:
@@ -27,6 +23,14 @@ export const CARD_ERRORS = {
     }
   }
 }
+
+export const HEADER_ERRORS = {
+  LIST: {
+    title: "You haven’t submitted anything yet",
+    emoji: TEXT_EMOJIS.NEONCAT
+  }
+}
+
 export const CARD_DIALOGUES = {
   CONSENT: {
     info: {

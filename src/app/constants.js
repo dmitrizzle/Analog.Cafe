@@ -26,3 +26,18 @@ export const TEXT_EMOJIS = {
   UNLOCKED: "🔐",
   KEY: "🔑"
 }
+
+export const HEADER_ERRORS = {
+  ARTICLE: {
+    title: TEXT_EMOJIS.WTF,
+    subtitle: "Page Not Available"
+  },
+  LIST: {
+    title: "Nothing here yet",
+    emoji: TEXT_EMOJIS.WTF
+  },
+  LIST_OFFLINE: {
+    title: "You aren’t connected to the internet",
+    emoji: TEXT_EMOJIS.WTF
+  }
+}

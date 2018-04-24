@@ -11,7 +11,7 @@ import {
 } from "../../../constants/routes-article"
 import { Stats } from "./styles/stats"
 import { TEXT_EMOJIS } from "../../../../constants"
-import { TEXT_LABELS } from "../../../constants/messages-list"
+import { TEXT_STATUS_LABELS } from "../../../constants/messages-list"
 import { ZigzagPicture } from "./styles/zigzag-picture"
 import { authorNameList } from "../../../utils/authorship"
 import { datestamp } from "../../../utils/datestamp"
@@ -164,7 +164,7 @@ export default props => {
                         {/* status of the submission */}
                         {item.type !== "placeholder" &&
                           props.private &&
-                          ` ↝ ${TEXT_LABELS[item.status]}`}
+                          ` ↝ ${TEXT_STATUS_LABELS[item.status]}`}
                         {/* TEXT_EMOJIS.MONOCLE + " Pending Editorial Review" */}
                       </Stats>
                       <AuthorAndDate>

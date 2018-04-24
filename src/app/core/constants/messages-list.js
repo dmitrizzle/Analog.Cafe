@@ -1,12 +1,12 @@
 import { APP_DESCRIPTION } from "../../constants"
 
-export const TEXT_LABELS = {
+export const TEXT_STATUS_LABELS = {
   pending: "In Queue",
   rejected: "Not Published",
   scheduled: "Scheduled",
   published: "Published"
 }
-export const META_URLS = {
+export const TEXT_ROUTE_LABELS = {
   "/me": {
     title: "Your submissions to Analog.Cafe"
   },

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { Article, Quote, Section } from "../styles/ArticleStyles"
 import { Email } from "../vignettes/EmailSnippet"
-import { Figure } from "../vignettes/Picture/styles"
+import Figure from "../vignettes/Picture"
 import { ModalDispatch } from "../controls/Modal"
 import { TEXT_LABELS } from "../../constants/messages-"
 import { froth } from "../../utils/image-froth"

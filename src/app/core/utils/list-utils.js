@@ -1,4 +1,4 @@
-import { META_URLS } from "../constants/messages-list"
+import { TEXT_ROUTE_LABELS } from "../constants/messages-list"
 import {
   ROUTE_API_LIST,
   ROUTE_FILTERS,
@@ -12,7 +12,7 @@ export const getListMeta = (pathname = "/", page = 1, url = ROUTE_API_LIST) => {
 
   // filter by author name
   if (pathname.includes("/author/")) {
-    meta = META_URLS["/author/*"]
+    meta = TEXT_ROUTE_LABELS["/author/*"]
     request = {
       params: {
         author: pathname.match(/\/author\/(.*)/)[1],
@@ -22,7 +22,9 @@ export const getListMeta = (pathname = "/", page = 1, url = ROUTE_API_LIST) => {
     }
   } else {
     // filter by tags
-    meta = META_URLS[pathname] ? META_URLS[pathname] : META_URLS.default
+    meta = TEXT_ROUTE_LABELS[pathname]
+      ? TEXT_ROUTE_LABELS[pathname]
+      : TEXT_ROUTE_LABELS.default
     request = {
       params: {
         tag: ROUTE_TAGS[pathname] ? ROUTE_TAGS[pathname] : "",

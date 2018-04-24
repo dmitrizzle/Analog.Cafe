@@ -1,8 +1,9 @@
-import React from "react"
-import { froth } from "../../../../utils/image-froth"
 import LazyLoad from "react-lazyload"
+import React from "react"
 
 import { PicturePlaceholder } from "./PicturePlaceholder"
+import { froth } from "../../../../utils/image-froth"
+
 // return
 export default props => {
   let src = props.src

@@ -1,22 +1,6 @@
 import { TEXT_EMOJIS } from "../../constants"
 
-// not all objects below belong in "card" category, need to be refactored
-// same for a few other constants files - do have a look.
-// some of this may need to move to the root folder as it's being used by all of
-// the app.
 export const CARD_ERRORS = {
-  ARTICLE: {
-    title: TEXT_EMOJIS.WTF,
-    subtitle: "Page Not Available"
-  },
-  LIST: {
-    title: "Nothing here yet",
-    emoji: TEXT_EMOJIS.WTF
-  },
-  LIST_OFFLINE: {
-    title: "You aren’t connected to the internet",
-    emoji: TEXT_EMOJIS.WTF
-  },
   PICTURE_AUTHOR: {
     name: "Unknown Author",
     title: "Info not available",
@@ -48,6 +32,6 @@ export const TEXT_ERRORS = {
   }
 }
 export const TEXT_LABELS = {
-  SUBSRIBE: "Subscribe ❤︎",
+  SUBSCRIBE: "Subscribe ❤︎",
   SUBMIT: "Submit ❤︎"
 }

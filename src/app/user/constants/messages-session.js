@@ -23,7 +23,7 @@ export const CARD_ERRORS = {
       } before requesting another login link to be sent to your email.`
     }
   },
-  LOGIN_BAD_TOKEN: {
+  LOGIN_EMAIL_BAD_TOKEN: {
     title: "Couldn’t Sign In",
     text:
       "Sorry, we couldn’t sign you in. Perhaps link has expired. Try signing in with your email again."
