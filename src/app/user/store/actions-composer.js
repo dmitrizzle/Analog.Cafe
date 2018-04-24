@@ -1,13 +1,13 @@
 import axios from "axios"
 
-import { CARD_ALERTS } from "../../../admin/constants/messages-admin"
-import { CARD_ERRORS } from "../../constants/messages-submission"
+import { CARD_ALERTS } from "../../admin/constants/messages-admin"
+import { CARD_ERRORS } from "../constants/messages-submission"
 import {
   ROUTE_API_IMAGES,
   ROUTE_API_SUBMISSIONS
-} from "../../constants/routes-submission"
-import { makeAPIRequest } from "../../../utils"
-import { setCard } from "../../../core/store/actions/modalActions"
+} from "../constants/routes-submission"
+import { makeAPIRequest } from "../../utils"
+import { setCard } from "../../core/store/actions-modal"
 
 // manage Composer state
 // note that Slate Editor state must be manage separately from within

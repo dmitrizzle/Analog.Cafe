@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { Button } from "../../Button"
-import { fetchCard, setCard } from "../../../../store/actions/modalActions"
+import { fetchCard, setCard } from "../../../../store/actions-modal"
 import InlineStarIcon from "../../../icons/InlineStarIcon"
 
 // return

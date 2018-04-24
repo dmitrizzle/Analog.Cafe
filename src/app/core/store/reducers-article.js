@@ -1,4 +1,4 @@
-import { TEXT_EMOJIS } from "../../../constants"
+import { TEXT_EMOJIS } from "../../constants"
 
 const INITIAL_STATE = {
   status: "loading",

@@ -9,7 +9,7 @@ import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/consta
 import { ModalDispatch } from "../../../../core/components/controls/Modal"
 import { Section } from "../../../../core/components/styles/ArticleStyles"
 import { TEXT_EMOJIS } from "../../../../constants"
-import { requestFocus as requestEditorFocus } from "../../../store/actions/composerActions"
+import { requestFocus as requestEditorFocus } from "../../../store/actions-composer"
 import ContentEditor from "./components/ContentEditor"
 import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"
 import HeaderEditor from "./components/HeaderEditor"

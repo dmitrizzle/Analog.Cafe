@@ -19,7 +19,7 @@ import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
   fetchPage,
   setPage as setNextArticle
-} from "../../../store/actions/articleActions"
+} from "../../../store/actions-article"
 import {
   getAbsoluteURLPath,
   getSubmissionOrArticleRoute

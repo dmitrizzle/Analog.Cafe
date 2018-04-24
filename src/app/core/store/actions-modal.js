@@ -1,7 +1,7 @@
 import axios from "axios"
 
-import { CARD_ERRORS, TEXT_ERRORS } from "../../constants/messages-"
-import { makeAPIRequest } from "../../../utils"
+import { CARD_ERRORS, TEXT_ERRORS } from "../constants/messages-"
+import { makeAPIRequest } from "../../utils"
 
 // return
 export const initCard = state => {

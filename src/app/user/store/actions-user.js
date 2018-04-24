@@ -1,15 +1,15 @@
 import axios from "axios"
 
-import { CARD_ALERTS, CARD_ERRORS } from "../../constants/messages-session"
+import { CARD_ALERTS, CARD_ERRORS } from "../constants/messages-session"
 import {
   ROUTE_API_LOGIN_EMAIL,
   ROUTE_API_USER
-} from "../../constants/routes-session"
-import { ROUTE_API_USERS } from "../../../admin/constants/routes-admin"
-import { TEXT_ERRORS } from "../../../core/constants/messages-"
-import { anonymizeEmail } from "../../utils/messages-session"
-import { makeAPIRequest } from "../../../utils"
-import { setCard } from "../../../core/store/actions/modalActions"
+} from "../constants/routes-session"
+import { ROUTE_API_USERS } from "../../admin/constants/routes-admin"
+import { TEXT_ERRORS } from "../../core/constants/messages-"
+import { anonymizeEmail } from "../utils/messages-session"
+import { makeAPIRequest } from "../../utils"
+import { setCard } from "../../core/store/actions-modal"
 
 // manage connectivity
 export const setConnectionStatus = connection => {

@@ -9,8 +9,8 @@ import {
 } from "../../../../../../core/components/icons/HeaderGlyphs"
 import { HOST_PROD } from "../../../../../../constants"
 import { ToggleFeature } from "./plugins"
-import { setCard } from "../../../../../../core/store/actions/modalActions"
-import { setDraftStatus } from "../../../../../store/actions/composerActions"
+import { setCard } from "../../../../../../core/store/actions-modal"
+import { setDraftStatus } from "../../../../../store/actions-composer"
 import Picture from "../../../../../../core/components/vignettes/Picture_c"
 import PictureDocket from "./components/PictureDocket"
 

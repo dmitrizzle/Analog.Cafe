@@ -20,7 +20,7 @@ import {
   getInfo as getUserInfo,
   setSessionInfo,
   refreshSessionInfo
-} from "../../../store/actions/userActions"
+} from "../../../store/actions-user"
 import AlreadyAuthenticated from "../Error/AlreadyAuthenticated"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import Helmet from "../../../../core/components/vignettes/Helmet"

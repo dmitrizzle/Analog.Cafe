@@ -18,8 +18,8 @@ import {
   getInfo as getUserInfo,
   setInfo as setUserInfo,
   acceptInfo as acceptUserInfo
-} from "../../../store/actions/userActions"
-import { setCard } from "../../../../core/store/actions/modalActions"
+} from "../../../store/actions-user"
+import { setCard } from "../../../../core/store/actions-modal"
 import CardEditableProfile from "../../../../core/components/controls/Card/components/EditableProfile"
 import Forbidden from "../../../../core/components/pages/Forbidden"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"

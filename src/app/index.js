@@ -9,17 +9,17 @@ import { CARD_ERRORS } from "./user/constants/messages-session"
 import { DATA_GA_ID, HOST_RUNTIME, HOST_PROD } from "./constants"
 import { Modal } from "./core/components/controls/Modal"
 import { ROUTE_URL_USER_LANDING } from "./user/constants/routes-session"
-import { setCard as setModalCard } from "./core/store/actions/modalActions"
+import { setCard as setModalCard } from "./core/store/actions-modal"
 import {
   setView as setNavView,
   setLocation as setNavLocation
-} from "./core/store/actions/navActions"
+} from "./core/store/actions-nav"
 import {
   verify as verifyUser,
   getInfo as getUserInfo,
   setConnectionStatus,
   setIntent as setUserIntent
-} from "./user/store/actions/userActions"
+} from "./user/store/actions-user"
 import AppRoutes from "./core/components/routes/App"
 import Nav from "./core/components/controls/Nav_c"
 

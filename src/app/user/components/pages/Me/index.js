@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { forget as forgetUser } from "../../../store/actions/userActions"
+import { forget as forgetUser } from "../../../store/actions-user"
 import Forbidden from "../../../../core/components/pages/Forbidden"
 import List from "../../../../core/components/pages/List"
 

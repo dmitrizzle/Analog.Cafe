@@ -19,10 +19,10 @@ import {
   deleteRecord as deleteImageRecord,
   feature as featureImage,
   unfeature as unfeatureImage
-} from "../../../../core/store/actions/pictureActions"
-import { fetchImageList } from "../../../../user/store/actions/composerActions"
-import { fetchUserList } from "../../../../user/store/actions/userActions"
-import { setCard } from "../../../../core/store/actions/modalActions"
+} from "../../../../core/store/actions-picture"
+import { fetchImageList } from "../../../../user/store/actions-composer"
+import { fetchUserList } from "../../../../user/store/actions-user"
+import { setCard } from "../../../../core/store/actions-modal"
 import Forbidden from "../../../../core/components/pages/Forbidden"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
 

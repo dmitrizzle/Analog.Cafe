@@ -7,7 +7,7 @@ import {
 } from "../../../../user/constants/rules-submission"
 import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
 import { getFroth } from "@roast-cms/image-froth"
-import { getInfo } from "../../../store/actions/pictureActions"
+import { getInfo } from "../../../store/actions-picture"
 import Picture from "../Picture"
 import PictureMenu from "../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"
 

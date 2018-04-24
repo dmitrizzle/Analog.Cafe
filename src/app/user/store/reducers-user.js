@@ -1,7 +1,8 @@
 // constatns
 
 // set placeholders for accountList grid:
-import { ROUTE_URL_USER_LANDING } from "../../constants/routes-session"
+
+import { ROUTE_URL_USER_LANDING } from "../constants/routes-session"
 
 let accountListDefaults = []
 for (var o = 0; o < 8; o++) {

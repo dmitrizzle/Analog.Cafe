@@ -1,11 +1,11 @@
 import axios from "axios"
 
-import { CARD_ERRORS, TEXT_ERRORS } from "../../constants/messages-"
+import { CARD_ERRORS, TEXT_ERRORS } from "../constants/messages-"
 import {
   ROUTE_API_ARTICLES,
   ROUTE_API_SUBMISSIONS
-} from "../../constants/routes-article"
-import { makeAPIRequest } from "../../../utils"
+} from "../constants/routes-article"
+import { makeAPIRequest } from "../../utils"
 
 // return
 export const setPage = page => {

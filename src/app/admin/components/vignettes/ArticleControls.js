@@ -26,10 +26,10 @@ import {
   rejectSubmission,
   setHeadingValues,
   setSubmissionStatus
-} from "../../../user/store/actions/composerActions"
-import { setCard } from "../../../core/store/actions/modalActions"
+} from "../../../user/store/actions-composer"
+import { setCard } from "../../../core/store/actions-modal"
 import { storeHeaderState } from "../../../user/utils/actions-submission"
-import { updateStatus as updateArticleStatus } from "../../../core/store/actions/articleActions"
+import { updateStatus as updateArticleStatus } from "../../../core/store/actions-article"
 import Link from "../../../core/components/controls/Link"
 
 const TAGS = {

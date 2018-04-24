@@ -1,5 +1,5 @@
-import { INPUT_HEADER_DEFAULTS } from "../../constants/rules-submission"
-import { loadHeader } from "../../utils/actions-submission"
+import { INPUT_HEADER_DEFAULTS } from "../constants/rules-submission"
+import { loadHeader } from "../utils/actions-submission"
 
 // set placeholders for imageList grid:
 let imageListDefaults = []

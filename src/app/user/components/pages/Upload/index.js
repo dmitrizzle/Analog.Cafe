@@ -20,17 +20,17 @@ import { LinkButton } from "../../../../core/components/controls/Button"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
-import { setCard } from "../../../../core/store/actions/modalActions"
+import { setCard } from "../../../../core/store/actions-modal"
 import {
   setRoutes as setLoginRedirectRoutes,
   resetRoutes as resetLoginRedirectRoutes
-} from "../../../store/actions/userActions"
+} from "../../../store/actions-user"
 import {
   uploadData as uploadSubmissionData,
   initUploadProgress,
   resetAllValues as resetComposerValues,
   resetSubmissionStatus
-} from "../../../store/actions/composerActions"
+} from "../../../store/actions-composer"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
 

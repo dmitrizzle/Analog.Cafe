@@ -1,12 +1,12 @@
 import axios from "axios"
 
-import { CARD_ERRORS } from "../../constants/messages-"
-import { CARD_ERRORS as CARD_ERRORS_SUBMISSIONS } from "../../../user/constants/messages-submission"
+import { CARD_ERRORS } from "../constants/messages-"
+import { CARD_ERRORS as CARD_ERRORS_SUBMISSIONS } from "../../user/constants/messages-submission"
 import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
-} from "../../constants/routes-list"
-import { makeAPIRequest } from "../../../utils"
+} from "../constants/routes-list"
+import { makeAPIRequest } from "../../utils"
 
 // return
 export const setPage = (page, appendItems) => {
