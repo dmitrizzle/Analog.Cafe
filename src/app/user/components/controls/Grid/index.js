@@ -3,7 +3,7 @@ import React from "react"
 import { AspectRatio, GridButton, GridButtonCaption } from "./styles"
 import { ModalDispatch } from "../../../../core/components/controls/Modal"
 import { ROUTE_API_AUTHORS } from "../../../../core/constants/routes-article"
-import { froth } from "../../../../utils"
+import { makeFroth } from "../../../../utils"
 
 // exports
 export const GridButtonImage = props => {
@@ -21,7 +21,7 @@ export const GridButtonImage = props => {
       <AspectRatio>
         <img
           src={
-            froth({
+            makeFroth({
               src: props.status === "ok" ? props.src : null,
               size: "t",
               crop: "square"

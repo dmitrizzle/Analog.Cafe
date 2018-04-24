@@ -2,7 +2,7 @@ import LazyLoad from "react-lazyload"
 import React from "react"
 
 import { PicturePlaceholder } from "./PicturePlaceholder"
-import { froth } from "../../../../../utils"
+import { makeFroth } from "../../../../../utils"
 
 // return
 export default props => {
@@ -33,28 +33,28 @@ export default props => {
         */}
 
         {!src.includes("data:image") &&
-          froth({ src, size: "s", type: "webp" }).type === "webp" && (
+          makeFroth({ src, size: "s", type: "webp" }).type === "webp" && (
             <source
               // mobile image size
-              srcSet={froth({ src, size: "s", type: "webp" }).src}
+              srcSet={makeFroth({ src, size: "s", type: "webp" }).src}
               media="(max-width: 480px)"
               type="image/webp"
             />
           )}
         {!src.includes("data:image") &&
-          froth({ src, size: "s", type: "webp" }).type === "webp" && (
+          makeFroth({ src, size: "s", type: "webp" }).type === "webp" && (
             <source
               // medium image size, largest for all images that aren't "features"
-              srcSet={froth({ src, size: "m", type: "webp" }).src}
+              srcSet={makeFroth({ src, size: "m", type: "webp" }).src}
               media="(max-width: 1200px)"
               type="image/webp"
             />
           )}
         {!src.includes("data:image") &&
-          froth({ src, size: "s", type: "webp" }).type === "webp" && (
+          makeFroth({ src, size: "s", type: "webp" }).type === "webp" && (
             <source
               // max image size, extra large only if it's a "feature"
-              srcSet={froth({ src, size: largestSize, type: "webp" }).src}
+              srcSet={makeFroth({ src, size: largestSize, type: "webp" }).src}
               media="(min-width: 1201px)"
               type="image/webp"
             />
@@ -64,31 +64,31 @@ export default props => {
         {!src.includes("data:image") && (
           <source
             // mobile image size
-            srcSet={froth({ src, size: "s" }).src}
+            srcSet={makeFroth({ src, size: "s" }).src}
             media="(max-width: 480px)"
           />
         )}
         {!src.includes("data:image") && (
           <source
             // medium image size, largest for all images that aren't "features"
-            srcSet={froth({ src, size: "m" }).src}
+            srcSet={makeFroth({ src, size: "m" }).src}
             media="(max-width: 1200px)"
           />
         )}
         {!src.includes("data:image") && (
           <source
             // max image size, extra large only if it's a "feature"
-            srcSet={froth({ src, size: largestSize }).src}
+            srcSet={makeFroth({ src, size: largestSize }).src}
             media="(min-width: 1201px)"
           />
         )}
         <LazyLoad unmountIfInvisible once offset={300} height={"100%"}>
           <img
             // default image size
-            src={froth({ src, size: "m" }).src}
+            src={makeFroth({ src, size: "m" }).src}
             alt={alt}
             className={className}
-            style={{ height: froth({ src }).ratio ? "100%" : "initial" }}
+            style={{ height: makeFroth({ src }).ratio ? "100%" : "initial" }}
           />
         </LazyLoad>
       </picture>

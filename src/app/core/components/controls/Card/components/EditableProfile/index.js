@@ -9,10 +9,10 @@ import {
 import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
-} from "../../../../../../user/constants/rules-submissions"
+} from "../../../../../../user/constants/rules-submission"
 import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
 import { SubtitleInput } from "../../../../../../user/components/forms/InputStyles"
-import { froth } from "../../../../../../utils"
+import { makeFroth } from "../../../../../../utils"
 
 // return
 export default props => {
@@ -31,7 +31,7 @@ export default props => {
       <figure>
         <PicturePlaceholder frothId={props.image}>
           <img
-            src={froth({ src: props.image, size: "s" }).src}
+            src={makeFroth({ src: props.image, size: "s" }).src}
             alt="Profile avatar"
             onClick={() => props.changeImage()}
             style={{ cursor: "pointer" }}

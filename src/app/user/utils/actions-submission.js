@@ -1,6 +1,6 @@
 import throttle from "lodash/throttle"
 
-import { INPUT_HEADER_DEFAULTS } from "../constants/rules-submissions"
+import { INPUT_HEADER_DEFAULTS } from "../constants/rules-submission"
 import {
   ROUTE_API_ARTICLES,
   ROUTE_API_SUBMISSIONS

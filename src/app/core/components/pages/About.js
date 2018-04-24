@@ -3,11 +3,11 @@ import styled from "styled-components"
 
 import { Article, Quote, Section } from "../styles/ArticleStyles"
 import { Email } from "../vignettes/EmailSnippet"
-import Figure from "../vignettes/Picture"
 import { ModalDispatch } from "../controls/Modal"
 import { TEXT_LABELS } from "../../constants/messages-"
-import { froth } from "../../utils/image-froth"
+import { makeFroth } from "../../../utils"
 import ArticleActions from "../controls/Card/components/ArticleActions"
+import Figure from "../vignettes/Picture"
 import Heading from "../vignettes/ArticleHeading"
 import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"
@@ -39,7 +39,7 @@ export default () => {
         <meta
           property="og:image"
           content={
-            froth({
+            makeFroth({
               src: "image-froth_669120_c34babc2fb974c8d9f03249bea647401",
               size: "m"
             }).src

@@ -4,7 +4,7 @@ import React from "react"
 import {
   CARD_ALERTS,
   CARD_DIALOGUES
-} from "../../../constants/messages-submissions"
+} from "../../../constants/messages-submission"
 import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/constants/messages-admin"
 import { ModalDispatch } from "../../../../core/components/controls/Modal"
 import { Section } from "../../../../core/components/styles/ArticleStyles"

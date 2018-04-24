@@ -7,8 +7,8 @@ import {
 } from "../../constants/routes-session"
 import { ROUTE_API_USERS } from "../../../admin/constants/routes-admin"
 import { TEXT_ERRORS } from "../../../core/constants/messages-"
-import { anonymizeEmail } from "../../utils/email-utils"
-import { axiosRequest } from "../../../core/utils/axios-request"
+import { anonymizeEmail } from "../../utils/messages-session"
+import { makeAPIRequest } from "../../../utils"
 import { setCard } from "../../../core/store/actions/modalActions"
 
 // manage connectivity
@@ -70,7 +70,7 @@ export const loginWithEmail = validatedEmail => {
 
     // send request
     axios(
-      axiosRequest({
+      makeAPIRequest({
         url: ROUTE_API_LOGIN_EMAIL,
         data: { email: validatedEmail },
         method: "post"
@@ -147,7 +147,7 @@ export const getInfo = () => {
       },
       url: ROUTE_API_USER
     }
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         dispatch({
           type: "USER.SET_INFO",
@@ -175,7 +175,7 @@ export const getInfo = () => {
 
 export const setInfo = request => {
   return dispatch => {
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         dispatch({
           type: "USER.SET_INFO",
@@ -245,7 +245,7 @@ export const fetchUserList = (options = {}, page = 1, appendItems = false) => {
       }
     }
 
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         dispatch({
           type: appendItems ? "ACCOUNTS.ADD_PAGE" : "ACCOUNTS.SET_PAGE",

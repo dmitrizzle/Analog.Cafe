@@ -15,10 +15,10 @@ import {
   ROUTE_API_LIST_SUBMISSIONS
 } from "../../../constants/routes-list"
 import { fetchPage } from "../../../store/actions/listActions"
-import { getListMeta } from "../../../utils/list-utils"
+import { getFirstNameFromFull } from "../../../utils/messages-author"
+import { getListMeta } from "../../../utils/messages-list"
 import { setPage as setNextArticle } from "../../../store/actions/articleActions"
 import { setIntent as setUserIntent } from "../../../../user/store/actions/userActions"
-import { trimAuthorName } from "../../../utils/authorship"
 import Helmet from "../../vignettes/Helmet"
 import ListBlock from "../../styles/List"
 
@@ -137,7 +137,9 @@ class List extends React.PureComponent {
                             }
                           }}
                         >
-                          {trimAuthorName(this.props.list.filter.author.name)}
+                          {getFirstNameFromFull(
+                            this.props.list.filter.author.name
+                          )}
                         </ModalDispatch>
                       </span>
                     ) : (

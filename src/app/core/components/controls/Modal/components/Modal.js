@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { CardModal, ModalOverlay } from "../../Card"
+import { CardModal, ModalOverlay } from "../../Card/components/Modal"
 import { HOST_API, HOST_RUNTIME } from "../../../../../constants"
 import { hideCard } from "../../../../store/actions/modalActions"
 

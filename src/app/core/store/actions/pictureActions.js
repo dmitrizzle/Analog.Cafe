@@ -1,9 +1,10 @@
 import axios from "axios"
 
+import { getFroth } from "@roast-cms/image-froth"
+
 import { CARD_ERRORS, TEXT_ERRORS } from "../../constants/messages-"
-import { ROUTE_API_IMAGES } from "../../../user/constants/routes-submissions"
-import { axiosRequest } from "../../utils/axios-request"
-import { getFroth } from "../../utils/image-froth"
+import { ROUTE_API_IMAGES } from "../../../user/constants/routes-submission"
+import { makeAPIRequest } from "../../../utils"
 
 // return
 const unknownAuthor = (id, error) => {
@@ -37,7 +38,7 @@ export const getInfo = src => {
     let picturesState = getState().pictures
     if (picturesState[id]) return
 
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         response.data.status === "ok"
           ? dispatch({
@@ -65,7 +66,7 @@ export const deleteRecord = id => {
     }
   }
   return dispatch => {
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         response.data.status === "ok"
           ? alert(
@@ -88,7 +89,7 @@ export const feature = id => {
   }
   return dispatch => {
     console.log(id)
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         response.data.status === "ok"
           ? alert(
@@ -111,7 +112,7 @@ export const unfeature = id => {
   }
   return dispatch => {
     console.log(id)
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         response.data.status === "ok"
           ? alert(

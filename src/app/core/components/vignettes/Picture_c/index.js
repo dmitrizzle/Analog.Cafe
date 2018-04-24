@@ -4,9 +4,9 @@ import React from "react"
 import {
   INPUT_FORMAT,
   OBJECT_SLATE_PICTURE_FROM_IMMUTABLE
-} from "../../../../user/constants/rules-submissions"
+} from "../../../../user/constants/rules-submission"
 import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
-import { getFroth } from "../../../utils/image-froth"
+import { getFroth } from "@roast-cms/image-froth"
 import { getInfo } from "../../../store/actions/pictureActions"
 import Picture from "../Picture"
 import PictureMenu from "../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"

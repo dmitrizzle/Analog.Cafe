@@ -3,16 +3,16 @@ import React from "react"
 
 import { Article } from "../../../../core/components/styles/ArticleStyles"
 import { Button } from "../../../../core/components/controls/Button"
-import { CARD_ERRORS } from "../../../constants/messages-submissions"
+import { CARD_ERRORS } from "../../../constants/messages-submission"
 import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
-} from "../../../constants/rules-submissions"
+} from "../../../constants/rules-submission"
 import {
   ROUTE_API_USER_PROFILE,
   ROUTE_URL_USER_LANDING
 } from "../../../constants/routes-session"
-import { forceImageRestrictions } from "../../../utils/upload-utils"
+import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { getProfileButtons } from "../../../utils/messages-profile"
 import {
   getInfo as getUserInfo,

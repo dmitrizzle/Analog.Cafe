@@ -4,7 +4,7 @@ import React from "react"
 import { AuthorAndDate, Ul } from "./styles/ul"
 import { Bleed } from "./styles/bleed"
 import { Caption } from "./styles/caption"
-import { INPUT_SUMMARY_LIMIT } from "../../../../user/constants/rules-submissions"
+import { INPUT_SUMMARY_LIMIT } from "../../../../user/constants/rules-submission"
 import {
   ROUTE_URL_ARTICLES,
   ROUTE_URL_SUBMISSIONS
@@ -13,9 +13,9 @@ import { Stats } from "./styles/stats"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { TEXT_STATUS_LABELS } from "../../../constants/messages-list"
 import { ZigzagPicture } from "./styles/zigzag-picture"
-import { authorNameList } from "../../../utils/authorship"
-import { datestamp } from "../../../utils/datestamp"
-import { froth } from "../../../utils/image-froth"
+import { makeFroth } from "../../../../utils"
+import { getAuthorListStringFromArray } from "../../../utils/messages-author"
+import { getHumanDatestamp } from "../../../utils/messages-"
 import Link from "../../controls/Link"
 
 // return
@@ -83,7 +83,7 @@ export default props => {
                             item.poster && {
                               backgroundImage:
                                 "url(" +
-                                froth({
+                                makeFroth({
                                   src: item.poster,
                                   size: index ? "s" : "m"
                                 }).src +
@@ -169,10 +169,14 @@ export default props => {
                       </Stats>
                       <AuthorAndDate>
                         {!props.private || props.isAdmin
-                          ? `${authorNameList(item.authors, { trim: true })} · `
+                          ? `${getAuthorListStringFromArray(item.authors, {
+                              trim: true
+                            })} · `
                           : null}
                         {item.type !== "placeholder" && (
-                          <small>{datestamp(item.date.published)}</small>
+                          <small>
+                            {getHumanDatestamp(item.date.published)}
+                          </small>
                         )}
                       </AuthorAndDate>
                     </div>
@@ -182,7 +186,7 @@ export default props => {
                       item.type !== "placeholder" && item.poster
                         ? {
                             backgroundImage: `url(${
-                              froth({
+                              makeFroth({
                                 src: item.poster,
                                 size: index ? "s" : "m"
                               }).src

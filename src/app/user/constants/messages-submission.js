@@ -1,4 +1,4 @@
-import { MIME_PICTURES_HUMAN } from "./rules-submissions"
+import { MIME_PICTURES_HUMAN } from "./rules-submission"
 import { TEXT_EMOJIS } from "../../constants"
 
 export const CARD_ERRORS = {

@@ -2,7 +2,7 @@ import { FrenchPress } from "@roast-cms/french-press-editor"
 import { connect } from "react-redux"
 import React from "react"
 
-import { CARD_ERRORS } from "../../../../../constants/messages-submissions"
+import { CARD_ERRORS } from "../../../../../constants/messages-submission"
 import {
   Capital,
   Lower

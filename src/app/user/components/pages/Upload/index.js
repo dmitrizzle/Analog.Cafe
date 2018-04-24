@@ -15,11 +15,11 @@ import {
   Subtitle,
   Title
 } from "../../../../core/components/styles/ArticleStyles"
-import { CARD_ERRORS } from "../../../constants/messages-submissions"
+import { CARD_ERRORS } from "../../../constants/messages-submission"
 import { LinkButton } from "../../../../core/components/controls/Button"
 import { TEXT_EMOJIS } from "../../../../constants"
-import { loadHeader } from "../../../utils/browser-storage"
-import { redirectToSignIn, sendSubmission } from "../../../utils/upload-utils"
+import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
+import { redirectToSignIn } from "../../../utils/actions-session"
 import { setCard } from "../../../../core/store/actions/modalActions"
 import {
   setRoutes as setLoginRedirectRoutes,

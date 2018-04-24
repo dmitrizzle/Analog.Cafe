@@ -1,6 +1,6 @@
 import keycode from "keycode"
 
-import { OBJECT_SLATE_PICTURE_FROM_IMMUTABLE } from "../../../../../constants/rules-submissions"
+import { OBJECT_SLATE_PICTURE_FROM_IMMUTABLE } from "../../../../../constants/rules-submission"
 
 // return
 export const ToggleFeature = options => {

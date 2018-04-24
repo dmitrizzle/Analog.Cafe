@@ -5,7 +5,7 @@ import {
   ROUTE_API_ARTICLES,
   ROUTE_API_SUBMISSIONS
 } from "../../constants/routes-article"
-import { axiosRequest } from "../../utils/axios-request"
+import { makeAPIRequest } from "../../../utils"
 
 // return
 export const setPage = page => {
@@ -59,7 +59,7 @@ export const fetchPage = request => {
         Authorization: "JWT " + token
       }
 
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         response.data.content && response.data.content.raw
           ? dispatch(setPage(response.data))
@@ -93,7 +93,7 @@ export const updateStatus = request => {
         Authorization: "JWT " + token
       }
 
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         response.data.status
           ? dispatch({

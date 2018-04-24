@@ -1,11 +1,11 @@
+import { connect } from "react-redux"
 import React from "react"
 
-// redux
-import { connect } from "react-redux"
+import { CommonNav, ComposerNav } from "../Nav"
+import { Connection, NavWrapper } from "../Nav/styles"
 import { setIntent as setUserIntent } from "../../../../user/store/actions/userActions"
 
 // components
-import { CommonNav, ComposerNav, NavWrapper, Connection } from "../Nav"
 
 const Nav = props => {
   if (props.top && !props.nav.location.top) return null

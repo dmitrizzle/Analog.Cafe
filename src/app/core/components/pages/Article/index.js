@@ -20,15 +20,21 @@ import {
   fetchPage,
   setPage as setNextArticle
 } from "../../../store/actions/articleActions"
-import { froth } from "../../../utils/image-froth"
-import { getLeadAuthor, authorNameList } from "../../../utils/authorship"
-import { locate, getAbsoluteURLPath } from "../../../utils/article-utils"
+import {
+  getAbsoluteURLPath,
+  getSubmissionOrArticleRoute
+} from "../../../utils/routes-article"
+import {
+  getAuthorListStringFromArray,
+  getLeadAuthorObject
+} from "../../../utils/messages-author"
+import { getTitleFromSlug } from "../../../utils/messages-"
+import { makeFroth } from "../../../../utils"
 import ArticleActions from "../../controls/Card/components/ArticleActions"
 import Heading from "../../vignettes/ArticleHeading"
 import Helmet from "../../vignettes/Helmet"
 import Link from "../../controls/Link"
 import Picture from "../../vignettes/Picture_c"
-import slugToTitle from "../../../utils/slug-to-title"
 
 // admin controls loader
 const AdminControls = Loadable({
@@ -63,9 +69,11 @@ class Article extends React.PureComponent {
 
     this.props.fetchPage({
       url:
-        locate(this.props.history.location.pathname).apiRoute +
+        getSubmissionOrArticleRoute(this.props.history.location.pathname)
+          .apiRoute +
         this.props.history.location.pathname.replace(
-          locate(this.props.history.location.pathname).pathname,
+          getSubmissionOrArticleRoute(this.props.history.location.pathname)
+            .pathname,
           ""
         )
     })
@@ -86,7 +94,7 @@ class Article extends React.PureComponent {
       tag: {
         name:
           tag.charAt(0).toUpperCase() +
-          slugToTitle(tag, { titleCase: false }).slice(1),
+          getTitleFromSlug(tag, { titleCase: false }).slice(1),
         route: Object.keys(ROUTE_TAGS).find(key => ROUTE_TAGS[key] === tag)
       }
     })
@@ -126,7 +134,8 @@ class Article extends React.PureComponent {
     window.open(
       "https://web.facebook.com/sharer.php?u=" +
         getAbsoluteURLPath(
-          locate(this.props.history.location.pathname).pathname,
+          getSubmissionOrArticleRoute(this.props.history.location.pathname)
+            .pathname,
           this.props.article.slug
         ),
       "_blank",
@@ -138,7 +147,8 @@ class Article extends React.PureComponent {
     window.open(
       "https://twitter.com/share?url=" +
         getAbsoluteURLPath(
-          locate(this.props.history.location.pathname).pathname,
+          getSubmissionOrArticleRoute(this.props.history.location.pathname)
+            .pathname,
           this.props.article.slug
         ) +
         "&text=" +
@@ -149,7 +159,7 @@ class Article extends React.PureComponent {
               ? " (" + this.props.article.subtitle + ")"
               : "") +
             "” by " +
-            authorNameList(this.props.article.authors)
+            getAuthorListStringFromArray(this.props.article.authors)
         ) +
         "&via=analog_cafe",
       "_blank",
@@ -170,7 +180,9 @@ class Article extends React.PureComponent {
           {this.props.article.poster && (
             <meta
               property="og:image"
-              content={froth({ src: this.props.article.poster, size: "m" }).src}
+              content={
+                makeFroth({ src: this.props.article.poster, size: "m" }).src
+              }
             />
           )}
         </Helmet>
@@ -183,24 +195,24 @@ class Article extends React.PureComponent {
             this.props.article.authors[0].name && (
               <Byline>
                 <Link to={this.state.tag.route}>{this.state.tag.name}</Link> by{" "}
-                {getLeadAuthor(this.props.article.authors).id ? (
+                {getLeadAuthorObject(this.props.article.authors).id ? (
                   <ModalDispatch
                     with={{
                       request: {
                         url:
                           ROUTE_API_AUTHORS +
                           "/" +
-                          getLeadAuthor(this.props.article.authors).id
+                          getLeadAuthorObject(this.props.article.authors).id
                       }
                     }}
                   >
-                    {getLeadAuthor(this.props.article.authors).name}
+                    {getLeadAuthorObject(this.props.article.authors).name}
                   </ModalDispatch>
                 ) : (
-                  getLeadAuthor(this.props.article.authors).name
+                  getLeadAuthorObject(this.props.article.authors).name
                 )}
                 {this.props.article.authors.length > 1 &&
-                  ` with images by ${authorNameList(
+                  ` with images by ${getAuthorListStringFromArray(
                     this.props.article.authors,
                     { ommitLeadAuthor: true, keepFullNames: true }
                   )}`}.

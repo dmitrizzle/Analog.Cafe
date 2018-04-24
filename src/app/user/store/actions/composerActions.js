@@ -1,12 +1,12 @@
 import axios from "axios"
 
 import { CARD_ALERTS } from "../../../admin/constants/messages-admin"
-import { CARD_ERRORS } from "../../constants/messages-submissions"
+import { CARD_ERRORS } from "../../constants/messages-submission"
 import {
   ROUTE_API_IMAGES,
   ROUTE_API_SUBMISSIONS
-} from "../../constants/routes-submissions"
-import { axiosRequest } from "../../../core/utils/axios-request"
+} from "../../constants/routes-submission"
+import { makeAPIRequest } from "../../../utils"
 import { setCard } from "../../../core/store/actions/modalActions"
 
 // manage Composer state
@@ -57,10 +57,10 @@ export const initUploadProgress = () => {
 // import { ROUTE_SUBMISSION_PROGRESS_API } from "../constants/submission"
 
 export const uploadData = request => {
-  let axiosRequestWithProgress = axiosRequest(request)
+  let makeAPIRequestWithProgress = makeAPIRequest(request)
   return dispatch => {
     // register upload progress
-    axiosRequestWithProgress.onUploadProgress = progressEvent =>
+    makeAPIRequestWithProgress.onUploadProgress = progressEvent =>
       dispatch(
         setUploadProgress({
           uploadProgress: Math.round(
@@ -70,7 +70,7 @@ export const uploadData = request => {
       )
 
     // dispatch data upload
-    axios(axiosRequestWithProgress).catch(error => {
+    axios(makeAPIRequestWithProgress).catch(error => {
       dispatch(
         setUploadProgress({
           uploadProgress: -1
@@ -142,7 +142,7 @@ export const fetchImageList = (options = {}, page = 1, appendItems = false) => {
       params
     }
 
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         dispatch({
           type: appendItems ? "IMAGES.ADD_PAGE" : "IMAGES.SET_PAGE",
@@ -165,7 +165,7 @@ export const rejectSubmission = submissionId => {
         Authorization: "JWT " + localStorage.getItem("token")
       }
     }
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         dispatch(setCard(CARD_ALERTS.REJECTED_SUCCESSFULLY))
         dispatch({
@@ -197,7 +197,7 @@ export const publishSubmission = (submissionId, scheduledOrder, tag) => {
       }
     }
 
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         dispatch(setCard(CARD_ALERTS.SCHEDULED))
         dispatch({

@@ -3,11 +3,11 @@ import React from "react"
 import {
   CARD_ALERTS,
   CARD_DIALOGUES
-} from "../../../../user/constants/messages-submissions"
+} from "../../../../user/constants/messages-submission"
 import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/constants/messages-admin"
 import { ModalDispatch } from "../Modal"
 import { NavIndexLink, NavItem, NavLink, TinyImageInline } from "./styles"
-import { froth } from "../../../utils/image-froth"
+import { makeFroth } from "../../../../utils"
 import Logo from "../../icons/Logo"
 
 // NOTE: components' `className` props are used in index.html and aren't required
@@ -20,7 +20,7 @@ const TinyImage = props => {
   return (
     <TinyImageInline>
       <img
-        src={froth({ src: props.image, size: "i" }).src}
+        src={makeFroth({ src: props.image, size: "i" }).src}
         alt="Profile avatar"
       />
     </TinyImageInline>
@@ -200,6 +200,3 @@ export const ComposerNav = props => {
     </ul>
   )
 }
-
-export { NavWrapper } from "./styles"
-export { Connection } from "./styles"

@@ -6,19 +6,19 @@ import {
   Byline,
   Header
 } from "../../../../../../core/components/styles/ArticleStyles"
-import { CARD_ALERTS } from "../../../../../constants/messages-submissions"
+import { CARD_ALERTS } from "../../../../../constants/messages-submission"
 import {
   INPUT_SUBTITLE_LIMIT,
   INPUT_SUBTITLE_WARNING,
   INPUT_TITLE_LIMIT,
   INPUT_TITLE_WARNING
-} from "../../../../../constants/rules-submissions"
+} from "../../../../../constants/rules-submission"
 import { ModalDispatch } from "../../../../../../core/components/controls/Modal"
 import {
   resetSubmissionStatus,
   setHeadingValues
 } from "../../../../../store/actions/composerActions"
-import { saveHeader } from "../../../../../utils/actions-submissions"
+import { saveHeader } from "../../../../../utils/actions-submission"
 import Link from "../../../../../../core/components/controls/Link"
 import TitleCase from "../../../../forms/TitleCase"
 

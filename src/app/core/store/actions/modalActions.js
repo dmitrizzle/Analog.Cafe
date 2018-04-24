@@ -1,7 +1,7 @@
 import axios from "axios"
 
 import { CARD_ERRORS, TEXT_ERRORS } from "../../constants/messages-"
-import { axiosRequest } from "../../utils/axios-request"
+import { makeAPIRequest } from "../../../utils"
 
 // return
 export const initCard = state => {
@@ -40,7 +40,7 @@ export const fetchCard = request => {
         hidden: false
       })
     )
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         // every card should have a title and text body or an image
         // if it's an author's card it could be blank though

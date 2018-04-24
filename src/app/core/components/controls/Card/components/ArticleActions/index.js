@@ -11,8 +11,8 @@ import { PicturePlaceholder } from "../../../../vignettes/Picture/components/Pic
 import { QuickSubscribe } from "../../../../../../user/components/forms/Subscribe"
 import { ROUTE_URL_ARTICLES } from "../../../../../constants/routes-article"
 import { TimeStamp } from "../../../../styles/ArticleStyles"
-import { froth } from "../../../../../../utils"
-import { getAuthorListStringFromArray } from "../../../../../utils/messages-authors"
+import { makeFroth } from "../../../../../../utils"
+import { getAuthorListStringFromArray } from "../../../../../utils/messages-author"
 import {
   getHumanDatestamp,
   getISODatestamp,
@@ -113,7 +113,8 @@ const ActionsCard = props => {
                   <PicturePlaceholder frothId={props.nextArticle.poster}>
                     <img
                       src={
-                        froth({ src: props.nextArticle.poster, size: "s" }).src
+                        makeFroth({ src: props.nextArticle.poster, size: "s" })
+                          .src
                       }
                       alt={props.nextArticle.title}
                     />

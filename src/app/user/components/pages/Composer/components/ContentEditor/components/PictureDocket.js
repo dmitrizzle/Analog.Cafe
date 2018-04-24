@@ -7,7 +7,7 @@ import uuidv1 from "uuid/v1"
 import {
   CARD_ALERTS,
   CARD_ERRORS
-} from "../../../../../../constants/messages-submissions"
+} from "../../../../../../constants/messages-submission"
 import { CardHeader } from "../../../../../../../core/components/controls/Card/styles"
 import {
   GridButton,
@@ -16,11 +16,11 @@ import {
   GridContainer,
   GridRow
 } from "../../../../../controls/Grid"
-import { MIME_PICTURES } from "../../../../../../constants/rules-submissions"
+import { MIME_PICTURES } from "../../../../../../constants/rules-submission"
 import { ModalDispatch } from "../../../../../../../core/components/controls/Modal"
 import { dot } from "../../../../../../../core/components/icons/BlankDot"
 import { fetchImageList } from "../../../../../../store/actions/composerActions"
-import { forceImageRestrictions } from "../../../../../../utils/actions-submissions"
+import { forceImageRestrictions } from "../../../../../../utils/actions-submission"
 import { setCard } from "../../../../../../../core/store/actions/modalActions"
 import PictureDocket from "../../../../../controls/PictureDocket"
 

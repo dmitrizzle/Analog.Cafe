@@ -6,7 +6,7 @@ import { CARD_ERRORS } from "../../../constants/messages-session"
 import { Form } from "../FormStyles"
 import { loginWithEmail } from "../../../store/actions/userActions"
 import { setCard } from "../../../../core/store/actions/modalActions"
-import { validateEmail } from "../../../utils/email-utils"
+import { validateEmail } from "../../../utils/messages-session"
 import EmailInput from "../EmailInput"
 
 class SigninWithEmail extends React.PureComponent {

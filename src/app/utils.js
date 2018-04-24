@@ -1,7 +1,5 @@
-import { froth as frothInit } from "@roast-cms/image-froth"
-import { dot } from "../components/icons/BlankDot"
-
-// METHODS AND FUNCTIONS STILL NEED RENAMING HERE
+import { froth } from "@roast-cms/image-froth"
+import { dot } from "./core/components/icons/BlankDot"
 
 const FROTH_CONSTANTS = {
   server: "https://res.cloudinary.com/analog-cafe/image/upload/",
@@ -15,10 +13,9 @@ const FROTH_CONSTANTS = {
   },
   placeholder: dot
 }
-export const froth = options => frothInit(options, FROTH_CONSTANTS)
-export { getFroth } from "@roast-cms/image-froth"
+export const makeFroth = options => froth(options, FROTH_CONSTANTS)
 
-export const axiosRequest = request => {
+export const makeAPIRequest = request => {
   const requestConstructor = {
     method: request.method || "get",
     data: request.data || {},
@@ -32,6 +29,7 @@ export const axiosRequest = request => {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#Polyfill
 export const polyfillArrayIncludes = () => {
   if (!Array.prototype.includes) {
+    // eslint-disable-next-line
     Object.defineProperty(Array.prototype, "includes", {
       value: function(searchElement, fromIndex) {
         if (this == null) {
@@ -68,6 +66,7 @@ export const polyfillArrayIncludes = () => {
 // https://tc39.github.io/ecma262/#sec-array.prototype.find
 export const polyfillArrayFind = () => {
   if (!Array.prototype.find) {
+    // eslint-disable-next-line
     Object.defineProperty(Array.prototype, "find", {
       value: function(predicate) {
         if (this == null) {

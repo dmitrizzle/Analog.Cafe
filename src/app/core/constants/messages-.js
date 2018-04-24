@@ -1,5 +1,3 @@
-import { TEXT_EMOJIS } from "../../constants"
-
 export const CARD_ERRORS = {
   PICTURE_AUTHOR: {
     name: "Unknown Author",

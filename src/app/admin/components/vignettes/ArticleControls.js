@@ -28,7 +28,7 @@ import {
   setSubmissionStatus
 } from "../../../user/store/actions/composerActions"
 import { setCard } from "../../../core/store/actions/modalActions"
-import { storeHeaderState } from "../../../user/utils/browser-storage"
+import { storeHeaderState } from "../../../user/utils/actions-submission"
 import { updateStatus as updateArticleStatus } from "../../../core/store/actions/articleActions"
 import Link from "../../../core/components/controls/Link"
 

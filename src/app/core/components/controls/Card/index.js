@@ -9,7 +9,7 @@ import {
 } from "./styles"
 import { PicturePlaceholder } from "../../vignettes/Picture/components/PicturePlaceholder"
 import { QuickSubscribe } from "../../../../user/components/forms/Subscribe"
-import { froth } from "../../../utils/image-froth"
+import { makeFroth } from "../../../../utils"
 
 // return
 export const Card = props => {
@@ -30,7 +30,10 @@ export const Card = props => {
       </CardHeader>
       <figure onClick={event => event.stopPropagation()}>
         <PicturePlaceholder frothId={props.image}>
-          <img src={froth({ src: props.image, size: "s" }).src} alt="Card" />
+          <img
+            src={makeFroth({ src: props.image, size: "s" }).src}
+            alt="Card"
+          />
         </PicturePlaceholder>
         <figcaption>
           <CardCaption
@@ -68,5 +71,3 @@ export const Card = props => {
     </CardElement>
   )
 }
-
-export { CardModal, ModalOverlay } from "./components/Modal"

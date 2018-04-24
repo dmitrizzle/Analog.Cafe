@@ -1,12 +1,12 @@
 import axios from "axios"
 
 import { CARD_ERRORS } from "../../constants/messages-"
-import { CARD_ERRORS as CARD_ERRORS_SUBMISSIONS } from "../../../user/constants/messages-submissions"
+import { CARD_ERRORS as CARD_ERRORS_SUBMISSIONS } from "../../../user/constants/messages-submission"
 import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
 } from "../../constants/routes-list"
-import { axiosRequest } from "../../utils/axios-request"
+import { makeAPIRequest } from "../../../utils"
 
 // return
 export const setPage = (page, appendItems) => {
@@ -64,7 +64,7 @@ export const fetchPage = (request, appendItems = false) => {
           requested: request
         })
       )
-    axios(axiosRequest(request))
+    axios(makeAPIRequest(request))
       .then(response => {
         if (response.data.page["items-total"] > 0)
           dispatch(setPage(response.data, appendItems))
