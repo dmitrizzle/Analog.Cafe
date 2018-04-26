@@ -5,13 +5,13 @@ import { ROUTE_API_SUBMISSIONS } from "../constants/routes-admin"
 import { makeAPIRequest } from "../../utils"
 import { setCard } from "../../core/store/actions-modal"
 
-export const setstatus = (id, type) => {
+export const setStatus = (id, type) => {
   return {
     type: "SUBMISSION.SET_STATUS",
     payload: { id, type }
   }
 }
-export const resetstatus = () => {
+export const resetStatus = () => {
   return {
     type: "SUBMISSION.RESET_STATUS"
   }

@@ -21,6 +21,7 @@ import { TEXT_EMOJIS } from "../../../../constants"
 import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
 import { resetComposer } from "../../../store/actions-composer"
+import { resetStatus } from "../../../../admin/store/actions-editor"
 import { setCard } from "../../../../core/store/actions-modal"
 import {
   setRoutes as setLoginRedirectRoutes,
@@ -28,8 +29,7 @@ import {
 } from "../../../store/actions-user"
 import {
   uploadSubmission,
-  resetUploadProgress,
-  resetstatus
+  resetUploadProgress
 } from "../../../store/actions-submission"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
@@ -171,7 +171,7 @@ class Upload extends React.PureComponent {
       this.props.resetUploadProgress()
 
       // remove working submission id
-      this.props.resetstatus()
+      this.props.resetStatus()
 
       // user-facing messages
       this.setState({
@@ -271,6 +271,7 @@ const mapStateToProps = state => {
   return {
     composer: state.composer,
     submission: state.submission,
+    editor: state.editor,
     user: state.user
   }
 }
@@ -282,8 +283,8 @@ const mapDispatchToProps = dispatch => {
     resetUploadProgress: () => {
       dispatch(resetUploadProgress())
     },
-    resetstatus: () => {
-      dispatch(resetstatus())
+    resetStatus: () => {
+      dispatch(resetStatus())
     },
     setLoginRedirectRoutes: routes => {
       dispatch(setLoginRedirectRoutes(routes))

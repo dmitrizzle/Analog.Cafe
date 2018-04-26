@@ -161,7 +161,7 @@ const NavLinkSend = props => {
   return (
     <ModalDispatch
       with={
-        props.submissionStatus.id && props.userRole === "admin"
+        props.editorStatus.id && props.userRole === "admin"
           ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
           : CARD_DIALOGUES.CONSENT
       }
@@ -194,7 +194,7 @@ export const ComposerNav = props => {
         <NavLinkSend
           userStatus={props.userStatus}
           userRole={props.userRole}
-          submissionStatus={props.submissionStatus}
+          editorStatus={props.editorStatus}
         />
       </NavItem>
     </ul>

@@ -13,14 +13,14 @@ export {
 export const sendSubmission = (data, props) => {
   let url = ROUTE_API_SUBMISSIONS
   let method = "post"
-  if (props.submission.status.id && props.user.info.role === "admin") {
+  if (props.editor.status.id && props.user.info.role === "admin") {
     method = "put"
-    if (props.submission.status.type === "unpublished")
-      url += "/" + props.submission.status.id
-    else if (props.submission.status.type === "published")
-      url = ROUTE_API_ARTICLES + "/" + props.submission.status.id
+    if (props.editor.status.type === "unpublished")
+      url += "/" + props.editor.status.id
+    else if (props.editor.status.type === "published")
+      url = ROUTE_API_ARTICLES + "/" + props.editor.status.id
   }
-  props.uploadSubmissionData({
+  props.uploadSubmission({
     method,
     data,
     headers: {

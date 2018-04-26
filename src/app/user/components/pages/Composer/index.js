@@ -39,7 +39,7 @@ const Composer = props => {
       style={{ marginBottom: "0.25em" }}
       key="Composer_Send"
       with={
-        props.submission.status.id && props.user.info.role === "admin"
+        props.editor.status.id && props.user.info.role === "admin"
           ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
           : CARD_DIALOGUES.CONSENT
       }
@@ -58,7 +58,7 @@ const Composer = props => {
 // connect with redux
 const mapStateToProps = state => {
   return {
-    submission: state.submission,
+    editor: state.editor,
     user: state.user
   }
 }

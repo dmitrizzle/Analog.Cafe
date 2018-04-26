@@ -24,8 +24,8 @@ import { getSubmissionOrArticleRoute } from "../../../core/utils/routes-article"
 import {
   publishSubmission,
   rejectSubmission,
-  setstatus
-} from "../../../user/store/actions-submission"
+  setStatus
+} from "../../store/actions-editor"
 import { setCard } from "../../../core/store/actions-modal"
 import { setComposerHeader } from "../../../user/store/actions-composer"
 import { storeHeaderState } from "../../../user/utils/actions-submission"
@@ -73,10 +73,8 @@ class AdminControls extends React.PureComponent {
 
     // refresh status & controls:
     if (
-      this.props.submission.submissionAdmin.reject.status ===
-        nextProps.submission.submissionAdmin.reject.status &&
-      this.props.submission.submissionAdmin.publish.status ===
-        nextProps.submission.submissionAdmin.publish.status
+      this.props.editor.reject.status === nextProps.editor.reject.status &&
+      this.props.editor.publish.status === nextProps.editor.publish.status
     )
       return
     this.props.updateArticleStatus({
@@ -116,7 +114,7 @@ class AdminControls extends React.PureComponent {
     storeContentState(this.props.article.content.raw)
 
     // set submission id so that the correct article would be updated with upload
-    this.props.setstatus(
+    this.props.setStatus(
       this.props.article.id,
       this.props.article.status !== "published" ? "unpublished" : "published"
     )
@@ -259,8 +257,7 @@ class AdminControls extends React.PureComponent {
                   key="ButtonStrip_Item_reject"
                   onClick={this.handleRejection}
                   inverse={
-                    this.props.submission.submissionAdmin.reject.id ===
-                    this.props.article.id
+                    this.props.editor.reject.id === this.props.article.id
                   }
                   style={{
                     minWidth: "6em",
@@ -351,13 +348,9 @@ class AdminControls extends React.PureComponent {
           <Button branded>Add to Queue</Button>
           <Button
             onClick={this.handlePublishNow}
-            loading={
-              this.props.submission.submissionAdmin.publish.id ===
-              this.props.article.id
-            }
+            loading={this.props.editor.publish.id === this.props.article.id}
           >
-            {this.props.submission.submissionAdmin.publish.id !==
-              this.props.article.id &&
+            {this.props.editor.publish.id !== this.props.article.id &&
               (this.state.allowPublish
                 ? TEXT_EMOJIS.LOCKED
                 : TEXT_EMOJIS.UNLOCKED)}{" "}
@@ -371,7 +364,7 @@ class AdminControls extends React.PureComponent {
 
 const mapStateToProps = state => {
   return {
-    submission: state.submission,
+    editor: state.editor,
     article: state.article
   }
 }
@@ -380,8 +373,8 @@ const mapDispatchToProps = dispatch => {
     setCard: (info, request) => {
       dispatch(setCard(info, request))
     },
-    setstatus: (id, type) => {
-      dispatch(setstatus(id, type))
+    setStatus: (id, type) => {
+      dispatch(setStatus(id, type))
     },
     rejectSubmission: id => {
       dispatch(rejectSubmission(id))

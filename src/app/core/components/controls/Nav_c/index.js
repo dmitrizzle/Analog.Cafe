@@ -23,7 +23,7 @@ const Nav = props => {
       {props.nav.view === "COMPOSER" ? (
         <ComposerNav
           composerStatus={props.composer.status}
-          submissionStatus={props.submission.status}
+          editorStatus={props.editor.status}
           userStatus={props.user.status}
           userRole={props.user.info.role}
         />
@@ -47,7 +47,7 @@ const mapStateToProps = state => {
   return {
     nav: state.nav,
     composer: state.composer,
-    submission: state.submission,
+    editor: state.editor,
     user: state.user
   }
 }
