@@ -144,17 +144,19 @@ class PictureDocketContainer extends React.PureComponent {
 
         <GridContainer>
           <GridRow>
-            {this.props.composer.imageList.items.slice(0, 2).map(item => {
+            {this.props.submission.imageList.items.slice(0, 2).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  status={this.props.composer.imageList.status}
+                  status={this.props.submission.imageList.status}
                   author={
-                    this.props.composer.imageList.items[1] ? item.author : null
+                    this.props.submission.imageList.items[1]
+                      ? item.author
+                      : null
                   }
                   add={
-                    this.props.composer.imageList.items[1]
+                    this.props.submission.imageList.items[1]
                       ? this.handleImageSuggestion
                       : null
                   }
@@ -170,12 +172,12 @@ class PictureDocketContainer extends React.PureComponent {
             </GridButton>
           </GridRow>
           <GridRow>
-            {this.props.composer.imageList.items.slice(2, 5).map(item => {
+            {this.props.submission.imageList.items.slice(2, 5).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  status={this.props.composer.imageList.status}
+                  status={this.props.submission.imageList.status}
                   author={item.author}
                   add={this.handleImageSuggestion}
                 />
@@ -183,12 +185,12 @@ class PictureDocketContainer extends React.PureComponent {
             })}
           </GridRow>
           <GridRow>
-            {this.props.composer.imageList.items.slice(5, 8).map(item => {
+            {this.props.submission.imageList.items.slice(5, 8).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  status={this.props.composer.imageList.status}
+                  status={this.props.submission.imageList.status}
                   author={item.author}
                   add={this.handleImageSuggestion}
                 />

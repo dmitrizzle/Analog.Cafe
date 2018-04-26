@@ -14,11 +14,9 @@ import {
   INPUT_TITLE_WARNING
 } from "../../../../../constants/rules-submission"
 import { ModalDispatch } from "../../../../../../core/components/controls/Modal"
-import {
-  resetSubmissionStatus,
-  setHeadingValues
-} from "../../../../../store/actions-submission"
+import { resetSubmissionStatus } from "../../../../../store/actions-submission"
 import { saveHeader } from "../../../../../utils/actions-submission"
+import { setComposerHeader } from "../../../../../store/actions-composer"
 import Link from "../../../../../../core/components/controls/Link"
 import TitleCase from "../../../../forms/TitleCase"
 
@@ -30,20 +28,20 @@ class HeaderEditor extends React.PureComponent {
     this.handleSubtitleChange = this.handleSubtitleChange.bind(this)
   }
   handleTitleChange = event => {
-    const headingValues = {
+    const header = {
       title: event,
-      subtitle: this.props.composer.headingValues.subtitle
+      subtitle: this.props.composer.header.subtitle
     }
-    this.props.setHeadingValues(headingValues)
-    saveHeader(headingValues)
+    this.props.setComposerHeader(header)
+    saveHeader(header)
   }
   handleSubtitleChange = event => {
-    const headingValues = {
-      title: this.props.composer.headingValues.title,
+    const header = {
+      title: this.props.composer.header.title,
       subtitle: event
     }
-    this.props.setHeadingValues(headingValues)
-    saveHeader(headingValues)
+    this.props.setComposerHeader(header)
+    saveHeader(header)
   }
   handleKeypress = event => {
     // disallow multiple lines in titles
@@ -61,50 +59,48 @@ class HeaderEditor extends React.PureComponent {
         <TitleCase
           placeholder={this.props.pageTitle}
           onChange={this.handleTitleChange}
-          value={this.props.composer.headingValues.title}
+          value={this.props.composer.header.title}
           inputDesignation="title"
           caution={
-            this.props.composer.headingValues.title.length > INPUT_TITLE_WARNING
+            this.props.composer.header.title.length > INPUT_TITLE_WARNING
           }
-          warning={
-            this.props.composer.headingValues.title.length >= INPUT_TITLE_LIMIT
-          }
+          warning={this.props.composer.header.title.length >= INPUT_TITLE_LIMIT}
           maxLength={INPUT_TITLE_LIMIT}
-          autoFocus={this.props.composer.headingValues.title === ""}
+          autoFocus={this.props.composer.header.title === ""}
           onKeyPress={this.handleKeypress}
         />
         <TitleCase
           placeholder={this.props.pageSubtitle}
           onChange={this.handleSubtitleChange}
-          value={this.props.composer.headingValues.subtitle}
+          value={this.props.composer.header.subtitle}
           inputDesignation="subtitle"
           caution={
-            this.props.composer.headingValues.subtitle.length >
-            INPUT_SUBTITLE_WARNING
+            this.props.composer.header.subtitle.length > INPUT_SUBTITLE_WARNING
           }
           warning={
-            this.props.composer.headingValues.subtitle.length >=
-            INPUT_SUBTITLE_LIMIT
+            this.props.composer.header.subtitle.length >= INPUT_SUBTITLE_LIMIT
           }
           maxLength={INPUT_SUBTITLE_LIMIT}
           onKeyPress={this.handleKeypress}
         />
         {this.props.user.info.role === "admin" &&
-        this.props.composer.submissionStatus.id ? (
+        this.props.submission.submissionStatus.id ? (
           <Byline>
             Submission under edit:{" "}
-            <strong>{this.props.composer.submissionStatus.id}</strong>{" "}
+            <strong>{this.props.submission.submissionStatus.id}</strong>{" "}
             <Link to="#unlink" onClick={this.handleUnlinkSubmission}>
               unlink
-            </Link>.{this.props.composer.submissionStatus.type ===
+            </Link>.{this.props.submission.submissionStatus.type ===
               "published" ||
-            this.props.composer.submissionStatus.type === "scheduled"
+            this.props.submission.submissionStatus.type === "scheduled"
               ? [
                   <br key="Byline_linebreak" />,
                   <span key="BYline_note">
                     You are editing a{" "}
-                    <strong>{this.props.composer.submissionStatus.type}</strong>{" "}
-                    article.{this.props.composer.submissionStatus.type ===
+                    <strong>
+                      {this.props.submission.submissionStatus.type}
+                    </strong>{" "}
+                    article.{this.props.submission.submissionStatus.type ===
                       "published" &&
                       " You will need to publish your changes to update the publication."}
                   </span>
@@ -129,6 +125,7 @@ class HeaderEditor extends React.PureComponent {
 const mapStateToProps = state => {
   return {
     composer: state.composer,
+    submission: state.submission,
     user: state.user
   }
 }
@@ -137,8 +134,8 @@ const mapDispatchToProps = dispatch => {
     resetSubmissionStatus: () => {
       dispatch(resetSubmissionStatus())
     },
-    setHeadingValues: value => {
-      dispatch(setHeadingValues(value))
+    setComposerHeader: value => {
+      dispatch(setComposerHeader(value))
     }
   }
 }

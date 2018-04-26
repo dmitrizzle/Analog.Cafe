@@ -9,7 +9,7 @@ import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/consta
 import { ModalDispatch } from "../../../../core/components/controls/Modal"
 import { Section } from "../../../../core/components/styles/ArticleStyles"
 import { TEXT_EMOJIS } from "../../../../constants"
-import { requestFocus as requestEditorFocus } from "../../../store/actions-submission"
+import { requestComposerFocus as requestEditorFocus } from "../../../store/actions-composer"
 import ContentEditor from "./components/ContentEditor"
 import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"
 import HeaderEditor from "./components/HeaderEditor"
@@ -39,7 +39,7 @@ const Composer = props => {
       style={{ marginBottom: "0.25em" }}
       key="Composer_Send"
       with={
-        props.composer.submissionStatus.id && props.user.info.role === "admin"
+        props.submission.submissionStatus.id && props.user.info.role === "admin"
           ? CARD_DIALOGUES_ADMIN.OVERWRITE_DRAFT
           : CARD_DIALOGUES.CONSENT
       }
@@ -58,7 +58,7 @@ const Composer = props => {
 // connect with redux
 const mapStateToProps = state => {
   return {
-    composer: state.composer,
+    submission: state.submission,
     user: state.user
   }
 }

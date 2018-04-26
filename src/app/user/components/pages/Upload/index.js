@@ -20,6 +20,7 @@ import { LinkButton } from "../../../../core/components/controls/Button"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
+import { resetComposer } from "../../../store/actions-composer"
 import { setCard } from "../../../../core/store/actions-modal"
 import {
   setRoutes as setLoginRedirectRoutes,
@@ -28,7 +29,6 @@ import {
 import {
   uploadData as uploadSubmissionData,
   initUploadProgress,
-  resetAllValues as resetComposerValues,
   resetSubmissionStatus
 } from "../../../store/actions-submission"
 import Helmet from "../../../../core/components/vignettes/Helmet"
@@ -131,7 +131,7 @@ class Upload extends React.PureComponent {
   }
   componentWillReceiveProps = nextProps => {
     if (
-      nextProps.composer.uploadProgress === this.props.composer.uploadProgress
+      nextProps.composer.uploadProgress === this.props.submission.uploadProgress
     )
       return
 
@@ -156,7 +156,7 @@ class Upload extends React.PureComponent {
     //
     // upload complete
     if (
-      this.props.composer.uploadProgress >= 0 &&
+      this.props.submission.uploadProgress >= 0 &&
       nextProps.composer.uploadProgress === 100
     ) {
       // clear submissions content and image in storage
@@ -164,7 +164,7 @@ class Upload extends React.PureComponent {
       localForage.clear()
 
       // clear store for Composer values
-      this.props.resetComposerValues()
+      this.props.resetComposer()
 
       // reset upload state
       this.props.initUploadProgress()
@@ -289,8 +289,8 @@ const mapDispatchToProps = dispatch => {
     resetLoginRedirectRoutes: () => {
       dispatch(resetLoginRedirectRoutes())
     },
-    resetComposerValues: () => {
-      dispatch(resetComposerValues())
+    resetComposer: () => {
+      dispatch(resetComposer())
     },
     setCard: (info, request) => {
       dispatch(setCard(info, request))

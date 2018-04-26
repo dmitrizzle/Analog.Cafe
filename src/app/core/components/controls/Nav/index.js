@@ -175,14 +175,14 @@ const NavLinkSend = props => {
 export const ComposerNav = props => {
   return (
     <ul>
-      <NavItem draftStatus prime left className="prime left">
+      <NavItem status prime left className="prime left">
         <ModalDispatch
           with={CARD_ALERTS.AUTO_SAVE}
           style={{ textDecoration: "none" }}
         >
-          {props.draftStatus === "ok" && <span>Draft Saved</span>}
-          {props.draftStatus === "pending" && <span>Saving…</span>}
-          {!props.draftStatus && <span>Draft</span>}
+          {props.status === "ok" && <span>Draft Saved</span>}
+          {props.status === "pending" && <span>Saving…</span>}
+          {!props.status && <span>Draft</span>}
         </ModalDispatch>
       </NavItem>
       <NavItem prime center className="prime center">

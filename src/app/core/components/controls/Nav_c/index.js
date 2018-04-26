@@ -22,8 +22,8 @@ const Nav = props => {
     <NavWrapper className="appNav" key="NavWrapper">
       {props.nav.view === "COMPOSER" ? (
         <ComposerNav
-          draftStatus={props.composer.draftStatus}
-          submissionStatus={props.composer.submissionStatus}
+          status={props.composer.status}
+          submissionStatus={props.submission.submissionStatus}
           userStatus={props.user.status}
           userRole={props.user.info.role}
         />
@@ -47,6 +47,7 @@ const mapStateToProps = state => {
   return {
     nav: state.nav,
     composer: state.composer,
+    submission: state.submission,
     user: state.user
   }
 }

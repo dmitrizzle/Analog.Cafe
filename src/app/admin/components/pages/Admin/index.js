@@ -93,8 +93,8 @@ class Admin extends React.PureComponent {
   // images list pagination
   incrementPage = () => {
     if (
-      this.props.composer.imageList.page &&
-      this.props.composer.imageList.page.total >= this.state.imageList.page
+      this.props.submission.imageList.page &&
+      this.props.submission.imageList.page.total >= this.state.imageList.page
     ) {
       this.setState({
         imageList: {
@@ -109,8 +109,8 @@ class Admin extends React.PureComponent {
   // images list pagination
   incrementPage = () => {
     if (
-      this.props.composer.imageList.page &&
-      this.props.composer.imageList.page.total >= this.state.imageList.page
+      this.props.submission.imageList.page &&
+      this.props.submission.imageList.page.total >= this.state.imageList.page
     ) {
       this.setState({
         imageList: {
@@ -125,8 +125,8 @@ class Admin extends React.PureComponent {
   // images list pagination
   incrementPage = () => {
     if (
-      this.props.composer.imageList.page &&
-      this.props.composer.imageList.page.total >= this.state.imageList.page
+      this.props.submission.imageList.page &&
+      this.props.submission.imageList.page.total >= this.state.imageList.page
     ) {
       this.setState({
         imageList: {
@@ -230,7 +230,7 @@ class Admin extends React.PureComponent {
           <GridContainer>
             {rows.map(row => (
               <GridRow key={row}>
-                {this.props.composer.imageList.items
+                {this.props.submission.imageList.items
                   .slice(
                     row * IMAGES_PER_ROW,
                     row * IMAGES_PER_ROW + IMAGES_PER_ROW
@@ -242,9 +242,9 @@ class Admin extends React.PureComponent {
                       noShim
                       key={item.id}
                       src={item.id}
-                      status={this.props.composer.imageList.status}
+                      status={this.props.submission.imageList.status}
                       author={
-                        this.props.composer.imageList.items[1]
+                        this.props.submission.imageList.items[1]
                           ? item.author
                           : null
                       }
@@ -292,11 +292,11 @@ class Admin extends React.PureComponent {
             ))}
           </GridContainer>
 
-          {this.props.composer.imageList.page &&
-            this.props.composer.imageList.page.total >=
+          {this.props.submission.imageList.page &&
+            this.props.submission.imageList.page.total >=
               this.state.imageList.page && (
               <Button onClick={this.handleImagesLoadMore}>
-                Load More ({this.props.composer.imageList.page["items-total"]})
+                Load More ({this.props.submission.imageList.page["items-total"]})
               </Button>
             )}
 

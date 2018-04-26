@@ -34,7 +34,7 @@ export const getInfo = src => {
 
   return (dispatch, getState) => {
     // run duplicate & validation checks
-    let picturesState = getState().pictures
+    let picturesState = getState().picture
     if (picturesState[id]) return
 
     axios(makeAPIRequest(request))

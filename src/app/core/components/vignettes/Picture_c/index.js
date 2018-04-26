@@ -151,8 +151,8 @@ class Figure extends React.PureComponent {
           src={src}
           className={className}
           author={
-            this.props.pictures[getFroth(src)] &&
-            this.props.pictures[getFroth(src)].info.author
+            this.props.picture[getFroth(src)] &&
+            this.props.picture[getFroth(src)].info.author
           }
           composer={!this.props.readOnly}
           feature={feature}
@@ -176,7 +176,7 @@ class Figure extends React.PureComponent {
 // connect with redux
 const mapStateToProps = state => {
   return {
-    pictures: state.pictures
+    picture: state.picture
   }
 }
 const mapDispatchToProps = dispatch => {

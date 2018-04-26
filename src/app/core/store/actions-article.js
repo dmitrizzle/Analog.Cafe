@@ -1,6 +1,7 @@
 import axios from "axios"
 
 import { CARD_ERRORS, TEXT_ERRORS } from "../constants/messages-"
+import { HEADER_ERRORS } from "../../constants"
 import {
   ROUTE_API_ARTICLES,
   ROUTE_API_SUBMISSIONS
@@ -74,8 +75,8 @@ export const fetchPage = request => {
       .catch(error => {
         dispatch(
           initPage({
-            title: CARD_ERRORS.ARTICLE.title,
-            subtitle: CARD_ERRORS.ARTICLE.subtitle,
+            title: HEADER_ERRORS.ARTICLE.title,
+            subtitle: HEADER_ERRORS.ARTICLE.subtitle,
             error
           })
         )

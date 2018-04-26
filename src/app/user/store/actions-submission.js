@@ -8,18 +8,6 @@ import { setCard } from "../../core/store/actions-modal"
 
 // Slate Editor state can not be managed via Redux
 
-export const setHeadingValues = value => {
-  return {
-    type: "COMPOSER.SET_HEADING_VALUES",
-    payload: value
-  }
-}
-export const resetAllValues = () => {
-  return {
-    type: "COMPOSER.RESET_ALL_VALUES",
-    payload: null
-  }
-}
 export const setSubmissionStatus = (id, type) => {
   return {
     type: "COMPOSER.SET_SUBMISSION_STATUS",
@@ -105,19 +93,6 @@ export const uploadData = request => {
         )
       )
     })
-  }
-}
-
-// monitor draft (save) status and show in header nav
-export const setDraftStatus = status => {
-  return {
-    type: "COMPOSER.SET_DRAFT_STATUS",
-    payload: status
-  }
-}
-export const requestFocus = () => {
-  return {
-    type: "COMPOSER.REQUEST_FOCUS"
   }
 }
 

@@ -24,10 +24,10 @@ import { getSubmissionOrArticleRoute } from "../../../core/utils/routes-article"
 import {
   publishSubmission,
   rejectSubmission,
-  setHeadingValues,
   setSubmissionStatus
 } from "../../../user/store/actions-submission"
 import { setCard } from "../../../core/store/actions-modal"
+import { setComposerHeader } from "../../../user/store/actions-composer"
 import { storeHeaderState } from "../../../user/utils/actions-submission"
 import { updateStatus as updateArticleStatus } from "../../../core/store/actions-article"
 import Link from "../../../core/components/controls/Link"
@@ -73,9 +73,9 @@ class AdminControls extends React.PureComponent {
 
     // refresh status & controls:
     if (
-      this.props.composer.submissionAdmin.reject.status ===
+      this.props.submission.submissionAdmin.reject.status ===
         nextProps.composer.submissionAdmin.reject.status &&
-      this.props.composer.submissionAdmin.publish.status ===
+      this.props.submission.submissionAdmin.publish.status ===
         nextProps.composer.submissionAdmin.publish.status
     )
       return
@@ -105,14 +105,14 @@ class AdminControls extends React.PureComponent {
     }
 
     // replace redux store values for header
-    const headingValues = {
+    const header = {
       title: this.props.article.title || "",
       subtitle: this.props.article.subtitle || ""
     }
-    this.props.setHeadingValues(headingValues)
+    this.props.setComposerHeader(header)
 
     // replace localStorage drafts with current article content
-    storeHeaderState(headingValues)
+    storeHeaderState(header)
     storeContentState(this.props.article.content.raw)
 
     // set submission id so that the correct article would be updated with upload
@@ -259,7 +259,7 @@ class AdminControls extends React.PureComponent {
                   key="ButtonStrip_Item_reject"
                   onClick={this.handleRejection}
                   inverse={
-                    this.props.composer.submissionAdmin.reject.id ===
+                    this.props.submission.submissionAdmin.reject.id ===
                     this.props.article.id
                   }
                   style={{
@@ -352,11 +352,11 @@ class AdminControls extends React.PureComponent {
           <Button
             onClick={this.handlePublishNow}
             loading={
-              this.props.composer.submissionAdmin.publish.id ===
+              this.props.submission.submissionAdmin.publish.id ===
               this.props.article.id
             }
           >
-            {this.props.composer.submissionAdmin.publish.id !==
+            {this.props.submission.submissionAdmin.publish.id !==
               this.props.article.id &&
               (this.state.allowPublish
                 ? TEXT_EMOJIS.LOCKED
@@ -386,8 +386,8 @@ const mapDispatchToProps = dispatch => {
     rejectSubmission: id => {
       dispatch(rejectSubmission(id))
     },
-    setHeadingValues: value => {
-      dispatch(setHeadingValues(value))
+    setComposerHeader: value => {
+      dispatch(setComposerHeader(value))
     },
     publishSubmission: (id, scheduledOrder, tag) => {
       dispatch(publishSubmission(id, scheduledOrder, tag))

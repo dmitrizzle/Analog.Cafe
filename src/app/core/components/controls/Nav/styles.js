@@ -76,7 +76,7 @@ export const NavItem = styled.li`
         : null}; */};
 
   ${props =>
-    props.draftStatus &&
+    props.status &&
     `
     // for "Draft Saved" button we need to set some trims because on very small
     // screens it breaks design

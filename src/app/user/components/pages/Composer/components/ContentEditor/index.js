@@ -10,7 +10,7 @@ import {
 import { HOST_PROD } from "../../../../../../constants"
 import { ToggleFeature } from "./plugins"
 import { setCard } from "../../../../../../core/store/actions-modal"
-import { setDraftStatus } from "../../../../../store/actions-submission"
+import { setComposerSatus } from "../../../../../store/actions-composer"
 import Picture from "../../../../../../core/components/vignettes/Picture_c"
 import PictureDocket from "./components/PictureDocket"
 
@@ -39,8 +39,7 @@ class ContentEditor extends React.PureComponent {
   componentWillReceiveProps = nextProps => {
     // set focus on editor when user clicks inside the container component
     if (
-      this.props.composer.editorFocusRequested <
-      nextProps.composer.editorFocusRequested
+      this.props.composer.focusRequested < nextProps.composer.focusRequested
     ) {
       this.editor.focus()
     }
@@ -67,7 +66,7 @@ class ContentEditor extends React.PureComponent {
         //
         // this prop will call a function with a parameter that specifies
         // editor's localStorage save status (see above)
-        callbackStatus={this.props.setDraftStatus}
+        callbackStatus={this.props.setComposerSatus}
         //
         // components within user controls; you may substitute them
         // for images, SVG animations, or whatever else you may fancy
@@ -122,8 +121,8 @@ const mapDispatchToProps = dispatch => {
     setCard: (info, request) => {
       dispatch(setCard(info, request))
     },
-    setDraftStatus: status => {
-      dispatch(setDraftStatus(status))
+    setComposerSatus: status => {
+      dispatch(setComposerSatus(status))
     }
   }
 }

@@ -7,12 +7,6 @@ const getLocalSubmissionStatus = () =>
     : {}
 
 const INITIAL_STATE = {
-  draftStatus: "",
-  editorFocusRequested: 0,
-  headingValues: {
-    title: loadHeader().title,
-    subtitle: loadHeader().subtitle
-  },
   uploadProgress: 0,
   submissionStatus: {
     id: getLocalSubmissionStatus().id || "",
@@ -66,32 +60,6 @@ export default (state = INITIAL_STATE, action) => {
       }
       break
 
-    // track state for composer document
-    case "COMPOSER.SET_HEADING_VALUES":
-      state = {
-        ...state,
-        headingValues: action.payload
-      }
-      break
-    case "COMPOSER.RESET_ALL_VALUES":
-      const lsHeader = "composer-header-state"
-      const lsContent = "composer-content-state"
-      // store back-ups just in case
-      localStorage.setItem(`backup-${lsHeader}`, localStorage.getItem(lsHeader))
-      localStorage.setItem(
-        `backup-${lsContent}`,
-        localStorage.getItem(lsContent)
-      )
-      // remove active LS
-      localStorage.removeItem(lsHeader)
-      localStorage.removeItem(lsContent)
-
-      state = {
-        ...state,
-        headingValues: INPUT_HEADER_DEFAULTS
-      }
-      break
-
     // for editing submissions
     case "COMPOSER.SET_SUBMISSION_STATUS":
       state = {
@@ -111,22 +79,6 @@ export default (state = INITIAL_STATE, action) => {
           id: "",
           type: "unpublished"
         }
-      }
-      break
-
-    // notification for saving everything locally
-    case "COMPOSER.SET_DRAFT_STATUS":
-      state = {
-        ...state,
-        draftStatus: action.payload
-      }
-      break
-
-    // additional reducers for Composer internals
-    case "COMPOSER.REQUEST_FOCUS":
-      state = {
-        ...state,
-        editorFocusRequested: state.editorFocusRequested + 1
       }
       break
 
