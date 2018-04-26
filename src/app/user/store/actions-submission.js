@@ -1,46 +1,24 @@
 import axios from "axios"
 
-import { CARD_ALERTS } from "../../admin/constants/messages-admin"
 import { CARD_ERRORS } from "../constants/messages-submission"
-import { ROUTE_API_SUBMISSIONS } from "../constants/routes-submission"
 import { makeAPIRequest } from "../../utils"
 import { setCard } from "../../core/store/actions-modal"
 
-// Slate Editor state can not be managed via Redux
-
-export const setstatus = (id, type) => {
-  return {
-    type: "COMPOSER.SET_SUBMISSION_STATUS",
-    payload: { id, type }
-  }
-}
-export const resetstatus = () => {
-  return {
-    type: "COMPOSER.RESET_SUBMISSION_STATUS"
-  }
-}
-
-// monitor upload status and percentage
 export const setUploadProgress = state => {
   return {
-    type: "UPLOAD.SET_PROGRESS",
+    type: "SUBMISSION.SET_UPLOAD_PROGRESS",
     payload: state
   }
 }
-export const initUploadProgress = () => {
+export const resetUploadProgress = () => {
   return {
-    type: "UPLOAD.INIT_PROGRESS"
+    type: "SUBMISSION.RESET_UPLOAD_PROGRESS"
   }
 }
 
-// this is where the server status displayed for uploading images to
-// Cloudinary - leaving here for futher reference
-// import { ROUTE_SUBMISSION_PROGRESS_API } from "../constants/submission"
-
-export const uploadData = request => {
+export const uploadSubmission = request => {
   let makeAPIRequestWithProgress = makeAPIRequest(request)
   return dispatch => {
-    // register upload progress
     makeAPIRequestWithProgress.onUploadProgress = progressEvent =>
       dispatch(
         setUploadProgress({
@@ -49,8 +27,6 @@ export const uploadData = request => {
           )
         })
       )
-
-    // dispatch data upload
     axios(makeAPIRequestWithProgress).catch(error => {
       dispatch(
         setUploadProgress({
@@ -93,64 +69,5 @@ export const uploadData = request => {
         )
       )
     })
-  }
-}
-
-// reject submission
-export const rejectSubmission = submissionId => {
-  return dispatch => {
-    const request = {
-      url: `${ROUTE_API_SUBMISSIONS}/${submissionId}/reject`,
-      method: "post",
-      headers: {
-        Authorization: "JWT " + localStorage.getItem("token")
-      }
-    }
-    axios(makeAPIRequest(request))
-      .then(response => {
-        dispatch(setCard(CARD_ALERTS.REJECTED_SUCCESSFULLY))
-        dispatch({
-          type: "SUBMISSION.ADMIN_REJECT",
-          payload: {
-            id: submissionId,
-            status: response.status
-          }
-        })
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
-}
-
-// publish submission
-export const publishSubmission = (submissionId, scheduledOrder, tag) => {
-  return dispatch => {
-    const request = {
-      url: `${ROUTE_API_SUBMISSIONS}/${submissionId}/approve`,
-      method: "post",
-      data: {
-        scheduledOrder,
-        tag
-      },
-      headers: {
-        Authorization: "JWT " + localStorage.getItem("token")
-      }
-    }
-
-    axios(makeAPIRequest(request))
-      .then(response => {
-        dispatch(setCard(CARD_ALERTS.SCHEDULED))
-        dispatch({
-          type: "SUBMISSION.ADMIN_PUBLISH",
-          payload: {
-            id: submissionId,
-            status: response.data.status
-          }
-        })
-      })
-      .catch(error => {
-        console.log(error)
-      })
   }
 }

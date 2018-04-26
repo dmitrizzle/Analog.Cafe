@@ -27,8 +27,8 @@ import {
   resetRoutes as resetLoginRedirectRoutes
 } from "../../../store/actions-user"
 import {
-  uploadData as uploadSubmissionData,
-  initUploadProgress,
+  uploadSubmission,
+  resetUploadProgress,
   resetstatus
 } from "../../../store/actions-submission"
 import Helmet from "../../../../core/components/vignettes/Helmet"
@@ -168,7 +168,7 @@ class Upload extends React.PureComponent {
       this.props.resetComposer()
 
       // reset upload state
-      this.props.initUploadProgress()
+      this.props.resetUploadProgress()
 
       // remove working submission id
       this.props.resetstatus()
@@ -276,11 +276,11 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    uploadSubmissionData: request => {
-      dispatch(uploadSubmissionData(request))
+    uploadSubmission: request => {
+      dispatch(uploadSubmission(request))
     },
-    initUploadProgress: () => {
-      dispatch(initUploadProgress())
+    resetUploadProgress: () => {
+      dispatch(resetUploadProgress())
     },
     resetstatus: () => {
       dispatch(resetstatus())

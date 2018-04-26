@@ -10,6 +10,7 @@ import nav from "./core/store/reducers-nav"
 import picture from "./core/store/reducers-picture"
 import user from "./user/store/reducers-user"
 import imagelib from "./user/store/reducers-imagelib"
+import editor from "./admin/store/reducers-editor"
 
 export default createStore(
   combineReducers({
@@ -21,7 +22,8 @@ export default createStore(
     article,
     picture,
     user,
-    imagelib
+    imagelib,
+    editor
   }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(thunk)

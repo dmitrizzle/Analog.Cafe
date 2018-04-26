@@ -1,6 +1,14 @@
 import { INPUT_HEADER_DEFAULTS } from "../constants/rules-submission"
 import { loadHeader } from "../utils/actions-submission"
 
+const clearLocalStorage = () => {
+  const lsHeader = "composer-header-state"
+  const lsContent = "composer-content-state"
+  localStorage.setItem(`backup-${lsHeader}`, localStorage.getItem(lsHeader))
+  localStorage.setItem(`backup-${lsContent}`, localStorage.getItem(lsContent))
+  localStorage.removeItem(lsHeader)
+  localStorage.removeItem(lsContent)
+}
 const INITIAL_STATE = {
   status: "",
   focusRequested: 0,
@@ -19,15 +27,7 @@ export default (state = INITIAL_STATE, action) => {
       }
       break
     case "COMPOSER.RESET":
-      const lsHeader = "composer-header-state"
-      const lsContent = "composer-content-state"
-      localStorage.setItem(`backup-${lsHeader}`, localStorage.getItem(lsHeader))
-      localStorage.setItem(
-        `backup-${lsContent}`,
-        localStorage.getItem(lsContent)
-      )
-      localStorage.removeItem(lsHeader)
-      localStorage.removeItem(lsContent)
+      clearLocalStorage()
       state = {
         ...state,
         header: INPUT_HEADER_DEFAULTS
