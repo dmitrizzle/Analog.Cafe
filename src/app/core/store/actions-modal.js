@@ -1,6 +1,7 @@
 import axios from "axios"
 
-import { CARD_ERRORS, TEXT_ERRORS } from "../constants/messages-"
+import { CARD_ERRORS } from "../constants/messages-"
+import { TEXT_ERRORS } from "../../constants"
 import { makeAPIRequest } from "../../utils"
 
 // return

@@ -24,7 +24,7 @@ import { getSubmissionOrArticleRoute } from "../../../core/utils/routes-article"
 import {
   publishSubmission,
   rejectSubmission,
-  setSubmissionStatus
+  setstatus
 } from "../../../user/store/actions-submission"
 import { setCard } from "../../../core/store/actions-modal"
 import { setComposerHeader } from "../../../user/store/actions-composer"
@@ -74,9 +74,9 @@ class AdminControls extends React.PureComponent {
     // refresh status & controls:
     if (
       this.props.submission.submissionAdmin.reject.status ===
-        nextProps.composer.submissionAdmin.reject.status &&
+        nextProps.submission.submissionAdmin.reject.status &&
       this.props.submission.submissionAdmin.publish.status ===
-        nextProps.composer.submissionAdmin.publish.status
+        nextProps.submission.submissionAdmin.publish.status
     )
       return
     this.props.updateArticleStatus({
@@ -116,7 +116,7 @@ class AdminControls extends React.PureComponent {
     storeContentState(this.props.article.content.raw)
 
     // set submission id so that the correct article would be updated with upload
-    this.props.setSubmissionStatus(
+    this.props.setstatus(
       this.props.article.id,
       this.props.article.status !== "published" ? "unpublished" : "published"
     )
@@ -371,7 +371,7 @@ class AdminControls extends React.PureComponent {
 
 const mapStateToProps = state => {
   return {
-    composer: state.composer,
+    submission: state.submission,
     article: state.article
   }
 }
@@ -380,8 +380,8 @@ const mapDispatchToProps = dispatch => {
     setCard: (info, request) => {
       dispatch(setCard(info, request))
     },
-    setSubmissionStatus: (id, type) => {
-      dispatch(setSubmissionStatus(id, type))
+    setstatus: (id, type) => {
+      dispatch(setstatus(id, type))
     },
     rejectSubmission: id => {
       dispatch(rejectSubmission(id))

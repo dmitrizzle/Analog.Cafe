@@ -22,8 +22,8 @@ const Nav = props => {
     <NavWrapper className="appNav" key="NavWrapper">
       {props.nav.view === "COMPOSER" ? (
         <ComposerNav
-          status={props.composer.status}
-          submissionStatus={props.submission.submissionStatus}
+          composerStatus={props.composer.status}
+          submissionStatus={props.submission.status}
           userStatus={props.user.status}
           userRole={props.user.info.role}
         />

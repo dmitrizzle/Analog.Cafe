@@ -14,7 +14,7 @@ import {
   INPUT_TITLE_WARNING
 } from "../../../../../constants/rules-submission"
 import { ModalDispatch } from "../../../../../../core/components/controls/Modal"
-import { resetSubmissionStatus } from "../../../../../store/actions-submission"
+import { resetstatus } from "../../../../../store/actions-submission"
 import { saveHeader } from "../../../../../utils/actions-submission"
 import { setComposerHeader } from "../../../../../store/actions-composer"
 import Link from "../../../../../../core/components/controls/Link"
@@ -51,7 +51,7 @@ class HeaderEditor extends React.PureComponent {
   // unlink submission
   handleUnlinkSubmission = event => {
     event.preventDefault()
-    this.props.resetSubmissionStatus()
+    this.props.resetstatus()
   }
   render = () => {
     return (
@@ -84,23 +84,20 @@ class HeaderEditor extends React.PureComponent {
           onKeyPress={this.handleKeypress}
         />
         {this.props.user.info.role === "admin" &&
-        this.props.submission.submissionStatus.id ? (
+        this.props.submission.status.id ? (
           <Byline>
             Submission under edit:{" "}
-            <strong>{this.props.submission.submissionStatus.id}</strong>{" "}
+            <strong>{this.props.submission.status.id}</strong>{" "}
             <Link to="#unlink" onClick={this.handleUnlinkSubmission}>
               unlink
-            </Link>.{this.props.submission.submissionStatus.type ===
-              "published" ||
-            this.props.submission.submissionStatus.type === "scheduled"
+            </Link>.{this.props.submission.status.type === "published" ||
+            this.props.submission.status.type === "scheduled"
               ? [
                   <br key="Byline_linebreak" />,
                   <span key="BYline_note">
                     You are editing a{" "}
-                    <strong>
-                      {this.props.submission.submissionStatus.type}
-                    </strong>{" "}
-                    article.{this.props.submission.submissionStatus.type ===
+                    <strong>{this.props.submission.status.type}</strong>{" "}
+                    article.{this.props.submission.status.type ===
                       "published" &&
                       " You will need to publish your changes to update the publication."}
                   </span>
@@ -131,8 +128,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    resetSubmissionStatus: () => {
-      dispatch(resetSubmissionStatus())
+    resetstatus: () => {
+      dispatch(resetstatus())
     },
     setComposerHeader: value => {
       dispatch(setComposerHeader(value))

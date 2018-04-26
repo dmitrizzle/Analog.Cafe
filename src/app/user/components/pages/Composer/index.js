@@ -39,8 +39,8 @@ const Composer = props => {
       style={{ marginBottom: "0.25em" }}
       key="Composer_Send"
       with={
-        props.submission.submissionStatus.id && props.user.info.role === "admin"
-          ? CARD_DIALOGUES_ADMIN.OVERWRITE_DRAFT
+        props.submission.status.id && props.user.info.role === "admin"
+          ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
           : CARD_DIALOGUES.CONSENT
       }
       wrapperElement="Button"

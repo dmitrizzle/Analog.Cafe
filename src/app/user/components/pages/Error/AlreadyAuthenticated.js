@@ -6,8 +6,9 @@ import {
   Article,
   Section
 } from "../../../../core/components/styles/ArticleStyles"
-import { CARD_ERRORS, TEXT_ERRORS } from "../../../../core/constants/messages-"
+import { CARD_ERRORS } from "../../../../core/constants/messages-"
 import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
+import { TEXT_ERRORS } from "../../../../constants"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"

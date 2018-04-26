@@ -6,7 +6,7 @@ import {
   ROUTE_API_USER
 } from "../constants/routes-session"
 import { ROUTE_API_USERS } from "../../admin/constants/routes-admin"
-import { TEXT_ERRORS } from "../../core/constants/messages-"
+import { TEXT_ERRORS } from "../../constants"
 import { anonymizeEmail } from "../utils/messages-session"
 import { makeAPIRequest } from "../../utils"
 import { setCard } from "../../core/store/actions-modal"

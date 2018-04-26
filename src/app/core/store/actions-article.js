@@ -1,7 +1,7 @@
 import axios from "axios"
 
-import { CARD_ERRORS, TEXT_ERRORS } from "../constants/messages-"
-import { HEADER_ERRORS } from "../../constants"
+import { CARD_ERRORS } from "../constants/messages-"
+import { HEADER_ERRORS, TEXT_ERRORS } from "../../constants"
 import {
   ROUTE_API_ARTICLES,
   ROUTE_API_SUBMISSIONS

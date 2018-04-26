@@ -144,19 +144,15 @@ class PictureDocketContainer extends React.PureComponent {
 
         <GridContainer>
           <GridRow>
-            {this.props.submission.imageList.items.slice(0, 2).map(item => {
+            {this.props.imagelib.items.slice(0, 2).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  status={this.props.submission.imageList.status}
-                  author={
-                    this.props.submission.imageList.items[1]
-                      ? item.author
-                      : null
-                  }
+                  status={this.props.imagelib.status}
+                  author={this.props.imagelib.items[1] ? item.author : null}
                   add={
-                    this.props.submission.imageList.items[1]
+                    this.props.imagelib.items[1]
                       ? this.handleImageSuggestion
                       : null
                   }
@@ -172,12 +168,12 @@ class PictureDocketContainer extends React.PureComponent {
             </GridButton>
           </GridRow>
           <GridRow>
-            {this.props.submission.imageList.items.slice(2, 5).map(item => {
+            {this.props.imagelib.items.slice(2, 5).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  status={this.props.submission.imageList.status}
+                  status={this.props.imagelib.status}
                   author={item.author}
                   add={this.handleImageSuggestion}
                 />
@@ -185,12 +181,12 @@ class PictureDocketContainer extends React.PureComponent {
             })}
           </GridRow>
           <GridRow>
-            {this.props.submission.imageList.items.slice(5, 8).map(item => {
+            {this.props.imagelib.items.slice(5, 8).map(item => {
               return (
                 <GridButtonImage
                   key={item.id}
                   src={item.id}
-                  status={this.props.submission.imageList.status}
+                  status={this.props.imagelib.status}
                   author={item.author}
                   add={this.handleImageSuggestion}
                 />
@@ -225,7 +221,7 @@ const mapDispatchToProps = dispatch => {
 }
 const mapStateToProps = state => {
   return {
-    composer: state.composer
+    imagelib: state.imagelib
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(

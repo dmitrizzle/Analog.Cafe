@@ -1,7 +1,8 @@
 import React from "react"
 
 import { Article, Section } from "../styles/ArticleStyles"
-import { CARD_ERRORS, TEXT_ERRORS } from "../../constants/messages-"
+import { CARD_ERRORS } from "../../constants/messages-"
+import { TEXT_ERRORS } from "../../../constants"
 import Heading from "../vignettes/ArticleHeading"
 import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"

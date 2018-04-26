@@ -1,16 +1,13 @@
-import { INPUT_HEADER_DEFAULTS } from "../constants/rules-submission"
-import { loadHeader } from "../utils/actions-submission"
-
-const getLocalSubmissionStatus = () =>
+const getLocalstatus = () =>
   localStorage.getItem("composer-submission-status")
     ? JSON.parse(localStorage.getItem("composer-submission-status"))
     : {}
 
 const INITIAL_STATE = {
   uploadProgress: 0,
-  submissionStatus: {
-    id: getLocalSubmissionStatus().id || "",
-    type: getLocalSubmissionStatus().type || "unpublished"
+  status: {
+    id: getLocalstatus().id || "",
+    type: getLocalstatus().type || "unpublished"
   },
   submissionAdmin: {
     reject: {
@@ -64,18 +61,18 @@ export default (state = INITIAL_STATE, action) => {
     case "COMPOSER.SET_SUBMISSION_STATUS":
       state = {
         ...state,
-        submissionStatus: action.payload
+        status: action.payload
       }
       localStorage.setItem(
         "composer-submission-status",
-        JSON.stringify(state.submissionStatus)
+        JSON.stringify(state.status)
       )
       break
     case "COMPOSER.RESET_SUBMISSION_STATUS":
       localStorage.removeItem("composer-submission-status")
       state = {
         ...state,
-        submissionStatus: {
+        status: {
           id: "",
           type: "unpublished"
         }

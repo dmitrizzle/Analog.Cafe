@@ -29,7 +29,7 @@ import {
 import {
   uploadData as uploadSubmissionData,
   initUploadProgress,
-  resetSubmissionStatus
+  resetstatus
 } from "../../../store/actions-submission"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
@@ -131,16 +131,17 @@ class Upload extends React.PureComponent {
   }
   componentWillReceiveProps = nextProps => {
     if (
-      nextProps.composer.uploadProgress === this.props.submission.uploadProgress
+      nextProps.submission.uploadProgress ===
+      this.props.submission.uploadProgress
     )
       return
 
     // set progress state
-    if (nextProps.composer.uploadProgress >= 0)
+    if (nextProps.submission.uploadProgress >= 0)
       this.setState({
         progress:
-          nextProps.composer.uploadProgress > 0
-            ? nextProps.composer.uploadProgress
+          nextProps.submission.uploadProgress > 0
+            ? nextProps.submission.uploadProgress
             : this.state.progress
       })
     // server connection error
@@ -157,7 +158,7 @@ class Upload extends React.PureComponent {
     // upload complete
     if (
       this.props.submission.uploadProgress >= 0 &&
-      nextProps.composer.uploadProgress === 100
+      nextProps.submission.uploadProgress === 100
     ) {
       // clear submissions content and image in storage
       localStorage.removeItem("composer-content-text")
@@ -170,7 +171,7 @@ class Upload extends React.PureComponent {
       this.props.initUploadProgress()
 
       // remove working submission id
-      this.props.resetSubmissionStatus()
+      this.props.resetstatus()
 
       // user-facing messages
       this.setState({
@@ -233,7 +234,7 @@ class Upload extends React.PureComponent {
           )}
           {this.state.status === "error" && (
             <p>
-              <strong>{CARD_ERRORS.SEND}</strong>{" "}
+              <strong>{CARD_ERRORS.SEND.text}</strong>{" "}
               <a
                 href="#reload"
                 onClick={event => {
@@ -269,6 +270,7 @@ class Upload extends React.PureComponent {
 const mapStateToProps = state => {
   return {
     composer: state.composer,
+    submission: state.submission,
     user: state.user
   }
 }
@@ -280,8 +282,8 @@ const mapDispatchToProps = dispatch => {
     initUploadProgress: () => {
       dispatch(initUploadProgress())
     },
-    resetSubmissionStatus: () => {
-      dispatch(resetSubmissionStatus())
+    resetstatus: () => {
+      dispatch(resetstatus())
     },
     setLoginRedirectRoutes: routes => {
       dispatch(setLoginRedirectRoutes(routes))

@@ -18,7 +18,7 @@ export const CARD_DIALOGUES = {
         }
       ]
     },
-    requested: { url: "hints/text-in-compsoer" }
+    id: "hints/text-in-compsoer"
   },
   REJECT: {
     info: {
@@ -37,7 +37,7 @@ export const CARD_DIALOGUES = {
         }
       ]
     },
-    requested: { url: "hints/reject-submission" }
+    id: "hints/reject-submission"
   },
   PUBLISH: {
     info: {
@@ -56,7 +56,7 @@ export const CARD_DIALOGUES = {
         }
       ]
     },
-    requested: { url: "hints/publish-submission" }
+    id: "hints/publish-submission"
   },
   SAVE_EDITS: {
     info: {
@@ -81,7 +81,7 @@ export const CARD_ALERTS = {
       text:
         "Done. Submission rejected. It will be marked as such in the database and the author should be receiving a notification shortly."
     },
-    requested: { url: "hints/reject-submission" }
+    id: "hints/reject-submission"
   },
   SCHEDULED: {
     info: {
@@ -89,6 +89,6 @@ export const CARD_ALERTS = {
       text:
         "The submission has been scheduled for the future time slot or to be published immediately. Please check the scheduling tool to confirm when it’s gonna go live."
     },
-    requested: { url: "hints/publish-submission" }
+    id: "hints/publish-submission"
   }
 }

@@ -8,13 +8,13 @@ import { setCard } from "../../core/store/actions-modal"
 
 // Slate Editor state can not be managed via Redux
 
-export const setSubmissionStatus = (id, type) => {
+export const setstatus = (id, type) => {
   return {
     type: "COMPOSER.SET_SUBMISSION_STATUS",
     payload: { id, type }
   }
 }
-export const resetSubmissionStatus = () => {
+export const resetstatus = () => {
   return {
     type: "COMPOSER.RESET_SUBMISSION_STATUS"
   }

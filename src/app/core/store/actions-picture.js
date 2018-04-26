@@ -1,8 +1,9 @@
 import { getFroth } from "@roast-cms/image-froth"
 import axios from "axios"
 
-import { CARD_ERRORS, TEXT_ERRORS } from "../constants/messages-"
+import { CARD_ERRORS } from "../constants/messages-"
 import { ROUTE_API_IMAGES } from "../../user/constants/routes-submission"
+import { TEXT_ERRORS } from "../../constants"
 import { makeAPIRequest } from "../../utils"
 
 // return

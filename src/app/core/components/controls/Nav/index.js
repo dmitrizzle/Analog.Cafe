@@ -162,7 +162,7 @@ const NavLinkSend = props => {
     <ModalDispatch
       with={
         props.submissionStatus.id && props.userRole === "admin"
-          ? CARD_DIALOGUES_ADMIN.OVERWRITE_DRAFT
+          ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
           : CARD_DIALOGUES.CONSENT
       }
       style={{ textDecoration: "none" }}
@@ -180,9 +180,9 @@ export const ComposerNav = props => {
           with={CARD_ALERTS.AUTO_SAVE}
           style={{ textDecoration: "none" }}
         >
-          {props.status === "ok" && <span>Draft Saved</span>}
-          {props.status === "pending" && <span>Saving…</span>}
-          {!props.status && <span>Draft</span>}
+          {props.composerStatus === "ok" && <span>Draft Saved</span>}
+          {props.composerStatus === "pending" && <span>Saving…</span>}
+          {!props.composerStatus && <span>Draft</span>}
         </ModalDispatch>
       </NavItem>
       <NavItem prime center className="prime center">
