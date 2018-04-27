@@ -21,7 +21,7 @@ import {
   unfeature as unfeatureImage
 } from "../../../../core/store/actions-picture"
 import { fetchImageLib } from "../../../../user/store/actions-imagelib"
-import { fetchUserList } from "../../../../user/store/actions-user"
+import { fetchUserList } from "../../../store/actions-admin"
 import { setCard } from "../../../../core/store/actions-modal"
 import Forbidden from "../../../../core/components/pages/Forbidden"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
@@ -301,7 +301,7 @@ class Admin extends React.PureComponent {
           <GridContainer>
             {rows.map(row => (
               <GridRow key={row}>
-                {this.props.user.accountList.items
+                {this.props.admin.accountList.items
                   .slice(
                     row * IMAGES_PER_ROW,
                     row * IMAGES_PER_ROW + IMAGES_PER_ROW
@@ -313,7 +313,7 @@ class Admin extends React.PureComponent {
                       noShim
                       key={item.id}
                       src={item.image}
-                      status={this.props.user.accountList.status}
+                      status={this.props.admin.accountList.status}
                       author={{
                         name: item.title,
                         id: item.id,
@@ -376,6 +376,7 @@ const mapDispatchToProps = dispatch => {
 }
 const mapStateToProps = state => {
   return {
+    admin: state.admin,
     user: state.user,
     imagelib: state.imagelib
   }

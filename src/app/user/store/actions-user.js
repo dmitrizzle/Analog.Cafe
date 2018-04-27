@@ -5,21 +5,31 @@ import {
   ROUTE_API_LOGIN_EMAIL,
   ROUTE_API_USER
 } from "../constants/routes-session"
-import { ROUTE_API_USERS } from "../../admin/constants/routes-admin"
 import { TEXT_ERRORS } from "../../constants"
 import { anonymizeEmail } from "../utils/messages-session"
 import { makeAPIRequest } from "../../utils"
 import { setCard } from "../../core/store/actions-modal"
 
-// manage connectivity
-export const setConnectionStatus = connection => {
-  return {
-    type: "USER.SET_CONNECTION_STATUS",
-    payload: connection
-  }
-}
+//
 
-// error message
+//
+
+//
+
+// NOTE: all functions in ALL actions should be reviewed and named for
+// better clarity
+
+//
+//
+///
+
+// /
+// /
+//
+// /
+// /
+// /
+
 const loginError = (type = "error") => {
   return {
     status: "ok",
@@ -40,9 +50,12 @@ const loginError = (type = "error") => {
     }
   }
 }
-
-// remember sesion user and method
-// helpful when showing to user how they logged in last time
+export const setConnectionStatus = connection => {
+  return {
+    type: "USER.SET_CONNECTION_STATUS",
+    payload: connection
+  }
+}
 export const setSessionInfo = (method, id = "") => {
   return {
     type: "USER.SET_SESSION_INFO",
@@ -52,11 +65,8 @@ export const setSessionInfo = (method, id = "") => {
 export const refreshSessionInfo = () => {
   return { type: "USER.REFRESH_SESSION_INFO" }
 }
-
-// log in with email
 export const loginWithEmail = validatedEmail => {
   return dispatch => {
-    // 60 second timeout block for email logins
     dispatch({
       type: "USER.SET_EMAIL_LOGIN_TIMEOUT",
       payload: Date.now() + 61 * 1000
@@ -65,10 +75,7 @@ export const loginWithEmail = validatedEmail => {
       type: "USER.SET_EMAIL_LOGIN_STATUS",
       payload: "pending"
     })
-    // remember anonymized email
     dispatch(setSessionInfo("email", anonymizeEmail(validatedEmail)))
-
-    // send request
     axios(
       makeAPIRequest({
         url: ROUTE_API_LOGIN_EMAIL,
@@ -98,8 +105,6 @@ export const loginWithEmail = validatedEmail => {
       })
   }
 }
-
-// check if user is logged in
 export const verify = () => {
   return dispatch => {
     if (!localStorage.getItem("token"))
@@ -112,9 +117,6 @@ export const verify = () => {
         type: "USER.SET_STATUS",
         payload: "ok"
       })
-
-      // confirm that the session info saved in localStorage actually went through
-      // after 1 second - to ensure this fires AFTER setting the session info
       const delaySessionInfoConfirmation = setTimeout(() => {
         dispatch({ type: "USER.CONFIRM_SESSION_INFO" })
         clearTimeout(delaySessionInfoConfirmation)
@@ -122,8 +124,6 @@ export const verify = () => {
     }
   }
 }
-
-// remove token from local storage
 export const forget = () => {
   return dispatch => {
     localStorage.removeItem("token")
@@ -133,11 +133,8 @@ export const forget = () => {
     })
   }
 }
-
-// get user data matched to login credentials
 export const getInfo = () => {
   return dispatch => {
-    // read token and kick if none
     const token = localStorage.getItem("token")
     if (!token) return
 
@@ -192,8 +189,6 @@ export const setInfo = request => {
             url: "errors/user"
           })
         )
-
-        // register in Redux store
         dispatch({
           type: "USER.SET_STATUS",
           payload: "forbidden"
@@ -207,8 +202,6 @@ export const acceptInfo = () => {
     payload: "ok"
   }
 }
-
-// set user routes, notably redirect after login url
 export const setRoutes = routes => {
   return {
     type: "USER.SET_ROUTES",
@@ -220,40 +213,9 @@ export const resetRoutes = () => {
     type: "USER.RESET_ROUTES"
   }
 }
-
-// set user intent (i.e. user is about to use this part of the app)
 export const setIntent = intent => {
   return {
     type: "USER.SET_INTENT",
     payload: intent
-  }
-}
-
-// admin functions
-
-export const fetchUserList = (options = {}, page = 1, appendItems = false) => {
-  const params = {
-    "items-per-page": options.itemsPerPage || undefined,
-    page
-  }
-  return dispatch => {
-    const request = {
-      url: ROUTE_API_USERS,
-      params,
-      headers: {
-        Authorization: "JWT " + localStorage.getItem("token")
-      }
-    }
-
-    axios(makeAPIRequest(request))
-      .then(response => {
-        dispatch({
-          type: appendItems ? "ACCOUNTS.ADD_PAGE" : "ACCOUNTS.SET_PAGE",
-          payload: response.data
-        })
-      })
-      .catch(error => {
-        console.log(error)
-      })
   }
 }

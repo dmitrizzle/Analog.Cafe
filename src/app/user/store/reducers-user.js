@@ -1,23 +1,9 @@
-// constatns
-
-// set placeholders for accountList grid:
-
 import { ROUTE_URL_USER_LANDING } from "../constants/routes-session"
 
-let accountListDefaults = []
-for (var o = 0; o < 8; o++) {
-  accountListDefaults[o] = { id: o }
-}
-
-// retrieve previous session's stats
 const getLocalSessionInfo = () =>
   localStorage.getItem("session-info")
     ? JSON.parse(localStorage.getItem("session-info"))
     : {}
-
-// retrieve previous session's routes
-// this is useful for redirecting users to correct page
-// after they logged in via email
 const getLocalRoutes = () =>
   localStorage.getItem("routes")
     ? JSON.parse(localStorage.getItem("routes"))
@@ -41,11 +27,6 @@ const INITIAL_STATE = {
     method: getLocalSessionInfo().method || "",
     id: getLocalSessionInfo().id || "",
     login: getLocalSessionInfo().login || false
-  },
-
-  accountList: {
-    status: "loading",
-    items: accountListDefaults
   }
 }
 
@@ -125,7 +106,6 @@ export default (state = INITIAL_STATE, action) => {
         }
       }
       break
-
     case "USER.SET_INTENT":
       state = {
         ...state,
@@ -149,24 +129,6 @@ export default (state = INITIAL_STATE, action) => {
     case "USER.RESET_STATE":
       state = INITIAL_STATE
       break
-
-    // Admin
-    case "ACCOUNTS.SET_PAGE":
-      state = {
-        ...state,
-        accountList: action.payload
-      }
-      break
-    case "ACCOUNTS.ADD_PAGE":
-      state = {
-        ...state,
-        accountList: {
-          ...state.accountList,
-          items: [...state.accountList.items, ...action.payload.items]
-        }
-      }
-      break
-
     default:
       return state
   }
