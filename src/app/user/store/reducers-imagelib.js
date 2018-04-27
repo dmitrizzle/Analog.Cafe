@@ -11,15 +11,12 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "IMAGELIB.SET_PAGE":
-      state = {
-        ...state,
-        status: action.payload.status,
-        items: action.payload.items
-      }
+      state = action.payload
       break
     case "IMAGELIB.ADD_PAGE":
       state = {
         ...state,
+        ...action.payload,
         items: [...state.items, ...action.payload.items]
       }
       break

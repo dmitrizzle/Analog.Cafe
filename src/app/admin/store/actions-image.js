@@ -4,7 +4,7 @@ import axios from "axios"
 import { ROUTE_API_IMAGES } from "../../user/constants/routes-submission"
 import { makeAPIRequest } from "../../utils"
 
-export const deletePictureRecord = id => {
+export const deleteImageRecord = id => {
   let request
   request = {
     url: `${ROUTE_API_IMAGES}/${id}/delete`,
@@ -26,7 +26,7 @@ export const deletePictureRecord = id => {
   }
 }
 
-export const featurePicture = id => {
+export const featureImage = id => {
   let request
   request = {
     url: `${ROUTE_API_IMAGES}/${id}/feature`,
@@ -43,13 +43,13 @@ export const featurePicture = id => {
           ? alert(
               `Featured ${id}! The cache will take a couple of minutes to update.`
             )
-          : alert(`Failed to feature picture record.`)
+          : alert(`Failed to feature image record.`)
       })
       .catch(error => alert(`Error: ${error}`))
   }
 }
 
-export const unfeaturePicture = id => {
+export const unfeatureImage = id => {
   let request
   request = {
     url: `${ROUTE_API_IMAGES}/${id}/unfeature`,
@@ -66,7 +66,7 @@ export const unfeaturePicture = id => {
           ? alert(
               `Removed ${id} from featured list. The cache will take a couple of minutes to update.`
             )
-          : alert(`Failed to unfeature picture record.`)
+          : alert(`Failed to unfeature iamge record.`)
       })
       .catch(error => alert(`Error: ${error}`))
   }
