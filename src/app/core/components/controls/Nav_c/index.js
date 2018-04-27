@@ -3,7 +3,7 @@ import React from "react"
 
 import { CommonNav, ComposerNav } from "../Nav"
 import { Connection, NavWrapper } from "../Nav/styles"
-import { setIntent as setUserIntent } from "../../../../user/store/actions-user"
+import { setUserIntent } from "../../../../user/store/actions-user"
 
 // components
 

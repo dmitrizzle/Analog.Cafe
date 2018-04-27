@@ -1,11 +1,10 @@
-export const setView = view => {
+export const setNavView = view => {
   return {
     type: "NAV.SET_VIEW",
     payload: view
   }
 }
-
-export const setLocation = location => {
+export const setNavPositions = location => {
   return {
     type: "NAV.SET_LOCATION",
     payload: location

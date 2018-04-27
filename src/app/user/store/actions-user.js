@@ -10,27 +10,7 @@ import { anonymizeEmail } from "../utils/messages-session"
 import { makeAPIRequest } from "../../utils"
 import { setCard } from "../../core/store/actions-modal"
 
-//
-
-//
-
-//
-
-// NOTE: all functions in ALL actions should be reviewed and named for
-// better clarity
-
-//
-//
-///
-
-// /
-// /
-//
-// /
-// /
-// /
-
-const loginError = (type = "error") => {
+const LOGIN_ERROR = (type = "error") => {
   return {
     status: "ok",
     info: {
@@ -105,7 +85,7 @@ export const loginWithEmail = validatedEmail => {
       })
   }
 }
-export const verify = () => {
+export const verifyUser = () => {
   return dispatch => {
     if (!localStorage.getItem("token"))
       dispatch({
@@ -124,7 +104,7 @@ export const verify = () => {
     }
   }
 }
-export const forget = () => {
+export const forgetUser = () => {
   return dispatch => {
     localStorage.removeItem("token")
     dispatch({
@@ -133,7 +113,7 @@ export const forget = () => {
     })
   }
 }
-export const getInfo = () => {
+export const getUserInfo = () => {
   return dispatch => {
     const token = localStorage.getItem("token")
     if (!token) return
@@ -162,7 +142,7 @@ export const getInfo = () => {
 
         if (!error.response || !error.response.data) return
         dispatch(
-          setCard(loginError(error.response.data.message), {
+          setCard(LOGIN_ERROR(error.response.data.message), {
             url: "errors/user"
           })
         )
@@ -170,7 +150,7 @@ export const getInfo = () => {
   }
 }
 
-export const setInfo = request => {
+export const setUserInfo = request => {
   return dispatch => {
     axios(makeAPIRequest(request))
       .then(response => {
@@ -185,7 +165,7 @@ export const setInfo = request => {
       })
       .catch(error => {
         dispatch(
-          setCard(loginError(error.response.data.message), {
+          setCard(LOGIN_ERROR(error.response.data.message), {
             url: "errors/user"
           })
         )
@@ -196,24 +176,24 @@ export const setInfo = request => {
       })
   }
 }
-export const acceptInfo = () => {
+export const acceptUserInfo = () => {
   return {
     type: "USER.SET_STATUS",
     payload: "ok"
   }
 }
-export const setRoutes = routes => {
+export const setUserRoutes = routes => {
   return {
     type: "USER.SET_ROUTES",
     payload: routes
   }
 }
-export const resetRoutes = () => {
+export const resetUserRoutes = () => {
   return {
     type: "USER.RESET_ROUTES"
   }
 }
-export const setIntent = intent => {
+export const setUserIntent = intent => {
   return {
     type: "USER.SET_INTENT",
     payload: intent

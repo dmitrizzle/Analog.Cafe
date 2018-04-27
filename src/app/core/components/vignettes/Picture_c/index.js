@@ -7,7 +7,7 @@ import {
 } from "../../../../user/constants/rules-submission"
 import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
 import { getFroth } from "@roast-cms/image-froth"
-import { getInfo } from "../../../store/actions-picture"
+import { getPictureInfo } from "../../../store/actions-picture"
 import Picture from "../Picture"
 import PictureMenu from "../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"
 
@@ -82,7 +82,7 @@ class Figure extends React.PureComponent {
     if (!key) {
       this.setState({ src })
       // get image author
-      this.props.readOnly && this.props.getInfo(src)
+      this.props.readOnly && this.props.getPictureInfo(src)
     } else {
       import("localforage").then(localForage => {
         // localForageCache = localForage
@@ -181,8 +181,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    getInfo: src => {
-      dispatch(getInfo(src))
+    getPictureInfo: src => {
+      dispatch(getPictureInfo(src))
     }
   }
 }

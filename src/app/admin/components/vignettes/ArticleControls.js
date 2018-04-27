@@ -29,7 +29,7 @@ import {
 import { setCard } from "../../../core/store/actions-modal"
 import { setComposerHeader } from "../../../user/store/actions-composer"
 import { storeHeaderState } from "../../../user/utils/actions-submission"
-import { updateStatus as updateArticleStatus } from "../../../core/store/actions-article"
+import { updateArticleStatus } from "../../../core/store/actions-article"
 import Link from "../../../core/components/controls/Link"
 
 const TAGS = {

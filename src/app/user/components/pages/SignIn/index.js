@@ -16,8 +16,8 @@ import {
   ROUTE_API_LOGIN_TWITTER
 } from "../../../constants/routes-session"
 import {
-  verify as verifyUser,
-  getInfo as getUserInfo,
+  verifyUser,
+  getUserInfo,
   setSessionInfo,
   refreshSessionInfo
 } from "../../../store/actions-user"

@@ -17,8 +17,8 @@ import {
 } from "../../../constants/routes-article"
 import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
-  fetchPage,
-  setPage as setNextArticle
+  fetchArticlePage,
+  setArticlePage
 } from "../../../store/actions-article"
 import {
   getAbsoluteURLPath,
@@ -58,7 +58,7 @@ class Article extends React.PureComponent {
     }
   }
 
-  fetchPage = () => {
+  fetchArticlePage = () => {
     // do not fetch pages unless they are located in /zine or /submissions dir
     // otherwise on unmount the component will try to load any page, and return 404 errors
     if (
@@ -67,7 +67,7 @@ class Article extends React.PureComponent {
     )
       return
 
-    this.props.fetchPage({
+    this.props.fetchArticlePage({
       url:
         getSubmissionOrArticleRoute(this.props.history.location.pathname)
           .apiRoute +
@@ -100,8 +100,8 @@ class Article extends React.PureComponent {
     })
   }
   componentDidMount = () => {
-    this.unlisten = this.props.history.listen(() => this.fetchPage())
-    this.fetchPage()
+    this.unlisten = this.props.history.listen(() => this.fetchArticlePage())
+    this.fetchArticlePage()
     this.makeTag(this.props)
     this.setState({
       adminControls: this.props.user.info.role === "admin"
@@ -260,7 +260,7 @@ class Article extends React.PureComponent {
                   this.props.article.date && this.props.article.date.published
                 }
                 nextArticleHeading={nextArticleHeading =>
-                  this.props.setNextArticle({
+                  this.props.setArticlePage({
                     title: nextArticleHeading.title,
                     subtitle: nextArticleHeading.subtitle,
                     authors: nextArticleHeading.authors,
@@ -286,11 +286,11 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    fetchPage: request => {
-      dispatch(fetchPage(request))
+    fetchArticlePage: request => {
+      dispatch(fetchArticlePage(request))
     },
-    setNextArticle: nextArticle => {
-      dispatch(setNextArticle(nextArticle))
+    setArticlePage: nextArticle => {
+      dispatch(setArticlePage(nextArticle))
     }
   }
 }

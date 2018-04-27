@@ -23,10 +23,7 @@ import { redirectToSignIn } from "../../../utils/actions-session"
 import { resetComposer } from "../../../store/actions-composer"
 import { resetStatus } from "../../../../admin/store/actions-editor"
 import { setCard } from "../../../../core/store/actions-modal"
-import {
-  setRoutes as setLoginRedirectRoutes,
-  resetRoutes as resetLoginRedirectRoutes
-} from "../../../store/actions-user"
+import { setUserRoutes, resetUserRoutes } from "../../../store/actions-user"
 import {
   uploadSubmission,
   resetUploadProgress
@@ -72,7 +69,7 @@ class Upload extends React.PureComponent {
       // redirects
       redirectToSignIn(this.props)
     } else {
-      this.props.resetLoginRedirectRoutes()
+      this.props.resetUserRoutes()
 
       // construct submission data
       const submissionConsent = this.props.history.location.pathname.includes(
@@ -286,11 +283,11 @@ const mapDispatchToProps = dispatch => {
     resetStatus: () => {
       dispatch(resetStatus())
     },
-    setLoginRedirectRoutes: routes => {
-      dispatch(setLoginRedirectRoutes(routes))
+    setUserRoutes: routes => {
+      dispatch(setUserRoutes(routes))
     },
-    resetLoginRedirectRoutes: () => {
-      dispatch(resetLoginRedirectRoutes())
+    resetUserRoutes: () => {
+      dispatch(resetUserRoutes())
     },
     resetComposer: () => {
       dispatch(resetComposer())

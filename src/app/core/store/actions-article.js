@@ -8,40 +8,31 @@ import {
 } from "../constants/routes-article"
 import { makeAPIRequest } from "../../utils"
 
-// return
-export const setPage = page => {
+export const setArticlePage = page => {
   return {
     type: "ARTICLE.SET_PAGE",
     payload: page
   }
 }
-export const initPage = state => {
+export const initArticlePage = state => {
   return {
     type: "ARTICLE.INIT_PAGE",
     payload: state
   }
 }
 
-export const fetchPage = request => {
+export const fetchArticlePage = request => {
   return (dispatch, getState) => {
-    // do not load anything outside of API scope
     if (
       !request.url.includes(ROUTE_API_ARTICLES) &&
       !request.url.includes(ROUTE_API_SUBMISSIONS)
     )
       return
-
-    // get current state from store
     let articleState = getState().article
-
-    // do not load article twice in a arow
     if (articleState.requested.url === request.url) return
-
-    // pre-cook article title, when available
-    // (if it matches actual requested article)
     if (request.url.includes(articleState.slug))
       dispatch(
-        initPage({
+        initArticlePage({
           requested: request,
           title: articleState.title,
           subtitle: articleState.subtitle,
@@ -50,22 +41,18 @@ export const fetchPage = request => {
           tag: articleState.tag
         })
       )
-    else dispatch(initPage())
-
-    // add token to request, if available;
-    // this is for viewing pending submissions
+    else dispatch(initArticlePage())
     const token = localStorage.getItem("token")
     if (token)
       request.headers = {
         Authorization: "JWT " + token
       }
-
     axios(makeAPIRequest(request))
       .then(response => {
         response.data.content && response.data.content.raw
-          ? dispatch(setPage(response.data))
+          ? dispatch(setArticlePage(response.data))
           : dispatch(
-              initPage({
+              initArticlePage({
                 title: CARD_ERRORS.ARTICLE.title,
                 subtitle: CARD_ERRORS.ARTICLE.subtitle,
                 error: TEXT_ERRORS.CODE_204.error
@@ -74,7 +61,7 @@ export const fetchPage = request => {
       })
       .catch(error => {
         dispatch(
-          initPage({
+          initArticlePage({
             title: HEADER_ERRORS.ARTICLE.title,
             subtitle: HEADER_ERRORS.ARTICLE.subtitle,
             error
@@ -84,16 +71,13 @@ export const fetchPage = request => {
   }
 }
 
-export const updateStatus = request => {
+export const updateArticleStatus = request => {
   return dispatch => {
-    // add token to request, if available;
-    // this is for viewing pending submissions
     const token = localStorage.getItem("token")
     if (token)
       request.headers = {
         Authorization: "JWT " + token
       }
-
     axios(makeAPIRequest(request))
       .then(response => {
         response.data.status

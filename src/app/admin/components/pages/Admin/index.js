@@ -16,10 +16,10 @@ import {
   GridRow
 } from "../../../../user/components/controls/Grid"
 import {
-  deleteRecord as deleteImageRecord,
-  feature as featureImage,
-  unfeature as unfeatureImage
-} from "../../../../core/store/actions-picture"
+  deletePictureRecord,
+  featurePicture,
+  unfeaturePicture
+} from "../../../store/actions-picture"
 import { fetchImageLib } from "../../../../user/store/actions-imagelib"
 import { fetchUserList } from "../../../store/actions-admin"
 import { setCard } from "../../../../core/store/actions-modal"
@@ -78,16 +78,16 @@ class Admin extends React.PureComponent {
       `WARNING!\n\nThis will remove the document with this image's data from the database. This can not be undone. The image file itself will need to be deleted from Cloudinary separately. Type\n\n${id}\n\nto confirm.`
     )
     if (confirmDelete === id) {
-      this.props.deleteImageRecord(id)
+      this.props.deletePictureRecord(id)
     }
   }
   handleImageFeature = (id, event) => {
     event.preventDefault()
-    this.props.featureImage(id)
+    this.props.featurePicture(id)
   }
   handleImageUnfeature = (id, event) => {
     event.preventDefault()
-    this.props.unfeatureImage(id)
+    this.props.unfeaturePicture(id)
   }
 
   // images list pagination
@@ -363,14 +363,14 @@ const mapDispatchToProps = dispatch => {
     setCard: (info, request) => {
       dispatch(setCard(info, request))
     },
-    deleteImageRecord: id => {
-      dispatch(deleteImageRecord(id))
+    deletePictureRecord: id => {
+      dispatch(deletePictureRecord(id))
     },
-    featureImage: id => {
-      dispatch(featureImage(id))
+    featurePicture: id => {
+      dispatch(featurePicture(id))
     },
-    unfeatureImage: id => {
-      dispatch(unfeatureImage(id))
+    unfeaturePicture: id => {
+      dispatch(unfeaturePicture(id))
     }
   }
 }

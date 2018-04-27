@@ -14,11 +14,11 @@ import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
 } from "../../../constants/routes-list"
-import { fetchPage } from "../../../store/actions-list"
+import { fetchListPage } from "../../../store/actions-list"
 import { getFirstNameFromFull } from "../../../utils/messages-author"
 import { getListMeta } from "../../../utils/messages-list"
-import { setPage as setNextArticle } from "../../../store/actions-article"
-import { setIntent as setUserIntent } from "../../../../user/store/actions-user"
+import { setArticlePage } from "../../../store/actions-article"
+import { setUserIntent } from "../../../../user/store/actions-user"
 import Helmet from "../../vignettes/Helmet"
 import ListBlock from "../../styles/List"
 
@@ -46,7 +46,7 @@ class List extends React.PureComponent {
     // this timeout ensures that all events have been registered and only the
     // final one is followed through
     const controlledFetch = setTimeout(() => {
-      this.props.fetchPage(
+      this.props.fetchListPage(
         getListMeta(this.props.history.location.pathname, 1, this.listAPI)
           .request
       )
@@ -55,7 +55,7 @@ class List extends React.PureComponent {
   }
   handleLoadMore = event => {
     event.preventDefault()
-    this.props.fetchPage(
+    this.props.fetchListPage(
       getListMeta(
         this.props.history.location.pathname,
         parseInt(this.props.list.page.current, 0) + 1,
@@ -176,7 +176,7 @@ class List extends React.PureComponent {
             status={this.props.list.status}
             items={this.props.list.items}
             nextArticleHeading={nextArticleHeading =>
-              this.props.setNextArticle({
+              this.props.setArticlePage({
                 title: nextArticleHeading.title,
                 subtitle: nextArticleHeading.subtitle,
                 tag: nextArticleHeading.tag,
@@ -220,11 +220,11 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    fetchPage: (request, appendItems) => {
-      dispatch(fetchPage(request, appendItems))
+    fetchListPage: (request, appendItems) => {
+      dispatch(fetchListPage(request, appendItems))
     },
-    setNextArticle: nextArticle => {
-      dispatch(setNextArticle(nextArticle))
+    setArticlePage: nextArticle => {
+      dispatch(setArticlePage(nextArticle))
     },
     setUserIntent: intent => {
       dispatch(setUserIntent(intent))

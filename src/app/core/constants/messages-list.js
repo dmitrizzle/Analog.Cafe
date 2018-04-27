@@ -64,3 +64,36 @@ export const TEXT_ROUTE_LABELS = {
     title: APP_DESCRIPTION
   }
 }
+
+export const LIST_PLACEHOLDER = [
+  {
+    type: "placeholder",
+    tag: "████████",
+    title: "███",
+    id: "0000000",
+    author: {
+      name: "██████"
+    },
+    summary: "█ ████████ ██████ ████ ████ ██████████ ████ ████████████████ ██"
+  },
+  {
+    type: "placeholder",
+    tag: "████",
+    title: "████",
+    id: "0000001",
+    author: {
+      name: "█████"
+    },
+    summary: "█████ ████████████ ████████ ███ ███████████ ██████████████████"
+  },
+  {
+    type: "placeholder",
+    tag: "█████████",
+    title: "██",
+    id: "0000002",
+    author: {
+      name: "██"
+    },
+    summary: "█ ██████████ ██████ ██████ ███████████ ███ ███████████ █████████"
+  }
+]

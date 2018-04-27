@@ -10,15 +10,12 @@ import { DATA_GA_ID, HOST_RUNTIME, HOST_PROD } from "./constants"
 import { Modal } from "./core/components/controls/Modal"
 import { ROUTE_URL_USER_LANDING } from "./user/constants/routes-session"
 import { setCard as setModalCard } from "./core/store/actions-modal"
+import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import {
-  setView as setNavView,
-  setLocation as setNavLocation
-} from "./core/store/actions-nav"
-import {
-  verify as verifyUser,
-  getInfo as getUserInfo,
+  verifyUser,
+  getUserInfo,
   setConnectionStatus,
-  setIntent as setUserIntent
+  setUserIntent
 } from "./user/store/actions-user"
 import AppRoutes from "./core/components/routes/App"
 import Nav from "./core/components/controls/Nav_c"
@@ -127,17 +124,17 @@ class App extends React.PureComponent {
       case "/submit/compose":
       case "/submit/compose/":
         this.props.setNavView("COMPOSER")
-        this.props.setNavLocation({ bottom: false })
+        this.props.setNavPositions({ bottom: false })
         break
       case ROUTE_URL_USER_LANDING + "/edit":
       case ROUTE_URL_USER_LANDING + "/edit/":
-        this.props.setNavLocation({ top: false, bottom: false })
+        this.props.setNavPositions({ top: false, bottom: false })
         break
       case "/submit/confirm-full-consent":
       case "/submit/confirm-full-consent/":
       case "/submit/confirm-basic-consent/":
       case "/submit/confirm-basic-consent":
-        this.props.setNavLocation({
+        this.props.setNavPositions({
           top: false,
           bottom: false
         })
@@ -149,12 +146,12 @@ class App extends React.PureComponent {
           this.props.history.location.state &&
           this.props.history.location.state.status === "103" // already authenticated
         ) {
-          this.props.setNavLocation({
+          this.props.setNavPositions({
             top: false,
             bottom: false
           })
         } else {
-          this.props.setNavLocation({ top: false })
+          this.props.setNavPositions({ top: false })
         }
         break
       default:
@@ -164,13 +161,13 @@ class App extends React.PureComponent {
             this.props.history.location.state.status === "403")
         ) {
           this.props.setNavView("VISITOR")
-          this.props.setNavLocation({
+          this.props.setNavPositions({
             top: false,
             bottom: false
           })
         } else {
           this.props.setNavView("VISITOR")
-          this.props.setNavLocation({})
+          this.props.setNavPositions({})
         }
     }
   }
@@ -191,8 +188,8 @@ const mapDispatchToProps = dispatch => {
     setNavView: view => {
       dispatch(setNavView(view))
     },
-    setNavLocation: location => {
-      dispatch(setNavLocation(location))
+    setNavPositions: location => {
+      dispatch(setNavPositions(location))
     },
     verifyUser: () => {
       dispatch(verifyUser())

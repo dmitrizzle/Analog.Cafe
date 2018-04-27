@@ -1,3 +1,5 @@
+import { LIST_PLACEHOLDER } from "../constants/messages-list"
+
 const INITIAL_STATE = {
   status: "loading",
   filter: {
@@ -8,39 +10,7 @@ const INITIAL_STATE = {
     current: "1",
     total: "1"
   },
-  items: [
-    {
-      type: "placeholder",
-      tag: "████████",
-      title: "███",
-      id: "0000000",
-      author: {
-        name: "██████"
-      },
-      summary: "█ ████████ ██████ ████ ████ ██████████ ████ ████████████████ ██"
-    },
-    {
-      type: "placeholder",
-      tag: "████",
-      title: "████",
-      id: "0000001",
-      author: {
-        name: "█████"
-      },
-      summary: "█████ ████████████ ████████ ███ ███████████ ██████████████████"
-    },
-    {
-      type: "placeholder",
-      tag: "█████████",
-      title: "██",
-      id: "0000002",
-      author: {
-        name: "██"
-      },
-      summary:
-        "█ ██████████ ██████ ██████ ███████████ ███ ███████████ █████████"
-    }
-  ],
+  items: LIST_PLACEHOLDER,
   requested: {
     method: "get",
     params: {},

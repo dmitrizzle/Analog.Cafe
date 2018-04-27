@@ -1,32 +1,11 @@
+import { DOCUMENT_PLACEHOLDER } from "../constants/messages-article"
 import { TEXT_EMOJIS } from "../../constants"
 
 const INITIAL_STATE = {
   status: "loading",
   title: TEXT_EMOJIS.HUG_RIGHT,
   subtitle: "Loading…",
-  content: {
-    raw: {
-      document: {
-        nodes: [
-          {
-            object: "block",
-            type: "paragraph",
-            nodes: [
-              {
-                object: "text",
-                leaves: [
-                  {
-                    text:
-                      "█████████ █████ █████████ ██████████████ ███████████ ████████ █████ ██ █████████ █████ █████████ ██████████████ █████████████ ██████ ███ ██ ██████ █████ █████ █████████ ██████████████ ███████████ ████████ █████ ███████████ █████ █████████ █████████ █████ ███████████ ████████ █████ ███████████ █████ █████████ ██████████████ ███████████ ████████ █████ ███████████ █████ █████████ ██████████ █████████ █████ █████████ █ ████████ ████████████ █████████ ███████████ █████████████ █ ████████ █████ ██"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
+  content: DOCUMENT_PLACEHOLDER,
   requested: {
     method: "get",
     params: {},

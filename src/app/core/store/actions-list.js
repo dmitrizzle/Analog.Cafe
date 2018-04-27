@@ -8,8 +8,7 @@ import {
 } from "../constants/routes-list"
 import { makeAPIRequest } from "../../utils"
 
-// return
-export const setPage = (page, appendItems) => {
+export const setListPage = (page, appendItems) => {
   if (appendItems === false)
     return {
       type: "LIST.SET_PAGE",
@@ -21,26 +20,21 @@ export const setPage = (page, appendItems) => {
       payload: page
     }
 }
-export function initPage(state) {
+export function initListPage(state) {
   return {
     type: "LIST.INIT_PAGE",
     payload: state
   }
 }
 
-export const fetchPage = (request, appendItems = false) => {
+export const fetchListPage = (request, appendItems = false) => {
   return (dispatch, getState) => {
-    // do not load anything outside of API scope
     if (
       !request.url.includes(ROUTE_API_LIST) &&
       !request.url.includes(ROUTE_API_LIST_SUBMISSIONS)
     )
       return
-
-    // get current state from store
     let listState = getState().list
-
-    // do not load list more than once, escape loops
     if (
       listState.requested.url === request.url &&
       listState.requested.params.tag === request.params.tag &&
@@ -49,34 +43,29 @@ export const fetchPage = (request, appendItems = false) => {
       listState.requested.params.page === request.params.page
     )
       return
-
-    // authenticate user should they want to see protected content
-    // (i.e. thieir submissions)
     if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
       request.headers = {
         Authorization: "JWT " + localStorage.getItem("token")
       }
-
-    // reset list state (unless it's being paginated)
     if (!appendItems)
       dispatch(
-        initPage({
+        initListPage({
           requested: request
         })
       )
     axios(makeAPIRequest(request))
       .then(response => {
         if (response.data.page["items-total"] > 0)
-          dispatch(setPage(response.data, appendItems))
+          dispatch(setListPage(response.data, appendItems))
         else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
           dispatch(
-            initPage({
+            initListPage({
               error: CARD_ERRORS_SUBMISSIONS.LIST
             })
           )
         } else {
           dispatch(
-            initPage({
+            initListPage({
               error: CARD_ERRORS.LIST
             })
           )
@@ -84,7 +73,7 @@ export const fetchPage = (request, appendItems = false) => {
       })
       .catch(() => {
         dispatch(
-          initPage({
+          initListPage({
             error: CARD_ERRORS.LIST
           })
         )

@@ -1,10 +1,9 @@
-export default (
-  state = {
-    view: "VISITOR",
-    location: { top: true, bottom: true }
-  },
-  action
-) => {
+const INITIAL_STATE = {
+  view: "VISITOR",
+  location: { top: true, bottom: true }
+}
+
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "NAV.SET_VIEW":
       state = {

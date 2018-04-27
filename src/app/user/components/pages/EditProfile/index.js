@@ -15,9 +15,9 @@ import {
 import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { getProfileButtons } from "../../../utils/messages-profile"
 import {
-  getInfo as getUserInfo,
-  setInfo as setUserInfo,
-  acceptInfo as acceptUserInfo
+  getUserInfo,
+  setUserInfo,
+  acceptUserInfo
 } from "../../../store/actions-user"
 import { setCard } from "../../../../core/store/actions-modal"
 import CardEditableProfile from "../../../../core/components/controls/Card/components/EditableProfile"

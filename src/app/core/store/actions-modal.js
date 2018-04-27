@@ -4,7 +4,6 @@ import { CARD_ERRORS } from "../constants/messages-"
 import { TEXT_ERRORS } from "../../constants"
 import { makeAPIRequest } from "../../utils"
 
-// return
 export const initCard = state => {
   return {
     type: "MODAL.INIT_CARD",
@@ -18,7 +17,6 @@ export const hideCard = () => {
     payload: {}
   }
 }
-
 export const setCard = (info, request) => {
   return dispatch => {
     dispatch(
@@ -43,8 +41,6 @@ export const fetchCard = request => {
     )
     axios(makeAPIRequest(request))
       .then(response => {
-        // every card should have a title and text body or an image
-        // if it's an author's card it could be blank though
         if (
           response.data.info.title &&
           (response.data.info.text ||

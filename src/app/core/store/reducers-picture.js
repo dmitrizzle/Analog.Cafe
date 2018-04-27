@@ -1,17 +1,16 @@
-export default (
-  state = {
-    default: {
-      status: "loading",
-      info: {
-        author: {
-          name: "Finding image author…",
-          id: ""
-        }
+const INITIAL_STATE = {
+  default: {
+    status: "loading",
+    info: {
+      author: {
+        name: "Finding image author…",
+        id: ""
       }
     }
-  },
-  action
-) => {
+  }
+}
+
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "PICTURE.GET_INFO":
       state = {
