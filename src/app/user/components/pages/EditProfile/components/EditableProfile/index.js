@@ -5,12 +5,12 @@ import {
   CardButtonEditable,
   CardHeaderEditable
 } from "./styles"
-import { CardFlattened } from "../../styles"
+import { CardFlattened } from "../../../../../../core/components/controls/Card/styles"
 import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
 } from "../../../../../../user/constants/rules-submission"
-import { PicturePlaceholder } from "../../../../vignettes/Picture/components/PicturePlaceholder"
+import { PicturePlaceholder } from "../../../../../../core/components/vignettes/Picture/components/PicturePlaceholder"
 import { SubtitleInput } from "../../../../../../user/components/forms/InputStyles"
 import { makeFroth } from "../../../../../../utils"
 

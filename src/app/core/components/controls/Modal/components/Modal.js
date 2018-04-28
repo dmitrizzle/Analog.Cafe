@@ -1,8 +1,9 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { CardModal, ModalOverlay } from "../../Card/components/Modal"
+import { CardModal } from "./Card"
 import { HOST_API, HOST_RUNTIME } from "../../../../../constants"
+import { ModalOverlay } from "./Card/styles"
 import { hideCard } from "../../../../store/actions-modal"
 
 // return
@@ -27,7 +28,6 @@ const Modal = props => {
     )
       props.hideCard()
   }
-
   return (
     <ModalOverlay
       id="modal-overlay"

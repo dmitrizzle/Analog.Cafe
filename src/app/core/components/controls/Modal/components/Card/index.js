@@ -1,8 +1,8 @@
 import React from "react"
 
+import { Card } from "../../../Card"
+
 // styles
-import { Card } from "../../"
-export { ModalOverlay } from "./styles"
 
 // return
 export const CardModal = props => {

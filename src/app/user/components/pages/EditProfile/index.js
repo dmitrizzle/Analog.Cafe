@@ -11,16 +11,16 @@ import {
   ROUTE_API_USER_PROFILE,
   ROUTE_URL_USER_LANDING
 } from "../../../constants/routes-session"
+import {
+  acceptUserInfo,
+  getUserInfo,
+  setUserInfo
+} from "../../../store/actions-user"
 import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { getProfileButtons } from "../../../utils/messages-profile"
-import {
-  getUserInfo,
-  setUserInfo,
-  acceptUserInfo
-} from "../../../store/actions-user"
 import { setCard } from "../../../../core/store/actions-modal"
 import Button from "../../../../core/components/controls/Button/components/Button"
-import CardEditableProfile from "../../../../core/components/controls/Card/components/EditableProfile"
+import CardEditableProfile from "./components/EditableProfile"
 import Forbidden from "../../../../core/components/pages/Forbidden"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
 
