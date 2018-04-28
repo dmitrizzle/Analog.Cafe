@@ -1,62 +1,68 @@
 import { TEXT_EMOJIS } from "../../constants"
 
+const NEVERMIND_BUTTON = {
+  to: "#",
+  text: "Nevermind",
+  branded: true
+}
 export const CARD_DIALOGUES = {
-  OVERWRITE_DRAFT: {
-    info: {
-      title: "Overwrite Warning",
-      text:
-        "Looks like you are currently editing another draft on this device. Do you want to overwrite it by editing this article instead? This can not be undone.",
-      buttons: [
-        {
-          to: "/submit/compose",
-          text: "See My Current Draft",
-          branded: true
-        },
-        {
-          to: "#overwrite",
-          text: TEXT_EMOJIS.KEY + " Overwrite"
-        }
-      ]
-    },
-    id: "hints/text-in-compsoer"
+  OVERWRITE_DRAFT: unlockFunction => {
+    return {
+      info: {
+        title: "Overwrite Warning",
+        text:
+          "Looks like you are currently editing another draft on this device. Do you want to overwrite it by editing this article instead? This can not be undone.",
+        buttons: [
+          {
+            to: "/submit/compose",
+            text: "See My Current Draft",
+            branded: true
+          },
+          {
+            to: "#overwrite",
+            onClick: event => unlockFunction(event, "allowOverwrite"),
+            text: TEXT_EMOJIS.KEY + " Unlock"
+          }
+        ]
+      },
+      id: "hints/text-in-compsoer"
+    }
   },
-  REJECT: {
-    info: {
-      title: "Are You Sure?",
-      text:
-        "Once you reject this submission the author will get an email notifying them of this event. Someone’s gonna be disappointed!",
-      buttons: [
-        {
-          to: "#",
-          text: "Nevermind",
-          branded: true
-        },
-        {
-          to: "#reject",
-          text: TEXT_EMOJIS.KEY + " Reject Submission"
-        }
-      ]
-    },
-    id: "hints/reject-submission"
+  REJECT: unlockFunction => {
+    return {
+      info: {
+        title: "Are You Sure?",
+        text:
+          "Once you reject this submission the author will get an email notifying them of this event. Someone’s gonna be disappointed!",
+        buttons: [
+          NEVERMIND_BUTTON,
+          {
+            to: "#reject",
+            onClick: event => unlockFunction(event, "allowReject"),
+            text: TEXT_EMOJIS.KEY + " Unlock"
+          }
+        ]
+      },
+      id: "hints/reject-submission"
+    }
   },
-  PUBLISH: {
-    info: {
-      title: "Are You Sure?",
-      text:
-        "Please confirm that you want this article to go live. This will trigger an immediate RSS feed update which will send an update to various channels and eventually the email list. This can not be undone. You can un-publish this article later, but the message will be already out.",
-      buttons: [
-        {
-          to: "#",
-          text: "Nevermind",
-          branded: true
-        },
-        {
-          to: "#publish",
-          text: TEXT_EMOJIS.KEY + " Publish Now"
-        }
-      ]
-    },
-    id: "hints/publish-submission"
+  PUBLISH: unlockFunction => {
+    return {
+      info: {
+        title: "Are You Sure?",
+        text:
+          "Please confirm that you want this article to go live. This will trigger an immediate RSS feed update which will send an update to various channels and eventually the email list. This can not be undone. You can un-publish this article later, but the message will be already out.",
+        buttons: [
+          NEVERMIND_BUTTON,
+          {
+            to: "#publish",
+            onClick: event => unlockFunction(event, "allowPublish"),
+            text: TEXT_EMOJIS.KEY + " Unlock"
+          }
+        ]
+      },
+      id: "hints/publish-submission"
+    }
   },
   SAVE_EDITS: {
     info: {

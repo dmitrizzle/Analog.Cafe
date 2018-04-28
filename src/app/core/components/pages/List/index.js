@@ -6,7 +6,7 @@ import { withRouter } from "react-router"
 
 import { Article, Section } from "../../styles/ArticleStyles"
 import { Button } from "../../controls/Button"
-import { CARD_ERRORS } from "../../../constants/messages-"
+import { HEADER_ERRORS } from "../../../../constants"
 import { ListDescription, ListHeader } from "../../vignettes/ListDescription"
 import { ModalDispatch } from "../../controls/Modal"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
@@ -161,8 +161,8 @@ class List extends React.PureComponent {
             </ListHeader>
           ) : (
             <ListHeader>
-              <em>{CARD_ERRORS.LIST_OFFLINE.title}</em>{" "}
-              {CARD_ERRORS.LIST_OFFLINE.emoji}
+              <em>{HEADER_ERRORS.LIST_OFFLINE.title}</em>{" "}
+              {HEADER_ERRORS.LIST_OFFLINE.emoji}
             </ListHeader>
           )}
         </ListDescription>

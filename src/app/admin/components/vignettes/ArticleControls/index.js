@@ -27,29 +27,16 @@ import StatusExplanation from "./components/StatusExplanation"
 class AdminControls extends React.PureComponent {
   constructor(props) {
     super(props)
-    const hash = window.location.hash
     this.state = {
-      publishControls: false,
       publishAs: "",
-      allowOverwrite: hash === "#overwrite" || !loadTextContent().length > 0,
-      allowReject: hash === "#reject",
-      allowPublish: hash === "#publish",
-      allowSync: hash === "#sync"
+      publishControls: false,
+      allowOverwrite: false,
+      allowReject: false,
+      allowPublish: false
+      // allowSync: false,
     }
   }
-  componentDidMount = () => {
-    this.setState({
-      allowOverwrite: window.location.hash
-    })
-  }
   componentWillReceiveProps = nextProps => {
-    const hash = window.location.hash
-    this.setState({
-      allowOverwrite: hash === "#overwrite" || !loadTextContent().length > 0,
-      allowReject: hash === "#reject",
-      allowPublish: hash === "#publish",
-      allowSync: hash === "#sync"
-    })
     if (
       this.props.editor.reject.status === nextProps.editor.reject.status &&
       this.props.editor.publish.status === nextProps.editor.publish.status
@@ -70,11 +57,14 @@ class AdminControls extends React.PureComponent {
       publishAs: ""
     })
   }
+
   handleEdit = event => {
     event.preventDefault()
     const isComposerEmpty = !loadTextContent().length > 0
     if (!isComposerEmpty && !this.state.allowOverwrite) {
-      this.props.setCard(CARD_DIALOGUES.OVERWRITE_DRAFT)
+      this.props.setCard(
+        CARD_DIALOGUES.OVERWRITE_DRAFT(this.handleUnlockFunction)
+      )
       return
     }
     const header = {
@@ -90,7 +80,30 @@ class AdminControls extends React.PureComponent {
     )
     this.props.history.push("/submit/compose")
   }
-  handlePublishControl = event => {
+  handleRejection = event => {
+    event.preventDefault()
+    if (!this.state.allowReject) {
+      this.props.setCard(CARD_DIALOGUES.REJECT(this.handleUnlockFunction))
+      return
+    }
+    this.props.rejectSubmission(this.props.article.id)
+  }
+  handlePublishNow = event => {
+    event.preventDefault()
+    if (!this.state.allowPublish) {
+      this.props.setCard(CARD_DIALOGUES.PUBLISH(this.handleUnlockFunction))
+      return
+    }
+    this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
+  }
+  handleUnlockFunction = (event, functionName) => {
+    event.preventDefault()
+    this.setState({
+      [functionName]: true
+    })
+  }
+
+  handlePublishControls = event => {
     event.preventDefault()
     this.setState({
       publishControls: !this.state.publishControls
@@ -101,22 +114,6 @@ class AdminControls extends React.PureComponent {
     this.setState({
       publishAs: tag === this.state.publishAs ? "" : tag
     })
-  }
-  handleRejection = event => {
-    event.preventDefault()
-    if (!this.state.allowReject) {
-      this.props.setCard(CARD_DIALOGUES.REJECT)
-      return
-    }
-    this.props.rejectSubmission(this.props.article.id)
-  }
-  handlePublishNow = event => {
-    event.preventDefault()
-    if (!this.state.allowPublish) {
-      this.props.setCard(CARD_DIALOGUES.PUBLISH)
-      return
-    }
-    this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
   }
   handleSync = event => {
     event.preventDefault()
@@ -135,7 +132,7 @@ class AdminControls extends React.PureComponent {
         edit={this.handleEdit}
         sync={this.handleSync}
         reject={this.handleRejection}
-        showPublishControls={this.handlePublishControl}
+        showPublishControls={this.handlePublishControls}
         stateAllowOverwrite={this.state.allowOverwrite}
         stateAllowSync={this.state.allowSync}
         stateAllowReject={this.state.allowReject}
