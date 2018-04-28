@@ -6,8 +6,8 @@ import { Email } from "../vignettes/EmailSnippet"
 import { ModalDispatch } from "../controls/Modal"
 import { TEXT_LABELS } from "../../constants/messages-"
 import { makeFroth } from "../../../utils"
-import ArticleActions from "../controls/Card/components/ArticleActions"
 import Figure from "../vignettes/Picture"
+import FollowButtons from "../controls/ArticleActions/components/FollowButtons"
 import Heading from "../vignettes/ArticleHeading"
 import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"
@@ -183,7 +183,7 @@ export default () => {
         </p>
         <MailChimpPrefill buttonText={TEXT_LABELS.SUBSCRIBE} />
 
-        <ArticleActions mode="follow" />
+        <FollowButtons />
         <p>
           If you have a question, suggestion or just want to chat, feel free to
           follow, message, or email <Email />

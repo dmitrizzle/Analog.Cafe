@@ -1,3 +1,13 @@
+import React from "react"
+
+import { CardCaption, CardFlattened } from "../../Card/styles"
+import { PicturePlaceholder } from "../../../vignettes/Picture/components/PicturePlaceholder"
+import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
+import { getAuthorListStringFromArray } from "../../../../utils/messages-author"
+import { makeFroth } from "../../../../../utils"
+import Link from "../../Link"
+import LinkButton from "../../Button/components/LinkButton"
+
 const nextArticlePreload = nextArticle => {
   return {
     title: nextArticle.title,
@@ -22,8 +32,6 @@ export default props => {
                   props.nextArticleHeading(
                     nextArticlePreload(props.nextArticle)
                   )
-
-                  // async load Google Analytics module
                   import("react-ga").then(ReactGA => {
                     ReactGA.event({
                       category: "Navigation",
@@ -69,8 +77,6 @@ export default props => {
               to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
               onClick={() => {
                 props.nextArticleHeading(nextArticlePreload(props.nextArticle))
-
-                // async load Google Analytics module
                 import("react-ga").then(ReactGA => {
                   ReactGA.event({
                     category: "Navigation",

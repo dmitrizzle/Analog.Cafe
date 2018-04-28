@@ -30,7 +30,7 @@ import {
 } from "../../../utils/messages-author"
 import { getTitleFromSlug } from "../../../utils/messages-"
 import { makeFroth } from "../../../../utils"
-import ArticleActions from "../../controls/Card/components/ArticleActions"
+import ArticleActions from "../../controls/ArticleActions"
 import Heading from "../../vignettes/ArticleHeading"
 import Helmet from "../../vignettes/Helmet"
 import Link from "../../controls/Link"
