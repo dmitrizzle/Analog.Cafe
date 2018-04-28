@@ -18,6 +18,13 @@ import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import ImageAdmin from "./components/ImageAdmin"
 import UserAdmin from "./components/UserAdmin"
 
+const TEXT_CONFIRM_DELETE = id => {
+  return (
+    `WARNING!\n\nThis will remove the document with this image's data from ` +
+    `the database. This can not be undone. The image file itself will need ` +
+    `to be deleted from Cloudinary separately. Type\n\n${id}\n\nto confirm.`
+  )
+}
 const GRID_ROWS = 4
 const GRID_CELLS = 16
 let rowIndex = []
@@ -75,11 +82,7 @@ class Admin extends React.PureComponent {
   }
   handleImageDelete = (id, event) => {
     event.preventDefault()
-    const confirmDelete = prompt(
-      `WARNING!\n\nThis will remove the document with this image's data from ` +
-        `the database. This can not be undone. The image file itself will need ` +
-        `to be deleted from Cloudinary separately. Type\n\n${id}\n\nto confirm.`
-    )
+    const confirmDelete = prompt(TEXT_CONFIRM_DELETE(id))
     if (confirmDelete === id) {
       this.props.deleteImageRecord(id)
     }
