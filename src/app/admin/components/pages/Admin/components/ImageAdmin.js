@@ -1,15 +1,13 @@
+import { ButtonStrip } from "@roast-cms/react-button-beans"
 import React from "react"
 
 import { Button } from "../../../../../core/components/controls/Button"
-import {
-  ButtonStrip,
-  Item
-} from "../../../../../core/components/controls/ButtonStrip"
 import { GridButtonImage } from "../../../../../user/components/controls/Grid"
 import {
   GridContainer,
   GridRow
 } from "../../../../../user/components/controls/Grid/styles"
+import ButtonStripItem from "../../../../../core/components/controls/Button/components/ButtonStripItem"
 
 export default props => {
   return [
@@ -17,7 +15,7 @@ export default props => {
       <h3>Images.</h3>
       <ButtonStrip style={{ margin: ".5em auto" }}>
         <div>
-          <Item
+          <ButtonStripItem
             left
             inverse={
               !props.stateImageList.options.featured &&
@@ -26,8 +24,8 @@ export default props => {
             onClick={view => props.imagesSwitchView("all")}
           >
             All
-          </Item>
-          <Item
+          </ButtonStripItem>
+          <ButtonStripItem
             inverse={
               !props.stateImageList.options.featured &&
               props.stateImageList.options.fullConsent
@@ -35,8 +33,8 @@ export default props => {
             onClick={view => props.imagesSwitchView("open")}
           >
             Open
-          </Item>
-          <Item
+          </ButtonStripItem>
+          <ButtonStripItem
             right
             inverse={
               props.stateImageList.options.featured &&
@@ -45,7 +43,7 @@ export default props => {
             onClick={view => props.imagesSwitchView("feature")}
           >
             Featured
-          </Item>
+          </ButtonStripItem>
         </div>
       </ButtonStrip>
     </div>,

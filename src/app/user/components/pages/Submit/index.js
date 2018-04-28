@@ -4,10 +4,10 @@ import {
   Article,
   Section
 } from "../../../../core/components/styles/ArticleStyles"
-import { ButtonGroup } from "../../../../core/components/controls/Button/components/ButtonGroup"
 import { Caption } from "../../../../core/components/styles/CaptionStyles"
 import { LinkButton } from "../../../../core/components/controls/Button"
 import { makeFroth } from "../../../../utils"
+import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import Figure from "../../../../core/components/vignettes/Picture"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import Helmet from "../../../../core/components/vignettes/Helmet"

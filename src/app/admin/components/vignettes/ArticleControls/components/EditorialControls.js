@@ -1,10 +1,8 @@
+import { ButtonStrip } from "@roast-cms/react-button-beans"
 import React from "react"
 
-import {
-  ButtonStrip,
-  Item
-} from "../../../../../core/components/controls/ButtonStrip"
 import { TEXT_EMOJIS } from "../../../../../constants"
+import ButtonStripItem from "../../../../../core/components/controls/Button/components/ButtonStripItem"
 
 export default props => {
   return (
@@ -16,7 +14,7 @@ export default props => {
       }}
     >
       <div>
-        <Item
+        <ButtonStripItem
           left
           onClick={props.edit}
           style={{
@@ -29,23 +27,26 @@ export default props => {
               : TEXT_EMOJIS.UNLOCKED}
           </span>{" "}
           Edit
-        </Item>
+        </ButtonStripItem>
         {props.article.status === "published"
           ? [
-              <Item key="ButtonStrip_Item_update" onClick={props.sync}>
+              <ButtonStripItem
+                key="ButtonStrip_Item_update"
+                onClick={props.sync}
+              >
                 <span role="img" aria-label="(Un)Locked button">
                   {props.stateAllowSync
                     ? TEXT_EMOJIS.LOCKED
                     : TEXT_EMOJIS.UNLOCKED}
                 </span>{" "}
                 Sync
-              </Item>,
-              <Item key="ButtonStrip_Item_unpublish" right>
+              </ButtonStripItem>,
+              <ButtonStripItem key="ButtonStrip_Item_unpublish" right>
                 Unpublish
-              </Item>
+              </ButtonStripItem>
             ]
           : [
-              <Item
+              <ButtonStripItem
                 key="ButtonStrip_Item_reject"
                 onClick={props.reject}
                 inverse={props.editor.reject.id === props.article.id}
@@ -61,8 +62,8 @@ export default props => {
                     : TEXT_EMOJIS.UNLOCKED}
                 </span>{" "}
                 Reject
-              </Item>,
-              <Item
+              </ButtonStripItem>,
+              <ButtonStripItem
                 right
                 inverse={props.statePublishControls}
                 style={
@@ -80,7 +81,7 @@ export default props => {
                 {props.article.status !== "scheduled"
                   ? "Publish"
                   : "Edit Schedule"}
-              </Item>
+              </ButtonStripItem>
             ]}
       </div>
     </ButtonStrip>

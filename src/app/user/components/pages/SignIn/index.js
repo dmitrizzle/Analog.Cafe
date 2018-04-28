@@ -6,7 +6,6 @@ import {
   Article,
   Section
 } from "../../../../core/components/styles/ArticleStyles"
-import { ButtonGroup } from "../../../../core/components/controls/Button/components/ButtonGroup"
 import {
   FacebookLinkButton,
   TwitterLinkButton
@@ -22,6 +21,7 @@ import {
   refreshSessionInfo
 } from "../../../store/actions-user"
 import AlreadyAuthenticated from "../Error/AlreadyAuthenticated"
+import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import SignInWithEmail from "../../forms/SigninWithEmail"

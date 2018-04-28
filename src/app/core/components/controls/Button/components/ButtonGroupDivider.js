@@ -1,7 +1,6 @@
-// styles
 import styled from "styled-components"
 
-export const ButtonGroupDivider = styled.div`
+export default styled.div`
   border-bottom: ${props => props.theme.elements.thickBorder};
   width: 100%;
 `

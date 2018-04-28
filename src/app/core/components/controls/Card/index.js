@@ -1,6 +1,5 @@
 import React from "react"
 
-import { ButtonGroupDivider } from "../Button/components/ButtonGroupDivider"
 import {
   Card as CardElement,
   CardButton,
@@ -10,6 +9,7 @@ import {
 import { PicturePlaceholder } from "../../vignettes/Picture/components/PicturePlaceholder"
 import { QuickSubscribe } from "../../../../user/components/forms/Subscribe"
 import { makeFroth } from "../../../../utils"
+import ButtonGroupDivider from "../Button/components/ButtonGroupDivider"
 
 // return
 export const Card = props => {

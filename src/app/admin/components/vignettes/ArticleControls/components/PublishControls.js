@@ -1,12 +1,10 @@
+import { ButtonStrip } from "@roast-cms/react-button-beans"
 import React from "react"
 
 import { Button } from "../../../../../core/components/controls/Button"
-import {
-  ButtonStrip,
-  Item
-} from "../../../../../core/components/controls/ButtonStrip"
 import { CardFlattened } from "../../../../../core/components/controls/Card/styles"
 import { TEXT_EMOJIS } from "../../../../../constants"
+import ButtonStripItem from "../../../../../core/components/controls/Button/components/ButtonStripItem"
 
 const TAGS = {
   story: "Story",
@@ -31,7 +29,7 @@ export default props => {
           {Object.keys(TAGS).map((key, i) => {
             let last = i === Object.keys(TAGS).length - 1
             return (
-              <Item
+              <ButtonStripItem
                 left={i === 0}
                 right={last}
                 key={key}
@@ -41,7 +39,7 @@ export default props => {
                 to={`#${key}`}
               >
                 {TAGS[key]}
-              </Item>
+              </ButtonStripItem>
             )
           })}
         </div>

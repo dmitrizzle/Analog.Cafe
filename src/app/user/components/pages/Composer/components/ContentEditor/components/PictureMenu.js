@@ -1,10 +1,8 @@
+import { ButtonStrip } from "@roast-cms/react-button-beans"
 import React from "react"
 import styled from "styled-components"
 
-import {
-  ButtonStrip,
-  Item
-} from "../../../../../../../core/components/controls/ButtonStrip"
+import ButtonStripItem from "../../../../../../../core/components/controls/Button/components/ButtonStripItem"
 
 // components
 
@@ -27,7 +25,7 @@ export default props => {
     <PictureMenu style={{ pointerEvents: "none" }}>
       <ButtonStrip style={{ margin: "0 auto", pointerEvents: "auto" }}>
         <div>
-          <Item
+          <ButtonStripItem
             onMouseDown={event => {
               event.preventDefault()
               props.removePicture()
@@ -36,8 +34,8 @@ export default props => {
             inverse
           >
             Delete
-          </Item>
-          <Item
+          </ButtonStripItem>
+          <ButtonStripItem
             onMouseDown={event => {
               event.preventDefault()
               props.featurePicture()
@@ -47,7 +45,7 @@ export default props => {
             inverse
           >
             Resize
-          </Item>
+          </ButtonStripItem>
         </div>
       </ButtonStrip>
     </PictureMenu>

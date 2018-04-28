@@ -8,9 +8,6 @@ import React from "react"
 
 import Link from "../Link"
 
-// direct exports
-export { ButtonStyles } from "@roast-cms/react-button-beans"
-
 const Loader = Loadable({
   loader: () => import("../../icons/Loader"),
   loading: () => null,

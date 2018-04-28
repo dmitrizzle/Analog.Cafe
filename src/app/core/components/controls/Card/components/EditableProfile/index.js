@@ -1,11 +1,11 @@
 import React from "react"
 
 import {
-  CardFlattened,
   CardCaptionEditable,
   CardButtonEditable,
   CardHeaderEditable
 } from "./styles"
+import { CardFlattened } from "../../styles"
 import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT

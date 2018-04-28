@@ -6,7 +6,6 @@ import Facebook from "../../../icons/Facebook"
 import Instagram from "../../../icons/Instagram"
 import Twitter from "../../../icons/Twitter"
 
-// css
 const brandButtonStyles = css`
   color: ${props => props.theme.color.background()} !important;
   svg {
@@ -33,7 +32,6 @@ const instagramButtonStyles = css`
   }
 `
 
-// styled button links
 const StyledTwitterLinkButton = styled(
   LinkButton
 )`${brandButtonStyles}${twitterButtonStyles}`
