@@ -173,7 +173,6 @@ class Admin extends React.PureComponent {
   }
 }
 
-// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     fetchImageLib: (options, page, appendItems) => {

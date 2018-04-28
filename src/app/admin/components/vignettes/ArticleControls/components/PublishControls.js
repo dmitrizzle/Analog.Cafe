@@ -1,9 +1,9 @@
 import { ButtonStrip } from "@roast-cms/react-button-beans"
 import React from "react"
 
-import { Button } from "../../../../../core/components/controls/Button"
 import { CardFlattened } from "../../../../../core/components/controls/Card/styles"
 import { TEXT_EMOJIS } from "../../../../../constants"
+import Button from "../../../../../core/components/controls/Button/components/Button"
 import ButtonStripItem from "../../../../../core/components/controls/Button/components/ButtonStripItem"
 
 const TAGS = {

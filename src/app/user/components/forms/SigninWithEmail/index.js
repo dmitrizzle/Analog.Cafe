@@ -1,12 +1,12 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { Button } from "../../../../core/components/controls/Button"
 import { CARD_ERRORS } from "../../../constants/messages-session"
 import { Form } from "../FormStyles"
 import { loginWithEmail } from "../../../store/actions-user"
 import { setCard } from "../../../../core/store/actions-modal"
 import { validateEmail } from "../../../utils/messages-session"
+import Button from "../../../../core/components/controls/Button/components/Button"
 import EmailInput from "../EmailInput"
 
 class SigninWithEmail extends React.PureComponent {

@@ -2,7 +2,6 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { Article } from "../../../../core/components/styles/ArticleStyles"
-import { Button } from "../../../../core/components/controls/Button"
 import { CARD_ERRORS } from "../../../constants/messages-submission"
 import {
   INPUT_SUMMARY_LIMIT,
@@ -20,6 +19,7 @@ import {
   acceptUserInfo
 } from "../../../store/actions-user"
 import { setCard } from "../../../../core/store/actions-modal"
+import Button from "../../../../core/components/controls/Button/components/Button"
 import CardEditableProfile from "../../../../core/components/controls/Card/components/EditableProfile"
 import Forbidden from "../../../../core/components/pages/Forbidden"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"

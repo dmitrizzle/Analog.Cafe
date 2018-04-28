@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components"
 
-import { LinkButton } from "../Button"
 import { Sidenote } from "../../styles/CaptionStyles"
 import { TEXT_EMOJIS } from "../../../../constants"
+import LinkButton from "../Button/components/LinkButton"
 
 // css
 export const CardButtonStyles = css`

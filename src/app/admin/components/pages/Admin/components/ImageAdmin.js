@@ -1,12 +1,12 @@
 import { ButtonStrip } from "@roast-cms/react-button-beans"
 import React from "react"
 
-import { Button } from "../../../../../core/components/controls/Button"
 import { GridButtonImage } from "../../../../../user/components/controls/Grid"
 import {
   GridContainer,
   GridRow
 } from "../../../../../user/components/controls/Grid/styles"
+import Button from "../../../../../core/components/controls/Button/components/Button"
 import ButtonStripItem from "../../../../../core/components/controls/Button/components/ButtonStripItem"
 
 export default props => {

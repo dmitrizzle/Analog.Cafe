@@ -24,7 +24,7 @@ import EditorialControls from "./components/EditorialControls"
 import PublishControls from "./components/PublishControls"
 import StatusExplanation from "./components/StatusExplanation"
 
-class AdminControls extends React.PureComponent {
+class ArticleControls extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -193,5 +193,5 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(AdminControls)
+  connect(mapStateToProps, mapDispatchToProps)(ArticleControls)
 )

@@ -1,9 +1,9 @@
 import React from "react"
 import styled, { css } from "styled-components"
 
-import { LinkButton } from ".."
 import Facebook from "../../../icons/Facebook"
 import Instagram from "../../../icons/Instagram"
+import LinkButton from "./LinkButton"
 import Twitter from "../../../icons/Twitter"
 
 const brandButtonStyles = css`

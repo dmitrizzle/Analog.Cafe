@@ -16,7 +16,6 @@ import {
   Title
 } from "../../../../core/components/styles/ArticleStyles"
 import { CARD_ERRORS } from "../../../constants/messages-submission"
-import { LinkButton } from "../../../../core/components/controls/Button"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
@@ -30,6 +29,7 @@ import {
 } from "../../../store/actions-submission"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
+import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 
 // constants
 const STATUS_MESSAGES = {

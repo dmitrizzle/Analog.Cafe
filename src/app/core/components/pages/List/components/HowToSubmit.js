@@ -2,7 +2,7 @@ import React from "react"
 
 import { Article, Section } from "../../../styles/ArticleStyles"
 import { Figure } from "../../../vignettes/Picture/styles"
-import { LinkButton } from "../../../controls/Button"
+import LinkButton from "../../../controls/Button/components/LinkButton"
 
 export default () => {
   return (

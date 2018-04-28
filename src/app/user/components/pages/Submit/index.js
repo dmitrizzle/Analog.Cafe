@@ -5,13 +5,13 @@ import {
   Section
 } from "../../../../core/components/styles/ArticleStyles"
 import { Caption } from "../../../../core/components/styles/CaptionStyles"
-import { LinkButton } from "../../../../core/components/controls/Button"
 import { makeFroth } from "../../../../utils"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import Figure from "../../../../core/components/vignettes/Picture"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
+import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 
 const metaTitle = "Submit"
 const metaDescription =

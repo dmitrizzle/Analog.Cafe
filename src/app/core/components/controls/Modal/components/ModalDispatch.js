@@ -2,8 +2,8 @@ import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
-import { Button } from "../../Button"
 import { fetchCard, setCard } from "../../../../store/actions-modal"
+import Button from "../../Button/components/Button"
 import InlineStarIcon from "../../../icons/InlineStarIcon"
 
 // return
