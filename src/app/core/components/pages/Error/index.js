@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet"
 import React from "react"
 
-import ArticleSection from "../../pages/Article/components/ArticleSection"
-import ArticleWrapper from "../../pages/Article/components/ArticleWrapper"
-import HeaderLarge from "../HeaderLarge"
+import ArticleSection from "../Article/components/ArticleSection"
+import ArticleWrapper from "../Article/components/ArticleWrapper"
+import HeaderLarge from "../../vignettes/HeaderLarge"
 
 export default props => {
   return (

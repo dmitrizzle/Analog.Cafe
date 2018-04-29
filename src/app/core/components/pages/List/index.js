@@ -17,7 +17,7 @@ import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Button from "../../controls/Button/components/Button"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
-import MetaTags from "./components/MetaTags"
+import MetaTags from "../../vignettes/MetaTags"
 
 const PlaceholderHowToSubmit = Loadable({
   loader: () => import("./components/PlaceholderHowToSubmit"),
@@ -89,17 +89,15 @@ class List extends React.PureComponent {
     return (
       <div>
         <MetaTags
-          renderedListMeta={renderedListMeta}
-          renderedListTitle={renderedListTitle}
+          metaTitle={renderedListTitle}
+          metaDescription={renderedListMeta.description}
         />
-
         <ListDescription
           user={this.props.user}
           list={this.props.list}
           renderedListMeta={renderedListMeta}
           location={this.props.location}
         />
-
         {this.props.user.connection.status !== "offline" &&
         this.props.list.error &&
         this.props.placeholder === "PlaceholderHowToSubmit" ? (
@@ -123,7 +121,6 @@ class List extends React.PureComponent {
             userIntent={this.handleUserIntent}
           />
         )}
-
         {parseInt(this.props.list.page.total, 0) > 1 &&
         parseInt(this.props.list.page.total, 0) >
           parseInt(this.props.list.page.current, 0) ? (
@@ -135,7 +132,6 @@ class List extends React.PureComponent {
             Load More
           </Button>
         ) : null}
-
         <ArticleWrapper>
           <ArticleSection />
         </ArticleWrapper>

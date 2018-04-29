@@ -9,7 +9,7 @@ import FollowButtons from "../../controls/ArticleActions/components/FollowButton
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
-import MetaTags from "./components/MetaTags"
+import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
 import ThankYouList from "./components/ThankYouList"
 

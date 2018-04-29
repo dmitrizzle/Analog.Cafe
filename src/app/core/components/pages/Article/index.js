@@ -19,7 +19,7 @@ import ArticleActions from "../../controls/ArticleActions"
 import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
 import ArticleWrapper from "./components/ArticleWrapper"
-import MetaTags from "./components/MetaTags"
+import MetaTags from "../../vignettes/MetaTags"
 import Picture from "../../vignettes/Picture_c"
 
 class Article extends React.PureComponent {
@@ -110,7 +110,11 @@ class Article extends React.PureComponent {
   render = () => {
     return (
       <ArticleWrapper>
-        <MetaTags article={this.props.article} />
+        <MetaTags
+          metaTitle={this.props.article.title}
+          metaDescription={this.props.article.summary}
+          metaImage={this.props.article.poster}
+        />
         <ArticleHeader
           article={this.props.article}
           stateAdminControls={this.state.adminControls}
