@@ -9,10 +9,10 @@ import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
 } from "../../../../../../user/constants/rules-submission"
-import { PicturePlaceholder } from "../../../../../../core/components/vignettes/Picture/components/PicturePlaceholder"
 import { SubtitleInput } from "../../../../../../user/components/forms/InputStyles"
 import { makeFroth } from "../../../../../../utils"
 import CardIntegrated from "../../../../../../core/components/controls/Card/components/CardIntegrated"
+import Placeholder from "../../../../../../core/components/vignettes/Picture/components/Placeholder"
 
 // return
 export default props => {
@@ -29,14 +29,14 @@ export default props => {
         />
       </CardHeaderEditable>
       <figure>
-        <PicturePlaceholder frothId={props.image}>
+        <Placeholder frothId={props.image}>
           <img
             src={makeFroth({ src: props.image, size: "s" }).src}
             alt="Profile avatar"
             onClick={() => props.changeImage()}
             style={{ cursor: "pointer" }}
           />
-        </PicturePlaceholder>
+        </Placeholder>
         <figcaption>
           <CardCaptionEditable
             maxLength={INPUT_SUMMARY_LIMIT}

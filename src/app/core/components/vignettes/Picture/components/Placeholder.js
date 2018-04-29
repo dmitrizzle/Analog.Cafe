@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 import { makeFroth } from "../../../../../utils"
 
-export const PicturePlaceholder = styled.div`
+export default styled.div`
   padding-bottom: ${props =>
     makeFroth({ src: props.frothId }).ratio
       ? Math.round(100 / makeFroth({ src: props.frothId }).ratio, 3)

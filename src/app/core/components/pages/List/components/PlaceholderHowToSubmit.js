@@ -1,8 +1,8 @@
 import React from "react"
 
-import { Figure } from "../../../vignettes/Picture/styles"
 import ArticleSection from "../../Article/components/ArticleSection"
 import ArticleWrapper from "../../Article/components/ArticleWrapper"
+import Figure from "../../../vignettes/Picture/components/Figure"
 import LinkButton from "../../../controls/Button/components/LinkButton"
 
 export default () => {

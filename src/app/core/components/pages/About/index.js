@@ -1,10 +1,10 @@
 import React from "react"
 
-import { Figure } from "../../vignettes/Picture/styles"
 import { TEXT_LABELS } from "../../../constants/messages-"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ContactInfo from "../../vignettes/ContactInfo"
+import Figure from "../../vignettes/Picture/components/Figure"
 import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
