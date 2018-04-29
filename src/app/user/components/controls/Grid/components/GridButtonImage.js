@@ -1,12 +1,13 @@
 import React from "react"
 
-import { AspectRatio, GridButton, GridButtonCaption } from "./styles"
-import Modal from "../../../../core/components/controls/Modal"
-import { ROUTE_API_AUTHORS } from "../../../../core/constants/routes-article"
-import { makeFroth } from "../../../../utils"
+import { ROUTE_API_AUTHORS } from "../../../../../core/constants/routes-article"
+import { makeFroth } from "../../../../../utils"
+import AspectRatio from "./AspectRatio"
+import GridButton from "./GridButton"
+import GridButtonCaption from "./GridButtonCaption"
+import Modal from "../../../../../core/components/controls/Modal"
 
-// exports
-export const GridButtonImage = props => {
+export default props => {
   return (
     <GridButton
       style={props.noShim ? { minHeight: 0 } : null}
@@ -50,11 +51,3 @@ export const GridButtonImage = props => {
     </GridButton>
   )
 }
-export {
-  GridContainer,
-  GridRow,
-  GridButton,
-  GridButtonCaption,
-  GridCaption,
-  AspectRatio
-} from "./styles"

@@ -1,17 +1,15 @@
 import React from "react"
 
-import { GridButtonImage } from "../../../../../user/components/controls/Grid"
-import {
-  GridContainer,
-  GridRow
-} from "../../../../../user/components/controls/Grid/styles"
+import GridButtonImage from "../../../../../user/components/controls/Grid/components/GridButtonImage"
+import GridRow from "../../../../../user/components/controls/Grid/components/GridRow"
+import GridWrapper from "../../../../../user/components/controls/Grid/components/GridWrapper"
 
 export default props => {
   return [
     <div style={{ padding: "0 1.5em" }} key="UserAdmin_header">
       <h3>Users.</h3>
     </div>,
-    <GridContainer key="UserAdmin_grid">
+    <GridWrapper key="UserAdmin_grid">
       {props.rowIndex.map(rowNumber => (
         <GridRow key={rowNumber}>
           {props.admin.accountList.items
@@ -55,6 +53,6 @@ export default props => {
             ))}
         </GridRow>
       ))}
-    </GridContainer>
+    </GridWrapper>
   ]
 }

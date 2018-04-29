@@ -9,17 +9,15 @@ import {
   CARD_ERRORS
 } from "../../../constants/messages-submission"
 import { DOCUMENT_BLANK_DOT } from "../../../../constants"
-import {
-  GridButton,
-  GridButtonImage,
-  GridCaption,
-  GridContainer,
-  GridRow
-} from "../Grid"
 import { MIME_PICTURES } from "../../../constants/rules-submission"
 import { fetchImageLib } from "../../../store/actions-imagelib"
 import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { setModal } from "../../../../core/store/actions-modal"
+import GridButton from "../Grid/components/GridButton"
+import GridButtonImage from "../Grid/components/GridButtonImage"
+import GridCaption from "../Grid/components/GridCaption"
+import GridRow from "../Grid/components/GridRow"
+import GridWrapper from "../Grid/components/GridWrapper"
 import HeaderSmall from "../../../../core/components/vignettes/HeaderSmall"
 import Modal from "../../../../core/components/controls/Modal"
 import PictureDocket from "./"
@@ -140,7 +138,7 @@ class PictureDocketContainer extends React.PureComponent {
           or upload new image.
         </GridCaption>
 
-        <GridContainer>
+        <GridWrapper>
           <GridRow>
             {this.props.imagelib.items.slice(0, 2).map(item => {
               return (
@@ -191,7 +189,7 @@ class PictureDocketContainer extends React.PureComponent {
               )
             })}
           </GridRow>
-        </GridContainer>
+        </GridWrapper>
         <input
           type="file"
           accept={MIME_PICTURES.toString()}

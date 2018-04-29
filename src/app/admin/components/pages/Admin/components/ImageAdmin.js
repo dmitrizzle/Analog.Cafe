@@ -1,13 +1,11 @@
 import { ButtonStrip } from "@roast-cms/react-button-beans"
 import React from "react"
 
-import { GridButtonImage } from "../../../../../user/components/controls/Grid"
-import {
-  GridContainer,
-  GridRow
-} from "../../../../../user/components/controls/Grid/styles"
 import Button from "../../../../../core/components/controls/Button/components/Button"
 import ButtonStripItem from "../../../../../core/components/controls/Button/components/ButtonStripItem"
+import GridButtonImage from "../../../../../user/components/controls/Grid/components/GridButtonImage"
+import GridRow from "../../../../../user/components/controls/Grid/components/GridRow"
+import GridWrapper from "../../../../../user/components/controls/Grid/components/GridWrapper"
 
 export default props => {
   return [
@@ -47,7 +45,7 @@ export default props => {
         </div>
       </ButtonStrip>
     </div>,
-    <GridContainer key="ImageAdmin_grid">
+    <GridWrapper key="ImageAdmin_grid">
       {props.rowIndex.map(rowNumber => (
         <GridRow key={rowNumber}>
           {props.imagelib.items
@@ -104,7 +102,7 @@ export default props => {
             ))}
         </GridRow>
       ))}
-    </GridContainer>,
+    </GridWrapper>,
     <div key="ImageAdmin_loadmore">
       {props.imagelib.page &&
         props.imagelib.page.total >= props.stateImageList.page && (
