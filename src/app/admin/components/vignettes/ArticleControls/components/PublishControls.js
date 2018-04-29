@@ -1,10 +1,10 @@
 import { ButtonStrip } from "@roast-cms/react-button-beans"
 import React from "react"
 
-import { CardFlattened } from "../../../../../core/components/controls/Card/styles"
 import { TEXT_EMOJIS } from "../../../../../constants"
 import Button from "../../../../../core/components/controls/Button/components/Button"
 import ButtonStripItem from "../../../../../core/components/controls/Button/components/ButtonStripItem"
+import CardIntegrated from "../../../../../core/components/controls/Card/components/CardIntegrated"
 
 const TAGS = {
   story: "Story",
@@ -44,7 +44,7 @@ export default props => {
           })}
         </div>
       </ButtonStrip>
-      <CardFlattened
+      <CardIntegrated
         style={{
           marginBottom: 0,
           marginTop: "0.5em",
@@ -62,7 +62,7 @@ export default props => {
               : TEXT_EMOJIS.UNLOCKED)}{" "}
           Publish Now
         </Button>
-      </CardFlattened>
+      </CardIntegrated>
     </div>
   )
 }

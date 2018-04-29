@@ -2,12 +2,11 @@ import { ButtonStyles } from "@roast-cms/react-button-beans"
 import styled from "styled-components"
 
 import { CaptionStyles } from "../../../../../../core/components/styles/CaptionStyles"
-import {
-  CardButtonStyles,
-  CardCaptionStyles,
-  CardHeader
-} from "../../../../../../core/components/controls/Card/styles"
+import { styles as CardButtonStyles } from "../../../../../../core/components/controls/Card/components/CardButton"
+import { styles as CardCaptionStyles } from "../../../../../../core/components/controls/Card/components/CardCaption"
+
 import { TextareaWithHighlights } from "../../../../forms/InputStyles"
+import CardHeader from "../../../../../../core/components/controls/Card/components/CardHeader"
 
 export const CardHeaderEditable = styled(CardHeader)`
   padding: 0;

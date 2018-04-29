@@ -1,7 +1,7 @@
 import React from "react"
 
-import { CardButton } from "../../../../core/components/controls/Card/styles"
 import { TEXT_LABELS } from "../../../../core/constants/messages-"
+import CardButton from "../../../../core/components/controls/Card/components/CardButton"
 import MailChimpPrefill from "./components/MailChimpPrefill"
 
 export class QuickSubscribe extends React.PureComponent {

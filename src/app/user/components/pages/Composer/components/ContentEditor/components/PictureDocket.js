@@ -8,7 +8,6 @@ import {
   CARD_ALERTS,
   CARD_ERRORS
 } from "../../../../../../constants/messages-submission"
-import { CardHeader } from "../../../../../../../core/components/controls/Card/styles"
 import {
   GridButton,
   GridButtonImage,
@@ -22,6 +21,7 @@ import { dot } from "../../../../../../../core/components/icons/BlankDot"
 import { fetchImageLib } from "../../../../../../store/actions-imagelib"
 import { forceImageRestrictions } from "../../../../../../utils/actions-submission"
 import { setCard } from "../../../../../../../core/store/actions-modal"
+import HeaderSmall from "../../../../../../../core/components/vignettes/HeaderSmall"
 import PictureDocket from "../../../../../controls/PictureDocket"
 
 // return
@@ -128,12 +128,12 @@ class PictureDocketContainer extends React.PureComponent {
   render = () => {
     return (
       <PictureDocket>
-        <CardHeader>
+        <HeaderSmall>
           <h3 style={{ paddingTop: ".25em" }}>Add an image:</h3>
           <a href="#close" onClick={this.handleClose.bind(this)}>
             ✕
           </a>
-        </CardHeader>
+        </HeaderSmall>
         <GridCaption>
           Create an{" "}
           <ModalDispatch with={CARD_ALERTS.COLLABORATIONS}>

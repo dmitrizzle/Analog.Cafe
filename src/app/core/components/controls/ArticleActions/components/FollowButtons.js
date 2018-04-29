@@ -1,15 +1,15 @@
 import React from "react"
 
-import { CardFlattened } from "../../Card/styles"
 import {
   FacebookLinkButton,
   InstagramLinkButton,
   TwitterLinkButton
 } from "../../Button/components/SocialButtons"
+import CardIntegrated from "../../Card/components/CardIntegrated"
 
 export default props => {
   return (
-    <CardFlattened>
+    <CardIntegrated>
       <TwitterLinkButton
         to="https://twitter.com/analog_cafe"
         onClick={() => {
@@ -51,6 +51,6 @@ export default props => {
       >
         Follow on Instagram
       </InstagramLinkButton>
-    </CardFlattened>
+    </CardIntegrated>
   )
 }

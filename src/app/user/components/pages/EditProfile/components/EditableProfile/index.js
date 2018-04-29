@@ -5,7 +5,6 @@ import {
   CardButtonEditable,
   CardHeaderEditable
 } from "./styles"
-import { CardFlattened } from "../../../../../../core/components/controls/Card/styles"
 import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
@@ -13,11 +12,12 @@ import {
 import { PicturePlaceholder } from "../../../../../../core/components/vignettes/Picture/components/PicturePlaceholder"
 import { SubtitleInput } from "../../../../../../user/components/forms/InputStyles"
 import { makeFroth } from "../../../../../../utils"
+import CardIntegrated from "../../../../../../core/components/controls/Card/components/CardIntegrated"
 
 // return
 export default props => {
   return (
-    <CardFlattened>
+    <CardIntegrated>
       <CardHeaderEditable>
         <SubtitleInput
           placeholder="Your Name"
@@ -55,6 +55,6 @@ export default props => {
         onFocus={() => props.focusButton()}
         onBlur={() => props.blurButton()}
       />
-    </CardFlattened>
+    </CardIntegrated>
   )
 }

@@ -1,16 +1,16 @@
 import React from "react"
 
-import { CardFlattened } from "../../Card/styles"
 import {
   FacebookLinkButton,
   TwitterLinkButton
 } from "../../Button/components/SocialButtons"
 import { QuickSubscribe } from "../../../../../user/components/forms/Subscribe"
 import Button from "../../Button/components/Button"
+import CardIntegrated from "../../Card/components/CardIntegrated"
 
 export default props => {
   return (
-    <CardFlattened>
+    <CardIntegrated>
       <QuickSubscribe
         subscribeFormCallback={props.subscribeFormCallback}
         stateOverwrite={props.subscribeForm}
@@ -57,6 +57,6 @@ export default props => {
           </span>
         </Button>
       )}
-    </CardFlattened>
+    </CardIntegrated>
   )
 }

@@ -1,10 +1,11 @@
 import React from "react"
 
-import { CardCaption, CardFlattened } from "../../Card/styles"
 import { PicturePlaceholder } from "../../../vignettes/Picture/components/PicturePlaceholder"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
 import { getAuthorListStringFromArray } from "../../../../utils/messages-author"
 import { makeFroth } from "../../../../../utils"
+import CardCaption from "../../Card/components/CardCaption"
+import CardIntegrated from "../../Card/components/CardIntegrated"
 import Link from "../../Link"
 import LinkButton from "../../Button/components/LinkButton"
 
@@ -24,7 +25,7 @@ export default props => {
     <div>
       {props.nextArticle &&
         props.nextArticle.slug && (
-          <CardFlattened>
+          <CardIntegrated>
             <figure>
               <Link
                 to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
@@ -87,7 +88,7 @@ export default props => {
             >
               Continue Reading <span>➢</span>
             </LinkButton>
-          </CardFlattened>
+          </CardIntegrated>
         )}
     </div>
   )

@@ -1,55 +1,27 @@
 import React from "react"
 
-import {
-  Card as CardElement,
-  CardButton,
-  CardCaption,
-  CardHeader
-} from "./styles"
-import { PicturePlaceholder } from "../../vignettes/Picture/components/PicturePlaceholder"
 import { QuickSubscribe } from "../../../../user/components/forms/Subscribe"
-import { makeFroth } from "../../../../utils"
 import ButtonGroupDivider from "../Button/components/ButtonGroupDivider"
+import CardButton from "./components/CardButton"
+import CardFigure from "./components/CardFigure"
+import CardHeader from "./components/CardHeader"
+import CardPopup from "./components/CardPopup"
 
-// return
-export const Card = props => {
-  console.log(props)
+export default props => {
   return (
-    <CardElement style={props.style}>
-      <CardHeader title={props.error && props.error}>
-        <h3 onClick={event => event.stopPropagation()}>{props.title}</h3>
-        {// Stubborn popup shows no close button but requires buttons within
-        !(
-          props.stubborn &&
-          props.buttons &&
-          Object.keys(props.buttons).length !== 0
-        ) ? (
-          <a href="#close" onClick={event => event.preventDefault()}>
-            ✕
-          </a>
-        ) : null}
-      </CardHeader>
-      <figure onClick={event => event.stopPropagation()}>
-        <PicturePlaceholder frothId={props.image}>
-          <img
-            src={makeFroth({ src: props.image, size: "s" }).src}
-            alt="Card"
-          />
-        </PicturePlaceholder>
-        <figcaption>
-          <CardCaption
-            style={{ padding: typeof props.text === "undefined" ? "0" : "" }}
-          >
-            {props.text}
-          </CardCaption>
-        </figcaption>
-      </figure>
+    <CardPopup style={props.style}>
+      <CardHeader
+        error={props.error}
+        stubborn={props.stubborn}
+        buttons={props.buttons}
+      />
+      <CardFigure image={props.image} text={props.text} />
       {props.subscribeForm && [
         <QuickSubscribe
-          key="CardQuickSubscribe"
+          key="Card_subscribe"
           onClick={event => event.stopPropagation()}
         />,
-        <ButtonGroupDivider key="CardQuickSubscribeDivider" />
+        <ButtonGroupDivider key="Card_divider" />
       ]}
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
@@ -69,6 +41,6 @@ export const Card = props => {
             <ButtonGroupDivider key={i} />
           ) : null
         })}
-    </CardElement>
+    </CardPopup>
   )
 }
