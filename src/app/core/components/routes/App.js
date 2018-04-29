@@ -47,7 +47,7 @@ const AppRoutesSubmit = Loadable({
   delay: 100
 })
 const NotFound = Loadable({
-  loader: () => import("../pages/NotFound"),
+  loader: () => import("../pages/Error/components/NotFound"),
   loading: ArticleLoader,
   delay: 100
 })

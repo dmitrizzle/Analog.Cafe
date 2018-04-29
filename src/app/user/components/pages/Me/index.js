@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { forgetUser } from "../../../store/actions-user"
-import Forbidden from "../../../../core/components/pages/Forbidden"
+import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
 import List from "../../../../core/components/pages/List"
 
 const Me = props => {

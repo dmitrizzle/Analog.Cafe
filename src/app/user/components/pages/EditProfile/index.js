@@ -21,7 +21,7 @@ import { setModal } from "../../../../core/store/actions-modal"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Button from "../../../../core/components/controls/Button/components/Button"
 import CardEditableProfile from "./components/EditableProfile"
-import Forbidden from "../../../../core/components/pages/Forbidden"
+import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 
 class EditProfile extends React.PureComponent {

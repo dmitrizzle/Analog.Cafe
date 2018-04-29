@@ -1,33 +1,18 @@
-import { Helmet } from "react-helmet"
 import React from "react"
-import styled from "styled-components"
 
-import { Email } from "../vignettes/EmailSnippet"
-import { TEXT_LABELS } from "../../constants/messages-"
-import { makeFroth } from "../../../utils"
-import ArticleQuote from "./Article/components/ArticleQuote"
-import ArticleSection from "./Article/components/ArticleSection"
-import ArticleWrapper from "./Article/components/ArticleWrapper"
-import Figure from "../vignettes/Picture"
-import FollowButtons from "../controls/ArticleActions/components/FollowButtons"
-import HeaderLarge from "../vignettes/HeaderLarge"
-import Link from "../controls/Link"
-import MailChimpPrefill from "../../../user/components/forms/Subscribe/components/MailChimpPrefill"
-import Modal from "../controls/Modal"
+import { Email } from "../../vignettes/EmailSnippet"
+import { Figure } from "../../vignettes/Picture/styles"
+import { TEXT_LABELS } from "../../../constants/messages-"
+import ArticleSection from "../Article/components/ArticleSection"
+import ArticleWrapper from "../Article/components/ArticleWrapper"
+import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
+import HeaderLarge from "../../vignettes/HeaderLarge"
+import Link from "../../controls/Link"
+import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
+import MetaTags from "./components/MetaTags"
+import Modal from "../../controls/Modal"
+import ThankYouList from "./components/ThankYouList"
 
-const ThankYouList = styled(ArticleQuote)`
-  font-style: normal !important;
-  &::first-letter {
-    font-size: inherit !important;
-    font-weight: inherit !important;
-    float: none !important;
-    margin: 0 !important;
-  }
-  &::before,
-  &::after {
-    content: "" !important;
-  }
-`
 const metaTitle = "About"
 const metaDescription =
   "Story, reason for existence, contributos and resources."
@@ -35,21 +20,7 @@ const metaDescription =
 export default () => {
   return (
     <ArticleWrapper>
-      <Helmet>
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <meta
-          property="og:image"
-          content={
-            makeFroth({
-              src: "image-froth_669120_c34babc2fb974c8d9f03249bea647401",
-              size: "m"
-            }).src
-          }
-        />
-        <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content={metaDescription} />
-      </Helmet>
+      <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
       <HeaderLarge
         pageTitle="Analog.Cafe"
         pageSubtitle="A Film Photography Publication"

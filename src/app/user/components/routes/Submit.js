@@ -3,7 +3,7 @@ import Loadable from "react-loadable"
 import React from "react"
 
 import ArticleLoader from "../../../core/components/pages/Article/components/ArticleLoader"
-import NotFound from "../../../core/components/pages/NotFound"
+import NotFound from "../../../core/components/pages/Error/components/NotFound"
 import Submit from "../pages/Submit"
 import Upload from "../pages/Upload"
 
