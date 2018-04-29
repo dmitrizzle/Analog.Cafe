@@ -18,7 +18,7 @@ import {
 } from "./user/store/actions-user"
 import AppRoutes from "./core/components/routes/App"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
-import Nav from "./core/components/controls/Nav_c"
+import Nav from "./core/components/controls/Nav"
 
 // init GA tracking
 if (process.env.NODE_ENV === "development" || HOST_RUNTIME !== HOST_PROD) {
