@@ -2,11 +2,11 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
-import { CARD_ERRORS } from "../../../../core/constants/messages-"
-import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
-import { TEXT_ERRORS } from "../../../../constants"
-import Error from "../../../../core/components/pages/Error"
-import Link from "../../../../core/components/controls/Link"
+import { CARD_ERRORS } from "../../../../../core/constants/messages-"
+import { ROUTE_URL_USER_LANDING } from "../../../../constants/routes-session"
+import { TEXT_ERRORS } from "../../../../../constants"
+import Error from "../../../../../core/components/pages/Error"
+import Link from "../../../../../core/components/controls/Link"
 
 class AlreadyAuthenticated extends React.PureComponent {
   componentWillMount = () => {

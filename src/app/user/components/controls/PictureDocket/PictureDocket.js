@@ -7,22 +7,22 @@ import uuidv1 from "uuid/v1"
 import {
   CARD_ALERTS,
   CARD_ERRORS
-} from "../../../../../../constants/messages-submission"
-import { DOCUMENT_BLANK_DOT } from "../../../../../../../constants"
+} from "../../../constants/messages-submission"
+import { DOCUMENT_BLANK_DOT } from "../../../../constants"
 import {
   GridButton,
   GridButtonImage,
   GridCaption,
   GridContainer,
   GridRow
-} from "../../../../../controls/Grid"
-import { MIME_PICTURES } from "../../../../../../constants/rules-submission"
-import { fetchImageLib } from "../../../../../../store/actions-imagelib"
-import { forceImageRestrictions } from "../../../../../../utils/actions-submission"
-import { setModal } from "../../../../../../../core/store/actions-modal"
-import HeaderSmall from "../../../../../../../core/components/vignettes/HeaderSmall"
-import Modal from "../../../../../../../core/components/controls/Modal"
-import PictureDocket from "../../../../../controls/PictureDocket"
+} from "../Grid"
+import { MIME_PICTURES } from "../../../constants/rules-submission"
+import { fetchImageLib } from "../../../store/actions-imagelib"
+import { forceImageRestrictions } from "../../../utils/actions-submission"
+import { setModal } from "../../../../core/store/actions-modal"
+import HeaderSmall from "../../../../core/components/vignettes/HeaderSmall"
+import Modal from "../../../../core/components/controls/Modal"
+import PictureDocket from "./"
 
 // return
 class PictureDocketContainer extends React.PureComponent {

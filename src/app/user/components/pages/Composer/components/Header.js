@@ -2,21 +2,21 @@ import { connect } from "react-redux"
 import React from "react"
 import keycode from "keycode"
 
-import { CARD_ALERTS } from "../../../../../constants/messages-submission"
+import { CARD_ALERTS } from "../../../../constants/messages-submission"
 import {
   INPUT_SUBTITLE_LIMIT,
   INPUT_SUBTITLE_WARNING,
   INPUT_TITLE_LIMIT,
   INPUT_TITLE_WARNING
-} from "../../../../../constants/rules-submission"
-import { resetStatus } from "../../../../../../admin/store/actions-editor"
-import { saveHeader } from "../../../../../utils/actions-submission"
-import { setComposerHeader } from "../../../../../store/actions-composer"
-import Byline from "../../../../../../core/components/vignettes/Byline"
-import HeaderWrapper from "../../../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
-import Link from "../../../../../../core/components/controls/Link"
-import Modal from "../../../../../../core/components/controls/Modal"
-import TitleCase from "../../../../forms/TitleCase"
+} from "../../../../constants/rules-submission"
+import { resetStatus } from "../../../../../admin/store/actions-editor"
+import { saveHeader } from "../../../../utils/actions-submission"
+import { setComposerHeader } from "../../../../store/actions-composer"
+import Byline from "../../../../../core/components/vignettes/Byline"
+import HeaderWrapper from "../../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
+import Link from "../../../../../core/components/controls/Link"
+import Modal from "../../../../../core/components/controls/Modal"
+import TitleCase from "../../../forms/TitleCase"
 
 // return
 class HeaderEditor extends React.PureComponent {

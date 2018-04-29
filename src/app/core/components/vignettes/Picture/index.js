@@ -12,8 +12,7 @@ import { getPictureInfo } from "../../../store/actions-picture"
 import Figure from "./components/Figure"
 
 const PictureMenu = Loadable({
-  loader: () =>
-    import("../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"),
+  loader: () => import("../../../../user/components/controls/PictureMenu"),
   loading: () => null,
   delay: 100
 })

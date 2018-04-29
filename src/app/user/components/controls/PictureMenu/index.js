@@ -2,7 +2,7 @@ import { ButtonStrip } from "@roast-cms/react-button-beans"
 import React from "react"
 import styled from "styled-components"
 
-import ButtonStripItem from "../../../../../../../core/components/controls/Button/components/ButtonStripItem"
+import ButtonStripItem from "../../../../core/components/controls/Button/components/ButtonStripItem"
 
 // components
 

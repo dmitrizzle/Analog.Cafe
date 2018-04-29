@@ -17,7 +17,7 @@ import {
   setSessionInfo,
   refreshSessionInfo
 } from "../../../store/actions-user"
-import AlreadyAuthenticated from "../Error/AlreadyAuthenticated"
+import AlreadyAuthenticated from "../Error/components/AlreadyAuthenticated"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"

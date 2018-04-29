@@ -9,9 +9,9 @@ import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/consta
 import { TEXT_EMOJIS } from "../../../../constants"
 import { requestComposerFocus as requestEditorFocus } from "../../../store/actions-composer"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
-import ContentEditor from "./components/ContentEditor"
-import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"
-import HeaderEditor from "./components/HeaderEditor"
+import ContentEditor from "./components/Body"
+import DraftStatusText from "./components/DraftStatusText"
+import HeaderEditor from "./components/Header"
 import Modal from "../../../../core/components/controls/Modal"
 
 // placeholders
