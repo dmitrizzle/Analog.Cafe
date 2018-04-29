@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import React from "react"
 
 import { CARD_ERRORS } from "../../constants/messages-"
@@ -5,7 +6,6 @@ import { TEXT_ERRORS } from "../../../constants"
 import ArticleSection from "./Article/components/ArticleSection"
 import ArticleWrapper from "./Article/components/ArticleWrapper"
 import HeaderLarge from "../vignettes/HeaderLarge"
-import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"
 
 export default class extends React.PureComponent {

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import React from "react"
 
 import { withRouter } from "react-router"
@@ -8,7 +9,6 @@ import { TEXT_ERRORS } from "../../../../constants"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
-import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
 
 class AlreadyAuthenticated extends React.PureComponent {

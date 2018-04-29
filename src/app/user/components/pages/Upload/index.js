@@ -1,5 +1,6 @@
 import "localforage-getitems"
 
+import { Helmet } from "react-helmet"
 import { connect } from "react-redux"
 import {
   loadTextContent,
@@ -25,7 +26,6 @@ import ArticleWrapper from "../../../../core/components/pages/Article/components
 import HeaderSubtitle from "../../../../core/components/vignettes/HeaderLarge/components/HeaderSubtitle"
 import HeaderTitle from "../../../../core/components/vignettes/HeaderLarge/components/HeaderTitle"
 import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
-import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 

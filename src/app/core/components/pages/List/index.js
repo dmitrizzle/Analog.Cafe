@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { connect } from "react-redux"
 import Loadable from "react-loadable"
 import React from "react"
@@ -19,7 +20,6 @@ import { setUserIntent } from "../../../../user/store/actions-user"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Button from "../../controls/Button/components/Button"
-import Helmet from "../../vignettes/Helmet"
 import ListBlock from "../../styles/List"
 import Modal from "../../controls/Modal"
 

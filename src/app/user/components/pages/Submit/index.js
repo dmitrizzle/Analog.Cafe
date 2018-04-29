@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import React from "react"
 
 import { Caption } from "../../../../core/components/vignettes/Caption"
@@ -7,7 +8,6 @@ import ArticleWrapper from "../../../../core/components/pages/Article/components
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import Figure from "../../../../core/components/vignettes/Picture"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
-import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 

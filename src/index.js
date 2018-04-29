@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
+import { Helmet } from "react-helmet"
 import { Provider } from "react-redux"
 import { Sugar } from "@roast-cms/react-sugar-styled"
 import { render } from "react-dom"
@@ -8,7 +9,6 @@ import styled, { ThemeProvider } from "styled-components"
 import { APP_NAME, TEXT_EMOJIS } from "./app/constants"
 import { polyfillArrayFind, polyfillArrayIncludes } from "./app/utils"
 import App from "./app"
-import Helmet from "./app/core/components/vignettes/Helmet"
 import registerServiceWorker from "./registerServiceWorker"
 import store from "./app/store"
 

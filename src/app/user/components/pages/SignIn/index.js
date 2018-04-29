@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { connect } from "react-redux"
 import React from "react"
 import open from "oauth-open"
@@ -21,7 +22,6 @@ import ArticleSection from "../../../../core/components/pages/Article/components
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
-import Helmet from "../../../../core/components/vignettes/Helmet"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
 class SignIn extends React.PureComponent {

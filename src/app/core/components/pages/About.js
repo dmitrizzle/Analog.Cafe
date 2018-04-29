@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import React from "react"
 import styled from "styled-components"
 
@@ -10,7 +11,6 @@ import ArticleWrapper from "./Article/components/ArticleWrapper"
 import Figure from "../vignettes/Picture"
 import FollowButtons from "../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../vignettes/HeaderLarge"
-import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"
 import MailChimpPrefill from "../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 import Modal from "../controls/Modal"

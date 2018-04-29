@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import React from "react"
 
 import { withRouter } from "react-router"
@@ -6,7 +7,6 @@ import { HEADER_ERRORS, TEXT_ERRORS } from "../../../constants"
 import ArticleSection from "./Article/components/ArticleSection"
 import ArticleWrapper from "./Article/components/ArticleWrapper"
 import HeaderLarge from "../vignettes/HeaderLarge"
-import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"
 
 class NotFound extends React.PureComponent {
