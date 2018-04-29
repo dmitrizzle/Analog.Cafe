@@ -1,29 +1,22 @@
-import React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
-
-// styles
+import React from "react"
 import styled, { css } from "styled-components"
 
-// images
-import ZigZag from "../components/ZigZag"
+import { VALUE_ZIGZAG_TOP_SHIM, VALUE_ZIGZAG_WIDTH } from "../constants"
+import ZigZag from "../../../icons/ZigZag"
+
 const zigZagSVG = encodeURIComponent(renderToStaticMarkup(<ZigZag />))
 const zigZagDataUri = `url("data:image/svg+xml,${zigZagSVG}")`
-
-// css & constants
-export const zigzagWidth = "33%"
-export const zigzagTopShim = 12
-
 const blockSafety = props => props.theme.size.block.padding
 const blockSpacing = props => props.theme.size.block.spacing
 const greyLine = props =>
   props.theme.color.foreground(props.theme.opacity.least)
-
 const posterDimensions = css`
   width: 5.5em;
   height: 9.33em;
 `
 const zigzagWidthShim = css`
-  width: calc(${zigzagWidth} + 0px);
+  width: calc(${VALUE_ZIGZAG_WIDTH} + 0px);
 `
 const zigzagFill = css`
   position: absolute;
@@ -39,10 +32,7 @@ const zigzagDimensions = css`
   ${props => props.theme.size.breakpoint.max.l`{ display: none !important; }`};
 `
 
-// return
-export const Ul = styled.ul`
-
-	/* placeholder style */
+export default styled.ul`
 	${props =>
     props.status === "loading" && `opacity: ` + props.theme.opacity.least + `;`}
 
@@ -57,7 +47,6 @@ export const Ul = styled.ul`
 		background-image: 	${zigZagDataUri};
 		background-repeat: 	repeat-y;
 	}
-
 	li {
 		display: 			block;
 		list-style: 	none;
@@ -100,7 +89,6 @@ export const Ul = styled.ul`
 				${props => props.theme.size.breakpoint.max.m`
 					border-radius:	${props => props.theme.effects.borderRadius.small}em;
 				`}
-
 				& > div {
 					width: 								100%;
 					height: 							100%;
@@ -108,28 +96,16 @@ export const Ul = styled.ul`
 					position: 						relative;
 					background-size: 			cover;
 					background-position: 	center;
-					${
-            "" /* -webkit-filter: 			sepia(75%) hue-rotate(-12deg);
-					filter: 							sepia(75%) hue-rotate(-12deg);
-					${props => props.theme.size.breakpoint.max.l`{
-						-webkit-filter: 		grayscale(95%);
-						filter: 						grayscale(95%);
-					}`} */
-          }
 				}
-
 				${props => props.theme.size.breakpoint.max.m`{
 					margin-top: calc(${blockSpacing}em / 2 + 0.1em);
 					margin-bottom: 0;
 				}`}
-
-				/* placeholder style */
 				background-color: ${props =>
           props.status === "loading"
             ? props.theme.color.foreground()
             : greyLine};
 				border-bottom: ${props => props.theme.elements.thickBorder};
-
 			}
 			h2 {
 				${props => props.theme.typography.title.auto}
@@ -158,26 +134,17 @@ export const Ul = styled.ul`
 						line-height: 	1.65em;
 					`}
 				}`}
-
-				/* placeholder style */
 				${props =>
           props.status === "loading" &&
           `
 					margin-top: -.1em;
 					letter-spacing: -1px !important;
 				`}
-
 			}
-
-
-			/* placeholder style */
 			${props => props.status === "loading" && `word-break: break-all;`}
-
 			& > div {
-				/* max-width: 30em; */
 				padding-top:	calc(${blockSpacing}em / 4.5);
 				display: inline-block;
-
 				${props => props.theme.size.breakpoint.max.m`{
 					width: 				calc(100vw - ${blockSpacing}em * 3.5);
 					min-width: 		auto;
@@ -186,8 +153,6 @@ export const Ul = styled.ul`
 				${props => props.theme.size.breakpoint.max.xs`{
 					text-align: left;
 				}`}
-
-				/* placeholder style */
 				${props =>
           props.status === "loading" &&
           `
@@ -201,16 +166,7 @@ export const Ul = styled.ul`
 		}
 	}
 	&:first-child li:first-child {
-		padding-top: ${zigzagTopShim}em;
+		padding-top: ${VALUE_ZIGZAG_TOP_SHIM}em;
 		:before { display: none; }
 	}
-`
-
-export const AuthorAndDate = styled.em`
-  line-height: ${blockSpacing}em;
-  padding-top: calc(${blockSpacing}em / 2);
-  display: inline-block;
-  & > small {
-    display: inline-block;
-  }
 `

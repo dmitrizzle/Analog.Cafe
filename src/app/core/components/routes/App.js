@@ -4,7 +4,7 @@ import React from "react"
 
 import { ROUTE_URL_USER_LANDING } from "../../../user/constants/routes-session"
 import ArticleLoader from "../pages/Article/components/ArticleLoader"
-import ListLoader from "../vignettes/ListLoader"
+import ListLoader from "../pages/List/components/ListLoader"
 import SignOut from "../../../user/components/pages/SignOut"
 
 const List = Loadable({

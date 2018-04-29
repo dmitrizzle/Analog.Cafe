@@ -1,4 +1,10 @@
-handleShareOnFacebook = event => {
+import {
+  getAbsoluteURLPath,
+  getSubmissionOrArticleRoute
+} from "./routes-article"
+import { getAuthorListStringFromArray } from "./messages-author"
+
+export const shareOnFacebook = event => {
   event.preventDefault()
   window.open(
     "https://web.facebook.com/sharer.php?u=" +
@@ -11,7 +17,7 @@ handleShareOnFacebook = event => {
     "height=600,width=500"
   )
 }
-handleShareOnTwitter = event => {
+export const shareOnTwitter = event => {
   event.preventDefault()
   window.open(
     "https://twitter.com/share?url=" +

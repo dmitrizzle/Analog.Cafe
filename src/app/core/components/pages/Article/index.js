@@ -14,6 +14,7 @@ import {
 } from "../../../store/actions-article"
 import { getSubmissionOrArticleRoute } from "../../../utils/routes-article"
 import { getTitleFromSlug } from "../../../utils/messages-"
+import { shareOnFacebook, shareOnTwitter } from "../../../utils/actions-article"
 import ArticleActions from "../../controls/ArticleActions"
 import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
@@ -98,6 +99,12 @@ class Article extends React.PureComponent {
       shareButtons: !this.state.shareButtons,
       subscribeForm: false
     })
+  }
+  handleShareOnTwitter = event => {
+    shareOnTwitter(event)
+  }
+  handleShareOnFacebook = event => {
+    shareOnFacebook(event)
   }
 
   render = () => {

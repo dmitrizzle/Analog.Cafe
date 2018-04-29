@@ -1,15 +1,13 @@
-// styles
 import styled from "styled-components"
 
-import { zigzagTopShim } from "./ul"
+import { VALUE_ZIGZAG_TOP_SHIM } from "../constants"
 
-// css
-export const Bleed = styled.div`
+export default styled.div`
   ${props => props.theme.size.font.auto} width: 100%;
   clear: both;
   position: relative;
   margin-top: calc(
-    -${zigzagTopShim}em - ${props => props.theme.size.block.padding}em
+    -${VALUE_ZIGZAG_TOP_SHIM}em - ${props => props.theme.size.block.padding}em
   );
   margin-bottom: ${props => props.theme.size.block.padding}em;
 `

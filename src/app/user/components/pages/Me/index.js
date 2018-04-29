@@ -10,7 +10,7 @@ const Me = props => {
     <List
       private
       isAdmin={props.user.info.role === "admin"}
-      placeholder="HowToSubmit"
+      placeholder="PlaceholderHowToSubmit"
     />
   ) : (
     <Forbidden />

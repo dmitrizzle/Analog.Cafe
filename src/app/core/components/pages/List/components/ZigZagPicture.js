@@ -1,12 +1,9 @@
-// styles
 import styled from "styled-components"
 
-// constants
-import { zigzagWidth, zigzagTopShim } from "./ul"
+import { VALUE_ZIGZAG_TOP_SHIM, VALUE_ZIGZAG_WIDTH } from "../constants"
 
-// css
-export const ZigzagPicture = styled.div`
-  min-width: ${zigzagWidth};
+export default styled.div`
+  min-width: ${VALUE_ZIGZAG_WIDTH};
   background-color: rgba(44, 44, 44, 0.125);
   background-size: cover;
   background-position: top right;
@@ -14,7 +11,7 @@ export const ZigzagPicture = styled.div`
   ${props =>
     props.theme.size.breakpoint.max
       .l` display: none; `} ul:first-child li:first-child & {
-    margin-top: -${zigzagTopShim + 4.5}em;
+    margin-top: -${VALUE_ZIGZAG_TOP_SHIM + 4.5}em;
   }
 
   clip-path: polygon(
