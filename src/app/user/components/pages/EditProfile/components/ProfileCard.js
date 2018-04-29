@@ -1,24 +1,21 @@
 import React from "react"
 
 import {
-  CardCaptionEditable,
-  CardButtonEditable,
-  CardHeaderEditable
-} from "./styles"
-import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
-} from "../../../../../../user/constants/rules-submission"
-import { makeFroth } from "../../../../../../utils"
-import CardIntegrated from "../../../../../../core/components/controls/Card/components/CardIntegrated"
-import Placeholder from "../../../../../../core/components/vignettes/Picture/components/Placeholder"
-import SubtitleInput from "../../../../forms/TextInput/components/SubtitleInput"
+} from "../../../../constants/rules-submission"
+import { makeFroth } from "../../../../../utils"
+import CardIntegrated from "../../../../../core/components/controls/Card/components/CardIntegrated"
+import Placeholder from "../../../../../core/components/vignettes/Picture/components/Placeholder"
+import ProfileButton from "./ProfileButton"
+import ProfileCaption from "./ProfileCaption"
+import ProfileHeader from "./ProfileHeader"
+import SubtitleInput from "../../../forms/TextInput/components/SubtitleInput"
 
-// return
 export default props => {
   return (
     <CardIntegrated>
-      <CardHeaderEditable>
+      <ProfileHeader>
         <SubtitleInput
           placeholder="Your Name"
           value={props.title || ""}
@@ -27,7 +24,7 @@ export default props => {
           onChange={event => props.changeTitle(event)}
           warning={props.warningTitle}
         />
-      </CardHeaderEditable>
+      </ProfileHeader>
       <figure>
         <Placeholder frothId={props.image}>
           <img
@@ -38,7 +35,7 @@ export default props => {
           />
         </Placeholder>
         <figcaption>
-          <CardCaptionEditable
+          <ProfileCaption
             maxLength={INPUT_SUMMARY_LIMIT}
             placeholder="Your short author bio goes here."
             onChange={event => props.changeText(event)}
@@ -47,7 +44,7 @@ export default props => {
           />
         </figcaption>
       </figure>
-      <CardButtonEditable
+      <ProfileButton
         value={props.buttonText || ""}
         placeholder="Website"
         maxLength={INPUT_SUMMARY_LIMIT}

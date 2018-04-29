@@ -1,7 +1,5 @@
-// import React from "react"
-
-// redux
 import { connect } from "react-redux"
+
 import { forgetUser } from "../../../store/actions-user"
 
 const SignOut = props => {
@@ -9,8 +7,6 @@ const SignOut = props => {
   props.history.replace({ pathname: "/" })
   return null
 }
-
-// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     forgetUser: () => {

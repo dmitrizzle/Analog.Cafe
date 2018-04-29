@@ -20,12 +20,11 @@ import { getProfileButtons } from "../../../utils/messages-profile"
 import { setModal } from "../../../../core/store/actions-modal"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Button from "../../../../core/components/controls/Button/components/Button"
-import CardEditableProfile from "./components/EditableProfile"
 import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
+import ProfileCard from "./components/ProfileCard"
 
 class EditProfile extends React.PureComponent {
-  // init
   constructor(props) {
     super(props)
     this.handleTitleChange = this.handleTitleChange.bind(this)
@@ -38,18 +37,14 @@ class EditProfile extends React.PureComponent {
       setUserInfoPending: false
     }
   }
-
   componentDidMount = () => {
-    // fetch user info if not present (for componentWillReceiveProps)
     if (
       this.props.user.status === "ok" &&
       typeof this.props.user.info === "object" &&
       Object.keys(this.props.user.info).length === 0
     ) {
       this.props.getUserInfo()
-    }
-    // or populate all profile fields with current info
-    else this.populateEditableProfile()
+    } else this.populateEditableProfile()
   }
   componentWillReceiveProps = () => {
     this.props.user.status !== "updated"
@@ -75,8 +70,6 @@ class EditProfile extends React.PureComponent {
           : ""
     })
   }
-
-  // process changes to title and bio
   handleTitleChange = event => {
     this.setState({
       title: event.target.value,
@@ -89,8 +82,6 @@ class EditProfile extends React.PureComponent {
       warningText: event.target.value.length >= INPUT_SUMMARY_LIMIT
     })
   }
-
-  // process image uploads
   handleImageChange = () => {
     this.fileInput.click()
   }
@@ -107,7 +98,7 @@ class EditProfile extends React.PureComponent {
           { url: "errors/upload" }
         )
       })
-  } // ⤵
+  }
   uploadRequest = file => {
     const reader = new FileReader()
     reader.addEventListener("load", () =>
@@ -115,8 +106,6 @@ class EditProfile extends React.PureComponent {
     )
     reader.readAsDataURL(file)
   }
-
-  // process changes to user's link button
   handleButtonChange = event => {
     this.setState({
       buttons: getProfileButtons(this.props.user.info.id, event.target.value),
@@ -133,22 +122,15 @@ class EditProfile extends React.PureComponent {
       buttonText: this.state.buttons[1].text
     })
   }
-
   handleDone = () => {
     const data = new FormData()
     data.append(
       "title",
       this.state.title || this.props.user.info.id.split("-", 1)[0]
-      // if user leaves their name blank, it'll default to their user ID
-      // if their user ID has a dash in it, we take the first part, before the
-      // dash; this is especially useful for users created via email login
-      // method where we use their email handle without the domain and add
-      // a randomly generated string after a dash to ensure for uniqueness
     )
     data.append("text", this.state.text || "")
     data.append("buttons", JSON.stringify(this.state.buttons))
     this.fileInput.value && data.append("image", this.fileInput.files[0])
-
     const request = {
       method: "put",
       headers: {
@@ -166,36 +148,25 @@ class EditProfile extends React.PureComponent {
   profileUpdated = () => {
     this.props.acceptUserInfo()
     this.props.history.push(ROUTE_URL_USER_LANDING)
-    //this.props.history.goBack()
   }
-
   render = () => {
     return this.props.user.status === "ok" ? (
       <ArticleWrapper>
         <HeaderLarge pageTitle="Edit Your Profile" />
-        <CardEditableProfile
-          // these props are pulled from Redux store that has
-          // logged-in user info
-
-          // author's name
+        <ProfileCard
           title={this.state.title || ""}
           changeTitle={this.handleTitleChange}
           warningTitle={this.state.warningTitle}
-          // author's bio
           text={this.state.text}
           changeText={this.handleTextChange}
           warningText={this.state.warningText}
-          // author's avatar image
           image={this.state.image}
           changeImage={this.handleImageChange}
-          // author's link
           buttonText={this.state.buttonText}
           changeButton={this.handleButtonChange}
           focusButton={this.handleButtonFocus}
           blurButton={this.handleButtonBlur}
         />
-
-        {/* Image upload hidden input */}
         <input
           type="file"
           accept="image/x-png,image/jpeg"
@@ -205,7 +176,6 @@ class EditProfile extends React.PureComponent {
           }}
           onChange={this.handleFileUpload}
         />
-
         <Button
           onClick={this.handleDone}
           branded
@@ -219,9 +189,6 @@ class EditProfile extends React.PureComponent {
     )
   }
 }
-//to={ROUTE_URL_USER_LANDING}
-
-// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     getUserInfo: () => {

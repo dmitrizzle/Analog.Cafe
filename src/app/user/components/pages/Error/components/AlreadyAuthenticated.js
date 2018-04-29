@@ -39,5 +39,4 @@ class AlreadyAuthenticated extends React.PureComponent {
     )
   }
 }
-
 export default withRouter(AlreadyAuthenticated)

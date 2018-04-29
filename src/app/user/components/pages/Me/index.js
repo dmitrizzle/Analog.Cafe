@@ -16,8 +16,6 @@ const Me = props => {
     <Forbidden />
   )
 }
-
-// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     forgetUser: () => {

@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet"
 import { connect } from "react-redux"
 import React from "react"
 import open from "oauth-open"
@@ -22,8 +21,26 @@ import ArticleSection from "../../../../core/components/pages/Article/components
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
+import MetaTags from "../../../../core/components/vignettes/MetaTags"
+import SignInInfo from "./components/SignInInfo"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
+const POPUP_WINDOW = name => {
+  return {
+    name,
+    width: 500,
+    height: 600
+  }
+}
+const processSignin = (props, code, sessionInfo) => {
+  localStorage.setItem("token", code.token)
+  props.verifyUser()
+  props.getUserInfo()
+  props.history.replace({
+    pathname: props.user.routes.success
+  })
+  props.setSessionInfo("Facebook")
+}
 class SignIn extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -37,7 +54,6 @@ class SignIn extends React.PureComponent {
       }
     }
   }
-
   componentDidMount = () => {
     this.props.refreshSessionInfo()
   }
@@ -50,29 +66,18 @@ class SignIn extends React.PureComponent {
       }
     })
   }
-
   handleTwitterButton = event => {
     event.stopPropagation()
     event.preventDefault()
     open(
       ROUTE_API_LOGIN_TWITTER,
-      {
-        name: "Sign in with Twitter",
-        width: 500,
-        height: 600
-      },
+      POPUP_WINDOW("Sign in with Twitter"),
       (err, code) => {
         if (err) {
           console.error(err)
           return
         }
-        localStorage.setItem("token", code.token)
-        this.props.verifyUser()
-        this.props.getUserInfo()
-        this.props.history.replace({
-          pathname: this.props.user.routes.success
-        })
-        this.props.setSessionInfo("Twtitter")
+        processSignin(this.props, code, "Twitter")
       }
     )
   }
@@ -81,23 +86,13 @@ class SignIn extends React.PureComponent {
     event.preventDefault()
     open(
       ROUTE_API_LOGIN_FACEBOOK,
-      {
-        name: "Sign in with Facebook",
-        width: 500,
-        height: 600
-      },
+      POPUP_WINDOW("Sign in with Facebook"),
       (err, code) => {
         if (err) {
           console.error(err)
           return
         }
-        localStorage.setItem("token", code.token)
-        this.props.verifyUser()
-        this.props.getUserInfo()
-        this.props.history.replace({
-          pathname: this.props.user.routes.success
-        })
-        this.props.setSessionInfo("Facebook")
+        processSignin(this.props, code, "Facebook")
       }
     )
   }
@@ -106,27 +101,10 @@ class SignIn extends React.PureComponent {
     if (this.props.user.status !== "ok") {
       return (
         <ArticleWrapper>
-          <Helmet>
-            <title>Sign In</title>
-          </Helmet>
-
+          <MetaTags metaTitle="Sign In" />
           <HeaderLarge pageTitle="Sign In" />
           <ArticleSection>
-            <p style={{ textAlign: "center", marginBottom: "0" }}>
-              Sign in or create new account instantly, without passwords.
-              <br />
-              <small>
-                {this.state.sessionInfo.login &&
-                this.state.sessionInfo.method ? (
-                  <em>
-                    Hint: last time you used {this.state.sessionInfo.id}{" "}
-                    {this.state.sessionInfo.method}.
-                  </em>
-                ) : (
-                  <span>&nbsp;</span>
-                )}
-              </small>
-            </p>
+            <SignInInfo stateSessionInfo={this.state.sessionInfo} />
 
             <ButtonGroup>
               <TwitterLinkButton
@@ -155,8 +133,6 @@ class SignIn extends React.PureComponent {
     }
   }
 }
-
-// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     verifyUser: () => {
