@@ -4,7 +4,7 @@ import React from "react"
 import { CARD_ERRORS } from "../../../constants/messages-session"
 import { Form } from "../FormStyles"
 import { loginWithEmail } from "../../../store/actions-user"
-import { setCard } from "../../../../core/store/actions-modal"
+import { setModal } from "../../../../core/store/actions-modal"
 import { validateEmail } from "../../../utils/messages-session"
 import Button from "../../../../core/components/controls/Button/components/Button"
 import EmailInput from "../EmailInput"
@@ -29,7 +29,7 @@ class SigninWithEmail extends React.PureComponent {
       )
         this.props.loginWithEmail(this.state.email.toLowerCase())
       else
-        this.props.setCard({
+        this.props.setModal({
           status: "ok",
           info: CARD_ERRORS.SESSION_LOGIN_EMAIL_TIMEOUT(
             Math.floor(
@@ -68,8 +68,8 @@ const mapDispatchToProps = dispatch => {
     loginWithEmail: validatedEmail => {
       dispatch(loginWithEmail(validatedEmail))
     },
-    setCard: (info, request) => {
-      dispatch(setCard(info, request))
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     }
   }
 }

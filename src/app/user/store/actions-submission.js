@@ -2,7 +2,7 @@ import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-submission"
 import { makeAPIRequest } from "../../utils"
-import { setCard } from "../../core/store/actions-modal"
+import { setModal } from "../../core/store/actions-modal"
 
 export const setUploadProgress = state => {
   return {
@@ -34,7 +34,7 @@ export const uploadSubmission = request => {
         })
       )
       dispatch(
-        setCard(
+        setModal(
           {
             status: "ok",
             info: {

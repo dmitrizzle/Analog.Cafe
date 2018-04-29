@@ -5,7 +5,7 @@ import {
   CARD_DIALOGUES
 } from "../../../../user/constants/messages-submission"
 import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/constants/messages-admin"
-import { ModalDispatch } from "../Modal"
+import Modal from "../Modal"
 import { NavIndexLink, NavItem, NavLink, TinyImageInline } from "./styles"
 import { makeFroth } from "../../../../utils"
 import Logo from "../../icons/Logo"
@@ -69,7 +69,7 @@ export const CommonNav = props => {
         )}
       </NavItem>
       <NavItem prime left className="prime right">
-        <ModalDispatch
+        <Modal
           with={{
             info: {
               title: "More…",
@@ -148,7 +148,7 @@ export const CommonNav = props => {
             userStatus={props.userStatus}
             userImage={props.userImage}
           />
-        </ModalDispatch>
+        </Modal>
       </NavItem>
     </ul>
   )
@@ -159,7 +159,7 @@ const NavLinkSendLabel = () => {
 }
 const NavLinkSend = props => {
   return (
-    <ModalDispatch
+    <Modal
       with={
         props.editorStatus.id && props.userRole === "admin"
           ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
@@ -168,7 +168,7 @@ const NavLinkSend = props => {
       style={{ textDecoration: "none" }}
     >
       <NavLinkSendLabel />
-    </ModalDispatch>
+    </Modal>
   )
 }
 
@@ -176,14 +176,11 @@ export const ComposerNav = props => {
   return (
     <ul>
       <NavItem status prime left className="prime left">
-        <ModalDispatch
-          with={CARD_ALERTS.AUTO_SAVE}
-          style={{ textDecoration: "none" }}
-        >
+        <Modal with={CARD_ALERTS.AUTO_SAVE} style={{ textDecoration: "none" }}>
           {props.composerStatus === "ok" && <span>Draft Saved</span>}
           {props.composerStatus === "pending" && <span>Saving…</span>}
           {!props.composerStatus && <span>Draft</span>}
-        </ModalDispatch>
+        </Modal>
       </NavItem>
       <NavItem prime center className="prime center">
         <NavIndexLink to={"/"} className="indexRouteLink">

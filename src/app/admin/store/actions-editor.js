@@ -3,7 +3,7 @@ import axios from "axios"
 import { CARD_ALERTS } from "../constants/messages-admin"
 import { ROUTE_API_SUBMISSIONS } from "../constants/routes-admin"
 import { makeAPIRequest } from "../../utils"
-import { setCard } from "../../core/store/actions-modal"
+import { setModal } from "../../core/store/actions-modal"
 
 export const setStatus = (id, type) => {
   return {
@@ -28,7 +28,7 @@ export const rejectSubmission = submissionId => {
     }
     axios(makeAPIRequest(request))
       .then(response => {
-        dispatch(setCard(CARD_ALERTS.REJECTED_SUCCESSFULLY))
+        dispatch(setModal(CARD_ALERTS.REJECTED_SUCCESSFULLY))
         dispatch({
           type: "SUBMISSION.REJECT",
           payload: {
@@ -58,7 +58,7 @@ export const publishSubmission = (submissionId, scheduledOrder, tag) => {
     }
     axios(makeAPIRequest(request))
       .then(response => {
-        dispatch(setCard(CARD_ALERTS.SCHEDULED))
+        dispatch(setModal(CARD_ALERTS.SCHEDULED))
         dispatch({
           type: "SUBMISSION.PUBLISH",
           payload: {

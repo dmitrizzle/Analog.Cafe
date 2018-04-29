@@ -21,7 +21,7 @@ import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
 import { resetComposer } from "../../../store/actions-composer"
 import { resetStatus } from "../../../../admin/store/actions-editor"
-import { setCard } from "../../../../core/store/actions-modal"
+import { setModal } from "../../../../core/store/actions-modal"
 import { setUserRoutes, resetUserRoutes } from "../../../store/actions-user"
 import {
   uploadSubmission,
@@ -111,7 +111,7 @@ class Upload extends React.PureComponent {
       } else {
         // images added as URLs or no images
         if (srcs.length === 0) {
-          this.props.setCard(
+          this.props.setModal(
             {
               status: "ok",
               info: CARD_ERRORS.SEND_IMAGES_MISSING
@@ -184,7 +184,7 @@ class Upload extends React.PureComponent {
   }
 
   handleEmptySubmission = () => {
-    this.props.setCard(
+    this.props.setModal(
       {
         status: "ok",
         info: CARD_ERRORS.SEND_CONTENT_EMPTY
@@ -292,8 +292,8 @@ const mapDispatchToProps = dispatch => {
     resetComposer: () => {
       dispatch(resetComposer())
     },
-    setCard: (info, request) => {
-      dispatch(setCard(info, request))
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     }
   }
 }

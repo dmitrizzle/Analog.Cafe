@@ -13,7 +13,7 @@ import {
   INPUT_TITLE_LIMIT,
   INPUT_TITLE_WARNING
 } from "../../../../../constants/rules-submission"
-import { ModalDispatch } from "../../../../../../core/components/controls/Modal"
+import Modal from "../../../../../../core/components/controls/Modal"
 import { resetStatus } from "../../../../../../admin/store/actions-editor"
 import { saveHeader } from "../../../../../utils/actions-submission"
 import { setComposerHeader } from "../../../../../store/actions-composer"
@@ -105,10 +105,7 @@ class HeaderEditor extends React.PureComponent {
           </Byline>
         ) : (
           <Byline>
-            Link to{" "}
-            <ModalDispatch with={CARD_ALERTS.YOUR_PROFILE}>
-              Your Profile
-            </ModalDispatch>{" "}
+            Link to <Modal with={CARD_ALERTS.YOUR_PROFILE}>Your Profile</Modal>{" "}
             will appear here.
           </Byline>
         )}

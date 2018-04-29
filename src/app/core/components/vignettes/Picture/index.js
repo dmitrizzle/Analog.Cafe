@@ -2,7 +2,7 @@ import React from "react"
 
 import { CARD_ERRORS } from "../../../constants/messages-"
 import { Image, Figure, Caption, CaptionAuthor } from "./styles"
-import { ModalDispatch } from "../../controls/Modal"
+import Modal from "../../controls/Modal"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 
 // return
@@ -35,7 +35,7 @@ export default props => {
                 <span
                   style={props.author.name === "" ? { display: "none" } : null}
                 >
-                  <ModalDispatch
+                  <Modal
                     with={
                       props.author.id !== "unknown"
                         ? {
@@ -54,7 +54,7 @@ export default props => {
                     }
                   >
                     {props.author.name}
-                  </ModalDispatch>.
+                  </Modal>.
                 </span>
               </CaptionAuthor>
             ) : null}

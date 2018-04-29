@@ -8,7 +8,7 @@ import {
 import { TEXT_ERRORS } from "../../constants"
 import { anonymizeEmail } from "../utils/messages-session"
 import { makeAPIRequest } from "../../utils"
-import { setCard } from "../../core/store/actions-modal"
+import { setModal } from "../../core/store/actions-modal"
 
 const LOGIN_ERROR = (type = "error") => {
   return {
@@ -64,7 +64,7 @@ export const loginWithEmail = validatedEmail => {
       })
     )
       .then(() => {
-        dispatch(setCard(CARD_ALERTS.LOGIN_EMAIL(validatedEmail)))
+        dispatch(setModal(CARD_ALERTS.LOGIN_EMAIL(validatedEmail)))
         dispatch({
           type: "USER.SET_EMAIL_LOGIN_STATUS",
           payload: "ok"
@@ -72,7 +72,7 @@ export const loginWithEmail = validatedEmail => {
       })
       .catch(() => {
         dispatch(
-          setCard({
+          setModal({
             status: "ok",
             info: CARD_ERRORS.LOGIN_EMAIL,
             requested: { url: "errors/email-login" }
@@ -142,7 +142,7 @@ export const getUserInfo = () => {
 
         if (!error.response || !error.response.data) return
         dispatch(
-          setCard(LOGIN_ERROR(error.response.data.message), {
+          setModal(LOGIN_ERROR(error.response.data.message), {
             url: "errors/user"
           })
         )
@@ -165,7 +165,7 @@ export const setUserInfo = request => {
       })
       .catch(error => {
         dispatch(
-          setCard(LOGIN_ERROR(error.response.data.message), {
+          setModal(LOGIN_ERROR(error.response.data.message), {
             url: "errors/user"
           })
         )

@@ -16,12 +16,12 @@ import {
   GridRow
 } from "../../../../../controls/Grid"
 import { MIME_PICTURES } from "../../../../../../constants/rules-submission"
-import { ModalDispatch } from "../../../../../../../core/components/controls/Modal"
 import { dot } from "../../../../../../../core/components/icons/BlankDot"
 import { fetchImageLib } from "../../../../../../store/actions-imagelib"
 import { forceImageRestrictions } from "../../../../../../utils/actions-submission"
-import { setCard } from "../../../../../../../core/store/actions-modal"
+import { setModal } from "../../../../../../../core/store/actions-modal"
 import HeaderSmall from "../../../../../../../core/components/vignettes/HeaderSmall"
+import Modal from "../../../../../../../core/components/controls/Modal"
 import PictureDocket from "../../../../../controls/PictureDocket"
 
 // return
@@ -78,7 +78,7 @@ class PictureDocketContainer extends React.PureComponent {
     forceImageRestrictions(file.size, file.type)
       .then(() => this.uploadRequest(file))
       .catch(() => {
-        this.props.setCard(
+        this.props.setModal(
           {
             status: "ok",
             info: CARD_ERRORS.IMAGE_SIZE(10)
@@ -136,9 +136,7 @@ class PictureDocketContainer extends React.PureComponent {
         </HeaderSmall>
         <GridCaption>
           Create an{" "}
-          <ModalDispatch with={CARD_ALERTS.COLLABORATIONS}>
-            instant collaboration
-          </ModalDispatch>{" "}
+          <Modal with={CARD_ALERTS.COLLABORATIONS}>instant collaboration</Modal>{" "}
           or upload new image.
         </GridCaption>
 
@@ -211,8 +209,8 @@ class PictureDocketContainer extends React.PureComponent {
 // connect with redux
 const mapDispatchToProps = dispatch => {
   return {
-    setCard: (info, request) => {
-      dispatch(setCard(info, request))
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     },
     fetchImageLib: () => {
       dispatch(fetchImageLib())

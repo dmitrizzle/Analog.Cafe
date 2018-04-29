@@ -65,7 +65,7 @@ export default props => {
                 status={props.imagelib.status}
                 author={props.imagelib.items[1] ? item.author : null}
                 add={src =>
-                  props.setCard({
+                  props.setModal({
                     info: {
                       title: src,
                       image: src,

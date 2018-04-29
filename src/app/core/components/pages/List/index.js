@@ -7,7 +7,7 @@ import { withRouter } from "react-router"
 import { Article, Section } from "../../styles/ArticleStyles"
 import { HEADER_ERRORS } from "../../../../constants"
 import { ListDescription, ListHeader } from "../../vignettes/ListDescription"
-import { ModalDispatch } from "../../controls/Modal"
+import Modal from "../../controls/Modal"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import {
   ROUTE_API_LIST,
@@ -127,7 +127,7 @@ class List extends React.PureComponent {
                     {this.props.list.filter.author.name ? (
                       <span>
                         by{" "}
-                        <ModalDispatch
+                        <Modal
                           with={{
                             request: {
                               url:
@@ -140,7 +140,7 @@ class List extends React.PureComponent {
                           {getFirstNameFromFull(
                             this.props.list.filter.author.name
                           )}
-                        </ModalDispatch>
+                        </Modal>
                       </span>
                     ) : (
                       this.props.location.pathname.includes("/author/") && ".."

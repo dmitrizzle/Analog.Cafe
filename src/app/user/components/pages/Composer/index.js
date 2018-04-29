@@ -6,7 +6,7 @@ import {
   CARD_DIALOGUES
 } from "../../../constants/messages-submission"
 import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/constants/messages-admin"
-import { ModalDispatch } from "../../../../core/components/controls/Modal"
+import Modal from "../../../../core/components/controls/Modal"
 import { Section } from "../../../../core/components/styles/ArticleStyles"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { requestComposerFocus as requestEditorFocus } from "../../../store/actions-composer"
@@ -35,7 +35,7 @@ const Composer = props => {
         }}
       />
     </Section>,
-    <ModalDispatch
+    <Modal
       style={{ marginBottom: "0.25em" }}
       key="Composer_Send"
       with={
@@ -47,10 +47,9 @@ const Composer = props => {
       branded
     >
       Send Submission {TEXT_EMOJIS.CHECKMARK}
-    </ModalDispatch>,
+    </Modal>,
     <DraftStatusText key={"Composer_DraftStatus"}>
-      Your draft is{" "}
-      <ModalDispatch with={CARD_ALERTS.AUTO_SAVE}>saved</ModalDispatch>.
+      Your draft is <Modal with={CARD_ALERTS.AUTO_SAVE}>saved</Modal>.
     </DraftStatusText>
   ]
 }

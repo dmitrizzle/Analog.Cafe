@@ -9,7 +9,7 @@ import {
 } from "../../../../../../core/components/icons/HeaderGlyphs"
 import { HOST_PROD } from "../../../../../../constants"
 import { ToggleFeature } from "./plugins"
-import { setCard } from "../../../../../../core/store/actions-modal"
+import { setModal } from "../../../../../../core/store/actions-modal"
 import { setComposerSatus } from "../../../../../store/actions-composer"
 import Picture from "../../../../../../core/components/vignettes/Picture_c"
 import PictureDocket from "./components/PictureDocket"
@@ -27,7 +27,7 @@ class ContentEditor extends React.PureComponent {
   }
   handleEditorError = error => {
     if (error === "insert_image") {
-      this.props.setCard(
+      this.props.setModal(
         {
           status: "ok",
           info: CARD_ERRORS.IMAGE_SIZE(10)
@@ -49,7 +49,7 @@ class ContentEditor extends React.PureComponent {
       !this.state.connectionMessageShown &&
       nextProps.user.connection.status === "offline"
     ) {
-      this.props.setCard(CARD_ERRORS.CONNECTION_OFFLINE)
+      this.props.setModal(CARD_ERRORS.CONNECTION_OFFLINE)
       this.setState({ connectionMessageShown: true })
     }
   }
@@ -118,8 +118,8 @@ class ContentEditor extends React.PureComponent {
 // connect with redux
 const mapDispatchToProps = dispatch => {
   return {
-    setCard: (info, request) => {
-      dispatch(setCard(info, request))
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     },
     setComposerSatus: status => {
       dispatch(setComposerSatus(status))

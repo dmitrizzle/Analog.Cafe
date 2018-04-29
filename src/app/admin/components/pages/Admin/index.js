@@ -12,7 +12,7 @@ import {
 } from "../../../store/actions-image"
 import { fetchImageLib } from "../../../../user/store/actions-imagelib"
 import { fetchUserList } from "../../../store/actions-admin"
-import { setCard } from "../../../../core/store/actions-modal"
+import { setModal } from "../../../../core/store/actions-modal"
 import Forbidden from "../../../../core/components/pages/Forbidden"
 import Heading from "../../../../core/components/vignettes/ArticleHeading"
 import ImageAdmin from "./components/ImageAdmin"
@@ -154,7 +154,7 @@ class Admin extends React.PureComponent {
             imageUnfeature={this.handleImageUnfeature}
             imagesLoadMore={this.handleImagesLoadMore}
             stateImageList={this.state.imageList}
-            setCard={this.props.setCard}
+            setModal={this.props.setModal}
             rowIndex={rowIndex}
             gridRows={GRID_ROWS}
             imagelib={this.props.imagelib}
@@ -163,7 +163,7 @@ class Admin extends React.PureComponent {
             rowIndex={rowIndex}
             gridRows={GRID_ROWS}
             admin={this.props.admin}
-            setCard={this.props.setCard}
+            setModal={this.props.setModal}
           />
         </Section>
       </Article>
@@ -181,8 +181,8 @@ const mapDispatchToProps = dispatch => {
     fetchUserList: (options, page, appendItems) => {
       dispatch(fetchUserList(options, page, appendItems))
     },
-    setCard: (info, request) => {
-      dispatch(setCard(info, request))
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     },
     deleteImageRecord: id => {
       dispatch(deleteImageRecord(id))

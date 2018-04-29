@@ -7,9 +7,8 @@ import { withRouter } from "react-router"
 
 import { CARD_ERRORS } from "./user/constants/messages-session"
 import { DATA_GA_ID, HOST_RUNTIME, HOST_PROD } from "./constants"
-import { Modal } from "./core/components/controls/Modal"
 import { ROUTE_URL_USER_LANDING } from "./user/constants/routes-session"
-import { setCard as setModalCard } from "./core/store/actions-modal"
+import { setModal as setModalCard } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import {
   verifyUser,
@@ -18,6 +17,7 @@ import {
   setUserIntent
 } from "./user/store/actions-user"
 import AppRoutes from "./core/components/routes/App"
+import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav_c"
 
 // init GA tracking
@@ -177,7 +177,7 @@ class App extends React.PureComponent {
       <Nav top key="App_Nav_top" />,
       <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
       <Nav bottom key="App_Nav_bottom" />,
-      <Modal key="App_Modal" />
+      <ModalOverlay key="App_Modal" />
     ]
   }
 }

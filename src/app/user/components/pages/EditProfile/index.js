@@ -18,7 +18,7 @@ import {
 } from "../../../store/actions-user"
 import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { getProfileButtons } from "../../../utils/messages-profile"
-import { setCard } from "../../../../core/store/actions-modal"
+import { setModal } from "../../../../core/store/actions-modal"
 import Button from "../../../../core/components/controls/Button/components/Button"
 import CardEditableProfile from "./components/EditableProfile"
 import Forbidden from "../../../../core/components/pages/Forbidden"
@@ -99,7 +99,7 @@ class EditProfile extends React.PureComponent {
     forceImageRestrictions(file.size, file.type, 5)
       .then(() => this.uploadRequest(file))
       .catch(() => {
-        this.props.setCard(
+        this.props.setModal(
           {
             status: "ok",
             info: CARD_ERRORS.IMAGE_SIZE(5)
@@ -233,8 +233,8 @@ const mapDispatchToProps = dispatch => {
     acceptUserInfo: () => {
       dispatch(acceptUserInfo())
     },
-    setCard: (info, request) => {
-      dispatch(setCard(info, request))
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     }
   }
 }

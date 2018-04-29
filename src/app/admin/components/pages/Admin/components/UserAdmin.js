@@ -33,7 +33,7 @@ export default props => {
                   email: item.email
                 }}
                 add={(src, author) =>
-                  props.setCard({
+                  props.setModal({
                     info: {
                       title: author.title || author.id,
                       text: `${author.email}`,

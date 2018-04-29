@@ -4,23 +4,23 @@ import { CARD_ERRORS } from "../constants/messages-"
 import { TEXT_ERRORS } from "../../constants"
 import { makeAPIRequest } from "../../utils"
 
-export const initCard = state => {
+export const initModal = state => {
   return {
     type: "MODAL.INIT_CARD",
     payload: state
   }
 }
-export const hideCard = () => {
+export const hideModal = () => {
   document.getElementById("modal-overlay").scrollTop = 0 // scroll card to top
   return {
     type: "MODAL.HIDE_CARD",
     payload: {}
   }
 }
-export const setCard = (info, request) => {
+export const setModal = (info, request) => {
   return dispatch => {
     dispatch(
-      initCard({
+      initModal({
         requested: request,
         hidden: false
       })
@@ -31,10 +31,10 @@ export const setCard = (info, request) => {
     })
   }
 }
-export const fetchCard = request => {
+export const fetchModal = request => {
   return dispatch => {
     dispatch(
-      initCard({
+      initModal({
         requested: request,
         hidden: false
       })
@@ -53,10 +53,10 @@ export const fetchCard = request => {
             response.data.info.role
           )
             response.data.info.text = CARD_ERRORS.AUTHOR.text
-          dispatch(setCard(response.data, request))
+          dispatch(setModal(response.data, request))
         } else
           dispatch(
-            setCard(
+            setModal(
               {
                 status: "ok",
                 info: {
@@ -72,7 +72,7 @@ export const fetchCard = request => {
       .catch(error => {
         error.response && error.response.status && error.response.status === 401
           ? dispatch(
-              setCard(
+              setModal(
                 {
                   status: "ok",
                   info: {
@@ -85,7 +85,7 @@ export const fetchCard = request => {
               )
             )
           : dispatch(
-              setCard(
+              setModal(
                 {
                   status: "ok",
                   info: {

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { Article, Quote, Section } from "../styles/ArticleStyles"
 import { Email } from "../vignettes/EmailSnippet"
-import { ModalDispatch } from "../controls/Modal"
+import Modal from "../controls/Modal"
 import { TEXT_LABELS } from "../../constants/messages-"
 import { makeFroth } from "../../../utils"
 import Figure from "../vignettes/Picture"
@@ -78,7 +78,7 @@ export default () => {
         </blockquote>
         <p>
           Analog.Cafe is an{" "}
-          <ModalDispatch
+          <Modal
             with={{
               info: {
                 title: "Inclusive",
@@ -89,7 +89,7 @@ export default () => {
             }}
           >
             inclusive
-          </ModalDispatch>{" "}
+          </Modal>{" "}
           creative outlet that publishes{" "}
           <strong>outstanding images and stories</strong>.
         </p>

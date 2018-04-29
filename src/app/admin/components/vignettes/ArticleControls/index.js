@@ -16,7 +16,7 @@ import {
   rejectSubmission,
   setStatus
 } from "../../../store/actions-editor"
-import { setCard } from "../../../../core/store/actions-modal"
+import { setModal } from "../../../../core/store/actions-modal"
 import { setComposerHeader } from "../../../../user/store/actions-composer"
 import { storeHeaderState } from "../../../../user/utils/actions-submission"
 import { updateArticleStatus } from "../../../../core/store/actions-article"
@@ -62,7 +62,7 @@ class ArticleControls extends React.PureComponent {
     event.preventDefault()
     const isComposerEmpty = !loadTextContent().length > 0
     if (!isComposerEmpty && !this.state.allowOverwrite) {
-      this.props.setCard(
+      this.props.setModal(
         CARD_DIALOGUES.OVERWRITE_DRAFT(this.handleUnlockFunction)
       )
       return
@@ -83,7 +83,7 @@ class ArticleControls extends React.PureComponent {
   handleRejection = event => {
     event.preventDefault()
     if (!this.state.allowReject) {
-      this.props.setCard(CARD_DIALOGUES.REJECT(this.handleUnlockFunction))
+      this.props.setModal(CARD_DIALOGUES.REJECT(this.handleUnlockFunction))
       return
     }
     this.props.rejectSubmission(this.props.article.id)
@@ -91,7 +91,7 @@ class ArticleControls extends React.PureComponent {
   handlePublishNow = event => {
     event.preventDefault()
     if (!this.state.allowPublish) {
-      this.props.setCard(CARD_DIALOGUES.PUBLISH(this.handleUnlockFunction))
+      this.props.setModal(CARD_DIALOGUES.PUBLISH(this.handleUnlockFunction))
       return
     }
     this.props.publishSubmission(this.props.article.id, 0, this.state.publishAs)
@@ -171,8 +171,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    setCard: (info, request) => {
-      dispatch(setCard(info, request))
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     },
     setStatus: (id, type) => {
       dispatch(setStatus(id, type))

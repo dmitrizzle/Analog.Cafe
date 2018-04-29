@@ -9,7 +9,7 @@ import {
   Article as ArticleElement
 } from "../../styles/ArticleStyles"
 import { HOST_PROD, TEXT_EMOJIS } from "../../../../constants"
-import { ModalDispatch } from "../../controls/Modal"
+import Modal from "../../controls/Modal"
 import {
   ROUTE_API_AUTHORS,
   ROUTE_URL_ARTICLES,
@@ -196,7 +196,7 @@ class Article extends React.PureComponent {
               <Byline>
                 <Link to={this.state.tag.route}>{this.state.tag.name}</Link> by{" "}
                 {getLeadAuthorObject(this.props.article.authors).id ? (
-                  <ModalDispatch
+                  <Modal
                     with={{
                       request: {
                         url:
@@ -207,7 +207,7 @@ class Article extends React.PureComponent {
                     }}
                   >
                     {getLeadAuthorObject(this.props.article.authors).name}
-                  </ModalDispatch>
+                  </Modal>
                 ) : (
                   getLeadAuthorObject(this.props.article.authors).name
                 )}

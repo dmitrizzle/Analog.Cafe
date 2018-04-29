@@ -14,6 +14,7 @@ export default props => {
         error={props.error}
         stubborn={props.stubborn}
         buttons={props.buttons}
+        title={props.title}
       />
       <CardFigure image={props.image} text={props.text} />
       {props.subscribeForm && [
