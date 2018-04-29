@@ -1,5 +1,6 @@
 import { connect } from "react-redux"
 import { getFroth } from "@roast-cms/image-froth"
+import Loadable from "react-loadable"
 import React from "react"
 
 import {
@@ -9,7 +10,13 @@ import {
 import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
 import { getPictureInfo } from "../../../store/actions-picture"
 import Figure from "./components/Figure"
-import PictureMenu from "../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"
+
+const PictureMenu = Loadable({
+  loader: () =>
+    import("../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"),
+  loading: () => null,
+  delay: 100
+})
 
 class Picture extends React.PureComponent {
   constructor(props) {
