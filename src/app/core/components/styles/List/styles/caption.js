@@ -1,8 +1,9 @@
 // styles
 import styled from "styled-components"
 
+import { Sidenote } from "../../../vignettes/Caption"
+
 // components
-import { Sidenote } from "../../CaptionStyles"
 
 // css
 export const Caption = styled(Sidenote)`

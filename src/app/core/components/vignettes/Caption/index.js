@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components"
 
-// css
 export const CaptionStyles = css`
   ${props => props.theme.typography.text.auto} ${props =>
     props.theme.size.font.auto}
@@ -13,10 +12,6 @@ export const CaptionStyles = css`
 export const Caption = styled.div`
   ${CaptionStyles} font-variant: small-caps;
   text-align: justify;
-  ${"" /* & a {
-		font-variant: normal;
-		font-style: italic;
-	} */};
 `
 export const Sidenote = styled.div`
   ${CaptionStyles} font-style: italic;

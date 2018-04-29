@@ -8,6 +8,7 @@ import {
   CARD_ALERTS,
   CARD_ERRORS
 } from "../../../../../../constants/messages-submission"
+import { DOCUMENT_BLANK_DOT } from "../../../../../../../constants"
 import {
   GridButton,
   GridButtonImage,
@@ -16,7 +17,6 @@ import {
   GridRow
 } from "../../../../../controls/Grid"
 import { MIME_PICTURES } from "../../../../../../constants/rules-submission"
-import { dot } from "../../../../../../../core/components/icons/BlankDot"
 import { fetchImageLib } from "../../../../../../store/actions-imagelib"
 import { forceImageRestrictions } from "../../../../../../utils/actions-submission"
 import { setModal } from "../../../../../../../core/store/actions-modal"
@@ -97,7 +97,7 @@ class PictureDocketContainer extends React.PureComponent {
       .insertBlock({
         type: "image",
         isVoid: true,
-        data: { file, key, src: dot }
+        data: { file, key, src: DOCUMENT_BLANK_DOT }
       })
       // remove docket
       .value.change()

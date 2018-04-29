@@ -1,10 +1,22 @@
 import { connect } from "react-redux"
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
+import { TEXT_EMOJIS } from "../../../../constants"
 import { fetchModal, setModal } from "../../../store/actions-modal"
 import Button from "../Button/components/Button"
-import InlineStarIcon from "../../icons/InlineStarIcon"
+
+const inlineStar = css`
+content: "${TEXT_EMOJIS.STAR}";
+text-decoration: none;
+font-style: normal;
+display: inline-block;
+vertical-align: super;
+font-size: 0.5em;
+margin-right: -.25em;
+margin-left: -.15em;
+margin-top: -.5em;
+`
 
 const ModalLauncher = props => {
   const invokeModal = event => {
@@ -36,7 +48,7 @@ const ModalLauncher = props => {
     case "a":
       ModalLauncherComponent = styled(WrapperComponent)`
         &::after {
-          ${InlineStarIcon};
+          ${inlineStar};
         }
       `
       break

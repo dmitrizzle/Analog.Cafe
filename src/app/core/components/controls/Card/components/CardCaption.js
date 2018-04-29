@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-import { Sidenote } from "../../../styles/CaptionStyles"
+import { Sidenote } from "../../../vignettes/Caption"
 
 export const styles = css`
   text-align: left;

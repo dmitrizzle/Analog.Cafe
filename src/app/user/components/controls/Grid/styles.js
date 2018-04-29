@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-import { Sidenote } from "../../../../core/components/styles/CaptionStyles"
+import { Sidenote } from "../../../../core/components/vignettes/Caption"
 import Button from "../../../../core/components/controls/Button/components/Button"
 
 // css

@@ -4,7 +4,7 @@ import {
   Article,
   Section
 } from "../../../../core/components/styles/ArticleStyles"
-import { Caption } from "../../../../core/components/styles/CaptionStyles"
+import { Caption } from "../../../../core/components/vignettes/Caption"
 import { makeFroth } from "../../../../utils"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import Figure from "../../../../core/components/vignettes/Picture"

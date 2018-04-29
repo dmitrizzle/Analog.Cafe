@@ -1,10 +1,10 @@
 import React from "react"
 import styled, { css } from "styled-components"
 
-import Facebook from "../../../icons/Facebook"
-import Instagram from "../../../icons/Instagram"
+import Facebook from "../../../icons/Social/components/Facebook"
+import Instagram from "../../../icons/Social/components/Instagram"
 import LinkButton from "./LinkButton"
-import Twitter from "../../../icons/Twitter"
+import Twitter from "../../../icons/Social/components/Twitter"
 
 const brandButtonStyles = css`
   color: ${props => props.theme.color.background()} !important;

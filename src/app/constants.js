@@ -9,6 +9,9 @@ export const HOST_RUNTIME = window.location.hostname
 
 export const DATA_GA_ID = "UA-91374353-3"
 
+export const DOCUMENT_BLANK_DOT =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+
 export const TEXT_EMOJIS = {
   WTF: "ʕ⊙ᴥ⊙ʔ",
   MONOCLE: "(╭ರ_•́)",

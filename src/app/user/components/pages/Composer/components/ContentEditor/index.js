@@ -3,14 +3,12 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { CARD_ERRORS } from "../../../../../constants/messages-submission"
-import {
-  Capital,
-  Lower
-} from "../../../../../../core/components/icons/HeaderGlyphs"
 import { HOST_PROD } from "../../../../../../constants"
 import { ToggleFeature } from "./plugins"
-import { setModal } from "../../../../../../core/store/actions-modal"
 import { setComposerSatus } from "../../../../../store/actions-composer"
+import { setModal } from "../../../../../../core/store/actions-modal"
+import CapitalA from "../../../../icons/Glyphs/components/CapitalA"
+import LowerA from "../../../../icons/Glyphs/components/LowerA"
 import Picture from "../../../../../../core/components/vignettes/Picture_c"
 import PictureDocket from "./components/PictureDocket"
 
@@ -73,10 +71,10 @@ class ContentEditor extends React.PureComponent {
         controls={{
           //
           // button that converts the text block into a header
-          MakeHeader: () => <Capital />,
+          MakeHeader: () => <CapitalA />,
           //
           // button that converts header block back into paragraph
-          CancelHeader: () => <Lower />,
+          CancelHeader: () => <LowerA />,
           //
           // button that converts text block into a quote
           MakeQuote: () => <span>❝</span>,

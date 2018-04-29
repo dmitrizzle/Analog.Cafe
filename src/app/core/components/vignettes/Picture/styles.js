@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 import {
   Caption as PictureCaption,
   CaptionStyles
-} from "../../styles/CaptionStyles"
+} from "../../vignettes/Caption"
 import Picture from "./components/PictureElement"
 
 // css

@@ -3,8 +3,8 @@ import styled, { css } from "styled-components"
 
 // components
 import { Button } from "../../../components/_controls/Button"
-import Twitter from "../../../components/_icons/Twitter"
-import Facebook from "../../../components/_icons/Facebook"
+import Twitter from "../../../components/_icons/Social/components/Twitter"
+import Facebook from "../../../components/_icons/Social/components/Facebook"
 
 // css
 const brandButtonStyles = css`

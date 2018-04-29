@@ -1,5 +1,6 @@
 import { froth } from "@roast-cms/image-froth"
-import { dot } from "./core/components/icons/BlankDot"
+
+import { DOCUMENT_BLANK_DOT } from "./constants"
 
 const FROTH_CONSTANTS = {
   server: "https://res.cloudinary.com/analog-cafe/image/upload/",
@@ -11,7 +12,7 @@ const FROTH_CONSTANTS = {
     m: "1268",
     l: "1800"
   },
-  placeholder: dot
+  placeholder: DOCUMENT_BLANK_DOT
 }
 export const makeFroth = options => froth(options, FROTH_CONSTANTS)
 
