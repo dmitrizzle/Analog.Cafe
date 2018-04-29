@@ -7,9 +7,9 @@ import {
   INPUT_FORMAT,
   OBJECT_SLATE_PICTURE_FROM_IMMUTABLE
 } from "../../../../user/constants/rules-submission"
-import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
 import { getPictureInfo } from "../../../store/actions-picture"
 import Figure from "./components/Figure"
+import PlainTextarea from "../../../../user/components/forms/TextInput/components/PlainTextarea"
 
 const PictureMenu = Loadable({
   loader: () => import("../../../../user/components/controls/PictureMenu"),

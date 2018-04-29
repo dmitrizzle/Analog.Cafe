@@ -4,8 +4,6 @@ import styled from "styled-components"
 
 import ButtonStripItem from "../../../../core/components/controls/Button/components/ButtonStripItem"
 
-// components
-
 const PictureMenu = styled.div`
   width: 100%;
   position: absolute;
@@ -18,8 +16,6 @@ const PictureMenu = styled.div`
       ${props => props.theme.color.background(props.theme.opacity.least)};
   }
 `
-
-// return
 export default props => {
   return (
     <PictureMenu style={{ pointerEvents: "none" }}>

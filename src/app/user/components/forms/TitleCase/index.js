@@ -2,14 +2,13 @@ import React from "react"
 import toTitleCase from "titlecase"
 
 import { INPUT_FORMAT } from "../../../constants/rules-submission"
-import { SubtitleTextarea, TitleTextarea } from "../InputStyles"
+import SubtitleTextarea from "../TextInput/components/SubtitleTextarea"
+import TitleTextarea from "../TextInput/components/TitleTextarea"
 
-// return
 const components = {
   title: TitleTextarea,
   subtitle: SubtitleTextarea
 }
-
 export default class extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -17,7 +16,6 @@ export default class extends React.PureComponent {
     this.handleChange = this.handleChange.bind(this)
   }
   handleChange = event => {
-    // preserve caret position
     const caret = event.target.selectionEnd
     const element = event.target
     window.requestAnimationFrame(() => {

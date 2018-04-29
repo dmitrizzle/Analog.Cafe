@@ -1,9 +1,9 @@
 import React from "react"
 
-import { Form } from "../../FormStyles"
 import { validateEmail } from "../../../../utils/messages-session"
 import Button from "../../../../../core/components/controls/Button/components/Button"
 import EmailInput from "../../EmailInput"
+import Form from "../../Form"
 
 // helpers
 

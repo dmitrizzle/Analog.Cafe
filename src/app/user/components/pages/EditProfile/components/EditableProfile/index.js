@@ -9,10 +9,10 @@ import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
 } from "../../../../../../user/constants/rules-submission"
-import { SubtitleInput } from "../../../../../../user/components/forms/InputStyles"
 import { makeFroth } from "../../../../../../utils"
 import CardIntegrated from "../../../../../../core/components/controls/Card/components/CardIntegrated"
 import Placeholder from "../../../../../../core/components/vignettes/Picture/components/Placeholder"
+import SubtitleInput from "../../../../forms/TextInput/components/SubtitleInput"
 
 // return
 export default props => {

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { SubtitleInput } from "../InputStyles"
+import SubtitleInput from "../TextInput/components/SubtitleInput"
 
 export default props => {
   return (

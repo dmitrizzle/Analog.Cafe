@@ -4,11 +4,10 @@ import styled from "styled-components"
 import { styles as CaptionStyles } from "../../../../../../core/components/vignettes/Caption"
 import { styles as CardButtonStyles } from "../../../../../../core/components/controls/Card/components/CardButton"
 import { styles as CardCaptionStyles } from "../../../../../../core/components/controls/Card/components/CardCaption"
+import HeaderSmall from "../../../../../../core/components/vignettes/HeaderSmall"
+import TextareaWithHighlights from "../../../../forms/TextInput/components/TextareaWithHighlights"
 
-import { TextareaWithHighlights } from "../../../../forms/InputStyles"
-import CardHeader from "../../../../../../core/components/controls/Card/components/CardHeader"
-
-export const CardHeaderEditable = styled(CardHeader)`
+export const CardHeaderEditable = styled(HeaderSmall)`
   padding: 0;
   input {
     padding: ${props => props.theme.size.block.spacing / 4}em

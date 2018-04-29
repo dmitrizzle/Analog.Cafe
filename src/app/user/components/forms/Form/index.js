@@ -1,12 +1,11 @@
 import styled from "styled-components"
 
-// return
 const shadowGrey = props =>
   props.theme.color.foreground(props.theme.opacity.least)
 const shadowGrey2 = props =>
   props.theme.color.foreground(props.theme.opacity.least * 2)
 
-export const Form = styled.form`
+export default styled.form`
   max-width: ${props => props.theme.size.breakpoint.stops.min}px;
   margin: 0 auto !important;
   border-radius: ${props =>
@@ -23,7 +22,6 @@ export const Form = styled.form`
     margin: 0;
     border-radius: 0;
   }
-
   ${props => props.theme.size.breakpoint.max.xs`
     width: 100vw;
     max-width: 100vw;
@@ -32,7 +30,6 @@ export const Form = styled.form`
       margin-left: -${props => props.theme.size.block.padding}em !important;
     }
   `};
-
   ${props =>
     props.withinGroup &&
     `
