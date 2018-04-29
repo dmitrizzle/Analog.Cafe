@@ -10,7 +10,7 @@ import { setModal } from "../../../../../core/store/actions-modal"
 import CapitalA from "../../../icons/Glyphs/components/CapitalA"
 import LowerA from "../../../icons/Glyphs/components/LowerA"
 import Picture from "../../../../../core/components/vignettes/Picture"
-import PictureDocket from "../../../controls/PictureDocket/PictureDocket"
+import PictureDocket from "../../../controls/PictureDocket"
 
 // return
 class ContentEditor extends React.PureComponent {
