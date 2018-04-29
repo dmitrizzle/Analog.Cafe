@@ -6,9 +6,9 @@ import {
 } from "../../../../../user/constants/messages-submission"
 import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../../admin/constants/messages-admin"
 import { NavLogoLink } from "./NavLinks"
-import Logo from "../../../icons/Logo"
 import Modal from "../../Modal"
 import NavItem from "./NavItem"
+import NavLogo from "./NavLogo"
 
 // NOTE: `className` props are used in index.html
 const NavLinkSendLabel = () => {
@@ -40,7 +40,7 @@ export default props => {
       </NavItem>
       <NavItem prime center className="prime center">
         <NavLogoLink to={"/"} className="indexRouteLink">
-          <Logo />
+          <NavLogo />
         </NavLogoLink>
       </NavItem>
       <NavItem prime right className="prime right">

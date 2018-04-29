@@ -1,11 +1,19 @@
 import React from "react"
+import styled from "styled-components"
 
-import { LoaderContainer } from "./styles"
-
-// return
+export const Spinner = styled.div`
+  display: inline-block;
+  overflow: hidden;
+  width: ${props => props.theme.size.block.spacing}em;
+  height: ${props => props.theme.size.block.spacing}em;
+  margin: -0.1em 0 0em -${props => props.theme.size.block.spacing / 2}em;
+  svg {
+    margin-top: -0.25em;
+  }
+`
 export default props => {
   return (
-    <LoaderContainer {...props}>
+    <Spinner {...props}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="28 22 20 20">
         <defs>
           <clipPath id="loader-clip">
@@ -43,6 +51,6 @@ export default props => {
           />
         </path>
       </svg>
-    </LoaderContainer>
+    </Spinner>
   )
 }

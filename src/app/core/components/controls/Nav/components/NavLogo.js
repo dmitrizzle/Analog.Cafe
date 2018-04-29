@@ -1,11 +1,10 @@
-// styles
+import React from "react"
 import styled from "styled-components"
 
-// components
-import Logo from "../AnalogCafe"
+import { APP_NAME } from "../../../../../constants"
+import Logo from "../../../icons/Logo"
 
-// css
-export const LogoOutline = styled.div`
+const NavLogo = styled.div`
   position: ${props => (props.stamp ? "relative" : "absolute")};
   top: -${props => props.theme.size.block.padding / 2 + 1}em;
   left: calc(
@@ -18,7 +17,7 @@ export const LogoOutline = styled.div`
   padding: ${props => props.theme.size.block.spacing}em;
   width: 5em;
 `
-export const LogoWithDownstate = styled(Logo)`
+const LogoWithDownstate = styled(Logo)`
   background: ${props =>
     props.stamp
       ? props.theme.color.brand()
@@ -34,3 +33,10 @@ export const LogoWithDownstate = styled(Logo)`
     box-shadow: 0 0 ${props => props.theme.color.foreground()} inset;
   }
 `
+export default props => {
+  return (
+    <NavLogo {...props} title={APP_NAME}>
+      <LogoWithDownstate {...props} />
+    </NavLogo>
+  )
+}

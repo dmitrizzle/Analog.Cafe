@@ -2,10 +2,10 @@
 import React from "react"
 
 import { NavLink, NavLogoLink } from "./NavLinks"
-import Logo from "../../../icons/Logo"
 import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
+import NavLogo from "./NavLogo"
 
 const NavLinkLabelMore = props => {
   return (
@@ -33,7 +33,7 @@ export default props => {
       </NavItem>
       <NavItem prime center className="prime center">
         <NavLogoLink to={"/"} className="indexRouteLink">
-          <Logo />
+          <NavLogo />
         </NavLogoLink>
       </NavItem>
       <NavItem prime right className="prime left">
