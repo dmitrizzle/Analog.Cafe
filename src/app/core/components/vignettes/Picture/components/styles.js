@@ -5,8 +5,6 @@ import { styles } from "../../vignettes/Caption"
 import Caption from "../Caption"
 import Picture from "./components/PictureElement"
 
-// css
-// remove `style` prop from Picture HOC
 export const Image = styled(({ style, ...props }) => (
   <Picture
     {...props}

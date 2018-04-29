@@ -1,79 +1,167 @@
+import { connect } from "react-redux"
+import { getFroth } from "@roast-cms/image-froth"
 import React from "react"
 
-import { CARD_ERRORS } from "../../../constants/messages-"
 import {
-  Image,
-  Figure,
-  PictureCaption as Caption,
-  CaptionAuthor
-} from "./styles"
-import Modal from "../../controls/Modal"
-import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
+  INPUT_FORMAT,
+  OBJECT_SLATE_PICTURE_FROM_IMMUTABLE
+} from "../../../../user/constants/rules-submission"
+import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
+import { getPictureInfo } from "../../../store/actions-picture"
+import Picture from "../Picture"
+import PictureMenu from "../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"
 
-// return
-export default props => {
-  const { src, ...select } = props
-  return (
-    <Figure {...select}>
-      <Image
-        {...props}
-        protected={
-          props.readOnly !== false && process.env.NODE_ENV === "production"
-        }
-      />
-      <figcaption
-        style={
-          props.nocaption && {
-            borderBottom: "8px solid #2c2c2c",
-            height: 0,
-            overflow: "hidden"
+class Figure extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {
+      caption: props.node.data.get("caption"),
+      src: props.node.data.get("src") || "",
+      key: ""
+    }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleTextareaClick = this.handleTextareaClick.bind(this)
+    this.handleRemovePicture = this.handleRemovePicture.bind(this)
+    this.handleFeaturePicture = this.handleFeaturePicture.bind(this)
+  }
+  componentWillReceiveProps = nextProps => {
+    const caption = nextProps.node.data.get("caption")
+    if (caption !== this.state.caption) {
+      this.setState({ caption })
+    }
+  }
+  handleChange = event => {
+    const caret = event.target.selectionStart
+    const element = event.target
+    window.requestAnimationFrame(() => {
+      element.selectionStart = caret
+      element.selectionEnd = caret
+    })
+
+    let caption = INPUT_FORMAT(element.value)
+    const { node, editor } = this.props
+    const feature = node.data.get("feature")
+    const src = node.data.get("src")
+    const key = node.data.get("key") || false
+    const file = node.data.get("file") || false
+    const properties = { data: { caption, src, feature, key, file } }
+
+    const resolvedState = editor.value
+      .change()
+      .setNodeByKey(node.key, properties)
+    editor.onChange(resolvedState)
+    this.setState({ key })
+  }
+  handleTextareaClick = event => {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+  componentDidMount = () => {
+    const { node } = this.props
+    const { data } = node
+    const caption = data.get("caption")
+    const key = data.get("key")
+    this.setState({ caption })
+    this.loadImage(data.get("file"), key, data.get("src"))
+    this.setState({ key })
+  }
+  loadImage = (file, key, src) => {
+    if (!key) {
+      this.setState({ src })
+      this.props.readOnly && this.props.getPictureInfo(src)
+    } else {
+      import("localforage").then(localForage => {
+        localForage.getItem(key).then(data => {
+          const reader = new FileReader()
+          reader.addEventListener("load", () =>
+            this.setState({ src: reader.result })
+          )
+          if (
+            data &&
+            Object.keys(file).length === 0 &&
+            file.constructor === Object
+          ) {
+            reader.readAsDataURL(data)
+          } else if (file && file.constructor !== Object) {
+            reader.readAsDataURL(file)
           }
-        }
-      >
-        {props.author ? (
-          <Caption>
-            {props.children}
-            {props.readOnly ? (
-              <CaptionAuthor>
-                {" "}
-                Image by{" "}
-                <span
-                  style={props.author.name === "" ? { display: "none" } : null}
-                >
-                  <Modal
-                    with={
-                      props.author.id !== "unknown"
-                        ? {
-                            request: {
-                              url: ROUTE_API_AUTHORS + "/" + props.author.id
-                            }
-                          }
-                        : {
-                            info: {
-                              title: CARD_ERRORS.PICTURE_AUTHOR.title,
-                              text: CARD_ERRORS.PICTURE_AUTHOR.text,
-                              error: props.author.error
-                            },
-                            id: "errors/author"
-                          }
-                    }
-                  >
-                    {props.author.name}
-                  </Modal>.
-                </span>
-              </CaptionAuthor>
-            ) : null}
-          </Caption>
-        ) : (
-          <Caption {...props}>
-            {props.children}
-            {!props.noAuthor &&
-              props.readOnly && (
-                <CaptionAuthor> Finding image author…</CaptionAuthor>
-              )}
-          </Caption>
-        )}
-      </figcaption>
-    </Figure>
-  )
+        })
+      })
+      this.setState({ key })
+    }
+  }
+  handleRemovePicture = () => {
+    const { node, editor } = this.props
+    if (!editor.value.document.getDescendant(node.key)) return
+    editor.onChange(editor.value.change().removeNodeByKey(node.key))
+  }
+  handleFeaturePicture = () => {
+    const { node, editor } = this.props
+    const previousData = OBJECT_SLATE_PICTURE_FROM_IMMUTABLE(
+      editor.value.document.getChild(node.key).data
+    )
+    let featureStatus = previousData.feature ? false : true
+    editor.onChange(
+      editor.value
+        .change()
+        .setNodeByKey(node.key, {
+          type: "image",
+          data: { ...previousData, feature: featureStatus }
+        })
+        .focus()
+    )
+  }
+  render = () => {
+    const { attributes, node, isSelected, editor } = this.props
+    const { src } = this.state
+    const focus = editor.value.isFocused && isSelected
+    const className = focus ? "focus" : "nofocus"
+    const feature = node.data.get("feature")
+    return (
+      <div style={{ clear: "both" }}>
+        {!this.props.readOnly && focus ? (
+          <PictureMenu
+            removePicture={this.handleRemovePicture}
+            featurePicture={this.handleFeaturePicture}
+          />
+        ) : null}
+        <Picture
+          {...attributes}
+          readOnly={this.props.readOnly}
+          src={src}
+          className={className}
+          author={
+            this.props.picture[getFroth(src)] &&
+            this.props.picture[getFroth(src)].info.author
+          }
+          composer={!this.props.readOnly}
+          feature={feature}
+        >
+          {!this.props.readOnly ? (
+            <PlainTextarea
+              value={this.state.caption}
+              placeholder="Add image title, location, camera, film&hellip;"
+              onChange={this.handleChange}
+              onClick={this.handleTextareaClick}
+            />
+          ) : (
+            <span>{this.state.caption}</span>
+          )}
+        </Picture>
+      </div>
+    )
+  }
 }
+const mapStateToProps = state => {
+  return {
+    picture: state.picture
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    getPictureInfo: src => {
+      dispatch(getPictureInfo(src))
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Figure)
