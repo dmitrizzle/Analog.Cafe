@@ -9,7 +9,7 @@ import Upload from "../pages/Upload"
 
 // async components
 const Composer = Loadable({
-  loader: () => import("../pages/Composer/Composer_a"),
+  loader: () => import("../pages/Composer"),
   loading: ArticleLoader,
   delay: 100
 })

@@ -9,55 +9,47 @@ import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/consta
 import { TEXT_EMOJIS } from "../../../../constants"
 import { requestComposerFocus as requestEditorFocus } from "../../../store/actions-composer"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
-import ContentEditor from "./components/Body"
+import ComposerWrapper from "./components/ComposerWrapper"
 import DraftStatusText from "./components/DraftStatusText"
-import HeaderEditor from "./components/Header"
+import Editor from "./components/Editor"
 import Modal from "../../../../core/components/controls/Modal"
+import TitleCreator from "./components/TitleCreator"
 
-// placeholders
-const titlePlaceholder = {
+const TITLE_PLACEHOLDER = {
   title: "Title",
   subtitle: "Subtitle (Optional)"
 }
-
-// return
 const Composer = props => {
-  return [
-    <HeaderEditor
-      pageTitle={titlePlaceholder.title}
-      pageSubtitle={titlePlaceholder.subtitle}
-      key="Composer_HeaderEditor"
-    />,
-    <ArticleSection
-      onClick={() => props.requestEditorFocus()}
-      key="Composer_Section"
-    >
-      <ContentEditor
-        ref={input => {
-          this.contentEditor = input
-        }}
+  return (
+    <ComposerWrapper>
+      <TitleCreator
+        pageTitle={TITLE_PLACEHOLDER.title}
+        pageSubtitle={TITLE_PLACEHOLDER.subtitle}
       />
-    </ArticleSection>,
-    <Modal
-      style={{ marginBottom: "0.25em" }}
-      key="Composer_Send"
-      with={
-        props.editor.status.id && props.user.info.role === "admin"
-          ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
-          : CARD_DIALOGUES.CONSENT
-      }
-      wrapperElement="Button"
-      branded
-    >
-      Send Submission {TEXT_EMOJIS.CHECKMARK}
-    </Modal>,
-    <DraftStatusText key={"Composer_DraftStatus"}>
-      Your draft is <Modal with={CARD_ALERTS.AUTO_SAVE}>saved</Modal>.
-    </DraftStatusText>
-  ]
+      <ArticleSection
+        onClick={() => props.requestEditorFocus()}
+        key="Composer_Section"
+      >
+        <Editor />
+      </ArticleSection>
+      <Modal
+        style={{ marginBottom: "0.25em" }}
+        with={
+          props.editor.status.id && props.user.info.role === "admin"
+            ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
+            : CARD_DIALOGUES.CONSENT
+        }
+        wrapperElement="Button"
+        branded
+      >
+        Send Submission {TEXT_EMOJIS.CHECKMARK}
+      </Modal>
+      <DraftStatusText>
+        Your draft is <Modal with={CARD_ALERTS.AUTO_SAVE}>saved</Modal>.
+      </DraftStatusText>
+    </ComposerWrapper>
+  )
 }
-
-// connect with redux
 const mapStateToProps = state => {
   return {
     editor: state.editor,
@@ -72,6 +64,3 @@ const mapDispatchToProps = dispatch => {
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Composer)
-
-// NOTE: this is a pure component but it's in the containers folder to help tie
-// everything together.
