@@ -6,7 +6,7 @@ import ArticleSection from "../../../../core/components/pages/Article/components
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import Caption from "../../../../core/components/vignettes/Caption"
-import Figure from "../../../../core/components/vignettes/Picture"
+import Figure from "../../../../core/components/vignettes/Picture/components/Figure"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"

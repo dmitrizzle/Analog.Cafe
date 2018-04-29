@@ -108,6 +108,7 @@ const Figure = styled.figure`
   }
   textarea {
     ${styles};
+    font-size: inherit !important;
   }
 `
 

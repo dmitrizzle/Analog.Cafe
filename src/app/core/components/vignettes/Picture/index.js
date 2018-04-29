@@ -14,12 +14,13 @@ import PictureMenu from "../../../../user/components/pages/Composer/components/C
 class Picture extends React.PureComponent {
   constructor(props) {
     super(props)
-    console.log(props)
-    this.state = {
-      caption: props.node.data.get("caption"),
-      src: props.node.data.get("src") || "",
-      key: ""
-    }
+    if (props.node)
+      this.state = {
+        caption: props.node.data.get("caption") || "",
+        src: props.node.data.get("src") || "",
+        key: ""
+      }
+    else this.state = {}
     this.handleChange = this.handleChange.bind(this)
     this.handleTextareaClick = this.handleTextareaClick.bind(this)
     this.handleRemovePicture = this.handleRemovePicture.bind(this)
@@ -59,6 +60,7 @@ class Picture extends React.PureComponent {
   }
   componentDidMount = () => {
     const { node } = this.props
+    if (!node) return
     const { data } = node
     const caption = data.get("caption")
     const key = data.get("key")
@@ -114,6 +116,7 @@ class Picture extends React.PureComponent {
   }
   render = () => {
     const { attributes, node, isSelected, editor } = this.props
+    if (!editor) return null
     const { src } = this.state
     const focus = editor.value.isFocused && isSelected
     const className = focus ? "focus" : "nofocus"
