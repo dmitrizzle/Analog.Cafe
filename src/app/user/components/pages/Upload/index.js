@@ -1,6 +1,5 @@
 import "localforage-getitems"
 
-import { Helmet } from "react-helmet"
 import { connect } from "react-redux"
 import {
   loadTextContent,
@@ -28,14 +27,13 @@ import HeaderTitle from "../../../../core/components/vignettes/HeaderLarge/compo
 import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
+import MetaTags from "../../../../core/components/vignettes/MetaTags"
 
-// constants
 const STATUS_MESSAGES = {
   pending: "Sending…",
   complete: "Done!",
   error: "Error"
 }
-
 class Upload extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -44,9 +42,7 @@ class Upload extends React.PureComponent {
       status: "pending"
     }
   }
-
   componentDidMount = () => {
-    // no title present
     if (
       !localStorage.getItem("composer-header-state") ||
       JSON.parse(localStorage.getItem("composer-header-state")).title === ""
@@ -54,7 +50,6 @@ class Upload extends React.PureComponent {
       this.handleEmptySubmission()
       return
     }
-    // no body text present
     if (
       !localStorage.getItem("composer-content-text") ||
       localStorage.getItem("composer-content-text") === ""
@@ -62,14 +57,10 @@ class Upload extends React.PureComponent {
       this.handleEmptySubmission()
       return
     }
-
     if (!localStorage.getItem("token")) {
-      // redirects
       redirectToSignIn(this.props)
     } else {
       this.props.resetUserRoutes()
-
-      // construct submission data
       const submissionConsent = this.props.history.location.pathname.includes(
         "full-consent"
       )
@@ -79,23 +70,17 @@ class Upload extends React.PureComponent {
       if (!(content && content.document && content.document.nodes)) {
         return this.handleEmptySubmission()
       }
-
-      // form data obj
       let data = new FormData()
       data.append("content", JSON.stringify(content))
       data.append("header", JSON.stringify(header))
       data.append("textContent", textContent)
       data.append("isFullConsent", submissionConsent)
-
-      // get filename keys for the saved images in the submission
       const keys = content.document.nodes
         .filter(node => !!(node.data && node.data.key))
         .map(node => node.data.key)
       const srcs = content.document.nodes
         .filter(node => !!(node.data && node.data.src))
         .map(node => node.data.src)
-
-      // images added from user's device
       if (keys.length > 0) {
         localForage.getItems(keys).then(results => {
           keys.forEach(k => {
@@ -107,7 +92,6 @@ class Upload extends React.PureComponent {
           sendSubmission(data, this.props)
         })
       } else {
-        // images added as URLs or no images
         if (srcs.length === 0) {
           this.props.setModal(
             {
@@ -130,8 +114,6 @@ class Upload extends React.PureComponent {
       this.props.submission.uploadProgress
     )
       return
-
-    // set progress state
     if (nextProps.submission.uploadProgress >= 0)
       this.setState({
         progress:
@@ -139,48 +121,24 @@ class Upload extends React.PureComponent {
             ? nextProps.submission.uploadProgress
             : this.state.progress
       })
-    // server connection error
     else
       this.setState({
         status: "error"
       })
-
-    //
-    //
-    //
-    //
-    //
-    // upload complete
     if (
       this.props.submission.uploadProgress >= 0 &&
       nextProps.submission.uploadProgress === 100
     ) {
-      // clear submissions content and image in storage
       localStorage.removeItem("composer-content-text")
       localForage.clear()
-
-      // clear store for Composer values
       this.props.resetComposer()
-
-      // reset upload state
       this.props.resetUploadProgress()
-
-      // remove working submission id
       this.props.resetStatus()
-
-      // user-facing messages
       this.setState({
         status: "complete"
       })
     }
-    //
-    //
-    //
-    //
-    //
-    //
   }
-
   handleEmptySubmission = () => {
     this.props.setModal(
       {
@@ -193,18 +151,14 @@ class Upload extends React.PureComponent {
       pathname: "/submit/compose"
     })
   }
-
   render = () => {
     return (
       <ArticleWrapper>
-        <Helmet>
-          <title>Sending…</title>
-        </Helmet>
+        <MetaTags metaTitle="Sending…" />
         <HeaderWrapper>
           <HeaderTitle>{this.state.progress}%</HeaderTitle>
           <HeaderSubtitle>{STATUS_MESSAGES[this.state.status]}</HeaderSubtitle>
         </HeaderWrapper>
-
         <ArticleSection>
           <p>
             You have marked your submission as
@@ -260,8 +214,6 @@ class Upload extends React.PureComponent {
     )
   }
 }
-
-// connect with redux
 const mapStateToProps = state => {
   return {
     composer: state.composer,
@@ -295,6 +247,4 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(Upload)
-// NOTE: withRouter() props inherited from /containers/_screens/AppRoutesSubmit
