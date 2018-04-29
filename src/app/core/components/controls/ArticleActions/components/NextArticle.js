@@ -1,6 +1,5 @@
 import React from "react"
 
-import { PicturePlaceholder } from "../../../vignettes/Picture/components/PicturePlaceholder"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
 import { getAuthorListStringFromArray } from "../../../../utils/messages-author"
 import { makeFroth } from "../../../../../utils"
@@ -8,6 +7,7 @@ import CardCaption from "../../Card/components/CardCaption"
 import CardIntegrated from "../../Card/components/CardIntegrated"
 import Link from "../../Link"
 import LinkButton from "../../Button/components/LinkButton"
+import Placeholder from "../../../vignettes/Picture/components/Placeholder"
 
 const nextArticlePreload = nextArticle => {
   return {
@@ -41,7 +41,7 @@ export default props => {
                   })
                 }}
               >
-                <PicturePlaceholder frothId={props.nextArticle.poster}>
+                <Placeholder frothId={props.nextArticle.poster}>
                   <img
                     src={
                       makeFroth({ src: props.nextArticle.poster, size: "s" })
@@ -49,7 +49,7 @@ export default props => {
                     }
                     alt={props.nextArticle.title}
                   />
-                </PicturePlaceholder>
+                </Placeholder>
               </Link>
               <figcaption>
                 <CardCaption>

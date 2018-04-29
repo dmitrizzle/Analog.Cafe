@@ -20,7 +20,7 @@ import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
 import ArticleWrapper from "./components/ArticleWrapper"
 import MetaTags from "../../vignettes/MetaTags"
-import Picture from "../../vignettes/Picture_c"
+import Picture from "../../vignettes/Picture"
 
 class Article extends React.PureComponent {
   constructor(props) {

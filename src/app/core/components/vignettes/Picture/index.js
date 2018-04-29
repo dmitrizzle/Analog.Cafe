@@ -8,12 +8,13 @@ import {
 } from "../../../../user/constants/rules-submission"
 import { PlainTextarea } from "../../../../user/components/forms/InputStyles"
 import { getPictureInfo } from "../../../store/actions-picture"
-import Picture from "../Picture"
+import Figure from "./components/Figure"
 import PictureMenu from "../../../../user/components/pages/Composer/components/ContentEditor/components/PictureMenu"
 
-class Figure extends React.PureComponent {
+class Picture extends React.PureComponent {
   constructor(props) {
     super(props)
+    console.log(props)
     this.state = {
       caption: props.node.data.get("caption"),
       src: props.node.data.get("src") || "",
@@ -125,7 +126,7 @@ class Figure extends React.PureComponent {
             featurePicture={this.handleFeaturePicture}
           />
         ) : null}
-        <Picture
+        <Figure
           {...attributes}
           readOnly={this.props.readOnly}
           src={src}
@@ -147,7 +148,7 @@ class Figure extends React.PureComponent {
           ) : (
             <span>{this.state.caption}</span>
           )}
-        </Picture>
+        </Figure>
       </div>
     )
   }
@@ -164,4 +165,4 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Figure)
+export default connect(mapStateToProps, mapDispatchToProps)(Picture)

@@ -1,10 +1,11 @@
 import LazyLoad from "react-lazyload"
 import React from "react"
+import styled from "styled-components"
 
-import { PicturePlaceholder } from "./PicturePlaceholder"
 import { makeFroth } from "../../../../../utils"
+import Placeholder from "./Placeholder"
 
-export default props => {
+const ImageSet = props => {
   let src = props.src
   const className = props.className
   const classFeature = "Featured image"
@@ -19,7 +20,7 @@ export default props => {
   else alt = props.feature ? classFeature : classNofeature
   let largestSize = props.feature ? "l" : "m"
   return (
-    <PicturePlaceholder preserve frothId={src}>
+    <Placeholder preserve frothId={src}>
       <picture>
         {!src.includes("data:image") &&
           makeFroth({ src, size: "s", type: "webp" }).type === "webp" && (
@@ -72,6 +73,27 @@ export default props => {
           />
         </LazyLoad>
       </picture>
-    </PicturePlaceholder>
+    </Placeholder>
   )
 }
+
+export default styled(({ style, ...props }) => (
+  <ImageSet
+    {...props}
+    onContextMenu={event => props.protected && event.preventDefault()}
+  />
+))`
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: center;
+  font-style: italic;
+  ${props =>
+    props.protected &&
+    `
+		-webkit-touch-callout : none;
+		user-select : none;
+		pointer-events: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	`};
+`

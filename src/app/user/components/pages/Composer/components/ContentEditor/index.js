@@ -9,7 +9,7 @@ import { setComposerSatus } from "../../../../../store/actions-composer"
 import { setModal } from "../../../../../../core/store/actions-modal"
 import CapitalA from "../../../../icons/Glyphs/components/CapitalA"
 import LowerA from "../../../../icons/Glyphs/components/LowerA"
-import Picture from "../../../../../../core/components/vignettes/Picture_c"
+import Picture from "../../../../../../core/components/vignettes/Picture"
 import PictureDocket from "./components/PictureDocket"
 
 // return
