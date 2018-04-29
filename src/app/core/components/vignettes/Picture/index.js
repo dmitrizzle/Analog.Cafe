@@ -1,7 +1,12 @@
 import React from "react"
 
 import { CARD_ERRORS } from "../../../constants/messages-"
-import { Image, Figure, Caption, CaptionAuthor } from "./styles"
+import {
+  Image,
+  Figure,
+  PictureCaption as Caption,
+  CaptionAuthor
+} from "./styles"
 import Modal from "../../controls/Modal"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 

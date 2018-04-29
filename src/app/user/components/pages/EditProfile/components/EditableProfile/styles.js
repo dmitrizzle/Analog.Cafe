@@ -1,7 +1,7 @@
 import { ButtonStyles } from "@roast-cms/react-button-beans"
 import styled from "styled-components"
 
-import { CaptionStyles } from "../../../../../../core/components/vignettes/Caption"
+import { styles as CaptionStyles } from "../../../../../../core/components/vignettes/Caption"
 import { styles as CardButtonStyles } from "../../../../../../core/components/controls/Card/components/CardButton"
 import { styles as CardCaptionStyles } from "../../../../../../core/components/controls/Card/components/CardCaption"
 

@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet"
 import React from "react"
 
-import { Caption } from "../../../core/components/vignettes/Caption"
 import ArticleSection from "../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../core/components/pages/Article/components/ArticleWrapper"
+import Caption from "../../../core/components/vignettes/Caption"
 import Composer from "./Composer"
 import Link from "../../../core/components/controls/Link"
 

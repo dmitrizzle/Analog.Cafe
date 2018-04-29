@@ -1,6 +1,6 @@
 import React from "react"
 
-export const Email = () => {
+export default () => {
   return (
     <strong style={{ display: "inline-block" }}>
       d<span style={{ fontStyle: "normal" }} role="img" aria-label="Envelope">

@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 import { INPUT_SUMMARY_LIMIT } from "../../../../../user/constants/rules-submission"
-import { Sidenote } from "../../../vignettes/Caption"
 import { TEXT_EMOJIS } from "../../../../../constants"
+import Sidenote from "../../../vignettes/Sidenote"
 
 const ListCaption = styled(Sidenote)`
   display: block !important;

@@ -1,10 +1,10 @@
 import React from "react"
 
-import { Email } from "../../vignettes/EmailSnippet"
 import { Figure } from "../../vignettes/Picture/styles"
 import { TEXT_LABELS } from "../../../constants/messages-"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
+import ContactInfo from "../../vignettes/ContactInfo"
 import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
@@ -159,7 +159,7 @@ export default () => {
         <FollowButtons />
         <p>
           If you have a question, suggestion or just want to chat, feel free to
-          follow, message, or email <Email />
+          follow, message, or email <ContactInfo />
         </p>
       </ArticleSection>
     </ArticleWrapper>

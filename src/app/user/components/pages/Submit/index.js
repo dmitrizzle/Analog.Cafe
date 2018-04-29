@@ -1,11 +1,11 @@
 import { Helmet } from "react-helmet"
 import React from "react"
 
-import { Caption } from "../../../../core/components/vignettes/Caption"
 import { makeFroth } from "../../../../utils"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
+import Caption from "../../../../core/components/vignettes/Caption"
 import Figure from "../../../../core/components/vignettes/Picture"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"

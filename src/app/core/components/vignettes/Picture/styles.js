@@ -1,10 +1,8 @@
 import React from "react"
 import styled, { css } from "styled-components"
 
-import {
-  Caption as PictureCaption,
-  CaptionStyles
-} from "../../vignettes/Caption"
+import { styles } from "../../vignettes/Caption"
+import Caption from "../Caption"
 import Picture from "./components/PictureElement"
 
 // css
@@ -141,7 +139,7 @@ export const Figure = styled.figure`
   }
 
   textarea {
-    ${CaptionStyles};
+    ${styles};
   }
 `
 
@@ -156,7 +154,7 @@ const captionBlock = css`
 		`}
 	`};
 `
-export const Caption = styled(PictureCaption)`
+export const PictureCaption = styled(Caption)`
   ${props =>
     !props.feature &&
     `

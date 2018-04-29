@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components"
 
-import { Sidenote } from "../../../../core/components/vignettes/Caption"
 import Button from "../../../../core/components/controls/Button/components/Button"
+import Sidenote from "../../../../core/components/vignettes/Sidenote"
 
 // css
 const squreWidth = css`
