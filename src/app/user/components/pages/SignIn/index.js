@@ -3,10 +3,6 @@ import React from "react"
 import open from "oauth-open"
 
 import {
-  Article,
-  Section
-} from "../../../../core/components/styles/ArticleStyles"
-import {
   FacebookLinkButton,
   TwitterLinkButton
 } from "../../../../core/components/controls/Button/components/SocialButtons"
@@ -21,8 +17,10 @@ import {
   refreshSessionInfo
 } from "../../../store/actions-user"
 import AlreadyAuthenticated from "../Error/AlreadyAuthenticated"
+import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
+import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
-import Heading from "../../../../core/components/vignettes/ArticleHeading"
+import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
@@ -107,13 +105,13 @@ class SignIn extends React.PureComponent {
   render() {
     if (this.props.user.status !== "ok") {
       return (
-        <Article>
+        <ArticleWrapper>
           <Helmet>
             <title>Sign In</title>
           </Helmet>
 
-          <Heading pageTitle="Sign In" />
-          <Section>
+          <HeaderLarge pageTitle="Sign In" />
+          <ArticleSection>
             <p style={{ textAlign: "center", marginBottom: "0" }}>
               Sign in or create new account instantly, without passwords.
               <br />
@@ -149,8 +147,8 @@ class SignIn extends React.PureComponent {
               </p>
               <SignInWithEmail />
             </ButtonGroup>
-          </Section>
-        </Article>
+          </ArticleSection>
+        </ArticleWrapper>
       )
     } else {
       return <AlreadyAuthenticated />

@@ -1,19 +1,16 @@
-// styles
 import styled, { css } from "styled-components"
-import { Quote } from "./quote"
 
-// css
-const sectionHeading = css`
+import { styles } from "./ArticleQuote"
+
+const sectionTitle = css`
   ${props => props.theme.typography.title.auto} font-size: ${props =>
   props.theme.size.font.make.larger / 1.5}em;
   padding-top: ${props => props.theme.size.block.spacing}em;
   margin-bottom: ${props => props.theme.size.block.spacing / 4}em;
   clear: both;
 `
-const paragraph = css`
+const sectionParagraph = css`
   margin: ${props => props.theme.size.block.spacing}em 0;
-
-  /* placeholder style */
   ${props =>
     props.articleStatus === "loading"
       ? `opacity: ` +
@@ -38,9 +35,7 @@ const sectionBreak = css`
     background-color: ${props => props.theme.color.highlight()};
   }
 `
-
-// return
-export const Section = styled.section`
+export default styled.section`
   ${props => props.theme.size.font.auto} ${props =>
     props.theme.typography.text.auto} margin: 0 auto;
   max-width: ${props => props.theme.size.block.column.m}px;
@@ -58,7 +53,7 @@ export const Section = styled.section`
     text-align: center;
   }`
       : null} p {
-    ${paragraph};
+    ${sectionParagraph};
   }
   ul {
     margin: 0 ${props => props.theme.size.block.padding}em 0;
@@ -69,27 +64,15 @@ export const Section = styled.section`
       padding-bottom: ${props => props.theme.size.block.spacing}em;
     }
   }
-
   blockquote {
-    ${Quote};
+    ${styles};
   }
   h2,
   h3,
   h4 {
-    ${sectionHeading};
+    ${sectionTitle};
   }
   hr {
     ${sectionBreak};
   }
-
-  ${"" /* border-bottom:	${ props => props.theme.elements.thickBorder }; */};
-`
-export const TimeStamp = styled.time`
-  display: block;
-  text-align: center;
-  font-size: ${props => props.theme.size.font.make.tiny}em;
-  margin-top: -${props => props.theme.size.block.spacing}em;
-`
-export const Article = styled.article`
-  overflow-x: hidden;
 `

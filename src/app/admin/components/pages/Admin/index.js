@@ -2,10 +2,6 @@ import { connect } from "react-redux"
 import React from "react"
 
 import {
-  Article,
-  Section
-} from "../../../../core/components/styles/ArticleStyles"
-import {
   deleteImageRecord,
   featureImage,
   unfeatureImage
@@ -13,8 +9,10 @@ import {
 import { fetchImageLib } from "../../../../user/store/actions-imagelib"
 import { fetchUserList } from "../../../store/actions-admin"
 import { setModal } from "../../../../core/store/actions-modal"
+import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
+import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Forbidden from "../../../../core/components/pages/Forbidden"
-import Heading from "../../../../core/components/vignettes/ArticleHeading"
+import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import ImageAdmin from "./components/ImageAdmin"
 import UserAdmin from "./components/UserAdmin"
 
@@ -143,10 +141,10 @@ class Admin extends React.PureComponent {
   render = () => {
     return this.props.user.status === "ok" &&
       this.props.user.info.role === "admin" ? (
-      <Article>
-        <Heading pageTitle="Admin" />
+      <ArticleWrapper>
+        <HeaderLarge pageTitle="Admin" />
 
-        <Section style={{ padding: "1.5em 0" }}>
+        <ArticleSection style={{ padding: "1.5em 0" }}>
           <ImageAdmin
             imagesSwitchView={this.handleImagesSwitchView}
             imageDelete={this.handleImageDelete}
@@ -165,8 +163,8 @@ class Admin extends React.PureComponent {
             admin={this.props.admin}
             setModal={this.props.setModal}
           />
-        </Section>
-      </Article>
+        </ArticleSection>
+      </ArticleWrapper>
     ) : (
       <Forbidden />
     )

@@ -1,7 +1,6 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { Article } from "../../../../core/components/styles/ArticleStyles"
 import { CARD_ERRORS } from "../../../constants/messages-submission"
 import {
   INPUT_SUMMARY_LIMIT,
@@ -19,10 +18,11 @@ import {
 import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { getProfileButtons } from "../../../utils/messages-profile"
 import { setModal } from "../../../../core/store/actions-modal"
+import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Button from "../../../../core/components/controls/Button/components/Button"
 import CardEditableProfile from "./components/EditableProfile"
 import Forbidden from "../../../../core/components/pages/Forbidden"
-import Heading from "../../../../core/components/vignettes/ArticleHeading"
+import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 
 class EditProfile extends React.PureComponent {
   // init
@@ -171,8 +171,8 @@ class EditProfile extends React.PureComponent {
 
   render = () => {
     return this.props.user.status === "ok" ? (
-      <Article>
-        <Heading pageTitle="Edit Your Profile" />
+      <ArticleWrapper>
+        <HeaderLarge pageTitle="Edit Your Profile" />
         <CardEditableProfile
           // these props are pulled from Redux store that has
           // logged-in user info
@@ -213,7 +213,7 @@ class EditProfile extends React.PureComponent {
         >
           Done
         </Button>
-      </Article>
+      </ArticleWrapper>
     ) : (
       <Forbidden />
     )

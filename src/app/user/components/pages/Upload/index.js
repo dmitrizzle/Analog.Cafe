@@ -8,13 +8,6 @@ import {
 import React from "react"
 import localForage from "localforage"
 
-import {
-  Article,
-  Header,
-  Section,
-  Subtitle,
-  Title
-} from "../../../../core/components/styles/ArticleStyles"
 import { CARD_ERRORS } from "../../../constants/messages-submission"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
@@ -27,6 +20,11 @@ import {
   uploadSubmission,
   resetUploadProgress
 } from "../../../store/actions-submission"
+import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
+import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
+import HeaderSubtitle from "../../../../core/components/vignettes/HeaderLarge/components/HeaderSubtitle"
+import HeaderTitle from "../../../../core/components/vignettes/HeaderLarge/components/HeaderTitle"
+import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
@@ -198,16 +196,16 @@ class Upload extends React.PureComponent {
 
   render = () => {
     return (
-      <Article>
+      <ArticleWrapper>
         <Helmet>
           <title>Sending…</title>
         </Helmet>
-        <Header>
-          <Title>{this.state.progress}%</Title>
-          <Subtitle>{STATUS_MESSAGES[this.state.status]}</Subtitle>
-        </Header>
+        <HeaderWrapper>
+          <HeaderTitle>{this.state.progress}%</HeaderTitle>
+          <HeaderSubtitle>{STATUS_MESSAGES[this.state.status]}</HeaderSubtitle>
+        </HeaderWrapper>
 
-        <Section>
+        <ArticleSection>
           <p>
             You have marked your submission as
             <em>
@@ -257,8 +255,8 @@ class Upload extends React.PureComponent {
               </LinkButton>
             </div>
           )}
-        </Section>
-      </Article>
+        </ArticleSection>
+      </ArticleWrapper>
     )
   }
 }

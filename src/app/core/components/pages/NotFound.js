@@ -1,9 +1,10 @@
 import React from "react"
 
-import { Article, Section } from "../styles/ArticleStyles"
 import { CARD_ERRORS } from "../../constants/messages-"
 import { TEXT_ERRORS } from "../../../constants"
-import Heading from "../vignettes/ArticleHeading"
+import ArticleSection from "./Article/components/ArticleSection"
+import ArticleWrapper from "./Article/components/ArticleWrapper"
+import HeaderLarge from "../vignettes/HeaderLarge"
 import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"
 
@@ -24,16 +25,16 @@ export default class extends React.PureComponent {
   }
   render = () => {
     return (
-      <Article>
+      <ArticleWrapper>
         <Helmet>
           <title>{CARD_ERRORS.ARTICLE.title}</title>
         </Helmet>
-        <Heading
+        <HeaderLarge
           pageTitle={CARD_ERRORS.ARTICLE.title}
           pageSubtitle={CARD_ERRORS.ARTICLE.subtitle}
           title={TEXT_ERRORS.CODE_403.error}
         />
-        <Section>
+        <ArticleSection>
           <p style={{ textAlign: "center" }}>
             Click{" "}
             <strong>
@@ -41,8 +42,8 @@ export default class extends React.PureComponent {
             </strong>{" "}
             to go to homepage.
           </p>
-        </Section>
-      </Article>
+        </ArticleSection>
+      </ArticleWrapper>
     )
   }
 }

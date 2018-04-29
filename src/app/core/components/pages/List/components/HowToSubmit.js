@@ -1,13 +1,14 @@
 import React from "react"
 
-import { Article, Section } from "../../../styles/ArticleStyles"
 import { Figure } from "../../../vignettes/Picture/styles"
+import ArticleSection from "../../Article/components/ArticleSection"
+import ArticleWrapper from "../../Article/components/ArticleWrapper"
 import LinkButton from "../../../controls/Button/components/LinkButton"
 
 export default () => {
   return (
-    <Article>
-      <Section plain>
+    <ArticleWrapper>
+      <ArticleSection plain>
         <h3>How to submit your work.</h3>
         <p>
           Analog.Cafe lets you create and edit your submission using a tool
@@ -62,7 +63,7 @@ export default () => {
         <LinkButton to={"/submit/compose"} branded>
           Submit Now
         </LinkButton>
-      </Section>
-    </Article>
+      </ArticleSection>
+    </ArticleWrapper>
   )
 }

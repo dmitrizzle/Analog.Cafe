@@ -1,9 +1,10 @@
 import React from "react"
 
-import { Article, Section } from "../styles/ArticleStyles"
 import { CARD_ERRORS } from "../../constants/messages-"
 import { ListDescription, ListHeader } from "./ListDescription"
 import { TEXT_EMOJIS } from "../../../constants"
+import ArticleSection from "../pages/Article/components/ArticleSection"
+import ArticleWrapper from "../pages/Article/components/ArticleWrapper"
 
 // return
 export default props => {
@@ -18,8 +19,8 @@ export default props => {
         </ListHeader>
       )}
     </ListDescription>,
-    <Article key="ListLoader_Article">
-      <Section style={{ paddingTop: "100vh" }} />
-    </Article>
+    <ArticleWrapper key="ListLoader_Article">
+      <ArticleSection style={{ paddingTop: "100vh" }} />
+    </ArticleWrapper>
   ]
 }

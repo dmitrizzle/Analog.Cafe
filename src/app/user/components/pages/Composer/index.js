@@ -6,13 +6,13 @@ import {
   CARD_DIALOGUES
 } from "../../../constants/messages-submission"
 import { CARD_DIALOGUES as CARD_DIALOGUES_ADMIN } from "../../../../admin/constants/messages-admin"
-import Modal from "../../../../core/components/controls/Modal"
-import { Section } from "../../../../core/components/styles/ArticleStyles"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { requestComposerFocus as requestEditorFocus } from "../../../store/actions-composer"
+import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ContentEditor from "./components/ContentEditor"
 import DraftStatusText from "./components/ContentEditor/components/DraftStatusText"
 import HeaderEditor from "./components/HeaderEditor"
+import Modal from "../../../../core/components/controls/Modal"
 
 // placeholders
 const titlePlaceholder = {
@@ -28,13 +28,16 @@ const Composer = props => {
       pageSubtitle={titlePlaceholder.subtitle}
       key="Composer_HeaderEditor"
     />,
-    <Section onClick={() => props.requestEditorFocus()} key="Composer_Section">
+    <ArticleSection
+      onClick={() => props.requestEditorFocus()}
+      key="Composer_Section"
+    >
       <ContentEditor
         ref={input => {
           this.contentEditor = input
         }}
       />
-    </Section>,
+    </ArticleSection>,
     <Modal
       style={{ marginBottom: "0.25em" }}
       key="Composer_Send"

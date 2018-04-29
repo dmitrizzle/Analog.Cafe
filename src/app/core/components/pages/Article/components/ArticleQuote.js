@@ -1,7 +1,5 @@
-// styles
-import { css } from "styled-components"
+import styled, { css } from "styled-components"
 
-// css
 const base = css`
   font-size: ${props => props.theme.size.font.make.smaller}em;
   font-style: italic;
@@ -71,9 +69,7 @@ const marks = css`
     font-size: ${props => props.theme.size.font.make.larger}em;
   }
 `
-
-// return
-export const Quote = css`
+export const styles = css`
   ${base} ${content} ${marks};
   ${props => props.theme.size.breakpoint.min.l`
   &:not(.focus) > span {
@@ -83,4 +79,7 @@ export const Quote = css`
     display: block;
     min-height: 13em;
   }`};
+`
+export default styled.blockquote`
+  ${styles};
 `

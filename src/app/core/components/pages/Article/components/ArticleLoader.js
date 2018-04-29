@@ -1,15 +1,15 @@
 import React from "react"
 
-import { Article, Section } from "../styles/ArticleStyles"
-import { CARD_ERRORS } from "../../constants/messages-"
-import { TEXT_EMOJIS } from "../../../constants"
-import Heading from "./ArticleHeading"
+import { CARD_ERRORS } from "../../../../constants/messages-"
+import { TEXT_EMOJIS } from "../../../../../constants"
+import ArticleSection from "./ArticleSection"
+import ArticleWrapper from "./ArticleWrapper"
+import HeaderLarge from "../../../vignettes/HeaderLarge"
 
-// return
 export default props => {
   return (
-    <Article>
-      <Heading
+    <ArticleWrapper>
+      <HeaderLarge
         pageTitle={
           props.isLoading
             ? props.pastDelay
@@ -25,7 +25,7 @@ export default props => {
             : CARD_ERRORS.ARTICLE.subtitle
         }
       />
-      <Section style={{ paddingTop: "100vh" }} />
-    </Article>
+      <ArticleSection style={{ paddingTop: "100vh" }} />
+    </ArticleWrapper>
   )
 }

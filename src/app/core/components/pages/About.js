@@ -1,19 +1,21 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Article, Quote, Section } from "../styles/ArticleStyles"
 import { Email } from "../vignettes/EmailSnippet"
-import Modal from "../controls/Modal"
 import { TEXT_LABELS } from "../../constants/messages-"
 import { makeFroth } from "../../../utils"
+import ArticleQuote from "./Article/components/ArticleQuote"
+import ArticleSection from "./Article/components/ArticleSection"
+import ArticleWrapper from "./Article/components/ArticleWrapper"
 import Figure from "../vignettes/Picture"
 import FollowButtons from "../controls/ArticleActions/components/FollowButtons"
-import Heading from "../vignettes/ArticleHeading"
+import HeaderLarge from "../vignettes/HeaderLarge"
 import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"
 import MailChimpPrefill from "../../../user/components/forms/Subscribe/components/MailChimpPrefill"
+import Modal from "../controls/Modal"
 
-const ThankYouList = styled(Quote)`
+const ThankYouList = styled(ArticleQuote)`
   font-style: normal !important;
   &::first-letter {
     font-size: inherit !important;
@@ -32,7 +34,7 @@ const metaDescription =
 
 export default () => {
   return (
-    <Article>
+    <ArticleWrapper>
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
@@ -48,11 +50,11 @@ export default () => {
         <meta property="og:title" content={metaTitle} />
         <meta property="og:description" content={metaDescription} />
       </Helmet>
-      <Heading
+      <HeaderLarge
         pageTitle="Analog.Cafe"
         pageSubtitle="A Film Photography Publication"
       />
-      <Section>
+      <ArticleSection>
         <Figure
           src="image-froth_669120_c34babc2fb974c8d9f03249bea647401"
           feature
@@ -188,7 +190,7 @@ export default () => {
           If you have a question, suggestion or just want to chat, feel free to
           follow, message, or email <Email />
         </p>
-      </Section>
-    </Article>
+      </ArticleSection>
+    </ArticleWrapper>
   )
 }

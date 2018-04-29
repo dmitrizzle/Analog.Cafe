@@ -1,7 +1,8 @@
 import React from "react"
 
-import { Article, Section } from "../../../core/components/styles/ArticleStyles"
 import { Caption } from "../../../core/components/vignettes/Caption"
+import ArticleSection from "../../../core/components/pages/Article/components/ArticleSection"
+import ArticleWrapper from "../../../core/components/pages/Article/components/ArticleWrapper"
 import Composer from "./Composer"
 import Helmet from "../../../core/components/vignettes/Helmet"
 import Link from "../../../core/components/controls/Link"
@@ -12,7 +13,7 @@ const metaDescription =
 
 export default () => {
   return (
-    <Article>
+    <ArticleWrapper>
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
@@ -20,7 +21,7 @@ export default () => {
         <meta property="og:description" content={metaDescription} />
       </Helmet>
       <Composer />
-      <Section plain>
+      <ArticleSection plain>
         <Caption style={{ fontVariant: "normal" }}>
           <p>
             <small>
@@ -34,7 +35,7 @@ export default () => {
             </small>
           </p>
         </Caption>
-      </Section>
-    </Article>
+      </ArticleSection>
+    </ArticleWrapper>
   )
 }

@@ -2,9 +2,10 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
-import { Article, Section } from "../styles/ArticleStyles"
 import { HEADER_ERRORS, TEXT_ERRORS } from "../../../constants"
-import Heading from "../vignettes/ArticleHeading"
+import ArticleSection from "./Article/components/ArticleSection"
+import ArticleWrapper from "./Article/components/ArticleWrapper"
+import HeaderLarge from "../vignettes/HeaderLarge"
 import Helmet from "../vignettes/Helmet"
 import Link from "../controls/Link"
 
@@ -25,16 +26,16 @@ class NotFound extends React.PureComponent {
   }
   render = () => {
     return (
-      <Article>
+      <ArticleWrapper>
         <Helmet>
           <title>{HEADER_ERRORS.ARTICLE.title}</title>
         </Helmet>
-        <Heading
+        <HeaderLarge
           pageTitle={HEADER_ERRORS.ARTICLE.title}
           pageSubtitle={HEADER_ERRORS.ARTICLE.subtitle}
           title={TEXT_ERRORS.CODE_403.error}
         />{" "}
-        <Section>
+        <ArticleSection>
           <p style={{ textAlign: "center" }}>
             You need to{" "}
             <strong>
@@ -42,8 +43,8 @@ class NotFound extends React.PureComponent {
             </strong>{" "}
             to view this page.
           </p>
-        </Section>
-      </Article>
+        </ArticleSection>
+      </ArticleWrapper>
     )
   }
 }

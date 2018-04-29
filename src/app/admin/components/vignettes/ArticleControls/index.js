@@ -7,7 +7,6 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
-import { Byline } from "../../../../core/components/styles/ArticleStyles"
 import { CARD_DIALOGUES } from "../../../constants/messages-admin"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { getSubmissionOrArticleRoute } from "../../../../core/utils/routes-article"
@@ -16,10 +15,11 @@ import {
   rejectSubmission,
   setStatus
 } from "../../../store/actions-editor"
-import { setModal } from "../../../../core/store/actions-modal"
 import { setComposerHeader } from "../../../../user/store/actions-composer"
+import { setModal } from "../../../../core/store/actions-modal"
 import { storeHeaderState } from "../../../../user/utils/actions-submission"
 import { updateArticleStatus } from "../../../../core/store/actions-article"
+import Byline from "../../../../core/components/vignettes/Byline"
 import EditorialControls from "./components/EditorialControls"
 import PublishControls from "./components/PublishControls"
 import StatusExplanation from "./components/StatusExplanation"

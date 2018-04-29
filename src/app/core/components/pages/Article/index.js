@@ -1,48 +1,25 @@
 import { Reader } from "@roast-cms/french-press-editor/dist/components/Reader"
 import { connect } from "react-redux"
-import Loadable from "react-loadable"
 import React from "react"
 
+import { HOST_PROD } from "../../../../constants"
+import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
-  Byline,
-  Section,
-  Article as ArticleElement
-} from "../../styles/ArticleStyles"
-import { HOST_PROD, TEXT_EMOJIS } from "../../../../constants"
-import Modal from "../../controls/Modal"
-import {
-  ROUTE_API_AUTHORS,
   ROUTE_URL_ARTICLES,
   ROUTE_URL_SUBMISSIONS
 } from "../../../constants/routes-article"
-import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
   fetchArticlePage,
   setArticlePage
 } from "../../../store/actions-article"
-import {
-  getAbsoluteURLPath,
-  getSubmissionOrArticleRoute
-} from "../../../utils/routes-article"
-import {
-  getAuthorListStringFromArray,
-  getLeadAuthorObject
-} from "../../../utils/messages-author"
+import { getSubmissionOrArticleRoute } from "../../../utils/routes-article"
 import { getTitleFromSlug } from "../../../utils/messages-"
-import { makeFroth } from "../../../../utils"
 import ArticleActions from "../../controls/ArticleActions"
-import Heading from "../../vignettes/ArticleHeading"
-import Helmet from "../../vignettes/Helmet"
-import Link from "../../controls/Link"
+import ArticleHeader from "./components/ArticleHeader"
+import ArticleSection from "./components/ArticleSection"
+import ArticleWrapper from "./components/ArticleWrapper"
+import MetaTags from "./components/MetaTags"
 import Picture from "../../vignettes/Picture_c"
-
-// admin controls loader
-const AdminControls = Loadable({
-  loader: () =>
-    import("../../../../admin/components/vignettes/ArticleControls"),
-  loading: () => null,
-  delay: 100
-})
 
 class Article extends React.PureComponent {
   constructor(props) {
@@ -57,16 +34,12 @@ class Article extends React.PureComponent {
       publicationStatus: this.props.article.status
     }
   }
-
   fetchArticlePage = () => {
-    // do not fetch pages unless they are located in /zine or /submissions dir
-    // otherwise on unmount the component will try to load any page, and return 404 errors
     if (
       !this.props.history.location.pathname.includes(ROUTE_URL_ARTICLES) &&
       !this.props.history.location.pathname.includes(ROUTE_URL_SUBMISSIONS)
     )
       return
-
     this.props.fetchArticlePage({
       url:
         getSubmissionOrArticleRoute(this.props.history.location.pathname)
@@ -77,15 +50,12 @@ class Article extends React.PureComponent {
           ""
         )
     })
-
-    // reset article actions menu
     this.setState({
       shareButtons: false,
       subscribeForm: false,
       publicationStatus: this.props.article.status
     })
   }
-
   makeTag = props => {
     const tag = props.article.tag
     if (typeof tag === "undefined") return
@@ -129,111 +99,18 @@ class Article extends React.PureComponent {
       subscribeForm: false
     })
   }
-  handleShareOnFacebook = event => {
-    event.preventDefault()
-    window.open(
-      "https://web.facebook.com/sharer.php?u=" +
-        getAbsoluteURLPath(
-          getSubmissionOrArticleRoute(this.props.history.location.pathname)
-            .pathname,
-          this.props.article.slug
-        ),
-      "_blank",
-      "height=600,width=500"
-    )
-  }
-  handleShareOnTwitter = event => {
-    event.preventDefault()
-    window.open(
-      "https://twitter.com/share?url=" +
-        getAbsoluteURLPath(
-          getSubmissionOrArticleRoute(this.props.history.location.pathname)
-            .pathname,
-          this.props.article.slug
-        ) +
-        "&text=" +
-        encodeURI(
-          "“" +
-            this.props.article.title +
-            (this.props.article.subtitle
-              ? " (" + this.props.article.subtitle + ")"
-              : "") +
-            "” by " +
-            getAuthorListStringFromArray(this.props.article.authors)
-        ) +
-        "&via=analog_cafe",
-      "_blank",
-      "height=600,width=500"
-    )
-  }
+
   render = () => {
     return (
-      <ArticleElement>
-        <Helmet>
-          <title>{this.props.article.title}</title>
-          <meta name="description" content={this.props.article.summary} />
-          <meta property="og:title" content={this.props.article.title} />
-          <meta
-            property="og:description"
-            content={this.props.article.summary}
-          />
-          {this.props.article.poster && (
-            <meta
-              property="og:image"
-              content={
-                makeFroth({ src: this.props.article.poster, size: "m" }).src
-              }
-            />
-          )}
-        </Helmet>
-        <Heading
-          pageTitle={this.props.article.title}
-          pageSubtitle={this.props.article.subtitle}
-          title={this.props.article.error && this.props.article.error}
-        >
-          {this.props.article.authors &&
-            this.props.article.authors[0].name && (
-              <Byline>
-                <Link to={this.state.tag.route}>{this.state.tag.name}</Link> by{" "}
-                {getLeadAuthorObject(this.props.article.authors).id ? (
-                  <Modal
-                    with={{
-                      request: {
-                        url:
-                          ROUTE_API_AUTHORS +
-                          "/" +
-                          getLeadAuthorObject(this.props.article.authors).id
-                      }
-                    }}
-                  >
-                    {getLeadAuthorObject(this.props.article.authors).name}
-                  </Modal>
-                ) : (
-                  getLeadAuthorObject(this.props.article.authors).name
-                )}
-                {this.props.article.authors.length > 1 &&
-                  ` with images by ${getAuthorListStringFromArray(
-                    this.props.article.authors,
-                    { ommitLeadAuthor: true, keepFullNames: true }
-                  )}`}.
-              </Byline>
-            )}
-          {this.props.article.submittedBy &&
-            this.props.article.status !== "published" &&
-            this.props.article.status !== "loading" && (
-              <Byline>
-                <br />
-                <span style={{ fontStyle: "normal" }}>
-                  {" "}
-                  {TEXT_EMOJIS.WARNING}
-                </span>{" "}
-                This submission is only visible to you and the Analog.Cafe
-                Editors.
-              </Byline>
-            )}
-          {this.state.adminControls && <AdminControls />}
-        </Heading>
-        <Section articleStatus={this.props.article.status}>
+      <ArticleWrapper>
+        <MetaTags article={this.props.article} />
+        <ArticleHeader
+          article={this.props.article}
+          stateAdminControls={this.state.adminControls}
+          stateTag={this.state.tag}
+        />
+
+        <ArticleSection articleStatus={this.props.article.status}>
           <Reader
             value={this.props.article.content.raw}
             options={{
@@ -271,13 +148,11 @@ class Article extends React.PureComponent {
                 }
               />
             )}
-        </Section>
-      </ArticleElement>
+        </ArticleSection>
+      </ArticleWrapper>
     )
   }
 }
-
-// connect with redux
 const mapStateToProps = state => {
   return {
     article: state.article,

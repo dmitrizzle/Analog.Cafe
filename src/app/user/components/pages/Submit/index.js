@@ -1,14 +1,12 @@
 import React from "react"
 
-import {
-  Article,
-  Section
-} from "../../../../core/components/styles/ArticleStyles"
 import { Caption } from "../../../../core/components/vignettes/Caption"
 import { makeFroth } from "../../../../utils"
+import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
+import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import Figure from "../../../../core/components/vignettes/Picture"
-import Heading from "../../../../core/components/vignettes/ArticleHeading"
+import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Helmet from "../../../../core/components/vignettes/Helmet"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
@@ -19,7 +17,7 @@ const metaDescription =
 
 export default () => {
   return (
-    <Article>
+    <ArticleWrapper>
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
@@ -36,11 +34,11 @@ export default () => {
         <meta property="og:description" content={metaDescription} />
       </Helmet>
 
-      <Heading
+      <HeaderLarge
         pageTitle="Submit"
         pageSubtitle="Film Photography, Essays & Articles"
       />
-      <Section>
+      <ArticleSection>
         <div style={{ textAlign: "center" }}>
           <LinkButton to={"/submit/compose"} branded>
             Submit Now
@@ -270,7 +268,7 @@ export default () => {
             if you already have an account.
           </p>
         </ButtonGroup>
-      </Section>
-    </Article>
+      </ArticleSection>
+    </ArticleWrapper>
   )
 }

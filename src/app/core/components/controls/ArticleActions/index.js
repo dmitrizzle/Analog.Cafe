@@ -1,6 +1,5 @@
 import React from "react"
 
-import { TimeStamp } from "../../styles/ArticleStyles"
 import {
   getHumanDatestamp,
   getISODatestamp,
@@ -8,6 +7,7 @@ import {
 } from "../../../utils/messages-"
 import NextArticle from "./components/NextArticle"
 import ShareButtons from "./components/ShareButtons"
+import TimeStamp from "../../pages/Article/components/TimeStamp"
 
 const DatePublished = props => {
   return (

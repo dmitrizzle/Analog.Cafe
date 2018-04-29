@@ -1,11 +1,11 @@
 import React from "react"
 
-import { Byline } from "../../../../../core/components/styles/ArticleStyles"
 import {
   ROUTE_URL_ARTICLES,
   ROUTE_URL_SUBMISSIONS
 } from "../../../../../core/constants/routes-article"
 import { TEXT_EMOJIS } from "../../../../../constants"
+import Byline from "../../../../../core/components/vignettes/Byline"
 import Link from "../../../../../core/components/controls/Link"
 
 export default props => {

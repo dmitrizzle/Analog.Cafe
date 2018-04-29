@@ -4,10 +4,8 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
-import { Article, Section } from "../../styles/ArticleStyles"
 import { HEADER_ERRORS } from "../../../../constants"
 import { ListDescription, ListHeader } from "../../vignettes/ListDescription"
-import Modal from "../../controls/Modal"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import {
   ROUTE_API_LIST,
@@ -18,9 +16,12 @@ import { getFirstNameFromFull } from "../../../utils/messages-author"
 import { getListMeta } from "../../../utils/messages-list"
 import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
+import ArticleSection from "../Article/components/ArticleSection"
+import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Button from "../../controls/Button/components/Button"
 import Helmet from "../../vignettes/Helmet"
 import ListBlock from "../../styles/List"
+import Modal from "../../controls/Modal"
 
 // fetch placeholder component
 const HowToSubmit = Loadable({
@@ -203,9 +204,9 @@ class List extends React.PureComponent {
           </Button>
         ) : null}
 
-        <Article>
-          <Section />
-        </Article>
+        <ArticleWrapper>
+          <ArticleSection />
+        </ArticleWrapper>
       </div>
     )
   }

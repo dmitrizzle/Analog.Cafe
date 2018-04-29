@@ -3,7 +3,7 @@ import Loadable from "react-loadable"
 import React from "react"
 
 import { ROUTE_URL_USER_LANDING } from "../../../user/constants/routes-session"
-import ArticleLoader from "../vignettes/ArticleLoader"
+import ArticleLoader from "../pages/Article/components/ArticleLoader"
 import ListLoader from "../vignettes/ListLoader"
 import SignOut from "../../../user/components/pages/SignOut"
 
