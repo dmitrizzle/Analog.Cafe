@@ -1,4 +1,3 @@
-// admin stuff
 import axios from "axios"
 
 import { ROUTE_API_IMAGES } from "../../user/constants/routes-submission"

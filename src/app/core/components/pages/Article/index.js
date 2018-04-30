@@ -1,5 +1,7 @@
 import { Reader } from "@roast-cms/french-press-editor/dist/components/Reader"
 import { connect } from "react-redux"
+import LazyLoad from "react-lazyload"
+import Loadable from "react-loadable"
 import React from "react"
 
 import { HOST_PROD } from "../../../../constants"
@@ -15,13 +17,17 @@ import {
 import { getSubmissionOrArticleRoute } from "../../../utils/routes-article"
 import { getTitleFromSlug } from "../../../utils/messages-"
 import { shareOnFacebook, shareOnTwitter } from "../../../utils/actions-article"
-import ArticleActions from "../../controls/ArticleActions"
 import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
 import ArticleWrapper from "./components/ArticleWrapper"
 import MetaTags from "../../vignettes/MetaTags"
 import Picture from "../../vignettes/Picture"
 
+const ArticleActions = Loadable({
+  loader: () => import("../../controls/ArticleActions"),
+  loading: () => null,
+  delay: 100
+})
 class Article extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -134,30 +140,37 @@ class Article extends React.PureComponent {
 
           {this.props.article.poster &&
             this.props.article.submittedBy && (
-              <ArticleActions
-                subscribeFormCallback={this.handleSubscribeFormCallback}
-                revealShareButtons={this.handleRevealShareButtons}
-                subscribeForm={this.state.subscribeForm}
-                shareButtons={this.state.shareButtons}
-                hideShareButtons={this.props.article.status !== "published"}
-                shareOnFacebook={this.handleShareOnFacebook}
-                shareOnTwitter={this.handleShareOnTwitter}
-                nextArticle={this.props.article.next}
-                thisArticle={this.props.article.slug}
-                thisArticlePostDate={
-                  this.props.article.date && this.props.article.date.published
-                }
-                nextArticleHeading={nextArticleHeading =>
-                  this.props.setArticlePage({
-                    title: nextArticleHeading.title,
-                    subtitle: nextArticleHeading.subtitle,
-                    authors: nextArticleHeading.authors,
-                    slug: nextArticleHeading.slug,
-                    poster: nextArticleHeading.poster,
-                    tag: nextArticleHeading.tag
-                  })
-                }
-              />
+              <LazyLoad
+                once
+                offset={300}
+                height={"100%"}
+                key={`ArticleActions_${this.props.article.slug}`}
+              >
+                <ArticleActions
+                  subscribeFormCallback={this.handleSubscribeFormCallback}
+                  revealShareButtons={this.handleRevealShareButtons}
+                  subscribeForm={this.state.subscribeForm}
+                  shareButtons={this.state.shareButtons}
+                  hideShareButtons={this.props.article.status !== "published"}
+                  shareOnFacebook={this.handleShareOnFacebook}
+                  shareOnTwitter={this.handleShareOnTwitter}
+                  nextArticle={this.props.article.next}
+                  thisArticle={this.props.article.slug}
+                  thisArticlePostDate={
+                    this.props.article.date && this.props.article.date.published
+                  }
+                  nextArticleHeading={nextArticleHeading =>
+                    this.props.setArticlePage({
+                      title: nextArticleHeading.title,
+                      subtitle: nextArticleHeading.subtitle,
+                      authors: nextArticleHeading.authors,
+                      slug: nextArticleHeading.slug,
+                      poster: nextArticleHeading.poster,
+                      tag: nextArticleHeading.tag
+                    })
+                  }
+                />
+              </LazyLoad>
             )}
         </ArticleSection>
       </ArticleWrapper>

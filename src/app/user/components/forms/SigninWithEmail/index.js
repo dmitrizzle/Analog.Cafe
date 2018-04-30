@@ -61,8 +61,6 @@ class SigninWithEmail extends React.PureComponent {
     )
   }
 }
-
-// connect with redux
 const mapDispatchToProps = dispatch => {
   return {
     loginWithEmail: validatedEmail => {
@@ -78,5 +76,4 @@ const mapStateToProps = state => {
     user: state.user
   }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(SigninWithEmail)

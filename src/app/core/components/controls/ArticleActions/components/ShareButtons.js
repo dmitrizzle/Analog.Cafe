@@ -4,14 +4,14 @@ import {
   FacebookLinkButton,
   TwitterLinkButton
 } from "../../Button/components/SocialButtons"
-import { QuickSubscribe } from "../../../../../user/components/forms/Subscribe"
 import Button from "../../Button/components/Button"
 import CardIntegrated from "../../Card/components/CardIntegrated"
+import Subscribe from "../../../../../user/components/forms/Subscribe"
 
 export default props => {
   return (
     <CardIntegrated>
-      <QuickSubscribe
+      <Subscribe
         subscribeFormCallback={props.subscribeFormCallback}
         stateOverwrite={props.subscribeForm}
       />

@@ -1,11 +1,11 @@
 import React from "react"
 
-import { QuickSubscribe } from "../../../../user/components/forms/Subscribe"
 import ButtonGroupDivider from "../Button/components/ButtonGroupDivider"
 import CardButton from "./components/CardButton"
 import CardFigure from "./components/CardFigure"
 import CardHeader from "./components/CardHeader"
 import CardPopup from "./components/CardPopup"
+import Subscribe from "../../../../user/components/forms/Subscribe"
 
 export default props => {
   return (
@@ -18,7 +18,7 @@ export default props => {
       />
       <CardFigure image={props.image} text={props.text} />
       {props.subscribeForm && [
-        <QuickSubscribe
+        <Subscribe
           key="Card_subscribe"
           onClick={event => event.stopPropagation()}
         />,

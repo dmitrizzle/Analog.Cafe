@@ -5,8 +5,6 @@ import Button from "../../../../../core/components/controls/Button/components/Bu
 import EmailInput from "../../EmailInput"
 import Form from "../../Form"
 
-// helpers
-
 export default class extends React.Component {
   constructor(props) {
     super(props)

@@ -9,8 +9,13 @@ import {
 } from "../../../../user/constants/rules-submission"
 import { getPictureInfo } from "../../../store/actions-picture"
 import Figure from "./components/Figure"
-import PlainTextarea from "../../../../user/components/forms/TextInput/components/PlainTextarea"
 
+const PlainTextarea = Loadable({
+  loader: () =>
+    import("../../../../user/components/forms/TextInput/components/PlainTextarea"),
+  loading: () => null,
+  delay: 100
+})
 const PictureMenu = Loadable({
   loader: () => import("../../../../user/components/controls/PictureMenu"),
   loading: () => null,

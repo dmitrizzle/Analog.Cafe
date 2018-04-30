@@ -4,7 +4,7 @@ import { TEXT_LABELS } from "../../../../core/constants/messages-"
 import CardButton from "../../../../core/components/controls/Card/components/CardButton"
 import MailChimpPrefill from "./components/MailChimpPrefill"
 
-export class QuickSubscribe extends React.PureComponent {
+export default class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
