@@ -16,6 +16,20 @@ import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import ImageAdmin from "./components/ImageAdmin"
 import UserAdmin from "./components/UserAdmin"
 
+const ITEMS_PER_PAGE = 16
+const ITEMS_PER_ROW = 4
+const ROW_INDEX = (page, rows, cells) => {
+  let rowIndex = []
+  for (
+    let rowNumber = 0;
+    rowNumber <
+    (cells || ITEMS_PER_PAGE) / (rows || ITEMS_PER_ROW) * (page || 1);
+    rowNumber++
+  ) {
+    rowIndex[rowNumber] = rowNumber
+  }
+  return rowIndex
+}
 const TEXT_CONFIRM_DELETE = id => {
   return (
     `WARNING!\n\nThis will remove the document with this image's data from ` +
@@ -23,9 +37,6 @@ const TEXT_CONFIRM_DELETE = id => {
     `to be deleted from Cloudinary separately. Type\n\n${id}\n\nto confirm.`
   )
 }
-const GRID_ROWS = 4
-const GRID_CELLS = 16
-let rowIndex = []
 
 class Admin extends React.PureComponent {
   constructor(props) {
@@ -36,7 +47,7 @@ class Admin extends React.PureComponent {
         options: {
           featured: false,
           fullConsent: false,
-          itemsPerPage: GRID_CELLS
+          itemsPerPage: ITEMS_PER_PAGE
         }
       }
     }
@@ -46,15 +57,6 @@ class Admin extends React.PureComponent {
     this.props.fetchUserList({
       itemsPerPage: 100
     })
-  }
-  componentDidUpdate = () => {
-    for (
-      let rowNumber = 0;
-      rowNumber < GRID_CELLS / GRID_ROWS * this.state.imageList.page;
-      rowNumber++
-    ) {
-      rowIndex[rowNumber] = rowNumber
-    }
   }
   handleImagesLoadMore = () => {
     this.incrementImagesPage() &&
@@ -153,13 +155,13 @@ class Admin extends React.PureComponent {
             imagesLoadMore={this.handleImagesLoadMore}
             stateImageList={this.state.imageList}
             setModal={this.props.setModal}
-            rowIndex={rowIndex}
-            gridRows={GRID_ROWS}
+            rowIndex={ROW_INDEX(this.state.imageList.page)}
+            gridRows={ITEMS_PER_ROW}
             imagelib={this.props.imagelib}
           />
           <UserAdmin
-            rowIndex={rowIndex}
-            gridRows={GRID_ROWS}
+            rowIndex={ROW_INDEX(1, ITEMS_PER_ROW, 100)}
+            gridRows={ITEMS_PER_ROW}
             admin={this.props.admin}
             setModal={this.props.setModal}
           />

@@ -2,9 +2,8 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
-import { CARD_ERRORS } from "../../../../../core/constants/messages-"
+import { HEADER_ERRORS, TEXT_ERRORS } from "../../../../../constants"
 import { ROUTE_URL_USER_LANDING } from "../../../../constants/routes-session"
-import { TEXT_ERRORS } from "../../../../../constants"
 import Error from "../../../../../core/components/pages/Error"
 import Link from "../../../../../core/components/controls/Link"
 
@@ -26,8 +25,8 @@ class AlreadyAuthenticated extends React.PureComponent {
   render = () => {
     return (
       <Error
-        errorTitle={CARD_ERRORS.ARTICLE.title}
-        errorSubtitle={CARD_ERRORS.ARTICLE.subtitle}
+        errorTitle={HEADER_ERRORS.ARTICLE.title}
+        errorSubtitle={HEADER_ERRORS.ARTICLE.subtitle}
         errorDetails={TEXT_ERRORS.CODE_103.error}
       >
         You are aloready signed in. Click{" "}
