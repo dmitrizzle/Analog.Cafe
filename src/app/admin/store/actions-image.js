@@ -17,7 +17,7 @@ export const deleteImageRecord = id => {
       .then(response => {
         response.data.status === "ok"
           ? alert(
-              `Deleted ${id} from database. It will be gone from cache in couple of minutes.`
+              `Deleted ${id} from database. It will be gone from cache in a couple of minutes.`
             )
           : alert(`Failed to delete image record.`)
       })
