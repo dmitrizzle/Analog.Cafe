@@ -6,8 +6,8 @@ import { makeFroth } from "../../../../utils"
 export default props => {
   return (
     <Helmet>
-      {props.metaDesmetaTitlecription && <title>{props.metaTitle}</title>}
-      {props.metaDesmetaTitlecription && (
+      {props.metaTitle && <title>{props.metaTitle}</title>}
+      {props.metaTitle && (
         <meta property="og:title" content={props.metaTitle} />
       )}
       {props.metaDescription && (

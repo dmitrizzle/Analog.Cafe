@@ -138,7 +138,6 @@ export default () => {
           <span>
             To get lovely updates (<Link
               onClick={() => {
-                // async load Google Analytics module
                 import("react-ga").then(ReactGA => {
                   ReactGA.event({
                     category: "Campaign",

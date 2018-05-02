@@ -5,7 +5,6 @@ import GridRow from "../../../../../user/components/controls/Grid/components/Gri
 import GridWrapper from "../../../../../user/components/controls/Grid/components/GridWrapper"
 
 export default props => {
-  console.log(props.rowIndex)
   return [
     <div style={{ padding: "0 1.5em" }} key="UserAdmin_header">
       <h3>Users.</h3>

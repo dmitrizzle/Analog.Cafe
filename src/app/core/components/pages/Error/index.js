@@ -1,16 +1,14 @@
-import { Helmet } from "react-helmet"
 import React from "react"
 
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import HeaderLarge from "../../vignettes/HeaderLarge"
+import MetaTags from "../../vignettes/MetaTags"
 
 export default props => {
   return (
     <ArticleWrapper>
-      <Helmet>
-        <title>{props.errorTitle}</title>
-      </Helmet>
+      <MetaTags metaTitle={props.errorTitle} />
       <HeaderLarge
         pageTitle={props.errorTitle}
         pageSubtitle={props.errorSubtitle}
