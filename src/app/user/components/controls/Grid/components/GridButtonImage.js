@@ -28,7 +28,7 @@ export default props => {
               crop: "square"
             }).src
           }
-          alt="Editor’s suggestion"
+          alt=""
           onDragStart={event => {
             event.preventDefault()
             event.stopPropagation()
