@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { TEXT_STATUS_LABELS } from "../../../../constants/messages-list"
+import { getTitleFromSlug } from "../../../../utils/messages-"
 
 const Stats = styled.span`
   ${props => props.theme.typography.title.auto} margin: 0;
@@ -16,13 +17,12 @@ export default props => {
         props.private &&
         props.item.tag &&
         "#"}
-      {props.item.tag
-        ? props.item.tag === "photo-essay" && props.item.stats.images === 1
-          ? "Single-Frame Narrative"
-          : (props.item.tag + "")
-              .replace(/-/g, " ")
-              .replace(/\b\w/g, l => l.toUpperCase())
-        : "Submitted"}
+      {props.item.type !== "placeholder" &&
+        (props.item.tag
+          ? getTitleFromSlug(props.item.tag, {
+              smartTagFromImageCount: props.item.stats.images
+            })
+          : "Submitted")}
       {props.item.type !== "placeholder" &&
         !props.private &&
         (props.item.tag !== "photo-essay"
