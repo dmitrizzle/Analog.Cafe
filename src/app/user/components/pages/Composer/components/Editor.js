@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { CARD_ERRORS } from "../../../../constants/messages-submission"
+import { CARD_ERRORS as CARD_ERRORS_SESSION } from "../../../../constants/messages-session"
 import { HOST_PROD } from "../../../../../constants"
 import { ToggleFeature } from "../plugins"
 import { setComposerSatus } from "../../../../store/actions-composer"
@@ -43,7 +44,7 @@ class Editor extends React.PureComponent {
       !this.state.connectionMessageShown &&
       nextProps.user.connection.status === "offline"
     ) {
-      this.props.setModal(CARD_ERRORS.CONNECTION_OFFLINE)
+      this.props.setModal(CARD_ERRORS_SESSION.CONNECTION_OFFLINE)
       this.setState({ connectionMessageShown: true })
     }
   }
