@@ -1,23 +1,17 @@
 import React from "react"
-import styled from "styled-components"
 
 import { APP_NAME, HEADER_ERRORS } from "../../../../../constants"
 import { ROUTE_API_AUTHORS } from "../../../../constants/routes-article"
 import { getFirstNameFromFull } from "../../../../utils/messages-author"
+import ListBrandName from "./ListBrandName"
 import ListDescriptionWrapper from "./ListDescriptionWrapper"
 import ListHeader from "./ListHeader"
 import Modal from "../../../controls/Modal"
 
-const BrandName = styled.strong`
-  ${props => props.theme.typography.title.auto} text-align: center;
-  display: block;
-  font-size: ${props => props.theme.size.font.make.smaller}em;
-  margin-bottom: 0.5em;
-`
 export default props => {
   return (
     <ListDescriptionWrapper {...props}>
-      <BrandName>{APP_NAME}</BrandName>
+      <ListBrandName>{APP_NAME}</ListBrandName>
       {props.user.connection.status !== "offline" ? (
         <ListHeader>
           {props.list.filter.author ? (

@@ -69,9 +69,13 @@ class Article extends React.PureComponent {
     this.setState({
       ...this.state,
       tag: {
-        name:
-          tag.charAt(0).toUpperCase() +
-          getTitleFromSlug(tag, { titleCase: false }).slice(1),
+        name: getTitleFromSlug(tag, {
+          titleCase: false,
+          capitalize: true,
+          smartTagFromImageCount: props.article.stats
+            ? props.article.stats.images
+            : 0
+        }),
         route: Object.keys(ROUTE_TAGS).find(key => ROUTE_TAGS[key] === tag)
       }
     })
