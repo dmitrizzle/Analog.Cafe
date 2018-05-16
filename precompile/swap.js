@@ -1,7 +1,6 @@
 const fs = require("fs")
 const replace = require("replace-in-file")
-//
-// function to swap placeholder with file contents
+
 exports.swap = function(target, placeholder, swap, message, callback){
   fs.readFile(swap, "utf8", function(
     err,
