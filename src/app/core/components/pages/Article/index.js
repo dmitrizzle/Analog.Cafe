@@ -111,10 +111,10 @@ class Article extends React.PureComponent {
     })
   }
   handleShareOnTwitter = event => {
-    shareOnTwitter(event)
+    shareOnTwitter(event, this.props)
   }
   handleShareOnFacebook = event => {
-    shareOnFacebook(event)
+    shareOnFacebook(event, this.props)
   }
 
   render = () => {

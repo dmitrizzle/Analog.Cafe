@@ -20,7 +20,7 @@ export default props => {
         <FacebookLinkButton
           to="https://facebook.com/analog8cafe"
           onClick={event => {
-            props.shareOnFacebook(event)
+            props.shareOnFacebook(event, props)
             import("react-ga").then(ReactGA => {
               ReactGA.event({
                 category: "Campaign",
@@ -36,7 +36,7 @@ export default props => {
         <TwitterLinkButton
           to="https://twitter.com/analog_cafe"
           onClick={event => {
-            props.shareOnTwitter(event)
+            props.shareOnTwitter(event, props)
             import("react-ga").then(ReactGA => {
               ReactGA.event({
                 category: "Campaign",
@@ -51,10 +51,7 @@ export default props => {
 
       {!props.hideShareButtons && (
         <Button onClick={props.revealShareButtons} inverse={props.shareButtons}>
-          Share{" "}
-          <span style={{ transform: "rotate(90deg)", display: "inline-block" }}>
-            ⎋
-          </span>
+          Share <span style={{ display: "inline-block" }}>❀</span>
         </Button>
       )}
     </CardIntegrated>
