@@ -17,8 +17,8 @@
     js-tokens "^3.0.0"
 
 "@roast-cms/french-press-editor@^0.6.2":
-  version "0.6.7"
-  resolved "https://registry.yarnpkg.com/@roast-cms/french-press-editor/-/french-press-editor-0.6.7.tgz#84c17433c6fb8ceea7c2eecfac13e04f48f32d1d"
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/@roast-cms/french-press-editor/-/french-press-editor-0.6.8.tgz#b4311927c42c15ecfce4b8d87c14f62e9028ecb7"
   dependencies:
     "@roast-cms/react-button-beans" "^1.1.3"
     "@roast-cms/react-link-filter" "*"
