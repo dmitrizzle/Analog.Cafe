@@ -6,16 +6,13 @@ const { copyFile } = require("./copy-file")
 const copyDir = require("copy")
 const replace = require("replace-in-file")
 const md5 = require("md5.js")
-//
+
 const FONTS = require("../html/fonts").fonts
 const COMPILED_INDEX_HTML = "public/index.html"
-//
+
 var cssFontImports = ""
-//
-// copy template file into public folder, ready to modify
 copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
   async.series([
-    // clean public directory
     function(callback) {
       del(["public/*", "!public/index.html"]).then(paths => {
         console.log("☕️  ☕️  ☕️")
@@ -23,7 +20,6 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
         callback()
       })
     },
-    // add sanitize_css
     function(callback) {
       swap(
         COMPILED_INDEX_HTML,
@@ -33,7 +29,6 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
         callback
       )
     },
-    // add critical.css
     function(callback) {
       swap(
         COMPILED_INDEX_HTML,
@@ -43,7 +38,6 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
         callback
       )
     },
-    // add critical.html
     function(callback) {
       swap(
         COMPILED_INDEX_HTML,
@@ -53,7 +47,6 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
         callback
       )
     },
-    // add meta.html
     function(callback) {
       swap(
         COMPILED_INDEX_HTML,
@@ -63,7 +56,6 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
         callback
       )
     },
-    // copy over icons
     function(callback) {
       copyDir(`./html/icons/**`, "./public/", function() {
         console.log("----------------------------------------")
@@ -72,7 +64,6 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
         callback()
       })
     },
-    // copy over open graph poster image with hash
     function(callback) {
       const hash = new md5().update("42").digest("hex")
       const filename = `poster.${hash}.jpg`
@@ -93,7 +84,6 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
           })
       })
     },
-    // copy over remaining required files
     function(callback) {
       copyDir(`./html/manifest*.json`, "./public/", function() {
         copyDir(`./html/analytics*.js`, "./public/", function() {
@@ -104,7 +94,6 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
         })
       })
     },
-    // copy fonts from node_modules THIS HAS TO BE LAST
     function(callback) {
       let cssFontImports = ""
       async.series([

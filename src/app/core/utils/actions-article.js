@@ -4,37 +4,33 @@ import {
 } from "./routes-article"
 import { getAuthorListStringFromArray } from "./messages-author"
 
-export const shareOnFacebook = event => {
+export const shareOnFacebook = (event, props) => {
   event.preventDefault()
   window.open(
     "https://web.facebook.com/sharer.php?u=" +
       getAbsoluteURLPath(
-        getSubmissionOrArticleRoute(this.props.history.location.pathname)
-          .pathname,
-        this.props.article.slug
+        getSubmissionOrArticleRoute(props.history.location.pathname).pathname,
+        props.article.slug
       ),
     "_blank",
     "height=600,width=500"
   )
 }
-export const shareOnTwitter = event => {
+export const shareOnTwitter = (event, props) => {
   event.preventDefault()
   window.open(
     "https://twitter.com/share?url=" +
       getAbsoluteURLPath(
-        getSubmissionOrArticleRoute(this.props.history.location.pathname)
-          .pathname,
-        this.props.article.slug
+        getSubmissionOrArticleRoute(props.history.location.pathname).pathname,
+        props.article.slug
       ) +
       "&text=" +
       encodeURI(
         "“" +
-          this.props.article.title +
-          (this.props.article.subtitle
-            ? " (" + this.props.article.subtitle + ")"
-            : "") +
+          props.article.title +
+          (props.article.subtitle ? " (" + props.article.subtitle + ")" : "") +
           "” by " +
-          getAuthorListStringFromArray(this.props.article.authors)
+          getAuthorListStringFromArray(props.article.authors)
       ) +
       "&via=analog_cafe",
     "_blank",

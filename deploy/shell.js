@@ -7,7 +7,6 @@
 // version: 0.1.0 (2013/02/01)
 
 
-// execute a single shell command where "cmd" is a string
 exports.exec = function(cmd, cb){
     // this would be way easier on a shell/bash script :P
     var child_process = require('child_process');
@@ -25,8 +24,6 @@ exports.exec = function(cmd, cb){
 };
 
 
-// execute multiple commands in series
-// this could be replaced by any flow control lib
 exports.series = function(cmds, cb){
     var execNext = function(){
         exports.exec(cmds.shift(), function(err){

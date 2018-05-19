@@ -11,7 +11,7 @@ export const CARD_DIALOGUES = {
       info: {
         title: "Overwrite Warning",
         text:
-          "Looks like you are currently editing another draft on this device. Do you want to overwrite it by editing this article instead? This can not be undone.",
+          "Looks like you are currently editing another draft on this device. Do you want to overwrite it? This can not be undone.",
         buttons: [
           {
             to: "/submit/compose",
