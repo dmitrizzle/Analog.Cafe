@@ -5,8 +5,7 @@ import {
   getISODatestamp,
   getLunarDatestamp
 } from "../../../utils/messages-"
-import NextArticle from "./components/NextArticle"
-import ShareButtons from "./components/ShareButtons"
+import Options from "./components/Options"
 import TimeStamp from "../../pages/Article/components/TimeStamp"
 
 const DatePublished = props => {
@@ -27,8 +26,7 @@ export default props => {
   return (
     <div style={{ clear: "both" }}>
       {props.thisArticlePostDate && <DatePublished {...props} />}
-      <ShareButtons {...props} />
-      <NextArticle {...props} />
+      <Options {...props} />
     </div>
   )
 }

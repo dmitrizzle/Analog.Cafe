@@ -16,17 +16,19 @@ export default styled.header`
   h3,
   input {
     ${props => props.theme.size.font.auto} ${props =>
-  props.theme.typography.title.auto} white-space: nowrap;
+      props.theme.typography.title.auto} white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
     padding: 0;
   }
   h3::before,
-  input::before {
+  ${props =>
+      !props.noStar &&
+      `input::before {
     content: "${TEXT_EMOJIS.STAR}";
-  }
-  a {
+  }`}
+    a {
     ${props => props.theme.size.font.auto} text-decoration:none;
     &:active {
       background: 0 0;

@@ -57,7 +57,8 @@ export default class extends React.Component {
             import("react-ga").then(ReactGA => {
               ReactGA.event({
                 category: "Campaign",
-                action: "MailChimpForm.subscribe"
+                action: "MailChimpForm_send",
+                label: this.props.formLocation ? this.props.formLocation : null
               })
             })
           }}

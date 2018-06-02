@@ -68,7 +68,7 @@ class App extends React.PureComponent {
       function() {
         import("react-ga").then(ReactGA => {
           ReactGA.initialize(DATA_GA_ID, {
-            debug: false,
+            debug: true,
             titleCase: true,
             gaOptions: {},
             gaAddress: process.env.PUBLIC_URL + "/analytics-20181123452.js"

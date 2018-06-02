@@ -21,6 +21,7 @@ export default props => {
         <Subscribe
           key="Card_subscribe"
           onClick={event => event.stopPropagation()}
+          formLocation={props.subscribeFormLocation}
         />,
         <ButtonGroupDivider key="Card_divider" />
       ]}

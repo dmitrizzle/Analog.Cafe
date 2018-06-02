@@ -24,7 +24,7 @@ const LOGIN_ERROR = (type = "error") => {
         },
         {
           to: "/",
-          text: "Nevermind"
+          text: "Go to Home Page"
         }
       ]
     }

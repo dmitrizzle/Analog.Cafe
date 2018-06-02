@@ -16,7 +16,6 @@ import {
 } from "../../../store/actions-article"
 import { getSubmissionOrArticleRoute } from "../../../utils/routes-article"
 import { getTitleFromSlug } from "../../../utils/messages-"
-import { shareOnFacebook, shareOnTwitter } from "../../../utils/actions-article"
 import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
 import ArticleWrapper from "./components/ArticleWrapper"
@@ -32,7 +31,6 @@ class Article extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      shareButtons: false,
       subscribeForm: false,
       tag: {
         name: "Post",
@@ -58,7 +56,6 @@ class Article extends React.PureComponent {
         )
     })
     this.setState({
-      shareButtons: false,
       subscribeForm: false,
       publicationStatus: this.props.article.status
     })
@@ -100,21 +97,8 @@ class Article extends React.PureComponent {
   }
   handleSubscribeFormCallback = value => {
     this.setState({
-      shareButtons: value,
       subscribeForm: !value
     })
-  }
-  handleRevealShareButtons = () => {
-    this.setState({
-      shareButtons: !this.state.shareButtons,
-      subscribeForm: false
-    })
-  }
-  handleShareOnTwitter = event => {
-    shareOnTwitter(event, this.props)
-  }
-  handleShareOnFacebook = event => {
-    shareOnFacebook(event, this.props)
   }
 
   render = () => {
@@ -152,12 +136,7 @@ class Article extends React.PureComponent {
               >
                 <ArticleActions
                   subscribeFormCallback={this.handleSubscribeFormCallback}
-                  revealShareButtons={this.handleRevealShareButtons}
                   subscribeForm={this.state.subscribeForm}
-                  shareButtons={this.state.shareButtons}
-                  hideShareButtons={this.props.article.status !== "published"}
-                  shareOnFacebook={this.handleShareOnFacebook}
-                  shareOnTwitter={this.handleShareOnTwitter}
                   nextArticle={this.props.article.next}
                   thisArticle={this.props.article.slug}
                   thisArticlePostDate={
