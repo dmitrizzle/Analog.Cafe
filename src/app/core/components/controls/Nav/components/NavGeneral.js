@@ -53,6 +53,7 @@ export default props => {
             info: {
               title: "More…",
               subscribeForm: props.userStatus !== "ok",
+              subscribeFormLocation: "NavGeneral",
               buttons: [
                 props.userStatus === "ok"
                   ? {

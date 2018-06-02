@@ -20,12 +20,11 @@ export default class extends React.PureComponent {
     })
     this.props.subscribeFormCallback &&
       this.props.subscribeFormCallback(this.state.subscribeForm)
-
-    // async load Google Analytics module
     import("react-ga").then(ReactGA => {
       ReactGA.event({
         category: "Campaign",
-        action: "ActionsCard.quickSubscribe"
+        action: "ActionsCard.quickSubscribe",
+        label: this.props.formLocation ? this.props.formLocation : null
       })
     })
   }

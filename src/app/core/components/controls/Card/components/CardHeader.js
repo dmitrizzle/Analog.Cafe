@@ -4,7 +4,7 @@ import HeaderSmall from "../../../vignettes/HeaderSmall"
 
 export default props => {
   return (
-    <HeaderSmall title={props.error && props.error}>
+    <HeaderSmall title={props.error && props.error} noStar={props.noStar}>
       <h3 onClick={event => event.stopPropagation()}>{props.title}</h3>
       {!(
         props.stubborn &&

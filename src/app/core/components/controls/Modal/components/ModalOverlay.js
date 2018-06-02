@@ -52,6 +52,7 @@ const ModalOverlay = props => {
         stubborn={props.modal.info.stubborn}
         buttons={props.modal.info.buttons}
         subscribeForm={props.modal.info.subscribeForm}
+        subscribeFormLocation={props.modal.info.subscribeFormLocation}
       />
     </Overlay>
   )

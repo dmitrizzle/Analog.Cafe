@@ -1,13 +1,13 @@
 import React from "react"
 
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
-import { getAuthorListStringFromArray } from "../../../../utils/messages-author"
 import { makeFroth } from "../../../../../utils"
-import CardCaption from "../../Card/components/CardCaption"
+import CardHeader from "../../Card/components/CardHeader"
 import CardIntegrated from "../../Card/components/CardIntegrated"
 import Link from "../../Link"
 import LinkButton from "../../Button/components/LinkButton"
 import Placeholder from "../../../vignettes/Picture/components/Placeholder"
+import Subscribe from "../../../../../user/components/forms/Subscribe"
 
 const nextArticlePreload = nextArticle => {
   return {
@@ -23,10 +23,17 @@ const nextArticlePreload = nextArticle => {
 export default props => {
   return (
     <div>
-      {props.nextArticle &&
-        props.nextArticle.slug && (
-          <CardIntegrated>
-            <figure>
+      <CardIntegrated>
+        {props.nextArticle &&
+          props.nextArticle.slug && [
+            <CardHeader
+              stubborn
+              buttons={[0]}
+              noStar
+              title={props.nextArticle.title}
+              key="Options_CardHeader"
+            />,
+            <figure key="Options_Figure">
               <Link
                 to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
                 onClick={() => {
@@ -51,28 +58,7 @@ export default props => {
                   />
                 </Placeholder>
               </Link>
-              <figcaption>
-                <CardCaption>
-                  <span
-                    style={{
-                      display: "block",
-                      fontSize: "0.8em",
-                      lineHeight: "1.5em"
-                    }}
-                  >
-                    <span style={{ opacity: "0.5" }}>Up next:</span>{" "}
-                    <q>
-                      {props.nextArticle.title}
-                      {props.nextArticle.subtitle
-                        ? " (" + props.nextArticle.subtitle + ")"
-                        : null}
-                    </q>{" "}
-                    – {props.nextArticle.tag.replace(/-/g, " ")} by{" "}
-                    {getAuthorListStringFromArray(props.nextArticle.authors)}.
-                  </span>
-                </CardCaption>
-              </figcaption>
-            </figure>
+            </figure>,
             <LinkButton
               style={{ margin: 0 }}
               to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
@@ -85,11 +71,17 @@ export default props => {
                   })
                 })
               }}
+              key="Options_LinkButton"
             >
-              Continue Reading <span>➢</span>
+              Read Next <span>➢</span>
             </LinkButton>
-          </CardIntegrated>
-        )}
+          ]}
+        <Subscribe
+          subscribeFormCallback={props.subscribeFormCallback}
+          stateOverwrite={props.subscribeForm}
+          formLocation={"ArticleActions"}
+        />
+      </CardIntegrated>
     </div>
   )
 }
