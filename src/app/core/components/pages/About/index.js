@@ -153,7 +153,10 @@ export default () => {
             }” We never share or sell your personal information.
           </span>
         </p>
-        <MailChimpPrefill buttonText={TEXT_LABELS.SUBSCRIBE} />
+        <MailChimpPrefill
+          buttonText={TEXT_LABELS.SUBSCRIBE}
+          formLocation="About"
+        />
 
         <FollowButtons />
         <p>

@@ -23,7 +23,7 @@ export default class extends React.PureComponent {
     import("react-ga").then(ReactGA => {
       ReactGA.event({
         category: "Campaign",
-        action: "ActionsCard.quickSubscribe",
+        action: "ActionsCard.quickSubscribe_open",
         label: this.props.formLocation ? this.props.formLocation : null
       })
     })
@@ -52,6 +52,7 @@ export default class extends React.PureComponent {
           </CardButton>
         ) : (
           <MailChimpPrefill
+            formLocation={this.props.formLocation}
             buttonText={TEXT_LABELS.SUBMIT}
             autoFocus
             submitCallback={this.handleSubmitCallback}
