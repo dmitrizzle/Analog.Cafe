@@ -1,5 +1,4 @@
 import { connect } from "react-redux"
-import { getFroth } from "@roast-cms/image-froth"
 import Loadable from "react-loadable"
 import React from "react"
 
@@ -126,29 +125,10 @@ class Picture extends React.PureComponent {
     if (caption !== this.state.caption) {
       this.setState({ caption })
     }
-
-    const authorRequet = this.state.authorCard.id
-    console.log(1, authorRequet)
-    if (authorRequet && nextProps.picture[authorRequet]) {
-      this.setState({
-        authorCard: {
-          info: nextProps.picture[authorRequet].info,
-          id: authorRequet,
-          url: "/author"
-        }
-      })
-      console.log(2, this.state.authorCard)
-    }
   }
   handleGetAuthor = src => {
     if (!src || !this.props.readOnly) return
     this.props.getPictureInfo(src)
-    this.setState({
-      authorCard: {
-        id: src
-      }
-    })
-    this.props.setModal(this.state.authorCard)
   }
   render = () => {
     const { attributes, node, isSelected, editor, parent } = this.props

@@ -2,7 +2,6 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 import Caption from "../../Caption"
-import CaptionAuthor from "./CaptionAuthor"
 
 const captionBlock = css`
   ${props => props.theme.size.breakpoint.min.l`

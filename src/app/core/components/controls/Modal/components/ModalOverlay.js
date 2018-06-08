@@ -50,6 +50,7 @@ const ModalOverlay = props => {
         text={props.modal.info.text}
         error={props.modal.info.error && props.modal.info.error}
         stubborn={props.modal.info.stubborn}
+        headless={props.modal.info.headless}
         buttons={props.modal.info.buttons}
         subscribeForm={props.modal.info.subscribeForm}
         subscribeFormLocation={props.modal.info.subscribeFormLocation}
