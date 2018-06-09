@@ -128,6 +128,22 @@ class Picture extends React.PureComponent {
   }
   handleGetAuthor = src => {
     if (!src || !this.props.readOnly) return
+    this.props.setModal({
+      info: {
+        buttons: [
+          {
+            to: "#about-author",
+            onClick: event => {
+              event.preventDefault()
+            },
+            text: "Finding Author… ",
+            loading: true,
+            inverse: true
+          }
+        ],
+        headless: true
+      }
+    })
     this.props.getPictureInfo(src)
   }
   render = () => {
