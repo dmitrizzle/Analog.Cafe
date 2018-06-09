@@ -110,7 +110,9 @@ const Figure = styled.figure`
     props.feature &&
     !props.caption &&
     props.foldSpacer &&
-    `margin-bottom: -1em;`}
+    props.theme.size.breakpoint.min.l`
+			margin-bottom: -${props.theme.size.block.spacing}em;
+  `}
   textarea {
     ${styles};
     font-size: inherit !important;

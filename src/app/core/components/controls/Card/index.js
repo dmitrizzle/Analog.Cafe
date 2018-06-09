@@ -5,6 +5,7 @@ import CardButton from "./components/CardButton"
 import CardFigure from "./components/CardFigure"
 import CardHeader from "./components/CardHeader"
 import CardPopup from "./components/CardPopup"
+import Spinner from "../../icons/Spinner"
 import Subscribe from "../../../../user/components/forms/Subscribe"
 
 export default props => {
@@ -39,6 +40,7 @@ export default props => {
               inverse={button.inverse ? true : null}
               responsiveMobileOnly={button.responsiveMobileOnly ? true : null}
             >
+              {button.loading && <Spinner />}
               {button.text}
             </CardButton>
           ) : button && button.divider ? (
