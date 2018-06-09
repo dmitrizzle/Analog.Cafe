@@ -2,7 +2,6 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 import Caption from "../../Caption"
-import CaptionAuthor from "./CaptionAuthor"
 
 const captionBlock = css`
   ${props => props.theme.size.breakpoint.min.l`
@@ -53,27 +52,16 @@ export default props => {
   return (
     <figcaption
       style={
-        props.nocaption && {
-          borderBottom: "8px solid #2c2c2c",
-          height: 0,
-          overflow: "hidden"
-        }
+        props.nocaption || (props.readOnly && !props.caption)
+          ? {
+              borderBottom: "8px solid #2c2c2c",
+              height: 0,
+              overflow: "hidden"
+            }
+          : null
       }
     >
-      {props.author ? (
-        <Figcaption>
-          {props.children}
-          {props.readOnly ? <CaptionAuthor author={props.author} /> : null}
-        </Figcaption>
-      ) : (
-        <Figcaption {...props}>
-          {props.children}
-          {!props.noAuthor &&
-            props.readOnly && (
-              <CaptionAuthor> Finding image author…</CaptionAuthor>
-            )}
-        </Figcaption>
-      )}
+      <Figcaption>{props.children}</Figcaption>
     </figcaption>
   )
 }

@@ -10,12 +10,14 @@ import Subscribe from "../../../../user/components/forms/Subscribe"
 export default props => {
   return (
     <CardPopup style={props.style}>
-      <CardHeader
-        error={props.error}
-        stubborn={props.stubborn}
-        buttons={props.buttons}
-        title={props.title}
-      />
+      {!props.headless && (
+        <CardHeader
+          error={props.error}
+          stubborn={props.stubborn}
+          buttons={props.buttons}
+          title={props.title}
+        />
+      )}
       <CardFigure image={props.image} text={props.text} />
       {props.subscribeForm && [
         <Subscribe
