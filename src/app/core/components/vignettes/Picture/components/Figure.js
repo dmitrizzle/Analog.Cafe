@@ -106,6 +106,13 @@ const Figure = styled.figure`
     }
     z-index: ${props => props.theme.layer.up + 1};
   }
+  ${props =>
+    props.feature &&
+    !props.caption &&
+    props.foldSpacer &&
+    props.theme.size.breakpoint.min.l`
+			margin-bottom: -${props.theme.size.block.spacing}em;
+  `}
   textarea {
     ${styles};
     font-size: inherit !important;
@@ -123,9 +130,8 @@ export default props => {
         }
       />
       <Figcaption
+        caption={props.caption}
         nocaption={props.nocaption}
-        author={props.author}
-        noAuthor={props.noAuthor}
         readOnly={props.readOnly}
       >
         {props.children}

@@ -2,8 +2,10 @@ import { getFroth } from "@roast-cms/image-froth"
 import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-"
+import { ROUTE_API_AUTHORS } from "../constants/routes-article"
 import { ROUTE_API_IMAGES } from "../../user/constants/routes-submission"
 import { TEXT_ERRORS } from "../../constants"
+import { fetchModal, setModal } from "./actions-modal"
 import { makeAPIRequest } from "../../utils"
 
 const UNKNOWN_AUTHOR = (id, error) => {
@@ -37,14 +39,41 @@ export const getPictureInfo = src => {
     axios(makeAPIRequest(request))
       .then(response => {
         response.data.status === "ok"
-          ? dispatch({
-              type: "PICTURE.GET_INFO",
-              payload: {
-                info: response.data.info,
-                status: response.data.status,
-                id
-              }
-            })
+          ? dispatch(
+              setModal(
+                {
+                  info: {
+                    buttons: [
+                      {
+                        to: "#about-author",
+                        onClick: event => {
+                          event.preventDefault()
+                          const authorCardDelay = setTimeout(() => {
+                            dispatch(
+                              fetchModal({
+                                url:
+                                  ROUTE_API_AUTHORS +
+                                  "/" +
+                                  response.data.info.author.id
+                              })
+                            )
+                            clearTimeout(authorCardDelay)
+                          }, 50)
+                        },
+                        text: `Image by ${response.data.info.author.name}`,
+                        inverse: true
+                      }
+                    ],
+                    headless: true
+                  },
+                  status: response.data.status,
+                  id
+                },
+                {
+                  url: "hints/image-author"
+                }
+              )
+            )
           : dispatch(UNKNOWN_AUTHOR(id))
       })
       .catch(error => dispatch(UNKNOWN_AUTHOR(id, error)))

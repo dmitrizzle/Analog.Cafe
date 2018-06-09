@@ -1,5 +1,4 @@
 import { connect } from "react-redux"
-import { getFroth } from "@roast-cms/image-froth"
 import Loadable from "react-loadable"
 import React from "react"
 
@@ -8,6 +7,7 @@ import {
   OBJECT_SLATE_PICTURE_FROM_IMMUTABLE
 } from "../../../../user/constants/rules-submission"
 import { getPictureInfo } from "../../../store/actions-picture"
+import { setModal } from "../../../store/actions-modal"
 import Figure from "./components/Figure"
 
 const PlainTextarea = Loadable({
@@ -29,7 +29,8 @@ class Picture extends React.PureComponent {
       this.state = {
         caption: props.node.data.get("caption") || "",
         src: props.node.data.get("src") || "",
-        key: ""
+        key: "",
+        authorCard: {}
       }
     else this.state = {}
     this.handleChange = this.handleChange.bind(this)
@@ -37,12 +38,7 @@ class Picture extends React.PureComponent {
     this.handleRemovePicture = this.handleRemovePicture.bind(this)
     this.handleFeaturePicture = this.handleFeaturePicture.bind(this)
   }
-  componentWillReceiveProps = nextProps => {
-    const caption = nextProps.node.data.get("caption")
-    if (caption !== this.state.caption) {
-      this.setState({ caption })
-    }
-  }
+
   handleChange = event => {
     const caret = event.target.selectionStart
     const element = event.target
@@ -82,7 +78,6 @@ class Picture extends React.PureComponent {
   loadImage = (file, key, src) => {
     if (!key) {
       this.setState({ src })
-      this.props.readOnly && this.props.getPictureInfo(src)
     } else {
       import("localforage").then(localForage => {
         localForage.getItem(key).then(data => {
@@ -125,13 +120,43 @@ class Picture extends React.PureComponent {
         .focus()
     )
   }
+  componentWillReceiveProps = nextProps => {
+    const caption = nextProps.node.data.get("caption")
+    if (caption !== this.state.caption) {
+      this.setState({ caption })
+    }
+  }
+  handleGetAuthor = src => {
+    if (!src || !this.props.readOnly) return
+    this.props.setModal({
+      info: {
+        buttons: [
+          {
+            to: "#about-author",
+            onClick: event => {
+              event.preventDefault()
+            },
+            text: "Finding Author… ",
+            loading: true,
+            inverse: true
+          }
+        ],
+        headless: true
+      }
+    })
+    this.props.getPictureInfo(src)
+  }
   render = () => {
-    const { attributes, node, isSelected, editor } = this.props
+    const { attributes, node, isSelected, editor, parent } = this.props
     if (!editor) return null
     const { src } = this.state
     const focus = editor.value.isFocused && isSelected
     const className = focus ? "focus" : "nofocus"
     const feature = node.data.get("feature")
+
+    const nextBlock = parent.getNextBlock(node.get("key"))
+    const foldSpacer = nextBlock.get("data").get("feature") ? true : false
+
     return (
       <div style={{ clear: "both" }}>
         {!this.props.readOnly && focus ? (
@@ -145,12 +170,11 @@ class Picture extends React.PureComponent {
           readOnly={this.props.readOnly}
           src={src}
           className={className}
-          author={
-            this.props.picture[getFroth(src)] &&
-            this.props.picture[getFroth(src)].info.author
-          }
           composer={!this.props.readOnly}
           feature={feature}
+          caption={this.state.caption}
+          foldSpacer={foldSpacer}
+          onClick={() => this.handleGetAuthor(src)}
         >
           {!this.props.readOnly ? (
             <PlainTextarea
@@ -176,6 +200,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getPictureInfo: src => {
       dispatch(getPictureInfo(src))
+    },
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     }
   }
 }

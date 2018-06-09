@@ -5,17 +5,20 @@ import CardButton from "./components/CardButton"
 import CardFigure from "./components/CardFigure"
 import CardHeader from "./components/CardHeader"
 import CardPopup from "./components/CardPopup"
+import Spinner from "../../icons/Spinner"
 import Subscribe from "../../../../user/components/forms/Subscribe"
 
 export default props => {
   return (
     <CardPopup style={props.style}>
-      <CardHeader
-        error={props.error}
-        stubborn={props.stubborn}
-        buttons={props.buttons}
-        title={props.title}
-      />
+      {!props.headless && (
+        <CardHeader
+          error={props.error}
+          stubborn={props.stubborn}
+          buttons={props.buttons}
+          title={props.title}
+        />
+      )}
       <CardFigure image={props.image} text={props.text} />
       {props.subscribeForm && [
         <Subscribe
@@ -37,6 +40,7 @@ export default props => {
               inverse={button.inverse ? true : null}
               responsiveMobileOnly={button.responsiveMobileOnly ? true : null}
             >
+              {button.loading && <Spinner />}
               {button.text}
             </CardButton>
           ) : button && button.divider ? (
