@@ -60,7 +60,7 @@ export const getPictureInfo = src => {
                             clearTimeout(authorCardDelay)
                           }, 50)
                         },
-                        text: `Image by ${response.data.info.author.name}`,
+                        text: `Image by [${response.data.info.author.name}]`,
                         inverse: true
                       }
                     ],
