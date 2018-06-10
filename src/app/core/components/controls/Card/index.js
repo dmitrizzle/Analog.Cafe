@@ -33,7 +33,7 @@ export default props => {
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {
           let keyword, buttonText
-          if (button.text) {
+          if (button && button.text) {
             const keywordMatch = button.text.match(/\[(.*?)\]/)
             keyword = keywordMatch ? keywordMatch[1] : null
             buttonText = button.text.replace(`[${keyword}]`, "")
