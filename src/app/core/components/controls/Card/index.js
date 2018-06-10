@@ -32,9 +32,12 @@ export default props => {
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {
-          const keywordMatch = button.text.match(/\[(.*?)\]/)
-          const keyword = keywordMatch ? keywordMatch[1] : null
-          const buttonText = button.text.replace(`[${keyword}]`, "")
+          let keyword, buttonText
+          if (button.text) {
+            const keywordMatch = button.text.match(/\[(.*?)\]/)
+            keyword = keywordMatch ? keywordMatch[1] : null
+            buttonText = button.text.replace(`[${keyword}]`, "")
+          }
           return button && button.to && button.text ? (
             <CardButton
               onClick={button.onClick}
