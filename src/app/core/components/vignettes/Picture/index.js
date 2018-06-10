@@ -136,7 +136,7 @@ class Picture extends React.PureComponent {
             onClick: event => {
               event.preventDefault()
             },
-            text: "Finding Author… ",
+            text: " ",
             loading: true,
             inverse: true
           }
