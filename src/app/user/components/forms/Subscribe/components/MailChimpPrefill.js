@@ -52,8 +52,6 @@ export default class extends React.Component {
           branded
           onClick={event => {
             this.handleSubmit(event)
-
-            // async load Google Analytics module
             import("react-ga").then(ReactGA => {
               ReactGA.event({
                 category: "Campaign",

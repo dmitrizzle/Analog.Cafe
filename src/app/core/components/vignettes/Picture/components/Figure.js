@@ -126,7 +126,8 @@ export default props => {
       <ImageSet
         {...props}
         protected={
-          props.readOnly !== false && process.env.NODE_ENV === "production"
+          props.readOnly !== false &&
+          (process.env.NODE_ENV === "production" || props.userRole === "admin")
         }
       />
       <Figcaption
