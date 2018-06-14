@@ -32,13 +32,15 @@ export default () => {
       />
       <ArticleSection>
         <Figure src="image-froth_1998002_HJcNND1bQ" feature alt="(⊙ᗜ⊙)">
-          (⊙ᗜ⊙)
+          <span style={{ transform: "rotate(90deg)", display: "inline-block" }}>
+            ↬
+          </span>
         </Figure>
         <h3>{smartGreeting()}</h3>
         <p>
-          Analog.Cafe, “a film photography publication” is a blog that publishes
-          creative and informative content, mainly made by people who enjoy
-          shooting film, for everyone who enjoys human creativity and
+          Analog.Cafe, “a film photography publication,” is a blog that
+          publishes creative and informative content, mainly made by people who
+          enjoy shooting film, for everyone who enjoys human creativity and
           appreciates <Link to="/zine/analogue-photography-98f3">analogue</Link>{" "}
           technology. The irony of this topic being discussed online is
           recognized. 😏
@@ -102,31 +104,29 @@ export default () => {
           buttonText={TEXT_LABELS.SUBSCRIBE}
           formLocation="About"
         />
-        <p>
-          <Byline
-            style={{
-              maxWidth: "320px",
-              display: "block",
-              margin: "0 auto"
-            }}
-          >
-            Weekly emails (<Link
-              onClick={() => {
-                import("react-ga").then(ReactGA => {
-                  ReactGA.event({
-                    category: "Campaign",
-                    action: "ActionsCard.subscribe_example"
-                  })
+        <Byline
+          style={{
+            maxWidth: "320px",
+            display: "block",
+            margin: "0 auto"
+          }}
+        >
+          Weekly emails (<Link
+            onClick={() => {
+              import("react-ga").then(ReactGA => {
+                ReactGA.event({
+                  category: "Campaign",
+                  action: "ActionsCard.subscribe_example"
                 })
-              }}
-              to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
-            >
-              like this one
-            </Link>) come every Tuesday. We{" "}
-            <Link to="/privacy-policy">never share or sell</Link> your personal
-            information.
-          </Byline>
-        </p>
+              })
+            }}
+            to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
+          >
+            like this one
+          </Link>) come every Tuesday. We{" "}
+          <Link to="/privacy-policy">never share or sell</Link> your personal
+          information.
+        </Byline>
 
         <p>
           Please also feel free to <Link to="/submit">submit</Link> your

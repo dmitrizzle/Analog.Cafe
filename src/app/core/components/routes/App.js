@@ -5,7 +5,6 @@ import React from "react"
 import { ROUTE_URL_USER_LANDING } from "../../../user/constants/routes-session"
 import ArticleLoader from "../pages/Article/components/ArticleLoader"
 import ListLoader from "../pages/List/components/ListLoader"
-import PrivacyPolicy from "../../../user/components/pages/PrivacyPolicy"
 import SignOut from "../../../user/components/pages/SignOut"
 
 const List = Loadable({
@@ -42,13 +41,19 @@ const Admin = Loadable({
   loading: ArticleLoader,
   delay: 100
 })
-const AppRoutesSubmit = Loadable({
+const Submit = Loadable({
   loader: () => import("../../../user/components/routes/Submit"),
   loading: ArticleLoader,
   delay: 100
 })
 const NotFound = Loadable({
   loader: () => import("../pages/Error/components/NotFound"),
+  loading: ArticleLoader,
+  delay: 100
+})
+
+const PrivacyPolicy = Loadable({
+  loader: () => import("../../../user/components/pages/PrivacyPolicy"),
   loading: ArticleLoader,
   delay: 100
 })
@@ -94,7 +99,7 @@ export default () => {
 
         {/* static views and urls */}
         <Route exact path="/about" component={About} />
-        <Route path="/submit" component={AppRoutesSubmit} />
+        <Route path="/submit" component={Submit} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route state={{ status: "404" }} component={NotFound} />
       </Switch>
