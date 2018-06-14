@@ -1,13 +1,17 @@
 import React from "react"
 
+import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import { TEXT_LABELS } from "../../../constants/messages-"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
+import ButtonGroup from "../../controls/Button/components/ButtonGroup"
+import Byline from "../../vignettes/Byline"
 import ContactInfo from "../../vignettes/ContactInfo"
 import Figure from "../../vignettes/Picture/components/Figure"
 import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
+import LinkButton from "../../controls/Button/components/LinkButton"
 import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
@@ -26,57 +30,129 @@ export default () => {
         pageSubtitle="A Film Photography Publication"
       />
       <ArticleSection>
-        <Figure
-          src="image-froth_669120_c34babc2fb974c8d9f03249bea647401"
-          feature
-          noAuthor
-          alt="Forest view"
-        >
-          A short ride up a twisty mountain road from downtown Chiang Mai<br />&mdash;
-          where Analog.Cafe is built &mdash;<br />is a tropical forest.
+        <Figure src="image-froth_1998002_HJcNND1bQ" feature alt="(⊙ᗜ⊙)">
+          (⊙ᗜ⊙)
         </Figure>
-        <blockquote>
-          <strong>Analog.Cafe</strong> exists because of the people who
-          contribute their art and the editors who curate it. It’s because of
-          the{" "}
-          <Link to="https://github.com/dmitrizzle/Analog.Cafe/wiki/Contributors">
-            developers
-          </Link>{" "}
-          and designers who devote their time and skill to build this platform.
-          And because of the 51 people who have graciously{" "}
-          <Link to="https://www.kickstarter.com/projects/dmitrizzle/analogcafe-the-remarkable-film-photography-blog">
-            funded
-          </Link>{" "}
-          the initial stages of this project.
-        </blockquote>
+        <h3>Hello!</h3>
         <p>
-          Analog.Cafe is an{" "}
+          Analog.Cafe, “a film photography publication” is a blog that publishes
+          creative and informative content, mainly made by people who enjoy
+          shooting film, for everyone who enjoys human creativity and
+          appreciates <Link to="/zine/analogue-photography-98f3">analogue</Link>{" "}
+          technology. The irony of this topic being discussed online is
+          recognized. 😏
+        </p>
+
+        <h3>Photographers, authors, nerds, hobbyists, artists.</h3>
+        <p>
+          Most of the articles published on this website are created by people
+          who <Link to="/submit">submit</Link> their{" "}
+          <Link to="/photo-essays">photo essays</Link>,{" "}
+          <Link to="/guides">guides</Link>, <Link to="/reviews">reviews</Link>,
+          and <Link to="/stories">stories</Link>. Most of them are{" "}
+          <Link to="/solo-projects">solo projects</Link>, but some are{" "}
+          <Link to="/collaborations">collaborations</Link>.
+        </p>
+
+        <h3>Editors.</h3>
+        <p>
           <Modal
             with={{
-              info: {
-                title: "Inclusive",
-                text:
-                  "Analog.Cafe is a human-edited publication; it’s bound to be shaped by personal opinions. However, it shall always strive to be welcoming and fair."
-              },
-              id: "footnotes/analog-cafe-inclusive"
+              request: {
+                url: ROUTE_API_AUTHORS + "/dmitrizzle"
+              }
             }}
           >
-            inclusive
+            dmitrizzle
           </Modal>{" "}
-          creative outlet that publishes{" "}
-          <strong>outstanding images and stories</strong>.
-        </p>
-        <p>
-          Analog.Cafe’s editors favour works based on{" "}
-          <strong>skill, imagination, innovation and diversity</strong>.
+          and{" "}
+          <Modal
+            with={{
+              request: {
+                url: ROUTE_API_AUTHORS + "/betty"
+              }
+            }}
+          >
+            Betty
+          </Modal>{" "}
+          edit every article on this blog, doing their best to maintain a high
+          level of quality, captivating content.
         </p>
 
-        <hr />
-
-        <h3>Thank you, Kickstarter backers!</h3>
+        <h3>Developers.</h3>
         <p>
-          Analog.Cafe owes its existence in large part to the contributions,
-          support and encouragement provided by the people below.
+          Adding to the irony of this blog’s obsession with analogue, it is also
+          a technological journey into the world of web interface development.
+          This website is a custom-built solution, kicked off by dmitrizzle and
+          his friends at Banana Coding and maintained as an{" "}
+          <Link to="https://github.com/dmitrizzle/Analog.Cafe">
+            open-source
+          </Link>{" "}
+          project.
+        </p>
+
+        <h3>Contact, connect.</h3>
+        <p>
+          If you have a question, suggestion or just want to chat, feel free to
+          email <ContactInfo />, or:
+        </p>
+        <FollowButtons />
+        <MailChimpPrefill
+          buttonText={TEXT_LABELS.SUBSCRIBE}
+          formLocation="About"
+        />
+        <p>
+          <Byline
+            style={{
+              maxWidth: "320px",
+              display: "block",
+              margin: "0 auto"
+            }}
+          >
+            Weekly emails (<Link
+              onClick={() => {
+                import("react-ga").then(ReactGA => {
+                  ReactGA.event({
+                    category: "Campaign",
+                    action: "ActionsCard.subscribe_example"
+                  })
+                })
+              }}
+              to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
+            >
+              like this one
+            </Link>) come every Tuesday. We{" "}
+            <Link to="/privacy-policy">never share or sell</Link> your personal
+            information.
+          </Byline>
+        </p>
+
+        <p>
+          Please also feel free to <Link to="/submit">submit</Link> your
+          articles for consideration:
+        </p>
+        <ButtonGroup>
+          <LinkButton to={"/submit/compose"} branded>
+            Submit Now
+          </LinkButton>
+          <p>
+            <em>- or -</em>
+          </p>
+          <p>
+            <Link to="/sign-in">
+              <strong>Sign in</strong>
+            </Link>{" "}
+            if you already have an account.
+          </p>
+        </ButtonGroup>
+
+        <h3>Thank you, project backers.</h3>
+        <p>
+          There are bills associated with the technology required to run
+          Analog.Cafe and there’s value to the time spent by all who make this
+          project possible. The people who make financial contributions, however
+          small, are supporting this blog and validating its existence in ways
+          not possible without their generosity:
         </p>
 
         <ThankYouList>
@@ -132,37 +208,6 @@ export default () => {
           Hakan (@haknization)<br />
           Ben Cairns
         </ThankYouList>
-
-        <h3>Connect, contact & get involved.</h3>
-        <p>
-          <span>
-            To get lovely updates (<Link
-              onClick={() => {
-                import("react-ga").then(ReactGA => {
-                  ReactGA.event({
-                    category: "Campaign",
-                    action: "ActionsCard.subscribe_example"
-                  })
-                })
-              }}
-              to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
-            >
-              like this one
-            </Link>) every Tuesday, fill out your email below and click “{
-              TEXT_LABELS.SUBSCRIBE
-            }” We never share or sell your personal information.
-          </span>
-        </p>
-        <MailChimpPrefill
-          buttonText={TEXT_LABELS.SUBSCRIBE}
-          formLocation="About"
-        />
-
-        <FollowButtons />
-        <p>
-          If you have a question, suggestion or just want to chat, feel free to
-          follow, message, or email <ContactInfo />
-        </p>
       </ArticleSection>
     </ArticleWrapper>
   )
