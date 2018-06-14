@@ -39,10 +39,11 @@ export default () => {
           identity to the server. It is not used to track your behaviour.
           Additionally, Analog.Cafe may store textual data in variety of forms
           on your device that lets you store your submissions in your browser
-          and resume them even when you are offline. Analog.Cafe does not use
-          that information to track your behaviour. Analog.Cafe can not see the
-          content of your token or submission data. Analog.Cafe does not
-          directly use “cookie” technology.
+          and resume them even when you are offline, as well as to provide
+          customized experience. Analog.Cafe does not use that information to
+          track your behaviour. Analog.Cafe can not see the content of your
+          token or submission data. Analog.Cafe does not directly use “cookie”
+          technology.
         </p>
         <p>
           Analog.Cafe uses Google Analytics, which in-turn anonymously tracks

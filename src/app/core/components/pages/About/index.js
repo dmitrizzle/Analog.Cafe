@@ -2,6 +2,7 @@ import React from "react"
 
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import { TEXT_LABELS } from "../../../constants/messages-"
+import { smartGreeting } from "../../../utils/messages-"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ButtonGroup from "../../controls/Button/components/ButtonGroup"
@@ -33,7 +34,7 @@ export default () => {
         <Figure src="image-froth_1998002_HJcNND1bQ" feature alt="(⊙ᗜ⊙)">
           (⊙ᗜ⊙)
         </Figure>
-        <h3>Hello!</h3>
+        <h3>{smartGreeting()}</h3>
         <p>
           Analog.Cafe, “a film photography publication” is a blog that publishes
           creative and informative content, mainly made by people who enjoy

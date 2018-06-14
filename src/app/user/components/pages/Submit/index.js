@@ -2,6 +2,7 @@ import React from "react"
 
 import { TEXT_EDITORIAL_RELEASE } from "../../../constants/messages-submission"
 import { makeFroth } from "../../../../utils"
+import { smartGreeting } from "../../../../core/utils/messages-"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
@@ -42,7 +43,7 @@ export default () => {
           </p>
         </div>
         <Figure src="image-froth_1533636_rygH__d9kQ" feature nocaption />
-        <h3>Hello!</h3>
+        <h3>{smartGreeting()}</h3>
         <p>
           Analog.Cafe publishes and celebrates expressive, insightful works by a
           diverse group of people from around the world. Some are submitted by
