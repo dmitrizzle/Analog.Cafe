@@ -1,6 +1,5 @@
 import React from "react"
 
-import { CARD_ERRORS } from "../../../../constants/messages-"
 import { TEXT_EMOJIS } from "../../../../../constants"
 import ArticleSection from "./ArticleSection"
 import ArticleWrapper from "./ArticleWrapper"
@@ -11,18 +10,10 @@ export default props => {
     <ArticleWrapper>
       <HeaderLarge
         pageTitle={
-          props.isLoading
-            ? props.pastDelay
-              ? TEXT_EMOJIS.HUG_RIGHT
-              : ""
-            : CARD_ERRORS.ARTICLE.title
+          props.isLoading ? (props.pastDelay ? TEXT_EMOJIS.HUG_RIGHT : "") : ""
         }
         pageSubtitle={
-          props.isLoading
-            ? props.pastDelay
-              ? "Loading…"
-              : ""
-            : CARD_ERRORS.ARTICLE.subtitle
+          props.isLoading ? (props.pastDelay ? "Loading…" : "") : ""
         }
       />
       <ArticleSection style={{ paddingTop: "100vh" }} />

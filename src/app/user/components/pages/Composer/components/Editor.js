@@ -11,7 +11,6 @@ import { setModal } from "../../../../../core/store/actions-modal"
 import CapitalA from "../../../icons/Glyphs/components/CapitalA"
 import LowerA from "../../../icons/Glyphs/components/LowerA"
 import Picture from "../../../../../core/components/vignettes/Picture"
-import PictureDocket from "../../../controls/PictureDocket"
 
 class Editor extends React.PureComponent {
   constructor(props) {
@@ -52,8 +51,7 @@ class Editor extends React.PureComponent {
     return (
       <FrenchPress
         components={{
-          Picture,
-          PictureDocket
+          Picture
         }}
         callbackStatus={this.props.setComposerSatus}
         controls={{
