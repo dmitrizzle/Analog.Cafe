@@ -31,11 +31,11 @@ export default () => {
         pageSubtitle="A Film Photography Publication"
       />
       <ArticleSection>
-        <Figure src="image-froth_1998002_HJcNND1bQ" feature alt="(⊙ᗜ⊙)">
-          <span style={{ transform: "rotate(90deg)", display: "inline-block" }}>
-            ↬
-          </span>
-        </Figure>
+        <Figure
+          src="image-froth_1998002_HJcNND1bQ"
+          feature
+          alt="A photograph of a misty forest"
+        />
         <h3>{smartGreeting()}</h3>
         <p>
           Analog.Cafe, “a film photography publication,” is a blog that
