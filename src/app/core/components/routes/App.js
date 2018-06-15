@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom"
+import { Redirect, Route, Switch } from "react-router-dom"
 import Loadable from "react-loadable"
 import React from "react"
 
@@ -74,6 +74,7 @@ export default () => {
         <Route exact path="/photo-essays" component={List} />
         <Route exact path="/articles" component={List} />
         <Route exact path="/stories" component={List} />
+        <Route exact path="/storys" render={() => <Redirect to="/stories" />} />
         <Route exact path="/editorials" component={List} />
         <Route exact path="/guides" component={List} />
         <Route exact path="/reviews" component={List} />
