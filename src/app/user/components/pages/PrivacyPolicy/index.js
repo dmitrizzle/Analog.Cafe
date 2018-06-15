@@ -22,28 +22,29 @@ export default () => {
           Your email will be used for communication regarding your work and
           occasional or scheduled company newsletters. If you are a part of an
           email list, you can easily unsubscribe at any time via link in the
-          footer of the email. Some emails are a part of the system (like
-          notificatons sent at the time of publication to all authors). Those
-          emails can can only be unsubscribed from when you delete your account
-          on Analog.Cafe server.
+          footer of the email. Being a part of the email list is not the same as
+          having an account with Analog.Cafe. Some emails are a part of the
+          system (like notificatons sent at the time of publication to all
+          authors). Those emails can can only be unsubscribed from when you
+          delete your account on Analog.Cafe server.
         </p>
         <p>
-          You can cancel your account at any time by sending a request to{" "}
+          You can delete your account at any time by sending a request to{" "}
           <ContactInfo />. Analog.Cafe will comply with your request within a
           week. If you want your work to be removed from Analog.Cafe website,
           please send a separate request.
         </p>
         <p>
-          If you have an account with Analog.Cafe (separate from email list
-          subscription), a token is stored on your device that verifies your
-          identity to the server. It is not used to track your behaviour.
-          Additionally, Analog.Cafe may store textual data in variety of forms
-          on your device that lets you store your submissions in your browser
-          and resume them even when you are offline, as well as to provide
-          customized experience. Analog.Cafe does not use that information to
-          track your behaviour. Analog.Cafe can not see the content of your
-          token or submission data. Analog.Cafe does not directly use “cookie”
-          technology.
+          If you are logged in to an account with Analog.Cafe, a token is stored
+          on your device that verifies your identity to the server. It is not
+          used to track your behaviour. Additionally (regardless of whether you
+          have an account or not, logged in or not), Analog.Cafe may store
+          textual data in a variety of forms on your device that lets you store
+          your submissions in your browser and resume them even when you are
+          offline, as well as to provide customized experiences. Analog.Cafe
+          does not use that information to track your behaviour. Analog.Cafe can
+          not see the content of your token or any of the stored data mentioned
+          above. Analog.Cafe does not directly use “cookie” technology.
         </p>
         <p>
           Analog.Cafe uses Google Analytics, which in-turn anonymously tracks
