@@ -90,7 +90,8 @@ export default () => {
           <Link to="/collaborations">joint authorship</Link>, where a single
           post can employ images by a variety of photographers. It’s been
           designed with speed and beauty in mind by dmitrizzle and his friends
-          at Banana Coding, and maintained as an{" "}
+          at <Link to="https://bananacoding.com/">Banana Coding</Link>, and
+          maintained as an{" "}
           <Link to="https://github.com/dmitrizzle/Analog.Cafe">
             open-source
           </Link>{" "}
