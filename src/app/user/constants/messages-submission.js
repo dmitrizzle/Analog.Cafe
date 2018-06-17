@@ -1,5 +1,6 @@
 import { MIME_PICTURES_HUMAN } from "./rules-submission"
 import { TEXT_EMOJIS } from "../../constants"
+import { contactInfoString } from "../../core/components/vignettes/ContactInfo"
 
 export const CARD_ERRORS = {
   SEND: {
@@ -31,21 +32,21 @@ export const HEADER_ERRORS = {
   }
 }
 
+export const TEXT_EDITORIAL_RELEASE = `All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email ${contactInfoString}. Please also note that series (i.e. “part one of three”) are not currently accepted.`
 export const CARD_DIALOGUES = {
   CONSENT: {
     info: {
-      title: "Open for Collaborations?",
-      text:
-        "If you choose “Yes” your images may appear in others’ published works on Analog.Cafe. You may also be featured in the “Collaborations” section. We’ll let you know once that happens.",
+      title: "Editorial Release",
+      text: `${TEXT_EDITORIAL_RELEASE} Visit /submit/rules for more details.`,
       buttons: [
         {
           to: "/submit/confirm-full-consent",
-          text: "Yes",
+          text: "Agree",
           branded: true
         },
         {
-          to: "/submit/confirm-basic-consent",
-          text: "No"
+          to: "/submit/compose",
+          text: "Cancel"
         }
       ]
     },

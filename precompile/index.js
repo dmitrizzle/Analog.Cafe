@@ -131,7 +131,7 @@ copyFile("html/index.html", COMPILED_INDEX_HTML, function() {
             .then(changes => {
               console.log(`8/8:  Added CSS font imports.`)
               console.log("----------------------------------------")
-              console.log(cssFontImports);
+              // console.log(cssFontImports);
               console.log("----------------------------------------")
               callback()
             })

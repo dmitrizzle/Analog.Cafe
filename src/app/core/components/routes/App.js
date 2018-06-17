@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom"
+import { Redirect, Route, Switch } from "react-router-dom"
 import Loadable from "react-loadable"
 import React from "react"
 
@@ -41,13 +41,19 @@ const Admin = Loadable({
   loading: ArticleLoader,
   delay: 100
 })
-const AppRoutesSubmit = Loadable({
+const Submit = Loadable({
   loader: () => import("../../../user/components/routes/Submit"),
   loading: ArticleLoader,
   delay: 100
 })
 const NotFound = Loadable({
   loader: () => import("../pages/Error/components/NotFound"),
+  loading: ArticleLoader,
+  delay: 100
+})
+
+const PrivacyPolicy = Loadable({
+  loader: () => import("../../../user/components/pages/PrivacyPolicy"),
   loading: ArticleLoader,
   delay: 100
 })
@@ -68,6 +74,7 @@ export default () => {
         <Route exact path="/photo-essays" component={List} />
         <Route exact path="/articles" component={List} />
         <Route exact path="/stories" component={List} />
+        <Route exact path="/storys" render={() => <Redirect to="/stories" />} />
         <Route exact path="/editorials" component={List} />
         <Route exact path="/guides" component={List} />
         <Route exact path="/reviews" component={List} />
@@ -93,7 +100,8 @@ export default () => {
 
         {/* static views and urls */}
         <Route exact path="/about" component={About} />
-        <Route path="/submit" component={AppRoutesSubmit} />
+        <Route path="/submit" component={Submit} />
+        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route state={{ status: "404" }} component={NotFound} />
       </Switch>
     </main>

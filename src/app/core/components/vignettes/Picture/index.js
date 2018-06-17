@@ -136,7 +136,7 @@ class Picture extends React.PureComponent {
             onClick: event => {
               event.preventDefault()
             },
-            text: "Finding Author… ",
+            text: " ",
             loading: true,
             inverse: true
           }
@@ -145,6 +145,13 @@ class Picture extends React.PureComponent {
       }
     })
     this.props.getPictureInfo(src)
+    import("react-ga").then(ReactGA => {
+      ReactGA.event({
+        category: "Navigation",
+        action: "Picture.get_author",
+        label: src
+      })
+    })
   }
   render = () => {
     const { attributes, node, isSelected, editor, parent } = this.props
@@ -175,6 +182,7 @@ class Picture extends React.PureComponent {
           caption={this.state.caption}
           foldSpacer={foldSpacer}
           onClick={() => this.handleGetAuthor(src)}
+          userRole={this.props.user.info.role}
         >
           {!this.props.readOnly ? (
             <PlainTextarea
@@ -193,7 +201,8 @@ class Picture extends React.PureComponent {
 }
 const mapStateToProps = state => {
   return {
-    picture: state.picture
+    picture: state.picture,
+    user: state.user
   }
 }
 const mapDispatchToProps = dispatch => {

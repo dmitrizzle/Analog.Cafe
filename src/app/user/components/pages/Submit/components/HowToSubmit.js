@@ -1,60 +1,32 @@
 import React from "react"
 
 import Figure from "../../../../../core/components/vignettes/Picture/components/Figure"
+import Link from "../../../../../core/components/controls/Link"
 
 export default () => {
   return (
     <div>
-      <h3>How to submit your work.</h3>
-      <p>
-        Analog.Cafe lets you create and edit your submission using a tool called{" "}
-        <em>Composer</em>.
-      </p>
-      <p>
-        It’s recommended that you use latest Google Chrome, Safari or Firefox
-        browser on your desktop computer to compose your submission.
-      </p>
-      <p>
-        We review and edit all works before publishing. Once you send us your
-        first submission it will appear on this page. As with most publications,
-        not all submissions can be accepted.
-      </p>
+      <h3>How to submit.</h3>
       <Figure
-        src="image-froth_1101010_20d7f3aee5134e109123d1f7e132185c.gif"
-        nocaption
-        alt="Analog.Cafe Composer in action"
-      />
+        src="http://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
+        alt="A short demo of the submission process to Analog.Cafe"
+      >
+        The “Composer” tool will help you create and send submissions.
+      </Figure>
       <p>
-        While composing your submission keep in mind that it needs to have a
-        concise and descriptive title and at least one image. You can add text
-        formatting to your entry (such as <strong>bold</strong> and{" "}
-        <em>italics</em>), links headings, and quotes. You can also move the
-        images around, choose to have them full-screen or float left for the
-        desired effect.
+        Click the “<Link to="/submit/compose">Submit Now</Link>” button and
+        start writing your piece or copy-paste it from your editor. Feel free to
+        format your work with titles, quotes, and links. Please make sure your
+        images are 1800 pixels-wide for the best display quality. Take your time
+        to double-check the grammar and spelling; your work is saved on your
+        device so that you can come back another day to finish what you started.
+        Click “Send.”
       </p>
       <p>
-        When inserting images into your post you may also choose one of the
-        recommended photographs that show up in a grid when you click the “Add
-        Image” button. They’ve been created by other Analog.Cafe contributors
-        and selected by the editor. Should you choose to use one, both of you
-        will be credited appropriately with links to your profiles. You will
-        also be listed under “Collaborations” catogory on the website.
-      </p>
-      <Figure
-        src="image-froth_1498127_rJE9bhJNG"
-        nocaption
-        alt="Instant Collaborations"
-      />
-      <p>
-        If you would like to offer your images up for being displayed in other
-        authors’ publications click “Yes” for{" "}
-        <strong>“Instant Collaborations”</strong> when you are submitting your
-        work and we may include it in the image suggestions grid for you.
-      </p>
-      <p>
-        You may also edit your profile image, bio and a link to your website or
-        social media page. Just click on “More…” in the naviagation bar to find
-        what you need.
+        After you <Link to="/sign-in">sign in or create an account</Link>, you
+        can <strong>edit your profile</strong> by clicking “More…” on the
+        top-right and selecting “My Profile.” There you can customize your
+        avatar, bio, and add a link to your website or a social media page.
       </p>
     </div>
   )

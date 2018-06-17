@@ -1,6 +1,7 @@
 import React from "react"
 
 import ButtonGroupDivider from "../Button/components/ButtonGroupDivider"
+import ButtonKeyword from "../Button/components/ButtonKeyword"
 import CardButton from "./components/CardButton"
 import CardFigure from "./components/CardFigure"
 import CardHeader from "./components/CardHeader"
@@ -31,6 +32,12 @@ export default props => {
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {
+          let keyword, buttonText
+          if (button && button.text) {
+            const keywordMatch = button.text.match(/\[(.*?)\]/)
+            keyword = keywordMatch ? keywordMatch[1] : null
+            buttonText = button.text.replace(`[${keyword}]`, "")
+          }
           return button && button.to && button.text ? (
             <CardButton
               onClick={button.onClick}
@@ -41,7 +48,15 @@ export default props => {
               responsiveMobileOnly={button.responsiveMobileOnly ? true : null}
             >
               {button.loading && <Spinner />}
-              {button.text}
+              {buttonText}
+              {keyword && (
+                <ButtonKeyword
+                  branded={button.branded}
+                  inverse={button.inverse}
+                >
+                  {keyword}
+                </ButtonKeyword>
+              )}
             </CardButton>
           ) : button && button.divider ? (
             <ButtonGroupDivider key={i} />
