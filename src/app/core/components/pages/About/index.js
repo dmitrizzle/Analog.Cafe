@@ -62,32 +62,35 @@ export default () => {
           <Modal
             with={{
               request: {
-                url: ROUTE_API_AUTHORS + "/dmitrizzle"
-              }
-            }}
-          >
-            dmitrizzle
-          </Modal>{" "}
-          and{" "}
-          <Modal
-            with={{
-              request: {
                 url: ROUTE_API_AUTHORS + "/betty"
               }
             }}
           >
             Betty
           </Modal>{" "}
-          edit every article on this blog, doing their best to maintain a high
-          level of quality, captivating content.
+          and{" "}
+          <Modal
+            with={{
+              request: {
+                url: ROUTE_API_AUTHORS + "/dmitrizzle"
+              }
+            }}
+          >
+            dmitrizzle
+          </Modal>{" "}
+          edit every article on this blog, doing their best to keep the content
+          interesting, thoughtful, and readable.
         </p>
 
         <h3>Developers.</h3>
         <p>
-          Adding to the irony of this blog’s obsession with analogue, it is also
-          a technological journey into the world of web interface development.
-          This website is a custom-built solution, kicked off by dmitrizzle and
-          his friends at Banana Coding and maintained as an{" "}
+          Analog.Cafe is also a web tech project. It’s been built with
+          travellers in mind, who may <Link to="/submit/compose">compose</Link>{" "}
+          articles without access to the internet. It allows{" "}
+          <Link to="/collaborations">joint authorship</Link>, where a single
+          post can employ images by a variety of photographers. It’s been
+          designed with speed and beauty in mind by dmitrizzle and his friends
+          at Banana Coding, and maintained as an{" "}
           <Link to="https://github.com/dmitrizzle/Analog.Cafe">
             open-source
           </Link>{" "}
