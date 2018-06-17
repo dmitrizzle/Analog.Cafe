@@ -10,8 +10,10 @@ export const styles = css`
     box-shadow: 0 -1px 0 ${props => props.theme.color.foreground()};
   }
   ${props =>
-    props.responsiveMobileOnly &&
-    props.theme.size.breakpoint.min.l`display:none;`};
+    props.mobile === "on" && props.theme.size.breakpoint.min.l`display:none;`};
+
+  ${props =>
+    props.mobile === "off" && props.theme.size.breakpoint.max.m`display:none;`};
 `
 
 export default styled(LinkButton)`

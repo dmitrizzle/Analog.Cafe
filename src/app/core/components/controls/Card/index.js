@@ -45,7 +45,7 @@ export default props => {
               key={button.to}
               branded={button.branded ? true : null}
               inverse={button.inverse ? true : null}
-              responsiveMobileOnly={button.responsiveMobileOnly ? true : null}
+              mobile={button.mobile ? button.mobile : null}
             >
               {button.loading && <Spinner />}
               {buttonText}

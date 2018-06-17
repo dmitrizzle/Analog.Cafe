@@ -16,6 +16,7 @@ import LinkButton from "../../controls/Button/components/LinkButton"
 import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
+import NavMore from "../../controls/Nav/components/NavMore"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
@@ -56,7 +57,11 @@ export default () => {
           <Link to="/solo-projects">solo projects</Link>, but some are{" "}
           <Link to="/collaborations">collaborations</Link>.
         </p>
-
+        <ButtonGroup>
+          <NavMore wrapperElement="Button" branded>
+            All Website Sections
+          </NavMore>
+        </ButtonGroup>
         <h3>Editors.</h3>
         <p>
           <Modal
@@ -103,34 +108,36 @@ export default () => {
           If you have a question, suggestion or just want to chat, feel free to
           email <ContactInfo />, or:
         </p>
-        <FollowButtons />
-        <MailChimpPrefill
-          buttonText={TEXT_LABELS.SUBSCRIBE}
-          formLocation="About"
-        />
-        <Byline
-          style={{
-            maxWidth: "320px",
-            display: "block",
-            margin: "0 auto"
-          }}
-        >
-          Weekly emails (<Link
-            onClick={() => {
-              import("react-ga").then(ReactGA => {
-                ReactGA.event({
-                  category: "Campaign",
-                  action: "ActionsCard.subscribe_example"
-                })
-              })
+        <ButtonGroup>
+          <FollowButtons />
+          <MailChimpPrefill
+            buttonText={TEXT_LABELS.SUBSCRIBE}
+            formLocation="About"
+          />
+          <Byline
+            style={{
+              maxWidth: "320px",
+              display: "block",
+              margin: "0 auto"
             }}
-            to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
           >
-            like this one
-          </Link>) come every Tuesday. We{" "}
-          <Link to="/privacy-policy">never share or sell</Link> your personal
-          information.
-        </Byline>
+            Weekly emails (<Link
+              onClick={() => {
+                import("react-ga").then(ReactGA => {
+                  ReactGA.event({
+                    category: "Campaign",
+                    action: "ActionsCard.subscribe_example"
+                  })
+                })
+              }}
+              to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
+            >
+              like this one
+            </Link>) come every Tuesday. We{" "}
+            <Link to="/privacy-policy">never share or sell</Link> your personal
+            information.
+          </Byline>
+        </ButtonGroup>
 
         <p>
           Please also feel free to <Link to="/submit">submit</Link> your
