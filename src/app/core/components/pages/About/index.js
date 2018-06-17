@@ -58,7 +58,7 @@ export default () => {
           <Link to="/collaborations">collaborations</Link>.
         </p>
         <ButtonGroup>
-          <NavMore wrapperElement="Button" branded>
+          <NavMore wrapperElement="Button" branded allItems>
             All Website Sections
           </NavMore>
         </ButtonGroup>

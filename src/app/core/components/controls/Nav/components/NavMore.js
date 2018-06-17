@@ -46,7 +46,7 @@ export default props => {
             {
               to: "/photo-essays",
               text: "Photo Essays",
-              mobile: "on"
+              mobile: props.allItems ? null : "on"
             },
             {
               to: "/editorials",
@@ -77,12 +77,12 @@ export default props => {
             {
               to: "/about",
               text: "About Analog.Cafe",
-              mobile: "off"
+              mobile: props.allItems ? null : "off"
             },
             {
               to: "/submit",
               text: "Submit",
-              mobile: "on"
+              mobile: props.allItems ? null : "on"
             }
           ]
         },
