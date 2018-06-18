@@ -37,7 +37,7 @@ export const CARD_DIALOGUES = {
   CONSENT: {
     info: {
       title: "Editorial Release",
-      text: `${TEXT_EDITORIAL_RELEASE} Visit /submit/rules for more details.`,
+      text: `${TEXT_EDITORIAL_RELEASE} Visit analog.cafe/submit/rules for complete submission rules.`,
       buttons: [
         {
           to: "/submit/confirm-full-consent",

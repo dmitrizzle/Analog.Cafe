@@ -1,3 +1,4 @@
+import { connect } from "react-redux"
 import React from "react"
 
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
@@ -23,7 +24,7 @@ const metaTitle = "About"
 const metaDescription =
   "Story, reason for existence, contributos and resources."
 
-export default () => {
+const About = props => {
   return (
     <ArticleWrapper>
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
@@ -58,7 +59,12 @@ export default () => {
           <Link to="/collaborations">collaborations</Link>.
         </p>
         <ButtonGroup>
-          <NavMore wrapperElement="Button" branded allItems>
+          <NavMore
+            wrapperElement="Button"
+            branded
+            allItems
+            userStatus={props.user.status}
+          >
             All Website Sections
           </NavMore>
         </ButtonGroup>
@@ -224,3 +230,9 @@ export default () => {
     </ArticleWrapper>
   )
 }
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+export default connect(mapStateToProps, null)(About)

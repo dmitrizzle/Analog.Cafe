@@ -12,7 +12,7 @@ export default props => {
       with={{
         info: {
           title: "More…",
-          subscribeForm: props.userStatus !== "ok",
+          subscribeForm: props.userStatus !== "ok" || props.allItems,
           subscribeFormLocation: "NavGeneral",
           buttons: [
             props.userStatus === "ok"
