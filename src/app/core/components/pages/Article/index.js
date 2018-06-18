@@ -105,7 +105,12 @@ class Article extends React.PureComponent {
     return (
       <ArticleWrapper>
         <MetaTags
-          metaTitle={this.props.article.title}
+          metaTitle={
+            this.props.article.title +
+            (this.props.article.subtitle
+              ? ` (${this.props.article.subtitle})`
+              : "")
+          }
           metaDescription={this.props.article.summary}
           metaImage={this.props.article.poster}
         />
