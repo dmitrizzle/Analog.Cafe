@@ -71,7 +71,7 @@ export const CARD_DIALOGUES = {
         "All image authorships and consent settings will remain as the original uploader/author has requested on submission. Article authorship will remain with original uploader. Note that if you upload a new image (which may include making edits to original images and re-uploading them) its authorship will belog to you, the editor.”",
       buttons: [
         {
-          to: "/submit/confirm-basic-consent",
+          to: "/submit/confirm-full-consent",
           text: "Apply Edits",
           branded: true
         }

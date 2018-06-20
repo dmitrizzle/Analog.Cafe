@@ -51,7 +51,7 @@ export default props => {
         )}
       </NavItem>
       <NavItem prime left className="prime right">
-        <NavMore userStatus={props.userStatus}>
+        <NavMore userStatus={props.userStatus} userRole={props.userRole}>
           <NavLinkLabelMore
             userStatus={props.userStatus}
             userImage={props.userImage}
