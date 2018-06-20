@@ -106,6 +106,13 @@ export const CARD_ALERTS = {
     },
     id: "hints/reject-submission"
   },
+  DELETED_SUCCESSFULLY: {
+    info: {
+      title: "Successfuly Deleted Submission",
+      text: "Done. Submission DELETED from database."
+    },
+    id: "hints/reject-submission"
+  },
   SCHEDULED: {
     info: {
       title: "Submission Scheduled",

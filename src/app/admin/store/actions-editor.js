@@ -1,4 +1,5 @@
 import axios from "axios"
+import { hashHistory } from "react-router-dom"
 
 import { CARD_ALERTS } from "../constants/messages-admin"
 import { ROUTE_API_SUBMISSIONS } from "../constants/routes-admin"
@@ -36,6 +37,25 @@ export const rejectSubmission = submissionId => {
             status: response.status
           }
         })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+}
+export const deleteSubmission = (submissionId, history) => {
+  return dispatch => {
+    const request = {
+      url: `${ROUTE_API_SUBMISSIONS}/${submissionId}`,
+      method: "delete",
+      headers: {
+        Authorization: "JWT " + localStorage.getItem("token")
+      }
+    }
+    axios(makeAPIRequest(request))
+      .then(response => {
+        dispatch(setModal(CARD_ALERTS.DELETED_SUCCESSFULLY))
+        dispatch(history.push("/me"))
       })
       .catch(error => {
         console.log(error)

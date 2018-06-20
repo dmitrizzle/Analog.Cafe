@@ -8,11 +8,13 @@ import React from "react"
 import { withRouter } from "react-router"
 
 import { CARD_DIALOGUES } from "../../../constants/messages-admin"
+import { ROUTE_URL_SUBMISSIONS } from "../../../../core/constants/routes-article"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { getSubmissionOrArticleRoute } from "../../../../core/utils/routes-article"
 import {
   publishSubmission,
   rejectSubmission,
+  deleteSubmission,
   setStatus
 } from "../../../store/actions-editor"
 import { setComposerHeader } from "../../../../user/store/actions-composer"
@@ -96,7 +98,7 @@ class ArticleControls extends React.PureComponent {
       this.props.setModal(CARD_DIALOGUES.DELETE(this.handleUnlockFunction))
       return
     }
-    alert("delete ok")
+    this.props.deleteSubmission(this.props.article.id, this.props.history)
   }
   handlePublishNow = event => {
     event.preventDefault()
@@ -159,15 +161,6 @@ class ArticleControls extends React.PureComponent {
         </span>{" "}
         This submission has been REJECTED and can not be published or edited.
       </Byline>,
-      <Byline style={{ marginTop: "1em", display: "block" }}>
-        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          {this.state.allowDelete ? TEXT_EMOJIS.UNLOCKED : TEXT_EMOJIS.LOCKED}
-        </span>You can also{" "}
-        <Link to="#delete" onClick={this.handleDelete}>
-          delte
-        </Link>{" "}
-        this post.
-      </Byline>,
       <PublishControls
         key="ArticleControls_publish"
         article={this.props.article}
@@ -177,7 +170,28 @@ class ArticleControls extends React.PureComponent {
         stateAllowPublish={this.state.allowPublish}
         setPublicationTag={this.handlePublishTag}
         publishNow={this.handlePublishNow}
-      />
+      />,
+      <Byline
+        style={{
+          marginTop: "1em",
+          display:
+            this.state.publishControls ||
+            !this.props.history.location.pathname.includes(
+              ROUTE_URL_SUBMISSIONS
+            )
+              ? "none"
+              : "block"
+        }}
+        key="ArticleControls_delete"
+      >
+        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
+          {this.state.allowDelete ? TEXT_EMOJIS.UNLOCKED : TEXT_EMOJIS.LOCKED}
+        </span>You can also{" "}
+        <Link to="#delete" onClick={this.handleDelete}>
+          delte
+        </Link>{" "}
+        this post.
+      </Byline>
     ]
   }
 }
@@ -198,6 +212,9 @@ const mapDispatchToProps = dispatch => {
     },
     rejectSubmission: id => {
       dispatch(rejectSubmission(id))
+    },
+    deleteSubmission: (id, history) => {
+      dispatch(deleteSubmission(id, history))
     },
     setComposerHeader: value => {
       dispatch(setComposerHeader(value))
