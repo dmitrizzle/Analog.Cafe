@@ -21,6 +21,7 @@ import { storeHeaderState } from "../../../../user/utils/actions-submission"
 import { updateArticleStatus } from "../../../../core/store/actions-article"
 import Byline from "../../../../core/components/vignettes/Byline"
 import EditorialControls from "./components/EditorialControls"
+import Link from "../../../../core/components/controls/Link"
 import PublishControls from "./components/PublishControls"
 import StatusExplanation from "./components/StatusExplanation"
 
@@ -32,7 +33,8 @@ class ArticleControls extends React.PureComponent {
       publishControls: false,
       allowOverwrite: false,
       allowReject: false,
-      allowPublish: false
+      allowPublish: false,
+      allowDelete: false
       // allowSync: false,
     }
   }
@@ -87,6 +89,14 @@ class ArticleControls extends React.PureComponent {
       return
     }
     this.props.rejectSubmission(this.props.article.id)
+  }
+  handleDelete = event => {
+    event.preventDefault()
+    if (!this.state.allowDelete) {
+      this.props.setModal(CARD_DIALOGUES.DELETE(this.handleUnlockFunction))
+      return
+    }
+    alert("delete ok")
   }
   handlePublishNow = event => {
     event.preventDefault()
@@ -148,6 +158,15 @@ class ArticleControls extends React.PureComponent {
           {TEXT_EMOJIS.STOP}
         </span>{" "}
         This submission has been REJECTED and can not be published or edited.
+      </Byline>,
+      <Byline style={{ marginTop: "1em", display: "block" }}>
+        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
+          {this.state.allowDelete ? TEXT_EMOJIS.UNLOCKED : TEXT_EMOJIS.LOCKED}
+        </span>You can also{" "}
+        <Link to="#delete" onClick={this.handleDelete}>
+          delte
+        </Link>{" "}
+        this post.
       </Byline>,
       <PublishControls
         key="ArticleControls_publish"

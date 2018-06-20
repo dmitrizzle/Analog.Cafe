@@ -33,12 +33,29 @@ export const CARD_DIALOGUES = {
       info: {
         title: "Are You Sure?",
         text:
-          "Once you reject this submission the author will get an email notifying them of this event. Someone’s gonna be disappointed!",
+          "Once you REJECT this submission the author will get an email notifying them of this event. Someone’s gonna be disappointed!",
         buttons: [
           NEVERMIND_BUTTON,
           {
             to: "#reject",
             onClick: event => unlockFunction(event, "allowReject"),
+            text: TEXT_EMOJIS.KEY + " Unlock"
+          }
+        ]
+      },
+      id: "hints/reject-submission"
+    }
+  },
+  DELETE: unlockFunction => {
+    return {
+      info: {
+        title: "Are You Sure?",
+        text: "Once you DELETE this submission THERE IS NO GOING BACK!",
+        buttons: [
+          NEVERMIND_BUTTON,
+          {
+            to: "#delete",
+            onClick: event => unlockFunction(event, "allowDelete"),
             text: TEXT_EMOJIS.KEY + " Unlock"
           }
         ]

@@ -63,8 +63,8 @@ class RestoreComposerBackup extends React.PureComponent {
               <Button onClick={this.handleRestore}>
                 <span role="img" aria-label="(Un)Locked button">
                   {this.state.allowOverwrite
-                    ? TEXT_EMOJIS.LOCKED
-                    : TEXT_EMOJIS.UNLOCKED}
+                    ? TEXT_EMOJIS.UNLOCKED
+                    : TEXT_EMOJIS.LOCKED}
                 </span>{" "}
                 Restore Lost Submission
               </Button>
