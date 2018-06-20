@@ -12,6 +12,7 @@ export default props => {
       autoFocus={props.autoFocus}
       maxLength="200"
       warning={props.warning}
+      type="email"
     />
   )
 }
