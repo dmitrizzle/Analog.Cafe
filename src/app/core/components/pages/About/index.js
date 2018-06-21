@@ -1,3 +1,4 @@
+import { connect } from "react-redux"
 import React from "react"
 
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
@@ -16,13 +17,14 @@ import LinkButton from "../../controls/Button/components/LinkButton"
 import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
+import NavMore from "../../controls/Nav/components/NavMore"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
 const metaDescription =
   "Story, reason for existence, contributos and resources."
 
-export default () => {
+const About = props => {
   return (
     <ArticleWrapper>
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
@@ -56,19 +58,18 @@ export default () => {
           <Link to="/solo-projects">solo projects</Link>, but some are{" "}
           <Link to="/collaborations">collaborations</Link>.
         </p>
-
+        <ButtonGroup>
+          <NavMore
+            wrapperElement="Button"
+            branded
+            allItems
+            userStatus={props.user.status}
+          >
+            All Website Sections
+          </NavMore>
+        </ButtonGroup>
         <h3>Editors.</h3>
         <p>
-          <Modal
-            with={{
-              request: {
-                url: ROUTE_API_AUTHORS + "/dmitrizzle"
-              }
-            }}
-          >
-            dmitrizzle
-          </Modal>{" "}
-          and{" "}
           <Modal
             with={{
               request: {
@@ -78,16 +79,30 @@ export default () => {
           >
             Betty
           </Modal>{" "}
-          edit every article on this blog, doing their best to maintain a high
-          level of quality, captivating content.
+          and{" "}
+          <Modal
+            with={{
+              request: {
+                url: ROUTE_API_AUTHORS + "/dmitrizzle"
+              }
+            }}
+          >
+            dmitrizzle
+          </Modal>{" "}
+          edit every article on this blog, doing their best to keep the content
+          interesting, thoughtful, and readable.
         </p>
 
         <h3>Developers.</h3>
         <p>
-          Adding to the irony of this blog’s obsession with analogue, it is also
-          a technological journey into the world of web interface development.
-          This website is a custom-built solution, kicked off by dmitrizzle and
-          his friends at Banana Coding and maintained as an{" "}
+          Analog.Cafe is also a web tech project. It’s been built with
+          travellers in mind, who may <Link to="/submit/compose">compose</Link>{" "}
+          articles without access to the internet. It allows{" "}
+          <Link to="/collaborations">joint authorship</Link>, where a single
+          post can employ images by a variety of photographers. It’s been
+          designed with speed and beauty in mind by dmitrizzle and his friends
+          at <Link to="https://bananacoding.com/">Banana Coding</Link>, and
+          maintained as an{" "}
           <Link to="https://github.com/dmitrizzle/Analog.Cafe">
             open-source
           </Link>{" "}
@@ -99,34 +114,36 @@ export default () => {
           If you have a question, suggestion or just want to chat, feel free to
           email <ContactInfo />, or:
         </p>
-        <FollowButtons />
-        <MailChimpPrefill
-          buttonText={TEXT_LABELS.SUBSCRIBE}
-          formLocation="About"
-        />
-        <Byline
-          style={{
-            maxWidth: "320px",
-            display: "block",
-            margin: "0 auto"
-          }}
-        >
-          Weekly emails (<Link
-            onClick={() => {
-              import("react-ga").then(ReactGA => {
-                ReactGA.event({
-                  category: "Campaign",
-                  action: "ActionsCard.subscribe_example"
-                })
-              })
+        <ButtonGroup>
+          <FollowButtons />
+          <MailChimpPrefill
+            buttonText={TEXT_LABELS.SUBSCRIBE}
+            formLocation="About"
+          />
+          <Byline
+            style={{
+              maxWidth: "320px",
+              display: "block",
+              margin: "0 auto"
             }}
-            to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
           >
-            like this one
-          </Link>) come every Tuesday. We{" "}
-          <Link to="/privacy-policy">never share or sell</Link> your personal
-          information.
-        </Byline>
+            Weekly emails (<Link
+              onClick={() => {
+                import("react-ga").then(ReactGA => {
+                  ReactGA.event({
+                    category: "Campaign",
+                    action: "ActionsCard.subscribe_example"
+                  })
+                })
+              }}
+              to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
+            >
+              like this one
+            </Link>) come every Tuesday. We{" "}
+            <Link to="/privacy-policy">never share or sell</Link> your personal
+            information.
+          </Byline>
+        </ButtonGroup>
 
         <p>
           Please also feel free to <Link to="/submit">submit</Link> your
@@ -213,3 +230,9 @@ export default () => {
     </ArticleWrapper>
   )
 }
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+export default connect(mapStateToProps, null)(About)

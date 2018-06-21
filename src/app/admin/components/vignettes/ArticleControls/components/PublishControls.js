@@ -58,8 +58,8 @@ export default props => {
         >
           {props.editor.publish.id !== props.article.id &&
             (props.stateAllowPublish
-              ? TEXT_EMOJIS.LOCKED
-              : TEXT_EMOJIS.UNLOCKED)}{" "}
+              ? TEXT_EMOJIS.UNLOCKED
+              : TEXT_EMOJIS.LOCKED)}{" "}
           Publish Now
         </Button>
       </CardIntegrated>

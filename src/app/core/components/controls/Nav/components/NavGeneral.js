@@ -2,10 +2,10 @@
 import React from "react"
 
 import { NavLink, NavLogoLink } from "./NavLinks"
-import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
+import NavMore from "./NavMore"
 
 const NavLinkLabelMore = props => {
   return (
@@ -36,7 +36,10 @@ export default props => {
           <NavLogo />
         </NavLogoLink>
       </NavItem>
-      <NavItem prime right className="prime left">
+      <NavItem narrow className="prime left mobile">
+        <NavLink to={"/about"}>About</NavLink>
+      </NavItem>
+      <NavItem right>
         {props.userStatus === "ok" ? (
           <NavLink to={"/submit/compose"}>
             <span>Submit</span>
@@ -48,87 +51,12 @@ export default props => {
         )}
       </NavItem>
       <NavItem prime left className="prime right">
-        <Modal
-          with={{
-            info: {
-              title: "More…",
-              subscribeForm: props.userStatus !== "ok",
-              subscribeFormLocation: "NavGeneral",
-              buttons: [
-                props.userStatus === "ok"
-                  ? {
-                      to: "/me",
-                      text: "My Submissions",
-                      branded: true
-                    }
-                  : null,
-                props.userStatus === "ok"
-                  ? {
-                      to: "/me/edit",
-                      text: "My Profile",
-                      branded: true
-                    }
-                  : null,
-                props.userRole === "admin"
-                  ? {
-                      to: "/me/admin",
-                      text: "Admin",
-                      branded: true
-                    }
-                  : null,
-                props.userStatus === "ok"
-                  ? {
-                      to: "/sign-out",
-                      text: "Sign Out",
-                      inverse: true
-                    }
-                  : null,
-                {
-                  to: "/photo-essays",
-                  text: "Photo Essays",
-                  responsiveMobileOnly: true
-                },
-                {
-                  to: "/editorials",
-                  text: "Editorials"
-                },
-                {
-                  to: "/guides",
-                  text: "Guides"
-                },
-                {
-                  to: "/reviews",
-                  text: "Reviews"
-                },
-                {
-                  to: "/stories",
-                  text: "Stories"
-                },
-                { divider: true },
-                {
-                  to: "/collaborations",
-                  text: "Collaborations"
-                },
-                {
-                  to: "/solo-projects",
-                  text: "Solo Projects"
-                },
-                { divider: true },
-                {
-                  to: "/about",
-                  text: "About Analog.Cafe"
-                }
-              ]
-            },
-            id: "nav/more"
-          }}
-          style={{ textDecoration: "none", paddingRight: ".25em" }}
-        >
+        <NavMore userStatus={props.userStatus} userRole={props.userRole}>
           <NavLinkLabelMore
             userStatus={props.userStatus}
             userImage={props.userImage}
           />
-        </Modal>
+        </NavMore>
       </NavItem>
     </ul>
   )

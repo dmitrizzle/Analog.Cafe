@@ -23,8 +23,8 @@ export default props => {
         >
           <span role="img" aria-label="(Un)Locked button">
             {props.stateAllowOverwrite
-              ? TEXT_EMOJIS.LOCKED
-              : TEXT_EMOJIS.UNLOCKED}
+              ? TEXT_EMOJIS.UNLOCKED
+              : TEXT_EMOJIS.LOCKED}
           </span>{" "}
           Edit
         </ButtonStripItem>
@@ -36,8 +36,8 @@ export default props => {
               >
                 <span role="img" aria-label="(Un)Locked button">
                   {props.stateAllowSync
-                    ? TEXT_EMOJIS.LOCKED
-                    : TEXT_EMOJIS.UNLOCKED}
+                    ? TEXT_EMOJIS.UNLOCKED
+                    : TEXT_EMOJIS.LOCKED}
                 </span>{" "}
                 Sync
               </ButtonStripItem>,
@@ -58,8 +58,8 @@ export default props => {
               >
                 <span role="img" aria-label="(Un)Locked button">
                   {props.stateAllowReject
-                    ? TEXT_EMOJIS.LOCKED
-                    : TEXT_EMOJIS.UNLOCKED}
+                    ? TEXT_EMOJIS.UNLOCKED
+                    : TEXT_EMOJIS.LOCKED}
                 </span>{" "}
                 Reject
               </ButtonStripItem>,

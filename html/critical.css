@@ -5,7 +5,8 @@
   margin-top: 2.5em;
   margin-bottom: 2.5em;
 }
-.appNav, .waitMessage {
+.appNav,
+.waitMessage {
   font-family: "Exo 2", Arial, sans-serif;
   letter-spacing: 0.025em;
   font-weight: 600;
@@ -18,31 +19,35 @@
   display: inline-block;
   vertical-align: super;
   font-size: 0.5em;
-  margin-left: -.15em;
-  margin-top: -.5em;
+  margin-left: -0.15em;
+  margin-top: -0.5em;
 }
-@media (min-width: 32.5625em){
-  .appNav, .waitMessage {
+@media (min-width: 32.5625em) {
+  .appNav,
+  .waitMessage {
     font-size: 20px;
   }
 }
-@media (max-width: 20em){
-  .appNav, .waitMessage {
+@media (max-width: 20em) {
+  .appNav,
+  .waitMessage {
     font-size: 17px;
   }
 }
-@media (max-width: 32.5em){
-  .appNav, .waitMessage {
+@media (max-width: 32.5em) {
+  .appNav,
+  .waitMessage {
     font-size: 18px;
   }
 }
-@media (min-width: 100.0625em){
-  .appNav, .waitMessage {
+@media (min-width: 100.0625em) {
+  .appNav,
+  .waitMessage {
     font-size: 23px;
   }
 }
 .waitMessage {
-  margin: -.65em auto 0;
+  margin: -0.65em auto 0;
   text-align: center;
 }
 .waitMessage span {
@@ -61,9 +66,15 @@
   text-align: center;
   width: 7em;
 }
-@media (max-width: 46.875em){
+.appNav li.mobile {
+  display: none;
+}
+@media (max-width: 46.875em) {
   .appNav li:not(.prime) {
     display: none;
+  }
+  .appNav li.mobile {
+    display: block;
   }
   .appNav li.prime.center {
     order: 1;
@@ -88,14 +99,14 @@ a.indexRouteLink {
 .appLogo {
   position: absolute;
   top: -1.75em;
-  left: calc( 50% - 2.5em );
+  left: calc(50% - 2.5em);
   z-index: 10;
   padding: 1em;
   width: 5em;
 }
 .appLogo > div {
   background: #2c2c2c;
-  box-shadow: 0 1px 1px rgba(44,44,44,0.25);
+  box-shadow: 0 1px 1px rgba(44, 44, 44, 0.25);
   width: 3em;
   height: 3em;
   overflow: hidden;
@@ -114,7 +125,7 @@ a.indexRouteLink {
 }
 
 .bodyFontLoader {
-  color: rgba(44,44,44,0.25);
+  color: rgba(44, 44, 44, 0.25);
   font-family: "Lora", Georgia, serif;
   letter-spacing: 0.025em;
   line-height: 1.75em;

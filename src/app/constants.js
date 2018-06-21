@@ -25,8 +25,8 @@ export const TEXT_EMOJIS = {
 
   WARNING: "⚠️",
   STOP: "❌",
-  LOCKED: "🔓",
-  UNLOCKED: "🔐",
+  UNLOCKED: "🔓",
+  LOCKED: "🔐",
   KEY: "🔑"
 }
 

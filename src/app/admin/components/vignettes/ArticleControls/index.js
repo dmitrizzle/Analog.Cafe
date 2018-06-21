@@ -8,11 +8,13 @@ import React from "react"
 import { withRouter } from "react-router"
 
 import { CARD_DIALOGUES } from "../../../constants/messages-admin"
+import { ROUTE_URL_SUBMISSIONS } from "../../../../core/constants/routes-article"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { getSubmissionOrArticleRoute } from "../../../../core/utils/routes-article"
 import {
   publishSubmission,
   rejectSubmission,
+  deleteSubmission,
   setStatus
 } from "../../../store/actions-editor"
 import { setComposerHeader } from "../../../../user/store/actions-composer"
@@ -21,6 +23,7 @@ import { storeHeaderState } from "../../../../user/utils/actions-submission"
 import { updateArticleStatus } from "../../../../core/store/actions-article"
 import Byline from "../../../../core/components/vignettes/Byline"
 import EditorialControls from "./components/EditorialControls"
+import Link from "../../../../core/components/controls/Link"
 import PublishControls from "./components/PublishControls"
 import StatusExplanation from "./components/StatusExplanation"
 
@@ -32,7 +35,8 @@ class ArticleControls extends React.PureComponent {
       publishControls: false,
       allowOverwrite: false,
       allowReject: false,
-      allowPublish: false
+      allowPublish: false,
+      allowDelete: false
       // allowSync: false,
     }
   }
@@ -87,6 +91,14 @@ class ArticleControls extends React.PureComponent {
       return
     }
     this.props.rejectSubmission(this.props.article.id)
+  }
+  handleDelete = event => {
+    event.preventDefault()
+    if (!this.state.allowDelete) {
+      this.props.setModal(CARD_DIALOGUES.DELETE(this.handleUnlockFunction))
+      return
+    }
+    this.props.deleteSubmission(this.props.article.id, this.props.history)
   }
   handlePublishNow = event => {
     event.preventDefault()
@@ -158,7 +170,28 @@ class ArticleControls extends React.PureComponent {
         stateAllowPublish={this.state.allowPublish}
         setPublicationTag={this.handlePublishTag}
         publishNow={this.handlePublishNow}
-      />
+      />,
+      <Byline
+        style={{
+          marginTop: "1em",
+          display:
+            this.state.publishControls ||
+            !this.props.history.location.pathname.includes(
+              ROUTE_URL_SUBMISSIONS
+            )
+              ? "none"
+              : "block"
+        }}
+        key="ArticleControls_delete"
+      >
+        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
+          {this.state.allowDelete ? TEXT_EMOJIS.UNLOCKED : TEXT_EMOJIS.LOCKED}
+        </span>You can also{" "}
+        <Link to="#delete" onClick={this.handleDelete}>
+          delte
+        </Link>{" "}
+        this post.
+      </Byline>
     ]
   }
 }
@@ -179,6 +212,9 @@ const mapDispatchToProps = dispatch => {
     },
     rejectSubmission: id => {
       dispatch(rejectSubmission(id))
+    },
+    deleteSubmission: (id, history) => {
+      dispatch(deleteSubmission(id, history))
     },
     setComposerHeader: value => {
       dispatch(setComposerHeader(value))
