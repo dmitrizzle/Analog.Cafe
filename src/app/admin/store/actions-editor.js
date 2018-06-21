@@ -42,6 +42,25 @@ export const rejectSubmission = submissionId => {
       })
   }
 }
+export const deleteSubmission = (submissionId, history) => {
+  return dispatch => {
+    const request = {
+      url: `${ROUTE_API_SUBMISSIONS}/${submissionId}`,
+      method: "delete",
+      headers: {
+        Authorization: "JWT " + localStorage.getItem("token")
+      }
+    }
+    axios(makeAPIRequest(request))
+      .then(response => {
+        dispatch(setModal(CARD_ALERTS.DELETED_SUCCESSFULLY))
+        dispatch(history.push("/me"))
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+}
 
 export const publishSubmission = (submissionId, scheduledOrder, tag) => {
   return dispatch => {

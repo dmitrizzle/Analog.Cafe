@@ -33,12 +33,29 @@ export const CARD_DIALOGUES = {
       info: {
         title: "Are You Sure?",
         text:
-          "Once you reject this submission the author will get an email notifying them of this event. Someone’s gonna be disappointed!",
+          "Once you REJECT this submission the author will get an email notifying them of this event. Someone’s gonna be disappointed!",
         buttons: [
           NEVERMIND_BUTTON,
           {
             to: "#reject",
             onClick: event => unlockFunction(event, "allowReject"),
+            text: TEXT_EMOJIS.KEY + " Unlock"
+          }
+        ]
+      },
+      id: "hints/reject-submission"
+    }
+  },
+  DELETE: unlockFunction => {
+    return {
+      info: {
+        title: "Are You Sure?",
+        text: "Once you DELETE this submission THERE IS NO GOING BACK!",
+        buttons: [
+          NEVERMIND_BUTTON,
+          {
+            to: "#delete",
+            onClick: event => unlockFunction(event, "allowDelete"),
             text: TEXT_EMOJIS.KEY + " Unlock"
           }
         ]
@@ -86,6 +103,13 @@ export const CARD_ALERTS = {
       title: "Successfuly Rejected Submission",
       text:
         "Done. Submission rejected. It will be marked as such in the database and the author should be receiving a notification shortly."
+    },
+    id: "hints/reject-submission"
+  },
+  DELETED_SUCCESSFULLY: {
+    info: {
+      title: "Successfuly Deleted Submission",
+      text: "Done. Submission DELETED from database."
     },
     id: "hints/reject-submission"
   },
