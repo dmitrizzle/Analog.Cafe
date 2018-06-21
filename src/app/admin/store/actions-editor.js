@@ -1,5 +1,4 @@
 import axios from "axios"
-import { hashHistory } from "react-router-dom"
 
 import { CARD_ALERTS } from "../constants/messages-admin"
 import { ROUTE_API_SUBMISSIONS } from "../constants/routes-admin"
