@@ -52,7 +52,7 @@
     "react-scripts": "^1.1.4",
     "replace-in-file": "^3.4.0",
     "s3-deploy": "^1.0.0",
-    "sanitize.css": "^5.0.0",
+    "sanitize.css": "6",
     "source-map-explorer": "^1.5.0"
   },
   "lint-staged": {
