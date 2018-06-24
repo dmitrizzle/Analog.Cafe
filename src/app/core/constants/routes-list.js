@@ -5,7 +5,7 @@ export const ROUTE_API_LIST = HOST_API + "/list"
 export const ROUTE_API_LIST_SUBMISSIONS = HOST_API + "/submissions"
 
 export const ROUTE_TAGS = {
-  "/me": "",
+  [ROUTE_URL_USER_LANDING]: "",
   "/stories": "story",
   "/editorials": "editorial",
   "/guides": "guide",

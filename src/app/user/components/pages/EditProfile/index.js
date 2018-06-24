@@ -24,6 +24,7 @@ import Forbidden from "../../../../core/components/pages/Error/components/Forbid
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import ProfileCard from "./components/ProfileCard"
 
+const composerPath = "/submit/compose"
 class EditProfile extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -34,10 +35,17 @@ class EditProfile extends React.PureComponent {
     this.handleButtonBlur = this.handleButtonBlur.bind(this)
     this.handleFileUpload = this.handleFileUpload.bind(this)
     this.state = {
-      setUserInfoPending: false
+      setUserInfoPending: false,
+      returnToComposer: false
     }
   }
   componentDidMount = () => {
+    this.setState({
+      returnToComposer: this.props.history.location.search.includes(
+        `return=${composerPath}`
+      )
+    })
+    console.log(this.props.history.location)
     if (
       this.props.user.status === "ok" &&
       typeof this.props.user.info === "object" &&
@@ -147,7 +155,9 @@ class EditProfile extends React.PureComponent {
   }
   profileUpdated = () => {
     this.props.acceptUserInfo()
-    this.props.history.push(ROUTE_URL_USER_LANDING)
+    this.props.history.push(
+      this.state.returnToComposer ? composerPath : ROUTE_URL_USER_LANDING
+    )
   }
   render = () => {
     return this.props.user.status === "ok" ? (
@@ -210,4 +220,7 @@ const mapStateToProps = state => {
     user: state.user
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(EditProfile)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditProfile)

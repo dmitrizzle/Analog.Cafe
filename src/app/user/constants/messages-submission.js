@@ -69,13 +69,5 @@ export const CARD_ALERTS = {
         "Your text and images are saved automatically onto your device as you type. Even if you’re offline!"
     },
     id: "hints/auto-save"
-  },
-  YOUR_PROFILE: {
-    info: {
-      title: "Your Profile",
-      text:
-        "You can create, view or update your profile after you send your submission."
-    },
-    id: "hints/your-profile"
   }
 }
