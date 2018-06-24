@@ -7,9 +7,7 @@ export const getFirstNameFromFull = (name, maxlength = 10) => {
 
 export const getAuthorListStringFromArray = (authors, options = {}) => {
   if (!authors) return ""
-  const namesTotal = options.ommitLeadAuthor
-    ? authors.length - 1
-    : authors.length
+  let namesTotal = options.ommitLeadAuthor ? authors.length - 1 : authors.length
   const punctuation = (namesTotal, count) => {
     if (namesTotal > 2 && count < namesTotal - 1) {
       return count === namesTotal - 2 ? ", and " : ", "
@@ -31,6 +29,7 @@ export const getAuthorListStringFromArray = (authors, options = {}) => {
     else if (!options.onlyLeadAuthor) names.push(nameFormat(object.name))
   })
   if (!options.ommitLeadAuthor) names.unshift(leadAuthorName)
+  if (options.onlyLeadAuthor) namesTotal = 1
 
   if (!options.trim)
     for (let count = 0; count < namesTotal; count++) {
