@@ -1,8 +1,8 @@
 import { shallow } from "enzyme"
 import React from "react"
 
-import Submit from "./Submit"
+import Submit from "./"
 
-it("Render Submit routes without crashing", () => {
+it("Render Submit without crashing", () => {
   shallow(<Submit />)
 })
