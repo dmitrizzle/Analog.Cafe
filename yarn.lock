@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@roast-cms/french-press-editor@^0.6.2":
-  version "0.6.8"
-  resolved "https://registry.yarnpkg.com/@roast-cms/french-press-editor/-/french-press-editor-0.6.8.tgz#b4311927c42c15ecfce4b8d87c14f62e9028ecb7"
+"@roast-cms/french-press-editor@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@roast-cms/french-press-editor/-/french-press-editor-0.7.0.tgz#a9bf57402ffe5a7e0e1bd58aebc84fba9cd1664f"
   dependencies:
     "@roast-cms/react-button-beans" "^1.1.3"
     "@roast-cms/react-link-filter" "*"
@@ -15,7 +15,7 @@
     localforage-getitems "^1.4.1"
     lodash "^4.17.4"
     positions "^1.6.1"
-    slate "^0.33.0"
+    slate "^0.34.2"
     slate-auto-replace "^0.9.0"
     slate-drop-or-paste-images "^0.8.1"
     slate-html-serializer "^0.6.0"
@@ -6292,8 +6292,8 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
 prettier@^1.12.0:
-  version "1.13.5"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.5.tgz#7ae2076998c8edce79d63834e9b7b09fead6bfd0"
+  version "1.13.6"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.6.tgz#00ae0b777ad92f81a9e7a1df2f0470b6dab0cb44"
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
@@ -7079,8 +7079,8 @@ rxjs@^6.1.0:
     tslib "^1.9.0"
 
 s3-deploy@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/s3-deploy/-/s3-deploy-1.0.1.tgz#47f0fb6a677a92e7ad61dcd8713753ddfa866535"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/s3-deploy/-/s3-deploy-1.1.0.tgz#b6085f09e7c648fd0432eaf65ee2a640fc6e7aa0"
   dependencies:
     aws-sdk "2.3.19"
     babel-polyfill "^6.26.0"
@@ -7377,13 +7377,13 @@ slate-react@^0.12.0:
     slate-plain-serializer "^0.5.17"
     slate-prop-types "^0.4.34"
 
-slate-schema-violations@^0.1.12:
+slate-schema-violations@^0.1.15:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/slate-schema-violations/-/slate-schema-violations-0.1.15.tgz#668c30b556397efe72ff1c82b22a2673814fd61e"
 
-slate@^0.33.0:
-  version "0.33.8"
-  resolved "https://registry.yarnpkg.com/slate/-/slate-0.33.8.tgz#c2cd9906c446d010b15e9e28f6d1a01792c7a113"
+slate@^0.34.2:
+  version "0.34.2"
+  resolved "https://registry.yarnpkg.com/slate/-/slate-0.34.2.tgz#faf75d295e44d8b43cf2e14168f7a43457a29c67"
   dependencies:
     debug "^3.1.0"
     direction "^0.1.5"
@@ -7392,7 +7392,7 @@ slate@^0.33.0:
     is-plain-object "^2.0.4"
     lodash "^4.17.4"
     slate-dev-logger "^0.1.39"
-    slate-schema-violations "^0.1.12"
+    slate-schema-violations "^0.1.15"
     type-of "^2.0.1"
 
 slice-ansi@0.0.4:
@@ -8244,8 +8244,8 @@ uuid@^2.0.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
 uuid@^3.1.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.0.tgz#b237147804881d7b86f40a7ff8f590f15c37de32"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.3"
