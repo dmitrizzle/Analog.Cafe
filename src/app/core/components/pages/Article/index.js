@@ -1,4 +1,4 @@
-import { Reader } from "@roast-cms/french-press-editor/dist/components/Reader"
+import { Reader } from "@roast-cms/french-press-editor/dist/components/vignettes/Reader"
 import { connect } from "react-redux"
 import LazyLoad from "react-lazyload"
 import Loadable from "react-loadable"
@@ -181,5 +181,8 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Article)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Article)
 // NOTE: withRouter() props inherited from /components/_screens/AppRoutes
