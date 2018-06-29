@@ -9,6 +9,7 @@ import React from "react"
 import localForage from "localforage"
 
 import { CARD_ERRORS } from "../../../constants/messages-submission"
+import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
@@ -201,10 +202,10 @@ class Upload extends React.PureComponent {
               <p>
                 We’ve received your work. It’ll take a couple of minutes to
                 process the images – after that, you should be able to see it{" "}
-                <Link to="/me">here</Link>.
+                <Link to={ROUTE_URL_USER_LANDING}>here</Link>.
               </p>
               <p>Thank you so much for your contribution!</p>
-              <LinkButton branded to="/me">
+              <LinkButton branded to={ROUTE_URL_USER_LANDING}>
                 My Submissions
               </LinkButton>
             </div>
@@ -247,4 +248,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Upload)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Upload)

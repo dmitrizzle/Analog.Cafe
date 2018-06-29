@@ -1,9 +1,7 @@
 import React from "react"
 
-import { CARD_ALERTS } from "../../../../constants/messages-submission"
 import Byline from "../../../../../core/components/vignettes/Byline"
 import Link from "../../../../../core/components/controls/Link"
-import Modal from "../../../../../core/components/controls/Modal"
 
 export default props => {
   return (
@@ -25,10 +23,13 @@ export default props => {
               ]
             : null}
         </Byline>
+      ) : props.user.status === "ok" ? (
+        <Byline>
+          <Link to="/me/edit?return=/submit/compose">Edit</Link> your profile.
+        </Byline>
       ) : (
         <Byline>
-          Link to <Modal with={CARD_ALERTS.YOUR_PROFILE}>Your Profile</Modal>{" "}
-          will appear here.
+          <Link to="/sign-in">Sign in</Link> to edit your profile.
         </Byline>
       )}
     </span>

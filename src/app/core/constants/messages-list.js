@@ -1,4 +1,5 @@
 import { APP_DESCRIPTION } from "../../constants"
+import { ROUTE_URL_USER_LANDING } from "../../user/constants/routes-session"
 
 export const TEXT_STATUS_LABELS = {
   pending: "In Queue",
@@ -7,7 +8,7 @@ export const TEXT_STATUS_LABELS = {
   published: "Published"
 }
 export const TEXT_ROUTE_LABELS = {
-  "/me": {
+  [ROUTE_URL_USER_LANDING]: {
     title: "Your submissions to Analog.Cafe"
   },
   "/stories": {

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 
 import { styles } from "../../Caption"
 import ImageSet from "./ImageSet"
-import Figcaption from "./Ficaption"
+import Figcaption from "./Figcaption"
 
 const bleed = css`
   float: none;

@@ -1,4 +1,4 @@
-const LINK_LABELS = {
+export const LINK_LABELS = {
   twitter: "Follow on Twitter",
   instagram: "Follow on Instagram",
   facebook: "Author’s Facebook Page",
@@ -8,7 +8,7 @@ const LINK_LABELS = {
   website: "Visit Author’s Website"
 }
 
-const linkToLabel = link => {
+export const linkToLabel = link => {
   if (link.includes("twitter.com/")) return LINK_LABELS.twitter
   else if (link.includes("instagram.com/")) return LINK_LABELS.instagram
   else if (link.includes("facebook.com/")) return LINK_LABELS.facebook
@@ -19,7 +19,7 @@ const linkToLabel = link => {
   else return LINK_LABELS.website
 }
 
-const fixLinks = link => {
+export const fixLinks = link => {
   if (!link || link === "") return ""
   return !link.match(/^[a-zA-Z]+:\/\//) ? "http://" + link : link
 }

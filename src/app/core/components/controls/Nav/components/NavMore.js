@@ -1,6 +1,7 @@
 // NOTE: `className` props are used in index.html
 import React from "react"
 
+import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
 import Modal from "../../Modal"
 
 export default props => {
@@ -17,7 +18,7 @@ export default props => {
           buttons: [
             props.userStatus === "ok"
               ? {
-                  to: "/me",
+                  to: ROUTE_URL_USER_LANDING,
                   text: "My Submissions",
                   branded: true
                 }
