@@ -3,15 +3,15 @@ import React from "react"
 
 import Button from "../../../../../core/components/controls/Button/components/Button"
 import ButtonStripItem from "../../../../../core/components/controls/Button/components/ButtonStripItem"
-import GridButtonImage from "../../../../../user/components/controls/Grid/components/GridButtonImage"
-import GridRow from "../../../../../user/components/controls/Grid/components/GridRow"
-import GridWrapper from "../../../../../user/components/controls/Grid/components/GridWrapper"
+import GridButtonImage from "../../../controls/Grid/components/GridButtonImage"
+import GridRow from "../../../controls/Grid/components/GridRow"
+import GridWrapper from "../../../controls/Grid/components/GridWrapper"
 
 export default props => {
   return [
     <div style={{ padding: "0 1.5em" }} key="ImageAdmin_header">
       <h3>Images.</h3>
-      <ButtonStrip style={{ margin: ".5em auto" }}>
+      <ButtonStrip style={{ margin: ".5em auto", whiteSpace: "nowrap" }}>
         <div>
           <ButtonStripItem
             left

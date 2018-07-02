@@ -14,7 +14,7 @@ import Modal from "../../../controls/Modal"
 
 const ArticleControls = Loadable({
   loader: () =>
-    import("../../../../../admin/components/vignettes/ArticleControls"),
+    import("../../../../../admin/components/controls/ArticleControls"),
   loading: () => null,
   delay: 100
 })

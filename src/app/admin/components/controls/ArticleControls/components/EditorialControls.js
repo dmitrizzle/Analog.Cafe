@@ -10,6 +10,7 @@ export default props => {
       style={{
         margin: "1em auto 0",
         width: "16em",
+        whiteSpace: "nowrap",
         display: props.article.status !== "rejected" ? "block" : "none"
       }}
     >
