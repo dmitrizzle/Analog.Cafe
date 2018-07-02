@@ -11,7 +11,7 @@ export default props => {
   return [
     <div style={{ padding: "0 1.5em" }} key="ImageAdmin_header">
       <h3>Images.</h3>
-      <ButtonStrip style={{ margin: ".5em auto" }}>
+      <ButtonStrip style={{ margin: ".5em auto", whiteSpace: "nowrap" }}>
         <div>
           <ButtonStripItem
             left
