@@ -1,10 +1,8 @@
-import { Reader } from "@roast-cms/french-press-editor/dist/components/vignettes/Reader"
 import { connect } from "react-redux"
 import LazyLoad from "react-lazyload"
 import Loadable from "react-loadable"
 import React from "react"
 
-import { HOST_PROD } from "../../../../constants"
 import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
   ROUTE_URL_ARTICLES,
@@ -20,7 +18,7 @@ import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
 import ArticleWrapper from "./components/ArticleWrapper"
 import MetaTags from "../../vignettes/MetaTags"
-import Picture from "../../vignettes/Picture"
+import toReact from "./to-react"
 
 const ArticleActions = Loadable({
   loader: () => import("../../controls/ArticleActions"),
@@ -121,7 +119,8 @@ class Article extends React.PureComponent {
         />
 
         <ArticleSection articleStatus={this.props.article.status}>
-          <Reader
+          {toReact(this.props.article.content.raw)}
+          {/* <Reader
             value={this.props.article.content.raw}
             options={{
               domain: HOST_PROD
@@ -129,7 +128,7 @@ class Article extends React.PureComponent {
             components={{
               Picture
             }}
-          />
+          /> */}
 
           {this.props.article.poster &&
             this.props.article.submittedBy && (
