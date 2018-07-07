@@ -103,7 +103,6 @@ class Upload extends React.PureComponent {
           )
           this.props.history.replace({ pathname: "/submit/compose" })
         } else {
-          // images are URLs from the web
           sendSubmission(data, this.props)
         }
       }
@@ -130,9 +129,6 @@ class Upload extends React.PureComponent {
       this.props.submission.uploadProgress >= 0 &&
       nextProps.submission.uploadProgress === 100
     ) {
-      localStorage.removeItem("composer-content-text")
-      localForage.clear()
-      this.props.resetComposer()
       this.props.resetUploadProgress()
       this.props.resetStatus()
       this.setState({
