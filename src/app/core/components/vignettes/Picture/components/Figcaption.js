@@ -52,7 +52,9 @@ export default props => {
   return (
     <figcaption
       style={
-        props.nocaption || (props.readOnly && !props.caption)
+        props.nocaption ||
+        (props.readOnly && !props.caption) ||
+        (!props.readOnly && !props.caption && !props.focus)
           ? {
               borderBottom: "8px solid #2c2c2c",
               height: 0,

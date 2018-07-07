@@ -81,7 +81,7 @@ export default props => {
               mobile: props.allItems ? null : "off"
             },
             {
-              to: "/submit",
+              to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
               text: "Submit",
               mobile: props.allItems ? null : "on"
             }

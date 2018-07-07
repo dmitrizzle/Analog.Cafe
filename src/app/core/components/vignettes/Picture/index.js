@@ -183,6 +183,7 @@ class Picture extends React.PureComponent {
           foldSpacer={foldSpacer}
           onClick={() => this.handleGetAuthor(src)}
           userRole={this.props.user.info.role}
+          focus={focus}
         >
           {!this.props.readOnly ? (
             <PlainTextarea
@@ -215,4 +216,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Picture)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Picture)

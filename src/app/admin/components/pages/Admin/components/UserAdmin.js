@@ -1,8 +1,8 @@
 import React from "react"
 
-import GridButtonImage from "../../../../../user/components/controls/Grid/components/GridButtonImage"
-import GridRow from "../../../../../user/components/controls/Grid/components/GridRow"
-import GridWrapper from "../../../../../user/components/controls/Grid/components/GridWrapper"
+import GridButtonImage from "../../../controls/Grid/components/GridButtonImage"
+import GridRow from "../../../controls/Grid/components/GridRow"
+import GridWrapper from "../../../controls/Grid/components/GridWrapper"
 
 export default props => {
   return [
