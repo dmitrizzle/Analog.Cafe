@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /modal
+Allow: /
+Sitemap: https://www.analog.cafe/sitemap.xml
