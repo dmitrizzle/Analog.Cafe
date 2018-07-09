@@ -8,6 +8,7 @@ shell.series(
     commands.uploadImmutableAssets("*.jpg"),
     commands.uploadImmutableAssets("analytics*.js"),
     commands.uploadStaticAssets("*.json"),
+    commands.uploadStaticAssets("robots.txt"),
     commands.uploadImmutableAssets("fonts/**"),
     commands.uploadImmutableAssets("static/**"),
   ],
