@@ -53,7 +53,6 @@ export const RULES_SERIALIZATION = [
     }
   }
 ]
-
 const rules = [
   ...RULES_SERIALIZATION,
   {
@@ -69,7 +68,7 @@ const rules = [
   }
 ]
 
-const addRootSerialNumbers = nodes => {
+export const addRootSerialNumbers = nodes => {
   nodes.forEach((node, iterator) => {
     node.serial = iterator
   })
