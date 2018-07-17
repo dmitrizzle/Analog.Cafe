@@ -1,9 +1,69 @@
 import React from "react"
-import { RULES } from "./rules" // What you normally feed slate-html-serializer
+import uuidv1 from "uuid/v1"
+
+import Link from "../../controls/Link"
+import Picture from "../../vignettes/Picture"
+
+export const RULES_SERIALIZATION = [
+  {
+    serialize(node, children) {
+      console.log(node)
+      const key = uuidv1().substr(0, 8)
+      const element = node.type
+      switch (element) {
+        case "paragraph": {
+          return <p key={key}>{children}</p>
+        }
+        case "quote": {
+          return (
+            <div style={{ clear: "both" }} key={key}>
+              <blockquote>{children}</blockquote>
+            </div>
+          )
+        }
+        case "heading": {
+          return <h3 key={key}>{children}</h3>
+        }
+        case "divider": {
+          return <hr key={key} />
+        }
+        case "italic": {
+          return <em key={key}>{children}</em>
+        }
+        case "bold": {
+          return <strong key={key}>{children}</strong>
+        }
+        case "link": {
+          // NOTE: needs to be made relative wtih `makeRelative(href,domain)`
+          return (
+            <Link key={key} to={node.data.href}>
+              {children}
+            </Link>
+          )
+        }
+        case "image": {
+          return (
+            <Picture
+              readOnly={true}
+              key={key}
+              editor={{ value: { isFocused: false, isSelected: false } }}
+              node={{
+                data: {
+                  get: key => node.data[key]
+                }
+              }}
+            />
+          )
+        }
+        default:
+          return <span key={key}>{children}</span>
+      }
+    }
+  }
+]
 
 const rules = [
-  ...RULES,
-  // from slate-html-serializer
+  ...RULES_SERIALIZATION,
   {
     serialize(obj, children) {
       if (obj.object === "string") {
