@@ -1,7 +1,7 @@
 import React from "react"
 
-import Link from "../../controls/Link"
-import Picture from "../../vignettes/Picture"
+import Link from "../components/controls/Link"
+import Picture from "../components/vignettes/Picture"
 
 export const RULES_SERIALIZATION = [
   {
