@@ -25,7 +25,7 @@ export default props => {
           padding: "1px 1px 3px"
         }}
       >
-        <div>
+        <div style={{ minWidth: "30em" }}>
           {Object.keys(TAGS).map((key, i) => {
             let last = i === Object.keys(TAGS).length - 1
             return (
