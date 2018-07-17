@@ -161,8 +161,9 @@ class Picture extends React.PureComponent {
     const className = focus ? "focus" : "nofocus"
     const feature = node.data.get("feature")
 
-    // const nextBlock = parent.getNextBlock(node.get("key"))
-    // const foldSpacer = nextBlock.get("data").get("feature") ? true : false
+    console.log(node.get("key"))
+    const nextBlock = parent.getNextBlock(node.get("key"))
+    //const foldSpacer = nextBlock.get("data").get("feature") ? true : false
 
     return (
       <div style={{ clear: "both" }}>

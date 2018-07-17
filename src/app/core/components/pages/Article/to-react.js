@@ -1,5 +1,4 @@
 import React from "react"
-import uuidv1 from "uuid/v1"
 
 import Link from "../../controls/Link"
 import Picture from "../../vignettes/Picture"
@@ -7,56 +6,52 @@ import Picture from "../../vignettes/Picture"
 export const RULES_SERIALIZATION = [
   {
     serialize(node, children) {
-      console.log(node)
-      const key = uuidv1().substr(0, 8)
       const element = node.type
       switch (element) {
         case "paragraph": {
-          return <p key={key}>{children}</p>
+          return addKey(<p>{children}</p>)
         }
         case "quote": {
-          return (
-            <div style={{ clear: "both" }} key={key}>
+          return addKey(
+            <div style={{ clear: "both" }}>
               <blockquote>{children}</blockquote>
             </div>
           )
         }
         case "heading": {
-          return <h3 key={key}>{children}</h3>
+          return addKey(<h3>{children}</h3>)
         }
         case "divider": {
-          return <hr key={key} />
+          return addKey(<hr />)
         }
         case "italic": {
-          return <em key={key}>{children}</em>
+          return addKey(<em>{children}</em>)
         }
         case "bold": {
-          return <strong key={key}>{children}</strong>
+          return addKey(<strong>{children}</strong>)
         }
         case "link": {
           // NOTE: needs to be made relative wtih `makeRelative(href,domain)`
-          return (
-            <Link key={key} to={node.data.href}>
-              {children}
-            </Link>
-          )
+          return addKey(<Link to={node.data.href}>{children}</Link>)
         }
         case "image": {
-          return (
+          return addKey(
             <Picture
               readOnly={true}
-              key={key}
               editor={{ value: { isFocused: false, isSelected: false } }}
               node={{
                 data: {
-                  get: key => node.data[key]
+                  get: object => node.data[object]
                 }
+              }}
+              parent={{
+                getNextBlock: nodeKey => {}
               }}
             />
           )
         }
         default:
-          return <span key={key}>{children}</span>
+          return addKey(<span>{children}</span>)
       }
     }
   }
@@ -77,16 +72,13 @@ const rules = [
   }
 ]
 
-let serializeNode, serializeLeaf, serializeString, cruftNewline, addKey
-
 const toReact = (value, options = {}) => {
   const { document } = value
   const elements = document.nodes.map(serializeNode).filter(Boolean)
-
   return elements
 }
 
-serializeNode = node => {
+const serializeNode = node => {
   if (node.object === "text") {
     const { leaves } = node
     return leaves.map(serializeLeaf)
@@ -104,7 +96,7 @@ serializeNode = node => {
   throw new Error(`No serializer defined for node of type "${node.type}".`)
 }
 
-serializeLeaf = leaf => {
+const serializeLeaf = leaf => {
   const string = { object: "string", text: leaf.text }
   const text = serializeString(string)
   if (!leaf.marks) return leaf.text
@@ -121,7 +113,7 @@ serializeLeaf = leaf => {
   }, text)
 }
 
-serializeString = string => {
+const serializeString = string => {
   for (const rule of rules) {
     if (!rule.serialize) continue
     const ret = rule.serialize(string, string.text)
@@ -129,11 +121,16 @@ serializeString = string => {
   }
 }
 
-cruftNewline = element =>
+const cruftNewline = element =>
   !(element.nodeName === "#text" && element.nodeValue == "\n")
 
 let key = 0
-
-addKey = element => React.cloneElement(element, { key: key++ })
+const addKey = element => {
+  const thisKey = key++
+  return React.cloneElement(element, {
+    key: thisKey,
+    node: { ...element.props.node, get: object => object === "key" && thisKey }
+  })
+}
 
 export default toReact
