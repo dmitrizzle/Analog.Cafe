@@ -37,15 +37,12 @@ export const RULES_SERIALIZATION = [
         case "image": {
           return addKey(
             <Picture
-              readOnly={true}
               editor={{ value: { isFocused: false, isSelected: false } }}
               node={{
                 data: {
                   get: object => node.data[object]
-                }
-              }}
-              parent={{
-                getNextBlock: nodeKey => {}
+                },
+                serial: node.serial
               }}
             />
           )
@@ -72,9 +69,18 @@ const rules = [
   }
 ]
 
+const addRootSerialNumbers = nodes => {
+  nodes.forEach((node, iterator) => {
+    node.serial = iterator
+  })
+  return nodes
+}
+
+let nodes = []
 const toReact = (value, options = {}) => {
   const { document } = value
-  const elements = document.nodes.map(serializeNode).filter(Boolean)
+  nodes = addRootSerialNumbers(document.nodes)
+  const elements = nodes.map(serializeNode).filter(Boolean)
   return elements
 }
 
@@ -83,16 +89,13 @@ const serializeNode = node => {
     const { leaves } = node
     return leaves.map(serializeLeaf)
   }
-
   const children = node.nodes.map(serializeNode)
-
   for (const rule of rules) {
     if (!rule.serialize) continue
     const ret = rule.serialize(node, children)
     if (ret === null) return
     if (ret) return addKey(ret)
   }
-
   throw new Error(`No serializer defined for node of type "${node.type}".`)
 }
 
@@ -129,7 +132,19 @@ const addKey = element => {
   const thisKey = key++
   return React.cloneElement(element, {
     key: thisKey,
-    node: { ...element.props.node, get: object => object === "key" && thisKey }
+    node: element.props.node
+      ? {
+          ...element.props.node,
+          get: object => {
+            return object === "key" && thisKey
+          }
+        }
+      : null,
+    parent: {
+      getNextBlock: () => {
+        return element.props.node.serial + 1
+      }
+    }
   })
 }
 
