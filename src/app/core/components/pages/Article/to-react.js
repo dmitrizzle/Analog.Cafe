@@ -31,7 +31,6 @@ export const RULES_SERIALIZATION = [
           return addKey(<strong>{children}</strong>)
         }
         case "link": {
-          // NOTE: needs to be made relative wtih `makeRelative(href,domain)`
           return addKey(<Link to={node.data.href}>{children}</Link>)
         }
         case "image": {
@@ -44,6 +43,7 @@ export const RULES_SERIALIZATION = [
                 },
                 serial: node.serial
               }}
+              readOnly={true}
             />
           )
         }
@@ -60,7 +60,7 @@ const rules = [
     serialize(obj, children) {
       if (obj.object === "string") {
         return children.split("\n").reduce((array, text, i) => {
-          if (i != 0) array.push(<br key={i} />)
+          if (i !== 0) array.push(<br key={i} />)
           array.push(text)
           return array
         }, [])
@@ -75,7 +75,6 @@ const addRootSerialNumbers = nodes => {
   })
   return nodes
 }
-
 let nodes = []
 const toReact = (value, options = {}) => {
   const { document } = value
@@ -108,10 +107,9 @@ const serializeLeaf = leaf => {
     for (const rule of rules) {
       if (!rule.serialize) continue
       const ret = rule.serialize(mark, children)
-      if (ret === null) return
+      if (ret === null) return null
       if (ret) return addKey(ret)
     }
-
     throw new Error(`No serializer defined for mark of type "${mark.type}".`)
   }, text)
 }
@@ -123,9 +121,6 @@ const serializeString = string => {
     if (ret) return ret
   }
 }
-
-const cruftNewline = element =>
-  !(element.nodeName === "#text" && element.nodeValue == "\n")
 
 let key = 0
 const addKey = element => {
@@ -142,7 +137,20 @@ const addKey = element => {
       : null,
     parent: {
       getNextBlock: () => {
-        return element.props.node.serial + 1
+        const node = nodes.filter(object => {
+          return object.serial === element.props.node.serial + 1
+        })[0]
+        const nodeFunction = {
+          get: object =>
+            object === "data" && {
+              get: object => (node.data ? node.data[object] : undefined)
+            }
+        }
+        console.log(
+          element.props.node.data.get("feature"),
+          nodeFunction.get("data").get("feature")
+        )
+        return nodeFunction
       }
     }
   })

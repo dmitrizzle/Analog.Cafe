@@ -162,8 +162,7 @@ class Picture extends React.PureComponent {
     const feature = node.data.get("feature")
 
     const nextBlock = parent.getNextBlock(node.get("key"))
-    console.log(nextBlock)
-    //const foldSpacer = nextBlock.get("data").get("feature") ? true : false
+    const foldSpacer = nextBlock.get("data").get("feature") ? true : false
 
     return (
       <div style={{ clear: "both" }}>
@@ -181,7 +180,7 @@ class Picture extends React.PureComponent {
           composer={!this.props.readOnly}
           feature={feature}
           caption={this.state.caption}
-          // foldSpacer={foldSpacer}
+          foldSpacer={foldSpacer}
           onClick={() => this.handleGetAuthor(src)}
           userRole={this.props.user.info.role}
           focus={focus}
