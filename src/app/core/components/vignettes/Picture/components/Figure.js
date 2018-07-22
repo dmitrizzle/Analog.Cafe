@@ -135,6 +135,7 @@ export default props => {
         nocaption={props.nocaption}
         readOnly={props.readOnly}
         focus={props.focus}
+        captionInputFocus={props.captionInputFocus}
       >
         {props.children}
       </Figcaption>

@@ -54,7 +54,10 @@ export default props => {
       style={
         props.nocaption ||
         (props.readOnly && !props.caption) ||
-        (!props.readOnly && !props.caption && !props.focus)
+        (!props.readOnly &&
+          !props.caption &&
+          !props.focus &&
+          !props.captionInputFocus)
           ? {
               borderBottom: "8px solid #2c2c2c",
               height: 0,
