@@ -30,7 +30,8 @@ class Picture extends React.PureComponent {
         caption: props.node.data.get("caption") || "",
         src: props.node.data.get("src") || "",
         key: "",
-        authorCard: {}
+        authorCard: {},
+        captionInputFocus: false
       }
     else this.state = {}
     this.handleChange = this.handleChange.bind(this)
@@ -153,6 +154,18 @@ class Picture extends React.PureComponent {
       })
     })
   }
+
+  handleCaptionInputBlur = event => {
+    this.setState({
+      captionInputFocus: false
+    })
+  }
+  handleCaptionInputFocus = event => {
+    this.setState({
+      captionInputFocus: true
+    })
+  }
+
   render = () => {
     const { attributes, node, isSelected, editor, parent } = this.props
     if (!editor) return null
@@ -183,6 +196,7 @@ class Picture extends React.PureComponent {
           foldSpacer={foldSpacer}
           onClick={() => this.handleGetAuthor(src)}
           userRole={this.props.user.info.role}
+          captionInputFocus={this.state.captionInputFocus}
           focus={focus}
         >
           {!this.props.readOnly ? (
@@ -191,6 +205,8 @@ class Picture extends React.PureComponent {
               placeholder="Add image title, location, camera, film&hellip;"
               onChange={this.handleChange}
               onClick={this.handleTextareaClick}
+              onFocus={this.handleCaptionInputFocus}
+              onBlur={this.handleCaptionInputBlur}
             />
           ) : (
             <span>{this.state.caption}</span>
