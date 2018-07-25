@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /modal
+Disallow: /me
 Allow: /
 Sitemap: https://www.analog.cafe/sitemap.xml
