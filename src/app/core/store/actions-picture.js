@@ -43,6 +43,7 @@ export const getPictureInfo = src => {
               setModal(
                 {
                   info: {
+                    image: src,
                     buttons: [
                       {
                         to: "#about-author",
