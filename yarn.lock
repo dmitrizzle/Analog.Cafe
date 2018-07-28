@@ -7209,9 +7209,9 @@ react-test-renderer@^16.0.0-0, react-test-renderer@^16.4.1:
     prop-types "^15.6.0"
     react-is "^16.4.1"
 
-react-textarea-autosize@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-6.1.0.tgz#df91387f8a8f22020b77e3833c09829d706a09a5"
+react-textarea-autosize@^7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-7.0.4.tgz#4e4be649b544a88713e7b5043f76950f35d3d503"
   dependencies:
     prop-types "^15.6.0"
 
@@ -7634,8 +7634,8 @@ rxjs@^6.1.0:
     tslib "^1.9.0"
 
 s3-deploy@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/s3-deploy/-/s3-deploy-1.1.0.tgz#b6085f09e7c648fd0432eaf65ee2a640fc6e7aa0"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/s3-deploy/-/s3-deploy-1.1.1.tgz#764aff618da442fb5f60c44e4240806d29a98bb1"
   dependencies:
     aws-sdk "2.3.19"
     babel-polyfill "^6.26.0"
