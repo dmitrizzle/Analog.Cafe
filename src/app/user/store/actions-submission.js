@@ -34,7 +34,7 @@ export const uploadSubmission = request => {
         if (response.status === 200) {
           localStorage.removeItem("composer-content-text")
           localForage.clear()
-          resetComposer()
+          dispatch(resetComposer())
         }
       })
       .catch(error => {

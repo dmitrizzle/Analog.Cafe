@@ -6,8 +6,7 @@ export const setComposerHeader = value => {
 }
 export const resetComposer = () => {
   return {
-    type: "COMPOSER.RESET",
-    payload: null
+    type: "COMPOSER.RESET"
   }
 }
 export const setComposerSatus = status => {

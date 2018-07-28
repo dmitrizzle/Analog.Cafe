@@ -1,3 +1,5 @@
+import "jest-styled-components"
+
 import { createMockStore } from "redux-test-utils"
 import { shallow } from "enzyme"
 import { shallowWithStore } from "enzyme-redux"
@@ -9,8 +11,8 @@ import DraftStatusText from "./DraftStatusText"
 import Editor from "./Editor"
 import TitleCreator from "./TitleCreator"
 
-it("Render ComposerByline without crashing", () => {
-  shallow(
+it("Render ComposerByline, matches snapshot", () => {
+  const element = shallow(
     <ComposerByline
       user={{
         info: {
@@ -19,22 +21,27 @@ it("Render ComposerByline without crashing", () => {
       }}
     />
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ComposerWrapper without crashing", () => {
-  shallow(<ComposerWrapper />)
+it("Render ComposerWrapper, matches snapshot", () => {
+  const element = shallow(<ComposerWrapper />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render DraftStatusText without crashing", () => {
-  shallow(<DraftStatusText />)
+it("Render DraftStatusText, matches snapshot", () => {
+  const element = shallow(<DraftStatusText />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render Editor without crashing", () => {
+it("Render Editor, matches snapshot", () => {
   const store = createMockStore()
-  shallowWithStore(<Editor />, store)
+  const element = shallowWithStore(<Editor />, store)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render TitleCreator without crashing", () => {
+it("Render TitleCreator, matches snapshot", () => {
   const store = createMockStore()
-  shallowWithStore(<TitleCreator />, store)
+  const element = shallowWithStore(<TitleCreator />, store)
+  expect(element).toMatchSnapshot()
 })

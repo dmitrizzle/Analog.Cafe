@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import {
   loadTextContent,
   loadContent
-} from "@roast-cms/french-press-editor/dist/utils/browser-storage"
+} from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 import localForage from "localforage"
 
@@ -13,7 +13,6 @@ import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
-import { resetComposer } from "../../../store/actions-composer"
 import { resetStatus } from "../../../../admin/store/actions-editor"
 import { setModal } from "../../../../core/store/actions-modal"
 import { setUserRoutes, resetUserRoutes } from "../../../store/actions-user"
@@ -195,6 +194,7 @@ class Upload extends React.PureComponent {
           )}
           {this.state.status === "complete" && (
             <div>
+              <MetaTags metaTitle="Done!" />
               <p>
                 We’ve received your work. It’ll take a couple of minutes to
                 process the images – after that, you should be able to see it{" "}
@@ -235,9 +235,6 @@ const mapDispatchToProps = dispatch => {
     },
     resetUserRoutes: () => {
       dispatch(resetUserRoutes())
-    },
-    resetComposer: () => {
-      dispatch(resetComposer())
     },
     setModal: (info, request) => {
       dispatch(setModal(info, request))

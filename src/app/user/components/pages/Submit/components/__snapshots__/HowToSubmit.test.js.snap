@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render HowToSubmit, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          How to submit.
+</h3>,
+        <Unknown
+          alt="A short demo of the submission process to Analog.Cafe"
+          src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
+>
+          The “Composer” tool will help you create and send submissions.
+</Unknown>,
+        <p>
+          Click the “
+          <Unknown
+                    to="/submit/compose"
+          >
+                    Submit Now
+          </Unknown>
+          ” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”
+</p>,
+        <p>
+          After you 
+          <Unknown
+                    to="/sign-in"
+          >
+                    sign in or create an account
+          </Unknown>
+          , you can 
+          <strong>
+                    edit your profile
+          </strong>
+           by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.
+</p>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "How to submit.",
+        },
+        "ref": null,
+        "rendered": "How to submit.",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "alt": "A short demo of the submission process to Analog.Cafe",
+          "children": "The “Composer” tool will help you create and send submissions.",
+          "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
+        },
+        "ref": null,
+        "rendered": "The “Composer” tool will help you create and send submissions.",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Click the “",
+            <Unknown
+              to="/submit/compose"
+>
+              Submit Now
+</Unknown>,
+            "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Click the “",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Submit Now",
+              "to": "/submit/compose",
+            },
+            "ref": null,
+            "rendered": "Submit Now",
+            "type": [Function],
+          },
+          "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "After you ",
+            <Unknown
+              to="/sign-in"
+>
+              sign in or create an account
+</Unknown>,
+            ", you can ",
+            <strong>
+              edit your profile
+</strong>,
+            " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "After you ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "sign in or create an account",
+              "to": "/sign-in",
+            },
+            "ref": null,
+            "rendered": "sign in or create an account",
+            "type": [Function],
+          },
+          ", you can ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "edit your profile",
+            },
+            "ref": null,
+            "rendered": "edit your profile",
+            "type": "strong",
+          },
+          " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            How to submit.
+</h3>,
+          <Unknown
+            alt="A short demo of the submission process to Analog.Cafe"
+            src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
+>
+            The “Composer” tool will help you create and send submissions.
+</Unknown>,
+          <p>
+            Click the “
+            <Unknown
+                        to="/submit/compose"
+            >
+                        Submit Now
+            </Unknown>
+            ” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”
+</p>,
+          <p>
+            After you 
+            <Unknown
+                        to="/sign-in"
+            >
+                        sign in or create an account
+            </Unknown>
+            , you can 
+            <strong>
+                        edit your profile
+            </strong>
+             by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.
+</p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "How to submit.",
+          },
+          "ref": null,
+          "rendered": "How to submit.",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "alt": "A short demo of the submission process to Analog.Cafe",
+            "children": "The “Composer” tool will help you create and send submissions.",
+            "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
+          },
+          "ref": null,
+          "rendered": "The “Composer” tool will help you create and send submissions.",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Click the “",
+              <Unknown
+                to="/submit/compose"
+>
+                Submit Now
+</Unknown>,
+              "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Click the “",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Submit Now",
+                "to": "/submit/compose",
+              },
+              "ref": null,
+              "rendered": "Submit Now",
+              "type": [Function],
+            },
+            "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "After you ",
+              <Unknown
+                to="/sign-in"
+>
+                sign in or create an account
+</Unknown>,
+              ", you can ",
+              <strong>
+                edit your profile
+</strong>,
+              " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "After you ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "sign in or create an account",
+                "to": "/sign-in",
+              },
+              "ref": null,
+              "rendered": "sign in or create an account",
+              "type": [Function],
+            },
+            ", you can ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "edit your profile",
+              },
+              "ref": null,
+              "rendered": "edit your profile",
+              "type": "strong",
+            },
+            " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,1400 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render EditorialControls without crashing, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    article={
+        Object {
+            "status": "published",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <div>
+        <Unknown
+                left={true}
+                onClick={undefined}
+                style={
+                        Object {
+                                "minWidth": "5em",
+                              }
+                }
+        >
+                <span
+                        aria-label="(Un)Locked button"
+                        role="img"
+                >
+                        🔐
+                </span>
+                 
+                Edit
+        </Unknown>
+        <Unknown
+                onClick={undefined}
+        >
+                <span
+                        aria-label="(Un)Locked button"
+                        role="img"
+                >
+                        🔐
+                </span>
+                 
+                Sync
+        </Unknown>
+        <Unknown
+                right={true}
+        >
+                Unpublish
+        </Unknown>
+</div>,
+      "style": Object {
+        "display": "block",
+        "margin": "1em auto 0",
+        "whiteSpace": "nowrap",
+        "width": "16em",
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            left={true}
+            onClick={undefined}
+            style={
+                        Object {
+                                    "minWidth": "5em",
+                                  }
+            }
+>
+            <span
+                        aria-label="(Un)Locked button"
+                        role="img"
+            >
+                        🔐
+            </span>
+             
+            Edit
+</Unknown>,
+          Array [
+            <Unknown
+              onClick={undefined}
+>
+              <span
+                            aria-label="(Un)Locked button"
+                            role="img"
+              >
+                            🔐
+              </span>
+               
+              Sync
+</Unknown>,
+            <Unknown
+              right={true}
+>
+              Unpublish
+</Unknown>,
+          ],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <span
+                aria-label="(Un)Locked button"
+                role="img"
+>
+                🔐
+</span>,
+              " ",
+              "Edit",
+            ],
+            "left": true,
+            "onClick": undefined,
+            "style": Object {
+              "minWidth": "5em",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-label": "(Un)Locked button",
+                "children": "🔐",
+                "role": "img",
+              },
+              "ref": null,
+              "rendered": "🔐",
+              "type": "span",
+            },
+            " ",
+            "Edit",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "ButtonStrip_Item_update",
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <span
+                aria-label="(Un)Locked button"
+                role="img"
+>
+                🔐
+</span>,
+              " ",
+              "Sync",
+            ],
+            "onClick": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-label": "(Un)Locked button",
+                "children": "🔐",
+                "role": "img",
+              },
+              "ref": null,
+              "rendered": "🔐",
+              "type": "span",
+            },
+            " ",
+            "Sync",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "ButtonStrip_Item_unpublish",
+          "nodeType": "function",
+          "props": Object {
+            "children": "Unpublish",
+            "right": true,
+          },
+          "ref": null,
+          "rendered": "Unpublish",
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <div>
+          <Unknown
+                    left={true}
+                    onClick={undefined}
+                    style={
+                              Object {
+                                        "minWidth": "5em",
+                                      }
+                    }
+          >
+                    <span
+                              aria-label="(Un)Locked button"
+                              role="img"
+                    >
+                              🔐
+                    </span>
+                     
+                    Edit
+          </Unknown>
+          <Unknown
+                    onClick={undefined}
+          >
+                    <span
+                              aria-label="(Un)Locked button"
+                              role="img"
+                    >
+                              🔐
+                    </span>
+                     
+                    Sync
+          </Unknown>
+          <Unknown
+                    right={true}
+          >
+                    Unpublish
+          </Unknown>
+</div>,
+        "style": Object {
+          "display": "block",
+          "margin": "1em auto 0",
+          "whiteSpace": "nowrap",
+          "width": "16em",
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Unknown
+              left={true}
+              onClick={undefined}
+              style={
+                            Object {
+                                          "minWidth": "5em",
+                                        }
+              }
+>
+              <span
+                            aria-label="(Un)Locked button"
+                            role="img"
+              >
+                            🔐
+              </span>
+               
+              Edit
+</Unknown>,
+            Array [
+              <Unknown
+                onClick={undefined}
+>
+                <span
+                                aria-label="(Un)Locked button"
+                                role="img"
+                >
+                                🔐
+                </span>
+                 
+                Sync
+</Unknown>,
+              <Unknown
+                right={true}
+>
+                Unpublish
+</Unknown>,
+            ],
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <span
+                  aria-label="(Un)Locked button"
+                  role="img"
+>
+                  🔐
+</span>,
+                " ",
+                "Edit",
+              ],
+              "left": true,
+              "onClick": undefined,
+              "style": Object {
+                "minWidth": "5em",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "aria-label": "(Un)Locked button",
+                  "children": "🔐",
+                  "role": "img",
+                },
+                "ref": null,
+                "rendered": "🔐",
+                "type": "span",
+              },
+              " ",
+              "Edit",
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "ButtonStrip_Item_update",
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <span
+                  aria-label="(Un)Locked button"
+                  role="img"
+>
+                  🔐
+</span>,
+                " ",
+                "Sync",
+              ],
+              "onClick": undefined,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "aria-label": "(Un)Locked button",
+                  "children": "🔐",
+                  "role": "img",
+                },
+                "ref": null,
+                "rendered": "🔐",
+                "type": "span",
+              },
+              " ",
+              "Sync",
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "ButtonStrip_Item_unpublish",
+            "nodeType": "function",
+            "props": Object {
+              "children": "Unpublish",
+              "right": true,
+            },
+            "ref": null,
+            "rendered": "Unpublish",
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render PublishControls without crashing, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    article={
+        Object {
+            "id": 0,
+          }
+    }
+    editor={
+        Object {
+            "publish": Object {
+              "id": 0,
+            },
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <styled.div
+          style={
+                    Object {
+                              "margin": "0.5em auto 0",
+                              "overflow": "scroll",
+                              "padding": "1px 1px 3px",
+                              "width": "auto",
+                            }
+          }
+>
+          <div
+                    style={
+                              Object {
+                                        "minWidth": "30em",
+                                      }
+                    }
+          >
+                    <Unknown
+                              inverse={false}
+                              left={true}
+                              onClick={[Function]}
+                              right={false}
+                              style={Object {}}
+                              to="#story"
+                    >
+                              Story
+                    </Unknown>
+                    <Unknown
+                              inverse={false}
+                              left={false}
+                              onClick={[Function]}
+                              right={false}
+                              style={Object {}}
+                              to="#editorial"
+                    >
+                              Editorial
+                    </Unknown>
+                    <Unknown
+                              inverse={false}
+                              left={false}
+                              onClick={[Function]}
+                              right={false}
+                              style={Object {}}
+                              to="#guide"
+                    >
+                              Guide
+                    </Unknown>
+                    <Unknown
+                              inverse={false}
+                              left={false}
+                              onClick={[Function]}
+                              right={false}
+                              style={Object {}}
+                              to="#review"
+                    >
+                              Review
+                    </Unknown>
+                    <Unknown
+                              inverse={false}
+                              left={false}
+                              onClick={[Function]}
+                              right={true}
+                              style={
+                                        Object {
+                                                  "minWidth": "7.5em",
+                                                }
+                              }
+                              to="#photo-essay"
+                    >
+                              Photo Essay
+                    </Unknown>
+          </div>
+</styled.div>,
+        <Styled(styled.div)
+          style={
+                    Object {
+                              "display": "none",
+                              "marginBottom": 0,
+                              "marginTop": "0.5em",
+                            }
+          }
+>
+          <Unknown
+                    branded={true}
+          >
+                    Add to Queue
+          </Unknown>
+          <Unknown
+                    loading={true}
+                    onClick={undefined}
+          >
+                     
+                    Publish Now
+          </Unknown>
+</Styled(styled.div)>,
+      ],
+      "style": Object {
+        "display": "none",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <div
+            style={
+                        Object {
+                                    "minWidth": "30em",
+                                  }
+            }
+>
+            <Unknown
+                        inverse={false}
+                        left={true}
+                        onClick={[Function]}
+                        right={false}
+                        style={Object {}}
+                        to="#story"
+            >
+                        Story
+            </Unknown>
+            <Unknown
+                        inverse={false}
+                        left={false}
+                        onClick={[Function]}
+                        right={false}
+                        style={Object {}}
+                        to="#editorial"
+            >
+                        Editorial
+            </Unknown>
+            <Unknown
+                        inverse={false}
+                        left={false}
+                        onClick={[Function]}
+                        right={false}
+                        style={Object {}}
+                        to="#guide"
+            >
+                        Guide
+            </Unknown>
+            <Unknown
+                        inverse={false}
+                        left={false}
+                        onClick={[Function]}
+                        right={false}
+                        style={Object {}}
+                        to="#review"
+            >
+                        Review
+            </Unknown>
+            <Unknown
+                        inverse={false}
+                        left={false}
+                        onClick={[Function]}
+                        right={true}
+                        style={
+                                    Object {
+                                                "minWidth": "7.5em",
+                                              }
+                        }
+                        to="#photo-essay"
+            >
+                        Photo Essay
+            </Unknown>
+</div>,
+          "style": Object {
+            "margin": "0.5em auto 0",
+            "overflow": "scroll",
+            "padding": "1px 1px 3px",
+            "width": "auto",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Unknown
+                inverse={false}
+                left={true}
+                onClick={[Function]}
+                right={false}
+                style={Object {}}
+                to="#story"
+>
+                Story
+</Unknown>,
+              <Unknown
+                inverse={false}
+                left={false}
+                onClick={[Function]}
+                right={false}
+                style={Object {}}
+                to="#editorial"
+>
+                Editorial
+</Unknown>,
+              <Unknown
+                inverse={false}
+                left={false}
+                onClick={[Function]}
+                right={false}
+                style={Object {}}
+                to="#guide"
+>
+                Guide
+</Unknown>,
+              <Unknown
+                inverse={false}
+                left={false}
+                onClick={[Function]}
+                right={false}
+                style={Object {}}
+                to="#review"
+>
+                Review
+</Unknown>,
+              <Unknown
+                inverse={false}
+                left={false}
+                onClick={[Function]}
+                right={true}
+                style={
+                                Object {
+                                                "minWidth": "7.5em",
+                                              }
+                }
+                to="#photo-essay"
+>
+                Photo Essay
+</Unknown>,
+            ],
+            "style": Object {
+              "minWidth": "30em",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "story",
+              "nodeType": "function",
+              "props": Object {
+                "children": "Story",
+                "inverse": false,
+                "left": true,
+                "onClick": [Function],
+                "right": false,
+                "style": Object {},
+                "to": "#story",
+              },
+              "ref": null,
+              "rendered": "Story",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "editorial",
+              "nodeType": "function",
+              "props": Object {
+                "children": "Editorial",
+                "inverse": false,
+                "left": false,
+                "onClick": [Function],
+                "right": false,
+                "style": Object {},
+                "to": "#editorial",
+              },
+              "ref": null,
+              "rendered": "Editorial",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "guide",
+              "nodeType": "function",
+              "props": Object {
+                "children": "Guide",
+                "inverse": false,
+                "left": false,
+                "onClick": [Function],
+                "right": false,
+                "style": Object {},
+                "to": "#guide",
+              },
+              "ref": null,
+              "rendered": "Guide",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "review",
+              "nodeType": "function",
+              "props": Object {
+                "children": "Review",
+                "inverse": false,
+                "left": false,
+                "onClick": [Function],
+                "right": false,
+                "style": Object {},
+                "to": "#review",
+              },
+              "ref": null,
+              "rendered": "Review",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "photo-essay",
+              "nodeType": "function",
+              "props": Object {
+                "children": "Photo Essay",
+                "inverse": false,
+                "left": false,
+                "onClick": [Function],
+                "right": true,
+                "style": Object {
+                  "minWidth": "7.5em",
+                },
+                "to": "#photo-essay",
+              },
+              "ref": null,
+              "rendered": "Photo Essay",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Unknown
+              branded={true}
+>
+              Add to Queue
+</Unknown>,
+            <Unknown
+              loading={true}
+              onClick={undefined}
+>
+               
+              Publish Now
+</Unknown>,
+          ],
+          "style": Object {
+            "display": "none",
+            "marginBottom": 0,
+            "marginTop": "0.5em",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "branded": true,
+              "children": "Add to Queue",
+            },
+            "ref": null,
+            "rendered": "Add to Queue",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                false,
+                " ",
+                "Publish Now",
+              ],
+              "loading": true,
+              "onClick": undefined,
+            },
+            "ref": null,
+            "rendered": Array [
+              false,
+              " ",
+              "Publish Now",
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <styled.div
+            style={
+                        Object {
+                                    "margin": "0.5em auto 0",
+                                    "overflow": "scroll",
+                                    "padding": "1px 1px 3px",
+                                    "width": "auto",
+                                  }
+            }
+>
+            <div
+                        style={
+                                    Object {
+                                                "minWidth": "30em",
+                                              }
+                        }
+            >
+                        <Unknown
+                                    inverse={false}
+                                    left={true}
+                                    onClick={[Function]}
+                                    right={false}
+                                    style={Object {}}
+                                    to="#story"
+                        >
+                                    Story
+                        </Unknown>
+                        <Unknown
+                                    inverse={false}
+                                    left={false}
+                                    onClick={[Function]}
+                                    right={false}
+                                    style={Object {}}
+                                    to="#editorial"
+                        >
+                                    Editorial
+                        </Unknown>
+                        <Unknown
+                                    inverse={false}
+                                    left={false}
+                                    onClick={[Function]}
+                                    right={false}
+                                    style={Object {}}
+                                    to="#guide"
+                        >
+                                    Guide
+                        </Unknown>
+                        <Unknown
+                                    inverse={false}
+                                    left={false}
+                                    onClick={[Function]}
+                                    right={false}
+                                    style={Object {}}
+                                    to="#review"
+                        >
+                                    Review
+                        </Unknown>
+                        <Unknown
+                                    inverse={false}
+                                    left={false}
+                                    onClick={[Function]}
+                                    right={true}
+                                    style={
+                                                Object {
+                                                            "minWidth": "7.5em",
+                                                          }
+                                    }
+                                    to="#photo-essay"
+                        >
+                                    Photo Essay
+                        </Unknown>
+            </div>
+</styled.div>,
+          <Styled(styled.div)
+            style={
+                        Object {
+                                    "display": "none",
+                                    "marginBottom": 0,
+                                    "marginTop": "0.5em",
+                                  }
+            }
+>
+            <Unknown
+                        branded={true}
+            >
+                        Add to Queue
+            </Unknown>
+            <Unknown
+                        loading={true}
+                        onClick={undefined}
+            >
+                         
+                        Publish Now
+            </Unknown>
+</Styled(styled.div)>,
+        ],
+        "style": Object {
+          "display": "none",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <div
+              style={
+                            Object {
+                                          "minWidth": "30em",
+                                        }
+              }
+>
+              <Unknown
+                            inverse={false}
+                            left={true}
+                            onClick={[Function]}
+                            right={false}
+                            style={Object {}}
+                            to="#story"
+              >
+                            Story
+              </Unknown>
+              <Unknown
+                            inverse={false}
+                            left={false}
+                            onClick={[Function]}
+                            right={false}
+                            style={Object {}}
+                            to="#editorial"
+              >
+                            Editorial
+              </Unknown>
+              <Unknown
+                            inverse={false}
+                            left={false}
+                            onClick={[Function]}
+                            right={false}
+                            style={Object {}}
+                            to="#guide"
+              >
+                            Guide
+              </Unknown>
+              <Unknown
+                            inverse={false}
+                            left={false}
+                            onClick={[Function]}
+                            right={false}
+                            style={Object {}}
+                            to="#review"
+              >
+                            Review
+              </Unknown>
+              <Unknown
+                            inverse={false}
+                            left={false}
+                            onClick={[Function]}
+                            right={true}
+                            style={
+                                          Object {
+                                                        "minWidth": "7.5em",
+                                                      }
+                            }
+                            to="#photo-essay"
+              >
+                            Photo Essay
+              </Unknown>
+</div>,
+            "style": Object {
+              "margin": "0.5em auto 0",
+              "overflow": "scroll",
+              "padding": "1px 1px 3px",
+              "width": "auto",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Unknown
+                  inverse={false}
+                  left={true}
+                  onClick={[Function]}
+                  right={false}
+                  style={Object {}}
+                  to="#story"
+>
+                  Story
+</Unknown>,
+                <Unknown
+                  inverse={false}
+                  left={false}
+                  onClick={[Function]}
+                  right={false}
+                  style={Object {}}
+                  to="#editorial"
+>
+                  Editorial
+</Unknown>,
+                <Unknown
+                  inverse={false}
+                  left={false}
+                  onClick={[Function]}
+                  right={false}
+                  style={Object {}}
+                  to="#guide"
+>
+                  Guide
+</Unknown>,
+                <Unknown
+                  inverse={false}
+                  left={false}
+                  onClick={[Function]}
+                  right={false}
+                  style={Object {}}
+                  to="#review"
+>
+                  Review
+</Unknown>,
+                <Unknown
+                  inverse={false}
+                  left={false}
+                  onClick={[Function]}
+                  right={true}
+                  style={
+                                    Object {
+                                                      "minWidth": "7.5em",
+                                                    }
+                  }
+                  to="#photo-essay"
+>
+                  Photo Essay
+</Unknown>,
+              ],
+              "style": Object {
+                "minWidth": "30em",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "story",
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Story",
+                  "inverse": false,
+                  "left": true,
+                  "onClick": [Function],
+                  "right": false,
+                  "style": Object {},
+                  "to": "#story",
+                },
+                "ref": null,
+                "rendered": "Story",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "editorial",
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Editorial",
+                  "inverse": false,
+                  "left": false,
+                  "onClick": [Function],
+                  "right": false,
+                  "style": Object {},
+                  "to": "#editorial",
+                },
+                "ref": null,
+                "rendered": "Editorial",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "guide",
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Guide",
+                  "inverse": false,
+                  "left": false,
+                  "onClick": [Function],
+                  "right": false,
+                  "style": Object {},
+                  "to": "#guide",
+                },
+                "ref": null,
+                "rendered": "Guide",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "review",
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Review",
+                  "inverse": false,
+                  "left": false,
+                  "onClick": [Function],
+                  "right": false,
+                  "style": Object {},
+                  "to": "#review",
+                },
+                "ref": null,
+                "rendered": "Review",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "photo-essay",
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Photo Essay",
+                  "inverse": false,
+                  "left": false,
+                  "onClick": [Function],
+                  "right": true,
+                  "style": Object {
+                    "minWidth": "7.5em",
+                  },
+                  "to": "#photo-essay",
+                },
+                "ref": null,
+                "rendered": "Photo Essay",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Unknown
+                branded={true}
+>
+                Add to Queue
+</Unknown>,
+              <Unknown
+                loading={true}
+                onClick={undefined}
+>
+                 
+                Publish Now
+</Unknown>,
+            ],
+            "style": Object {
+              "display": "none",
+              "marginBottom": 0,
+              "marginTop": "0.5em",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "branded": true,
+                "children": "Add to Queue",
+              },
+              "ref": null,
+              "rendered": "Add to Queue",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  false,
+                  " ",
+                  "Publish Now",
+                ],
+                "loading": true,
+                "onClick": undefined,
+              },
+              "ref": null,
+              "rendered": Array [
+                false,
+                " ",
+                "Publish Now",
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render StatusExplanation without crashing, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    article={
+        Object {
+            "status": "scheduled",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <span
+          aria-label="Notice"
+          role="img"
+          style={
+                    Object {
+                              "fontStyle": "normal",
+                            }
+          }
+>
+          ⚠️
+</span>,
+        " ",
+        "This is a SCHEDULED submission that you can edit while it is in the queue.",
+        false,
+        false,
+      ],
+      "style": Object {
+        "display": "block",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "aria-label": "Notice",
+          "children": "⚠️",
+          "role": "img",
+          "style": Object {
+            "fontStyle": "normal",
+          },
+        },
+        "ref": null,
+        "rendered": "⚠️",
+        "type": "span",
+      },
+      " ",
+      "This is a SCHEDULED submission that you can edit while it is in the queue.",
+      false,
+      false,
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <span
+            aria-label="Notice"
+            role="img"
+            style={
+                        Object {
+                                    "fontStyle": "normal",
+                                  }
+            }
+>
+            ⚠️
+</span>,
+          " ",
+          "This is a SCHEDULED submission that you can edit while it is in the queue.",
+          false,
+          false,
+        ],
+        "style": Object {
+          "display": "block",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "aria-label": "Notice",
+            "children": "⚠️",
+            "role": "img",
+            "style": Object {
+              "fontStyle": "normal",
+            },
+          },
+          "ref": null,
+          "rendered": "⚠️",
+          "type": "span",
+        },
+        " ",
+        "This is a SCHEDULED submission that you can edit while it is in the queue.",
+        false,
+        false,
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

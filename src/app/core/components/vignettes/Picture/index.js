@@ -131,6 +131,7 @@ class Picture extends React.PureComponent {
     if (!src || !this.props.readOnly) return
     this.props.setModal({
       info: {
+        image: src,
         buttons: [
           {
             to: "#about-author",

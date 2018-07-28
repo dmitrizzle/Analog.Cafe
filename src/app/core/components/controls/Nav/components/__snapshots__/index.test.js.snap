@@ -1,0 +1,1995 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render NavAvatar, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <img
+        alt="Profile avatar"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+/>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "alt": "Profile avatar",
+        "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "img",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <img
+          alt="Profile avatar"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+/>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "alt": "Profile avatar",
+          "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render NavComposer, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <styled.li
+          className="prime left"
+          left={true}
+          prime={true}
+          status={true}
+>
+          <Connect(ModalLauncher)
+                    style={
+                              Object {
+                                        "textDecoration": "none",
+                                      }
+                    }
+                    with={
+                              Object {
+                                        "id": "hints/auto-save",
+                                        "info": Object {
+                                          "text": "Your text and images are saved automatically onto your device as you type. Even if you’re offline!",
+                                          "title": "Never Loose Your Work!",
+                                        },
+                                      }
+                    }
+          >
+                    <span>
+                              Draft
+                    </span>
+          </Connect(ModalLauncher)>
+</styled.li>,
+        <styled.li
+          center={true}
+          className="prime center"
+          prime={true}
+>
+          <Unknown
+                    className="indexRouteLink"
+                    to="/"
+          >
+                    <Unknown />
+          </Unknown>
+</styled.li>,
+        <styled.li
+          className="prime right"
+          prime={true}
+          right={true}
+>
+          <NavLinkSend
+                    editorStatus={undefined}
+                    userRole={undefined}
+                    userStatus={undefined}
+          />
+</styled.li>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Connect(ModalLauncher)
+            style={
+                        Object {
+                                    "textDecoration": "none",
+                                  }
+            }
+            with={
+                        Object {
+                                    "id": "hints/auto-save",
+                                    "info": Object {
+                                      "text": "Your text and images are saved automatically onto your device as you type. Even if you’re offline!",
+                                      "title": "Never Loose Your Work!",
+                                    },
+                                  }
+            }
+>
+            <span>
+                        Draft
+            </span>
+</Connect(ModalLauncher)>,
+          "className": "prime left",
+          "left": true,
+          "prime": true,
+          "status": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              false,
+              false,
+              <span>
+                Draft
+</span>,
+            ],
+            "style": Object {
+              "textDecoration": "none",
+            },
+            "with": Object {
+              "id": "hints/auto-save",
+              "info": Object {
+                "text": "Your text and images are saved automatically onto your device as you type. Even if you’re offline!",
+                "title": "Never Loose Your Work!",
+              },
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Draft",
+              },
+              "ref": null,
+              "rendered": "Draft",
+              "type": "span",
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "center": true,
+          "children": <Unknown
+            className="indexRouteLink"
+            to="/"
+>
+            <Unknown />
+</Unknown>,
+          "className": "prime center",
+          "prime": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Unknown />,
+            "className": "indexRouteLink",
+            "to": "/",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <NavLinkSend
+            editorStatus={undefined}
+            userRole={undefined}
+            userStatus={undefined}
+/>,
+          "className": "prime right",
+          "prime": true,
+          "right": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "editorStatus": undefined,
+            "userRole": undefined,
+            "userStatus": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "ul",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <styled.li
+            className="prime left"
+            left={true}
+            prime={true}
+            status={true}
+>
+            <Connect(ModalLauncher)
+                        style={
+                                    Object {
+                                                "textDecoration": "none",
+                                              }
+                        }
+                        with={
+                                    Object {
+                                                "id": "hints/auto-save",
+                                                "info": Object {
+                                                  "text": "Your text and images are saved automatically onto your device as you type. Even if you’re offline!",
+                                                  "title": "Never Loose Your Work!",
+                                                },
+                                              }
+                        }
+            >
+                        <span>
+                                    Draft
+                        </span>
+            </Connect(ModalLauncher)>
+</styled.li>,
+          <styled.li
+            center={true}
+            className="prime center"
+            prime={true}
+>
+            <Unknown
+                        className="indexRouteLink"
+                        to="/"
+            >
+                        <Unknown />
+            </Unknown>
+</styled.li>,
+          <styled.li
+            className="prime right"
+            prime={true}
+            right={true}
+>
+            <NavLinkSend
+                        editorStatus={undefined}
+                        userRole={undefined}
+                        userStatus={undefined}
+            />
+</styled.li>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Connect(ModalLauncher)
+              style={
+                            Object {
+                                          "textDecoration": "none",
+                                        }
+              }
+              with={
+                            Object {
+                                          "id": "hints/auto-save",
+                                          "info": Object {
+                                            "text": "Your text and images are saved automatically onto your device as you type. Even if you’re offline!",
+                                            "title": "Never Loose Your Work!",
+                                          },
+                                        }
+              }
+>
+              <span>
+                            Draft
+              </span>
+</Connect(ModalLauncher)>,
+            "className": "prime left",
+            "left": true,
+            "prime": true,
+            "status": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                false,
+                false,
+                <span>
+                  Draft
+</span>,
+              ],
+              "style": Object {
+                "textDecoration": "none",
+              },
+              "with": Object {
+                "id": "hints/auto-save",
+                "info": Object {
+                  "text": "Your text and images are saved automatically onto your device as you type. Even if you’re offline!",
+                  "title": "Never Loose Your Work!",
+                },
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              false,
+              false,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Draft",
+                },
+                "ref": null,
+                "rendered": "Draft",
+                "type": "span",
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "center": true,
+            "children": <Unknown
+              className="indexRouteLink"
+              to="/"
+>
+              <Unknown />
+</Unknown>,
+            "className": "prime center",
+            "prime": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <Unknown />,
+              "className": "indexRouteLink",
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <NavLinkSend
+              editorStatus={undefined}
+              userRole={undefined}
+              userStatus={undefined}
+/>,
+            "className": "prime right",
+            "prime": true,
+            "right": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "editorStatus": undefined,
+              "userRole": undefined,
+              "userStatus": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "ul",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render NavConnectionStatus, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+        Object {
+            "color": Object {
+              "background": [Function],
+              "brand": [Function],
+              "foreground": [Function],
+              "highlight": [Function],
+            },
+            "effects": Object {
+              "borderRadius": Object {
+                "med": 0.5,
+                "small": [Function],
+              },
+            },
+            "elements": Object {
+              "thickBorder": [Function],
+            },
+            "layer": Object {
+              "card": 30,
+              "nav": 20,
+              "overlay": 40,
+              "tuck": -1,
+              "up": 10,
+            },
+            "opacity": Object {
+              "half": 0.5,
+              "least": 0.125,
+              "most": 0.85,
+            },
+            "size": Object {
+              "block": Object {
+                "border": 8,
+                "column": Object {
+                  "l": 820,
+                  "m": 750,
+                },
+                "padding": 1.5,
+                "spacing": 1,
+              },
+              "breakpoint": Object {
+                "exact": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "max": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "min": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "stops": Object {
+                  "max": 1600,
+                  "min": 320,
+                },
+              },
+              "font": Object {
+                "auto": Array [
+                  "
+                ",
+                  "
+        		@media (min-width: ",
+                  "32.5625",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "32.5",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "20",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (min-width: ",
+                  "100.0625",
+                  "em) {
+        			",
+                  "font-size:	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  ";
+              ",
+                ],
+                "l": 23,
+                "m": 20,
+                "make": Object {
+                  "larger": 3,
+                  "normal": 1,
+                  "smaller": 0.85,
+                  "tiny": 0.65,
+                },
+                "s": 18,
+                "xs": 17,
+              },
+            },
+            "typography": Object {
+              "text": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Lora', Georgia, serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                ",
+                ],
+                "font": "'Lora', Georgia, serif",
+                "lineHeight": 1.75,
+              },
+              "title": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Exo 2', Arial, sans-serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                  font-weight: ",
+                  "600",
+                  ";
+                  margin: 0;
+                ",
+                ],
+                "font": "'Exo 2', Arial, sans-serif",
+                "lineHeight": 1.15,
+              },
+            },
+          }
+    }
+>
+    <styled.div />
+</ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render NavGeneral, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <styled.li>
+          <Unknown
+                    to="/photo-essays"
+          >
+                    <span>
+                              Photo Essays
+                    </span>
+          </Unknown>
+</styled.li>,
+        <styled.li>
+          <Unknown
+                    to="/articles"
+          >
+                    <span>
+                              Articles
+                    </span>
+          </Unknown>
+</styled.li>,
+        <styled.li
+          center={true}
+          className="prime center"
+          prime={true}
+>
+          <Unknown
+                    className="indexRouteLink"
+                    to="/"
+          >
+                    <Unknown />
+          </Unknown>
+</styled.li>,
+        <styled.li
+          className="prime left mobile"
+          narrow={true}
+>
+          <Unknown
+                    to="/about"
+          >
+                    About
+          </Unknown>
+</styled.li>,
+        <styled.li
+          right={true}
+>
+          <Unknown
+                    to="/submit"
+          >
+                    <span>
+                              Submit
+                    </span>
+          </Unknown>
+</styled.li>,
+        <styled.li
+          className="prime right"
+          left={true}
+          prime={true}
+>
+          <Unknown
+                    userRole={undefined}
+                    userStatus={undefined}
+          >
+                    <NavLinkLabelMore
+                              userImage={undefined}
+                              userStatus={undefined}
+                    />
+          </Unknown>
+</styled.li>,
+      ],
+      "onMouseOver": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Unknown
+            to="/photo-essays"
+>
+            <span>
+                        Photo Essays
+            </span>
+</Unknown>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <span>
+              Photo Essays
+</span>,
+            "to": "/photo-essays",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Photo Essays",
+            },
+            "ref": null,
+            "rendered": "Photo Essays",
+            "type": "span",
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Unknown
+            to="/articles"
+>
+            <span>
+                        Articles
+            </span>
+</Unknown>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <span>
+              Articles
+</span>,
+            "to": "/articles",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Articles",
+            },
+            "ref": null,
+            "rendered": "Articles",
+            "type": "span",
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "center": true,
+          "children": <Unknown
+            className="indexRouteLink"
+            to="/"
+>
+            <Unknown />
+</Unknown>,
+          "className": "prime center",
+          "prime": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Unknown />,
+            "className": "indexRouteLink",
+            "to": "/",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Unknown
+            to="/about"
+>
+            About
+</Unknown>,
+          "className": "prime left mobile",
+          "narrow": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": "About",
+            "to": "/about",
+          },
+          "ref": null,
+          "rendered": "About",
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Unknown
+            to="/submit"
+>
+            <span>
+                        Submit
+            </span>
+</Unknown>,
+          "right": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <span>
+              Submit
+</span>,
+            "to": "/submit",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Submit",
+            },
+            "ref": null,
+            "rendered": "Submit",
+            "type": "span",
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Unknown
+            userRole={undefined}
+            userStatus={undefined}
+>
+            <NavLinkLabelMore
+                        userImage={undefined}
+                        userStatus={undefined}
+            />
+</Unknown>,
+          "className": "prime right",
+          "left": true,
+          "prime": true,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <NavLinkLabelMore
+              userImage={undefined}
+              userStatus={undefined}
+/>,
+            "userRole": undefined,
+            "userStatus": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "userImage": undefined,
+              "userStatus": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "ul",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <styled.li>
+            <Unknown
+                        to="/photo-essays"
+            >
+                        <span>
+                                    Photo Essays
+                        </span>
+            </Unknown>
+</styled.li>,
+          <styled.li>
+            <Unknown
+                        to="/articles"
+            >
+                        <span>
+                                    Articles
+                        </span>
+            </Unknown>
+</styled.li>,
+          <styled.li
+            center={true}
+            className="prime center"
+            prime={true}
+>
+            <Unknown
+                        className="indexRouteLink"
+                        to="/"
+            >
+                        <Unknown />
+            </Unknown>
+</styled.li>,
+          <styled.li
+            className="prime left mobile"
+            narrow={true}
+>
+            <Unknown
+                        to="/about"
+            >
+                        About
+            </Unknown>
+</styled.li>,
+          <styled.li
+            right={true}
+>
+            <Unknown
+                        to="/submit"
+            >
+                        <span>
+                                    Submit
+                        </span>
+            </Unknown>
+</styled.li>,
+          <styled.li
+            className="prime right"
+            left={true}
+            prime={true}
+>
+            <Unknown
+                        userRole={undefined}
+                        userStatus={undefined}
+            >
+                        <NavLinkLabelMore
+                                    userImage={undefined}
+                                    userStatus={undefined}
+                        />
+            </Unknown>
+</styled.li>,
+        ],
+        "onMouseOver": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Unknown
+              to="/photo-essays"
+>
+              <span>
+                            Photo Essays
+              </span>
+</Unknown>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <span>
+                Photo Essays
+</span>,
+              "to": "/photo-essays",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Photo Essays",
+              },
+              "ref": null,
+              "rendered": "Photo Essays",
+              "type": "span",
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Unknown
+              to="/articles"
+>
+              <span>
+                            Articles
+              </span>
+</Unknown>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <span>
+                Articles
+</span>,
+              "to": "/articles",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Articles",
+              },
+              "ref": null,
+              "rendered": "Articles",
+              "type": "span",
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "center": true,
+            "children": <Unknown
+              className="indexRouteLink"
+              to="/"
+>
+              <Unknown />
+</Unknown>,
+            "className": "prime center",
+            "prime": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <Unknown />,
+              "className": "indexRouteLink",
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Unknown
+              to="/about"
+>
+              About
+</Unknown>,
+            "className": "prime left mobile",
+            "narrow": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "About",
+              "to": "/about",
+            },
+            "ref": null,
+            "rendered": "About",
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Unknown
+              to="/submit"
+>
+              <span>
+                            Submit
+              </span>
+</Unknown>,
+            "right": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <span>
+                Submit
+</span>,
+              "to": "/submit",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Submit",
+              },
+              "ref": null,
+              "rendered": "Submit",
+              "type": "span",
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Unknown
+              userRole={undefined}
+              userStatus={undefined}
+>
+              <NavLinkLabelMore
+                            userImage={undefined}
+                            userStatus={undefined}
+              />
+</Unknown>,
+            "className": "prime right",
+            "left": true,
+            "prime": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <NavLinkLabelMore
+                userImage={undefined}
+                userStatus={undefined}
+/>,
+              "userRole": undefined,
+              "userStatus": undefined,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "userImage": undefined,
+                "userStatus": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "ul",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render NavItem, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+        Object {
+            "color": Object {
+              "background": [Function],
+              "brand": [Function],
+              "foreground": [Function],
+              "highlight": [Function],
+            },
+            "effects": Object {
+              "borderRadius": Object {
+                "med": 0.5,
+                "small": [Function],
+              },
+            },
+            "elements": Object {
+              "thickBorder": [Function],
+            },
+            "layer": Object {
+              "card": 30,
+              "nav": 20,
+              "overlay": 40,
+              "tuck": -1,
+              "up": 10,
+            },
+            "opacity": Object {
+              "half": 0.5,
+              "least": 0.125,
+              "most": 0.85,
+            },
+            "size": Object {
+              "block": Object {
+                "border": 8,
+                "column": Object {
+                  "l": 820,
+                  "m": 750,
+                },
+                "padding": 1.5,
+                "spacing": 1,
+              },
+              "breakpoint": Object {
+                "exact": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "max": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "min": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "stops": Object {
+                  "max": 1600,
+                  "min": 320,
+                },
+              },
+              "font": Object {
+                "auto": Array [
+                  "
+                ",
+                  "
+        		@media (min-width: ",
+                  "32.5625",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "32.5",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "20",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (min-width: ",
+                  "100.0625",
+                  "em) {
+        			",
+                  "font-size:	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  ";
+              ",
+                ],
+                "l": 23,
+                "m": 20,
+                "make": Object {
+                  "larger": 3,
+                  "normal": 1,
+                  "smaller": 0.85,
+                  "tiny": 0.65,
+                },
+                "s": 18,
+                "xs": 17,
+              },
+            },
+            "typography": Object {
+              "text": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Lora', Georgia, serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                ",
+                ],
+                "font": "'Lora', Georgia, serif",
+                "lineHeight": 1.75,
+              },
+              "title": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Exo 2', Arial, sans-serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                  font-weight: ",
+                  "600",
+                  ";
+                  margin: 0;
+                ",
+                ],
+                "font": "'Exo 2', Arial, sans-serif",
+                "lineHeight": 1.15,
+              },
+            },
+          }
+    }
+>
+    <styled.li />
+</ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render NavLink, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "activeClassName": "active",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "activeClassName": "active",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render NavLogo, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <Styled(Component) />,
+      "title": "Analog.Cafe",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <Styled(Component) />,
+        "title": "Analog.Cafe",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render NavLogoLink, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "activeClassName": "active",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "activeClassName": "active",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render NavMore, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "branded": undefined,
+      "children": undefined,
+      "inverse": undefined,
+      "style": Object {
+        "paddingRight": ".25em",
+        "textDecoration": "none",
+      },
+      "with": Object {
+        "id": "nav/more",
+        "info": Object {
+          "buttons": Array [
+            null,
+            null,
+            null,
+            null,
+            Object {
+              "mobile": "on",
+              "text": "Photo Essays",
+              "to": "/photo-essays",
+            },
+            Object {
+              "text": "Editorials",
+              "to": "/editorials",
+            },
+            Object {
+              "text": "Guides",
+              "to": "/guides",
+            },
+            Object {
+              "text": "Reviews",
+              "to": "/reviews",
+            },
+            Object {
+              "text": "Stories",
+              "to": "/stories",
+            },
+            Object {
+              "divider": true,
+            },
+            Object {
+              "text": "Collaborations",
+              "to": "/collaborations",
+            },
+            Object {
+              "text": "Solo Projects",
+              "to": "/solo-projects",
+            },
+            Object {
+              "divider": true,
+            },
+            Object {
+              "mobile": "off",
+              "text": "About Analog.Cafe",
+              "to": "/about",
+            },
+            Object {
+              "mobile": "on",
+              "text": "Submit",
+              "to": "/submit",
+            },
+          ],
+          "subscribeForm": true,
+          "subscribeFormLocation": "NavGeneral",
+          "title": "More…",
+        },
+      },
+      "wrapperElement": undefined,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "branded": undefined,
+        "children": undefined,
+        "inverse": undefined,
+        "style": Object {
+          "paddingRight": ".25em",
+          "textDecoration": "none",
+        },
+        "with": Object {
+          "id": "nav/more",
+          "info": Object {
+            "buttons": Array [
+              null,
+              null,
+              null,
+              null,
+              Object {
+                "mobile": "on",
+                "text": "Photo Essays",
+                "to": "/photo-essays",
+              },
+              Object {
+                "text": "Editorials",
+                "to": "/editorials",
+              },
+              Object {
+                "text": "Guides",
+                "to": "/guides",
+              },
+              Object {
+                "text": "Reviews",
+                "to": "/reviews",
+              },
+              Object {
+                "text": "Stories",
+                "to": "/stories",
+              },
+              Object {
+                "divider": true,
+              },
+              Object {
+                "text": "Collaborations",
+                "to": "/collaborations",
+              },
+              Object {
+                "text": "Solo Projects",
+                "to": "/solo-projects",
+              },
+              Object {
+                "divider": true,
+              },
+              Object {
+                "mobile": "off",
+                "text": "About Analog.Cafe",
+                "to": "/about",
+              },
+              Object {
+                "mobile": "on",
+                "text": "Submit",
+                "to": "/submit",
+              },
+            ],
+            "subscribeForm": true,
+            "subscribeFormLocation": "NavGeneral",
+            "title": "More…",
+          },
+        },
+        "wrapperElement": undefined,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render NavWrapper, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <styled.nav />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "className": "sc-VigVT fIhGog",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "nav",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "className": "sc-VigVT fIhGog",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "nav",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

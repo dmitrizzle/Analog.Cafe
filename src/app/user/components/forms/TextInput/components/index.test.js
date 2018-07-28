@@ -1,3 +1,5 @@
+import "jest-styled-components"
+
 import { ThemeProvider } from "styled-components"
 import { shallow } from "enzyme"
 import React from "react"
@@ -10,42 +12,47 @@ import TextareaWithHighlights from "./TextareaWithHighlights"
 import TitleInput from "./TitleInput"
 import TitleTextarea from "./TitleTextarea"
 
-it("Render PlainTextarea without crashing", () => {
-  shallow(<PlainTextarea />)
+it("Render PlainTextarea, matches snapshot", () => {
+  const element = shallow(<PlainTextarea />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render SubtitleInput without crashing", () => {
-  shallow(
+it("Render SubtitleInput, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <SubtitleInput />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render SubtitleTextarea without crashing", () => {
-  shallow(
+it("Render SubtitleTextarea, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <SubtitleTextarea />
     </ThemeProvider>
   )
 })
 
-it("Render TextareaWithHighlights without crashing", () => {
-  shallow(<TextareaWithHighlights />)
+it("Render TextareaWithHighlights, matches snapshot", () => {
+  const element = shallow(<TextareaWithHighlights />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render TitleInput without crashing", () => {
-  shallow(
+it("Render TitleInput, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <TitleInput />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render TitleTextarea without crashing", () => {
-  shallow(
+it("Render TitleTextarea, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <TitleTextarea />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })

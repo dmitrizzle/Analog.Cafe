@@ -1,3 +1,5 @@
+import "jest-styled-components"
+
 import { ThemeProvider } from "styled-components"
 import { shallow } from "enzyme"
 import React from "react"
@@ -13,49 +15,59 @@ import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
 import NavWrapper from "./NavWrapper"
 
-it("Render NavAvatar without crashing", () => {
-  shallow(<NavAvatar />)
+it("Render NavAvatar, matches snapshot", () => {
+  const element = shallow(<NavAvatar />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render NavComposer without crashing", () => {
-  shallow(<NavComposer />)
+it("Render NavComposer, matches snapshot", () => {
+  const element = shallow(<NavComposer />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render NavConnectionStatus without crashing", () => {
-  shallow(
+it("Render NavConnectionStatus, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <NavConnectionStatus />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render NavGeneral without crashing", () => {
-  shallow(<NavGeneral />)
+it("Render NavGeneral, matches snapshot", () => {
+  const element = shallow(<NavGeneral />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render NavItem without crashing", () => {
-  shallow(
+it("Render NavItem, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <NavItem />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render NavLink without crashing", () => {
-  shallow(<NavLink />)
+it("Render NavLink, matches snapshot", () => {
+  const element = shallow(<NavLink />)
+  expect(element).toMatchSnapshot()
 })
-it("Render NavLogoLink without crashing", () => {
-  shallow(<NavLogoLink />)
-})
-
-it("Render NavLogo without crashing", () => {
-  shallow(<NavLogo />)
+it("Render NavLogoLink, matches snapshot", () => {
+  const element = shallow(<NavLogoLink />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render NavMore without crashing", () => {
-  shallow(<NavMore />)
+it("Render NavLogo, matches snapshot", () => {
+  const element = shallow(<NavLogo />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render NavWrapper without crashing", () => {
-  shallow(<NavWrapper />)
+it("Render NavMore, matches snapshot", () => {
+  const element = shallow(<NavMore />)
+  expect(element).toMatchSnapshot()
+})
+
+it("Render NavWrapper, matches snapshot", () => {
+  const element = shallow(<NavWrapper />)
+  expect(element).toMatchSnapshot()
 })
