@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import {
   storeContentState,
   loadTextContent
-} from "@roast-cms/french-press-editor/dist/utils/browser-storage"
+} from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 
 import { withRouter } from "react-router"

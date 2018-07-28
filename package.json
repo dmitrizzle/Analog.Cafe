@@ -5,7 +5,7 @@
   "license": "MPL-2.0",
   "private": true,
   "engines": {
-    "node": "8.x",
+    "node": "10.x",
     "npm": "5.x"
   },
   "repository": {
@@ -39,7 +39,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-test-renderer": "^16.4.1",
-    "react-textarea-autosize": "^6.0.0",
+    "react-textarea-autosize": "^7.0.4",
     "redux": "^4.0.0",
     "redux-test-utils": "^0.2.2",
     "redux-thunk": "^2.2.0",
@@ -60,6 +60,7 @@
     "replace-in-file": "^3.4.0",
     "s3-deploy": "^1.0.0",
     "sanitize.css": "6",
+    "size-limit": "^0.19.0",
     "source-map-explorer": "^1.5.0"
   },
   "lint-staged": {
@@ -74,8 +75,15 @@
     "start": "node precompile && react-scripts start",
     "build": "node precompile && react-scripts build",
     "deploy": "node deploy",
-    "test": "react-scripts test --env=jsdom"
+    "size": "size-limit",
+    "test": "npm run size && react-scripts test --env=jsdom"
   },
+  "size-limit": [
+    {
+      "path": "build/static/js/main.*.js",
+      "limit": "120 KB"
+    }
+  ],
   "browserslist": {
     "development": [
       "last 2 chrome versions",

@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/browser-storage"
+import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 
 import { CARD_DIALOGUES } from "../../../../admin/constants/messages-admin"
@@ -92,4 +92,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(RestoreComposerBackup)
+export default connect(
+  null,
+  mapDispatchToProps
+)(RestoreComposerBackup)
