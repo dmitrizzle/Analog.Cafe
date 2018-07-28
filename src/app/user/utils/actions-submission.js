@@ -8,7 +8,7 @@ import {
 
 export {
   forceImageRestrictions
-} from "@roast-cms/french-press-editor/dist/utils/image-rules"
+} from "@roast-cms/french-press-editor/dist/utils/actions-image"
 
 export const sendSubmission = (data, props) => {
   let url = ROUTE_API_SUBMISSIONS

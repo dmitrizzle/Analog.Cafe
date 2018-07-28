@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import {
   loadTextContent,
   loadContent
-} from "@roast-cms/french-press-editor/dist/utils/browser-storage"
+} from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 import localForage from "localforage"
 
