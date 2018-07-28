@@ -19,7 +19,6 @@ ShallowWrapper {
     "props": Object {
       "composer": undefined,
       "editor": undefined,
-      "resetComposer": [Function],
       "resetStatus": [Function],
       "resetUploadProgress": [Function],
       "resetUserRoutes": [Function],
@@ -41,7 +40,6 @@ ShallowWrapper {
       "props": Object {
         "composer": undefined,
         "editor": undefined,
-        "resetComposer": [Function],
         "resetStatus": [Function],
         "resetUploadProgress": [Function],
         "resetUserRoutes": [Function],
