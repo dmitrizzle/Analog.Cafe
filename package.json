@@ -64,10 +64,7 @@
     "source-map-explorer": "^1.5.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --no-semi --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier --no-semi --write", "git add"]
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
@@ -75,8 +72,15 @@
     "start": "node precompile && react-scripts start",
     "build": "node precompile && react-scripts build",
     "deploy": "node deploy",
-    "test": "react-scripts test --env=jsdom"
+    "size": "size-limit",
+    "test": "npm run size && react-scripts test --env=jsdom"
   },
+  "size-limit": [
+    {
+      "path": "build/static/js/main.*.js",
+      "limit": "120 KB"
+    }
+  ],
   "browserslist": {
     "development": [
       "last 2 chrome versions",
