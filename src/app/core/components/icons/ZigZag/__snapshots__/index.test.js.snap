@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ZigZag, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <path
+        d="M 4 1001 L 0 1001 L 0 -1 L 4 -1 L 169 343 L 4 1001 Z"
+        fill="#ffffff"
+/>,
+      "preserveAspectRatio": "none slice",
+      "viewBox": "0 0 500 1000",
+      "xmlns": "http://www.w3.org/2000/svg",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "d": "M 4 1001 L 0 1001 L 0 -1 L 4 -1 L 169 343 L 4 1001 Z",
+        "fill": "#ffffff",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "path",
+    },
+    "type": "svg",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <path
+          d="M 4 1001 L 0 1001 L 0 -1 L 4 -1 L 169 343 L 4 1001 Z"
+          fill="#ffffff"
+/>,
+        "preserveAspectRatio": "none slice",
+        "viewBox": "0 0 500 1000",
+        "xmlns": "http://www.w3.org/2000/svg",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "d": "M 4 1001 L 0 1001 L 0 -1 L 4 -1 L 169 343 L 4 1001 Z",
+          "fill": "#ffffff",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "path",
+      },
+      "type": "svg",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,839 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Rules, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Unknown
+          metaDescription="By sending your submission you are agreeing to the following rules."
+          metaTitle="Rules"
+/>,
+        <Unknown
+          pageTitle="Rules"
+/>,
+        <styled.section>
+          <p>
+                    By sending your submission you are agreeing to the following rules:
+          </p>
+          <p>
+                    <strong>
+                              Copyright.
+                    </strong>
+                     Please note that besides the design and functionality of this website Analog.Cafe copyright also extends to the way your work is presented. Copy edits associated with your post, the brand name, font combinations and all design decisions regarding presenting your work belongs to Analog.Cafe.
+          </p>
+          <p>
+                    All copy-editing and touch-up work is done at Analog.Cafe editors’ discretion. We may or may not accept your edit requests; all edits are done for the benefit of a good overall presentation of the whole publication, rather than just one piece. Analog.Cafe staff has limited time and resources, please keep that in mind when you make your requests.
+          </p>
+          <p>
+                    <strong>
+                              Release & Withdrawal.
+                    </strong>
+                     By submitting your work you give Analog.Cafe full, non-exclusive permission to exhibit it online on this website and any other location representing this website only (such as social accounts, other websites offline printed and display medium etc). Your work may be included (same general function as “retweeting” on Twitter or “sharing” on Facebook or any other social network) within other authors’ submissions with a clearly-visible link to your profile on Analog.Cafe; you are giving Analog.Cafe and the authors of Analog.Cafe to use your work in such manner (Analog.Cafe will make reasonable effort to ensure that all of such actions are respectful and in good faith). You are also granting Analog.Cafe editors the permission to modify your work (cropping, color and quality adjustments as well as copy editing and visual decorations). You are free to request an immediate withdrawal of your work at any time via email (see 
+                    <Unknown
+                              to="/about"
+                    >
+                              About
+                    </Unknown>
+                     page for contact info). We will comply as soon as possible, within two weeks of request; images which are used within other posts or are “suggested” images will take longer to remove (up to 30 days), since we’ll be forced to make arrangements that would satisfy all the authors and editors who have used that material. Analog.Cafe also reserves the right to remove your work at any time at editors’ discretion.
+          </p>
+          <p>
+                    <strong>
+                              Exclusivity.
+                    </strong>
+                     Your work is being exhibited on non-exclusive basis. This means that you are free to continue submitting it to any other gallery or website that you wish.
+          </p>
+          <p>
+                    <strong>
+                              Watermarks.
+                    </strong>
+                     If you choose to place watermarks on your images their aesthetics will be considered by Analog.Cafe editor. Meaning that tasteful, well-designed (this is up to Analog.Cafe editor’s discretion) watermarks are welcome; badly-designed, obstructive (this is up to Analog.Cafe editor’s discretion) watermarks might diminish your works’s chances to be accepted.
+          </p>
+          <p>
+                    <strong>
+                              Links to your work.
+                    </strong>
+                     All links directed outside of Analog.Cafe website will be set to “no-follow.”
+          </p>
+          <p>
+                    <strong>
+                              By using the Analog.Cafe
+                               
+                              <Unknown
+                                        to="/submit/compose"
+                              >
+                                        Composer
+                              </Unknown>
+                               tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
+                    </strong>
+          </p>
+</styled.section>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "metaDescription": "By sending your submission you are agreeing to the following rules.",
+          "metaTitle": "Rules",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "pageTitle": "Rules",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <p>
+              By sending your submission you are agreeing to the following rules:
+</p>,
+            <p>
+              <strong>
+                            Copyright.
+              </strong>
+               Please note that besides the design and functionality of this website Analog.Cafe copyright also extends to the way your work is presented. Copy edits associated with your post, the brand name, font combinations and all design decisions regarding presenting your work belongs to Analog.Cafe.
+</p>,
+            <p>
+              All copy-editing and touch-up work is done at Analog.Cafe editors’ discretion. We may or may not accept your edit requests; all edits are done for the benefit of a good overall presentation of the whole publication, rather than just one piece. Analog.Cafe staff has limited time and resources, please keep that in mind when you make your requests.
+</p>,
+            <p>
+              <strong>
+                            Release & Withdrawal.
+              </strong>
+               By submitting your work you give Analog.Cafe full, non-exclusive permission to exhibit it online on this website and any other location representing this website only (such as social accounts, other websites offline printed and display medium etc). Your work may be included (same general function as “retweeting” on Twitter or “sharing” on Facebook or any other social network) within other authors’ submissions with a clearly-visible link to your profile on Analog.Cafe; you are giving Analog.Cafe and the authors of Analog.Cafe to use your work in such manner (Analog.Cafe will make reasonable effort to ensure that all of such actions are respectful and in good faith). You are also granting Analog.Cafe editors the permission to modify your work (cropping, color and quality adjustments as well as copy editing and visual decorations). You are free to request an immediate withdrawal of your work at any time via email (see 
+              <Unknown
+                            to="/about"
+              >
+                            About
+              </Unknown>
+               page for contact info). We will comply as soon as possible, within two weeks of request; images which are used within other posts or are “suggested” images will take longer to remove (up to 30 days), since we’ll be forced to make arrangements that would satisfy all the authors and editors who have used that material. Analog.Cafe also reserves the right to remove your work at any time at editors’ discretion.
+</p>,
+            <p>
+              <strong>
+                            Exclusivity.
+              </strong>
+               Your work is being exhibited on non-exclusive basis. This means that you are free to continue submitting it to any other gallery or website that you wish.
+</p>,
+            <p>
+              <strong>
+                            Watermarks.
+              </strong>
+               If you choose to place watermarks on your images their aesthetics will be considered by Analog.Cafe editor. Meaning that tasteful, well-designed (this is up to Analog.Cafe editor’s discretion) watermarks are welcome; badly-designed, obstructive (this is up to Analog.Cafe editor’s discretion) watermarks might diminish your works’s chances to be accepted.
+</p>,
+            <p>
+              <strong>
+                            Links to your work.
+              </strong>
+               All links directed outside of Analog.Cafe website will be set to “no-follow.”
+</p>,
+            <p>
+              <strong>
+                            By using the Analog.Cafe
+                             
+                            <Unknown
+                                          to="/submit/compose"
+                            >
+                                          Composer
+                            </Unknown>
+                             tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
+              </strong>
+</p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "By sending your submission you are agreeing to the following rules:",
+            },
+            "ref": null,
+            "rendered": "By sending your submission you are agreeing to the following rules:",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong>
+                  Copyright.
+</strong>,
+                " Please note that besides the design and functionality of this website Analog.Cafe copyright also extends to the way your work is presented. Copy edits associated with your post, the brand name, font combinations and all design decisions regarding presenting your work belongs to Analog.Cafe.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Copyright.",
+                },
+                "ref": null,
+                "rendered": "Copyright.",
+                "type": "strong",
+              },
+              " Please note that besides the design and functionality of this website Analog.Cafe copyright also extends to the way your work is presented. Copy edits associated with your post, the brand name, font combinations and all design decisions regarding presenting your work belongs to Analog.Cafe.",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "All copy-editing and touch-up work is done at Analog.Cafe editors’ discretion. We may or may not accept your edit requests; all edits are done for the benefit of a good overall presentation of the whole publication, rather than just one piece. Analog.Cafe staff has limited time and resources, please keep that in mind when you make your requests.",
+            },
+            "ref": null,
+            "rendered": "All copy-editing and touch-up work is done at Analog.Cafe editors’ discretion. We may or may not accept your edit requests; all edits are done for the benefit of a good overall presentation of the whole publication, rather than just one piece. Analog.Cafe staff has limited time and resources, please keep that in mind when you make your requests.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong>
+                  Release & Withdrawal.
+</strong>,
+                " By submitting your work you give Analog.Cafe full, non-exclusive permission to exhibit it online on this website and any other location representing this website only (such as social accounts, other websites offline printed and display medium etc). Your work may be included (same general function as “retweeting” on Twitter or “sharing” on Facebook or any other social network) within other authors’ submissions with a clearly-visible link to your profile on Analog.Cafe; you are giving Analog.Cafe and the authors of Analog.Cafe to use your work in such manner (Analog.Cafe will make reasonable effort to ensure that all of such actions are respectful and in good faith). You are also granting Analog.Cafe editors the permission to modify your work (cropping, color and quality adjustments as well as copy editing and visual decorations). You are free to request an immediate withdrawal of your work at any time via email (see ",
+                <Unknown
+                  to="/about"
+>
+                  About
+</Unknown>,
+                " page for contact info). We will comply as soon as possible, within two weeks of request; images which are used within other posts or are “suggested” images will take longer to remove (up to 30 days), since we’ll be forced to make arrangements that would satisfy all the authors and editors who have used that material. Analog.Cafe also reserves the right to remove your work at any time at editors’ discretion.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Release & Withdrawal.",
+                },
+                "ref": null,
+                "rendered": "Release & Withdrawal.",
+                "type": "strong",
+              },
+              " By submitting your work you give Analog.Cafe full, non-exclusive permission to exhibit it online on this website and any other location representing this website only (such as social accounts, other websites offline printed and display medium etc). Your work may be included (same general function as “retweeting” on Twitter or “sharing” on Facebook or any other social network) within other authors’ submissions with a clearly-visible link to your profile on Analog.Cafe; you are giving Analog.Cafe and the authors of Analog.Cafe to use your work in such manner (Analog.Cafe will make reasonable effort to ensure that all of such actions are respectful and in good faith). You are also granting Analog.Cafe editors the permission to modify your work (cropping, color and quality adjustments as well as copy editing and visual decorations). You are free to request an immediate withdrawal of your work at any time via email (see ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "About",
+                  "to": "/about",
+                },
+                "ref": null,
+                "rendered": "About",
+                "type": [Function],
+              },
+              " page for contact info). We will comply as soon as possible, within two weeks of request; images which are used within other posts or are “suggested” images will take longer to remove (up to 30 days), since we’ll be forced to make arrangements that would satisfy all the authors and editors who have used that material. Analog.Cafe also reserves the right to remove your work at any time at editors’ discretion.",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong>
+                  Exclusivity.
+</strong>,
+                " Your work is being exhibited on non-exclusive basis. This means that you are free to continue submitting it to any other gallery or website that you wish.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Exclusivity.",
+                },
+                "ref": null,
+                "rendered": "Exclusivity.",
+                "type": "strong",
+              },
+              " Your work is being exhibited on non-exclusive basis. This means that you are free to continue submitting it to any other gallery or website that you wish.",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong>
+                  Watermarks.
+</strong>,
+                " If you choose to place watermarks on your images their aesthetics will be considered by Analog.Cafe editor. Meaning that tasteful, well-designed (this is up to Analog.Cafe editor’s discretion) watermarks are welcome; badly-designed, obstructive (this is up to Analog.Cafe editor’s discretion) watermarks might diminish your works’s chances to be accepted.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Watermarks.",
+                },
+                "ref": null,
+                "rendered": "Watermarks.",
+                "type": "strong",
+              },
+              " If you choose to place watermarks on your images their aesthetics will be considered by Analog.Cafe editor. Meaning that tasteful, well-designed (this is up to Analog.Cafe editor’s discretion) watermarks are welcome; badly-designed, obstructive (this is up to Analog.Cafe editor’s discretion) watermarks might diminish your works’s chances to be accepted.",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong>
+                  Links to your work.
+</strong>,
+                " All links directed outside of Analog.Cafe website will be set to “no-follow.”",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Links to your work.",
+                },
+                "ref": null,
+                "rendered": "Links to your work.",
+                "type": "strong",
+              },
+              " All links directed outside of Analog.Cafe website will be set to “no-follow.”",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <strong>
+                By using the Analog.Cafe
+                 
+                <Unknown
+                                to="/submit/compose"
+                >
+                                Composer
+                </Unknown>
+                 tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
+</strong>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "By using the Analog.Cafe",
+                  " ",
+                  <Unknown
+                    to="/submit/compose"
+>
+                    Composer
+</Unknown>,
+                  " tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "By using the Analog.Cafe",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Composer",
+                    "to": "/submit/compose",
+                  },
+                  "ref": null,
+                  "rendered": "Composer",
+                  "type": [Function],
+                },
+                " tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.",
+              ],
+              "type": "strong",
+            },
+            "type": "p",
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            metaDescription="By sending your submission you are agreeing to the following rules."
+            metaTitle="Rules"
+/>,
+          <Unknown
+            pageTitle="Rules"
+/>,
+          <styled.section>
+            <p>
+                        By sending your submission you are agreeing to the following rules:
+            </p>
+            <p>
+                        <strong>
+                                    Copyright.
+                        </strong>
+                         Please note that besides the design and functionality of this website Analog.Cafe copyright also extends to the way your work is presented. Copy edits associated with your post, the brand name, font combinations and all design decisions regarding presenting your work belongs to Analog.Cafe.
+            </p>
+            <p>
+                        All copy-editing and touch-up work is done at Analog.Cafe editors’ discretion. We may or may not accept your edit requests; all edits are done for the benefit of a good overall presentation of the whole publication, rather than just one piece. Analog.Cafe staff has limited time and resources, please keep that in mind when you make your requests.
+            </p>
+            <p>
+                        <strong>
+                                    Release & Withdrawal.
+                        </strong>
+                         By submitting your work you give Analog.Cafe full, non-exclusive permission to exhibit it online on this website and any other location representing this website only (such as social accounts, other websites offline printed and display medium etc). Your work may be included (same general function as “retweeting” on Twitter or “sharing” on Facebook or any other social network) within other authors’ submissions with a clearly-visible link to your profile on Analog.Cafe; you are giving Analog.Cafe and the authors of Analog.Cafe to use your work in such manner (Analog.Cafe will make reasonable effort to ensure that all of such actions are respectful and in good faith). You are also granting Analog.Cafe editors the permission to modify your work (cropping, color and quality adjustments as well as copy editing and visual decorations). You are free to request an immediate withdrawal of your work at any time via email (see 
+                        <Unknown
+                                    to="/about"
+                        >
+                                    About
+                        </Unknown>
+                         page for contact info). We will comply as soon as possible, within two weeks of request; images which are used within other posts or are “suggested” images will take longer to remove (up to 30 days), since we’ll be forced to make arrangements that would satisfy all the authors and editors who have used that material. Analog.Cafe also reserves the right to remove your work at any time at editors’ discretion.
+            </p>
+            <p>
+                        <strong>
+                                    Exclusivity.
+                        </strong>
+                         Your work is being exhibited on non-exclusive basis. This means that you are free to continue submitting it to any other gallery or website that you wish.
+            </p>
+            <p>
+                        <strong>
+                                    Watermarks.
+                        </strong>
+                         If you choose to place watermarks on your images their aesthetics will be considered by Analog.Cafe editor. Meaning that tasteful, well-designed (this is up to Analog.Cafe editor’s discretion) watermarks are welcome; badly-designed, obstructive (this is up to Analog.Cafe editor’s discretion) watermarks might diminish your works’s chances to be accepted.
+            </p>
+            <p>
+                        <strong>
+                                    Links to your work.
+                        </strong>
+                         All links directed outside of Analog.Cafe website will be set to “no-follow.”
+            </p>
+            <p>
+                        <strong>
+                                    By using the Analog.Cafe
+                                     
+                                    <Unknown
+                                                to="/submit/compose"
+                                    >
+                                                Composer
+                                    </Unknown>
+                                     tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
+                        </strong>
+            </p>
+</styled.section>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "metaDescription": "By sending your submission you are agreeing to the following rules.",
+            "metaTitle": "Rules",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "pageTitle": "Rules",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <p>
+                By sending your submission you are agreeing to the following rules:
+</p>,
+              <p>
+                <strong>
+                                Copyright.
+                </strong>
+                 Please note that besides the design and functionality of this website Analog.Cafe copyright also extends to the way your work is presented. Copy edits associated with your post, the brand name, font combinations and all design decisions regarding presenting your work belongs to Analog.Cafe.
+</p>,
+              <p>
+                All copy-editing and touch-up work is done at Analog.Cafe editors’ discretion. We may or may not accept your edit requests; all edits are done for the benefit of a good overall presentation of the whole publication, rather than just one piece. Analog.Cafe staff has limited time and resources, please keep that in mind when you make your requests.
+</p>,
+              <p>
+                <strong>
+                                Release & Withdrawal.
+                </strong>
+                 By submitting your work you give Analog.Cafe full, non-exclusive permission to exhibit it online on this website and any other location representing this website only (such as social accounts, other websites offline printed and display medium etc). Your work may be included (same general function as “retweeting” on Twitter or “sharing” on Facebook or any other social network) within other authors’ submissions with a clearly-visible link to your profile on Analog.Cafe; you are giving Analog.Cafe and the authors of Analog.Cafe to use your work in such manner (Analog.Cafe will make reasonable effort to ensure that all of such actions are respectful and in good faith). You are also granting Analog.Cafe editors the permission to modify your work (cropping, color and quality adjustments as well as copy editing and visual decorations). You are free to request an immediate withdrawal of your work at any time via email (see 
+                <Unknown
+                                to="/about"
+                >
+                                About
+                </Unknown>
+                 page for contact info). We will comply as soon as possible, within two weeks of request; images which are used within other posts or are “suggested” images will take longer to remove (up to 30 days), since we’ll be forced to make arrangements that would satisfy all the authors and editors who have used that material. Analog.Cafe also reserves the right to remove your work at any time at editors’ discretion.
+</p>,
+              <p>
+                <strong>
+                                Exclusivity.
+                </strong>
+                 Your work is being exhibited on non-exclusive basis. This means that you are free to continue submitting it to any other gallery or website that you wish.
+</p>,
+              <p>
+                <strong>
+                                Watermarks.
+                </strong>
+                 If you choose to place watermarks on your images their aesthetics will be considered by Analog.Cafe editor. Meaning that tasteful, well-designed (this is up to Analog.Cafe editor’s discretion) watermarks are welcome; badly-designed, obstructive (this is up to Analog.Cafe editor’s discretion) watermarks might diminish your works’s chances to be accepted.
+</p>,
+              <p>
+                <strong>
+                                Links to your work.
+                </strong>
+                 All links directed outside of Analog.Cafe website will be set to “no-follow.”
+</p>,
+              <p>
+                <strong>
+                                By using the Analog.Cafe
+                                 
+                                <Unknown
+                                                to="/submit/compose"
+                                >
+                                                Composer
+                                </Unknown>
+                                 tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
+                </strong>
+</p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "By sending your submission you are agreeing to the following rules:",
+              },
+              "ref": null,
+              "rendered": "By sending your submission you are agreeing to the following rules:",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    Copyright.
+</strong>,
+                  " Please note that besides the design and functionality of this website Analog.Cafe copyright also extends to the way your work is presented. Copy edits associated with your post, the brand name, font combinations and all design decisions regarding presenting your work belongs to Analog.Cafe.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Copyright.",
+                  },
+                  "ref": null,
+                  "rendered": "Copyright.",
+                  "type": "strong",
+                },
+                " Please note that besides the design and functionality of this website Analog.Cafe copyright also extends to the way your work is presented. Copy edits associated with your post, the brand name, font combinations and all design decisions regarding presenting your work belongs to Analog.Cafe.",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "All copy-editing and touch-up work is done at Analog.Cafe editors’ discretion. We may or may not accept your edit requests; all edits are done for the benefit of a good overall presentation of the whole publication, rather than just one piece. Analog.Cafe staff has limited time and resources, please keep that in mind when you make your requests.",
+              },
+              "ref": null,
+              "rendered": "All copy-editing and touch-up work is done at Analog.Cafe editors’ discretion. We may or may not accept your edit requests; all edits are done for the benefit of a good overall presentation of the whole publication, rather than just one piece. Analog.Cafe staff has limited time and resources, please keep that in mind when you make your requests.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    Release & Withdrawal.
+</strong>,
+                  " By submitting your work you give Analog.Cafe full, non-exclusive permission to exhibit it online on this website and any other location representing this website only (such as social accounts, other websites offline printed and display medium etc). Your work may be included (same general function as “retweeting” on Twitter or “sharing” on Facebook or any other social network) within other authors’ submissions with a clearly-visible link to your profile on Analog.Cafe; you are giving Analog.Cafe and the authors of Analog.Cafe to use your work in such manner (Analog.Cafe will make reasonable effort to ensure that all of such actions are respectful and in good faith). You are also granting Analog.Cafe editors the permission to modify your work (cropping, color and quality adjustments as well as copy editing and visual decorations). You are free to request an immediate withdrawal of your work at any time via email (see ",
+                  <Unknown
+                    to="/about"
+>
+                    About
+</Unknown>,
+                  " page for contact info). We will comply as soon as possible, within two weeks of request; images which are used within other posts or are “suggested” images will take longer to remove (up to 30 days), since we’ll be forced to make arrangements that would satisfy all the authors and editors who have used that material. Analog.Cafe also reserves the right to remove your work at any time at editors’ discretion.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Release & Withdrawal.",
+                  },
+                  "ref": null,
+                  "rendered": "Release & Withdrawal.",
+                  "type": "strong",
+                },
+                " By submitting your work you give Analog.Cafe full, non-exclusive permission to exhibit it online on this website and any other location representing this website only (such as social accounts, other websites offline printed and display medium etc). Your work may be included (same general function as “retweeting” on Twitter or “sharing” on Facebook or any other social network) within other authors’ submissions with a clearly-visible link to your profile on Analog.Cafe; you are giving Analog.Cafe and the authors of Analog.Cafe to use your work in such manner (Analog.Cafe will make reasonable effort to ensure that all of such actions are respectful and in good faith). You are also granting Analog.Cafe editors the permission to modify your work (cropping, color and quality adjustments as well as copy editing and visual decorations). You are free to request an immediate withdrawal of your work at any time via email (see ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "About",
+                    "to": "/about",
+                  },
+                  "ref": null,
+                  "rendered": "About",
+                  "type": [Function],
+                },
+                " page for contact info). We will comply as soon as possible, within two weeks of request; images which are used within other posts or are “suggested” images will take longer to remove (up to 30 days), since we’ll be forced to make arrangements that would satisfy all the authors and editors who have used that material. Analog.Cafe also reserves the right to remove your work at any time at editors’ discretion.",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    Exclusivity.
+</strong>,
+                  " Your work is being exhibited on non-exclusive basis. This means that you are free to continue submitting it to any other gallery or website that you wish.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Exclusivity.",
+                  },
+                  "ref": null,
+                  "rendered": "Exclusivity.",
+                  "type": "strong",
+                },
+                " Your work is being exhibited on non-exclusive basis. This means that you are free to continue submitting it to any other gallery or website that you wish.",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    Watermarks.
+</strong>,
+                  " If you choose to place watermarks on your images their aesthetics will be considered by Analog.Cafe editor. Meaning that tasteful, well-designed (this is up to Analog.Cafe editor’s discretion) watermarks are welcome; badly-designed, obstructive (this is up to Analog.Cafe editor’s discretion) watermarks might diminish your works’s chances to be accepted.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Watermarks.",
+                  },
+                  "ref": null,
+                  "rendered": "Watermarks.",
+                  "type": "strong",
+                },
+                " If you choose to place watermarks on your images their aesthetics will be considered by Analog.Cafe editor. Meaning that tasteful, well-designed (this is up to Analog.Cafe editor’s discretion) watermarks are welcome; badly-designed, obstructive (this is up to Analog.Cafe editor’s discretion) watermarks might diminish your works’s chances to be accepted.",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    Links to your work.
+</strong>,
+                  " All links directed outside of Analog.Cafe website will be set to “no-follow.”",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Links to your work.",
+                  },
+                  "ref": null,
+                  "rendered": "Links to your work.",
+                  "type": "strong",
+                },
+                " All links directed outside of Analog.Cafe website will be set to “no-follow.”",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <strong>
+                  By using the Analog.Cafe
+                   
+                  <Unknown
+                                    to="/submit/compose"
+                  >
+                                    Composer
+                  </Unknown>
+                   tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
+</strong>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "By using the Analog.Cafe",
+                    " ",
+                    <Unknown
+                      to="/submit/compose"
+>
+                      Composer
+</Unknown>,
+                    " tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "By using the Analog.Cafe",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Composer",
+                      "to": "/submit/compose",
+                    },
+                    "ref": null,
+                    "rendered": "Composer",
+                    "type": [Function],
+                  },
+                  " tool you certify that the you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.",
+                ],
+                "type": "strong",
+              },
+              "type": "p",
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

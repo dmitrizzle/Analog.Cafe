@@ -1,3 +1,5 @@
+import "jest-styled-components"
+
 import { ThemeProvider } from "styled-components"
 import { shallow } from "enzyme"
 import React from "react"
@@ -17,28 +19,31 @@ import ListUL from "./ListUL"
 import PlaceholderHowToSubmit from "./PlaceholderHowToSubmit"
 import ZigZagPicture from "./ZigZagPicture"
 
-it("Render Bleed without crashing", () => {
-  shallow(
+it("Render Bleed, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <Bleed />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ListBlock without crashing", () => {
-  shallow(<ListBlock items={[{ id: 0 }]} />)
+it("Render ListBlock, matches snapshot", () => {
+  const element = shallow(<ListBlock items={[{ id: 0 }]} />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ListBrandName without crashing", () => {
-  shallow(
+it("Render ListBrandName, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <ListBrandName />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ListCaption without crashing", () => {
-  shallow(
+it("Render ListCaption, matches snapshot", () => {
+  const element = shallow(
     <ListCaption
       item={{
         status: "published",
@@ -47,10 +52,11 @@ it("Render ListCaption without crashing", () => {
       }}
     />
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ListDescription without crashing", () => {
-  shallow(
+it("Render ListDescription, matches snapshot", () => {
+  const element = shallow(
     <ListDescription
       user={{
         connection: { status: "online" }
@@ -65,26 +71,29 @@ it("Render ListDescription without crashing", () => {
       }}
     />
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ListDescriptionWrapper without crashing", () => {
-  shallow(
+it("Render ListDescriptionWrapper, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <ListDescriptionWrapper />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ListHeader without crashing", () => {
-  shallow(
+it("Render ListHeader, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <ListHeader />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ListItemAuthorDate without crashing", () => {
-  shallow(
+it("Render ListItemAuthorDate, matches snapshot", () => {
+  const element = shallow(
     <ListItemAuthorDate
       item={{
         authors: [{ name: "" }],
@@ -92,38 +101,43 @@ it("Render ListItemAuthorDate without crashing", () => {
       }}
     />
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ListItemStats without crashing", () => {
-  shallow(
+it("Render ListItemStats, matches snapshot", () => {
+  const element = shallow(
     <ListItemStats
       item={{
         type: "placeholder"
       }}
     />
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ListLoader without crashing", () => {
-  shallow(<ListLoader />)
+it("Render ListLoader, matches snapshot", () => {
+  const element = shallow(<ListLoader />)
 })
 
-it("Render ListUL without crashing", () => {
-  shallow(
+it("Render ListUL, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <ListUL />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
-it("Render PlaceholderHowToSubmit without crashing", () => {
-  shallow(<PlaceholderHowToSubmit />)
+it("Render PlaceholderHowToSubmit, matches snapshot", () => {
+  const element = shallow(<PlaceholderHowToSubmit />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ZigZagPicture without crashing", () => {
-  shallow(
+it("Render ZigZagPicture, matches snapshot", () => {
+  const element = shallow(
     <ThemeProvider theme={APP_THEME}>
       <ZigZagPicture />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })

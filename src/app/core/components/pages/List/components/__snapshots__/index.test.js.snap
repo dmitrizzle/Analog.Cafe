@@ -1,0 +1,3240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Bleed, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+        Object {
+            "color": Object {
+              "background": [Function],
+              "brand": [Function],
+              "foreground": [Function],
+              "highlight": [Function],
+            },
+            "effects": Object {
+              "borderRadius": Object {
+                "med": 0.5,
+                "small": [Function],
+              },
+            },
+            "elements": Object {
+              "thickBorder": [Function],
+            },
+            "layer": Object {
+              "card": 30,
+              "nav": 20,
+              "overlay": 40,
+              "tuck": -1,
+              "up": 10,
+            },
+            "opacity": Object {
+              "half": 0.5,
+              "least": 0.125,
+              "most": 0.85,
+            },
+            "size": Object {
+              "block": Object {
+                "border": 8,
+                "column": Object {
+                  "l": 820,
+                  "m": 750,
+                },
+                "padding": 1.5,
+                "spacing": 1,
+              },
+              "breakpoint": Object {
+                "exact": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "max": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "min": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "stops": Object {
+                  "max": 1600,
+                  "min": 320,
+                },
+              },
+              "font": Object {
+                "auto": Array [
+                  "
+                ",
+                  "
+        		@media (min-width: ",
+                  "32.5625",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "32.5",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "20",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (min-width: ",
+                  "100.0625",
+                  "em) {
+        			",
+                  "font-size:	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  ";
+              ",
+                ],
+                "l": 23,
+                "m": 20,
+                "make": Object {
+                  "larger": 3,
+                  "normal": 1,
+                  "smaller": 0.85,
+                  "tiny": 0.65,
+                },
+                "s": 18,
+                "xs": 17,
+              },
+            },
+            "typography": Object {
+              "text": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Lora', Georgia, serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                ",
+                ],
+                "font": "'Lora', Georgia, serif",
+                "lineHeight": 1.75,
+              },
+              "title": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Exo 2', Arial, sans-serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                  font-weight: ",
+                  "600",
+                  ";
+                  margin: 0;
+                ",
+                ],
+                "font": "'Exo 2', Arial, sans-serif",
+                "lineHeight": 1.15,
+              },
+            },
+          }
+    }
+>
+    <styled.div />
+</ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ListBlock, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    items={
+        Array [
+            Object {
+              "id": 0,
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <styled.ul
+        status={undefined}
+>
+        <LazyLoad
+                height="100%"
+                offset={300}
+                once={true}
+                overflow={false}
+                resize={false}
+                scroll={true}
+                unmountIfInvisible={true}
+        >
+                <li>
+                        <Unknown
+                                onClick={[Function]}
+                                onMouseOver={undefined}
+                                to={undefined}
+                        >
+                                <section>
+                                        <figure
+                                                style={null}
+                                        >
+                                                <div
+                                                        aria-label="undefined poster image"
+                                                        style={undefined}
+                                                />
+                                        </figure>
+                                        <h2
+                                                style={null}
+                                                title={undefined}
+                                        />
+                                        <Unknown
+                                                item={
+                                                        Object {
+                                                                "id": 0,
+                                                              }
+                                                }
+                                                status={undefined}
+                                        />
+                                        <div>
+                                                <Unknown
+                                                        item={
+                                                                Object {
+                                                                        "id": 0,
+                                                                      }
+                                                        }
+                                                        private={undefined}
+                                                />
+                                                <Unknown
+                                                        isAdmin={undefined}
+                                                        item={
+                                                                Object {
+                                                                        "id": 0,
+                                                                      }
+                                                        }
+                                                        private={undefined}
+                                                />
+                                        </div>
+                                </section>
+                                <styled.div
+                                        style={null}
+                                />
+                        </Unknown>
+                </li>
+        </LazyLoad>
+</styled.ul>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <LazyLoad
+            height="100%"
+            offset={300}
+            once={true}
+            overflow={false}
+            resize={false}
+            scroll={true}
+            unmountIfInvisible={true}
+>
+            <li>
+                        <Unknown
+                                    onClick={[Function]}
+                                    onMouseOver={undefined}
+                                    to={undefined}
+                        >
+                                    <section>
+                                                <figure
+                                                            style={null}
+                                                >
+                                                            <div
+                                                                        aria-label="undefined poster image"
+                                                                        style={undefined}
+                                                            />
+                                                </figure>
+                                                <h2
+                                                            style={null}
+                                                            title={undefined}
+                                                />
+                                                <Unknown
+                                                            item={
+                                                                        Object {
+                                                                                    "id": 0,
+                                                                                  }
+                                                            }
+                                                            status={undefined}
+                                                />
+                                                <div>
+                                                            <Unknown
+                                                                        item={
+                                                                                    Object {
+                                                                                                "id": 0,
+                                                                                              }
+                                                                        }
+                                                                        private={undefined}
+                                                            />
+                                                            <Unknown
+                                                                        isAdmin={undefined}
+                                                                        item={
+                                                                                    Object {
+                                                                                                "id": 0,
+                                                                                              }
+                                                                        }
+                                                                        private={undefined}
+                                                            />
+                                                </div>
+                                    </section>
+                                    <styled.div
+                                                style={null}
+                                    />
+                        </Unknown>
+            </li>
+</LazyLoad>,
+        ],
+        "status": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "class",
+          "props": Object {
+            "children": <li>
+              <Unknown
+                            onClick={[Function]}
+                            onMouseOver={undefined}
+                            to={undefined}
+              >
+                            <section>
+                                          <figure
+                                                        style={null}
+                                          >
+                                                        <div
+                                                                      aria-label="undefined poster image"
+                                                                      style={undefined}
+                                                        />
+                                          </figure>
+                                          <h2
+                                                        style={null}
+                                                        title={undefined}
+                                          />
+                                          <Unknown
+                                                        item={
+                                                                      Object {
+                                                                                    "id": 0,
+                                                                                  }
+                                                        }
+                                                        status={undefined}
+                                          />
+                                          <div>
+                                                        <Unknown
+                                                                      item={
+                                                                                    Object {
+                                                                                                  "id": 0,
+                                                                                                }
+                                                                      }
+                                                                      private={undefined}
+                                                        />
+                                                        <Unknown
+                                                                      isAdmin={undefined}
+                                                                      item={
+                                                                                    Object {
+                                                                                                  "id": 0,
+                                                                                                }
+                                                                      }
+                                                                      private={undefined}
+                                                        />
+                                          </div>
+                            </section>
+                            <styled.div
+                                          style={null}
+                            />
+              </Unknown>
+</li>,
+            "height": "100%",
+            "offset": 300,
+            "once": true,
+            "overflow": false,
+            "resize": false,
+            "scroll": true,
+            "unmountIfInvisible": true,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Unknown
+                onClick={[Function]}
+                onMouseOver={undefined}
+                to={undefined}
+>
+                <section>
+                                <figure
+                                                style={null}
+                                >
+                                                <div
+                                                                aria-label="undefined poster image"
+                                                                style={undefined}
+                                                />
+                                </figure>
+                                <h2
+                                                style={null}
+                                                title={undefined}
+                                />
+                                <Unknown
+                                                item={
+                                                                Object {
+                                                                                "id": 0,
+                                                                              }
+                                                }
+                                                status={undefined}
+                                />
+                                <div>
+                                                <Unknown
+                                                                item={
+                                                                                Object {
+                                                                                                "id": 0,
+                                                                                              }
+                                                                }
+                                                                private={undefined}
+                                                />
+                                                <Unknown
+                                                                isAdmin={undefined}
+                                                                item={
+                                                                                Object {
+                                                                                                "id": 0,
+                                                                                              }
+                                                                }
+                                                                private={undefined}
+                                                />
+                                </div>
+                </section>
+                <styled.div
+                                style={null}
+                />
+</Unknown>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <section>
+                    <figure
+                                        style={null}
+                    >
+                                        <div
+                                                            aria-label="undefined poster image"
+                                                            style={undefined}
+                                        />
+                    </figure>
+                    <h2
+                                        style={null}
+                                        title={undefined}
+                    />
+                    <Unknown
+                                        item={
+                                                            Object {
+                                                                                "id": 0,
+                                                                              }
+                                        }
+                                        status={undefined}
+                    />
+                    <div>
+                                        <Unknown
+                                                            item={
+                                                                                Object {
+                                                                                                    "id": 0,
+                                                                                                  }
+                                                            }
+                                                            private={undefined}
+                                        />
+                                        <Unknown
+                                                            isAdmin={undefined}
+                                                            item={
+                                                                                Object {
+                                                                                                    "id": 0,
+                                                                                                  }
+                                                            }
+                                                            private={undefined}
+                                        />
+                    </div>
+</section>,
+                  <styled.div
+                    style={null}
+/>,
+                ],
+                "onClick": [Function],
+                "onMouseOver": undefined,
+                "to": undefined,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <figure
+                        style={null}
+>
+                        <div
+                                                aria-label="undefined poster image"
+                                                style={undefined}
+                        />
+</figure>,
+                      <h2
+                        style={null}
+                        title={undefined}
+/>,
+                      <Unknown
+                        item={
+                                                Object {
+                                                                        "id": 0,
+                                                                      }
+                        }
+                        status={undefined}
+/>,
+                      <div>
+                        <Unknown
+                                                item={
+                                                                        Object {
+                                                                                                "id": 0,
+                                                                                              }
+                                                }
+                                                private={undefined}
+                        />
+                        <Unknown
+                                                isAdmin={undefined}
+                                                item={
+                                                                        Object {
+                                                                                                "id": 0,
+                                                                                              }
+                                                }
+                                                private={undefined}
+                        />
+</div>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <div
+                          aria-label="undefined poster image"
+                          style={undefined}
+/>,
+                        "style": null,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "aria-label": "undefined poster image",
+                          "style": undefined,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "div",
+                      },
+                      "type": "figure",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                        "style": null,
+                        "title": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "h2",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "item": Object {
+                          "id": 0,
+                        },
+                        "status": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <Unknown
+                            item={
+                                                        Object {
+                                                                                    "id": 0,
+                                                                                  }
+                            }
+                            private={undefined}
+/>,
+                          <Unknown
+                            isAdmin={undefined}
+                            item={
+                                                        Object {
+                                                                                    "id": 0,
+                                                                                  }
+                            }
+                            private={undefined}
+/>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "function",
+                          "props": Object {
+                            "item": Object {
+                              "id": 0,
+                            },
+                            "private": undefined,
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "function",
+                          "props": Object {
+                            "isAdmin": undefined,
+                            "item": Object {
+                              "id": 0,
+                            },
+                            "private": undefined,
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
+                      "type": "div",
+                    },
+                  ],
+                  "type": "section",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "style": null,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            "type": "li",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <styled.ul
+          status={undefined}
+>
+          <LazyLoad
+                    height="100%"
+                    offset={300}
+                    once={true}
+                    overflow={false}
+                    resize={false}
+                    scroll={true}
+                    unmountIfInvisible={true}
+          >
+                    <li>
+                              <Unknown
+                                        onClick={[Function]}
+                                        onMouseOver={undefined}
+                                        to={undefined}
+                              >
+                                        <section>
+                                                  <figure
+                                                            style={null}
+                                                  >
+                                                            <div
+                                                                      aria-label="undefined poster image"
+                                                                      style={undefined}
+                                                            />
+                                                  </figure>
+                                                  <h2
+                                                            style={null}
+                                                            title={undefined}
+                                                  />
+                                                  <Unknown
+                                                            item={
+                                                                      Object {
+                                                                                "id": 0,
+                                                                              }
+                                                            }
+                                                            status={undefined}
+                                                  />
+                                                  <div>
+                                                            <Unknown
+                                                                      item={
+                                                                                Object {
+                                                                                          "id": 0,
+                                                                                        }
+                                                                      }
+                                                                      private={undefined}
+                                                            />
+                                                            <Unknown
+                                                                      isAdmin={undefined}
+                                                                      item={
+                                                                                Object {
+                                                                                          "id": 0,
+                                                                                        }
+                                                                      }
+                                                                      private={undefined}
+                                                            />
+                                                  </div>
+                                        </section>
+                                        <styled.div
+                                                  style={null}
+                                        />
+                              </Unknown>
+                    </li>
+          </LazyLoad>
+</styled.ul>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <LazyLoad
+              height="100%"
+              offset={300}
+              once={true}
+              overflow={false}
+              resize={false}
+              scroll={true}
+              unmountIfInvisible={true}
+>
+              <li>
+                            <Unknown
+                                          onClick={[Function]}
+                                          onMouseOver={undefined}
+                                          to={undefined}
+                            >
+                                          <section>
+                                                        <figure
+                                                                      style={null}
+                                                        >
+                                                                      <div
+                                                                                    aria-label="undefined poster image"
+                                                                                    style={undefined}
+                                                                      />
+                                                        </figure>
+                                                        <h2
+                                                                      style={null}
+                                                                      title={undefined}
+                                                        />
+                                                        <Unknown
+                                                                      item={
+                                                                                    Object {
+                                                                                                  "id": 0,
+                                                                                                }
+                                                                      }
+                                                                      status={undefined}
+                                                        />
+                                                        <div>
+                                                                      <Unknown
+                                                                                    item={
+                                                                                                  Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                                                    }
+                                                                                    private={undefined}
+                                                                      />
+                                                                      <Unknown
+                                                                                    isAdmin={undefined}
+                                                                                    item={
+                                                                                                  Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                                                    }
+                                                                                    private={undefined}
+                                                                      />
+                                                        </div>
+                                          </section>
+                                          <styled.div
+                                                        style={null}
+                                          />
+                            </Unknown>
+              </li>
+</LazyLoad>,
+          ],
+          "status": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "class",
+            "props": Object {
+              "children": <li>
+                <Unknown
+                                onClick={[Function]}
+                                onMouseOver={undefined}
+                                to={undefined}
+                >
+                                <section>
+                                                <figure
+                                                                style={null}
+                                                >
+                                                                <div
+                                                                                aria-label="undefined poster image"
+                                                                                style={undefined}
+                                                                />
+                                                </figure>
+                                                <h2
+                                                                style={null}
+                                                                title={undefined}
+                                                />
+                                                <Unknown
+                                                                item={
+                                                                                Object {
+                                                                                                "id": 0,
+                                                                                              }
+                                                                }
+                                                                status={undefined}
+                                                />
+                                                <div>
+                                                                <Unknown
+                                                                                item={
+                                                                                                Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                                                }
+                                                                                private={undefined}
+                                                                />
+                                                                <Unknown
+                                                                                isAdmin={undefined}
+                                                                                item={
+                                                                                                Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                                                }
+                                                                                private={undefined}
+                                                                />
+                                                </div>
+                                </section>
+                                <styled.div
+                                                style={null}
+                                />
+                </Unknown>
+</li>,
+              "height": "100%",
+              "offset": 300,
+              "once": true,
+              "overflow": false,
+              "resize": false,
+              "scroll": true,
+              "unmountIfInvisible": true,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Unknown
+                  onClick={[Function]}
+                  onMouseOver={undefined}
+                  to={undefined}
+>
+                  <section>
+                                    <figure
+                                                      style={null}
+                                    >
+                                                      <div
+                                                                        aria-label="undefined poster image"
+                                                                        style={undefined}
+                                                      />
+                                    </figure>
+                                    <h2
+                                                      style={null}
+                                                      title={undefined}
+                                    />
+                                    <Unknown
+                                                      item={
+                                                                        Object {
+                                                                                          "id": 0,
+                                                                                        }
+                                                      }
+                                                      status={undefined}
+                                    />
+                                    <div>
+                                                      <Unknown
+                                                                        item={
+                                                                                          Object {
+                                                                                                            "id": 0,
+                                                                                                          }
+                                                                        }
+                                                                        private={undefined}
+                                                      />
+                                                      <Unknown
+                                                                        isAdmin={undefined}
+                                                                        item={
+                                                                                          Object {
+                                                                                                            "id": 0,
+                                                                                                          }
+                                                                        }
+                                                                        private={undefined}
+                                                      />
+                                    </div>
+                  </section>
+                  <styled.div
+                                    style={null}
+                  />
+</Unknown>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <section>
+                      <figure
+                                            style={null}
+                      >
+                                            <div
+                                                                  aria-label="undefined poster image"
+                                                                  style={undefined}
+                                            />
+                      </figure>
+                      <h2
+                                            style={null}
+                                            title={undefined}
+                      />
+                      <Unknown
+                                            item={
+                                                                  Object {
+                                                                                        "id": 0,
+                                                                                      }
+                                            }
+                                            status={undefined}
+                      />
+                      <div>
+                                            <Unknown
+                                                                  item={
+                                                                                        Object {
+                                                                                                              "id": 0,
+                                                                                                            }
+                                                                  }
+                                                                  private={undefined}
+                                            />
+                                            <Unknown
+                                                                  isAdmin={undefined}
+                                                                  item={
+                                                                                        Object {
+                                                                                                              "id": 0,
+                                                                                                            }
+                                                                  }
+                                                                  private={undefined}
+                                            />
+                      </div>
+</section>,
+                    <styled.div
+                      style={null}
+/>,
+                  ],
+                  "onClick": [Function],
+                  "onMouseOver": undefined,
+                  "to": undefined,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <figure
+                          style={null}
+>
+                          <div
+                                                    aria-label="undefined poster image"
+                                                    style={undefined}
+                          />
+</figure>,
+                        <h2
+                          style={null}
+                          title={undefined}
+/>,
+                        <Unknown
+                          item={
+                                                    Object {
+                                                                              "id": 0,
+                                                                            }
+                          }
+                          status={undefined}
+/>,
+                        <div>
+                          <Unknown
+                                                    item={
+                                                                              Object {
+                                                                                                        "id": 0,
+                                                                                                      }
+                                                    }
+                                                    private={undefined}
+                          />
+                          <Unknown
+                                                    isAdmin={undefined}
+                                                    item={
+                                                                              Object {
+                                                                                                        "id": 0,
+                                                                                                      }
+                                                    }
+                                                    private={undefined}
+                          />
+</div>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": <div
+                            aria-label="undefined poster image"
+                            style={undefined}
+/>,
+                          "style": null,
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "aria-label": "undefined poster image",
+                            "style": undefined,
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "div",
+                        },
+                        "type": "figure",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": undefined,
+                          "style": null,
+                          "title": undefined,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "h2",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "item": Object {
+                            "id": 0,
+                          },
+                          "status": undefined,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <Unknown
+                              item={
+                                                            Object {
+                                                                                          "id": 0,
+                                                                                        }
+                              }
+                              private={undefined}
+/>,
+                            <Unknown
+                              isAdmin={undefined}
+                              item={
+                                                            Object {
+                                                                                          "id": 0,
+                                                                                        }
+                              }
+                              private={undefined}
+/>,
+                          ],
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "item": Object {
+                                "id": 0,
+                              },
+                              "private": undefined,
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "isAdmin": undefined,
+                              "item": Object {
+                                "id": 0,
+                              },
+                              "private": undefined,
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                        ],
+                        "type": "div",
+                      },
+                    ],
+                    "type": "section",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "style": null,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": "li",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ListBrandName, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+        Object {
+            "color": Object {
+              "background": [Function],
+              "brand": [Function],
+              "foreground": [Function],
+              "highlight": [Function],
+            },
+            "effects": Object {
+              "borderRadius": Object {
+                "med": 0.5,
+                "small": [Function],
+              },
+            },
+            "elements": Object {
+              "thickBorder": [Function],
+            },
+            "layer": Object {
+              "card": 30,
+              "nav": 20,
+              "overlay": 40,
+              "tuck": -1,
+              "up": 10,
+            },
+            "opacity": Object {
+              "half": 0.5,
+              "least": 0.125,
+              "most": 0.85,
+            },
+            "size": Object {
+              "block": Object {
+                "border": 8,
+                "column": Object {
+                  "l": 820,
+                  "m": 750,
+                },
+                "padding": 1.5,
+                "spacing": 1,
+              },
+              "breakpoint": Object {
+                "exact": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "max": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "min": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "stops": Object {
+                  "max": 1600,
+                  "min": 320,
+                },
+              },
+              "font": Object {
+                "auto": Array [
+                  "
+                ",
+                  "
+        		@media (min-width: ",
+                  "32.5625",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "32.5",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "20",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (min-width: ",
+                  "100.0625",
+                  "em) {
+        			",
+                  "font-size:	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  ";
+              ",
+                ],
+                "l": 23,
+                "m": 20,
+                "make": Object {
+                  "larger": 3,
+                  "normal": 1,
+                  "smaller": 0.85,
+                  "tiny": 0.65,
+                },
+                "s": 18,
+                "xs": 17,
+              },
+            },
+            "typography": Object {
+              "text": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Lora', Georgia, serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                ",
+                ],
+                "font": "'Lora', Georgia, serif",
+                "lineHeight": 1.75,
+              },
+              "title": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Exo 2', Arial, sans-serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                  font-weight: ",
+                  "600",
+                  ";
+                  margin: 0;
+                ",
+                ],
+                "font": "'Exo 2', Arial, sans-serif",
+                "lineHeight": 1.15,
+              },
+            },
+          }
+    }
+>
+    <styled.strong />
+</ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ListCaption, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    item={
+        Object {
+            "status": "published",
+            "summary": "",
+            "title": "",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <ListSubtitle
+          subtitle={undefined}
+          title=""
+/>,
+        <span
+          className="long"
+>
+          <span
+                    style={
+                              Object {
+                                        "fontStyle": "normal",
+                                      }
+                    }
+          >
+                    ❡
+          </span>
+          …
+</span>,
+        <span
+          className="short"
+>
+          <span
+                    style={
+                              Object {
+                                        "fontStyle": "normal",
+                                      }
+                    }
+          >
+                    ❡
+          </span>
+          …
+</span>,
+      ],
+      "status": undefined,
+      "style": null,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "subtitle": undefined,
+          "title": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              style={
+                            Object {
+                                          "fontStyle": "normal",
+                                        }
+              }
+>
+              ❡
+</span>,
+            "…",
+          ],
+          "className": "long",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "❡",
+              "style": Object {
+                "fontStyle": "normal",
+              },
+            },
+            "ref": null,
+            "rendered": "❡",
+            "type": "span",
+          },
+          "…",
+        ],
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              style={
+                            Object {
+                                          "fontStyle": "normal",
+                                        }
+              }
+>
+              ❡
+</span>,
+            "…",
+          ],
+          "className": "short",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "❡",
+              "style": Object {
+                "fontStyle": "normal",
+              },
+            },
+            "ref": null,
+            "rendered": "❡",
+            "type": "span",
+          },
+          "…",
+        ],
+        "type": "span",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <ListSubtitle
+            subtitle={undefined}
+            title=""
+/>,
+          <span
+            className="long"
+>
+            <span
+                        style={
+                                    Object {
+                                                "fontStyle": "normal",
+                                              }
+                        }
+            >
+                        ❡
+            </span>
+            …
+</span>,
+          <span
+            className="short"
+>
+            <span
+                        style={
+                                    Object {
+                                                "fontStyle": "normal",
+                                              }
+                        }
+            >
+                        ❡
+            </span>
+            …
+</span>,
+        ],
+        "status": undefined,
+        "style": null,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "subtitle": undefined,
+            "title": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                style={
+                                Object {
+                                                "fontStyle": "normal",
+                                              }
+                }
+>
+                ❡
+</span>,
+              "…",
+            ],
+            "className": "long",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "❡",
+                "style": Object {
+                  "fontStyle": "normal",
+                },
+              },
+              "ref": null,
+              "rendered": "❡",
+              "type": "span",
+            },
+            "…",
+          ],
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                style={
+                                Object {
+                                                "fontStyle": "normal",
+                                              }
+                }
+>
+                ❡
+</span>,
+              "…",
+            ],
+            "className": "short",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "❡",
+                "style": Object {
+                  "fontStyle": "normal",
+                },
+              },
+              "ref": null,
+              "rendered": "❡",
+              "type": "span",
+            },
+            "…",
+          ],
+          "type": "span",
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ListDescription, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    list={
+        Object {
+            "filter": Object {
+              "tags": Array [],
+            },
+          }
+    }
+    renderedListMeta={
+        Object {
+            "title": "",
+          }
+    }
+    user={
+        Object {
+            "connection": Object {
+              "status": "online",
+            },
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <styled.strong>
+          Analog.Cafe
+</styled.strong>,
+        <styled.div>
+          <span>
+                    <em />
+          </span>
+          .
+</styled.div>,
+      ],
+      "list": Object {
+        "filter": Object {
+          "tags": Array [],
+        },
+      },
+      "renderedListMeta": Object {
+        "title": "",
+      },
+      "user": Object {
+        "connection": Object {
+          "status": "online",
+        },
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Analog.Cafe",
+        },
+        "ref": null,
+        "rendered": "Analog.Cafe",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <span>
+              <em />
+</span>,
+            ".",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <em />,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "em",
+            },
+            "type": "span",
+          },
+          ".",
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.strong>
+            Analog.Cafe
+</styled.strong>,
+          <styled.div>
+            <span>
+                        <em />
+            </span>
+            .
+</styled.div>,
+        ],
+        "list": Object {
+          "filter": Object {
+            "tags": Array [],
+          },
+        },
+        "renderedListMeta": Object {
+          "title": "",
+        },
+        "user": Object {
+          "connection": Object {
+            "status": "online",
+          },
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Analog.Cafe",
+          },
+          "ref": null,
+          "rendered": "Analog.Cafe",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <span>
+                <em />
+</span>,
+              ".",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <em />,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "",
+                },
+                "ref": null,
+                "rendered": "",
+                "type": "em",
+              },
+              "type": "span",
+            },
+            ".",
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ListDescriptionWrapper, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+        Object {
+            "color": Object {
+              "background": [Function],
+              "brand": [Function],
+              "foreground": [Function],
+              "highlight": [Function],
+            },
+            "effects": Object {
+              "borderRadius": Object {
+                "med": 0.5,
+                "small": [Function],
+              },
+            },
+            "elements": Object {
+              "thickBorder": [Function],
+            },
+            "layer": Object {
+              "card": 30,
+              "nav": 20,
+              "overlay": 40,
+              "tuck": -1,
+              "up": 10,
+            },
+            "opacity": Object {
+              "half": 0.5,
+              "least": 0.125,
+              "most": 0.85,
+            },
+            "size": Object {
+              "block": Object {
+                "border": 8,
+                "column": Object {
+                  "l": 820,
+                  "m": 750,
+                },
+                "padding": 1.5,
+                "spacing": 1,
+              },
+              "breakpoint": Object {
+                "exact": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "max": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "min": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "stops": Object {
+                  "max": 1600,
+                  "min": 320,
+                },
+              },
+              "font": Object {
+                "auto": Array [
+                  "
+                ",
+                  "
+        		@media (min-width: ",
+                  "32.5625",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "32.5",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "20",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (min-width: ",
+                  "100.0625",
+                  "em) {
+        			",
+                  "font-size:	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  ";
+              ",
+                ],
+                "l": 23,
+                "m": 20,
+                "make": Object {
+                  "larger": 3,
+                  "normal": 1,
+                  "smaller": 0.85,
+                  "tiny": 0.65,
+                },
+                "s": 18,
+                "xs": 17,
+              },
+            },
+            "typography": Object {
+              "text": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Lora', Georgia, serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                ",
+                ],
+                "font": "'Lora', Georgia, serif",
+                "lineHeight": 1.75,
+              },
+              "title": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Exo 2', Arial, sans-serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                  font-weight: ",
+                  "600",
+                  ";
+                  margin: 0;
+                ",
+                ],
+                "font": "'Exo 2', Arial, sans-serif",
+                "lineHeight": 1.15,
+              },
+            },
+          }
+    }
+>
+    <styled.div />
+</ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ListHeader, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+        Object {
+            "color": Object {
+              "background": [Function],
+              "brand": [Function],
+              "foreground": [Function],
+              "highlight": [Function],
+            },
+            "effects": Object {
+              "borderRadius": Object {
+                "med": 0.5,
+                "small": [Function],
+              },
+            },
+            "elements": Object {
+              "thickBorder": [Function],
+            },
+            "layer": Object {
+              "card": 30,
+              "nav": 20,
+              "overlay": 40,
+              "tuck": -1,
+              "up": 10,
+            },
+            "opacity": Object {
+              "half": 0.5,
+              "least": 0.125,
+              "most": 0.85,
+            },
+            "size": Object {
+              "block": Object {
+                "border": 8,
+                "column": Object {
+                  "l": 820,
+                  "m": 750,
+                },
+                "padding": 1.5,
+                "spacing": 1,
+              },
+              "breakpoint": Object {
+                "exact": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "max": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "min": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "stops": Object {
+                  "max": 1600,
+                  "min": 320,
+                },
+              },
+              "font": Object {
+                "auto": Array [
+                  "
+                ",
+                  "
+        		@media (min-width: ",
+                  "32.5625",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "32.5",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "20",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (min-width: ",
+                  "100.0625",
+                  "em) {
+        			",
+                  "font-size:	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  ";
+              ",
+                ],
+                "l": 23,
+                "m": 20,
+                "make": Object {
+                  "larger": 3,
+                  "normal": 1,
+                  "smaller": 0.85,
+                  "tiny": 0.65,
+                },
+                "s": 18,
+                "xs": 17,
+              },
+            },
+            "typography": Object {
+              "text": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Lora', Georgia, serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                ",
+                ],
+                "font": "'Lora', Georgia, serif",
+                "lineHeight": 1.75,
+              },
+              "title": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Exo 2', Arial, sans-serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                  font-weight: ",
+                  "600",
+                  ";
+                  margin: 0;
+                ",
+                ],
+                "font": "'Exo 2', Arial, sans-serif",
+                "lineHeight": 1.15,
+              },
+            },
+          }
+    }
+>
+    <styled.div />
+</ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ListItemAuthorDate, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    item={
+        Object {
+            "authors": Array [
+              Object {
+                "name": "",
+              },
+            ],
+            "date": Object {
+              "published": "",
+            },
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        " · ",
+        <small>
+          December 31, 1969
+</small>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      " · ",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "December 31, 1969",
+        },
+        "ref": null,
+        "rendered": "December 31, 1969",
+        "type": "small",
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          " · ",
+          <small>
+            December 31, 1969
+</small>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        " · ",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "December 31, 1969",
+          },
+          "ref": null,
+          "rendered": "December 31, 1969",
+          "type": "small",
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ListItemStats, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    item={
+        Object {
+            "type": "placeholder",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        false,
+        false,
+        false,
+        false,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      false,
+      false,
+      false,
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          false,
+          false,
+          false,
+          false,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        false,
+        false,
+        false,
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ListUL, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+        Object {
+            "color": Object {
+              "background": [Function],
+              "brand": [Function],
+              "foreground": [Function],
+              "highlight": [Function],
+            },
+            "effects": Object {
+              "borderRadius": Object {
+                "med": 0.5,
+                "small": [Function],
+              },
+            },
+            "elements": Object {
+              "thickBorder": [Function],
+            },
+            "layer": Object {
+              "card": 30,
+              "nav": 20,
+              "overlay": 40,
+              "tuck": -1,
+              "up": 10,
+            },
+            "opacity": Object {
+              "half": 0.5,
+              "least": 0.125,
+              "most": 0.85,
+            },
+            "size": Object {
+              "block": Object {
+                "border": 8,
+                "column": Object {
+                  "l": 820,
+                  "m": 750,
+                },
+                "padding": 1.5,
+                "spacing": 1,
+              },
+              "breakpoint": Object {
+                "exact": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "max": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "min": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "stops": Object {
+                  "max": 1600,
+                  "min": 320,
+                },
+              },
+              "font": Object {
+                "auto": Array [
+                  "
+                ",
+                  "
+        		@media (min-width: ",
+                  "32.5625",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "32.5",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "20",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (min-width: ",
+                  "100.0625",
+                  "em) {
+        			",
+                  "font-size:	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  ";
+              ",
+                ],
+                "l": 23,
+                "m": 20,
+                "make": Object {
+                  "larger": 3,
+                  "normal": 1,
+                  "smaller": 0.85,
+                  "tiny": 0.65,
+                },
+                "s": 18,
+                "xs": 17,
+              },
+            },
+            "typography": Object {
+              "text": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Lora', Georgia, serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                ",
+                ],
+                "font": "'Lora', Georgia, serif",
+                "lineHeight": 1.75,
+              },
+              "title": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Exo 2', Arial, sans-serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                  font-weight: ",
+                  "600",
+                  ";
+                  margin: 0;
+                ",
+                ],
+                "font": "'Exo 2', Arial, sans-serif",
+                "lineHeight": 1.15,
+              },
+            },
+          }
+    }
+>
+    <styled.ul />
+</ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render PlaceholderHowToSubmit, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <styled.section
+        plain={true}
+>
+        <Unknown />
+        <Unknown
+                branded={true}
+                to="/submit/compose"
+        >
+                Submit Now
+        </Unknown>
+</styled.section>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Unknown />,
+          <Unknown
+            branded={true}
+            to="/submit/compose"
+>
+            Submit Now
+</Unknown>,
+        ],
+        "plain": true,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "branded": true,
+            "children": "Submit Now",
+            "to": "/submit/compose",
+          },
+          "ref": null,
+          "rendered": "Submit Now",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <styled.section
+          plain={true}
+>
+          <Unknown />
+          <Unknown
+                    branded={true}
+                    to="/submit/compose"
+          >
+                    Submit Now
+          </Unknown>
+</styled.section>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Unknown />,
+            <Unknown
+              branded={true}
+              to="/submit/compose"
+>
+              Submit Now
+</Unknown>,
+          ],
+          "plain": true,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "branded": true,
+              "children": "Submit Now",
+              "to": "/submit/compose",
+            },
+            "ref": null,
+            "rendered": "Submit Now",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render ZigZagPicture, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+        Object {
+            "color": Object {
+              "background": [Function],
+              "brand": [Function],
+              "foreground": [Function],
+              "highlight": [Function],
+            },
+            "effects": Object {
+              "borderRadius": Object {
+                "med": 0.5,
+                "small": [Function],
+              },
+            },
+            "elements": Object {
+              "thickBorder": [Function],
+            },
+            "layer": Object {
+              "card": 30,
+              "nav": 20,
+              "overlay": 40,
+              "tuck": -1,
+              "up": 10,
+            },
+            "opacity": Object {
+              "half": 0.5,
+              "least": 0.125,
+              "most": 0.85,
+            },
+            "size": Object {
+              "block": Object {
+                "border": 8,
+                "column": Object {
+                  "l": 820,
+                  "m": 750,
+                },
+                "padding": 1.5,
+                "spacing": 1,
+              },
+              "breakpoint": Object {
+                "exact": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "max": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "min": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "stops": Object {
+                  "max": 1600,
+                  "min": 320,
+                },
+              },
+              "font": Object {
+                "auto": Array [
+                  "
+                ",
+                  "
+        		@media (min-width: ",
+                  "32.5625",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "32.5",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "20",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (min-width: ",
+                  "100.0625",
+                  "em) {
+        			",
+                  "font-size:	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  ";
+              ",
+                ],
+                "l": 23,
+                "m": 20,
+                "make": Object {
+                  "larger": 3,
+                  "normal": 1,
+                  "smaller": 0.85,
+                  "tiny": 0.65,
+                },
+                "s": 18,
+                "xs": 17,
+              },
+            },
+            "typography": Object {
+              "text": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Lora', Georgia, serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                ",
+                ],
+                "font": "'Lora', Georgia, serif",
+                "lineHeight": 1.75,
+              },
+              "title": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Exo 2', Arial, sans-serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                  font-weight: ",
+                  "600",
+                  ";
+                  margin: 0;
+                ",
+                ],
+                "font": "'Exo 2', Arial, sans-serif",
+                "lineHeight": 1.15,
+              },
+            },
+          }
+    }
+>
+    <styled.div />
+</ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
