@@ -1,3 +1,5 @@
+import "jest-styled-components"
+
 import { shallow } from "enzyme"
 import React from "react"
 
@@ -6,18 +8,22 @@ import Figure from "./Figure"
 import ImageSet from "./ImageSet"
 import Placeholder from "./Placeholder"
 
-it("Render Figcaption without crashing", () => {
-  shallow(<Figcaption />)
+it("Render Figcaption, matches snapshot", () => {
+  const element = shallow(<Figcaption />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render Figure without crashing", () => {
-  shallow(<Figure />)
+it("Render Figure, matches snapshot", () => {
+  const element = shallow(<Figure />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render ImageSet without crashing", () => {
-  shallow(<ImageSet />)
+it("Render ImageSet, matches snapshot", () => {
+  const element = shallow(<ImageSet />)
+  expect(element).toMatchSnapshot()
 })
 
-it("Render Placeholder without crashing", () => {
-  shallow(<Placeholder />)
+it("Render Placeholder, matches snapshot", () => {
+  const element = shallow(<Placeholder />)
+  expect(element).toMatchSnapshot()
 })

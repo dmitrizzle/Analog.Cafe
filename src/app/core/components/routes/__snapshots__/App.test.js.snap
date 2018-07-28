@@ -1,0 +1,1185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render routes App, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Switch>
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/author"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/zine"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/author/*"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/zine/*"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/photo-essays"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/articles"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/stories"
+        />
+        <Route
+                exact={true}
+                path="/storys"
+                render={[Function]}
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/editorials"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/guides"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/reviews"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/collaborations"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/solo-projects"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/me"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/me/admin"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/submissions/*"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/me/edit"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/sign-in"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/sign-out"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/about"
+        />
+        <Route
+                component={[Function]}
+                path="/submit"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/privacy-policy"
+        />
+        <Route
+                component={[Function]}
+                state={
+                        Object {
+                                "status": "404",
+                              }
+                }
+        />
+</Switch>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/author"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/zine"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/author/*"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/zine/*"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/photo-essays"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/articles"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/stories"
+/>,
+          <Route
+            exact={true}
+            path="/storys"
+            render={[Function]}
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/editorials"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/guides"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/reviews"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/collaborations"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/solo-projects"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/me"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/me/admin"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/submissions/*"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/me/edit"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/sign-in"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/sign-out"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/about"
+/>,
+          <Route
+            component={[Function]}
+            path="/submit"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/privacy-policy"
+/>,
+          <Route
+            component={[Function]}
+            state={
+                        Object {
+                                    "status": "404",
+                                  }
+            }
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/author",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/zine",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/author/*",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/zine/*",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/photo-essays",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/articles",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/stories",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/storys",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/editorials",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/guides",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/reviews",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/collaborations",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/solo-projects",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/me",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/me/admin",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/submissions/*",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/me/edit",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/sign-in",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/sign-out",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/about",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/submit",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/privacy-policy",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "state": Object {
+              "status": "404",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": "main",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Switch>
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/author"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/zine"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/author/*"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/zine/*"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/photo-essays"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/articles"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/stories"
+          />
+          <Route
+                    exact={true}
+                    path="/storys"
+                    render={[Function]}
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/editorials"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/guides"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/reviews"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/collaborations"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/solo-projects"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/me"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/me/admin"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/submissions/*"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/me/edit"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/sign-in"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/sign-out"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/about"
+          />
+          <Route
+                    component={[Function]}
+                    path="/submit"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/privacy-policy"
+          />
+          <Route
+                    component={[Function]}
+                    state={
+                              Object {
+                                        "status": "404",
+                                      }
+                    }
+          />
+</Switch>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/author"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/zine"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/author/*"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/zine/*"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/photo-essays"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/articles"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/stories"
+/>,
+            <Route
+              exact={true}
+              path="/storys"
+              render={[Function]}
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/editorials"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/guides"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/reviews"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/collaborations"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/solo-projects"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/me"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/me/admin"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/submissions/*"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/me/edit"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/sign-in"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/sign-out"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/about"
+/>,
+            <Route
+              component={[Function]}
+              path="/submit"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/privacy-policy"
+/>,
+            <Route
+              component={[Function]}
+              state={
+                            Object {
+                                          "status": "404",
+                                        }
+              }
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/author",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/zine",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/author/*",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/zine/*",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/photo-essays",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/articles",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/stories",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/storys",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/editorials",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/guides",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/reviews",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/collaborations",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/solo-projects",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/me",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/me/admin",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/submissions/*",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/me/edit",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/sign-in",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/sign-out",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/about",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "path": "/submit",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/privacy-policy",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "state": Object {
+                "status": "404",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": "main",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

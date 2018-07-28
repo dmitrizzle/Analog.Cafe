@@ -1,0 +1,507 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render PrivacyPolicy, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Unknown
+          metaDescription="Privacy policy employed on Analog.Cafe"
+          metaTitle="Privacy Policy"
+/>,
+        <Unknown
+          pageTitle="Privacy Policy"
+/>,
+        <styled.section>
+          <p>
+                    Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account on Analog.Cafe server.
+          </p>
+          <p>
+                    You can delete your account at any time by sending a request to
+                     
+                    <Unknown />
+                    . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
+          </p>
+          <p>
+                    If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.
+          </p>
+          <p>
+                    Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
+                     
+                    <Unknown
+                              to="https://policies.google.com/privacy"
+                    >
+                              privacy policy
+                    </Unknown>
+                    . You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their
+                     
+                    <Unknown
+                              to="https://cloudinary.com/privacy"
+                    >
+                              privacy policy
+                    </Unknown>
+                    .
+          </p>
+          <p>
+                    This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
+          </p>
+</styled.section>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "metaDescription": "Privacy policy employed on Analog.Cafe",
+          "metaTitle": "Privacy Policy",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "pageTitle": "Privacy Policy",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <p>
+              Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account on Analog.Cafe server.
+</p>,
+            <p>
+              You can delete your account at any time by sending a request to
+               
+              <Unknown />
+              . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
+</p>,
+            <p>
+              If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.
+</p>,
+            <p>
+              Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
+               
+              <Unknown
+                            to="https://policies.google.com/privacy"
+              >
+                            privacy policy
+              </Unknown>
+              . You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their
+               
+              <Unknown
+                            to="https://cloudinary.com/privacy"
+              >
+                            privacy policy
+              </Unknown>
+              .
+</p>,
+            <p>
+              This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
+</p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account on Analog.Cafe server.",
+            },
+            "ref": null,
+            "rendered": "Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account on Analog.Cafe server.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "You can delete your account at any time by sending a request to",
+                " ",
+                <Unknown />,
+                ". Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "You can delete your account at any time by sending a request to",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              ". Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.",
+            },
+            "ref": null,
+            "rendered": "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own",
+                " ",
+                <Unknown
+                  to="https://policies.google.com/privacy"
+>
+                  privacy policy
+</Unknown>,
+                ". You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their",
+                " ",
+                <Unknown
+                  to="https://cloudinary.com/privacy"
+>
+                  privacy policy
+</Unknown>,
+                ".",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "privacy policy",
+                  "to": "https://policies.google.com/privacy",
+                },
+                "ref": null,
+                "rendered": "privacy policy",
+                "type": [Function],
+              },
+              ". You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "privacy policy",
+                  "to": "https://cloudinary.com/privacy",
+                },
+                "ref": null,
+                "rendered": "privacy policy",
+                "type": [Function],
+              },
+              ".",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.",
+            },
+            "ref": null,
+            "rendered": "This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.",
+            "type": "p",
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            metaDescription="Privacy policy employed on Analog.Cafe"
+            metaTitle="Privacy Policy"
+/>,
+          <Unknown
+            pageTitle="Privacy Policy"
+/>,
+          <styled.section>
+            <p>
+                        Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account on Analog.Cafe server.
+            </p>
+            <p>
+                        You can delete your account at any time by sending a request to
+                         
+                        <Unknown />
+                        . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
+            </p>
+            <p>
+                        If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.
+            </p>
+            <p>
+                        Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
+                         
+                        <Unknown
+                                    to="https://policies.google.com/privacy"
+                        >
+                                    privacy policy
+                        </Unknown>
+                        . You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their
+                         
+                        <Unknown
+                                    to="https://cloudinary.com/privacy"
+                        >
+                                    privacy policy
+                        </Unknown>
+                        .
+            </p>
+            <p>
+                        This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
+            </p>
+</styled.section>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "metaDescription": "Privacy policy employed on Analog.Cafe",
+            "metaTitle": "Privacy Policy",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "pageTitle": "Privacy Policy",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <p>
+                Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account on Analog.Cafe server.
+</p>,
+              <p>
+                You can delete your account at any time by sending a request to
+                 
+                <Unknown />
+                . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
+</p>,
+              <p>
+                If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.
+</p>,
+              <p>
+                Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
+                 
+                <Unknown
+                                to="https://policies.google.com/privacy"
+                >
+                                privacy policy
+                </Unknown>
+                . You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their
+                 
+                <Unknown
+                                to="https://cloudinary.com/privacy"
+                >
+                                privacy policy
+                </Unknown>
+                .
+</p>,
+              <p>
+                This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
+</p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account on Analog.Cafe server.",
+              },
+              "ref": null,
+              "rendered": "Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account on Analog.Cafe server.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "You can delete your account at any time by sending a request to",
+                  " ",
+                  <Unknown />,
+                  ". Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "You can delete your account at any time by sending a request to",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                ". Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.",
+              },
+              "ref": null,
+              "rendered": "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own",
+                  " ",
+                  <Unknown
+                    to="https://policies.google.com/privacy"
+>
+                    privacy policy
+</Unknown>,
+                  ". You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their",
+                  " ",
+                  <Unknown
+                    to="https://cloudinary.com/privacy"
+>
+                    privacy policy
+</Unknown>,
+                  ".",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "privacy policy",
+                    "to": "https://policies.google.com/privacy",
+                  },
+                  "ref": null,
+                  "rendered": "privacy policy",
+                  "type": [Function],
+                },
+                ". You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "privacy policy",
+                    "to": "https://cloudinary.com/privacy",
+                  },
+                  "ref": null,
+                  "rendered": "privacy policy",
+                  "type": [Function],
+                },
+                ".",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.",
+              },
+              "ref": null,
+              "rendered": "This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.",
+              "type": "p",
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

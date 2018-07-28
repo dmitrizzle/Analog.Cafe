@@ -1,10 +1,13 @@
+import "jest-styled-components"
+
 import { createMockStore } from "redux-test-utils"
 import { shallowWithStore } from "enzyme-redux"
 import React from "react"
 
 import About from "./"
 
-it("Render About without crashing", () => {
+it("Render About, matches snapshot", () => {
   const store = createMockStore()
-  shallowWithStore(<About />, store)
+  const element = shallowWithStore(<About />, store)
+  expect(element).toMatchSnapshot()
 })

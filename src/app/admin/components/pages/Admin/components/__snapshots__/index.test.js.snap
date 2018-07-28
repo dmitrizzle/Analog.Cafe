@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ImageAdmin without crashing, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    imagelib={
+        Object {
+            "items": Array [
+              Object {
+                "id": 0,
+              },
+            ],
+            "status": "loading",
+          }
+    }
+    rowIndex={
+        Array [
+            0,
+          ]
+    }
+    stateImageList={
+        Object {
+            "options": Object {
+              "featured": false,
+              "fullConsent": false,
+            },
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Array [
+    <div
+      style={
+            Object {
+                  "padding": "0 1.5em",
+                }
+      }
+>
+      <h3>
+            Images.
+      </h3>
+      <styled.div
+            style={
+                  Object {
+                        "margin": ".5em auto",
+                        "whiteSpace": "nowrap",
+                      }
+            }
+      >
+            <div>
+                  <Unknown
+                        inverse={true}
+                        left={true}
+                        onClick={[Function]}
+                  >
+                        All
+                  </Unknown>
+                  <Unknown
+                        inverse={false}
+                        onClick={[Function]}
+                  >
+                        Open
+                  </Unknown>
+                  <Unknown
+                        inverse={false}
+                        onClick={[Function]}
+                        right={true}
+                  >
+                        Featured
+                  </Unknown>
+            </div>
+      </styled.div>
+</div>,
+    <styled.div>
+      <styled.div>
+            
+      </styled.div>
+</styled.div>,
+    <div />,
+  ],
+  Symbol(enzyme.__nodes__): Array [
+    Array [
+      <div
+        style={
+                Object {
+                        "padding": "0 1.5em",
+                      }
+        }
+>
+        <h3>
+                Images.
+        </h3>
+        <styled.div
+                style={
+                        Object {
+                                "margin": ".5em auto",
+                                "whiteSpace": "nowrap",
+                              }
+                }
+        >
+                <div>
+                        <Unknown
+                                inverse={true}
+                                left={true}
+                                onClick={[Function]}
+                        >
+                                All
+                        </Unknown>
+                        <Unknown
+                                inverse={false}
+                                onClick={[Function]}
+                        >
+                                Open
+                        </Unknown>
+                        <Unknown
+                                inverse={false}
+                                onClick={[Function]}
+                                right={true}
+                        >
+                                Featured
+                        </Unknown>
+                </div>
+        </styled.div>
+</div>,
+      <styled.div>
+        <styled.div>
+                
+        </styled.div>
+</styled.div>,
+      <div />,
+    ],
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Render UserAdmin without crashing, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    admin={
+        Object {
+            "accountList": Object {
+              "items": Array [
+                Object {
+                  "id": 0,
+                },
+              ],
+              "status": "loading",
+            },
+          }
+    }
+    rowIndex={
+        Array [
+            0,
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Array [
+    <div
+      style={
+            Object {
+                  "padding": "0 1.5em",
+                }
+      }
+>
+      <h3>
+            Users.
+      </h3>
+</div>,
+    <styled.div>
+      <styled.div>
+            
+      </styled.div>
+</styled.div>,
+  ],
+  Symbol(enzyme.__nodes__): Array [
+    Array [
+      <div
+        style={
+                Object {
+                        "padding": "0 1.5em",
+                      }
+        }
+>
+        <h3>
+                Users.
+        </h3>
+</div>,
+      <styled.div>
+        <styled.div>
+                
+        </styled.div>
+</styled.div>,
+    ],
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -1,10 +1,13 @@
+import "jest-styled-components"
+
 import { createMockStore } from "redux-test-utils"
 import { shallowWithStore } from "enzyme-redux"
 import React from "react"
 
 import SigninWithEmail from "./"
 
-it("Render SigninWithEmail without crashing", () => {
+it("Render SigninWithEmail, matches snapshot", () => {
   const store = createMockStore()
-  shallowWithStore(<SigninWithEmail />, store)
+  const element = shallowWithStore(<SigninWithEmail />, store)
+  expect(element).toMatchSnapshot()
 })
