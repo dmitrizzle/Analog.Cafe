@@ -2,6 +2,7 @@ import React from "react"
 
 import {
   FacebookLinkButton,
+  FeedlyLinkButton,
   InstagramLinkButton,
   TwitterLinkButton
 } from "../../Button/components/SocialButtons"
@@ -10,6 +11,20 @@ import CardIntegrated from "../../Card/components/CardIntegrated"
 export default props => {
   return (
     <CardIntegrated>
+      <FeedlyLinkButton
+        to="http://bit.ly/FeedAnalog"
+        onClick={() => {
+          import("react-ga").then(ReactGA => {
+            ReactGA.event({
+              category: "Campaign",
+              action: "ActionsCard.follow_feedly"
+            })
+          })
+        }}
+      >
+        Follow on Feedly
+      </FeedlyLinkButton>
+
       <TwitterLinkButton
         to="https://twitter.com/analog_cafe"
         onClick={() => {
