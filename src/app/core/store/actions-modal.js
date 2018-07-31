@@ -11,7 +11,8 @@ export const initModal = state => {
   }
 }
 export const hideModal = () => {
-  document.getElementById("modal-overlay").scrollTop = 0 // scroll card to top
+  const overlayElement = document.getElementById("modal-overlay")
+  overlayElement.scrollTop = 0
   return {
     type: "MODAL.HIDE_CARD",
     payload: {}
