@@ -18,6 +18,14 @@ const Overlay = styled.aside`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `
 
+export const modalScrollCallback = (target, callback) => {
+  if (!target) return
+  const scrollPosition = target.scrollTop
+  if (!scrollPosition) return
+  const scrollLimitUpper = target.scrollHeight - target.clientHeight
+  return scrollLimitUpper - scrollPosition === 0 ? callback() : null
+}
+
 const ModalOverlay = props => {
   if (!props.modal.hidden && props.modal.status === "ok") {
     import("react-ga").then(ReactGA => {
@@ -43,6 +51,7 @@ const ModalOverlay = props => {
         display: props.modal.hidden ? "none" : "block"
       }}
       onClick={() => props.hideModal()}
+      onScroll={event => modalScrollCallback(event.target, props.hideModal)}
     >
       <ModalCard
         title={props.modal.info.title}
@@ -71,4 +80,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ModalOverlay)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ModalOverlay)

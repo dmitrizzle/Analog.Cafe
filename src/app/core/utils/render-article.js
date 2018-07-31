@@ -145,10 +145,6 @@ const addKey = element => {
               get: object => (node.data ? node.data[object] : undefined)
             }
         }
-        console.log(
-          element.props.node.data.get("feature"),
-          nodeFunction.get("data").get("feature")
-        )
         return nodeFunction
       }
     }
