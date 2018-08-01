@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import { fileToBase64 } from "@roast-cms/french-press-editor/dist/utils/actions-image"
 import Loadable from "react-loadable"
 import React from "react"
 
@@ -82,20 +83,13 @@ class Picture extends React.PureComponent {
     } else {
       import("localforage").then(localForage => {
         localForage.getItem(key).then(data => {
-          const reader = new FileReader()
-          reader.addEventListener("load", () =>
-            this.setState({ src: reader.result })
-          )
-          if (
-            data &&
-            Object.keys(file).length === 0 &&
-            file.constructor === Object
-          ) {
-            reader.readAsDataURL(data)
+          if (data) {
+            fileToBase64(data).then(string => this.setState({ src: string }))
           } else if (file && file.constructor !== Object) {
-            reader.readAsDataURL(file)
+            fileToBase64(file).then(string => this.setState({ src: string }))
           }
         })
+        this.setState({ key })
       })
       this.setState({ key })
     }
