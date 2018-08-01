@@ -177,7 +177,12 @@ class Picture extends React.PureComponent {
     const foldSpacer = nextBlock.get("data").get("feature") ? true : false
 
     return (
-      <div style={{ clear: "both" }}>
+      <div
+        style={{ clear: "both" }}
+        onClick={() => {
+          return null
+        }}
+      >
         {!this.props.readOnly && focus ? (
           <PictureMenu
             removePicture={this.handleRemovePicture}
@@ -193,7 +198,9 @@ class Picture extends React.PureComponent {
           feature={feature}
           caption={this.state.caption}
           foldSpacer={foldSpacer}
-          onClick={() => this.handleGetAuthor(src)}
+          onClick={() => {
+            this.handleGetAuthor(src)
+          }}
           userRole={this.props.user.info.role}
           captionInputFocus={this.state.captionInputFocus}
           focus={focus}
@@ -206,6 +213,7 @@ class Picture extends React.PureComponent {
               onClick={this.handleTextareaClick}
               onFocus={this.handleCaptionInputFocus}
               onBlur={this.handleCaptionInputBlur}
+              ref={r => (this.textarea = r)}
             />
           ) : (
             <span>{this.state.caption}</span>
