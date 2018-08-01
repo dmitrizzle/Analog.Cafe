@@ -86,10 +86,16 @@ class Picture extends React.PureComponent {
     } else {
       import("localforage").then(localForage => {
         localForage.getItem(key).then(data => {
-          const src = URL.createObjectURL(base64ToBlob(data))
-          this.setState({ src, key })
+          if (data) {
+            const src = URL.createObjectURL(base64ToBlob(data))
+            this.setState({ src })
+          } else if (file && file.constructor !== Object) {
+            const src = URL.createObjectURL(file)
+            this.setState({ src })
+          }
         })
       })
+      this.setState({ key })
     }
   }
   handleRemovePicture = () => {
