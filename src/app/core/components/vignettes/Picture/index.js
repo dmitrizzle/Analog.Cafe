@@ -1,5 +1,4 @@
 import { connect } from "react-redux"
-import { fileToBase64 } from "@roast-cms/french-press-editor/dist/utils/actions-image"
 import Loadable from "react-loadable"
 import React from "react"
 
@@ -7,6 +6,7 @@ import {
   INPUT_FORMAT,
   OBJECT_SLATE_PICTURE_FROM_IMMUTABLE
 } from "../../../../user/constants/rules-submission"
+import { fileToBase64 } from "../../../../user/utils/actions-submission"
 import { getPictureInfo } from "../../../store/actions-picture"
 import { setModal } from "../../../store/actions-modal"
 import Figure from "./components/Figure"
