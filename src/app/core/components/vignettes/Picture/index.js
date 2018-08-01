@@ -6,7 +6,7 @@ import {
   INPUT_FORMAT,
   OBJECT_SLATE_PICTURE_FROM_IMMUTABLE
 } from "../../../../user/constants/rules-submission"
-import { fileToBase64 } from "../../../../user/utils/actions-submission"
+import { base64ToBlob } from "../../../../user/utils/actions-submission"
 import { getPictureInfo } from "../../../store/actions-picture"
 import { setModal } from "../../../store/actions-modal"
 import Figure from "./components/Figure"
@@ -77,21 +77,19 @@ class Picture extends React.PureComponent {
     this.loadImage(data.get("file"), key, data.get("src"))
     this.setState({ key })
   }
+  componentWillUnmount = () => {
+    this.state.src.includes("blob:") && URL.revokeObjectURL(this.state.src)
+  }
   loadImage = (file, key, src) => {
     if (!key) {
       this.setState({ src })
     } else {
       import("localforage").then(localForage => {
         localForage.getItem(key).then(data => {
-          if (data) {
-            fileToBase64(data).then(string => this.setState({ src: string }))
-          } else if (file && file.constructor !== Object) {
-            fileToBase64(file).then(string => this.setState({ src: string }))
-          }
+          const src = URL.createObjectURL(base64ToBlob(data))
+          this.setState({ src, key })
         })
-        this.setState({ key })
       })
-      this.setState({ key })
     }
   }
   handleRemovePicture = () => {
