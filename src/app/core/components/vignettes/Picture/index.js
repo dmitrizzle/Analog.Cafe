@@ -213,7 +213,6 @@ class Picture extends React.PureComponent {
               onClick={this.handleTextareaClick}
               onFocus={this.handleCaptionInputFocus}
               onBlur={this.handleCaptionInputBlur}
-              ref={r => (this.textarea = r)}
             />
           ) : (
             <span>{this.state.caption}</span>
