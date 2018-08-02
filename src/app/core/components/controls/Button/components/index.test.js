@@ -8,7 +8,8 @@ import { APP_THEME } from "../../../../../../constants"
 import {
   FacebookLinkButton,
   InstagramLinkButton,
-  TwitterLinkButton
+  TwitterLinkButton,
+  FeedlyLinkButton
 } from "./SocialButtons"
 import Button from "./Button"
 import ButtonGroup from "./ButtonGroup"
@@ -59,6 +60,10 @@ it("Render LinkButton, matches snapshot", () => {
   expect(element).toMatchSnapshot()
 })
 
+it("Render FeedlyLinkButton, matches snapshot", () => {
+  const element = shallow(<FeedlyLinkButton />)
+  expect(element).toMatchSnapshot()
+})
 it("Render TwitterLinkButton, matches snapshot", () => {
   const element = shallow(<TwitterLinkButton />)
   expect(element).toMatchSnapshot()

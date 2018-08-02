@@ -4,6 +4,7 @@ import { shallow } from "enzyme"
 import React from "react"
 
 import Facebook from "./Facebook"
+import Feedly from "./Feedly"
 import Instagram from "./Instagram"
 import Twitter from "./Twitter"
 
@@ -19,5 +20,10 @@ it("Render Instagram, matches snapshot", () => {
 
 it("Render Twitter, matches snapshot", () => {
   const element = shallow(<Twitter />)
+  expect(element).toMatchSnapshot()
+})
+
+it("Render Feedly, matches snapshot", () => {
+  const element = shallow(<Feedly />)
   expect(element).toMatchSnapshot()
 })

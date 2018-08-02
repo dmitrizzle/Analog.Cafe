@@ -7,6 +7,7 @@ import { hideModal } from "../../../../store/actions-modal"
 import ModalCard from "./ModalCard"
 
 const Overlay = styled.aside`
+  display: ${props => (props.hidden ? "none" : "block")};
   position: fixed;
   top: 0;
   left: 0;
@@ -17,6 +18,15 @@ const Overlay = styled.aside`
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `
+
+export const modalScrollCallback = (target, callback) => {
+  if (!target) return
+  const scrollPosition = target.scrollTop
+  if (!scrollPosition) return
+  const scrollLimitUpper = target.scrollHeight - target.clientHeight
+  const scrollAvailableUpper = scrollLimitUpper - scrollPosition
+  return scrollAvailableUpper === 0 ? callback() : null
+}
 
 const ModalOverlay = props => {
   if (!props.modal.hidden && props.modal.status === "ok") {
@@ -39,10 +49,9 @@ const ModalOverlay = props => {
   return (
     <Overlay
       id="modal-overlay"
-      style={{
-        display: props.modal.hidden ? "none" : "block"
-      }}
+      hidden={props.modal.hidden}
       onClick={() => props.hideModal()}
+      onScroll={event => modalScrollCallback(event.target, props.hideModal)}
     >
       <ModalCard
         title={props.modal.info.title}
@@ -71,4 +80,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ModalOverlay)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ModalOverlay)

@@ -20,6 +20,12 @@ ShallowWrapper {
       "children": Array [
         <Unknown
           onClick={[Function]}
+          to="http://bit.ly/FeedAnalog"
+>
+          Follow on Feedly
+</Unknown>,
+        <Unknown
+          onClick={[Function]}
           to="https://twitter.com/analog_cafe"
 >
           Follow on Twitter
@@ -40,6 +46,19 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": "Follow on Feedly",
+          "onClick": [Function],
+          "to": "http://bit.ly/FeedAnalog",
+        },
+        "ref": null,
+        "rendered": "Follow on Feedly",
+        "type": [Function],
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -91,6 +110,12 @@ ShallowWrapper {
         "children": Array [
           <Unknown
             onClick={[Function]}
+            to="http://bit.ly/FeedAnalog"
+>
+            Follow on Feedly
+</Unknown>,
+          <Unknown
+            onClick={[Function]}
             to="https://twitter.com/analog_cafe"
 >
             Follow on Twitter
@@ -111,6 +136,19 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": "Follow on Feedly",
+            "onClick": [Function],
+            "to": "http://bit.ly/FeedAnalog",
+          },
+          "ref": null,
+          "rendered": "Follow on Feedly",
+          "type": [Function],
+        },
         Object {
           "instance": null,
           "key": undefined,

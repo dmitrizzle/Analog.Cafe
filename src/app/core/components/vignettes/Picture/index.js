@@ -6,6 +6,7 @@ import {
   INPUT_FORMAT,
   OBJECT_SLATE_PICTURE_FROM_IMMUTABLE
 } from "../../../../user/constants/rules-submission"
+import { base64ToBlob } from "../../../../user/utils/actions-submission"
 import { getPictureInfo } from "../../../store/actions-picture"
 import { setModal } from "../../../store/actions-modal"
 import Figure from "./components/Figure"
@@ -76,24 +77,21 @@ class Picture extends React.PureComponent {
     this.loadImage(data.get("file"), key, data.get("src"))
     this.setState({ key })
   }
+  componentWillUnmount = () => {
+    this.state.src.includes("blob:") && URL.revokeObjectURL(this.state.src)
+  }
   loadImage = (file, key, src) => {
     if (!key) {
       this.setState({ src })
     } else {
       import("localforage").then(localForage => {
         localForage.getItem(key).then(data => {
-          const reader = new FileReader()
-          reader.addEventListener("load", () =>
-            this.setState({ src: reader.result })
-          )
-          if (
-            data &&
-            Object.keys(file).length === 0 &&
-            file.constructor === Object
-          ) {
-            reader.readAsDataURL(data)
+          if (data) {
+            const src = URL.createObjectURL(base64ToBlob(data))
+            this.setState({ src })
           } else if (file && file.constructor !== Object) {
-            reader.readAsDataURL(file)
+            const src = URL.createObjectURL(file)
+            this.setState({ src })
           }
         })
       })
@@ -179,7 +177,12 @@ class Picture extends React.PureComponent {
     const foldSpacer = nextBlock.get("data").get("feature") ? true : false
 
     return (
-      <div style={{ clear: "both" }}>
+      <div
+        style={{ clear: "both" }}
+        onClick={() => {
+          return null
+        }}
+      >
         {!this.props.readOnly && focus ? (
           <PictureMenu
             removePicture={this.handleRemovePicture}
@@ -195,7 +198,9 @@ class Picture extends React.PureComponent {
           feature={feature}
           caption={this.state.caption}
           foldSpacer={foldSpacer}
-          onClick={() => this.handleGetAuthor(src)}
+          onClick={() => {
+            this.handleGetAuthor(src)
+          }}
           userRole={this.props.user.info.role}
           captionInputFocus={this.state.captionInputFocus}
           focus={focus}

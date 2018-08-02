@@ -11,7 +11,11 @@ import localForage from "localforage"
 import { CARD_ERRORS } from "../../../constants/messages-submission"
 import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
-import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
+import {
+  base64ToBlob,
+  loadHeader,
+  sendSubmission
+} from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
 import { resetStatus } from "../../../../admin/store/actions-editor"
 import { setModal } from "../../../../core/store/actions-modal"
@@ -84,7 +88,7 @@ class Upload extends React.PureComponent {
       if (keys.length > 0) {
         localForage.getItems(keys).then(results => {
           keys.forEach(k => {
-            data.append("images[" + k + "]", results[k])
+            data.append("images[" + k + "]", base64ToBlob(results[k]))
           })
           content.document.nodes
             .filter(node => !!(node.data && node.data.src))
