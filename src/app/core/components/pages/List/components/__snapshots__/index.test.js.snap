@@ -2882,9 +2882,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <styled.section
-        plain={true}
->
+      "children": <styled.section>
         <Unknown />
         <Unknown
                 branded={true}
@@ -2909,7 +2907,6 @@ ShallowWrapper {
             Submit Now
 </Unknown>,
         ],
-        "plain": true,
       },
       "ref": null,
       "rendered": Array [
@@ -2946,9 +2943,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <styled.section
-          plain={true}
->
+        "children": <styled.section>
           <Unknown />
           <Unknown
                     branded={true}
@@ -2973,7 +2968,6 @@ ShallowWrapper {
               Submit Now
 </Unknown>,
           ],
-          "plain": true,
         },
         "ref": null,
         "rendered": Array [

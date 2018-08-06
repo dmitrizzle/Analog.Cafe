@@ -3,9 +3,9 @@ import "jest-styled-components"
 import { shallow } from "enzyme"
 import React from "react"
 
-import FooterDecor from "./"
+import Footer from "./Footer"
 
-it("Render FooterDecor, matches snapshot", () => {
-  const element = shallow(<FooterDecor />)
+it("Render Footer, matches snapshot", () => {
+  const element = shallow(<Footer />)
   expect(element).toMatchSnapshot()
 })
