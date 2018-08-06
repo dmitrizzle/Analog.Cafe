@@ -36,7 +36,11 @@ ShallowWrapper {
                     . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
           </p>
           <p>
-                    If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.
+                    If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use cookie-tracking technology. An instance of Google Analytics 
+                    <em>
+                              is
+                    </em>
+                     installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.
           </p>
           <p>
                     Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
@@ -46,7 +50,17 @@ ShallowWrapper {
                     >
                               privacy policy
                     </Unknown>
-                    . You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their
+                    . If you would like to opt out of Google Analytics tracking, please visit
+                     
+                    <strong>
+                              <Unknown
+                                        to="/privacy-settings"
+                              >
+                                        Privacy Settings
+                              </Unknown>
+                    </strong>
+                     
+                    and follow the instructions there. We use Cloudinary to deliver high-quality images who acts according to their own
                      
                     <Unknown
                               to="https://cloudinary.com/privacy"
@@ -102,7 +116,11 @@ ShallowWrapper {
               . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
 </p>,
             <p>
-              If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.
+              If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use cookie-tracking technology. An instance of Google Analytics 
+              <em>
+                            is
+              </em>
+               installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.
 </p>,
             <p>
               Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
@@ -112,7 +130,17 @@ ShallowWrapper {
               >
                             privacy policy
               </Unknown>
-              . You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their
+              . If you would like to opt out of Google Analytics tracking, please visit
+               
+              <strong>
+                            <Unknown
+                                          to="/privacy-settings"
+                            >
+                                          Privacy Settings
+                            </Unknown>
+              </strong>
+               
+              and follow the instructions there. We use Cloudinary to deliver high-quality images who acts according to their own
                
               <Unknown
                             to="https://cloudinary.com/privacy"
@@ -173,10 +201,30 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.",
+              "children": Array [
+                "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use cookie-tracking technology. An instance of Google Analytics ",
+                <em>
+                  is
+</em>,
+                " installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.",
+              ],
             },
             "ref": null,
-            "rendered": "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.",
+            "rendered": Array [
+              "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use cookie-tracking technology. An instance of Google Analytics ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "is",
+                },
+                "ref": null,
+                "rendered": "is",
+                "type": "em",
+              },
+              " installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.",
+            ],
             "type": "p",
           },
           Object {
@@ -192,7 +240,17 @@ ShallowWrapper {
 >
                   privacy policy
 </Unknown>,
-                ". You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their",
+                ". If you would like to opt out of Google Analytics tracking, please visit",
+                " ",
+                <strong>
+                  <Unknown
+                                    to="/privacy-settings"
+                  >
+                                    Privacy Settings
+                  </Unknown>
+</strong>,
+                " ",
+                "and follow the instructions there. We use Cloudinary to deliver high-quality images who acts according to their own",
                 " ",
                 <Unknown
                   to="https://cloudinary.com/privacy"
@@ -218,7 +276,36 @@ ShallowWrapper {
                 "rendered": "privacy policy",
                 "type": [Function],
               },
-              ". You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their",
+              ". If you would like to opt out of Google Analytics tracking, please visit",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Unknown
+                    to="/privacy-settings"
+>
+                    Privacy Settings
+</Unknown>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Privacy Settings",
+                    "to": "/privacy-settings",
+                  },
+                  "ref": null,
+                  "rendered": "Privacy Settings",
+                  "type": [Function],
+                },
+                "type": "strong",
+              },
+              " ",
+              "and follow the instructions there. We use Cloudinary to deliver high-quality images who acts according to their own",
               " ",
               Object {
                 "instance": null,
@@ -278,7 +365,11 @@ ShallowWrapper {
                         . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
             </p>
             <p>
-                        If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.
+                        If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use cookie-tracking technology. An instance of Google Analytics 
+                        <em>
+                                    is
+                        </em>
+                         installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.
             </p>
             <p>
                         Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
@@ -288,7 +379,17 @@ ShallowWrapper {
                         >
                                     privacy policy
                         </Unknown>
-                        . You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their
+                        . If you would like to opt out of Google Analytics tracking, please visit
+                         
+                        <strong>
+                                    <Unknown
+                                                to="/privacy-settings"
+                                    >
+                                                Privacy Settings
+                                    </Unknown>
+                        </strong>
+                         
+                        and follow the instructions there. We use Cloudinary to deliver high-quality images who acts according to their own
                          
                         <Unknown
                                     to="https://cloudinary.com/privacy"
@@ -344,7 +445,11 @@ ShallowWrapper {
                 . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
 </p>,
               <p>
-                If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.
+                If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use cookie-tracking technology. An instance of Google Analytics 
+                <em>
+                                is
+                </em>
+                 installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.
 </p>,
               <p>
                 Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
@@ -354,7 +459,17 @@ ShallowWrapper {
                 >
                                 privacy policy
                 </Unknown>
-                . You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their
+                . If you would like to opt out of Google Analytics tracking, please visit
+                 
+                <strong>
+                                <Unknown
+                                                to="/privacy-settings"
+                                >
+                                                Privacy Settings
+                                </Unknown>
+                </strong>
+                 
+                and follow the instructions there. We use Cloudinary to deliver high-quality images who acts according to their own
                  
                 <Unknown
                                 to="https://cloudinary.com/privacy"
@@ -415,10 +530,30 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.",
+                "children": Array [
+                  "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use cookie-tracking technology. An instance of Google Analytics ",
+                  <em>
+                    is
+</em>,
+                  " installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.",
+                ],
               },
               "ref": null,
-              "rendered": "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use “cookie” technology.",
+              "rendered": Array [
+                "If you are logged in to an account with Analog.Cafe, a token is stored on your device that verifies your identity to the server. It is not used to track your behaviour. Additionally (regardless of whether you have an account or not, logged in or not), Analog.Cafe may store textual data in a variety of forms on your device that lets you store your submissions in your browser and resume them even when you are offline, as well as to provide customized experiences. Analog.Cafe does not use that information to track your behaviour. Analog.Cafe can not see the content of your token or any of the stored data mentioned above. Analog.Cafe does not directly use cookie-tracking technology. An instance of Google Analytics ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "is",
+                  },
+                  "ref": null,
+                  "rendered": "is",
+                  "type": "em",
+                },
+                " installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.",
+              ],
               "type": "p",
             },
             Object {
@@ -434,7 +569,17 @@ ShallowWrapper {
 >
                     privacy policy
 </Unknown>,
-                  ". You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their",
+                  ". If you would like to opt out of Google Analytics tracking, please visit",
+                  " ",
+                  <strong>
+                    <Unknown
+                                        to="/privacy-settings"
+                    >
+                                        Privacy Settings
+                    </Unknown>
+</strong>,
+                  " ",
+                  "and follow the instructions there. We use Cloudinary to deliver high-quality images who acts according to their own",
                   " ",
                   <Unknown
                     to="https://cloudinary.com/privacy"
@@ -460,7 +605,36 @@ ShallowWrapper {
                   "rendered": "privacy policy",
                   "type": [Function],
                 },
-                ". You can opt-out by installing a plugin on your browser or switching the settings of your OS. A service called Cloudinary that we use to deliver high-quality images may track your activity according to their",
+                ". If you would like to opt out of Google Analytics tracking, please visit",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Unknown
+                      to="/privacy-settings"
+>
+                      Privacy Settings
+</Unknown>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "Privacy Settings",
+                      "to": "/privacy-settings",
+                    },
+                    "ref": null,
+                    "rendered": "Privacy Settings",
+                    "type": [Function],
+                  },
+                  "type": "strong",
+                },
+                " ",
+                "and follow the instructions there. We use Cloudinary to deliver high-quality images who acts according to their own",
                 " ",
                 Object {
                   "instance": null,

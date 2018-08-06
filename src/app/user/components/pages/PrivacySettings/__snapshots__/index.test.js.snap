@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render RestoreComposerBackup, matches snapshot 1`] = `
+exports[`Render PrivacySettings, matches snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(RestoreComposerBackup) />,
+  Symbol(enzyme.__unrendered__): <PureComponent />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,10 +17,302 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "setModal": [Function],
+      "children": Array [
+        <Unknown
+          pageTitle="Privacy Settings"
+/>,
+        <styled.section>
+          <p>
+                    Google Analytics is used by Analog.Cafe to anonymously (individual users can not be identified) study how the visitors are using the website and how the website experience could be improved based on those findings.
+          </p>
+          <p>
+                    Analog.Cafe will store your preferences in your browser’s
+                     
+                    <em>
+                              LocalStorage
+                    </em>
+                     (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.
+          </p>
+          <Styled(styled.div)>
+                    <Unknown
+                              buttons={
+                                        Array [
+                                                  0,
+                                                ]
+                              }
+                              noStar={true}
+                              stubborn={true}
+                              title="Share Usage Data With:"
+                    />
+                    <Unknown
+                              inverse={true}
+                              loading={false}
+                              onClick={[Function]}
+                    >
+                              Google Analytics
+                    </Unknown>
+          </Styled(styled.div)>
+          <p
+                    style={
+                              Object {
+                                        "textAlign": "center",
+                                      }
+                    }
+          >
+                    <small>
+                              Your usage data is
+                               
+                              being
+                              <span>
+                                         anonymously
+                              </span>
+                               
+                              shared with Google Analytics.
+                    </small>
+          </p>
+</styled.section>,
+      ],
     },
     "ref": null,
-    "rendered": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "pageTitle": "Privacy Settings",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <p>
+              Google Analytics is used by Analog.Cafe to anonymously (individual users can not be identified) study how the visitors are using the website and how the website experience could be improved based on those findings.
+</p>,
+            <p>
+              Analog.Cafe will store your preferences in your browser’s
+               
+              <em>
+                            LocalStorage
+              </em>
+               (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.
+</p>,
+            <Styled(styled.div)>
+              <Unknown
+                            buttons={
+                                          Array [
+                                                        0,
+                                                      ]
+                            }
+                            noStar={true}
+                            stubborn={true}
+                            title="Share Usage Data With:"
+              />
+              <Unknown
+                            inverse={true}
+                            loading={false}
+                            onClick={[Function]}
+              >
+                            Google Analytics
+              </Unknown>
+</Styled(styled.div)>,
+            <p
+              style={
+                            Object {
+                                          "textAlign": "center",
+                                        }
+              }
+>
+              <small>
+                            Your usage data is
+                             
+                            being
+                            <span>
+                                           anonymously
+                            </span>
+                             
+                            shared with Google Analytics.
+              </small>
+</p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Google Analytics is used by Analog.Cafe to anonymously (individual users can not be identified) study how the visitors are using the website and how the website experience could be improved based on those findings.",
+            },
+            "ref": null,
+            "rendered": "Google Analytics is used by Analog.Cafe to anonymously (individual users can not be identified) study how the visitors are using the website and how the website experience could be improved based on those findings.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Analog.Cafe will store your preferences in your browser’s",
+                " ",
+                <em>
+                  LocalStorage
+</em>,
+                " (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Analog.Cafe will store your preferences in your browser’s",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "LocalStorage",
+                },
+                "ref": null,
+                "rendered": "LocalStorage",
+                "type": "em",
+              },
+              " (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Unknown
+                  buttons={
+                                    Array [
+                                                      0,
+                                                    ]
+                  }
+                  noStar={true}
+                  stubborn={true}
+                  title="Share Usage Data With:"
+/>,
+                <Unknown
+                  inverse={true}
+                  loading={false}
+                  onClick={[Function]}
+>
+                  Google Analytics
+</Unknown>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "buttons": Array [
+                    0,
+                  ],
+                  "noStar": true,
+                  "stubborn": true,
+                  "title": "Share Usage Data With:",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Google Analytics",
+                  "inverse": true,
+                  "loading": false,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Google Analytics",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <small>
+                Your usage data is
+                 
+                being
+                <span>
+                                 anonymously
+                </span>
+                 
+                shared with Google Analytics.
+</small>,
+              "style": Object {
+                "textAlign": "center",
+              },
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Your usage data is",
+                  false,
+                  " ",
+                  "being",
+                  <span>
+                     anonymously
+</span>,
+                  " ",
+                  "shared with Google Analytics.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Your usage data is",
+                false,
+                " ",
+                "being",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": " anonymously",
+                  },
+                  "ref": null,
+                  "rendered": " anonymously",
+                  "type": "span",
+                },
+                " ",
+                "shared with Google Analytics.",
+              ],
+              "type": "small",
+            },
+            "type": "p",
+          },
+        ],
+        "type": [Function],
+      },
+    ],
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -29,10 +321,302 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "setModal": [Function],
+        "children": Array [
+          <Unknown
+            pageTitle="Privacy Settings"
+/>,
+          <styled.section>
+            <p>
+                        Google Analytics is used by Analog.Cafe to anonymously (individual users can not be identified) study how the visitors are using the website and how the website experience could be improved based on those findings.
+            </p>
+            <p>
+                        Analog.Cafe will store your preferences in your browser’s
+                         
+                        <em>
+                                    LocalStorage
+                        </em>
+                         (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.
+            </p>
+            <Styled(styled.div)>
+                        <Unknown
+                                    buttons={
+                                                Array [
+                                                            0,
+                                                          ]
+                                    }
+                                    noStar={true}
+                                    stubborn={true}
+                                    title="Share Usage Data With:"
+                        />
+                        <Unknown
+                                    inverse={true}
+                                    loading={false}
+                                    onClick={[Function]}
+                        >
+                                    Google Analytics
+                        </Unknown>
+            </Styled(styled.div)>
+            <p
+                        style={
+                                    Object {
+                                                "textAlign": "center",
+                                              }
+                        }
+            >
+                        <small>
+                                    Your usage data is
+                                     
+                                    being
+                                    <span>
+                                                 anonymously
+                                    </span>
+                                     
+                                    shared with Google Analytics.
+                        </small>
+            </p>
+</styled.section>,
+        ],
       },
       "ref": null,
-      "rendered": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "pageTitle": "Privacy Settings",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <p>
+                Google Analytics is used by Analog.Cafe to anonymously (individual users can not be identified) study how the visitors are using the website and how the website experience could be improved based on those findings.
+</p>,
+              <p>
+                Analog.Cafe will store your preferences in your browser’s
+                 
+                <em>
+                                LocalStorage
+                </em>
+                 (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.
+</p>,
+              <Styled(styled.div)>
+                <Unknown
+                                buttons={
+                                                Array [
+                                                                0,
+                                                              ]
+                                }
+                                noStar={true}
+                                stubborn={true}
+                                title="Share Usage Data With:"
+                />
+                <Unknown
+                                inverse={true}
+                                loading={false}
+                                onClick={[Function]}
+                >
+                                Google Analytics
+                </Unknown>
+</Styled(styled.div)>,
+              <p
+                style={
+                                Object {
+                                                "textAlign": "center",
+                                              }
+                }
+>
+                <small>
+                                Your usage data is
+                                 
+                                being
+                                <span>
+                                                 anonymously
+                                </span>
+                                 
+                                shared with Google Analytics.
+                </small>
+</p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Google Analytics is used by Analog.Cafe to anonymously (individual users can not be identified) study how the visitors are using the website and how the website experience could be improved based on those findings.",
+              },
+              "ref": null,
+              "rendered": "Google Analytics is used by Analog.Cafe to anonymously (individual users can not be identified) study how the visitors are using the website and how the website experience could be improved based on those findings.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Analog.Cafe will store your preferences in your browser’s",
+                  " ",
+                  <em>
+                    LocalStorage
+</em>,
+                  " (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Analog.Cafe will store your preferences in your browser’s",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "LocalStorage",
+                  },
+                  "ref": null,
+                  "rendered": "LocalStorage",
+                  "type": "em",
+                },
+                " (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Unknown
+                    buttons={
+                                        Array [
+                                                            0,
+                                                          ]
+                    }
+                    noStar={true}
+                    stubborn={true}
+                    title="Share Usage Data With:"
+/>,
+                  <Unknown
+                    inverse={true}
+                    loading={false}
+                    onClick={[Function]}
+>
+                    Google Analytics
+</Unknown>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "buttons": Array [
+                      0,
+                    ],
+                    "noStar": true,
+                    "stubborn": true,
+                    "title": "Share Usage Data With:",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Google Analytics",
+                    "inverse": true,
+                    "loading": false,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Google Analytics",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <small>
+                  Your usage data is
+                   
+                  being
+                  <span>
+                                     anonymously
+                  </span>
+                   
+                  shared with Google Analytics.
+</small>,
+                "style": Object {
+                  "textAlign": "center",
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Your usage data is",
+                    false,
+                    " ",
+                    "being",
+                    <span>
+                       anonymously
+</span>,
+                    " ",
+                    "shared with Google Analytics.",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Your usage data is",
+                  false,
+                  " ",
+                  "being",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": " anonymously",
+                    },
+                    "ref": null,
+                    "rendered": " anonymously",
+                    "type": "span",
+                  },
+                  " ",
+                  "shared with Google Analytics.",
+                ],
+                "type": "small",
+              },
+              "type": "p",
+            },
+          ],
+          "type": [Function],
+        },
+      ],
       "type": [Function],
     },
   ],
@@ -40,17 +624,6 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-    "context": Object {
-      "store": Object {
-        "dispatch": [Function],
-        "getAction": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "isActionDispatched": [Function],
-        "isActionTypeDispatched": [Function],
-        "subscribe": [Function],
       },
     },
   },

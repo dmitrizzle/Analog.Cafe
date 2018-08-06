@@ -1,13 +1,11 @@
 import "jest-styled-components"
 
-import { createMockStore } from "redux-test-utils"
-import { shallowWithStore } from "enzyme-redux"
+import { shallow } from "enzyme"
 import React from "react"
 
-import RestoreComposerBackup from "./"
+import PrivacySettings from "./"
 
-it("Render RestoreComposerBackup, matches snapshot", () => {
-  const store = createMockStore()
-  const element = shallowWithStore(<RestoreComposerBackup />, store)
+it("Render PrivacySettings, matches snapshot", () => {
+  const element = shallow(<PrivacySettings />)
   expect(element).toMatchSnapshot()
 })
