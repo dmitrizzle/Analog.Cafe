@@ -66,14 +66,6 @@ export const CARD_DIALOGUES = {
   }
 }
 export const CARD_ALERTS = {
-  COLLABORATIONS: {
-    info: {
-      title: "Instant Collaboration",
-      text:
-        "Creating together is easy! Simply select a photo below that fits your work. You and the photographer will share the credit and may be listed in the “Collaborations” section on Analog.Cafe."
-    },
-    id: "hints/image-suggestions"
-  },
   AUTO_SAVE: {
     info: {
       title: "Never Loose Your Work!",

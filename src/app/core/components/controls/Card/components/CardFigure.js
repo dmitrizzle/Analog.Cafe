@@ -2,7 +2,6 @@ import React from "react"
 
 import { makeFroth } from "../../../../../utils"
 import CardCaption from "./CardCaption"
-import Link from "../../Link"
 import Placeholder from "../../../vignettes/Picture/components/Placeholder"
 
 export default props => {

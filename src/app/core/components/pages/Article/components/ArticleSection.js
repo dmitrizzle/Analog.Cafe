@@ -44,7 +44,7 @@ export default styled.section`
       props.theme.size.block.column.l}px;`};
   padding: 0 ${props => props.theme.size.block.padding}em;
 
-  ${props =>
+  ${"" /* ${props =>
     !props.plain
       ? `&::after {
     content: "⁓☙❦❧⁓";
@@ -52,7 +52,7 @@ export default styled.section`
     display: block;
     text-align: center;
   }`
-      : null} p {
+      : null}  */} p {
     ${sectionParagraph};
   }
   ul {

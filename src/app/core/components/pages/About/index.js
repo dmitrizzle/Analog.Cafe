@@ -112,7 +112,8 @@ const About = props => {
         <h3>Contact, connect.</h3>
         <p>
           If you have a question, suggestion or just want to chat, feel free to
-          email <ContactInfo />, or:
+          email
+          <ContactInfo />, or:
         </p>
         <ButtonGroup>
           <FollowButtons />
@@ -127,7 +128,8 @@ const About = props => {
               margin: "0 auto"
             }}
           >
-            Weekly emails (<Link
+            Weekly emails (
+            <Link
               onClick={() => {
                 import("react-ga").then(ReactGA => {
                   ReactGA.event({
@@ -139,7 +141,8 @@ const About = props => {
               to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
             >
               like this one
-            </Link>) come every Tuesday. We{" "}
+            </Link>
+            ) come every Tuesday. We{" "}
             <Link to="/privacy-policy">never share or sell</Link> your personal
             information.
           </Byline>
@@ -174,58 +177,114 @@ const About = props => {
         </p>
 
         <ThankYouList>
-          Thayanantha Thevanayagam<br />
-          Betty Dai<br />
-          Kevin Kethcart<br />
-          Fernando Lavin (@film.lav)<br />
-          Lee Webb<br />
-          Lewis Phan<br />
-          Genester<br />
-          Jose Altamirano (josekasek)<br />
-          Marianne Oliver<br />
-          Michael Jones<br />
-          Tim Dobbs<br />
-          James Cockroft<br />
-          faultyflipflap<br />
-          Jennifer Precious Finch<br />
-          Denise<br />
-          Frank Russo<br />
-          Domenico Stefani<br />
-          Stephen King<br />
-          Arjun Mohan<br />
-          Kevin Aungle<br />
-          Jack Yu<br />
-          Stephen Dowling<br />
-          Anonymous<br />
-          Joey Pasco<br />
-          Kanoa Mulling<br />
-          BVH<br />
-          Jacob Michael Hanania<br />
-          Rob James Davie<br />
-          Joey Santiago<br />
-          Danielle Cardoz<br />
+          Thayanantha Thevanayagam
+          <br />
+          Betty Dai
+          <br />
+          Kevin Kethcart
+          <br />
+          Fernando Lavin (@film.lav)
+          <br />
+          Lee Webb
+          <br />
+          Lewis Phan
+          <br />
+          Genester
+          <br />
+          Jose Altamirano (josekasek)
+          <br />
+          Marianne Oliver
+          <br />
+          Michael Jones
+          <br />
+          Tim Dobbs
+          <br />
+          James Cockroft
+          <br />
+          faultyflipflap
+          <br />
+          Jennifer Precious Finch
+          <br />
+          Denise
+          <br />
+          Frank Russo
+          <br />
+          Domenico Stefani
+          <br />
+          Stephen King
+          <br />
+          Arjun Mohan
+          <br />
+          Kevin Aungle
+          <br />
+          Jack Yu
+          <br />
+          Stephen Dowling
+          <br />
+          Anonymous
+          <br />
+          Joey Pasco
+          <br />
+          Kanoa Mulling
+          <br />
+          BVH
+          <br />
+          Jacob Michael Hanania
+          <br />
+          Rob James Davie
+          <br />
+          Joey Santiago
+          <br />
+          Danielle Cardoz
+          <br />
           Francisco M<br />
-          Jonathan Zobro<br />
-          Matthew Stollmeyer<br />
-          Ishtiaq Rahman<br />
-          Lu Yu<br />
-          Jan Ian Chow<br />
-          Olga Tcherbadji<br />
-          Andreea Cojocaru<br />
-          Jeff Santos<br />
-          Arjan Wiertz<br />
-          Stepan Cherbadzhi<br />
-          Jackie Wong<br />
-          Vivian Qiu<br />
-          Ben Yee<br />
-          Ashley Taylor<br />
-          Anonymous<br />
-          Anonymous<br />
-          Geraldine Pontius<br />
-          Larry Treadway<br />
-          Hakan (@haknization)<br />
+          Jonathan Zobro
+          <br />
+          Matthew Stollmeyer
+          <br />
+          Ishtiaq Rahman
+          <br />
+          Lu Yu
+          <br />
+          Jan Ian Chow
+          <br />
+          Olga Tcherbadji
+          <br />
+          Andreea Cojocaru
+          <br />
+          Jeff Santos
+          <br />
+          Arjan Wiertz
+          <br />
+          Stepan Cherbadzhi
+          <br />
+          Jackie Wong
+          <br />
+          Vivian Qiu
+          <br />
+          Ben Yee
+          <br />
+          Ashley Taylor
+          <br />
+          Anonymous
+          <br />
+          Anonymous
+          <br />
+          Geraldine Pontius
+          <br />
+          Larry Treadway
+          <br />
+          Hakan (@haknization)
+          <br />
           Ben Cairns
         </ThankYouList>
+        <p style={{ textAlign: "center" }}>
+          <small>
+            <Link to="/privacy-policy">Privacy Policy</Link> ・{" "}
+            <Link to="/submit/rules">Rules</Link> ・{" "}
+            <Link to="/submit/restore">Restore Submission</Link>
+          </small>
+        </p>
       </ArticleSection>
     </ArticleWrapper>
   )
@@ -235,4 +294,7 @@ const mapStateToProps = state => {
     user: state.user
   }
 }
-export default connect(mapStateToProps, null)(About)
+export default connect(
+  mapStateToProps,
+  null
+)(About)
