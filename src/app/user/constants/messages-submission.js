@@ -32,12 +32,12 @@ export const HEADER_ERRORS = {
   }
 }
 
-export const TEXT_EDITORIAL_RELEASE = `All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email ${contactInfoString}. Please also note that series (i.e. “part one of three”) are not currently accepted.`
+export const TEXT_EDITORIAL_RELEASE = `All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email ${contactInfoString}.`
 export const CARD_DIALOGUES = {
   CONSENT: {
     info: {
       title: "Editorial Release",
-      text: `${TEXT_EDITORIAL_RELEASE} Visit analog.cafe/submit/rules for complete submission rules.`,
+      text: `${TEXT_EDITORIAL_RELEASE} Full list of rules applied to all submissions is listed at www.analog.cafe/submit/rules.`,
       buttons: [
         {
           to: "/submit/confirm-full-consent",
