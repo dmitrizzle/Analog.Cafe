@@ -115,15 +115,14 @@ class App extends React.PureComponent {
         break
       case ROUTE_URL_USER_LANDING + "/edit":
       case ROUTE_URL_USER_LANDING + "/edit/":
-        this.props.setNavPositions({ top: false, bottom: false })
+        this.props.setNavPositions({ top: false })
         break
       case "/submit/confirm-full-consent":
       case "/submit/confirm-full-consent/":
       case "/submit/confirm-basic-consent/":
       case "/submit/confirm-basic-consent":
         this.props.setNavPositions({
-          top: false,
-          bottom: false
+          top: false
         })
         break
       case "/sign-in":
@@ -134,8 +133,7 @@ class App extends React.PureComponent {
           this.props.history.location.state.status === "103" // already authenticated
         ) {
           this.props.setNavPositions({
-            top: false,
-            bottom: false
+            top: false
           })
         } else {
           this.props.setNavPositions({ top: false })
@@ -149,8 +147,7 @@ class App extends React.PureComponent {
         ) {
           this.props.setNavView("VISITOR")
           this.props.setNavPositions({
-            top: false,
-            bottom: false
+            top: false
           })
         } else {
           this.props.setNavView("VISITOR")
