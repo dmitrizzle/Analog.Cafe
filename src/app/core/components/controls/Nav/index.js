@@ -44,12 +44,7 @@ const Nav = props => {
         )}
       </NavWrapper>
     ]
-  if (props.bottom && props.nav.location.bottom)
-    return (
-      <FooterMicro>
-        <Footer />
-      </FooterMicro>
-    )
+  if (props.bottom && props.nav.location.bottom) return null // no footer
 }
 
 const mapStateToProps = state => {
