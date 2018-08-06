@@ -2,8 +2,6 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { setUserIntent } from "../../../../user/store/actions-user"
-import Footer from "../../icons/Decor/Footer"
-import FooterMicro from "./components/FooterMicro"
 import NavComposer from "./components/NavComposer"
 import NavConnectionStatus from "./components/NavConnectionStatus"
 import NavGeneral from "./components/NavGeneral"
