@@ -1,5 +1,6 @@
 import React from "react"
 
+import { GA } from "../../../../utils"
 import { TEXT_LABELS } from "../../../../core/constants/messages-"
 import CardButton from "../../../../core/components/controls/Card/components/CardButton"
 import MailChimpPrefill from "./components/MailChimpPrefill"
@@ -21,7 +22,7 @@ export default class extends React.PureComponent {
     this.props.subscribeFormCallback &&
       this.props.subscribeFormCallback(this.state.subscribeForm)
     import("react-ga").then(ReactGA => {
-      ReactGA.event({
+      GA.event({
         category: "Campaign",
         action: "ActionsCard.quickSubscribe_open",
         label: this.props.formLocation ? this.props.formLocation : null

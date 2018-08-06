@@ -1,5 +1,6 @@
 import React from "react"
 
+import { GA } from "../../../../../utils"
 import { validateEmail } from "../../../../utils/messages-session"
 import Button from "../../../../../core/components/controls/Button/components/Button"
 import EmailInput from "../../EmailInput"
@@ -53,7 +54,7 @@ export default class extends React.Component {
           onClick={event => {
             this.handleSubmit(event)
             import("react-ga").then(ReactGA => {
-              ReactGA.event({
+              GA.event({
                 category: "Campaign",
                 action: "MailChimpForm_send",
                 label: this.props.formLocation ? this.props.formLocation : null

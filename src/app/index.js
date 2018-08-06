@@ -6,8 +6,8 @@ import queryString from "query-string"
 import { withRouter } from "react-router"
 
 import { CARD_ERRORS } from "./user/constants/messages-session"
-import { DATA_GA_ID, HOST_RUNTIME, HOST_PROD } from "./constants"
 import { ROUTE_URL_USER_LANDING } from "./user/constants/routes-session"
+import { GA } from "./utils"
 import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import {
@@ -19,12 +19,6 @@ import {
 import AppRoutes from "./core/components/routes/App"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav"
-
-// if (process.env.NODE_ENV === "development" || HOST_RUNTIME !== HOST_PROD) {
-//   window["ga-disable-" + DATA_GA_ID] = true
-// } else {
-//   window["ga-disable-" + DATA_GA_ID] = false
-// }
 
 const ListPreloader = Loadable({
   loader: () => import("./core/components/pages/List"),
@@ -66,21 +60,12 @@ class App extends React.PureComponent {
 
     const analyticsScriptDeferrer = setTimeout(
       function() {
-        import("react-ga").then(ReactGA => {
-          ReactGA.initialize(DATA_GA_ID, {
-            debug:
-              process.env.NODE_ENV === "development" ||
-              HOST_RUNTIME !== HOST_PROD,
-            titleCase: true,
-            gaOptions: {},
-            gaAddress: process.env.PUBLIC_URL + "/analytics-201808051558.js"
-          })
-          this.setView = () => {
-            ReactGA.pageview(window.location.pathname + window.location.search)
-            window.scrollTo(0, 0)
-          }
-          this.setView()
-        })
+        GA.initialize()
+        this.setView = () => {
+          window.scrollTo(0, 0)
+          GA.pageview()
+        }
+        this.setView()
         clearTimeout(analyticsScriptDeferrer)
       }.bind(this),
       1000
