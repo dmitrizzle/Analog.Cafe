@@ -1,6 +1,9 @@
+import React from "react"
+
 import { MIME_PICTURES_HUMAN } from "./rules-submission"
 import { TEXT_EMOJIS } from "../../constants"
 import { contactInfoString } from "../../core/components/vignettes/ContactInfo"
+import Link from "../../core/components/controls/Link"
 
 export const CARD_ERRORS = {
   SEND: {
@@ -37,7 +40,16 @@ export const CARD_DIALOGUES = {
   CONSENT: {
     info: {
       title: "Editorial Release",
-      text: `${TEXT_EDITORIAL_RELEASE} Full list of rules applied to all submissions is listed at www.analog.cafe/submit/rules.`,
+      text: () => (
+        <span>
+          {TEXT_EDITORIAL_RELEASE} Full list of rules applied to all submissions
+          is listed{" "}
+          <strong>
+            <Link to="/submit/rules">here</Link>
+          </strong>
+          .
+        </span>
+      ),
       buttons: [
         {
           to: "/submit/confirm-full-consent",

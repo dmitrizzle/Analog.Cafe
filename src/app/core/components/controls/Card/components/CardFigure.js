@@ -2,6 +2,7 @@ import React from "react"
 
 import { makeFroth } from "../../../../../utils"
 import CardCaption from "./CardCaption"
+import Link from "../../Link"
 import Placeholder from "../../../vignettes/Picture/components/Placeholder"
 
 export default props => {
@@ -14,7 +15,7 @@ export default props => {
         <CardCaption
           style={{ padding: typeof props.text === "undefined" ? "0" : "" }}
         >
-          {props.text}
+          {typeof props.text === "function" ? props.text() : props.text}
         </CardCaption>
       </figcaption>
     </figure>
