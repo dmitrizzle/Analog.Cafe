@@ -44,6 +44,12 @@ export default styled.section`
       props.theme.size.block.column.l}px;`};
   padding: 0 ${props => props.theme.size.block.padding}em;
 
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
   p {
     ${sectionParagraph};
   }

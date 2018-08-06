@@ -111,7 +111,7 @@ class App extends React.PureComponent {
       case "/submit/compose":
       case "/submit/compose/":
         this.props.setNavView("COMPOSER")
-        this.props.setNavPositions({ bottom: false })
+        this.props.setNavPositions({})
         break
       case ROUTE_URL_USER_LANDING + "/edit":
       case ROUTE_URL_USER_LANDING + "/edit/":

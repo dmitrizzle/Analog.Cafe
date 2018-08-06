@@ -10,6 +10,9 @@ import NavGeneral from "./components/NavGeneral"
 import NavWrapper from "./components/NavWrapper"
 
 const Nav = props => {
+  if (props.top && !props.nav.location.top) return null
+  if (props.bottom && !props.nav.location.bottom) return null
+
   if (props.top && props.nav.location.top)
     return [
       <NavConnectionStatus
