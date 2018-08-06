@@ -44,7 +44,11 @@ export default () => {
           offline, as well as to provide customized experiences. Analog.Cafe
           does not use that information to track your behaviour. Analog.Cafe can
           not see the content of your token or any of the stored data mentioned
-          above. Analog.Cafe does not directly use “cookie” technology.
+          above. Analog.Cafe does not directly use cookie-tracking technology.
+          An instance of Google Analytics <em>is</em> installed on Analog.Cafe,
+          which employs cookies, however,{" "}
+          <strong>it is set up to respect “do not track” settings</strong>{" "}
+          within your browser.
         </p>
         <p>
           Analog.Cafe uses Google Analytics, which in-turn anonymously tracks
