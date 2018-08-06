@@ -15,11 +15,9 @@ export default props => {
       <FeedlyLinkButton
         to="http://bit.ly/FeedAnalog"
         onClick={() => {
-          import("react-ga").then(ReactGA => {
-            GA.event({
-              category: "Campaign",
-              action: "ActionsCard.follow_feedly"
-            })
+          GA.event({
+            category: "Campaign",
+            action: "ActionsCard.follow_feedly"
           })
         }}
       >
@@ -29,11 +27,9 @@ export default props => {
       <TwitterLinkButton
         to="https://twitter.com/analog_cafe"
         onClick={() => {
-          import("react-ga").then(ReactGA => {
-            GA.event({
-              category: "Campaign",
-              action: "ActionsCard.follow_twitter"
-            })
+          GA.event({
+            category: "Campaign",
+            action: "ActionsCard.follow_twitter"
           })
         }}
       >
@@ -43,11 +39,9 @@ export default props => {
       <FacebookLinkButton
         to="https://facebook.com/analog8cafe"
         onClick={() => {
-          import("react-ga").then(ReactGA => {
-            GA.event({
-              category: "Campaign",
-              action: "ActionsCard.follow_facebook"
-            })
+          GA.event({
+            category: "Campaign",
+            action: "ActionsCard.follow_facebook"
           })
         }}
       >
@@ -57,11 +51,9 @@ export default props => {
       <InstagramLinkButton
         to="https://instagram.com/analog_cafe"
         onClick={() => {
-          import("react-ga").then(ReactGA => {
-            GA.event({
-              category: "Campaign",
-              action: "ActionsCard.follow_instagram"
-            })
+          GA.event({
+            category: "Campaign",
+            action: "ActionsCard.follow_instagram"
           })
         }}
       >

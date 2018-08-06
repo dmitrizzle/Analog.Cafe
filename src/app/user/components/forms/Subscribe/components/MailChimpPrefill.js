@@ -53,12 +53,10 @@ export default class extends React.Component {
           branded
           onClick={event => {
             this.handleSubmit(event)
-            import("react-ga").then(ReactGA => {
-              GA.event({
-                category: "Campaign",
-                action: "MailChimpForm_send",
-                label: this.props.formLocation ? this.props.formLocation : null
-              })
+            GA.event({
+              category: "Campaign",
+              action: "MailChimpForm_send",
+              label: this.props.formLocation ? this.props.formLocation : null
             })
           }}
         >

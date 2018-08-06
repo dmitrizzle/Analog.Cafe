@@ -57,11 +57,9 @@ class List extends React.PureComponent {
     this.setState({
       loadMorePending: true
     })
-    import("react-ga").then(ReactGA => {
-      GA.event({
-        category: "Navigation",
-        action: "List.load_more"
-      })
+    GA.event({
+      category: "Navigation",
+      action: "List.load_more"
     })
   }
   handleUserIntent = () => {

@@ -132,11 +132,9 @@ const About = props => {
             Weekly emails (
             <Link
               onClick={() => {
-                import("react-ga").then(ReactGA => {
-                  GA.event({
-                    category: "Campaign",
-                    action: "ActionsCard.subscribe_example"
-                  })
+                GA.event({
+                  category: "Campaign",
+                  action: "ActionsCard.subscribe_example"
                 })
               }}
               to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"

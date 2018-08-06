@@ -40,11 +40,9 @@ export default props => {
                   props.nextArticleHeading(
                     nextArticlePreload(props.nextArticle)
                   )
-                  import("react-ga").then(ReactGA => {
-                    GA.event({
-                      category: "Navigation",
-                      action: "ActionsCard.next_article_picture"
-                    })
+                  GA.event({
+                    category: "Navigation",
+                    action: "ActionsCard.next_article_picture"
                   })
                 }}
               >
@@ -64,11 +62,9 @@ export default props => {
               to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
               onClick={() => {
                 props.nextArticleHeading(nextArticlePreload(props.nextArticle))
-                import("react-ga").then(ReactGA => {
-                  GA.event({
-                    category: "Navigation",
-                    action: "ActionsCard.next_article_button"
-                  })
+                GA.event({
+                  category: "Navigation",
+                  action: "ActionsCard.next_article_button"
                 })
               }}
               key="Options_LinkButton"

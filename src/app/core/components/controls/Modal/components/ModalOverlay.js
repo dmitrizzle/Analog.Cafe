@@ -31,13 +31,9 @@ export const modalScrollCallback = (target, callback) => {
 
 const ModalOverlay = props => {
   if (!props.modal.hidden && props.modal.status === "ok") {
-    import("react-ga").then(ReactGA => {
-      GA.modalview(
-        props.modal.requested.url
-          .replace(HOST_API, "")
-          .replace(HOST_RUNTIME, "")
-      )
-    })
+    GA.modalview(
+      props.modal.requested.url.replace(HOST_API, "").replace(HOST_RUNTIME, "")
+    )
   }
   document.onkeydown = event => {
     if (

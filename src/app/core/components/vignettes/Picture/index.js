@@ -146,12 +146,10 @@ class Picture extends React.PureComponent {
       }
     })
     this.props.getPictureInfo(src)
-    import("react-ga").then(ReactGA => {
-      GA.event({
-        category: "Navigation",
-        action: "Picture.get_author",
-        label: src
-      })
+    GA.event({
+      category: "Navigation",
+      action: "Picture.get_author",
+      label: src
     })
   }
 
