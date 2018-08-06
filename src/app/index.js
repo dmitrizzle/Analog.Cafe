@@ -20,11 +20,11 @@ import AppRoutes from "./core/components/routes/App"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav"
 
-if (process.env.NODE_ENV === "development" || HOST_RUNTIME !== HOST_PROD) {
-  window["ga-disable-" + DATA_GA_ID] = true
-} else {
-  window["ga-disable-" + DATA_GA_ID] = false
-}
+// if (process.env.NODE_ENV === "development" || HOST_RUNTIME !== HOST_PROD) {
+//   window["ga-disable-" + DATA_GA_ID] = true
+// } else {
+//   window["ga-disable-" + DATA_GA_ID] = false
+// }
 
 const ListPreloader = Loadable({
   loader: () => import("./core/components/pages/List"),
@@ -68,15 +68,14 @@ class App extends React.PureComponent {
       function() {
         import("react-ga").then(ReactGA => {
           ReactGA.initialize(DATA_GA_ID, {
-            debug: false,
+            debug:
+              process.env.NODE_ENV === "development" ||
+              HOST_RUNTIME !== HOST_PROD,
             titleCase: true,
             gaOptions: {},
-            gaAddress: process.env.PUBLIC_URL + "/analytics-20181123452.js"
+            gaAddress: process.env.PUBLIC_URL + "/analytics-201808051558.js"
           })
           this.setView = () => {
-            ReactGA.set({
-              page: window.location.pathname + window.location.search
-            })
             ReactGA.pageview(window.location.pathname + window.location.search)
             window.scrollTo(0, 0)
           }
@@ -112,19 +111,18 @@ class App extends React.PureComponent {
       case "/submit/compose":
       case "/submit/compose/":
         this.props.setNavView("COMPOSER")
-        this.props.setNavPositions({ bottom: false })
+        this.props.setNavPositions({})
         break
       case ROUTE_URL_USER_LANDING + "/edit":
       case ROUTE_URL_USER_LANDING + "/edit/":
-        this.props.setNavPositions({ top: false, bottom: false })
+        this.props.setNavPositions({ top: false })
         break
       case "/submit/confirm-full-consent":
       case "/submit/confirm-full-consent/":
       case "/submit/confirm-basic-consent/":
       case "/submit/confirm-basic-consent":
         this.props.setNavPositions({
-          top: false,
-          bottom: false
+          top: false
         })
         break
       case "/sign-in":
@@ -135,8 +133,7 @@ class App extends React.PureComponent {
           this.props.history.location.state.status === "103" // already authenticated
         ) {
           this.props.setNavPositions({
-            top: false,
-            bottom: false
+            top: false
           })
         } else {
           this.props.setNavPositions({ top: false })
@@ -150,8 +147,7 @@ class App extends React.PureComponent {
         ) {
           this.props.setNavView("VISITOR")
           this.props.setNavPositions({
-            top: false,
-            bottom: false
+            top: false
           })
         } else {
           this.props.setNavView("VISITOR")
@@ -199,4 +195,9 @@ const mapStateToProps = state => {
     user: state.user
   }
 }
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+)

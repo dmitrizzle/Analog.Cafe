@@ -19,7 +19,7 @@ export default props => {
     <div style={{ display: props.statePublishControls ? "block" : "none" }}>
       <ButtonStrip
         style={{
-          margin: "0.5em auto 0",
+          margin: "0.5em auto 0.075em",
           width: "auto",
           overflow: "scroll",
           padding: "1px 1px 3px"

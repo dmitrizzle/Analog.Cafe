@@ -99,7 +99,7 @@ ShallowWrapper {
                     Please note.
           </h3>
           <p>
-                    All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email d/at/analog.cafe. Please also note that series (i.e. “part one of three”) are not currently accepted.
+                    All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
           </p>
           <p>
                     There are more detailed 
@@ -247,7 +247,7 @@ ShallowWrapper {
               Please note.
 </h3>,
             <p>
-              All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email d/at/analog.cafe. Please also note that series (i.e. “part one of three”) are not currently accepted.
+              All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
 </p>,
             <p>
               There are more detailed 
@@ -576,10 +576,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email d/at/analog.cafe. Please also note that series (i.e. “part one of three”) are not currently accepted.",
+              "children": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
             },
             "ref": null,
-            "rendered": "All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email d/at/analog.cafe. Please also note that series (i.e. “part one of three”) are not currently accepted.",
+            "rendered": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
             "type": "p",
           },
           Object {
@@ -848,7 +848,7 @@ ShallowWrapper {
                         Please note.
             </h3>
             <p>
-                        All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email d/at/analog.cafe. Please also note that series (i.e. “part one of three”) are not currently accepted.
+                        All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
             </p>
             <p>
                         There are more detailed 
@@ -996,7 +996,7 @@ ShallowWrapper {
                 Please note.
 </h3>,
               <p>
-                All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email d/at/analog.cafe. Please also note that series (i.e. “part one of three”) are not currently accepted.
+                All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
 </p>,
               <p>
                 There are more detailed 
@@ -1325,10 +1325,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email d/at/analog.cafe. Please also note that series (i.e. “part one of three”) are not currently accepted.",
+                "children": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
               },
               "ref": null,
-              "rendered": "All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email d/at/analog.cafe. Please also note that series (i.e. “part one of three”) are not currently accepted.",
+              "rendered": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
               "type": "p",
             },
             Object {
