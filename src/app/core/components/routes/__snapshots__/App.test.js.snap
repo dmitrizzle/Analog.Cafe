@@ -134,6 +134,11 @@ ShallowWrapper {
         />
         <Route
                 component={[Function]}
+                exact={true}
+                path="/privacy-settings"
+        />
+        <Route
+                component={[Function]}
                 state={
                         Object {
                                 "status": "404",
@@ -262,6 +267,11 @@ ShallowWrapper {
             component={[Function]}
             exact={true}
             path="/privacy-policy"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/privacy-settings"
 />,
           <Route
             component={[Function]}
@@ -579,6 +589,19 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
+            "exact": true,
+            "path": "/privacy-settings",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
             "state": Object {
               "status": "404",
             },
@@ -715,6 +738,11 @@ ShallowWrapper {
           />
           <Route
                     component={[Function]}
+                    exact={true}
+                    path="/privacy-settings"
+          />
+          <Route
+                    component={[Function]}
                     state={
                               Object {
                                         "status": "404",
@@ -843,6 +871,11 @@ ShallowWrapper {
               component={[Function]}
               exact={true}
               path="/privacy-policy"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/privacy-settings"
 />,
             <Route
               component={[Function]}
@@ -1149,6 +1182,19 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/privacy-policy",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/privacy-settings",
             },
             "ref": null,
             "rendered": null,

@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
+import { GA } from "../../../../../utils"
 import { HOST_API, HOST_RUNTIME } from "../../../../../constants"
 import { hideModal } from "../../../../store/actions-modal"
 import ModalCard from "./ModalCard"
@@ -31,7 +32,7 @@ export const modalScrollCallback = (target, callback) => {
 const ModalOverlay = props => {
   if (!props.modal.hidden && props.modal.status === "ok") {
     import("react-ga").then(ReactGA => {
-      ReactGA.modalview(
+      GA.modalview(
         props.modal.requested.url
           .replace(HOST_API, "")
           .replace(HOST_RUNTIME, "")

@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import Loadable from "react-loadable"
 import React from "react"
 
+import { GA } from "../../../../utils"
 import {
   INPUT_FORMAT,
   OBJECT_SLATE_PICTURE_FROM_IMMUTABLE
@@ -146,7 +147,7 @@ class Picture extends React.PureComponent {
     })
     this.props.getPictureInfo(src)
     import("react-ga").then(ReactGA => {
-      ReactGA.event({
+      GA.event({
         category: "Navigation",
         action: "Picture.get_author",
         label: src

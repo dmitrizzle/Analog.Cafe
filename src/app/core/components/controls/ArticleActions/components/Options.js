@@ -1,7 +1,7 @@
 import React from "react"
 
+import { GA, makeFroth } from "../../../../../utils"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
-import { makeFroth } from "../../../../../utils"
 import CardHeader from "../../Card/components/CardHeader"
 import CardIntegrated from "../../Card/components/CardIntegrated"
 import Link from "../../Link"
@@ -41,7 +41,7 @@ export default props => {
                     nextArticlePreload(props.nextArticle)
                   )
                   import("react-ga").then(ReactGA => {
-                    ReactGA.event({
+                    GA.event({
                       category: "Navigation",
                       action: "ActionsCard.next_article_picture"
                     })
@@ -65,7 +65,7 @@ export default props => {
               onClick={() => {
                 props.nextArticleHeading(nextArticlePreload(props.nextArticle))
                 import("react-ga").then(ReactGA => {
-                  ReactGA.event({
+                  GA.event({
                     category: "Navigation",
                     action: "ActionsCard.next_article_button"
                   })

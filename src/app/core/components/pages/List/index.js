@@ -4,6 +4,7 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
+import { GA } from "../../../../utils"
 import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
@@ -57,7 +58,7 @@ class List extends React.PureComponent {
       loadMorePending: true
     })
     import("react-ga").then(ReactGA => {
-      ReactGA.event({
+      GA.event({
         category: "Navigation",
         action: "List.load_more"
       })
@@ -159,4 +160,9 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(List))
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(List)
+)

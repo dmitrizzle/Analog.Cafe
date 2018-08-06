@@ -6,6 +6,7 @@ import {
   InstagramLinkButton,
   TwitterLinkButton
 } from "../../Button/components/SocialButtons"
+import { GA } from "../../../../../utils"
 import CardIntegrated from "../../Card/components/CardIntegrated"
 
 export default props => {
@@ -15,7 +16,7 @@ export default props => {
         to="http://bit.ly/FeedAnalog"
         onClick={() => {
           import("react-ga").then(ReactGA => {
-            ReactGA.event({
+            GA.event({
               category: "Campaign",
               action: "ActionsCard.follow_feedly"
             })
@@ -29,7 +30,7 @@ export default props => {
         to="https://twitter.com/analog_cafe"
         onClick={() => {
           import("react-ga").then(ReactGA => {
-            ReactGA.event({
+            GA.event({
               category: "Campaign",
               action: "ActionsCard.follow_twitter"
             })
@@ -43,7 +44,7 @@ export default props => {
         to="https://facebook.com/analog8cafe"
         onClick={() => {
           import("react-ga").then(ReactGA => {
-            ReactGA.event({
+            GA.event({
               category: "Campaign",
               action: "ActionsCard.follow_facebook"
             })
@@ -57,7 +58,7 @@ export default props => {
         to="https://instagram.com/analog_cafe"
         onClick={() => {
           import("react-ga").then(ReactGA => {
-            ReactGA.event({
+            GA.event({
               category: "Campaign",
               action: "ActionsCard.follow_instagram"
             })

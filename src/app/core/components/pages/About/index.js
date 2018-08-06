@@ -1,6 +1,7 @@
 import { connect } from "react-redux"
 import React from "react"
 
+import { GA } from "../../../../utils"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import { TEXT_LABELS } from "../../../constants/messages-"
 import { smartGreeting } from "../../../utils/messages-"
@@ -132,7 +133,7 @@ const About = props => {
             <Link
               onClick={() => {
                 import("react-ga").then(ReactGA => {
-                  ReactGA.event({
+                  GA.event({
                     category: "Campaign",
                     action: "ActionsCard.subscribe_example"
                   })
