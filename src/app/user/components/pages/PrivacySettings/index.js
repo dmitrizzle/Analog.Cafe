@@ -14,7 +14,8 @@ export default class extends React.PureComponent {
       dataSharing: {
         googleAnalytics:
           localStorage.getItem("ga-enabled") === "false" ? false : true
-      }
+      },
+      restartCountDown: false
     }
   }
   handleToggleGA = () => {
@@ -23,9 +24,14 @@ export default class extends React.PureComponent {
       dataSharing: {
         ...this.state.dataSharing,
         googleAnalytics
-      }
+      },
+      restartCountDown: true
     })
     localStorage.setItem("ga-enabled", googleAnalytics)
+    const restartIn = setTimeout(() => {
+      clearTimeout(restartIn)
+      window.location.reload()
+    }, 1000)
   }
   render = () => {
     return (
@@ -54,6 +60,7 @@ export default class extends React.PureComponent {
             <Button
               onClick={this.handleToggleGA}
               inverse={this.state.dataSharing.googleAnalytics}
+              loading={this.state.restartCountDown}
             >
               Google Analytics
             </Button>

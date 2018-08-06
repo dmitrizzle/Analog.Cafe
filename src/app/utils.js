@@ -30,6 +30,11 @@ export const GA = {
       ReactGA.pageview(url || window.location.pathname + window.location.search)
     })
   },
+  modalview: loc => {
+    createGA.then(ReactGA => {
+      ReactGA.modalview(loc)
+    })
+  },
   event: options => {
     createGA.then(ReactGA => {
       ReactGA.event(options)
