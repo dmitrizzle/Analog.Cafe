@@ -34,7 +34,7 @@ ShallowWrapper {
                      (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.
           </p>
           <Styled(styled.div)>
-                    <Unknown
+                    <WithTheme(Component)
                               buttons={
                                         Array [
                                                   0,
@@ -104,7 +104,7 @@ ShallowWrapper {
                (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.
 </p>,
             <Styled(styled.div)>
-              <Unknown
+              <WithTheme(Component)
                             buttons={
                                           Array [
                                                         0,
@@ -194,7 +194,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                <Unknown
+                <WithTheme(Component)
                   buttons={
                                     Array [
                                                       0,
@@ -218,7 +218,7 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "class",
                 "props": Object {
                   "buttons": Array [
                     0,
@@ -338,7 +338,7 @@ ShallowWrapper {
                          (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.
             </p>
             <Styled(styled.div)>
-                        <Unknown
+                        <WithTheme(Component)
                                     buttons={
                                                 Array [
                                                             0,
@@ -408,7 +408,7 @@ ShallowWrapper {
                  (not a cookie) and remember them indefinitely, as long as your browser or you, personally, do not choose to remove that data.
 </p>,
               <Styled(styled.div)>
-                <Unknown
+                <WithTheme(Component)
                                 buttons={
                                                 Array [
                                                                 0,
@@ -498,7 +498,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  <Unknown
+                  <WithTheme(Component)
                     buttons={
                                         Array [
                                                             0,
@@ -522,7 +522,7 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "function",
+                  "nodeType": "class",
                   "props": Object {
                     "buttons": Array [
                       0,
