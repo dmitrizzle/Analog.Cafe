@@ -53,7 +53,7 @@ const ModalLauncher = props => {
       `
       break
     case "Button":
-      ModalLauncherComponent = () => (
+      ModalLauncherComponent = props => (
         <Button {...props} onClick={invokeModal.bind(this)}>
           {props.children}
         </Button>
@@ -84,4 +84,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(null, mapDispatchToProps)(ModalLauncher)
+export default connect(
+  null,
+  mapDispatchToProps
+)(ModalLauncher)

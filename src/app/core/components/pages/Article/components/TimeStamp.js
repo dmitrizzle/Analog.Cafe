@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export default styled.time`
+export default styled.div`
   display: block;
   text-align: center;
   font-size: ${props => props.theme.size.font.make.tiny}em;

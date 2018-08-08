@@ -17,8 +17,8 @@ import { getTitleFromSlug } from "../../../utils/messages-"
 import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
 import ArticleWrapper from "./components/ArticleWrapper"
-import renderArticle from "../../../utils/render-article"
 import MetaTags from "../../vignettes/MetaTags"
+import renderArticle from "../../../utils/render-article"
 
 const ArticleActions = Loadable({
   loader: () => import("../../controls/ArticleActions"),
@@ -111,6 +111,15 @@ class Article extends React.PureComponent {
           }
           metaDescription={this.props.article.summary}
           metaImage={this.props.article.poster}
+          metaPostDate={
+            this.props.article.date && this.props.article.date.published
+          }
+          metaEditDate={
+            this.props.article.date && this.props.article.date.updated
+          }
+          metaAuthors={this.props.article.authors}
+          metaSlug={this.props.article.slug}
+          metaArticleSchema
         />
         <ArticleHeader
           article={this.props.article}
@@ -135,6 +144,9 @@ class Article extends React.PureComponent {
                   thisArticle={this.props.article.slug}
                   thisArticlePostDate={
                     this.props.article.date && this.props.article.date.published
+                  }
+                  thisArticleEditDate={
+                    this.props.article.date && this.props.article.date.updated
                   }
                   nextArticleHeading={nextArticleHeading =>
                     this.props.setArticlePage({

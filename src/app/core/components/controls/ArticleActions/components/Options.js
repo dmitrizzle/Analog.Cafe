@@ -31,6 +31,7 @@ export default props => {
               buttons={[0]}
               noStar
               title={props.nextArticle.title}
+              titlePrefix="Next: "
               key="Options_CardHeader"
             />,
             <figure key="Options_Figure">

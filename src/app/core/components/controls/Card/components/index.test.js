@@ -3,6 +3,7 @@ import "jest-styled-components"
 import { ThemeProvider } from "styled-components"
 import { shallow } from "enzyme"
 import React from "react"
+import { withTheme } from "styled-components"
 
 import { APP_THEME } from "../../../../../../constants"
 import CardButton from "./CardButton"
@@ -36,7 +37,7 @@ it("Render CardFigure, matches snapshot", () => {
 })
 
 it("Render CardHeader, matches snapshot", () => {
-  const element = shallow(<CardHeader />)
+  const element = shallow(<CardHeader theme={APP_THEME} />)
   expect(element).toMatchSnapshot()
 })
 
