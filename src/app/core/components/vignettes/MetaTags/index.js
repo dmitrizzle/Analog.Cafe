@@ -19,14 +19,14 @@ export default props => {
             "@type": "WebPage",
             "@id": `${ROUTE_URL_ARTICLES}/${props.metaSlug}`
           }
-        : null,
+        : undefined,
       image: image
         ? {
             "@type": "ImageObject",
             url: image
           }
-        : null,
-      headline: props.metaTitle ? props.metaTitle : null,
+        : undefined,
+      headline: props.metaTitle ? props.metaTitle : undefined,
       publisher: {
         "@type": "Organization",
         name: "Analog.Cafe",
@@ -43,13 +43,14 @@ export default props => {
               "@type": "Person",
               name: getLeadAuthorObject(props.metaAuthors).name
             }
-          : null,
+          : undefined,
       datePublished: props.metaPostDate
         ? getISODatestamp(props.metaPostDate)
-        : null,
-      dateModified: props.metaEditDate
-        ? getISODatestamp(props.metaEditDate)
-        : null
+        : undefined,
+      dateModified:
+        props.metaEditDate && props.metaEditDate !== props.metaPostDate
+          ? getISODatestamp(props.metaEditDate)
+          : undefined
     })
   }
 
