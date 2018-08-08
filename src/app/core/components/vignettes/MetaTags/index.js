@@ -47,9 +47,10 @@ export default props => {
       datePublished: props.metaPostDate
         ? getISODatestamp(props.metaPostDate)
         : undefined,
-      dateModified:
-        props.metaEditDate && props.metaEditDate !== props.metaPostDate
-          ? getISODatestamp(props.metaEditDate)
+      dateModified: props.metaEditDate
+        ? getISODatestamp(props.metaEditDate)
+        : props.metaPostDate
+          ? props.metaPostDate
           : undefined
     })
   }
