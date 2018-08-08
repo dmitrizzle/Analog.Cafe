@@ -53,7 +53,7 @@ const ModalLauncher = props => {
       `
       break
     case "Button":
-      ModalLauncherComponent = () => (
+      ModalLauncherComponent = props => (
         <Button {...props} onClick={invokeModal.bind(this)}>
           {props.children}
         </Button>
@@ -68,6 +68,9 @@ const ModalLauncher = props => {
       style={props.style}
       onClick={invokeModal.bind(this)}
       {...wrapperProps}
+      itemProp={props.itemPropAuthor ? "author" : null}
+      itemScope={props.itemPropAuthor}
+      itemType={props.itemPropAuthor ? "https://schema.org/Person" : null}
     >
       {props.children}
     </ModalLauncherComponent>
@@ -84,4 +87,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(null, mapDispatchToProps)(ModalLauncher)
+export default connect(
+  null,
+  mapDispatchToProps
+)(ModalLauncher)

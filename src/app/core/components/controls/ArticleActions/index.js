@@ -8,16 +8,43 @@ import {
 import Options from "./components/Options"
 import TimeStamp from "../../pages/Article/components/TimeStamp"
 
+const dateFactory = unix => {
+  return {
+    unix: unix,
+    iso: getISODatestamp(unix),
+    human: getHumanDatestamp(unix),
+    lunar: getLunarDatestamp(unix)
+  }
+}
 const DatePublished = props => {
+  const dateModified =
+    props.thisArticleEditDate &&
+    props.thisArticleEditDate !== props.thisArticlePostDate
+      ? dateFactory(props.thisArticleEditDate)
+      : null
+  const datePublished = dateFactory(props.thisArticlePostDate)
   return (
-    <TimeStamp
-      dateTime={getISODatestamp(props.thisArticlePostDate)}
-      itemprop="datePublished"
-      title={
-        "Published on " + getHumanDatestamp(props.thisArticlePostDate) + "."
-      }
-    >
-      {getLunarDatestamp(props.thisArticlePostDate)}
+    <TimeStamp>
+      <time
+        itemProp="datePublished"
+        content={datePublished.iso}
+        dateTime={datePublished.iso}
+        title={`Published on ${datePublished.human}.`}
+      >
+        {datePublished.lunar}
+      </time>
+      {dateModified && [
+        <span key="divider"> ✏︎ </span>,
+        <time
+          key="data"
+          itemProp="dateModified"
+          content={dateModified.iso}
+          dateTime={dateModified.iso}
+          title={`Edited on on ${dateModified.human}.`}
+        >
+          {dateModified.lunar}
+        </time>
+      ]}
     </TimeStamp>
   )
 }

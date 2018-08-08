@@ -19,6 +19,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <styled.h1
+          itemProp={null}
           title={undefined}
 />,
         undefined,
@@ -33,6 +34,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": undefined,
+          "itemProp": null,
           "title": undefined,
         },
         "ref": null,
@@ -52,6 +54,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <styled.h1
+            itemProp={null}
             title={undefined}
 />,
           undefined,
@@ -66,6 +69,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": undefined,
+            "itemProp": null,
             "title": undefined,
           },
           "ref": null,

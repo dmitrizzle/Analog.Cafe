@@ -136,6 +136,9 @@ class Article extends React.PureComponent {
                   thisArticlePostDate={
                     this.props.article.date && this.props.article.date.published
                   }
+                  thisArticleEditDate={
+                    this.props.article.date && this.props.article.date.updated
+                  }
                   nextArticleHeading={nextArticleHeading =>
                     this.props.setArticlePage({
                       title: nextArticleHeading.title,
