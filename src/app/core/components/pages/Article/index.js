@@ -119,6 +119,7 @@ class Article extends React.PureComponent {
           }
           metaAuthors={this.props.article.authors}
           metaSlug={this.props.article.slug}
+          metaArticleSchema
         />
         <ArticleHeader
           article={this.props.article}

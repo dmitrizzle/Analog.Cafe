@@ -52,8 +52,9 @@ export default props => {
         : null
     })
   }
+
   return (
-    <Helmet script={[schema]}>
+    <Helmet {...(props.metaArticleSchema ? { script: [schema] } : {})}>
       {props.metaTitle && <title>{props.metaTitle}</title>}
       {props.metaTitle && (
         <meta property="og:title" content={props.metaTitle} />
