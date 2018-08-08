@@ -52,7 +52,10 @@ export default props => {
           itemProp="url"
           content={`${HOST_PROTOCOL + HOST_PROD}/icon-512x512.png`}
         />
+        <meta itemProp="width" content="512" />
+        <meta itemProp="height" content="512" />
       </NavLogo>
+      <meta itemProp="name" content="Analog.Cafe" />
     </div>
   )
 }
