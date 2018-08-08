@@ -8,10 +8,7 @@ import HeaderWrapper from "./components/HeaderWrapper"
 export default props => {
   return (
     <HeaderWrapper>
-      <HeaderTitle
-        title={props.title}
-        itemProp={props.itemPropHeadline ? "headline" : null}
-      >
+      <HeaderTitle title={props.title}>
         {toTitleCase(props.pageTitle)}
       </HeaderTitle>
       {props.pageSubtitle && (

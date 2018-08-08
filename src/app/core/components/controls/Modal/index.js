@@ -68,9 +68,6 @@ const ModalLauncher = props => {
       style={props.style}
       onClick={invokeModal.bind(this)}
       {...wrapperProps}
-      itemProp={props.itemPropAuthor ? "author" : null}
-      itemScope={props.itemPropAuthor}
-      itemType={props.itemPropAuthor ? "https://schema.org/Person" : null}
     >
       {props.children}
     </ModalLauncherComponent>

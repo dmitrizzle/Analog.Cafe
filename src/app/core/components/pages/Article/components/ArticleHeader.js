@@ -25,7 +25,6 @@ export default props => {
       pageTitle={props.article.title}
       pageSubtitle={props.article.subtitle}
       title={props.article.error && props.article.error}
-      itemPropHeadline
     >
       {props.article.authors &&
         props.article.authors[0].name && (
@@ -33,7 +32,6 @@ export default props => {
             <Link to={props.stateTag.route}>{props.stateTag.name}</Link> by{" "}
             {getLeadAuthorObject(props.article.authors).id ? (
               <Modal
-                itemPropAuthor
                 with={{
                   request: {
                     url:

@@ -25,23 +25,12 @@ const DatePublished = props => {
   const datePublished = dateFactory(props.thisArticlePostDate)
   return (
     <TimeStamp>
-      <time
-        itemProp="datePublished"
-        content={datePublished.iso}
-        dateTime={datePublished.iso}
-        title={`Published on ${datePublished.human}.`}
-      >
+      <time title={`Published on ${datePublished.human}.`}>
         {datePublished.lunar}
       </time>
       {dateModified && [
         <span key="divider"> ✏︎ </span>,
-        <time
-          key="data"
-          itemProp="dateModified"
-          content={dateModified.iso}
-          dateTime={dateModified.iso}
-          title={`Edited on on ${dateModified.human}.`}
-        >
+        <time key="tiemstamp" title={`Edited on on ${dateModified.human}.`}>
           {dateModified.lunar}
         </time>
       ]}

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { APP_NAME, HOST_PROD, HOST_PROTOCOL } from "../../../../../constants"
+import { APP_NAME } from "../../../../../constants"
 import Logo from "../../../icons/Logo"
 
 const NavLogo = styled.div`
@@ -35,27 +35,8 @@ const LogoWithDownstate = styled(Logo)`
 `
 export default props => {
   return (
-    <div
-      itemProp="publisher"
-      itemScope
-      itemType="https://schema.org/Organization"
-    >
-      <NavLogo
-        {...props}
-        title={APP_NAME}
-        itemProp="logo"
-        itemScope
-        itemType="https://schema.org/ImageObject"
-      >
-        <LogoWithDownstate {...props} />
-        <meta
-          itemProp="url"
-          content={`${HOST_PROTOCOL + HOST_PROD}/icon-512x512.png`}
-        />
-        <meta itemProp="width" content="512" />
-        <meta itemProp="height" content="512" />
-      </NavLogo>
-      <meta itemProp="name" content="Analog.Cafe" />
-    </div>
+    <NavLogo {...props} title={APP_NAME}>
+      <LogoWithDownstate {...props} />
+    </NavLogo>
   )
 }
