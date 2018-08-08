@@ -53,7 +53,7 @@ const ModalLauncher = props => {
       `
       break
     case "Button":
-      ModalLauncherComponent = props => (
+      ModalLauncherComponent = () => (
         <Button {...props} onClick={invokeModal.bind(this)}>
           {props.children}
         </Button>
