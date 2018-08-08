@@ -8,7 +8,7 @@ import {
 import Options from "./components/Options"
 import TimeStamp from "../../pages/Article/components/TimeStamp"
 
-const dateFactory = unix => {
+export const dateFactory = unix => {
   return {
     unix: unix,
     iso: getISODatestamp(unix),
