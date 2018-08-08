@@ -14,11 +14,12 @@ import {
 } from "../../../store/actions-article"
 import { getSubmissionOrArticleRoute } from "../../../utils/routes-article"
 import { getTitleFromSlug } from "../../../utils/messages-"
+import { makeFroth } from "../../../../utils"
 import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
 import ArticleWrapper from "./components/ArticleWrapper"
-import renderArticle from "../../../utils/render-article"
 import MetaTags from "../../vignettes/MetaTags"
+import renderArticle from "../../../utils/render-article"
 
 const ArticleActions = Loadable({
   loader: () => import("../../controls/ArticleActions"),
@@ -101,7 +102,7 @@ class Article extends React.PureComponent {
 
   render = () => {
     return (
-      <ArticleWrapper>
+      <ArticleWrapper itemScope itemType="http://schema.org/Article">
         <MetaTags
           metaTitle={
             this.props.article.title +
@@ -117,6 +118,19 @@ class Article extends React.PureComponent {
           stateAdminControls={this.state.adminControls}
           stateTag={this.state.tag}
         />
+        <meta itemProp="description" content={this.props.article.summary} />
+        <div
+          itemProp="image"
+          itemScope
+          itemType="https://schema.org/ImageObject"
+        >
+          <meta
+            itemProp="url"
+            content={
+              makeFroth({ src: this.props.article.poster, size: "m" }).src
+            }
+          />
+        </div>
 
         <ArticleSection articleStatus={this.props.article.status}>
           {renderArticle(this.props.article.content.raw)}
