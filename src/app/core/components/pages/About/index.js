@@ -113,8 +113,7 @@ const About = props => {
         <h3>Contact, connect.</h3>
         <p>
           If you have a question, suggestion or just want to chat, feel free to
-          email
-          <ContactInfo />, or:
+          email <ContactInfo />, or:
         </p>
         <ButtonGroup>
           <FollowButtons />
