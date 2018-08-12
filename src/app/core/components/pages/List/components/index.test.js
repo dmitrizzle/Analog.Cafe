@@ -13,7 +13,7 @@ import ListDescription from "./ListDescription"
 import ListDescriptionWrapper from "./ListDescriptionWrapper"
 import ListHeader from "./ListHeader"
 import ListItemAuthorDate from "./ListItemAuthorDate"
-import ListItemStats from "./ListItemStats"
+import ListItemStats, { Stats, readingTime } from "./ListItemStats"
 import ListLoader from "./ListLoader"
 import ListUL from "./ListUL"
 import PlaceholderHowToSubmit from "./PlaceholderHowToSubmit"
@@ -113,6 +113,13 @@ it("Render ListItemStats, matches snapshot", () => {
     />
   )
   expect(element).toMatchSnapshot()
+})
+it("Render Stats, matches snapshot", () => {
+  const element = shallow(<Stats theme={APP_THEME} />)
+  expect(element).toMatchSnapshot()
+})
+it("Calculate reading time correctly", () => {
+  expect(readingTime({ words: 250, images: 2 })).toEqual(2)
 })
 
 it("Render ListLoader, matches snapshot", () => {
