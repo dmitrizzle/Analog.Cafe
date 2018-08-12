@@ -6,7 +6,7 @@ export default styled.div`
   min-width: ${VALUE_ZIGZAG_WIDTH};
   background-color: rgba(44, 44, 44, 0.125);
   background-size: cover;
-  background-position: top right;
+  background-position: right 22%;
   margin: 0 0 0 auto;
   ${props =>
     props.theme.size.breakpoint.max
