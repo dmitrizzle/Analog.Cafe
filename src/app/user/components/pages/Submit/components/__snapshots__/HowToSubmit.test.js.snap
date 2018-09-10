@@ -28,26 +28,41 @@ ShallowWrapper {
           The “Composer” tool will help you create and send submissions.
 </Unknown>,
         <p>
-          Click the “
-          <Unknown
-                    to="/submit/compose"
-          >
-                    Submit Now
-          </Unknown>
-          ” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”
+          <em>
+                    <strong>
+                              First:
+                    </strong>
+          </em>
+           
+          go to
+           
+          <em>
+                    <Unknown
+                              to="/submit/compose"
+                    >
+                              Submit Now
+                    </Unknown>
+          </em>
+           
+          page and start creating your submission with text and images. As you edit, your work is saved automatically.
 </p>,
         <p>
-          After you 
-          <Unknown
-                    to="/sign-in"
-          >
-                    sign in or create an account
-          </Unknown>
-          , you can 
-          <strong>
-                    edit your profile
-          </strong>
-           by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.
+          <em>
+                    <strong>
+                              Then:
+                    </strong>
+          </em>
+           
+          make sure that your submission has at least one image: JPG or PNG. It must also include a title and text.
+</p>,
+        <p>
+          <em>
+                    <strong>
+                              Finally:
+                    </strong>
+          </em>
+           
+          click “send!”
 </p>,
       ],
     },
@@ -83,31 +98,81 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "Click the “",
-            <Unknown
-              to="/submit/compose"
->
-              Submit Now
-</Unknown>,
-            "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
+            <em>
+              <strong>
+                            First:
+              </strong>
+</em>,
+            " ",
+            "go to",
+            " ",
+            <em>
+              <Unknown
+                            to="/submit/compose"
+              >
+                            Submit Now
+              </Unknown>
+</em>,
+            " ",
+            "page and start creating your submission with text and images. As you edit, your work is saved automatically.",
           ],
         },
         "ref": null,
         "rendered": Array [
-          "Click the “",
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "host",
             "props": Object {
-              "children": "Submit Now",
-              "to": "/submit/compose",
+              "children": <strong>
+                First:
+</strong>,
             },
             "ref": null,
-            "rendered": "Submit Now",
-            "type": [Function],
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "First:",
+              },
+              "ref": null,
+              "rendered": "First:",
+              "type": "strong",
+            },
+            "type": "em",
           },
-          "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
+          " ",
+          "go to",
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Unknown
+                to="/submit/compose"
+>
+                Submit Now
+</Unknown>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Submit Now",
+                "to": "/submit/compose",
+              },
+              "ref": null,
+              "rendered": "Submit Now",
+              "type": [Function],
+            },
+            "type": "em",
+          },
+          " ",
+          "page and start creating your submission with text and images. As you edit, your work is saved automatically.",
         ],
         "type": "p",
       },
@@ -117,47 +182,87 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "After you ",
-            <Unknown
-              to="/sign-in"
->
-              sign in or create an account
-</Unknown>,
-            ", you can ",
-            <strong>
-              edit your profile
-</strong>,
-            " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
+            <em>
+              <strong>
+                            Then:
+              </strong>
+</em>,
+            " ",
+            "make sure that your submission has at least one image: JPG or PNG. It must also include a title and text.",
           ],
         },
         "ref": null,
         "rendered": Array [
-          "After you ",
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": "sign in or create an account",
-              "to": "/sign-in",
-            },
-            "ref": null,
-            "rendered": "sign in or create an account",
-            "type": [Function],
-          },
-          ", you can ",
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "edit your profile",
+              "children": <strong>
+                Then:
+</strong>,
             },
             "ref": null,
-            "rendered": "edit your profile",
-            "type": "strong",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Then:",
+              },
+              "ref": null,
+              "rendered": "Then:",
+              "type": "strong",
+            },
+            "type": "em",
           },
-          " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
+          " ",
+          "make sure that your submission has at least one image: JPG or PNG. It must also include a title and text.",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <em>
+              <strong>
+                            Finally:
+              </strong>
+</em>,
+            " ",
+            "click “send!”",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <strong>
+                Finally:
+</strong>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Finally:",
+              },
+              "ref": null,
+              "rendered": "Finally:",
+              "type": "strong",
+            },
+            "type": "em",
+          },
+          " ",
+          "click “send!”",
         ],
         "type": "p",
       },
@@ -181,26 +286,41 @@ ShallowWrapper {
             The “Composer” tool will help you create and send submissions.
 </Unknown>,
           <p>
-            Click the “
-            <Unknown
-                        to="/submit/compose"
-            >
-                        Submit Now
-            </Unknown>
-            ” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”
+            <em>
+                        <strong>
+                                    First:
+                        </strong>
+            </em>
+             
+            go to
+             
+            <em>
+                        <Unknown
+                                    to="/submit/compose"
+                        >
+                                    Submit Now
+                        </Unknown>
+            </em>
+             
+            page and start creating your submission with text and images. As you edit, your work is saved automatically.
 </p>,
           <p>
-            After you 
-            <Unknown
-                        to="/sign-in"
-            >
-                        sign in or create an account
-            </Unknown>
-            , you can 
-            <strong>
-                        edit your profile
-            </strong>
-             by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.
+            <em>
+                        <strong>
+                                    Then:
+                        </strong>
+            </em>
+             
+            make sure that your submission has at least one image: JPG or PNG. It must also include a title and text.
+</p>,
+          <p>
+            <em>
+                        <strong>
+                                    Finally:
+                        </strong>
+            </em>
+             
+            click “send!”
 </p>,
         ],
       },
@@ -236,31 +356,81 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Click the “",
-              <Unknown
-                to="/submit/compose"
->
-                Submit Now
-</Unknown>,
-              "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
+              <em>
+                <strong>
+                                First:
+                </strong>
+</em>,
+              " ",
+              "go to",
+              " ",
+              <em>
+                <Unknown
+                                to="/submit/compose"
+                >
+                                Submit Now
+                </Unknown>
+</em>,
+              " ",
+              "page and start creating your submission with text and images. As you edit, your work is saved automatically.",
             ],
           },
           "ref": null,
           "rendered": Array [
-            "Click the “",
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "host",
               "props": Object {
-                "children": "Submit Now",
-                "to": "/submit/compose",
+                "children": <strong>
+                  First:
+</strong>,
               },
               "ref": null,
-              "rendered": "Submit Now",
-              "type": [Function],
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "First:",
+                },
+                "ref": null,
+                "rendered": "First:",
+                "type": "strong",
+              },
+              "type": "em",
             },
-            "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
+            " ",
+            "go to",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Unknown
+                  to="/submit/compose"
+>
+                  Submit Now
+</Unknown>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Submit Now",
+                  "to": "/submit/compose",
+                },
+                "ref": null,
+                "rendered": "Submit Now",
+                "type": [Function],
+              },
+              "type": "em",
+            },
+            " ",
+            "page and start creating your submission with text and images. As you edit, your work is saved automatically.",
           ],
           "type": "p",
         },
@@ -270,47 +440,87 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "After you ",
-              <Unknown
-                to="/sign-in"
->
-                sign in or create an account
-</Unknown>,
-              ", you can ",
-              <strong>
-                edit your profile
-</strong>,
-              " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
+              <em>
+                <strong>
+                                Then:
+                </strong>
+</em>,
+              " ",
+              "make sure that your submission has at least one image: JPG or PNG. It must also include a title and text.",
             ],
           },
           "ref": null,
           "rendered": Array [
-            "After you ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": "sign in or create an account",
-                "to": "/sign-in",
-              },
-              "ref": null,
-              "rendered": "sign in or create an account",
-              "type": [Function],
-            },
-            ", you can ",
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "edit your profile",
+                "children": <strong>
+                  Then:
+</strong>,
               },
               "ref": null,
-              "rendered": "edit your profile",
-              "type": "strong",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Then:",
+                },
+                "ref": null,
+                "rendered": "Then:",
+                "type": "strong",
+              },
+              "type": "em",
             },
-            " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
+            " ",
+            "make sure that your submission has at least one image: JPG or PNG. It must also include a title and text.",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <em>
+                <strong>
+                                Finally:
+                </strong>
+</em>,
+              " ",
+              "click “send!”",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <strong>
+                  Finally:
+</strong>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Finally:",
+                },
+                "ref": null,
+                "rendered": "Finally:",
+                "type": "strong",
+              },
+              "type": "em",
+            },
+            " ",
+            "click “send!”",
           ],
           "type": "p",
         },

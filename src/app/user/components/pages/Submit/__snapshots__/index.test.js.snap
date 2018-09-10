@@ -60,16 +60,97 @@ ShallowWrapper {
           <Unknown
                     feature={true}
                     nocaption={true}
-                    src="image-froth_1533636_rygH__d9kQ"
+                    src="image-froth_1061008_rJ_ULUmd7"
           />
-          <h3>
-                    Hello!
-          </h3>
           <p>
-                    Analog.Cafe publishes and celebrates expressive, insightful works by a diverse group of people from around the world. Some are submitted by invitation, others are casual surf-ins; both are
+                    This autumn, all
                      
+                    <Connect(ModalLauncher)
+                              with={
+                                        Object {
+                                                  "id": "hints/qualifying-submission",
+                                                  "info": Object {
+                                                    "buttons": Array [
+                                                      Object {
+                                                        "branded": true,
+                                                        "text": "Submit Now",
+                                                        "to": "/submit/compose",
+                                                      },
+                                                    ],
+                                                    "text": <span>
+                                                      Submissions with compelling stories or informative guides, with quality images, shot on film. Best way to tell what’s acceptable is to 
+                                                      <Unknown
+                                                                    to="/"
+                                                      >
+                                                                    browse
+                                                      </Unknown>
+                                                       Analog.Cafe content.
+                                                      <br />
+                                                      <br />
+                                                      Remarkably, the current acceptance rate on Analog.Cafe is 85% – so your chances are looking good.
+                                        </span>,
+                                                    "title": "What Qualifies?",
+                                                  },
+                                                }
+                              }
+                    >
+                              qualifying
+                    </Connect(ModalLauncher)>
+                     
+                    submissions will receive an exclusive coupon for £5 from
+                     
+                    <Unknown
+                              to="https://analoguewonderland.co.uk/"
+                    >
+                              Analogue Wonderland
+                    </Unknown>
+                    ’s incredible selection of over 180 film stocks!
+          </p>
+          <p>
                     <strong>
-                              welcome!
+                              To get the deal
+                    </strong>
+                    , follow the steps below to create and send your submission. Provided that your content and images look good, an editor will reach out to you with a coupon code that you can use at Analogue Wonderland.
+          </p>
+          <p>
+                    <strong>
+                              There is a
+                               
+                              <Connect(ModalLauncher)
+                                        with={
+                                                  Object {
+                                                            "id": "hints/how-many-coupons-left",
+                                                            "info": Object {
+                                                              "buttons": Array [
+                                                                Object {
+                                                                  "branded": true,
+                                                                  "text": "Submit Now",
+                                                                  "to": "/submit/compose",
+                                                                },
+                                                              ],
+                                                              "image": "image-froth_1511062_ByvHiFXdX",
+                                                              "text": <span>
+                                                                There are only
+                                                                 
+                                                                <strong>
+                                                                              <PureComponent
+                                                                                            from="promotions"
+                                                                                            id="coupons-left"
+                                                                              />
+                                                                               
+                                                                              coupons left
+                                                                </strong>
+                                                                !
+                                                  </span>,
+                                                              "title": "How Many Coupons Left?",
+                                                            },
+                                                          }
+                                        }
+                              >
+                                        limited number
+                              </Connect(ModalLauncher)>
+                               
+                              of coupons available.
                     </strong>
           </p>
           <h3>
@@ -99,18 +180,13 @@ ShallowWrapper {
                     Please note.
           </h3>
           <p>
-                    All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
+                    All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
           </p>
           <p>
-                    There are more detailed 
+                    Complete rules and code of conduct can be found
+                     
                     <Unknown
                               to="/submit/rules"
-                    >
-                              rules
-                    </Unknown>
-                     that Analog.Cafe uses to govern its relationship with you and others. Privacy policy is 
-                    <Unknown
-                              to="/privacy-policy"
                     >
                               here
                     </Unknown>
@@ -208,16 +284,97 @@ ShallowWrapper {
             <Unknown
               feature={true}
               nocaption={true}
-              src="image-froth_1533636_rygH__d9kQ"
+              src="image-froth_1061008_rJ_ULUmd7"
 />,
-            <h3>
-              Hello!
-</h3>,
             <p>
-              Analog.Cafe publishes and celebrates expressive, insightful works by a diverse group of people from around the world. Some are submitted by invitation, others are casual surf-ins; both are
+              This autumn, all
                
+              <Connect(ModalLauncher)
+                            with={
+                                          Object {
+                                                        "id": "hints/qualifying-submission",
+                                                        "info": Object {
+                                                          "buttons": Array [
+                                                            Object {
+                                                              "branded": true,
+                                                              "text": "Submit Now",
+                                                              "to": "/submit/compose",
+                                                            },
+                                                          ],
+                                                          "text": <span>
+                                                            Submissions with compelling stories or informative guides, with quality images, shot on film. Best way to tell what’s acceptable is to 
+                                                            <Unknown
+                                                                              to="/"
+                                                            >
+                                                                              browse
+                                                            </Unknown>
+                                                             Analog.Cafe content.
+                                                            <br />
+                                                            <br />
+                                                            Remarkably, the current acceptance rate on Analog.Cafe is 85% – so your chances are looking good.
+                                          </span>,
+                                                          "title": "What Qualifies?",
+                                                        },
+                                                      }
+                            }
+              >
+                            qualifying
+              </Connect(ModalLauncher)>
+               
+              submissions will receive an exclusive coupon for £5 from
+               
+              <Unknown
+                            to="https://analoguewonderland.co.uk/"
+              >
+                            Analogue Wonderland
+              </Unknown>
+              ’s incredible selection of over 180 film stocks!
+</p>,
+            <p>
               <strong>
-                            welcome!
+                            To get the deal
+              </strong>
+              , follow the steps below to create and send your submission. Provided that your content and images look good, an editor will reach out to you with a coupon code that you can use at Analogue Wonderland.
+</p>,
+            <p>
+              <strong>
+                            There is a
+                             
+                            <Connect(ModalLauncher)
+                                          with={
+                                                        Object {
+                                                                      "id": "hints/how-many-coupons-left",
+                                                                      "info": Object {
+                                                                        "buttons": Array [
+                                                                          Object {
+                                                                            "branded": true,
+                                                                            "text": "Submit Now",
+                                                                            "to": "/submit/compose",
+                                                                          },
+                                                                        ],
+                                                                        "image": "image-froth_1511062_ByvHiFXdX",
+                                                                        "text": <span>
+                                                                          There are only
+                                                                           
+                                                                          <strong>
+                                                                                            <PureComponent
+                                                                                                              from="promotions"
+                                                                                                              id="coupons-left"
+                                                                                            />
+                                                                                             
+                                                                                            coupons left
+                                                                          </strong>
+                                                                          !
+                                                        </span>,
+                                                                        "title": "How Many Coupons Left?",
+                                                                      },
+                                                                    }
+                                          }
+                            >
+                                          limited number
+                            </Connect(ModalLauncher)>
+                             
+                            of coupons available.
               </strong>
 </p>,
             <h3>
@@ -247,18 +404,13 @@ ShallowWrapper {
               Please note.
 </h3>,
             <p>
-              All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
+              All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
 </p>,
             <p>
-              There are more detailed 
+              Complete rules and code of conduct can be found
+               
               <Unknown
                             to="/submit/rules"
-              >
-                            rules
-              </Unknown>
-               that Analog.Cafe uses to govern its relationship with you and others. Privacy policy is 
-              <Unknown
-                            to="/privacy-policy"
               >
                             here
               </Unknown>
@@ -421,7 +573,7 @@ ShallowWrapper {
             "props": Object {
               "feature": true,
               "nocaption": true,
-              "src": "image-froth_1533636_rygH__d9kQ",
+              "src": "image-froth_1061008_rJ_ULUmd7",
             },
             "ref": null,
             "rendered": null,
@@ -432,11 +584,109 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Hello!",
+              "children": Array [
+                "This autumn, all",
+                " ",
+                <Connect(ModalLauncher)
+                  with={
+                                    Object {
+                                                      "id": "hints/qualifying-submission",
+                                                      "info": Object {
+                                                        "buttons": Array [
+                                                          Object {
+                                                            "branded": true,
+                                                            "text": "Submit Now",
+                                                            "to": "/submit/compose",
+                                                          },
+                                                        ],
+                                                        "text": <span>
+                                                          Submissions with compelling stories or informative guides, with quality images, shot on film. Best way to tell what’s acceptable is to 
+                                                          <Unknown
+                                                                                to="/"
+                                                          >
+                                                                                browse
+                                                          </Unknown>
+                                                           Analog.Cafe content.
+                                                          <br />
+                                                          <br />
+                                                          Remarkably, the current acceptance rate on Analog.Cafe is 85% – so your chances are looking good.
+                                    </span>,
+                                                        "title": "What Qualifies?",
+                                                      },
+                                                    }
+                  }
+>
+                  qualifying
+</Connect(ModalLauncher)>,
+                " ",
+                "submissions will receive an exclusive coupon for £5 from",
+                " ",
+                <Unknown
+                  to="https://analoguewonderland.co.uk/"
+>
+                  Analogue Wonderland
+</Unknown>,
+                "’s incredible selection of over 180 film stocks!",
+              ],
             },
             "ref": null,
-            "rendered": "Hello!",
-            "type": "h3",
+            "rendered": Array [
+              "This autumn, all",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "qualifying",
+                  "with": Object {
+                    "id": "hints/qualifying-submission",
+                    "info": Object {
+                      "buttons": Array [
+                        Object {
+                          "branded": true,
+                          "text": "Submit Now",
+                          "to": "/submit/compose",
+                        },
+                      ],
+                      "text": <span>
+                        Submissions with compelling stories or informative guides, with quality images, shot on film. Best way to tell what’s acceptable is to 
+                        <Unknown
+                                                to="/"
+                        >
+                                                browse
+                        </Unknown>
+                         Analog.Cafe content.
+                        <br />
+                        <br />
+                        Remarkably, the current acceptance rate on Analog.Cafe is 85% – so your chances are looking good.
+</span>,
+                      "title": "What Qualifies?",
+                    },
+                  },
+                },
+                "ref": null,
+                "rendered": "qualifying",
+                "type": [Function],
+              },
+              " ",
+              "submissions will receive an exclusive coupon for £5 from",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Analogue Wonderland",
+                  "to": "https://analoguewonderland.co.uk/",
+                },
+                "ref": null,
+                "rendered": "Analogue Wonderland",
+                "type": [Function],
+              },
+              "’s incredible selection of over 180 film stocks!",
+            ],
+            "type": "p",
           },
           Object {
             "instance": null,
@@ -444,29 +694,167 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Analog.Cafe publishes and celebrates expressive, insightful works by a diverse group of people from around the world. Some are submitted by invitation, others are casual surf-ins; both are",
-                " ",
                 <strong>
-                  welcome!
+                  To get the deal
 </strong>,
+                ", follow the steps below to create and send your submission. Provided that your content and images look good, an editor will reach out to you with a coupon code that you can use at Analogue Wonderland.",
               ],
             },
             "ref": null,
             "rendered": Array [
-              "Analog.Cafe publishes and celebrates expressive, insightful works by a diverse group of people from around the world. Some are submitted by invitation, others are casual surf-ins; both are",
-              " ",
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "welcome!",
+                  "children": "To get the deal",
                 },
                 "ref": null,
-                "rendered": "welcome!",
+                "rendered": "To get the deal",
                 "type": "strong",
               },
+              ", follow the steps below to create and send your submission. Provided that your content and images look good, an editor will reach out to you with a coupon code that you can use at Analogue Wonderland.",
             ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <strong>
+                There is a
+                 
+                <Connect(ModalLauncher)
+                                with={
+                                                Object {
+                                                                "id": "hints/how-many-coupons-left",
+                                                                "info": Object {
+                                                                  "buttons": Array [
+                                                                    Object {
+                                                                      "branded": true,
+                                                                      "text": "Submit Now",
+                                                                      "to": "/submit/compose",
+                                                                    },
+                                                                  ],
+                                                                  "image": "image-froth_1511062_ByvHiFXdX",
+                                                                  "text": <span>
+                                                                    There are only
+                                                                     
+                                                                    <strong>
+                                                                                        <PureComponent
+                                                                                                            from="promotions"
+                                                                                                            id="coupons-left"
+                                                                                        />
+                                                                                         
+                                                                                        coupons left
+                                                                    </strong>
+                                                                    !
+                                                </span>,
+                                                                  "title": "How Many Coupons Left?",
+                                                                },
+                                                              }
+                                }
+                >
+                                limited number
+                </Connect(ModalLauncher)>
+                 
+                of coupons available.
+</strong>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "There is a",
+                  " ",
+                  <Connect(ModalLauncher)
+                    with={
+                                        Object {
+                                                            "id": "hints/how-many-coupons-left",
+                                                            "info": Object {
+                                                              "buttons": Array [
+                                                                Object {
+                                                                  "branded": true,
+                                                                  "text": "Submit Now",
+                                                                  "to": "/submit/compose",
+                                                                },
+                                                              ],
+                                                              "image": "image-froth_1511062_ByvHiFXdX",
+                                                              "text": <span>
+                                                                There are only
+                                                                 
+                                                                <strong>
+                                                                                        <PureComponent
+                                                                                                                from="promotions"
+                                                                                                                id="coupons-left"
+                                                                                        />
+                                                                                         
+                                                                                        coupons left
+                                                                </strong>
+                                                                !
+                                        </span>,
+                                                              "title": "How Many Coupons Left?",
+                                                            },
+                                                          }
+                    }
+>
+                    limited number
+</Connect(ModalLauncher)>,
+                  " ",
+                  "of coupons available.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "There is a",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "limited number",
+                    "with": Object {
+                      "id": "hints/how-many-coupons-left",
+                      "info": Object {
+                        "buttons": Array [
+                          Object {
+                            "branded": true,
+                            "text": "Submit Now",
+                            "to": "/submit/compose",
+                          },
+                        ],
+                        "image": "image-froth_1511062_ByvHiFXdX",
+                        "text": <span>
+                          There are only
+                           
+                          <strong>
+                                                    <PureComponent
+                                                                              from="promotions"
+                                                                              id="coupons-left"
+                                                    />
+                                                     
+                                                    coupons left
+                          </strong>
+                          !
+</span>,
+                        "title": "How Many Coupons Left?",
+                      },
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "limited number",
+                  "type": [Function],
+                },
+                " ",
+                "of coupons available.",
+              ],
+              "type": "strong",
+            },
             "type": "p",
           },
           Object {
@@ -576,10 +964,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
+              "children": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
             },
             "ref": null,
-            "rendered": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
+            "rendered": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
             "type": "p",
           },
           Object {
@@ -588,15 +976,10 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "There are more detailed ",
+                "Complete rules and code of conduct can be found",
+                " ",
                 <Unknown
                   to="/submit/rules"
->
-                  rules
-</Unknown>,
-                " that Analog.Cafe uses to govern its relationship with you and others. Privacy policy is ",
-                <Unknown
-                  to="/privacy-policy"
 >
                   here
 </Unknown>,
@@ -605,27 +988,15 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "There are more detailed ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": "rules",
-                  "to": "/submit/rules",
-                },
-                "ref": null,
-                "rendered": "rules",
-                "type": [Function],
-              },
-              " that Analog.Cafe uses to govern its relationship with you and others. Privacy policy is ",
+              "Complete rules and code of conduct can be found",
+              " ",
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
                   "children": "here",
-                  "to": "/privacy-policy",
+                  "to": "/submit/rules",
                 },
                 "ref": null,
                 "rendered": "here",
@@ -809,16 +1180,97 @@ ShallowWrapper {
             <Unknown
                         feature={true}
                         nocaption={true}
-                        src="image-froth_1533636_rygH__d9kQ"
+                        src="image-froth_1061008_rJ_ULUmd7"
             />
-            <h3>
-                        Hello!
-            </h3>
             <p>
-                        Analog.Cafe publishes and celebrates expressive, insightful works by a diverse group of people from around the world. Some are submitted by invitation, others are casual surf-ins; both are
+                        This autumn, all
                          
+                        <Connect(ModalLauncher)
+                                    with={
+                                                Object {
+                                                            "id": "hints/qualifying-submission",
+                                                            "info": Object {
+                                                              "buttons": Array [
+                                                                Object {
+                                                                  "branded": true,
+                                                                  "text": "Submit Now",
+                                                                  "to": "/submit/compose",
+                                                                },
+                                                              ],
+                                                              "text": <span>
+                                                                Submissions with compelling stories or informative guides, with quality images, shot on film. Best way to tell what’s acceptable is to 
+                                                                <Unknown
+                                                                                to="/"
+                                                                >
+                                                                                browse
+                                                                </Unknown>
+                                                                 Analog.Cafe content.
+                                                                <br />
+                                                                <br />
+                                                                Remarkably, the current acceptance rate on Analog.Cafe is 85% – so your chances are looking good.
+                                                </span>,
+                                                              "title": "What Qualifies?",
+                                                            },
+                                                          }
+                                    }
+                        >
+                                    qualifying
+                        </Connect(ModalLauncher)>
+                         
+                        submissions will receive an exclusive coupon for £5 from
+                         
+                        <Unknown
+                                    to="https://analoguewonderland.co.uk/"
+                        >
+                                    Analogue Wonderland
+                        </Unknown>
+                        ’s incredible selection of over 180 film stocks!
+            </p>
+            <p>
                         <strong>
-                                    welcome!
+                                    To get the deal
+                        </strong>
+                        , follow the steps below to create and send your submission. Provided that your content and images look good, an editor will reach out to you with a coupon code that you can use at Analogue Wonderland.
+            </p>
+            <p>
+                        <strong>
+                                    There is a
+                                     
+                                    <Connect(ModalLauncher)
+                                                with={
+                                                            Object {
+                                                                        "id": "hints/how-many-coupons-left",
+                                                                        "info": Object {
+                                                                          "buttons": Array [
+                                                                            Object {
+                                                                              "branded": true,
+                                                                              "text": "Submit Now",
+                                                                              "to": "/submit/compose",
+                                                                            },
+                                                                          ],
+                                                                          "image": "image-froth_1511062_ByvHiFXdX",
+                                                                          "text": <span>
+                                                                            There are only
+                                                                             
+                                                                            <strong>
+                                                                                            <PureComponent
+                                                                                                            from="promotions"
+                                                                                                            id="coupons-left"
+                                                                                            />
+                                                                                             
+                                                                                            coupons left
+                                                                            </strong>
+                                                                            !
+                                                            </span>,
+                                                                          "title": "How Many Coupons Left?",
+                                                                        },
+                                                                      }
+                                                }
+                                    >
+                                                limited number
+                                    </Connect(ModalLauncher)>
+                                     
+                                    of coupons available.
                         </strong>
             </p>
             <h3>
@@ -848,18 +1300,13 @@ ShallowWrapper {
                         Please note.
             </h3>
             <p>
-                        All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
+                        All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
             </p>
             <p>
-                        There are more detailed 
+                        Complete rules and code of conduct can be found
+                         
                         <Unknown
                                     to="/submit/rules"
-                        >
-                                    rules
-                        </Unknown>
-                         that Analog.Cafe uses to govern its relationship with you and others. Privacy policy is 
-                        <Unknown
-                                    to="/privacy-policy"
                         >
                                     here
                         </Unknown>
@@ -957,16 +1404,97 @@ ShallowWrapper {
               <Unknown
                 feature={true}
                 nocaption={true}
-                src="image-froth_1533636_rygH__d9kQ"
+                src="image-froth_1061008_rJ_ULUmd7"
 />,
-              <h3>
-                Hello!
-</h3>,
               <p>
-                Analog.Cafe publishes and celebrates expressive, insightful works by a diverse group of people from around the world. Some are submitted by invitation, others are casual surf-ins; both are
+                This autumn, all
                  
+                <Connect(ModalLauncher)
+                                with={
+                                                Object {
+                                                                "id": "hints/qualifying-submission",
+                                                                "info": Object {
+                                                                  "buttons": Array [
+                                                                    Object {
+                                                                      "branded": true,
+                                                                      "text": "Submit Now",
+                                                                      "to": "/submit/compose",
+                                                                    },
+                                                                  ],
+                                                                  "text": <span>
+                                                                    Submissions with compelling stories or informative guides, with quality images, shot on film. Best way to tell what’s acceptable is to 
+                                                                    <Unknown
+                                                                                        to="/"
+                                                                    >
+                                                                                        browse
+                                                                    </Unknown>
+                                                                     Analog.Cafe content.
+                                                                    <br />
+                                                                    <br />
+                                                                    Remarkably, the current acceptance rate on Analog.Cafe is 85% – so your chances are looking good.
+                                                </span>,
+                                                                  "title": "What Qualifies?",
+                                                                },
+                                                              }
+                                }
+                >
+                                qualifying
+                </Connect(ModalLauncher)>
+                 
+                submissions will receive an exclusive coupon for £5 from
+                 
+                <Unknown
+                                to="https://analoguewonderland.co.uk/"
+                >
+                                Analogue Wonderland
+                </Unknown>
+                ’s incredible selection of over 180 film stocks!
+</p>,
+              <p>
                 <strong>
-                                welcome!
+                                To get the deal
+                </strong>
+                , follow the steps below to create and send your submission. Provided that your content and images look good, an editor will reach out to you with a coupon code that you can use at Analogue Wonderland.
+</p>,
+              <p>
+                <strong>
+                                There is a
+                                 
+                                <Connect(ModalLauncher)
+                                                with={
+                                                                Object {
+                                                                                "id": "hints/how-many-coupons-left",
+                                                                                "info": Object {
+                                                                                  "buttons": Array [
+                                                                                    Object {
+                                                                                      "branded": true,
+                                                                                      "text": "Submit Now",
+                                                                                      "to": "/submit/compose",
+                                                                                    },
+                                                                                  ],
+                                                                                  "image": "image-froth_1511062_ByvHiFXdX",
+                                                                                  "text": <span>
+                                                                                    There are only
+                                                                                     
+                                                                                    <strong>
+                                                                                                        <PureComponent
+                                                                                                                            from="promotions"
+                                                                                                                            id="coupons-left"
+                                                                                                        />
+                                                                                                         
+                                                                                                        coupons left
+                                                                                    </strong>
+                                                                                    !
+                                                                </span>,
+                                                                                  "title": "How Many Coupons Left?",
+                                                                                },
+                                                                              }
+                                                }
+                                >
+                                                limited number
+                                </Connect(ModalLauncher)>
+                                 
+                                of coupons available.
                 </strong>
 </p>,
               <h3>
@@ -996,18 +1524,13 @@ ShallowWrapper {
                 Please note.
 </h3>,
               <p>
-                All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
+                All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.
 </p>,
               <p>
-                There are more detailed 
+                Complete rules and code of conduct can be found
+                 
                 <Unknown
                                 to="/submit/rules"
-                >
-                                rules
-                </Unknown>
-                 that Analog.Cafe uses to govern its relationship with you and others. Privacy policy is 
-                <Unknown
-                                to="/privacy-policy"
                 >
                                 here
                 </Unknown>
@@ -1170,7 +1693,7 @@ ShallowWrapper {
               "props": Object {
                 "feature": true,
                 "nocaption": true,
-                "src": "image-froth_1533636_rygH__d9kQ",
+                "src": "image-froth_1061008_rJ_ULUmd7",
               },
               "ref": null,
               "rendered": null,
@@ -1181,11 +1704,109 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Hello!",
+                "children": Array [
+                  "This autumn, all",
+                  " ",
+                  <Connect(ModalLauncher)
+                    with={
+                                        Object {
+                                                            "id": "hints/qualifying-submission",
+                                                            "info": Object {
+                                                              "buttons": Array [
+                                                                Object {
+                                                                  "branded": true,
+                                                                  "text": "Submit Now",
+                                                                  "to": "/submit/compose",
+                                                                },
+                                                              ],
+                                                              "text": <span>
+                                                                Submissions with compelling stories or informative guides, with quality images, shot on film. Best way to tell what’s acceptable is to 
+                                                                <Unknown
+                                                                                        to="/"
+                                                                >
+                                                                                        browse
+                                                                </Unknown>
+                                                                 Analog.Cafe content.
+                                                                <br />
+                                                                <br />
+                                                                Remarkably, the current acceptance rate on Analog.Cafe is 85% – so your chances are looking good.
+                                        </span>,
+                                                              "title": "What Qualifies?",
+                                                            },
+                                                          }
+                    }
+>
+                    qualifying
+</Connect(ModalLauncher)>,
+                  " ",
+                  "submissions will receive an exclusive coupon for £5 from",
+                  " ",
+                  <Unknown
+                    to="https://analoguewonderland.co.uk/"
+>
+                    Analogue Wonderland
+</Unknown>,
+                  "’s incredible selection of over 180 film stocks!",
+                ],
               },
               "ref": null,
-              "rendered": "Hello!",
-              "type": "h3",
+              "rendered": Array [
+                "This autumn, all",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "qualifying",
+                    "with": Object {
+                      "id": "hints/qualifying-submission",
+                      "info": Object {
+                        "buttons": Array [
+                          Object {
+                            "branded": true,
+                            "text": "Submit Now",
+                            "to": "/submit/compose",
+                          },
+                        ],
+                        "text": <span>
+                          Submissions with compelling stories or informative guides, with quality images, shot on film. Best way to tell what’s acceptable is to 
+                          <Unknown
+                                                    to="/"
+                          >
+                                                    browse
+                          </Unknown>
+                           Analog.Cafe content.
+                          <br />
+                          <br />
+                          Remarkably, the current acceptance rate on Analog.Cafe is 85% – so your chances are looking good.
+</span>,
+                        "title": "What Qualifies?",
+                      },
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "qualifying",
+                  "type": [Function],
+                },
+                " ",
+                "submissions will receive an exclusive coupon for £5 from",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Analogue Wonderland",
+                    "to": "https://analoguewonderland.co.uk/",
+                  },
+                  "ref": null,
+                  "rendered": "Analogue Wonderland",
+                  "type": [Function],
+                },
+                "’s incredible selection of over 180 film stocks!",
+              ],
+              "type": "p",
             },
             Object {
               "instance": null,
@@ -1193,29 +1814,167 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Analog.Cafe publishes and celebrates expressive, insightful works by a diverse group of people from around the world. Some are submitted by invitation, others are casual surf-ins; both are",
-                  " ",
                   <strong>
-                    welcome!
+                    To get the deal
 </strong>,
+                  ", follow the steps below to create and send your submission. Provided that your content and images look good, an editor will reach out to you with a coupon code that you can use at Analogue Wonderland.",
                 ],
               },
               "ref": null,
               "rendered": Array [
-                "Analog.Cafe publishes and celebrates expressive, insightful works by a diverse group of people from around the world. Some are submitted by invitation, others are casual surf-ins; both are",
-                " ",
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "welcome!",
+                    "children": "To get the deal",
                   },
                   "ref": null,
-                  "rendered": "welcome!",
+                  "rendered": "To get the deal",
                   "type": "strong",
                 },
+                ", follow the steps below to create and send your submission. Provided that your content and images look good, an editor will reach out to you with a coupon code that you can use at Analogue Wonderland.",
               ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <strong>
+                  There is a
+                   
+                  <Connect(ModalLauncher)
+                                    with={
+                                                      Object {
+                                                                        "id": "hints/how-many-coupons-left",
+                                                                        "info": Object {
+                                                                          "buttons": Array [
+                                                                            Object {
+                                                                              "branded": true,
+                                                                              "text": "Submit Now",
+                                                                              "to": "/submit/compose",
+                                                                            },
+                                                                          ],
+                                                                          "image": "image-froth_1511062_ByvHiFXdX",
+                                                                          "text": <span>
+                                                                            There are only
+                                                                             
+                                                                            <strong>
+                                                                                                  <PureComponent
+                                                                                                                        from="promotions"
+                                                                                                                        id="coupons-left"
+                                                                                                  />
+                                                                                                   
+                                                                                                  coupons left
+                                                                            </strong>
+                                                                            !
+                                                      </span>,
+                                                                          "title": "How Many Coupons Left?",
+                                                                        },
+                                                                      }
+                                    }
+                  >
+                                    limited number
+                  </Connect(ModalLauncher)>
+                   
+                  of coupons available.
+</strong>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "There is a",
+                    " ",
+                    <Connect(ModalLauncher)
+                      with={
+                                            Object {
+                                                                  "id": "hints/how-many-coupons-left",
+                                                                  "info": Object {
+                                                                    "buttons": Array [
+                                                                      Object {
+                                                                        "branded": true,
+                                                                        "text": "Submit Now",
+                                                                        "to": "/submit/compose",
+                                                                      },
+                                                                    ],
+                                                                    "image": "image-froth_1511062_ByvHiFXdX",
+                                                                    "text": <span>
+                                                                      There are only
+                                                                       
+                                                                      <strong>
+                                                                                                <PureComponent
+                                                                                                                          from="promotions"
+                                                                                                                          id="coupons-left"
+                                                                                                />
+                                                                                                 
+                                                                                                coupons left
+                                                                      </strong>
+                                                                      !
+                                            </span>,
+                                                                    "title": "How Many Coupons Left?",
+                                                                  },
+                                                                }
+                      }
+>
+                      limited number
+</Connect(ModalLauncher)>,
+                    " ",
+                    "of coupons available.",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "There is a",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "limited number",
+                      "with": Object {
+                        "id": "hints/how-many-coupons-left",
+                        "info": Object {
+                          "buttons": Array [
+                            Object {
+                              "branded": true,
+                              "text": "Submit Now",
+                              "to": "/submit/compose",
+                            },
+                          ],
+                          "image": "image-froth_1511062_ByvHiFXdX",
+                          "text": <span>
+                            There are only
+                             
+                            <strong>
+                                                        <PureComponent
+                                                                                    from="promotions"
+                                                                                    id="coupons-left"
+                                                        />
+                                                         
+                                                        coupons left
+                            </strong>
+                            !
+</span>,
+                          "title": "How Many Coupons Left?",
+                        },
+                      },
+                    },
+                    "ref": null,
+                    "rendered": "limited number",
+                    "type": [Function],
+                  },
+                  " ",
+                  "of coupons available.",
+                ],
+                "type": "strong",
+              },
               "type": "p",
             },
             Object {
@@ -1325,10 +2084,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
+                "children": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
               },
               "ref": null,
-              "rendered": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
+              "rendered": "All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email d/at/analog.cafe.",
               "type": "p",
             },
             Object {
@@ -1337,15 +2096,10 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "There are more detailed ",
+                  "Complete rules and code of conduct can be found",
+                  " ",
                   <Unknown
                     to="/submit/rules"
->
-                    rules
-</Unknown>,
-                  " that Analog.Cafe uses to govern its relationship with you and others. Privacy policy is ",
-                  <Unknown
-                    to="/privacy-policy"
 >
                     here
 </Unknown>,
@@ -1354,27 +2108,15 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                "There are more detailed ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "rules",
-                    "to": "/submit/rules",
-                  },
-                  "ref": null,
-                  "rendered": "rules",
-                  "type": [Function],
-                },
-                " that Analog.Cafe uses to govern its relationship with you and others. Privacy policy is ",
+                "Complete rules and code of conduct can be found",
+                " ",
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
                     "children": "here",
-                    "to": "/privacy-policy",
+                    "to": "/submit/rules",
                   },
                   "ref": null,
                   "rendered": "here",
