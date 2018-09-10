@@ -2,7 +2,6 @@ import React from "react"
 
 import { TEXT_EDITORIAL_RELEASE } from "../../../constants/messages-submission"
 import { makeFroth } from "../../../../utils"
-import { smartGreeting } from "../../../../core/utils/messages-"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
@@ -12,6 +11,7 @@ import HowToSubmit from "./components/HowToSubmit"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
+import Modal from "../../../../core/components/controls/Modal"
 
 export default () => {
   return (
@@ -44,8 +44,37 @@ export default () => {
         </div>
         <Figure src="image-froth_1061008_rJ_ULUmd7" feature nocaption />
         <p>
-          This autumn, all qualifying submissions will receive an exclusive
-          coupon for £5 from{" "}
+          This autumn, all{" "}
+          <Modal
+            with={{
+              info: {
+                title: "What Qualifies?",
+                text: (
+                  <span>
+                    Submissions with compelling stories or informative guides,
+                    with quality images, shot on film. Best way to tell what’s
+                    acceptable is to <Link to="/">browse</Link> Analog.Cafe
+                    content.
+                    <br />
+                    <br />
+                    Remarkably, the current acceptance rate on Analog.Cafe is
+                    85% – so your chances are looking good.
+                  </span>
+                ),
+                buttons: [
+                  {
+                    to: "/submit/compose",
+                    text: "Submit Now",
+                    branded: true
+                  }
+                ]
+              },
+              id: "hints/qualifying-submission"
+            }}
+          >
+            qualifying
+          </Modal>{" "}
+          submissions will receive an exclusive coupon for £5 from{" "}
           <Link to="https://analoguewonderland.co.uk/">
             Analogue Wonderland
           </Link>
@@ -58,7 +87,33 @@ export default () => {
           Analogue Wonderland.
         </p>
         <p>
-          <strong>There is a limited number of coupons available.</strong>
+          <strong>
+            There is a{" "}
+            <Modal
+              with={{
+                info: {
+                  title: "How Many Coupons Left?",
+                  text: (
+                    <span>
+                      There are only <strong>10 coupons left</strong>!
+                    </span>
+                  ),
+                  image: "image-froth_1511062_ByvHiFXdX",
+                  buttons: [
+                    {
+                      to: "/submit/compose",
+                      text: "Submit Now",
+                      branded: true
+                    }
+                  ]
+                },
+                id: "hints/how-many-coupons-left"
+              }}
+            >
+              limited number
+            </Modal>{" "}
+            of coupons available.
+          </strong>
         </p>
         <h3>What to submit.</h3>
         <p>
@@ -77,9 +132,8 @@ export default () => {
         <h3>Please note.</h3>
         <p>{TEXT_EDITORIAL_RELEASE}</p>
         <p>
-          There are more detailed <Link to="/submit/rules">rules</Link> that
-          Analog.Cafe uses to govern its relationship with you and others.
-          Privacy policy is <Link to="/privacy-policy">here</Link>.
+          Complete rules and code of conduct can be found{" "}
+          <Link to="/submit/rules">here</Link>.
         </p>
 
         <ButtonGroup>
