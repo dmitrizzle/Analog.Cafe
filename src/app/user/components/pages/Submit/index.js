@@ -42,20 +42,31 @@ export default () => {
             if you have an account.
           </p>
         </div>
-        <Figure src="image-froth_1533636_rygH__d9kQ" feature nocaption />
-        <h3>{smartGreeting()}</h3>
+        <Figure src="image-froth_1061008_rJ_ULUmd7" feature nocaption />
         <p>
-          Analog.Cafe publishes and celebrates expressive, insightful works by a
-          diverse group of people from around the world. Some are submitted by
-          invitation, others are casual surf-ins; both are{" "}
-          <strong>welcome!</strong>
+          This autumn, all qualifying submissions will receive an exclusive
+          coupon for £5 from{" "}
+          <Link to="https://analoguewonderland.co.uk/">
+            Analogue Wonderland
+          </Link>
+          ’s incredible selection of over 180 film stocks!
+        </p>
+        <p>
+          <strong>To get the deal</strong>, follow the steps below to create and
+          send your submission. Provided that your content and images look good,
+          an editor will reach out to you with a coupon code that you can use at
+          Analogue Wonderland.
+        </p>
+        <p>
+          <strong>There is a limited number of coupons available.</strong>
         </p>
         <h3>What to submit.</h3>
         <p>
           Analog.Cafe’s speciality is{" "}
           <Link to="/photo-essays">
             <strong>photo essays</strong>
-          </Link>, composed with images shot on{" "}
+          </Link>
+          , composed with images shot on{" "}
           <Link to="/zine/analogue-photography-98f3">film cameras</Link>.
           However, any illustrated, written piece is considered, as long as it
           fits with the publication. Including: guides, reviews, and stories.

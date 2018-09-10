@@ -1,6 +1,7 @@
 import { connect } from "react-redux"
 import React from "react"
 
+import { CARD_ALERTS } from "../../../../user/constants/messages-submission"
 import { GA } from "../../../../utils"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import { TEXT_LABELS } from "../../../constants/messages-"
@@ -14,7 +15,6 @@ import Figure from "../../vignettes/Picture/components/Figure"
 import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
-import LinkButton from "../../controls/Button/components/LinkButton"
 import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
@@ -23,7 +23,7 @@ import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
 const metaDescription =
-  "Story, reason for existence, contributos and resources."
+  "Analog.Cafe is a publication that promotes creative and informative works by a community of writers, artists and film photographers."
 
 const About = props => {
   return (
@@ -35,28 +35,22 @@ const About = props => {
       />
       <ArticleSection>
         <Figure
-          src="image-froth_1998002_HJcNND1bQ"
+          src="image-froth_1533636_rygH__d9kQ"
           feature
           alt="A photograph of a misty forest"
         />
         <h3>{smartGreeting()}</h3>
         <p>
-          Analog.Cafe, “a film photography publication,” is a blog that
-          publishes creative and informative content, mainly made by people who
-          enjoy shooting film, for everyone who enjoys human creativity and
-          appreciates <Link to="/zine/analogue-photography-98f3">analogue</Link>{" "}
-          technology. The irony of this topic being discussed online is
-          recognized. 😏
+          Analog.Cafe is a publication that promotes creative and informative
+          works by a community of writers, artists and film photographers.
         </p>
 
-        <h3>Photographers, authors, nerds, hobbyists, artists.</h3>
         <p>
-          Most of the articles published on this website are created by people
-          who <Link to="/submit">submit</Link> their{" "}
+          Every week we publish quality{" "}
           <Link to="/photo-essays">photo essays</Link>,{" "}
           <Link to="/guides">guides</Link>, <Link to="/reviews">reviews</Link>,
-          and <Link to="/stories">stories</Link>. Most of them are{" "}
-          <Link to="/solo-projects">solo projects</Link>, but some are{" "}
+          and <Link to="/stories">stories</Link>. Some of which are{" "}
+          <Link to="/solo-projects">solo projects</Link>, while others are{" "}
           <Link to="/collaborations">collaborations</Link>.
         </p>
         <ButtonGroup>
@@ -90,24 +84,41 @@ const About = props => {
           >
             dmitrizzle
           </Modal>{" "}
-          edit every article on this blog, doing their best to keep the content
-          interesting, thoughtful, and readable.
+          edit every article, keeping the content interesting, thoughtful, and
+          readable.
         </p>
 
         <h3>Developers.</h3>
         <p>
-          Analog.Cafe is also a web tech project. It’s been built with
-          travellers in mind, who may <Link to="/submit/compose">compose</Link>{" "}
-          articles without access to the internet. It allows{" "}
-          <Link to="/collaborations">joint authorship</Link>, where a single
-          post can employ images by a variety of photographers. It’s been
-          designed with speed and beauty in mind by dmitrizzle and his friends
-          at <Link to="https://bananacoding.com/">Banana Coding</Link>, and
-          maintained as an{" "}
-          <Link to="https://github.com/dmitrizzle/Analog.Cafe">
-            open-source
-          </Link>{" "}
-          project.
+          Analog.Cafe is built in-house and maintained specifically for{" "}
+          <Link to="/zine/analogue-photography-98f3">analogue</Link>{" "}
+          enthusiasts. It respects <Link to="/privacy-policy">privacy</Link>,
+          works{" "}
+          <Modal
+            with={{
+              ...CARD_ALERTS.AUTO_SAVE,
+              info: {
+                ...CARD_ALERTS.AUTO_SAVE.info,
+                title: "Create Submissions Offline",
+                buttons: [
+                  {
+                    to: "/submit/compose",
+                    text: "Submit Now",
+                    branded: true
+                  }
+                ]
+              }
+            }}
+          >
+            offline
+          </Modal>
+          , comes with many features specifically designed for readers, writers,
+          and editors.
+        </p>
+
+        <p>
+          Analog.Cafe is{" "}
+          <Link to="https://github.com/roast-cms">open-source</Link>.
         </p>
 
         <h3>Contact, connect.</h3>
@@ -146,34 +157,15 @@ const About = props => {
           </Byline>
         </ButtonGroup>
 
-        <p>
-          Please also feel free to <Link to="/submit">submit</Link> your
-          articles for consideration:
-        </p>
-        <ButtonGroup>
-          <LinkButton to={"/submit/compose"} branded>
-            Submit Now
-          </LinkButton>
-          <p>
-            <em>- or -</em>
-          </p>
-          <p>
-            <Link to="/sign-in">
-              <strong>Sign in</strong>
-            </Link>{" "}
-            if you already have an account.
-          </p>
-        </ButtonGroup>
-
         <h3>Thank you, project backers.</h3>
         <p>
-          There are bills associated with the technology required to run
-          Analog.Cafe and there’s value to the time spent by all who make this
-          project possible. The people who make financial contributions, however
-          small, are supporting this blog and validating its existence in ways
-          not possible without their generosity:
+          Analog.Cafe began as a dream to bring together a community of writers,
+          artists and film photographers and promote the creative and
+          informative products of ambition, generosity and imagination. With the
+          financial help and moral support of the fifty-one backers on our first
+          Kickstarter campaign, we were able to build and grow into a prominent
+          home the remarkable, the beautiful, and the fascinating.
         </p>
-
         <ThankYouList>
           Thayanantha Thevanayagam
           <br />
