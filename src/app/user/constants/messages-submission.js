@@ -35,7 +35,7 @@ export const HEADER_ERRORS = {
   }
 }
 
-export const TEXT_EDITORIAL_RELEASE = `All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectatoins. If you’d like to approve the edits or request changes, please email ${contactInfoString}.`
+export const TEXT_EDITORIAL_RELEASE = `All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email ${contactInfoString}.`
 export const CARD_DIALOGUES = {
   CONSENT: {
     info: {

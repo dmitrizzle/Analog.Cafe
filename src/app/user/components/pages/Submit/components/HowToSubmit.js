@@ -14,19 +14,28 @@ export default () => {
         The “Composer” tool will help you create and send submissions.
       </Figure>
       <p>
-        Click the “<Link to="/submit/compose">Submit Now</Link>” button and
-        start writing your piece or copy-paste it from your editor. Feel free to
-        format your work with titles, quotes, and links. Please make sure your
-        images are 1800 pixels-wide for the best display quality. Take your time
-        to double-check the grammar and spelling; your work is saved on your
-        device so that you can come back another day to finish what you started.
-        Click “Send.”
+        <em>
+          <strong>First:</strong>
+        </em>{" "}
+        go to{" "}
+        <em>
+          <Link to="/submit/compose">Submit Now</Link>
+        </em>{" "}
+        page and start creating your submission with text and images. As you
+        edit, your work is saved automatically.
       </p>
       <p>
-        After you <Link to="/sign-in">sign in or create an account</Link>, you
-        can <strong>edit your profile</strong> by clicking “More…” on the
-        top-right and selecting “My Profile.” There you can customize your
-        avatar, bio, and add a link to your website or a social media page.
+        <em>
+          <strong>Then:</strong>
+        </em>{" "}
+        make sure that your submission has at least one image: JPG or PNG. It
+        must also include a title and text.
+      </p>
+      <p>
+        <em>
+          <strong>Finally:</strong>
+        </em>{" "}
+        click “send!”
       </p>
     </div>
   )
