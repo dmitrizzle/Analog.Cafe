@@ -12,6 +12,7 @@ import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
 import Modal from "../../../../core/components/controls/Modal"
+import RemoteMessage from "../../../../core/components/vignettes/RemoteMessage"
 
 export default () => {
   return (
@@ -95,7 +96,12 @@ export default () => {
                   title: "How Many Coupons Left?",
                   text: (
                     <span>
-                      There are only <strong>10 coupons left</strong>!
+                      There are only{" "}
+                      <strong>
+                        <RemoteMessage from="promotions" id="coupons-left" />{" "}
+                        coupons left
+                      </strong>
+                      !
                     </span>
                   ),
                   image: "image-froth_1511062_ByvHiFXdX",
