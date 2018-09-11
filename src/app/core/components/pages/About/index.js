@@ -112,8 +112,8 @@ const About = props => {
           >
             offline
           </Modal>
-          , comes with many features specifically designed for readers, writers,
-          and editors.
+          , comes with many <Link to="/zine/2.0-a8nt">features</Link>{" "}
+          specifically designed for readers, writers, and editors.
         </p>
 
         <p>
