@@ -19,7 +19,7 @@ export default () => {
     <ArticleWrapper>
       <MetaTags
         metaTitle="Submit"
-        metaDescription="Submit film photography essays and articles to be featured on Analog.Cafe."
+        metaDescription="Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
         metaImage={
           makeFroth({
             src: "image-froth_1533636_rygH__d9kQ",
@@ -27,7 +27,10 @@ export default () => {
           }).src
         }
       />
-      <HeaderLarge pageTitle="Submit" />
+      <HeaderLarge
+        pageTitle="Submit Yours"
+        pageSubtitle="Photo Essays, Stories, Guides, Reviews"
+      />
       <ArticleSection>
         <div style={{ textAlign: "center" }}>
           <LinkButton to={"/submit/compose"} branded>
