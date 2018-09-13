@@ -154,7 +154,7 @@ export default () => {
 
         <ButtonGroup>
           <p>
-            <em>Non-exclusive, reprint is OK.</em>
+            <em>Non-exclusive, syndication is OK.</em>
           </p>
           <LinkButton to={"/submit/compose"} branded>
             Submit Now
