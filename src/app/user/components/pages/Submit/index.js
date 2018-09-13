@@ -45,7 +45,7 @@ export default () => {
 
         <h3>What to submit.</h3>
         <p>
-          Analog.Cafe’s speciality is{" "}
+          We love{" "}
           <Link to="/photo-essays">
             <strong>photo essays</strong>
           </Link>
@@ -54,9 +54,8 @@ export default () => {
         </p>
 
         <p>
-          All written pieces are considered, as long as they fit well within the
-          rest of the articles here. If you haven’t yet,{" "}
-          <Link to="/">give them a read</Link>!
+          Nevertheless, all written pieces are considered, as long as they fit
+          well within the rest of the website’s <Link to="/">content</Link>.
         </p>
 
         <div style={{ textAlign: "center" }}>
