@@ -19,12 +19,13 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
-          metaDescription="Submit film photography essays and articles to be featured on Analog.Cafe."
+          metaDescription="Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
           metaImage="https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg"
           metaTitle="Submit"
 />,
         <Unknown
-          pageTitle="Submit"
+          pageSubtitle="Photo Essays, Stories, Guides, Reviews"
+          pageTitle="Submit Yours"
 />,
         <styled.section>
           <div
@@ -226,7 +227,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "metaDescription": "Submit film photography essays and articles to be featured on Analog.Cafe.",
+          "metaDescription": "Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe.",
           "metaImage": "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg",
           "metaTitle": "Submit",
         },
@@ -239,7 +240,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "pageTitle": "Submit",
+          "pageSubtitle": "Photo Essays, Stories, Guides, Reviews",
+          "pageTitle": "Submit Yours",
         },
         "ref": null,
         "rendered": null,
@@ -1139,12 +1141,13 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
-            metaDescription="Submit film photography essays and articles to be featured on Analog.Cafe."
+            metaDescription="Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
             metaImage="https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg"
             metaTitle="Submit"
 />,
           <Unknown
-            pageTitle="Submit"
+            pageSubtitle="Photo Essays, Stories, Guides, Reviews"
+            pageTitle="Submit Yours"
 />,
           <styled.section>
             <div
@@ -1346,7 +1349,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "metaDescription": "Submit film photography essays and articles to be featured on Analog.Cafe.",
+            "metaDescription": "Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe.",
             "metaImage": "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg",
             "metaTitle": "Submit",
           },
@@ -1359,7 +1362,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "pageTitle": "Submit",
+            "pageSubtitle": "Photo Essays, Stories, Guides, Reviews",
+            "pageTitle": "Submit Yours",
           },
           "ref": null,
           "rendered": null,

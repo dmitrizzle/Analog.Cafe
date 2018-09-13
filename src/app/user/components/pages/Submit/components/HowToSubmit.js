@@ -6,7 +6,7 @@ import Link from "../../../../../core/components/controls/Link"
 export default () => {
   return (
     <div>
-      <h3>How to submit.</h3>
+      <h3>Here’s how:</h3>
       <Figure
         src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
         alt="A short demo of the submission process to Analog.Cafe"
@@ -36,6 +36,10 @@ export default () => {
           <strong>Finally:</strong>
         </em>{" "}
         click “send!”
+      </p>
+      <p>
+        Our editors will go through your submission and, if necessary, brush up
+        on language and grammar.
       </p>
     </div>
   )

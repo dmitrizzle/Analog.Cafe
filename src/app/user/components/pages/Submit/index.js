@@ -33,22 +33,46 @@ export default () => {
       />
       <ArticleSection>
         <div style={{ textAlign: "center" }}>
+          <p>
+            <em>We’ll take care of the grammar.</em>
+          </p>
           <LinkButton to={"/submit/compose"} branded>
             Submit Now
           </LinkButton>
-          <p>
-            <em>- or -</em>
-          </p>
-          <p>
-            <Link to="/sign-in">
-              <strong>Sign in</strong>
-            </Link>{" "}
-            if you have an account.
-          </p>
         </div>
-        <Figure src="image-froth_1061008_rJ_ULUmd7" feature nocaption />
+
+        <HowToSubmit />
+
+        <h3>What to submit.</h3>
         <p>
-          This autumn, all{" "}
+          Analog.Cafe’s speciality is{" "}
+          <Link to="/photo-essays">
+            <strong>photo essays</strong>
+          </Link>
+          , composed with images shot on{" "}
+          <Link to="/zine/analogue-photography-98f3">film cameras</Link>.
+        </p>
+
+        <p>
+          All written pieces are considered, as long as they fit well within the
+          rest of the articles here. If you haven’t yet,{" "}
+          <Link to="/">give them a read</Link>!
+        </p>
+
+        <div style={{ textAlign: "center" }}>
+          <p>
+            <em>We have a film perk for you.</em>
+          </p>
+          <LinkButton to={"/submit/compose"} branded>
+            Submit Now
+          </LinkButton>
+        </div>
+
+        <h3>A thank-you offer.</h3>
+        <Figure src="image-froth_737735_BJVOSKw_7" nocaption />
+        <p>
+          As a small token of appreciation for the time, skill and talent that
+          goes into composing submissions, all{" "}
           <Modal
             with={{
               info: {
@@ -78,21 +102,17 @@ export default () => {
           >
             qualifying
           </Modal>{" "}
-          submissions will receive an exclusive coupon for £5 from{" "}
+          entries will receive an exclusive coupon for £5 from{" "}
           <Link to="https://analoguewonderland.co.uk/">
             Analogue Wonderland
           </Link>
-          ’s incredible selection of over 180 film stocks!
+          ’s incredible selection of over 180 film stocks.
         </p>
         <p>
-          <strong>To get the deal</strong>, follow the steps below to create and
-          send your submission. Provided that your content and images look good,
-          an editor will reach out to you with a coupon code that you can use at
-          Analogue Wonderland.
-        </p>
-        <p>
+          We’ll email you the code after we’ve reviewed and approved your
+          submission.{" "}
           <strong>
-            There is a{" "}
+            There’s a{" "}
             <Modal
               with={{
                 info: {
@@ -124,28 +144,18 @@ export default () => {
             of coupons available.
           </strong>
         </p>
-        <h3>What to submit.</h3>
-        <p>
-          Analog.Cafe’s speciality is{" "}
-          <Link to="/photo-essays">
-            <strong>photo essays</strong>
-          </Link>
-          , composed with images shot on{" "}
-          <Link to="/zine/analogue-photography-98f3">film cameras</Link>.
-          However, any illustrated, written piece is considered, as long as it
-          fits with the publication. Including: guides, reviews, and stories.
-        </p>
 
-        <HowToSubmit />
-
-        <h3>Please note.</h3>
+        <h3>Rules.</h3>
         <p>{TEXT_EDITORIAL_RELEASE}</p>
         <p>
-          Complete rules and code of conduct can be found{" "}
+          Complete set of rules should be read{" "}
           <Link to="/submit/rules">here</Link>.
         </p>
 
         <ButtonGroup>
+          <p>
+            <em>Non-exclusive, reprint is OK.</em>
+          </p>
           <LinkButton to={"/submit/compose"} branded>
             Submit Now
           </LinkButton>
