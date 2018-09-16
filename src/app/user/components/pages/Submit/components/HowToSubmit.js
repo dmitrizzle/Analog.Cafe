@@ -1,7 +1,6 @@
 import React from "react"
 
 import Figure from "../../../../../core/components/vignettes/Picture/components/Figure"
-import Link from "../../../../../core/components/controls/Link"
 
 export default () => {
   return (

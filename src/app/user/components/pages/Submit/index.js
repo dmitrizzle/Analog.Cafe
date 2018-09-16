@@ -1,11 +1,9 @@
 import React from "react"
 
-import { TEXT_EDITORIAL_RELEASE } from "../../../constants/messages-submission"
 import { makeFroth } from "../../../../utils"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
-import Figure from "../../../../core/components/vignettes/Picture/components/Figure"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import HowToSubmit from "./components/HowToSubmit"
 import Link from "../../../../core/components/controls/Link"
