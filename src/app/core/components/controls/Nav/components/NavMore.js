@@ -13,8 +13,6 @@ export default props => {
       with={{
         info: {
           title: "More…",
-          subscribeForm: props.userStatus !== "ok" || props.allItems,
-          subscribeFormLocation: "NavGeneral",
           buttons: [
             props.userStatus === "ok"
               ? {
@@ -65,25 +63,10 @@ export default props => {
               to: "/stories",
               text: "Stories"
             },
-            { divider: true },
-            {
-              to: "/collaborations",
-              text: "Collaborations"
-            },
-            {
-              to: "/solo-projects",
-              text: "Solo Projects"
-            },
-            { divider: true },
-            {
-              to: "/about",
-              text: "About Analog.Cafe",
-              mobile: props.allItems ? null : "off"
-            },
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
-              text: "Submit",
-              mobile: props.allItems ? null : "on"
+              text: `Submit ${props.userStatus === "ok" ? "New" : "Yours"}`,
+              branded: true
             }
           ]
         },

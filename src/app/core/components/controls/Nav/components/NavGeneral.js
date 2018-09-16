@@ -36,21 +36,10 @@ export default props => {
           <NavLogo />
         </NavLogoLink>
       </NavItem>
-      <NavItem narrow className="prime left mobile">
+      <NavItem narrow prime left className="prime left">
         <NavLink to={"/about"}>About</NavLink>
       </NavItem>
-      <NavItem right>
-        {props.userStatus === "ok" ? (
-          <NavLink to={"/submit/compose"}>
-            <span>Submit</span>
-          </NavLink>
-        ) : (
-          <NavLink to={"/submit"}>
-            <span>Submit</span>
-          </NavLink>
-        )}
-      </NavItem>
-      <NavItem prime left className="prime right">
+      <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>
           <NavLinkLabelMore
             userStatus={props.userStatus}

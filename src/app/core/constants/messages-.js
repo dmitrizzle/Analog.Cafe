@@ -13,6 +13,6 @@ export const CARD_ERRORS = {
   }
 }
 export const TEXT_LABELS = {
-  SUBSCRIBE: "Subscribe ❤︎",
-  SUBMIT: "Submit ❤︎"
+  SUBSCRIBE: "Newsletter ❤︎",
+  SUBMIT: "Subscribe ❤︎"
 }

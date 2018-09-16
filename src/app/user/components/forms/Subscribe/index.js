@@ -46,7 +46,7 @@ export default class extends React.PureComponent {
     return (
       <div>
         {!this.state.subscribeForm ? (
-          <CardButton branded onClick={this.handleRevealSubscribeForm}>
+          <CardButton onClick={this.handleRevealSubscribeForm}>
             {TEXT_LABELS.SUBSCRIBE}
           </CardButton>
         ) : (

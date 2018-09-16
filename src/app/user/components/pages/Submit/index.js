@@ -40,35 +40,11 @@ export default () => {
             Submit Now
           </LinkButton>
         </div>
+        <hr />
 
         <HowToSubmit />
 
-        <h3>What to submit.</h3>
-        <p>
-          We love{" "}
-          <Link to="/photo-essays">
-            <strong>photo essays</strong>
-          </Link>
-          , composed with images shot on{" "}
-          <Link to="/zine/analogue-photography-98f3">film cameras</Link>.
-        </p>
-
-        <p>
-          Nevertheless, all written pieces are considered, as long as they fit
-          well within the rest of the website’s <Link to="/">content</Link>.
-        </p>
-
-        <div style={{ textAlign: "center" }}>
-          <p>
-            <em>We have a film perk for you.</em>
-          </p>
-          <LinkButton to={"/submit/compose"} branded>
-            Submit Now
-          </LinkButton>
-        </div>
-
-        <h3>A thank-you offer.</h3>
-        <Figure src="image-froth_737735_BJVOSKw_7" nocaption />
+        <hr />
         <p>
           As a small token of appreciation for the time, skill and talent that
           goes into composing submissions, all{" "}
@@ -144,16 +120,9 @@ export default () => {
           </strong>
         </p>
 
-        <h3>Rules.</h3>
-        <p>{TEXT_EDITORIAL_RELEASE}</p>
-        <p>
-          Complete set of rules should be read{" "}
-          <Link to="/submit/rules">here</Link>.
-        </p>
-
         <ButtonGroup>
           <p>
-            <em>Non-exclusive, syndication is OK.</em>
+            <em>We have a film perk for you.</em>
           </p>
           <LinkButton to={"/submit/compose"} branded>
             Submit Now
