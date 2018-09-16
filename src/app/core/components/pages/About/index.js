@@ -52,8 +52,11 @@ const About = props => {
           <Link to="/guides">guides</Link>, <Link to="/reviews">reviews</Link>,
           and <Link to="/stories">stories</Link>. Some of which are{" "}
           <Link to="/solo-projects">solo projects</Link>, while others are{" "}
-          <Link to="/collaborations">collaborations</Link>.{" "}
-          <strong>Join us:</strong>
+          <Link to="/collaborations">collaborations</Link>.
+        </p>
+        <p>
+          Together, we are building a place to discover beauty, get inspired,
+          and learn something new. <strong>Join us:</strong>
         </p>
         <ButtonGroup>
           <LinkButton
