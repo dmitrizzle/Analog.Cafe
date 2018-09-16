@@ -30,22 +30,9 @@ export default () => {
         pageSubtitle="Photo Essays, Stories, Guides, Reviews"
       />
       <ArticleSection>
-        <div style={{ textAlign: "center" }}>
-          <p>
-            <em>We’ll take care of the grammar.</em>
-          </p>
-          <LinkButton to={"/submit/compose"} branded>
-            Submit Now
-          </LinkButton>
-        </div>
-        <hr />
-
-        <HowToSubmit />
-
-        <hr />
+        <h3>Get £5 for film.</h3>
         <p>
-          As a small token of appreciation for the time, skill and talent that
-          goes into composing submissions, all{" "}
+          As a small token of appreciation for your time, skill and talent,{" "}
           <Modal
             with={{
               info: {
@@ -75,15 +62,13 @@ export default () => {
           >
             qualifying
           </Modal>{" "}
-          entries will receive an exclusive coupon for £5 from{" "}
+          submissions will receive an exclusive coupon for £5 from{" "}
           <Link to="https://analoguewonderland.co.uk/">
             Analogue Wonderland
           </Link>
           ’s incredible selection of over 180 film stocks.
         </p>
         <p>
-          We’ll email you the code after we’ve reviewed and approved your
-          submission.{" "}
           <strong>
             There’s a{" "}
             <Modal
@@ -117,10 +102,18 @@ export default () => {
             of coupons available.
           </strong>
         </p>
+        <div style={{ textAlign: "center" }}>
+          <LinkButton to={"/submit/compose"} branded>
+            Submit Now
+          </LinkButton>
+        </div>
+
+        <hr />
+        <HowToSubmit />
 
         <ButtonGroup>
           <p>
-            <em>We have a film perk for you.</em>
+            <em>We’ll take care of the grammar.</em>
           </p>
           <LinkButton to={"/submit/compose"} branded>
             Submit Now
@@ -132,7 +125,7 @@ export default () => {
             <Link to="/sign-in">
               <strong>Sign in</strong>
             </Link>{" "}
-            if you already have an account.
+            if you have an account.
           </p>
         </ButtonGroup>
       </ArticleSection>

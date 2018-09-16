@@ -24,7 +24,7 @@ import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
 const metaDescription =
-  "Analog.Cafe is a publication that promotes creative and informative works by a community of writers, artists and film photographers."
+  "Analog.Cafe is a magazine that promotes creative and informative works by a community of writers, artists and film photographers."
 
 const About = props => {
   return (
@@ -32,7 +32,7 @@ const About = props => {
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
       <HeaderLarge
         pageTitle="Analog.Cafe"
-        pageSubtitle="A Film Photography Publication"
+        pageSubtitle="A Film Photography Magazine"
       />
       <ArticleSection>
         <Figure
@@ -42,8 +42,8 @@ const About = props => {
         />
         <h3>{smartGreeting()}</h3>
         <p>
-          Analog.Cafe is a publication that promotes creative and informative
-          works by a community of writers, artists and film photographers.
+          Analog.Cafe is a magazine that promotes creative and informative works
+          by a community of writers, artists and film photographers.
         </p>
 
         <p>
@@ -91,7 +91,7 @@ const About = props => {
               }
             }}
           >
-            dmitrizzle
+            Dmitri
           </Modal>{" "}
           edit every article, keeping the content interesting, thoughtful, and
           readable.

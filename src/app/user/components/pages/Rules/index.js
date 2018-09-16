@@ -29,7 +29,7 @@ export default () => {
           All copy-editing and touch-up work is done at Analog.Cafe editors’
           discretion. We may or may not accept your edit requests; all edits are
           done for the benefit of a good overall presentation of the whole
-          publication, rather than just one piece. Analog.Cafe staff has limited
+          magazine, rather than just one piece. Analog.Cafe staff has limited
           time and resources, please keep that in mind when you make your
           requests.
         </p>
