@@ -10,15 +10,16 @@ import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ButtonGroup from "../../controls/Button/components/ButtonGroup"
 import Byline from "../../vignettes/Byline"
+import CardIntegrated from "../../controls/Card/components/CardIntegrated"
 import ContactInfo from "../../vignettes/ContactInfo"
 import Figure from "../../vignettes/Picture/components/Figure"
 import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
+import LinkButton from "../../controls/Button/components/LinkButton"
 import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
-import NavMore from "../../controls/Nav/components/NavMore"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
@@ -51,19 +52,24 @@ const About = props => {
           <Link to="/guides">guides</Link>, <Link to="/reviews">reviews</Link>,
           and <Link to="/stories">stories</Link>. Some of which are{" "}
           <Link to="/solo-projects">solo projects</Link>, while others are{" "}
-          <Link to="/collaborations">collaborations</Link>.
+          <Link to="/collaborations">collaborations</Link>.{" "}
+          <strong>Join us:</strong>
         </p>
         <ButtonGroup>
-          <NavMore
-            wrapperElement="Button"
+          <LinkButton
             branded
-            allItems
-            userStatus={props.user.status}
+            to={props.userStatus === "ok" ? "/submit/compose" : "/submit"}
+            onClick={() => {
+              GA.event({
+                category: "Campaign",
+                action: "About.submit_button"
+              })
+            }}
           >
-            All Website Sections
-          </NavMore>
+            Submit Your Article
+          </LinkButton>
         </ButtonGroup>
-        <h3>Editors.</h3>
+        <h3>The Editors.</h3>
         <p>
           <Modal
             with={{
@@ -88,7 +94,7 @@ const About = props => {
           readable.
         </p>
 
-        <h3>Developers.</h3>
+        <h3>The App.</h3>
         <p>
           Analog.Cafe is built in-house and maintained specifically for{" "}
           <Link to="/zine/analogue-photography-98f3">analogue</Link>{" "}
@@ -128,10 +134,12 @@ const About = props => {
         </p>
         <ButtonGroup>
           <FollowButtons />
-          <MailChimpPrefill
-            buttonText={TEXT_LABELS.SUBSCRIBE}
-            formLocation="About"
-          />
+          <CardIntegrated>
+            <MailChimpPrefill
+              buttonText={TEXT_LABELS.SUBSCRIBE}
+              formLocation="About"
+            />
+          </CardIntegrated>
           <Byline
             style={{
               maxWidth: "320px",
@@ -157,7 +165,7 @@ const About = props => {
           </Byline>
         </ButtonGroup>
 
-        <h3>Thank you, project backers.</h3>
+        <h3>Thank you, project backers!</h3>
         <p>
           Analog.Cafe began as a dream to bring together a community of writers,
           artists and film photographers and promote the creative and

@@ -51,7 +51,7 @@ export default props => {
             onClick={() => {
               props.nextArticleHeading(nextArticlePreload(props.nextArticle))
               GA.event({
-                category: "Navigation",
+                category: "Campaign",
                 action: "ActionsCard.submit_button"
               })
             }}
