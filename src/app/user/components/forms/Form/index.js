@@ -8,11 +8,13 @@ const shadowGrey2 = props =>
 export default styled.form`
   max-width: ${props => props.theme.size.breakpoint.stops.min}px;
   margin: 0 auto !important;
-  border-radius: ${props =>
-    props.theme.effects.borderRadius.small}em !important;
+  ${
+    "" /* border-radius: ${props =>
+    props.theme.effects.borderRadius.small}em !important; */
+  }
   background: ${shadowGrey};
   overflow: hidden;
-  box-shadow: 0 1px 1px ${shadowGrey2}, 0 0 0 1px ${shadowGrey};
+  ${"" /* box-shadow: 0 1px 1px ${shadowGrey2}, 0 0 0 1px ${shadowGrey}; */}
   input {
     text-align: center;
     padding: 0;

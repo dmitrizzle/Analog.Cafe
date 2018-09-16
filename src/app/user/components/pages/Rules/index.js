@@ -45,7 +45,7 @@ export default () => {
           authors of Analog.Cafe to use your work in such manner (Analog.Cafe
           will make reasonable effort to ensure that all of such actions are
           respectful and in good faith). You are also granting Analog.Cafe
-          editors the permission to modify your work (cropping, color and
+          editors the permission to modify your work (cropping, colour and
           quality adjustments as well as copy editing and visual decorations).
           You are free to request an immediate withdrawal of your work at any
           time via email (see <Link to="/about">About</Link> page for contact
@@ -57,7 +57,7 @@ export default () => {
           right to remove your work at any time at editors’ discretion.
         </p>
         <p>
-          <strong>Exclusivity.</strong> Your work is being exhibited on
+          <strong>Exclusivity.</strong> Your work is being exhibited on a
           non-exclusive basis. This means that you are free to continue
           submitting it to any other gallery or website that you wish.
         </p>
@@ -70,15 +70,32 @@ export default () => {
           might diminish your works’s chances to be accepted.
         </p>
         <p>
+          <strong>Admission.</strong> There are no submission fees and no
+          monetary compensation to the person submitting unless otherwise
+          specified. Analog.Cafe editors select and publish submissions that
+          they feel are a good fit – and reserve the right to decline
+          submissions.
+        </p>
+        <p>
           <strong>Links to your work.</strong> All links directed outside of
           Analog.Cafe website will be set to &ldquo;no-follow.&rdquo;
+        </p>
+        <p>
+          <strong>Guarantees and data storage.</strong> Analog.Cafe does not
+          provide any guarantee of service, it is presented to you as-is. We are
+          doing our best to keep all of the data as safe as reasonably possible,
+          but there may be cases when issues may arise, which may cause loss and
+          damage of your work. Analog.Cafe cannot take responsibility for these
+          events. Analog.Cafe reserves the right to delete irrelevant, offensive
+          content at the discretion of editors. Additionally, Analog.Cafe may
+          delete, ban, or block abusive users.
         </p>
         <p>
           <strong>
             By using the Analog.Cafe{" "}
             <Link to={"/submit/compose"}>Composer</Link> tool you certify that
-            the you are the owner of the copyrights or have a permission to use
-            in the context all the images, text, files or other intellectual
+            you are the owner of the copyrights or have a permission to use in
+            the context all the images, text, files or other intellectual
             property that you submit to Analog.Cafe, and that you agree to the
             above terms, conditions and benefits.
           </strong>

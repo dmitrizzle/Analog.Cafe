@@ -63,6 +63,15 @@ export default props => {
               to: "/stories",
               text: "Stories"
             },
+            { divider: true },
+            {
+              to: "/collaborations",
+              text: "Collaborations"
+            },
+            {
+              to: "/solo-projects",
+              text: "Solo Projects"
+            },
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
               text: `Submit ${props.userStatus === "ok" ? "New" : "Yours"}`,
