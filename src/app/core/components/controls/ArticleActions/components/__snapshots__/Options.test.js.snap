@@ -15,42 +15,700 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": <Styled(styled.div)>
-        <PureComponent
-                formLocation="ArticleActions"
-                stateOverwrite={undefined}
-                subscribeFormCallback={undefined}
-        />
-</Styled(styled.div)>,
+      "children": Array [
+        <div>
+          <Styled(Styled(styled.div))>
+                    <WithTheme(Component)
+                              buttons={
+                                        Array [
+                                                  0,
+                                                ]
+                              }
+                              noStar={true}
+                              stubborn={true}
+                              title="Get Published"
+                    />
+                    <Styled(Styled(styled.div))>
+                              We’d love to publish your photo essay, guide, or a review!
+                    </Styled(Styled(styled.div))>
+                    <Unknown
+                              branded={true}
+                              onClick={[Function]}
+                              to="/submit"
+                    >
+                              Submit Your Article
+                    </Unknown>
+          </Styled(Styled(styled.div))>
+          <Styled(Styled(styled.div))>
+                    <WithTheme(Component)
+                              buttons={
+                                        Array [
+                                                  0,
+                                                ]
+                              }
+                              noStar={true}
+                              stubborn={true}
+                              title="Email Newsletter"
+                    />
+                    <Styled(Styled(styled.div))>
+                              Our weekly email newsletter, “Analogue Reads” is
+                               
+                              <Unknown
+                                        to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e"
+                              >
+                                        excellent
+                              </Unknown>
+                              . 
+                              <Unknown
+                                        to="/privacy-policy"
+                              >
+                                        No spam
+                              </Unknown>
+                              , no ads. The best way to stay in-touch.
+                    </Styled(Styled(styled.div))>
+                    <PureComponent
+                              formLocation="ArticleActions"
+                              stateOverwrite={undefined}
+                              subscribeFormCallback={undefined}
+                    />
+          </Styled(Styled(styled.div))>
+</div>,
+        <Styled(Styled(styled.div)) />,
+      ],
     },
     "ref": null,
-    "rendered": Object {
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Styled(Styled(styled.div))>
+              <WithTheme(Component)
+                            buttons={
+                                          Array [
+                                                        0,
+                                                      ]
+                            }
+                            noStar={true}
+                            stubborn={true}
+                            title="Get Published"
+              />
+              <Styled(Styled(styled.div))>
+                            We’d love to publish your photo essay, guide, or a review!
+              </Styled(Styled(styled.div))>
+              <Unknown
+                            branded={true}
+                            onClick={[Function]}
+                            to="/submit"
+              >
+                            Submit Your Article
+              </Unknown>
+</Styled(Styled(styled.div))>,
+            <Styled(Styled(styled.div))>
+              <WithTheme(Component)
+                            buttons={
+                                          Array [
+                                                        0,
+                                                      ]
+                            }
+                            noStar={true}
+                            stubborn={true}
+                            title="Email Newsletter"
+              />
+              <Styled(Styled(styled.div))>
+                            Our weekly email newsletter, “Analogue Reads” is
+                             
+                            <Unknown
+                                          to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e"
+                            >
+                                          excellent
+                            </Unknown>
+                            . 
+                            <Unknown
+                                          to="/privacy-policy"
+                            >
+                                          No spam
+                            </Unknown>
+                            , no ads. The best way to stay in-touch.
+              </Styled(Styled(styled.div))>
+              <PureComponent
+                            formLocation="ArticleActions"
+                            stateOverwrite={undefined}
+                            subscribeFormCallback={undefined}
+              />
+</Styled(Styled(styled.div))>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <WithTheme(Component)
+                  buttons={
+                                    Array [
+                                                      0,
+                                                    ]
+                  }
+                  noStar={true}
+                  stubborn={true}
+                  title="Get Published"
+/>,
+                <Styled(Styled(styled.div))>
+                  We’d love to publish your photo essay, guide, or a review!
+</Styled(Styled(styled.div))>,
+                <Unknown
+                  branded={true}
+                  onClick={[Function]}
+                  to="/submit"
+>
+                  Submit Your Article
+</Unknown>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "buttons": Array [
+                    0,
+                  ],
+                  "noStar": true,
+                  "stubborn": true,
+                  "title": "Get Published",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "We’d love to publish your photo essay, guide, or a review!",
+                },
+                "ref": null,
+                "rendered": "We’d love to publish your photo essay, guide, or a review!",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "Options_LinkButton",
+                "nodeType": "function",
+                "props": Object {
+                  "branded": true,
+                  "children": "Submit Your Article",
+                  "onClick": [Function],
+                  "to": "/submit",
+                },
+                "ref": null,
+                "rendered": "Submit Your Article",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <WithTheme(Component)
+                  buttons={
+                                    Array [
+                                                      0,
+                                                    ]
+                  }
+                  noStar={true}
+                  stubborn={true}
+                  title="Email Newsletter"
+/>,
+                <Styled(Styled(styled.div))>
+                  Our weekly email newsletter, “Analogue Reads” is
+                   
+                  <Unknown
+                                    to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e"
+                  >
+                                    excellent
+                  </Unknown>
+                  . 
+                  <Unknown
+                                    to="/privacy-policy"
+                  >
+                                    No spam
+                  </Unknown>
+                  , no ads. The best way to stay in-touch.
+</Styled(Styled(styled.div))>,
+                <PureComponent
+                  formLocation="ArticleActions"
+                  stateOverwrite={undefined}
+                  subscribeFormCallback={undefined}
+/>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "buttons": Array [
+                    0,
+                  ],
+                  "noStar": true,
+                  "stubborn": true,
+                  "title": "Email Newsletter",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "Our weekly email newsletter, “Analogue Reads” is",
+                    " ",
+                    <Unknown
+                      to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e"
+>
+                      excellent
+</Unknown>,
+                    ". ",
+                    <Unknown
+                      to="/privacy-policy"
+>
+                      No spam
+</Unknown>,
+                    ", no ads. The best way to stay in-touch.",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Our weekly email newsletter, “Analogue Reads” is",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "excellent",
+                      "to": "https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e",
+                    },
+                    "ref": null,
+                    "rendered": "excellent",
+                    "type": [Function],
+                  },
+                  ". ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "No spam",
+                      "to": "/privacy-policy",
+                    },
+                    "ref": null,
+                    "rendered": "No spam",
+                    "type": [Function],
+                  },
+                  ", no ads. The best way to stay in-touch.",
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "formLocation": "ArticleActions",
+                  "stateOverwrite": undefined,
+                  "subscribeFormCallback": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
       "instance": null,
       "key": undefined,
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          undefined,
-          <PureComponent
-            formLocation="ArticleActions"
-            stateOverwrite={undefined}
-            subscribeFormCallback={undefined}
-/>,
+          <div>
+            <Styled(Styled(styled.div))>
+                        <WithTheme(Component)
+                                    buttons={
+                                                Array [
+                                                            0,
+                                                          ]
+                                    }
+                                    noStar={true}
+                                    stubborn={true}
+                                    title="Get Published"
+                        />
+                        <Styled(Styled(styled.div))>
+                                    We’d love to publish your photo essay, guide, or a review!
+                        </Styled(Styled(styled.div))>
+                        <Unknown
+                                    branded={true}
+                                    onClick={[Function]}
+                                    to="/submit"
+                        >
+                                    Submit Your Article
+                        </Unknown>
+            </Styled(Styled(styled.div))>
+            <Styled(Styled(styled.div))>
+                        <WithTheme(Component)
+                                    buttons={
+                                                Array [
+                                                            0,
+                                                          ]
+                                    }
+                                    noStar={true}
+                                    stubborn={true}
+                                    title="Email Newsletter"
+                        />
+                        <Styled(Styled(styled.div))>
+                                    Our weekly email newsletter, “Analogue Reads” is
+                                     
+                                    <Unknown
+                                                to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e"
+                                    >
+                                                excellent
+                                    </Unknown>
+                                    . 
+                                    <Unknown
+                                                to="/privacy-policy"
+                                    >
+                                                No spam
+                                    </Unknown>
+                                    , no ads. The best way to stay in-touch.
+                        </Styled(Styled(styled.div))>
+                        <PureComponent
+                                    formLocation="ArticleActions"
+                                    stateOverwrite={undefined}
+                                    subscribeFormCallback={undefined}
+                        />
+            </Styled(Styled(styled.div))>
+</div>,
+          <Styled(Styled(styled.div)) />,
         ],
       },
       "ref": null,
       "rendered": Array [
-        undefined,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Styled(Styled(styled.div))>
+                <WithTheme(Component)
+                                buttons={
+                                                Array [
+                                                                0,
+                                                              ]
+                                }
+                                noStar={true}
+                                stubborn={true}
+                                title="Get Published"
+                />
+                <Styled(Styled(styled.div))>
+                                We’d love to publish your photo essay, guide, or a review!
+                </Styled(Styled(styled.div))>
+                <Unknown
+                                branded={true}
+                                onClick={[Function]}
+                                to="/submit"
+                >
+                                Submit Your Article
+                </Unknown>
+</Styled(Styled(styled.div))>,
+              <Styled(Styled(styled.div))>
+                <WithTheme(Component)
+                                buttons={
+                                                Array [
+                                                                0,
+                                                              ]
+                                }
+                                noStar={true}
+                                stubborn={true}
+                                title="Email Newsletter"
+                />
+                <Styled(Styled(styled.div))>
+                                Our weekly email newsletter, “Analogue Reads” is
+                                 
+                                <Unknown
+                                                to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e"
+                                >
+                                                excellent
+                                </Unknown>
+                                . 
+                                <Unknown
+                                                to="/privacy-policy"
+                                >
+                                                No spam
+                                </Unknown>
+                                , no ads. The best way to stay in-touch.
+                </Styled(Styled(styled.div))>
+                <PureComponent
+                                formLocation="ArticleActions"
+                                stateOverwrite={undefined}
+                                subscribeFormCallback={undefined}
+                />
+</Styled(Styled(styled.div))>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <WithTheme(Component)
+                    buttons={
+                                        Array [
+                                                            0,
+                                                          ]
+                    }
+                    noStar={true}
+                    stubborn={true}
+                    title="Get Published"
+/>,
+                  <Styled(Styled(styled.div))>
+                    We’d love to publish your photo essay, guide, or a review!
+</Styled(Styled(styled.div))>,
+                  <Unknown
+                    branded={true}
+                    onClick={[Function]}
+                    to="/submit"
+>
+                    Submit Your Article
+</Unknown>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "buttons": Array [
+                      0,
+                    ],
+                    "noStar": true,
+                    "stubborn": true,
+                    "title": "Get Published",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "We’d love to publish your photo essay, guide, or a review!",
+                  },
+                  "ref": null,
+                  "rendered": "We’d love to publish your photo essay, guide, or a review!",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "Options_LinkButton",
+                  "nodeType": "function",
+                  "props": Object {
+                    "branded": true,
+                    "children": "Submit Your Article",
+                    "onClick": [Function],
+                    "to": "/submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit Your Article",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <WithTheme(Component)
+                    buttons={
+                                        Array [
+                                                            0,
+                                                          ]
+                    }
+                    noStar={true}
+                    stubborn={true}
+                    title="Email Newsletter"
+/>,
+                  <Styled(Styled(styled.div))>
+                    Our weekly email newsletter, “Analogue Reads” is
+                     
+                    <Unknown
+                                        to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e"
+                    >
+                                        excellent
+                    </Unknown>
+                    . 
+                    <Unknown
+                                        to="/privacy-policy"
+                    >
+                                        No spam
+                    </Unknown>
+                    , no ads. The best way to stay in-touch.
+</Styled(Styled(styled.div))>,
+                  <PureComponent
+                    formLocation="ArticleActions"
+                    stateOverwrite={undefined}
+                    subscribeFormCallback={undefined}
+/>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "buttons": Array [
+                      0,
+                    ],
+                    "noStar": true,
+                    "stubborn": true,
+                    "title": "Email Newsletter",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      "Our weekly email newsletter, “Analogue Reads” is",
+                      " ",
+                      <Unknown
+                        to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e"
+>
+                        excellent
+</Unknown>,
+                      ". ",
+                      <Unknown
+                        to="/privacy-policy"
+>
+                        No spam
+</Unknown>,
+                      ", no ads. The best way to stay in-touch.",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Our weekly email newsletter, “Analogue Reads” is",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "excellent",
+                        "to": "https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e",
+                      },
+                      "ref": null,
+                      "rendered": "excellent",
+                      "type": [Function],
+                    },
+                    ". ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "No spam",
+                        "to": "/privacy-policy",
+                      },
+                      "ref": null,
+                      "rendered": "No spam",
+                      "type": [Function],
+                    },
+                    ", no ads. The best way to stay in-touch.",
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "formLocation": "ArticleActions",
+                    "stateOverwrite": undefined,
+                    "subscribeFormCallback": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "formLocation": "ArticleActions",
-            "stateOverwrite": undefined,
-            "subscribeFormCallback": undefined,
+            "children": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -58,58 +716,6 @@ ShallowWrapper {
         },
       ],
       "type": [Function],
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <Styled(styled.div)>
-          <PureComponent
-                    formLocation="ArticleActions"
-                    stateOverwrite={undefined}
-                    subscribeFormCallback={undefined}
-          />
-</Styled(styled.div)>,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            undefined,
-            <PureComponent
-              formLocation="ArticleActions"
-              stateOverwrite={undefined}
-              subscribeFormCallback={undefined}
-/>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          undefined,
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "formLocation": "ArticleActions",
-              "stateOverwrite": undefined,
-              "subscribeFormCallback": undefined,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

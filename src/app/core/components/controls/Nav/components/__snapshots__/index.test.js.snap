@@ -831,8 +831,10 @@ ShallowWrapper {
           </Unknown>
 </styled.li>,
         <styled.li
-          className="prime left mobile"
+          className="prime left"
+          left={true}
           narrow={true}
+          prime={true}
 >
           <Unknown
                     to="/about"
@@ -841,20 +843,9 @@ ShallowWrapper {
           </Unknown>
 </styled.li>,
         <styled.li
-          right={true}
->
-          <Unknown
-                    to="/submit"
-          >
-                    <span>
-                              Submit
-                    </span>
-          </Unknown>
-</styled.li>,
-        <styled.li
           className="prime right"
-          left={true}
           prime={true}
+          right={true}
 >
           <Unknown
                     userRole={undefined}
@@ -1000,8 +991,10 @@ ShallowWrapper {
 >
             About
 </Unknown>,
-          "className": "prime left mobile",
+          "className": "prime left",
+          "left": true,
           "narrow": true,
+          "prime": true,
         },
         "ref": null,
         "rendered": Object {
@@ -1024,47 +1017,6 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <Unknown
-            to="/submit"
->
-            <span>
-                        Submit
-            </span>
-</Unknown>,
-          "right": true,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": <span>
-              Submit
-</span>,
-            "to": "/submit",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Submit",
-            },
-            "ref": null,
-            "rendered": "Submit",
-            "type": "span",
-          },
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": <Unknown
             userRole={undefined}
             userStatus={undefined}
 >
@@ -1074,8 +1026,8 @@ ShallowWrapper {
             />
 </Unknown>,
           "className": "prime right",
-          "left": true,
           "prime": true,
+          "right": true,
         },
         "ref": null,
         "rendered": Object {
@@ -1148,8 +1100,10 @@ ShallowWrapper {
             </Unknown>
 </styled.li>,
           <styled.li
-            className="prime left mobile"
+            className="prime left"
+            left={true}
             narrow={true}
+            prime={true}
 >
             <Unknown
                         to="/about"
@@ -1158,20 +1112,9 @@ ShallowWrapper {
             </Unknown>
 </styled.li>,
           <styled.li
-            right={true}
->
-            <Unknown
-                        to="/submit"
-            >
-                        <span>
-                                    Submit
-                        </span>
-            </Unknown>
-</styled.li>,
-          <styled.li
             className="prime right"
-            left={true}
             prime={true}
+            right={true}
 >
             <Unknown
                         userRole={undefined}
@@ -1317,8 +1260,10 @@ ShallowWrapper {
 >
               About
 </Unknown>,
-            "className": "prime left mobile",
+            "className": "prime left",
+            "left": true,
             "narrow": true,
+            "prime": true,
           },
           "ref": null,
           "rendered": Object {
@@ -1341,47 +1286,6 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <Unknown
-              to="/submit"
->
-              <span>
-                            Submit
-              </span>
-</Unknown>,
-            "right": true,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": <span>
-                Submit
-</span>,
-              "to": "/submit",
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Submit",
-              },
-              "ref": null,
-              "rendered": "Submit",
-              "type": "span",
-            },
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <Unknown
               userRole={undefined}
               userStatus={undefined}
 >
@@ -1391,8 +1295,8 @@ ShallowWrapper {
               />
 </Unknown>,
             "className": "prime right",
-            "left": true,
             "prime": true,
+            "right": true,
           },
           "ref": null,
           "rendered": Object {
@@ -1883,21 +1787,11 @@ ShallowWrapper {
               "to": "/solo-projects",
             },
             Object {
-              "divider": true,
-            },
-            Object {
-              "mobile": "off",
-              "text": "About Analog.Cafe",
-              "to": "/about",
-            },
-            Object {
-              "mobile": "on",
-              "text": "Submit",
+              "branded": true,
+              "text": "Submit Yours",
               "to": "/submit",
             },
           ],
-          "subscribeForm": true,
-          "subscribeFormLocation": "NavGeneral",
           "title": "More…",
         },
       },
@@ -1961,21 +1855,11 @@ ShallowWrapper {
                 "to": "/solo-projects",
               },
               Object {
-                "divider": true,
-              },
-              Object {
-                "mobile": "off",
-                "text": "About Analog.Cafe",
-                "to": "/about",
-              },
-              Object {
-                "mobile": "on",
-                "text": "Submit",
+                "branded": true,
+                "text": "Submit Yours",
                 "to": "/submit",
               },
             ],
-            "subscribeForm": true,
-            "subscribeFormLocation": "NavGeneral",
             "title": "More…",
           },
         },

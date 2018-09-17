@@ -1,11 +1,9 @@
 import React from "react"
 
-import { TEXT_EDITORIAL_RELEASE } from "../../../constants/messages-submission"
 import { makeFroth } from "../../../../utils"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
-import Figure from "../../../../core/components/vignettes/Picture/components/Figure"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import HowToSubmit from "./components/HowToSubmit"
 import Link from "../../../../core/components/controls/Link"
@@ -32,46 +30,9 @@ export default () => {
         pageSubtitle="Photo Essays, Stories, Guides, Reviews"
       />
       <ArticleSection>
-        <div style={{ textAlign: "center" }}>
-          <p>
-            <em>We’ll take care of the grammar.</em>
-          </p>
-          <LinkButton to={"/submit/compose"} branded>
-            Submit Now
-          </LinkButton>
-        </div>
-
-        <HowToSubmit />
-
-        <h3>What to submit.</h3>
+        <h3>Get £5 for film.</h3>
         <p>
-          We love{" "}
-          <Link to="/photo-essays">
-            <strong>photo essays</strong>
-          </Link>
-          , composed with images shot on{" "}
-          <Link to="/zine/analogue-photography-98f3">film cameras</Link>.
-        </p>
-
-        <p>
-          Nevertheless, all written pieces are considered, as long as they fit
-          well within the rest of the website’s <Link to="/">content</Link>.
-        </p>
-
-        <div style={{ textAlign: "center" }}>
-          <p>
-            <em>We have a film perk for you.</em>
-          </p>
-          <LinkButton to={"/submit/compose"} branded>
-            Submit Now
-          </LinkButton>
-        </div>
-
-        <h3>A thank-you offer.</h3>
-        <Figure src="image-froth_737735_BJVOSKw_7" nocaption />
-        <p>
-          As a small token of appreciation for the time, skill and talent that
-          goes into composing submissions, all{" "}
+          As a small token of appreciation for your time, skill and talent,{" "}
           <Modal
             with={{
               info: {
@@ -101,15 +62,13 @@ export default () => {
           >
             qualifying
           </Modal>{" "}
-          entries will receive an exclusive coupon for £5 from{" "}
+          submissions will receive an exclusive coupon for £5 from{" "}
           <Link to="https://analoguewonderland.co.uk/">
             Analogue Wonderland
           </Link>
           ’s incredible selection of over 180 film stocks.
         </p>
         <p>
-          We’ll email you the code after we’ve reviewed and approved your
-          submission.{" "}
           <strong>
             There’s a{" "}
             <Modal
@@ -143,17 +102,18 @@ export default () => {
             of coupons available.
           </strong>
         </p>
+        <div style={{ textAlign: "center" }}>
+          <LinkButton to={"/submit/compose"} branded>
+            Submit Now
+          </LinkButton>
+        </div>
 
-        <h3>Rules.</h3>
-        <p>{TEXT_EDITORIAL_RELEASE}</p>
-        <p>
-          Complete set of rules should be read{" "}
-          <Link to="/submit/rules">here</Link>.
-        </p>
+        <hr />
+        <HowToSubmit />
 
         <ButtonGroup>
           <p>
-            <em>Non-exclusive, syndication is OK.</em>
+            <em>We’ll take care of the grammar.</em>
           </p>
           <LinkButton to={"/submit/compose"} branded>
             Submit Now
@@ -165,7 +125,7 @@ export default () => {
             <Link to="/sign-in">
               <strong>Sign in</strong>
             </Link>{" "}
-            if you already have an account.
+            if you have an account.
           </p>
         </ButtonGroup>
       </ArticleSection>

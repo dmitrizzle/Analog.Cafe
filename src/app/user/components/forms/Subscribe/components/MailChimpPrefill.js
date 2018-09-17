@@ -55,7 +55,7 @@ export default class extends React.Component {
           onClick={this.handleInputClick}
         />
         <Button
-          branded
+          inverse
           onClick={event => {
             this.handleSubmit(event)
           }}

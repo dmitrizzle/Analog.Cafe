@@ -21,14 +21,6 @@ export default props => {
         />
       )}
       <CardFigure image={props.image} text={props.text} />
-      {props.subscribeForm && [
-        <Subscribe
-          key="Card_subscribe"
-          onClick={event => event.stopPropagation()}
-          formLocation={props.subscribeFormLocation}
-        />,
-        <ButtonGroupDivider key="Card_divider" />
-      ]}
       {props.buttons &&
         Object.keys(props.buttons).length !== 0 &&
         props.buttons.map(function(button, i) {
@@ -62,6 +54,13 @@ export default props => {
             <ButtonGroupDivider key={i} />
           ) : null
         })}
+      {props.subscribeForm && [
+        <Subscribe
+          key="Card_subscribe"
+          onClick={event => event.stopPropagation()}
+          formLocation={props.subscribeFormLocation}
+        />
+      ]}
     </CardPopup>
   )
 }

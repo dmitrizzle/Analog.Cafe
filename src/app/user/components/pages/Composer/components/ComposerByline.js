@@ -11,14 +11,17 @@ export default props => {
           Submission under edit: <strong>{props.editor.status.id}</strong>{" "}
           <Link to="#unlink" onClick={props.unlinkSubmission}>
             unlink
-          </Link>.{props.editor.status.type === "published" ||
+          </Link>
+          .
+          {props.editor.status.type === "published" ||
           props.editor.status.type === "scheduled"
             ? [
                 <br key="Byline_linebreak" />,
                 <span key="BYline_note">
                   You are editing a <strong>{props.editor.status.type}</strong>{" "}
-                  article.{props.editor.status.type === "published" &&
-                    " You will need to publish your changes to update the publication."}
+                  article.
+                  {props.editor.status.type === "published" &&
+                    " You will need to publish your changes to update the magazine."}
                 </span>
               ]
             : null}

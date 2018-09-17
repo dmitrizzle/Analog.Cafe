@@ -1,48 +1,120 @@
 import { connect } from "react-redux"
 import React from "react"
+import styled from "styled-components"
 
 import { CARD_ALERTS } from "../../../../user/constants/messages-submission"
-import { GA } from "../../../../utils"
+import { GA, makeFroth } from "../../../../utils"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import { TEXT_LABELS } from "../../../constants/messages-"
+import { bleed } from "../../vignettes/Picture/components/Figure"
+import { fetchAuthorsList } from "../../../../user/store/actions-community"
+import { setModal } from "../../../store/actions-modal"
 import { smartGreeting } from "../../../utils/messages-"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ButtonGroup from "../../controls/Button/components/ButtonGroup"
 import Byline from "../../vignettes/Byline"
+import CardIntegrated from "../../controls/Card/components/CardIntegrated"
 import ContactInfo from "../../vignettes/ContactInfo"
-import Figure from "../../vignettes/Picture/components/Figure"
 import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
+import LinkButton from "../../controls/Button/components/LinkButton"
 import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
-import NavMore from "../../controls/Nav/components/NavMore"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
 const metaDescription =
-  "Analog.Cafe is a publication that promotes creative and informative works by a community of writers, artists and film photographers."
+  "Analog.Cafe is a magazine that promotes creative and informative works by a community of writers, artists and film photographers."
 
-const About = props => {
-  return (
+const AuthorsBanner = styled.div`
+  width: 100vw;
+  min-height: 25em;
+  padding: ${props => props.theme.size.block.padding * 2}em 0 20vw;
+  background-image: url(${props =>
+    makeFroth({ src: props.src, size: "l" }).src});
+  ${props => props.theme.size.breakpoint.max.l`
+      background-image: url(${props =>
+        makeFroth({ src: props.src, size: "m" }).src});
+    `};
+  background-size: cover;
+  background-position: bottom center;
+
+  margin-left: calc(
+    (-100vw + ${props => props.theme.size.block.column.m}px) / 2 -
+      ${props => props.theme.size.block.padding}em
+  );
+  ${props => props.theme.size.breakpoint.max.m`
+    ${bleed}
+  `};
+  ${props => props.theme.size.breakpoint.min.xxl`
+  margin-left:	calc(( -100vw + ${props =>
+    props.theme.size.block.column.l}px )/2 - ${props =>
+    props.theme.size.block.padding}em );
+`}
+
+  border-bottom: ${props => props.theme.elements.thickBorder};
+`
+const Authors = styled.div`
+  display: flex;
+  max-width: ${props => props.theme.size.block.column.m}px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+const AuthorIcon = styled.a`
+  display: block;
+  width: ${props => props.theme.size.block.padding * 2}em;
+  height: ${props => props.theme.size.block.padding * 2}em;
+  margin: ${props => props.theme.size.block.spacing / 4}em;
+  overflow: hidden;
+  border-radius: ${props => props.theme.size.block.padding}em;
+  background-size: cover !important;
+`
+
+class About extends React.PureComponent {
+  componentDidMount = () => {
+    this.props.fetchAuthorsList({ itemsPerPage: 100 })
+  }
+  render = () => (
     <ArticleWrapper>
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
       <HeaderLarge
         pageTitle="Analog.Cafe"
-        pageSubtitle="A Film Photography Publication"
+        pageSubtitle="A Film Photography Magazine"
       />
+
       <ArticleSection>
-        <Figure
-          src="image-froth_1533636_rygH__d9kQ"
-          feature
-          alt="A photograph of a misty forest"
-        />
+        <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
+          <Authors>
+            {this.props.community.authorsList.items.map((item, count) => {
+              const image = makeFroth({ src: item.image, size: "t" }).src
+
+              return (
+                <Modal
+                  key={item.id}
+                  wrapperElement={"div"}
+                  with={{
+                    info: item,
+                    id: `authors/${item.id}`
+                  }}
+                >
+                  <AuthorIcon
+                    style={{ backgroundImage: `url(${image})` }}
+                    href={`author/${item.id}`}
+                  />
+                </Modal>
+              )
+            })}
+          </Authors>
+        </AuthorsBanner>
+
         <h3>{smartGreeting()}</h3>
         <p>
-          Analog.Cafe is a publication that promotes creative and informative
-          works by a community of writers, artists and film photographers.
+          Analog.Cafe is a magazine that promotes creative and informative works
+          by a community of writers, artists and film photographers.
         </p>
 
         <p>
@@ -53,17 +125,26 @@ const About = props => {
           <Link to="/solo-projects">solo projects</Link>, while others are{" "}
           <Link to="/collaborations">collaborations</Link>.
         </p>
+        <p>
+          Together, we are building a place to discover beauty, get inspired,
+          and learn something new. <strong>Join us:</strong>
+        </p>
         <ButtonGroup>
-          <NavMore
-            wrapperElement="Button"
+          <LinkButton
             branded
-            allItems
-            userStatus={props.user.status}
+            to={this.props.userStatus === "ok" ? "/submit/compose" : "/submit"}
+            onClick={() => {
+              GA.event({
+                category: "Campaign",
+                action: "About.submit_button"
+              })
+            }}
           >
-            All Website Sections
-          </NavMore>
+            Submit Your Article
+          </LinkButton>
         </ButtonGroup>
-        <h3>Editors.</h3>
+
+        <h3>The Editors.</h3>
         <p>
           <Modal
             with={{
@@ -82,13 +163,13 @@ const About = props => {
               }
             }}
           >
-            dmitrizzle
+            Dmitri
           </Modal>{" "}
           edit every article, keeping the content interesting, thoughtful, and
           readable.
         </p>
 
-        <h3>Developers.</h3>
+        <h3>The App.</h3>
         <p>
           Analog.Cafe is built in-house and maintained specifically for{" "}
           <Link to="/zine/analogue-photography-98f3">analogue</Link>{" "}
@@ -128,10 +209,12 @@ const About = props => {
         </p>
         <ButtonGroup>
           <FollowButtons />
-          <MailChimpPrefill
-            buttonText={TEXT_LABELS.SUBSCRIBE}
-            formLocation="About"
-          />
+          <CardIntegrated>
+            <MailChimpPrefill
+              buttonText={TEXT_LABELS.SUBSCRIBE}
+              formLocation="About"
+            />
+          </CardIntegrated>
           <Byline
             style={{
               maxWidth: "320px",
@@ -157,7 +240,7 @@ const About = props => {
           </Byline>
         </ButtonGroup>
 
-        <h3>Thank you, project backers.</h3>
+        <h3>Thank you, project backers!</h3>
         <p>
           Analog.Cafe began as a dream to bring together a community of writers,
           artists and film photographers and promote the creative and
@@ -279,12 +362,24 @@ const About = props => {
     </ArticleWrapper>
   )
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchAuthorsList: (options, page) => {
+      dispatch(fetchAuthorsList(options, page))
+    },
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
+    }
+  }
+}
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user,
+    community: state.community
   }
 }
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(About)

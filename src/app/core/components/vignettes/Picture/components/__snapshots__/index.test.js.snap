@@ -97,6 +97,7 @@ ShallowWrapper {
         <Styled(Component)
           protected={false}
 />,
+        undefined,
         <Unknown
           caption={undefined}
           captionInputFocus={undefined}
@@ -119,6 +120,7 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -148,6 +150,7 @@ ShallowWrapper {
           <Styled(Component)
             protected={false}
 />,
+          undefined,
           <Unknown
             caption={undefined}
             captionInputFocus={undefined}
@@ -170,6 +173,7 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
         Object {
           "instance": null,
           "key": undefined,

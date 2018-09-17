@@ -1,12 +1,10 @@
 import React from "react"
 
 import Figure from "../../../../../core/components/vignettes/Picture/components/Figure"
-import Link from "../../../../../core/components/controls/Link"
 
 export default () => {
   return (
     <div>
-      <h3>Here’s how:</h3>
       <Figure
         src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
         alt="A short demo of the submission process to Analog.Cafe"
@@ -14,32 +12,17 @@ export default () => {
         The “Composer” tool will help you create and send submissions.
       </Figure>
       <p>
-        <em>
-          <strong>First:</strong>
-        </em>{" "}
-        go to{" "}
-        <em>
-          <Link to="/submit/compose">Submit Now</Link>
-        </em>{" "}
-        page and start creating your submission with text and images. As you
-        edit, your work is saved automatically.
+        Analog.Cafe owes its existence to the diverse, expressive, and
+        informative works of artists, writers, and film photographers like you.
       </p>
       <p>
-        <em>
-          <strong>Then:</strong>
-        </em>{" "}
-        make sure that your submission has at least one image: JPG or PNG. It
-        must also include a title and text.
+        Together, we are building a place to discover beauty, get inspired, and
+        learn something new. <strong>Join us.</strong>
       </p>
       <p>
-        <em>
-          <strong>Finally:</strong>
-        </em>{" "}
-        click “send!”
-      </p>
-      <p>
-        Our editors will go through your submission and, if necessary, brush up
-        on language and grammar.
+        We edit each submission to make sure that all articles read and look
+        fantastic, and every author is proud to have their work published on
+        Analog.Cafe.
       </p>
     </div>
   )

@@ -5,7 +5,7 @@ import { styles } from "../../Caption"
 import ImageSet from "./ImageSet"
 import Figcaption from "./Figcaption"
 
-const bleed = css`
+export const bleed = css`
   float: none;
   margin-left: -${props => props.theme.size.block.padding}em;
   margin-right: -${props => props.theme.size.block.padding}em;
@@ -130,6 +130,7 @@ export default props => {
           (process.env.NODE_ENV === "production" || props.userRole === "admin")
         }
       />
+      {props.wrapper && props.children}
       <Figcaption
         caption={props.caption}
         nocaption={props.nocaption}
