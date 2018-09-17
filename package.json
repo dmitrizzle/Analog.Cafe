@@ -1,7 +1,7 @@
 {
   "name": "analog-cafe",
-  "version": "2.1.1",
-  "description": "A film photography publication",
+  "version": "2.2.8",
+  "description": "A film photography magazine",
   "license": "MPL-2.0",
   "private": true,
   "engines": {

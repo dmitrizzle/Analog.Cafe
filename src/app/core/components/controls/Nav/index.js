@@ -10,36 +10,39 @@ import NavWrapper from "./components/NavWrapper"
 const Nav = props => {
   if (props.top && !props.nav.location.top) return null
   if (props.bottom && !props.nav.location.bottom) return null
-  return [
-    <NavConnectionStatus
-      key="Online_status"
-      style={{
-        display: props.user.connection.status === "offline" ? "block" : "none"
-      }}
-    >
-      Offline
-    </NavConnectionStatus>,
-    <NavWrapper className="appNav" key="NavWrapper">
-      {props.nav.view === "COMPOSER" ? (
-        <NavComposer
-          composerStatus={props.composer.status}
-          editorStatus={props.editor.status}
-          userStatus={props.user.status}
-          userRole={props.user.info.role}
-        />
-      ) : (
-        <NavGeneral
-          userStatus={props.user.status}
-          userRole={props.user.info.role}
-          userImage={props.user.info.image}
-          userIntent={() => {
-            props.user.intent.load !== "List" &&
-              props.setUserIntent({ load: "List" })
-          }}
-        />
-      )}
-    </NavWrapper>
-  ]
+
+  if (props.top && props.nav.location.top)
+    return [
+      <NavConnectionStatus
+        key="Online_status"
+        style={{
+          display: props.user.connection.status === "offline" ? "block" : "none"
+        }}
+      >
+        Offline
+      </NavConnectionStatus>,
+      <NavWrapper className="appNav" key="NavWrapper">
+        {props.nav.view === "COMPOSER" ? (
+          <NavComposer
+            composerStatus={props.composer.status}
+            editorStatus={props.editor.status}
+            userStatus={props.user.status}
+            userRole={props.user.info.role}
+          />
+        ) : (
+          <NavGeneral
+            userStatus={props.user.status}
+            userRole={props.user.info.role}
+            userImage={props.user.info.image}
+            userIntent={() => {
+              props.user.intent.load !== "List" &&
+                props.setUserIntent({ load: "List" })
+            }}
+          />
+        )}
+      </NavWrapper>
+    ]
+  if (props.bottom && props.nav.location.bottom) return null // no footer
 }
 
 const mapStateToProps = state => {
@@ -57,4 +60,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Nav)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Nav)

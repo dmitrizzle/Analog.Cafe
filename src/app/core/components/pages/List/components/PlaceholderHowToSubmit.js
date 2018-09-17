@@ -8,7 +8,7 @@ import LinkButton from "../../../controls/Button/components/LinkButton"
 export default () => {
   return (
     <ArticleWrapper>
-      <ArticleSection plain>
+      <ArticleSection>
         <HowToSubmit />
         <LinkButton to={"/submit/compose"} branded>
           Submit Now

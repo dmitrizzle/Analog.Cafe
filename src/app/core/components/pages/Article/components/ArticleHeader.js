@@ -50,7 +50,8 @@ export default props => {
               ` with images by ${getAuthorListStringFromArray(
                 props.article.authors,
                 { ommitLeadAuthor: true, keepFullNames: true }
-              )}`}.
+              )}`}
+            .
           </Byline>
         )}
       {props.article.submittedBy &&

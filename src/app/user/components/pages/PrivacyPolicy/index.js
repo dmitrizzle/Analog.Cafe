@@ -44,15 +44,22 @@ export default () => {
           offline, as well as to provide customized experiences. Analog.Cafe
           does not use that information to track your behaviour. Analog.Cafe can
           not see the content of your token or any of the stored data mentioned
-          above. Analog.Cafe does not directly use “cookie” technology.
+          above. Analog.Cafe does not directly use cookie-tracking technology.
+          An instance of Google Analytics <em>is</em> installed on Analog.Cafe,
+          which employs cookies, however, they are not shared with any outside
+          domain.
         </p>
         <p>
           Analog.Cafe uses Google Analytics, which in-turn anonymously tracks
           your browsing behaviour and adheres to it’s own{" "}
           <Link to="https://policies.google.com/privacy">privacy policy</Link>.
-          You can opt-out by installing a plugin on your browser or switching
-          the settings of your OS. A service called Cloudinary that we use to
-          deliver high-quality images may track your activity according to their{" "}
+          If you would like to opt out of Google Analytics tracking, please
+          visit{" "}
+          <strong>
+            <Link to="/privacy-settings">Privacy Settings</Link>
+          </strong>{" "}
+          and follow the instructions there. We use Cloudinary to deliver
+          high-quality images who acts according to their own{" "}
           <Link to="https://cloudinary.com/privacy">privacy policy</Link>.
         </p>
         <p>

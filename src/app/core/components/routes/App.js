@@ -5,6 +5,7 @@ import React from "react"
 import { ROUTE_URL_USER_LANDING } from "../../../user/constants/routes-session"
 import ArticleLoader from "../pages/Article/components/ArticleLoader"
 import ListLoader from "../pages/List/components/ListLoader"
+import PrivacySettings from "../../../user/components/pages/PrivacySettings"
 import SignOut from "../../../user/components/pages/SignOut"
 
 const List = Loadable({
@@ -102,6 +103,7 @@ export default () => {
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+        <Route exact path="/privacy-settings" component={PrivacySettings} />
         <Route state={{ status: "404" }} component={NotFound} />
       </Switch>
     </main>

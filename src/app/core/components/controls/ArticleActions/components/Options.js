@@ -1,7 +1,9 @@
 import React from "react"
+import styled from "styled-components"
 
+import { GA, makeFroth } from "../../../../../utils"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
-import { makeFroth } from "../../../../../utils"
+import CardCaption from "../../Card/components/CardCaption"
 import CardHeader from "../../Card/components/CardHeader"
 import CardIntegrated from "../../Card/components/CardIntegrated"
 import Link from "../../Link"
@@ -20,10 +22,62 @@ const nextArticlePreload = nextArticle => {
   }
 }
 
+export const CardColumns = styled.div`
+  display: flex;
+  align-items: flex-start;
+  ${props => props.theme.size.breakpoint.max.m`
+    display: block;
+  `};
+`
+export const CardIntegratedForColumns = styled(CardIntegrated)`
+  width: ${props => props.theme.size.breakpoint.stops.min}px;
+`
+export const CardCaptionIntegrated = styled(CardCaption)`
+  font-size: ${props => props.theme.size.font.make.smaller}em !important;
+`
+
 export default props => {
   return (
-    <div>
-      <CardIntegrated>
+    <CardColumns>
+      <div>
+        <CardIntegratedForColumns>
+          <CardHeader stubborn buttons={[0]} noStar title="Get Published" />
+          <CardCaptionIntegrated>
+            We’d love to publish your photo essay, guide, or a review!
+          </CardCaptionIntegrated>
+          <LinkButton
+            branded
+            to={props.userStatus === "ok" ? "/submit/compose" : "/submit"}
+            onClick={() => {
+              props.nextArticleHeading(nextArticlePreload(props.nextArticle))
+              GA.event({
+                category: "Campaign",
+                action: "ActionsCard.submit_button"
+              })
+            }}
+            key="Options_LinkButton"
+          >
+            Submit Your Article
+          </LinkButton>
+        </CardIntegratedForColumns>
+        <CardIntegratedForColumns>
+          <CardHeader stubborn buttons={[0]} noStar title="Email Newsletter" />
+          <CardCaptionIntegrated>
+            Our weekly email newsletter, “Analogue Reads” is{" "}
+            <Link to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e">
+              excellent
+            </Link>
+            . <Link to="/privacy-policy">No spam</Link>, no ads. The best way to
+            stay in-touch.
+          </CardCaptionIntegrated>
+          <Subscribe
+            subscribeFormCallback={props.subscribeFormCallback}
+            stateOverwrite={props.subscribeForm}
+            formLocation={"ArticleActions"}
+          />
+        </CardIntegratedForColumns>
+      </div>
+      <CardIntegratedForColumns>
         {props.nextArticle &&
           props.nextArticle.slug && [
             <CardHeader
@@ -31,6 +85,7 @@ export default props => {
               buttons={[0]}
               noStar
               title={props.nextArticle.title}
+              titlePrefix="Next: "
               key="Options_CardHeader"
             />,
             <figure key="Options_Figure">
@@ -40,11 +95,9 @@ export default props => {
                   props.nextArticleHeading(
                     nextArticlePreload(props.nextArticle)
                   )
-                  import("react-ga").then(ReactGA => {
-                    ReactGA.event({
-                      category: "Navigation",
-                      action: "ActionsCard.next_article_picture"
-                    })
+                  GA.event({
+                    category: "Navigation",
+                    action: "ActionsCard.next_article_picture"
                   })
                 }}
               >
@@ -64,11 +117,9 @@ export default props => {
               to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
               onClick={() => {
                 props.nextArticleHeading(nextArticlePreload(props.nextArticle))
-                import("react-ga").then(ReactGA => {
-                  ReactGA.event({
-                    category: "Navigation",
-                    action: "ActionsCard.next_article_button"
-                  })
+                GA.event({
+                  category: "Navigation",
+                  action: "ActionsCard.next_article_button"
                 })
               }}
               key="Options_LinkButton"
@@ -76,12 +127,7 @@ export default props => {
               Read Next <span>➢</span>
             </LinkButton>
           ]}
-        <Subscribe
-          subscribeFormCallback={props.subscribeFormCallback}
-          stateOverwrite={props.subscribeForm}
-          formLocation={"ArticleActions"}
-        />
-      </CardIntegrated>
-    </div>
+      </CardIntegratedForColumns>
+    </CardColumns>
   )
 }

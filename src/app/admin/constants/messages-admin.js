@@ -85,7 +85,7 @@ export const CARD_DIALOGUES = {
     info: {
       title: "Notes for Editors",
       text:
-        "All image authorships and consent settings will remain as the original uploader/author has requested on submission. Article authorship will remain with original uploader. Note that if you upload a new image (which may include making edits to original images and re-uploading them) its authorship will belog to you, the editor.”",
+        "All image and article authorship, and consent settings will remain as per original submission. Note that if you upload a new image (which includes making edits to original images and re-uploading them) its authorship will belog to you, the editor – this may need to be fixed before publishing event.",
       buttons: [
         {
           to: "/submit/confirm-full-consent",

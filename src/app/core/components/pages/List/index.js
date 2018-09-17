@@ -4,6 +4,7 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
+import { GA } from "../../../../utils"
 import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
@@ -12,8 +13,6 @@ import { fetchListPage } from "../../../store/actions-list"
 import { getListMeta } from "../../../utils/messages-list"
 import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
-import ArticleSection from "../Article/components/ArticleSection"
-import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Button from "../../controls/Button/components/Button"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
@@ -56,11 +55,9 @@ class List extends React.PureComponent {
     this.setState({
       loadMorePending: true
     })
-    import("react-ga").then(ReactGA => {
-      ReactGA.event({
-        category: "Navigation",
-        action: "List.load_more"
-      })
+    GA.event({
+      category: "Navigation",
+      action: "List.load_more"
     })
   }
   handleUserIntent = () => {
@@ -132,9 +129,6 @@ class List extends React.PureComponent {
             Load More
           </Button>
         ) : null}
-        <ArticleWrapper>
-          <ArticleSection />
-        </ArticleWrapper>
       </div>
     )
   }
@@ -159,4 +153,9 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(List))
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(List)
+)

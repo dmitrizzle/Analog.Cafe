@@ -1,11 +1,20 @@
 import React from "react"
 
 import HeaderSmall from "../../../vignettes/HeaderSmall"
+import { withTheme } from "styled-components"
 
-export default props => {
+export const CardHeader = props => {
+  const { theme } = props
   return (
     <HeaderSmall title={props.error && props.error} noStar={props.noStar}>
-      <h3 onClick={event => event.stopPropagation()}>{props.title}</h3>
+      <h3 title={props.title} onClick={event => event.stopPropagation()}>
+        {props.titlePrefix && (
+          <span style={{ color: theme.color.brand() }}>
+            {props.titlePrefix}
+          </span>
+        )}
+        {props.title}
+      </h3>
       {!(
         props.stubborn &&
         props.buttons &&
@@ -18,3 +27,5 @@ export default props => {
     </HeaderSmall>
   )
 }
+
+export default withTheme(CardHeader)

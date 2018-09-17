@@ -84,4 +84,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(null, mapDispatchToProps)(ModalLauncher)
+export default connect(
+  null,
+  mapDispatchToProps
+)(ModalLauncher)

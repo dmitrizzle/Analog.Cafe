@@ -14,7 +14,7 @@ export default props => {
         <CardCaption
           style={{ padding: typeof props.text === "undefined" ? "0" : "" }}
         >
-          {props.text}
+          {typeof props.text === "function" ? props.text() : props.text}
         </CardCaption>
       </figcaption>
     </figure>

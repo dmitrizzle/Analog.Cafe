@@ -18,9 +18,6 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3>
-          How to submit.
-</h3>,
         <Unknown
           alt="A short demo of the submission process to Analog.Cafe"
           src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
@@ -28,42 +25,21 @@ ShallowWrapper {
           The “Composer” tool will help you create and send submissions.
 </Unknown>,
         <p>
-          Click the “
-          <Unknown
-                    to="/submit/compose"
-          >
-                    Submit Now
-          </Unknown>
-          ” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”
+          Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.
 </p>,
         <p>
-          After you 
-          <Unknown
-                    to="/sign-in"
-          >
-                    sign in or create an account
-          </Unknown>
-          , you can 
+          Together, we are building a place to discover beauty, get inspired, and learn something new. 
           <strong>
-                    edit your profile
+                    Join us.
           </strong>
-           by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.
+</p>,
+        <p>
+          We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.
 </p>,
       ],
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "How to submit.",
-        },
-        "ref": null,
-        "rendered": "How to submit.",
-        "type": "h3",
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -82,33 +58,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Click the “",
-            <Unknown
-              to="/submit/compose"
->
-              Submit Now
-</Unknown>,
-            "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
-          ],
+          "children": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
         },
         "ref": null,
-        "rendered": Array [
-          "Click the “",
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": "Submit Now",
-              "to": "/submit/compose",
-            },
-            "ref": null,
-            "rendered": "Submit Now",
-            "type": [Function],
-          },
-          "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
-        ],
+        "rendered": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
         "type": "p",
       },
       Object {
@@ -117,48 +70,38 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "After you ",
-            <Unknown
-              to="/sign-in"
->
-              sign in or create an account
-</Unknown>,
-            ", you can ",
+            "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
             <strong>
-              edit your profile
+              Join us.
 </strong>,
-            " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
           ],
         },
         "ref": null,
         "rendered": Array [
-          "After you ",
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": "sign in or create an account",
-              "to": "/sign-in",
-            },
-            "ref": null,
-            "rendered": "sign in or create an account",
-            "type": [Function],
-          },
-          ", you can ",
+          "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "edit your profile",
+              "children": "Join us.",
             },
             "ref": null,
-            "rendered": "edit your profile",
+            "rendered": "Join us.",
             "type": "strong",
           },
-          " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
         ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
+        },
+        "ref": null,
+        "rendered": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
         "type": "p",
       },
     ],
@@ -171,9 +114,6 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3>
-            How to submit.
-</h3>,
           <Unknown
             alt="A short demo of the submission process to Analog.Cafe"
             src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
@@ -181,42 +121,21 @@ ShallowWrapper {
             The “Composer” tool will help you create and send submissions.
 </Unknown>,
           <p>
-            Click the “
-            <Unknown
-                        to="/submit/compose"
-            >
-                        Submit Now
-            </Unknown>
-            ” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”
+            Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.
 </p>,
           <p>
-            After you 
-            <Unknown
-                        to="/sign-in"
-            >
-                        sign in or create an account
-            </Unknown>
-            , you can 
+            Together, we are building a place to discover beauty, get inspired, and learn something new. 
             <strong>
-                        edit your profile
+                        Join us.
             </strong>
-             by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.
+</p>,
+          <p>
+            We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.
 </p>,
         ],
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "How to submit.",
-          },
-          "ref": null,
-          "rendered": "How to submit.",
-          "type": "h3",
-        },
         Object {
           "instance": null,
           "key": undefined,
@@ -235,33 +154,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              "Click the “",
-              <Unknown
-                to="/submit/compose"
->
-                Submit Now
-</Unknown>,
-              "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
-            ],
+            "children": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
           },
           "ref": null,
-          "rendered": Array [
-            "Click the “",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": "Submit Now",
-                "to": "/submit/compose",
-              },
-              "ref": null,
-              "rendered": "Submit Now",
-              "type": [Function],
-            },
-            "” button and start writing your piece or copy-paste it from your editor. Feel free to format your work with titles, quotes, and links. Please make sure your images are 1800 pixels-wide for the best display quality. Take your time to double-check the grammar and spelling; your work is saved on your device so that you can come back another day to finish what you started. Click “Send.”",
-          ],
+          "rendered": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
           "type": "p",
         },
         Object {
@@ -270,48 +166,38 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "After you ",
-              <Unknown
-                to="/sign-in"
->
-                sign in or create an account
-</Unknown>,
-              ", you can ",
+              "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
               <strong>
-                edit your profile
+                Join us.
 </strong>,
-              " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
             ],
           },
           "ref": null,
           "rendered": Array [
-            "After you ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": "sign in or create an account",
-                "to": "/sign-in",
-              },
-              "ref": null,
-              "rendered": "sign in or create an account",
-              "type": [Function],
-            },
-            ", you can ",
+            "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "edit your profile",
+                "children": "Join us.",
               },
               "ref": null,
-              "rendered": "edit your profile",
+              "rendered": "Join us.",
               "type": "strong",
             },
-            " by clicking “More…” on the top-right and selecting “My Profile.” There you can customize your avatar, bio, and add a link to your website or a social media page.",
           ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
+          },
+          "ref": null,
+          "rendered": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
           "type": "p",
         },
       ],

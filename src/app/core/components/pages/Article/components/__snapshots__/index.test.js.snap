@@ -875,7 +875,7 @@ ShallowWrapper {
           }
     }
 >
-    <styled.time />
+    <styled.div />
 </ThemeProvider>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

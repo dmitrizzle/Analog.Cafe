@@ -1,6 +1,46 @@
 import { froth } from "@roast-cms/image-froth"
 
-import { DOCUMENT_BLANK_DOT } from "./constants"
+import {
+  DATA_GA_ID,
+  DOCUMENT_BLANK_DOT,
+  HOST_PROD,
+  HOST_RUNTIME
+} from "./constants"
+
+export const createGA = new Promise((resolve, reject) => {
+  if (localStorage.getItem("ga-enabled") !== "false")
+    import("react-ga").then(ReactGA => {
+      resolve(ReactGA)
+    })
+})
+export const GA = {
+  initialize: () => {
+    createGA.then(ReactGA => {
+      ReactGA.initialize(DATA_GA_ID, {
+        debug:
+          process.env.NODE_ENV === "development" || HOST_RUNTIME !== HOST_PROD,
+        titleCase: true,
+        gaOptions: {},
+        gaAddress: process.env.PUBLIC_URL + "/analytics-201808051558.js"
+      })
+    })
+  },
+  pageview: url => {
+    createGA.then(ReactGA => {
+      ReactGA.pageview(url || window.location.pathname + window.location.search)
+    })
+  },
+  modalview: loc => {
+    createGA.then(ReactGA => {
+      ReactGA.modalview(loc)
+    })
+  },
+  event: options => {
+    createGA.then(ReactGA => {
+      ReactGA.event(options)
+    })
+  }
+}
 
 const FROTH_CONSTANTS = {
   server: "https://res.cloudinary.com/analog-cafe/image/upload/",

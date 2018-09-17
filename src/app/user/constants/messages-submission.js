@@ -1,6 +1,9 @@
+import React from "react"
+
 import { MIME_PICTURES_HUMAN } from "./rules-submission"
 import { TEXT_EMOJIS } from "../../constants"
 import { contactInfoString } from "../../core/components/vignettes/ContactInfo"
+import Link from "../../core/components/controls/Link"
 
 export const CARD_ERRORS = {
   SEND: {
@@ -32,12 +35,21 @@ export const HEADER_ERRORS = {
   }
 }
 
-export const TEXT_EDITORIAL_RELEASE = `All published submissions are edited for grammar and style, and, in some cases, may read differently from your submitted draft. The voice and the message should be preserved. If you’d like to approve the edits or request changes, please email ${contactInfoString}. Please also note that series (i.e. “part one of three”) are not currently accepted.`
+export const TEXT_EDITORIAL_RELEASE = `All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email ${contactInfoString}.`
 export const CARD_DIALOGUES = {
   CONSENT: {
     info: {
       title: "Editorial Release",
-      text: `${TEXT_EDITORIAL_RELEASE} Visit analog.cafe/submit/rules for complete submission rules.`,
+      text: () => (
+        <span>
+          {TEXT_EDITORIAL_RELEASE} Full list of rules applied to all submissions
+          is listed{" "}
+          <strong>
+            <Link to="/submit/rules">here</Link>
+          </strong>
+          .
+        </span>
+      ),
       buttons: [
         {
           to: "/submit/confirm-full-consent",
@@ -54,14 +66,6 @@ export const CARD_DIALOGUES = {
   }
 }
 export const CARD_ALERTS = {
-  COLLABORATIONS: {
-    info: {
-      title: "Instant Collaboration",
-      text:
-        "Creating together is easy! Simply select a photo below that fits your work. You and the photographer will share the credit and may be listed in the “Collaborations” section on Analog.Cafe."
-    },
-    id: "hints/image-suggestions"
-  },
   AUTO_SAVE: {
     info: {
       title: "Never Loose Your Work!",
