@@ -15,9 +15,11 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
-      "dispatch": [Function],
+      "community": undefined,
+      "fetchAuthorsList": [Function],
+      "setModal": [Function],
       "user": undefined,
     },
     "ref": null,
@@ -28,9 +30,11 @@ ShallowWrapper {
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
-        "dispatch": [Function],
+        "community": undefined,
+        "fetchAuthorsList": [Function],
+        "setModal": [Function],
         "user": undefined,
       },
       "ref": null,
