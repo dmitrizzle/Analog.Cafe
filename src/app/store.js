@@ -4,6 +4,7 @@ import thunk from "redux-thunk"
 import article from "./core/store/reducers-article"
 import composer from "./user/store/reducers-composer"
 import submission from "./user/store/reducers-submission"
+import community from "./user/store/reducers-community"
 import list from "./core/store/reducers-list"
 import modal from "./core/store/reducers-modal"
 import nav from "./core/store/reducers-nav"
@@ -19,6 +20,7 @@ export default createStore(
     submission,
     nav,
     modal,
+    community,
     list,
     article,
     picture,

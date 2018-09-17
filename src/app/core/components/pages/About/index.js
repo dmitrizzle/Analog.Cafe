@@ -1,10 +1,12 @@
 import { connect } from "react-redux"
 import React from "react"
+import styled from "styled-components"
 
 import { CARD_ALERTS } from "../../../../user/constants/messages-submission"
-import { GA } from "../../../../utils"
+import { GA, makeFroth } from "../../../../utils"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import { TEXT_LABELS } from "../../../constants/messages-"
+import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { smartGreeting } from "../../../utils/messages-"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
@@ -26,7 +28,28 @@ const metaTitle = "About"
 const metaDescription =
   "Analog.Cafe is a magazine that promotes creative and informative works by a community of writers, artists and film photographers."
 
+const Authors = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  background-image: url(${makeFroth({
+    src: "image-froth_1533636_rygH__d9kQ",
+    size: "t"
+  }).src});
+  background-size: cover;
+`
+const AuthorIcon = styled.a`
+  width: ${props => props.theme.size.block.padding * 2}em;
+  height: ${props => props.theme.size.block.padding * 2}em;
+  margin: ${props => props.theme.size.block.spacing / 4}em;
+  overflow: hidden;
+  border-radius: ${props => props.theme.size.block.padding}em;
+  background-size: cover;
+`
+
 const About = props => {
+  props.fetchAuthorsList({ itemsPerPage: 100 })
   return (
     <ArticleWrapper>
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
@@ -35,11 +58,19 @@ const About = props => {
         pageSubtitle="A Film Photography Magazine"
       />
       <ArticleSection>
-        <Figure
-          src="image-froth_1533636_rygH__d9kQ"
-          feature
-          alt="A photograph of a misty forest"
-        />
+        <Authors>
+          {props.community.authorsList.items.map((item, count) => {
+            const image = makeFroth({ src: item.image, size: "t" }).src
+
+            return (
+              <AuthorIcon
+                style={{ backgroundImage: `url(${image})` }}
+                href={`/author/${item.id}`}
+              />
+            )
+          })}
+        </Authors>
+
         <h3>{smartGreeting()}</h3>
         <p>
           Analog.Cafe is a magazine that promotes creative and informative works
@@ -72,6 +103,7 @@ const About = props => {
             Submit Your Article
           </LinkButton>
         </ButtonGroup>
+
         <h3>The Editors.</h3>
         <p>
           <Modal
@@ -290,12 +322,21 @@ const About = props => {
     </ArticleWrapper>
   )
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchAuthorsList: (options, page) => {
+      dispatch(fetchAuthorsList(options, page))
+    }
+  }
+}
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user,
+    community: state.community
   }
 }
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(About)
