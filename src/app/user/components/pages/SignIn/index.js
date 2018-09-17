@@ -20,6 +20,7 @@ import AlreadyAuthenticated from "../Error/components/AlreadyAuthenticated"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
+import CardIntegrated from "../../../../core/components/controls/Card/components/CardIntegrated"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
 import SignInInfo from "./components/SignInInfo"
@@ -123,7 +124,9 @@ class SignIn extends React.PureComponent {
               <p>
                 <em>- or -</em>
               </p>
-              <SignInWithEmail />
+              <CardIntegrated>
+                <SignInWithEmail />
+              </CardIntegrated>
             </ButtonGroup>
           </ArticleSection>
         </ArticleWrapper>
@@ -155,4 +158,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignIn)
