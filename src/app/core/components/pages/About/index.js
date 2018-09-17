@@ -6,7 +6,9 @@ import { CARD_ALERTS } from "../../../../user/constants/messages-submission"
 import { GA, makeFroth } from "../../../../utils"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import { TEXT_LABELS } from "../../../constants/messages-"
+import { bleed } from "../../vignettes/Picture/components/Figure"
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
+import { setModal } from "../../../store/actions-modal"
 import { smartGreeting } from "../../../utils/messages-"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
@@ -14,7 +16,6 @@ import ButtonGroup from "../../controls/Button/components/ButtonGroup"
 import Byline from "../../vignettes/Byline"
 import CardIntegrated from "../../controls/Card/components/CardIntegrated"
 import ContactInfo from "../../vignettes/ContactInfo"
-import Figure from "../../vignettes/Picture/components/Figure"
 import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
@@ -28,48 +29,87 @@ const metaTitle = "About"
 const metaDescription =
   "Analog.Cafe is a magazine that promotes creative and informative works by a community of writers, artists and film photographers."
 
+const AuthorsBanner = styled.div`
+  width: 100vw;
+  min-height: 25em;
+  padding: ${props => props.theme.size.block.padding * 2}em 0 20vw;
+  background-image: url(${props =>
+    makeFroth({ src: props.src, size: "l" }).src});
+  ${props => props.theme.size.breakpoint.max.l`
+      background-image: url(${props =>
+        makeFroth({ src: props.src, size: "m" }).src});
+    `};
+  background-size: cover;
+  background-position: bottom center;
+
+  margin-left: calc(
+    (-100vw + ${props => props.theme.size.block.column.m}px) / 2 -
+      ${props => props.theme.size.block.padding}em
+  );
+  ${props => props.theme.size.breakpoint.max.m`
+    ${bleed}
+  `};
+  ${props => props.theme.size.breakpoint.min.xxl`
+  margin-left:	calc(( -100vw + ${props =>
+    props.theme.size.block.column.l}px )/2 - ${props =>
+    props.theme.size.block.padding}em );
+`}
+
+  border-bottom: ${props => props.theme.elements.thickBorder};
+`
 const Authors = styled.div`
   display: flex;
+  max-width: ${props => props.theme.size.block.column.m}px;
+  margin: 0 auto;
   flex-wrap: wrap;
   justify-content: center;
-
-  background-image: url(${makeFroth({
-    src: "image-froth_1533636_rygH__d9kQ",
-    size: "t"
-  }).src});
-  background-size: cover;
 `
 const AuthorIcon = styled.a`
+  display: block;
   width: ${props => props.theme.size.block.padding * 2}em;
   height: ${props => props.theme.size.block.padding * 2}em;
   margin: ${props => props.theme.size.block.spacing / 4}em;
   overflow: hidden;
   border-radius: ${props => props.theme.size.block.padding}em;
-  background-size: cover;
+  background-size: cover !important;
 `
 
-const About = props => {
-  props.fetchAuthorsList({ itemsPerPage: 100 })
-  return (
+class About extends React.PureComponent {
+  componentDidMount = () => {
+    this.props.fetchAuthorsList({ itemsPerPage: 100 })
+  }
+  render = () => (
     <ArticleWrapper>
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
       <HeaderLarge
         pageTitle="Analog.Cafe"
         pageSubtitle="A Film Photography Magazine"
       />
-      <ArticleSection>
-        <Authors>
-          {props.community.authorsList.items.map((item, count) => {
-            const image = makeFroth({ src: item.image, size: "t" }).src
 
-            return (
-              <AuthorIcon
-                style={{ backgroundImage: `url(${image})` }}
-                href={`/author/${item.id}`}
-              />
-            )
-          })}
-        </Authors>
+      <ArticleSection>
+        <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
+          <Authors>
+            {this.props.community.authorsList.items.map((item, count) => {
+              const image = makeFroth({ src: item.image, size: "t" }).src
+
+              return (
+                <Modal
+                  key={item.id}
+                  wrapperElement={"div"}
+                  with={{
+                    info: item,
+                    id: `authors/${item.id}`
+                  }}
+                >
+                  <AuthorIcon
+                    style={{ backgroundImage: `url(${image})` }}
+                    href={`author/${item.id}`}
+                  />
+                </Modal>
+              )
+            })}
+          </Authors>
+        </AuthorsBanner>
 
         <h3>{smartGreeting()}</h3>
         <p>
@@ -92,7 +132,7 @@ const About = props => {
         <ButtonGroup>
           <LinkButton
             branded
-            to={props.userStatus === "ok" ? "/submit/compose" : "/submit"}
+            to={this.props.userStatus === "ok" ? "/submit/compose" : "/submit"}
             onClick={() => {
               GA.event({
                 category: "Campaign",
@@ -327,6 +367,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchAuthorsList: (options, page) => {
       dispatch(fetchAuthorsList(options, page))
+    },
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     }
   }
 }
