@@ -138,6 +138,7 @@ class Article extends React.PureComponent {
                 key={`ArticleActions_${this.props.article.slug}`}
               >
                 <ArticleActions
+                  user={this.props.user}
                   subscribeFormCallback={this.handleSubscribeFormCallback}
                   subscribeForm={this.state.subscribeForm}
                   nextArticle={this.props.article.next}
