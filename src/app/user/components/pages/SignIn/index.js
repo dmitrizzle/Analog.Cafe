@@ -29,8 +29,8 @@ import SignInWithEmail from "../../forms/SigninWithEmail"
 const POPUP_WINDOW = name => {
   return {
     name,
-    width: 500,
-    height: 600
+    width: 580,
+    height: 400
   }
 }
 const processSignin = (props, code, sessionInfo) => {
