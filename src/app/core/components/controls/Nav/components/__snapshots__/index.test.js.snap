@@ -1788,7 +1788,7 @@ ShallowWrapper {
             },
             Object {
               "branded": true,
-              "text": "Submit Yours",
+              "text": "Submit",
               "to": "/submit",
             },
           ],
@@ -1856,7 +1856,7 @@ ShallowWrapper {
               },
               Object {
                 "branded": true,
-                "text": "Submit Yours",
+                "text": "Submit",
                 "to": "/submit",
               },
             ],

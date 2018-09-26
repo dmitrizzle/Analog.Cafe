@@ -25,7 +25,7 @@ ShallowWrapper {
 />,
         <Unknown
           pageSubtitle="Photo Essays, Stories, Guides, Reviews"
-          pageTitle="Submit Yours"
+          pageTitle="Submit"
 />,
         <styled.section>
           <h3>
@@ -185,7 +185,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "pageSubtitle": "Photo Essays, Stories, Guides, Reviews",
-          "pageTitle": "Submit Yours",
+          "pageTitle": "Submit",
         },
         "ref": null,
         "rendered": null,
@@ -810,7 +810,7 @@ ShallowWrapper {
 />,
           <Unknown
             pageSubtitle="Photo Essays, Stories, Guides, Reviews"
-            pageTitle="Submit Yours"
+            pageTitle="Submit"
 />,
           <styled.section>
             <h3>
@@ -970,7 +970,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "pageSubtitle": "Photo Essays, Stories, Guides, Reviews",
-            "pageTitle": "Submit Yours",
+            "pageTitle": "Submit",
           },
           "ref": null,
           "rendered": null,

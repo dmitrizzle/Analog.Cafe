@@ -26,7 +26,7 @@ export default () => {
         }
       />
       <HeaderLarge
-        pageTitle="Submit Yours"
+        pageTitle="Submit"
         pageSubtitle="Photo Essays, Stories, Guides, Reviews"
       />
       <ArticleSection>
