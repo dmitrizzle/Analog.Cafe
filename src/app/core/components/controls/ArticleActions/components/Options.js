@@ -39,10 +39,13 @@ export const CardCaptionIntegrated = styled(CardCaption)`
 export default props => {
   return (
     <CardColumns
-      style={{ display: props.user.status !== "ok" ? undefined : "block" }}
+      style={{
+        display:
+          props.user.status !== "ok" || props.nextArticle ? undefined : "block"
+      }}
     >
       <div>
-        {props.user.status !== "ok" && (
+        {props.nextArticle && (
           <CardIntegratedForColumns>
             <CardHeader stubborn buttons={[0]} noStar title="Get Published" />
             <CardCaptionIntegrated>
@@ -52,7 +55,6 @@ export default props => {
               branded
               to={props.userStatus === "ok" ? "/submit/compose" : "/submit"}
               onClick={() => {
-                props.nextArticleHeading(nextArticlePreload(props.nextArticle))
                 GA.event({
                   category: "Campaign",
                   action: "ActionsCard.submit_button"
@@ -81,44 +83,18 @@ export default props => {
           />
         </CardIntegratedForColumns>
       </div>
-      {props.user.status !== "ok" && (
-        <CardIntegratedForColumns>
-          {props.nextArticle &&
-            props.nextArticle.slug && [
-              <CardHeader
-                stubborn
-                buttons={[0]}
-                noStar
-                title={props.nextArticle.title}
-                titlePrefix="Next: "
-                key="Options_CardHeader"
-              />,
-              <figure key="Options_Figure">
-                <Link
-                  to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
-                  onClick={() => {
-                    props.nextArticleHeading(
-                      nextArticlePreload(props.nextArticle)
-                    )
-                    GA.event({
-                      category: "Navigation",
-                      action: "ActionsCard.next_article_picture"
-                    })
-                  }}
-                >
-                  <Placeholder frothId={props.nextArticle.poster}>
-                    <img
-                      src={
-                        makeFroth({ src: props.nextArticle.poster, size: "s" })
-                          .src
-                      }
-                      alt={props.nextArticle.title}
-                    />
-                  </Placeholder>
-                </Link>
-              </figure>,
-              <LinkButton
-                style={{ margin: 0 }}
+      {props.nextArticle &&
+        props.nextArticle.slug && (
+          <CardIntegratedForColumns>
+            <CardHeader
+              stubborn
+              buttons={[0]}
+              noStar
+              title={props.nextArticle.title}
+              titlePrefix="Next: "
+            />
+            <figure>
+              <Link
                 to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
                 onClick={() => {
                   props.nextArticleHeading(
@@ -126,16 +102,36 @@ export default props => {
                   )
                   GA.event({
                     category: "Navigation",
-                    action: "ActionsCard.next_article_button"
+                    action: "ActionsCard.next_article_picture"
                   })
                 }}
-                key="Options_LinkButton"
               >
-                Read Next <span>➢</span>
-              </LinkButton>
-            ]}
-        </CardIntegratedForColumns>
-      )}
+                <Placeholder frothId={props.nextArticle.poster}>
+                  <img
+                    src={
+                      makeFroth({ src: props.nextArticle.poster, size: "s" })
+                        .src
+                    }
+                    alt={props.nextArticle.title}
+                  />
+                </Placeholder>
+              </Link>
+            </figure>
+            <LinkButton
+              style={{ margin: 0 }}
+              to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
+              onClick={() => {
+                props.nextArticleHeading(nextArticlePreload(props.nextArticle))
+                GA.event({
+                  category: "Navigation",
+                  action: "ActionsCard.next_article_button"
+                })
+              }}
+            >
+              Read Next <span>➢</span>
+            </LinkButton>
+          </CardIntegratedForColumns>
+        )}
     </CardColumns>
   )
 }

@@ -4,7 +4,13 @@ exports[`Render Options, matches snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__unrendered__): <Unknown
+    user={
+        Object {
+            "status": "ok",
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -19,28 +25,6 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div>
-          <Styled(Styled(styled.div))>
-                    <WithTheme(Component)
-                              buttons={
-                                        Array [
-                                                  0,
-                                                ]
-                              }
-                              noStar={true}
-                              stubborn={true}
-                              title="Get Published"
-                    />
-                    <Styled(Styled(styled.div))>
-                              We’d love to publish your photo essay, guide, or a review!
-                    </Styled(Styled(styled.div))>
-                    <Unknown
-                              branded={true}
-                              onClick={[Function]}
-                              to="/submit"
-                    >
-                              Submit Your Article
-                    </Unknown>
-          </Styled(Styled(styled.div))>
           <Styled(Styled(styled.div))>
                     <WithTheme(Component)
                               buttons={
@@ -75,8 +59,11 @@ ShallowWrapper {
                     />
           </Styled(Styled(styled.div))>
 </div>,
-        <Styled(Styled(styled.div)) />,
+        undefined,
       ],
+      "style": Object {
+        "display": "block",
+      },
     },
     "ref": null,
     "rendered": Array [
@@ -86,28 +73,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <Styled(Styled(styled.div))>
-              <WithTheme(Component)
-                            buttons={
-                                          Array [
-                                                        0,
-                                                      ]
-                            }
-                            noStar={true}
-                            stubborn={true}
-                            title="Get Published"
-              />
-              <Styled(Styled(styled.div))>
-                            We’d love to publish your photo essay, guide, or a review!
-              </Styled(Styled(styled.div))>
-              <Unknown
-                            branded={true}
-                            onClick={[Function]}
-                            to="/submit"
-              >
-                            Submit Your Article
-              </Unknown>
-</Styled(Styled(styled.div))>,
+            undefined,
             <Styled(Styled(styled.div))>
               <WithTheme(Component)
                             buttons={
@@ -145,80 +111,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <WithTheme(Component)
-                  buttons={
-                                    Array [
-                                                      0,
-                                                    ]
-                  }
-                  noStar={true}
-                  stubborn={true}
-                  title="Get Published"
-/>,
-                <Styled(Styled(styled.div))>
-                  We’d love to publish your photo essay, guide, or a review!
-</Styled(Styled(styled.div))>,
-                <Unknown
-                  branded={true}
-                  onClick={[Function]}
-                  to="/submit"
->
-                  Submit Your Article
-</Unknown>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "buttons": Array [
-                    0,
-                  ],
-                  "noStar": true,
-                  "stubborn": true,
-                  "title": "Get Published",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "We’d love to publish your photo essay, guide, or a review!",
-                },
-                "ref": null,
-                "rendered": "We’d love to publish your photo essay, guide, or a review!",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": "Options_LinkButton",
-                "nodeType": "function",
-                "props": Object {
-                  "branded": true,
-                  "children": "Submit Your Article",
-                  "onClick": [Function],
-                  "to": "/submit",
-                },
-                "ref": null,
-                "rendered": "Submit Your Article",
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
+          undefined,
           Object {
             "instance": null,
             "key": undefined,
@@ -350,17 +243,7 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": undefined,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
+      undefined,
     ],
     "type": [Function],
   },
@@ -372,28 +255,6 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div>
-            <Styled(Styled(styled.div))>
-                        <WithTheme(Component)
-                                    buttons={
-                                                Array [
-                                                            0,
-                                                          ]
-                                    }
-                                    noStar={true}
-                                    stubborn={true}
-                                    title="Get Published"
-                        />
-                        <Styled(Styled(styled.div))>
-                                    We’d love to publish your photo essay, guide, or a review!
-                        </Styled(Styled(styled.div))>
-                        <Unknown
-                                    branded={true}
-                                    onClick={[Function]}
-                                    to="/submit"
-                        >
-                                    Submit Your Article
-                        </Unknown>
-            </Styled(Styled(styled.div))>
             <Styled(Styled(styled.div))>
                         <WithTheme(Component)
                                     buttons={
@@ -428,8 +289,11 @@ ShallowWrapper {
                         />
             </Styled(Styled(styled.div))>
 </div>,
-          <Styled(Styled(styled.div)) />,
+          undefined,
         ],
+        "style": Object {
+          "display": "block",
+        },
       },
       "ref": null,
       "rendered": Array [
@@ -439,28 +303,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <Styled(Styled(styled.div))>
-                <WithTheme(Component)
-                                buttons={
-                                                Array [
-                                                                0,
-                                                              ]
-                                }
-                                noStar={true}
-                                stubborn={true}
-                                title="Get Published"
-                />
-                <Styled(Styled(styled.div))>
-                                We’d love to publish your photo essay, guide, or a review!
-                </Styled(Styled(styled.div))>
-                <Unknown
-                                branded={true}
-                                onClick={[Function]}
-                                to="/submit"
-                >
-                                Submit Your Article
-                </Unknown>
-</Styled(Styled(styled.div))>,
+              undefined,
               <Styled(Styled(styled.div))>
                 <WithTheme(Component)
                                 buttons={
@@ -498,80 +341,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <WithTheme(Component)
-                    buttons={
-                                        Array [
-                                                            0,
-                                                          ]
-                    }
-                    noStar={true}
-                    stubborn={true}
-                    title="Get Published"
-/>,
-                  <Styled(Styled(styled.div))>
-                    We’d love to publish your photo essay, guide, or a review!
-</Styled(Styled(styled.div))>,
-                  <Unknown
-                    branded={true}
-                    onClick={[Function]}
-                    to="/submit"
->
-                    Submit Your Article
-</Unknown>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "buttons": Array [
-                      0,
-                    ],
-                    "noStar": true,
-                    "stubborn": true,
-                    "title": "Get Published",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "We’d love to publish your photo essay, guide, or a review!",
-                  },
-                  "ref": null,
-                  "rendered": "We’d love to publish your photo essay, guide, or a review!",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": "Options_LinkButton",
-                  "nodeType": "function",
-                  "props": Object {
-                    "branded": true,
-                    "children": "Submit Your Article",
-                    "onClick": [Function],
-                    "to": "/submit",
-                  },
-                  "ref": null,
-                  "rendered": "Submit Your Article",
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
+            undefined,
             Object {
               "instance": null,
               "key": undefined,
@@ -703,17 +473,7 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
+        undefined,
       ],
       "type": [Function],
     },

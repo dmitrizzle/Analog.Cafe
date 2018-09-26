@@ -74,7 +74,7 @@ export default props => {
             },
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
-              text: `Submit ${props.userStatus === "ok" ? "New" : ""}`,
+              text: `Submit${props.userStatus === "ok" ? " New" : ""}`,
               branded: true
             }
           ]
