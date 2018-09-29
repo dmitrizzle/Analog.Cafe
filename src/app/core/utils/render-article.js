@@ -36,7 +36,7 @@ export const RULES_SERIALIZATION = [
         case "image": {
           return addKey(
             <Picture
-              editor={{ value: { isFocused: false, isSelected: false } }}
+              editor={{ value: { isSelected: false } }}
               node={{
                 data: {
                   get: object => node.data[object]
