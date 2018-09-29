@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import {
   storeContentState,
   loadTextContent
-} from "@roast-cms/french-press-editor/dist/utils/actions-storage"
+} from "@roast-cms/french-press-editor/dist/utils/storage"
 import React from "react"
 
 import { withRouter } from "react-router"
@@ -186,7 +186,8 @@ class ArticleControls extends React.PureComponent {
       >
         <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
           {this.state.allowDelete ? TEXT_EMOJIS.UNLOCKED : TEXT_EMOJIS.LOCKED}
-        </span>You can also{" "}
+        </span>
+        You can also{" "}
         <Link to="#delete" onClick={this.handleDelete}>
           delte
         </Link>{" "}
