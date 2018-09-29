@@ -1,7 +1,6 @@
 import { connect } from "react-redux"
 import Loadable from "react-loadable"
 import React from "react"
-import ReactDOM from "react-dom"
 
 import { GA } from "../../../../utils"
 import {
@@ -44,19 +43,16 @@ class Picture extends React.PureComponent {
   }
 
   handleCaptionInputBlur = event => {
-    console.log("blur")
     this.setState({
       captionInputFocus: false
     })
   }
   handleCaptionInputFocus = event => {
-    console.log("focus")
     this.setState({
       captionInputFocus: true
     })
   }
   handleChange = event => {
-    console.log(event)
     const caret = event.target.selectionStart
     const element = event.target
     window.requestAnimationFrame(() => {
@@ -83,10 +79,10 @@ class Picture extends React.PureComponent {
     event.stopPropagation()
   }
   componentWillReceiveProps = nextProps => {
-    // const caption = nextProps.node.data.get("caption");
-    // if (caption !== this.state.caption) {
-    //   this.setState({ caption });
-    // }
+    const caption = nextProps.node.data.get("caption")
+    if (caption !== this.state.caption) {
+      this.setState({ caption })
+    }
   }
 
   componentDidMount = () => {
