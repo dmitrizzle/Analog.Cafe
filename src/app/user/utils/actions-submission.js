@@ -9,7 +9,7 @@ import {
 export {
   forceImageRestrictions,
   fileToBase64
-} from "@roast-cms/french-press-editor/dist/utils/actions-image"
+} from "@roast-cms/french-press-editor/dist/utils/image"
 
 // https://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata
 export const base64ToBlob = string => {
