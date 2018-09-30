@@ -81,6 +81,24 @@ export const CARD_DIALOGUES = {
       id: "hints/publish-submission"
     }
   },
+  UNPUBLISH: unlockFunction => {
+    return {
+      info: {
+        title: "Are You Sure?",
+        text:
+          "Please confirm that you want this article UNPUBLISHED. This will trigger an immediate RSS feed update and will affect sitemap, SEO, and create a 404 page status.",
+        buttons: [
+          NEVERMIND_BUTTON,
+          {
+            to: "#unpublish",
+            onClick: event => unlockFunction(event, "allowUnpublish"),
+            text: TEXT_EMOJIS.KEY + " Unlock"
+          }
+        ]
+      },
+      id: "hints/unpublish-submission"
+    }
+  },
   SAVE_EDITS: {
     info: {
       title: "Notes for Editors",
@@ -109,9 +127,16 @@ export const CARD_ALERTS = {
   DELETED_SUCCESSFULLY: {
     info: {
       title: "Successfuly Deleted Submission",
-      text: "Done. Submission DELETED from database."
+      text: "Done. Submission REMOVED from database."
     },
     id: "hints/reject-submission"
+  },
+  UNPUBLISHED_SUCCESSFULLY: {
+    info: {
+      title: "Successfuly Unpublished Article",
+      text: "Done. Article REMOVED from publication."
+    },
+    id: "hints/unpublish-submission"
   },
   SCHEDULED: {
     info: {

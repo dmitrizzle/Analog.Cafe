@@ -1,6 +1,7 @@
 import axios from "axios"
 
 import { CARD_ALERTS } from "../constants/messages-admin"
+import { ROUTE_API_ARTICLES } from "../../core/constants/routes-article"
 import { ROUTE_API_SUBMISSIONS } from "../constants/routes-admin"
 import { ROUTE_URL_USER_LANDING } from "../../user/constants/routes-session"
 import { makeAPIRequest } from "../../utils"
@@ -56,6 +57,25 @@ export const deleteSubmission = (submissionId, history) => {
       .then(response => {
         dispatch(setModal(CARD_ALERTS.DELETED_SUCCESSFULLY))
         dispatch(history.push(ROUTE_URL_USER_LANDING))
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+}
+export const unpublishArticle = (submissionId, history) => {
+  return dispatch => {
+    const request = {
+      url: `${ROUTE_API_ARTICLES}/${submissionId}`,
+      method: "delete",
+      headers: {
+        Authorization: "JWT " + localStorage.getItem("token")
+      }
+    }
+    axios(makeAPIRequest(request))
+      .then(response => {
+        dispatch(setModal(CARD_ALERTS.UNPUBLISHED_SUCCESSFULLY))
+        dispatch(history.push("/"))
       })
       .catch(error => {
         console.log(error)
