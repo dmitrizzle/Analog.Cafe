@@ -10,13 +10,14 @@ import { withRouter } from "react-router"
 import { CARD_DIALOGUES } from "../../../constants/messages-admin"
 import { ROUTE_URL_SUBMISSIONS } from "../../../../core/constants/routes-article"
 import { TEXT_EMOJIS } from "../../../../constants"
-import { getSubmissionOrArticleRoute } from "../../../../core/utils/routes-article"
 import {
+  deleteSubmission,
   publishSubmission,
   rejectSubmission,
-  deleteSubmission,
-  setStatus
+  setStatus,
+  unpublishArticle
 } from "../../../store/actions-editor"
+import { getSubmissionOrArticleRoute } from "../../../../core/utils/routes-article"
 import { setComposerHeader } from "../../../../user/store/actions-composer"
 import { setModal } from "../../../../core/store/actions-modal"
 import { storeHeaderState } from "../../../../user/utils/actions-submission"
@@ -90,7 +91,7 @@ class ArticleControls extends React.PureComponent {
       this.props.setModal(CARD_DIALOGUES.UNPUBLISH(this.handleUnlockFunction))
       return
     }
-    alert("unpublish")
+    this.props.unpublishArticle(this.props.article.id, this.props.history)
   }
   handleRejection = event => {
     event.preventDefault()
@@ -221,6 +222,9 @@ const mapDispatchToProps = dispatch => {
     },
     deleteSubmission: (id, history) => {
       dispatch(deleteSubmission(id, history))
+    },
+    unpublishArticle: (id, history) => {
+      dispatch(unpublishArticle(id, history))
     },
     setComposerHeader: value => {
       dispatch(setComposerHeader(value))

@@ -127,9 +127,16 @@ export const CARD_ALERTS = {
   DELETED_SUCCESSFULLY: {
     info: {
       title: "Successfuly Deleted Submission",
-      text: "Done. Submission DELETED from database."
+      text: "Done. Submission REMOVED from database."
     },
     id: "hints/reject-submission"
+  },
+  UNPUBLISHED_SUCCESSFULLY: {
+    info: {
+      title: "Successfuly Unpublished Article",
+      text: "Done. Article REMOVED from publication."
+    },
+    id: "hints/unpublish-submission"
   },
   SCHEDULED: {
     info: {
