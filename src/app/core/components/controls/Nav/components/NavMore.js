@@ -77,7 +77,7 @@ export default props => {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
               text:
                 loadTextContent().length > 0
-                  ? "Edit Draft"
+                  ? "Continue With Submission"
                   : `Submit${props.userStatus === "ok" ? " New" : ""}`,
               branded: true
             }

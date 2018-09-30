@@ -17,30 +17,44 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <Unknown
+      "children": <Unknown
+        alt="A short demo of the submission process to Analog.Cafe"
+        src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
+>
+        The “Composer” tool will help you create and send submissions.
+</Unknown>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "alt": "A short demo of the submission process to Analog.Cafe",
+        "children": "The “Composer” tool will help you create and send submissions.",
+        "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
+      },
+      "ref": null,
+      "rendered": "The “Composer” tool will help you create and send submissions.",
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Unknown
           alt="A short demo of the submission process to Analog.Cafe"
           src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
 >
           The “Composer” tool will help you create and send submissions.
 </Unknown>,
-        <p>
-          Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.
-</p>,
-        <p>
-          Together, we are building a place to discover beauty, get inspired, and learn something new. 
-          <strong>
-                    Join us.
-          </strong>
-</p>,
-        <p>
-          We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.
-</p>,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
+      },
+      "ref": null,
+      "rendered": Object {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
@@ -53,154 +67,6 @@ ShallowWrapper {
         "rendered": "The “Composer” tool will help you create and send submissions.",
         "type": [Function],
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
-        },
-        "ref": null,
-        "rendered": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
-            <strong>
-              Join us.
-</strong>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Join us.",
-            },
-            "ref": null,
-            "rendered": "Join us.",
-            "type": "strong",
-          },
-        ],
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
-        },
-        "ref": null,
-        "rendered": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
-        "type": "p",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <Unknown
-            alt="A short demo of the submission process to Analog.Cafe"
-            src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
->
-            The “Composer” tool will help you create and send submissions.
-</Unknown>,
-          <p>
-            Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.
-</p>,
-          <p>
-            Together, we are building a place to discover beauty, get inspired, and learn something new. 
-            <strong>
-                        Join us.
-            </strong>
-</p>,
-          <p>
-            We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.
-</p>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "alt": "A short demo of the submission process to Analog.Cafe",
-            "children": "The “Composer” tool will help you create and send submissions.",
-            "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
-          },
-          "ref": null,
-          "rendered": "The “Composer” tool will help you create and send submissions.",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
-          },
-          "ref": null,
-          "rendered": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
-              <strong>
-                Join us.
-</strong>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Join us.",
-              },
-              "ref": null,
-              "rendered": "Join us.",
-              "type": "strong",
-            },
-          ],
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
-          },
-          "ref": null,
-          "rendered": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
-          "type": "p",
-        },
-      ],
       "type": "div",
     },
   ],

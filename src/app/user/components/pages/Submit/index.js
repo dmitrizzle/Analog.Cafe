@@ -1,3 +1,4 @@
+import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 
 import { makeFroth } from "../../../../utils"
@@ -9,9 +10,10 @@ import HowToSubmit from "./components/HowToSubmit"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
-import Modal from "../../../../core/components/controls/Modal"
 import RemoteMessage from "../../../../core/components/vignettes/RemoteMessage"
 
+const ctaText =
+  loadTextContent().length > 0 ? "Continue With Submission" : "Submit Now"
 export default () => {
   return (
     <ArticleWrapper>
@@ -30,97 +32,18 @@ export default () => {
         pageSubtitle="Photo Essays, Stories, Guides, Reviews"
       />
       <ArticleSection>
-        <h3>Get £5 for film.</h3>
         <p>
-          As a small token of appreciation for your time, skill and talent,{" "}
-          <Modal
-            with={{
-              info: {
-                title: "What Qualifies?",
-                text: (
-                  <span>
-                    Submissions with compelling stories or informative guides,
-                    with quality images, shot on film. Best way to tell what’s
-                    acceptable is to <Link to="/">browse</Link> Analog.Cafe
-                    content.
-                    <br />
-                    <br />
-                    Remarkably, the current acceptance rate on Analog.Cafe is
-                    85% – so your chances are looking good.
-                  </span>
-                ),
-                buttons: [
-                  {
-                    to: "/submit/compose",
-                    text: "Submit Now",
-                    branded: true
-                  }
-                ]
-              },
-              id: "hints/qualifying-submission"
-            }}
-          >
-            qualifying
-          </Modal>{" "}
-          submissions will receive an exclusive coupon for £5 from{" "}
-          <Link to="https://analoguewonderland.co.uk/">
-            Analogue Wonderland
-          </Link>
-          ’s incredible selection of over 180 film stocks.
+          Do you shoot film?{" "}
+          <strong>Get your work reviewed and published</strong> along with a
+          growing <Link to="/about">community</Link> of authors, artists, film
+          photographers. Each accepted submission is edited to look and read
+          beautifully – for thousands of global readers.
         </p>
-        <p>
-          <strong>
-            There’s a{" "}
-            <Modal
-              with={{
-                info: {
-                  title: "How Many Coupons Left?",
-                  text: (
-                    <span>
-                      There are only{" "}
-                      <strong>
-                        <RemoteMessage from="promotions" id="coupons-left" />{" "}
-                        coupons left
-                      </strong>
-                      !
-                    </span>
-                  ),
-                  image: "image-froth_1511062_ByvHiFXdX",
-                  buttons: [
-                    {
-                      to: "/submit/compose",
-                      text: "Submit Now",
-                      branded: true
-                    }
-                  ]
-                },
-                id: "hints/how-many-coupons-left"
-              }}
-            >
-              limited number
-            </Modal>{" "}
-            of coupons available.
-          </strong>
-        </p>
-        <div style={{ textAlign: "center" }}>
-          <LinkButton to={"/submit/compose"} branded>
-            Submit Now
-          </LinkButton>
-        </div>
 
-        <hr />
-        <HowToSubmit />
-
-        <ButtonGroup>
-          <p>
-            <em>We’ll take care of the grammar.</em>
-          </p>
+        <ButtonGroup style={{ paddingBottom: "1.5em" }}>
           <LinkButton to={"/submit/compose"} branded>
-            Submit Now
+            {ctaText}
           </LinkButton>
-          <p>
-            <em>- or -</em>
-          </p>
           <p>
             <Link to="/sign-in">
               <strong>Sign in</strong>
@@ -128,6 +51,28 @@ export default () => {
             if you have an account.
           </p>
         </ButtonGroup>
+
+        <p>
+          <strong>Sending submissions is easy.</strong> Plus, you get to see
+          what your work may look like when published with the{" "}
+          <Link to="/submit/compose">
+            <em>Composer</em>
+          </Link>{" "}
+          tool. Just add your images, title, text, and click “Send” once ready.
+        </p>
+
+        <p>
+          <strong>Get £5 for film.</strong> As a small token of appreciation for
+          your time, skill and talent, accepted submissions will receive an
+          exclusive coupon for £5 from{" "}
+          <Link to="https://analoguewonderland.co.uk/">
+            Analogue Wonderland
+          </Link>
+          . There are <RemoteMessage from="promotions" id="coupons-left" /> left
+          to give.
+        </p>
+
+        <HowToSubmit />
       </ArticleSection>
     </ArticleWrapper>
   )
