@@ -31,7 +31,9 @@ const metaDescription =
 
 const AuthorsBanner = styled.div`
   width: 100vw;
-  height: 26em;
+  min-height: 26em;
+  height: 66vw;
+  max-height: 36em;
   overflow: hidden;
 
   padding: ${props => props.theme.size.block.padding * 2}em 0 0;
