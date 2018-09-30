@@ -5,11 +5,13 @@ import { makeFroth } from "../../../../utils"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
+import ContactInfo from "../../../../core/components/vignettes/ContactInfo"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import HowToSubmit from "./components/HowToSubmit"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
+import Modal from "../../../../core/components/controls/Modal"
 import RemoteMessage from "../../../../core/components/vignettes/RemoteMessage"
 
 export default () => {
@@ -36,8 +38,40 @@ export default () => {
           Do you shoot film?{" "}
           <strong>Get your work reviewed and published</strong> along with a
           growing <Link to="/about">community</Link> of authors, artists, film
-          photographers. Each accepted submission is edited to look and read
-          beautifully – for thousands of global readers.
+          photographers. Each accepted submission is{" "}
+          <Modal
+            with={{
+              info: {
+                title: "Editor’s Note",
+                text: (
+                  <span>
+                    We tent to edit every article for clarity of expression,
+                    grammar, and style. At times this yields a lot of changes.
+                    <strong>
+                      We do our best to preserve every author’s original voice
+                      and message while taking the language onto the next level.
+                    </strong>
+                    <br />
+                    <br />
+                    However, if you’d like to have greater control over content,
+                    just let us know and we’ll send the edited version to you
+                    for approval before publishing: <ContactInfo />
+                  </span>
+                ),
+                buttons: [
+                  {
+                    to: "/submit/compose",
+                    text: ctaText,
+                    branded: true
+                  }
+                ]
+              },
+              id: "hints/submission-edits"
+            }}
+          >
+            edited
+          </Modal>{" "}
+          to look and read beautifully – for thousands of global readers.
         </p>
 
         <ButtonGroup style={{ paddingBottom: "1.5em" }}>
