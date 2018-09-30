@@ -11,19 +11,6 @@ export default () => {
       >
         The “Composer” tool will help you create and send submissions.
       </Figure>
-      <p>
-        Analog.Cafe owes its existence to the diverse, expressive, and
-        informative works of artists, writers, and film photographers like you.
-      </p>
-      <p>
-        Together, we are building a place to discover beauty, get inspired, and
-        learn something new. <strong>Join us.</strong>
-      </p>
-      <p>
-        We edit each submission to make sure that all articles read and look
-        fantastic, and every author is proud to have their work published on
-        Analog.Cafe.
-      </p>
     </div>
   )
 }

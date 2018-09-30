@@ -31,8 +31,12 @@ const metaDescription =
 
 const AuthorsBanner = styled.div`
   width: 100vw;
-  min-height: 25em;
-  padding: ${props => props.theme.size.block.padding * 2}em 0 20vw;
+  min-height: 26em;
+  height: 66vw;
+  max-height: 36em;
+  overflow: hidden;
+
+  padding: ${props => props.theme.size.block.padding * 2}em 0 0;
   background-image: url(${props =>
     makeFroth({ src: props.src, size: "l" }).src});
   ${props => props.theme.size.breakpoint.max.l`
@@ -126,8 +130,12 @@ class About extends React.PureComponent {
           <Link to="/collaborations">collaborations</Link>.
         </p>
         <p>
-          Together, we are building a place to discover beauty, get inspired,
-          and learn something new. <strong>Join us:</strong>
+          Together,{" "}
+          {this.props.community.authorsList.items.length > 8
+            ? `all ${this.props.community.authorsList.items.length} of us`
+            : "we"}{" "}
+          are building a place to discover beauty, get inspired, and learn
+          something new. <strong>Join us:</strong>
         </p>
         <ButtonGroup>
           <LinkButton
