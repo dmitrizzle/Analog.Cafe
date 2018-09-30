@@ -44,22 +44,25 @@ export default props => {
           </ButtonStripItem>
         ) : (
           [
-            <ButtonStripItem
-              key="ButtonStrip_Item_reject"
-              onClick={props.reject}
-              inverse={props.editor.reject.id === props.article.id}
-              style={{
-                minWidth: "6em",
-                display: props.article.status !== "scheduled" ? "block" : "none"
-              }}
-            >
-              <span role="img" aria-label="(Un)Locked button">
-                {props.stateAllowReject
-                  ? TEXT_EMOJIS.UNLOCKED
-                  : TEXT_EMOJIS.LOCKED}
-              </span>{" "}
-              Reject
-            </ButtonStripItem>,
+            props.article.status !== "unpublished" ? (
+              <ButtonStripItem
+                key="ButtonStrip_Item_reject"
+                onClick={props.reject}
+                inverse={props.editor.reject.id === props.article.id}
+                style={{
+                  minWidth: "6em",
+                  display:
+                    props.article.status !== "scheduled" ? "block" : "none"
+                }}
+              >
+                <span role="img" aria-label="(Un)Locked button">
+                  {props.stateAllowReject
+                    ? TEXT_EMOJIS.UNLOCKED
+                    : TEXT_EMOJIS.LOCKED}
+                </span>{" "}
+                Reject
+              </ButtonStripItem>
+            ) : null,
             <ButtonStripItem
               right
               inverse={props.statePublishControls}
@@ -74,7 +77,11 @@ export default props => {
               key="ButtonStrip_Item_publish"
             >
               {props.article.status !== "scheduled"
-                ? "Publish"
+                ? `${
+                    props.article.status === "unpublished"
+                      ? "Republish"
+                      : "Publish"
+                  }`
                 : "Edit Schedule"}
             </ButtonStripItem>
           ]

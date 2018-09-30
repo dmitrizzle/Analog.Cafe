@@ -4,6 +4,7 @@ import { ROUTE_URL_USER_LANDING } from "../../user/constants/routes-session"
 export const TEXT_STATUS_LABELS = {
   pending: "In Queue",
   rejected: "Not Published",
+  unpublished: "Unpublished",
   scheduled: "Scheduled",
   published: "Published"
 }
