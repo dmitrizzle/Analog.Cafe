@@ -12,9 +12,9 @@ import LinkButton from "../../../../core/components/controls/Button/components/L
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
 import RemoteMessage from "../../../../core/components/vignettes/RemoteMessage"
 
-const ctaText =
-  loadTextContent().length > 0 ? "Continue With Submission" : "Submit Now"
 export default () => {
+  const ctaText =
+    loadTextContent().length > 0 ? "Continue With Submission" : "Submit Now"
   return (
     <ArticleWrapper>
       <MetaTags
