@@ -1,4 +1,5 @@
 // NOTE: `className` props are used in index.html
+import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 
 import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
@@ -74,7 +75,10 @@ export default props => {
             },
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
-              text: `Submit${props.userStatus === "ok" ? " New" : ""}`,
+              text:
+                loadTextContent().length > 0
+                  ? "Edit Draft"
+                  : `Submit${props.userStatus === "ok" ? " New" : ""}`,
               branded: true
             }
           ]
