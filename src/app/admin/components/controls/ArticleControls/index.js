@@ -10,13 +10,14 @@ import { withRouter } from "react-router"
 import { CARD_DIALOGUES } from "../../../constants/messages-admin"
 import { ROUTE_URL_SUBMISSIONS } from "../../../../core/constants/routes-article"
 import { TEXT_EMOJIS } from "../../../../constants"
-import { getSubmissionOrArticleRoute } from "../../../../core/utils/routes-article"
 import {
+  deleteSubmission,
   publishSubmission,
   rejectSubmission,
-  deleteSubmission,
-  setStatus
+  setStatus,
+  unpublishArticle
 } from "../../../store/actions-editor"
+import { getSubmissionOrArticleRoute } from "../../../../core/utils/routes-article"
 import { setComposerHeader } from "../../../../user/store/actions-composer"
 import { setModal } from "../../../../core/store/actions-modal"
 import { storeHeaderState } from "../../../../user/utils/actions-submission"
@@ -36,8 +37,8 @@ class ArticleControls extends React.PureComponent {
       allowOverwrite: false,
       allowReject: false,
       allowPublish: false,
-      allowDelete: false
-      // allowSync: false,
+      allowDelete: false,
+      allowUnpublish: false
     }
   }
   componentWillReceiveProps = nextProps => {
@@ -84,6 +85,14 @@ class ArticleControls extends React.PureComponent {
     )
     this.props.history.push("/submit/compose")
   }
+  handleUnpublish = event => {
+    event.preventDefault()
+    if (!this.state.allowUnpublish) {
+      this.props.setModal(CARD_DIALOGUES.UNPUBLISH(this.handleUnlockFunction))
+      return
+    }
+    this.props.unpublishArticle(this.props.article.id, this.props.history)
+  }
   handleRejection = event => {
     event.preventDefault()
     if (!this.state.allowReject) {
@@ -127,9 +136,6 @@ class ArticleControls extends React.PureComponent {
       publishAs: tag === this.state.publishAs ? "" : tag
     })
   }
-  handleSync = event => {
-    event.preventDefault()
-  }
 
   render = () => {
     return [
@@ -142,12 +148,12 @@ class ArticleControls extends React.PureComponent {
         article={this.props.article}
         editor={this.props.editor}
         edit={this.handleEdit}
-        sync={this.handleSync}
+        unpublish={this.handleUnpublish}
         reject={this.handleRejection}
         showPublishControls={this.handlePublishControls}
         stateAllowOverwrite={this.state.allowOverwrite}
-        stateAllowSync={this.state.allowSync}
         stateAllowReject={this.state.allowReject}
+        stateAllowUnpublish={this.state.allowUnpublish}
         statePublishControls={this.state.publishControls}
       />,
       <Byline
@@ -186,7 +192,8 @@ class ArticleControls extends React.PureComponent {
       >
         <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
           {this.state.allowDelete ? TEXT_EMOJIS.UNLOCKED : TEXT_EMOJIS.LOCKED}
-        </span>You can also{" "}
+        </span>
+        You can also{" "}
         <Link to="#delete" onClick={this.handleDelete}>
           delte
         </Link>{" "}
@@ -215,6 +222,9 @@ const mapDispatchToProps = dispatch => {
     },
     deleteSubmission: (id, history) => {
       dispatch(deleteSubmission(id, history))
+    },
+    unpublishArticle: (id, history) => {
+      dispatch(unpublishArticle(id, history))
     },
     setComposerHeader: value => {
       dispatch(setComposerHeader(value))
