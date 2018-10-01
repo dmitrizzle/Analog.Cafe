@@ -19,9 +19,10 @@ ShallowWrapper {
     "props": Object {
       "children": <Unknown
         alt="A short demo of the submission process to Analog.Cafe"
+        caption={true}
         src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
 >
-        The “Composer” tool will help you create and send submissions.
+        Analog.Cafe “Composer” tool is easy to use and works offline.
 </Unknown>,
     },
     "ref": null,
@@ -31,11 +32,12 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "alt": "A short demo of the submission process to Analog.Cafe",
-        "children": "The “Composer” tool will help you create and send submissions.",
+        "caption": true,
+        "children": "Analog.Cafe “Composer” tool is easy to use and works offline.",
         "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
       },
       "ref": null,
-      "rendered": "The “Composer” tool will help you create and send submissions.",
+      "rendered": "Analog.Cafe “Composer” tool is easy to use and works offline.",
       "type": [Function],
     },
     "type": "div",
@@ -48,9 +50,10 @@ ShallowWrapper {
       "props": Object {
         "children": <Unknown
           alt="A short demo of the submission process to Analog.Cafe"
+          caption={true}
           src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
 >
-          The “Composer” tool will help you create and send submissions.
+          Analog.Cafe “Composer” tool is easy to use and works offline.
 </Unknown>,
       },
       "ref": null,
@@ -60,11 +63,12 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "alt": "A short demo of the submission process to Analog.Cafe",
-          "children": "The “Composer” tool will help you create and send submissions.",
+          "caption": true,
+          "children": "Analog.Cafe “Composer” tool is easy to use and works offline.",
           "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
         },
         "ref": null,
-        "rendered": "The “Composer” tool will help you create and send submissions.",
+        "rendered": "Analog.Cafe “Composer” tool is easy to use and works offline.",
         "type": [Function],
       },
       "type": "div",
