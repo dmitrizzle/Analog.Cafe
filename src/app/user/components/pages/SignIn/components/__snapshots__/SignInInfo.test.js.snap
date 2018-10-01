@@ -20,7 +20,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        "Sign in or create new account instantly, without passwords.",
+        "Sign in to send your submission, edit profile, and get notifications. New? We’ll create an account for you automatically!",
         <br />,
         <small>
           <span>
@@ -35,7 +35,7 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
-      "Sign in or create new account instantly, without passwords.",
+      "Sign in to send your submission, edit profile, and get notifications. New? We’ll create an account for you automatically!",
       Object {
         "instance": null,
         "key": undefined,
@@ -78,7 +78,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "Sign in or create new account instantly, without passwords.",
+          "Sign in to send your submission, edit profile, and get notifications. New? We’ll create an account for you automatically!",
           <br />,
           <small>
             <span>
@@ -93,7 +93,7 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
-        "Sign in or create new account instantly, without passwords.",
+        "Sign in to send your submission, edit profile, and get notifications. New? We’ll create an account for you automatically!",
         Object {
           "instance": null,
           "key": undefined,
