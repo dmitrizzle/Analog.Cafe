@@ -30,7 +30,7 @@ export const SubmitIntro = () => {
             title: "Editor’s Note",
             text: (
               <span>
-                We tend to edit every article for clarity, grammar, and style.{" "}
+                Every article is edited for clarity, grammar, and style.{" "}
                 <strong>
                   We do our best to preserve your voice and message while taking
                   the language to the next level.
