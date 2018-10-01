@@ -34,7 +34,7 @@ export const SubmitIntro = () => {
                 grammar, and style. At times this yields a lot of changes.{" "}
                 <strong>
                   We do our best to preserve every author’s original voice and
-                  message while taking the language onto the next level.
+                  message while taking the language into the next level.
                 </strong>
                 <br />
                 <br />
