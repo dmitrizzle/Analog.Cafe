@@ -1,7 +1,7 @@
 import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-"
-import { CARD_ERRORS as CARD_ERRORS_SUBMISSIONS } from "../../user/constants/messages-submission"
+import { HEADER_ERRORS } from "../../user/constants/messages-submission"
 import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
@@ -58,9 +58,10 @@ export const fetchListPage = (request, appendItems = false) => {
         if (response.data.page["items-total"] > 0)
           dispatch(setListPage(response.data, appendItems))
         else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
+          console.log("ERR", HEADER_ERRORS.LIST)
           dispatch(
             initListPage({
-              error: CARD_ERRORS_SUBMISSIONS.LIST
+              error: HEADER_ERRORS.LIST
             })
           )
         } else {
