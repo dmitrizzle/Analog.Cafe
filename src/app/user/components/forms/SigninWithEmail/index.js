@@ -31,7 +31,7 @@ class SigninWithEmail extends React.PureComponent {
       else
         this.props.setModal({
           status: "ok",
-          info: CARD_ERRORS.SESSION_LOGIN_EMAIL_TIMEOUT(
+          info: CARD_ERRORS.LOGIN_EMAIL_TIMEOUT(
             Math.floor(
               (this.props.user.emailLogin.timeout - Date.now()) / 1000 + 1
             )
@@ -76,4 +76,7 @@ const mapStateToProps = state => {
     user: state.user
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(SigninWithEmail)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SigninWithEmail)
