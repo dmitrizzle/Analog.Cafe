@@ -30,13 +30,10 @@ export const SubmitIntro = () => {
             title: "Editor’s Note",
             text: (
               <span>
-                Every article is edited for clarity, grammar, and style.{" "}
-                <strong>
-                  We do our best to preserve your voice and message while taking
-                  the language to the next level.
-                </strong>{" "}
-                Though your published submission may read somewhat different
-                from what you sent us.
+                Your published submission may read different from what you sent
+                us. That’s because we edit every article for clarity, grammar,
+                and style.{" "}
+                <strong>We edit to preserve your voice and message.</strong>
                 <br />
                 <br />
                 If you’d like to have greater control over content, just let us
