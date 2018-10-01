@@ -35,8 +35,8 @@ export const SubmitIntro = () => {
                   We do our best to preserve your voice and message while taking
                   the language to the next level.
                 </strong>{" "}
-                Though sometimes your published submission may read somewhat
-                different from what you have sent us.
+                Though your published submission may read somewhat different
+                from what you sent us.
                 <br />
                 <br />
                 If you’d like to have greater control over content, just let us
