@@ -7,11 +7,7 @@ import List from "../../../../core/components/pages/List"
 
 const Me = props => {
   return props.user.status === "ok" ? (
-    <List
-      private
-      isAdmin={props.user.info.role === "admin"}
-      placeholder="PlaceholderHowToSubmit"
-    />
+    <List private isAdmin={props.user.info.role === "admin"} me />
   ) : (
     <Forbidden />
   )
@@ -28,4 +24,7 @@ const mapStateToProps = state => {
     user: state.user
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Me)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Me)

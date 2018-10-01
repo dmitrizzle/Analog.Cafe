@@ -9,10 +9,11 @@ export default () => {
   return (
     <ArticleWrapper>
       <ArticleSection>
-        <HowToSubmit />
         <LinkButton to={"/submit/compose"} branded>
           Submit Now
         </LinkButton>
+
+        <HowToSubmit />
       </ArticleSection>
     </ArticleWrapper>
   )
