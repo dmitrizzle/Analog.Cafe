@@ -31,7 +31,7 @@ export const SubmitIntro = () => {
             text: (
               <span>
                 We tend to edit every article for clarity of expression,
-                grammar, and style. At times this yields a lot of changes.
+                grammar, and style. At times this yields a lot of changes.{" "}
                 <strong>
                   We do our best to preserve every author’s original voice and
                   message while taking the language onto the next level.
