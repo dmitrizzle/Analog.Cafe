@@ -33,7 +33,12 @@ export const SubmitIntro = () => {
                 Your published submission may read different from what you sent
                 us. That’s because we edit every article for clarity, grammar,
                 and style.{" "}
-                <strong>We edit to preserve your voice and message.</strong>
+                <Link
+                  to="https://www.analog.cafe/zine/open-call-g99w"
+                  target="_blank"
+                >
+                  Learn more.
+                </Link>
                 <br />
                 <br />
                 If you’d like to have greater control over content, just let us

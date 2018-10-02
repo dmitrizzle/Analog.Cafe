@@ -1,6 +1,7 @@
 import React from "react"
 
 import Figure from "../../../../../core/components/vignettes/Picture/components/Figure"
+import Link from "../../../../../core/components/controls/Link"
 
 export default () => {
   return (
@@ -12,6 +13,12 @@ export default () => {
       >
         Analog.Cafe “Composer” tool is easy to use and works offline.
       </Figure>
+      <p>
+        <strong>Learn more</strong> about the types of content we publish,
+        quality prerequisites, edits, and our mission in Dmitri’s editorial “
+        <Link to="/zine/open-call-g99w">Open Call</Link>
+        .”
+      </p>
     </div>
   )
 }
