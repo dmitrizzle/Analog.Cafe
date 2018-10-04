@@ -50,11 +50,11 @@ export const getISODatestamp = unix => {
   return date.toISOString()
 }
 
-export const smartGreeting = throttle(() => {
-  if (localStorage.getItem("greeted") === "true") {
-    return "Hello, again!"
-  } else {
-    localStorage.setItem("greeted", "true")
-    return "Hello!"
-  }
-}, 3000)
+// export const smartGreeting = throttle(() => {
+//   if (localStorage.getItem("greeted") === "true") {
+//     return "Hello, again!"
+//   } else {
+//     localStorage.setItem("greeted", "true")
+//     return "Hello!"
+//   }
+// }, 3000)
