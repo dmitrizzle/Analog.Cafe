@@ -17,47 +17,31 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <Unknown
-        alt="A short demo of the submission process to Analog.Cafe"
-        caption={true}
-        src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
->
-        Analog.Cafe “Composer” tool is easy to use and works offline.
-</Unknown>,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "alt": "A short demo of the submission process to Analog.Cafe",
-        "caption": true,
-        "children": "Analog.Cafe “Composer” tool is easy to use and works offline.",
-        "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
-      },
-      "ref": null,
-      "rendered": "Analog.Cafe “Composer” tool is easy to use and works offline.",
-      "type": [Function],
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <Unknown
+      "children": Array [
+        <Unknown
           alt="A short demo of the submission process to Analog.Cafe"
           caption={true}
           src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
 >
           Analog.Cafe “Composer” tool is easy to use and works offline.
 </Unknown>,
-      },
-      "ref": null,
-      "rendered": Object {
+        <p>
+          <strong>
+                    Learn more
+          </strong>
+           about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “
+          <Unknown
+                    to="/zine/open-call-g99w"
+          >
+                    Open Call
+          </Unknown>
+          .”
+</p>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
@@ -71,6 +55,150 @@ ShallowWrapper {
         "rendered": "Analog.Cafe “Composer” tool is easy to use and works offline.",
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <strong>
+              Learn more
+</strong>,
+            " about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “",
+            <Unknown
+              to="/zine/open-call-g99w"
+>
+              Open Call
+</Unknown>,
+            ".”",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Learn more",
+            },
+            "ref": null,
+            "rendered": "Learn more",
+            "type": "strong",
+          },
+          " about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Open Call",
+              "to": "/zine/open-call-g99w",
+            },
+            "ref": null,
+            "rendered": "Open Call",
+            "type": [Function],
+          },
+          ".”",
+        ],
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            alt="A short demo of the submission process to Analog.Cafe"
+            caption={true}
+            src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
+>
+            Analog.Cafe “Composer” tool is easy to use and works offline.
+</Unknown>,
+          <p>
+            <strong>
+                        Learn more
+            </strong>
+             about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “
+            <Unknown
+                        to="/zine/open-call-g99w"
+            >
+                        Open Call
+            </Unknown>
+            .”
+</p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "alt": "A short demo of the submission process to Analog.Cafe",
+            "caption": true,
+            "children": "Analog.Cafe “Composer” tool is easy to use and works offline.",
+            "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
+          },
+          "ref": null,
+          "rendered": "Analog.Cafe “Composer” tool is easy to use and works offline.",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <strong>
+                Learn more
+</strong>,
+              " about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “",
+              <Unknown
+                to="/zine/open-call-g99w"
+>
+                Open Call
+</Unknown>,
+              ".”",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Learn more",
+              },
+              "ref": null,
+              "rendered": "Learn more",
+              "type": "strong",
+            },
+            " about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Open Call",
+                "to": "/zine/open-call-g99w",
+              },
+              "ref": null,
+              "rendered": "Open Call",
+              "type": [Function],
+            },
+            ".”",
+          ],
+          "type": "p",
+        },
+      ],
       "type": "div",
     },
   ],

@@ -1,5 +1,4 @@
 import toTitleCase from "titlecase"
-import throttle from "lodash/throttle"
 
 export const getTitleFromSlug = (slug = "", options = {}) => {
   let title
