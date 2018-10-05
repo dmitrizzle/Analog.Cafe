@@ -3,6 +3,7 @@ import axios from "axios"
 import { CARD_ALERTS, CARD_ERRORS } from "../constants/messages-session"
 import {
   ROUTE_API_LOGIN_EMAIL,
+  ROUTE_API_LOGIN_REFRESH,
   ROUTE_API_USER
 } from "../constants/routes-session"
 import { TEXT_ERRORS } from "../../constants"
@@ -82,6 +83,27 @@ export const loginWithEmail = validatedEmail => {
           type: "USER.SET_EMAIL_LOGIN_STATUS",
           payload: "ok"
         })
+      })
+  }
+}
+export const refreshUser = () => {
+  return dispatch => {
+    const token = localStorage.getItem("token")
+    if (!token) return
+
+    const request = {
+      url: ROUTE_API_LOGIN_REFRESH,
+      headers: {
+        Authorization: "JWT " + token
+      },
+      method: "post"
+    }
+    axios(makeAPIRequest(request))
+      .then(response => {
+        localStorage.setItem("token", response.data.token)
+      })
+      .catch(() => {
+        // fail silently
       })
   }
 }
