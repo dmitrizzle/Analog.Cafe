@@ -34,7 +34,11 @@ class Article extends React.PureComponent {
         name: "Post",
         route: "/"
       },
-      publicationStatus: this.props.article.status
+      publicationStatus: this.props.article.status,
+      selection: {
+        leftOffset: 0,
+        topOffset: 0
+      }
     }
   }
   fetchArticlePage = () => {
@@ -99,6 +103,32 @@ class Article extends React.PureComponent {
     })
   }
 
+  handleMouseUp = event => {
+    const selection = window.getSelection()
+    const range = selection.getRangeAt(0)
+    const rect = range.getBoundingClientRect()
+    const menu = {
+      offsetWidth: 100,
+      offsetHeight: 20
+    }
+    const leftOffset =
+      rect.left + window.scrollX - menu.offsetWidth / 2 + rect.width / 2
+    const topOffset = rect.top + window.scrollY - menu.offsetHeight + 3
+    this.setState({
+      selection: {
+        leftOffset,
+        topOffset
+      }
+    })
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.props !== nextProps) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   render = () => {
     return (
       <ArticleWrapper>
@@ -126,8 +156,20 @@ class Article extends React.PureComponent {
           stateAdminControls={this.state.adminControls}
           stateTag={this.state.tag}
         />
-
-        <ArticleSection articleStatus={this.props.article.status}>
+        <ArticleSection
+          articleStatus={this.props.article.status}
+          onMouseUp={this.handleMouseUp}
+        >
+          <div
+            style={{
+              width: "100px",
+              height: "20px",
+              background: "#000",
+              position: "absolute",
+              top: `${this.state.selection.topOffset}px`,
+              left: `${this.state.selection.leftOffset}px`
+            }}
+          />
           {renderArticle(this.props.article.content.raw)}
           {this.props.article.poster &&
             this.props.article.submittedBy && (
