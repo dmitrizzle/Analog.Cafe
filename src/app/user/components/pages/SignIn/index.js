@@ -131,28 +131,28 @@ class SignIn extends React.PureComponent {
                       with={{
                         info: {
                           image: "image-froth_3525424_rJ1m0e15m",
-                          title: "Disposable Email Links",
+                          title: "Sign In with Confirmation Link",
                           text: (
                             <span>
                               Sign in and create accounts{" "}
                               <strong>securely and without passwords</strong>{" "}
-                              using disposable email links.
+                              using confirmation link.
                               <br />
                               <br />
-                              Enter your email and we’ll send you a link that
-                              expires in ten minutes. Click it to instantly
-                              access your account.
+                              Enter your email and we’ll send you a confirmatoin
+                              link that expires in ten minutes. Click it to
+                              instantly access your account.
                               <br />
                               <br />
                               Use the same email to access your existing
-                              account. Disposable email links are very secure.
+                              account. Confirmation email links are very secure.
                             </span>
                           )
                         },
                         id: "hints/disposable-links"
                       }}
                     >
-                      disposable
+                      confirmation
                     </Modal>{" "}
                     sign in link:
                   </small>
