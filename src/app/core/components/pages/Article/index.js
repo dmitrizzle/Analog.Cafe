@@ -112,14 +112,14 @@ class Article extends React.Component {
     const range = selection.getRangeAt(0).cloneRange()
     let rects, rect, leftOffset, topOffset
     if (range.getClientRects) {
-      range.collapse(!touch)
+      range.collapse(true)
       rects = range.getClientRects()
       if (rects.length > 0) {
         rect = rects[0]
       }
       console.log(rect)
-      leftOffset = touch ? rect.left + 20 : rect.left
-      topOffset = touch ? rect.bottom + 5 : rect.top
+      leftOffset = touch ? rect.left - 27 : rect.left
+      topOffset = touch ? rect.bottom - 5 : rect.top
     }
     leftOffset += window.scrollX
     topOffset += window.scrollY
@@ -175,6 +175,7 @@ class Article extends React.Component {
           articleStatus={this.props.article.status}
           onMouseUp={event => this.handleSelection(event, false)}
           onTouchEnd={event => this.handleSelection(event, true)}
+          onTouchCancel={event => this.handleSelection(event, true)}
         >
           {renderArticle(this.props.article.content.raw)}
           {this.props.article.poster &&
