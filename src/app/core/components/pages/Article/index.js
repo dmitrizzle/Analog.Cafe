@@ -105,13 +105,13 @@ class Article extends React.Component {
     })
   }
 
-  handleSelection = event => {
+  handleSelection = (event, touch) => {
     event.stopPropagation()
     const selection = window.getSelection()
     const range = selection.getRangeAt(0).cloneRange()
     let rects, rect, leftOffset, topOffset
     if (range.getClientRects) {
-      range.collapse(true)
+      range.collapse(!touch)
       rects = range.getClientRects()
       if (rects.length > 0) {
         rect = rects[0]
@@ -171,8 +171,8 @@ class Article extends React.Component {
         />
         <ArticleSection
           articleStatus={this.props.article.status}
-          onMouseUp={this.handleSelection}
-          onTouchEnd={this.handleSelection}
+          onMouseUp={event => this.handleSelection(event)}
+          onTouchEnd={event => this.handleSelection(event, true)}
         >
           {renderArticle(this.props.article.content.raw)}
           {this.props.article.poster &&

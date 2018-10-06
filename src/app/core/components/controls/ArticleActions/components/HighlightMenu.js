@@ -26,6 +26,15 @@ const MenuItem = styled(ButtonStripItem)`
   svg {
     margin-left: 0
   }
+  ${props => props.theme.size.breakpoint.max.s`
+    width: 2.5em;
+    height: 2em;
+    border-radius: ${props => props.theme.effects.borderRadius.med}em;
+    svg {
+      height: 2.5em;
+      margin-top: -0.9em;
+    }
+  `};
 `
 
 export default props => (
