@@ -36,6 +36,8 @@ const sectionBreak = css`
   }
 `
 export default styled.section`
+  cursor: text;
+
   ${props => props.theme.size.font.auto} ${props =>
     props.theme.typography.text.auto} margin: 0 auto;
   max-width: ${props => props.theme.size.block.column.m}px;

@@ -3,6 +3,7 @@ import LazyLoad from "react-lazyload"
 import Loadable from "react-loadable"
 import React from "react"
 
+import { HOST_PROD, HOST_PROTOCOL } from "../../../../constants"
 import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
   ROUTE_URL_ARTICLES,
@@ -10,7 +11,8 @@ import {
 } from "../../../constants/routes-article"
 import {
   fetchArticlePage,
-  setArticlePage
+  setArticlePage,
+  setArticleSelectoin
 } from "../../../store/actions-article"
 import { getSubmissionOrArticleRoute } from "../../../utils/routes-article"
 import { getTitleFromSlug } from "../../../utils/messages-"
@@ -25,7 +27,7 @@ const ArticleActions = Loadable({
   loading: () => null,
   delay: 100
 })
-class Article extends React.PureComponent {
+class Article extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -82,6 +84,11 @@ class Article extends React.PureComponent {
     this.setState({
       adminControls: this.props.user.info.role === "admin"
     })
+    window.addEventListener("mouseup", () => {
+      this.props.setArticleSelectoin({
+        hidden: true
+      })
+    })
   }
   componentWillReceiveProps = nextProps => {
     this.makeTag(nextProps)
@@ -97,6 +104,62 @@ class Article extends React.PureComponent {
     this.setState({
       subscribeForm: !value
     })
+  }
+
+  handleSelection = (event, touch) => {
+    // based on https://jsfiddle.net/NFJ9r/132/
+    event.stopPropagation()
+    const selection = window.getSelection()
+    const range = selection.getRangeAt(0).cloneRange()
+    let rects, rect, leftOffset, topOffset
+    if (range.getClientRects) {
+      range.collapse(true)
+      rects = range.getClientRects()
+      if (rects.length > 0) {
+        rect = rects[0]
+      }
+      leftOffset = touch ? rect.left - 33 : rect.left
+      topOffset = touch ? rect.bottom - 9 : rect.top
+    }
+    leftOffset += window.scrollX
+    topOffset += window.scrollY
+
+    const authorName = this.props.article.submittedBy.name
+    const punctuation = "“ ” – "
+    const url =
+      HOST_PROTOCOL +
+      HOST_PROD +
+      ROUTE_URL_ARTICLES +
+      "/" +
+      this.props.article.slug
+    const shortenedUrlLength = 23
+    const maxChar =
+      280 -
+      shortenedUrlLength -
+      authorName.length -
+      punctuation.length -
+      url.length
+
+    const text = selection.toString()
+    window.requestAnimationFrame(() => {
+      this.props.setArticleSelectoin({
+        leftOffset,
+        topOffset,
+        text: text.length > 0 ? `“${text}” – ${authorName} ${url}` : undefined,
+        hidden:
+          selection.type === "Range"
+            ? selection.toString().length < maxChar &&
+              selection.toString().length
+              ? false
+              : true
+            : true
+      })
+    })
+  }
+  shouldComponentUpdate = (nextProps, nextState) => {
+    if (this.props.article.selection !== nextProps.article.selection)
+      return false
+    return true
   }
 
   render = () => {
@@ -126,8 +189,12 @@ class Article extends React.PureComponent {
           stateAdminControls={this.state.adminControls}
           stateTag={this.state.tag}
         />
-
-        <ArticleSection articleStatus={this.props.article.status}>
+        <ArticleSection
+          articleStatus={this.props.article.status}
+          onMouseUp={event => this.handleSelection(event, false)}
+          onTouchEnd={event => this.handleSelection(event, true)}
+          onTouchCancel={event => this.handleSelection(event, true)}
+        >
           {renderArticle(this.props.article.content.raw)}
           {this.props.article.poster &&
             this.props.article.submittedBy && (
@@ -180,6 +247,9 @@ const mapDispatchToProps = dispatch => {
     },
     setArticlePage: nextArticle => {
       dispatch(setArticlePage(nextArticle))
+    },
+    setArticleSelectoin: selection => {
+      dispatch(setArticleSelectoin(selection))
     }
   }
 }

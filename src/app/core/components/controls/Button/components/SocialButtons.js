@@ -7,7 +7,7 @@ import Instagram from "../../../icons/Social/components/Instagram"
 import LinkButton from "./LinkButton"
 import Twitter from "../../../icons/Social/components/Twitter"
 
-const brandButtonStyles = css`
+export const brandButtonStyles = css`
   color: ${props => props.theme.color.background()} !important;
   svg {
     height: 2em;
@@ -19,7 +19,7 @@ const feedlyButtonStyles = css`
     height: 2em;
   }
 `
-const twitterButtonStyles = css`
+export const twitterButtonStyles = css`
   background-color: #1da1f2;
   svg {
     margin: -1.25em 0.25em -1em -1.5em;
@@ -56,7 +56,8 @@ export const FeedlyLinkButton = props => {
   return (
     <StyledFeedlyLinkButton {...props} inverse>
       <Feedly />
-      &nbsp;{props.children}
+      &nbsp;
+      {props.children}
     </StyledFeedlyLinkButton>
   )
 }
@@ -64,7 +65,8 @@ export const TwitterLinkButton = props => {
   return (
     <StyledTwitterLinkButton {...props}>
       <Twitter />
-      &nbsp;{props.children}
+      &nbsp;
+      {props.children}
     </StyledTwitterLinkButton>
   )
 }
@@ -72,7 +74,8 @@ export const FacebookLinkButton = props => {
   return (
     <StyledFacebookLinkButton {...props}>
       <Facebook />
-      &nbsp;{props.children}
+      &nbsp;
+      {props.children}
     </StyledFacebookLinkButton>
   )
 }
@@ -80,7 +83,8 @@ export const InstagramLinkButton = props => {
   return (
     <StyledInstagramLinkButton {...props}>
       <Instagram />
-      &nbsp;&nbsp;{props.children}
+      &nbsp;&nbsp;
+      {props.children}
     </StyledInstagramLinkButton>
   )
 }

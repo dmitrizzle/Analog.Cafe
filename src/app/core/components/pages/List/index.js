@@ -19,7 +19,7 @@ import ListDescription from "./components/ListDescription"
 import MetaTags from "../../vignettes/MetaTags"
 
 const PlaceholderHowToSubmit = Loadable({
-  loader: () => import("./components/PlaceholderHowToSubmit"),
+  loader: () => import("./components/HowToSubmit"),
   loading: () => null
 })
 
@@ -97,7 +97,7 @@ class List extends React.PureComponent {
         />
         {this.props.user.connection.status !== "offline" &&
         this.props.list.error &&
-        this.props.placeholder === "PlaceholderHowToSubmit" ? (
+        this.props.me ? (
           <PlaceholderHowToSubmit />
         ) : (
           <ListBlock

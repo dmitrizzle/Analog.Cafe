@@ -29,18 +29,8 @@ ShallowWrapper {
 />,
         <styled.section>
           <p>
-                    Do you shoot film?
-                     
-                    <strong>
-                              Get your work reviewed and published
-                    </strong>
-                     along with a growing 
-                    <Unknown
-                              to="/about"
-                    >
-                              community
-                    </Unknown>
-                     of authors, artists, film photographers. Each accepted submission is edited to look and read beautifully – for thousands of global readers.
+                    Do you shoot film? 
+                    <Unknown />
           </p>
           <styled.div
                     style={
@@ -139,18 +129,8 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <p>
-              Do you shoot film?
-               
-              <strong>
-                            Get your work reviewed and published
-              </strong>
-               along with a growing 
-              <Unknown
-                            to="/about"
-              >
-                            community
-              </Unknown>
-               of authors, artists, film photographers. Each accepted submission is edited to look and read beautifully – for thousands of global readers.
+              Do you shoot film? 
+              <Unknown />
 </p>,
             <styled.div
               style={
@@ -222,49 +202,22 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Do you shoot film?",
-                " ",
-                <strong>
-                  Get your work reviewed and published
-</strong>,
-                " along with a growing ",
-                <Unknown
-                  to="/about"
->
-                  community
-</Unknown>,
-                " of authors, artists, film photographers. Each accepted submission is edited to look and read beautifully – for thousands of global readers.",
+                "Do you shoot film? ",
+                <Unknown />,
               ],
             },
             "ref": null,
             "rendered": Array [
-              "Do you shoot film?",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Get your work reviewed and published",
-                },
-                "ref": null,
-                "rendered": "Get your work reviewed and published",
-                "type": "strong",
-              },
-              " along with a growing ",
+              "Do you shoot film? ",
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "function",
-                "props": Object {
-                  "children": "community",
-                  "to": "/about",
-                },
+                "props": Object {},
                 "ref": null,
-                "rendered": "community",
+                "rendered": null,
                 "type": [Function],
               },
-              " of authors, artists, film photographers. Each accepted submission is edited to look and read beautifully – for thousands of global readers.",
             ],
             "type": "p",
           },
@@ -529,18 +482,8 @@ ShallowWrapper {
 />,
           <styled.section>
             <p>
-                        Do you shoot film?
-                         
-                        <strong>
-                                    Get your work reviewed and published
-                        </strong>
-                         along with a growing 
-                        <Unknown
-                                    to="/about"
-                        >
-                                    community
-                        </Unknown>
-                         of authors, artists, film photographers. Each accepted submission is edited to look and read beautifully – for thousands of global readers.
+                        Do you shoot film? 
+                        <Unknown />
             </p>
             <styled.div
                         style={
@@ -639,18 +582,8 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <p>
-                Do you shoot film?
-                 
-                <strong>
-                                Get your work reviewed and published
-                </strong>
-                 along with a growing 
-                <Unknown
-                                to="/about"
-                >
-                                community
-                </Unknown>
-                 of authors, artists, film photographers. Each accepted submission is edited to look and read beautifully – for thousands of global readers.
+                Do you shoot film? 
+                <Unknown />
 </p>,
               <styled.div
                 style={
@@ -722,49 +655,22 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Do you shoot film?",
-                  " ",
-                  <strong>
-                    Get your work reviewed and published
-</strong>,
-                  " along with a growing ",
-                  <Unknown
-                    to="/about"
->
-                    community
-</Unknown>,
-                  " of authors, artists, film photographers. Each accepted submission is edited to look and read beautifully – for thousands of global readers.",
+                  "Do you shoot film? ",
+                  <Unknown />,
                 ],
               },
               "ref": null,
               "rendered": Array [
-                "Do you shoot film?",
-                " ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Get your work reviewed and published",
-                  },
-                  "ref": null,
-                  "rendered": "Get your work reviewed and published",
-                  "type": "strong",
-                },
-                " along with a growing ",
+                "Do you shoot film? ",
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "function",
-                  "props": Object {
-                    "children": "community",
-                    "to": "/about",
-                  },
+                  "props": Object {},
                   "ref": null,
-                  "rendered": "community",
+                  "rendered": null,
                   "type": [Function],
                 },
-                " of authors, artists, film photographers. Each accepted submission is edited to look and read beautifully – for thousands of global readers.",
               ],
               "type": "p",
             },

@@ -9,7 +9,6 @@ import { TEXT_LABELS } from "../../../constants/messages-"
 import { bleed } from "../../vignettes/Picture/components/Figure"
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { setModal } from "../../../store/actions-modal"
-import { smartGreeting } from "../../../utils/messages-"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ButtonGroup from "../../controls/Button/components/ButtonGroup"
@@ -27,7 +26,7 @@ import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
 const metaDescription =
-  "Analog.Cafe is a magazine that promotes creative and informative works by a community of writers, artists and film photographers."
+  "A web magazine that publishes weekly creative and insightful works by a community of artists, writers and film photographers."
 
 const AuthorsBanner = styled.div`
   width: 100vw;
@@ -85,12 +84,14 @@ class About extends React.PureComponent {
   render = () => (
     <ArticleWrapper>
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
-      <HeaderLarge
-        pageTitle="Analog.Cafe"
-        pageSubtitle="A Film Photography Magazine"
-      />
+      <HeaderLarge pageTitle="Analog.Cafe" />
 
       <ArticleSection>
+        <blockquote>
+          <strong>A web magazine</strong> that publishes weekly creative and
+          insightful works by a community of artists, writers and{" "}
+          <strong>film photographers</strong>.
+        </blockquote>
         <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
           <Authors>
             {this.props.community.authorsList.items.map((item, count) => {
@@ -115,28 +116,27 @@ class About extends React.PureComponent {
           </Authors>
         </AuthorsBanner>
 
-        <h3>{smartGreeting()}</h3>
+        <h3>Magazine.</h3>
         <p>
-          Analog.Cafe is a magazine that promotes creative and informative works
-          by a community of writers, artists and film photographers.
+          Every week, we publish creative{" "}
+          <Link to="/photo-essays">photo essays</Link>, as well as insightful{" "}
+          <Link to="/guides">guides</Link>, <Link to="/reviews">reviews</Link>,
+          and <Link to="/stories">stories</Link>.
+        </p>
+        <p>
+          <strong>Film photography</strong> is our tool of choice for 99% of all
+          images. An analogue, tangeable medium that uses chemistry to capture
+          light. Check out{" "}
+          <Link to="/zine/analogue-photography-98f3">this</Link> guide and{" "}
+          <Link to="/zine/my-love-for-film-lw88">this</Link> photo essay to find
+          out why.
         </p>
 
         <p>
-          Every week we publish quality{" "}
-          <Link to="/photo-essays">photo essays</Link>,{" "}
-          <Link to="/guides">guides</Link>, <Link to="/reviews">reviews</Link>,
-          and <Link to="/stories">stories</Link>. Some of which are{" "}
-          <Link to="/solo-projects">solo projects</Link>, while others are{" "}
-          <Link to="/collaborations">collaborations</Link>.
+          If you shoot film and would like to be a part of this{" "}
+          <strong>passion project</strong>, join us:
         </p>
-        <p>
-          Together,{" "}
-          {this.props.community.authorsList.items.length > 8
-            ? `all ${this.props.community.authorsList.items.length} of us`
-            : "we"}{" "}
-          are building a place to discover beauty, get inspired, and learn
-          something new. <strong>Join us:</strong>
-        </p>
+
         <ButtonGroup>
           <LinkButton
             branded

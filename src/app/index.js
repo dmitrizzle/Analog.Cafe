@@ -2,21 +2,24 @@ import { connect } from "react-redux"
 import Loadable from "react-loadable"
 import React from "react"
 import queryString from "query-string"
+import throttle from "lodash/throttle"
 
 import { withRouter } from "react-router"
 
 import { CARD_ERRORS } from "./user/constants/messages-session"
-import { ROUTE_URL_USER_LANDING } from "./user/constants/routes-session"
 import { GA } from "./utils"
+import { ROUTE_URL_USER_LANDING } from "./user/constants/routes-session"
+import {
+  getUserInfo,
+  refreshUser,
+  setConnectionStatus,
+  setUserIntent,
+  verifyUser
+} from "./user/store/actions-user"
 import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
-import {
-  verifyUser,
-  getUserInfo,
-  setConnectionStatus,
-  setUserIntent
-} from "./user/store/actions-user"
 import AppRoutes from "./core/components/routes/App"
+import HighlightMenu from "./core/components/controls/ArticleActions/components/HighlightMenu"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav"
 
@@ -78,7 +81,10 @@ class App extends React.PureComponent {
     window.addEventListener("offline", updateConnectionStatus)
     navigator.onLine === false && this.props.setConnectionStatus("offline")
   }
+  keepUserAlive = throttle(this.props.refreshUser, 1000 * 60 * 5)
   componentWillReceiveProps = nextProps => {
+    this.keepUserAlive()
+
     switch (nextProps.user.intent.load) {
       case "Article":
         ArticlePreloader.preload()
@@ -146,7 +152,11 @@ class App extends React.PureComponent {
       <Nav top key="App_Nav_top" />,
       <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
       <Nav bottom key="App_Nav_bottom" />,
-      <ModalOverlay key="App_Modal" />
+      <ModalOverlay key="App_Modal" />,
+      <HighlightMenu
+        key="App_HighlightMenu"
+        selection={this.props.article.selection}
+      />
     ]
   }
 }
@@ -160,6 +170,9 @@ const mapDispatchToProps = dispatch => {
     },
     verifyUser: () => {
       dispatch(verifyUser())
+    },
+    refreshUser: () => {
+      dispatch(refreshUser())
     },
     getUserInfo: () => {
       dispatch(getUserInfo())
@@ -177,7 +190,8 @@ const mapDispatchToProps = dispatch => {
 }
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user,
+    article: state.article
   }
 }
 export default withRouter(

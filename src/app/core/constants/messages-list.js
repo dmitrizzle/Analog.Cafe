@@ -53,7 +53,7 @@ export const TEXT_ROUTE_LABELS = {
       "Solo projects are written pieces with images created by a single author."
   },
   "/": {
-    title: APP_DESCRIPTION,
+    title: "Photo essays, guides, reviews & stories",
     description:
       "Analog.Cafe is an inclusive creative outlet that publishes outstanding images and stories.",
     designation: "homepage"

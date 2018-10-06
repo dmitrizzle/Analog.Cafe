@@ -22,7 +22,9 @@ import ArticleWrapper from "../../../../core/components/pages/Article/components
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import CardIntegrated from "../../../../core/components/controls/Card/components/CardIntegrated"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
+import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
+import Modal from "../../../../core/components/controls/Modal"
 import SignInInfo from "./components/SignInInfo"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
@@ -122,12 +124,52 @@ class SignIn extends React.PureComponent {
                 Continue with Facebook
               </FacebookLinkButton>
               <p>
-                <em>- or -</em>
+                <em>
+                  <small>
+                    <strong>OR:</strong> type your email below and get a{" "}
+                    <Modal
+                      with={{
+                        info: {
+                          image: "image-froth_3525424_rJ1m0e15m",
+                          title: "Sign In with Confirmation Link",
+                          text: (
+                            <span>
+                              Sign in and create accounts{" "}
+                              <strong>securely and without passwords</strong>{" "}
+                              using confirmation link.
+                              <br />
+                              <br />
+                              Enter your email and we’ll send you a confirmatoin
+                              link that expires in ten minutes. Click it to
+                              instantly access your account.
+                              <br />
+                              <br />
+                              Use the same email to access your existing
+                              account. Confirmation email links are very secure.
+                            </span>
+                          )
+                        },
+                        id: "hints/disposable-links"
+                      }}
+                    >
+                      confirmation
+                    </Modal>{" "}
+                    sign in link:
+                  </small>
+                </em>
               </p>
               <CardIntegrated>
                 <SignInWithEmail />
               </CardIntegrated>
             </ButtonGroup>
+            <p>
+              Your account is created automatically whenever you click either of
+              the buttons above. You do not need to remember passwords. If you
+              already have an account, simply use the same method to sign in as
+              you did the first time – we’ll open your existing account for you.
+              All accounts are secure and adhere to our strict{" "}
+              <Link to="/privacy-policy">privacy policy</Link>.
+            </p>
           </ArticleSection>
         </ArticleWrapper>
       )
