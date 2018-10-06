@@ -10,7 +10,8 @@ import {
 } from "../../../constants/routes-article"
 import {
   fetchArticlePage,
-  setArticlePage
+  setArticlePage,
+  setArticleSelectoin
 } from "../../../store/actions-article"
 import { getSubmissionOrArticleRoute } from "../../../utils/routes-article"
 import { getTitleFromSlug } from "../../../utils/messages-"
@@ -114,19 +115,16 @@ class Article extends React.PureComponent {
     const leftOffset =
       rect.left + window.scrollX - menu.offsetWidth / 2 + rect.width / 2
     const topOffset = rect.top + window.scrollY - menu.offsetHeight + 3
-    this.setState({
-      selection: {
-        leftOffset,
-        topOffset
-      }
+
+    this.props.setArticleSelectoin({
+      leftOffset,
+      topOffset
     })
   }
-  shouldComponentUpdate(nextProps, nextState) {
-    if (this.props !== nextProps) {
-      return true
-    } else {
+  shouldComponentUpdate = (nextProps, nextState) => {
+    if (this.props.article.selection !== nextProps.article.selection)
       return false
-    }
+    return true
   }
 
   render = () => {
@@ -156,20 +154,20 @@ class Article extends React.PureComponent {
           stateAdminControls={this.state.adminControls}
           stateTag={this.state.tag}
         />
+        {/* <div
+          style={{
+            width: "100px",
+            height: "20px",
+            background: "#000",
+            position: "absolute",
+            top: `${this.props.article.selection.topOffset}px`,
+            left: `${this.props.article.selection.leftOffset}px`
+          }}
+        /> */}
         <ArticleSection
           articleStatus={this.props.article.status}
           onMouseUp={this.handleMouseUp}
         >
-          <div
-            style={{
-              width: "100px",
-              height: "20px",
-              background: "#000",
-              position: "absolute",
-              top: `${this.state.selection.topOffset}px`,
-              left: `${this.state.selection.leftOffset}px`
-            }}
-          />
           {renderArticle(this.props.article.content.raw)}
           {this.props.article.poster &&
             this.props.article.submittedBy && (
@@ -222,6 +220,9 @@ const mapDispatchToProps = dispatch => {
     },
     setArticlePage: nextArticle => {
       dispatch(setArticlePage(nextArticle))
+    },
+    setArticleSelectoin: selection => {
+      dispatch(setArticleSelectoin(selection))
     }
   }
 }

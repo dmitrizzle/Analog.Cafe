@@ -20,6 +20,12 @@ export const initArticlePage = state => {
     payload: state
   }
 }
+export const setArticleSelectoin = state => {
+  return {
+    type: "ARTICLE.SET_SELECTION",
+    payload: state
+  }
+}
 
 export const fetchArticlePage = request => {
   return (dispatch, getState) => {

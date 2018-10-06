@@ -151,7 +151,18 @@ class App extends React.PureComponent {
       <Nav top key="App_Nav_top" />,
       <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
       <Nav bottom key="App_Nav_bottom" />,
-      <ModalOverlay key="App_Modal" />
+      <ModalOverlay key="App_Modal" />,
+      <div
+        key="App_SelectionNav"
+        style={{
+          width: "100px",
+          height: "20px",
+          background: "#000",
+          position: "absolute",
+          top: `${this.props.article.selection.topOffset}px`,
+          left: `${this.props.article.selection.leftOffset}px`
+        }}
+      />
     ]
   }
 }
@@ -185,7 +196,8 @@ const mapDispatchToProps = dispatch => {
 }
 const mapStateToProps = state => {
   return {
-    user: state.user
+    user: state.user,
+    article: state.article
   }
 }
 export default withRouter(
