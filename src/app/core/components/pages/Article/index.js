@@ -108,7 +108,6 @@ class Article extends React.Component {
   handleSelection = event => {
     event.stopPropagation()
     const selection = window.getSelection()
-    const doc = window.document
     const range = selection.getRangeAt(0).cloneRange()
     let rects, rect, leftOffset, topOffset
     if (range.getClientRects) {
@@ -119,19 +118,6 @@ class Article extends React.Component {
       }
       leftOffset = rect.left
       topOffset = rect.top
-    }
-    if (leftOffset === 0 && topOffset === 0) {
-      const span = doc.createElement("span")
-      if (span.getClientRects) {
-        span.appendChild(doc.createTextNode("\u200b"))
-        range.insertNode(span)
-        rect = span.getClientRects()[0]
-        leftOffset = rect.left
-        topOffset = rect.top
-        const spanParent = span.parentNode
-        spanParent.removeChild(span)
-        spanParent.normalize()
-      }
     }
     leftOffset += window.scrollX
     topOffset += window.scrollY
@@ -186,6 +172,7 @@ class Article extends React.Component {
         <ArticleSection
           articleStatus={this.props.article.status}
           onMouseUp={this.handleSelection}
+          onTouchEnd={this.handleSelection}
         >
           {renderArticle(this.props.article.content.raw)}
           {this.props.article.poster &&
