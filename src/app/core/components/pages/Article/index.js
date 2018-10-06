@@ -10,7 +10,8 @@ import {
 } from "../../../constants/routes-article"
 import {
   fetchArticlePage,
-  setArticlePage
+  setArticlePage,
+  setArticleSelectoin
 } from "../../../store/actions-article"
 import { getSubmissionOrArticleRoute } from "../../../utils/routes-article"
 import { getTitleFromSlug } from "../../../utils/messages-"
@@ -25,7 +26,7 @@ const ArticleActions = Loadable({
   loading: () => null,
   delay: 100
 })
-class Article extends React.PureComponent {
+class Article extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -82,6 +83,11 @@ class Article extends React.PureComponent {
     this.setState({
       adminControls: this.props.user.info.role === "admin"
     })
+    window.addEventListener("mouseup", () => {
+      this.props.setArticleSelectoin({
+        hidden: true
+      })
+    })
   }
   componentWillReceiveProps = nextProps => {
     this.makeTag(nextProps)
@@ -97,6 +103,41 @@ class Article extends React.PureComponent {
     this.setState({
       subscribeForm: !value
     })
+  }
+
+  handleSelection = event => {
+    event.stopPropagation()
+    const selection = window.getSelection()
+    const range = selection.getRangeAt(0).cloneRange()
+    let rects, rect, leftOffset, topOffset
+    if (range.getClientRects) {
+      range.collapse(true)
+      rects = range.getClientRects()
+      if (rects.length > 0) {
+        rect = rects[0]
+      }
+      leftOffset = rect.left + window.scrollX
+      topOffset = rect.top + window.scrollY
+    }
+    const text = selection.toString()
+    window.requestAnimationFrame(() => {
+      this.props.setArticleSelectoin({
+        leftOffset,
+        topOffset,
+        text: text.length > 0 ? text : undefined,
+        hidden:
+          selection.type === "Range"
+            ? selection.toString().length < 260 && selection.toString().length
+              ? false
+              : true
+            : true
+      })
+    })
+  }
+  shouldComponentUpdate = (nextProps, nextState) => {
+    if (this.props.article.selection !== nextProps.article.selection)
+      return false
+    return true
   }
 
   render = () => {
@@ -126,8 +167,10 @@ class Article extends React.PureComponent {
           stateAdminControls={this.state.adminControls}
           stateTag={this.state.tag}
         />
-
-        <ArticleSection articleStatus={this.props.article.status}>
+        <ArticleSection
+          articleStatus={this.props.article.status}
+          onMouseUp={this.handleSelection}
+        >
           {renderArticle(this.props.article.content.raw)}
           {this.props.article.poster &&
             this.props.article.submittedBy && (
@@ -180,6 +223,9 @@ const mapDispatchToProps = dispatch => {
     },
     setArticlePage: nextArticle => {
       dispatch(setArticlePage(nextArticle))
+    },
+    setArticleSelectoin: selection => {
+      dispatch(setArticleSelectoin(selection))
     }
   }
 }
