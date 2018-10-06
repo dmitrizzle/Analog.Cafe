@@ -106,6 +106,7 @@ class Article extends React.Component {
   }
 
   handleSelection = (event, touch) => {
+    // based on https://jsfiddle.net/NFJ9r/132/
     event.stopPropagation()
     const selection = window.getSelection()
     const range = selection.getRangeAt(0).cloneRange()
@@ -116,8 +117,9 @@ class Article extends React.Component {
       if (rects.length > 0) {
         rect = rects[0]
       }
-      leftOffset = rect.left
-      topOffset = rect.top
+      console.log(rect)
+      leftOffset = touch ? rect.left + 15 : rect.left
+      topOffset = touch ? rect.bottom + 25 : rect.top
     }
     leftOffset += window.scrollX
     topOffset += window.scrollY
@@ -171,7 +173,7 @@ class Article extends React.Component {
         />
         <ArticleSection
           articleStatus={this.props.article.status}
-          onMouseUp={event => this.handleSelection(event)}
+          onMouseUp={event => this.handleSelection(event, false)}
           onTouchEnd={event => this.handleSelection(event, true)}
         >
           {renderArticle(this.props.article.content.raw)}

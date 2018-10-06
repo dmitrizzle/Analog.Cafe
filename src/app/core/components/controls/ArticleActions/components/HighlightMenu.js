@@ -14,8 +14,6 @@ export const Menu = styled(ButtonStrip)`
   display: ${props => (props.hidden ? "none" : "block")};
   position: absolute;
   z-index: ${props => props.theme.layer.up + 1};
-  width: 100px;
-  height: 20px;
 `
 
 const MenuItem = styled(ButtonStripItem)`
@@ -23,6 +21,7 @@ const MenuItem = styled(ButtonStripItem)`
   background: ${props => props.theme.color.foreground()};
   width: 2em;
   padding-left: 0;
+
   svg {
     margin-left: 0
   }
