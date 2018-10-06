@@ -20,21 +20,22 @@ ShallowWrapper {
       "children": Array [
         <Unknown
           alt="A short demo of the submission process to Analog.Cafe"
+          caption={true}
           src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
 >
-          The “Composer” tool will help you create and send submissions.
+          Analog.Cafe “Composer” tool is easy to use and works offline.
 </Unknown>,
         <p>
-          Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.
-</p>,
-        <p>
-          Together, we are building a place to discover beauty, get inspired, and learn something new. 
           <strong>
-                    Join us.
+                    Learn more
           </strong>
-</p>,
-        <p>
-          We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.
+           about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “
+          <Unknown
+                    to="/zine/open-call-g99w"
+          >
+                    Open Call
+          </Unknown>
+          .”
 </p>,
       ],
     },
@@ -46,11 +47,12 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "alt": "A short demo of the submission process to Analog.Cafe",
-          "children": "The “Composer” tool will help you create and send submissions.",
+          "caption": true,
+          "children": "Analog.Cafe “Composer” tool is easy to use and works offline.",
           "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
         },
         "ref": null,
-        "rendered": "The “Composer” tool will help you create and send submissions.",
+        "rendered": "Analog.Cafe “Composer” tool is easy to use and works offline.",
         "type": [Function],
       },
       Object {
@@ -58,50 +60,47 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
-        },
-        "ref": null,
-        "rendered": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
           "children": Array [
-            "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
             <strong>
-              Join us.
+              Learn more
 </strong>,
+            " about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “",
+            <Unknown
+              to="/zine/open-call-g99w"
+>
+              Open Call
+</Unknown>,
+            ".”",
           ],
         },
         "ref": null,
         "rendered": Array [
-          "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Join us.",
+              "children": "Learn more",
             },
             "ref": null,
-            "rendered": "Join us.",
+            "rendered": "Learn more",
             "type": "strong",
           },
+          " about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Open Call",
+              "to": "/zine/open-call-g99w",
+            },
+            "ref": null,
+            "rendered": "Open Call",
+            "type": [Function],
+          },
+          ".”",
         ],
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
-        },
-        "ref": null,
-        "rendered": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
         "type": "p",
       },
     ],
@@ -116,21 +115,22 @@ ShallowWrapper {
         "children": Array [
           <Unknown
             alt="A short demo of the submission process to Analog.Cafe"
+            caption={true}
             src="https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif"
 >
-            The “Composer” tool will help you create and send submissions.
+            Analog.Cafe “Composer” tool is easy to use and works offline.
 </Unknown>,
           <p>
-            Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.
-</p>,
-          <p>
-            Together, we are building a place to discover beauty, get inspired, and learn something new. 
             <strong>
-                        Join us.
+                        Learn more
             </strong>
-</p>,
-          <p>
-            We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.
+             about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “
+            <Unknown
+                        to="/zine/open-call-g99w"
+            >
+                        Open Call
+            </Unknown>
+            .”
 </p>,
         ],
       },
@@ -142,11 +142,12 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "alt": "A short demo of the submission process to Analog.Cafe",
-            "children": "The “Composer” tool will help you create and send submissions.",
+            "caption": true,
+            "children": "Analog.Cafe “Composer” tool is easy to use and works offline.",
             "src": "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
           },
           "ref": null,
-          "rendered": "The “Composer” tool will help you create and send submissions.",
+          "rendered": "Analog.Cafe “Composer” tool is easy to use and works offline.",
           "type": [Function],
         },
         Object {
@@ -154,50 +155,47 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
-          },
-          "ref": null,
-          "rendered": "Analog.Cafe owes its existence to the diverse, expressive, and informative works of artists, writers, and film photographers like you.",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
             "children": Array [
-              "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
               <strong>
-                Join us.
+                Learn more
 </strong>,
+              " about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “",
+              <Unknown
+                to="/zine/open-call-g99w"
+>
+                Open Call
+</Unknown>,
+              ".”",
             ],
           },
           "ref": null,
           "rendered": Array [
-            "Together, we are building a place to discover beauty, get inspired, and learn something new. ",
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Join us.",
+                "children": "Learn more",
               },
               "ref": null,
-              "rendered": "Join us.",
+              "rendered": "Learn more",
               "type": "strong",
             },
+            " about the types of content we publish, quality prerequisites, edits, and our mission in Dmitri’s editorial “",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Open Call",
+                "to": "/zine/open-call-g99w",
+              },
+              "ref": null,
+              "rendered": "Open Call",
+              "type": [Function],
+            },
+            ".”",
           ],
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
-          },
-          "ref": null,
-          "rendered": "We edit each submission to make sure that all articles read and look fantastic, and every author is proud to have their work published on Analog.Cafe.",
           "type": "p",
         },
       ],

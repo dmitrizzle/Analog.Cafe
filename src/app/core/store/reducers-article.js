@@ -10,6 +10,12 @@ const INITIAL_STATE = {
     method: "get",
     params: {},
     url: ""
+  },
+  selection: {
+    leftOffset: 0,
+    topOffset: 0,
+    text: "",
+    hidden: true
   }
 }
 export default (state = INITIAL_STATE, action) => {
@@ -30,6 +36,15 @@ export default (state = INITIAL_STATE, action) => {
       state = {
         ...state,
         status: action.payload
+      }
+      break
+    case "ARTICLE.SET_SELECTION":
+      state = {
+        ...state,
+        selection: {
+          ...state.selection,
+          ...action.payload
+        }
       }
       break
     default:
