@@ -23,7 +23,7 @@ const MenuItem = styled(ButtonStripItem)`
   padding-left: 0;
 
   svg {
-    margin-left: 0
+    margin-left: 0;
   }
   ${props => props.theme.size.breakpoint.max.s`
     width: 2.5em;

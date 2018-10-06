@@ -3,6 +3,7 @@ import LazyLoad from "react-lazyload"
 import Loadable from "react-loadable"
 import React from "react"
 
+import { HOST_PROD, HOST_PROTOCOL } from "../../../../constants"
 import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
   ROUTE_URL_ARTICLES,
@@ -117,21 +118,33 @@ class Article extends React.Component {
       if (rects.length > 0) {
         rect = rects[0]
       }
-      console.log(rect)
       leftOffset = touch ? rect.left - 33 : rect.left
       topOffset = touch ? rect.bottom - 9 : rect.top
     }
     leftOffset += window.scrollX
     topOffset += window.scrollY
+
+    const authorName = this.props.article.submittedBy.name
+    const punctuation = "“ ” – "
+    const url =
+      HOST_PROTOCOL +
+      HOST_PROD +
+      ROUTE_URL_ARTICLES +
+      "/" +
+      this.props.article.slug
+    const maxChar = 280 - authorName.length - punctuation.length - url.length
+    const shortenedUrlLength = 23
+
     const text = selection.toString()
     window.requestAnimationFrame(() => {
       this.props.setArticleSelectoin({
         leftOffset,
         topOffset,
-        text: text.length > 0 ? text : undefined,
+        text: text.length > 0 ? `“${text}” – ${authorName} ${url}` : undefined,
         hidden:
           selection.type === "Range"
-            ? selection.toString().length < 260 && selection.toString().length
+            ? selection.toString().length < maxChar &&
+              selection.toString().length
               ? false
               : true
             : true
