@@ -119,7 +119,7 @@ class Article extends React.Component {
       }
       console.log(rect)
       leftOffset = touch ? rect.left - 33 : rect.left
-      topOffset = touch ? rect.bottom - 5 : rect.top
+      topOffset = touch ? rect.bottom - 9 : rect.top
     }
     leftOffset += window.scrollX
     topOffset += window.scrollY
