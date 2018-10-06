@@ -132,8 +132,13 @@ class Article extends React.Component {
       ROUTE_URL_ARTICLES +
       "/" +
       this.props.article.slug
-    const maxChar = 280 - authorName.length - punctuation.length - url.length
     const shortenedUrlLength = 23
+    const maxChar =
+      280 -
+      shortenedUrlLength -
+      authorName.length -
+      punctuation.length -
+      url.length
 
     const text = selection.toString()
     window.requestAnimationFrame(() => {
