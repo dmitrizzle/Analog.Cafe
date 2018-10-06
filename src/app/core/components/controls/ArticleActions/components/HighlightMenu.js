@@ -20,6 +20,7 @@ export const Menu = styled(ButtonStrip)`
 
 const MenuItem = styled(ButtonStripItem)`
   ${brandButtonStyles}${twitterButtonStyles};
+  background: ${props => props.theme.color.foreground()};
   width: 2em;
   padding-left: 0;
   svg {

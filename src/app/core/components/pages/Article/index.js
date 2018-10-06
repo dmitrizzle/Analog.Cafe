@@ -108,11 +108,18 @@ class Article extends React.Component {
   handleSelection = event => {
     event.stopPropagation()
     const selection = window.getSelection()
-    const range = selection.getRangeAt(0)
+    const range = selection.getRangeAt(0).cloneRange()
+    let rects, rect, leftOffset, topOffset
+    if (range.getClientRects) {
+      range.collapse(true)
+      rects = range.getClientRects()
+      if (rects.length > 0) {
+        rect = rects[0]
+      }
+      leftOffset = rect.left + window.scrollX
+      topOffset = rect.top + window.scrollY
+    }
     const text = selection.toString()
-    const rect = range.getBoundingClientRect()
-    const leftOffset = rect.left + window.scrollX + rect.width / 2
-    const topOffset = rect.top + window.scrollY
     window.requestAnimationFrame(() => {
       this.props.setArticleSelectoin({
         leftOffset,

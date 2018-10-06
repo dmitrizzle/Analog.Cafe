@@ -39,6 +39,7 @@ const shadow = css`
     ${props => props.theme.color.foreground(props.theme.opacity.least)};
 `
 const Figure = styled.figure`
+  cursor: pointer;
   overflow: hidden;
   position: relative;
   padding: 0;
