@@ -13,7 +13,9 @@ const INITIAL_STATE = {
   },
   selection: {
     leftOffset: 0,
-    topOffset: 0
+    topOffset: 0,
+    text: "",
+    hidden: true
   }
 }
 export default (state = INITIAL_STATE, action) => {
@@ -39,8 +41,12 @@ export default (state = INITIAL_STATE, action) => {
     case "ARTICLE.SET_SELECTION":
       state = {
         ...state,
-        selection: action.payload
+        selection: {
+          ...state.selection,
+          ...action.payload
+        }
       }
+      break
     default:
       return state
   }

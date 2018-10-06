@@ -19,6 +19,7 @@ import {
 import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import AppRoutes from "./core/components/routes/App"
+import HighlightMenu from "./core/components/controls/ArticleActions/components/HighlightMenu"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav"
 
@@ -152,16 +153,9 @@ class App extends React.PureComponent {
       <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
       <Nav bottom key="App_Nav_bottom" />,
       <ModalOverlay key="App_Modal" />,
-      <div
-        key="App_SelectionNav"
-        style={{
-          width: "100px",
-          height: "20px",
-          background: "#000",
-          position: "absolute",
-          top: `${this.props.article.selection.topOffset}px`,
-          left: `${this.props.article.selection.leftOffset}px`
-        }}
+      <HighlightMenu
+        key="App_HighlightMenu"
+        selection={this.props.article.selection}
       />
     ]
   }

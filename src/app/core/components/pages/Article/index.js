@@ -26,7 +26,7 @@ const ArticleActions = Loadable({
   loading: () => null,
   delay: 100
 })
-class Article extends React.PureComponent {
+class Article extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -35,11 +35,7 @@ class Article extends React.PureComponent {
         name: "Post",
         route: "/"
       },
-      publicationStatus: this.props.article.status,
-      selection: {
-        leftOffset: 0,
-        topOffset: 0
-      }
+      publicationStatus: this.props.article.status
     }
   }
   fetchArticlePage = () => {
@@ -87,6 +83,11 @@ class Article extends React.PureComponent {
     this.setState({
       adminControls: this.props.user.info.role === "admin"
     })
+    window.addEventListener("mouseup", () => {
+      this.props.setArticleSelectoin({
+        hidden: true
+      })
+    })
   }
   componentWillReceiveProps = nextProps => {
     this.makeTag(nextProps)
@@ -104,21 +105,26 @@ class Article extends React.PureComponent {
     })
   }
 
-  handleMouseUp = event => {
+  handleSelection = event => {
+    event.stopPropagation()
     const selection = window.getSelection()
     const range = selection.getRangeAt(0)
+    const text = selection.toString()
     const rect = range.getBoundingClientRect()
-    const menu = {
-      offsetWidth: 100,
-      offsetHeight: 20
-    }
-    const leftOffset =
-      rect.left + window.scrollX - menu.offsetWidth / 2 + rect.width / 2
-    const topOffset = rect.top + window.scrollY - menu.offsetHeight + 3
-
-    this.props.setArticleSelectoin({
-      leftOffset,
-      topOffset
+    const leftOffset = rect.left + window.scrollX + rect.width / 2
+    const topOffset = rect.top + window.scrollY
+    window.requestAnimationFrame(() => {
+      this.props.setArticleSelectoin({
+        leftOffset,
+        topOffset,
+        text: text.length > 0 ? text : undefined,
+        hidden:
+          selection.type === "Range"
+            ? selection.toString().length < 260 && selection.toString().length
+              ? false
+              : true
+            : true
+      })
     })
   }
   shouldComponentUpdate = (nextProps, nextState) => {
@@ -154,19 +160,9 @@ class Article extends React.PureComponent {
           stateAdminControls={this.state.adminControls}
           stateTag={this.state.tag}
         />
-        {/* <div
-          style={{
-            width: "100px",
-            height: "20px",
-            background: "#000",
-            position: "absolute",
-            top: `${this.props.article.selection.topOffset}px`,
-            left: `${this.props.article.selection.leftOffset}px`
-          }}
-        /> */}
         <ArticleSection
           articleStatus={this.props.article.status}
-          onMouseUp={this.handleMouseUp}
+          onMouseUp={this.handleSelection}
         >
           {renderArticle(this.props.article.content.raw)}
           {this.props.article.poster &&
