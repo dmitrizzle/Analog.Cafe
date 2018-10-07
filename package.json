@@ -1,6 +1,6 @@
 {
   "name": "analog-cafe",
-  "version": "2.2.13",
+  "version": "2.2.15",
   "description": "A film photography magazine",
   "license": "MPL-2.0",
   "private": true,
@@ -74,7 +74,7 @@
     "precommit": "lint-staged",
     "start": "node precompile && react-scripts start",
     "build": "node precompile && react-scripts build",
-    "deploy": "node deploy",
+    "deploy": "yarn version && node deploy",
     "size": "size-limit",
     "test": "npm run size && react-scripts test --env=jsdom"
   },
