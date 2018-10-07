@@ -22,18 +22,9 @@ export const MenuItem = styled(ButtonStripItem)`
   background: ${props => props.theme.color.foreground()};
   width: 2em;
   padding-left: 0;
-
   svg {
     margin-left: 0;
   }
-  ${props => props.theme.size.breakpoint.max.s`
-    width: 2.5em;
-    height: 2em;
-    svg {
-      height: 2.5em;
-      margin-top: -0.75em;
-    }
-  `};
 `
 
 export default props => (

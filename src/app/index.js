@@ -16,6 +16,7 @@ import {
   setUserIntent,
   verifyUser
 } from "./user/store/actions-user"
+import { setArticleSelectoin } from "./core/store/actions-article"
 import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import AppRoutes from "./core/components/routes/App"
@@ -65,6 +66,7 @@ class App extends React.PureComponent {
       function() {
         GA.initialize()
         this.setView = () => {
+          this.props.setArticleSelectoin({ hidden: true })
           window.scrollTo(0, 0)
           GA.pageview()
         }
@@ -185,6 +187,9 @@ const mapDispatchToProps = dispatch => {
     },
     setModal: (info, request) => {
       dispatch(setModal(info, request))
+    },
+    setArticleSelectoin: selection => {
+      dispatch(setArticleSelectoin(selection))
     }
   }
 }
