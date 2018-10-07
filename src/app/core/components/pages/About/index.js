@@ -125,8 +125,8 @@ class About extends React.PureComponent {
         </p>
         <p>
           <strong>Film photography</strong> is our tool of choice for 99% of all
-          images. An analogue, tangeable medium that uses chemistry to capture
-          light. Check out{" "}
+          published images on Analog.Cafe. An analogue, tangeable medium that
+          uses chemistry to capture light. Check out{" "}
           <Link to="/zine/analogue-photography-98f3">this</Link> guide and{" "}
           <Link to="/zine/my-love-for-film-lw88">this</Link> photo essay to find
           out why.
