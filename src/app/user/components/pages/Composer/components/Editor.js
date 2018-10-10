@@ -27,7 +27,7 @@ class Editor extends React.PureComponent {
       this.props.setModal(
         {
           status: "ok",
-          info: CARD_ERRORS.IMAGE_SIZE(10)
+          info: CARD_ERRORS.IMAGE_SIZE(30)
         },
         { url: "errors/upload" }
       )
@@ -64,7 +64,8 @@ class Editor extends React.PureComponent {
           UploadImage: () => <span>↫ Add Image</span>
         }}
         options={{
-          domain: HOST_PROD
+          domain: HOST_PROD,
+          imageMaxSize: 30
         }}
         callbackError={this.handleEditorError}
         editorRef={this.editorRef}
@@ -89,4 +90,7 @@ const mapStateToProps = state => {
     user: state.user
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Editor)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Editor)

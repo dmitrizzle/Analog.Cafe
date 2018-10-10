@@ -30,9 +30,9 @@ export const SubmitIntro = () => {
             title: "Editor’s Note",
             text: (
               <span>
-                Your published submission may read different from what you sent
-                us. That’s because we edit every article for clarity, grammar,
-                and style.{" "}
+                We edit every article for clarity, grammar, and style. In some
+                cases this may yield a fair amount of changes, in others – none
+                at all.{" "}
                 <Link
                   to="https://www.analog.cafe/zine/open-call-g99w"
                   target="_blank"
