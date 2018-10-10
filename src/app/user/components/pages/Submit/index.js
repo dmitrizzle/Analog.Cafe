@@ -23,7 +23,7 @@ export const SubmitIntro = () => {
     <span>
       <strong>Get your work reviewed and published</strong> along with a growing{" "}
       <Link to="/about">community</Link> of authors, artists, film
-      photographers. Each accepted submission is{" "}
+      photographers. We’ll{" "}
       <Modal
         with={{
           info: {
@@ -57,9 +57,9 @@ export const SubmitIntro = () => {
           id: "hints/submission-edits"
         }}
       >
-        edited
+        edit
       </Modal>{" "}
-      to look and read beautifully – for thousands of global readers.
+      your submission to look and read beautifully.
     </span>
   )
 }
