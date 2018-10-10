@@ -27,7 +27,7 @@ class Editor extends React.PureComponent {
       this.props.setModal(
         {
           status: "ok",
-          info: CARD_ERRORS.IMAGE_SIZE(30)
+          info: CARD_ERRORS.IMAGE_SIZE(10)
         },
         { url: "errors/upload" }
       )
@@ -65,7 +65,7 @@ class Editor extends React.PureComponent {
         }}
         options={{
           domain: HOST_PROD,
-          imageMaxSize: 30
+          imageMaxSize: 10
         }}
         callbackError={this.handleEditorError}
         editorRef={this.editorRef}
