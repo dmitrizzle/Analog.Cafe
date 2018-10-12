@@ -3,6 +3,7 @@ import LazyLoad from "react-lazyload"
 import Loadable from "react-loadable"
 import React from "react"
 
+import { DOCUMENT_PLACEHOLDER } from "../../../constants/messages-article"
 import { HOST_PROD, HOST_PROTOCOL } from "../../../../constants"
 import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
@@ -224,12 +225,14 @@ class Article extends React.Component {
                   }
                   nextArticleHeading={nextArticleHeading =>
                     this.props.setArticlePage({
+                      status: "loading",
                       title: nextArticleHeading.title,
                       subtitle: nextArticleHeading.subtitle,
                       authors: nextArticleHeading.authors,
                       slug: nextArticleHeading.slug,
                       poster: nextArticleHeading.poster,
-                      tag: nextArticleHeading.tag
+                      tag: nextArticleHeading.tag,
+                      content: DOCUMENT_PLACEHOLDER
                     })
                   }
                 />

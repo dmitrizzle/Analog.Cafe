@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
+import { DOCUMENT_PLACEHOLDER } from "../../../../constants/messages-article"
 import { GA, makeFroth } from "../../../../../utils"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
 import CardCaption from "../../Card/components/CardCaption"
@@ -13,12 +14,14 @@ import Subscribe from "../../../../../user/components/forms/Subscribe"
 
 const nextArticlePreload = nextArticle => {
   return {
+    status: "loading",
     title: nextArticle.title,
     subtitle: nextArticle.subtitle,
     authors: nextArticle.authors,
     slug: nextArticle.slug,
     poster: nextArticle.poster,
-    tag: nextArticle.tag
+    tag: nextArticle.tag,
+    content: DOCUMENT_PLACEHOLDER
   }
 }
 

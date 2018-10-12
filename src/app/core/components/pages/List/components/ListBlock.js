@@ -1,6 +1,7 @@
 import LazyLoad from "react-lazyload"
 import React from "react"
 
+import { DOCUMENT_PLACEHOLDER } from "../../../../constants/messages-article"
 import {
   ROUTE_URL_ARTICLES,
   ROUTE_URL_SUBMISSIONS
@@ -40,12 +41,14 @@ export default props => {
                   }
                   onClick={() =>
                     props.nextArticleHeading({
+                      status: "loading",
                       title: item.title,
                       subtitle: item.subtitle,
                       authors: item.authors,
                       slug: item.slug,
                       poster: item.poster,
-                      tag: item.tag
+                      tag: item.tag,
+                      content: DOCUMENT_PLACEHOLDER
                     })
                   }
                   onMouseOver={

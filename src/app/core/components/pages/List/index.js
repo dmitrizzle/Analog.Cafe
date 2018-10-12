@@ -4,6 +4,7 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
+import { DOCUMENT_PLACEHOLDER } from "../../../constants/messages-article"
 import { GA } from "../../../../utils"
 import {
   ROUTE_API_LIST,
@@ -105,12 +106,14 @@ class List extends React.PureComponent {
             items={this.props.list.items}
             nextArticleHeading={nextArticleHeading =>
               this.props.setArticlePage({
+                status: "loading",
                 title: nextArticleHeading.title,
                 subtitle: nextArticleHeading.subtitle,
                 tag: nextArticleHeading.tag,
                 authors: nextArticleHeading.authors,
                 slug: nextArticleHeading.slug,
-                poster: nextArticleHeading.poster
+                poster: nextArticleHeading.poster,
+                content: DOCUMENT_PLACEHOLDER
               })
             }
             private={this.props.private}
