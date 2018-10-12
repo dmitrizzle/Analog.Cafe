@@ -1,12 +1,12 @@
 import LazyLoad from "react-lazyload"
 import React from "react"
 
-import { DOCUMENT_PLACEHOLDER } from "../../../../constants/messages-article"
 import {
   ROUTE_URL_ARTICLES,
   ROUTE_URL_SUBMISSIONS
 } from "../../../../constants/routes-article"
 import { makeFroth } from "../../../../../utils"
+import { preloadConstructor } from "../../../../utils/routes-article"
 import Bleed from "./Bleed"
 import Link from "../../../controls/Link"
 import ListCaption from "./ListCaption"
@@ -40,16 +40,9 @@ export default props => {
                       item.slug
                   }
                   onClick={() =>
-                    props.nextArticleHeading({
-                      status: "loading",
-                      title: item.title,
-                      subtitle: item.subtitle,
-                      authors: item.authors,
-                      slug: item.slug,
-                      poster: item.poster,
-                      tag: item.tag,
-                      content: DOCUMENT_PLACEHOLDER
-                    })
+                    props.nextArticleHeading(
+                      preloadConstructor(item, props.article)
+                    )
                   }
                   onMouseOver={
                     "ontouchstart" in document.documentElement

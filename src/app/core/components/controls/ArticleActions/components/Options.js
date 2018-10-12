@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 
-import { DOCUMENT_PLACEHOLDER } from "../../../../constants/messages-article"
 import { GA, makeFroth } from "../../../../../utils"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
+import { preloadConstructor } from "../../../../utils/routes-article"
 import CardCaption from "../../Card/components/CardCaption"
 import CardHeader from "../../Card/components/CardHeader"
 import CardIntegrated from "../../Card/components/CardIntegrated"
@@ -11,19 +11,6 @@ import Link from "../../Link"
 import LinkButton from "../../Button/components/LinkButton"
 import Placeholder from "../../../vignettes/Picture/components/Placeholder"
 import Subscribe from "../../../../../user/components/forms/Subscribe"
-
-const nextArticlePreload = nextArticle => {
-  return {
-    status: "loading",
-    title: nextArticle.title,
-    subtitle: nextArticle.subtitle,
-    authors: nextArticle.authors,
-    slug: nextArticle.slug,
-    poster: nextArticle.poster,
-    tag: nextArticle.tag,
-    content: DOCUMENT_PLACEHOLDER
-  }
-}
 
 export const CardColumns = styled.div`
   display: flex;
@@ -101,7 +88,7 @@ export default props => {
                 to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
                 onClick={() => {
                   props.nextArticleHeading(
-                    nextArticlePreload(props.nextArticle)
+                    preloadConstructor(props.article, props.nextArticle)
                   )
                   GA.event({
                     category: "Navigation",
@@ -124,7 +111,9 @@ export default props => {
               style={{ margin: 0 }}
               to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
               onClick={() => {
-                props.nextArticleHeading(nextArticlePreload(props.nextArticle))
+                props.nextArticleHeading(
+                  preloadConstructor(props.article, props.nextArticle)
+                )
                 GA.event({
                   category: "Navigation",
                   action: "ActionsCard.next_article_button"

@@ -3,7 +3,6 @@ import LazyLoad from "react-lazyload"
 import Loadable from "react-loadable"
 import React from "react"
 
-import { DOCUMENT_PLACEHOLDER } from "../../../constants/messages-article"
 import { HOST_PROD, HOST_PROTOCOL } from "../../../../constants"
 import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
@@ -15,7 +14,10 @@ import {
   setArticlePage,
   setArticleSelectoin
 } from "../../../store/actions-article"
-import { getSubmissionOrArticleRoute } from "../../../utils/routes-article"
+import {
+  getSubmissionOrArticleRoute,
+  preloadConstructor
+} from "../../../utils/routes-article"
 import { getTitleFromSlug } from "../../../utils/messages-"
 import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
@@ -116,8 +118,12 @@ class Article extends React.Component {
       })
       return
     }
-    const selection = window.getSelection()
-    const range = selection.getRangeAt(0).cloneRange()
+    const selection = window.getSelection && window.getSelection()
+    if (!selection || selection.rangeCount <= 0) return
+    const range = selection.getRangeAt(0)
+      ? selection.getRangeAt(0).cloneRange()
+      : undefined
+    if (!range) return
     let rects, rect, leftOffset, topOffset
     if (range.getClientRects) {
       range.collapse(true)
@@ -213,6 +219,7 @@ class Article extends React.Component {
               >
                 <ArticleActions
                   user={this.props.user}
+                  article={this.props.article}
                   subscribeFormCallback={this.handleSubscribeFormCallback}
                   subscribeForm={this.state.subscribeForm}
                   nextArticle={this.props.article.next}
@@ -224,16 +231,9 @@ class Article extends React.Component {
                     this.props.article.date && this.props.article.date.updated
                   }
                   nextArticleHeading={nextArticleHeading =>
-                    this.props.setArticlePage({
-                      status: "loading",
-                      title: nextArticleHeading.title,
-                      subtitle: nextArticleHeading.subtitle,
-                      authors: nextArticleHeading.authors,
-                      slug: nextArticleHeading.slug,
-                      poster: nextArticleHeading.poster,
-                      tag: nextArticleHeading.tag,
-                      content: DOCUMENT_PLACEHOLDER
-                    })
+                    this.props.setArticlePage(
+                      preloadConstructor(this.props.article, nextArticleHeading)
+                    )
                   }
                 />
               </LazyLoad>
