@@ -100,7 +100,7 @@ class About extends React.PureComponent {
               return (
                 <Modal
                   key={item.id}
-                  wrapperElement={"div"}
+                  element={"div"}
                   with={{
                     info: item,
                     id: `authors/${item.id}`

@@ -6,71 +6,49 @@ import { TEXT_EMOJIS } from "../../../../constants"
 import { fetchModal, setModal } from "../../../store/actions-modal"
 import Button from "../Button/components/Button"
 
-const inlineStar = css`
-content: "${TEXT_EMOJIS.STAR}";
-text-decoration: none;
-font-style: normal;
-display: inline-block;
-vertical-align: super;
-font-size: 0.5em;
-margin-right: -.25em;
-margin-left: -.15em;
-margin-top: -.5em;
+export const ModalLink = styled.a`
+  &::after{
+    content: "${TEXT_EMOJIS.STAR}";
+    text-decoration: none;
+    font-style: normal;
+    display: inline-block;
+    vertical-align: super;
+    font-size: 0.5em;
+    margin-right: -.25em;
+    margin-left: -.15em;
+    margin-top: -.5em;
+  }
 `
 
-const ModalLauncher = props => {
-  const invokeModal = event => {
-    event.stopPropagation()
-    event.preventDefault()
-    props.with.request
-      ? props.fetchModal(props.with.request)
-      : props.setModal(
-          {
-            status: "ok",
-            info: props.with.info
-          },
-          { url: props.with.id }
-        )
-  }
-  let wrapperElement, wrapperProps
-  if (!props.wrapperElement) {
-    wrapperElement = "a"
-    wrapperProps = {
-      href: "#card"
-    }
-  } else {
-    wrapperElement = props.wrapperElement
-    wrapperProps = {}
-  }
-  const WrapperComponent = wrapperElement
-  let ModalLauncherComponent
-  switch (wrapperElement) {
-    case "a":
-      ModalLauncherComponent = styled(WrapperComponent)`
-        &::after {
-          ${inlineStar};
-        }
-      `
-      break
-    case "Button":
-      ModalLauncherComponent = () => (
-        <Button {...props} onClick={invokeModal.bind(this)}>
-          {props.children}
-        </Button>
+export const launchModal = function(event) {
+  event.stopPropagation()
+  event.preventDefault()
+  this.props.with.request
+    ? this.props.fetchModal(this.props.with.request)
+    : this.props.setModal(
+        {
+          status: "ok",
+          info: this.props.with.info
+        },
+        { url: this.props.with.id }
       )
-      break
-    default:
-      ModalLauncherComponent = WrapperComponent
-  }
+}
+
+const ModalLauncher = props => {
+  const { element } = props
+  const { setModal, fetchModal, ...rest } = props
+  const componentProps = { ...rest, onClick: launchModal.bind({ props }) }
+
+  if (element && element !== "Button" && element !== "a")
+    return <element {...componentProps}>{props.children}</element>
+
+  if (element === "Button")
+    return <Button {...componentProps}>{props.children}</Button>
 
   return (
-    <ModalLauncherComponent
-      style={props.style}
-      onClick={invokeModal.bind(this)}
-      {...wrapperProps}
-    >
+    <ModalLink {...componentProps} href="#card">
       {props.children}
-    </ModalLauncherComponent>
+    </ModalLink>
   )
 }
 

@@ -8,7 +8,7 @@ import Modal from "../../Modal"
 export default props => {
   return (
     <Modal
-      wrapperElement={props.wrapperElement}
+      element={props.element}
       branded={props.branded}
       inverse={props.inverse}
       with={{

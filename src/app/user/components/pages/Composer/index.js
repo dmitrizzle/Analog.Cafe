@@ -39,7 +39,7 @@ const Composer = props => {
             ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
             : CARD_DIALOGUES.CONSENT
         }
-        wrapperElement="Button"
+        element="Button"
         branded
       >
         Send Submission {TEXT_EMOJIS.CHECKMARK}
@@ -63,4 +63,7 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Composer)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Composer)
