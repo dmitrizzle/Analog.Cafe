@@ -41,7 +41,7 @@ export default props => {
                   }
                   onClick={() =>
                     props.nextArticleHeading(
-                      preloadConstructor(item, props.article)
+                      preloadConstructor(props.article, item)
                     )
                   }
                   onMouseOver={

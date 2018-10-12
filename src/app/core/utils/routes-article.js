@@ -18,7 +18,7 @@ export const getSubmissionOrArticleRoute = locationPathname => {
 }
 
 export const preloadConstructor = (loadedArticle, nextArticle) => {
-  console.log(nextArticle)
+  console.log(loadedArticle.slug, nextArticle.slug)
   if (loadedArticle.slug === nextArticle.slug) return loadedArticle
   return {
     status: "loading",
