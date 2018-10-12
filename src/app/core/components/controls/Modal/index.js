@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 import { TEXT_EMOJIS } from "../../../../constants"
 import { fetchModal, setModal } from "../../../store/actions-modal"

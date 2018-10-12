@@ -124,6 +124,7 @@ class Article extends React.Component {
       if (rects.length > 0) {
         rect = rects[0]
       }
+      if (!rect) return
       leftOffset = rect.left
       topOffset = rect.top
     }

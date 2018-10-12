@@ -1741,6 +1741,7 @@ ShallowWrapper {
     "props": Object {
       "branded": undefined,
       "children": undefined,
+      "element": undefined,
       "inverse": undefined,
       "style": Object {
         "paddingRight": ".25em",
@@ -1795,7 +1796,6 @@ ShallowWrapper {
           "title": "More…",
         },
       },
-      "wrapperElement": undefined,
     },
     "ref": null,
     "rendered": null,
@@ -1809,6 +1809,7 @@ ShallowWrapper {
       "props": Object {
         "branded": undefined,
         "children": undefined,
+        "element": undefined,
         "inverse": undefined,
         "style": Object {
           "paddingRight": ".25em",
@@ -1863,7 +1864,6 @@ ShallowWrapper {
             "title": "More…",
           },
         },
-        "wrapperElement": undefined,
       },
       "ref": null,
       "rendered": null,
@@ -1897,7 +1897,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "sc-jTzLTM eCMmlJ",
+      "className": "sc-fjdhpX nsimD",
     },
     "ref": null,
     "rendered": null,
@@ -1909,7 +1909,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "sc-jTzLTM eCMmlJ",
+        "className": "sc-fjdhpX nsimD",
       },
       "ref": null,
       "rendered": null,
