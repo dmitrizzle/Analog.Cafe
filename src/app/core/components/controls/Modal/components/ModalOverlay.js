@@ -45,6 +45,7 @@ const ModalOverlay = props => {
     )
       props.hideModal()
   }
+  const transferProps = props.modal.info
   return (
     <Overlay
       id="modal-overlay"
@@ -52,17 +53,7 @@ const ModalOverlay = props => {
       onClick={() => props.hideModal()}
       onScroll={event => modalScrollCallback(event.target, props.hideModal)}
     >
-      <ModalCard
-        title={props.modal.info.title}
-        image={props.modal.info.image}
-        text={props.modal.info.text}
-        error={props.modal.info.error && props.modal.info.error}
-        stubborn={props.modal.info.stubborn}
-        headless={props.modal.info.headless}
-        buttons={props.modal.info.buttons}
-        subscribeForm={props.modal.info.subscribeForm}
-        subscribeFormLocation={props.modal.info.subscribeFormLocation}
-      />
+      <ModalCard {...transferProps} />
     </Overlay>
   )
 }

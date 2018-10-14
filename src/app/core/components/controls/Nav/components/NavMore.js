@@ -45,8 +45,7 @@ export default props => {
               : null,
             {
               to: "/photo-essays",
-              text: "Photo Essays",
-              mobile: props.allItems ? null : "on"
+              text: "Photo Essays"
             },
             {
               to: "/editorials",
