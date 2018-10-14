@@ -135,6 +135,7 @@ class Picture extends React.PureComponent {
           {
             to: "#about-author",
             onClick: event => {
+              event.stopPropagation()
               event.preventDefault()
             },
             text: " ",

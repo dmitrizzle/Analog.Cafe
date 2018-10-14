@@ -49,6 +49,7 @@ export const getPictureInfo = src => {
                         to: "#about-author",
                         onClick: event => {
                           event.preventDefault()
+                          event.stopPropagation()
                           const authorCardDelay = setTimeout(() => {
                             dispatch(
                               fetchModal({
