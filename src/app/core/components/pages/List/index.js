@@ -11,6 +11,7 @@ import {
 } from "../../../constants/routes-list"
 import { fetchListPage } from "../../../store/actions-list"
 import { getListMeta } from "../../../utils/messages-list"
+import { preloadConstructor } from "../../../utils/routes-article"
 import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
 import Button from "../../controls/Button/components/Button"
@@ -104,18 +105,14 @@ class List extends React.PureComponent {
             status={this.props.list.status}
             items={this.props.list.items}
             nextArticleHeading={nextArticleHeading =>
-              this.props.setArticlePage({
-                title: nextArticleHeading.title,
-                subtitle: nextArticleHeading.subtitle,
-                tag: nextArticleHeading.tag,
-                authors: nextArticleHeading.authors,
-                slug: nextArticleHeading.slug,
-                poster: nextArticleHeading.poster
-              })
+              this.props.setArticlePage(
+                preloadConstructor(this.props.article, nextArticleHeading)
+              )
             }
             private={this.props.private}
             isAdmin={this.props.isAdmin}
             userIntent={this.handleUserIntent}
+            article={this.props.article}
           />
         )}
         {parseInt(this.props.list.page.total, 0) > 1 &&
@@ -137,7 +134,8 @@ class List extends React.PureComponent {
 const mapStateToProps = state => {
   return {
     list: state.list,
-    user: state.user
+    user: state.user,
+    article: state.article
   }
 }
 const mapDispatchToProps = dispatch => {
