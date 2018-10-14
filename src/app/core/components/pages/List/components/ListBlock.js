@@ -6,6 +6,7 @@ import {
   ROUTE_URL_SUBMISSIONS
 } from "../../../../constants/routes-article"
 import { makeFroth } from "../../../../../utils"
+import { preloadConstructor } from "../../../../utils/routes-article"
 import Bleed from "./Bleed"
 import Link from "../../../controls/Link"
 import ListCaption from "./ListCaption"
@@ -39,14 +40,9 @@ export default props => {
                       item.slug
                   }
                   onClick={() =>
-                    props.nextArticleHeading({
-                      title: item.title,
-                      subtitle: item.subtitle,
-                      authors: item.authors,
-                      slug: item.slug,
-                      poster: item.poster,
-                      tag: item.tag
-                    })
+                    props.nextArticleHeading(
+                      preloadConstructor(props.article, item)
+                    )
                   }
                   onMouseOver={
                     "ontouchstart" in document.documentElement
