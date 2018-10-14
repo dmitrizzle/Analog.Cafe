@@ -11,16 +11,24 @@ export default class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      topOffset: 0
+      topOffset: 0,
+      topOffsetMax: 20,
+      minElementHeight: 80
     }
   }
   componentWillReceiveProps = () => {
     const element = document.getElementById("modal-card")
     if (element)
       window.requestAnimationFrame(() => {
-        const topOffset = (windowHeight() - element.offsetHeight) / 2
+        const elementHeight = element.offsetHeight
+        const topOffset = (windowHeight() - elementHeight) / 2
         this.setState({
-          topOffset: topOffset > 20 ? topOffset : 20
+          topOffset:
+            elementHeight >= this.state.minElementHeight
+              ? topOffset > this.state.topOffsetMax
+                ? topOffset
+                : this.state.topOffsetMax
+              : this.state.topOffsetMax
         })
       })
   }
