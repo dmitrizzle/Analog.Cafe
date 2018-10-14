@@ -11,7 +11,7 @@ import Subscribe from "../../../../user/components/forms/Subscribe"
 
 export default props => {
   return (
-    <CardPopup style={props.style}>
+    <CardPopup style={props.style} id={props.id}>
       {!props.headless && (
         <CardHeader
           error={props.error}
