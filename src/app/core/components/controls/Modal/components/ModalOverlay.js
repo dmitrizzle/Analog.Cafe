@@ -18,7 +18,8 @@ const Overlay = styled.aside`
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-backdrop-filter: blur(5px);
+  background: ${props =>
+    props.theme.color.background(props.theme.opacity.most)};
 `
 
 export const modalScrollCallback = (target, callback) => {
