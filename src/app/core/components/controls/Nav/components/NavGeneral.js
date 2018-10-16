@@ -22,13 +22,13 @@ export default props => {
       }
     >
       <NavItem>
-        <NavLink to={"/photo-essays"}>
-          <span>Photo Essays</span>
+        <NavLink to={"/tools"}>
+          <span>Tools</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink to={"/articles"}>
-          <span>Articles</span>
+        <NavLink to={"/culture"}>
+          <span>Culture</span>
         </NavLink>
       </NavItem>
       <NavItem prime center className="prime center">
@@ -37,7 +37,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="prime left">
-        <NavLink to={"/about"}>About</NavLink>
+        <NavLink to={"/voices"}>Voices</NavLink>
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>
