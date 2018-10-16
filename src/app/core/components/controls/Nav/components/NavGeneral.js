@@ -10,7 +10,7 @@ import NavMore from "./NavMore"
 const NavLinkLabelMore = props => {
   return (
     <span>
-      More… {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
+      More {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
     </span>
   )
 }

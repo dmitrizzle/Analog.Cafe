@@ -89,9 +89,11 @@
 .appNav a {
   color: inherit;
   text-decoration-skip: ink;
-  background: #fff;
   text-decoration: none;
   position: relative;
+  background: #f7f7f7;
+  padding: 0.1em 0.45em 0.15em;
+  border-radius: 0.25em;
 }
 a.indexRouteLink {
   position: static;

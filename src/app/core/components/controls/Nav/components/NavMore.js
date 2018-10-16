@@ -13,7 +13,7 @@ export default props => {
       inverse={props.inverse}
       with={{
         info: {
-          title: "More…",
+          title: "More ",
           buttons: [
             props.userStatus === "ok"
               ? {

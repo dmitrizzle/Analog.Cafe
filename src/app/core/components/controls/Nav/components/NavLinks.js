@@ -10,14 +10,18 @@ import Link from "../../Link"
 // position: relative;
 
 const StyledLink = styled(Link)`
-  &.active::before {
-    content: "";
-    width: 110%;
-    left: -5%;
-    height: 2px;
-    bottom: -5px;
-    background: ${props => props.theme.color.foreground()};
-    position: absolute;
+  &.active {
+    background: ${props => props.theme.color.brand()};
+    color: ${props => props.theme.color.background()};
+    ::before {
+      content: "";
+      width: 110%;
+      left: -5%;
+      height: 2px;
+      bottom: -5px;
+      background: ${props => props.theme.color.foreground()};
+      position: absolute;
+    }
   }
   ${props =>
     props.connectionStatus === "offline"
