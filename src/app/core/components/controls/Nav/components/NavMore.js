@@ -44,26 +44,13 @@ export default props => {
                 }
               : null,
             {
-              to: "/photo-essays",
-              text: "Photo Essays"
-            },
-            {
               to: "/editorials",
               text: "Editorials"
             },
             {
-              to: "/guides",
-              text: "Guides"
+              to: "/opinions",
+              text: "Opinions"
             },
-            {
-              to: "/reviews",
-              text: "Reviews"
-            },
-            {
-              to: "/stories",
-              text: "Stories"
-            },
-            { divider: true },
             {
               to: "/collaborations",
               text: "Collaborations"
@@ -71,6 +58,11 @@ export default props => {
             {
               to: "/solo-projects",
               text: "Solo Projects"
+            },
+
+            {
+              to: "/about",
+              text: "About"
             },
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",

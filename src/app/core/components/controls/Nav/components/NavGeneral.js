@@ -37,7 +37,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="prime left">
-        <NavLink to={"/toys"}>Toys</NavLink>
+        <NavLink to={"/film-photography"}>Photography</NavLink>
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>

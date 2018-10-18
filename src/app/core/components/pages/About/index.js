@@ -88,9 +88,10 @@ class About extends React.PureComponent {
 
       <ArticleSection>
         <blockquote>
-          <strong>A web magazine</strong> that publishes weekly creative and
-          insightful works by a community of artists, writers and{" "}
-          <strong>film photographers</strong>.
+          Weekly articles on{" "}
+          <strong>culture, places, and film photography</strong>. Created and
+          written by a community of film photographers, artists, writers,
+          professionals, analogue technology enthusiasts, and enterpreneurs.
         </blockquote>
         <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
           <Authors>

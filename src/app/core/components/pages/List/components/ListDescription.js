@@ -11,7 +11,9 @@ import Modal from "../../../controls/Modal"
 export default props => {
   return (
     <ListDescriptionWrapper {...props}>
-      <ListBrandName>{APP_NAME}</ListBrandName>
+      <ListBrandName homepage={props.location.pathname === "/"}>
+        {APP_NAME}
+      </ListBrandName>
       {props.user.connection.status !== "offline" ? (
         <ListHeader>
           {props.list.filter.author ? (

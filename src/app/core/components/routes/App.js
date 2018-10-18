@@ -68,21 +68,30 @@ export default () => {
         <Route exact path="/zine" component={NotFound} />
         <Route exact path="/author/*" component={List} />
         <Route exact path="/zine/*" component={Article} />
-        {/* dynamic views, static urls */}
+        {/* NOTE below is a set of outdated routes */}
+        <Route exact path="/photo-essays" render={() => <Redirect to="/" />} />
+        <Route exact path="/articles" render={() => <Redirect to="/" />} />
+        <Route exact path="/stories" render={() => <Redirect to="/" />} />
+        <Route exact path="/storys" render={() => <Redirect to="/" />} />
+        <Route
+          exact
+          path="/guides"
+          render={() => <Redirect to="/film-photography" />}
+        />
+        <Route
+          exact
+          path="/reviews"
+          render={() => <Redirect to="/film-photography" />}
+        />
+        {/* new magazine sections */}
         <Route exact path="/" component={List} />
-        <Route exact path="/photo-essays" component={List} />
-        <Route exact path="/articles" component={List} />
-        <Route exact path="/stories" component={List} />
-        <Route exact path="/storys" render={() => <Redirect to="/stories" />} />
+        <Route exact path="/film-photography" component={List} />
+        <Route exact path="/culture" component={List} />
+        <Route exact path="/places" component={List} />
         <Route exact path="/editorials" component={List} />
-        <Route exact path="/guides" component={List} />
-        <Route exact path="/reviews" component={List} />
+        <Route exact path="/opinions" component={List} />
         <Route exact path="/collaborations" component={List} />
         <Route exact path="/solo-projects" component={List} />
-        {/* new magazine sections */}+{" "}
-        <Route exact path="/toys" component={List} />+{" "}
-        <Route exact path="/culture" component={List} />+{" "}
-        <Route exact path="/places" component={List} />
         {/* auth views */}
         <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
         <Route

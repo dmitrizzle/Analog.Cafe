@@ -9,38 +9,34 @@ export const TEXT_STATUS_LABELS = {
   published: "Published"
 }
 export const TEXT_ROUTE_LABELS = {
-  [ROUTE_URL_USER_LANDING]: {
-    title: "Your submissions to Analog.Cafe"
+  "/": {
+    title: "Culture. Places. Film photography",
+    description: `A web magazine that publishes weekly on topics of culture, places, and film photography. Created and written by a community of film photographers, artists, writers, professionals, analogue technology enthusiasts, and enterpreneurs.`,
+    designation: "homepage"
   },
-  "/stories": {
-    title: "Stories: any medium, any topic",
-    description:
-      "Stories, essays and creative writing, beyond film photography."
+  default: {
+    title: APP_DESCRIPTION
+  },
+
+  "/culture": {
+    title: "",
+    description: ""
+  },
+  "/places": {
+    title: "",
+    description: ""
+  },
+  "/film-photography": {
+    title: "",
+    description: ""
   },
   "/editorials": {
-    title: "Notes from Analog.Cafe editors",
-    description:
-      "Announcements, notes and opinion pieces from Analog.Cafe editors."
+    title: "From the Analog.Cafe editors",
+    description: ""
   },
-  "/guides": {
-    title: "Guides: learn, understand & DIY",
-    description:
-      "Guides, explainations and instructables on film photography, art and technology."
-  },
-  "/reviews": {
-    title: "Reviews: tools, toys & places",
-    description:
-      "Film photography gear, creative tools, places & experiences that inspire."
-  },
-  "/photo-essays": {
-    title: "Photo essays; shot on film",
-    description:
-      "A colleciton of photo essays created with analog (film) cameras."
-  },
-  "/articles": {
-    title: "Stories, reviews, guides & editorials",
-    description:
-      "A collection of articles about art, inspiration and technology."
+  "/opinions": {
+    title: "",
+    description: ""
   },
   "/collaborations": {
     title: "Collaborations",
@@ -52,18 +48,13 @@ export const TEXT_ROUTE_LABELS = {
     description:
       "Solo projects are written pieces with images created by a single author."
   },
-  "/": {
-    title: "Photo essays, guides, reviews & stories",
-    description:
-      "Analog.Cafe is an inclusive creative outlet that publishes outstanding images and stories.",
-    designation: "homepage"
+
+  [ROUTE_URL_USER_LANDING]: {
+    title: "Your submissions to Analog.Cafe"
   },
   "/author/*": {
     title: "Images & stories",
     description: "Published works and photography by Analog.Cafe author."
-  },
-  default: {
-    title: APP_DESCRIPTION
   }
 }
 
