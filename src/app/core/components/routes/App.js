@@ -80,9 +80,9 @@ export default () => {
         <Route exact path="/collaborations" component={List} />
         <Route exact path="/solo-projects" component={List} />
         {/* new magazine sections */}+{" "}
-        <Route exact path="/tools" component={List} />+{" "}
+        <Route exact path="/toys" component={List} />+{" "}
         <Route exact path="/culture" component={List} />+{" "}
-        <Route exact path="/voices" component={List} />
+        <Route exact path="/places" component={List} />
         {/* auth views */}
         <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
         <Route
