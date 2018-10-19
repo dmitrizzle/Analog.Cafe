@@ -10,8 +10,8 @@ export const TEXT_STATUS_LABELS = {
 }
 export const TEXT_ROUTE_LABELS = {
   "/": {
-    title: "Culture. Places. Film photography",
-    description: `A web magazine that publishes weekly on topics of culture, places, and film photography. Created and written by a community of film photographers, artists, writers, professionals, analogue technology enthusiasts, and enterpreneurs.`,
+    title: "Weekly articles by analogue photographers, artists, and writers",
+    description: `A web magazine that publishes weekly on topics of culture, places, and film photography. Created by a community of writers and film photographers.`,
     designation: "homepage"
   },
   default: {
@@ -19,15 +19,15 @@ export const TEXT_ROUTE_LABELS = {
   },
 
   "/culture": {
-    title: "",
+    title: "Culture. People-centric stories",
     description: ""
   },
   "/places": {
-    title: "",
+    title: "Places of interest. Real and imagined",
     description: ""
   },
   "/film-photography": {
-    title: "",
+    title: "Film cameras, chemicals, tools. Reviews and guides",
     description: ""
   },
   "/editorials": {
@@ -35,26 +35,25 @@ export const TEXT_ROUTE_LABELS = {
     description: ""
   },
   "/opinions": {
-    title: "",
+    title: "Thoughts, suggestions, and ideas",
     description: ""
   },
   "/collaborations": {
-    title: "Collaborations",
-    description:
-      "Collaborations are written pieces with images created by multiple artists and photographers."
+    title: "Co-authored articles",
+    description: ""
   },
   "/solo-projects": {
-    title: "Solo projects",
-    description:
-      "Solo projects are written pieces with images created by a single author."
+    title: "Written and photographed by a single author",
+    description: ""
   },
 
   [ROUTE_URL_USER_LANDING]: {
     title: "Your submissions to Analog.Cafe"
   },
   "/author/*": {
-    title: "Images & stories",
-    description: "Published works and photography by Analog.Cafe author."
+    title: "Published work",
+    description:
+      "All published work by the Analog.Cafe author, including images and text published in collaboration with other authors."
   }
 }
 

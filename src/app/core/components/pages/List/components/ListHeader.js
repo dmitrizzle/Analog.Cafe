@@ -7,8 +7,11 @@ export default styled.div`
   margin: ${props => props.theme.size.block.spacing * 2}em
     ${props => props.theme.size.block.padding / 3}em
     ${props => props.theme.size.block.padding}em;
-  overflow: hidden;
   q {
+  }
+  > span {
     background: ${props => props.theme.color.background()};
+    border-radius: ${props => props.theme.effects.borderRadius.small}em;
+    box-shadow: 0 0 0 5px ${props => props.theme.color.background()};
   }
 `
