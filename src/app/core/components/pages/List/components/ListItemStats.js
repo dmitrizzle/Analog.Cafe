@@ -28,11 +28,11 @@ export default props => {
           : "Submitted")}
       {props.item.type !== "placeholder" &&
         !props.private &&
-        (props.item.tag !== "photo-essay"
-          ? ` | ${readingTime(props.item.stats)}-minute read`
-          : (props.item.stats.images > 1
-              ? ` | ${props.item.stats.images} images`
-              : "") + ` | ${readingTime(props.item.stats)} min`)}
+        (props.item.stats.images > 0
+          ? ` | ${props.item.stats.images} image${
+              props.item.stats.images > 1 ? "s" : ""
+            }`
+          : "") + ` | ${readingTime(props.item.stats)} min`}
 
       {props.item.type !== "placeholder" &&
         props.private &&

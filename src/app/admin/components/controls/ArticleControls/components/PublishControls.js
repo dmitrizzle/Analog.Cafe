@@ -7,11 +7,11 @@ import ButtonStripItem from "../../../../../core/components/controls/Button/comp
 import CardIntegrated from "../../../../../core/components/controls/Card/components/CardIntegrated"
 
 const TAGS = {
-  story: "Story",
-  editorial: "Editorial",
-  guide: "Guide",
-  review: "Review",
-  "photo-essay": "Photo Essay"
+  culture: "Culture",
+  places: "Places",
+  "film-photography": "Photography",
+  editorials: "Editorials",
+  opinions: "Opinions"
 }
 
 export default props => {
@@ -34,7 +34,7 @@ export default props => {
                 right={last}
                 key={key}
                 onClick={event => props.setPublicationTag(event, key)}
-                style={key === "photo-essay" ? { minWidth: "7.5em" } : {}}
+                style={key === "film-photography" ? { minWidth: "7.5em" } : {}}
                 inverse={props.statePublishAs === key}
                 to={`#${key}`}
               >

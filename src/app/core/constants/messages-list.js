@@ -10,7 +10,7 @@ export const TEXT_STATUS_LABELS = {
 }
 export const TEXT_ROUTE_LABELS = {
   "/": {
-    title: "Weekly articles by analogue photographers, artists, and writers",
+    title: "Weekly Photo Essays. 98% Analogue",
     description: `A web magazine that publishes weekly on topics of culture, places, and film photography. Created by a community of writers and film photographers.`,
     designation: "homepage"
   },
@@ -19,7 +19,7 @@ export const TEXT_ROUTE_LABELS = {
   },
 
   "/culture": {
-    title: "Culture. People-centric stories",
+    title: "Culture. People-centric essays",
     description: ""
   },
   "/places": {

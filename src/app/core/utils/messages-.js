@@ -10,8 +10,6 @@ export const getTitleFromSlug = (slug = "", options = {}) => {
     title = slug.substr(0, slug.lastIndexOf("-"))
   } else title = slug
   title = title.replace(/-/g, " ")
-  if (options.smartTagFromImageCount === 1 && slug === "photo-essay")
-    title = "single-frame narrative"
   if (options.titleCase) title = toTitleCase(title)
   if (options.capitalize) title = title.charAt(0).toUpperCase() + title.slice(1)
   return title
