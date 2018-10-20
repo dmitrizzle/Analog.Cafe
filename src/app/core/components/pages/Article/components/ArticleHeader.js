@@ -29,7 +29,7 @@ export default props => {
       {props.article.authors &&
         props.article.authors[0].name && (
           <Byline>
-            <Link to={props.stateTag.route}>{props.stateTag.name}</Link> by{" "}
+            By{" "}
             {getLeadAuthorObject(props.article.authors).id ? (
               <Modal
                 with={{

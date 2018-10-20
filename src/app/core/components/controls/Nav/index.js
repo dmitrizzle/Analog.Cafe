@@ -38,6 +38,7 @@ const Nav = props => {
               props.user.intent.load !== "List" &&
                 props.setUserIntent({ load: "List" })
             }}
+            articleTag={props.article.tag}
           />
         )}
       </NavWrapper>
@@ -50,7 +51,8 @@ const mapStateToProps = state => {
     nav: state.nav,
     composer: state.composer,
     editor: state.editor,
-    user: state.user
+    user: state.user,
+    article: state.article
   }
 }
 const mapDispatchToProps = dispatch => {

@@ -201,7 +201,6 @@ class Article extends React.Component {
         <ArticleHeader
           article={this.props.article}
           stateAdminControls={this.state.adminControls}
-          stateTag={this.state.tag}
         />
         <ArticleSection
           articleStatus={this.props.article.status}

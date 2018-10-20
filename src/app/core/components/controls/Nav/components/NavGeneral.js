@@ -16,8 +16,35 @@ const NavLinkLabelMore = props => {
 }
 export default props => {
   const isActive = to => {
-    return window.location.pathname === to
+    if (window.location.pathname === to) return true
+    if (props.articleTag === to.replace("/", "")) return true
+    return false
   }
+
+  const a = "active"
+  const ps = "/photo-stories"
+  const pe = "/perspective"
+  const fo = "/focus"
+
+  const photoStories = {
+    to: ps,
+    className: isActive(ps) || isActive(pe) || isActive(fo) ? a : undefined
+  }
+  const perspective = {
+    to: pe,
+    className: isActive(ps) || isActive(pe) ? a : undefined
+  }
+  const focus = {
+    to: fo,
+    className: isActive(ps) || isActive(fo) ? a : undefined
+  }
+
+  const fc = "/film-cameras"
+  const filmCameras = {
+    to: fc,
+    className: isActive(fc) ? a : undefined
+  }
+
   return (
     <ul
       onMouseOver={
@@ -25,23 +52,17 @@ export default props => {
       }
     >
       <NavItem prime left mobile className="prime left mobile">
-        <NavLink to={"/photo-stories"}>
+        <NavLink {...photoStories}>
           <span>Photo Stories</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink
-          to={"/perspective"}
-          className={isActive("/photo-stories") ? "active" : undefined}
-        >
+        <NavLink {...perspective}>
           <span>Perspective</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink
-          to={"/focus"}
-          className={isActive("/photo-stories") ? "active" : undefined}
-        >
+        <NavLink {...focus}>
           <span>Focus</span>
         </NavLink>
       </NavItem>
@@ -51,7 +72,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="left">
-        <NavLink to={"/film-cameras"}>Film Cameras</NavLink>
+        <NavLink {...filmCameras}>Film Cameras</NavLink>
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>
