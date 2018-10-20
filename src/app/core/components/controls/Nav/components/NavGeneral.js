@@ -15,20 +15,34 @@ const NavLinkLabelMore = props => {
   )
 }
 export default props => {
+  const isActive = to => {
+    return window.location.pathname === to
+  }
   return (
     <ul
       onMouseOver={
         "ontouchstart" in document.documentElement ? null : props.userIntent
       }
     >
-      <NavItem>
-        <NavLink to={"/culture"}>
-          <span>Culture</span>
+      <NavItem prime left mobile className="prime left mobile">
+        <NavLink to={"/photo-stories"}>
+          <span>Photo Stories</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink to={"/places"}>
-          <span>Places</span>
+        <NavLink
+          to={"/perspective"}
+          className={isActive("/photo-stories") ? "active" : undefined}
+        >
+          <span>Perspective</span>
+        </NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink
+          to={"/focus"}
+          className={isActive("/photo-stories") ? "active" : undefined}
+        >
+          <span>Focus</span>
         </NavLink>
       </NavItem>
       <NavItem prime center className="prime center">
@@ -36,8 +50,8 @@ export default props => {
           <NavLogo />
         </NavLogoLink>
       </NavItem>
-      <NavItem narrow prime left className="prime left">
-        <NavLink to={"/film-photography"}>Photography</NavLink>
+      <NavItem narrow prime left className="left">
+        <NavLink to={"/film-cameras"}>Film Cameras</NavLink>
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>

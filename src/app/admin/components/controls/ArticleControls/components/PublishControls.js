@@ -7,11 +7,11 @@ import ButtonStripItem from "../../../../../core/components/controls/Button/comp
 import CardIntegrated from "../../../../../core/components/controls/Card/components/CardIntegrated"
 
 const TAGS = {
-  culture: "Culture",
-  places: "Places",
-  "film-photography": "Photography",
+  focus: "Focus",
+  perspective: "Perspective",
+  "film-cameras": "Cameras",
   editorials: "Editorials",
-  opinions: "Opinions"
+  unclassifieds: "Unclassif."
 }
 
 export default props => {

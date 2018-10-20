@@ -43,14 +43,10 @@ export default props => {
                   inverse: true
                 }
               : null,
-            {
-              to: "/editorials",
-              text: "Editorials"
-            },
-            {
-              to: "/opinions",
-              text: "Opinions"
-            },
+            // {
+            //   to: "/unclassifieds",
+            //   text: "Unclassifieds"
+            // },
             {
               to: "/collaborations",
               text: "Collaborations"
@@ -61,8 +57,12 @@ export default props => {
             },
 
             {
+              to: "/editorials",
+              text: "Editorials"
+            },
+            {
               to: "/about",
-              text: "About"
+              text: "About Analog.Cafe"
             },
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",

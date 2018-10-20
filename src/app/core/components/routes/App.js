@@ -69,27 +69,40 @@ export default () => {
         <Route exact path="/author/*" component={List} />
         <Route exact path="/zine/*" component={Article} />
         {/* NOTE below is a set of outdated routes */}
-        <Route exact path="/photo-essays" render={() => <Redirect to="/" />} />
+        <Route
+          exact
+          path="/photo-essays"
+          render={() => <Redirect to="/photo-stories" />}
+        />
         <Route exact path="/articles" render={() => <Redirect to="/" />} />
-        <Route exact path="/stories" render={() => <Redirect to="/" />} />
-        <Route exact path="/storys" render={() => <Redirect to="/" />} />
+        <Route
+          exact
+          path="/stories"
+          render={() => <Redirect to="/photo-stories" />}
+        />
+        <Route
+          exact
+          path="/storys"
+          render={() => <Redirect to="/photo-storie" />}
+        />
         <Route
           exact
           path="/guides"
-          render={() => <Redirect to="/film-photography" />}
+          render={() => <Redirect to="/film-cameras" />}
         />
         <Route
           exact
           path="/reviews"
-          render={() => <Redirect to="/film-photography" />}
+          render={() => <Redirect to="/film-cameras" />}
         />
         {/* new magazine sections */}
         <Route exact path="/" component={List} />
-        <Route exact path="/film-photography" component={List} />
-        <Route exact path="/culture" component={List} />
-        <Route exact path="/places" component={List} />
+        <Route exact path="/film-cameras" component={List} />
+        <Route exact path="/focus" component={List} />
+        <Route exact path="/perspective" component={List} />
+        <Route exact path="/photo-stories" component={List} />
         <Route exact path="/editorials" component={List} />
-        <Route exact path="/opinions" component={List} />
+        <Route exact path="/unclassifieds" component={List} />
         <Route exact path="/collaborations" component={List} />
         <Route exact path="/solo-projects" component={List} />
         {/* auth views */}

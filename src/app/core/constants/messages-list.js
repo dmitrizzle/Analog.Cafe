@@ -10,7 +10,7 @@ export const TEXT_STATUS_LABELS = {
 }
 export const TEXT_ROUTE_LABELS = {
   "/": {
-    title: "Weekly Photo Essays. 98% Analogue",
+    title: "Photo Stories & Film Cameras",
     description: `A web magazine that publishes weekly on topics of culture, places, and film photography. Created by a community of writers and film photographers.`,
     designation: "homepage"
   },
@@ -18,24 +18,29 @@ export const TEXT_ROUTE_LABELS = {
     title: APP_DESCRIPTION
   },
 
-  "/culture": {
-    title: "Culture. People-centric essays",
+  "/perspective": {
+    title: "Thought pieces and art projects",
     description: ""
   },
-  "/places": {
-    title: "Places of interest. Real and imagined",
+  "/focus": {
+    title: "Places, people, events",
     description: ""
   },
-  "/film-photography": {
-    title: "Film cameras, chemicals, tools. Reviews and guides",
+  "/photo-stories": {
+    title: "Art, culture, travel",
+    description: ""
+  },
+
+  "/film-cameras": {
+    title: "Film cameras, chemicals, tools; reviews, stories, guides",
     description: ""
   },
   "/editorials": {
     title: "From the Analog.Cafe editors",
     description: ""
   },
-  "/opinions": {
-    title: "Thoughts, suggestions, and ideas",
+  "/unclassifieds": {
+    title: "Everything else",
     description: ""
   },
   "/collaborations": {

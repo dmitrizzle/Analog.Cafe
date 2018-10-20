@@ -6,12 +6,12 @@ export const ROUTE_API_LIST_SUBMISSIONS = HOST_API + "/submissions"
 
 export const ROUTE_TAGS = {
   [ROUTE_URL_USER_LANDING]: "",
-  "/culture": "culture",
-  "/places": "places",
-  "/film-photography": "film-photography",
+  "/focus": "focus",
+  "/perspective": "perspective",
+  "/film-cameras": "film-cameras",
   "/editorials": "editorial",
-  "/opinions": "opinions",
-  "/featured": "culture:places",
+  "/unclassifieds": "unclassifieds",
+  "/photo-stories": "focus:perspective",
   [ROUTE_URL_USER_LANDING]: "",
   "/": ""
 }

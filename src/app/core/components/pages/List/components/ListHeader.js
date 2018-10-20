@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export default styled.div`
   text-align: center;
+  color: ${props => props.theme.color.background()};
   font-size: ${props => props.theme.size.font.make.smaller}em;
   height: ${props => props.theme.typography.text.lineHeight}em;
   margin: ${props => props.theme.size.block.spacing * 2}em
@@ -10,8 +11,7 @@ export default styled.div`
   q {
   }
   > span {
-    background: ${props => props.theme.color.background()};
-    border-radius: ${props => props.theme.effects.borderRadius.small}em;
-    box-shadow: 0 0 0 5px ${props => props.theme.color.background()};
+    background: ${props => props.theme.color.foreground()};
+    box-shadow: 0 0 0 5px ${props => props.theme.color.foreground()};
   }
 `
