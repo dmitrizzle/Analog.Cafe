@@ -2,6 +2,7 @@
 import React from "react"
 
 import { NavLink, NavLogoLink } from "./NavLinks"
+import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
@@ -17,7 +18,11 @@ const NavLinkLabelMore = props => {
 export default props => {
   const isActive = to => {
     if (window.location.pathname === to) return true
-    if (props.articleTag === to.replace("/", "")) return true
+    if (
+      window.location.pathname.includes(ROUTE_URL_ARTICLES) &&
+      props.articleTag === to.replace("/", "")
+    )
+      return true
     return false
   }
 
