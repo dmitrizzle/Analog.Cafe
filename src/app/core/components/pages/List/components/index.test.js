@@ -69,6 +69,9 @@ it("Render ListDescription, matches snapshot", () => {
       renderedListMeta={{
         title: ""
       }}
+      location={{
+        pathname: jest.fn()
+      }}
     />
   )
   expect(element).toMatchSnapshot()

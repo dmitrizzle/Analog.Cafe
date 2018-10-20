@@ -800,21 +800,38 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <styled.li>
+        <styled.li
+          className="prime left mobile"
+          left={true}
+          mobile={true}
+          prime={true}
+>
           <Unknown
-                    to="/photo-essays"
+                    className={undefined}
+                    to="/photo-stories"
           >
                     <span>
-                              Photo Essays
+                              Photo Stories
                     </span>
           </Unknown>
 </styled.li>,
         <styled.li>
           <Unknown
-                    to="/articles"
+                    className={undefined}
+                    to="/perspective"
           >
                     <span>
-                              Articles
+                              Perspective
+                    </span>
+          </Unknown>
+</styled.li>,
+        <styled.li>
+          <Unknown
+                    className={undefined}
+                    to="/focus"
+          >
+                    <span>
+                              Focus
                     </span>
           </Unknown>
 </styled.li>,
@@ -831,15 +848,16 @@ ShallowWrapper {
           </Unknown>
 </styled.li>,
         <styled.li
-          className="prime left"
+          className="left"
           left={true}
           narrow={true}
           prime={true}
 >
           <Unknown
-                    to="/about"
+                    className={undefined}
+                    to="/film-cameras"
           >
-                    About
+                    Film Cameras
           </Unknown>
 </styled.li>,
         <styled.li
@@ -868,12 +886,17 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <Unknown
-            to="/photo-essays"
+            className={undefined}
+            to="/photo-stories"
 >
             <span>
-                        Photo Essays
+                        Photo Stories
             </span>
 </Unknown>,
+          "className": "prime left mobile",
+          "left": true,
+          "mobile": true,
+          "prime": true,
         },
         "ref": null,
         "rendered": Object {
@@ -882,9 +905,10 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": <span>
-              Photo Essays
+              Photo Stories
 </span>,
-            "to": "/photo-essays",
+            "className": undefined,
+            "to": "/photo-stories",
           },
           "ref": null,
           "rendered": Object {
@@ -892,10 +916,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Photo Essays",
+              "children": "Photo Stories",
             },
             "ref": null,
-            "rendered": "Photo Essays",
+            "rendered": "Photo Stories",
             "type": "span",
           },
           "type": [Function],
@@ -908,10 +932,11 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <Unknown
-            to="/articles"
+            className={undefined}
+            to="/perspective"
 >
             <span>
-                        Articles
+                        Perspective
             </span>
 </Unknown>,
         },
@@ -922,9 +947,10 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": <span>
-              Articles
+              Perspective
 </span>,
-            "to": "/articles",
+            "className": undefined,
+            "to": "/perspective",
           },
           "ref": null,
           "rendered": Object {
@@ -932,10 +958,52 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Articles",
+              "children": "Perspective",
             },
             "ref": null,
-            "rendered": "Articles",
+            "rendered": "Perspective",
+            "type": "span",
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Unknown
+            className={undefined}
+            to="/focus"
+>
+            <span>
+                        Focus
+            </span>
+</Unknown>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <span>
+              Focus
+</span>,
+            "className": undefined,
+            "to": "/focus",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Focus",
+            },
+            "ref": null,
+            "rendered": "Focus",
             "type": "span",
           },
           "type": [Function],
@@ -987,11 +1055,12 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <Unknown
-            to="/about"
+            className={undefined}
+            to="/film-cameras"
 >
-            About
+            Film Cameras
 </Unknown>,
-          "className": "prime left",
+          "className": "left",
           "left": true,
           "narrow": true,
           "prime": true,
@@ -1002,11 +1071,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": "About",
-            "to": "/about",
+            "children": "Film Cameras",
+            "className": undefined,
+            "to": "/film-cameras",
           },
           "ref": null,
-          "rendered": "About",
+          "rendered": "Film Cameras",
           "type": [Function],
         },
         "type": [Function],
@@ -1069,21 +1139,38 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <styled.li>
+          <styled.li
+            className="prime left mobile"
+            left={true}
+            mobile={true}
+            prime={true}
+>
             <Unknown
-                        to="/photo-essays"
+                        className={undefined}
+                        to="/photo-stories"
             >
                         <span>
-                                    Photo Essays
+                                    Photo Stories
                         </span>
             </Unknown>
 </styled.li>,
           <styled.li>
             <Unknown
-                        to="/articles"
+                        className={undefined}
+                        to="/perspective"
             >
                         <span>
-                                    Articles
+                                    Perspective
+                        </span>
+            </Unknown>
+</styled.li>,
+          <styled.li>
+            <Unknown
+                        className={undefined}
+                        to="/focus"
+            >
+                        <span>
+                                    Focus
                         </span>
             </Unknown>
 </styled.li>,
@@ -1100,15 +1187,16 @@ ShallowWrapper {
             </Unknown>
 </styled.li>,
           <styled.li
-            className="prime left"
+            className="left"
             left={true}
             narrow={true}
             prime={true}
 >
             <Unknown
-                        to="/about"
+                        className={undefined}
+                        to="/film-cameras"
             >
-                        About
+                        Film Cameras
             </Unknown>
 </styled.li>,
           <styled.li
@@ -1137,12 +1225,17 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <Unknown
-              to="/photo-essays"
+              className={undefined}
+              to="/photo-stories"
 >
               <span>
-                            Photo Essays
+                            Photo Stories
               </span>
 </Unknown>,
+            "className": "prime left mobile",
+            "left": true,
+            "mobile": true,
+            "prime": true,
           },
           "ref": null,
           "rendered": Object {
@@ -1151,9 +1244,10 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": <span>
-                Photo Essays
+                Photo Stories
 </span>,
-              "to": "/photo-essays",
+              "className": undefined,
+              "to": "/photo-stories",
             },
             "ref": null,
             "rendered": Object {
@@ -1161,10 +1255,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Photo Essays",
+                "children": "Photo Stories",
               },
               "ref": null,
-              "rendered": "Photo Essays",
+              "rendered": "Photo Stories",
               "type": "span",
             },
             "type": [Function],
@@ -1177,10 +1271,11 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <Unknown
-              to="/articles"
+              className={undefined}
+              to="/perspective"
 >
               <span>
-                            Articles
+                            Perspective
               </span>
 </Unknown>,
           },
@@ -1191,9 +1286,10 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": <span>
-                Articles
+                Perspective
 </span>,
-              "to": "/articles",
+              "className": undefined,
+              "to": "/perspective",
             },
             "ref": null,
             "rendered": Object {
@@ -1201,10 +1297,52 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Articles",
+                "children": "Perspective",
               },
               "ref": null,
-              "rendered": "Articles",
+              "rendered": "Perspective",
+              "type": "span",
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Unknown
+              className={undefined}
+              to="/focus"
+>
+              <span>
+                            Focus
+              </span>
+</Unknown>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <span>
+                Focus
+</span>,
+              "className": undefined,
+              "to": "/focus",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Focus",
+              },
+              "ref": null,
+              "rendered": "Focus",
               "type": "span",
             },
             "type": [Function],
@@ -1256,11 +1394,12 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <Unknown
-              to="/about"
+              className={undefined}
+              to="/film-cameras"
 >
-              About
+              Film Cameras
 </Unknown>,
-            "className": "prime left",
+            "className": "left",
             "left": true,
             "narrow": true,
             "prime": true,
@@ -1271,11 +1410,12 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": "About",
-              "to": "/about",
+              "children": "Film Cameras",
+              "className": undefined,
+              "to": "/film-cameras",
             },
             "ref": null,
-            "rendered": "About",
+            "rendered": "Film Cameras",
             "type": [Function],
           },
           "type": [Function],
@@ -1757,27 +1897,8 @@ ShallowWrapper {
             null,
             Object {
               "mobile": "on",
-              "text": "Photo Essays",
-              "to": "/photo-essays",
-            },
-            Object {
-              "text": "Editorials",
-              "to": "/editorials",
-            },
-            Object {
-              "text": "Guides",
-              "to": "/guides",
-            },
-            Object {
-              "text": "Reviews",
-              "to": "/reviews",
-            },
-            Object {
-              "text": "Stories",
-              "to": "/stories",
-            },
-            Object {
-              "divider": true,
+              "text": "Film Cameras",
+              "to": "/film-cameras",
             },
             Object {
               "text": "Collaborations",
@@ -1788,12 +1909,20 @@ ShallowWrapper {
               "to": "/solo-projects",
             },
             Object {
+              "text": "Editorials",
+              "to": "/editorials",
+            },
+            Object {
+              "text": "About Analog.Cafe",
+              "to": "/about",
+            },
+            Object {
               "branded": true,
               "text": "Submit",
               "to": "/submit",
             },
           ],
-          "title": "More…",
+          "title": "More ",
         },
       },
     },
@@ -1825,27 +1954,8 @@ ShallowWrapper {
               null,
               Object {
                 "mobile": "on",
-                "text": "Photo Essays",
-                "to": "/photo-essays",
-              },
-              Object {
-                "text": "Editorials",
-                "to": "/editorials",
-              },
-              Object {
-                "text": "Guides",
-                "to": "/guides",
-              },
-              Object {
-                "text": "Reviews",
-                "to": "/reviews",
-              },
-              Object {
-                "text": "Stories",
-                "to": "/stories",
-              },
-              Object {
-                "divider": true,
+                "text": "Film Cameras",
+                "to": "/film-cameras",
               },
               Object {
                 "text": "Collaborations",
@@ -1856,12 +1966,20 @@ ShallowWrapper {
                 "to": "/solo-projects",
               },
               Object {
+                "text": "Editorials",
+                "to": "/editorials",
+              },
+              Object {
+                "text": "About Analog.Cafe",
+                "to": "/about",
+              },
+              Object {
                 "branded": true,
                 "text": "Submit",
                 "to": "/submit",
               },
             ],
-            "title": "More…",
+            "title": "More ",
           },
         },
       },

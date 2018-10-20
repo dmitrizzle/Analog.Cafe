@@ -17,6 +17,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
+      "article": undefined,
       "composer": undefined,
       "editor": undefined,
       "nav": undefined,
@@ -33,6 +34,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
+        "article": undefined,
         "composer": undefined,
         "editor": undefined,
         "nav": undefined,
