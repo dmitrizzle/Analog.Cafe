@@ -39,7 +39,8 @@ export default props => {
           <CardIntegratedForColumns>
             <CardHeader stubborn buttons={[0]} noStar title="Get Published" />
             <CardCaptionIntegrated>
-              We’d love to publish your photo essay, guide, or a review!
+              Do you shoot film? Get your work reviewed and published on
+              Analog.Cafe.
             </CardCaptionIntegrated>
             <LinkButton
               branded
@@ -52,7 +53,7 @@ export default props => {
               }}
               key="Options_LinkButton"
             >
-              Submit Your Article
+              Write for Analog.Cafe
             </LinkButton>
           </CardIntegratedForColumns>
         )}
