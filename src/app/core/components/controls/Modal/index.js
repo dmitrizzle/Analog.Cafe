@@ -15,7 +15,7 @@ export const ModalLink = styled.a`
     vertical-align: super;
     font-size: 0.5em;
     margin-right: -.25em;
-    margin-left: -.15em;
+    margin-left: 0em;
     margin-top: -.5em;
   }
 `

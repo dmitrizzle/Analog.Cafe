@@ -9,7 +9,6 @@ import {
 } from "../../../../utils/messages-author"
 import Byline from "../../../vignettes/Byline"
 import HeaderLarge from "../../../vignettes/HeaderLarge"
-import Link from "../../../controls/Link"
 import Modal from "../../../controls/Modal"
 
 const ArticleControls = Loadable({
