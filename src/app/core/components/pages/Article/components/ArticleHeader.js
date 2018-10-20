@@ -9,7 +9,6 @@ import {
 } from "../../../../utils/messages-author"
 import Byline from "../../../vignettes/Byline"
 import HeaderLarge from "../../../vignettes/HeaderLarge"
-import Link from "../../../controls/Link"
 import Modal from "../../../controls/Modal"
 
 const ArticleControls = Loadable({
@@ -29,7 +28,7 @@ export default props => {
       {props.article.authors &&
         props.article.authors[0].name && (
           <Byline>
-            <Link to={props.stateTag.route}>{props.stateTag.name}</Link> by{" "}
+            By{" "}
             {getLeadAuthorObject(props.article.authors).id ? (
               <Modal
                 with={{

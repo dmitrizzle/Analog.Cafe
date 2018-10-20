@@ -9,61 +9,56 @@ export const TEXT_STATUS_LABELS = {
   published: "Published"
 }
 export const TEXT_ROUTE_LABELS = {
-  [ROUTE_URL_USER_LANDING]: {
-    title: "Your submissions to Analog.Cafe"
-  },
-  "/stories": {
-    title: "Stories: any medium, any topic",
-    description:
-      "Stories, essays and creative writing, beyond film photography."
-  },
-  "/editorials": {
-    title: "Notes from Analog.Cafe editors",
-    description:
-      "Announcements, notes and opinion pieces from Analog.Cafe editors."
-  },
-  "/guides": {
-    title: "Guides: learn, understand & DIY",
-    description:
-      "Guides, explainations and instructables on film photography, art and technology."
-  },
-  "/reviews": {
-    title: "Reviews: tools, toys & places",
-    description:
-      "Film photography gear, creative tools, places & experiences that inspire."
-  },
-  "/photo-essays": {
-    title: "Photo essays; shot on film",
-    description:
-      "A colleciton of photo essays created with analog (film) cameras."
-  },
-  "/articles": {
-    title: "Stories, reviews, guides & editorials",
-    description:
-      "A collection of articles about art, inspiration and technology."
-  },
-  "/collaborations": {
-    title: "Collaborations",
-    description:
-      "Collaborations are written pieces with images created by multiple artists and photographers."
-  },
-  "/solo-projects": {
-    title: "Solo projects",
-    description:
-      "Solo projects are written pieces with images created by a single author."
-  },
   "/": {
-    title: "Photo essays, guides, reviews & stories",
-    description:
-      "Analog.Cafe is an inclusive creative outlet that publishes outstanding images and stories.",
+    title: "Film Cameras & Photo Stories",
+    description: `Weekly photo stories on art, culture, travel. Also, film cameras. Created by film photographers, artists, and writers of the internet.`,
     designation: "homepage"
-  },
-  "/author/*": {
-    title: "Images & stories",
-    description: "Published works and photography by Analog.Cafe author."
   },
   default: {
     title: APP_DESCRIPTION
+  },
+
+  "/perspective": {
+    title: "Thought pieces and art projects",
+    description: ""
+  },
+  "/focus": {
+    title: "Places, people, events",
+    description: ""
+  },
+  "/photo-stories": {
+    title: "Art, culture, travel",
+    description: ""
+  },
+
+  "/film-cameras": {
+    title: "Film cameras, chemicals, tools; reviews, stories, guides",
+    description: ""
+  },
+  "/editorials": {
+    title: "From the Analog.Cafe editors",
+    description: ""
+  },
+  "/unclassifieds": {
+    title: "Everything else",
+    description: ""
+  },
+  "/collaborations": {
+    title: "Co-authored articles",
+    description: ""
+  },
+  "/solo-projects": {
+    title: "Written and photographed by a single author",
+    description: ""
+  },
+
+  [ROUTE_URL_USER_LANDING]: {
+    title: "Your submissions to Analog.Cafe"
+  },
+  "/author/*": {
+    title: "Published work",
+    description:
+      "All published work by the Analog.Cafe author, including images and text published in collaboration with other authors."
   }
 }
 

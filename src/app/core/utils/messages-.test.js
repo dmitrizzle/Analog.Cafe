@@ -12,18 +12,6 @@ it("Convert slug with ID to title", () =>
       trim: [0, -1]
     })
   ).toEqual("Isaan on a Cloud"))
-it("Change photo essay to single-frame narrative on context", () => {
-  expect(
-    getTitleFromSlug("photo-essay", {
-      smartTagFromImageCount: 1
-    })
-  ).toEqual("Single-Frame Narrative")
-  expect(
-    getTitleFromSlug("photo-essay", {
-      smartTagFromImageCount: 4
-    })
-  ).toEqual("Photo Essay")
-})
 it("Convert slug to text with no titlecase", () =>
   expect(getTitleFromSlug("isaan-on-a-cloud", { titleCase: false })).toEqual(
     "isaan on a cloud"

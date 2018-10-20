@@ -2058,6 +2058,11 @@ ShallowWrapper {
             },
           }
     }
+    location={
+        Object {
+            "pathname": [Function],
+          }
+    }
     renderedListMeta={
         Object {
             "title": "",
@@ -2084,7 +2089,9 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        <styled.strong>
+        <styled.strong
+          homepage={false}
+>
           Analog.Cafe
 </styled.strong>,
         <styled.div>
@@ -2098,6 +2105,9 @@ ShallowWrapper {
         "filter": Object {
           "tags": Array [],
         },
+      },
+      "location": Object {
+        "pathname": [Function],
       },
       "renderedListMeta": Object {
         "title": "",
@@ -2116,6 +2126,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": "Analog.Cafe",
+          "homepage": false,
         },
         "ref": null,
         "rendered": "Analog.Cafe",
@@ -2170,7 +2181,9 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <styled.strong>
+          <styled.strong
+            homepage={false}
+>
             Analog.Cafe
 </styled.strong>,
           <styled.div>
@@ -2184,6 +2197,9 @@ ShallowWrapper {
           "filter": Object {
             "tags": Array [],
           },
+        },
+        "location": Object {
+          "pathname": [Function],
         },
         "renderedListMeta": Object {
           "title": "",
@@ -2202,6 +2218,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": "Analog.Cafe",
+            "homepage": false,
           },
           "ref": null,
           "rendered": "Analog.Cafe",

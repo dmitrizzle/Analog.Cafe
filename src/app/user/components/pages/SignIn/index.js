@@ -136,16 +136,12 @@ class SignIn extends React.PureComponent {
                             <span>
                               Sign in and create accounts{" "}
                               <strong>securely and without passwords</strong>{" "}
-                              using confirmation link.
+                              using confirmation links.
                               <br />
                               <br />
-                              Enter your email and we’ll send you a confirmatoin
-                              link that expires in ten minutes. Click it to
-                              instantly access your account.
-                              <br />
-                              <br />
-                              Use the same email to access your existing
-                              account. Confirmation email links are very secure.
+                              Enter your email address and we’ll email you a
+                              link that expires in ten minutes. Click it –
+                              you’re now signed in!
                             </span>
                           )
                         },
@@ -154,7 +150,7 @@ class SignIn extends React.PureComponent {
                     >
                       confirmation
                     </Modal>{" "}
-                    sign in link:
+                    link:
                   </small>
                 </em>
               </p>

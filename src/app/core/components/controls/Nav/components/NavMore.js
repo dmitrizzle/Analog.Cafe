@@ -13,7 +13,7 @@ export default props => {
       inverse={props.inverse}
       with={{
         info: {
-          title: "More…",
+          title: "More ",
           buttons: [
             props.userStatus === "ok"
               ? {
@@ -44,26 +44,10 @@ export default props => {
                 }
               : null,
             {
-              to: "/photo-essays",
-              text: "Photo Essays"
+              to: "/film-cameras",
+              text: "Film Cameras",
+              mobile: "on"
             },
-            {
-              to: "/editorials",
-              text: "Editorials"
-            },
-            {
-              to: "/guides",
-              text: "Guides"
-            },
-            {
-              to: "/reviews",
-              text: "Reviews"
-            },
-            {
-              to: "/stories",
-              text: "Stories"
-            },
-            { divider: true },
             {
               to: "/collaborations",
               text: "Collaborations"
@@ -71,6 +55,15 @@ export default props => {
             {
               to: "/solo-projects",
               text: "Solo Projects"
+            },
+
+            {
+              to: "/editorials",
+              text: "Editorials"
+            },
+            {
+              to: "/about",
+              text: "About Analog.Cafe"
             },
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",

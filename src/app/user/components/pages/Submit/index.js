@@ -79,8 +79,8 @@ export default () => {
         }
       />
       <HeaderLarge
-        pageTitle="Submit"
-        pageSubtitle="Photo Essays, Stories, Guides, Reviews"
+        pageTitle="Your Submissions"
+        pageSubtitle="Write for Analog.Cafe"
       />
       <ArticleSection>
         <p>
@@ -100,12 +100,32 @@ export default () => {
         </ButtonGroup>
 
         <p>
-          <strong>Sending submissions is easy.</strong> Plus, you get to see
-          what your work may look like when published with the{" "}
-          <Link to="/submit/compose">
-            <em>Composer</em>
-          </Link>{" "}
-          tool. Just add your images, title, text, and click “Send” once ready.
+          <strong>Sending submissions is easy.</strong> Just add your images,
+          title, and text to a Analog.Cafe’s{" "}
+          <Modal
+            with={{
+              info: {
+                title: "What’s WISIWIG?",
+                image: "image-froth_1144351_rk-MB7KoQ",
+                text: (
+                  <span>
+                    <strong>WISIWIG</strong> is short for “what I see is what I
+                    get.”
+                    <br />
+                    <br />
+                    We call ours “Composer.” It’s been built to help you format
+                    your submission to look the way you choose. You can resize
+                    your images to appear full-screen, add captions, add quotes,
+                    dividers and headings, as well as links and font styles.
+                  </span>
+                )
+              },
+              id: "hints/disposable-links"
+            }}
+          >
+            WISIWIG
+          </Modal>{" "}
+          editor.
         </p>
 
         <p>

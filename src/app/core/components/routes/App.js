@@ -66,23 +66,45 @@ export default () => {
         {/* dynamic urls and views */}
         <Route exact path="/author" component={NotFound} />
         <Route exact path="/zine" component={NotFound} />
-
         <Route exact path="/author/*" component={List} />
         <Route exact path="/zine/*" component={Article} />
-
-        {/* dynamic views, static urls */}
+        {/* NOTE below is a set of outdated routes */}
+        <Route
+          exact
+          path="/photo-essays"
+          render={() => <Redirect to="/photo-stories" />}
+        />
+        <Route exact path="/articles" render={() => <Redirect to="/" />} />
+        <Route
+          exact
+          path="/stories"
+          render={() => <Redirect to="/photo-stories" />}
+        />
+        <Route
+          exact
+          path="/storys"
+          render={() => <Redirect to="/photo-storie" />}
+        />
+        <Route
+          exact
+          path="/guides"
+          render={() => <Redirect to="/film-cameras" />}
+        />
+        <Route
+          exact
+          path="/reviews"
+          render={() => <Redirect to="/film-cameras" />}
+        />
+        {/* new magazine sections */}
         <Route exact path="/" component={List} />
-        <Route exact path="/photo-essays" component={List} />
-        <Route exact path="/articles" component={List} />
-        <Route exact path="/stories" component={List} />
-        <Route exact path="/storys" render={() => <Redirect to="/stories" />} />
+        <Route exact path="/film-cameras" component={List} />
+        <Route exact path="/focus" component={List} />
+        <Route exact path="/perspective" component={List} />
+        <Route exact path="/photo-stories" component={List} />
         <Route exact path="/editorials" component={List} />
-        <Route exact path="/guides" component={List} />
-        <Route exact path="/reviews" component={List} />
-
+        <Route exact path="/unclassifieds" component={List} />
         <Route exact path="/collaborations" component={List} />
         <Route exact path="/solo-projects" component={List} />
-
         {/* auth views */}
         <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
         <Route
@@ -98,7 +120,6 @@ export default () => {
         />
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-out" component={SignOut} />
-
         {/* static views and urls */}
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />

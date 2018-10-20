@@ -13,7 +13,7 @@
   line-height: 1.15em;
 }
 .navMore::after {
-  content: "✦";
+  content: "✪";
   text-decoration: none;
   font-style: normal;
   display: inline-block;
@@ -64,7 +64,7 @@
 .appNav li {
   display: block;
   text-align: center;
-  width: 7em;
+  width: 7.5em;
 }
 .appNav li.mobile {
   display: none;
@@ -89,9 +89,11 @@
 .appNav a {
   color: inherit;
   text-decoration-skip: ink;
-  background: #fff;
   text-decoration: none;
   position: relative;
+  background: #f7f7f7;
+  padding: 0.1em 0.45em 0.15em;
+  border-radius: 0.25em;
 }
 a.indexRouteLink {
   position: static;
@@ -125,14 +127,16 @@ a.indexRouteLink {
 }
 
 .bodyFontLoader {
-  color: rgba(44, 44, 44, 0.25);
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  height: 1.75em;
+  margin: 2em 0.5em 1.5em;
   font-family: "Lora", Georgia, serif;
   letter-spacing: 0.025em;
   line-height: 1.75em;
-  margin: 1.5em 0;
-  text-align: center;
-  font-size: 20px;
 }
 .bodyFontLoader > span {
-  font-size: 0.85em;
+  font-size: 1.07em;
+  background: rgba(44, 44, 44, 1);
+  box-shadow: 0 0 0 5px rgba(44, 44, 44, 1);
 }

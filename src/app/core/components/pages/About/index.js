@@ -26,7 +26,7 @@ import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
 const metaDescription =
-  "A web magazine that publishes weekly creative and insightful works by a community of artists, writers and film photographers."
+  "Analog.Cafe is weekly photo stories on art, culture, travel. Also, film cameras. Created by film photographers, artists, and writers of the internet."
 
 const AuthorsBanner = styled.div`
   width: 100vw;
@@ -88,9 +88,9 @@ class About extends React.PureComponent {
 
       <ArticleSection>
         <blockquote>
-          <strong>A web magazine</strong> that publishes weekly creative and
-          insightful works by a community of artists, writers and{" "}
-          <strong>film photographers</strong>.
+          Weekly photo stories on <strong>art, culture, travel</strong>. Also,
+          film cameras. Created by film photographers, artists, and writers of
+          the internet.
         </blockquote>
         <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
           <Authors>
@@ -116,43 +116,66 @@ class About extends React.PureComponent {
           </Authors>
         </AuthorsBanner>
 
-        <h3>Magazine.</h3>
+        <h3>Film Cameras.</h3>
         <p>
-          Every week, we publish creative{" "}
-          <Link to="/photo-essays">photo essays</Link>, as well as insightful{" "}
-          <Link to="/guides">guides</Link>, <Link to="/reviews">reviews</Link>,
-          and <Link to="/stories">stories</Link>.
+          Almost every image on this website has originated on a roll of film,
+          for what’s known as <strong>film photography</strong> 🎞. The{" "}
+          <Link to="/zine/analogue-photography-98f3">analogue</Link> process is
+          notably different from digital photography.
         </p>
         <p>
-          <strong>Film photography</strong> is our tool of choice for 99% of all
-          published images on Analog.Cafe. An analogue, tangeable medium that
-          uses chemistry to capture light. Check out{" "}
-          <Link to="/zine/analogue-photography-98f3">this</Link> guide and{" "}
-          <Link to="/zine/my-love-for-film-lw88">this</Link> photo essay to find
-          out why.
-        </p>
-
-        <p>
-          If you shoot film and would like to be a part of this{" "}
-          <strong>passion project</strong>, join us:
+          Most stories and articles on Analog.Cafe are either about{" "}
+          <Link to="/film-cameras">film cameras</Link> or have them involved in
+          the image making. The reason is our collective passion and
+          appreciation for the analogue process and technology. We believe it
+          helps create more thoughtful, beautiful, and truthful works.
         </p>
 
-        <ButtonGroup>
-          <LinkButton
-            branded
-            to={this.props.userStatus === "ok" ? "/submit/compose" : "/submit"}
-            onClick={() => {
-              GA.event({
-                category: "Campaign",
-                action: "About.submit_button"
-              })
+        <h3>Photo Stories.</h3>
+        <p>
+          Photography is more than gear. Photography is images, art,
+          documentation, and stories. Analog.Cafe’s{" "}
+          <em>
+            <Link to="/photo-stories">Photo Stories</Link>
+          </em>{" "}
+          section is split into <em>Perspective</em> and <em>Focus</em> topics
+          to distinguish between the two different storytelling styles.
+        </p>
+        <p>
+          <em>
+            <Link to="/perspective">Perspective</Link>
+          </em>{" "}
+          is an emphasis on thought pieces and art projects. These are
+          collections of abstract photography, thought-provoking essays,
+          observations, and creative self-expression.
+        </p>
+        <p>
+          <em>
+            <Link to="/focus">Focus</Link>
+          </em>{" "}
+          is an emphasis on places, people, events. These are the stories about
+          travel, culture, and items of interest meant to inform and enlighten.
+        </p>
+
+        <h3>The authors.</h3>
+        <p>
+          Analog.Cafe got started by{" "}
+          <Modal
+            with={{
+              request: {
+                url: ROUTE_API_AUTHORS + "/dmitrizzle"
+              }
             }}
           >
-            Submit Your Article
-          </LinkButton>
-        </ButtonGroup>
-
-        <h3>The Editors.</h3>
+            Dmitri
+          </Modal>{" "}
+          in 2017 as a small community project of ten authors to collect and
+          write about photographs shot on film. It has since more than
+          quadrupled in size with contributions from all corner of the world. We
+          always look go welcome new writers through our{" "}
+          <Link to="/submit">submission</Link> program.
+        </p>
+        <h3>The editors.</h3>
         <p>
           <Modal
             with={{
@@ -163,26 +186,13 @@ class About extends React.PureComponent {
           >
             Betty
           </Modal>{" "}
-          and{" "}
-          <Modal
-            with={{
-              request: {
-                url: ROUTE_API_AUTHORS + "/dmitrizzle"
-              }
-            }}
-          >
-            Dmitri
-          </Modal>{" "}
-          edit every article, keeping the content interesting, thoughtful, and
-          readable.
+          and Dmitri edit every article, keeping the content interesting,
+          thoughtful, and readable.
         </p>
 
-        <h3>The App.</h3>
+        <h3>The Website.</h3>
         <p>
-          Analog.Cafe is built in-house and maintained specifically for{" "}
-          <Link to="/zine/analogue-photography-98f3">analogue</Link>{" "}
-          enthusiasts. It respects <Link to="/privacy-policy">privacy</Link>,
-          works{" "}
+          Analog.Cafe respects <Link to="/privacy-policy">privacy</Link>, works{" "}
           <Modal
             with={{
               ...CARD_ALERTS.AUTO_SAVE,
@@ -246,6 +256,27 @@ class About extends React.PureComponent {
             <Link to="/privacy-policy">never share or sell</Link> your personal
             information.
           </Byline>
+        </ButtonGroup>
+
+        <h3>Write for Analog.Cafe.</h3>
+        <p>
+          Interested in having your work reviewed and published on Analog.Cafe?
+          It’s easy:
+        </p>
+
+        <ButtonGroup>
+          <LinkButton
+            branded
+            to={"/submit"}
+            onClick={() => {
+              GA.event({
+                category: "Campaign",
+                action: "About.submit_button"
+              })
+            }}
+          >
+            How to Submit
+          </LinkButton>
         </ButtonGroup>
 
         <h3>Thank you, project backers!</h3>
