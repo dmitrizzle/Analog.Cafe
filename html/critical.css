@@ -13,7 +13,7 @@
   line-height: 1.15em;
 }
 .navMore::after {
-  content: "✦";
+  content: "✪";
   text-decoration: none;
   font-style: normal;
   display: inline-block;

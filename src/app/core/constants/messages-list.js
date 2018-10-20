@@ -10,8 +10,8 @@ export const TEXT_STATUS_LABELS = {
 }
 export const TEXT_ROUTE_LABELS = {
   "/": {
-    title: "Photo Stories & Film Cameras",
-    description: `A web magazine that publishes weekly on topics of culture, places, and film photography. Created by a community of writers and film photographers.`,
+    title: "Film Cameras & Photo Stories",
+    description: `Weekly photo stories on art, culture, travel. Also, film cameras. Created by film photographers, artists, and writers of the internet.`,
     designation: "homepage"
   },
   default: {

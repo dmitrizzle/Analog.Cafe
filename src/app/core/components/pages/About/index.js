@@ -88,8 +88,9 @@ class About extends React.PureComponent {
 
       <ArticleSection>
         <blockquote>
-          Weekly <strong>culture, places, and film photography</strong>. A web
-          zine created by the community of writers and film photographers.
+          Weekly photo stories on <strong>art, culture, travel</strong>. Also,
+          film cameras. Created by film photographers, artists, and writers of
+          the internet.
         </blockquote>
         <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
           <Authors>

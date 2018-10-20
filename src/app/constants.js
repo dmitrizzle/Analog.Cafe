@@ -18,7 +18,7 @@ export const TEXT_EMOJIS = {
   NEONCAT: "(◕⌂◕⊃⊃)",
   HUG_RIGHT: "ʕっ•ᴥ•ʔっ",
 
-  STAR: "✦",
+  STAR: "✪",
   TITLE_SEPARATOR: "—",
   CHECKMARK: "✓",
   PARAGRAPH: "❡",

@@ -2,7 +2,6 @@ import { connect } from "react-redux"
 import Loadable from "react-loadable"
 import React from "react"
 import queryString from "query-string"
-import styled from "styled-components"
 import throttle from "lodash/throttle"
 
 import { withRouter } from "react-router"
@@ -21,34 +20,11 @@ import { setArticleSelectoin } from "./core/store/actions-article"
 import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import AppRoutes from "./core/components/routes/App"
+import Essays from "./core/components/controls/Nav/components/Essays"
 import HighlightMenu from "./core/components/controls/ArticleActions/components/HighlightMenu"
 import Link from "./core/components/controls/Link"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav"
-
-const Essays = styled.div`
-  width: 12em;
-  position: absolute;
-  border-radius: 0.33em;
-  box-shadow: 0 1px #2c2c2c;
-  color: #2c2c2c;
-  height: 0.65em;
-  top: 5em;
-  margin-left: calc(50vw - 21em);
-  opacity: 0.5;
-  z-index: 1;
-  ${props => props.theme.size.breakpoint.max.m`display: none;`} a {
-    font-style: italic;
-    font-family: "Lora", Georgia, serif;
-    display: block;
-    background: #fff;
-    width: 6.5em;
-    text-align: center;
-    margin: 0 auto -1em;
-    height: 1.25em;
-    text-decoration: none;
-  }
-`
 
 const ListPreloader = Loadable({
   loader: () => import("./core/components/pages/List"),
@@ -178,7 +154,12 @@ class App extends React.PureComponent {
   render = () => {
     return [
       <Nav top key="App_Nav_top" />,
-      <Essays key="App_Essays">
+      <Essays
+        key="App_Essays"
+        hidden={
+          this.props.nav.view !== "VISITOR" || !this.props.nav.location.top
+        }
+      >
         <Link to="/photo-stories">Photo Stories</Link>
       </Essays>,
       <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
@@ -225,7 +206,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     user: state.user,
-    article: state.article
+    article: state.article,
+    nav: state.nav
   }
 }
 export default withRouter(

@@ -43,10 +43,11 @@ export default props => {
                   inverse: true
                 }
               : null,
-            // {
-            //   to: "/unclassifieds",
-            //   text: "Unclassifieds"
-            // },
+            {
+              to: "/film-cameras",
+              text: "Film Cameras",
+              mobile: "on"
+            },
             {
               to: "/collaborations",
               text: "Collaborations"
