@@ -98,8 +98,8 @@ export default () => {
         {/* new magazine sections */}
         <Route exact path="/" component={List} />
         <Route exact path="/film-cameras" component={List} />
-        <Route exact path="/focus" component={List} />
-        <Route exact path="/perspective" component={List} />
+        <Route exact path="/places" component={List} />
+        <Route exact path="/art" component={List} />
         <Route exact path="/photo-stories" component={List} />
         <Route exact path="/editorials" component={List} />
         <Route exact path="/unclassifieds" component={List} />

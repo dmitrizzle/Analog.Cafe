@@ -11,31 +11,33 @@ export const TEXT_STATUS_LABELS = {
 export const TEXT_ROUTE_LABELS = {
   "/": {
     title: "Film Cameras & Photo Stories",
-    description: `Weekly photo stories on art, culture, travel. Also, film cameras. Created by film photographers, artists, and writers of the internet.`,
+    description: `Weekly photo stories on art, culture, and travel. Also, film cameras. Created by film photographers, artists, and writers of the internet.`,
     designation: "homepage"
   },
   default: {
     title: APP_DESCRIPTION
   },
 
-  "/perspective": {
+  "/art": {
     title: "Thought pieces and art projects",
     description:
-      "Emphasis on thought pieces and art projects. These are collections of abstract photography, thought-provoking essays, observations, and creative self-expression."
+      "Emphasis on thought pieces and art projects. These are collections of abstract photography, thought-provoking essays, observations, and creative self-expressions."
   },
-  "/focus": {
+  "/places": {
     title: "Places, people, events",
     description:
-      "Emphasis on places, people, events. These are the stories about travel, culture, and items of interest meant to inform and enlighten."
+      "Emphasis on places, people, events. These are the stories about travel, culture, and items of interest; meant to inform and enlighten."
   },
   "/photo-stories": {
     title: "Art, culture, travel",
-    description: ""
+    description:
+      "Analog.Cafe’s Photo Stories section, split into Art and Culture topics, is a stream of non-technical essays focusing on art, culture, and travel."
   },
 
   "/film-cameras": {
     title: "Film cameras, chemicals, tools; reviews, stories, guides",
-    description: ""
+    description:
+      "Most stories and articles on Analog.Cafe are either about film cameras or have them involved in the image making. The reason is our collective passion and appreciation for the analogue process and technology."
   },
   "/editorials": {
     title: "From the Analog.Cafe editors",

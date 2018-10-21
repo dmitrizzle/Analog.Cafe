@@ -426,9 +426,9 @@ ShallowWrapper {
                               onClick={[Function]}
                               right={false}
                               style={Object {}}
-                              to="#focus"
+                              to="#places"
                     >
-                              Focus
+                              Places
                     </Unknown>
                     <Unknown
                               inverse={false}
@@ -436,9 +436,9 @@ ShallowWrapper {
                               onClick={[Function]}
                               right={false}
                               style={Object {}}
-                              to="#perspective"
+                              to="#art"
                     >
-                              Perspective
+                              Art
                     </Unknown>
                     <Unknown
                               inverse={false}
@@ -519,9 +519,9 @@ ShallowWrapper {
                         onClick={[Function]}
                         right={false}
                         style={Object {}}
-                        to="#focus"
+                        to="#places"
             >
-                        Focus
+                        Places
             </Unknown>
             <Unknown
                         inverse={false}
@@ -529,9 +529,9 @@ ShallowWrapper {
                         onClick={[Function]}
                         right={false}
                         style={Object {}}
-                        to="#perspective"
+                        to="#art"
             >
-                        Perspective
+                        Art
             </Unknown>
             <Unknown
                         inverse={false}
@@ -584,9 +584,9 @@ ShallowWrapper {
                 onClick={[Function]}
                 right={false}
                 style={Object {}}
-                to="#focus"
+                to="#places"
 >
-                Focus
+                Places
 </Unknown>,
               <Unknown
                 inverse={false}
@@ -594,9 +594,9 @@ ShallowWrapper {
                 onClick={[Function]}
                 right={false}
                 style={Object {}}
-                to="#perspective"
+                to="#art"
 >
-                Perspective
+                Art
 </Unknown>,
               <Unknown
                 inverse={false}
@@ -637,36 +637,36 @@ ShallowWrapper {
           "rendered": Array [
             Object {
               "instance": null,
-              "key": "focus",
+              "key": "places",
               "nodeType": "function",
               "props": Object {
-                "children": "Focus",
+                "children": "Places",
                 "inverse": false,
                 "left": true,
                 "onClick": [Function],
                 "right": false,
                 "style": Object {},
-                "to": "#focus",
+                "to": "#places",
               },
               "ref": null,
-              "rendered": "Focus",
+              "rendered": "Places",
               "type": [Function],
             },
             Object {
               "instance": null,
-              "key": "perspective",
+              "key": "art",
               "nodeType": "function",
               "props": Object {
-                "children": "Perspective",
+                "children": "Art",
                 "inverse": false,
                 "left": false,
                 "onClick": [Function],
                 "right": false,
                 "style": Object {},
-                "to": "#perspective",
+                "to": "#art",
               },
               "ref": null,
-              "rendered": "Perspective",
+              "rendered": "Art",
               "type": [Function],
             },
             Object {
@@ -821,9 +821,9 @@ ShallowWrapper {
                                     onClick={[Function]}
                                     right={false}
                                     style={Object {}}
-                                    to="#focus"
+                                    to="#places"
                         >
-                                    Focus
+                                    Places
                         </Unknown>
                         <Unknown
                                     inverse={false}
@@ -831,9 +831,9 @@ ShallowWrapper {
                                     onClick={[Function]}
                                     right={false}
                                     style={Object {}}
-                                    to="#perspective"
+                                    to="#art"
                         >
-                                    Perspective
+                                    Art
                         </Unknown>
                         <Unknown
                                     inverse={false}
@@ -914,9 +914,9 @@ ShallowWrapper {
                             onClick={[Function]}
                             right={false}
                             style={Object {}}
-                            to="#focus"
+                            to="#places"
               >
-                            Focus
+                            Places
               </Unknown>
               <Unknown
                             inverse={false}
@@ -924,9 +924,9 @@ ShallowWrapper {
                             onClick={[Function]}
                             right={false}
                             style={Object {}}
-                            to="#perspective"
+                            to="#art"
               >
-                            Perspective
+                            Art
               </Unknown>
               <Unknown
                             inverse={false}
@@ -979,9 +979,9 @@ ShallowWrapper {
                   onClick={[Function]}
                   right={false}
                   style={Object {}}
-                  to="#focus"
+                  to="#places"
 >
-                  Focus
+                  Places
 </Unknown>,
                 <Unknown
                   inverse={false}
@@ -989,9 +989,9 @@ ShallowWrapper {
                   onClick={[Function]}
                   right={false}
                   style={Object {}}
-                  to="#perspective"
+                  to="#art"
 >
-                  Perspective
+                  Art
 </Unknown>,
                 <Unknown
                   inverse={false}
@@ -1032,36 +1032,36 @@ ShallowWrapper {
             "rendered": Array [
               Object {
                 "instance": null,
-                "key": "focus",
+                "key": "places",
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Focus",
+                  "children": "Places",
                   "inverse": false,
                   "left": true,
                   "onClick": [Function],
                   "right": false,
                   "style": Object {},
-                  "to": "#focus",
+                  "to": "#places",
                 },
                 "ref": null,
-                "rendered": "Focus",
+                "rendered": "Places",
                 "type": [Function],
               },
               Object {
                 "instance": null,
-                "key": "perspective",
+                "key": "art",
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Perspective",
+                  "children": "Art",
                   "inverse": false,
                   "left": false,
                   "onClick": [Function],
                   "right": false,
                   "style": Object {},
-                  "to": "#perspective",
+                  "to": "#art",
                 },
                 "ref": null,
-                "rendered": "Perspective",
+                "rendered": "Art",
                 "type": [Function],
               },
               Object {

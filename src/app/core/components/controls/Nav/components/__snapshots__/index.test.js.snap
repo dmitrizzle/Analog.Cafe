@@ -828,20 +828,20 @@ ShallowWrapper {
         <styled.li>
           <Unknown
                     className={undefined}
-                    to="/perspective"
+                    to="/art"
           >
                     <span>
-                              Perspective
+                              Art
                     </span>
           </Unknown>
 </styled.li>,
         <styled.li>
           <Unknown
                     className={undefined}
-                    to="/focus"
+                    to="/places"
           >
                     <span>
-                              Focus
+                              Places
                     </span>
           </Unknown>
 </styled.li>,
@@ -1001,10 +1001,10 @@ ShallowWrapper {
         "props": Object {
           "children": <Unknown
             className={undefined}
-            to="/perspective"
+            to="/art"
 >
             <span>
-                        Perspective
+                        Art
             </span>
 </Unknown>,
         },
@@ -1015,10 +1015,10 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": <span>
-              Perspective
+              Art
 </span>,
             "className": undefined,
-            "to": "/perspective",
+            "to": "/art",
           },
           "ref": null,
           "rendered": Object {
@@ -1026,10 +1026,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Perspective",
+              "children": "Art",
             },
             "ref": null,
-            "rendered": "Perspective",
+            "rendered": "Art",
             "type": "span",
           },
           "type": [Function],
@@ -1043,10 +1043,10 @@ ShallowWrapper {
         "props": Object {
           "children": <Unknown
             className={undefined}
-            to="/focus"
+            to="/places"
 >
             <span>
-                        Focus
+                        Places
             </span>
 </Unknown>,
         },
@@ -1057,10 +1057,10 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": <span>
-              Focus
+              Places
 </span>,
             "className": undefined,
-            "to": "/focus",
+            "to": "/places",
           },
           "ref": null,
           "rendered": Object {
@@ -1068,10 +1068,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Focus",
+              "children": "Places",
             },
             "ref": null,
-            "rendered": "Focus",
+            "rendered": "Places",
             "type": "span",
           },
           "type": [Function],
@@ -1235,20 +1235,20 @@ ShallowWrapper {
           <styled.li>
             <Unknown
                         className={undefined}
-                        to="/perspective"
+                        to="/art"
             >
                         <span>
-                                    Perspective
+                                    Art
                         </span>
             </Unknown>
 </styled.li>,
           <styled.li>
             <Unknown
                         className={undefined}
-                        to="/focus"
+                        to="/places"
             >
                         <span>
-                                    Focus
+                                    Places
                         </span>
             </Unknown>
 </styled.li>,
@@ -1408,10 +1408,10 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown
               className={undefined}
-              to="/perspective"
+              to="/art"
 >
               <span>
-                            Perspective
+                            Art
               </span>
 </Unknown>,
           },
@@ -1422,10 +1422,10 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": <span>
-                Perspective
+                Art
 </span>,
               "className": undefined,
-              "to": "/perspective",
+              "to": "/art",
             },
             "ref": null,
             "rendered": Object {
@@ -1433,10 +1433,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Perspective",
+                "children": "Art",
               },
               "ref": null,
-              "rendered": "Perspective",
+              "rendered": "Art",
               "type": "span",
             },
             "type": [Function],
@@ -1450,10 +1450,10 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown
               className={undefined}
-              to="/focus"
+              to="/places"
 >
               <span>
-                            Focus
+                            Places
               </span>
 </Unknown>,
           },
@@ -1464,10 +1464,10 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": <span>
-                Focus
+                Places
 </span>,
               "className": undefined,
-              "to": "/focus",
+              "to": "/places",
             },
             "ref": null,
             "rendered": Object {
@@ -1475,10 +1475,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Focus",
+                "children": "Places",
               },
               "ref": null,
-              "rendered": "Focus",
+              "rendered": "Places",
               "type": "span",
             },
             "type": [Function],

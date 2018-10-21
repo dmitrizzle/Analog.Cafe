@@ -28,20 +28,20 @@ export default props => {
 
   const a = "active"
   const ps = "/photo-stories"
-  const pe = "/perspective"
-  const fo = "/focus"
+  const ar = "/art"
+  const pl = "/places"
 
   const photoStories = {
     to: ps,
-    className: isActive(ps) || isActive(pe) || isActive(fo) ? a : undefined
+    className: isActive(ps) || isActive(ar) || isActive(pl) ? a : undefined
   }
-  const perspective = {
-    to: pe,
-    className: isActive(ps) || isActive(pe) ? a : undefined
+  const art = {
+    to: ar,
+    className: isActive(ps) || isActive(ar) ? a : undefined
   }
-  const focus = {
-    to: fo,
-    className: isActive(ps) || isActive(fo) ? a : undefined
+  const places = {
+    to: pl,
+    className: isActive(ps) || isActive(pl) ? a : undefined
   }
 
   const fc = "/film-cameras"
@@ -66,13 +66,13 @@ export default props => {
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...perspective}>
-          <span>Perspective</span>
+        <NavLink {...art}>
+          <span>Art</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...focus}>
-          <span>Focus</span>
+        <NavLink {...places}>
+          <span>Places</span>
         </NavLink>
       </NavItem>
       <NavItem prime center className="prime center">
