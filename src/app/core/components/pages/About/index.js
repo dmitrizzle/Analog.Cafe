@@ -26,7 +26,7 @@ import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
 const metaDescription =
-  "Analog.Cafe is weekly photo stories on art, culture, and travel. Also, film cameras. Created by film photographers, artists, and writers of the internet."
+  "Analog.Cafe is written by film photographers, artists, and writers of the internet. Published weekly. Maintained as an open-source project by Dmitri."
 
 const AuthorsBanner = styled.div`
   width: 100vw;
@@ -84,13 +84,25 @@ class About extends React.PureComponent {
   render = () => (
     <ArticleWrapper>
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
-      <HeaderLarge pageTitle="Analog.Cafe" />
+      <HeaderLarge
+        pageTitle="Analog.Cafe"
+        pageSubtitle="Art, Places, Film Cameras"
+      />
 
       <ArticleSection>
         <blockquote>
-          Weekly photo stories on <strong>art, culture, and travel</strong>.
-          Also, film cameras. Created by film photographers, artists, and
-          writers of the internet.
+          Written by film photographers, artists, and writers of the internet.
+          Published weekly. Maintained as an open-source project by{" "}
+          <Modal
+            with={{
+              request: {
+                url: ROUTE_API_AUTHORS + "/dmitrizzle"
+              }
+            }}
+          >
+            Dmitri
+          </Modal>
+          .
         </blockquote>
         <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
           <Authors>
@@ -159,19 +171,9 @@ class About extends React.PureComponent {
 
         <h3>The authors.</h3>
         <p>
-          Analog.Cafe got started by{" "}
-          <Modal
-            with={{
-              request: {
-                url: ROUTE_API_AUTHORS + "/dmitrizzle"
-              }
-            }}
-          >
-            Dmitri
-          </Modal>{" "}
-          in 2017 as a small community project along with ten film
-          photographers. It has since more than quadrupled in size with
-          contributions from all corners of the world.
+          Analog.Cafe got started by Dmitri in 2017 as a small community project
+          along with ten film photographers. It has since more than quadrupled
+          in size with contributions from all corners of the world.
         </p>
         <h3>The editors.</h3>
         <p>
