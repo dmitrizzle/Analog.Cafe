@@ -37,6 +37,7 @@ export default class extends React.PureComponent {
       <Card
         {...this.props}
         style={{
+          display: this.state.topOffset ? "block" : "none",
           margin: `${this.state.topOffset}px auto 90.1vh`
         }}
         id="modal-card"

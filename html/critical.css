@@ -1,5 +1,6 @@
 .appNav {
   margin: 0;
+  padding: 0 0.5em;
   position: relative;
   z-index: 20;
   margin-top: 2.5em;
@@ -69,7 +70,7 @@
 .appNav li.mobile {
   display: none;
 }
-@media (max-width: 46.875em) {
+@media (max-width: 48em) {
   .appNav li:not(.prime) {
     display: none;
   }
@@ -86,6 +87,19 @@
     order: 2;
   }
 }
+
+.appNav li.mobile .narrow {
+  display: none;
+}
+@media (max-width: 25em) {
+  .appNav li.mobile .wide {
+    display: none;
+  }
+  .appNav li.mobile .narrow {
+    display: inline;
+  }
+}
+
 .appNav a {
   color: inherit;
   text-decoration-skip: ink;

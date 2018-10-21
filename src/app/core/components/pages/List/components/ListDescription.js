@@ -40,7 +40,7 @@ export default props => {
                     </Modal>
                   </span>
                 ) : (
-                  props.location.pathname.includes("/author/") && ".."
+                  props.location.pathname.includes("/author/") && ""
                 )}
               </em>
             </span>

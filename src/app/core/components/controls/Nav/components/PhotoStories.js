@@ -10,7 +10,10 @@ export default styled.div`
   margin-left: calc(50vw - 21em);
   opacity: 0.5;
   z-index: 1;
-  ${props => props.theme.size.breakpoint.max.m`display: none;`} a {
+  @media (max-width: 48em) {
+    display: none;
+  }
+  a {
     font-style: italic;
     font-family: "Lora", Georgia, serif;
     display: block;

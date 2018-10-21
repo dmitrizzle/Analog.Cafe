@@ -811,7 +811,17 @@ ShallowWrapper {
                     to="/photo-stories"
           >
                     <span>
-                              Photo Stories
+                              <span
+                                        className="wide"
+                              >
+                                        Photo 
+                              </span>
+                              <span
+                                        className="narrow"
+                              >
+                                        🎞
+                              </span>
+                              Stories
                     </span>
           </Unknown>
 </styled.li>,
@@ -890,7 +900,17 @@ ShallowWrapper {
             to="/photo-stories"
 >
             <span>
-                        Photo Stories
+                        <span
+                                    className="wide"
+                        >
+                                    Photo 
+                        </span>
+                        <span
+                                    className="narrow"
+                        >
+                                    🎞
+                        </span>
+                        Stories
             </span>
 </Unknown>,
           "className": "prime left mobile",
@@ -905,7 +925,17 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": <span>
-              Photo Stories
+              <span
+                            className="wide"
+              >
+                            Photo 
+              </span>
+              <span
+                            className="narrow"
+              >
+                            🎞
+              </span>
+              Stories
 </span>,
             "className": undefined,
             "to": "/photo-stories",
@@ -916,10 +946,48 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Photo Stories",
+              "children": Array [
+                <span
+                  className="wide"
+>
+                  Photo 
+</span>,
+                <span
+                  className="narrow"
+>
+                  🎞
+</span>,
+                "Stories",
+              ],
             },
             "ref": null,
-            "rendered": "Photo Stories",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Photo ",
+                  "className": "wide",
+                },
+                "ref": null,
+                "rendered": "Photo ",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "🎞",
+                  "className": "narrow",
+                },
+                "ref": null,
+                "rendered": "🎞",
+                "type": "span",
+              },
+              "Stories",
+            ],
             "type": "span",
           },
           "type": [Function],
@@ -1150,7 +1218,17 @@ ShallowWrapper {
                         to="/photo-stories"
             >
                         <span>
-                                    Photo Stories
+                                    <span
+                                                className="wide"
+                                    >
+                                                Photo 
+                                    </span>
+                                    <span
+                                                className="narrow"
+                                    >
+                                                🎞
+                                    </span>
+                                    Stories
                         </span>
             </Unknown>
 </styled.li>,
@@ -1229,7 +1307,17 @@ ShallowWrapper {
               to="/photo-stories"
 >
               <span>
-                            Photo Stories
+                            <span
+                                          className="wide"
+                            >
+                                          Photo 
+                            </span>
+                            <span
+                                          className="narrow"
+                            >
+                                          🎞
+                            </span>
+                            Stories
               </span>
 </Unknown>,
             "className": "prime left mobile",
@@ -1244,7 +1332,17 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": <span>
-                Photo Stories
+                <span
+                                className="wide"
+                >
+                                Photo 
+                </span>
+                <span
+                                className="narrow"
+                >
+                                🎞
+                </span>
+                Stories
 </span>,
               "className": undefined,
               "to": "/photo-stories",
@@ -1255,10 +1353,48 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Photo Stories",
+                "children": Array [
+                  <span
+                    className="wide"
+>
+                    Photo 
+</span>,
+                  <span
+                    className="narrow"
+>
+                    🎞
+</span>,
+                  "Stories",
+                ],
               },
               "ref": null,
-              "rendered": "Photo Stories",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Photo ",
+                    "className": "wide",
+                  },
+                  "ref": null,
+                  "rendered": "Photo ",
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "🎞",
+                    "className": "narrow",
+                  },
+                  "ref": null,
+                  "rendered": "🎞",
+                  "type": "span",
+                },
+                "Stories",
+              ],
               "type": "span",
             },
             "type": [Function],
@@ -1897,6 +2033,11 @@ ShallowWrapper {
             null,
             Object {
               "mobile": "on",
+              "text": "Photo Stories",
+              "to": "/photo-stories",
+            },
+            Object {
+              "mobile": "on",
               "text": "Film Cameras",
               "to": "/film-cameras",
             },
@@ -1952,6 +2093,11 @@ ShallowWrapper {
               null,
               null,
               null,
+              Object {
+                "mobile": "on",
+                "text": "Photo Stories",
+                "to": "/photo-stories",
+              },
               Object {
                 "mobile": "on",
                 "text": "Film Cameras",
