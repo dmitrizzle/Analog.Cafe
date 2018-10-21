@@ -30,13 +30,15 @@ export default class extends React.PureComponent {
               ? topOffset > this.state.topOffsetMax
                 ? topOffset
                 : this.state.topOffsetMax
-              : this.state.topOffsetMax
+              : this.state.topOffsetMax,
+          visible: true
         })
       })
-      const delayReveal = setTimeout(() => {
-        this.setState({ visible: true })
-        clearTimeout(delayReveal)
-      }, 150)
+
+      // const delayReveal = setTimeout(() => {
+      //   this.setState({ visible: true })
+      //   clearTimeout(delayReveal)
+      // }, 150)
     }
   }
   render = () => {
