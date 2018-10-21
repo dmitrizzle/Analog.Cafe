@@ -20,11 +20,13 @@ export const TEXT_ROUTE_LABELS = {
 
   "/perspective": {
     title: "Thought pieces and art projects",
-    description: ""
+    description:
+      "Emphasis on thought pieces and art projects. These are collections of abstract photography, thought-provoking essays, observations, and creative self-expression."
   },
   "/focus": {
     title: "Places, people, events",
-    description: ""
+    description:
+      "Emphasis on places, people, events. These are the stories about travel, culture, and items of interest meant to inform and enlighten."
   },
   "/photo-stories": {
     title: "Art, culture, travel",
