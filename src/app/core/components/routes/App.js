@@ -60,6 +60,7 @@ const PrivacyPolicy = Loadable({
 })
 
 export default () => {
+  console.log("render routes")
   return (
     <main>
       <Switch>
