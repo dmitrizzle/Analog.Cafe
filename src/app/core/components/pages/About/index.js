@@ -169,11 +169,9 @@ class About extends React.PureComponent {
           >
             Dmitri
           </Modal>{" "}
-          in 2017 as a small community project of ten authors to collect and
-          write about photographs shot on film. It has since more than
-          quadrupled in size with contributions from all corner of the world. We
-          always look go welcome new writers through our{" "}
-          <Link to="/submit">submission</Link> program.
+          in 2017 as a small community project along with ten film
+          photographers. It has since more than quadrupled in size with
+          contributions from all corners of the world.
         </p>
         <h3>The editors.</h3>
         <p>
