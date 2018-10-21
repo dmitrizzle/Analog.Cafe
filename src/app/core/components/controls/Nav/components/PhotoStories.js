@@ -7,7 +7,7 @@ export default styled.div`
   color: #2c2c2c;
   height: 0.65em;
   top: 5em;
-  margin-left: calc(50vw - 19em);
+  margin-left: calc(50vw - 20em);
   opacity: 0.5;
   z-index: 1;
   @media (max-width: 48em) {

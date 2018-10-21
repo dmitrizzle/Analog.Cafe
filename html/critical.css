@@ -65,7 +65,7 @@
 .appNav li {
   display: block;
   text-align: center;
-  width: 7.5em;
+  width: 8em;
 }
 .appNav li.mobile {
   display: none;
