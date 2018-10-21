@@ -816,11 +816,6 @@ ShallowWrapper {
                               >
                                         Photo 
                               </span>
-                              <span
-                                        className="narrow"
-                              >
-                                        🎞
-                              </span>
                               Stories
                     </span>
           </Unknown>
@@ -905,11 +900,6 @@ ShallowWrapper {
                         >
                                     Photo 
                         </span>
-                        <span
-                                    className="narrow"
-                        >
-                                    🎞
-                        </span>
                         Stories
             </span>
 </Unknown>,
@@ -930,11 +920,6 @@ ShallowWrapper {
               >
                             Photo 
               </span>
-              <span
-                            className="narrow"
-              >
-                            🎞
-              </span>
               Stories
 </span>,
             "className": undefined,
@@ -952,11 +937,6 @@ ShallowWrapper {
 >
                   Photo 
 </span>,
-                <span
-                  className="narrow"
->
-                  🎞
-</span>,
                 "Stories",
               ],
             },
@@ -972,18 +952,6 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": "Photo ",
-                "type": "span",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "🎞",
-                  "className": "narrow",
-                },
-                "ref": null,
-                "rendered": "🎞",
                 "type": "span",
               },
               "Stories",
@@ -1223,11 +1191,6 @@ ShallowWrapper {
                                     >
                                                 Photo 
                                     </span>
-                                    <span
-                                                className="narrow"
-                                    >
-                                                🎞
-                                    </span>
                                     Stories
                         </span>
             </Unknown>
@@ -1312,11 +1275,6 @@ ShallowWrapper {
                             >
                                           Photo 
                             </span>
-                            <span
-                                          className="narrow"
-                            >
-                                          🎞
-                            </span>
                             Stories
               </span>
 </Unknown>,
@@ -1337,11 +1295,6 @@ ShallowWrapper {
                 >
                                 Photo 
                 </span>
-                <span
-                                className="narrow"
-                >
-                                🎞
-                </span>
                 Stories
 </span>,
               "className": undefined,
@@ -1359,11 +1312,6 @@ ShallowWrapper {
 >
                     Photo 
 </span>,
-                  <span
-                    className="narrow"
->
-                    🎞
-</span>,
                   "Stories",
                 ],
               },
@@ -1379,18 +1327,6 @@ ShallowWrapper {
                   },
                   "ref": null,
                   "rendered": "Photo ",
-                  "type": "span",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "🎞",
-                    "className": "narrow",
-                  },
-                  "ref": null,
-                  "rendered": "🎞",
                   "type": "span",
                 },
                 "Stories",

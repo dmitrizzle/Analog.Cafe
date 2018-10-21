@@ -60,7 +60,6 @@ export default props => {
         <NavLink {...photoStories}>
           <span>
             <span className="wide">Photo </span>
-            <span className="narrow">🎞</span>
             Stories
           </span>
         </NavLink>
