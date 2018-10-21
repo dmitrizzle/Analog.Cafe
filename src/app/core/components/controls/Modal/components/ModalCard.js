@@ -13,12 +13,14 @@ export default class extends React.PureComponent {
     this.state = {
       topOffset: 0,
       topOffsetMax: 20,
-      minElementHeight: 0
+      minElementHeight: 80,
+      visible: false
     }
   }
   componentWillReceiveProps = () => {
     const element = document.getElementById("modal-card")
-    if (element)
+    this.setState({ visible: false })
+    if (element) {
       window.requestAnimationFrame(() => {
         const elementHeight = element.offsetHeight
         const topOffset = (windowHeight() - elementHeight) / 2
@@ -31,13 +33,18 @@ export default class extends React.PureComponent {
               : this.state.topOffsetMax
         })
       })
+      const delayReveal = setTimeout(() => {
+        this.setState({ visible: true })
+        clearTimeout(delayReveal)
+      }, 150)
+    }
   }
   render = () => {
     return (
       <Card
         {...this.props}
         style={{
-          display: this.state.topOffset ? "block" : "none",
+          opacity: this.state.visible ? "1" : "0",
           margin: `${this.state.topOffset}px auto 90.1vh`
         }}
         id="modal-card"
