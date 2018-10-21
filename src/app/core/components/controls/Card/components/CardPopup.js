@@ -14,6 +14,7 @@ export default styled.div`
     ${props => props.theme.size.block.spacing * 2}em
     ${props => props.theme.color.foreground(props.theme.opacity.half)};
   transition: opacity 250ms;
+  transform: translateZ(0);
 
   ${props => props.theme.size.breakpoint.max.xs`
 		border-radius: 0;
