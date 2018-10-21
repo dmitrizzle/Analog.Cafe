@@ -20,7 +20,7 @@ ShallowWrapper {
       "id": "modal-card",
       "style": Object {
         "margin": "0px auto 90.1vh",
-        "opacity": "0",
+        "opacity": 0,
       },
     },
     "ref": null,
@@ -36,7 +36,7 @@ ShallowWrapper {
         "id": "modal-card",
         "style": Object {
           "margin": "0px auto 90.1vh",
-          "opacity": "0",
+          "opacity": 0,
         },
       },
       "ref": null,

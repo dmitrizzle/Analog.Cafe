@@ -1969,8 +1969,13 @@ ShallowWrapper {
             null,
             Object {
               "mobile": "on",
-              "text": "Photo Stories",
-              "to": "/photo-stories",
+              "text": "Art",
+              "to": "/art",
+            },
+            Object {
+              "mobile": "on",
+              "text": "Places",
+              "to": "/places",
             },
             Object {
               "mobile": "on",
@@ -2031,8 +2036,13 @@ ShallowWrapper {
               null,
               Object {
                 "mobile": "on",
-                "text": "Photo Stories",
-                "to": "/photo-stories",
+                "text": "Art",
+                "to": "/art",
+              },
+              Object {
+                "mobile": "on",
+                "text": "Places",
+                "to": "/places",
               },
               Object {
                 "mobile": "on",

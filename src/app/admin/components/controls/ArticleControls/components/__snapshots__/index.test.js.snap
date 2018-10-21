@@ -456,7 +456,7 @@ ShallowWrapper {
                               onClick={[Function]}
                               right={false}
                               style={Object {}}
-                              to="#editorials"
+                              to="#editorial"
                     >
                               Editorials
                     </Unknown>
@@ -549,7 +549,7 @@ ShallowWrapper {
                         onClick={[Function]}
                         right={false}
                         style={Object {}}
-                        to="#editorials"
+                        to="#editorial"
             >
                         Editorials
             </Unknown>
@@ -614,7 +614,7 @@ ShallowWrapper {
                 onClick={[Function]}
                 right={false}
                 style={Object {}}
-                to="#editorials"
+                to="#editorial"
 >
                 Editorials
 </Unknown>,
@@ -688,7 +688,7 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": "editorials",
+              "key": "editorial",
               "nodeType": "function",
               "props": Object {
                 "children": "Editorials",
@@ -697,7 +697,7 @@ ShallowWrapper {
                 "onClick": [Function],
                 "right": false,
                 "style": Object {},
-                "to": "#editorials",
+                "to": "#editorial",
               },
               "ref": null,
               "rendered": "Editorials",
@@ -851,7 +851,7 @@ ShallowWrapper {
                                     onClick={[Function]}
                                     right={false}
                                     style={Object {}}
-                                    to="#editorials"
+                                    to="#editorial"
                         >
                                     Editorials
                         </Unknown>
@@ -944,7 +944,7 @@ ShallowWrapper {
                             onClick={[Function]}
                             right={false}
                             style={Object {}}
-                            to="#editorials"
+                            to="#editorial"
               >
                             Editorials
               </Unknown>
@@ -1009,7 +1009,7 @@ ShallowWrapper {
                   onClick={[Function]}
                   right={false}
                   style={Object {}}
-                  to="#editorials"
+                  to="#editorial"
 >
                   Editorials
 </Unknown>,
@@ -1083,7 +1083,7 @@ ShallowWrapper {
               },
               Object {
                 "instance": null,
-                "key": "editorials",
+                "key": "editorial",
                 "nodeType": "function",
                 "props": Object {
                   "children": "Editorials",
@@ -1092,7 +1092,7 @@ ShallowWrapper {
                   "onClick": [Function],
                   "right": false,
                   "style": Object {},
-                  "to": "#editorials",
+                  "to": "#editorial",
                 },
                 "ref": null,
                 "rendered": "Editorials",

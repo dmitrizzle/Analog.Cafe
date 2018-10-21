@@ -171,6 +171,11 @@ ShallowWrapper {
                 }
         />
 </Switch>,
+      "style": Object {
+        "marginTop": "-8em",
+        "paddingTop": "8em",
+        "transform": "translateZ(0)",
+      },
     },
     "ref": null,
     "rendered": Object {
@@ -890,6 +895,11 @@ ShallowWrapper {
                     }
           />
 </Switch>,
+        "style": Object {
+          "marginTop": "-8em",
+          "paddingTop": "8em",
+          "transform": "translateZ(0)",
+        },
       },
       "ref": null,
       "rendered": Object {
