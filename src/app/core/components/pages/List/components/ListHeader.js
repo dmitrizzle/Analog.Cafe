@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export default styled.div`
   text-align: center;
-  color: ${props => props.theme.color.background()};
+
   font-size: ${props => props.theme.size.font.make.smaller}em;
   height: ${props => props.theme.typography.text.lineHeight}em;
   margin: ${props => props.theme.size.block.spacing * 2}em
@@ -12,6 +12,7 @@ export default styled.div`
   }
   > span {
     background: ${props => props.theme.color.foreground()};
+    color: ${props => props.theme.color.background()};
     box-shadow: 0 0 0 5px ${props => props.theme.color.foreground()};
   }
 `
