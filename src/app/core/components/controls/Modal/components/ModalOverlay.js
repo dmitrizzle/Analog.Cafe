@@ -19,7 +19,7 @@ const Overlay = styled.aside`
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background: ${props =>
-    props.theme.color.background(props.theme.opacity.most)};
+    props.theme.color.background(props.theme.opacity.half * 1.5)};
 `
 
 export const modalScrollCallback = (target, callback) => {
