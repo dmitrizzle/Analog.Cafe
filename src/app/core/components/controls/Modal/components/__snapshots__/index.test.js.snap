@@ -19,6 +19,7 @@ ShallowWrapper {
     "props": Object {
       "id": "modal-card",
       "style": Object {
+        "display": "none",
         "margin": "0px auto 90.1vh",
       },
     },
@@ -34,6 +35,7 @@ ShallowWrapper {
       "props": Object {
         "id": "modal-card",
         "style": Object {
+          "display": "none",
           "margin": "0px auto 90.1vh",
         },
       },
