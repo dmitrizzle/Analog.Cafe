@@ -46,7 +46,7 @@ export default class extends React.PureComponent {
       <Card
         {...this.props}
         style={{
-          opacity: this.state.visible ? 0.9999999 : 0,
+          opacity: this.state.visible ? 1 : 0,
           margin: `${this.state.topOffset}px auto 90.1vh`
         }}
         id="modal-card"
