@@ -119,27 +119,27 @@ class About extends React.PureComponent {
         <h3>Film Cameras.</h3>
         <p>
           Almost every image on this website has originated on a roll of film,
-          for what’s known as <strong>film photography</strong> 🎞. The{" "}
-          <Link to="/zine/analogue-photography-98f3">analogue</Link> process is
-          notably different from digital photography.
+          for what’s known as <strong>film photography</strong> 🎞.
         </p>
         <p>
           Most stories and articles on Analog.Cafe are either about{" "}
           <Link to="/film-cameras">film cameras</Link> or have them involved in
           the image making. The reason is our collective passion and
-          appreciation for the analogue process and technology. We believe it
-          helps create more thoughtful, beautiful, and truthful works.
+          appreciation for the analogue process and{" "}
+          <Link to="/zine/analogue-photography-98f3">technology</Link>. We
+          believe that it helps create more thoughtful, beautiful, and truthful
+          stories.
         </p>
 
         <h3>Photo Stories.</h3>
         <p>
-          Photography is more than gear. Photography is images, art,
-          documentation, and stories. Analog.Cafe’s{" "}
+          Art, stories, statements. Photography is more than gear and chemicals.
+          Analog.Cafe’s{" "}
           <em>
             <Link to="/photo-stories">Photo Stories</Link>
           </em>{" "}
-          section is split into <em>Perspective</em> and <em>Focus</em> topics
-          to distinguish between the two different storytelling styles.
+          section, split into <em>Perspective</em> and <em>Focus</em> topics, is
+          a stream of non-technical essays focusing on art, culture, and travel.
         </p>
         <p>
           <em>
@@ -147,14 +147,14 @@ class About extends React.PureComponent {
           </em>{" "}
           is an emphasis on thought pieces and art projects. These are
           collections of abstract photography, thought-provoking essays,
-          observations, and creative self-expression.
+          observations, and creative self-expressions.
         </p>
         <p>
           <em>
             <Link to="/focus">Focus</Link>
           </em>{" "}
           is an emphasis on places, people, events. These are the stories about
-          travel, culture, and items of interest meant to inform and enlighten.
+          travel, culture, and items of interest; meant to inform and enlighten.
         </p>
 
         <h3>The authors.</h3>
