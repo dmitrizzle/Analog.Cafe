@@ -44,6 +44,11 @@ export default props => {
                 }
               : null,
             {
+              to: "/photo-stories",
+              text: "Photo Stories",
+              mobile: "on"
+            },
+            {
               to: "/film-cameras",
               text: "Film Cameras",
               mobile: "on"

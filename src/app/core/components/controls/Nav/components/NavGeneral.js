@@ -58,7 +58,11 @@ export default props => {
     >
       <NavItem prime left mobile className="prime left mobile">
         <NavLink {...photoStories}>
-          <span>Photo Stories</span>
+          <span>
+            <span className="wide">Photo </span>
+            <span className="narrow">🎞</span>
+            Stories
+          </span>
         </NavLink>
       </NavItem>
       <NavItem>
