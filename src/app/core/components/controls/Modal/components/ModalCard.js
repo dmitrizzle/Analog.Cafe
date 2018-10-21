@@ -13,7 +13,7 @@ export default class extends React.PureComponent {
     this.state = {
       topOffset: 0,
       topOffsetMax: 20,
-      minElementHeight: 80
+      minElementHeight: 0
     }
   }
   componentWillReceiveProps = () => {
