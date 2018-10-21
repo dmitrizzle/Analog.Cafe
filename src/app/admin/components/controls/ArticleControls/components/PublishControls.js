@@ -10,7 +10,7 @@ const TAGS = {
   places: "Places",
   art: "Art",
   "film-cameras": "Cameras",
-  editorials: "Editorials",
+  editorial: "Editorials",
   unclassifieds: "Unclassif."
 }
 
