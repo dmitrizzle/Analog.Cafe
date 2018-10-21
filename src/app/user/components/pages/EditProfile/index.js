@@ -18,6 +18,7 @@ import {
 import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { getProfileButtons } from "../../../utils/messages-profile"
 import { setModal } from "../../../../core/store/actions-modal"
+import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Button from "../../../../core/components/controls/Button/components/Button"
 import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
@@ -163,6 +164,14 @@ class EditProfile extends React.PureComponent {
     return this.props.user.status === "ok" ? (
       <ArticleWrapper>
         <HeaderLarge pageTitle="Edit Your Profile" />
+        <ArticleSection>
+          <p>
+            You can edit your <strong>name</strong>, upload a new profile{" "}
+            <strong>picture</strong>, and your <strong>mini-bio</strong>. You
+            can also <strong>add a link</strong>, which will automatically
+            become a button.
+          </p>
+        </ArticleSection>
         <ProfileCard
           title={this.state.title || ""}
           changeTitle={this.handleTitleChange}
