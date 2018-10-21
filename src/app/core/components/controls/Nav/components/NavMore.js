@@ -44,8 +44,13 @@ export default props => {
                 }
               : null,
             {
-              to: "/photo-stories",
-              text: "Photo Stories",
+              to: "/art",
+              text: "Art",
+              mobile: "on"
+            },
+            {
+              to: "/places",
+              text: "Places",
               mobile: "on"
             },
             {
