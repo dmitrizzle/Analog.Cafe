@@ -1,13 +1,13 @@
 import styled from "styled-components"
 export default styled.div`
-  width: 12em;
+  width: 10em;
   position: absolute;
   border-radius: 0.33em;
   box-shadow: 0 1px #2c2c2c;
   color: #2c2c2c;
   height: 0.65em;
   top: 5em;
-  margin-left: calc(50vw - 21em);
+  margin-left: calc(50vw - 19em);
   opacity: 0.5;
   z-index: 1;
   @media (max-width: 48em) {

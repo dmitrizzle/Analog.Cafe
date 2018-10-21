@@ -7,8 +7,8 @@ import ButtonStripItem from "../../../../../core/components/controls/Button/comp
 import CardIntegrated from "../../../../../core/components/controls/Card/components/CardIntegrated"
 
 const TAGS = {
-  focus: "Focus",
-  perspective: "Perspective",
+  places: "Places",
+  art: "Art",
   "film-cameras": "Cameras",
   editorials: "Editorials",
   unclassifieds: "Unclassif."

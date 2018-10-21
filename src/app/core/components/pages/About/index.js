@@ -26,7 +26,7 @@ import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
 const metaDescription =
-  "Analog.Cafe is weekly photo stories on art, culture, travel. Also, film cameras. Created by film photographers, artists, and writers of the internet."
+  "Analog.Cafe is weekly photo stories on art, culture, and travel. Also, film cameras. Created by film photographers, artists, and writers of the internet."
 
 const AuthorsBanner = styled.div`
   width: 100vw;
@@ -88,9 +88,9 @@ class About extends React.PureComponent {
 
       <ArticleSection>
         <blockquote>
-          Weekly photo stories on <strong>art, culture, travel</strong>. Also,
-          film cameras. Created by film photographers, artists, and writers of
-          the internet.
+          Weekly photo stories on <strong>art, culture, and travel</strong>.
+          Also, film cameras. Created by film photographers, artists, and
+          writers of the internet.
         </blockquote>
         <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
           <Authors>
@@ -138,12 +138,12 @@ class About extends React.PureComponent {
           <em>
             <Link to="/photo-stories">Photo Stories</Link>
           </em>{" "}
-          section, split into <em>Perspective</em> and <em>Focus</em> topics, is
-          a stream of non-technical essays focusing on art, culture, and travel.
+          section, split into <em>Art</em> and <em>Places</em> topics, is a
+          stream of non-technical essays focusing on art, culture, and travel.
         </p>
         <p>
           <em>
-            <Link to="/perspective">Perspective</Link>
+            <Link to="/art">Art</Link>
           </em>{" "}
           is an emphasis on thought pieces and art projects. These are
           collections of abstract photography, thought-provoking essays,
@@ -151,7 +151,7 @@ class About extends React.PureComponent {
         </p>
         <p>
           <em>
-            <Link to="/focus">Focus</Link>
+            <Link to="/places">Places</Link>
           </em>{" "}
           is an emphasis on places, people, events. These are the stories about
           travel, culture, and items of interest; meant to inform and enlighten.

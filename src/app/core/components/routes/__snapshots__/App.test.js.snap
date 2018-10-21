@@ -81,12 +81,12 @@ ShallowWrapper {
         <Route
                 component={[Function]}
                 exact={true}
-                path="/focus"
+                path="/places"
         />
         <Route
                 component={[Function]}
                 exact={true}
-                path="/perspective"
+                path="/art"
         />
         <Route
                 component={[Function]}
@@ -242,12 +242,12 @@ ShallowWrapper {
           <Route
             component={[Function]}
             exact={true}
-            path="/focus"
+            path="/places"
 />,
           <Route
             component={[Function]}
             exact={true}
-            path="/perspective"
+            path="/art"
 />,
           <Route
             component={[Function]}
@@ -498,7 +498,7 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
-            "path": "/focus",
+            "path": "/places",
           },
           "ref": null,
           "rendered": null,
@@ -511,7 +511,7 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
-            "path": "/perspective",
+            "path": "/art",
           },
           "ref": null,
           "rendered": null,
@@ -800,12 +800,12 @@ ShallowWrapper {
           <Route
                     component={[Function]}
                     exact={true}
-                    path="/focus"
+                    path="/places"
           />
           <Route
                     component={[Function]}
                     exact={true}
-                    path="/perspective"
+                    path="/art"
           />
           <Route
                     component={[Function]}
@@ -961,12 +961,12 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
-              path="/focus"
+              path="/places"
 />,
             <Route
               component={[Function]}
               exact={true}
-              path="/perspective"
+              path="/art"
 />,
             <Route
               component={[Function]}
@@ -1217,7 +1217,7 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "exact": true,
-              "path": "/focus",
+              "path": "/places",
             },
             "ref": null,
             "rendered": null,
@@ -1230,7 +1230,7 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "exact": true,
-              "path": "/perspective",
+              "path": "/art",
             },
             "ref": null,
             "rendered": null,
