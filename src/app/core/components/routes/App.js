@@ -61,7 +61,13 @@ const PrivacyPolicy = Loadable({
 
 export default () => {
   return (
-    <main style={{ transform: "translateZ(0)" }}>
+    <main
+      style={{
+        transform: "translateZ(0)",
+        marginTop: "-8em",
+        paddingTop: "8em"
+      }}
+    >
       <Switch>
         {/* dynamic urls and views */}
         <Route exact path="/author" component={NotFound} />
