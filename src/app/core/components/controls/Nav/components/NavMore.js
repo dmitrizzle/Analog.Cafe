@@ -45,18 +45,15 @@ export default props => {
               : null,
             {
               to: "/art",
-              text: "Art",
-              mobile: "on"
+              text: "Art"
             },
             {
               to: "/places",
-              text: "Places",
-              mobile: "on"
+              text: "Places"
             },
             {
               to: "/film-cameras",
-              text: "Film Cameras",
-              mobile: "on"
+              text: "Film Cameras"
             },
 
             {
@@ -65,6 +62,10 @@ export default props => {
             },
             { divider: true },
             {
+              to: "/about",
+              text: "About Analog.Cafe"
+            },
+            {
               to: "/collaborations",
               text: "Collaborations"
             },
@@ -72,10 +73,7 @@ export default props => {
               to: "/solo-projects",
               text: "Solo Projects"
             },
-            {
-              to: "/about",
-              text: "About Analog.Cafe"
-            },
+
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
               text:
