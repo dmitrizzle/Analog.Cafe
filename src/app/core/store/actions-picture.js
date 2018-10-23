@@ -6,6 +6,7 @@ import { ROUTE_API_AUTHORS } from "../constants/routes-article"
 import { ROUTE_API_IMAGES } from "../../user/constants/routes-submission"
 import { TEXT_ERRORS } from "../../constants"
 import { fetchModal, setModal } from "./actions-modal"
+import { getFirstNameFromFull } from "../utils/messages-author"
 import { makeAPIRequest } from "../../utils"
 
 const UNKNOWN_AUTHOR = (id, error) => {
@@ -62,7 +63,9 @@ export const getPictureInfo = src => {
                             clearTimeout(authorCardDelay)
                           }, 50)
                         },
-                        text: `Image by [${response.data.info.author.name}]`,
+                        text: `Image by [${getFirstNameFromFull(
+                          response.data.info.author.name
+                        )}]`,
                         inverse: true
                       }
                     ],
