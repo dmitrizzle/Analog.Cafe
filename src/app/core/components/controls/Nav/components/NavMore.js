@@ -58,6 +58,12 @@ export default props => {
               text: "Film Cameras",
               mobile: "on"
             },
+
+            {
+              to: "/editorials",
+              text: "Editorials"
+            },
+            { divider: true },
             {
               to: "/collaborations",
               text: "Collaborations"
@@ -65,11 +71,6 @@ export default props => {
             {
               to: "/solo-projects",
               text: "Solo Projects"
-            },
-
-            {
-              to: "/editorials",
-              text: "Editorials"
             },
             {
               to: "/about",
