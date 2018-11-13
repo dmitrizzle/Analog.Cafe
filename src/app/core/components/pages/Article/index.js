@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import LazyLoad from "react-lazyload"
 import Loadable from "react-loadable"
 import React from "react"
-
+import Reader from "@roast-cms/french-press-editor/dist/components/vignettes/Reader"
 import { HOST_PROD, HOST_PROTOCOL } from "../../../../constants"
 import { ROUTE_TAGS } from "../../../constants/routes-list"
 import {
@@ -23,7 +23,7 @@ import ArticleHeader from "./components/ArticleHeader"
 import ArticleSection from "./components/ArticleSection"
 import ArticleWrapper from "./components/ArticleWrapper"
 import MetaTags from "../../vignettes/MetaTags"
-import renderArticle from "../../../utils/render-article"
+import Picture from "../../vignettes/Picture"
 
 const ArticleActions = Loadable({
   loader: () => import("../../controls/ArticleActions"),
@@ -207,7 +207,11 @@ class Article extends React.Component {
           onMouseUp={event => this.handleSelection(event, false)}
           onTouchEnd={event => this.handleSelection(event, true)}
         >
-          {renderArticle(this.props.article.content.raw)}
+          <Reader
+            options={{ domain: HOST_PROD }}
+            value={this.props.article.content.raw}
+            components={{ Picture }}
+          />
           {this.props.article.poster &&
             this.props.article.submittedBy && (
               <LazyLoad

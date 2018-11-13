@@ -42,6 +42,16 @@ class Picture extends React.PureComponent {
     this.handleFeaturePicture = this.handleFeaturePicture.bind(this)
   }
 
+  handleCaptionInputBlur = event => {
+    this.setState({
+      captionInputFocus: false
+    })
+  }
+  handleCaptionInputFocus = event => {
+    this.setState({
+      captionInputFocus: true
+    })
+  }
   handleChange = event => {
     const caret = event.target.selectionStart
     const element = event.target
@@ -68,6 +78,13 @@ class Picture extends React.PureComponent {
     event.preventDefault()
     event.stopPropagation()
   }
+  componentWillReceiveProps = nextProps => {
+    const caption = nextProps.node.data.get("caption")
+    if (caption !== this.state.caption) {
+      this.setState({ caption })
+    }
+  }
+
   componentDidMount = () => {
     const { node } = this.props
     if (!node) return
@@ -120,12 +137,6 @@ class Picture extends React.PureComponent {
         .focus()
     )
   }
-  componentWillReceiveProps = nextProps => {
-    const caption = nextProps.node.data.get("caption")
-    if (caption !== this.state.caption) {
-      this.setState({ caption })
-    }
-  }
   handleGetAuthor = src => {
     if (!src || !this.props.readOnly) return
     this.props.setModal({
@@ -154,25 +165,17 @@ class Picture extends React.PureComponent {
     })
   }
 
-  handleCaptionInputBlur = event => {
-    this.setState({
-      captionInputFocus: false
-    })
-  }
-  handleCaptionInputFocus = event => {
-    this.setState({
-      captionInputFocus: true
-    })
-  }
-
   render = () => {
     const { attributes, node, isSelected, editor, parent } = this.props
     if (!editor) return null
     const { src } = this.state
-    const focus = editor.value.isFocused && isSelected
+    const focus =
+      editor.value.selection && editor.value.selection.isFocused && isSelected
+
     const className = focus ? "focus" : "nofocus"
     const feature = node.data.get("feature")
 
+    // TODO: test blelow functions
     const nextBlock = parent.getNextBlock(node.get("key"))
     const foldSpacer = nextBlock.get("data").get("feature") ? true : false
 
