@@ -20,5 +20,7 @@ export const CARD_ERRORS = {
 }
 export const TEXT_LABELS = {
   SUBSCRIBE: "Subscribe ❤︎",
+  SEARCH: "Search… 〄",
+  FIND: "Search 〄",
   SUBMIT: "Submit ❤︎"
 }

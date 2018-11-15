@@ -1,9 +1,9 @@
 import React from "react"
 
 import { GA } from "../../../../utils"
-import { TEXT_LABELS } from "../../../../core/constants/messages-"
-import CardButton from "../../../../core/components/controls/Card/components/CardButton"
-import MailChimpPrefill from "./components/MailChimpPrefill"
+import { TEXT_LABELS } from "../../../constants/messages-"
+import CardButton from "../../controls/Card/components/CardButton"
+import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 
 export default class extends React.PureComponent {
   constructor(props) {
@@ -13,6 +13,7 @@ export default class extends React.PureComponent {
     }
   }
   handleRevealSubscribeForm = event => {
+    this.props.searchMode(true)
     event.preventDefault()
     event.stopPropagation()
     this.setState({
@@ -46,12 +47,12 @@ export default class extends React.PureComponent {
       <div>
         {!this.state.subscribeForm ? (
           <CardButton inverse onClick={this.handleRevealSubscribeForm}>
-            {TEXT_LABELS.SUBSCRIBE}
+            {TEXT_LABELS.SEARCH}
           </CardButton>
         ) : (
           <MailChimpPrefill
             formLocation={this.props.formLocation}
-            buttonText={TEXT_LABELS.SUBMIT}
+            buttonText={TEXT_LABELS.FIND}
             autoFocus
             submitCallback={this.handleSubmitCallback}
           />

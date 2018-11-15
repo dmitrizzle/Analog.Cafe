@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render MailChimpPrefill, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Component />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Unknown
+          autoFocus={undefined}
+          onChange={[Function]}
+          onClick={[Function]}
+          warning={false}
+/>,
+        <Unknown
+          inverse={true}
+          onClick={[Function]}
+>
+          Subscribe
+</Unknown>,
+      ],
+      "style": null,
+      "withinGroup": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "autoFocus": undefined,
+          "onChange": [Function],
+          "onClick": [Function],
+          "warning": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": "Subscribe",
+          "inverse": true,
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Subscribe",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Unknown
+            autoFocus={undefined}
+            onChange={[Function]}
+            onClick={[Function]}
+            warning={false}
+/>,
+          <Unknown
+            inverse={true}
+            onClick={[Function]}
+>
+            Subscribe
+</Unknown>,
+        ],
+        "style": null,
+        "withinGroup": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "autoFocus": undefined,
+            "onChange": [Function],
+            "onClick": [Function],
+            "warning": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": "Subscribe",
+            "inverse": true,
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Subscribe",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

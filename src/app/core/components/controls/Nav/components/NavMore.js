@@ -13,6 +13,7 @@ export default props => {
       inverse={props.inverse}
       with={{
         info: {
+          search: true,
           title: "More ",
           buttons: [
             props.userStatus === "ok"
@@ -73,7 +74,6 @@ export default props => {
               to: "/solo-projects",
               text: "Solo Projects"
             },
-
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
               text:
