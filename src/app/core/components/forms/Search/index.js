@@ -3,13 +3,13 @@ import React from "react"
 import { GA } from "../../../../utils"
 import { TEXT_LABELS } from "../../../constants/messages-"
 import CardButton from "../../controls/Card/components/CardButton"
-import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
+import SearchForm from "./components/SearchForm"
 
 export default class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      subscribeForm: false
+      searchForm: false
     }
   }
   handleRevealSubscribeForm = event => {
@@ -17,10 +17,10 @@ export default class extends React.PureComponent {
     event.preventDefault()
     event.stopPropagation()
     this.setState({
-      subscribeForm: !this.state.subscribeForm
+      searchForm: !this.state.searchForm
     })
-    this.props.subscribeFormCallback &&
-      this.props.subscribeFormCallback(this.state.subscribeForm)
+    this.props.searchFormCallback &&
+      this.props.searchFormCallback(this.state.searchForm)
     GA.event({
       category: "Campaign",
       action: "ActionsCard.quickSubscribe_open",
@@ -29,7 +29,7 @@ export default class extends React.PureComponent {
   }
   handleSubmitCallback = () => {
     this.setState({
-      subscribeForm: !this.state.subscribeForm
+      searchForm: !this.state.searchForm
     })
   }
   componentWillReceiveProps = nextProps => {
@@ -39,18 +39,18 @@ export default class extends React.PureComponent {
     )
       return
     this.setState({
-      subscribeForm: nextProps.stateOverwrite
+      searchForm: nextProps.stateOverwrite
     })
   }
   render = () => {
     return (
       <div>
-        {!this.state.subscribeForm ? (
+        {!this.state.searchForm ? (
           <CardButton inverse onClick={this.handleRevealSubscribeForm}>
             {TEXT_LABELS.SEARCH}
           </CardButton>
         ) : (
-          <MailChimpPrefill
+          <SearchForm
             formLocation={this.props.formLocation}
             buttonText={TEXT_LABELS.FIND}
             autoFocus
