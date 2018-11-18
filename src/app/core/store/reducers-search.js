@@ -1,5 +1,3 @@
-import { LIST_PLACEHOLDER } from "../constants/messages-list"
-
 const INITIAL_STATE = {
   isFetching: false,
   data: {
