@@ -1,11 +1,16 @@
+import { connect } from "react-redux"
 import React from "react"
 
 import { GA } from "../../../../utils"
 import { TEXT_LABELS } from "../../../constants/messages-"
-import CardButton from "../../controls/Card/components/CardButton"
+import { getSearchResults } from "../../../store/actions-search"
+import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivider"
+import CardButton, {
+  CardSearchItem
+} from "../../controls/Card/components/CardButton"
 import SearchForm from "./components/SearchForm"
 
-export default class extends React.PureComponent {
+export class Search extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -28,7 +33,7 @@ export default class extends React.PureComponent {
     })
   }
   handleSubmitCallback = query => {
-    console.log(query)
+    this.props.getSearchResults(query)
   }
   componentWillReceiveProps = nextProps => {
     if (
@@ -48,14 +53,62 @@ export default class extends React.PureComponent {
             {TEXT_LABELS.SEARCH}
           </CardButton>
         ) : (
-          <SearchForm
-            formLocation={this.props.formLocation}
-            buttonText={TEXT_LABELS.FIND}
-            autoFocus
-            submitCallback={this.handleSubmitCallback}
-          />
+          [
+            <SearchForm
+              formLocation={this.props.formLocation}
+              buttonText={TEXT_LABELS.FIND}
+              autoFocus
+              submitCallback={this.handleSubmitCallback}
+              loading={this.props.search.isFetching}
+              key="SearchForm"
+              style={{ zIndex: 1, position: "relative" }}
+            />,
+            <div key="SearchResults">
+              {this.props.search.data.items &&
+                this.props.search.data.items.length > 0 &&
+                this.props.search.data.items.map(item => {
+                  return [
+                    <CardSearchItem
+                      key={item.link}
+                      to={item.link}
+                      image={
+                        item.pagemap.cse_image
+                          ? item.pagemap.cse_image[0].src
+                          : null
+                      }
+                    >
+                      <div>{item.title}</div>
+                      <br />
+                      <em>{item.snippet}</em>
+                    </CardSearchItem>,
+                    <ButtonGroupDivider
+                      key={`div_${item.link}`}
+                      style={{ zIndex: 1, position: "relative" }}
+                    />
+                  ]
+                })}
+            </div>
+          ]
         )}
       </div>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    search: state.search
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    getSearchResults: query => {
+      dispatch(getSearchResults(query))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Search)

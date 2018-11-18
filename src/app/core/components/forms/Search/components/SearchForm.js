@@ -46,6 +46,7 @@ export default class extends React.Component {
           onClick={event => {
             this.handleSubmit(event)
           }}
+          loading={this.props.loading}
         >
           {this.props.buttonText || "Search"}
         </Button>

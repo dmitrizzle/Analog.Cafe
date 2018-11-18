@@ -19,6 +19,7 @@ export const GA = {
       ReactGA.initialize(DATA_GA_ID, {
         debug:
           process.env.NODE_ENV === "development" || HOST_RUNTIME !== HOST_PROD,
+        debug: false,
         titleCase: true,
         gaOptions: {},
         gaAddress: process.env.PUBLIC_URL + "/analytics-201808051558.js"
