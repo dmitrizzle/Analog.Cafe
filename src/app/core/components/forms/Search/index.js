@@ -27,10 +27,8 @@ export default class extends React.PureComponent {
       label: this.props.formLocation ? this.props.formLocation : null
     })
   }
-  handleSubmitCallback = () => {
-    this.setState({
-      searchForm: !this.state.searchForm
-    })
+  handleSubmitCallback = query => {
+    console.log(query)
   }
   componentWillReceiveProps = nextProps => {
     if (

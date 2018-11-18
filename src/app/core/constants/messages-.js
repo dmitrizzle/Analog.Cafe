@@ -1,4 +1,21 @@
+import React from "react"
+
 import { HEADER_ERRORS, TEXT_EMOJIS } from "../../constants"
+import Search from "../components/icons/Search"
+import styled from "styled-components"
+
+export const SearchType = styled.span`
+  color: #999;
+  svg {
+    display: inline-block;
+    margin: -0.5em 0.25em -0.15em 0.25em;
+    height: 1em;
+    path {
+      stroke: ${props => props.theme.color.brand()};
+      stroke-width: 4px;
+    }
+  }
+`
 
 export const CARD_ERRORS = {
   PICTURE_AUTHOR: {
@@ -20,7 +37,16 @@ export const CARD_ERRORS = {
 }
 export const TEXT_LABELS = {
   SUBSCRIBE: "Subscribe ❤︎",
-  SEARCH: "Search… 〄",
-  FIND: "Search 〄",
+  SEARCH: (
+    <SearchType>
+      <Search />
+      Search
+    </SearchType>
+  ),
+  FIND: (
+    <SearchType>
+      <Search style={{ marginLeft: 0 }} />
+    </SearchType>
+  ),
   SUBMIT: "Submit ❤︎"
 }
