@@ -45,12 +45,12 @@ export default props => {
                 }
               : null,
             {
-              to: "/art",
-              text: "Art"
+              to: "/places",
+              text: "Photo Stories: Places"
             },
             {
-              to: "/places",
-              text: "Places"
+              to: "/art",
+              text: "Photo Stories: Art"
             },
             {
               to: "/film-cameras",

@@ -7,14 +7,30 @@ import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
+import Search from "../../../icons/Search"
+import styled from "styled-components"
+
+export const LabelWithSearchSVG = styled.span`
+  svg {
+    width: 1em;
+    margin: -0.25em 0.15em 0 0;
+    path {
+      stroke: ${props => props.theme.color.foreground()};
+      stroke-width: 2;
+    }
+  }
+`
 
 const NavLinkLabelMore = props => {
   return (
-    <span>
-      More {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
-    </span>
+    <LabelWithSearchSVG>
+      <Search />
+      {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
+      More
+    </LabelWithSearchSVG>
   )
 }
+
 export default props => {
   const isActive = to => {
     if (window.location.pathname === to) return true
@@ -58,21 +74,17 @@ export default props => {
     >
       <NavItem prime left mobile className="prime left mobile">
         <NavLink {...photoStories}>
-          <span>
-            <span className="wide">Photo </span>
-            Stories
-          </span>
+          <span>Subscribe</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...art}>
-          <span>Art</span>
+        <NavLink {...photoStories}>
+          <span className="wide">Photo </span>
+          Stories
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...places}>
-          <span>Places</span>
-        </NavLink>
+        <NavLink {...filmCameras}>Film Cameras</NavLink>
       </NavItem>
       <NavItem prime center className="prime center">
         <NavLogoLink to={"/"} className="indexRouteLink">
@@ -80,7 +92,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="left">
-        <NavLink {...filmCameras}>Film Cameras</NavLink>
+        <NavLink {...filmCameras}>Submit Yours</NavLink>
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>
