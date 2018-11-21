@@ -86,7 +86,7 @@ class About extends React.PureComponent {
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
       <HeaderLarge
         pageTitle="Analog.Cafe"
-        pageSubtitle="Art, Places, Film Cameras"
+        pageSubtitle="Photo Stories & Film Cameras"
       />
 
       <ArticleSection>
