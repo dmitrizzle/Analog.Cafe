@@ -14,6 +14,8 @@ export const LabelWithSearchSVG = styled.span`
   svg {
     width: 1em;
     margin: -0.25em 0.15em 0 0;
+    z-index: 1;
+    position: relative;
     path {
       stroke: ${props => props.theme.color.foreground()};
       stroke-width: 2;
@@ -43,27 +45,27 @@ export default props => {
   }
 
   const a = "active"
-  const ps = "/photo-stories"
-  const ar = "/art"
-  const pl = "/places"
 
-  const photoStories = {
-    to: ps,
-    className: isActive(ps) || isActive(ar) || isActive(pl) ? a : undefined
-  }
-  const art = {
-    to: ar,
-    className: isActive(ps) || isActive(ar) ? a : undefined
-  }
-  const places = {
-    to: pl,
-    className: isActive(ps) || isActive(pl) ? a : undefined
-  }
+  const ve = "/visual-essays"
+  const su = "/submit"
+  const sc = "/subscribe"
+  const fp = "/film-photography"
 
-  const fc = "/film-cameras"
-  const filmCameras = {
-    to: fc,
-    className: isActive(fc) ? a : undefined
+  const visualEssays = {
+    to: ve,
+    className: isActive(ve) ? a : undefined
+  }
+  const submit = {
+    to: su,
+    className: isActive(su) ? a : undefined
+  }
+  const subscribe = {
+    to: sc,
+    className: isActive(sc) ? a : undefined
+  }
+  const filmPhotography = {
+    to: fp,
+    className: isActive(fp) ? a : undefined
   }
 
   return (
@@ -73,18 +75,21 @@ export default props => {
       }
     >
       <NavItem prime left mobile className="prime left mobile">
-        <NavLink {...photoStories}>
+        <NavLink {...visualEssays}>
           <span>Subscribe</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...photoStories}>
-          <span className="wide">Photo </span>
-          Stories
+        <NavLink {...visualEssays}>
+          <span className="wide">Visual </span>
+          Essays
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...filmCameras}>Film Cameras</NavLink>
+        <NavLink {...filmPhotography}>
+          <span className="wide">Film </span>
+          Photography
+        </NavLink>
       </NavItem>
       <NavItem prime center className="prime center">
         <NavLogoLink to={"/"} className="indexRouteLink">
@@ -92,7 +97,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="left">
-        <NavLink {...filmCameras}>Submit Yours</NavLink>
+        <NavLink {...submit}>Submit Yours</NavLink>
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>

@@ -45,26 +45,16 @@ export default props => {
                 }
               : null,
             {
-              to: "/places",
-              text: "Photo Stories: Places"
+              to: "/visual-essays",
+              text: "Visual Essays"
             },
             {
-              to: "/art",
-              text: "Photo Stories: Art"
+              to: "/film-photography",
+              text: "Film Photography"
             },
-            {
-              to: "/film-cameras",
-              text: "Film Cameras"
-            },
-
             {
               to: "/editorials",
               text: "Editorials"
-            },
-            { divider: true },
-            {
-              to: "/about",
-              text: "About Analog.Cafe"
             },
             {
               to: "/collaborations",
@@ -73,6 +63,11 @@ export default props => {
             {
               to: "/solo-projects",
               text: "Solo Projects"
+            },
+            { divider: true },
+            {
+              to: "/about",
+              text: "About Analog.Cafe"
             },
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",

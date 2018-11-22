@@ -7,7 +7,10 @@ export default styled.div`
   color: ${props => props.theme.color.brand()};
   height: 0.65em;
   top: 5em;
-  margin-left: calc(50vw - 20em);
+  margin-left: calc(50vw - 24em);
+  @media (max-width: 930px) {
+    margin-left: calc(50vw - 20em);
+  }
   z-index: 1;
   @media (max-width: 48em) {
     display: none;

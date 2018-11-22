@@ -160,7 +160,7 @@ class App extends React.PureComponent {
           this.props.nav.view !== "VISITOR" || !this.props.nav.location.top
         }
       >
-        <Link to="/photo-stories">
+        <Link to="/subscribe">
           Subscribe <span style={{ fontStyle: "normal" }}>❤︎</span>
         </Link>
       </Subscribe>,
