@@ -11,40 +11,25 @@ export const TEXT_STATUS_LABELS = {
 export const TEXT_ROUTE_LABELS = {
   "/": {
     title: "Visual Essays & Film Photography",
-    description: `Written by film photographers, artists, and writers of the internet. Published weekly. Maintained as an open-source project by Dmitri.`,
+    description: `Created by film photographers, artists, and writers of the internet. Published weekly. Maintained as an open-source project by Dmitri.`,
     designation: "homepage"
   },
   default: {
     title: APP_DESCRIPTION
   },
 
-  "/art": {
-    title: "Thought pieces and art projects",
+  "/visual-essays": {
+    title: "Stories, thought pieces, art projects",
     description:
-      "Emphasis on thought pieces and art projects. These are collections of abstract photography, thought-provoking essays, observations, and creative self-expressions."
+      "Emphasis on thought pieces and art projects. A collection of abstract photography, thought-provoking essays, observations, travel, culture, and items of interest."
   },
-  "/places": {
-    title: "Places, people, events",
-    description:
-      "Emphasis on places, people, events. These are the stories about travel, culture, and items of interest; meant to inform and enlighten."
-  },
-  "/photo-stories": {
-    title: "Art, culture, travel",
-    description:
-      "Analog.Cafe’s Photo Stories section, split into Art and Culture topics, is a stream of non-technical essays focusing on art, culture, and travel."
-  },
-
-  "/film-cameras": {
+  "/film-photography": {
     title: "Film cameras, chemicals, tools; reviews, stories, guides",
     description:
-      "Most stories and articles on Analog.Cafe are either about film cameras or have them involved in the image making. The reason is our collective passion and appreciation for the analogue process and technology."
+      "Stories and articles about film cameras, our editors’ favourite analogue tool to tell stories."
   },
   "/editorials": {
     title: "From the Analog.Cafe editors",
-    description: ""
-  },
-  "/unclassifieds": {
-    title: "Everything else",
     description: ""
   },
   "/collaborations": {
