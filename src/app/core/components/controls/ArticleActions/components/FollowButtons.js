@@ -1,7 +1,6 @@
 import React from "react"
 
 import {
-  FacebookLinkButton,
   FeedlyLinkButton,
   InstagramLinkButton,
   TwitterLinkButton
@@ -36,7 +35,7 @@ export default props => {
         Follow on Twitter
       </TwitterLinkButton>
 
-      <FacebookLinkButton
+      {/* <FacebookLinkButton
         to="https://facebook.com/analog8cafe"
         onClick={() => {
           GA.event({
@@ -46,7 +45,7 @@ export default props => {
         }}
       >
         Follow on Facebook
-      </FacebookLinkButton>
+      </FacebookLinkButton> */}
 
       <InstagramLinkButton
         to="https://instagram.com/analog_cafe"

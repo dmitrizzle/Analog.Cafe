@@ -32,10 +32,13 @@ const facebookButtonStyles = css`
   }
 `
 const instagramButtonStyles = css`
-  background-color: #e1306c;
+  color: ${props => props.theme.color.foreground()} !important;
   svg {
     margin: -1.25em 0 -1em -0.25em;
     height: 1.5em;
+    path {
+      fill: ${props => props.theme.color.foreground()} !important;
+    }
   }
 `
 

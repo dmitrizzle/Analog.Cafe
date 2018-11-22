@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { GA, makeFroth } from "../../../../../utils"
+import { GetYourWeekly } from "../../../pages/Subscribe"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
 import { preloadConstructor } from "../../../../utils/routes-article"
 import CardCaption from "../../Card/components/CardCaption"
@@ -59,14 +60,7 @@ export default props => {
         )} */}
         <CardIntegratedForColumns>
           <CardHeader stubborn buttons={[0]} noStar title="Email Newsletter" />
-          <CardCaptionIntegrated>
-            Our weekly email newsletter, “Analogue Reads” is{" "}
-            <Link to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=8327655f5e">
-              excellent
-            </Link>
-            . <Link to="/privacy-policy">No spam</Link>, no ads. The best way to
-            stay in-touch.
-          </CardCaptionIntegrated>
+          <GetYourWeekly />
           <Subscribe
             subscribeFormCallback={props.subscribeFormCallback}
             stateOverwrite={props.subscribeForm}

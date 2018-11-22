@@ -48,5 +48,5 @@ export const TEXT_LABELS = {
       <Search style={{ marginLeft: 0 }} />
     </SearchType>
   ),
-  SUBMIT: "Submit ❤︎"
+  SUBMIT: "Subscribe ❤︎"
 }
