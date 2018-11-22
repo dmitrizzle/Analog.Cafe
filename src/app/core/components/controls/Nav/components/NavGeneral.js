@@ -75,7 +75,7 @@ export default props => {
       }
     >
       <NavItem prime left mobile className="prime left mobile">
-        <NavLink {...visualEssays}>
+        <NavLink {...subscribe}>
           <span>Subscribe</span>
         </NavLink>
       </NavItem>

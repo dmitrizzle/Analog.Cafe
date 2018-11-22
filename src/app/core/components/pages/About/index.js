@@ -4,24 +4,24 @@ import styled from "styled-components"
 
 import { CARD_ALERTS } from "../../../../user/constants/messages-submission"
 import { GA, makeFroth } from "../../../../utils"
+import { GetYourWeekly } from "../Subscribe"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
-import { TEXT_LABELS } from "../../../constants/messages-"
 import { bleed } from "../../vignettes/Picture/components/Figure"
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { setModal } from "../../../store/actions-modal"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ButtonGroup from "../../controls/Button/components/ButtonGroup"
-import Byline from "../../vignettes/Byline"
+import CardHeader from "../../controls/Card/components/CardHeader"
 import CardIntegrated from "../../controls/Card/components/CardIntegrated"
 import ContactInfo from "../../vignettes/ContactInfo"
 import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import LinkButton from "../../controls/Button/components/LinkButton"
-import MailChimpPrefill from "../../../../user/components/forms/Subscribe/components/MailChimpPrefill"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
+import Subscribe from "../../../../user/components/forms/Subscribe"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
@@ -227,36 +227,17 @@ class About extends React.PureComponent {
           email <ContactInfo />, or:
         </p>
         <ButtonGroup>
-          <FollowButtons />
           <CardIntegrated>
-            <MailChimpPrefill
-              buttonText={TEXT_LABELS.SUBSCRIBE}
-              formLocation="About"
+            <CardHeader
+              stubborn
+              buttons={[0]}
+              noStar
+              title="Email Newsletter"
             />
+            <GetYourWeekly />
+            <Subscribe formLocation={"About"} />
           </CardIntegrated>
-          <Byline
-            style={{
-              maxWidth: "320px",
-              display: "block",
-              margin: "0 auto"
-            }}
-          >
-            Weekly emails (
-            <Link
-              onClick={() => {
-                GA.event({
-                  category: "Campaign",
-                  action: "ActionsCard.subscribe_example"
-                })
-              }}
-              to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=434dbe7e2b"
-            >
-              like this one
-            </Link>
-            ) come every Tuesday. We{" "}
-            <Link to="/privacy-policy">never share or sell</Link> your personal
-            information.
-          </Byline>
+          <FollowButtons />
         </ButtonGroup>
 
         <h3>Write for Analog.Cafe.</h3>
