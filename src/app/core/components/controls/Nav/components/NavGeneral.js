@@ -46,13 +46,13 @@ export default props => {
 
   const a = "active"
 
-  const ve = "/visual-essays"
+  const ve = "/photo-essay"
   const su = "/submit"
   const sc = "/subscribe"
   const fp = "/film-photography"
 
   const visualEssays = {
-    to: ve,
+    to: "/photo-essays",
     className: isActive(ve) ? a : undefined
   }
   const submit = {
@@ -81,7 +81,7 @@ export default props => {
       </NavItem>
       <NavItem>
         <NavLink {...visualEssays}>
-          <span className="wide">Visual </span>
+          <span className="wide">Photo </span>
           Essays
         </NavLink>
       </NavItem>

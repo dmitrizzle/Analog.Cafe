@@ -10,7 +10,7 @@ export const TEXT_STATUS_LABELS = {
 }
 export const TEXT_ROUTE_LABELS = {
   "/": {
-    title: "Visual Essays & Film Photography",
+    title: "Photo Essays & Film Photography",
     description: `Created by film photographers, artists, and writers of the internet. Published weekly. Maintained as an open-source project by Dmitri.`,
     designation: "homepage"
   },
@@ -18,15 +18,15 @@ export const TEXT_ROUTE_LABELS = {
     title: APP_DESCRIPTION
   },
 
-  "/visual-essays": {
+  "/photo-essays": {
     title: "Stories, thought pieces, art projects",
     description:
       "Emphasis on thought pieces and art projects. A collection of abstract photography, thought-provoking essays, observations, travel, culture, and items of interest."
   },
   "/film-photography": {
-    title: "Film cameras, chemicals, tools; reviews, stories, guides",
+    title: "Cameras, chemicals, tools, reviews, guides",
     description:
-      "Stories and articles about film cameras, our editors’ favourite analogue tool to tell stories."
+      "Articles about film cameras, our editors’ favourite analogue tool to tell stories."
   },
   "/editorials": {
     title: "From the Analog.Cafe editors",

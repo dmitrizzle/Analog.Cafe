@@ -75,21 +75,16 @@ export default () => {
         <Route exact path="/author/*" component={List} />
         <Route exact path="/zine/*" component={Article} />
         {/* NOTE below is a set of outdated routes */}
-        <Route
-          exact
-          path="/photo-essays"
-          render={() => <Redirect to="/visual-essays" />}
-        />
         <Route exact path="/articles" render={() => <Redirect to="/" />} />
         <Route
           exact
           path="/stories"
-          render={() => <Redirect to="/visual-essays" />}
+          render={() => <Redirect to="/photo-essays" />}
         />
         <Route
           exact
           path="/storys"
-          render={() => <Redirect to="/visual-essays" />}
+          render={() => <Redirect to="/photo-essays" />}
         />
         <Route
           exact
@@ -109,22 +104,22 @@ export default () => {
         <Route
           exact
           path="/places"
-          render={() => <Redirect to="/visual-essays" />}
+          render={() => <Redirect to="/photo-essays" />}
         />
         <Route
           exact
           path="/art"
-          render={() => <Redirect to="/visual-essays" />}
+          render={() => <Redirect to="/photo-essays" />}
         />
         <Route
           exact
           path="/photo-stories"
-          render={() => <Redirect to="/visual-essays" />}
+          render={() => <Redirect to="/photo-essays" />}
         />
         {/* new magazine sections */}
         <Route exact path="/" component={List} />
         <Route exact path="/film-photography" component={List} />
-        <Route exact path="/visual-essays" component={List} />
+        <Route exact path="/photo-essays" component={List} />
         <Route exact path="/editorials" component={List} />
         <Route exact path="/unclassifieds" component={List} />
         <Route exact path="/collaborations" component={List} />

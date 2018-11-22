@@ -45,8 +45,8 @@ export default props => {
                 }
               : null,
             {
-              to: "/visual-essays",
-              text: "Visual Essays"
+              to: "/photo-essays",
+              text: "Photo Essays"
             },
             {
               to: "/film-photography",
