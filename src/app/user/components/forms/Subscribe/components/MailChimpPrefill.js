@@ -9,9 +9,6 @@ import Form from "../../Form"
 export default class extends React.Component {
   constructor(props) {
     super(props)
-    this.handleEmailChange = this.handleEmailChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleInputClick = this.handleInputClick.bind(this)
     this.state = {
       email: "",
       warning: false
@@ -55,7 +52,7 @@ export default class extends React.Component {
           onClick={this.handleInputClick}
         />
         <Button
-          inverse
+          branded
           onClick={event => {
             this.handleSubmit(event)
           }}

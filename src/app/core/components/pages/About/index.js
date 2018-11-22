@@ -26,7 +26,7 @@ import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
 const metaDescription =
-  "Analog.Cafe is written by film photographers, artists, and writers of the internet. Published weekly. Maintained as an open-source project by Dmitri."
+  "Analog.Cafe is created by film photographers, artists, and writers of the internet. Published every Tuesday and most Thursday mornings. Maintained as an open-source project by Dmitri."
 
 const AuthorsBanner = styled.div`
   width: 100vw;
@@ -86,13 +86,14 @@ class About extends React.PureComponent {
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
       <HeaderLarge
         pageTitle="Analog.Cafe"
-        pageSubtitle="Art, Places, Film Cameras"
+        pageSubtitle="Photo Essays & Film Photography"
       />
 
       <ArticleSection>
         <blockquote>
-          Written by film photographers, artists, and writers of the internet.
-          Published weekly. Maintained as an open-source project by{" "}
+          Created by film photographers, artists, and writers of the internet.
+          Published every Tuesday and most Thursday mornings. Maintained as an
+          open-source project by{" "}
           <Modal
             with={{
               request: {

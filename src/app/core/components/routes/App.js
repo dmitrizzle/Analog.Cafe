@@ -7,6 +7,7 @@ import ArticleLoader from "../pages/Article/components/ArticleLoader"
 import ListLoader from "../pages/List/components/ListLoader"
 import PrivacySettings from "../../../user/components/pages/PrivacySettings"
 import SignOut from "../../../user/components/pages/SignOut"
+import Subscribe from "../pages/Subscribe"
 
 const List = Loadable({
   loader: () => import("../pages/List"),
@@ -75,38 +76,51 @@ export default () => {
         <Route exact path="/author/*" component={List} />
         <Route exact path="/zine/*" component={Article} />
         {/* NOTE below is a set of outdated routes */}
-        <Route
-          exact
-          path="/photo-essays"
-          render={() => <Redirect to="/photo-stories" />}
-        />
         <Route exact path="/articles" render={() => <Redirect to="/" />} />
         <Route
           exact
           path="/stories"
-          render={() => <Redirect to="/photo-stories" />}
+          render={() => <Redirect to="/photo-essays" />}
         />
         <Route
           exact
           path="/storys"
-          render={() => <Redirect to="/photo-storie" />}
+          render={() => <Redirect to="/photo-essays" />}
         />
         <Route
           exact
           path="/guides"
-          render={() => <Redirect to="/film-cameras" />}
+          render={() => <Redirect to="/film-photography" />}
         />
         <Route
           exact
           path="/reviews"
-          render={() => <Redirect to="/film-cameras" />}
+          render={() => <Redirect to="/film-photography" />}
+        />
+        <Route
+          exact
+          path="/film-cameras"
+          render={() => <Redirect to="/film-photography" />}
+        />
+        <Route
+          exact
+          path="/places"
+          render={() => <Redirect to="/photo-essays" />}
+        />
+        <Route
+          exact
+          path="/art"
+          render={() => <Redirect to="/photo-essays" />}
+        />
+        <Route
+          exact
+          path="/photo-stories"
+          render={() => <Redirect to="/photo-essays" />}
         />
         {/* new magazine sections */}
         <Route exact path="/" component={List} />
-        <Route exact path="/film-cameras" component={List} />
-        <Route exact path="/places" component={List} />
-        <Route exact path="/art" component={List} />
-        <Route exact path="/photo-stories" component={List} />
+        <Route exact path="/film-photography" component={List} />
+        <Route exact path="/photo-essays" component={List} />
         <Route exact path="/editorials" component={List} />
         <Route exact path="/unclassifieds" component={List} />
         <Route exact path="/collaborations" component={List} />
@@ -129,6 +143,7 @@ export default () => {
         {/* static views and urls */}
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />
+        <Route path="/subscribe" component={Subscribe} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/privacy-settings" component={PrivacySettings} />
         <Route state={{ status: "404" }} component={NotFound} />

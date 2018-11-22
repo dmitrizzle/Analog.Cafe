@@ -35,7 +35,7 @@ export default props => {
       }}
     >
       <div>
-        {props.nextArticle && (
+        {/* {props.nextArticle && (
           <CardIntegratedForColumns>
             <CardHeader stubborn buttons={[0]} noStar title="Get Published" />
             <CardCaptionIntegrated>
@@ -56,7 +56,7 @@ export default props => {
               Write for Analog.Cafe
             </LinkButton>
           </CardIntegratedForColumns>
-        )}
+        )} */}
         <CardIntegratedForColumns>
           <CardHeader stubborn buttons={[0]} noStar title="Email Newsletter" />
           <CardCaptionIntegrated>

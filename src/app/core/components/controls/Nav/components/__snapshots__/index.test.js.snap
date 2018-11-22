@@ -1968,19 +1968,27 @@ ShallowWrapper {
             null,
             null,
             Object {
-              "mobile": "on",
               "text": "Art",
               "to": "/art",
             },
             Object {
-              "mobile": "on",
               "text": "Places",
               "to": "/places",
             },
             Object {
-              "mobile": "on",
               "text": "Film Cameras",
               "to": "/film-cameras",
+            },
+            Object {
+              "text": "Editorials",
+              "to": "/editorials",
+            },
+            Object {
+              "divider": true,
+            },
+            Object {
+              "text": "About Analog.Cafe",
+              "to": "/about",
             },
             Object {
               "text": "Collaborations",
@@ -1991,19 +1999,12 @@ ShallowWrapper {
               "to": "/solo-projects",
             },
             Object {
-              "text": "Editorials",
-              "to": "/editorials",
-            },
-            Object {
-              "text": "About Analog.Cafe",
-              "to": "/about",
-            },
-            Object {
               "branded": true,
               "text": "Submit",
               "to": "/submit",
             },
           ],
+          "search": true,
           "title": "More ",
         },
       },
@@ -2035,19 +2036,27 @@ ShallowWrapper {
               null,
               null,
               Object {
-                "mobile": "on",
                 "text": "Art",
                 "to": "/art",
               },
               Object {
-                "mobile": "on",
                 "text": "Places",
                 "to": "/places",
               },
               Object {
-                "mobile": "on",
                 "text": "Film Cameras",
                 "to": "/film-cameras",
+              },
+              Object {
+                "text": "Editorials",
+                "to": "/editorials",
+              },
+              Object {
+                "divider": true,
+              },
+              Object {
+                "text": "About Analog.Cafe",
+                "to": "/about",
               },
               Object {
                 "text": "Collaborations",
@@ -2058,19 +2067,12 @@ ShallowWrapper {
                 "to": "/solo-projects",
               },
               Object {
-                "text": "Editorials",
-                "to": "/editorials",
-              },
-              Object {
-                "text": "About Analog.Cafe",
-                "to": "/about",
-              },
-              Object {
                 "branded": true,
                 "text": "Submit",
                 "to": "/submit",
               },
             ],
+            "search": true,
             "title": "More ",
           },
         },
@@ -2107,7 +2109,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "sc-fjdhpX nsimD",
+      "className": "sc-jzJRlG enxKql",
     },
     "ref": null,
     "rendered": null,
@@ -2119,7 +2121,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "sc-fjdhpX nsimD",
+        "className": "sc-jzJRlG enxKql",
       },
       "ref": null,
       "rendered": null,

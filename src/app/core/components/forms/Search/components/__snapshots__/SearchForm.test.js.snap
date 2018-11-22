@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Card, matches snapshot 1`] = `
+exports[`Render SearchForm, matches snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <PureComponent />,
+  Symbol(enzyme.__unrendered__): <Component />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,33 +18,34 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        <WithTheme(Component)
-          buttons={undefined}
-          error={undefined}
-          stubborn={undefined}
-          title={undefined}
+        <Unknown
+          autoFocus={undefined}
+          onChange={[Function]}
+          onClick={[Function]}
+          warning={false}
 />,
         <Unknown
-          image={undefined}
-          text={undefined}
-/>,
-        undefined,
-        undefined,
+          inverse={true}
+          loading={undefined}
+          onClick={[Function]}
+>
+          Search
+</Unknown>,
       ],
-      "id": undefined,
-      "style": undefined,
+      "style": null,
+      "withinGroup": undefined,
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
-          "buttons": undefined,
-          "error": undefined,
-          "stubborn": undefined,
-          "title": undefined,
+          "autoFocus": undefined,
+          "onChange": [Function],
+          "onClick": [Function],
+          "warning": false,
         },
         "ref": null,
         "rendered": null,
@@ -55,15 +56,15 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "image": undefined,
-          "text": undefined,
+          "children": "Search",
+          "inverse": true,
+          "loading": undefined,
+          "onClick": [Function],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": "Search",
         "type": [Function],
       },
-      undefined,
-      undefined,
     ],
     "type": [Function],
   },
@@ -74,33 +75,34 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <WithTheme(Component)
-            buttons={undefined}
-            error={undefined}
-            stubborn={undefined}
-            title={undefined}
+          <Unknown
+            autoFocus={undefined}
+            onChange={[Function]}
+            onClick={[Function]}
+            warning={false}
 />,
           <Unknown
-            image={undefined}
-            text={undefined}
-/>,
-          undefined,
-          undefined,
+            inverse={true}
+            loading={undefined}
+            onClick={[Function]}
+>
+            Search
+</Unknown>,
         ],
-        "id": undefined,
-        "style": undefined,
+        "style": null,
+        "withinGroup": undefined,
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "buttons": undefined,
-            "error": undefined,
-            "stubborn": undefined,
-            "title": undefined,
+            "autoFocus": undefined,
+            "onChange": [Function],
+            "onClick": [Function],
+            "warning": false,
           },
           "ref": null,
           "rendered": null,
@@ -111,15 +113,15 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "image": undefined,
-            "text": undefined,
+            "children": "Search",
+            "inverse": true,
+            "loading": undefined,
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": null,
+          "rendered": "Search",
           "type": [Function],
         },
-        undefined,
-        undefined,
       ],
       "type": [Function],
     },

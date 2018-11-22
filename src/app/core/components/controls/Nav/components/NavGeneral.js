@@ -7,14 +7,32 @@ import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
+import Search from "../../../icons/Search"
+import styled from "styled-components"
+
+export const LabelWithSearchSVG = styled.span`
+  svg {
+    width: 1em;
+    margin: -0.25em 0.15em 0 0;
+    z-index: 1;
+    position: relative;
+    path {
+      stroke: ${props => props.theme.color.foreground()};
+      stroke-width: 2;
+    }
+  }
+`
 
 const NavLinkLabelMore = props => {
   return (
-    <span>
-      More {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
-    </span>
+    <LabelWithSearchSVG>
+      <Search />
+      {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
+      More
+    </LabelWithSearchSVG>
   )
 }
+
 export default props => {
   const isActive = to => {
     if (window.location.pathname === to) return true
@@ -27,27 +45,27 @@ export default props => {
   }
 
   const a = "active"
-  const ps = "/photo-stories"
-  const ar = "/art"
-  const pl = "/places"
 
-  const photoStories = {
-    to: ps,
-    className: isActive(ps) || isActive(ar) || isActive(pl) ? a : undefined
-  }
-  const art = {
-    to: ar,
-    className: isActive(ps) || isActive(ar) ? a : undefined
-  }
-  const places = {
-    to: pl,
-    className: isActive(ps) || isActive(pl) ? a : undefined
-  }
+  const ve = "/photo-essay"
+  const su = "/submit"
+  const sc = "/subscribe"
+  const fp = "/film-photography"
 
-  const fc = "/film-cameras"
-  const filmCameras = {
-    to: fc,
-    className: isActive(fc) ? a : undefined
+  const visualEssays = {
+    to: "/photo-essays",
+    className: isActive(ve) ? a : undefined
+  }
+  const submit = {
+    to: su,
+    className: isActive(su) ? a : undefined
+  }
+  const subscribe = {
+    to: sc,
+    className: isActive(sc) ? a : undefined
+  }
+  const filmPhotography = {
+    to: fp,
+    className: isActive(fp) ? a : undefined
   }
 
   return (
@@ -57,21 +75,20 @@ export default props => {
       }
     >
       <NavItem prime left mobile className="prime left mobile">
-        <NavLink {...photoStories}>
-          <span>
-            <span className="wide">Photo </span>
-            Stories
-          </span>
+        <NavLink {...visualEssays}>
+          <span>Subscribe</span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...art}>
-          <span>Art</span>
+        <NavLink {...visualEssays}>
+          <span className="wide">Photo </span>
+          Essays
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...places}>
-          <span>Places</span>
+        <NavLink {...filmPhotography}>
+          <span className="wide">Film </span>
+          Photography
         </NavLink>
       </NavItem>
       <NavItem prime center className="prime center">
@@ -80,7 +97,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="left">
-        <NavLink {...filmCameras}>Film Cameras</NavLink>
+        <NavLink {...submit}>Submit Yours</NavLink>
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>

@@ -65,7 +65,7 @@
 .appNav li {
   display: block;
   text-align: center;
-  width: 8em;
+  width: 10em;
 }
 .appNav li.mobile {
   display: none;
@@ -91,8 +91,11 @@
 .appNav li.mobile .narrow {
   display: none;
 }
-@media (max-width: 25em) {
-  .appNav li.mobile .wide {
+@media (max-width: 930px) {
+  .appNav li {
+    width: 8em;
+  }
+  .appNav li .wide {
     display: none;
   }
   .appNav li.mobile .narrow {

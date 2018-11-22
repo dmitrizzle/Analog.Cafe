@@ -4,17 +4,16 @@ import styled from "styled-components"
 import { makeFroth } from "../../../../../utils"
 
 const Avatar = styled.span`
-  width: 1em;
-  height: 1em;
+  position: absolute;
+  width: 0.65em;
+  height: 0.65em;
+  top: 0.3em;
+  left: 0.55em;
   border-radius: 1em;
-  margin: 0 0 -0.075em;
   overflow: hidden;
   display: inline-block;
-
   background: ${props =>
     props.theme.color.foreground(props.theme.opacity.least)};
-  box-shadow: 0 0 0 1px
-    ${props => props.theme.color.foreground(props.theme.opacity.half / 2)} inset;
 
   & > img {
     width: 100%;

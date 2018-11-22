@@ -20,11 +20,11 @@ import { setArticleSelectoin } from "./core/store/actions-article"
 import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import AppRoutes from "./core/components/routes/App"
-import PhotoStories from "./core/components/controls/Nav/components/PhotoStories"
 import HighlightMenu from "./core/components/controls/ArticleActions/components/HighlightMenu"
 import Link from "./core/components/controls/Link"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav"
+import Subscribe from "./core/components/controls/Nav/components/Subscribe"
 
 const ListPreloader = Loadable({
   loader: () => import("./core/components/pages/List"),
@@ -154,14 +154,16 @@ class App extends React.PureComponent {
   render = () => {
     return [
       <Nav top key="App_Nav_top" />,
-      <PhotoStories
+      <Subscribe
         key="App_Essays"
         hidden={
           this.props.nav.view !== "VISITOR" || !this.props.nav.location.top
         }
       >
-        <Link to="/photo-stories">Photo Stories</Link>
-      </PhotoStories>,
+        <Link to="/subscribe">
+          Subscribe <span style={{ fontStyle: "normal" }}>❤︎</span>
+        </Link>
+      </Subscribe>,
       <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
       <Nav bottom key="App_Nav_bottom" />,
       <ModalOverlay key="App_Modal" />,
