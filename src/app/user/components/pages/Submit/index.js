@@ -21,45 +21,8 @@ export const SubmitIntro = () => {
   const ctaText = ctaTextInit()
   return (
     <span>
-      <strong>Get your work reviewed and published</strong> along with a growing{" "}
-      <Link to="/about">community</Link> of authors, artists, film
-      photographers. We’ll{" "}
-      <Modal
-        with={{
-          info: {
-            title: "Editor’s Note",
-            text: (
-              <span>
-                We edit every article for clarity, grammar, and style. In some
-                cases this may yield a fair amount of changes, in others – none
-                at all.{" "}
-                <Link
-                  to="https://www.analog.cafe/zine/open-call-g99w"
-                  target="_blank"
-                >
-                  Learn more.
-                </Link>
-                <br />
-                <br />
-                If you’d like to have greater control over content, just let us
-                know and we’ll send the edited version to you for approval
-                before publishing: <ContactInfo />
-              </span>
-            ),
-            buttons: [
-              {
-                to: "/submit/compose",
-                text: ctaText,
-                branded: true
-              }
-            ]
-          },
-          id: "hints/submission-edits"
-        }}
-      >
-        edit
-      </Modal>{" "}
-      your submission to look and read beautifully.
+      Get your work published along with a growing{" "}
+      <Link to="/about">community</Link> of artists and film photographers.
     </span>
   )
 }
@@ -84,7 +47,7 @@ export default () => {
       />
       <ArticleSection>
         <p>
-          Do you shoot film? <SubmitIntro />
+          <strong>Do you shoot film?</strong> <SubmitIntro />
         </p>
 
         <ButtonGroup style={{ paddingBottom: "1.5em" }}>
@@ -98,35 +61,6 @@ export default () => {
             if you have an account.
           </p>
         </ButtonGroup>
-
-        <p>
-          <strong>Sending submissions is easy.</strong> Just add your images,
-          title, and text to a Analog.Cafe’s{" "}
-          <Modal
-            with={{
-              info: {
-                title: "What’s WISIWIG?",
-                image: "image-froth_1144351_rk-MB7KoQ",
-                text: (
-                  <span>
-                    <strong>WISIWIG</strong> is short for “what I see is what I
-                    get.”
-                    <br />
-                    <br />
-                    We call ours “Composer.” It’s been built to help you format
-                    your submission to look the way you choose. You can resize
-                    your images to appear full-screen, add captions, add quotes,
-                    dividers and headings, as well as links and font styles.
-                  </span>
-                )
-              },
-              id: "hints/disposable-links"
-            }}
-          >
-            WISIWIG
-          </Modal>{" "}
-          editor.
-        </p>
 
         <p>
           <strong>Get £5 for film.</strong> As a small token of appreciation for

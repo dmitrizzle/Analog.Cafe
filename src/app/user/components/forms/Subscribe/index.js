@@ -9,7 +9,9 @@ export default class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      subscribeForm: false
+      subscribeForm: this.props.stateOverwrite
+        ? this.props.stateOverwrite.subscribeForm
+        : false
     }
   }
   handleRevealSubscribeForm = event => {
@@ -45,7 +47,7 @@ export default class extends React.PureComponent {
     return (
       <div>
         {!this.state.subscribeForm ? (
-          <CardButton inverse onClick={this.handleRevealSubscribeForm}>
+          <CardButton branded onClick={this.handleRevealSubscribeForm}>
             {TEXT_LABELS.SUBSCRIBE}
           </CardButton>
         ) : (

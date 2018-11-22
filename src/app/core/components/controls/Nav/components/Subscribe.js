@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 export default styled.div`
   width: 10em;
   position: absolute;
@@ -25,5 +26,14 @@ export default styled.div`
     margin: 0 auto -1em;
     height: 1.25em;
     text-decoration: none;
+    border-radius: 0.15em;
+  }
+  a:active,
+  a.active {
+    background: ${props => props.theme.color.brand()};
+  }
+  a.active {
+    color: ${props => props.theme.color.background()};
+    box-shadow: 0 0 0 1px ${props => props.theme.color.foreground()};
   }
 `
