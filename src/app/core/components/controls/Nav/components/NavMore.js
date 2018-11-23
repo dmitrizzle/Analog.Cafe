@@ -44,6 +44,16 @@ export default props => {
                   inverse: true
                 }
               : null,
+
+            {
+              to: "/about",
+              text: "About Analog.Cafe"
+            },
+            {
+              to: "/subscribe",
+              text: "Subscribe ❤︎"
+            },
+            { divider: true },
             {
               to: "/photo-essays",
               text: "Photo Essays"
@@ -64,17 +74,12 @@ export default props => {
               to: "/solo-projects",
               text: "Solo Projects"
             },
-            { divider: true },
-            {
-              to: "/about",
-              text: "About Analog.Cafe"
-            },
             {
               to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
               text:
                 loadTextContent().length > 0
                   ? "Continue With Submission"
-                  : `Submit${props.userStatus === "ok" ? " New" : ""}`,
+                  : `Submit${props.userStatus === "ok" ? " New" : " Yours"}`,
               branded: true
             }
           ]

@@ -44,6 +44,10 @@ export class Search extends React.PureComponent {
     this.setState({
       searchForm: nextProps.stateOverwrite
     })
+
+    typeof this.props.searchResultsShown === "function" &&
+      nextProps.search.data.items &&
+      this.props.searchResultsShown(nextProps.search.data.items.length)
   }
   render = () => {
     return (

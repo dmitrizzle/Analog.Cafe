@@ -21,8 +21,6 @@ export default styled(LinkButton)`
 `
 
 export const searchTextStyles = css`
-  background: ${props =>
-    props.theme.color.background(props.theme.opacity.most)};
   text-align: left;
   display: inline;
   position: relative;
@@ -43,6 +41,8 @@ export const CardSearchItem = styled(LinkButton)`
     font-size: 0.65em;
     font-weight: 400;
     ${searchTextStyles};
+    display: inline-block;
+    text-align: left;
   }
   ::before {
     content: "";
@@ -51,6 +51,7 @@ export const CardSearchItem = styled(LinkButton)`
     right: 0;
     bottom: -4px;
     left: 0;
+    opacity: ${props => props.theme.opacity.least * 1.5};
     ${props =>
       props.image &&
       `
@@ -62,7 +63,7 @@ export const CardSearchItem = styled(LinkButton)`
   :active {
     em,
     div {
-      background: ${props => props.theme.color.highlight()};
+      ${"" /* background: ${props => props.theme.color.highlight()}; */};
     }
     ::before {
       background: transparent;

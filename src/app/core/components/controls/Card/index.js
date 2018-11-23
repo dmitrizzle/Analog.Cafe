@@ -1,8 +1,9 @@
 import React from "react"
 
+import { SEARCH_RESULTS_FEATURED } from "../../../constants/messages-search"
 import ButtonGroupDivider from "../Button/components/ButtonGroupDivider"
 import ButtonKeyword from "../Button/components/ButtonKeyword"
-import CardButton from "./components/CardButton"
+import CardButton, { CardSearchItem } from "./components/CardButton"
 import CardFigure from "./components/CardFigure"
 import CardHeader from "./components/CardHeader"
 import CardPopup from "./components/CardPopup"
@@ -13,7 +14,8 @@ export default class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      searchMode: false
+      searchMode: false,
+      searchResults: false
     }
   }
   handleSearchMode = searchMode => {
@@ -21,11 +23,17 @@ export default class extends React.PureComponent {
       searchMode
     })
   }
+  handleSearchResultsShown = total => {
+    total > 0
+      ? this.setState({ searchResults: true })
+      : this.setState({ searchResults: false })
+  }
   componentWillReceiveProps = () => {
     this.setState({
       searchMode: false
     })
   }
+
   render = () => {
     return (
       <CardPopup style={this.props.style} id={this.props.id}>
@@ -38,14 +46,35 @@ export default class extends React.PureComponent {
           />
         )}
         <CardFigure image={this.props.image} text={this.props.text} />
-        {this.props.search && (
+        {this.props.search && [
           <Search
             onClick={event => event.stopPropagation()}
             formLocation={this.props.searchFormLocation}
             searchMode={this.handleSearchMode}
             stateOverwrite={this.state.searchMode}
-          />
-        )}
+            key="search"
+            searchResultsShown={this.handleSearchResultsShown}
+          />,
+          this.state.searchMode && !this.state.searchResults
+            ? SEARCH_RESULTS_FEATURED.map(item => {
+                return [
+                  <CardSearchItem
+                    key={item.link}
+                    to={item.link}
+                    image={item.image || null}
+                  >
+                    <div>{item.title}</div>
+                    <br />
+                    <em>{item.snippet}</em>
+                  </CardSearchItem>,
+                  <ButtonGroupDivider
+                    key={`div_${item.link}`}
+                    style={{ zIndex: 1, position: "relative" }}
+                  />
+                ]
+              })
+            : null
+        ]}
         {this.props.buttons &&
           !this.state.searchMode &&
           Object.keys(this.props.buttons).length !== 0 &&
