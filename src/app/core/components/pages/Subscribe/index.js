@@ -27,8 +27,8 @@ const WallPaper = styled.div`
 
 export const GetYourWeekly = () => (
   <CardCaptionIntegrated>
-    Don’t miss Analog.Cafe’s next big story, guide, or photo essay.{" "}
-    <strong>Every Tuesday.</strong> <Link to="/privacy-policy">No spam</Link>.
+    Get your weekly dose of stories, reviews, and guides on art and film
+    photography. <Link to="/privacy-policy">No spam</Link>.
   </CardCaptionIntegrated>
 )
 

@@ -25,8 +25,7 @@ export const TEXT_ROUTE_LABELS = {
   },
   "/film-photography": {
     title: "Cameras, chemicals, tools, reviews, guides",
-    description:
-      "Articles about film cameras, our editors’ favourite analogue tool to tell stories."
+    description: "Articles about film cameras, film, and everything in-between."
   },
   "/editorials": {
     title: "From the Analog.Cafe editors",

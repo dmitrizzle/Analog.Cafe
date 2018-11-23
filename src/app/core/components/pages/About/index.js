@@ -91,9 +91,13 @@ class About extends React.PureComponent {
 
       <ArticleSection>
         <blockquote>
-          Created by film photographers, artists, and writers of the internet.
-          Published every Tuesday and most Thursday mornings. Maintained as an
-          open-source project by{" "}
+          Created by film photographers, artists, and writers of the internet.{" "}
+          <strong>
+            Published <Link to="/">online</Link>
+          </strong>{" "}
+          every Tuesday and most Thursday mornings.{" "}
+          <Link to="https://github.com/dmitrizzle/Analog.Cafe">Maintained</Link>{" "}
+          as an open-source project by{" "}
           <Modal
             with={{
               request: {
@@ -129,27 +133,27 @@ class About extends React.PureComponent {
           </Authors>
         </AuthorsBanner>
 
-        <h3>Film Cameras.</h3>
+        <h3>Film Photography.</h3>
         <p>
           Almost every image on this website has originated on a roll of film,
-          for what’s known as <strong>film photography</strong> 🎞.
+          for what’s known as <em>film photography</em>.
         </p>
         <p>
           Most stories and articles on Analog.Cafe are either about{" "}
-          <Link to="/film-cameras">film cameras</Link> or have them involved in
-          the image making. The reason is our collective passion and
+          <Link to="/film-photography">film photography</Link> or have it
+          involved in the image making. The reason is our collective passion and
           appreciation for the analogue process and{" "}
           <Link to="/zine/analogue-photography-98f3">technology</Link>. We
-          believe that it helps create more thoughtful, beautiful, and truthful
-          stories.
+          believe that it helps us create more thoughtful, beautiful, and
+          truthful stories.
         </p>
 
-        <h3>Photo Stories.</h3>
+        <h3>Photo Essays.</h3>
         <p>
           Art, stories, statements. Photography is more than gear and chemicals.
           Analog.Cafe’s{" "}
           <em>
-            <Link to="/photo-stories">Photo Stories</Link>
+            <Link to="/photo-essays">Photo Essays</Link>
           </em>{" "}
           section, split into <em>Art</em> and <em>Places</em> topics, is a
           stream of non-technical essays focusing on art, culture, and travel.
