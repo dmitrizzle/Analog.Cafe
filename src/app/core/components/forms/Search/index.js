@@ -14,7 +14,8 @@ export class Search extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      searchForm: false
+      searchForm: false,
+      hideSearchResults: false
     }
   }
   handleRevealSubscribeForm = event => {
@@ -34,6 +35,12 @@ export class Search extends React.PureComponent {
   }
   handleSubmitCallback = query => {
     this.props.getSearchResults(query)
+  }
+  handleSearchText = text => {
+    this.props.searchText(text)
+    text === ""
+      ? this.setState({ hideSearchResults: true })
+      : this.setState({ hideSearchResults: false })
   }
   componentWillReceiveProps = nextProps => {
     if (
@@ -59,13 +66,14 @@ export class Search extends React.PureComponent {
               buttonText={TEXT_LABELS.FIND}
               autoFocus
               submitCallback={this.handleSubmitCallback}
-              searchText={this.props.searchText}
+              searchText={this.handleSearchText}
               loading={this.props.search.isFetching}
               key="SearchForm"
               style={{ zIndex: 1, position: "relative" }}
             />,
             <div key="SearchResults">
-              {this.props.search.data.items &&
+              {!this.state.hideSearchResults &&
+                this.props.search.data.items &&
                 this.props.search.data.items.length > 0 &&
                 this.props.search.data.items.map(item => {
                   return [

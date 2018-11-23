@@ -5,20 +5,17 @@ import { makeFroth } from "../../../../utils"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
-import ContactInfo from "../../../../core/components/vignettes/ContactInfo"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import HowToSubmit from "./components/HowToSubmit"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
-import Modal from "../../../../core/components/controls/Modal"
 import RemoteMessage from "../../../../core/components/vignettes/RemoteMessage"
 
 export const ctaTextInit = () =>
   loadTextContent().length > 0 ? "Continue With Submission" : "Submit Now"
 
 export const SubmitIntro = () => {
-  const ctaText = ctaTextInit()
   return (
     <span>
       Get your work published along with a growing{" "}
@@ -28,7 +25,6 @@ export const SubmitIntro = () => {
 }
 
 export default () => {
-  const ctaText = ctaTextInit()
   return (
     <ArticleWrapper>
       <MetaTags
@@ -52,7 +48,7 @@ export default () => {
 
         <ButtonGroup style={{ paddingBottom: "1.5em" }}>
           <LinkButton to={"/submit/compose"} branded>
-            {ctaText}
+            {ctaTextInit()}
           </LinkButton>
           <p>
             <Link to="/sign-in">
