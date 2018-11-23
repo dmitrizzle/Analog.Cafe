@@ -44,10 +44,6 @@ export class Search extends React.PureComponent {
     this.setState({
       searchForm: nextProps.stateOverwrite
     })
-
-    typeof this.props.searchResultsShown === "function" &&
-      nextProps.search.data.items &&
-      this.props.searchResultsShown(nextProps.search.data.items.length)
   }
   render = () => {
     return (
@@ -63,6 +59,7 @@ export class Search extends React.PureComponent {
               buttonText={TEXT_LABELS.FIND}
               autoFocus
               submitCallback={this.handleSubmitCallback}
+              searchText={this.props.searchText}
               loading={this.props.search.isFetching}
               key="SearchForm"
               style={{ zIndex: 1, position: "relative" }}

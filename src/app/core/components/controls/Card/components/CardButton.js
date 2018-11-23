@@ -61,9 +61,9 @@ export const CardSearchItem = styled(LinkButton)`
     `};
   }
   :active {
-    em,
+    background: ${props => props.theme.color.background()} !important;
     div {
-      ${"" /* background: ${props => props.theme.color.highlight()}; */};
+      background: ${props => props.theme.color.highlight()};
     }
     ::before {
       background: transparent;

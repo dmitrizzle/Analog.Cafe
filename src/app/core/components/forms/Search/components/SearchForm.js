@@ -15,6 +15,7 @@ export default class extends React.Component {
   }
   handleEmailChange = event => {
     this.setState({ query: event.target.value || "", warning: false })
+    this.props.searchText(event.target.value)
   }
   handleSubmit = event => {
     event.stopPropagation()

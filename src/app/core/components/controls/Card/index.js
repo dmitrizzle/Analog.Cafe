@@ -15,7 +15,7 @@ export default class extends React.PureComponent {
     super(props)
     this.state = {
       searchMode: false,
-      searchResults: false
+      searchText: ""
     }
   }
   handleSearchMode = searchMode => {
@@ -23,10 +23,8 @@ export default class extends React.PureComponent {
       searchMode
     })
   }
-  handleSearchResultsShown = total => {
-    total > 0
-      ? this.setState({ searchResults: true })
-      : this.setState({ searchResults: false })
+  handleSearchText = searchText => {
+    this.setState({ searchText })
   }
   componentWillReceiveProps = () => {
     this.setState({
@@ -53,9 +51,9 @@ export default class extends React.PureComponent {
             searchMode={this.handleSearchMode}
             stateOverwrite={this.state.searchMode}
             key="search"
-            searchResultsShown={this.handleSearchResultsShown}
+            searchText={this.handleSearchText}
           />,
-          this.state.searchMode && !this.state.searchResults
+          this.state.searchMode && !this.state.searchText
             ? SEARCH_RESULTS_FEATURED.map(item => {
                 return [
                   <CardSearchItem
