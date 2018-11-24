@@ -7,7 +7,7 @@ const Avatar = styled.span`
   position: absolute;
   width: 0.65em;
   height: 0.65em;
-  top: 0.3em;
+  top: 0.34em;
   left: 0.55em;
   border-radius: 1em;
   overflow: hidden;
