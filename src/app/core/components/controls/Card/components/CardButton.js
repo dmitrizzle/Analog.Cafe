@@ -48,7 +48,7 @@ export const CardSearchItem = styled(LinkButton)`
     position: absolute;
     width: 3em;
     height: 3em;
-    bottom: 0;
+    bottom: -1px;
     right: -1px;
 
     ${props =>
