@@ -62,7 +62,6 @@ export default class extends React.PureComponent {
                     image={item.image || null}
                   >
                     <div>{item.title}</div>
-                    <br />
                     <em>{item.snippet}</em>
                   </CardSearchItem>,
                   <ButtonGroupDivider

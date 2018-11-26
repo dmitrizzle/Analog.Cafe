@@ -22,15 +22,14 @@ export default styled(LinkButton)`
 
 export const searchTextStyles = css`
   text-align: left;
-  display: inline;
   position: relative;
-  padding: 0.05em;
+  padding: 0 0 0.5em;
   color: ${props => props.theme.color.foreground()};
 `
 
 export const CardSearchItem = styled(LinkButton)`
   ${styles};
-  padding: 1em;
+  padding: 1em 1em 1em 2em;
   position: relative;
   div {
     font-size: 0.85em;
@@ -44,29 +43,24 @@ export const CardSearchItem = styled(LinkButton)`
     display: inline-block;
     text-align: left;
   }
-  ::before {
+  ::after {
     content: "";
     position: absolute;
-    top: -4px;
-    right: 0;
-    bottom: -4px;
+    width: 1em;
+    height: 100%;
+    top: 0;
     left: 0;
-    opacity: ${props => props.theme.opacity.least * 1.5};
+    transition: all 250ms;
+
     ${props =>
       props.image &&
       `
       background: url(${props.image});
-      background-size: cover;
-      filter: blur(3px);
+      background-size: auto 100%;
+      background-position: center;
     `};
   }
   :active {
-    background: ${props => props.theme.color.background()} !important;
-    div {
-      background: ${props => props.theme.color.highlight()};
-    }
-    ::before {
-      background: transparent;
-    }
+    background: ${props => props.theme.color.background()};
   }
 `

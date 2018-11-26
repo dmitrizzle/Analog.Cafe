@@ -87,7 +87,6 @@ export class Search extends React.PureComponent {
                       }
                     >
                       <div>{item.title}</div>
-                      <br />
                       <em>{item.snippet}</em>
                     </CardSearchItem>,
                     <ButtonGroupDivider
