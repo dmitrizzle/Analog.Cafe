@@ -46,21 +46,20 @@ export const CardSearchItem = styled(LinkButton)`
   ::after {
     content: "";
     position: absolute;
-    width: 1em;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transition: all 250ms;
+    width: 3em;
+    height: 3em;
+    bottom: 0;
+    right: -1px;
 
     ${props =>
       props.image &&
       `
       background: url(${props.image});
-      background-size: auto 100%;
-      background-position: center;
+      background-size: cover;
+      clip-path: polygon(100% 0, 0% 100%, 100% 100%);
     `};
   }
   :active {
-    background: ${props => props.theme.color.background()};
+    background: ${props => props.theme.color.background()} !important;
   }
 `
