@@ -29,7 +29,7 @@ export const searchTextStyles = css`
 
 export const CardSearchItem = styled(LinkButton)`
   ${styles};
-  padding: 1em 1em 1em 2em;
+  padding: 1em 2em;
   position: relative;
   div {
     font-size: 0.85em;
