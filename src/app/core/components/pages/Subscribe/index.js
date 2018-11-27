@@ -50,6 +50,7 @@ export default props => {
               />
               <GetYourWeekly />
               <Subscribe
+                autoFocus={false}
                 stateOverwrite={{ subscribeForm: true }}
                 formLocation={"Subscribe"}
               />

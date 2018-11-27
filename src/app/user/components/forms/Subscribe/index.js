@@ -54,7 +54,9 @@ export default class extends React.PureComponent {
           <MailChimpPrefill
             formLocation={this.props.formLocation}
             buttonText={TEXT_LABELS.SUBMIT}
-            autoFocus
+            autoFocus={
+              this.props.autoFocus === false ? this.props.autoFocus : true
+            }
             submitCallback={this.handleSubmitCallback}
           />
         )}
