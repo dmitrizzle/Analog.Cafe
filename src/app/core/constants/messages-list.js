@@ -24,7 +24,7 @@ export const TEXT_ROUTE_LABELS = {
       "Emphasis on thought pieces and art projects. A collection of abstract photography, thought-provoking essays, observations, travel, culture, and items of interest."
   },
   "/film-photography": {
-    title: "Cameras, film, analogue studies",
+    title: "Reviews, guides, photographers’ stories",
     description:
       "Articles, reviews, and guides on film photography and the stories of its influence on art and culture."
   },
