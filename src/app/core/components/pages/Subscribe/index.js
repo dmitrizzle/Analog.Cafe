@@ -18,11 +18,13 @@ const metaDescription = ""
 
 const WallPaper = styled.div`
   margin-top: 1em;
-  height: 100vh;
+  ${props => props.theme.size.breakpoint.max.m`
+    margin-top: 0;
+  `} height: 100vh;
   padding-top: 3em;
   background: url(${"https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1512027_B13cpBr2m.jpg"});
   background-size: cover;
-  background-position: center;
+  background-position: top center;
 `
 
 export const GetYourWeekly = () => (
