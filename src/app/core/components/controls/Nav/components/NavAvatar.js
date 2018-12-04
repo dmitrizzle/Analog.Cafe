@@ -5,8 +5,8 @@ import { makeFroth } from "../../../../../utils"
 
 const Avatar = styled.span`
   position: absolute;
-  width: 0.65em;
-  height: 0.65em;
+  width: 0.67em;
+  height: 0.67em;
   right: 0.96em;
   top: 0.34em;
   border-radius: 1em;
