@@ -26,8 +26,7 @@ export const LabelWithSearchSVG = styled.span`
 const NavLinkLabelMore = props => {
   return (
     <LabelWithSearchSVG>
-      More
-      <Search />
+      More <Search />
       {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
     </LabelWithSearchSVG>
   )
