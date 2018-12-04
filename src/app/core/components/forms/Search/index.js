@@ -18,10 +18,19 @@ export class Search extends React.PureComponent {
       hideSearchResults: false
     }
   }
-  handleRevealSubscribeForm = event => {
-    this.props.searchMode(true)
+  componentDidMount = () => {
+    window.addEventListener("keydown", event => {
+      if (event.key === "f" && !this.state.searchForm) {
+        this.handleRevealSearchForm(event)
+        this.handleRevealSearchForm(event)
+      }
+    })
+  }
+  handleRevealSearchForm = event => {
     event.preventDefault()
     event.stopPropagation()
+    this.props.searchMode(true)
+
     this.setState({
       searchForm: !this.state.searchForm
     })
@@ -56,7 +65,7 @@ export class Search extends React.PureComponent {
     return (
       <div>
         {!this.state.searchForm ? (
-          <CardButton inverse onClick={this.handleRevealSubscribeForm}>
+          <CardButton inverse onClick={this.handleRevealSearchForm}>
             {TEXT_LABELS.SEARCH}
           </CardButton>
         ) : (

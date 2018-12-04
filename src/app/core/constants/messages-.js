@@ -45,8 +45,7 @@ export const TEXT_LABELS = {
   ),
   FIND: (
     <SearchType style={{ color: "#fff" }}>
-      <Search />
-      Search
+      Search <Search />
     </SearchType>
   ),
   SUBMIT: "Subscribe ❤︎"
