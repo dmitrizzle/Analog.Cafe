@@ -39,8 +39,7 @@ export const TEXT_LABELS = {
   SUBSCRIBE: "Subscribe ❤︎",
   SEARCH: (
     <SearchType>
-      <Search />
-      Search
+      Search <Search />
     </SearchType>
   ),
   FIND: (

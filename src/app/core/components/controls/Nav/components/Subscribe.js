@@ -9,6 +9,10 @@ export default styled.div`
   height: 0.65em;
   top: 5em;
   margin-left: calc(50vw - 24em);
+  ${props => props.theme.size.breakpoint.min.xxl`
+    top: 5.75em;
+    margin-left: calc(50vw - 27em);
+  `};
   @media (max-width: 930px) {
     margin-left: calc(50vw - 20em);
   }
