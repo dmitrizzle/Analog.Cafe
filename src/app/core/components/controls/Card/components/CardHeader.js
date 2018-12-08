@@ -7,7 +7,10 @@ export const CardHeader = props => {
   const { theme } = props
   return (
     <HeaderSmall title={props.error && props.error} noStar={props.noStar}>
-      <h3 title={props.title} onClick={event => event.stopPropagation()}>
+      <h3
+        title={typeof props.title === "string" && props.title}
+        onClick={event => event.stopPropagation()}
+      >
         {props.titlePrefix && (
           <span style={{ color: theme.color.brand() }}>
             {props.titlePrefix}

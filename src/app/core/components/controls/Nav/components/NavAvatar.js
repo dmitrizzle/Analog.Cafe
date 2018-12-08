@@ -4,20 +4,9 @@ import styled from "styled-components"
 import { makeFroth } from "../../../../../utils"
 
 const Avatar = styled.span`
-  position: absolute;
-  right: 0.96em;
-  top: 0.34em;
-  ${props => props.theme.size.breakpoint.min.xxl`
-    right: 0.94em;
-    top: 0.30em;
-  `};
-  ${props => props.theme.size.breakpoint.max.m`
-    right: 0.98em;
-    top: 0.36em;
-  `};
-
-  width: 0.67em;
-  height: 0.67em;
+  margin-left: 0.25em;
+  width: 0.75em;
+  height: 0.75em;
   border-radius: 1em;
   overflow: hidden;
   display: inline-block;

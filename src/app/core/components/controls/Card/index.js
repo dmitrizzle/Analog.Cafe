@@ -41,6 +41,7 @@ export default class extends React.PureComponent {
             stubborn={this.props.stubborn}
             buttons={this.props.buttons}
             title={this.props.title}
+            noStar={this.props.menu}
           />
         )}
         <CardFigure image={this.props.image} text={this.props.text} />

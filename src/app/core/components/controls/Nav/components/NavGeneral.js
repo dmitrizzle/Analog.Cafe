@@ -23,14 +23,25 @@ export const LabelWithSearchSVG = styled.span`
   }
 `
 
-const NavLinkLabelMore = props => {
-  return (
-    <LabelWithSearchSVG>
-      More <Search />
-      {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
-    </LabelWithSearchSVG>
-  )
-}
+export const Burger = styled.div`
+  display: inline-block;
+  width: 1em;
+  height: 0.85em;
+  margin-left: 0.15em;
+  > div {
+    height: 0.1em;
+    margin: 0.15em 0.05em;
+    background: ${props => props.theme.color.foreground()};
+  }
+`
+
+export const BurgerMenu = () => (
+  <Burger>
+    <div />
+    <div />
+    <div />
+  </Burger>
+)
 
 export default props => {
   const isActive = to => {
@@ -96,14 +107,16 @@ export default props => {
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="left">
-        <NavLink {...submit}>Submit Yours</NavLink>
+        <NavLink {...submit}>
+          <LabelWithSearchSVG>
+            Search <Search />
+          </LabelWithSearchSVG>
+        </NavLink>
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>
-          <NavLinkLabelMore
-            userStatus={props.userStatus}
-            userImage={props.userImage}
-          />
+          Menu <BurgerMenu />
+          {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
         </NavMore>
       </NavItem>
     </ul>

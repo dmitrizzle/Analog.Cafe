@@ -2,19 +2,26 @@
 import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 
+import { BurgerMenu } from "./NavGeneral"
 import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
 import Modal from "../../Modal"
 
 export default props => {
+  console.log(props)
   return (
     <Modal
       element={props.element}
       branded={props.branded}
       inverse={props.inverse}
+      unmarked
       with={{
         info: {
-          search: true,
-          title: "More ",
+          menu: true,
+          title: (
+            <span>
+              <BurgerMenu /> Menu
+            </span>
+          ),
           buttons: [
             props.userStatus === "ok"
               ? {

@@ -7,17 +7,21 @@ import { fetchModal, setModal } from "../../../store/actions-modal"
 import Button from "../Button/components/Button"
 
 export const ModalLink = styled.a`
-  &::after{
-    content: "${TEXT_EMOJIS.STAR}";
-    text-decoration: none;
-    font-style: normal;
-    display: inline-block;
-    vertical-align: super;
-    font-size: 0.5em;
-    margin-right: -.25em;
-    margin-left: 0em;
-    margin-top: -.5em;
-  }
+  ${props =>
+    !props.unmarked &&
+    `
+    &::after{
+      content: "${TEXT_EMOJIS.STAR}";
+      text-decoration: none;
+      font-style: normal;
+      display: inline-block;
+      vertical-align: super;
+      font-size: 0.5em;
+      margin-right: -.25em;
+      margin-left: 0em;
+      margin-top: -.5em;
+    }
+  `};
 `
 
 export const launchModal = function(event) {
