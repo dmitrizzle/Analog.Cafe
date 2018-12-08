@@ -53,6 +53,7 @@ export default class extends React.PureComponent {
             stateOverwrite={this.state.searchMode}
             key="search"
             searchText={this.handleSearchText}
+            menu={this.props.menu}
           />,
           this.state.searchMode && !this.state.searchText
             ? SEARCH_RESULTS_FEATURED.map(item => {

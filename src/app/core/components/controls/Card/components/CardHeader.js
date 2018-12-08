@@ -8,7 +8,7 @@ export const CardHeader = props => {
   return (
     <HeaderSmall title={props.error && props.error} noStar={props.noStar}>
       <h3
-        title={typeof props.title === "string" && props.title}
+        title={typeof props.title === "string" ? props.title : undefined}
         onClick={event => event.stopPropagation()}
       >
         {props.titlePrefix && (

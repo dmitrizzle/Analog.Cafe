@@ -7,7 +7,6 @@ import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-ses
 import Modal from "../../Modal"
 
 export default props => {
-  console.log(props)
   return (
     <Modal
       element={props.element}
@@ -16,6 +15,7 @@ export default props => {
       unmarked
       with={{
         info: {
+          search: true,
           menu: true,
           title: (
             <span>

@@ -1,6 +1,8 @@
 import { connect } from "react-redux"
 import React from "react"
 
+import styled from "styled-components"
+
 import { GA } from "../../../../utils"
 import { TEXT_LABELS } from "../../../constants/messages-"
 import { getSearchResults } from "../../../store/actions-search"
@@ -9,6 +11,10 @@ import CardButton, {
   CardSearchItem
 } from "../../controls/Card/components/CardButton"
 import SearchForm from "./components/SearchForm"
+
+export const SearchVisibility = styled.div`
+  ${props => props.menu && props.theme.size.breakpoint.min.l`display:none;`};
+`
 
 export class Search extends React.PureComponent {
   constructor(props) {
@@ -63,7 +69,7 @@ export class Search extends React.PureComponent {
   }
   render = () => {
     return (
-      <div>
+      <SearchVisibility menu={this.props.menu}>
         {!this.state.searchForm ? (
           <CardButton inverse onClick={this.handleRevealSearchForm}>
             {TEXT_LABELS.SEARCH}
@@ -107,7 +113,7 @@ export class Search extends React.PureComponent {
             </div>
           ]
         )}
-      </div>
+      </SearchVisibility>
     )
   }
 }

@@ -2,7 +2,7 @@
 
 [![GitHub version](https://badge.fury.io/gh/dmitrizzle%2FAnalog.Cafe.svg)](https://badge.fury.io/gh/dmitrizzle%2FAnalog.Cafe) [![Build Status](https://travis-ci.com/dmitrizzle/Analog.Cafe.svg?branch=develop)](https://travis-ci.com/dmitrizzle/Analog.Cafe)
 
-> Photo essays, reviews, guides.
+> A Film Photography Magazine.
 
 <img src="https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1076479_8f0a0ec6c4794688a66d79935fab2ca3.gif" width="373" alt="Screenshot" />
 

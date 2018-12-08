@@ -10,7 +10,7 @@ export const TEXT_STATUS_LABELS = {
 }
 export const TEXT_ROUTE_LABELS = {
   "/": {
-    title: "Photo essays, reviews, guides",
+    title: "A Film Photography Magazine",
     description: `Created by film photographers, artists, and writers of the internet. Published weekly. Maintained as an open-source project by Dmitri.`,
     designation: "homepage"
   },
@@ -19,12 +19,12 @@ export const TEXT_ROUTE_LABELS = {
   },
 
   "/photo-essays": {
-    title: "Stories, art projects, photo essays",
+    title: "Travel, culture, thought pieces, art projects",
     description:
-      "Emphasis on thought pieces and art projects. A collection of abstract photography, thought-provoking essays, observations, travel, culture, and items of interest."
+      "A collection of abstract photography, thought-provoking essays, observations, travel, culture, and items of interest."
   },
   "/film-photography": {
-    title: "Reviews, guides, photographers’ stories",
+    title: "Camera and film reviews, guides, and stories",
     description:
       "Articles, reviews, and guides on film photography and the stories of its influence on art and culture."
   },
