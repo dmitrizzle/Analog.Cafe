@@ -258,12 +258,36 @@ class About extends React.PureComponent {
           with={{
             info: {
               image: "image-froth_663152_ByGEigckN",
-              title: "Japanese Payphone"
+              title: "Contact Info",
+              buttons: [
+                {
+                  to: "#email-dmitri",
+                  onClick: event => {
+                    event.preventDefault(), window.open("mailto:d@analog.cafe")
+                  },
+                  text: "Email Dmitri"
+                },
+                {
+                  to: "https://twitter.com/analog_cafe",
+                  text: "Twitter"
+                },
+                {
+                  to: "https://www.facebook.com/analog8cafe",
+                  text: "Facebook"
+                },
+                {
+                  to: "https://instagram.com/analog_cafe",
+                  text: "Instagram"
+                }
+              ]
             },
-            id: "modal/hints/japanese-payphone"
+            id: "modal/hints/contact"
           }}
         >
-          <Figure src="image-froth_663152_ByGEigckN" />
+          <Figure src="image-froth_663152_ByGEigckN" caption feature>
+            {"ontouchstart" in document.documentElement ? "Tap" : "Click"} the
+            payphone.
+          </Figure>
         </Modal>
         <p>
           If you have a question, suggestion or just want to chat, feel free to
@@ -286,20 +310,24 @@ class About extends React.PureComponent {
           <Link to="/zine/chiang-mai-d7jy">Chiang Mai</Link>, in collaboration
           with authors and photographers from a growing list of locations.
         </p>
-        <p>🇺🇸🇬🇧🇨🇦🇹🇭🇯🇵🇬🇷🇸🇰🇨🇳🇭🇰🇵🇭🇸🇬🇻🇳🇮🇪🇻🇪🇵🇹🇲🇾 </p>
         <p>
           Currently, Dmitri is maintaining the project from his home in{" "}
           <Link to="/zine/expat-years-6sje">Vancouver</Link>.
         </p>
+        <p>🇺🇸🇬🇧🇨🇦🇹🇭🇯🇵🇬🇷🇸🇰🇨🇳🇭🇰🇵🇭🇸🇬🇻🇳🇮🇪🇻🇪🇵🇹🇲🇾 </p>
 
         <h3>Thank you, project backers!</h3>
         <p>
           Analog.Cafe began as a dream to bring together a community of writers,
           artists and film photographers and promote the creative and
           informative products of ambition, generosity and imagination. With the
-          financial help and moral support of the fifty-one backers on our first
-          Kickstarter campaign, we were able to build and grow into a prominent
-          home the remarkable, the beautiful, and the fascinating.
+          financial help and moral support of the fifty-one backers on our first{" "}
+          Kickstarter{" "}
+          <Link to="https://www.kickstarter.com/projects/dmitrizzle/analogcafe-the-remarkable-film-photography-blog">
+            campaign
+          </Link>
+          , we were able to build and grow into a prominent home the remarkable,
+          the beautiful, and the fascinating.
         </p>
         <ThankYouList>
           Thayanantha Thevanayagam
