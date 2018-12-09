@@ -11,7 +11,7 @@ export const ModalLink = styled.a`
     !props.unmarked &&
     `
     &::after{
-      content: "${TEXT_EMOJIS.STAR}";
+      content: "${TEXT_EMOJIS.CARD}";
       text-decoration: none;
       font-style: normal;
       display: inline-block;

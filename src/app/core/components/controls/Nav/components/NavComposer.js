@@ -17,6 +17,7 @@ const NavLinkSendLabel = () => {
 const NavLinkSend = props => {
   return (
     <Modal
+      unmarked
       with={
         props.editorStatus.id && props.userRole === "admin"
           ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
@@ -32,7 +33,11 @@ export default props => {
   return (
     <ul>
       <NavItem status prime left className="prime left">
-        <Modal with={CARD_ALERTS.AUTO_SAVE} style={{ textDecoration: "none" }}>
+        <Modal
+          unmarked
+          with={CARD_ALERTS.AUTO_SAVE}
+          style={{ textDecoration: "none" }}
+        >
           {props.composerStatus === "ok" && <span>Draft Saved</span>}
           {props.composerStatus === "pending" && <span>Saving…</span>}
           {!props.composerStatus && <span>Draft</span>}

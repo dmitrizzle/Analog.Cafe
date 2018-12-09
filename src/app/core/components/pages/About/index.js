@@ -3,25 +3,18 @@ import React from "react"
 import styled from "styled-components"
 
 import { CARD_ALERTS } from "../../../../user/constants/messages-submission"
-import { GA, makeFroth } from "../../../../utils"
-import { GetYourWeekly } from "../Subscribe"
 import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
-import { bleed } from "../../vignettes/Picture/components/Figure"
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
+import { makeFroth } from "../../../../utils"
 import { setModal } from "../../../store/actions-modal"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
-import ButtonGroup from "../../controls/Button/components/ButtonGroup"
-import CardHeader from "../../controls/Card/components/CardHeader"
-import CardIntegrated from "../../controls/Card/components/CardIntegrated"
 import ContactInfo from "../../vignettes/ContactInfo"
-import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
+import Figure, { bleed } from "../../vignettes/Picture/components/Figure"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
-import LinkButton from "../../controls/Button/components/LinkButton"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
-import Subscribe from "../../../../user/components/forms/Subscribe"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
@@ -133,52 +126,27 @@ class About extends React.PureComponent {
           </Authors>
         </AuthorsBanner>
 
-        <h3>Film Photography.</h3>
-        <p>
-          Almost every image on this website has originated on a roll of film,
-          for what’s known as <em>film photography</em>.
-        </p>
-        <p>
-          Most stories and articles on Analog.Cafe are either about{" "}
-          <Link to="/film-photography">film photography</Link> or have it
-          involved in the image making. The reason is our collective passion and
-          appreciation for the analogue process and{" "}
-          <Link to="/zine/analogue-photography-98f3">technology</Link>. We
-          believe that it helps us create more thoughtful, beautiful, and
-          truthful stories.
-        </p>
-
-        <h3>Photo Essays.</h3>
-        <p>
-          Art, stories, statements. Photography is more than gear and chemicals.
-          Analog.Cafe’s{" "}
-          <em>
-            <Link to="/photo-essays">Photo Essays</Link>
-          </em>{" "}
-          section, split into <em>Art</em> and <em>Places</em> topics, is a
-          stream of non-technical essays focusing on art, culture, and travel.
-        </p>
-        <p>
-          <em>
-            <Link to="/art">Art</Link>
-          </em>{" "}
-          is an emphasis on thought pieces and art projects. These are
-          collections of abstract photography, thought-provoking essays,
-          observations, and creative self-expressions.
-        </p>
-        <p>
-          <em>
-            <Link to="/places">Places</Link>
-          </em>{" "}
-          is an emphasis on places, people, events. These are the stories about
-          travel, culture, and items of interest; meant to inform and enlighten.
-        </p>
-
         <h3>The authors.</h3>
         <p>
-          Analog.Cafe got started by Dmitri in 2017 as a small community project
-          along with ten film photographers. It has since more than quadrupled
-          in size with contributions from all corners of the world.
+          Analog.Cafe got its name in 2017 when{" "}
+          <Modal
+            with={{
+              request: {
+                url: ROUTE_API_AUTHORS + "/dmitrizzle"
+              }
+            }}
+          >
+            Dmitri
+          </Modal>{" "}
+          began working on a community photography/writing project. It has since
+          grown ten-fold in readership and written contributions.
+        </p>
+        <p>
+          It takes character and conviction to favour analogue, tangible
+          processes in the age of advancing digital technology. Analog.Cafe
+          project is dedicated to exhibiting and promoting the works of such
+          people. We are <Link to="/submit">always</Link> looking for new
+          publishing members.
         </p>
         <h3>The editors.</h3>
         <p>
@@ -191,8 +159,65 @@ class About extends React.PureComponent {
           >
             Betty
           </Modal>{" "}
-          and Dmitri edit every article, keeping the content interesting,
-          thoughtful, and readable.
+          and Dmitri pick and edit every article, keeping the content
+          interesting, thoughtful, and readable.
+        </p>
+
+        <h3>Film Photography.</h3>
+
+        <p>
+          Almost every image on this website has originated on a roll of film,
+          for what’s known as <em>film photography</em>.
+        </p>
+        <Modal
+          unmarked
+          element="a"
+          with={{
+            info: {
+              image: "image-froth_1206996_r1CqlUwRm",
+              title: "Voigtländer Vitessa L",
+              text: (
+                <span>
+                  <strong>Voigtländer Vitessa</strong> is a German 35mm film
+                  rangefinder camera, manufactured in the mid-1950s. The camera
+                  is uniquely-built, with a lot of thought and care put into the
+                  manufacturing process.
+                </span>
+              ),
+              buttons: [
+                {
+                  to: "/zine/vitessa-fzyi",
+                  text: "More on Vitessa",
+                  branded: true
+                }
+              ]
+            },
+            id: "modal/hints/vitessa-l"
+          }}
+        >
+          <Figure src="image-froth_1206996_r1CqlUwRm" />
+        </Modal>
+        <p>
+          Most stories and articles on Analog.Cafe are either about{" "}
+          <Link to="/film-photography">film photography</Link> or have it
+          involved in the image making. The reason is our collective passion and
+          appreciation for the analogue process and{" "}
+          <Link to="/zine/analogue-photography-98f3">technology</Link>.
+        </p>
+        <p>
+          We believe that film photography helps us create more thoughtful,
+          beautiful, and truthful stories.
+        </p>
+
+        <h3>Photo Essays.</h3>
+        <p>
+          Travel, culture, thought pieces, art projects. Photography is more
+          than gear and chemicals. Analog.Cafe’s{" "}
+          <em>
+            <Link to="/photo-essays">Photo Essays</Link>
+          </em>{" "}
+          section is a collection of abstract photography, thought-provoking
+          essays, observations, travel, culture, and items of interest.
         </p>
 
         <h3>The Website.</h3>
@@ -203,11 +228,13 @@ class About extends React.PureComponent {
               ...CARD_ALERTS.AUTO_SAVE,
               info: {
                 ...CARD_ALERTS.AUTO_SAVE.info,
-                title: "Create Submissions Offline",
+                title: "Create Offline",
+                text:
+                  "If you are working on your submission to Analog.Cafe, be it a photo essay or a review, you can safely continue adding your images and text even when you have no access to the internet. All your work will be saved in your web browser automatically.",
                 buttons: [
                   {
-                    to: "/submit/compose",
-                    text: "Submit Now",
+                    to: "/submit",
+                    text: "How to Submit",
                     branded: true
                   }
                 ]
@@ -225,45 +252,34 @@ class About extends React.PureComponent {
           <Link to="https://github.com/roast-cms">open-source</Link>.
         </p>
 
-        <h3>Contact, connect.</h3>
+        <h3>Contact Info.</h3>
+        <Figure src="image-froth_663152_ByGEigckN" />
         <p>
           If you have a question, suggestion or just want to chat, feel free to
-          email <ContactInfo />, or:
+          email Dmitri via <ContactInfo />, or reach out via{" "}
+          <strong>
+            <Link to="https://twitter.com/analog_cafe">Twitter</Link>
+          </strong>
+          ,{" "}
+          <strong>
+            <Link to="https://www.facebook.com/analog8cafe">Facebook</Link>
+          </strong>
+          , or{" "}
+          <strong>
+            <Link to="https://instagram.com/analog_cafe">Instagram</Link>
+          </strong>
+          .
         </p>
-        <ButtonGroup>
-          <CardIntegrated>
-            <CardHeader
-              stubborn
-              buttons={[0]}
-              noStar
-              title="Email Newsletter"
-            />
-            <GetYourWeekly />
-            <Subscribe formLocation={"About"} />
-          </CardIntegrated>
-          <FollowButtons />
-        </ButtonGroup>
-
-        <h3>Write for Analog.Cafe.</h3>
         <p>
-          Interested in having your work reviewed and published on Analog.Cafe?
-          It’s easy:
+          Analog.Cafe is a global project, initiated in{" "}
+          <Link to="/zine/chiang-mai-d7jy">Chiang Mai</Link>, in collaboration
+          with authors and photographers from a growing list of locations.
         </p>
-
-        <ButtonGroup>
-          <LinkButton
-            branded
-            to={"/submit"}
-            onClick={() => {
-              GA.event({
-                category: "Campaign",
-                action: "About.submit_button"
-              })
-            }}
-          >
-            How to Submit
-          </LinkButton>
-        </ButtonGroup>
+        <p>🇺🇸🇬🇧🇨🇦🇹🇭🇯🇵🇬🇷🇸🇰🇨🇳🇭🇰🇵🇭🇸🇬🇻🇳🇮🇪🇻🇪🇵🇹🇲🇾 </p>
+        <p>
+          Currently, Dmitri is maintaining the project from his home in{" "}
+          <Link to="/zine/expat-years-6sje">Vancouver</Link>.
+        </p>
 
         <h3>Thank you, project backers!</h3>
         <p>

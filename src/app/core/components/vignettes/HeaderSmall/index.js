@@ -26,7 +26,7 @@ export default styled.header`
   ${props =>
       !props.noStar &&
       `input::before {
-    content: "${TEXT_EMOJIS.STAR} ";
+    content: "${TEXT_EMOJIS.CARD} ";
   }`}
     a {
     ${props => props.theme.size.font.auto} text-decoration:none;

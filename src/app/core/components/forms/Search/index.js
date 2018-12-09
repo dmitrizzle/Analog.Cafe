@@ -24,17 +24,12 @@ export class Search extends React.PureComponent {
       hideSearchResults: false
     }
   }
-  componentDidMount = () => {
-    window.addEventListener("keydown", event => {
-      if (event.key === "f" && !this.state.searchForm) {
-        this.handleRevealSearchForm(event)
-        this.handleRevealSearchForm(event)
-      }
-    })
-  }
   handleRevealSearchForm = event => {
-    event.preventDefault()
-    event.stopPropagation()
+    if (event) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+
     this.props.searchMode(true)
 
     this.setState({
@@ -57,7 +52,12 @@ export class Search extends React.PureComponent {
       ? this.setState({ hideSearchResults: true })
       : this.setState({ hideSearchResults: false })
   }
+  componentDidMount = () => {
+    !this.props.menu && this.handleRevealSearchForm()
+  }
   componentWillReceiveProps = nextProps => {
+    !nextProps.menu && this.handleRevealSearchForm()
+
     if (
       nextProps.stateOverwrite === null ||
       nextProps.stateOverwrite === undefined

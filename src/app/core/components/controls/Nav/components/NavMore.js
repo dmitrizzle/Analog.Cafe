@@ -4,6 +4,7 @@ import React from "react"
 
 import { BurgerMenu } from "./NavGeneral"
 import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
+import { TEXT_LABELS } from "../../../../constants/messages-"
 import Modal from "../../Modal"
 
 export default props => {
@@ -58,7 +59,7 @@ export default props => {
             },
             {
               to: "/subscribe",
-              text: "Subscribe ❤︎"
+              text: TEXT_LABELS.SUBSCRIBE
             },
             { divider: true },
             {

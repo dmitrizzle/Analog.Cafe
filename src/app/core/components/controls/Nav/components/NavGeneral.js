@@ -1,14 +1,16 @@
 // NOTE: `className` props are used in index.html
 import React from "react"
+import styled from "styled-components"
 
 import { NavLink, NavLogoLink } from "./NavLinks"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
+import { TEXT_LABELS } from "../../../../constants/messages-"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
+import NavSearch from "./NavSearch"
 import Search from "../../../icons/Search"
-import styled from "styled-components"
 
 export const LabelWithSearchSVG = styled.span`
   svg {
@@ -28,9 +30,12 @@ export const Burger = styled.div`
   width: 1em;
   height: 0.85em;
   margin-left: 0.15em;
-  > div {
-    height: 0.1em;
-    margin: 0.15em 0.05em;
+
+  ${props => props.theme.size.breakpoint.min.m`
+  margin-bottom: -1px;
+  `} > div {
+    height: 2px;
+    margin: 3px 1px;
     background: ${props => props.theme.color.foreground()};
   }
 `
@@ -86,7 +91,7 @@ export default props => {
     >
       <NavItem prime left mobile className="prime left mobile">
         <NavLink {...subscribe}>
-          <span>Subscribe</span>
+          <span>{TEXT_LABELS.SUBSCRIBE}</span>
         </NavLink>
       </NavItem>
       <NavItem>
@@ -107,11 +112,11 @@ export default props => {
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="left">
-        <NavLink {...submit}>
+        <NavSearch>
           <LabelWithSearchSVG>
             Search <Search />
           </LabelWithSearchSVG>
-        </NavLink>
+        </NavSearch>
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>

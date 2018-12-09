@@ -19,6 +19,7 @@ export const TEXT_EMOJIS = {
   HUG_RIGHT: "ʕっ•ᴥ•ʔっ",
 
   STAR: "✪",
+  CARD: "❐",
   TITLE_SEPARATOR: "—",
   CHECKMARK: "✓",
   PARAGRAPH: "❡",
