@@ -142,7 +142,7 @@ class About extends React.PureComponent {
           grown ten-fold in readership and written contributions.
         </p>
         <p>
-          It takes conviction to favour analogue, tangible processes in the age
+          It takes conviction to favour analogue creative processes in the age
           of advancing digital technology. Analog.Cafe project is dedicated to
           exhibiting and promoting the works of such people. We are{" "}
           <Link to="/submit">always</Link> looking for new publishing members.
@@ -252,7 +252,19 @@ class About extends React.PureComponent {
         </p>
 
         <h3>Contact Info.</h3>
-        <Figure src="image-froth_663152_ByGEigckN" />
+        <Modal
+          unmarked
+          element="a"
+          with={{
+            info: {
+              image: "image-froth_663152_ByGEigckN",
+              title: "Japanese Payphone"
+            },
+            id: "modal/hints/japanese-payphone"
+          }}
+        >
+          <Figure src="image-froth_663152_ByGEigckN" />
+        </Modal>
         <p>
           If you have a question, suggestion or just want to chat, feel free to
           email Dmitri via <ContactInfo />, or reach out via{" "}
