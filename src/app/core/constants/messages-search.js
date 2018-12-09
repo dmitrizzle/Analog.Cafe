@@ -3,7 +3,7 @@ export const SEARCH_RESULTS_FEATURED = [
     link: "/zine/open-call-g99w",
     image:
       "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1402564_SklPuuHRNf.jpg",
-    title: "Open Call",
+    title: "Open Call (What to Submit)",
     snippet:
       "I understand that there are many avenues for film photographers to exhibit and publish. To make it worth your while, every submission is human-edited to look and read beautifully for years on end. "
   },

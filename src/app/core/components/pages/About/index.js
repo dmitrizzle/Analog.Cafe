@@ -142,11 +142,10 @@ class About extends React.PureComponent {
           grown ten-fold in readership and written contributions.
         </p>
         <p>
-          It takes character and conviction to favour analogue, tangible
-          processes in the age of advancing digital technology. Analog.Cafe
-          project is dedicated to exhibiting and promoting the works of such
-          people. We are <Link to="/submit">always</Link> looking for new
-          publishing members.
+          It takes conviction to favour analogue, tangible processes in the age
+          of advancing digital technology. Analog.Cafe project is dedicated to
+          exhibiting and promoting the works of such people. We are{" "}
+          <Link to="/submit">always</Link> looking for new publishing members.
         </p>
         <h3>The editors.</h3>
         <p>

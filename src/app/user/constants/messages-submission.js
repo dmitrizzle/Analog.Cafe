@@ -17,8 +17,22 @@ export const CARD_ERRORS = {
   },
   SEND_CONTENT_EMPTY: {
     title: "Some Stuff is Missing",
-    text:
-      "Please make sure that you’ve added a title, text and image(s) to your submission."
+    image:
+      "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
+    text: (
+      <span>
+        Please make sure that you’ve added:
+        <br />
+        <strong>– A title</strong>
+        <br />
+        <strong>- Text</strong>{" "}
+        <em>
+          <Link to="/zine/open-call-g99w">What should I write?</Link>
+        </em>
+        <br />
+        <strong>– Image(s)</strong> <em>10MB or smaller</em>
+      </span>
+    )
   },
   IMAGE_SIZE: size => {
     return {

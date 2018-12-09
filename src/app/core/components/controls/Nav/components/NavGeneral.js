@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import { NavLink, NavLogoLink } from "./NavLinks"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
-import { TEXT_LABELS } from "../../../../constants/messages-"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
@@ -38,6 +37,12 @@ export const Burger = styled.div`
     margin: 3px 1px;
     background: ${props => props.theme.color.foreground()};
   }
+`
+
+export const Extra = styled.span`
+  ${props => props.theme.size.breakpoint.max.s`
+display: none;
+`};
 `
 
 export const BurgerMenu = () => (
@@ -91,7 +96,9 @@ export default props => {
     >
       <NavItem prime left mobile className="prime left mobile">
         <NavLink {...subscribe}>
-          <span>{TEXT_LABELS.SUBSCRIBE}</span>
+          <span>
+            Subscribe <Extra>❤︎</Extra>
+          </span>
         </NavLink>
       </NavItem>
       <NavItem>
@@ -121,7 +128,9 @@ export default props => {
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>
           Menu <BurgerMenu />
-          {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
+          <Extra>
+            {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
+          </Extra>
         </NavMore>
       </NavItem>
     </ul>
