@@ -67,17 +67,12 @@ export default props => {
   const a = "active"
 
   const ve = "/photo-essay"
-  const su = "/submit"
   const sc = "/subscribe"
   const fp = "/film-photography"
 
   const visualEssays = {
     to: "/photo-essays",
     className: isActive(ve) ? a : undefined
-  }
-  const submit = {
-    to: su,
-    className: isActive(su) ? a : undefined
   }
   const subscribe = {
     to: sc,

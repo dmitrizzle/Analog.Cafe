@@ -152,6 +152,7 @@ ShallowWrapper {
                                         "textDecoration": "none",
                                       }
                     }
+                    unmarked={true}
                     with={
                               Object {
                                         "id": "hints/auto-save",
@@ -205,6 +206,7 @@ ShallowWrapper {
                                     "textDecoration": "none",
                                   }
             }
+            unmarked={true}
             with={
                         Object {
                                     "id": "hints/auto-save",
@@ -240,6 +242,7 @@ ShallowWrapper {
             "style": Object {
               "textDecoration": "none",
             },
+            "unmarked": true,
             "with": Object {
               "id": "hints/auto-save",
               "info": Object {
@@ -359,6 +362,7 @@ ShallowWrapper {
                                                 "textDecoration": "none",
                                               }
                         }
+                        unmarked={true}
                         with={
                                     Object {
                                                 "id": "hints/auto-save",
@@ -412,6 +416,7 @@ ShallowWrapper {
                                           "textDecoration": "none",
                                         }
               }
+              unmarked={true}
               with={
                             Object {
                                           "id": "hints/auto-save",
@@ -447,6 +452,7 @@ ShallowWrapper {
               "style": Object {
                 "textDecoration": "none",
               },
+              "unmarked": true,
               "with": Object {
                 "id": "hints/auto-save",
                 "info": Object {
@@ -808,36 +814,40 @@ ShallowWrapper {
 >
           <Unknown
                     className={undefined}
-                    to="/photo-stories"
+                    to="/subscribe"
           >
                     <span>
-                              <span
-                                        className="wide"
-                              >
-                                        Photo 
-                              </span>
-                              Stories
+                              Subscribe 
+                              <styled.span>
+                                        ❤︎
+                              </styled.span>
                     </span>
           </Unknown>
 </styled.li>,
         <styled.li>
           <Unknown
                     className={undefined}
-                    to="/art"
+                    to="/photo-essays"
           >
-                    <span>
-                              Art
+                    <span
+                              className="wide"
+                    >
+                              Photo 
                     </span>
+                    Essays
           </Unknown>
 </styled.li>,
         <styled.li>
           <Unknown
                     className={undefined}
-                    to="/places"
+                    to="/film-photography"
           >
-                    <span>
-                              Places
+                    <span
+                              className="wide"
+                    >
+                              Film 
                     </span>
+                    Photography
           </Unknown>
 </styled.li>,
         <styled.li
@@ -858,11 +868,11 @@ ShallowWrapper {
           narrow={true}
           prime={true}
 >
-          <Unknown
-                    className={undefined}
-                    to="/film-cameras"
-          >
-                    Film Cameras
+          <Unknown>
+                    <styled.span>
+                              Search 
+                              <Unknown />
+                    </styled.span>
           </Unknown>
 </styled.li>,
         <styled.li
@@ -874,10 +884,9 @@ ShallowWrapper {
                     userRole={undefined}
                     userStatus={undefined}
           >
-                    <NavLinkLabelMore
-                              userImage={undefined}
-                              userStatus={undefined}
-                    />
+                    Menu 
+                    <Unknown />
+                    <styled.span />
           </Unknown>
 </styled.li>,
       ],
@@ -892,15 +901,13 @@ ShallowWrapper {
         "props": Object {
           "children": <Unknown
             className={undefined}
-            to="/photo-stories"
+            to="/subscribe"
 >
             <span>
-                        <span
-                                    className="wide"
-                        >
-                                    Photo 
-                        </span>
-                        Stories
+                        Subscribe 
+                        <styled.span>
+                                    ❤︎
+                        </styled.span>
             </span>
 </Unknown>,
           "className": "prime left mobile",
@@ -915,15 +922,13 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": <span>
-              <span
-                            className="wide"
-              >
-                            Photo 
-              </span>
-              Stories
+              Subscribe 
+              <styled.span>
+                            ❤︎
+              </styled.span>
 </span>,
             "className": undefined,
-            "to": "/photo-stories",
+            "to": "/subscribe",
           },
           "ref": null,
           "rendered": Object {
@@ -932,29 +937,26 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <span
-                  className="wide"
->
-                  Photo 
-</span>,
-                "Stories",
+                "Subscribe ",
+                <styled.span>
+                  ❤︎
+</styled.span>,
               ],
             },
             "ref": null,
             "rendered": Array [
+              "Subscribe ",
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": "Photo ",
-                  "className": "wide",
+                  "children": "❤︎",
                 },
                 "ref": null,
-                "rendered": "Photo ",
-                "type": "span",
+                "rendered": "❤︎",
+                "type": [Function],
               },
-              "Stories",
             ],
             "type": "span",
           },
@@ -969,11 +971,14 @@ ShallowWrapper {
         "props": Object {
           "children": <Unknown
             className={undefined}
-            to="/art"
+            to="/photo-essays"
 >
-            <span>
-                        Art
+            <span
+                        className="wide"
+            >
+                        Photo 
             </span>
+            Essays
 </Unknown>,
         },
         "ref": null,
@@ -982,24 +987,33 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": <span>
-              Art
+            "children": Array [
+              <span
+                className="wide"
+>
+                Photo 
 </span>,
+              "Essays",
+            ],
             "className": undefined,
-            "to": "/art",
+            "to": "/photo-essays",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Art",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Photo ",
+                "className": "wide",
+              },
+              "ref": null,
+              "rendered": "Photo ",
+              "type": "span",
             },
-            "ref": null,
-            "rendered": "Art",
-            "type": "span",
-          },
+            "Essays",
+          ],
           "type": [Function],
         },
         "type": [Function],
@@ -1011,11 +1025,14 @@ ShallowWrapper {
         "props": Object {
           "children": <Unknown
             className={undefined}
-            to="/places"
+            to="/film-photography"
 >
-            <span>
-                        Places
+            <span
+                        className="wide"
+            >
+                        Film 
             </span>
+            Photography
 </Unknown>,
         },
         "ref": null,
@@ -1024,24 +1041,33 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": <span>
-              Places
+            "children": Array [
+              <span
+                className="wide"
+>
+                Film 
 </span>,
+              "Photography",
+            ],
             "className": undefined,
-            "to": "/places",
+            "to": "/film-photography",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Places",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Film ",
+                "className": "wide",
+              },
+              "ref": null,
+              "rendered": "Film ",
+              "type": "span",
             },
-            "ref": null,
-            "rendered": "Places",
-            "type": "span",
-          },
+            "Photography",
+          ],
           "type": [Function],
         },
         "type": [Function],
@@ -1090,11 +1116,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <Unknown
-            className={undefined}
-            to="/film-cameras"
->
-            Film Cameras
+          "children": <Unknown>
+            <styled.span>
+                        Search 
+                        <Unknown />
+            </styled.span>
 </Unknown>,
           "className": "left",
           "left": true,
@@ -1107,12 +1133,37 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": "Film Cameras",
-            "className": undefined,
-            "to": "/film-cameras",
+            "children": <styled.span>
+              Search 
+              <Unknown />
+</styled.span>,
           },
           "ref": null,
-          "rendered": "Film Cameras",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "Search ",
+                <Unknown />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Search ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
           "type": [Function],
         },
         "type": [Function],
@@ -1126,10 +1177,9 @@ ShallowWrapper {
             userRole={undefined}
             userStatus={undefined}
 >
-            <NavLinkLabelMore
-                        userImage={undefined}
-                        userStatus={undefined}
-            />
+            Menu 
+            <Unknown />
+            <styled.span />
 </Unknown>,
           "className": "prime right",
           "prime": true,
@@ -1141,26 +1191,38 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": <NavLinkLabelMore
-              userImage={undefined}
-              userStatus={undefined}
-/>,
+            "children": Array [
+              "Menu ",
+              <Unknown />,
+              <styled.span />,
+            ],
             "userRole": undefined,
             "userStatus": undefined,
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "userImage": undefined,
-              "userStatus": undefined,
+          "rendered": Array [
+            "Menu ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": false,
+              },
+              "ref": null,
+              "rendered": false,
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
         "type": [Function],
@@ -1183,36 +1245,40 @@ ShallowWrapper {
 >
             <Unknown
                         className={undefined}
-                        to="/photo-stories"
+                        to="/subscribe"
             >
                         <span>
-                                    <span
-                                                className="wide"
-                                    >
-                                                Photo 
-                                    </span>
-                                    Stories
+                                    Subscribe 
+                                    <styled.span>
+                                                ❤︎
+                                    </styled.span>
                         </span>
             </Unknown>
 </styled.li>,
           <styled.li>
             <Unknown
                         className={undefined}
-                        to="/art"
+                        to="/photo-essays"
             >
-                        <span>
-                                    Art
+                        <span
+                                    className="wide"
+                        >
+                                    Photo 
                         </span>
+                        Essays
             </Unknown>
 </styled.li>,
           <styled.li>
             <Unknown
                         className={undefined}
-                        to="/places"
+                        to="/film-photography"
             >
-                        <span>
-                                    Places
+                        <span
+                                    className="wide"
+                        >
+                                    Film 
                         </span>
+                        Photography
             </Unknown>
 </styled.li>,
           <styled.li
@@ -1233,11 +1299,11 @@ ShallowWrapper {
             narrow={true}
             prime={true}
 >
-            <Unknown
-                        className={undefined}
-                        to="/film-cameras"
-            >
-                        Film Cameras
+            <Unknown>
+                        <styled.span>
+                                    Search 
+                                    <Unknown />
+                        </styled.span>
             </Unknown>
 </styled.li>,
           <styled.li
@@ -1249,10 +1315,9 @@ ShallowWrapper {
                         userRole={undefined}
                         userStatus={undefined}
             >
-                        <NavLinkLabelMore
-                                    userImage={undefined}
-                                    userStatus={undefined}
-                        />
+                        Menu 
+                        <Unknown />
+                        <styled.span />
             </Unknown>
 </styled.li>,
         ],
@@ -1267,15 +1332,13 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown
               className={undefined}
-              to="/photo-stories"
+              to="/subscribe"
 >
               <span>
-                            <span
-                                          className="wide"
-                            >
-                                          Photo 
-                            </span>
-                            Stories
+                            Subscribe 
+                            <styled.span>
+                                          ❤︎
+                            </styled.span>
               </span>
 </Unknown>,
             "className": "prime left mobile",
@@ -1290,15 +1353,13 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": <span>
-                <span
-                                className="wide"
-                >
-                                Photo 
-                </span>
-                Stories
+                Subscribe 
+                <styled.span>
+                                ❤︎
+                </styled.span>
 </span>,
               "className": undefined,
-              "to": "/photo-stories",
+              "to": "/subscribe",
             },
             "ref": null,
             "rendered": Object {
@@ -1307,29 +1368,26 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <span
-                    className="wide"
->
-                    Photo 
-</span>,
-                  "Stories",
+                  "Subscribe ",
+                  <styled.span>
+                    ❤︎
+</styled.span>,
                 ],
               },
               "ref": null,
               "rendered": Array [
+                "Subscribe ",
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
+                  "nodeType": "class",
                   "props": Object {
-                    "children": "Photo ",
-                    "className": "wide",
+                    "children": "❤︎",
                   },
                   "ref": null,
-                  "rendered": "Photo ",
-                  "type": "span",
+                  "rendered": "❤︎",
+                  "type": [Function],
                 },
-                "Stories",
               ],
               "type": "span",
             },
@@ -1344,11 +1402,14 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown
               className={undefined}
-              to="/art"
+              to="/photo-essays"
 >
-              <span>
-                            Art
+              <span
+                            className="wide"
+              >
+                            Photo 
               </span>
+              Essays
 </Unknown>,
           },
           "ref": null,
@@ -1357,24 +1418,33 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": <span>
-                Art
+              "children": Array [
+                <span
+                  className="wide"
+>
+                  Photo 
 </span>,
+                "Essays",
+              ],
               "className": undefined,
-              "to": "/art",
+              "to": "/photo-essays",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Art",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Photo ",
+                  "className": "wide",
+                },
+                "ref": null,
+                "rendered": "Photo ",
+                "type": "span",
               },
-              "ref": null,
-              "rendered": "Art",
-              "type": "span",
-            },
+              "Essays",
+            ],
             "type": [Function],
           },
           "type": [Function],
@@ -1386,11 +1456,14 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown
               className={undefined}
-              to="/places"
+              to="/film-photography"
 >
-              <span>
-                            Places
+              <span
+                            className="wide"
+              >
+                            Film 
               </span>
+              Photography
 </Unknown>,
           },
           "ref": null,
@@ -1399,24 +1472,33 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": <span>
-                Places
+              "children": Array [
+                <span
+                  className="wide"
+>
+                  Film 
 </span>,
+                "Photography",
+              ],
               "className": undefined,
-              "to": "/places",
+              "to": "/film-photography",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Places",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Film ",
+                  "className": "wide",
+                },
+                "ref": null,
+                "rendered": "Film ",
+                "type": "span",
               },
-              "ref": null,
-              "rendered": "Places",
-              "type": "span",
-            },
+              "Photography",
+            ],
             "type": [Function],
           },
           "type": [Function],
@@ -1465,11 +1547,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <Unknown
-              className={undefined}
-              to="/film-cameras"
->
-              Film Cameras
+            "children": <Unknown>
+              <styled.span>
+                            Search 
+                            <Unknown />
+              </styled.span>
 </Unknown>,
             "className": "left",
             "left": true,
@@ -1482,12 +1564,37 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": "Film Cameras",
-              "className": undefined,
-              "to": "/film-cameras",
+              "children": <styled.span>
+                Search 
+                <Unknown />
+</styled.span>,
             },
             "ref": null,
-            "rendered": "Film Cameras",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  "Search ",
+                  <Unknown />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Search ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
             "type": [Function],
           },
           "type": [Function],
@@ -1501,10 +1608,9 @@ ShallowWrapper {
               userRole={undefined}
               userStatus={undefined}
 >
-              <NavLinkLabelMore
-                            userImage={undefined}
-                            userStatus={undefined}
-              />
+              Menu 
+              <Unknown />
+              <styled.span />
 </Unknown>,
             "className": "prime right",
             "prime": true,
@@ -1516,26 +1622,38 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": <NavLinkLabelMore
-                userImage={undefined}
-                userStatus={undefined}
-/>,
+              "children": Array [
+                "Menu ",
+                <Unknown />,
+                <styled.span />,
+              ],
               "userRole": undefined,
               "userStatus": undefined,
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "userImage": undefined,
-                "userStatus": undefined,
+            "rendered": Array [
+              "Menu ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": false,
+                },
+                "ref": null,
+                "rendered": false,
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
           "type": [Function],
@@ -1959,6 +2077,7 @@ ShallowWrapper {
         "paddingRight": ".25em",
         "textDecoration": "none",
       },
+      "unmarked": true,
       "with": Object {
         "id": "nav/more",
         "info": Object {
@@ -1968,27 +2087,27 @@ ShallowWrapper {
             null,
             null,
             Object {
-              "text": "Art",
-              "to": "/art",
+              "text": "About Analog.Cafe",
+              "to": "/about",
             },
             Object {
-              "text": "Places",
-              "to": "/places",
-            },
-            Object {
-              "text": "Film Cameras",
-              "to": "/film-cameras",
-            },
-            Object {
-              "text": "Editorials",
-              "to": "/editorials",
+              "text": "Subscribe ❤︎",
+              "to": "/subscribe",
             },
             Object {
               "divider": true,
             },
             Object {
-              "text": "About Analog.Cafe",
-              "to": "/about",
+              "text": "Photo Essays",
+              "to": "/photo-essays",
+            },
+            Object {
+              "text": "Film Photography",
+              "to": "/film-photography",
+            },
+            Object {
+              "text": "Editorials",
+              "to": "/editorials",
             },
             Object {
               "text": "Collaborations",
@@ -2000,12 +2119,16 @@ ShallowWrapper {
             },
             Object {
               "branded": true,
-              "text": "Submit",
+              "text": "Submit Yours",
               "to": "/submit",
             },
           ],
+          "menu": true,
           "search": true,
-          "title": "More ",
+          "title": <span>
+            <Unknown />
+             Menu
+</span>,
         },
       },
     },
@@ -2027,6 +2150,7 @@ ShallowWrapper {
           "paddingRight": ".25em",
           "textDecoration": "none",
         },
+        "unmarked": true,
         "with": Object {
           "id": "nav/more",
           "info": Object {
@@ -2036,27 +2160,27 @@ ShallowWrapper {
               null,
               null,
               Object {
-                "text": "Art",
-                "to": "/art",
+                "text": "About Analog.Cafe",
+                "to": "/about",
               },
               Object {
-                "text": "Places",
-                "to": "/places",
-              },
-              Object {
-                "text": "Film Cameras",
-                "to": "/film-cameras",
-              },
-              Object {
-                "text": "Editorials",
-                "to": "/editorials",
+                "text": "Subscribe ❤︎",
+                "to": "/subscribe",
               },
               Object {
                 "divider": true,
               },
               Object {
-                "text": "About Analog.Cafe",
-                "to": "/about",
+                "text": "Photo Essays",
+                "to": "/photo-essays",
+              },
+              Object {
+                "text": "Film Photography",
+                "to": "/film-photography",
+              },
+              Object {
+                "text": "Editorials",
+                "to": "/editorials",
               },
               Object {
                 "text": "Collaborations",
@@ -2068,12 +2192,16 @@ ShallowWrapper {
               },
               Object {
                 "branded": true,
-                "text": "Submit",
+                "text": "Submit Yours",
                 "to": "/submit",
               },
             ],
+            "menu": true,
             "search": true,
-            "title": "More ",
+            "title": <span>
+              <Unknown />
+               Menu
+</span>,
           },
         },
       },
@@ -2109,7 +2237,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "sc-jzJRlG enxKql",
+      "className": "sc-chPdSV byfFmt",
     },
     "ref": null,
     "rendered": null,
@@ -2121,7 +2249,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "sc-jzJRlG enxKql",
+        "className": "sc-chPdSV byfFmt",
       },
       "ref": null,
       "rendered": null,

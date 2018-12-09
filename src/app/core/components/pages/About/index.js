@@ -262,9 +262,7 @@ class About extends React.PureComponent {
               buttons: [
                 {
                   to: "#email-dmitri",
-                  onClick: event => {
-                    event.preventDefault(), window.open("mailto:d@analog.cafe")
-                  },
+                  onClick: () => window.open("mailto:d@analog.cafe"),
                   text: "Email Dmitri"
                 },
                 {
@@ -314,7 +312,11 @@ class About extends React.PureComponent {
           Currently, Dmitri is maintaining the project from his home in{" "}
           <Link to="/zine/expat-years-6sje">Vancouver</Link>.
         </p>
-        <p>🇺🇸🇬🇧🇨🇦🇹🇭🇯🇵🇬🇷🇸🇰🇨🇳🇭🇰🇵🇭🇸🇬🇻🇳🇮🇪🇻🇪🇵🇹🇲🇾 </p>
+        <p>
+          <span role="img" aria-label="Country flags">
+            🇺🇸🇬🇧🇨🇦🇹🇭🇯🇵🇬🇷🇸🇰🇨🇳🇭🇰🇵🇭🇸🇬🇻🇳🇮🇪🇻🇪🇵🇹🇲🇾{" "}
+          </span>
+        </p>
 
         <h3>Thank you, project backers!</h3>
         <p>

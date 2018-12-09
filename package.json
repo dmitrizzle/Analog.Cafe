@@ -81,7 +81,7 @@
   "size-limit": [
     {
       "path": "build/static/js/main.*.js",
-      "limit": "120 KB"
+      "limit": "130 KB"
     }
   ],
   "browserslist": {
