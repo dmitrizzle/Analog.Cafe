@@ -6,6 +6,7 @@ import styled from "styled-components"
 
 export const SearchType = styled.span`
   color: #999;
+  padding-left: 1em;
   svg {
     display: inline-block;
     margin: -0.5em 0.25em -0.15em 0.25em;

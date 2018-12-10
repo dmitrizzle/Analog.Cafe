@@ -7,7 +7,80 @@ import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-ses
 import { TEXT_LABELS } from "../../../../constants/messages-"
 import Modal from "../../Modal"
 
+const NAV_USER = [
+  {
+    to: "/submit/compose",
+    text:
+      loadTextContent().length > 0
+        ? "Continue Editing Submission"
+        : "Create New Submission"
+  },
+  {
+    to: ROUTE_URL_USER_LANDING,
+    text: "My Submissions"
+  },
+  {
+    to: "/me/edit",
+    text: "Edit Profile"
+  },
+
+  {
+    to: "/sign-out",
+    text: "Sign Out",
+    inverse: true
+  }
+]
+
+const NAV_VISITOR = [
+  {
+    to: "/photo-essays",
+    text: "Photo Essays"
+  },
+  {
+    to: "/film-photography",
+    text: "Film Photography"
+  },
+  {
+    to: "/editorials",
+    text: "Editorials"
+  },
+  { divider: true },
+  //
+  // {
+  //   to: "/collaborations",
+  //   text: "Collaborations"
+  // },
+  // {
+  //   to: "/solo-projects",
+  //   text: "Solo Projects"
+  // },
+  // { divider: true },
+  {
+    to: "/about",
+    text: "About Analog.Cafe"
+  },
+  {
+    to: "/submit",
+    text: "Submissions"
+  },
+  {
+    to: "/subscribe",
+    text: TEXT_LABELS.SUBSCRIBE,
+    inverse: true
+  }
+]
+
 export default props => {
+  let buttons = props.userStatus === "ok" ? NAV_USER : NAV_VISITOR
+  if (props.userRole === "admin")
+    buttons = [
+      ...buttons,
+      {
+        to: "/me/admin",
+        text: "Admin",
+        branded: true
+      }
+    ]
   return (
     <Modal
       element={props.element}
@@ -23,74 +96,7 @@ export default props => {
               <BurgerMenu /> Menu
             </span>
           ),
-          buttons: [
-            props.userStatus === "ok"
-              ? {
-                  to: ROUTE_URL_USER_LANDING,
-                  text: "My Submissions",
-                  branded: true
-                }
-              : null,
-            props.userStatus === "ok"
-              ? {
-                  to: "/me/edit",
-                  text: "My Profile",
-                  branded: true
-                }
-              : null,
-            props.userRole === "admin"
-              ? {
-                  to: "/me/admin",
-                  text: "Admin",
-                  branded: true
-                }
-              : null,
-            props.userStatus === "ok"
-              ? {
-                  to: "/sign-out",
-                  text: "Sign Out",
-                  inverse: true
-                }
-              : null,
-
-            {
-              to: "/about",
-              text: "About Analog.Cafe"
-            },
-            {
-              to: "/subscribe",
-              text: TEXT_LABELS.SUBSCRIBE
-            },
-            { divider: true },
-            {
-              to: "/photo-essays",
-              text: "Photo Essays"
-            },
-            {
-              to: "/film-photography",
-              text: "Film Photography"
-            },
-            {
-              to: "/editorials",
-              text: "Editorials"
-            },
-            {
-              to: "/collaborations",
-              text: "Collaborations"
-            },
-            {
-              to: "/solo-projects",
-              text: "Solo Projects"
-            },
-            {
-              to: props.userStatus === "ok" ? "/submit/compose" : "/submit",
-              text:
-                loadTextContent().length > 0
-                  ? "Continue With Submission"
-                  : `Submit${props.userStatus === "ok" ? " New" : " Yours"}`,
-              branded: true
-            }
-          ]
+          buttons
         },
         id: "nav/more"
       }}
