@@ -7,7 +7,7 @@ import ButtonStripItem from "../../../../../core/components/controls/Button/comp
 import CardIntegrated from "../../../../../core/components/controls/Card/components/CardIntegrated"
 
 const TAGS = {
-  "photo-essays": "Photo Essay",
+  "photo-essay": "Photo Essay",
   "film-photography": "Film Photography",
   editorial: "Editorial"
 }
