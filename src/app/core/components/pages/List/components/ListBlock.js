@@ -88,6 +88,7 @@ export default props => {
                         private={props.private}
                         isAdmin={props.isAdmin}
                         item={item}
+                        index={index}
                       />
                     </div>
                   </section>
