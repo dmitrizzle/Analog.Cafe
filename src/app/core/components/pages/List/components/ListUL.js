@@ -65,6 +65,11 @@ export default styled.ul`
 					border-bottom-color: ${props => props.theme.color.highlight()};
 				}
 			}
+      &:visited {
+        .sticker-new {
+          background: #fff;
+        }
+      }
 		}
 		section {
 			position: 				relative;

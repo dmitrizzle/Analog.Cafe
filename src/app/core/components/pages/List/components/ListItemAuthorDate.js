@@ -33,14 +33,19 @@ export default props => {
             trim: true
           })} · `
         : null}
-      {props.item.type !== "placeholder" &&
-        (props.index || isXWeeksAgo(props.item.date.published) > 0 ? (
-          <small>{getHumanDatestamp(props.item.date.published)}</small>
-        ) : (
-          <Sticker title={getHumanDatestamp(props.item.date.published)}>
-            <em>New!</em>
-          </Sticker>
-        ))}
+      {props.item.type !== "placeholder" && (
+        <React.Fragment>
+          <small>{getHumanDatestamp(props.item.date.published)}</small>{" "}
+          {isXWeeksAgo(props.item.date.published) === 0 && (
+            <Sticker
+              className="sticker-new"
+              title={getHumanDatestamp(props.item.date.published)}
+            >
+              <em>New!</em>
+            </Sticker>
+          )}
+        </React.Fragment>
+      )}
     </AuthorAndDate>
   )
 }
