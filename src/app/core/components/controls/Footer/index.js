@@ -15,7 +15,7 @@ export const Footer = props => (
         <Link to="/collaborations">Collaborations</Link>
         <br />
         <Link to="/about">About</Link> ・ <Link to="/submit">Submissions</Link>{" "}
-        ・ <Link to="/privacy-policy">Privacy Policy</Link> ・{" "}
+        ・ <Link to="/privacy-policy">Privacy</Link> ・{" "}
         <Link to="/submit/rules">Rules</Link>
         <br />
         {props.user.status === "ok" ? (
