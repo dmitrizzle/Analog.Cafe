@@ -19,11 +19,18 @@ export const Footer = props => (
         <Link to="/submit/rules">Rules</Link>
         <br />
         {props.user.status === "ok" ? (
-          <Link to="/sign-out">Sign Out</Link>
+          <React.Fragment>
+            <Link to="/sign-out">Sign Out</Link> ・{" "}
+            <Link to="/me">My Submissions</Link> ・{" "}
+            <Link to="/submit/compose">Composer</Link> ・{" "}
+            <Link to="/me/edit">Edit Profile</Link> ・{" "}
+          </React.Fragment>
         ) : (
-          <Link to="/sign-in">Sign In</Link>
-        )}{" "}
-        ・{" "}
+          <React.Fragment>
+            <Link to="/sign-in">Sign In</Link>
+            {"・ "}
+          </React.Fragment>
+        )}
         <strong>
           <Link to="/subscribe">Subscribe</Link>
         </strong>

@@ -13,7 +13,7 @@ const NAV_USER = [
     text:
       loadTextContent().length > 0
         ? "Continue Editing Submission"
-        : "Create New Submission"
+        : "Compose New Submission"
   },
   {
     to: ROUTE_URL_USER_LANDING,
