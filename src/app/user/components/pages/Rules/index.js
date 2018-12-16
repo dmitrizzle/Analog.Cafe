@@ -17,7 +17,11 @@ export default () => {
       <HeaderLarge pageTitle="Rules" />
       <ArticleSection>
         <p>
-          By sending your submission you are agreeing to the following rules:
+          By sending your{" "}
+          <strong>
+            <Link to="/submit">submission</Link>
+          </strong>{" "}
+          you are agreeing to the following rules:
         </p>
         <p>
           <strong>Copyright.</strong> Please note that besides the design and
