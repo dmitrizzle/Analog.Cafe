@@ -105,7 +105,7 @@ class SignIn extends React.PureComponent {
       return (
         <ArticleWrapper>
           <MetaTags metaTitle="Sign In" />
-          <HeaderLarge pageTitle="Sign In" />
+          <HeaderLarge pageTitle="Sign In" pageSubtitle="Authors and Editors" />
           <ArticleSection>
             <SignInInfo stateSessionInfo={this.state.sessionInfo} />
 

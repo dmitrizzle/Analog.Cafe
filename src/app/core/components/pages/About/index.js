@@ -11,6 +11,7 @@ import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ContactInfo from "../../vignettes/ContactInfo"
 import Figure, { bleed } from "../../vignettes/Picture/components/Figure"
+import Footer from "../../controls/Footer"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import MetaTags from "../../vignettes/MetaTags"
@@ -433,13 +434,7 @@ class About extends React.PureComponent {
           <br />
           Ben Cairns
         </ThankYouList>
-        <p style={{ textAlign: "center" }}>
-          <small>
-            <Link to="/privacy-policy">Privacy Policy</Link> ・{" "}
-            <Link to="/submit/rules">Rules</Link> ・{" "}
-            <Link to="/submit/restore">Restore Submission</Link>
-          </small>
-        </p>
+        <Footer />
       </ArticleSection>
     </ArticleWrapper>
   )

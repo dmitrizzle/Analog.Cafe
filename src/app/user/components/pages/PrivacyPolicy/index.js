@@ -3,6 +3,7 @@ import React from "react"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ContactInfo from "../../../../core/components/vignettes/ContactInfo"
+import Footer from "../../../../core/components/controls/Footer"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
@@ -70,6 +71,7 @@ export default () => {
           be posted on this page. This policy was last modified on June 14,
           2018.
         </p>
+        <Footer />
       </ArticleSection>
     </ArticleWrapper>
   )

@@ -19,6 +19,17 @@ export default () => {
         <Link to="/zine/open-call-g99w">Open Call</Link>
         .”
       </p>
+      <p style={{ lineHeight: "1.25em" }}>
+        <em>
+          <small>
+            Did you accidentally delete your submission? You may be able to{" "}
+            <strong>
+              <Link to="/submit/restore">restore</Link>
+            </strong>{" "}
+            it.
+          </small>
+        </em>
+      </p>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from "react"
 
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
+import Footer from "../../../../core/components/controls/Footer"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
@@ -100,6 +101,7 @@ export default () => {
             above terms, conditions and benefits.
           </strong>
         </p>
+        <Footer />
       </ArticleSection>
     </ArticleWrapper>
   )

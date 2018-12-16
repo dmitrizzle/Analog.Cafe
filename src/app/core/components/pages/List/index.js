@@ -14,7 +14,9 @@ import { getListMeta } from "../../../utils/messages-list"
 import { preloadConstructor } from "../../../utils/routes-article"
 import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
+import ArticleSection from "../Article/components/ArticleSection"
 import Button from "../../controls/Button/components/Button"
+import Footer from "../../controls/Footer"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
 import MetaTags from "../../vignettes/MetaTags"
@@ -126,6 +128,9 @@ class List extends React.PureComponent {
             Load More
           </Button>
         ) : null}
+        <ArticleSection>
+          <Footer />
+        </ArticleSection>
       </div>
     )
   }
