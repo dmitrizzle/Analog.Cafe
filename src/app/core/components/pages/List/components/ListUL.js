@@ -62,10 +62,12 @@ export default styled.ul`
 
 			&:active {
 				background: 0 0;
-				section figure {
+				${
+          "" /* section figure {
 					box-shadow:	none;
 					border-bottom-color: ${props => props.theme.color.highlight()};
-				}
+				} */
+        }
 			}
       &:visited {
         .sticker-new {
@@ -137,7 +139,7 @@ export default styled.ul`
         `}
 
         & > div {
-          padding-top: 1.5em;
+          padding-top: .35em;
         }
 			}
 
