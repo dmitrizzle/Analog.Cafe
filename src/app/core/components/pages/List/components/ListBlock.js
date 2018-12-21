@@ -78,7 +78,7 @@ export default props => {
                           opacity:
                             item.status === "rejected" ? "0.25" : undefined,
                           letterSpacing:
-                            item.type !== "placeholder" ? undefined : "-0.17em"
+                            item.type !== "placeholder" ? undefined : "-0.13em"
                         }}
                       >
                         {item.title}
