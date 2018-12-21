@@ -28,7 +28,9 @@ export default props => {
   return (
     <AuthorAndDate>
       {!props.private || props.isAdmin
-        ? `by ${getAuthorListStringFromArray(props.item.authors, {
+        ? `${
+            props.item.type !== "placeholder" ? "By " : ""
+          }${getAuthorListStringFromArray(props.item.authors, {
             trim: true
           })} `
         : null}
