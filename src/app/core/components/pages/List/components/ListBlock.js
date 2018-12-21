@@ -74,15 +74,27 @@ export default props => {
                     </figure>
                     <div>
                       <h2
-                        style={
-                          item.status === "rejected"
-                            ? { opacity: "0.25" }
-                            : null
-                        }
+                        style={{
+                          opacity:
+                            item.status === "rejected" ? "0.25" : undefined,
+                          letterSpacing:
+                            item.type !== "placeholder" ? undefined : "-0.17em"
+                        }}
                       >
                         {item.title}
                       </h2>
-                      <h3>{item.subtitle || ""}</h3>
+                      <h3
+                        style={{
+                          letterSpacing:
+                            item.type !== "placeholder"
+                              ? undefined
+                              : "-0.165em",
+                          paddingLeft:
+                            item.type !== "placeholder" ? undefined : ".05em"
+                        }}
+                      >
+                        {item.subtitle || ""}
+                      </h3>
                       <div>
                         <ListItemStats item={item} private={props.private} />
                         <ListItemAuthorDate
