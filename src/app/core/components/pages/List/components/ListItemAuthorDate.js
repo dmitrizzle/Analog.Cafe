@@ -6,8 +6,7 @@ import { getHumanDatestamp } from "../../../../utils/messages-"
 
 export const AuthorAndDate = styled.em`
   line-height: ${props => props.theme.size.block.spacing}em;
-  padding-top: calc(${props => props.theme.size.block.spacing}em / 2);
-  display: inline-block;
+  display: block;
   & > small {
     display: inline-block;
   }
@@ -29,13 +28,15 @@ export default props => {
   return (
     <AuthorAndDate>
       {!props.private || props.isAdmin
-        ? `${getAuthorListStringFromArray(props.item.authors, {
+        ? `by ${getAuthorListStringFromArray(props.item.authors, {
             trim: true
-          })} · `
+          })} `
         : null}
       {props.item.type !== "placeholder" && (
         <React.Fragment>
-          <small>{getHumanDatestamp(props.item.date.published)}</small>{" "}
+          <small style={{ opacity: 0.35 }}>
+            {getHumanDatestamp(props.item.date.published, true)}
+          </small>{" "}
           {isXWeeksAgo(props.item.date.published) === 0 && (
             <Sticker
               className="sticker-new"

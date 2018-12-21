@@ -74,7 +74,6 @@ export default props => {
                     </figure>
                     <div>
                       <h2
-                        title={item.title}
                         style={
                           item.status === "rejected"
                             ? { opacity: "0.25" }

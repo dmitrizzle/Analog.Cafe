@@ -1,12 +1,13 @@
+import { withRouter } from "react-router-dom"
 import React from "react"
 import styled from "styled-components"
 
+import { ROUTE_TAGS } from "../../../../constants/routes-list"
 import { TEXT_STATUS_LABELS } from "../../../../constants/messages-list"
 import { getTitleFromSlug } from "../../../../utils/messages-"
 
 export const Stats = styled.span`
   ${props => props.theme.typography.title.auto} margin: 0;
-  display: block;
   color: ${props => props.theme.color.brand()};
   ${props => props.status === "loading" && `letter-spacing: 0 !important;`};
 `
@@ -18,10 +19,10 @@ export const readType = (images, readingTime) => {
   const wellIllustrated = images / readingTime > 1 ? true : false
   const inDepth = wellIllustrated && longRead ? true : false
 
-  if (inDepth) return "In-Depth"
-  if (wellIllustrated) return "Well-Illustrated"
-  if (longRead) return "Long-Read"
-  return "Quick-Read"
+  if (inDepth) return "in-depth"
+  if (wellIllustrated) return "well-illustrated"
+  if (longRead) return "long-read"
+  return "quick-read"
 }
 
 export const ReadType = styled.span`
@@ -30,9 +31,19 @@ export const ReadType = styled.span`
   font-variant: all-petite-caps;
 `
 
-export default props => {
+export default withRouter(props => {
   return (
-    <Stats>
+    <Stats
+      onClick={event => {
+        event.preventDefault()
+        event.stopPropagation()
+        const route = Object.keys(ROUTE_TAGS).find(
+          key => ROUTE_TAGS[key] === props.item.tag
+        )
+        console.log(route)
+        props.history.push(`${route}`)
+      }}
+    >
       {props.item.type !== "placeholder" &&
         props.private &&
         props.item.tag &&
@@ -58,4 +69,4 @@ export default props => {
         ` ↝ ${TEXT_STATUS_LABELS[props.item.status]}`}
     </Stats>
   )
-}
+})

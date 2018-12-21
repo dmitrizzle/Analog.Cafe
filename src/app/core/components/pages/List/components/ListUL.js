@@ -86,6 +86,9 @@ export default styled.ul`
 			`}
 			& > figure {
 				${posterDimensions}
+        ${props => props.theme.size.breakpoint.max.s`
+            width: 100%;
+        `}
 				float: 			left;
 				margin: 		0 ${blockSpacing}em 0 0;
 				overflow:		hidden;
@@ -127,6 +130,12 @@ export default styled.ul`
 			& > div {
 				float: left;
         width: calc(100% - 6.5em);
+        max-width: ${props => props.theme.size.block.column.m}px;
+
+        ${props => props.theme.size.breakpoint.max.l`
+            min-width: 280px;
+        `}
+
         & > div {
           padding-top: 1.5em;
         }

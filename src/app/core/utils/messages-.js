@@ -15,7 +15,7 @@ export const getTitleFromSlug = (slug = "", options = {}) => {
   return title
 }
 
-export const getHumanDatestamp = unix => {
+export const getHumanDatestamp = (unix, short) => {
   const m = [
     "January",
     "February",
@@ -32,7 +32,7 @@ export const getHumanDatestamp = unix => {
   ]
   let date = new Date(unix * 1000)
   let year = date.getFullYear()
-  let month = m[date.getMonth()]
+  let month = short ? m[date.getMonth()].slice(0, 3) : m[date.getMonth()]
   let day = date.getDate()
   return month + " " + day + ", " + year
 }
