@@ -4,6 +4,8 @@ import styled, { css } from "styled-components"
 
 import { VALUE_ZIGZAG_TOP_SHIM, VALUE_ZIGZAG_WIDTH } from "../constants"
 import ZigZag from "../../../icons/ZigZag"
+import { sectionTitle } from "../../Article/components/ArticleSection"
+import { subtitleStyles } from "../../../vignettes/HeaderLarge/components/HeaderSubtitle"
 
 const zigZagSVG = encodeURIComponent(renderToStaticMarkup(<ZigZag />))
 const zigZagDataUri = `url("data:image/svg+xml,${zigZagSVG}")`
@@ -113,59 +115,21 @@ export default styled.ul`
 				border-bottom: ${props => props.theme.elements.thickBorder};
 			}
 			h2 {
-				${props => props.theme.typography.title.auto}
-				font-size:        ${props => props.theme.size.font.make.larger / 1.5}em;
-				display: 					inline-block;
-				padding: 					0 0 .15em;
-				margin-top: 			-0.275em;
-				margin-bottom: 		-0.15em;
-				overflow: 				hidden;
-				white-space: 			nowrap;
-				text-overflow: 		ellipsis;
-				max-width: 				11.5em;
-        max-height:       4.75em;
-        hyphens:          auto;
-				${props => props.theme.size.breakpoint.max.m`{
-					display: 			block;
-					white-space: 	normal;
-					line-height: 	1.185em;
-					margin-top: 	0.04em;
-
-					/* placeholder style */
-					${props =>
-            props.status === "loading" &&
-            `
-						margin-top: 	0;
-						line-height: 	1.65em;
-					`}
-				}`}
-				${props =>
-          props.status === "loading" &&
-          `
-					margin-top: -.1em;
-					letter-spacing: -1px !important;
-				`}
+				${sectionTitle}
+        padding: 0;
+        margin: 0
 			}
+      h3 {
+        ${subtitleStyles}
+        font-size: ${props => props.theme.size.font.make.normal * 1.15}em;
+      }
 			${props => props.status === "loading" && `word-break: break-all;`}
 			& > div {
-				padding-top:	calc(${blockSpacing}em / 4.5);
-				display: inline-block;
-				${props => props.theme.size.breakpoint.max.m`{
-					width: 				calc(100vw - ${blockSpacing}em * 3.5);
-					min-width: 		auto;
-					padding-top:	calc(${blockSafety}em / 2);
-				}`}
-				${props => props.theme.size.breakpoint.max.xs`{
-					text-align: left;
-				}`}
-				${props =>
-          props.status === "loading" &&
-          `
-					& > em { font-style: normal; }
-					letter-spacing: 0 !important;
-				`}
-				}
-
+				float: left;
+        width: calc(100% - 6.5em);
+        & > div {
+          padding-top: 1.5em;
+        }
 			}
 
 		}

@@ -13,6 +13,23 @@ export const Stats = styled.span`
 export const readingTime = stats =>
   Math.ceil(stats.words / 250 + stats.images * 0.25)
 
+export const readType = (images, readingTime) => {
+  const longRead = readingTime > 4 ? true : false
+  const wellIllustrated = images / readingTime > 1 ? true : false
+  const inDepth = wellIllustrated && longRead ? true : false
+
+  if (inDepth) return "In-Depth"
+  if (wellIllustrated) return "Well-Illustrated"
+  if (longRead) return "Long-Read"
+  return "Quick-Read"
+}
+
+export const ReadType = styled.span`
+  padding: 0.5em;
+  color: ${props => props.theme.color.foreground()};
+  font-variant: all-petite-caps;
+`
+
 export default props => {
   return (
     <Stats>
@@ -26,13 +43,15 @@ export default props => {
               smartTagFromImageCount: props.item.stats.images
             })
           : "Submitted")}
-      {props.item.type !== "placeholder" &&
-        !props.private &&
-        (props.item.stats.images > 0
-          ? ` | ${props.item.stats.images} image${
-              props.item.stats.images > 1 ? "s" : ""
-            }`
-          : "") + ` | ${readingTime(props.item.stats)} min`}
+      {props.item.stats && (
+        <ReadType
+          title={`${props.item.stats.images} image${
+            props.item.stats.images > 1 ? "s" : ""
+          }, ${readingTime(props.item.stats)} min read`}
+        >
+          {readType(props.item.stats.images, readingTime(props.item.stats))}
+        </ReadType>
+      )}
 
       {props.item.type !== "placeholder" &&
         props.private &&
