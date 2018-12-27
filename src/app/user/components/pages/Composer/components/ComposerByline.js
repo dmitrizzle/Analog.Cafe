@@ -28,7 +28,8 @@ export default props => {
         </Byline>
       ) : props.user.status === "ok" ? (
         <Byline>
-          <Link to="/me/edit?return=/submit/compose">Edit</Link> your profile.
+          <Link to="/profile/edit?return=/submit/compose">Edit</Link> your
+          profile.
         </Byline>
       ) : (
         <Byline>

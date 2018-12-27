@@ -20,7 +20,7 @@ const NAV_USER = [
     text: "My Submissions"
   },
   {
-    to: "/me/edit",
+    to: "/profile/edit",
     text: "Edit Profile"
   },
 
@@ -76,7 +76,7 @@ export default props => {
     buttons = [
       ...buttons,
       {
-        to: "/me/admin",
+        to: "/admin",
         text: "Admin",
         branded: true
       }

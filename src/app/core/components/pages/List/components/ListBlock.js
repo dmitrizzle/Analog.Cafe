@@ -9,7 +9,6 @@ import { makeFroth } from "../../../../../utils"
 import { preloadConstructor } from "../../../../utils/routes-article"
 import Bleed from "./Bleed"
 import Link from "../../../controls/Link"
-import ListCaption from "./ListCaption"
 import ListItemAuthorDate from "./ListItemAuthorDate"
 import ListItemStats from "./ListItemStats"
 import ListUL from "./ListUL"
@@ -73,22 +72,37 @@ export default props => {
                         />
                       )}
                     </figure>
-                    <h2
-                      title={item.title}
-                      style={
-                        item.status === "rejected" ? { opacity: "0.25" } : null
-                      }
-                    >
-                      {item.title}
-                    </h2>
-                    <ListCaption status={props.status} item={item} />
                     <div>
-                      <ListItemStats item={item} private={props.private} />
-                      <ListItemAuthorDate
-                        private={props.private}
-                        isAdmin={props.isAdmin}
-                        item={item}
-                      />
+                      <h2
+                        style={{
+                          opacity:
+                            item.status === "rejected" ? "0.25" : undefined,
+                          letterSpacing:
+                            item.type !== "placeholder" ? undefined : "-0.13em"
+                        }}
+                      >
+                        {item.title}
+                      </h2>
+                      <h3
+                        style={{
+                          letterSpacing:
+                            item.type !== "placeholder"
+                              ? undefined
+                              : "-0.165em",
+                          paddingLeft:
+                            item.type !== "placeholder" ? undefined : ".05em"
+                        }}
+                      >
+                        {item.subtitle || ""}
+                      </h3>
+                      <div>
+                        <ListItemStats item={item} private={props.private} />
+                        <ListItemAuthorDate
+                          private={props.private}
+                          isAdmin={props.isAdmin}
+                          item={item}
+                        />
+                      </div>
                     </div>
                   </section>
                   <ZigZagPicture
