@@ -5,12 +5,14 @@ export const LINK_LABELS = {
   flickr: "Visit Author’s Flickr",
   px: "Visit Author’s 500px",
   gplus: "Author’s Google+ Page",
-  website: "Visit Author’s Website"
+  website: "Visit Author’s Website",
+  youtube: "Author’s YouTube Channel"
 }
 
 export const linkToLabel = link => {
   if (link.includes("twitter.com/")) return LINK_LABELS.twitter
   else if (link.includes("instagram.com/")) return LINK_LABELS.instagram
+  else if (link.includes("youtube.com/")) return LINK_LABELS.youtube
   else if (link.includes("facebook.com/")) return LINK_LABELS.facebook
   else if (link.includes("flickr.com/")) return LINK_LABELS.flickr
   else if (link.includes("500px.com/")) return LINK_LABELS.px

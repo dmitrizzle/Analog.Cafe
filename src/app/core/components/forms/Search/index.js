@@ -38,8 +38,8 @@ export class Search extends React.PureComponent {
     this.props.searchFormCallback &&
       this.props.searchFormCallback(this.state.searchForm)
     GA.event({
-      category: "Campaign",
-      action: "ActionsCard.quickSubscribe_open",
+      category: "Navigation",
+      action: "ActionsCard.search",
       label: this.props.formLocation ? this.props.formLocation : null
     })
   }
@@ -79,7 +79,9 @@ export class Search extends React.PureComponent {
             <SearchForm
               formLocation={this.props.formLocation}
               buttonText={TEXT_LABELS.FIND}
-              autoFocus
+              autoFocus={
+                "ontouchstart" in document.documentElement ? false : true
+              }
               submitCallback={this.handleSubmitCallback}
               searchText={this.handleSearchText}
               loading={this.props.search.isFetching}

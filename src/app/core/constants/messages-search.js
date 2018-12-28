@@ -1,13 +1,5 @@
 export const SEARCH_RESULTS_FEATURED = [
   {
-    link: "/zine/open-call-g99w",
-    image:
-      "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1402564_SklPuuHRNf.jpg",
-    title: "Open Call (What to Submit)",
-    snippet:
-      "I understand that there are many avenues for film photographers to exhibit and publish. To make it worth your while, every submission is human-edited to look and read beautifully for years on end. "
-  },
-  {
     link: "/zine/35mm-film-price-guide-6zt1",
     image:
       "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1000000_H1ktMj9sX.jpg",
@@ -16,11 +8,27 @@ export const SEARCH_RESULTS_FEATURED = [
       "How Much Should That Roll of Film Cost? This guide, containing a list of 35 popular 35mm film stocks and their prices will give you a good idea on what a roll of film should cost."
   },
   {
-    link: "https://www.analog.cafe/zine/through-the-green-fuse-2ozf",
+    link: "/zine/open-call-g99w",
     image:
-      "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1257862_SkZDt-7nM.jpg",
-    title: "Through the Green Fuse",
+      "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1402564_SklPuuHRNf.jpg",
+    title: "Open Call: Write for Analog.Cafe",
     snippet:
-      "Through the Green Fuse is a portfolio of images that I [Robert Buelteman] created as an interpretation and celebration of the design of being, and through them, to enhance my understanding of its nature."
+      "Analog.Cafe publishes articles and stories on film (analogue) photography gear as well as photo stories on travel, culture, and art. Below is a list of topics or “assignments” you may choose to write your essay or article about."
+  },
+  {
+    link: "/zine/analogue-photography-98f3",
+    image:
+      "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_2703927_r1lqSlCJN.jpg",
+    title: "What is Film Photography?",
+    snippet:
+      "Film (or analogue) photography is the method and the tools mostly popular amongst amateur and professional photographers up until the early 2000s. Today it is still used by millions of artists and hobbyists who appreciate or feel fascinated by the process and the results of capturing light using photo-sensitive chemicals on rolls of photographic film."
+  },
+  {
+    link: "/zine/what-is-art-iu4s",
+    image:
+      "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1518843_B1skGpWWV.jpg",
+    title: "What is Art?",
+    snippet:
+      "In his 1934 paper on aesthetics “Art as Experience,” John Dewy offers to think of art as a relationship and interaction."
   }
 ]
