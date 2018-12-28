@@ -42,7 +42,7 @@ const processSignin = (props, code, sessionInfo) => {
   props.history.replace({
     pathname: props.user.routes.success
   })
-  props.setSessionInfo("Facebook")
+  props.setSessionInfo(sessionInfo)
 }
 class SignIn extends React.PureComponent {
   constructor(props) {
