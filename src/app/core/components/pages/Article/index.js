@@ -9,6 +9,7 @@ import {
   ROUTE_URL_ARTICLES,
   ROUTE_URL_SUBMISSIONS
 } from "../../../constants/routes-article"
+import { addSessionInfo } from "../../../../user/store/actions-user"
 import {
   fetchArticlePage,
   setArticlePage,
@@ -94,11 +95,22 @@ class Article extends React.Component {
     })
   }
   componentWillReceiveProps = nextProps => {
+    if (!nextProps.article) return
     this.makeTag(nextProps)
     this.setState({
       adminControls: nextProps.user.info.role === "admin",
       publicationStatus: nextProps.article.status
     })
+
+    const articleId = nextProps.article.id
+    let pastReadReceipts = nextProps.user.sessionInfo.readReceipts || []
+    if (pastReadReceipts.length > 100) pastReadReceipts.shift()
+    const alreadyRead = pastReadReceipts.indexOf(articleId)
+
+    if (alreadyRead === -1 && articleId) {
+      const readReceipts = [...pastReadReceipts, articleId]
+      nextProps.addSessionInfo({ readReceipts })
+    }
   }
   componentWillUnmount = () => {
     this.unlisten()
@@ -258,6 +270,9 @@ const mapDispatchToProps = dispatch => {
     },
     setArticleSelectoin: selection => {
       dispatch(setArticleSelectoin(selection))
+    },
+    addSessionInfo: sessionInfo => {
+      dispatch(addSessionInfo(sessionInfo))
     }
   }
 }
