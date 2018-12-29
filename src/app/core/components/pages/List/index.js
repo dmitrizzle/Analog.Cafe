@@ -81,11 +81,12 @@ class List extends React.PureComponent {
   }
   render = () => {
     const renderedListMeta = getListMeta(this.props.location.pathname).meta
-    const renderedListTitle =
-      renderedListMeta.title +
-      (this.props.list.filter.author && this.props.list.filter.author.name
-        ? " by " + this.props.list.filter.author.name
-        : "")
+    const renderedListTitle = !this.props.list.filter.author
+      ? (renderedListMeta.title || "") +
+        (this.props.list.filter.author && this.props.list.filter.author.name
+          ? " by " + this.props.list.filter.author.name
+          : "")
+      : this.props.list.filter.author.name
     return (
       <div>
         <MetaTags

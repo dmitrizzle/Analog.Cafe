@@ -22,7 +22,6 @@ export const Mobile = styled.span`
   }
 `
 export default props => {
-  console.log(props.list.author)
   const mobileContent = props.list.author
     ? props.list.author.title
     : getTitleFromSlug(props.location.pathname).replace("/", "") || APP_NAME
@@ -40,44 +39,13 @@ export default props => {
       </ListBrandName>
       {props.user.connection.status !== "offline" ? (
         <ListHeader>
-          {props.list.filter.author ? (
-            <span>
-              <em>
-                {props.list.error
-                  ? props.list.error.title
-                  : props.renderedListMeta.title}
-                {props.list.filter.author.name ? " " : null}
-                {props.list.filter.author.name ? (
-                  <span>
-                    by{" "}
-                    <Modal
-                      with={{
-                        request: {
-                          url:
-                            ROUTE_API_AUTHORS +
-                            "/" +
-                            props.list.filter.author.id
-                        }
-                      }}
-                    >
-                      {getFirstNameFromFull(props.list.filter.author.name)}
-                    </Modal>
-                  </span>
-                ) : (
-                  props.location.pathname.includes("/author/") && ""
-                )}
-              </em>
-            </span>
-          ) : (
-            <span>
-              <em>{props.renderedListMeta.title}</em>
-            </span>
-          )}
-          {props.list.filter.author && props.list.filter.author.name
-            ? "."
-            : props.list.error
-              ? " " + props.list.error.emoji
-              : "."}
+          <span>
+            <em>
+              {props.list.author
+                ? props.list.author.text
+                : props.renderedListMeta.title}
+            </em>
+          </span>
         </ListHeader>
       ) : (
         <ListHeader>
