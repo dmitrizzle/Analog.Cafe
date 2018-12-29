@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { NavLink, NavLogoLink } from "./NavLinks"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
+import { makeFroth } from "../../../../../utils"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
@@ -83,6 +84,8 @@ export default props => {
     className: isActive(fp) ? a : undefined
   }
 
+  // console.log(props.list.filter.author.id);
+
   return (
     <ul
       onMouseOver={
@@ -110,7 +113,16 @@ export default props => {
       </NavItem>
       <NavItem prime center className="prime center">
         <NavLogoLink to={"/"} className="indexRouteLink">
-          <NavLogo />
+          <NavLogo
+            image={
+              props.list.author
+                ? makeFroth({
+                    src: props.list.author.info.image,
+                    size: "s"
+                  }).src
+                : null
+            }
+          />
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="left">

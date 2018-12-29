@@ -34,6 +34,7 @@ const Nav = props => {
             userStatus={props.user.status}
             userRole={props.user.info.role}
             userImage={props.user.info.image}
+            list={props.list}
             userIntent={() => {
               props.user.intent.load !== "List" &&
                 props.setUserIntent({ load: "List" })
@@ -52,7 +53,8 @@ const mapStateToProps = state => {
     composer: state.composer,
     editor: state.editor,
     user: state.user,
-    article: state.article
+    article: state.article,
+    list: state.list
   }
 }
 const mapDispatchToProps = dispatch => {

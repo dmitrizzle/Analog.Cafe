@@ -39,6 +39,12 @@ export default (state = INITIAL_STATE, action) => {
         ...action.payload
       }
       break
+    case "LIST.SET_AUTHOR":
+      state = {
+        ...state,
+        author: action.payload
+      }
+      break
     default:
       return state
   }

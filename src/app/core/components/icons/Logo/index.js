@@ -16,8 +16,19 @@ const Logo = styled.div`
     height: 100%;
     width: 100%;
     path {
-      fill: #fff;
+      fill: ${props => (props.image ? "transparent" : "#fff")};
     }
+
+    ${props =>
+      props.image &&
+      `
+      background: url(${props.image});
+      background-size: cover;
+      width: 200%;
+      height: 200%;
+      margin-top: -50%;
+      margin-left: -50%;
+    `};
   }
 `
 export default props => {
