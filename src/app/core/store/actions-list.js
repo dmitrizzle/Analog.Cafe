@@ -71,8 +71,6 @@ export const fetchListPage = (request, appendItems = false) => {
         if (listAuthor) dispatch(fetchListAuthor(listAuthor))
         else dispatch(setListAuthor(undefined))
 
-        console.log("add loading state for author")
-
         if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
           dispatch(fetchListAuthor(getState().user.info.id))
 
