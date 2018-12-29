@@ -3,7 +3,6 @@ import styled from "styled-components"
 import CardPopup from "./CardPopup"
 
 export default styled(CardPopup)`
-  max-width: 100%;
   margin: ${props => props.theme.size.block.padding}em auto
     ${props => props.theme.size.block.spacing}em;
   box-shadow: 0 1px 1px
@@ -12,6 +11,9 @@ export default styled(CardPopup)`
       ${props => props.theme.color.foreground(props.theme.opacity.least)};
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
 
+  @media (max-width: 375px) {
+    max-width: 100%;
+  }
   ${props => props.theme.size.breakpoint.max.xs`
     max-width: 100vw;
 		border-radius: 0;

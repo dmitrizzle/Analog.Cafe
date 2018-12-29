@@ -62,13 +62,17 @@ export default props => {
           {(isNew || isNewlyEdited) &&
             !read && (
               <Sticker
-                inverse={props.item.date.published < props.item.date.updated}
+                inverse={
+                  isXWeeksAgo(props.item.date.published) > 0 &&
+                  props.item.date.published < props.item.date.updated
+                }
                 title={getHumanDatestamp(props.item.date.updated)}
               >
                 <em>
-                  {props.item.date.published >= props.item.date.updated
-                    ? "New!"
-                    : "Recently updated"}
+                  {isXWeeksAgo(props.item.date.published) > 0 &&
+                  props.item.date.published < props.item.date.updated
+                    ? "Recently updated"
+                    : "New!"}
                 </em>
               </Sticker>
             )}
