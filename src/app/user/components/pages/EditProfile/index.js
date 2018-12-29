@@ -29,12 +29,6 @@ const composerPath = "/submit/compose"
 class EditProfile extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.handleTitleChange = this.handleTitleChange.bind(this)
-    this.handleTextChange = this.handleTextChange.bind(this)
-    this.handleButtonChange = this.handleButtonChange.bind(this)
-    this.handleButtonFocus = this.handleButtonFocus.bind(this)
-    this.handleButtonBlur = this.handleButtonBlur.bind(this)
-    this.handleFileUpload = this.handleFileUpload.bind(this)
     this.state = {
       setUserInfoPending: false,
       returnToComposer: false
@@ -46,7 +40,6 @@ class EditProfile extends React.PureComponent {
         `return=${composerPath}`
       )
     })
-    console.log(this.props.history.location)
     if (
       this.props.user.status === "ok" &&
       typeof this.props.user.info === "object" &&
