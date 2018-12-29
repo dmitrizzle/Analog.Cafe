@@ -34,15 +34,15 @@ export const ReadType = styled.span`
 export default withRouter(props => {
   return (
     <Stats
-      onClick={event => {
-        event.preventDefault()
-        event.stopPropagation()
-        const route = Object.keys(ROUTE_TAGS).find(
-          key => ROUTE_TAGS[key] === props.item.tag
-        )
-        console.log(route)
-        props.history.push(`${route}`)
-      }}
+    // onClick={event => {
+    //   event.preventDefault()
+    //   event.stopPropagation()
+    //   const route = Object.keys(ROUTE_TAGS).find(
+    //     key => ROUTE_TAGS[key] === props.item.tag
+    //   )
+    //   console.log(route)
+    //   props.history.push(`${route}`)
+    // }}
     >
       {props.item.type !== "placeholder" &&
         props.private &&
