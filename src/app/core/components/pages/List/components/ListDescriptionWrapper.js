@@ -14,10 +14,13 @@ export default styled.div`
     props.list &&
     props.list.author &&
     `
-      height: 11em;
       & > div {
         overflow: visible;
         margin: 1.5em;
+        display: flex;
+        align-items: flex-start;
+        overflow: scroll;
+        height: 6em;
         span {
           color: #2c2c2c;
           border-radius: .3em;

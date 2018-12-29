@@ -2,12 +2,11 @@ import { getFroth } from "@roast-cms/image-froth"
 import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-"
-import { ROUTE_API_AUTHORS } from "../constants/routes-article"
 import { ROUTE_API_IMAGES } from "../../user/constants/routes-submission"
 import { TEXT_ERRORS } from "../../constants"
-import { fetchModal, setModal } from "./actions-modal"
 import { getFirstNameFromFull } from "../utils/messages-author"
 import { makeAPIRequest } from "../../utils"
+import { setModal } from "./actions-modal"
 
 const UNKNOWN_AUTHOR = (id, error) => {
   return {
@@ -47,22 +46,7 @@ export const getPictureInfo = src => {
                     image: src,
                     buttons: [
                       {
-                        to: "#about-author",
-                        onClick: event => {
-                          event.preventDefault()
-                          event.stopPropagation()
-                          const authorCardDelay = setTimeout(() => {
-                            dispatch(
-                              fetchModal({
-                                url:
-                                  ROUTE_API_AUTHORS +
-                                  "/" +
-                                  response.data.info.author.id
-                              })
-                            )
-                            clearTimeout(authorCardDelay)
-                          }, 50)
-                        },
+                        to: `/author/${response.data.info.author.id}`,
                         text: `Image by [${getFirstNameFromFull(
                           response.data.info.author.name
                         )}]`,

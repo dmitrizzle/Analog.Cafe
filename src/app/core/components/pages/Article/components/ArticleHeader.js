@@ -1,7 +1,6 @@
 import Loadable from "react-loadable"
 import React from "react"
 
-import { ROUTE_API_AUTHORS } from "../../../../constants/routes-article"
 import { TEXT_EMOJIS } from "../../../../../constants"
 import {
   getAuthorListStringFromArray,
@@ -9,7 +8,7 @@ import {
 } from "../../../../utils/messages-author"
 import Byline from "../../../vignettes/Byline"
 import HeaderLarge from "../../../vignettes/HeaderLarge"
-import Modal from "../../../controls/Modal"
+import Link from "../../../controls/Link"
 
 const ArticleControls = Loadable({
   loader: () =>
@@ -30,18 +29,11 @@ export default props => {
           <Byline>
             By{" "}
             {getLeadAuthorObject(props.article.authors).id ? (
-              <Modal
-                with={{
-                  request: {
-                    url:
-                      ROUTE_API_AUTHORS +
-                      "/" +
-                      getLeadAuthorObject(props.article.authors).id
-                  }
-                }}
+              <Link
+                to={"/author/" + getLeadAuthorObject(props.article.authors).id}
               >
                 {getLeadAuthorObject(props.article.authors).name}
-              </Modal>
+              </Link>
             ) : (
               getLeadAuthorObject(props.article.authors).name
             )}

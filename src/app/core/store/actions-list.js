@@ -41,6 +41,7 @@ export const fetchListPage = (request, appendItems = false) => {
       !request.url.includes(ROUTE_API_LIST_SUBMISSIONS)
     )
       return
+
     let listState = getState().list
     if (
       listState.requested.url === request.url &&
@@ -54,6 +55,7 @@ export const fetchListPage = (request, appendItems = false) => {
       request.headers = {
         Authorization: "JWT " + localStorage.getItem("token")
       }
+    //dispatch(setListAuthor({ id: "", title: "" }));
     if (!appendItems)
       dispatch(
         initListPage({
@@ -69,6 +71,8 @@ export const fetchListPage = (request, appendItems = false) => {
             response.data.filter.author.id) ||
           null
         if (listAuthor) dispatch(fetchListAuthor(listAuthor))
+        else dispatch(setListAuthor(undefined))
+
         if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
           dispatch(fetchListAuthor(getState().user.info.id))
 

@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { APP_NAME, HEADER_ERRORS } from "../../../../../constants"
+import { CARD_ERRORS } from "../../../../constants/messages-"
 import { getFirstNameFromFull } from "../../../../utils/messages-author"
 import { getTitleFromSlug } from "../../../../utils/messages-"
 import Link from "../../../controls/Link"
@@ -39,7 +40,7 @@ export default props => {
       ).replace("Author", getFirstNameFromFull(props.list.author.title)) + "."
     : null
   const correctTrailingPunctuation = text => {
-    const trimmedText = text
+    const trimmedText = text ? text.trim() : CARD_ERRORS.AUTHOR.text
     const lastChar = trimmedText.slice(-1)
     if (text && lastChar !== "." && lastChar !== "!" && lastChar !== "?")
       return `${trimmedText}.`
@@ -66,10 +67,16 @@ export default props => {
             <em>
               {props.list.author ? (
                 <React.Fragment>
-                  {correctTrailingPunctuation(props.list.author.text)}
-                  {cta && (
+                  {isEditableProfile && (
                     <React.Fragment>
                       {" "}
+                      <strong>
+                        <Link to="/profile/edit">Edit Profile.</Link>{" "}
+                      </strong>
+                    </React.Fragment>
+                  )}
+                  {cta && (
+                    <React.Fragment>
                       <strong
                         style={{
                           display: "inline-block",
@@ -78,16 +85,10 @@ export default props => {
                       >
                         <Link to={cta.to}>{ctaCopy}</Link>
                       </strong>
+                      <br />
                     </React.Fragment>
                   )}
-                  {isEditableProfile && (
-                    <React.Fragment>
-                      {" "}
-                      <strong>
-                        <Link to="/profile/edit">Edit Profile.</Link>
-                      </strong>
-                    </React.Fragment>
-                  )}
+                  {correctTrailingPunctuation(props.list.author.text)}
                 </React.Fragment>
               ) : (
                 props.renderedListMeta.title
