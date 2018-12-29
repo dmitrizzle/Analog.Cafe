@@ -4,7 +4,7 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
-import { GA } from "../../../../utils"
+import { GA, makeFroth } from "../../../../utils"
 import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
@@ -16,10 +16,15 @@ import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
 import ArticleSection from "../Article/components/ArticleSection"
 import Button from "../../controls/Button/components/Button"
+import CardButton from "../../controls/Card/components/CardButton"
+import CardCaption from "../../controls/Card/components/CardCaption"
+import CardHeader from "../../controls/Card/components/CardHeader"
+import CardIntegrated from "../../controls/Card/components/CardIntegrated"
 import Footer from "../../controls/Footer"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
 import MetaTags from "../../vignettes/MetaTags"
+import Placeholder from "../../vignettes/Picture/components/Placeholder"
 
 const PlaceholderHowToSubmit = Loadable({
   loader: () => import("./components/HowToSubmit"),
@@ -103,20 +108,54 @@ class List extends React.PureComponent {
         this.props.me ? (
           <PlaceholderHowToSubmit />
         ) : (
-          <ListBlock
-            status={this.props.list.status}
-            items={this.props.list.items}
-            nextArticleHeading={nextArticleHeading =>
-              this.props.setArticlePage(
-                preloadConstructor(this.props.article, nextArticleHeading)
-              )
-            }
-            private={this.props.private}
-            isAdmin={this.props.isAdmin}
-            userIntent={this.handleUserIntent}
-            article={this.props.article}
-            readReceipts={this.props.user.sessionInfo.readReceipts}
-          />
+          <React.Fragment>
+            {console.log(this.props.list.author)}
+            {this.props.list.author && (
+              <CardIntegrated style={{ zIndex: 1 }}>
+                <CardHeader
+                  stubborn
+                  buttons={[0]}
+                  noStar
+                  title={this.props.list.author.title}
+                />
+                <figure>
+                  <Placeholder frothId={this.props.list.author.image}>
+                    <img
+                      src={
+                        makeFroth({
+                          src: this.props.list.author.image,
+                          size: "s"
+                        }).src
+                      }
+                      alt={this.props.list.author.title}
+                    />
+                  </Placeholder>
+                </figure>
+                <figcaption>
+                  <CardCaption>{this.props.list.author.text}</CardCaption>
+                </figcaption>
+                {this.props.list.author.buttons[1] && (
+                  <CardButton to={this.props.list.author.buttons[1].to}>
+                    {this.props.list.author.buttons[1].text}
+                  </CardButton>
+                )}
+              </CardIntegrated>
+            )}
+            <ListBlock
+              status={this.props.list.status}
+              items={this.props.list.items}
+              nextArticleHeading={nextArticleHeading =>
+                this.props.setArticlePage(
+                  preloadConstructor(this.props.article, nextArticleHeading)
+                )
+              }
+              private={this.props.private}
+              isAdmin={this.props.isAdmin}
+              userIntent={this.handleUserIntent}
+              article={this.props.article}
+              readReceipts={this.props.user.sessionInfo.readReceipts}
+            />
+          </React.Fragment>
         )}
         {parseInt(this.props.list.page.total, 0) > 1 &&
         parseInt(this.props.list.page.total, 0) >
