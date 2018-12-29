@@ -69,6 +69,8 @@ export const fetchListPage = (request, appendItems = false) => {
             response.data.filter.author.id) ||
           null
         if (listAuthor) dispatch(fetchListAuthor(listAuthor))
+        if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
+          dispatch(fetchListAuthor(getState().user.info.id))
 
         if (response.data.page["items-total"] > 0)
           dispatch(setListPage(response.data, appendItems))

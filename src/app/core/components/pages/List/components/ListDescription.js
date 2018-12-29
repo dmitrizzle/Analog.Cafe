@@ -2,13 +2,12 @@ import React from "react"
 import styled from "styled-components"
 
 import { APP_NAME, HEADER_ERRORS } from "../../../../../constants"
-import { ROUTE_API_AUTHORS } from "../../../../constants/routes-article"
 import { getFirstNameFromFull } from "../../../../utils/messages-author"
 import { getTitleFromSlug } from "../../../../utils/messages-"
+import Link from "../../../controls/Link"
 import ListBrandName from "./ListBrandName"
 import ListDescriptionWrapper from "./ListDescriptionWrapper"
 import ListHeader from "./ListHeader"
-import Modal from "../../../controls/Modal"
 
 export const Desktop = styled.span`
   @media (max-width: 48em) {
@@ -28,11 +27,35 @@ export default props => {
   const desktopUserContent = props.list.author
     ? props.list.author.title
     : APP_NAME
+
+  const cta =
+    props.list.author && props.list.author.buttons
+      ? props.list.author.buttons[1]
+      : null
+  const ctaCopy = cta
+    ? (
+        cta.text.charAt(0).toUpperCase() +
+        cta.text.replace("Website", "website").slice(1)
+      ).replace("Author", getFirstNameFromFull(props.list.author.title)) + "."
+    : null
+  const correctTrailingPunctuation = text => {
+    const trimmedText = text
+    const lastChar = trimmedText.slice(-1)
+    if (text && lastChar !== "." && lastChar !== "!" && lastChar !== "?")
+      return `${trimmedText}.`
+    return trimmedText
+  }
+
+  const isEditableProfile =
+    props.user.status === "ok" &&
+    props.list.author &&
+    props.user.info.id === props.list.author.id
+
   return (
     <ListDescriptionWrapper {...props}>
       <ListBrandName
         homepage={props.location.pathname === "/"}
-        style={{ width: mobileContent !== APP_NAME ? "12em" : "" }}
+        noSetWidth={mobileContent !== APP_NAME}
       >
         <Desktop>{desktopUserContent}</Desktop>
         <Mobile>{mobileContent}</Mobile>
@@ -41,9 +64,34 @@ export default props => {
         <ListHeader>
           <span>
             <em>
-              {props.list.author
-                ? props.list.author.text
-                : props.renderedListMeta.title}
+              {props.list.author ? (
+                <React.Fragment>
+                  {correctTrailingPunctuation(props.list.author.text)}
+                  {cta && (
+                    <React.Fragment>
+                      {" "}
+                      <strong
+                        style={{
+                          display: "inline-block",
+                          fontWeight: isEditableProfile ? 400 : 700
+                        }}
+                      >
+                        <Link to={cta.to}>{ctaCopy}</Link>
+                      </strong>
+                    </React.Fragment>
+                  )}
+                  {isEditableProfile && (
+                    <React.Fragment>
+                      {" "}
+                      <strong>
+                        <Link to="/profile/edit">Edit Profile.</Link>
+                      </strong>
+                    </React.Fragment>
+                  )}
+                </React.Fragment>
+              ) : (
+                props.renderedListMeta.title
+              )}
             </em>
           </span>
         </ListHeader>

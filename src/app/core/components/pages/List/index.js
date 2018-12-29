@@ -105,6 +105,7 @@ class List extends React.PureComponent {
           <PlaceholderHowToSubmit />
         ) : (
           <ListBlock
+            author={this.props.list.author}
             status={this.props.list.status}
             items={this.props.list.items}
             nextArticleHeading={nextArticleHeading =>
