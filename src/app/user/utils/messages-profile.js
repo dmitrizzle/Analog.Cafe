@@ -31,7 +31,7 @@ export const getProfileButtons = (id = "unknown", link = "") => {
   template = [
     {
       to: "/author/" + id,
-      text: "More on Analog.Cafe",
+      text: "View Full Profile",
       branded: true
     },
     {
