@@ -4,6 +4,10 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
+import {
+  CardColumns,
+  CardIntegratedForColumns
+} from "../../controls/ArticleActions/components/Options"
 import { GA, makeFroth } from "../../../../utils"
 import {
   ROUTE_API_LIST,
@@ -16,10 +20,10 @@ import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
 import ArticleSection from "../Article/components/ArticleSection"
 import Button from "../../controls/Button/components/Button"
+import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivider"
 import CardButton from "../../controls/Card/components/CardButton"
 import CardCaption from "../../controls/Card/components/CardCaption"
 import CardHeader from "../../controls/Card/components/CardHeader"
-import CardIntegrated from "../../controls/Card/components/CardIntegrated"
 import Footer from "../../controls/Footer"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
@@ -112,41 +116,59 @@ class List extends React.PureComponent {
         ) : (
           <React.Fragment>
             {this.props.list.author && (
-              <CardIntegrated style={{ zIndex: 1 }}>
-                <CardHeader
-                  stubborn
-                  buttons={[0]}
-                  noStar
-                  title={this.props.list.author.title}
-                />
-                <figure>
-                  <Placeholder frothId={this.props.list.author.image}>
-                    <img
-                      src={
-                        makeFroth({
-                          src: this.props.list.author.image,
-                          size: "s"
-                        }).src
-                      }
-                      alt={this.props.list.author.title}
-                    />
-                  </Placeholder>
-                </figure>
-                <figcaption>
-                  <CardCaption>{this.props.list.author.text}</CardCaption>
-                </figcaption>
-                {this.props.list.author.buttons[1] && (
-                  <CardButton to={this.props.list.author.buttons[1].to}>
-                    {this.props.list.author.buttons[1].text}
-                  </CardButton>
-                )}
-                {this.props.list.author &&
-                  this.props.user.info.id === this.props.list.author.id && (
-                    <CardButton branded to="/profile/edit">
-                      Edit Profile
+              <CardColumns
+                style={{
+                  zIndex: 11,
+                  position: "relative",
+                  maxWidth: "680px",
+                  margin: "0 auto"
+                }}
+              >
+                <CardIntegratedForColumns>
+                  <CardHeader
+                    stubborn
+                    buttons={[0]}
+                    noStar
+                    title={this.props.list.author.title}
+                  />
+                  <figure>
+                    <Placeholder frothId={this.props.list.author.image}>
+                      <img
+                        src={
+                          makeFroth({
+                            src: this.props.list.author.image,
+                            size: "s"
+                          }).src
+                        }
+                        alt={this.props.list.author.title}
+                      />
+                    </Placeholder>
+                  </figure>
+                </CardIntegratedForColumns>
+                <CardIntegratedForColumns
+                  style={{ background: "rgba(255, 255, 255, 0.5)" }}
+                >
+                  <ButtonGroupDivider />
+
+                  <figcaption>
+                    <CardCaption>{this.props.list.author.text}</CardCaption>
+                  </figcaption>
+                  {this.props.list.author.buttons[1] && (
+                    <CardButton
+                      to={this.props.list.author.buttons[1].to}
+                      style={{ background: "rgba(255, 255, 255, 0.5)" }}
+                    >
+                      {this.props.list.author.buttons[1].text}
                     </CardButton>
                   )}
-              </CardIntegrated>
+                  {this.props.list.author &&
+                    this.props.user.info.id === this.props.list.author.id && (
+                      <CardButton branded to="/profile/edit">
+                        Edit Profile
+                      </CardButton>
+                    )}
+                </CardIntegratedForColumns>
+              </CardColumns>
             )}
             <ListBlock
               status={this.props.list.status}
