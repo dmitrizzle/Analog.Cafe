@@ -141,7 +141,7 @@ export default styled.ul`
 		}
 	}
 	&:first-child li:first-child {
-		padding-top: ${VALUE_ZIGZAG_TOP_SHIM}em;
+		padding-top: ${props => (props.author ? 17 : VALUE_ZIGZAG_TOP_SHIM)}em;
 		:before { display: none; }
 	}
 `

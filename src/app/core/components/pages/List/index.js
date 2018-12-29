@@ -91,6 +91,7 @@ class List extends React.PureComponent {
       (this.props.list.filter.author && this.props.list.filter.author.name
         ? " by " + this.props.list.filter.author.name
         : "")
+
     return (
       <div>
         <MetaTags
@@ -102,6 +103,7 @@ class List extends React.PureComponent {
           list={this.props.list}
           renderedListMeta={renderedListMeta}
           location={this.props.location}
+          style={this.props.list.author ? { height: 0, opacity: 0 } : null}
         />
         {this.props.user.connection.status !== "offline" &&
         this.props.list.error &&
@@ -109,7 +111,6 @@ class List extends React.PureComponent {
           <PlaceholderHowToSubmit />
         ) : (
           <React.Fragment>
-            {console.log(this.props.list.author)}
             {this.props.list.author && (
               <CardIntegrated style={{ zIndex: 1 }}>
                 <CardHeader
@@ -139,11 +140,18 @@ class List extends React.PureComponent {
                     {this.props.list.author.buttons[1].text}
                   </CardButton>
                 )}
+                {this.props.list.author &&
+                  this.props.user.info.id === this.props.list.author.id && (
+                    <CardButton branded to="/profile/edit">
+                      Edit Profile
+                    </CardButton>
+                  )}
               </CardIntegrated>
             )}
             <ListBlock
               status={this.props.list.status}
               items={this.props.list.items}
+              author={this.props.list.author ? true : false}
               nextArticleHeading={nextArticleHeading =>
                 this.props.setArticlePage(
                   preloadConstructor(this.props.article, nextArticleHeading)

@@ -9,4 +9,7 @@ export default styled.div`
   max-width: ${props => props.theme.size.block.column.m}px;
   position: relative;
   z-index: ${props => props.theme.layer.card};
+
+  transition: height 500ms, opacity 500ms;
+  transform: translateZ(0);
 `

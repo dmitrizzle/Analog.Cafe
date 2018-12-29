@@ -16,7 +16,7 @@ import ZigZagPicture from "./ZigZagPicture"
 export default props => {
   return (
     <Bleed>
-      <ListUL status={props.status}>
+      <ListUL status={props.status} author={props.author}>
         {props.items.map((item, index) => {
           // NOTE: index is used to show high quality image for first item
           return (
