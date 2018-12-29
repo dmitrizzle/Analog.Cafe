@@ -34,6 +34,7 @@ ShallowWrapper {
                                       }
                     }
           />
+          <Connect(Footer) />
 </styled.section>,
       ],
     },
@@ -68,29 +69,43 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <p
-            style={
-                        Object {
-                                    "textAlign": "center",
-                                  }
-            }
+          "children": Array [
+            <p
+              style={
+                            Object {
+                                          "textAlign": "center",
+                                        }
+              }
 />,
+            <Connect(Footer) />,
+          ],
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-            "style": Object {
-              "textAlign": "center",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "style": Object {
+                "textAlign": "center",
+              },
             },
+            "ref": null,
+            "rendered": null,
+            "type": "p",
           },
-          "ref": null,
-          "rendered": null,
-          "type": "p",
-        },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
         "type": [Function],
       },
     ],
@@ -119,6 +134,7 @@ ShallowWrapper {
                                               }
                         }
             />
+            <Connect(Footer) />
 </styled.section>,
         ],
       },
@@ -153,29 +169,43 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <p
-              style={
-                            Object {
-                                          "textAlign": "center",
-                                        }
-              }
+            "children": Array [
+              <p
+                style={
+                                Object {
+                                                "textAlign": "center",
+                                              }
+                }
 />,
+              <Connect(Footer) />,
+            ],
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": undefined,
-              "style": Object {
-                "textAlign": "center",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "style": Object {
+                  "textAlign": "center",
+                },
               },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
             },
-            "ref": null,
-            "rendered": null,
-            "type": "p",
-          },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
       ],

@@ -32,12 +32,6 @@ ShallowWrapper {
 </Unknown>,
         <Unknown
           onClick={[Function]}
-          to="https://facebook.com/analog8cafe"
->
-          Follow on Facebook
-</Unknown>,
-        <Unknown
-          onClick={[Function]}
           to="https://instagram.com/analog_cafe"
 >
           Follow on Instagram
@@ -77,19 +71,6 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "children": "Follow on Facebook",
-          "onClick": [Function],
-          "to": "https://facebook.com/analog8cafe",
-        },
-        "ref": null,
-        "rendered": "Follow on Facebook",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
           "children": "Follow on Instagram",
           "onClick": [Function],
           "to": "https://instagram.com/analog_cafe",
@@ -119,12 +100,6 @@ ShallowWrapper {
             to="https://twitter.com/analog_cafe"
 >
             Follow on Twitter
-</Unknown>,
-          <Unknown
-            onClick={[Function]}
-            to="https://facebook.com/analog8cafe"
->
-            Follow on Facebook
 </Unknown>,
           <Unknown
             onClick={[Function]}
@@ -160,19 +135,6 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": "Follow on Twitter",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": "Follow on Facebook",
-            "onClick": [Function],
-            "to": "https://facebook.com/analog8cafe",
-          },
-          "ref": null,
-          "rendered": "Follow on Facebook",
           "type": [Function],
         },
         Object {

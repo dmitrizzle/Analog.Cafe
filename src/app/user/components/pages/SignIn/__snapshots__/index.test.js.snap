@@ -17,9 +17,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "getUserInfo": [Function],
-      "getSessionInfo": [Function],
       "addSessionInfo": [Function],
+      "getSessionInfo": [Function],
+      "getUserInfo": [Function],
       "user": undefined,
       "verifyUser": [Function],
     },
@@ -33,9 +33,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "getUserInfo": [Function],
-        "getSessionInfo": [Function],
         "addSessionInfo": [Function],
+        "getSessionInfo": [Function],
+        "getUserInfo": [Function],
         "user": undefined,
         "verifyUser": [Function],
       },

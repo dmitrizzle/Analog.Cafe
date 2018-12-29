@@ -30,8 +30,11 @@ export const CardCaptionIntegrated = styled(CardCaption)`
 
 export default props => {
   let readNext
-  const readReceipts = props.user.sessionInfo.readReceipts
-  const newArticleDate = props.list.items[0].date
+  const readReceipts =
+    props.user && props.user.sessionInfo
+      ? props.user.sessionInfo.readReceipts
+      : null
+  const newArticleDate = props.list && props.list.items[0].date
   const read =
     readReceipts && newArticleDate
       ? readReceipts.filter(

@@ -25,7 +25,7 @@ ShallowWrapper {
           warning={false}
 />,
         <Unknown
-          inverse={true}
+          branded={true}
           onClick={[Function]}
 >
           Subscribe
@@ -55,8 +55,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "branded": true,
           "children": "Subscribe",
-          "inverse": true,
           "onClick": [Function],
         },
         "ref": null,
@@ -80,7 +80,7 @@ ShallowWrapper {
             warning={false}
 />,
           <Unknown
-            inverse={true}
+            branded={true}
             onClick={[Function]}
 >
             Subscribe
@@ -110,8 +110,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "branded": true,
             "children": "Subscribe",
-            "inverse": true,
             "onClick": [Function],
           },
           "ref": null,

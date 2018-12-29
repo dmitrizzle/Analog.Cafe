@@ -37,6 +37,29 @@ ShallowWrapper {
           </Unknown>
           .”
 </p>,
+        <p
+          style={
+                    Object {
+                              "lineHeight": "1.25em",
+                            }
+          }
+>
+          <em>
+                    <small>
+                              Did you accidentally delete your submission? You may be able to
+                               
+                              <strong>
+                                        <Unknown
+                                                  to="/submit/restore"
+                                        >
+                                                  restore
+                                        </Unknown>
+                              </strong>
+                               
+                              it.
+                    </small>
+          </em>
+</p>,
       ],
     },
     "ref": null,
@@ -103,6 +126,109 @@ ShallowWrapper {
         ],
         "type": "p",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <em>
+            <small>
+                        Did you accidentally delete your submission? You may be able to
+                         
+                        <strong>
+                                    <Unknown
+                                                to="/submit/restore"
+                                    >
+                                                restore
+                                    </Unknown>
+                        </strong>
+                         
+                        it.
+            </small>
+</em>,
+          "style": Object {
+            "lineHeight": "1.25em",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <small>
+              Did you accidentally delete your submission? You may be able to
+               
+              <strong>
+                            <Unknown
+                                          to="/submit/restore"
+                            >
+                                          restore
+                            </Unknown>
+              </strong>
+               
+              it.
+</small>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Did you accidentally delete your submission? You may be able to",
+                " ",
+                <strong>
+                  <Unknown
+                                    to="/submit/restore"
+                  >
+                                    restore
+                  </Unknown>
+</strong>,
+                " ",
+                "it.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Did you accidentally delete your submission? You may be able to",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Unknown
+                    to="/submit/restore"
+>
+                    restore
+</Unknown>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "restore",
+                    "to": "/submit/restore",
+                  },
+                  "ref": null,
+                  "rendered": "restore",
+                  "type": [Function],
+                },
+                "type": "strong",
+              },
+              " ",
+              "it.",
+            ],
+            "type": "small",
+          },
+          "type": "em",
+        },
+        "type": "p",
+      },
     ],
     "type": "div",
   },
@@ -131,6 +257,29 @@ ShallowWrapper {
                         Open Call
             </Unknown>
             .”
+</p>,
+          <p
+            style={
+                        Object {
+                                    "lineHeight": "1.25em",
+                                  }
+            }
+>
+            <em>
+                        <small>
+                                    Did you accidentally delete your submission? You may be able to
+                                     
+                                    <strong>
+                                                <Unknown
+                                                            to="/submit/restore"
+                                                >
+                                                            restore
+                                                </Unknown>
+                                    </strong>
+                                     
+                                    it.
+                        </small>
+            </em>
 </p>,
         ],
       },
@@ -196,6 +345,109 @@ ShallowWrapper {
             },
             ".”",
           ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <em>
+              <small>
+                            Did you accidentally delete your submission? You may be able to
+                             
+                            <strong>
+                                          <Unknown
+                                                        to="/submit/restore"
+                                          >
+                                                        restore
+                                          </Unknown>
+                            </strong>
+                             
+                            it.
+              </small>
+</em>,
+            "style": Object {
+              "lineHeight": "1.25em",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <small>
+                Did you accidentally delete your submission? You may be able to
+                 
+                <strong>
+                                <Unknown
+                                                to="/submit/restore"
+                                >
+                                                restore
+                                </Unknown>
+                </strong>
+                 
+                it.
+</small>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Did you accidentally delete your submission? You may be able to",
+                  " ",
+                  <strong>
+                    <Unknown
+                                        to="/submit/restore"
+                    >
+                                        restore
+                    </Unknown>
+</strong>,
+                  " ",
+                  "it.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Did you accidentally delete your submission? You may be able to",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Unknown
+                      to="/submit/restore"
+>
+                      restore
+</Unknown>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "restore",
+                      "to": "/submit/restore",
+                    },
+                    "ref": null,
+                    "rendered": "restore",
+                    "type": [Function],
+                  },
+                  "type": "strong",
+                },
+                " ",
+                "it.",
+              ],
+              "type": "small",
+            },
+            "type": "em",
+          },
           "type": "p",
         },
       ],

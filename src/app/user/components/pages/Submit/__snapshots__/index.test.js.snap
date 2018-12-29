@@ -29,7 +29,10 @@ ShallowWrapper {
 />,
         <styled.section>
           <p>
-                    Do you shoot film? 
+                    <strong>
+                              Do you shoot film?
+                    </strong>
+                     
                     <Unknown />
           </p>
           <styled.div
@@ -57,37 +60,6 @@ ShallowWrapper {
                               if you have an account.
                     </p>
           </styled.div>
-          <p>
-                    <strong>
-                              Sending submissions is easy.
-                    </strong>
-                     Just add your images, title, and text to a Analog.Cafe’s
-                     
-                    <Connect(ModalLauncher)
-                              with={
-                                        Object {
-                                                  "id": "hints/disposable-links",
-                                                  "info": Object {
-                                                    "image": "image-froth_1144351_rk-MB7KoQ",
-                                                    "text": <span>
-                                                      <strong>
-                                                                    WISIWIG
-                                                      </strong>
-                                                       is short for “what I see is what I get.”
-                                                      <br />
-                                                      <br />
-                                                      We call ours “Composer.” It’s been built to help you format your submission to look the way you choose. You can resize your images to appear full-screen, add captions, add quotes, dividers and headings, as well as links and font styles.
-                                        </span>,
-                                                    "title": "What’s WISIWIG?",
-                                                  },
-                                                }
-                              }
-                    >
-                              WISIWIG
-                    </Connect(ModalLauncher)>
-                     
-                    editor.
-          </p>
           <p>
                     <strong>
                               Get £5 for film.
@@ -144,7 +116,10 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <p>
-              Do you shoot film? 
+              <strong>
+                            Do you shoot film?
+              </strong>
+               
               <Unknown />
 </p>,
             <styled.div
@@ -174,37 +149,6 @@ ShallowWrapper {
 </styled.div>,
             <p>
               <strong>
-                            Sending submissions is easy.
-              </strong>
-               Just add your images, title, and text to a Analog.Cafe’s
-               
-              <Connect(ModalLauncher)
-                            with={
-                                          Object {
-                                                        "id": "hints/disposable-links",
-                                                        "info": Object {
-                                                          "image": "image-froth_1144351_rk-MB7KoQ",
-                                                          "text": <span>
-                                                            <strong>
-                                                                              WISIWIG
-                                                            </strong>
-                                                             is short for “what I see is what I get.”
-                                                            <br />
-                                                            <br />
-                                                            We call ours “Composer.” It’s been built to help you format your submission to look the way you choose. You can resize your images to appear full-screen, add captions, add quotes, dividers and headings, as well as links and font styles.
-                                          </span>,
-                                                          "title": "What’s WISIWIG?",
-                                                        },
-                                                      }
-                            }
-              >
-                            WISIWIG
-              </Connect(ModalLauncher)>
-               
-              editor.
-</p>,
-            <p>
-              <strong>
                             Get £5 for film.
               </strong>
                As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from
@@ -232,13 +176,27 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Do you shoot film? ",
+                <strong>
+                  Do you shoot film?
+</strong>,
+                " ",
                 <Unknown />,
               ],
             },
             "ref": null,
             "rendered": Array [
-              "Do you shoot film? ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Do you shoot film?",
+                },
+                "ref": null,
+                "rendered": "Do you shoot film?",
+                "type": "strong",
+              },
+              " ",
               Object {
                 "instance": null,
                 "key": undefined,
@@ -352,90 +310,6 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <strong>
-                  Sending submissions is easy.
-</strong>,
-                " Just add your images, title, and text to a Analog.Cafe’s",
-                " ",
-                <Connect(ModalLauncher)
-                  with={
-                                    Object {
-                                                      "id": "hints/disposable-links",
-                                                      "info": Object {
-                                                        "image": "image-froth_1144351_rk-MB7KoQ",
-                                                        "text": <span>
-                                                          <strong>
-                                                                                WISIWIG
-                                                          </strong>
-                                                           is short for “what I see is what I get.”
-                                                          <br />
-                                                          <br />
-                                                          We call ours “Composer.” It’s been built to help you format your submission to look the way you choose. You can resize your images to appear full-screen, add captions, add quotes, dividers and headings, as well as links and font styles.
-                                    </span>,
-                                                        "title": "What’s WISIWIG?",
-                                                      },
-                                                    }
-                  }
->
-                  WISIWIG
-</Connect(ModalLauncher)>,
-                " ",
-                "editor.",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Sending submissions is easy.",
-                },
-                "ref": null,
-                "rendered": "Sending submissions is easy.",
-                "type": "strong",
-              },
-              " Just add your images, title, and text to a Analog.Cafe’s",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "WISIWIG",
-                  "with": Object {
-                    "id": "hints/disposable-links",
-                    "info": Object {
-                      "image": "image-froth_1144351_rk-MB7KoQ",
-                      "text": <span>
-                        <strong>
-                                                WISIWIG
-                        </strong>
-                         is short for “what I see is what I get.”
-                        <br />
-                        <br />
-                        We call ours “Composer.” It’s been built to help you format your submission to look the way you choose. You can resize your images to appear full-screen, add captions, add quotes, dividers and headings, as well as links and font styles.
-</span>,
-                      "title": "What’s WISIWIG?",
-                    },
-                  },
-                },
-                "ref": null,
-                "rendered": "WISIWIG",
-                "type": [Function],
-              },
-              " ",
-              "editor.",
-            ],
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <strong>
                   Get £5 for film.
 </strong>,
                 " As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from",
@@ -530,7 +404,10 @@ ShallowWrapper {
 />,
           <styled.section>
             <p>
-                        Do you shoot film? 
+                        <strong>
+                                    Do you shoot film?
+                        </strong>
+                         
                         <Unknown />
             </p>
             <styled.div
@@ -558,37 +435,6 @@ ShallowWrapper {
                                     if you have an account.
                         </p>
             </styled.div>
-            <p>
-                        <strong>
-                                    Sending submissions is easy.
-                        </strong>
-                         Just add your images, title, and text to a Analog.Cafe’s
-                         
-                        <Connect(ModalLauncher)
-                                    with={
-                                                Object {
-                                                            "id": "hints/disposable-links",
-                                                            "info": Object {
-                                                              "image": "image-froth_1144351_rk-MB7KoQ",
-                                                              "text": <span>
-                                                                <strong>
-                                                                                WISIWIG
-                                                                </strong>
-                                                                 is short for “what I see is what I get.”
-                                                                <br />
-                                                                <br />
-                                                                We call ours “Composer.” It’s been built to help you format your submission to look the way you choose. You can resize your images to appear full-screen, add captions, add quotes, dividers and headings, as well as links and font styles.
-                                                </span>,
-                                                              "title": "What’s WISIWIG?",
-                                                            },
-                                                          }
-                                    }
-                        >
-                                    WISIWIG
-                        </Connect(ModalLauncher)>
-                         
-                        editor.
-            </p>
             <p>
                         <strong>
                                     Get £5 for film.
@@ -645,7 +491,10 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <p>
-                Do you shoot film? 
+                <strong>
+                                Do you shoot film?
+                </strong>
+                 
                 <Unknown />
 </p>,
               <styled.div
@@ -675,37 +524,6 @@ ShallowWrapper {
 </styled.div>,
               <p>
                 <strong>
-                                Sending submissions is easy.
-                </strong>
-                 Just add your images, title, and text to a Analog.Cafe’s
-                 
-                <Connect(ModalLauncher)
-                                with={
-                                                Object {
-                                                                "id": "hints/disposable-links",
-                                                                "info": Object {
-                                                                  "image": "image-froth_1144351_rk-MB7KoQ",
-                                                                  "text": <span>
-                                                                    <strong>
-                                                                                        WISIWIG
-                                                                    </strong>
-                                                                     is short for “what I see is what I get.”
-                                                                    <br />
-                                                                    <br />
-                                                                    We call ours “Composer.” It’s been built to help you format your submission to look the way you choose. You can resize your images to appear full-screen, add captions, add quotes, dividers and headings, as well as links and font styles.
-                                                </span>,
-                                                                  "title": "What’s WISIWIG?",
-                                                                },
-                                                              }
-                                }
-                >
-                                WISIWIG
-                </Connect(ModalLauncher)>
-                 
-                editor.
-</p>,
-              <p>
-                <strong>
                                 Get £5 for film.
                 </strong>
                  As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from
@@ -733,13 +551,27 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Do you shoot film? ",
+                  <strong>
+                    Do you shoot film?
+</strong>,
+                  " ",
                   <Unknown />,
                 ],
               },
               "ref": null,
               "rendered": Array [
-                "Do you shoot film? ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Do you shoot film?",
+                  },
+                  "ref": null,
+                  "rendered": "Do you shoot film?",
+                  "type": "strong",
+                },
+                " ",
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -845,90 +677,6 @@ ShallowWrapper {
                 },
               ],
               "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <strong>
-                    Sending submissions is easy.
-</strong>,
-                  " Just add your images, title, and text to a Analog.Cafe’s",
-                  " ",
-                  <Connect(ModalLauncher)
-                    with={
-                                        Object {
-                                                            "id": "hints/disposable-links",
-                                                            "info": Object {
-                                                              "image": "image-froth_1144351_rk-MB7KoQ",
-                                                              "text": <span>
-                                                                <strong>
-                                                                                        WISIWIG
-                                                                </strong>
-                                                                 is short for “what I see is what I get.”
-                                                                <br />
-                                                                <br />
-                                                                We call ours “Composer.” It’s been built to help you format your submission to look the way you choose. You can resize your images to appear full-screen, add captions, add quotes, dividers and headings, as well as links and font styles.
-                                        </span>,
-                                                              "title": "What’s WISIWIG?",
-                                                            },
-                                                          }
-                    }
->
-                    WISIWIG
-</Connect(ModalLauncher)>,
-                  " ",
-                  "editor.",
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Sending submissions is easy.",
-                  },
-                  "ref": null,
-                  "rendered": "Sending submissions is easy.",
-                  "type": "strong",
-                },
-                " Just add your images, title, and text to a Analog.Cafe’s",
-                " ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "WISIWIG",
-                    "with": Object {
-                      "id": "hints/disposable-links",
-                      "info": Object {
-                        "image": "image-froth_1144351_rk-MB7KoQ",
-                        "text": <span>
-                          <strong>
-                                                    WISIWIG
-                          </strong>
-                           is short for “what I see is what I get.”
-                          <br />
-                          <br />
-                          We call ours “Composer.” It’s been built to help you format your submission to look the way you choose. You can resize your images to appear full-screen, add captions, add quotes, dividers and headings, as well as links and font styles.
-</span>,
-                        "title": "What’s WISIWIG?",
-                      },
-                    },
-                  },
-                  "ref": null,
-                  "rendered": "WISIWIG",
-                  "type": [Function],
-                },
-                " ",
-                "editor.",
-              ],
-              "type": "p",
             },
             Object {
               "instance": null,
