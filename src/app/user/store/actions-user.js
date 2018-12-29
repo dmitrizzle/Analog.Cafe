@@ -31,21 +31,24 @@ const LOGIN_ERROR = (type = "error") => {
     }
   }
 }
+
 export const setConnectionStatus = connection => {
   return {
     type: "USER.SET_CONNECTION_STATUS",
     payload: connection
   }
 }
-export const setSessionInfo = (method, id = "") => {
+
+export const addSessionInfo = sessionInfo => {
   return {
-    type: "USER.SET_SESSION_INFO",
-    payload: { method, id }
+    type: "USER.ADD_SESSION_INFO",
+    payload: sessionInfo
   }
 }
-export const refreshSessionInfo = () => {
-  return { type: "USER.REFRESH_SESSION_INFO" }
+export const getSessionInfo = () => {
+  return { type: "USER.GET_SESSION_INFO" }
 }
+
 export const loginWithEmail = validatedEmail => {
   return dispatch => {
     dispatch({
@@ -56,7 +59,12 @@ export const loginWithEmail = validatedEmail => {
       type: "USER.SET_EMAIL_LOGIN_STATUS",
       payload: "pending"
     })
-    dispatch(setSessionInfo("email", anonymizeEmail(validatedEmail)))
+    dispatch(
+      addSessionInfo({
+        loginMethod: "email",
+        loginEmail: anonymizeEmail(validatedEmail)
+      })
+    )
     axios(
       makeAPIRequest({
         url: ROUTE_API_LOGIN_EMAIL,
@@ -120,7 +128,7 @@ export const verifyUser = () => {
         payload: "ok"
       })
       const delaySessionInfoConfirmation = setTimeout(() => {
-        dispatch({ type: "USER.CONFIRM_SESSION_INFO" })
+        dispatch(addSessionInfo({ hasLoggedIn: true }))
         clearTimeout(delaySessionInfoConfirmation)
       }, 1000)
     }

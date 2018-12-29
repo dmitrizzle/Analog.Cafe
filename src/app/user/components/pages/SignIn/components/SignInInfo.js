@@ -7,10 +7,11 @@ export default props => {
       We’ll create an account for you automatically!
       <br />
       <small>
-        {props.stateSessionInfo.login && props.stateSessionInfo.method ? (
+        {props.stateSessionInfo.hasLoggedIn &&
+        props.stateSessionInfo.loginMethod ? (
           <em>
-            Hint: last time you used {props.stateSessionInfo.id}{" "}
-            {props.stateSessionInfo.method}.
+            Hint: last time you used {props.stateSessionInfo.loginEmail}{" "}
+            {props.stateSessionInfo.loginMethod}.
           </em>
         ) : (
           <span>&nbsp;</span>
