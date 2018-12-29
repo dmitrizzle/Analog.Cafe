@@ -115,6 +115,7 @@ class List extends React.PureComponent {
             isAdmin={this.props.isAdmin}
             userIntent={this.handleUserIntent}
             article={this.props.article}
+            readReceipts={this.props.user.sessionInfo.readReceipts}
           />
         )}
         {parseInt(this.props.list.page.total, 0) > 1 &&

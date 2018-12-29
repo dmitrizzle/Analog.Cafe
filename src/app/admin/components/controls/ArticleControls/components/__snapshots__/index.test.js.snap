@@ -416,7 +416,8 @@ ShallowWrapper {
           <div
                     style={
                               Object {
-                                        "minWidth": "30em",
+                                        "margin": "0 auto",
+                                        "width": "26em",
                                       }
                     }
           >
@@ -426,39 +427,23 @@ ShallowWrapper {
                               onClick={[Function]}
                               right={false}
                               style={Object {}}
-                              to="#places"
+                              to="#photo-essay"
                     >
-                              Places
+                              Photo Essay
                     </Unknown>
                     <Unknown
                               inverse={false}
                               left={false}
                               onClick={[Function]}
                               right={false}
-                              style={Object {}}
-                              to="#art"
+                              style={
+                                        Object {
+                                                  "minWidth": "10.5em",
+                                                }
+                              }
+                              to="#film-photography"
                     >
-                              Art
-                    </Unknown>
-                    <Unknown
-                              inverse={false}
-                              left={false}
-                              onClick={[Function]}
-                              right={false}
-                              style={Object {}}
-                              to="#film-cameras"
-                    >
-                              Cameras
-                    </Unknown>
-                    <Unknown
-                              inverse={false}
-                              left={false}
-                              onClick={[Function]}
-                              right={false}
-                              style={Object {}}
-                              to="#editorial"
-                    >
-                              Editorials
+                              Film Photography
                     </Unknown>
                     <Unknown
                               inverse={false}
@@ -466,9 +451,9 @@ ShallowWrapper {
                               onClick={[Function]}
                               right={true}
                               style={Object {}}
-                              to="#unclassifieds"
+                              to="#editorial"
                     >
-                              Unclassif.
+                              Editorial
                     </Unknown>
           </div>
 </styled.div>,
@@ -509,7 +494,8 @@ ShallowWrapper {
           "children": <div
             style={
                         Object {
-                                    "minWidth": "30em",
+                                    "margin": "0 auto",
+                                    "width": "26em",
                                   }
             }
 >
@@ -519,39 +505,23 @@ ShallowWrapper {
                         onClick={[Function]}
                         right={false}
                         style={Object {}}
-                        to="#places"
+                        to="#photo-essay"
             >
-                        Places
+                        Photo Essay
             </Unknown>
             <Unknown
                         inverse={false}
                         left={false}
                         onClick={[Function]}
                         right={false}
-                        style={Object {}}
-                        to="#art"
+                        style={
+                                    Object {
+                                                "minWidth": "10.5em",
+                                              }
+                        }
+                        to="#film-photography"
             >
-                        Art
-            </Unknown>
-            <Unknown
-                        inverse={false}
-                        left={false}
-                        onClick={[Function]}
-                        right={false}
-                        style={Object {}}
-                        to="#film-cameras"
-            >
-                        Cameras
-            </Unknown>
-            <Unknown
-                        inverse={false}
-                        left={false}
-                        onClick={[Function]}
-                        right={false}
-                        style={Object {}}
-                        to="#editorial"
-            >
-                        Editorials
+                        Film Photography
             </Unknown>
             <Unknown
                         inverse={false}
@@ -559,9 +529,9 @@ ShallowWrapper {
                         onClick={[Function]}
                         right={true}
                         style={Object {}}
-                        to="#unclassifieds"
+                        to="#editorial"
             >
-                        Unclassif.
+                        Editorial
             </Unknown>
 </div>,
           "style": Object {
@@ -584,39 +554,23 @@ ShallowWrapper {
                 onClick={[Function]}
                 right={false}
                 style={Object {}}
-                to="#places"
+                to="#photo-essay"
 >
-                Places
+                Photo Essay
 </Unknown>,
               <Unknown
                 inverse={false}
                 left={false}
                 onClick={[Function]}
                 right={false}
-                style={Object {}}
-                to="#art"
+                style={
+                                Object {
+                                                "minWidth": "10.5em",
+                                              }
+                }
+                to="#film-photography"
 >
-                Art
-</Unknown>,
-              <Unknown
-                inverse={false}
-                left={false}
-                onClick={[Function]}
-                right={false}
-                style={Object {}}
-                to="#film-cameras"
->
-                Cameras
-</Unknown>,
-              <Unknown
-                inverse={false}
-                left={false}
-                onClick={[Function]}
-                right={false}
-                style={Object {}}
-                to="#editorial"
->
-                Editorials
+                Film Photography
 </Unknown>,
               <Unknown
                 inverse={false}
@@ -624,66 +578,52 @@ ShallowWrapper {
                 onClick={[Function]}
                 right={true}
                 style={Object {}}
-                to="#unclassifieds"
+                to="#editorial"
 >
-                Unclassif.
+                Editorial
 </Unknown>,
             ],
             "style": Object {
-              "minWidth": "30em",
+              "margin": "0 auto",
+              "width": "26em",
             },
           },
           "ref": null,
           "rendered": Array [
             Object {
               "instance": null,
-              "key": "places",
+              "key": "photo-essay",
               "nodeType": "function",
               "props": Object {
-                "children": "Places",
+                "children": "Photo Essay",
                 "inverse": false,
                 "left": true,
                 "onClick": [Function],
                 "right": false,
                 "style": Object {},
-                "to": "#places",
+                "to": "#photo-essay",
               },
               "ref": null,
-              "rendered": "Places",
+              "rendered": "Photo Essay",
               "type": [Function],
             },
             Object {
               "instance": null,
-              "key": "art",
+              "key": "film-photography",
               "nodeType": "function",
               "props": Object {
-                "children": "Art",
+                "children": "Film Photography",
                 "inverse": false,
                 "left": false,
                 "onClick": [Function],
                 "right": false,
-                "style": Object {},
-                "to": "#art",
+                "style": Object {
+                  "minWidth": "10.5em",
+                },
+                "to": "#film-photography",
               },
               "ref": null,
-              "rendered": "Art",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": "film-cameras",
-              "nodeType": "function",
-              "props": Object {
-                "children": "Cameras",
-                "inverse": false,
-                "left": false,
-                "onClick": [Function],
-                "right": false,
-                "style": Object {},
-                "to": "#film-cameras",
-              },
-              "ref": null,
-              "rendered": "Cameras",
+              "rendered": "Film Photography",
               "type": [Function],
             },
             Object {
@@ -691,33 +631,16 @@ ShallowWrapper {
               "key": "editorial",
               "nodeType": "function",
               "props": Object {
-                "children": "Editorials",
-                "inverse": false,
-                "left": false,
-                "onClick": [Function],
-                "right": false,
-                "style": Object {},
-                "to": "#editorial",
-              },
-              "ref": null,
-              "rendered": "Editorials",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": "unclassifieds",
-              "nodeType": "function",
-              "props": Object {
-                "children": "Unclassif.",
+                "children": "Editorial",
                 "inverse": false,
                 "left": false,
                 "onClick": [Function],
                 "right": true,
                 "style": Object {},
-                "to": "#unclassifieds",
+                "to": "#editorial",
               },
               "ref": null,
-              "rendered": "Unclassif.",
+              "rendered": "Editorial",
               "type": [Function],
             },
           ],
@@ -811,7 +734,8 @@ ShallowWrapper {
             <div
                         style={
                                     Object {
-                                                "minWidth": "30em",
+                                                "margin": "0 auto",
+                                                "width": "26em",
                                               }
                         }
             >
@@ -821,39 +745,23 @@ ShallowWrapper {
                                     onClick={[Function]}
                                     right={false}
                                     style={Object {}}
-                                    to="#places"
+                                    to="#photo-essay"
                         >
-                                    Places
+                                    Photo Essay
                         </Unknown>
                         <Unknown
                                     inverse={false}
                                     left={false}
                                     onClick={[Function]}
                                     right={false}
-                                    style={Object {}}
-                                    to="#art"
+                                    style={
+                                                Object {
+                                                            "minWidth": "10.5em",
+                                                          }
+                                    }
+                                    to="#film-photography"
                         >
-                                    Art
-                        </Unknown>
-                        <Unknown
-                                    inverse={false}
-                                    left={false}
-                                    onClick={[Function]}
-                                    right={false}
-                                    style={Object {}}
-                                    to="#film-cameras"
-                        >
-                                    Cameras
-                        </Unknown>
-                        <Unknown
-                                    inverse={false}
-                                    left={false}
-                                    onClick={[Function]}
-                                    right={false}
-                                    style={Object {}}
-                                    to="#editorial"
-                        >
-                                    Editorials
+                                    Film Photography
                         </Unknown>
                         <Unknown
                                     inverse={false}
@@ -861,9 +769,9 @@ ShallowWrapper {
                                     onClick={[Function]}
                                     right={true}
                                     style={Object {}}
-                                    to="#unclassifieds"
+                                    to="#editorial"
                         >
-                                    Unclassif.
+                                    Editorial
                         </Unknown>
             </div>
 </styled.div>,
@@ -904,7 +812,8 @@ ShallowWrapper {
             "children": <div
               style={
                             Object {
-                                          "minWidth": "30em",
+                                          "margin": "0 auto",
+                                          "width": "26em",
                                         }
               }
 >
@@ -914,39 +823,23 @@ ShallowWrapper {
                             onClick={[Function]}
                             right={false}
                             style={Object {}}
-                            to="#places"
+                            to="#photo-essay"
               >
-                            Places
+                            Photo Essay
               </Unknown>
               <Unknown
                             inverse={false}
                             left={false}
                             onClick={[Function]}
                             right={false}
-                            style={Object {}}
-                            to="#art"
+                            style={
+                                          Object {
+                                                        "minWidth": "10.5em",
+                                                      }
+                            }
+                            to="#film-photography"
               >
-                            Art
-              </Unknown>
-              <Unknown
-                            inverse={false}
-                            left={false}
-                            onClick={[Function]}
-                            right={false}
-                            style={Object {}}
-                            to="#film-cameras"
-              >
-                            Cameras
-              </Unknown>
-              <Unknown
-                            inverse={false}
-                            left={false}
-                            onClick={[Function]}
-                            right={false}
-                            style={Object {}}
-                            to="#editorial"
-              >
-                            Editorials
+                            Film Photography
               </Unknown>
               <Unknown
                             inverse={false}
@@ -954,9 +847,9 @@ ShallowWrapper {
                             onClick={[Function]}
                             right={true}
                             style={Object {}}
-                            to="#unclassifieds"
+                            to="#editorial"
               >
-                            Unclassif.
+                            Editorial
               </Unknown>
 </div>,
             "style": Object {
@@ -979,39 +872,23 @@ ShallowWrapper {
                   onClick={[Function]}
                   right={false}
                   style={Object {}}
-                  to="#places"
+                  to="#photo-essay"
 >
-                  Places
+                  Photo Essay
 </Unknown>,
                 <Unknown
                   inverse={false}
                   left={false}
                   onClick={[Function]}
                   right={false}
-                  style={Object {}}
-                  to="#art"
+                  style={
+                                    Object {
+                                                      "minWidth": "10.5em",
+                                                    }
+                  }
+                  to="#film-photography"
 >
-                  Art
-</Unknown>,
-                <Unknown
-                  inverse={false}
-                  left={false}
-                  onClick={[Function]}
-                  right={false}
-                  style={Object {}}
-                  to="#film-cameras"
->
-                  Cameras
-</Unknown>,
-                <Unknown
-                  inverse={false}
-                  left={false}
-                  onClick={[Function]}
-                  right={false}
-                  style={Object {}}
-                  to="#editorial"
->
-                  Editorials
+                  Film Photography
 </Unknown>,
                 <Unknown
                   inverse={false}
@@ -1019,66 +896,52 @@ ShallowWrapper {
                   onClick={[Function]}
                   right={true}
                   style={Object {}}
-                  to="#unclassifieds"
+                  to="#editorial"
 >
-                  Unclassif.
+                  Editorial
 </Unknown>,
               ],
               "style": Object {
-                "minWidth": "30em",
+                "margin": "0 auto",
+                "width": "26em",
               },
             },
             "ref": null,
             "rendered": Array [
               Object {
                 "instance": null,
-                "key": "places",
+                "key": "photo-essay",
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Places",
+                  "children": "Photo Essay",
                   "inverse": false,
                   "left": true,
                   "onClick": [Function],
                   "right": false,
                   "style": Object {},
-                  "to": "#places",
+                  "to": "#photo-essay",
                 },
                 "ref": null,
-                "rendered": "Places",
+                "rendered": "Photo Essay",
                 "type": [Function],
               },
               Object {
                 "instance": null,
-                "key": "art",
+                "key": "film-photography",
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Art",
+                  "children": "Film Photography",
                   "inverse": false,
                   "left": false,
                   "onClick": [Function],
                   "right": false,
-                  "style": Object {},
-                  "to": "#art",
+                  "style": Object {
+                    "minWidth": "10.5em",
+                  },
+                  "to": "#film-photography",
                 },
                 "ref": null,
-                "rendered": "Art",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": "film-cameras",
-                "nodeType": "function",
-                "props": Object {
-                  "children": "Cameras",
-                  "inverse": false,
-                  "left": false,
-                  "onClick": [Function],
-                  "right": false,
-                  "style": Object {},
-                  "to": "#film-cameras",
-                },
-                "ref": null,
-                "rendered": "Cameras",
+                "rendered": "Film Photography",
                 "type": [Function],
               },
               Object {
@@ -1086,33 +949,16 @@ ShallowWrapper {
                 "key": "editorial",
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Editorials",
-                  "inverse": false,
-                  "left": false,
-                  "onClick": [Function],
-                  "right": false,
-                  "style": Object {},
-                  "to": "#editorial",
-                },
-                "ref": null,
-                "rendered": "Editorials",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": "unclassifieds",
-                "nodeType": "function",
-                "props": Object {
-                  "children": "Unclassif.",
+                  "children": "Editorial",
                   "inverse": false,
                   "left": false,
                   "onClick": [Function],
                   "right": true,
                   "style": Object {},
-                  "to": "#unclassifieds",
+                  "to": "#editorial",
                 },
                 "ref": null,
-                "rendered": "Unclassif.",
+                "rendered": "Editorial",
                 "type": [Function],
               },
             ],

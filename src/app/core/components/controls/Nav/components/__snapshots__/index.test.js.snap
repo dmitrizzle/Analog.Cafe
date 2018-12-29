@@ -2082,21 +2082,6 @@ ShallowWrapper {
         "id": "nav/more",
         "info": Object {
           "buttons": Array [
-            null,
-            null,
-            null,
-            null,
-            Object {
-              "text": "About Analog.Cafe",
-              "to": "/about",
-            },
-            Object {
-              "text": "Subscribe ❤︎",
-              "to": "/subscribe",
-            },
-            Object {
-              "divider": true,
-            },
             Object {
               "text": "Photo Essays",
               "to": "/photo-essays",
@@ -2110,17 +2095,20 @@ ShallowWrapper {
               "to": "/editorials",
             },
             Object {
-              "text": "Collaborations",
-              "to": "/collaborations",
+              "divider": true,
             },
             Object {
-              "text": "Solo Projects",
-              "to": "/solo-projects",
+              "text": "About Analog.Cafe",
+              "to": "/about",
             },
             Object {
-              "branded": true,
-              "text": "Submit Yours",
+              "text": "Submissions",
               "to": "/submit",
+            },
+            Object {
+              "inverse": true,
+              "text": "Subscribe ❤︎",
+              "to": "/subscribe",
             },
           ],
           "menu": true,
@@ -2155,21 +2143,6 @@ ShallowWrapper {
           "id": "nav/more",
           "info": Object {
             "buttons": Array [
-              null,
-              null,
-              null,
-              null,
-              Object {
-                "text": "About Analog.Cafe",
-                "to": "/about",
-              },
-              Object {
-                "text": "Subscribe ❤︎",
-                "to": "/subscribe",
-              },
-              Object {
-                "divider": true,
-              },
               Object {
                 "text": "Photo Essays",
                 "to": "/photo-essays",
@@ -2183,17 +2156,20 @@ ShallowWrapper {
                 "to": "/editorials",
               },
               Object {
-                "text": "Collaborations",
-                "to": "/collaborations",
+                "divider": true,
               },
               Object {
-                "text": "Solo Projects",
-                "to": "/solo-projects",
+                "text": "About Analog.Cafe",
+                "to": "/about",
               },
               Object {
-                "branded": true,
-                "text": "Submit Yours",
+                "text": "Submissions",
                 "to": "/submit",
+              },
+              Object {
+                "inverse": true,
+                "text": "Subscribe ❤︎",
+                "to": "/subscribe",
               },
             ],
             "menu": true,

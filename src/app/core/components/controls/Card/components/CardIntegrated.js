@@ -11,9 +11,16 @@ export default styled(CardPopup)`
       ${props => props.theme.color.foreground(props.theme.opacity.least)};
   border-radius: ${props => props.theme.effects.borderRadius.small}em;
 
+  @media (max-width: 375px) {
+    max-width: 100%;
+  }
   ${props => props.theme.size.breakpoint.max.xs`
+    max-width: 100vw;
 		border-radius: 0;
     width: 100vw;
     margin-left: -${props => props.theme.size.block.padding}em;
+    & a {
+      margin-left: 0
+    }
 	`};
 `

@@ -2,7 +2,6 @@ import { withRouter } from "react-router-dom"
 import React from "react"
 import styled from "styled-components"
 
-import { ROUTE_TAGS } from "../../../../constants/routes-list"
 import { TEXT_STATUS_LABELS } from "../../../../constants/messages-list"
 import { getTitleFromSlug } from "../../../../utils/messages-"
 
@@ -34,15 +33,15 @@ export const ReadType = styled.span`
 export default withRouter(props => {
   return (
     <Stats
-      onClick={event => {
-        event.preventDefault()
-        event.stopPropagation()
-        const route = Object.keys(ROUTE_TAGS).find(
-          key => ROUTE_TAGS[key] === props.item.tag
-        )
-        console.log(route)
-        props.history.push(`${route}`)
-      }}
+    // onClick={event => {
+    //   event.preventDefault()
+    //   event.stopPropagation()
+    //   const route = Object.keys(ROUTE_TAGS).find(
+    //     key => ROUTE_TAGS[key] === props.item.tag
+    //   )
+    //   console.log(route)
+    //   props.history.push(`${route}`)
+    // }}
     >
       {props.item.type !== "placeholder" &&
         props.private &&

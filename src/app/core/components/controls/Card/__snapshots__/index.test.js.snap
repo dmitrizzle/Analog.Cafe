@@ -21,6 +21,7 @@ ShallowWrapper {
         <WithTheme(Component)
           buttons={undefined}
           error={undefined}
+          noStar={undefined}
           stubborn={undefined}
           title={undefined}
 />,
@@ -43,6 +44,7 @@ ShallowWrapper {
         "props": Object {
           "buttons": undefined,
           "error": undefined,
+          "noStar": undefined,
           "stubborn": undefined,
           "title": undefined,
         },
@@ -77,6 +79,7 @@ ShallowWrapper {
           <WithTheme(Component)
             buttons={undefined}
             error={undefined}
+            noStar={undefined}
             stubborn={undefined}
             title={undefined}
 />,
@@ -99,6 +102,7 @@ ShallowWrapper {
           "props": Object {
             "buttons": undefined,
             "error": undefined,
+            "noStar": undefined,
             "stubborn": undefined,
             "title": undefined,
           },

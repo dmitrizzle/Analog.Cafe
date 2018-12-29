@@ -8,7 +8,6 @@ import { APP_THEME } from "../../../../../../constants"
 import Bleed from "./Bleed"
 import ListBlock from "./ListBlock"
 import ListBrandName from "./ListBrandName"
-import ListCaption from "./ListCaption"
 import ListDescription from "./ListDescription"
 import ListDescriptionWrapper from "./ListDescriptionWrapper"
 import ListHeader from "./ListHeader"
@@ -38,19 +37,6 @@ it("Render ListBrandName, matches snapshot", () => {
     <ThemeProvider theme={APP_THEME}>
       <ListBrandName />
     </ThemeProvider>
-  )
-  expect(element).toMatchSnapshot()
-})
-
-it("Render ListCaption, matches snapshot", () => {
-  const element = shallow(
-    <ListCaption
-      item={{
-        status: "published",
-        title: "",
-        summary: ""
-      }}
-    />
   )
   expect(element).toMatchSnapshot()
 })

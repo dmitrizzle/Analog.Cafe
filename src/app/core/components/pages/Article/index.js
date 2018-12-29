@@ -4,16 +4,19 @@ import Loadable from "react-loadable"
 import React from "react"
 
 import { HOST_PROD, HOST_PROTOCOL } from "../../../../constants"
-import { ROUTE_TAGS } from "../../../constants/routes-list"
+import { ROUTE_API_LIST, ROUTE_TAGS } from "../../../constants/routes-list"
 import {
   ROUTE_URL_ARTICLES,
   ROUTE_URL_SUBMISSIONS
 } from "../../../constants/routes-article"
+import { addSessionInfo } from "../../../../user/store/actions-user"
 import {
   fetchArticlePage,
   setArticlePage,
   setArticleSelectoin
 } from "../../../store/actions-article"
+import { fetchListPage } from "../../../store/actions-list"
+import { getListMeta } from "../../../utils/messages-list"
 import {
   getSubmissionOrArticleRoute,
   preloadConstructor
@@ -94,11 +97,36 @@ class Article extends React.Component {
     })
   }
   componentWillReceiveProps = nextProps => {
+    if (!nextProps.article) return
     this.makeTag(nextProps)
     this.setState({
       adminControls: nextProps.user.info.role === "admin",
       publicationStatus: nextProps.article.status
     })
+
+    const articleId = nextProps.article.id
+    let pastReadReceipts = nextProps.user.sessionInfo.readReceipts || []
+    if (pastReadReceipts.length > 100) pastReadReceipts.shift()
+    const unixTime = Math.round(new Date().getTime() / 1000)
+    const alreadyRead =
+      pastReadReceipts.filter(
+        receipt =>
+          receipt.articleId === articleId && receipt.readOn > unixTime - 10
+      ).length > 0
+
+    if (!alreadyRead && articleId) {
+      const readReceipts = [
+        ...pastReadReceipts,
+        {
+          articleId,
+          readOn: unixTime
+        }
+      ]
+      nextProps.addSessionInfo({ readReceipts })
+    }
+
+    if (articleId)
+      this.props.fetchListPage(getListMeta("/", 1, ROUTE_API_LIST).request)
   }
   componentWillUnmount = () => {
     this.unlisten()
@@ -218,6 +246,7 @@ class Article extends React.Component {
               >
                 <ArticleActions
                   user={this.props.user}
+                  list={this.props.list}
                   article={this.props.article}
                   subscribeFormCallback={this.handleSubscribeFormCallback}
                   subscribeForm={this.state.subscribeForm}
@@ -245,7 +274,8 @@ class Article extends React.Component {
 const mapStateToProps = state => {
   return {
     article: state.article,
-    user: state.user
+    user: state.user,
+    list: state.list
   }
 }
 const mapDispatchToProps = dispatch => {
@@ -253,11 +283,17 @@ const mapDispatchToProps = dispatch => {
     fetchArticlePage: request => {
       dispatch(fetchArticlePage(request))
     },
+    fetchListPage: (request, appendItems) => {
+      dispatch(fetchListPage(request, appendItems))
+    },
     setArticlePage: nextArticle => {
       dispatch(setArticlePage(nextArticle))
     },
     setArticleSelectoin: selection => {
       dispatch(setArticleSelectoin(selection))
+    },
+    addSessionInfo: sessionInfo => {
+      dispatch(addSessionInfo(sessionInfo))
     }
   }
 }

@@ -23,11 +23,7 @@ const INITIAL_STATE = {
     timeout: 0,
     status: "ok"
   },
-  sessionInfo: {
-    method: getLocalSessionInfo().method || "",
-    id: getLocalSessionInfo().id || "",
-    login: getLocalSessionInfo().login || false
-  }
+  sessionInfo: getLocalSessionInfo()
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -72,23 +68,24 @@ export default (state = INITIAL_STATE, action) => {
       }
       break
 
-    case "USER.SET_SESSION_INFO":
+    case "USER.GET_SESSION_INFO":
       state = {
         ...state,
-        sessionInfo: action.payload
+        sessionInfo: getLocalSessionInfo()
       }
-      localStorage.setItem("session-info", JSON.stringify(state.sessionInfo))
       break
-    case "USER.CONFIRM_SESSION_INFO":
+
+    case "USER.ADD_SESSION_INFO":
       state = {
         ...state,
         sessionInfo: {
           ...state.sessionInfo,
-          login: true
+          ...action.payload
         }
       }
       localStorage.setItem("session-info", JSON.stringify(state.sessionInfo))
       break
+
     case "USER.RESET_SESSION_INFO":
       localStorage.removeItem("session-info")
       state = {
@@ -96,16 +93,7 @@ export default (state = INITIAL_STATE, action) => {
         sessionInfo: INITIAL_STATE.sessionInfo
       }
       break
-    case "USER.REFRESH_SESSION_INFO":
-      state = {
-        ...state,
-        sessionInfo: {
-          method: getLocalSessionInfo().method || "",
-          id: getLocalSessionInfo().id || "",
-          login: getLocalSessionInfo().login || false
-        }
-      }
-      break
+
     case "USER.SET_INTENT":
       state = {
         ...state,

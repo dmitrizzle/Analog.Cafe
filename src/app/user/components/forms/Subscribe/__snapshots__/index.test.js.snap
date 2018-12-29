@@ -18,7 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <Styled(Component)
-        inverse={true}
+        branded={true}
         onClick={[Function]}
 >
         Subscribe ❤︎
@@ -30,8 +30,8 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
+        "branded": true,
         "children": "Subscribe ❤︎",
-        "inverse": true,
         "onClick": [Function],
       },
       "ref": null,
@@ -47,7 +47,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <Styled(Component)
-          inverse={true}
+          branded={true}
           onClick={[Function]}
 >
           Subscribe ❤︎
@@ -59,8 +59,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "branded": true,
           "children": "Subscribe ❤︎",
-          "inverse": true,
           "onClick": [Function],
         },
         "ref": null,

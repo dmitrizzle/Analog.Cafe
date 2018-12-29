@@ -69,11 +69,6 @@ export default styled.ul`
 				} */
         }
 			}
-      &:visited {
-        .sticker-new {
-          background: #fff;
-        }
-      }
 		}
 		section {
 			position: 				relative;

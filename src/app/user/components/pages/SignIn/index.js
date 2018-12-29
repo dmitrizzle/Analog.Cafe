@@ -13,8 +13,8 @@ import {
 import {
   verifyUser,
   getUserInfo,
-  setSessionInfo,
-  refreshSessionInfo
+  addSessionInfo,
+  getSessionInfo
 } from "../../../store/actions-user"
 import AlreadyAuthenticated from "../Error/components/AlreadyAuthenticated"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
@@ -42,7 +42,7 @@ const processSignin = (props, code, sessionInfo) => {
   props.history.replace({
     pathname: props.user.routes.success
   })
-  props.setSessionInfo("Facebook")
+  props.addSessionInfo(sessionInfo)
 }
 class SignIn extends React.PureComponent {
   constructor(props) {
@@ -51,21 +51,21 @@ class SignIn extends React.PureComponent {
     this.handleFacebookButton = this.handleFacebookButton.bind(this)
     this.state = {
       sessionInfo: {
-        method: this.props.user.sessionInfo.method,
-        id: this.props.user.sessionInfo.id,
-        login: this.props.user.sessionInfo.login
+        loginMethod: this.props.user.sessionInfo.loginMethod,
+        loginEmail: this.props.user.sessionInfo.loginEmail,
+        hasLoggedIn: this.props.user.sessionInfo.hasLoggedIn
       }
     }
   }
   componentDidMount = () => {
-    this.props.refreshSessionInfo()
+    this.props.getSessionInfo()
   }
   componentWillReceiveProps = nextProps => {
     this.setState({
       sessionInfo: {
-        method: nextProps.user.sessionInfo.method,
-        id: nextProps.user.sessionInfo.id,
-        login: nextProps.user.sessionInfo.login
+        loginMethod: nextProps.user.sessionInfo.loginMethod,
+        loginEmail: nextProps.user.sessionInfo.loginEmail,
+        hasLoggedIn: nextProps.user.sessionInfo.hasLoggedIn
       }
     })
   }
@@ -80,7 +80,7 @@ class SignIn extends React.PureComponent {
           console.error(err)
           return
         }
-        processSignin(this.props, code, "Twitter")
+        processSignin(this.props, code, { loginMethod: "Twitter" })
       }
     )
   }
@@ -95,7 +95,7 @@ class SignIn extends React.PureComponent {
           console.error(err)
           return
         }
-        processSignin(this.props, code, "Facebook")
+        processSignin(this.props, code, { loginMethod: "Facebook" })
       }
     )
   }
@@ -182,11 +182,11 @@ const mapDispatchToProps = dispatch => {
     getUserInfo: () => {
       dispatch(getUserInfo())
     },
-    setSessionInfo: (method, id) => {
-      dispatch(setSessionInfo(method, id))
+    addSessionInfo: sessionInfo => {
+      dispatch(addSessionInfo(sessionInfo))
     },
-    refreshSessionInfo: () => {
-      dispatch(refreshSessionInfo())
+    getSessionInfo: () => {
+      dispatch(getSessionInfo())
     }
   }
 }

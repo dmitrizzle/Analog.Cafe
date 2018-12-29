@@ -27,7 +27,17 @@ ShallowWrapper {
 />,
         <styled.section>
           <p>
-                    By sending your submission you are agreeing to the following rules:
+                    By sending your
+                     
+                    <strong>
+                              <Unknown
+                                        to="/submit"
+                              >
+                                        submission
+                              </Unknown>
+                    </strong>
+                     
+                    you are agreeing to the following rules:
           </p>
           <p>
                     <strong>
@@ -92,6 +102,7 @@ ShallowWrapper {
                                tool you certify that you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
                     </strong>
           </p>
+          <Connect(Footer) />
 </styled.section>,
       ],
     },
@@ -127,7 +138,17 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <p>
-              By sending your submission you are agreeing to the following rules:
+              By sending your
+               
+              <strong>
+                            <Unknown
+                                          to="/submit"
+                            >
+                                          submission
+                            </Unknown>
+              </strong>
+               
+              you are agreeing to the following rules:
 </p>,
             <p>
               <strong>
@@ -192,6 +213,7 @@ ShallowWrapper {
                              tool you certify that you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
               </strong>
 </p>,
+            <Connect(Footer) />,
           ],
         },
         "ref": null,
@@ -201,10 +223,53 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "By sending your submission you are agreeing to the following rules:",
+              "children": Array [
+                "By sending your",
+                " ",
+                <strong>
+                  <Unknown
+                                    to="/submit"
+                  >
+                                    submission
+                  </Unknown>
+</strong>,
+                " ",
+                "you are agreeing to the following rules:",
+              ],
             },
             "ref": null,
-            "rendered": "By sending your submission you are agreeing to the following rules:",
+            "rendered": Array [
+              "By sending your",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Unknown
+                    to="/submit"
+>
+                    submission
+</Unknown>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "submission",
+                    "to": "/submit",
+                  },
+                  "ref": null,
+                  "rendered": "submission",
+                  "type": [Function],
+                },
+                "type": "strong",
+              },
+              " ",
+              "you are agreeing to the following rules:",
+            ],
             "type": "p",
           },
           Object {
@@ -495,6 +560,15 @@ ShallowWrapper {
             },
             "type": "p",
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
         ],
         "type": [Function],
       },
@@ -517,7 +591,17 @@ ShallowWrapper {
 />,
           <styled.section>
             <p>
-                        By sending your submission you are agreeing to the following rules:
+                        By sending your
+                         
+                        <strong>
+                                    <Unknown
+                                                to="/submit"
+                                    >
+                                                submission
+                                    </Unknown>
+                        </strong>
+                         
+                        you are agreeing to the following rules:
             </p>
             <p>
                         <strong>
@@ -582,6 +666,7 @@ ShallowWrapper {
                                      tool you certify that you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
                         </strong>
             </p>
+            <Connect(Footer) />
 </styled.section>,
         ],
       },
@@ -617,7 +702,17 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <p>
-                By sending your submission you are agreeing to the following rules:
+                By sending your
+                 
+                <strong>
+                                <Unknown
+                                                to="/submit"
+                                >
+                                                submission
+                                </Unknown>
+                </strong>
+                 
+                you are agreeing to the following rules:
 </p>,
               <p>
                 <strong>
@@ -682,6 +777,7 @@ ShallowWrapper {
                                  tool you certify that you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
                 </strong>
 </p>,
+              <Connect(Footer) />,
             ],
           },
           "ref": null,
@@ -691,10 +787,53 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "By sending your submission you are agreeing to the following rules:",
+                "children": Array [
+                  "By sending your",
+                  " ",
+                  <strong>
+                    <Unknown
+                                        to="/submit"
+                    >
+                                        submission
+                    </Unknown>
+</strong>,
+                  " ",
+                  "you are agreeing to the following rules:",
+                ],
               },
               "ref": null,
-              "rendered": "By sending your submission you are agreeing to the following rules:",
+              "rendered": Array [
+                "By sending your",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Unknown
+                      to="/submit"
+>
+                      submission
+</Unknown>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": "submission",
+                      "to": "/submit",
+                    },
+                    "ref": null,
+                    "rendered": "submission",
+                    "type": [Function],
+                  },
+                  "type": "strong",
+                },
+                " ",
+                "you are agreeing to the following rules:",
+              ],
               "type": "p",
             },
             Object {
@@ -984,6 +1123,15 @@ ShallowWrapper {
                 "type": "strong",
               },
               "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": [Function],

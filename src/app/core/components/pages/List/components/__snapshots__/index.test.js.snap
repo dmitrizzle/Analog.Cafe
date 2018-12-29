@@ -510,36 +510,43 @@ ShallowWrapper {
                                                         style={undefined}
                                                 />
                                         </figure>
-                                        <h2
-                                                style={null}
-                                                title={undefined}
-                                        />
-                                        <Unknown
-                                                item={
-                                                        Object {
-                                                                "id": 0,
-                                                              }
-                                                }
-                                                status={undefined}
-                                        />
                                         <div>
-                                                <Unknown
-                                                        item={
+                                                <h2
+                                                        style={
                                                                 Object {
-                                                                        "id": 0,
+                                                                        "letterSpacing": undefined,
+                                                                        "opacity": undefined,
                                                                       }
                                                         }
-                                                        private={undefined}
                                                 />
-                                                <Unknown
-                                                        isAdmin={undefined}
-                                                        item={
+                                                <h3
+                                                        style={
                                                                 Object {
-                                                                        "id": 0,
+                                                                        "letterSpacing": undefined,
+                                                                        "paddingLeft": undefined,
                                                                       }
                                                         }
-                                                        private={undefined}
                                                 />
+                                                <div>
+                                                        <withRouter()
+                                                                item={
+                                                                        Object {
+                                                                                "id": 0,
+                                                                              }
+                                                                }
+                                                                private={undefined}
+                                                        />
+                                                        <Unknown
+                                                                isAdmin={undefined}
+                                                                item={
+                                                                        Object {
+                                                                                "id": 0,
+                                                                              }
+                                                                }
+                                                                private={undefined}
+                                                                readReceipts={undefined}
+                                                        />
+                                                </div>
                                         </div>
                                 </section>
                                 <styled.div
@@ -581,36 +588,43 @@ ShallowWrapper {
                                                                         style={undefined}
                                                             />
                                                 </figure>
-                                                <h2
-                                                            style={null}
-                                                            title={undefined}
-                                                />
-                                                <Unknown
-                                                            item={
-                                                                        Object {
-                                                                                    "id": 0,
-                                                                                  }
-                                                            }
-                                                            status={undefined}
-                                                />
                                                 <div>
-                                                            <Unknown
-                                                                        item={
+                                                            <h2
+                                                                        style={
                                                                                     Object {
-                                                                                                "id": 0,
+                                                                                                "letterSpacing": undefined,
+                                                                                                "opacity": undefined,
                                                                                               }
                                                                         }
-                                                                        private={undefined}
                                                             />
-                                                            <Unknown
-                                                                        isAdmin={undefined}
-                                                                        item={
+                                                            <h3
+                                                                        style={
                                                                                     Object {
-                                                                                                "id": 0,
+                                                                                                "letterSpacing": undefined,
+                                                                                                "paddingLeft": undefined,
                                                                                               }
                                                                         }
-                                                                        private={undefined}
                                                             />
+                                                            <div>
+                                                                        <withRouter()
+                                                                                    item={
+                                                                                                Object {
+                                                                                                            "id": 0,
+                                                                                                          }
+                                                                                    }
+                                                                                    private={undefined}
+                                                                        />
+                                                                        <Unknown
+                                                                                    isAdmin={undefined}
+                                                                                    item={
+                                                                                                Object {
+                                                                                                            "id": 0,
+                                                                                                          }
+                                                                                    }
+                                                                                    private={undefined}
+                                                                                    readReceipts={undefined}
+                                                                        />
+                                                            </div>
                                                 </div>
                                     </section>
                                     <styled.div
@@ -644,36 +658,43 @@ ShallowWrapper {
                                                                       style={undefined}
                                                         />
                                           </figure>
-                                          <h2
-                                                        style={null}
-                                                        title={undefined}
-                                          />
-                                          <Unknown
-                                                        item={
-                                                                      Object {
-                                                                                    "id": 0,
-                                                                                  }
-                                                        }
-                                                        status={undefined}
-                                          />
                                           <div>
-                                                        <Unknown
-                                                                      item={
+                                                        <h2
+                                                                      style={
                                                                                     Object {
-                                                                                                  "id": 0,
+                                                                                                  "letterSpacing": undefined,
+                                                                                                  "opacity": undefined,
                                                                                                 }
                                                                       }
-                                                                      private={undefined}
                                                         />
-                                                        <Unknown
-                                                                      isAdmin={undefined}
-                                                                      item={
+                                                        <h3
+                                                                      style={
                                                                                     Object {
-                                                                                                  "id": 0,
+                                                                                                  "letterSpacing": undefined,
+                                                                                                  "paddingLeft": undefined,
                                                                                                 }
                                                                       }
-                                                                      private={undefined}
                                                         />
+                                                        <div>
+                                                                      <withRouter()
+                                                                                    item={
+                                                                                                  Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                                                    }
+                                                                                    private={undefined}
+                                                                      />
+                                                                      <Unknown
+                                                                                    isAdmin={undefined}
+                                                                                    item={
+                                                                                                  Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                                                    }
+                                                                                    private={undefined}
+                                                                                    readReceipts={undefined}
+                                                                      />
+                                                        </div>
                                           </div>
                             </section>
                             <styled.div
@@ -709,36 +730,43 @@ ShallowWrapper {
                                                                 style={undefined}
                                                 />
                                 </figure>
-                                <h2
-                                                style={null}
-                                                title={undefined}
-                                />
-                                <Unknown
-                                                item={
-                                                                Object {
-                                                                                "id": 0,
-                                                                              }
-                                                }
-                                                status={undefined}
-                                />
                                 <div>
-                                                <Unknown
-                                                                item={
+                                                <h2
+                                                                style={
                                                                                 Object {
-                                                                                                "id": 0,
+                                                                                                "letterSpacing": undefined,
+                                                                                                "opacity": undefined,
                                                                                               }
                                                                 }
-                                                                private={undefined}
                                                 />
-                                                <Unknown
-                                                                isAdmin={undefined}
-                                                                item={
+                                                <h3
+                                                                style={
                                                                                 Object {
-                                                                                                "id": 0,
+                                                                                                "letterSpacing": undefined,
+                                                                                                "paddingLeft": undefined,
                                                                                               }
                                                                 }
-                                                                private={undefined}
                                                 />
+                                                <div>
+                                                                <withRouter()
+                                                                                item={
+                                                                                                Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                                                }
+                                                                                private={undefined}
+                                                                />
+                                                                <Unknown
+                                                                                isAdmin={undefined}
+                                                                                item={
+                                                                                                Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                                                }
+                                                                                private={undefined}
+                                                                                readReceipts={undefined}
+                                                                />
+                                                </div>
                                 </div>
                 </section>
                 <styled.div
@@ -762,36 +790,43 @@ ShallowWrapper {
                                                             style={undefined}
                                         />
                     </figure>
-                    <h2
-                                        style={null}
-                                        title={undefined}
-                    />
-                    <Unknown
-                                        item={
-                                                            Object {
-                                                                                "id": 0,
-                                                                              }
-                                        }
-                                        status={undefined}
-                    />
                     <div>
-                                        <Unknown
-                                                            item={
+                                        <h2
+                                                            style={
                                                                                 Object {
-                                                                                                    "id": 0,
+                                                                                                    "letterSpacing": undefined,
+                                                                                                    "opacity": undefined,
                                                                                                   }
                                                             }
-                                                            private={undefined}
                                         />
-                                        <Unknown
-                                                            isAdmin={undefined}
-                                                            item={
+                                        <h3
+                                                            style={
                                                                                 Object {
-                                                                                                    "id": 0,
+                                                                                                    "letterSpacing": undefined,
+                                                                                                    "paddingLeft": undefined,
                                                                                                   }
                                                             }
-                                                            private={undefined}
                                         />
+                                        <div>
+                                                            <withRouter()
+                                                                                item={
+                                                                                                    Object {
+                                                                                                                        "id": 0,
+                                                                                                                      }
+                                                                                }
+                                                                                private={undefined}
+                                                            />
+                                                            <Unknown
+                                                                                isAdmin={undefined}
+                                                                                item={
+                                                                                                    Object {
+                                                                                                                        "id": 0,
+                                                                                                                      }
+                                                                                }
+                                                                                private={undefined}
+                                                                                readReceipts={undefined}
+                                                            />
+                                        </div>
                     </div>
 </section>,
                   <styled.div
@@ -818,36 +853,43 @@ ShallowWrapper {
                                                 style={undefined}
                         />
 </figure>,
-                      <h2
-                        style={null}
-                        title={undefined}
-/>,
-                      <Unknown
-                        item={
-                                                Object {
-                                                                        "id": 0,
-                                                                      }
-                        }
-                        status={undefined}
-/>,
                       <div>
-                        <Unknown
-                                                item={
+                        <h2
+                                                style={
                                                                         Object {
-                                                                                                "id": 0,
+                                                                                                "letterSpacing": undefined,
+                                                                                                "opacity": undefined,
                                                                                               }
                                                 }
-                                                private={undefined}
                         />
-                        <Unknown
-                                                isAdmin={undefined}
-                                                item={
+                        <h3
+                                                style={
                                                                         Object {
-                                                                                                "id": 0,
+                                                                                                "letterSpacing": undefined,
+                                                                                                "paddingLeft": undefined,
                                                                                               }
                                                 }
-                                                private={undefined}
                         />
+                        <div>
+                                                <withRouter()
+                                                                        item={
+                                                                                                Object {
+                                                                                                                        "id": 0,
+                                                                                                                      }
+                                                                        }
+                                                                        private={undefined}
+                                                />
+                                                <Unknown
+                                                                        isAdmin={undefined}
+                                                                        item={
+                                                                                                Object {
+                                                                                                                        "id": 0,
+                                                                                                                      }
+                                                                        }
+                                                                        private={undefined}
+                                                                        readReceipts={undefined}
+                                                />
+                        </div>
 </div>,
                     ],
                   },
@@ -884,51 +926,43 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": undefined,
-                        "style": null,
-                        "title": undefined,
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": "h2",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "function",
-                      "props": Object {
-                        "item": Object {
-                          "id": 0,
-                        },
-                        "status": undefined,
-                      },
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
                         "children": Array [
-                          <Unknown
-                            item={
+                          <h2
+                            style={
                                                         Object {
-                                                                                    "id": 0,
+                                                                                    "letterSpacing": undefined,
+                                                                                    "opacity": undefined,
                                                                                   }
                             }
-                            private={undefined}
 />,
-                          <Unknown
-                            isAdmin={undefined}
-                            item={
+                          <h3
+                            style={
                                                         Object {
-                                                                                    "id": 0,
+                                                                                    "letterSpacing": undefined,
+                                                                                    "paddingLeft": undefined,
                                                                                   }
                             }
-                            private={undefined}
 />,
+                          <div>
+                            <withRouter()
+                                                        item={
+                                                                                    Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                        }
+                                                        private={undefined}
+                            />
+                            <Unknown
+                                                        isAdmin={undefined}
+                                                        item={
+                                                                                    Object {
+                                                                                                                "id": 0,
+                                                                                                              }
+                                                        }
+                                                        private={undefined}
+                                                        readReceipts={undefined}
+                            />
+</div>,
                         ],
                       },
                       "ref": null,
@@ -936,31 +970,93 @@ ShallowWrapper {
                         Object {
                           "instance": null,
                           "key": undefined,
-                          "nodeType": "function",
+                          "nodeType": "host",
                           "props": Object {
-                            "item": Object {
-                              "id": 0,
+                            "children": undefined,
+                            "style": Object {
+                              "letterSpacing": undefined,
+                              "opacity": undefined,
                             },
-                            "private": undefined,
                           },
                           "ref": null,
                           "rendered": null,
-                          "type": [Function],
+                          "type": "h2",
                         },
                         Object {
                           "instance": null,
                           "key": undefined,
-                          "nodeType": "function",
+                          "nodeType": "host",
                           "props": Object {
-                            "isAdmin": undefined,
-                            "item": Object {
-                              "id": 0,
+                            "children": "",
+                            "style": Object {
+                              "letterSpacing": undefined,
+                              "paddingLeft": undefined,
                             },
-                            "private": undefined,
                           },
                           "ref": null,
-                          "rendered": null,
-                          "type": [Function],
+                          "rendered": "",
+                          "type": "h3",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <withRouter()
+                                item={
+                                                                Object {
+                                                                                                "id": 0,
+                                                                                              }
+                                }
+                                private={undefined}
+/>,
+                              <Unknown
+                                isAdmin={undefined}
+                                item={
+                                                                Object {
+                                                                                                "id": 0,
+                                                                                              }
+                                }
+                                private={undefined}
+                                readReceipts={undefined}
+/>,
+                            ],
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "item": Object {
+                                  "id": 0,
+                                },
+                                "private": undefined,
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": [Function],
+                            },
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "isAdmin": undefined,
+                                "item": Object {
+                                  "id": 0,
+                                },
+                                "private": undefined,
+                                "readReceipts": undefined,
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": [Function],
+                            },
+                          ],
+                          "type": "div",
                         },
                       ],
                       "type": "div",
@@ -1024,36 +1120,43 @@ ShallowWrapper {
                                                                       style={undefined}
                                                             />
                                                   </figure>
-                                                  <h2
-                                                            style={null}
-                                                            title={undefined}
-                                                  />
-                                                  <Unknown
-                                                            item={
-                                                                      Object {
-                                                                                "id": 0,
-                                                                              }
-                                                            }
-                                                            status={undefined}
-                                                  />
                                                   <div>
-                                                            <Unknown
-                                                                      item={
+                                                            <h2
+                                                                      style={
                                                                                 Object {
-                                                                                          "id": 0,
+                                                                                          "letterSpacing": undefined,
+                                                                                          "opacity": undefined,
                                                                                         }
                                                                       }
-                                                                      private={undefined}
                                                             />
-                                                            <Unknown
-                                                                      isAdmin={undefined}
-                                                                      item={
+                                                            <h3
+                                                                      style={
                                                                                 Object {
-                                                                                          "id": 0,
+                                                                                          "letterSpacing": undefined,
+                                                                                          "paddingLeft": undefined,
                                                                                         }
                                                                       }
-                                                                      private={undefined}
                                                             />
+                                                            <div>
+                                                                      <withRouter()
+                                                                                item={
+                                                                                          Object {
+                                                                                                    "id": 0,
+                                                                                                  }
+                                                                                }
+                                                                                private={undefined}
+                                                                      />
+                                                                      <Unknown
+                                                                                isAdmin={undefined}
+                                                                                item={
+                                                                                          Object {
+                                                                                                    "id": 0,
+                                                                                                  }
+                                                                                }
+                                                                                private={undefined}
+                                                                                readReceipts={undefined}
+                                                                      />
+                                                            </div>
                                                   </div>
                                         </section>
                                         <styled.div
@@ -1095,36 +1198,43 @@ ShallowWrapper {
                                                                                     style={undefined}
                                                                       />
                                                         </figure>
-                                                        <h2
-                                                                      style={null}
-                                                                      title={undefined}
-                                                        />
-                                                        <Unknown
-                                                                      item={
-                                                                                    Object {
-                                                                                                  "id": 0,
-                                                                                                }
-                                                                      }
-                                                                      status={undefined}
-                                                        />
                                                         <div>
-                                                                      <Unknown
-                                                                                    item={
+                                                                      <h2
+                                                                                    style={
                                                                                                   Object {
-                                                                                                                "id": 0,
+                                                                                                                "letterSpacing": undefined,
+                                                                                                                "opacity": undefined,
                                                                                                               }
                                                                                     }
-                                                                                    private={undefined}
                                                                       />
-                                                                      <Unknown
-                                                                                    isAdmin={undefined}
-                                                                                    item={
+                                                                      <h3
+                                                                                    style={
                                                                                                   Object {
-                                                                                                                "id": 0,
+                                                                                                                "letterSpacing": undefined,
+                                                                                                                "paddingLeft": undefined,
                                                                                                               }
                                                                                     }
-                                                                                    private={undefined}
                                                                       />
+                                                                      <div>
+                                                                                    <withRouter()
+                                                                                                  item={
+                                                                                                                Object {
+                                                                                                                              "id": 0,
+                                                                                                                            }
+                                                                                                  }
+                                                                                                  private={undefined}
+                                                                                    />
+                                                                                    <Unknown
+                                                                                                  isAdmin={undefined}
+                                                                                                  item={
+                                                                                                                Object {
+                                                                                                                              "id": 0,
+                                                                                                                            }
+                                                                                                  }
+                                                                                                  private={undefined}
+                                                                                                  readReceipts={undefined}
+                                                                                    />
+                                                                      </div>
                                                         </div>
                                           </section>
                                           <styled.div
@@ -1158,36 +1268,43 @@ ShallowWrapper {
                                                                                 style={undefined}
                                                                 />
                                                 </figure>
-                                                <h2
-                                                                style={null}
-                                                                title={undefined}
-                                                />
-                                                <Unknown
-                                                                item={
-                                                                                Object {
-                                                                                                "id": 0,
-                                                                                              }
-                                                                }
-                                                                status={undefined}
-                                                />
                                                 <div>
-                                                                <Unknown
-                                                                                item={
+                                                                <h2
+                                                                                style={
                                                                                                 Object {
-                                                                                                                "id": 0,
+                                                                                                                "letterSpacing": undefined,
+                                                                                                                "opacity": undefined,
                                                                                                               }
                                                                                 }
-                                                                                private={undefined}
                                                                 />
-                                                                <Unknown
-                                                                                isAdmin={undefined}
-                                                                                item={
+                                                                <h3
+                                                                                style={
                                                                                                 Object {
-                                                                                                                "id": 0,
+                                                                                                                "letterSpacing": undefined,
+                                                                                                                "paddingLeft": undefined,
                                                                                                               }
                                                                                 }
-                                                                                private={undefined}
                                                                 />
+                                                                <div>
+                                                                                <withRouter()
+                                                                                                item={
+                                                                                                                Object {
+                                                                                                                                "id": 0,
+                                                                                                                              }
+                                                                                                }
+                                                                                                private={undefined}
+                                                                                />
+                                                                                <Unknown
+                                                                                                isAdmin={undefined}
+                                                                                                item={
+                                                                                                                Object {
+                                                                                                                                "id": 0,
+                                                                                                                              }
+                                                                                                }
+                                                                                                private={undefined}
+                                                                                                readReceipts={undefined}
+                                                                                />
+                                                                </div>
                                                 </div>
                                 </section>
                                 <styled.div
@@ -1223,36 +1340,43 @@ ShallowWrapper {
                                                                         style={undefined}
                                                       />
                                     </figure>
-                                    <h2
-                                                      style={null}
-                                                      title={undefined}
-                                    />
-                                    <Unknown
-                                                      item={
-                                                                        Object {
-                                                                                          "id": 0,
-                                                                                        }
-                                                      }
-                                                      status={undefined}
-                                    />
                                     <div>
-                                                      <Unknown
-                                                                        item={
+                                                      <h2
+                                                                        style={
                                                                                           Object {
-                                                                                                            "id": 0,
+                                                                                                            "letterSpacing": undefined,
+                                                                                                            "opacity": undefined,
                                                                                                           }
                                                                         }
-                                                                        private={undefined}
                                                       />
-                                                      <Unknown
-                                                                        isAdmin={undefined}
-                                                                        item={
+                                                      <h3
+                                                                        style={
                                                                                           Object {
-                                                                                                            "id": 0,
+                                                                                                            "letterSpacing": undefined,
+                                                                                                            "paddingLeft": undefined,
                                                                                                           }
                                                                         }
-                                                                        private={undefined}
                                                       />
+                                                      <div>
+                                                                        <withRouter()
+                                                                                          item={
+                                                                                                            Object {
+                                                                                                                              "id": 0,
+                                                                                                                            }
+                                                                                          }
+                                                                                          private={undefined}
+                                                                        />
+                                                                        <Unknown
+                                                                                          isAdmin={undefined}
+                                                                                          item={
+                                                                                                            Object {
+                                                                                                                              "id": 0,
+                                                                                                                            }
+                                                                                          }
+                                                                                          private={undefined}
+                                                                                          readReceipts={undefined}
+                                                                        />
+                                                      </div>
                                     </div>
                   </section>
                   <styled.div
@@ -1276,36 +1400,43 @@ ShallowWrapper {
                                                                   style={undefined}
                                             />
                       </figure>
-                      <h2
-                                            style={null}
-                                            title={undefined}
-                      />
-                      <Unknown
-                                            item={
-                                                                  Object {
-                                                                                        "id": 0,
-                                                                                      }
-                                            }
-                                            status={undefined}
-                      />
                       <div>
-                                            <Unknown
-                                                                  item={
+                                            <h2
+                                                                  style={
                                                                                         Object {
-                                                                                                              "id": 0,
+                                                                                                              "letterSpacing": undefined,
+                                                                                                              "opacity": undefined,
                                                                                                             }
                                                                   }
-                                                                  private={undefined}
                                             />
-                                            <Unknown
-                                                                  isAdmin={undefined}
-                                                                  item={
+                                            <h3
+                                                                  style={
                                                                                         Object {
-                                                                                                              "id": 0,
+                                                                                                              "letterSpacing": undefined,
+                                                                                                              "paddingLeft": undefined,
                                                                                                             }
                                                                   }
-                                                                  private={undefined}
                                             />
+                                            <div>
+                                                                  <withRouter()
+                                                                                        item={
+                                                                                                              Object {
+                                                                                                                                    "id": 0,
+                                                                                                                                  }
+                                                                                        }
+                                                                                        private={undefined}
+                                                                  />
+                                                                  <Unknown
+                                                                                        isAdmin={undefined}
+                                                                                        item={
+                                                                                                              Object {
+                                                                                                                                    "id": 0,
+                                                                                                                                  }
+                                                                                        }
+                                                                                        private={undefined}
+                                                                                        readReceipts={undefined}
+                                                                  />
+                                            </div>
                       </div>
 </section>,
                     <styled.div
@@ -1332,36 +1463,43 @@ ShallowWrapper {
                                                     style={undefined}
                           />
 </figure>,
-                        <h2
-                          style={null}
-                          title={undefined}
-/>,
-                        <Unknown
-                          item={
-                                                    Object {
-                                                                              "id": 0,
-                                                                            }
-                          }
-                          status={undefined}
-/>,
                         <div>
-                          <Unknown
-                                                    item={
+                          <h2
+                                                    style={
                                                                               Object {
-                                                                                                        "id": 0,
+                                                                                                        "letterSpacing": undefined,
+                                                                                                        "opacity": undefined,
                                                                                                       }
                                                     }
-                                                    private={undefined}
                           />
-                          <Unknown
-                                                    isAdmin={undefined}
-                                                    item={
+                          <h3
+                                                    style={
                                                                               Object {
-                                                                                                        "id": 0,
+                                                                                                        "letterSpacing": undefined,
+                                                                                                        "paddingLeft": undefined,
                                                                                                       }
                                                     }
-                                                    private={undefined}
                           />
+                          <div>
+                                                    <withRouter()
+                                                                              item={
+                                                                                                        Object {
+                                                                                                                                  "id": 0,
+                                                                                                                                }
+                                                                              }
+                                                                              private={undefined}
+                                                    />
+                                                    <Unknown
+                                                                              isAdmin={undefined}
+                                                                              item={
+                                                                                                        Object {
+                                                                                                                                  "id": 0,
+                                                                                                                                }
+                                                                              }
+                                                                              private={undefined}
+                                                                              readReceipts={undefined}
+                                                    />
+                          </div>
 </div>,
                       ],
                     },
@@ -1398,51 +1536,43 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "host",
                         "props": Object {
-                          "children": undefined,
-                          "style": null,
-                          "title": undefined,
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": "h2",
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "function",
-                        "props": Object {
-                          "item": Object {
-                            "id": 0,
-                          },
-                          "status": undefined,
-                        },
-                        "ref": null,
-                        "rendered": null,
-                        "type": [Function],
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
                           "children": Array [
-                            <Unknown
-                              item={
+                            <h2
+                              style={
                                                             Object {
-                                                                                          "id": 0,
+                                                                                          "letterSpacing": undefined,
+                                                                                          "opacity": undefined,
                                                                                         }
                               }
-                              private={undefined}
 />,
-                            <Unknown
-                              isAdmin={undefined}
-                              item={
+                            <h3
+                              style={
                                                             Object {
-                                                                                          "id": 0,
+                                                                                          "letterSpacing": undefined,
+                                                                                          "paddingLeft": undefined,
                                                                                         }
                               }
-                              private={undefined}
 />,
+                            <div>
+                              <withRouter()
+                                                            item={
+                                                                                          Object {
+                                                                                                                        "id": 0,
+                                                                                                                      }
+                                                            }
+                                                            private={undefined}
+                              />
+                              <Unknown
+                                                            isAdmin={undefined}
+                                                            item={
+                                                                                          Object {
+                                                                                                                        "id": 0,
+                                                                                                                      }
+                                                            }
+                                                            private={undefined}
+                                                            readReceipts={undefined}
+                              />
+</div>,
                           ],
                         },
                         "ref": null,
@@ -1450,31 +1580,93 @@ ShallowWrapper {
                           Object {
                             "instance": null,
                             "key": undefined,
-                            "nodeType": "function",
+                            "nodeType": "host",
                             "props": Object {
-                              "item": Object {
-                                "id": 0,
+                              "children": undefined,
+                              "style": Object {
+                                "letterSpacing": undefined,
+                                "opacity": undefined,
                               },
-                              "private": undefined,
                             },
                             "ref": null,
                             "rendered": null,
-                            "type": [Function],
+                            "type": "h2",
                           },
                           Object {
                             "instance": null,
                             "key": undefined,
-                            "nodeType": "function",
+                            "nodeType": "host",
                             "props": Object {
-                              "isAdmin": undefined,
-                              "item": Object {
-                                "id": 0,
+                              "children": "",
+                              "style": Object {
+                                "letterSpacing": undefined,
+                                "paddingLeft": undefined,
                               },
-                              "private": undefined,
                             },
                             "ref": null,
-                            "rendered": null,
-                            "type": [Function],
+                            "rendered": "",
+                            "type": "h3",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                <withRouter()
+                                  item={
+                                                                    Object {
+                                                                                                      "id": 0,
+                                                                                                    }
+                                  }
+                                  private={undefined}
+/>,
+                                <Unknown
+                                  isAdmin={undefined}
+                                  item={
+                                                                    Object {
+                                                                                                      "id": 0,
+                                                                                                    }
+                                  }
+                                  private={undefined}
+                                  readReceipts={undefined}
+/>,
+                              ],
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "function",
+                                "props": Object {
+                                  "item": Object {
+                                    "id": 0,
+                                  },
+                                  "private": undefined,
+                                },
+                                "ref": null,
+                                "rendered": null,
+                                "type": [Function],
+                              },
+                              Object {
+                                "instance": null,
+                                "key": undefined,
+                                "nodeType": "function",
+                                "props": Object {
+                                  "isAdmin": undefined,
+                                  "item": Object {
+                                    "id": 0,
+                                  },
+                                  "private": undefined,
+                                  "readReceipts": undefined,
+                                },
+                                "ref": null,
+                                "rendered": null,
+                                "type": [Function],
+                              },
+                            ],
+                            "type": "div",
                           },
                         ],
                         "type": "div",
@@ -1740,312 +1932,6 @@ ShallowWrapper {
 }
 `;
 
-exports[`Render ListCaption, matches snapshot 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
-    item={
-        Object {
-            "status": "published",
-            "summary": "",
-            "title": "",
-          }
-    }
-/>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": Array [
-        <ListSubtitle
-          subtitle={undefined}
-          title=""
-/>,
-        <span
-          className="long"
->
-          <span
-                    style={
-                              Object {
-                                        "fontStyle": "normal",
-                                      }
-                    }
-          >
-                    ❡
-          </span>
-          …
-</span>,
-        <span
-          className="short"
->
-          <span
-                    style={
-                              Object {
-                                        "fontStyle": "normal",
-                                      }
-                    }
-          >
-                    ❡
-          </span>
-          …
-</span>,
-      ],
-      "status": undefined,
-      "style": null,
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "subtitle": undefined,
-          "title": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <span
-              style={
-                            Object {
-                                          "fontStyle": "normal",
-                                        }
-              }
->
-              ❡
-</span>,
-            "…",
-          ],
-          "className": "long",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "❡",
-              "style": Object {
-                "fontStyle": "normal",
-              },
-            },
-            "ref": null,
-            "rendered": "❡",
-            "type": "span",
-          },
-          "…",
-        ],
-        "type": "span",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <span
-              style={
-                            Object {
-                                          "fontStyle": "normal",
-                                        }
-              }
->
-              ❡
-</span>,
-            "…",
-          ],
-          "className": "short",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "❡",
-              "style": Object {
-                "fontStyle": "normal",
-              },
-            },
-            "ref": null,
-            "rendered": "❡",
-            "type": "span",
-          },
-          "…",
-        ],
-        "type": "span",
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": Array [
-          <ListSubtitle
-            subtitle={undefined}
-            title=""
-/>,
-          <span
-            className="long"
->
-            <span
-                        style={
-                                    Object {
-                                                "fontStyle": "normal",
-                                              }
-                        }
-            >
-                        ❡
-            </span>
-            …
-</span>,
-          <span
-            className="short"
->
-            <span
-                        style={
-                                    Object {
-                                                "fontStyle": "normal",
-                                              }
-                        }
-            >
-                        ❡
-            </span>
-            …
-</span>,
-        ],
-        "status": undefined,
-        "style": null,
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "subtitle": undefined,
-            "title": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <span
-                style={
-                                Object {
-                                                "fontStyle": "normal",
-                                              }
-                }
->
-                ❡
-</span>,
-              "…",
-            ],
-            "className": "long",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "❡",
-                "style": Object {
-                  "fontStyle": "normal",
-                },
-              },
-              "ref": null,
-              "rendered": "❡",
-              "type": "span",
-            },
-            "…",
-          ],
-          "type": "span",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <span
-                style={
-                                Object {
-                                                "fontStyle": "normal",
-                                              }
-                }
->
-                ❡
-</span>,
-              "…",
-            ],
-            "className": "short",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "❡",
-                "style": Object {
-                  "fontStyle": "normal",
-                },
-              },
-              "ref": null,
-              "rendered": "❡",
-              "type": "span",
-            },
-            "…",
-          ],
-          "type": "span",
-        },
-      ],
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
-`;
-
 exports[`Render ListDescription, matches snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
@@ -2091,8 +1977,18 @@ ShallowWrapper {
       "children": Array [
         <styled.strong
           homepage={false}
+          style={
+                    Object {
+                              "width": "",
+                            }
+          }
 >
-          Analog.Cafe
+          <styled.span>
+                    Analog.Cafe
+          </styled.span>
+          <styled.span>
+                    Analog.Cafe
+          </styled.span>
 </styled.strong>,
         <styled.div>
           <span>
@@ -2125,11 +2021,44 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": "Analog.Cafe",
+          "children": Array [
+            <styled.span>
+              Analog.Cafe
+</styled.span>,
+            <styled.span>
+              Analog.Cafe
+</styled.span>,
+          ],
           "homepage": false,
+          "style": Object {
+            "width": "",
+          },
         },
         "ref": null,
-        "rendered": "Analog.Cafe",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Analog.Cafe",
+            },
+            "ref": null,
+            "rendered": "Analog.Cafe",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Analog.Cafe",
+            },
+            "ref": null,
+            "rendered": "Analog.Cafe",
+            "type": [Function],
+          },
+        ],
         "type": [Function],
       },
       Object {
@@ -2183,8 +2112,18 @@ ShallowWrapper {
         "children": Array [
           <styled.strong
             homepage={false}
+            style={
+                        Object {
+                                    "width": "",
+                                  }
+            }
 >
-            Analog.Cafe
+            <styled.span>
+                        Analog.Cafe
+            </styled.span>
+            <styled.span>
+                        Analog.Cafe
+            </styled.span>
 </styled.strong>,
           <styled.div>
             <span>
@@ -2217,11 +2156,44 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": "Analog.Cafe",
+            "children": Array [
+              <styled.span>
+                Analog.Cafe
+</styled.span>,
+              <styled.span>
+                Analog.Cafe
+</styled.span>,
+            ],
             "homepage": false,
+            "style": Object {
+              "width": "",
+            },
           },
           "ref": null,
-          "rendered": "Analog.Cafe",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Analog.Cafe",
+              },
+              "ref": null,
+              "rendered": "Analog.Cafe",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Analog.Cafe",
+              },
+              "ref": null,
+              "rendered": "Analog.Cafe",
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
         Object {
@@ -2756,25 +2728,63 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        " · ",
-        <small>
-          December 31, 1969
-</small>,
+        "By  ",
+        <Unknown>
+          <small
+                    style={
+                              Object {
+                                        "opacity": 0.35,
+                                      }
+                    }
+          >
+                    Dec 31, 1969
+          </small>
+           
+</Unknown>,
       ],
     },
     "ref": null,
     "rendered": Array [
-      " · ",
+      "By  ",
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": "December 31, 1969",
+          "children": Array [
+            <small
+              style={
+                            Object {
+                                          "opacity": 0.35,
+                                        }
+              }
+>
+              Dec 31, 1969
+</small>,
+            " ",
+            false,
+          ],
         },
         "ref": null,
-        "rendered": "December 31, 1969",
-        "type": "small",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Dec 31, 1969",
+              "style": Object {
+                "opacity": 0.35,
+              },
+            },
+            "ref": null,
+            "rendered": "Dec 31, 1969",
+            "type": "small",
+          },
+          " ",
+          false,
+        ],
+        "type": Symbol(react.fragment),
       },
     ],
     "type": [Function],
@@ -2786,25 +2796,63 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          " · ",
-          <small>
-            December 31, 1969
-</small>,
+          "By  ",
+          <Unknown>
+            <small
+                        style={
+                                    Object {
+                                                "opacity": 0.35,
+                                              }
+                        }
+            >
+                        Dec 31, 1969
+            </small>
+             
+</Unknown>,
         ],
       },
       "ref": null,
       "rendered": Array [
-        " · ",
+        "By  ",
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": "December 31, 1969",
+            "children": Array [
+              <small
+                style={
+                                Object {
+                                                "opacity": 0.35,
+                                              }
+                }
+>
+                Dec 31, 1969
+</small>,
+              " ",
+              false,
+            ],
           },
           "ref": null,
-          "rendered": "December 31, 1969",
-          "type": "small",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Dec 31, 1969",
+                "style": Object {
+                  "opacity": 0.35,
+                },
+              },
+              "ref": null,
+              "rendered": "Dec 31, 1969",
+              "type": "small",
+            },
+            " ",
+            false,
+          ],
+          "type": Symbol(react.fragment),
         },
       ],
       "type": [Function],
@@ -2824,7 +2872,7 @@ exports[`Render ListItemStats, matches snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <withRouter()
     item={
         Object {
             "type": "placeholder",
@@ -2843,20 +2891,10 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": Array [
-        false,
-        false,
-        false,
-        false,
-      ],
+      "children": [Function],
     },
     "ref": null,
-    "rendered": Array [
-      false,
-      false,
-      false,
-      false,
-    ],
+    "rendered": [Function],
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -2865,20 +2903,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": Array [
-          false,
-          false,
-          false,
-          false,
-        ],
+        "children": [Function],
       },
       "ref": null,
-      "rendered": Array [
-        false,
-        false,
-        false,
-        false,
-      ],
+      "rendered": [Function],
       "type": [Function],
     },
   ],
@@ -3313,7 +3341,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "sc-EHOje kdpWbx",
+      "className": "sc-bxivhb lPWmc",
     },
     "ref": null,
     "rendered": null,
@@ -3325,7 +3353,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "sc-EHOje kdpWbx",
+        "className": "sc-bxivhb lPWmc",
       },
       "ref": null,
       "rendered": null,
