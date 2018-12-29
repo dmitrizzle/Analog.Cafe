@@ -2,7 +2,6 @@ import { withRouter } from "react-router-dom"
 import React from "react"
 import styled from "styled-components"
 
-import { ROUTE_TAGS } from "../../../../constants/routes-list"
 import { TEXT_STATUS_LABELS } from "../../../../constants/messages-list"
 import { getTitleFromSlug } from "../../../../utils/messages-"
 

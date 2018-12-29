@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { GA, makeFroth } from "../../../../../utils"
 import { GetYourWeekly } from "../../../pages/Subscribe"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
+import { isXWeeksAgo } from "../../../pages/List/components/ListItemAuthorDate"
 import { preloadConstructor } from "../../../../utils/routes-article"
 import CardCaption from "../../Card/components/CardCaption"
 import CardHeader from "../../Card/components/CardHeader"
@@ -28,6 +29,47 @@ export const CardCaptionIntegrated = styled(CardCaption)`
 `
 
 export default props => {
+  let readNext
+  const readReceipts = props.user.sessionInfo.readReceipts
+  const newArticleDate = props.list.items[0].date
+  const read =
+    readReceipts && newArticleDate
+      ? readReceipts.filter(
+          receipt =>
+            receipt.articleId === props.list.items[0].id &&
+            receipt.readOn > newArticleDate.published
+        ).length > 0
+      : null
+  if (
+    !read &&
+    newArticleDate &&
+    isXWeeksAgo(props.list.items[0].date.published) === 0 &&
+    props.article.id !== props.list.items[0].id
+  ) {
+    readNext = {
+      status: props.list.status,
+      title: props.list.items[0].title,
+      titlePrefix: "Just Published: ",
+      cta: (
+        <React.Fragment>
+          Read Now <span>➢</span>
+        </React.Fragment>
+      ),
+      slug: props.list.items[0].slug,
+      poster: props.list.items[0].poster
+    }
+  } else {
+    readNext = {
+      status: props.nextArticle && props.nextArticle.slug ? "ok" : "error",
+      titlePrefix: "Next: ",
+      cta: (
+        <React.Fragment>
+          Read Next <span>➢</span>
+        </React.Fragment>
+      ),
+      ...props.nextArticle
+    }
+  }
   return (
     <CardColumns
       style={{
@@ -68,57 +110,53 @@ export default props => {
           />
         </CardIntegratedForColumns>
       </div>
-      {props.nextArticle &&
-        props.nextArticle.slug && (
-          <CardIntegratedForColumns>
-            <CardHeader
-              stubborn
-              buttons={[0]}
-              noStar
-              title={props.nextArticle.title}
-              titlePrefix="Next: "
-            />
-            <figure>
-              <Link
-                to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
-                onClick={() => {
-                  props.nextArticleHeading(
-                    preloadConstructor(props.article, props.nextArticle)
-                  )
-                  GA.event({
-                    category: "Navigation",
-                    action: "ActionsCard.next_article_picture"
-                  })
-                }}
-              >
-                <Placeholder frothId={props.nextArticle.poster}>
-                  <img
-                    src={
-                      makeFroth({ src: props.nextArticle.poster, size: "s" })
-                        .src
-                    }
-                    alt={props.nextArticle.title}
-                  />
-                </Placeholder>
-              </Link>
-            </figure>
-            <LinkButton
-              style={{ margin: 0 }}
-              to={ROUTE_URL_ARTICLES + "/" + props.nextArticle.slug}
+      {readNext.status === "ok" && (
+        <CardIntegratedForColumns>
+          <CardHeader
+            stubborn
+            buttons={[0]}
+            noStar
+            title={readNext.title}
+            titlePrefix={readNext.titlePrefix}
+          />
+          <figure>
+            <Link
+              to={ROUTE_URL_ARTICLES + "/" + readNext.slug}
               onClick={() => {
                 props.nextArticleHeading(
-                  preloadConstructor(props.article, props.nextArticle)
+                  preloadConstructor(props.article, readNext)
                 )
                 GA.event({
                   category: "Navigation",
-                  action: "ActionsCard.next_article_button"
+                  action: "ActionsCard.next_article_picture"
                 })
               }}
             >
-              Read Next <span>➢</span>
-            </LinkButton>
-          </CardIntegratedForColumns>
-        )}
+              <Placeholder frothId={readNext.poster}>
+                <img
+                  src={makeFroth({ src: readNext.poster, size: "s" }).src}
+                  alt={readNext.title}
+                />
+              </Placeholder>
+            </Link>
+          </figure>
+          <LinkButton
+            style={{ margin: 0 }}
+            to={ROUTE_URL_ARTICLES + "/" + readNext.slug}
+            onClick={() => {
+              props.nextArticleHeading(
+                preloadConstructor(props.article, readNext)
+              )
+              GA.event({
+                category: "Navigation",
+                action: "ActionsCard.next_article_button"
+              })
+            }}
+          >
+            {readNext.cta}
+          </LinkButton>
+        </CardIntegratedForColumns>
+      )}
     </CardColumns>
   )
 }
