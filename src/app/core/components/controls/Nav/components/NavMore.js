@@ -9,21 +9,18 @@ import Modal from "../../Modal"
 
 const NAV_USER = [
   {
+    to: ROUTE_URL_USER_LANDING,
+    text: "My Stuff"
+  },
+  {
     to: "/submit/compose",
     text:
-      loadTextContent().length > 0
-        ? "Continue Editing Submission"
-        : "Compose New Submission"
+      loadTextContent().length > 0 ? "Edit My Submission" : "+ New Submission"
   },
   {
-    to: ROUTE_URL_USER_LANDING,
-    text: "My Submissions"
+    to: "/about",
+    text: "About Analog.Cafe"
   },
-  {
-    to: "/profile/edit",
-    text: "Edit Profile"
-  },
-
   {
     to: "/sign-out",
     text: "Sign Out",
@@ -32,29 +29,6 @@ const NAV_USER = [
 ]
 
 const NAV_VISITOR = [
-  {
-    to: "/photo-essays",
-    text: "Photo Essays"
-  },
-  {
-    to: "/film-photography",
-    text: "Film Photography"
-  },
-  {
-    to: "/editorials",
-    text: "Editorials"
-  },
-  { divider: true },
-  //
-  // {
-  //   to: "/collaborations",
-  //   text: "Collaborations"
-  // },
-  // {
-  //   to: "/solo-projects",
-  //   text: "Solo Projects"
-  // },
-  // { divider: true },
   {
     to: "/about",
     text: "About Analog.Cafe"

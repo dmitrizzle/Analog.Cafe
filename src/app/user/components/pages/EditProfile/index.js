@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { CARD_ERRORS } from "../../../constants/messages-submission"
+import { CardColumns } from "../../../../core/components/controls/ArticleActions/components/Options"
 import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
@@ -165,29 +166,38 @@ class EditProfile extends React.PureComponent {
             become a button.
           </p>
         </ArticleSection>
-        <ProfileCard
-          title={this.state.title || ""}
-          changeTitle={this.handleTitleChange}
-          warningTitle={this.state.warningTitle}
-          text={this.state.text}
-          changeText={this.handleTextChange}
-          warningText={this.state.warningText}
-          image={this.state.image}
-          changeImage={this.handleImageChange}
-          buttonText={this.state.buttonText}
-          changeButton={this.handleButtonChange}
-          focusButton={this.handleButtonFocus}
-          blurButton={this.handleButtonBlur}
-        />
-        <input
-          type="file"
-          accept="image/x-png,image/jpeg"
-          style={{ display: "none" }}
-          ref={input => {
-            this.fileInput = input
+        <CardColumns
+          style={{
+            zIndex: 11,
+            position: "relative",
+            maxWidth: "680px",
+            margin: "0 auto"
           }}
-          onChange={this.handleFileUpload}
-        />
+        >
+          <ProfileCard
+            title={this.state.title || ""}
+            changeTitle={this.handleTitleChange}
+            warningTitle={this.state.warningTitle}
+            text={this.state.text}
+            changeText={this.handleTextChange}
+            warningText={this.state.warningText}
+            image={this.state.image}
+            changeImage={this.handleImageChange}
+            buttonText={this.state.buttonText}
+            changeButton={this.handleButtonChange}
+            focusButton={this.handleButtonFocus}
+            blurButton={this.handleButtonBlur}
+          />
+          <input
+            type="file"
+            accept="image/x-png,image/jpeg"
+            style={{ display: "none" }}
+            ref={input => {
+              this.fileInput = input
+            }}
+            onChange={this.handleFileUpload}
+          />
+        </CardColumns>
         <Button
           onClick={this.handleDone}
           branded

@@ -61,9 +61,8 @@ export class Footer extends React.Component {
           {this.props.user.status === "ok" ? (
             <React.Fragment>
               <Link to="/sign-out">Sign Out</Link> ・{" "}
-              <Link to={ROUTE_URL_USER_LANDING}>My Submissions</Link> ・{" "}
+              <Link to={ROUTE_URL_USER_LANDING}>My Stuff</Link> ・{" "}
               <Link to="/submit/compose">Composer</Link> ・{" "}
-              <Link to="/profile/edit">Edit Profile</Link> ・{" "}
             </React.Fragment>
           ) : (
             <React.Fragment>

@@ -122,7 +122,7 @@ export default props => {
       </NavItem>
       <NavItem prime right className="prime right">
         <NavMore userStatus={props.userStatus} userRole={props.userRole}>
-          Menu <BurgerMenu />
+          More <BurgerMenu />
           <Extra>
             {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
           </Extra>
