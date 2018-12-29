@@ -105,10 +105,21 @@ class Article extends React.Component {
     const articleId = nextProps.article.id
     let pastReadReceipts = nextProps.user.sessionInfo.readReceipts || []
     if (pastReadReceipts.length > 100) pastReadReceipts.shift()
-    const alreadyRead = pastReadReceipts.indexOf(articleId)
+    const unixTime = Math.round(new Date().getTime() / 1000)
+    const alreadyRead =
+      pastReadReceipts.filter(
+        receipt =>
+          receipt.articleId === articleId && receipt.readOn > unixTime - 10
+      ).length > 0
 
-    if (alreadyRead === -1 && articleId) {
-      const readReceipts = [...pastReadReceipts, articleId]
+    if (!alreadyRead && articleId) {
+      const readReceipts = [
+        ...pastReadReceipts,
+        {
+          articleId,
+          readOn: unixTime
+        }
+      ]
       nextProps.addSessionInfo({ readReceipts })
     }
   }

@@ -37,6 +37,14 @@ export default props => {
     props.item.type !== "placeholder"
       ? isXWeeksAgo(props.item.date.updated) === 0
       : null
+  const read = props.readReceipts
+    ? props.readReceipts.filter(
+        receipt =>
+          receipt.articleId === props.item.id &&
+          receipt.readOn > props.item.date.updated
+      ).length > 0
+    : null
+
   return (
     <AuthorAndDate>
       {!props.private || props.isAdmin
@@ -51,18 +59,19 @@ export default props => {
           <small style={{ opacity: 0.35 }}>
             {getHumanDatestamp(props.item.date.published, true)}
           </small>{" "}
-          {(isNew || isNewlyEdited) && (
-            <Sticker
-              inverse={props.item.date.published < props.item.date.updated}
-              title={getHumanDatestamp(props.item.date.updated)}
-            >
-              <em>
-                {props.item.date.published >= props.item.date.updated
-                  ? "New!"
-                  : "Recently updated"}
-              </em>
-            </Sticker>
-          )}
+          {(isNew || isNewlyEdited) &&
+            !read && (
+              <Sticker
+                inverse={props.item.date.published < props.item.date.updated}
+                title={getHumanDatestamp(props.item.date.updated)}
+              >
+                <em>
+                  {props.item.date.published >= props.item.date.updated
+                    ? "New!"
+                    : "Recently updated"}
+                </em>
+              </Sticker>
+            )}
         </React.Fragment>
       )}
     </AuthorAndDate>

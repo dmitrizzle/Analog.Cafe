@@ -101,6 +101,7 @@ export default props => {
                           private={props.private}
                           isAdmin={props.isAdmin}
                           item={item}
+                          readReceipts={props.readReceipts}
                         />
                       </div>
                     </div>
