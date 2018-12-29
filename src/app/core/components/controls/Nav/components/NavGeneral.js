@@ -117,7 +117,7 @@ export default props => {
             image={
               props.list.author
                 ? makeFroth({
-                    src: props.list.author.info.image,
+                    src: props.list.author.image,
                     size: "s"
                   }).src
                 : null

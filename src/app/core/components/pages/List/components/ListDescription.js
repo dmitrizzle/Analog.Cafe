@@ -22,15 +22,20 @@ export const Mobile = styled.span`
   }
 `
 export default props => {
-  const mobileContent =
-    getTitleFromSlug(props.location.pathname).replace("/", "") || APP_NAME
+  console.log(props.list.author)
+  const mobileContent = props.list.author
+    ? props.list.author.title
+    : getTitleFromSlug(props.location.pathname).replace("/", "") || APP_NAME
+  const desktopUserContent = props.list.author
+    ? props.list.author.title
+    : APP_NAME
   return (
     <ListDescriptionWrapper {...props}>
       <ListBrandName
         homepage={props.location.pathname === "/"}
         style={{ width: mobileContent !== APP_NAME ? "12em" : "" }}
       >
-        <Desktop>{APP_NAME}</Desktop>
+        <Desktop>{desktopUserContent}</Desktop>
         <Mobile>{mobileContent}</Mobile>
       </ListBrandName>
       {props.user.connection.status !== "offline" ? (

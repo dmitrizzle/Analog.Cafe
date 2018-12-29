@@ -101,7 +101,7 @@ export const fetchListAuthor = id => {
   return dispatch => {
     axios(makeAPIRequest({ url: `${ROUTE_API_AUTHORS}/${id}` }))
       .then(response => {
-        dispatch(setListAuthor(response.data))
+        dispatch(setListAuthor(response.data.info))
       })
       .catch(() => {
         dispatch(
