@@ -1,9 +1,7 @@
 import { connect } from "react-redux"
 import React from "react"
-
 import styled from "styled-components"
 
-import { GA } from "../../../../utils"
 import { TEXT_LABELS } from "../../../constants/messages-"
 import { getSearchResults } from "../../../store/actions-search"
 import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivider"
@@ -37,11 +35,6 @@ export class Search extends React.PureComponent {
     })
     this.props.searchFormCallback &&
       this.props.searchFormCallback(this.state.searchForm)
-    GA.event({
-      category: "Navigation",
-      action: "ActionsCard.search",
-      label: this.props.formLocation ? this.props.formLocation : null
-    })
   }
   handleSubmitCallback = query => {
     this.props.getSearchResults(query)

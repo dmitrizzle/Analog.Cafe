@@ -21,11 +21,7 @@ export default class extends React.Component {
     event.stopPropagation()
     event.preventDefault()
     this.props.submitCallback && this.props.submitCallback(this.state.query)
-    GA.event({
-      category: "Navigation",
-      action: "SearchForm_send",
-      label: this.props.formLocation ? this.props.formLocation : null
-    })
+    GA.modalview(`/search?for=${this.state.query}`)
   }
   handleInputClick = event => {
     event.stopPropagation()

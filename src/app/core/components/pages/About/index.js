@@ -3,7 +3,6 @@ import React from "react"
 import styled from "styled-components"
 
 import { CARD_ALERTS } from "../../../../user/constants/messages-submission"
-import { ROUTE_API_AUTHORS } from "../../../constants/routes-article"
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { makeFroth } from "../../../../utils"
 import { setModal } from "../../../store/actions-modal"
