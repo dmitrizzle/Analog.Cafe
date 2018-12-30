@@ -2,6 +2,7 @@ import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-"
 import { HEADER_ERRORS } from "../../user/constants/messages-submission"
+import { ROUTE_API_AUTHORS } from "../constants/routes-article"
 import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
@@ -20,10 +21,16 @@ export const setListPage = (page, appendItems) => {
       payload: page
     }
 }
-export function initListPage(state) {
+export const initListPage = state => {
   return {
     type: "LIST.INIT_PAGE",
     payload: state
+  }
+}
+export const setListAuthor = author => {
+  return {
+    type: "LIST.SET_AUTHOR",
+    payload: author
   }
 }
 
@@ -55,9 +62,33 @@ export const fetchListPage = (request, appendItems = false) => {
       )
     axios(makeAPIRequest(request))
       .then(response => {
-        if (response.data.page["items-total"] > 0)
-          dispatch(setListPage(response.data, appendItems))
-        else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
+        const listAuthor =
+          (response.data &&
+            response.data.filter &&
+            response.data.filter.author &&
+            response.data.filter.author.id) ||
+          null
+
+        if (response.data.page["items-total"] > 0) {
+          if (listAuthor)
+            dispatch(
+              fetchListAuthor(
+                listAuthor,
+                setListPage(response.data, appendItems)
+              )
+            )
+          else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
+            dispatch(
+              fetchListAuthor(
+                getState().user.info.id,
+                setListPage(response.data, appendItems)
+              )
+            )
+          else {
+            dispatch(setListAuthor(undefined))
+            dispatch(setListPage(response.data, appendItems))
+          }
+        } else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
           console.log("ERR", HEADER_ERRORS.LIST)
           dispatch(
             initListPage({
@@ -71,6 +102,23 @@ export const fetchListPage = (request, appendItems = false) => {
             })
           )
         }
+      })
+      .catch(() => {
+        dispatch(
+          initListPage({
+            error: CARD_ERRORS.LIST
+          })
+        )
+      })
+  }
+}
+
+export const fetchListAuthor = (id, callback) => {
+  return dispatch => {
+    axios(makeAPIRequest({ url: `${ROUTE_API_AUTHORS}/${id}` }))
+      .then(response => {
+        dispatch(setListAuthor(response.data.info))
+        dispatch(callback)
       })
       .catch(() => {
         dispatch(

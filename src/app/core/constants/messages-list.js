@@ -47,7 +47,7 @@ export const TEXT_ROUTE_LABELS = {
   "/author/*": {
     title: "Published work",
     description:
-      "All published work by the Analog.Cafe author, including images and text published in collaboration with other authors."
+      "All published works by the author, including images and text published in collaboration with other authors."
   }
 }
 

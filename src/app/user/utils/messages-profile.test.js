@@ -34,7 +34,7 @@ it("Generate user profile buttons template", () => {
   expect(getProfileButtons("dmitrizzle", "https://google.com")).toEqual([
     {
       to: "/author/dmitrizzle",
-      text: "More on Analog.Cafe",
+      text: "View Full Profile",
       branded: true
     },
     {

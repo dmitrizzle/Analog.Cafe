@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { CARD_ERRORS } from "../../../constants/messages-submission"
+import { CardColumns } from "../../../../core/components/controls/ArticleActions/components/Options"
 import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
@@ -10,6 +11,7 @@ import {
   ROUTE_API_USER_PROFILE,
   ROUTE_URL_USER_LANDING
 } from "../../../constants/routes-session"
+import { TEXT_EMOJIS } from "../../../../constants"
 import {
   acceptUserInfo,
   getUserInfo,
@@ -18,23 +20,17 @@ import {
 import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { getProfileButtons } from "../../../utils/messages-profile"
 import { setModal } from "../../../../core/store/actions-modal"
-import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Button from "../../../../core/components/controls/Button/components/Button"
 import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
-import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
+import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
 import ProfileCard from "./components/ProfileCard"
+import TitleTextarea from "../../forms/TextInput/components/TitleTextarea"
 
 const composerPath = "/submit/compose"
 class EditProfile extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.handleTitleChange = this.handleTitleChange.bind(this)
-    this.handleTextChange = this.handleTextChange.bind(this)
-    this.handleButtonChange = this.handleButtonChange.bind(this)
-    this.handleButtonFocus = this.handleButtonFocus.bind(this)
-    this.handleButtonBlur = this.handleButtonBlur.bind(this)
-    this.handleFileUpload = this.handleFileUpload.bind(this)
     this.state = {
       setUserInfoPending: false,
       returnToComposer: false
@@ -46,7 +42,6 @@ class EditProfile extends React.PureComponent {
         `return=${composerPath}`
       )
     })
-    console.log(this.props.history.location)
     if (
       this.props.user.status === "ok" &&
       typeof this.props.user.info === "object" &&
@@ -163,44 +158,52 @@ class EditProfile extends React.PureComponent {
   render = () => {
     return this.props.user.status === "ok" ? (
       <ArticleWrapper>
-        <HeaderLarge pageTitle="Edit Your Profile" />
-        <ArticleSection>
-          <p>
-            You can edit your <strong>name</strong>, upload a new profile{" "}
-            <strong>picture</strong>, and your <strong>mini-bio</strong>. You
-            can also <strong>add a link</strong>, which will automatically
-            become a button.
-          </p>
-        </ArticleSection>
-        <ProfileCard
-          title={this.state.title || ""}
-          changeTitle={this.handleTitleChange}
-          warningTitle={this.state.warningTitle}
-          text={this.state.text}
-          changeText={this.handleTextChange}
-          warningText={this.state.warningText}
-          image={this.state.image}
-          changeImage={this.handleImageChange}
-          buttonText={this.state.buttonText}
-          changeButton={this.handleButtonChange}
-          focusButton={this.handleButtonFocus}
-          blurButton={this.handleButtonBlur}
-        />
-        <input
-          type="file"
-          accept="image/x-png,image/jpeg"
-          style={{ display: "none" }}
-          ref={input => {
-            this.fileInput = input
+        <HeaderWrapper>
+          <TitleTextarea
+            placeholder="Your Name"
+            onChange={this.handleTitleChange}
+            value={this.state.title}
+            inputDesignation="title"
+            maxLength={INPUT_TITLE_LIMIT}
+            autoFocus
+            warning={this.state.warningTitle}
+          />
+        </HeaderWrapper>
+        <CardColumns
+          style={{
+            zIndex: 11,
+            position: "relative",
+            maxWidth: "680px",
+            margin: "0 auto"
           }}
-          onChange={this.handleFileUpload}
-        />
+        >
+          <ProfileCard
+            text={this.state.text}
+            changeText={this.handleTextChange}
+            warningText={this.state.warningText}
+            image={this.state.image}
+            changeImage={this.handleImageChange}
+            buttonText={this.state.buttonText}
+            changeButton={this.handleButtonChange}
+            focusButton={this.handleButtonFocus}
+            blurButton={this.handleButtonBlur}
+          />
+          <input
+            type="file"
+            accept="image/x-png,image/jpeg"
+            style={{ display: "none" }}
+            ref={input => {
+              this.fileInput = input
+            }}
+            onChange={this.handleFileUpload}
+          />
+        </CardColumns>
         <Button
           onClick={this.handleDone}
           branded
           loading={this.state.setUserInfoPending ? true : false}
         >
-          Done
+          {TEXT_EMOJIS.CHECKMARK} Save
         </Button>
       </ArticleWrapper>
     ) : (

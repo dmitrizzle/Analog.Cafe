@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
+import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
 import Link from "../../controls/Link"
 
 export const FooterContent = styled.p`
@@ -60,9 +61,8 @@ export class Footer extends React.Component {
           {this.props.user.status === "ok" ? (
             <React.Fragment>
               <Link to="/sign-out">Sign Out</Link> ・{" "}
-              <Link to="/my-submissions">My Submissions</Link> ・{" "}
+              <Link to={ROUTE_URL_USER_LANDING}>My Stuff</Link> ・{" "}
               <Link to="/submit/compose">Composer</Link> ・{" "}
-              <Link to="/profile/edit">Edit Profile</Link> ・{" "}
             </React.Fragment>
           ) : (
             <React.Fragment>

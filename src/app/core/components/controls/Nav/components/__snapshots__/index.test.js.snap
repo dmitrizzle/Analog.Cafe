@@ -884,7 +884,7 @@ ShallowWrapper {
                     userRole={undefined}
                     userStatus={undefined}
           >
-                    Menu 
+                    More 
                     <Unknown />
                     <styled.span />
           </Unknown>
@@ -1177,7 +1177,7 @@ ShallowWrapper {
             userRole={undefined}
             userStatus={undefined}
 >
-            Menu 
+            More 
             <Unknown />
             <styled.span />
 </Unknown>,
@@ -1192,7 +1192,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              "Menu ",
+              "More ",
               <Unknown />,
               <styled.span />,
             ],
@@ -1201,7 +1201,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "Menu ",
+            "More ",
             Object {
               "instance": null,
               "key": undefined,
@@ -1315,7 +1315,7 @@ ShallowWrapper {
                         userRole={undefined}
                         userStatus={undefined}
             >
-                        Menu 
+                        More 
                         <Unknown />
                         <styled.span />
             </Unknown>
@@ -1608,7 +1608,7 @@ ShallowWrapper {
               userRole={undefined}
               userStatus={undefined}
 >
-              Menu 
+              More 
               <Unknown />
               <styled.span />
 </Unknown>,
@@ -1623,7 +1623,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": Array [
-                "Menu ",
+                "More ",
                 <Unknown />,
                 <styled.span />,
               ],
@@ -1632,7 +1632,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "Menu ",
+              "More ",
               Object {
                 "instance": null,
                 "key": undefined,
@@ -2083,21 +2083,6 @@ ShallowWrapper {
         "info": Object {
           "buttons": Array [
             Object {
-              "text": "Photo Essays",
-              "to": "/photo-essays",
-            },
-            Object {
-              "text": "Film Photography",
-              "to": "/film-photography",
-            },
-            Object {
-              "text": "Editorials",
-              "to": "/editorials",
-            },
-            Object {
-              "divider": true,
-            },
-            Object {
               "text": "About Analog.Cafe",
               "to": "/about",
             },
@@ -2143,21 +2128,6 @@ ShallowWrapper {
           "id": "nav/more",
           "info": Object {
             "buttons": Array [
-              Object {
-                "text": "Photo Essays",
-                "to": "/photo-essays",
-              },
-              Object {
-                "text": "Film Photography",
-                "to": "/film-photography",
-              },
-              Object {
-                "text": "Editorials",
-                "to": "/editorials",
-              },
-              Object {
-                "divider": true,
-              },
               Object {
                 "text": "About Analog.Cafe",
                 "to": "/about",

@@ -9,8 +9,12 @@ export default styled.input`
   outline: 0;
   width: 100%;
   cursor: text;
-  &:active {
-    background: initial !important;
-    color: initial !important;
+  &:active,
+  &:focus,
+  &.active {
+    background: ${props => props.theme.color.background()} !important;
+    color: ${props => props.theme.color.foreground()} !important;
+    box-shadow: 0 1px 1px rgba(44, 44, 44, 0.25),
+      0 0 0 1px rgba(44, 44, 44, 0.125) !important;
   }
 `
