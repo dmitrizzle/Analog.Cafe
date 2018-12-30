@@ -463,34 +463,28 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
-        <Styled(styled.header)>
-          <Styled(Component)
-                    autoFocus={true}
-                    maxLength={52}
-                    onChange={[Function]}
-                    placeholder="Your Name"
-                    value=""
-                    warning={undefined}
-          />
-</Styled(styled.header)>,
-        <figure>
-          <styled.div
-                    frothId={undefined}
-          >
-                    <img
-                              alt="Profile avatar"
-                              onClick={[Function]}
-                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                              style={
-                                        Object {
-                                                  "cursor": "pointer",
-                                                }
-                              }
-                    />
-          </styled.div>
+        <Styled(Styled(styled.div))>
+          <figure>
+                    <styled.div
+                              frothId={undefined}
+                    >
+                              <img
+                                        alt="Profile avatar"
+                                        onClick={[Function]}
+                                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                        style={
+                                                  Object {
+                                                            "cursor": "pointer",
+                                                          }
+                                        }
+                              />
+                    </styled.div>
+          </figure>
+</Styled(Styled(styled.div))>,
+        <Styled(Styled(styled.div))>
           <figcaption>
                     <Styled(Styled(Component))
                               maxLength={250}
@@ -500,15 +494,16 @@ ShallowWrapper {
                               warning={undefined}
                     />
           </figcaption>
-</figure>,
-        <styled.input
-          maxLength={250}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Website"
-          value=""
-/>,
+          <styled.input
+                    branded={undefined}
+                    maxLength={250}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Website"
+                    value=""
+          />
+</Styled(Styled(styled.div))>,
       ],
     },
     "ref": null,
@@ -518,41 +513,30 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <Styled(Component)
-            autoFocus={true}
-            maxLength={52}
-            onChange={[Function]}
-            placeholder="Your Name"
-            value=""
-            warning={undefined}
-/>,
+          "children": <figure>
+            <styled.div
+                        frothId={undefined}
+            >
+                        <img
+                                    alt="Profile avatar"
+                                    onClick={[Function]}
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    style={
+                                                Object {
+                                                            "cursor": "pointer",
+                                                          }
+                                    }
+                        />
+            </styled.div>
+</figure>,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "autoFocus": true,
-            "maxLength": 52,
-            "onChange": [Function],
-            "placeholder": "Your Name",
-            "value": "",
-            "warning": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <styled.div
+            "children": <styled.div
               frothId={undefined}
 >
               <img
@@ -566,20 +550,9 @@ ShallowWrapper {
                             }
               />
 </styled.div>,
-            <figcaption>
-              <Styled(Styled(Component))
-                            maxLength={250}
-                            onChange={[Function]}
-                            placeholder="Your short author bio goes here."
-                            value=""
-                            warning={undefined}
-              />
-</figcaption>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "class",
@@ -615,6 +588,38 @@ ShallowWrapper {
             },
             "type": [Function],
           },
+          "type": "figure",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <figcaption>
+              <Styled(Styled(Component))
+                            maxLength={250}
+                            onChange={[Function]}
+                            placeholder="Your short author bio goes here."
+                            value=""
+                            warning={undefined}
+              />
+</figcaption>,
+            <styled.input
+              branded={undefined}
+              maxLength={250}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Website"
+              value=""
+/>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
           Object {
             "instance": null,
             "key": undefined,
@@ -646,60 +651,55 @@ ShallowWrapper {
             },
             "type": "figcaption",
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "branded": undefined,
+              "maxLength": 250,
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "placeholder": "Website",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
         ],
-        "type": "figure",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "maxLength": 250,
-          "onBlur": [Function],
-          "onChange": [Function],
-          "onFocus": [Function],
-          "placeholder": "Website",
-          "value": "",
-        },
-        "ref": null,
-        "rendered": null,
         "type": [Function],
       },
     ],
-    "type": [Function],
+    "type": Symbol(react.fragment),
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
-          <Styled(styled.header)>
-            <Styled(Component)
-                        autoFocus={true}
-                        maxLength={52}
-                        onChange={[Function]}
-                        placeholder="Your Name"
-                        value=""
-                        warning={undefined}
-            />
-</Styled(styled.header)>,
-          <figure>
-            <styled.div
-                        frothId={undefined}
-            >
-                        <img
-                                    alt="Profile avatar"
-                                    onClick={[Function]}
-                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                    style={
-                                                Object {
-                                                            "cursor": "pointer",
-                                                          }
-                                    }
-                        />
-            </styled.div>
+          <Styled(Styled(styled.div))>
+            <figure>
+                        <styled.div
+                                    frothId={undefined}
+                        >
+                                    <img
+                                                alt="Profile avatar"
+                                                onClick={[Function]}
+                                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                                style={
+                                                            Object {
+                                                                        "cursor": "pointer",
+                                                                      }
+                                                }
+                                    />
+                        </styled.div>
+            </figure>
+</Styled(Styled(styled.div))>,
+          <Styled(Styled(styled.div))>
             <figcaption>
                         <Styled(Styled(Component))
                                     maxLength={250}
@@ -709,15 +709,16 @@ ShallowWrapper {
                                     warning={undefined}
                         />
             </figcaption>
-</figure>,
-          <styled.input
-            maxLength={250}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder="Website"
-            value=""
-/>,
+            <styled.input
+                        branded={undefined}
+                        maxLength={250}
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Website"
+                        value=""
+            />
+</Styled(Styled(styled.div))>,
         ],
       },
       "ref": null,
@@ -727,41 +728,30 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <Styled(Component)
-              autoFocus={true}
-              maxLength={52}
-              onChange={[Function]}
-              placeholder="Your Name"
-              value=""
-              warning={undefined}
-/>,
+            "children": <figure>
+              <styled.div
+                            frothId={undefined}
+              >
+                            <img
+                                          alt="Profile avatar"
+                                          onClick={[Function]}
+                                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                          style={
+                                                        Object {
+                                                                      "cursor": "pointer",
+                                                                    }
+                                          }
+                            />
+              </styled.div>
+</figure>,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "host",
             "props": Object {
-              "autoFocus": true,
-              "maxLength": 52,
-              "onChange": [Function],
-              "placeholder": "Your Name",
-              "value": "",
-              "warning": undefined,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <styled.div
+              "children": <styled.div
                 frothId={undefined}
 >
                 <img
@@ -775,20 +765,9 @@ ShallowWrapper {
                                 }
                 />
 </styled.div>,
-              <figcaption>
-                <Styled(Styled(Component))
-                                maxLength={250}
-                                onChange={[Function]}
-                                placeholder="Your short author bio goes here."
-                                value=""
-                                warning={undefined}
-                />
-</figcaption>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
+            },
+            "ref": null,
+            "rendered": Object {
               "instance": null,
               "key": undefined,
               "nodeType": "class",
@@ -824,6 +803,38 @@ ShallowWrapper {
               },
               "type": [Function],
             },
+            "type": "figure",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <figcaption>
+                <Styled(Styled(Component))
+                                maxLength={250}
+                                onChange={[Function]}
+                                placeholder="Your short author bio goes here."
+                                value=""
+                                warning={undefined}
+                />
+</figcaption>,
+              <styled.input
+                branded={undefined}
+                maxLength={250}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Website"
+                value=""
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
             Object {
               "instance": null,
               "key": undefined,
@@ -855,27 +866,28 @@ ShallowWrapper {
               },
               "type": "figcaption",
             },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "branded": undefined,
+                "maxLength": 250,
+                "onBlur": [Function],
+                "onChange": [Function],
+                "onFocus": [Function],
+                "placeholder": "Website",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
           ],
-          "type": "figure",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "maxLength": 250,
-            "onBlur": [Function],
-            "onChange": [Function],
-            "onFocus": [Function],
-            "placeholder": "Website",
-            "value": "",
-          },
-          "ref": null,
-          "rendered": null,
           "type": [Function],
         },
       ],
-      "type": [Function],
+      "type": Symbol(react.fragment),
     },
   ],
   Symbol(enzyme.__options__): Object {

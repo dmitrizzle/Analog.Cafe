@@ -9,10 +9,14 @@ export default props => {
   return (
     <HeaderWrapper>
       <HeaderTitle title={props.title}>
-        {toTitleCase(props.pageTitle)}
+        {props.noTitleCase ? props.pageTitle : toTitleCase(props.pageTitle)}
       </HeaderTitle>
       {props.pageSubtitle && (
-        <HeaderSubtitle>{toTitleCase(props.pageSubtitle)}</HeaderSubtitle>
+        <HeaderSubtitle>
+          {props.noTitleCase
+            ? props.pageSubtitle
+            : toTitleCase(props.pageSubtitle)}
+        </HeaderSubtitle>
       )}
       {props.children}
     </HeaderWrapper>

@@ -10,6 +10,5 @@ export default styled.div`
   position: relative;
   z-index: ${props => props.theme.layer.card};
 
-  transition: height 500ms, opacity 500ms;
   transform: translateZ(0);
 `

@@ -96,20 +96,23 @@ class List extends React.PureComponent {
       (this.props.list.filter.author && this.props.list.filter.author.name
         ? " by " + this.props.list.filter.author.name
         : "")
-
+    console.log(this.props)
     return (
       <div>
         <MetaTags
           metaTitle={renderedListTitle}
           metaDescription={renderedListMeta.description}
         />
-        <ListDescription
-          user={this.props.user}
-          list={this.props.list}
-          renderedListMeta={renderedListMeta}
-          location={this.props.location}
-          style={this.props.list.author ? { height: 0, opacity: 0 } : null}
-        />
+        {!this.props.location.pathname.includes("/author/") &&
+          !this.props.list.author && (
+            <ListDescription
+              user={this.props.user}
+              list={this.props.list}
+              renderedListMeta={renderedListMeta}
+              location={this.props.location}
+            />
+          )}
+
         {this.props.user.connection.status !== "offline" &&
         this.props.list.error &&
         this.props.me ? (
@@ -123,7 +126,10 @@ class List extends React.PureComponent {
                   position: "relative"
                 }}
               >
-                <HeaderLarge pageTitle={this.props.list.author.title}>
+                <HeaderLarge
+                  noTitleCase
+                  pageTitle={this.props.list.author.title}
+                >
                   <Byline>
                     {this.props.list.author &&
                       this.props.user.info.id === this.props.list.author.id && (
@@ -179,7 +185,9 @@ class List extends React.PureComponent {
             <ListBlock
               status={this.props.list.status}
               items={this.props.list.items}
-              author={this.props.list.author ? true : false}
+              author={
+                this.props.location.pathname.includes("/author/") ? true : false
+              }
               nextArticleHeading={nextArticleHeading =>
                 this.props.setArticlePage(
                   preloadConstructor(this.props.article, nextArticleHeading)
