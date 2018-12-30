@@ -497,9 +497,9 @@ ShallowWrapper {
           <styled.input
                     branded={undefined}
                     maxLength={250}
-                    onBlur={[Function]}
+                    onBlur={undefined}
                     onChange={[Function]}
-                    onFocus={[Function]}
+                    onFocus={undefined}
                     placeholder="Website"
                     value=""
           />
@@ -610,9 +610,9 @@ ShallowWrapper {
             <styled.input
               branded={undefined}
               maxLength={250}
-              onBlur={[Function]}
+              onBlur={undefined}
               onChange={[Function]}
-              onFocus={[Function]}
+              onFocus={undefined}
               placeholder="Website"
               value=""
 />,
@@ -658,9 +658,9 @@ ShallowWrapper {
             "props": Object {
               "branded": undefined,
               "maxLength": 250,
-              "onBlur": [Function],
+              "onBlur": undefined,
               "onChange": [Function],
-              "onFocus": [Function],
+              "onFocus": undefined,
               "placeholder": "Website",
               "value": "",
             },
@@ -712,9 +712,9 @@ ShallowWrapper {
             <styled.input
                         branded={undefined}
                         maxLength={250}
-                        onBlur={[Function]}
+                        onBlur={undefined}
                         onChange={[Function]}
-                        onFocus={[Function]}
+                        onFocus={undefined}
                         placeholder="Website"
                         value=""
             />
@@ -825,9 +825,9 @@ ShallowWrapper {
               <styled.input
                 branded={undefined}
                 maxLength={250}
-                onBlur={[Function]}
+                onBlur={undefined}
                 onChange={[Function]}
-                onFocus={[Function]}
+                onFocus={undefined}
                 placeholder="Website"
                 value=""
 />,
@@ -873,9 +873,9 @@ ShallowWrapper {
               "props": Object {
                 "branded": undefined,
                 "maxLength": 250,
-                "onBlur": [Function],
+                "onBlur": undefined,
                 "onChange": [Function],
-                "onFocus": [Function],
+                "onFocus": undefined,
                 "placeholder": "Website",
                 "value": "",
               },
