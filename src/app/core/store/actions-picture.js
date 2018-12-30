@@ -2,12 +2,11 @@ import { getFroth } from "@roast-cms/image-froth"
 import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-"
-import { ROUTE_API_AUTHORS } from "../constants/routes-article"
 import { ROUTE_API_IMAGES } from "../../user/constants/routes-submission"
 import { TEXT_ERRORS } from "../../constants"
-import { fetchModal, setModal } from "./actions-modal"
 import { getFirstNameFromFull } from "../utils/messages-author"
 import { makeAPIRequest } from "../../utils"
+import { setModal } from "./actions-modal"
 
 const UNKNOWN_AUTHOR = (id, error) => {
   return {
