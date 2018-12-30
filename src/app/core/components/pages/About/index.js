@@ -92,16 +92,7 @@ class About extends React.PureComponent {
           every Tuesday and most Thursday mornings.{" "}
           <Link to="https://github.com/dmitrizzle/Analog.Cafe">Maintained</Link>{" "}
           as an open-source project by{" "}
-          <Modal
-            with={{
-              request: {
-                url: ROUTE_API_AUTHORS + "/dmitrizzle"
-              }
-            }}
-          >
-            Dmitri
-          </Modal>
-          .
+          <Link to="/author/dmitrizzle">Dmitri</Link>.
         </blockquote>
         <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
           <Authors>
@@ -109,19 +100,10 @@ class About extends React.PureComponent {
               const image = makeFroth({ src: item.image, size: "t" }).src
 
               return (
-                <Modal
-                  key={item.id}
-                  element={"div"}
-                  with={{
-                    info: item,
-                    id: `authors/${item.id}`
-                  }}
-                >
-                  <AuthorIcon
-                    style={{ backgroundImage: `url(${image})` }}
-                    href={`author/${item.id}`}
-                  />
-                </Modal>
+                <AuthorIcon
+                  style={{ backgroundImage: `url(${image})` }}
+                  href={`author/${item.id}`}
+                />
               )
             })}
           </Authors>
@@ -130,17 +112,9 @@ class About extends React.PureComponent {
         <h3>The authors.</h3>
         <p>
           Analog.Cafe got its name in 2017 when{" "}
-          <Modal
-            with={{
-              request: {
-                url: ROUTE_API_AUTHORS + "/dmitrizzle"
-              }
-            }}
-          >
-            Dmitri
-          </Modal>{" "}
-          began working on a community photography/writing project. It has since
-          grown ten-fold in readership and written contributions.
+          <Link to="/author/dmitrizzle">Dmitri</Link> began working on a
+          community photography/writing project. It has since grown ten-fold in
+          readership and written contributions.
         </p>
         <p>
           It takes conviction to favour analogue creative processes in the age
@@ -150,17 +124,8 @@ class About extends React.PureComponent {
         </p>
         <h3>The editors.</h3>
         <p>
-          <Modal
-            with={{
-              request: {
-                url: ROUTE_API_AUTHORS + "/betty"
-              }
-            }}
-          >
-            Betty
-          </Modal>{" "}
-          and Dmitri pick and edit every article, keeping the content
-          interesting, thoughtful, and readable.
+          <Link to="/author/betty">Betty</Link> and Dmitri pick and edit every
+          article, keeping the content interesting, thoughtful, and readable.
         </p>
 
         <h3>Film Photography.</h3>

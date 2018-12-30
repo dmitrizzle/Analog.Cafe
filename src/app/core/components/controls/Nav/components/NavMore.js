@@ -15,7 +15,7 @@ const NAV_USER = [
   {
     to: "/submit/compose",
     text:
-      loadTextContent().length > 0 ? "Edit My Submission" : "+ New Submission"
+      loadTextContent().length > 0 ? "✐ Edit Submission" : "+ New Submission"
   },
   {
     to: "/about",
