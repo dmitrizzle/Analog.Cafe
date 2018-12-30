@@ -11,6 +11,7 @@ import {
   ROUTE_API_USER_PROFILE,
   ROUTE_URL_USER_LANDING
 } from "../../../constants/routes-session"
+import { TEXT_EMOJIS } from "../../../../constants"
 import {
   acceptUserInfo,
   getUserInfo,
@@ -19,12 +20,12 @@ import {
 import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { getProfileButtons } from "../../../utils/messages-profile"
 import { setModal } from "../../../../core/store/actions-modal"
-import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Button from "../../../../core/components/controls/Button/components/Button"
 import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
-import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
+import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
 import ProfileCard from "./components/ProfileCard"
+import TitleTextarea from "../../forms/TextInput/components/TitleTextarea"
 
 const composerPath = "/submit/compose"
 class EditProfile extends React.PureComponent {
@@ -157,15 +158,17 @@ class EditProfile extends React.PureComponent {
   render = () => {
     return this.props.user.status === "ok" ? (
       <ArticleWrapper>
-        <HeaderLarge pageTitle="Edit Your Profile" />
-        <ArticleSection>
-          <p>
-            You can edit your <strong>name</strong>, upload a new profile{" "}
-            <strong>picture</strong>, and your <strong>mini-bio</strong>. You
-            can also <strong>add a link</strong>, which will automatically
-            become a button.
-          </p>
-        </ArticleSection>
+        <HeaderWrapper>
+          <TitleTextarea
+            placeholder="Your Name"
+            onChange={this.handleTitleChange}
+            value={this.state.title}
+            inputDesignation="title"
+            maxLength={INPUT_TITLE_LIMIT}
+            autoFocus
+            warning={this.state.warningTitle}
+          />
+        </HeaderWrapper>
         <CardColumns
           style={{
             zIndex: 11,
@@ -175,9 +178,6 @@ class EditProfile extends React.PureComponent {
           }}
         >
           <ProfileCard
-            title={this.state.title || ""}
-            changeTitle={this.handleTitleChange}
-            warningTitle={this.state.warningTitle}
             text={this.state.text}
             changeText={this.handleTextChange}
             warningText={this.state.warningText}
@@ -203,7 +203,7 @@ class EditProfile extends React.PureComponent {
           branded
           loading={this.state.setUserInfoPending ? true : false}
         >
-          Done
+          {TEXT_EMOJIS.CHECKMARK} Save
         </Button>
       </ArticleWrapper>
     ) : (

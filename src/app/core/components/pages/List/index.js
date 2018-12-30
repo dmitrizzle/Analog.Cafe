@@ -20,11 +20,12 @@ import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
 import ArticleSection from "../Article/components/ArticleSection"
 import Button from "../../controls/Button/components/Button"
-import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivider"
+import Byline from "../../vignettes/Byline"
 import CardButton from "../../controls/Card/components/CardButton"
 import CardCaption from "../../controls/Card/components/CardCaption"
-import CardHeader from "../../controls/Card/components/CardHeader"
 import Footer from "../../controls/Footer"
+import HeaderLarge from "../../vignettes/HeaderLarge"
+import Link from "../../controls/Link"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
 import MetaTags from "../../vignettes/MetaTags"
@@ -116,59 +117,64 @@ class List extends React.PureComponent {
         ) : (
           <React.Fragment>
             {this.props.list.author && (
-              <CardColumns
+              <ArticleSection
                 style={{
                   zIndex: 11,
-                  position: "relative",
-                  maxWidth: "680px",
-                  margin: "0 auto"
+                  position: "relative"
                 }}
               >
-                <CardIntegratedForColumns>
-                  <CardHeader
-                    stubborn
-                    buttons={[0]}
-                    noStar
-                    title={this.props.list.author.title}
-                  />
-                  <figure>
-                    <Placeholder frothId={this.props.list.author.image}>
-                      <img
-                        src={
-                          makeFroth({
-                            src: this.props.list.author.image,
-                            size: "s"
-                          }).src
-                        }
-                        alt={this.props.list.author.title}
-                      />
-                    </Placeholder>
-                  </figure>
-                </CardIntegratedForColumns>
-                <CardIntegratedForColumns
-                  style={{ background: "rgba(255, 255, 255, 0.5)" }}
-                >
-                  <ButtonGroupDivider />
-
-                  <figcaption>
-                    <CardCaption>{this.props.list.author.text}</CardCaption>
-                  </figcaption>
-                  {this.props.list.author.buttons[1] && (
-                    <CardButton
-                      to={this.props.list.author.buttons[1].to}
-                      style={{ background: "rgba(255, 255, 255, 0.5)" }}
-                    >
-                      {this.props.list.author.buttons[1].text}
-                    </CardButton>
+                <HeaderLarge pageTitle={this.props.list.author.title}>
+                  <Byline>
+                    {this.props.list.author &&
+                      this.props.user.info.id === this.props.list.author.id && (
+                        <React.Fragment>
+                          <span style={{ fontStyle: "normal" }}>✐ </span>
+                          <Link to="/profile/edit">Edit Profile</Link>
+                        </React.Fragment>
+                      )}
+                  </Byline>
+                </HeaderLarge>
+                <CardColumns>
+                  {this.props.list.author.image && (
+                    <CardIntegratedForColumns>
+                      <figure>
+                        <Placeholder frothId={this.props.list.author.image}>
+                          <img
+                            src={
+                              makeFroth({
+                                src: this.props.list.author.image,
+                                size: "s"
+                              }).src
+                            }
+                            alt={this.props.list.author.title}
+                          />
+                        </Placeholder>
+                      </figure>
+                    </CardIntegratedForColumns>
                   )}
-                  {this.props.list.author &&
-                    this.props.user.info.id === this.props.list.author.id && (
-                      <CardButton branded to="/profile/edit">
-                        Edit Profile
-                      </CardButton>
-                    )}
-                </CardIntegratedForColumns>
-              </CardColumns>
+                  {(this.props.list.author.text ||
+                    this.props.list.author.buttons[1]) && (
+                    <CardIntegratedForColumns>
+                      {this.props.list.author.text && (
+                        <figcaption style={{ fontSize: ".8em" }}>
+                          <CardCaption>
+                            {this.props.list.author.text}
+                          </CardCaption>
+                        </figcaption>
+                      )}
+                      {this.props.list.author.buttons[1] &&
+                        this.props.list.author.buttons[1].text && (
+                          <CardButton
+                            to={this.props.list.author.buttons[1].to}
+                            branded
+                          >
+                            {this.props.list.author.buttons[1].text}
+                          </CardButton>
+                        )}
+                    </CardIntegratedForColumns>
+                  )}
+                </CardColumns>
+              </ArticleSection>
             )}
             <ListBlock
               status={this.props.list.status}

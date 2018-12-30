@@ -47,22 +47,7 @@ export const getPictureInfo = src => {
                     image: src,
                     buttons: [
                       {
-                        to: "#about-author",
-                        onClick: event => {
-                          event.preventDefault()
-                          event.stopPropagation()
-                          const authorCardDelay = setTimeout(() => {
-                            dispatch(
-                              fetchModal({
-                                url:
-                                  ROUTE_API_AUTHORS +
-                                  "/" +
-                                  response.data.info.author.id
-                              })
-                            )
-                            clearTimeout(authorCardDelay)
-                          }, 50)
-                        },
+                        to: `/author/${response.data.info.author.id}`,
                         text: `Image by [${getFirstNameFromFull(
                           response.data.info.author.name
                         )}]`,
