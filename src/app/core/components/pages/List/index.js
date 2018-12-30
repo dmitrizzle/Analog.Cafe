@@ -13,7 +13,7 @@ import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_SUBMISSIONS
 } from "../../../constants/routes-list"
-import { fetchListPage } from "../../../store/actions-list"
+import { fetchListPage, initListPage } from "../../../store/actions-list"
 import { getListMeta } from "../../../utils/messages-list"
 import { preloadConstructor } from "../../../utils/routes-article"
 import { setArticlePage } from "../../../store/actions-article"
@@ -47,13 +47,10 @@ class List extends React.PureComponent {
     }
   }
   fetchNewList = () => {
-    const controlledFetch = setTimeout(() => {
-      this.props.fetchListPage(
-        getListMeta(this.props.history.location.pathname, 1, this.listAPI)
-          .request
-      )
-      clearTimeout(controlledFetch)
-    }, 50)
+    this.props.initListPage()
+    this.props.fetchListPage(
+      getListMeta(this.props.history.location.pathname, 1, this.listAPI).request
+    )
   }
   handleLoadMore = event => {
     event.preventDefault()
@@ -96,7 +93,6 @@ class List extends React.PureComponent {
       (this.props.list.filter.author && this.props.list.filter.author.name
         ? " by " + this.props.list.filter.author.name
         : "")
-    console.log(this.props)
     return (
       <div>
         <MetaTags
@@ -231,6 +227,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchListPage: (request, appendItems) => {
       dispatch(fetchListPage(request, appendItems))
+    },
+    initListPage: state => {
+      dispatch(initListPage(state))
     },
     setArticlePage: nextArticle => {
       dispatch(setArticlePage(nextArticle))

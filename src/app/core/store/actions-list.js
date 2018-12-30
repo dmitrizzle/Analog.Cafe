@@ -68,15 +68,27 @@ export const fetchListPage = (request, appendItems = false) => {
             response.data.filter.author &&
             response.data.filter.author.id) ||
           null
-        if (listAuthor) dispatch(fetchListAuthor(listAuthor))
-        else dispatch(setListAuthor(undefined))
 
-        if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
-          dispatch(fetchListAuthor(getState().user.info.id))
-
-        if (response.data.page["items-total"] > 0)
-          dispatch(setListPage(response.data, appendItems))
-        else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
+        if (response.data.page["items-total"] > 0) {
+          if (listAuthor)
+            dispatch(
+              fetchListAuthor(
+                listAuthor,
+                setListPage(response.data, appendItems)
+              )
+            )
+          else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
+            dispatch(
+              fetchListAuthor(
+                getState().user.info.id,
+                setListPage(response.data, appendItems)
+              )
+            )
+          else {
+            dispatch(setListAuthor(undefined))
+            dispatch(setListPage(response.data, appendItems))
+          }
+        } else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
           console.log("ERR", HEADER_ERRORS.LIST)
           dispatch(
             initListPage({
@@ -101,11 +113,12 @@ export const fetchListPage = (request, appendItems = false) => {
   }
 }
 
-export const fetchListAuthor = id => {
+export const fetchListAuthor = (id, callback) => {
   return dispatch => {
     axios(makeAPIRequest({ url: `${ROUTE_API_AUTHORS}/${id}` }))
       .then(response => {
         dispatch(setListAuthor(response.data.info))
+        dispatch(callback)
       })
       .catch(() => {
         dispatch(
