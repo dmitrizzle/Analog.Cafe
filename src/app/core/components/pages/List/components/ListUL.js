@@ -38,6 +38,8 @@ export default styled.ul`
 	${props =>
     props.status === "loading" && `opacity: ` + props.theme.opacity.least + `;`}
 
+    ${props => props.status === "loading" && props.author && `opacity: 0;`}
+
 	${props => props.theme.typography.text.auto};
 	position: 			relative;
 	max-width: 			${props => props.theme.size.breakpoint.stops.max}px;
