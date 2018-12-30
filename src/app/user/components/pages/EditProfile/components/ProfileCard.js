@@ -38,8 +38,8 @@ export default props => {
           placeholder="Website"
           maxLength={INPUT_SUMMARY_LIMIT}
           onChange={event => props.changeButton(event)}
-          onFocus={() => props.focusButton()}
-          onBlur={() => props.blurButton()}
+          onFocus={props.focusButton}
+          onBlur={props.blurButton}
         />
       </CardIntegratedForColumns>
     </React.Fragment>
