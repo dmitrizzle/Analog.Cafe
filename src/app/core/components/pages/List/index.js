@@ -124,6 +124,10 @@ class List extends React.PureComponent {
             {isProfilePage && (
               <ArticleWrapper>
                 <HeaderLarge
+                  style={{
+                    zIndex: 11,
+                    position: "relative"
+                  }}
                   noTitleCase
                   pageTitle={
                     (this.props.list.author && this.props.list.author.title) ||
