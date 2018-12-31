@@ -174,7 +174,8 @@ class List extends React.PureComponent {
                       )}
                     {this.props.list.author &&
                       (this.props.list.author.text ||
-                        this.props.list.author.buttons[1]) && (
+                        (this.props.list.author.buttons[1] &&
+                          this.props.list.author.buttons[1].text)) && (
                         <CardIntegratedForColumns>
                           {this.props.list.author.text && (
                             <figcaption style={{ fontSize: ".8em" }}>
