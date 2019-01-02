@@ -32,7 +32,7 @@ const POPUP_WINDOW = name => {
   return {
     name,
     width: 620,
-    height: 540
+    height: 980
   }
 }
 const processSignin = (props, code, sessionInfo) => {
