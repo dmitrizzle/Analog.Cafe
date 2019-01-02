@@ -175,12 +175,7 @@ class Article extends React.Component {
       "/" +
       this.props.article.slug
     const shortenedUrlLength = 23
-    const maxChar =
-      800 - // user can select almost as much text as they want and edit later in Twitter dialogue
-      shortenedUrlLength -
-      authorName.length -
-      punctuation.length -
-      url.length
+    const maxChar = 800 // user can select almost as much text as they want and edit later in Twitter dialogue
 
     const text = selection.toString()
     window.requestAnimationFrame(() => {
