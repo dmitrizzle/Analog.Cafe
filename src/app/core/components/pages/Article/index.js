@@ -174,19 +174,27 @@ class Article extends React.Component {
       ROUTE_URL_ARTICLES +
       "/" +
       this.props.article.slug
-    const shortenedUrlLength = 23
-    const maxChar = 800 // user can select almost as much text as they want and edit later in Twitter dialogue
+    const shortenedUrlLength = 23 // shortened URL length
+    const maxShareableChar = 800 // can't select and tweet more than this
+    const maxChar =
+      280 - shortenedUrlLength - authorName.length - punctuation.length
 
     const text = selection.toString()
     window.requestAnimationFrame(() => {
       this.props.setArticleSelectoin({
         leftOffset,
         topOffset,
-        text: text.length > 0 ? `“${text}” – ${authorName} ${url}` : undefined,
+        text:
+          text.length > 0
+            ? `“${
+                text.length > maxChar
+                  ? text.substring(0, maxChar - 1) + "…"
+                  : text
+              }” – ${authorName} ${url}`
+            : undefined,
         hidden:
           selection.type === "Range"
-            ? selection.toString().length < maxChar &&
-              selection.toString().length
+            ? text.length < maxShareableChar && text.length > 0
               ? false
               : true
             : true
