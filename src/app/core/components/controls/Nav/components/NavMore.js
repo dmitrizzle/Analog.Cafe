@@ -1,5 +1,4 @@
 // NOTE: `className` props are used in index.html
-import { connect } from "react-redux"
 import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 

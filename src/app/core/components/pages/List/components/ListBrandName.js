@@ -5,7 +5,7 @@ export default styled.strong`
   display: block;
   font-size: ${props => props.theme.size.font.make.smaller}em;
   position: relative;
-  width: 6em;
+  width: 6.2em;
   margin: 0 auto 0.5em;
 
   ${props =>
