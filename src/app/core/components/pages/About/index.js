@@ -60,7 +60,7 @@ const Authors = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 `
-const AuthorIcon = styled.a`
+const AuthorIcon = styled(Link)`
   display: block;
   width: ${props => props.theme.size.block.padding * 2}em;
   height: ${props => props.theme.size.block.padding * 2}em;
@@ -101,7 +101,7 @@ class About extends React.PureComponent {
               return (
                 <AuthorIcon
                   style={{ backgroundImage: `url(${image})` }}
-                  href={`author/${item.id}`}
+                  to={`/author/${item.id}`}
                 />
               )
             })}

@@ -10,6 +10,7 @@ import {
 import { makeAPIRequest } from "../../utils"
 
 export const setListPage = (page, appendItems) => {
+  console.log("setListPage")
   if (appendItems === false)
     return {
       type: "LIST.SET_PAGE",
@@ -28,6 +29,7 @@ export const initListPage = state => {
   }
 }
 export const setListAuthor = author => {
+  console.log("setListAuthor")
   return {
     type: "LIST.SET_AUTHOR",
     payload: author
@@ -36,12 +38,13 @@ export const setListAuthor = author => {
 
 export const fetchListPage = (request, appendItems = false) => {
   return (dispatch, getState) => {
+    let listState = getState().list
+
     if (
       !request.url.includes(ROUTE_API_LIST) &&
       !request.url.includes(ROUTE_API_LIST_SUBMISSIONS)
     )
       return
-    let listState = getState().list
     if (
       listState.requested.url === request.url &&
       listState.requested.params.tag === request.params.tag &&
@@ -50,10 +53,12 @@ export const fetchListPage = (request, appendItems = false) => {
       listState.requested.params.page === request.params.page
     )
       return
+
     if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
       request.headers = {
         Authorization: "JWT " + localStorage.getItem("token")
       }
+
     if (!appendItems)
       dispatch(
         initListPage({
@@ -70,38 +75,33 @@ export const fetchListPage = (request, appendItems = false) => {
           null
 
         if (
-          response.data.page["items-total"] > 0 ||
-          request.url.includes(ROUTE_API_LIST_SUBMISSIONS)
+          response.data.page["items-total"] === 0 &&
+          !request.url.includes(ROUTE_API_LIST_SUBMISSIONS)
         ) {
-          if (listAuthor)
-            dispatch(
-              fetchListAuthor(
-                listAuthor,
-                setListPage(response.data, appendItems)
-              )
-            )
-          if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
-            dispatch(
-              fetchListAuthor(
-                getState().user.info.id,
-                setListPage(response.data, appendItems)
-              )
-            )
-            response.data.page["items-total"] === 0 &&
-              initListPage({
-                error: HEADER_ERRORS.LIST
-              })
-          } else {
-            dispatch(setListAuthor(undefined))
-            dispatch(setListPage(response.data, appendItems))
-          }
-        } else {
           dispatch(
             initListPage({
               error: CARD_ERRORS.LIST
             })
           )
+          return
         }
+
+        if (listAuthor) {
+          dispatch(fetchListAuthor(listAuthor, response.data, appendItems))
+          return
+        }
+        if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
+          dispatch(
+            fetchListAuthor(getState().user.info.id, response.data, appendItems)
+          )
+          response.data.page["items-total"] === 0 &&
+            initListPage({
+              error: HEADER_ERRORS.LIST
+            })
+          return
+        }
+        dispatch(setListAuthor(undefined))
+        dispatch(setListPage(response.data, appendItems))
       })
       .catch(() => {
         dispatch(
@@ -113,19 +113,19 @@ export const fetchListPage = (request, appendItems = false) => {
   }
 }
 
-export const fetchListAuthor = (id, callback) => {
+export const fetchListAuthor = (authorId, listResponse, listAppendItems) => {
   return dispatch => {
-    axios(makeAPIRequest({ url: `${ROUTE_API_AUTHORS}/${id}` }))
+    axios(makeAPIRequest({ url: `${ROUTE_API_AUTHORS}/${authorId}` }))
       .then(response => {
         dispatch(setListAuthor(response.data.info))
-        dispatch(callback)
-      })
-      .catch(() => {
-        dispatch(
-          initListPage({
-            error: CARD_ERRORS.LIST
-          })
+        window.requestAnimationFrame(() =>
+          dispatch(setListPage(listResponse, listAppendItems))
         )
       })
+      .catch(() =>
+        initListPage({
+          error: CARD_ERRORS.LIST
+        })
+      )
   }
 }
