@@ -190,7 +190,7 @@ class List extends React.PureComponent {
                 </CardColumns>
               </ArticleSection>
               {this.props.user.connection.status !== "offline" &&
-                this.props.list.error &&
+                this.props.list.page["items-total"] == 0 &&
                 this.props.me && <PlaceholderHowToSubmit />}
             </ArticleWrapper>
           )}
@@ -210,7 +210,6 @@ class List extends React.PureComponent {
             readReceipts={this.props.user.sessionInfo.readReceipts}
           />
         </React.Fragment>
-        )}
         {parseInt(this.props.list.page.total, 0) > 1 &&
         parseInt(this.props.list.page.total, 0) >
           parseInt(this.props.list.page.current, 0) ? (

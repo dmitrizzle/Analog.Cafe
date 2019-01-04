@@ -35,6 +35,7 @@ export const setListAuthor = author => {
 }
 
 export const fetchListPage = (request, appendItems = false) => {
+  console.log(1)
   return (dispatch, getState) => {
     if (
       !request.url.includes(ROUTE_API_LIST) &&
@@ -69,7 +70,10 @@ export const fetchListPage = (request, appendItems = false) => {
             response.data.filter.author.id) ||
           null
 
-        if (response.data.page["items-total"] > 0) {
+        if (
+          response.data.page["items-total"] > 0 ||
+          request.url.includes(ROUTE_API_LIST_SUBMISSIONS)
+        ) {
           if (listAuthor)
             dispatch(
               fetchListAuthor(
@@ -77,24 +81,21 @@ export const fetchListPage = (request, appendItems = false) => {
                 setListPage(response.data, appendItems)
               )
             )
-          else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
+          if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
             dispatch(
               fetchListAuthor(
                 getState().user.info.id,
                 setListPage(response.data, appendItems)
               )
             )
-          else {
+            response.data.page["items-total"] === 0 &&
+              initListPage({
+                error: HEADER_ERRORS.LIST
+              })
+          } else {
             dispatch(setListAuthor(undefined))
             dispatch(setListPage(response.data, appendItems))
           }
-        } else if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
-          console.log("ERR", HEADER_ERRORS.LIST)
-          dispatch(
-            initListPage({
-              error: HEADER_ERRORS.LIST
-            })
-          )
         } else {
           dispatch(
             initListPage({

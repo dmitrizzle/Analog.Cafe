@@ -14,17 +14,16 @@ export default () => {
   const ctaText = ctaTextInit()
 
   return (
-    <ArticleWrapper>
-      <ArticleSection>
-        <SubmitIntro />
-        <ButtonGroup style={{ paddingBottom: "1.5em" }}>
-          <LinkButton to={"/submit/compose"} branded>
-            {ctaText}
-          </LinkButton>
-        </ButtonGroup>
+    <ArticleSection style={{ paddingBottom: "17.5em" }}>
+      <hr />
+      <SubmitIntro />
+      <ButtonGroup style={{ paddingBottom: "1.5em" }}>
+        <LinkButton to={"/submit/compose"} branded>
+          {ctaText}
+        </LinkButton>
+      </ButtonGroup>
 
-        <HowToSubmit />
-      </ArticleSection>
-    </ArticleWrapper>
+      <HowToSubmit />
+    </ArticleSection>
   )
 }
