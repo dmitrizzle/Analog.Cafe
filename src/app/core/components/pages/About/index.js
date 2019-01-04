@@ -95,13 +95,14 @@ class About extends React.PureComponent {
         </blockquote>
         <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
           <Authors>
-            {this.props.community.authorsList.items.map((item, count) => {
+            {this.props.community.authorsList.items.map((item, index) => {
               const image = makeFroth({ src: item.image, size: "t" }).src
 
               return (
                 <AuthorIcon
                   style={{ backgroundImage: `url(${image})` }}
                   to={`/author/${item.id}`}
+                  key={index}
                 />
               )
             })}
