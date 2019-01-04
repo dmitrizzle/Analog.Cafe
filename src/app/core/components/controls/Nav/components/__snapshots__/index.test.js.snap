@@ -2100,7 +2100,7 @@ ShallowWrapper {
           "search": true,
           "title": <span>
             <Unknown />
-             Menu
+             More
 </span>,
         },
       },
@@ -2146,7 +2146,7 @@ ShallowWrapper {
             "search": true,
             "title": <span>
               <Unknown />
-               Menu
+               More
 </span>,
           },
         },
