@@ -127,9 +127,18 @@ export default () => {
         <Route exact path="/solo-projects" component={List} />
         {/* auth views */}
         <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
+        <Route
+          exact
+          path="/my-submissions"
+          render={() => <Redirect to={ROUTE_URL_USER_LANDING} />}
+        />
         <Route exact path={`/admin`} component={Admin} />
         <Route exact path="/submissions/*" component={Article} />
-        <Route exact path={"/profile/edit"} component={EditProfile} />
+        <Route
+          exact
+          path={`${ROUTE_URL_USER_LANDING}/edit`}
+          component={EditProfile}
+        />
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-out" component={SignOut} />
         {/* static views and urls */}

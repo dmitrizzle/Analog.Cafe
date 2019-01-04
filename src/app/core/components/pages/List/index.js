@@ -134,7 +134,9 @@ class List extends React.PureComponent {
                     this.props.user.info.id === this.props.list.author.id && (
                       <React.Fragment>
                         <span style={{ fontStyle: "normal" }}>✐ </span>
-                        <Link to="/profile/edit">Edit Profile</Link>
+                        <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
+                          Edit Profile
+                        </Link>
                       </React.Fragment>
                     )}
                 </Byline>

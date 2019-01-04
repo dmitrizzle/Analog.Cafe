@@ -8,4 +8,4 @@ export const ROUTE_API_LOGIN_REFRESH = HOST_API + "/auth/refresh"
 export const ROUTE_API_USER = HOST_API + "/auth/user"
 export const ROUTE_API_USER_PROFILE = HOST_API + "/users/me"
 
-export const ROUTE_URL_USER_LANDING = "/my-submissions"
+export const ROUTE_URL_USER_LANDING = "/profile"
