@@ -114,107 +114,102 @@ class List extends React.PureComponent {
             location={this.props.location}
           />
         )}
-
-        {this.props.user.connection.status !== "offline" &&
-        this.props.list.error &&
-        this.props.me ? (
-          <PlaceholderHowToSubmit />
-        ) : (
-          <React.Fragment>
-            {isProfilePage && (
-              <ArticleWrapper>
-                <HeaderLarge
-                  style={{
-                    zIndex: 11,
-                    position: "relative"
-                  }}
-                  noTitleCase
-                  pageTitle={
-                    (this.props.list.author && this.props.list.author.title) ||
-                    TEXT_EMOJIS.HUG_RIGHT
-                  }
-                  pageSubtitle={
-                    !this.props.list.author ? "Loading…" : undefined
-                  }
-                >
-                  <Byline>
-                    {this.props.list.author &&
-                      this.props.user.info.id === this.props.list.author.id && (
-                        <React.Fragment>
-                          <span style={{ fontStyle: "normal" }}>✐ </span>
-                          <Link to="/profile/edit">Edit Profile</Link>
-                        </React.Fragment>
-                      )}
-                  </Byline>
-                </HeaderLarge>
-                <ArticleSection
-                  style={{
-                    zIndex: 11,
-                    position: "relative"
-                  }}
-                >
-                  <CardColumns>
-                    {this.props.list.author &&
-                      this.props.list.author.image && (
-                        <CardIntegratedForColumns>
-                          <figure>
-                            <Placeholder frothId={this.props.list.author.image}>
-                              <img
-                                src={
-                                  makeFroth({
-                                    src: this.props.list.author.image,
-                                    size: "s"
-                                  }).src
-                                }
-                                alt={this.props.list.author.title}
-                              />
-                            </Placeholder>
-                          </figure>
-                        </CardIntegratedForColumns>
-                      )}
-                    {this.props.list.author &&
-                      (this.props.list.author.text ||
-                        (this.props.list.author.buttons[1] &&
-                          this.props.list.author.buttons[1].text)) && (
-                        <CardIntegratedForColumns>
-                          {this.props.list.author.text && (
-                            <figcaption style={{ fontSize: ".8em" }}>
-                              <CardCaption>
-                                {this.props.list.author.text}
-                              </CardCaption>
-                            </figcaption>
+        <React.Fragment>
+          {isProfilePage && (
+            <ArticleWrapper>
+              <HeaderLarge
+                style={{
+                  zIndex: 11,
+                  position: "relative"
+                }}
+                noTitleCase
+                pageTitle={
+                  (this.props.list.author && this.props.list.author.title) ||
+                  TEXT_EMOJIS.HUG_RIGHT
+                }
+                pageSubtitle={!this.props.list.author ? "Loading…" : undefined}
+              >
+                <Byline>
+                  {this.props.list.author &&
+                    this.props.user.info.id === this.props.list.author.id && (
+                      <React.Fragment>
+                        <span style={{ fontStyle: "normal" }}>✐ </span>
+                        <Link to="/profile/edit">Edit Profile</Link>
+                      </React.Fragment>
+                    )}
+                </Byline>
+              </HeaderLarge>
+              <ArticleSection
+                style={{
+                  zIndex: 11,
+                  position: "relative"
+                }}
+              >
+                <CardColumns>
+                  {this.props.list.author &&
+                    this.props.list.author.image && (
+                      <CardIntegratedForColumns>
+                        <figure>
+                          <Placeholder frothId={this.props.list.author.image}>
+                            <img
+                              src={
+                                makeFroth({
+                                  src: this.props.list.author.image,
+                                  size: "s"
+                                }).src
+                              }
+                              alt={this.props.list.author.title}
+                            />
+                          </Placeholder>
+                        </figure>
+                      </CardIntegratedForColumns>
+                    )}
+                  {this.props.list.author &&
+                    (this.props.list.author.text ||
+                      (this.props.list.author.buttons[1] &&
+                        this.props.list.author.buttons[1].text)) && (
+                      <CardIntegratedForColumns>
+                        {this.props.list.author.text && (
+                          <figcaption style={{ fontSize: ".8em" }}>
+                            <CardCaption>
+                              {this.props.list.author.text}
+                            </CardCaption>
+                          </figcaption>
+                        )}
+                        {this.props.list.author.buttons[1] &&
+                          this.props.list.author.buttons[1].text && (
+                            <CardButton
+                              to={this.props.list.author.buttons[1].to}
+                              branded
+                            >
+                              {this.props.list.author.buttons[1].text}
+                            </CardButton>
                           )}
-                          {this.props.list.author.buttons[1] &&
-                            this.props.list.author.buttons[1].text && (
-                              <CardButton
-                                to={this.props.list.author.buttons[1].to}
-                                branded
-                              >
-                                {this.props.list.author.buttons[1].text}
-                              </CardButton>
-                            )}
-                        </CardIntegratedForColumns>
-                      )}
-                  </CardColumns>
-                </ArticleSection>
-              </ArticleWrapper>
-            )}
-            <ListBlock
-              status={this.props.list.status}
-              items={this.props.list.items}
-              author={isProfilePage}
-              nextArticleHeading={nextArticleHeading =>
-                this.props.setArticlePage(
-                  preloadConstructor(this.props.article, nextArticleHeading)
-                )
-              }
-              private={this.props.private}
-              isAdmin={this.props.isAdmin}
-              userIntent={this.handleUserIntent}
-              article={this.props.article}
-              readReceipts={this.props.user.sessionInfo.readReceipts}
-            />
-          </React.Fragment>
+                      </CardIntegratedForColumns>
+                    )}
+                </CardColumns>
+              </ArticleSection>
+              {this.props.user.connection.status !== "offline" &&
+                this.props.list.error &&
+                this.props.me && <PlaceholderHowToSubmit />}
+            </ArticleWrapper>
+          )}
+          <ListBlock
+            status={this.props.list.status}
+            items={this.props.list.items}
+            author={isProfilePage}
+            nextArticleHeading={nextArticleHeading =>
+              this.props.setArticlePage(
+                preloadConstructor(this.props.article, nextArticleHeading)
+              )
+            }
+            private={this.props.private}
+            isAdmin={this.props.isAdmin}
+            userIntent={this.handleUserIntent}
+            article={this.props.article}
+            readReceipts={this.props.user.sessionInfo.readReceipts}
+          />
+        </React.Fragment>
         )}
         {parseInt(this.props.list.page.total, 0) > 1 &&
         parseInt(this.props.list.page.total, 0) >
