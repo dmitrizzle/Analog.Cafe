@@ -190,7 +190,7 @@ class List extends React.PureComponent {
                 </CardColumns>
               </ArticleSection>
               {this.props.user.connection.status !== "offline" &&
-                this.props.list.page["items-total"] == 0 &&
+                this.props.list.page["items-total"] === 0 &&
                 this.props.me && <PlaceholderHowToSubmit />}
             </ArticleWrapper>
           )}

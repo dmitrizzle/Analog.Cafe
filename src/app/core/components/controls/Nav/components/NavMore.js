@@ -1,4 +1,5 @@
 // NOTE: `className` props are used in index.html
+import { connect } from "react-redux"
 import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 
@@ -7,15 +8,14 @@ import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-ses
 import { TEXT_LABELS } from "../../../../constants/messages-"
 import Modal from "../../Modal"
 
-const NAV_USER = [
+const NAV_USER = hasDraft => [
   {
     to: ROUTE_URL_USER_LANDING,
-    text: "My Stuff"
+    text: "My Profile"
   },
   {
     to: "/submit/compose",
-    text:
-      loadTextContent().length > 0 ? "✐ Edit Submission" : "+ New Submission"
+    text: hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
   },
   {
     to: "/about",
@@ -45,7 +45,10 @@ const NAV_VISITOR = [
 ]
 
 export default props => {
-  let buttons = props.userStatus === "ok" ? NAV_USER : NAV_VISITOR
+  let buttons =
+    props.userStatus === "ok"
+      ? NAV_USER(loadTextContent().length > 0)
+      : NAV_VISITOR
   if (props.userRole === "admin")
     buttons = [
       ...buttons,

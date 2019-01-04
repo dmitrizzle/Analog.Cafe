@@ -35,7 +35,6 @@ export const setListAuthor = author => {
 }
 
 export const fetchListPage = (request, appendItems = false) => {
-  console.log(1)
   return (dispatch, getState) => {
     if (
       !request.url.includes(ROUTE_API_LIST) &&

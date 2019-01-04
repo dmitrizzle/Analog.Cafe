@@ -5,7 +5,6 @@ import {
   ctaTextInit
 } from "../../../../../user/components/pages/Submit"
 import ArticleSection from "../../Article/components/ArticleSection"
-import ArticleWrapper from "../../Article/components/ArticleWrapper"
 import ButtonGroup from "../../../controls/Button/components/ButtonGroup"
 import HowToSubmit from "../../../../../user/components/pages/Submit/components/HowToSubmit"
 import LinkButton from "../../../controls/Button/components/LinkButton"
