@@ -69,7 +69,7 @@ export default props => {
           menu: true,
           title: (
             <span>
-              <BurgerMenu /> Menu
+              <BurgerMenu /> More
             </span>
           ),
           buttons
