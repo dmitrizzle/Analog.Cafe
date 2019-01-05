@@ -21,6 +21,7 @@ const WallPaper = styled.div`
   ${props => props.theme.size.breakpoint.max.m`
     margin-top: 0;
   `} height: 100vh;
+  min-height: 670px;
   padding-top: 3em;
   background: url(${"https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1512027_B13cpBr2m.jpg"});
   background-size: cover;
@@ -36,7 +37,7 @@ export const GetYourWeekly = () => (
 
 export default props => {
   return (
-    <ArticleWrapper>
+    <ArticleWrapper style={{ overflow: "visible" }}>
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
       <HeaderLarge pageTitle={metaTitle} pageSubtitle="Analog.Cafe" />
 
