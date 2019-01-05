@@ -22,7 +22,8 @@ export default styled.form`
     max-width: 100vw;
     border-radius: 0 !important;
     section & {
-      margin-left: -${props => props.theme.size.block.padding}em !important;
+      margin-left: -${props =>
+        props.inCard ? 0 : props.theme.size.block.padding}em !important;
     }
   `};
   ${props =>

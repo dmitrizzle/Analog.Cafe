@@ -45,7 +45,7 @@ export default class extends React.PureComponent {
   }
   render = () => {
     return (
-      <div>
+      <React.Fragment>
         {!this.state.subscribeForm ? (
           <CardButton branded onClick={this.handleRevealSubscribeForm}>
             {TEXT_LABELS.SUBSCRIBE}
@@ -60,7 +60,7 @@ export default class extends React.PureComponent {
             submitCallback={this.handleSubmitCallback}
           />
         )}
-      </div>
+      </React.Fragment>
     )
   }
 }

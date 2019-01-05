@@ -43,6 +43,7 @@ export default class extends React.Component {
     return (
       <Form
         style={this.props.style || null}
+        inCard
         withinGroup={this.props.withinGroup}
       >
         <EmailInput
