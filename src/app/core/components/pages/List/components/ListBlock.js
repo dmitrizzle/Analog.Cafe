@@ -47,17 +47,16 @@ export default props => {
                   >
                     {item.type !== "placeholder" && (
                       <div
-                        style={
-                          item.poster && {
-                            backgroundImage:
-                              "url(" +
-                              makeFroth({
-                                src: item.poster,
-                                size: index ? "s" : "m"
-                              }).src +
-                              ")"
-                          }
-                        }
+                        style={{
+                          backgroundImage: item.poster
+                            ? `url(${
+                                makeFroth({
+                                  src: item.poster,
+                                  size: index ? "s" : "m"
+                                }).src
+                              })`
+                            : undefined
+                        }}
                         aria-label={item.title + " poster image"}
                       />
                     )}
@@ -95,19 +94,17 @@ export default props => {
                   </div>
                 </section>
                 <ZigZagPicture
-                  style={
-                    item.type !== "placeholder" && item.poster
-                      ? {
-                          backgroundImage: `url(${
-                            makeFroth({
-                              src: item.poster,
-                              size: index ? "s" : "m"
-                            }).src
-                          })`,
-                          opacity: item.status === "rejected" ? "0.25" : null
-                        }
-                      : null
-                  }
+                  index={index}
+                  style={{
+                    backgroundImage: item.poster
+                      ? `url(${
+                          makeFroth({
+                            src: item.poster,
+                            size: index ? "s" : "m"
+                          }).src
+                        })`
+                      : undefined
+                  }}
                 />
               </Link>
             </li>

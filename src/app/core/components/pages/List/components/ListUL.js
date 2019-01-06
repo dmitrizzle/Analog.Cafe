@@ -3,9 +3,9 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 import { VALUE_ZIGZAG_TOP_SHIM, VALUE_ZIGZAG_WIDTH } from "../constants"
-import ZigZag from "../../../icons/ZigZag"
 import { sectionTitle } from "../../Article/components/ArticleSection"
 import { subtitleStyles } from "../../../vignettes/HeaderLarge/components/HeaderSubtitle"
+import ZigZag from "../../../icons/ZigZag"
 
 const zigZagSVG = encodeURIComponent(renderToStaticMarkup(<ZigZag />))
 const zigZagDataUri = `url("data:image/svg+xml,${zigZagSVG}")`

@@ -21,13 +21,11 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "LIST.SET_PAGE":
-      // console.log(4, action.payload);
-
       state = {
         ...state,
+        requested: INITIAL_STATE.requested,
         ...action.payload
       }
-      // console.log(5, state);
       break
     case "LIST.ADD_PAGE":
       state = {

@@ -13,7 +13,6 @@ export default styled.div`
       .l` display: none; `} ul:first-child li:first-child & {
     margin-top: -${VALUE_ZIGZAG_TOP_SHIM + 4.5}em;
   }
-
   clip-path: polygon(
     40% 0,
     73% 4%,
