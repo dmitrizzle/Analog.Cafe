@@ -37,6 +37,5 @@ export const getListMeta = (pathname = "/", page = 1) => {
       url
     }
   }
-  console.log("BBB", url, request.url)
   return { request, meta }
 }

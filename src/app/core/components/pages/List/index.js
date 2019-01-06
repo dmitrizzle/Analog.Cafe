@@ -9,10 +9,6 @@ import {
   CardIntegratedForColumns
 } from "../../controls/ArticleActions/components/Options"
 import { GA, makeFroth } from "../../../../utils"
-import {
-  ROUTE_API_LIST,
-  ROUTE_API_LIST_SUBMISSIONS
-} from "../../../constants/routes-list"
 import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { fetchListPage, initListPage } from "../../../store/actions-list"
@@ -47,29 +43,14 @@ class List extends React.PureComponent {
     }
   }
   fetchNewList = () => {
-    console.log(
-      "AAAA",
-      this.props.history.location.pathname,
-      window.location.pathname
-    )
-    const request = getListMeta(
-      this.props.history.location.pathname,
-      1,
-      this.props.private ? ROUTE_API_LIST_SUBMISSIONS : ROUTE_API_LIST
-    ).request
+    const request = getListMeta(this.props.history.location.pathname, 1).request
     this.props.fetchListPage(request)
-
-    // const delay = setTimeout(() => {
-    //   clearTimeout(delay);
-    //   this.props.fetchListPage(request);
-    // }, 20);
   }
   handleLoadMore = event => {
     event.preventDefault()
     const request = getListMeta(
       this.props.history.location.pathname,
-      parseInt(this.props.list.page.current, 0) + 1,
-      this.props.private ? ROUTE_API_LIST_SUBMISSIONS : ROUTE_API_LIST
+      parseInt(this.props.list.page.current, 0) + 1
     ).request
     this.props.fetchListPage(request, true)
     this.setState({

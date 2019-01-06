@@ -9,7 +9,6 @@ import {
 import { makeAPIRequest } from "../../utils"
 
 export const setListPage = (page, appendItems) => {
-  console.log("setListPage")
   const type = `LIST.${!appendItems ? "SET" : "ADD"}_PAGE`
   return {
     type,
@@ -31,18 +30,15 @@ export const setListAuthor = author => {
 }
 
 export const fetchListPage = (request, appendItems = false) => {
-  console.log("request.url ", request.url)
   return (dispatch, getState) => {
     const listState = getState().list
     const isSubmissions = url => {
-      // console.log("isSubmissions", url);
       return url.includes(ROUTE_API_LIST_SUBMISSIONS)
     }
 
     if (!request.url.includes(ROUTE_API_LIST) && !isSubmissions(request.url))
       return
 
-    // console.log(listState, request);
     if (
       listState.requested.url === request.url &&
       listState.requested.params.page === request.params.page &&
@@ -60,17 +56,23 @@ export const fetchListPage = (request, appendItems = false) => {
         Authorization: "JWT " + localStorage.getItem("token")
       }
     if (isSubmissions(request.url) !== isSubmissions(listState.requested.url)) {
-      console.log("initListPage 1")
       dispatch(initListPage())
     }
 
+    console.log(request)
+    if (listState.requested.params.author !== request.params.author) {
+      dispatch(initListPage())
+    }
+
+    //
+    //
+    //
+    //
+    //
     const delay = setTimeout(() => {
       clearTimeout(delay)
-      // console.log("request.url > delay", request.url);
       axios(makeAPIRequest(request))
         .then(response => {
-          console.log("request.url > delay > axios", request.url)
-
           const listAuthor =
             (response.data &&
               response.data.filter &&
@@ -91,7 +93,6 @@ export const fetchListPage = (request, appendItems = false) => {
             isSubmissions(request.url) !==
             isSubmissions(listState.requested.url)
           ) {
-            console.log("initListPage 2")
             dispatch(initListPage())
           }
 
@@ -108,18 +109,10 @@ export const fetchListPage = (request, appendItems = false) => {
           }
 
           if (listAuthor) {
-            console.log("listAuthor dispatches fetchListAuthor")
             dispatch(fetchListAuthor(listAuthor, payload, appendItems))
             return
           }
           if (isSubmissions(request.url)) {
-            //
-            //
-            //
-            //
-            //
-            //
-            console.log("request.url dispatches fetchListAuthor")
             dispatch(
               fetchListAuthor(getState().user.info.id, payload, appendItems)
             )
@@ -127,7 +120,6 @@ export const fetchListPage = (request, appendItems = false) => {
           }
 
           dispatch(setListAuthor(undefined))
-          console.log("dispatch setListPage 1")
           dispatch(setListPage(payload, appendItems))
         })
         .catch(() => {
@@ -148,8 +140,6 @@ export const fetchListAuthor = (authorId, payload, listAppendItems) => {
     axios(makeAPIRequest(request))
       .then(response => {
         dispatch(setListAuthor(response.data.info))
-        console.log("dispatch setListPage 2")
-
         dispatch(setListPage(payload, listAppendItems))
       })
       .catch(() =>
