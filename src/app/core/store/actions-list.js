@@ -1,7 +1,6 @@
 import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-"
-import { HEADER_ERRORS } from "../../user/constants/messages-submission"
 import { ROUTE_API_AUTHORS } from "../constants/routes-article"
 import {
   ROUTE_API_LIST,
@@ -10,17 +9,13 @@ import {
 import { makeAPIRequest } from "../../utils"
 
 export const setListPage = (page, appendItems) => {
+  //console.log(3, page);
   console.log("setListPage")
-  if (appendItems === false)
-    return {
-      type: "LIST.SET_PAGE",
-      payload: page
-    }
-  else
-    return {
-      type: "LIST.ADD_PAGE",
-      payload: page
-    }
+  const type = `LIST.${!appendItems ? "SET" : "ADD"}_PAGE`
+  return {
+    type,
+    payload: page
+  }
 }
 export const initListPage = state => {
   return {
@@ -38,33 +33,32 @@ export const setListAuthor = author => {
 
 export const fetchListPage = (request, appendItems = false) => {
   return (dispatch, getState) => {
-    let listState = getState().list
+    const listState = getState().list
+    const isSubmissions = url => url.includes(ROUTE_API_LIST_SUBMISSIONS)
 
-    if (
-      !request.url.includes(ROUTE_API_LIST) &&
-      !request.url.includes(ROUTE_API_LIST_SUBMISSIONS)
-    )
+    // console.log(6, listState);
+    if (!request.url.includes(ROUTE_API_LIST) && !isSubmissions(request.url))
       return
+
     if (
       listState.requested.url === request.url &&
-      listState.requested.params.tag === request.params.tag &&
-      listState.requested.params.authorship === request.params.authorship &&
-      listState.requested.params.author === request.params.author &&
-      listState.requested.params.page === request.params.page
+      listState.requested.params.page === request.params.page &&
+      listState.requested.params.tag === request.params.tag
+      // listState.requested.params.authorship === request.params.authorship ||
+      // listState.requested.params.author === request.params.author ||
+      // listState.requested.params.page === request.params.page
     )
       return
 
-    if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS))
+    if (isSubmissions(request.url) !== isSubmissions(listState.requested.url)) {
+      dispatch(initListPage())
+    }
+
+    if (isSubmissions(request.url))
       request.headers = {
         Authorization: "JWT " + localStorage.getItem("token")
       }
 
-    if (!appendItems)
-      dispatch(
-        initListPage({
-          requested: request
-        })
-      )
     axios(makeAPIRequest(request))
       .then(response => {
         const listAuthor =
@@ -73,10 +67,11 @@ export const fetchListPage = (request, appendItems = false) => {
             response.data.filter.author &&
             response.data.filter.author.id) ||
           null
+        const payload = { ...response.data, requested: request }
 
         if (
           response.data.page["items-total"] === 0 &&
-          !request.url.includes(ROUTE_API_LIST_SUBMISSIONS)
+          !isSubmissions(request.url)
         ) {
           dispatch(
             initListPage({
@@ -87,21 +82,19 @@ export const fetchListPage = (request, appendItems = false) => {
         }
 
         if (listAuthor) {
-          dispatch(fetchListAuthor(listAuthor, response.data, appendItems))
+          dispatch(fetchListAuthor(listAuthor, payload, appendItems))
           return
         }
-        if (request.url.includes(ROUTE_API_LIST_SUBMISSIONS)) {
+        if (isSubmissions(request.url)) {
+          // console.log(1, payload);
           dispatch(
-            fetchListAuthor(getState().user.info.id, response.data, appendItems)
+            fetchListAuthor(getState().user.info.id, payload, appendItems)
           )
-          response.data.page["items-total"] === 0 &&
-            initListPage({
-              error: HEADER_ERRORS.LIST
-            })
           return
         }
         dispatch(setListAuthor(undefined))
-        dispatch(setListPage(response.data, appendItems))
+        // console.log(payload);
+        dispatch(setListPage(payload, appendItems))
       })
       .catch(() => {
         dispatch(
@@ -113,14 +106,15 @@ export const fetchListPage = (request, appendItems = false) => {
   }
 }
 
-export const fetchListAuthor = (authorId, listResponse, listAppendItems) => {
+export const fetchListAuthor = (authorId, payload, listAppendItems) => {
+  const request = { url: `${ROUTE_API_AUTHORS}/${authorId}` }
+
   return dispatch => {
-    axios(makeAPIRequest({ url: `${ROUTE_API_AUTHORS}/${authorId}` }))
+    axios(makeAPIRequest(request))
       .then(response => {
         dispatch(setListAuthor(response.data.info))
-        window.requestAnimationFrame(() =>
-          dispatch(setListPage(listResponse, listAppendItems))
-        )
+        // console.log(2, payload);
+        dispatch(setListPage(payload, listAppendItems))
       })
       .catch(() =>
         initListPage({

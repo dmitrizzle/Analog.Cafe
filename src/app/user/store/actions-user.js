@@ -49,6 +49,30 @@ export const getSessionInfo = () => {
   return { type: "USER.GET_SESSION_INFO" }
 }
 
+export const acceptUserInfo = () => {
+  return {
+    type: "USER.SET_STATUS",
+    payload: "ok"
+  }
+}
+export const setUserRoutes = routes => {
+  return {
+    type: "USER.SET_ROUTES",
+    payload: routes
+  }
+}
+export const resetUserRoutes = () => {
+  return {
+    type: "USER.RESET_ROUTES"
+  }
+}
+export const setUserIntent = intent => {
+  return {
+    type: "USER.SET_INTENT",
+    payload: intent
+  }
+}
+
 export const loginWithEmail = validatedEmail => {
   return dispatch => {
     dispatch({
@@ -204,28 +228,5 @@ export const setUserInfo = request => {
           payload: "forbidden"
         })
       })
-  }
-}
-export const acceptUserInfo = () => {
-  return {
-    type: "USER.SET_STATUS",
-    payload: "ok"
-  }
-}
-export const setUserRoutes = routes => {
-  return {
-    type: "USER.SET_ROUTES",
-    payload: routes
-  }
-}
-export const resetUserRoutes = () => {
-  return {
-    type: "USER.RESET_ROUTES"
-  }
-}
-export const setUserIntent = intent => {
-  return {
-    type: "USER.SET_INTENT",
-    payload: intent
   }
 }

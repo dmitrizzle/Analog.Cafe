@@ -50,21 +50,21 @@ class List extends React.PureComponent {
     }
   }
   fetchNewList = () => {
-    this.props.initListPage()
-    this.props.fetchListPage(
-      getListMeta(this.props.history.location.pathname, 1, this.listAPI).request
-    )
+    const request = getListMeta(
+      this.props.history.location.pathname,
+      1,
+      this.listAPI
+    ).request
+    this.props.fetchListPage(request)
   }
   handleLoadMore = event => {
     event.preventDefault()
-    this.props.fetchListPage(
-      getListMeta(
-        this.props.history.location.pathname,
-        parseInt(this.props.list.page.current, 0) + 1,
-        this.listAPI
-      ).request,
-      true
-    )
+    const request = getListMeta(
+      this.props.history.location.pathname,
+      parseInt(this.props.list.page.current, 0) + 1,
+      this.listAPI
+    ).request
+    this.props.fetchListPage(request, true)
     this.setState({
       loadMorePending: true
     })
@@ -83,6 +83,7 @@ class List extends React.PureComponent {
     })
   }
   componentDidMount = () => {
+    //this.props.initListPage();
     this.fetchNewList()
     this.unlisten = this.props.history.listen(this.fetchNewList)
   }
@@ -217,7 +218,7 @@ class List extends React.PureComponent {
           parseInt(this.props.list.page.current, 0) ? (
           <Button
             branded
-            onClick={this.handleLoadMore.bind(this)}
+            onClick={this.handleLoadMore}
             loading={this.state.loadMorePending ? true : false}
           >
             Load More
