@@ -231,7 +231,7 @@ class List extends React.PureComponent {
           </Button>
         ) : null}
         <ArticleSection>
-          {this.props.list.items > 0 && <Footer />}
+          {this.props.list.items.length > 0 && <Footer />}
         </ArticleSection>
       </div>
     )
