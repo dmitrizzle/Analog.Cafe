@@ -1,11 +1,16 @@
-import { TEXT_ROUTE_LABELS } from "../constants/messages-list"
 import {
   ROUTE_API_LIST,
+  ROUTE_API_LIST_SUBMISSIONS,
   ROUTE_FILTERS,
   ROUTE_TAGS
 } from "../constants/routes-list"
+import { ROUTE_URL_USER_LANDING } from "../../user/constants/routes-session"
+import { TEXT_ROUTE_LABELS } from "../constants/messages-list"
 
-export const getListMeta = (pathname = "/", page = 1, url = ROUTE_API_LIST) => {
+export const getListMeta = (pathname = "/", page = 1) => {
+  const url = pathname.includes(ROUTE_URL_USER_LANDING)
+    ? ROUTE_API_LIST_SUBMISSIONS
+    : ROUTE_API_LIST
   let request
   let meta
   page = parseInt(page, 0)

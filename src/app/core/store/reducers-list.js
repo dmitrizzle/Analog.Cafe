@@ -23,6 +23,7 @@ export default (state = INITIAL_STATE, action) => {
     case "LIST.SET_PAGE":
       state = {
         ...state,
+        requested: INITIAL_STATE.requested,
         ...action.payload
       }
       break

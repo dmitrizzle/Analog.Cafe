@@ -9,10 +9,6 @@ import {
   CardIntegratedForColumns
 } from "../../controls/ArticleActions/components/Options"
 import { GA, makeFroth } from "../../../../utils"
-import {
-  ROUTE_API_LIST,
-  ROUTE_API_LIST_SUBMISSIONS
-} from "../../../constants/routes-list"
 import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
 import { fetchListPage, initListPage } from "../../../store/actions-list"
@@ -42,29 +38,21 @@ const PlaceholderHowToSubmit = Loadable({
 class List extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.listAPI = this.props.private
-      ? ROUTE_API_LIST_SUBMISSIONS
-      : ROUTE_API_LIST
     this.state = {
       loadMorePending: false
     }
   }
   fetchNewList = () => {
-    this.props.initListPage()
-    this.props.fetchListPage(
-      getListMeta(this.props.history.location.pathname, 1, this.listAPI).request
-    )
+    const request = getListMeta(this.props.history.location.pathname, 1).request
+    this.props.fetchListPage(request)
   }
   handleLoadMore = event => {
     event.preventDefault()
-    this.props.fetchListPage(
-      getListMeta(
-        this.props.history.location.pathname,
-        parseInt(this.props.list.page.current, 0) + 1,
-        this.listAPI
-      ).request,
-      true
-    )
+    const request = getListMeta(
+      this.props.history.location.pathname,
+      parseInt(this.props.list.page.current, 0) + 1
+    ).request
+    this.props.fetchListPage(request, true)
     this.setState({
       loadMorePending: true
     })
@@ -83,6 +71,7 @@ class List extends React.PureComponent {
     })
   }
   componentDidMount = () => {
+    //this.props.initListPage();
     this.fetchNewList()
     this.unlisten = this.props.history.listen(this.fetchNewList)
   }
@@ -127,16 +116,34 @@ class List extends React.PureComponent {
                   (this.props.list.author && this.props.list.author.title) ||
                   TEXT_EMOJIS.HUG_RIGHT
                 }
-                pageSubtitle={!this.props.list.author ? "Loading…" : undefined}
+                pageSubtitle={
+                  !this.props.list.author
+                    ? "Loading…"
+                    : this.props.list.author.subtitle
+                }
               >
                 <Byline>
                   {this.props.list.author &&
                     this.props.user.info.id === this.props.list.author.id && (
                       <React.Fragment>
-                        <span style={{ fontStyle: "normal" }}>✐ </span>
-                        <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
-                          Edit Profile
-                        </Link>
+                        {this.props.history.location.pathname.includes(
+                          ROUTE_URL_USER_LANDING
+                        ) ? (
+                          <React.Fragment>
+                            <span style={{ fontStyle: "normal" }}>✐ </span>
+                            <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
+                              Edit Profile
+                            </Link>
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            This is a preview of your public profile.{" "}
+                            <Link to={`${ROUTE_URL_USER_LANDING}`}>
+                              My Profile
+                            </Link>
+                            .
+                          </React.Fragment>
+                        )}
                       </React.Fragment>
                     )}
                 </Byline>
@@ -217,14 +224,14 @@ class List extends React.PureComponent {
           parseInt(this.props.list.page.current, 0) ? (
           <Button
             branded
-            onClick={this.handleLoadMore.bind(this)}
+            onClick={this.handleLoadMore}
             loading={this.state.loadMorePending ? true : false}
           >
             Load More
           </Button>
         ) : null}
         <ArticleSection>
-          <Footer />
+          {this.props.list.items > 0 && <Footer />}
         </ArticleSection>
       </div>
     )
