@@ -59,77 +59,67 @@ export const fetchListPage = (request, appendItems = false) => {
       dispatch(initListPage())
     }
 
-    console.log(request)
     if (listState.requested.params.author !== request.params.author) {
       dispatch(initListPage())
     }
 
-    //
-    //
-    //
-    //
-    //
-    const delay = setTimeout(() => {
-      clearTimeout(delay)
-      axios(makeAPIRequest(request))
-        .then(response => {
-          const listAuthor =
-            (response.data &&
-              response.data.filter &&
-              response.data.filter.author &&
-              response.data.filter.author.id) ||
-            null
+    axios(makeAPIRequest(request))
+      .then(response => {
+        const listAuthor =
+          (response.data &&
+            response.data.filter &&
+            response.data.filter.author &&
+            response.data.filter.author.id) ||
+          null
 
-          const payload = {
-            ...response.data,
-            requested: request,
-            filter: response.data.filter || {
-              tags: [],
-              author: {}
-            }
+        const payload = {
+          ...response.data,
+          requested: request,
+          filter: response.data.filter || {
+            tags: [],
+            author: {}
           }
+        }
 
-          if (
-            isSubmissions(request.url) !==
-            isSubmissions(listState.requested.url)
-          ) {
-            dispatch(initListPage())
-          }
+        if (
+          isSubmissions(request.url) !== isSubmissions(listState.requested.url)
+        ) {
+          dispatch(initListPage())
+        }
 
-          if (
-            response.data.page["items-total"] === 0 &&
-            !isSubmissions(request.url)
-          ) {
-            dispatch(
-              initListPage({
-                error: CARD_ERRORS.LIST
-              })
-            )
-            return
-          }
-
-          if (listAuthor) {
-            dispatch(fetchListAuthor(listAuthor, payload, appendItems))
-            return
-          }
-          if (isSubmissions(request.url)) {
-            dispatch(
-              fetchListAuthor(getState().user.info.id, payload, appendItems)
-            )
-            return
-          }
-
-          dispatch(setListAuthor(undefined))
-          dispatch(setListPage(payload, appendItems))
-        })
-        .catch(() => {
+        if (
+          response.data.page["items-total"] === 0 &&
+          !isSubmissions(request.url)
+        ) {
           dispatch(
             initListPage({
               error: CARD_ERRORS.LIST
             })
           )
-        })
-    }, 20)
+          return
+        }
+
+        if (listAuthor) {
+          dispatch(fetchListAuthor(listAuthor, payload, appendItems))
+          return
+        }
+        if (isSubmissions(request.url)) {
+          dispatch(
+            fetchListAuthor(getState().user.info.id, payload, appendItems)
+          )
+          return
+        }
+
+        dispatch(setListAuthor(undefined))
+        dispatch(setListPage(payload, appendItems))
+      })
+      .catch(() => {
+        dispatch(
+          initListPage({
+            error: CARD_ERRORS.LIST
+          })
+        )
+      })
   }
 }
 
