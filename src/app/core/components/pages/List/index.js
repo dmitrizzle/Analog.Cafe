@@ -116,16 +116,34 @@ class List extends React.PureComponent {
                   (this.props.list.author && this.props.list.author.title) ||
                   TEXT_EMOJIS.HUG_RIGHT
                 }
-                pageSubtitle={!this.props.list.author ? "Loading…" : undefined}
+                pageSubtitle={
+                  !this.props.list.author
+                    ? "Loading…"
+                    : this.props.list.author.subtitle
+                }
               >
                 <Byline>
                   {this.props.list.author &&
                     this.props.user.info.id === this.props.list.author.id && (
                       <React.Fragment>
-                        <span style={{ fontStyle: "normal" }}>✐ </span>
-                        <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
-                          Edit Profile
-                        </Link>
+                        {this.props.history.location.pathname.includes(
+                          ROUTE_URL_USER_LANDING
+                        ) ? (
+                          <React.Fragment>
+                            <span style={{ fontStyle: "normal" }}>✐ </span>
+                            <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
+                              Edit Profile
+                            </Link>
+                          </React.Fragment>
+                        ) : (
+                          <React.Fragment>
+                            This is a preview of your public profile.{" "}
+                            <Link to={`${ROUTE_URL_USER_LANDING}`}>
+                              My Profile
+                            </Link>
+                            .
+                          </React.Fragment>
+                        )}
                       </React.Fragment>
                     )}
                 </Byline>

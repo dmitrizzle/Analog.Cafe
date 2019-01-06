@@ -1,6 +1,7 @@
 import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-"
+import { HEADER_ERRORS } from "../../constants"
 import { ROUTE_API_AUTHORS } from "../constants/routes-article"
 import {
   ROUTE_API_LIST,
@@ -87,6 +88,15 @@ export const fetchListPage = (request, appendItems = false) => {
           dispatch(initListPage())
         }
 
+        const user = getState().user
+        if (
+          (user.status === "ok" && user.info.id === listAuthor) ||
+          (user.info.role === "admin" && listAuthor)
+        ) {
+          dispatch(fetchListAuthor(listAuthor, payload, appendItems))
+          return
+        }
+
         if (
           response.data.page["items-total"] === 0 &&
           !isSubmissions(request.url)
@@ -117,6 +127,12 @@ export const fetchListPage = (request, appendItems = false) => {
         dispatch(
           initListPage({
             error: CARD_ERRORS.LIST
+          })
+        )
+        dispatch(
+          setListAuthor({
+            ...HEADER_ERRORS.ARTICLE,
+            buttons: []
           })
         )
       })
