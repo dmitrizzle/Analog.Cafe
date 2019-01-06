@@ -137,11 +137,10 @@ class List extends React.PureComponent {
                           </React.Fragment>
                         ) : (
                           <React.Fragment>
-                            This is a preview of your public profile.{" "}
-                            <Link to={`${ROUTE_URL_USER_LANDING}`}>
-                              My Profile
-                            </Link>
-                            .
+                            This is a preview of your public profile. You can
+                            edit it along with seeing all your published and not
+                            yet published submissions{" "}
+                            <Link to={`${ROUTE_URL_USER_LANDING}`}>here</Link>.
                           </React.Fragment>
                         )}
                       </React.Fragment>
