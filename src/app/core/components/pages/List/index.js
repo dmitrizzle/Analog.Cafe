@@ -42,27 +42,34 @@ const PlaceholderHowToSubmit = Loadable({
 class List extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.listAPI = this.props.private
-      ? ROUTE_API_LIST_SUBMISSIONS
-      : ROUTE_API_LIST
     this.state = {
       loadMorePending: false
     }
   }
   fetchNewList = () => {
+    console.log(
+      "AAAA",
+      this.props.history.location.pathname,
+      window.location.pathname
+    )
     const request = getListMeta(
       this.props.history.location.pathname,
       1,
-      this.listAPI
+      this.props.private ? ROUTE_API_LIST_SUBMISSIONS : ROUTE_API_LIST
     ).request
     this.props.fetchListPage(request)
+
+    // const delay = setTimeout(() => {
+    //   clearTimeout(delay);
+    //   this.props.fetchListPage(request);
+    // }, 20);
   }
   handleLoadMore = event => {
     event.preventDefault()
     const request = getListMeta(
       this.props.history.location.pathname,
       parseInt(this.props.list.page.current, 0) + 1,
-      this.listAPI
+      this.props.private ? ROUTE_API_LIST_SUBMISSIONS : ROUTE_API_LIST
     ).request
     this.props.fetchListPage(request, true)
     this.setState({

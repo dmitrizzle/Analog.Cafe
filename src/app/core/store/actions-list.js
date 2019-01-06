@@ -7,16 +7,15 @@ import {
   ROUTE_API_LIST_SUBMISSIONS
 } from "../constants/routes-list"
 import { makeAPIRequest } from "../../utils"
-import throttle from "lodash/throttle"
 
 export const setListPage = (page, appendItems) => {
+  console.log("setListPage")
   const type = `LIST.${!appendItems ? "SET" : "ADD"}_PAGE`
   return {
     type,
     payload: page
   }
 }
-export const throttledSetListPage = throttle(setListPage, 100)
 
 export const initListPage = state => {
   return {
@@ -32,17 +31,24 @@ export const setListAuthor = author => {
 }
 
 export const fetchListPage = (request, appendItems = false) => {
+  console.log("request.url ", request.url)
   return (dispatch, getState) => {
     const listState = getState().list
-    const isSubmissions = url => url.includes(ROUTE_API_LIST_SUBMISSIONS)
+    const isSubmissions = url => {
+      // console.log("isSubmissions", url);
+      return url.includes(ROUTE_API_LIST_SUBMISSIONS)
+    }
 
     if (!request.url.includes(ROUTE_API_LIST) && !isSubmissions(request.url))
       return
 
+    // console.log(listState, request);
     if (
       listState.requested.url === request.url &&
       listState.requested.params.page === request.params.page &&
-      listState.requested.params.tag === request.params.tag // &&
+      listState.requested.params.tag === request.params.tag
+      // &&
+      //
       // listState.requested.params.authorship === request.params.authorship &&
       // listState.requested.params.author === request.params.author &&
       // listState.requested.params.page === request.params.page
@@ -58,55 +64,80 @@ export const fetchListPage = (request, appendItems = false) => {
       dispatch(initListPage())
     }
 
-    axios(makeAPIRequest(request))
-      .then(response => {
-        const listAuthor =
-          (response.data &&
-            response.data.filter &&
-            response.data.filter.author &&
-            response.data.filter.author.id) ||
-          null
-        const payload = { ...response.data, requested: request }
+    const delay = setTimeout(() => {
+      clearTimeout(delay)
+      // console.log("request.url > delay", request.url);
+      axios(makeAPIRequest(request))
+        .then(response => {
+          console.log("request.url > delay > axios", request.url)
 
-        if (
-          response.data.page["items-total"] === 0 &&
-          !isSubmissions(request.url)
-        ) {
+          const listAuthor =
+            (response.data &&
+              response.data.filter &&
+              response.data.filter.author &&
+              response.data.filter.author.id) ||
+            null
+
+          const payload = {
+            ...response.data,
+            requested: request,
+            filter: response.data.filter || {
+              tags: [],
+              author: {}
+            }
+          }
+
+          if (
+            isSubmissions(request.url) !==
+            isSubmissions(listState.requested.url)
+          ) {
+            console.log("initListPage 2")
+            dispatch(initListPage())
+          }
+
+          if (
+            response.data.page["items-total"] === 0 &&
+            !isSubmissions(request.url)
+          ) {
+            dispatch(
+              initListPage({
+                error: CARD_ERRORS.LIST
+              })
+            )
+            return
+          }
+
+          if (listAuthor) {
+            console.log("listAuthor dispatches fetchListAuthor")
+            dispatch(fetchListAuthor(listAuthor, payload, appendItems))
+            return
+          }
+          if (isSubmissions(request.url)) {
+            //
+            //
+            //
+            //
+            //
+            //
+            console.log("request.url dispatches fetchListAuthor")
+            dispatch(
+              fetchListAuthor(getState().user.info.id, payload, appendItems)
+            )
+            return
+          }
+
+          dispatch(setListAuthor(undefined))
+          console.log("dispatch setListPage 1")
+          dispatch(setListPage(payload, appendItems))
+        })
+        .catch(() => {
           dispatch(
             initListPage({
               error: CARD_ERRORS.LIST
             })
           )
-          return
-        }
-        if (
-          isSubmissions(request.url) !== isSubmissions(listState.requested.url)
-        ) {
-          console.log("initListPage 2")
-          dispatch(initListPage())
-        }
-
-        if (listAuthor) {
-          dispatch(fetchListAuthor(listAuthor, payload, appendItems))
-          return
-        }
-        if (isSubmissions(request.url)) {
-          dispatch(
-            fetchListAuthor(getState().user.info.id, payload, appendItems)
-          )
-          return
-        }
-
-        dispatch(setListAuthor(undefined))
-        dispatch(throttledSetListPage(payload, appendItems))
-      })
-      .catch(() => {
-        dispatch(
-          initListPage({
-            error: CARD_ERRORS.LIST
-          })
-        )
-      })
+        })
+    }, 20)
   }
 }
 
@@ -117,7 +148,9 @@ export const fetchListAuthor = (authorId, payload, listAppendItems) => {
     axios(makeAPIRequest(request))
       .then(response => {
         dispatch(setListAuthor(response.data.info))
-        dispatch(throttledSetListPage(payload, listAppendItems))
+        console.log("dispatch setListPage 2")
+
+        dispatch(setListPage(payload, listAppendItems))
       })
       .catch(() =>
         initListPage({
