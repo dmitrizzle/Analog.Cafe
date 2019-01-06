@@ -160,7 +160,7 @@ class Upload extends React.PureComponent {
           <HeaderSubtitle>{STATUS_MESSAGES[this.state.status]}</HeaderSubtitle>
         </HeaderWrapper>
         <ArticleSection>
-          <p>
+          {/* <p>
             You have marked your submission as
             <em>
               {this.props.history.location.pathname.includes("full-consent") ===
@@ -168,7 +168,7 @@ class Upload extends React.PureComponent {
                 ? " open for collaborations. "
                 : " closed to collaborations. "}
             </em>
-          </p>
+          </p> */}
           {this.state.status === "pending" && (
             <p>
               <strong>
