@@ -6,15 +6,29 @@ import { BurgerMenu } from "./NavGeneral"
 import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
 import { TEXT_LABELS } from "../../../../constants/messages-"
 import Modal from "../../Modal"
+import NavAvatar from "./NavAvatar"
 
-const NAV_USER = hasDraft => [
+const NAV_USER = props => [
   {
     to: ROUTE_URL_USER_LANDING,
-    text: "My Profile"
+    text: (
+      <span>
+        <NavAvatar
+          image={props.userImage}
+          style={{
+            width: "1em",
+            height: "1em",
+            marginBottom: "-.1em",
+            boxShadow: "0 0 0 1px"
+          }}
+        />{" "}
+        My Profile
+      </span>
+    )
   },
   {
     to: "/submit/compose",
-    text: hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
+    text: props.hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
   },
   {
     to: "/about",
@@ -46,7 +60,10 @@ const NAV_VISITOR = [
 export default props => {
   let buttons =
     props.userStatus === "ok"
-      ? NAV_USER(loadTextContent().length > 0)
+      ? NAV_USER({
+          userImage: props.userImage,
+          hasDraft: loadTextContent().length > 0
+        })
       : NAV_VISITOR
   if (props.userRole === "admin")
     buttons = [

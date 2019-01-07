@@ -121,7 +121,11 @@ export default props => {
         </NavSearch>
       </NavItem>
       <NavItem prime right className="prime right">
-        <NavMore userStatus={props.userStatus} userRole={props.userRole}>
+        <NavMore
+          userImage={props.userImage}
+          userStatus={props.userStatus}
+          userRole={props.userRole}
+        >
           More <BurgerMenu />
           <Extra>
             {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}

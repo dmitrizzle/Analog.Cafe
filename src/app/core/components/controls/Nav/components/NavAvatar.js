@@ -21,7 +21,7 @@ const Avatar = styled.span`
 
 export default props => {
   return (
-    <Avatar>
+    <Avatar style={props.style}>
       <img
         src={makeFroth({ src: props.image, size: "i" }).src}
         alt="Profile avatar"

@@ -79,10 +79,13 @@ export default class extends React.PureComponent {
           Object.keys(this.props.buttons).length !== 0 &&
           this.props.buttons.map(function(button, i) {
             let keyword, buttonText
-            if (button && button.text) {
+            if (button && button.text && typeof button.text === "string") {
               const keywordMatch = button.text.match(/\[(.*?)\]/)
               keyword = keywordMatch ? keywordMatch[1] : null
               buttonText = button.text.replace(`[${keyword}]`, "")
+            }
+            if (button && button.text && React.isValidElement(button.text)) {
+              buttonText = button.text
             }
             return button && button.to && button.text ? (
               <CardButton
