@@ -22,29 +22,7 @@ export const Sticker = styled.span`
   font-size: ${props => props.theme.size.font.make.smaller}em;
 `
 
-export const isXWeeksAgo = date => {
-  const seconds = Math.floor(new Date() / 1000 - date)
-  const weeks = Math.floor(seconds / 60 / 60 / 24 / 7)
-  return weeks
-}
-
 export default props => {
-  const isNew =
-    props.item.type !== "placeholder"
-      ? isXWeeksAgo(props.item.date.published) === 0
-      : null
-  const isNewlyEdited =
-    props.item.type !== "placeholder"
-      ? isXWeeksAgo(props.item.date.updated) === 0
-      : null
-  const read = props.readReceipts
-    ? props.readReceipts.filter(
-        receipt =>
-          receipt.articleId === props.item.id &&
-          receipt.readOn > props.item.date.updated
-      ).length > 0
-    : null
-
   return (
     <AuthorAndDate>
       {!props.private || props.isAdmin
@@ -59,20 +37,14 @@ export default props => {
           <small style={{ opacity: 0.35 }}>
             {getHumanDatestamp(props.item.date.published, true)}
           </small>{" "}
-          {(isNew || isNewlyEdited) &&
-            !read && (
+          {(props.isNew || props.isNewlyEdited) &&
+            !props.read && (
               <Sticker
-                inverse={
-                  isXWeeksAgo(props.item.date.published) > 0 &&
-                  props.item.date.published < props.item.date.updated
-                }
+                inverse={props.isOldAndNewlyEdited}
                 title={getHumanDatestamp(props.item.date.updated)}
               >
                 <em>
-                  {isXWeeksAgo(props.item.date.published) > 0 &&
-                  props.item.date.published < props.item.date.updated
-                    ? "Recently updated"
-                    : "New!"}
+                  {props.isOldAndNewlyEdited ? "Recently updated" : "New!"}
                 </em>
               </Sticker>
             )}
