@@ -28,6 +28,8 @@ export const CardCaptionIntegrated = styled(CardCaption)`
   font-size: ${props => props.theme.size.font.make.smaller}em !important;
 `
 
+const PREFIX_NEW = "Just Published: "
+const PREFIX_NEXT = "Next: "
 export default props => {
   let readNext
   const readReceipts =
@@ -52,7 +54,7 @@ export default props => {
     readNext = {
       status: props.list.status,
       title: props.list.items[0].title,
-      titlePrefix: "Just Published: ",
+      titlePrefix: PREFIX_NEW,
       cta: (
         <React.Fragment>
           Read Now <span>➢</span>
@@ -64,7 +66,7 @@ export default props => {
   } else {
     readNext = {
       status: props.nextArticle && props.nextArticle.slug ? "ok" : "error",
-      titlePrefix: "Next: ",
+      titlePrefix: PREFIX_NEXT,
       cta: (
         <React.Fragment>
           Read Next <span>➢</span>
@@ -131,7 +133,8 @@ export default props => {
                 )
                 GA.event({
                   category: "Navigation",
-                  action: "ActionsCard.next_article_picture"
+                  action: "ActionsCard.next_article_picture",
+                  label: readNext.titlePrefix === PREFIX_NEW ? "new" : undefined
                 })
               }}
             >
@@ -152,7 +155,8 @@ export default props => {
               )
               GA.event({
                 category: "Navigation",
-                action: "ActionsCard.next_article_button"
+                action: "ActionsCard.next_article_button",
+                label: readNext.titlePrefix === PREFIX_NEW ? "new" : undefined
               })
             }}
           >
