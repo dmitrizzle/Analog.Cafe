@@ -2,6 +2,7 @@
 import React from "react"
 import styled from "styled-components"
 
+import { GA } from "../../../../../utils"
 import { NavLink, NavLogoLink } from "./NavLinks"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
 import NavAvatar from "./NavAvatar"
@@ -90,26 +91,63 @@ export default props => {
       }
     >
       <NavItem prime left mobile className="prime left mobile">
-        <NavLink {...subscribe}>
+        <NavLink
+          {...subscribe}
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "Subscribe.mobile"
+            })
+          }}
+        >
           <span>
             Subscribe <Extra>❤︎</Extra>
           </span>
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...visualEssays}>
+        <NavLink
+          {...visualEssays}
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "PhotoEssays"
+            })
+          }}
+        >
           <span className="wide">Photo </span>
           Essays
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink {...filmPhotography}>
+        <NavLink
+          {...filmPhotography}
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "FilmPhotography"
+            })
+          }}
+        >
           <span className="wide">Film </span>
           Photography
         </NavLink>
       </NavItem>
       <NavItem prime center className="prime center">
-        <NavLogoLink to={"/"} className="indexRouteLink">
+        <NavLogoLink
+          to={"/"}
+          className="indexRouteLink"
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "Logo"
+            })
+          }}
+        >
           <NavLogo />
         </NavLogoLink>
       </NavItem>

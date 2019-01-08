@@ -159,6 +159,13 @@ class App extends React.PureComponent {
         hidden={
           this.props.nav.view !== "VISITOR" || !this.props.nav.location.top
         }
+        onClick={() => {
+          GA.event({
+            category: "Navigation",
+            action: "Nav.click",
+            label: "Subscribe.desktop"
+          })
+        }}
       >
         <Link to="/subscribe">
           Subscribe <span style={{ fontStyle: "normal" }}>❤︎</span>
