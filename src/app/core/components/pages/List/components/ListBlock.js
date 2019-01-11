@@ -34,7 +34,7 @@ export default props => {
             readReceipts
           }
           const dateProps =
-            item && item.type !== "placeholder"
+            item && item.date && item.type !== "placeholder"
               ? {
                   isNew:
                     item.type !== "placeholder"

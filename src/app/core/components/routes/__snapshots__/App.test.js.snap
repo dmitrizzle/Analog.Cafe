@@ -19,6 +19,12 @@ ShallowWrapper {
     "props": Object {
       "children": <Switch>
         <Route
+                exact={true}
+                path="/zine/vitessa-fzyi"
+                render={[Function]}
+        />
+         
+        <Route
                 component={[Function]}
                 exact={true}
                 path="/author"
@@ -199,6 +205,12 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Route
+            exact={true}
+            path="/zine/vitessa-fzyi"
+            render={[Function]}
+/>,
+          " ",
+          <Route
             component={[Function]}
             exact={true}
             path="/author"
@@ -368,6 +380,20 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/zine/vitessa-fzyi",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        " ",
         Object {
           "instance": null,
           "key": undefined,
@@ -809,6 +835,12 @@ ShallowWrapper {
       "props": Object {
         "children": <Switch>
           <Route
+                    exact={true}
+                    path="/zine/vitessa-fzyi"
+                    render={[Function]}
+          />
+           
+          <Route
                     component={[Function]}
                     exact={true}
                     path="/author"
@@ -989,6 +1021,12 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Route
+              exact={true}
+              path="/zine/vitessa-fzyi"
+              render={[Function]}
+/>,
+            " ",
+            <Route
               component={[Function]}
               exact={true}
               path="/author"
@@ -1158,6 +1196,20 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/zine/vitessa-fzyi",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          " ",
           Object {
             "instance": null,
             "key": undefined,

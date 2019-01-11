@@ -15,7 +15,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
       "children": <Styled(Component)
         branded={true}
@@ -38,13 +38,13 @@ ShallowWrapper {
       "rendered": "Subscribe ❤︎",
       "type": [Function],
     },
-    "type": "div",
+    "type": Symbol(react.fragment),
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
         "children": <Styled(Component)
           branded={true}
@@ -67,7 +67,7 @@ ShallowWrapper {
         "rendered": "Subscribe ❤︎",
         "type": [Function],
       },
-      "type": "div",
+      "type": Symbol(react.fragment),
     },
   ],
   Symbol(enzyme.__options__): Object {

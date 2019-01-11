@@ -63,6 +63,7 @@ export default props => {
     if (options.modalUrl && props.isModalHidden) return false
     if (currentUrl === to) return true
     if (
+      currentUrl &&
       currentUrl.includes(ROUTE_URL_ARTICLES) &&
       props.articleTag === to.replace("/", "")
     )

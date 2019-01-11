@@ -472,7 +472,11 @@ ShallowWrapper {
                                 >
                                         <div
                                                 aria-label="undefined poster image"
-                                                style={undefined}
+                                                style={
+                                                        Object {
+                                                                "backgroundImage": undefined,
+                                                              }
+                                                }
                                         />
                                 </figure>
                                 <div>
@@ -515,7 +519,12 @@ ShallowWrapper {
                                 </div>
                         </section>
                         <styled.div
-                                style={null}
+                                index={0}
+                                style={
+                                        Object {
+                                                "backgroundImage": undefined,
+                                              }
+                                }
                         />
                 </Unknown>
         </li>
@@ -541,7 +550,11 @@ ShallowWrapper {
                                     >
                                                 <div
                                                             aria-label="undefined poster image"
-                                                            style={undefined}
+                                                            style={
+                                                                        Object {
+                                                                                    "backgroundImage": undefined,
+                                                                                  }
+                                                            }
                                                 />
                                     </figure>
                                     <div>
@@ -584,7 +597,12 @@ ShallowWrapper {
                                     </div>
                         </section>
                         <styled.div
-                                    style={null}
+                                    index={0}
+                                    style={
+                                                Object {
+                                                            "backgroundImage": undefined,
+                                                          }
+                                    }
                         />
             </Unknown>
 </li>,
@@ -609,7 +627,11 @@ ShallowWrapper {
                             >
                                           <div
                                                         aria-label="undefined poster image"
-                                                        style={undefined}
+                                                        style={
+                                                                      Object {
+                                                                                    "backgroundImage": undefined,
+                                                                                  }
+                                                        }
                                           />
                             </figure>
                             <div>
@@ -652,7 +674,12 @@ ShallowWrapper {
                             </div>
               </section>
               <styled.div
-                            style={null}
+                            index={0}
+                            style={
+                                          Object {
+                                                        "backgroundImage": undefined,
+                                                      }
+                            }
               />
 </Unknown>,
           },
@@ -669,7 +696,11 @@ ShallowWrapper {
                   >
                                     <div
                                                       aria-label="undefined poster image"
-                                                      style={undefined}
+                                                      style={
+                                                                        Object {
+                                                                                          "backgroundImage": undefined,
+                                                                                        }
+                                                      }
                                     />
                   </figure>
                   <div>
@@ -712,7 +743,12 @@ ShallowWrapper {
                   </div>
 </section>,
                 <styled.div
-                  style={null}
+                  index={0}
+                  style={
+                                    Object {
+                                                      "backgroundImage": undefined,
+                                                    }
+                  }
 />,
               ],
               "onClick": [Function],
@@ -732,7 +768,11 @@ ShallowWrapper {
 >
                       <div
                                             aria-label="undefined poster image"
-                                            style={undefined}
+                                            style={
+                                                                  Object {
+                                                                                        "backgroundImage": undefined,
+                                                                                      }
+                                            }
                       />
 </figure>,
                     <div>
@@ -784,7 +824,11 @@ ShallowWrapper {
                     "props": Object {
                       "children": <div
                         aria-label="undefined poster image"
-                        style={undefined}
+                        style={
+                                                Object {
+                                                                        "backgroundImage": undefined,
+                                                                      }
+                        }
 />,
                       "style": null,
                     },
@@ -795,7 +839,9 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "aria-label": "undefined poster image",
-                        "style": undefined,
+                        "style": Object {
+                          "backgroundImage": undefined,
+                        },
                       },
                       "ref": null,
                       "rendered": null,
@@ -951,7 +997,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "style": null,
+                  "index": 0,
+                  "style": Object {
+                    "backgroundImage": undefined,
+                  },
                 },
                 "ref": null,
                 "rendered": null,
@@ -990,7 +1039,11 @@ ShallowWrapper {
                                         >
                                                   <div
                                                             aria-label="undefined poster image"
-                                                            style={undefined}
+                                                            style={
+                                                                      Object {
+                                                                                "backgroundImage": undefined,
+                                                                              }
+                                                            }
                                                   />
                                         </figure>
                                         <div>
@@ -1033,7 +1086,12 @@ ShallowWrapper {
                                         </div>
                               </section>
                               <styled.div
-                                        style={null}
+                                        index={0}
+                                        style={
+                                                  Object {
+                                                            "backgroundImage": undefined,
+                                                          }
+                                        }
                               />
                     </Unknown>
           </li>
@@ -1059,7 +1117,11 @@ ShallowWrapper {
                                           >
                                                         <div
                                                                       aria-label="undefined poster image"
-                                                                      style={undefined}
+                                                                      style={
+                                                                                    Object {
+                                                                                                  "backgroundImage": undefined,
+                                                                                                }
+                                                                      }
                                                         />
                                           </figure>
                                           <div>
@@ -1102,7 +1164,12 @@ ShallowWrapper {
                                           </div>
                             </section>
                             <styled.div
-                                          style={null}
+                                          index={0}
+                                          style={
+                                                        Object {
+                                                                      "backgroundImage": undefined,
+                                                                    }
+                                          }
                             />
               </Unknown>
 </li>,
@@ -1127,7 +1194,11 @@ ShallowWrapper {
                                 >
                                                 <div
                                                                 aria-label="undefined poster image"
-                                                                style={undefined}
+                                                                style={
+                                                                                Object {
+                                                                                                "backgroundImage": undefined,
+                                                                                              }
+                                                                }
                                                 />
                                 </figure>
                                 <div>
@@ -1170,7 +1241,12 @@ ShallowWrapper {
                                 </div>
                 </section>
                 <styled.div
-                                style={null}
+                                index={0}
+                                style={
+                                                Object {
+                                                                "backgroundImage": undefined,
+                                                              }
+                                }
                 />
 </Unknown>,
             },
@@ -1187,7 +1263,11 @@ ShallowWrapper {
                     >
                                         <div
                                                             aria-label="undefined poster image"
-                                                            style={undefined}
+                                                            style={
+                                                                                Object {
+                                                                                                    "backgroundImage": undefined,
+                                                                                                  }
+                                                            }
                                         />
                     </figure>
                     <div>
@@ -1230,7 +1310,12 @@ ShallowWrapper {
                     </div>
 </section>,
                   <styled.div
-                    style={null}
+                    index={0}
+                    style={
+                                        Object {
+                                                            "backgroundImage": undefined,
+                                                          }
+                    }
 />,
                 ],
                 "onClick": [Function],
@@ -1250,7 +1335,11 @@ ShallowWrapper {
 >
                         <div
                                                 aria-label="undefined poster image"
-                                                style={undefined}
+                                                style={
+                                                                        Object {
+                                                                                                "backgroundImage": undefined,
+                                                                                              }
+                                                }
                         />
 </figure>,
                       <div>
@@ -1302,7 +1391,11 @@ ShallowWrapper {
                       "props": Object {
                         "children": <div
                           aria-label="undefined poster image"
-                          style={undefined}
+                          style={
+                                                    Object {
+                                                                              "backgroundImage": undefined,
+                                                                            }
+                          }
 />,
                         "style": null,
                       },
@@ -1313,7 +1406,9 @@ ShallowWrapper {
                         "nodeType": "host",
                         "props": Object {
                           "aria-label": "undefined poster image",
-                          "style": undefined,
+                          "style": Object {
+                            "backgroundImage": undefined,
+                          },
                         },
                         "ref": null,
                         "rendered": null,
@@ -1469,7 +1564,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "style": null,
+                    "index": 0,
+                    "style": Object {
+                      "backgroundImage": undefined,
+                    },
                   },
                   "ref": null,
                   "rendered": null,
@@ -2550,7 +2648,7 @@ ShallowWrapper {
               Dec 31, 1969
 </small>,
             " ",
-            false,
+            undefined,
           ],
         },
         "ref": null,
@@ -2570,7 +2668,7 @@ ShallowWrapper {
             "type": "small",
           },
           " ",
-          false,
+          undefined,
         ],
         "type": Symbol(react.fragment),
       },
@@ -2618,7 +2716,7 @@ ShallowWrapper {
                 Dec 31, 1969
 </small>,
               " ",
-              false,
+              undefined,
             ],
           },
           "ref": null,
@@ -2638,7 +2736,7 @@ ShallowWrapper {
               "type": "small",
             },
             " ",
-            false,
+            undefined,
           ],
           "type": Symbol(react.fragment),
         },

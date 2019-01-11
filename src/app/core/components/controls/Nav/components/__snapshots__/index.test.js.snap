@@ -69,6 +69,7 @@ ShallowWrapper {
         alt="Profile avatar"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 />,
+      "style": undefined,
     },
     "ref": null,
     "rendered": Object {
@@ -95,6 +96,7 @@ ShallowWrapper {
           alt="Profile avatar"
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 />,
+        "style": undefined,
       },
       "ref": null,
       "rendered": Object {
@@ -814,19 +816,19 @@ ShallowWrapper {
 >
           <Unknown
                     className={undefined}
-                    to="/subscribe"
           >
                     <span>
-                              Subscribe 
                               <styled.span>
-                                        ❤︎
+                                        Sections 
                               </styled.span>
+                              ◈
                     </span>
           </Unknown>
 </styled.li>,
         <styled.li>
           <Unknown
                     className={undefined}
+                    onClick={[Function]}
                     to="/photo-essays"
           >
                     <span
@@ -840,6 +842,7 @@ ShallowWrapper {
         <styled.li>
           <Unknown
                     className={undefined}
+                    onClick={[Function]}
                     to="/film-photography"
           >
                     <span
@@ -857,6 +860,7 @@ ShallowWrapper {
 >
           <Unknown
                     className="indexRouteLink"
+                    onClick={[Function]}
                     to="/"
           >
                     <Unknown />
@@ -868,7 +872,9 @@ ShallowWrapper {
           narrow={true}
           prime={true}
 >
-          <Unknown>
+          <Unknown
+                    className={undefined}
+          >
                     <styled.span>
                               Search 
                               <Unknown />
@@ -881,6 +887,8 @@ ShallowWrapper {
           right={true}
 >
           <Unknown
+                    className={undefined}
+                    userImage={undefined}
                     userRole={undefined}
                     userStatus={undefined}
           >
@@ -901,13 +909,12 @@ ShallowWrapper {
         "props": Object {
           "children": <Unknown
             className={undefined}
-            to="/subscribe"
 >
             <span>
-                        Subscribe 
                         <styled.span>
-                                    ❤︎
+                                    Sections 
                         </styled.span>
+                        ◈
             </span>
 </Unknown>,
           "className": "prime left mobile",
@@ -922,13 +929,12 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": <span>
-              Subscribe 
               <styled.span>
-                            ❤︎
+                            Sections 
               </styled.span>
+              ◈
 </span>,
             "className": undefined,
-            "to": "/subscribe",
           },
           "ref": null,
           "rendered": Object {
@@ -937,26 +943,26 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Subscribe ",
                 <styled.span>
-                  ❤︎
+                  Sections 
 </styled.span>,
+                "◈",
               ],
             },
             "ref": null,
             "rendered": Array [
-              "Subscribe ",
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "❤︎",
+                  "children": "Sections ",
                 },
                 "ref": null,
-                "rendered": "❤︎",
+                "rendered": "Sections ",
                 "type": [Function],
               },
+              "◈",
             ],
             "type": "span",
           },
@@ -971,6 +977,7 @@ ShallowWrapper {
         "props": Object {
           "children": <Unknown
             className={undefined}
+            onClick={[Function]}
             to="/photo-essays"
 >
             <span
@@ -996,6 +1003,7 @@ ShallowWrapper {
               "Essays",
             ],
             "className": undefined,
+            "onClick": [Function],
             "to": "/photo-essays",
           },
           "ref": null,
@@ -1025,6 +1033,7 @@ ShallowWrapper {
         "props": Object {
           "children": <Unknown
             className={undefined}
+            onClick={[Function]}
             to="/film-photography"
 >
             <span
@@ -1050,6 +1059,7 @@ ShallowWrapper {
               "Photography",
             ],
             "className": undefined,
+            "onClick": [Function],
             "to": "/film-photography",
           },
           "ref": null,
@@ -1080,6 +1090,7 @@ ShallowWrapper {
           "center": true,
           "children": <Unknown
             className="indexRouteLink"
+            onClick={[Function]}
             to="/"
 >
             <Unknown />
@@ -1095,6 +1106,7 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown />,
             "className": "indexRouteLink",
+            "onClick": [Function],
             "to": "/",
           },
           "ref": null,
@@ -1116,7 +1128,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <Unknown>
+          "children": <Unknown
+            className={undefined}
+>
             <styled.span>
                         Search 
                         <Unknown />
@@ -1137,6 +1151,7 @@ ShallowWrapper {
               Search 
               <Unknown />
 </styled.span>,
+            "className": undefined,
           },
           "ref": null,
           "rendered": Object {
@@ -1174,6 +1189,8 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <Unknown
+            className={undefined}
+            userImage={undefined}
             userRole={undefined}
             userStatus={undefined}
 >
@@ -1196,6 +1213,8 @@ ShallowWrapper {
               <Unknown />,
               <styled.span />,
             ],
+            "className": undefined,
+            "userImage": undefined,
             "userRole": undefined,
             "userStatus": undefined,
           },
@@ -1245,19 +1264,19 @@ ShallowWrapper {
 >
             <Unknown
                         className={undefined}
-                        to="/subscribe"
             >
                         <span>
-                                    Subscribe 
                                     <styled.span>
-                                                ❤︎
+                                                Sections 
                                     </styled.span>
+                                    ◈
                         </span>
             </Unknown>
 </styled.li>,
           <styled.li>
             <Unknown
                         className={undefined}
+                        onClick={[Function]}
                         to="/photo-essays"
             >
                         <span
@@ -1271,6 +1290,7 @@ ShallowWrapper {
           <styled.li>
             <Unknown
                         className={undefined}
+                        onClick={[Function]}
                         to="/film-photography"
             >
                         <span
@@ -1288,6 +1308,7 @@ ShallowWrapper {
 >
             <Unknown
                         className="indexRouteLink"
+                        onClick={[Function]}
                         to="/"
             >
                         <Unknown />
@@ -1299,7 +1320,9 @@ ShallowWrapper {
             narrow={true}
             prime={true}
 >
-            <Unknown>
+            <Unknown
+                        className={undefined}
+            >
                         <styled.span>
                                     Search 
                                     <Unknown />
@@ -1312,6 +1335,8 @@ ShallowWrapper {
             right={true}
 >
             <Unknown
+                        className={undefined}
+                        userImage={undefined}
                         userRole={undefined}
                         userStatus={undefined}
             >
@@ -1332,13 +1357,12 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown
               className={undefined}
-              to="/subscribe"
 >
               <span>
-                            Subscribe 
                             <styled.span>
-                                          ❤︎
+                                          Sections 
                             </styled.span>
+                            ◈
               </span>
 </Unknown>,
             "className": "prime left mobile",
@@ -1353,13 +1377,12 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": <span>
-                Subscribe 
                 <styled.span>
-                                ❤︎
+                                Sections 
                 </styled.span>
+                ◈
 </span>,
               "className": undefined,
-              "to": "/subscribe",
             },
             "ref": null,
             "rendered": Object {
@@ -1368,26 +1391,26 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Subscribe ",
                   <styled.span>
-                    ❤︎
+                    Sections 
 </styled.span>,
+                  "◈",
                 ],
               },
               "ref": null,
               "rendered": Array [
-                "Subscribe ",
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "❤︎",
+                    "children": "Sections ",
                   },
                   "ref": null,
-                  "rendered": "❤︎",
+                  "rendered": "Sections ",
                   "type": [Function],
                 },
+                "◈",
               ],
               "type": "span",
             },
@@ -1402,6 +1425,7 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown
               className={undefined}
+              onClick={[Function]}
               to="/photo-essays"
 >
               <span
@@ -1427,6 +1451,7 @@ ShallowWrapper {
                 "Essays",
               ],
               "className": undefined,
+              "onClick": [Function],
               "to": "/photo-essays",
             },
             "ref": null,
@@ -1456,6 +1481,7 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown
               className={undefined}
+              onClick={[Function]}
               to="/film-photography"
 >
               <span
@@ -1481,6 +1507,7 @@ ShallowWrapper {
                 "Photography",
               ],
               "className": undefined,
+              "onClick": [Function],
               "to": "/film-photography",
             },
             "ref": null,
@@ -1511,6 +1538,7 @@ ShallowWrapper {
             "center": true,
             "children": <Unknown
               className="indexRouteLink"
+              onClick={[Function]}
               to="/"
 >
               <Unknown />
@@ -1526,6 +1554,7 @@ ShallowWrapper {
             "props": Object {
               "children": <Unknown />,
               "className": "indexRouteLink",
+              "onClick": [Function],
               "to": "/",
             },
             "ref": null,
@@ -1547,7 +1576,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <Unknown>
+            "children": <Unknown
+              className={undefined}
+>
               <styled.span>
                             Search 
                             <Unknown />
@@ -1568,6 +1599,7 @@ ShallowWrapper {
                 Search 
                 <Unknown />
 </styled.span>,
+              "className": undefined,
             },
             "ref": null,
             "rendered": Object {
@@ -1605,6 +1637,8 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <Unknown
+              className={undefined}
+              userImage={undefined}
               userRole={undefined}
               userStatus={undefined}
 >
@@ -1627,6 +1661,8 @@ ShallowWrapper {
                 <Unknown />,
                 <styled.span />,
               ],
+              "className": undefined,
+              "userImage": undefined,
               "userRole": undefined,
               "userStatus": undefined,
             },
@@ -2069,10 +2105,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "branded": undefined,
       "children": undefined,
-      "element": undefined,
-      "inverse": undefined,
       "style": Object {
         "paddingRight": ".25em",
         "textDecoration": "none",
@@ -2091,7 +2124,7 @@ ShallowWrapper {
               "to": "/submit",
             },
             Object {
-              "inverse": true,
+              "branded": true,
               "text": "Subscribe ❤︎",
               "to": "/subscribe",
             },
@@ -2115,10 +2148,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "branded": undefined,
         "children": undefined,
-        "element": undefined,
-        "inverse": undefined,
         "style": Object {
           "paddingRight": ".25em",
           "textDecoration": "none",
@@ -2137,7 +2167,7 @@ ShallowWrapper {
                 "to": "/submit",
               },
               Object {
-                "inverse": true,
+                "branded": true,
                 "text": "Subscribe ❤︎",
                 "to": "/subscribe",
               },
@@ -2183,7 +2213,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "sc-chPdSV byfFmt",
+      "className": "sc-kgoBCf kVSTZj",
     },
     "ref": null,
     "rendered": null,
@@ -2195,7 +2225,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "sc-chPdSV byfFmt",
+        "className": "sc-kgoBCf kVSTZj",
       },
       "ref": null,
       "rendered": null,
