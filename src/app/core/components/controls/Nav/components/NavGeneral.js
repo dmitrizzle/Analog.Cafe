@@ -9,6 +9,7 @@ import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
+import NavSections from "./NavSections"
 import NavSearch from "./NavSearch"
 import Search from "../../../icons/Search"
 
@@ -68,16 +69,11 @@ export default props => {
   const a = "active"
 
   const ve = "/photo-essay"
-  const sc = "/subscribe"
   const fp = "/film-photography"
 
   const visualEssays = {
     to: "/photo-essays",
     className: isActive(ve) ? a : undefined
-  }
-  const subscribe = {
-    to: sc,
-    className: isActive(sc) ? a : undefined
   }
   const filmPhotography = {
     to: fp,
@@ -91,20 +87,19 @@ export default props => {
       }
     >
       <NavItem prime left mobile className="prime left mobile">
-        <NavLink
-          {...subscribe}
+        <NavSections
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "Subscribe.mobile"
+              label: "Sections.mobile"
             })
           }}
         >
           <span>
-            Subscribe <Extra>❤︎</Extra>
+            <Extra>Sections </Extra>◈
           </span>
-        </NavLink>
+        </NavSections>
       </NavItem>
       <NavItem>
         <NavLink

@@ -53,7 +53,7 @@ const NAV_VISITOR = [
   {
     to: "/subscribe",
     text: TEXT_LABELS.SUBSCRIBE,
-    inverse: true
+    branded: true
   }
 ]
 
