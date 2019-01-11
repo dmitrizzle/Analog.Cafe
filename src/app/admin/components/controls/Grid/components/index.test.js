@@ -38,6 +38,7 @@ it("Render GridButtonCaption without crashing, matches snapshot", () => {
 
 it("Render GridButtonImage without crashing, matches snapshot", () => {
   const element = shallow(<GridButtonImage />)
+  expect(element).toMatchSnapshot()
 })
 
 it("Render GridCaption without crashing, matches snapshot", () => {

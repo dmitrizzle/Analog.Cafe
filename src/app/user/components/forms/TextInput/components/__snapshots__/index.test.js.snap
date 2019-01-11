@@ -270,6 +270,230 @@ ShallowWrapper {
 }
 `;
 
+exports[`Render SubtitleTextarea, matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+        Object {
+            "color": Object {
+              "background": [Function],
+              "brand": [Function],
+              "foreground": [Function],
+              "highlight": [Function],
+            },
+            "effects": Object {
+              "borderRadius": Object {
+                "med": 0.5,
+                "small": [Function],
+              },
+            },
+            "elements": Object {
+              "thickBorder": [Function],
+            },
+            "layer": Object {
+              "card": 30,
+              "nav": 20,
+              "overlay": 40,
+              "tuck": -1,
+              "up": 10,
+            },
+            "opacity": Object {
+              "half": 0.5,
+              "least": 0.125,
+              "most": 0.85,
+            },
+            "size": Object {
+              "block": Object {
+                "border": 8,
+                "column": Object {
+                  "l": 820,
+                  "m": 750,
+                },
+                "padding": 1.5,
+                "spacing": 1,
+              },
+              "breakpoint": Object {
+                "exact": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "max": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "min": Object {
+                  "l": [Function],
+                  "m": [Function],
+                  "s": [Function],
+                  "xl": [Function],
+                  "xs": [Function],
+                  "xxl": [Function],
+                },
+                "stops": Object {
+                  "max": 1600,
+                  "min": 320,
+                },
+              },
+              "font": Object {
+                "auto": Array [
+                  "
+                ",
+                  "
+        		@media (min-width: ",
+                  "32.5625",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "32.5",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (max-width: ",
+                  "20",
+                  "em) {
+        			",
+                  "font-size: 	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  " ",
+                  "
+        		@media (min-width: ",
+                  "100.0625",
+                  "em) {
+        			",
+                  "font-size:	",
+                  [Function],
+                  "px;",
+                  "
+        		}
+        	",
+                  ";
+              ",
+                ],
+                "l": 23,
+                "m": 20,
+                "make": Object {
+                  "larger": 3,
+                  "normal": 1,
+                  "smaller": 0.85,
+                  "tiny": 0.65,
+                },
+                "s": 18,
+                "xs": 17,
+              },
+            },
+            "typography": Object {
+              "text": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Lora', Georgia, serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                ",
+                ],
+                "font": "'Lora', Georgia, serif",
+                "lineHeight": 1.75,
+              },
+              "title": Object {
+                "auto": Array [
+                  "
+                  color: ",
+                  [Function],
+                  ";
+                  font-family: ",
+                  "'Exo 2', Arial, sans-serif",
+                  ";
+                  letter-spacing: 0.025em;
+                  line-height: ",
+                  [Function],
+                  "em;
+                  font-weight: ",
+                  "600",
+                  ";
+                  margin: 0;
+                ",
+                ],
+                "font": "'Exo 2', Arial, sans-serif",
+                "lineHeight": 1.15,
+              },
+            },
+          }
+    }
+>
+    <Styled(Component) />
+</ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {},
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {},
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`Render TextareaWithHighlights, matches snapshot 1`] = `
 ShallowWrapper {
   "length": 1,

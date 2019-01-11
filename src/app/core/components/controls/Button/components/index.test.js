@@ -21,6 +21,7 @@ import TinyButton from "./TinyButton"
 
 it("Render Button, matches snapshot", () => {
   const element = shallow(<Button />)
+  expect(element).toMatchSnapshot()
 })
 
 it("Render ButtonGroup, matches snapshot", () => {

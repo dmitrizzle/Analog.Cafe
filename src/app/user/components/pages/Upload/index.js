@@ -6,16 +6,11 @@ import {
   loadContent
 } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
-// import localForage from "localforage"
 
 import { CARD_ERRORS } from "../../../constants/messages-submission"
 import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
-import {
-  base64ToBlob,
-  loadHeader,
-  sendSubmission
-} from "../../../utils/actions-submission"
+import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
 import { resetStatus } from "../../../../admin/store/actions-editor"
 import { setModal } from "../../../../core/store/actions-modal"

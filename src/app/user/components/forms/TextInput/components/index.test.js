@@ -32,6 +32,7 @@ it("Render SubtitleTextarea, matches snapshot", () => {
       <SubtitleTextarea />
     </ThemeProvider>
   )
+  expect(element).toMatchSnapshot()
 })
 
 it("Render TextareaWithHighlights, matches snapshot", () => {

@@ -3,7 +3,6 @@ import "jest-styled-components"
 import { ThemeProvider } from "styled-components"
 import { shallow } from "enzyme"
 import React from "react"
-import { withTheme } from "styled-components"
 
 import { APP_THEME } from "../../../../../../constants"
 import CardButton from "./CardButton"

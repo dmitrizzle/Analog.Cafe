@@ -74,14 +74,15 @@
     "precommit": "lint-staged",
     "start": "node precompile && react-scripts start",
     "build": "node precompile && react-scripts build",
-    "deploy": "node node_modules/eslint/bin/eslint.js --config node_modules/eslint-config-react-app/index.js ./src && yarn test && yarn version && node deploy",
+    "lint": "node node_modules/eslint/bin/eslint.js --config node_modules/eslint-config-react-app/index.js ./src",
+    "deploy": "yarn lint && yarn test && yarn version && node deploy",
     "size": "size-limit",
     "test": "npm run size && react-scripts test --env=jsdom"
   },
   "size-limit": [
     {
       "path": "build/static/js/main.*.js",
-      "limit": "130 KB"
+      "limit": "125 KB"
     }
   ],
   "browserslist": {

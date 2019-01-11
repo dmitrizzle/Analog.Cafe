@@ -113,6 +113,7 @@ it("Calculate reading time correctly", () => {
 
 it("Render ListLoader, matches snapshot", () => {
   const element = shallow(<ListLoader />)
+  expect(element).toMatchSnapshot()
 })
 
 it("Render ListUL, matches snapshot", () => {
