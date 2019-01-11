@@ -70,12 +70,18 @@ export default () => {
       }}
     >
       <Switch>
-        {/* dynamic urls and views */}
+        {/**
+         * dynamic urls and views
+         */}
+        <Route
+          exact
+          path="/zine/vitessa-fzyi"
+          render={() => <Redirect to="/zine/voigtlander-vitessa-l-fzyi" />}
+        />{" "}
         <Route exact path="/author" component={NotFound} />
         <Route exact path="/zine" component={NotFound} />
         <Route exact path="/author/*" component={List} />
         <Route exact path="/zine/*" component={Article} />
-        {/* NOTE below is a set of outdated routes */}
         <Route exact path="/articles" render={() => <Redirect to="/" />} />
         <Route
           exact
@@ -117,7 +123,9 @@ export default () => {
           path="/photo-stories"
           render={() => <Redirect to="/photo-essays" />}
         />
-        {/* new magazine sections */}
+        {/**
+         * new magazine sections
+         */}
         <Route exact path="/" component={List} />
         <Route exact path="/film-photography" component={List} />
         <Route exact path="/photo-essays" component={List} />
@@ -125,7 +133,9 @@ export default () => {
         <Route exact path="/unclassifieds" component={List} />
         <Route exact path="/collaborations" component={List} />
         <Route exact path="/solo-projects" component={List} />
-        {/* auth views */}
+        {/**
+         * auth views
+         */}
         <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
         <Route
           exact
@@ -141,7 +151,9 @@ export default () => {
         />
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-out" component={SignOut} />
-        {/* static views and urls */}
+        {/**
+         * static views and urls
+         */}
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />
         <Route path="/subscribe" component={Subscribe} />
