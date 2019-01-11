@@ -1,8 +1,8 @@
 // NOTE: `className` props are used in index.html
 import React from "react"
 
+import { NavModal } from "./NavMore"
 import { TEXT_LABELS } from "../../../../constants/messages-"
-import Modal from "../../Modal"
 
 const buttons = [
   {
@@ -22,7 +22,8 @@ const buttons = [
 
 export default props => {
   return (
-    <Modal
+    <NavModal
+      {...props}
       unmarked
       with={{
         info: {
@@ -33,9 +34,9 @@ export default props => {
         },
         id: "nav/sections"
       }}
-      style={{ textDecoration: "none", paddingRight: ".25em" }}
+      style={{ textDecoration: "none" }}
     >
       {props.children}
-    </Modal>
+    </NavModal>
   )
 }

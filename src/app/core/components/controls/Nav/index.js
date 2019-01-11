@@ -39,6 +39,8 @@ const Nav = props => {
                 props.setUserIntent({ load: "List" })
             }}
             articleTag={props.article.tag}
+            modalUrl={props.modal.requested.url}
+            isModalHidden={props.modal.hidden}
           />
         )}
       </NavWrapper>
@@ -52,7 +54,8 @@ const mapStateToProps = state => {
     composer: state.composer,
     editor: state.editor,
     user: state.user,
-    article: state.article
+    article: state.article,
+    modal: state.modal
   }
 }
 const mapDispatchToProps = dispatch => {

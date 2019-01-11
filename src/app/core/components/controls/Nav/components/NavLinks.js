@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import Link from "../../Link"
 
@@ -9,19 +9,23 @@ import Link from "../../Link"
 // text-decoration: none;
 // position: relative;
 
+export const navActiveCss = css`
+  background: ${props => props.theme.color.brand()};
+  color: ${props => props.theme.color.background()};
+  ::before {
+    content: "";
+    width: 110%;
+    left: -5%;
+    height: 2px;
+    bottom: -5px;
+    background: ${props => props.theme.color.foreground()};
+    position: absolute;
+  }
+`
+
 const StyledLink = styled(Link)`
   &.active {
-    background: ${props => props.theme.color.brand()};
-    color: ${props => props.theme.color.background()};
-    ::before {
-      content: "";
-      width: 110%;
-      left: -5%;
-      height: 2px;
-      bottom: -5px;
-      background: ${props => props.theme.color.foreground()};
-      position: absolute;
-    }
+    ${navActiveCss};
   }
   ${props =>
     props.connectionStatus === "offline"

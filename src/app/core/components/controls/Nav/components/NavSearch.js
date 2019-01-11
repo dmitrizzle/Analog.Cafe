@@ -2,15 +2,13 @@
 import React from "react"
 
 import { LabelWithSearchSVG } from "./NavGeneral"
-import Modal from "../../Modal"
+import { NavModal } from "./NavMore"
 import Search from "../../../icons/Search"
 
 export default props => {
   return (
-    <Modal
-      element={props.element}
-      branded={props.branded}
-      inverse={props.inverse}
+    <NavModal
+      {...props}
       unmarked
       with={{
         info: {
@@ -27,6 +25,6 @@ export default props => {
       style={{ textDecoration: "none", paddingRight: ".25em" }}
     >
       {props.children}
-    </Modal>
+    </NavModal>
   )
 }

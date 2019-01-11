@@ -1,12 +1,26 @@
 // NOTE: `className` props are used in index.html
 import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
+import styled from "styled-components"
 
 import { BurgerMenu } from "./NavGeneral"
 import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
 import { TEXT_LABELS } from "../../../../constants/messages-"
+import { navActiveCss } from "./NavLinks"
 import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
+
+export const NavModal = styled(Modal)`
+  &.active {
+    ${navActiveCss};
+    > div > div {
+      background: ${props => props.theme.color.background()};
+    }
+    svg path {
+      stroke: ${props => props.theme.color.background()};
+    }
+  }
+`
 
 const NAV_USER = props => [
   {
@@ -75,10 +89,8 @@ export default props => {
       }
     ]
   return (
-    <Modal
-      element={props.element}
-      branded={props.branded}
-      inverse={props.inverse}
+    <NavModal
+      {...props}
       unmarked
       with={{
         info: {
@@ -96,6 +108,6 @@ export default props => {
       style={{ textDecoration: "none", paddingRight: ".25em" }}
     >
       {props.children}
-    </Modal>
+    </NavModal>
   )
 }

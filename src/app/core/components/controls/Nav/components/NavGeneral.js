@@ -56,10 +56,14 @@ export const BurgerMenu = () => (
 )
 
 export default props => {
-  const isActive = to => {
-    if (window.location.pathname === to) return true
+  const isActiveUrl = (to, options = {}) => {
+    const currentUrl = options.modalUrl
+      ? props.modalUrl
+      : window.location.pathname
+    if (options.modalUrl && props.isModalHidden) return false
+    if (currentUrl === to) return true
     if (
-      window.location.pathname.includes(ROUTE_URL_ARTICLES) &&
+      currentUrl.includes(ROUTE_URL_ARTICLES) &&
       props.articleTag === to.replace("/", "")
     )
       return true
@@ -73,11 +77,20 @@ export default props => {
 
   const visualEssays = {
     to: "/photo-essays",
-    className: isActive(ve) ? a : undefined
+    className: isActiveUrl(ve) ? a : undefined
   }
   const filmPhotography = {
     to: fp,
-    className: isActive(fp) ? a : undefined
+    className: isActiveUrl(fp) ? a : undefined
+  }
+  const navSections = {
+    className: isActiveUrl("nav/sections", { modalUrl: true }) ? a : undefined
+  }
+  const navMore = {
+    className: isActiveUrl("nav/more", { modalUrl: true }) ? a : undefined
+  }
+  const navSearch = {
+    className: isActiveUrl("nav/search", { modalUrl: true }) ? a : undefined
   }
 
   return (
@@ -87,15 +100,7 @@ export default props => {
       }
     >
       <NavItem prime left mobile className="prime left mobile">
-        <NavSections
-          onClick={() => {
-            GA.event({
-              category: "Navigation",
-              action: "Nav.click",
-              label: "Sections.mobile"
-            })
-          }}
-        >
+        <NavSections {...navSections}>
           <span>
             <Extra>Sections </Extra>◈
           </span>
@@ -147,7 +152,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
       <NavItem narrow prime left className="left">
-        <NavSearch>
+        <NavSearch {...navSearch}>
           <LabelWithSearchSVG>
             Search <Search />
           </LabelWithSearchSVG>
@@ -158,6 +163,7 @@ export default props => {
           userImage={props.userImage}
           userStatus={props.userStatus}
           userRole={props.userRole}
+          {...navMore}
         >
           More <BurgerMenu />
           <Extra>
