@@ -1,4 +1,4 @@
-import "localforage-getitems"
+// import "localforage-getitems"
 
 import { connect } from "react-redux"
 import {
@@ -6,7 +6,7 @@ import {
   loadContent
 } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
-import localForage from "localforage"
+// import localForage from "localforage"
 
 import { CARD_ERRORS } from "../../../constants/messages-submission"
 import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
@@ -86,15 +86,15 @@ class Upload extends React.PureComponent {
         .filter(node => !!(node.data && node.data.src))
         .map(node => node.data.src)
       if (keys.length > 0) {
-        localForage.getItems(keys).then(results => {
-          keys.forEach(k => {
-            data.append("images[" + k + "]", base64ToBlob(results[k]))
-          })
-          content.document.nodes
-            .filter(node => !!(node.data && node.data.src))
-            .forEach(node => (node.data.src = null))
-          sendSubmission(data, this.props)
-        })
+        // localForage.getItems(keys).then(results => {
+        //   keys.forEach(k => {
+        //     data.append("images[" + k + "]", base64ToBlob(results[k]))
+        //   })
+        //   content.document.nodes
+        //     .filter(node => !!(node.data && node.data.src))
+        //     .forEach(node => (node.data.src = null))
+        //   sendSubmission(data, this.props)
+        // })
       } else {
         if (srcs.length === 0) {
           this.props.setModal(

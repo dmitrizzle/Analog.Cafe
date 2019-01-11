@@ -74,7 +74,7 @@
     "precommit": "lint-staged",
     "start": "node precompile && react-scripts start",
     "build": "node precompile && react-scripts build",
-    "deploy": "yarn version && node deploy",
+    "deploy": "node node_modules/eslint/bin/eslint.js --config node_modules/eslint-config-react-app/index.js ./src && yarn test && yarn version && node deploy",
     "size": "size-limit",
     "test": "npm run size && react-scripts test --env=jsdom"
   },

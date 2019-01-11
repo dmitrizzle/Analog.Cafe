@@ -17,7 +17,6 @@ import {
   getUserInfo,
   setUserInfo
 } from "../../../store/actions-user"
-import { forceImageRestrictions } from "../../../utils/actions-submission"
 import { getProfileButtons } from "../../../utils/messages-profile"
 import { setModal } from "../../../../core/store/actions-modal"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
@@ -26,6 +25,10 @@ import Forbidden from "../../../../core/components/pages/Error/components/Forbid
 import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
 import ProfileCard from "./components/ProfileCard"
 import TitleTextarea from "../../forms/TextInput/components/TitleTextarea"
+
+// export {
+//   forceImageRestrictions
+// } from "@roast-cms/french-press-editor/dist/utils/actions-image";
 
 const composerPath = "/submit/compose"
 class EditProfile extends React.PureComponent {
@@ -91,17 +94,21 @@ class EditProfile extends React.PureComponent {
   }
   handleFileUpload = event => {
     const file = event.target.files[0]
-    forceImageRestrictions(file.size, file.type, 5)
-      .then(() => this.uploadRequest(file))
-      .catch(() => {
-        this.props.setModal(
-          {
-            status: "ok",
-            info: CARD_ERRORS.IMAGE_SIZE(5)
-          },
-          { url: "errors/upload" }
-        )
-      })
+    import("@roast-cms/french-press-editor/dist/utils/actions-image").then(
+      forceImageRestrictions => {
+        forceImageRestrictions(file.size, file.type, 5)
+          .then(() => this.uploadRequest(file))
+          .catch(() => {
+            this.props.setModal(
+              {
+                status: "ok",
+                info: CARD_ERRORS.IMAGE_SIZE(5)
+              },
+              { url: "errors/upload" }
+            )
+          })
+      }
+    )
   }
   uploadRequest = file => {
     const reader = new FileReader()

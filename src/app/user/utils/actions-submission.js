@@ -6,11 +6,6 @@ import {
   ROUTE_API_SUBMISSIONS
 } from "../../core/constants/routes-article"
 
-export {
-  forceImageRestrictions,
-  fileToBase64
-} from "@roast-cms/french-press-editor/dist/utils/actions-image"
-
 // https://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata
 export const base64ToBlob = string => {
   if (string instanceof Blob) return string
