@@ -9,10 +9,11 @@ export const SearchType = styled.span`
   padding-left: 1em;
   svg {
     display: inline-block;
-    margin: -0.5em 0.25em -0.15em 0.25em;
+    margin: -0.5em 0.25em -0.15em 0;
     height: 1em;
     path {
-      stroke: ${props => props.theme.color.brand()};
+      fill: #999 !important;
+      stroke: #999 !important;
       stroke-width: 4px;
     }
   }
@@ -37,7 +38,7 @@ export const CARD_ERRORS = {
   }
 }
 export const TEXT_LABELS = {
-  SUBSCRIBE: "Subscribe ❤︎",
+  SUBSCRIBE: "Email Newsletter ❤︎",
   SEARCH: (
     <SearchType>
       Search <Search />

@@ -7,13 +7,12 @@ import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ButtonGroup from "../../controls/Button/components/ButtonGroup"
 import CardHeader from "../../controls/Card/components/CardHeader"
 import CardIntegrated from "../../controls/Card/components/CardIntegrated"
-import FollowButtons from "../../controls/ArticleActions/components/FollowButtons"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import MetaTags from "../../vignettes/MetaTags"
 import Subscribe from "../../../../user/components/forms/Subscribe"
 
-const metaTitle = "Subscribe"
+const metaTitle = "Analogue Reads"
 const metaDescription = ""
 
 const WallPaper = styled.div`
@@ -30,8 +29,13 @@ const WallPaper = styled.div`
 
 export const GetYourWeekly = () => (
   <CardCaptionIntegrated>
-    Get your weekly dose of stories, reviews, and guides on art and film
-    photography. <Link to="/privacy-policy">No spam</Link>.
+    Photo essays, reviews, guides. Delivered Tuesdays at 9AM EST.
+    <br />
+    Free. <Link to="/privacy-policy">No spam</Link>.{" "}
+    <Link to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=f8892b3a23">
+      Sneak Peek
+    </Link>
+    .
   </CardCaptionIntegrated>
 )
 
@@ -39,7 +43,7 @@ export default props => {
   return (
     <ArticleWrapper style={{ overflow: "visible" }}>
       <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
-      <HeaderLarge pageTitle={metaTitle} pageSubtitle="Analog.Cafe" />
+      <HeaderLarge pageTitle={metaTitle} pageSubtitle="Every Tuesday Morning" />
 
       <WallPaper>
         <ArticleSection>
@@ -49,16 +53,16 @@ export default props => {
                 stubborn
                 buttons={[0]}
                 noStar
-                title="Email Newsletter"
+                title="Weekly Email Newsletter"
               />
               <GetYourWeekly />
               <Subscribe
-                autoFocus={false}
+                autoFocus
                 stateOverwrite={{ subscribeForm: true }}
                 formLocation={"Subscribe"}
               />
             </CardIntegrated>
-            <FollowButtons />
+            {/* <FollowButtons /> */}
           </ButtonGroup>
         </ArticleSection>
       </WallPaper>

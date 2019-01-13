@@ -38,8 +38,13 @@ ShallowWrapper {
                     />
                     <Unknown />
                     <PureComponent
+                              autoFocus={false}
                               formLocation="ArticleActions"
-                              stateOverwrite={undefined}
+                              stateOverwrite={
+                                        Object {
+                                                  "subscribeForm": true,
+                                                }
+                              }
                               subscribeFormCallback={undefined}
                     />
           </Styled(Styled(styled.div))>
@@ -70,8 +75,13 @@ ShallowWrapper {
             />
             <Unknown />
             <PureComponent
+                        autoFocus={false}
                         formLocation="ArticleActions"
-                        stateOverwrite={undefined}
+                        stateOverwrite={
+                                    Object {
+                                                "subscribeForm": true,
+                                              }
+                        }
                         subscribeFormCallback={undefined}
             />
 </Styled(Styled(styled.div))>,
@@ -95,8 +105,13 @@ ShallowWrapper {
 />,
               <Unknown />,
               <PureComponent
+                autoFocus={false}
                 formLocation="ArticleActions"
-                stateOverwrite={undefined}
+                stateOverwrite={
+                                Object {
+                                                "subscribeForm": true,
+                                              }
+                }
                 subscribeFormCallback={undefined}
 />,
             ],
@@ -133,8 +148,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "autoFocus": false,
                 "formLocation": "ArticleActions",
-                "stateOverwrite": undefined,
+                "stateOverwrite": Object {
+                  "subscribeForm": true,
+                },
                 "subscribeFormCallback": undefined,
               },
               "ref": null,
@@ -171,8 +189,13 @@ ShallowWrapper {
                         />
                         <Unknown />
                         <PureComponent
+                                    autoFocus={false}
                                     formLocation="ArticleActions"
-                                    stateOverwrite={undefined}
+                                    stateOverwrite={
+                                                Object {
+                                                            "subscribeForm": true,
+                                                          }
+                                    }
                                     subscribeFormCallback={undefined}
                         />
             </Styled(Styled(styled.div))>
@@ -203,8 +226,13 @@ ShallowWrapper {
               />
               <Unknown />
               <PureComponent
+                            autoFocus={false}
                             formLocation="ArticleActions"
-                            stateOverwrite={undefined}
+                            stateOverwrite={
+                                          Object {
+                                                        "subscribeForm": true,
+                                                      }
+                            }
                             subscribeFormCallback={undefined}
               />
 </Styled(Styled(styled.div))>,
@@ -228,8 +256,13 @@ ShallowWrapper {
 />,
                 <Unknown />,
                 <PureComponent
+                  autoFocus={false}
                   formLocation="ArticleActions"
-                  stateOverwrite={undefined}
+                  stateOverwrite={
+                                    Object {
+                                                      "subscribeForm": true,
+                                                    }
+                  }
                   subscribeFormCallback={undefined}
 />,
               ],
@@ -266,8 +299,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
+                  "autoFocus": false,
                   "formLocation": "ArticleActions",
-                  "stateOverwrite": undefined,
+                  "stateOverwrite": Object {
+                    "subscribeForm": true,
+                  },
                   "subscribeFormCallback": undefined,
                 },
                 "ref": null,

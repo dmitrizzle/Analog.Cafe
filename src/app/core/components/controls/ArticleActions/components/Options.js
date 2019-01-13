@@ -110,8 +110,9 @@ export default props => {
           <GetYourWeekly />
           <Subscribe
             subscribeFormCallback={props.subscribeFormCallback}
-            stateOverwrite={props.subscribeForm}
+            stateOverwrite={{ subscribeForm: true }}
             formLocation={"ArticleActions"}
+            autoFocus={false}
           />
         </CardIntegratedForColumns>
       </div>

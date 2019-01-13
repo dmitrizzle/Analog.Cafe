@@ -1,12 +1,15 @@
 import React from "react"
 
+import { GA } from "../../../../utils"
 import { SEARCH_RESULTS_FEATURED } from "../../../constants/messages-search"
+import { TEXT_LABELS } from "../../../constants/messages-"
 import ButtonGroupDivider from "../Button/components/ButtonGroupDivider"
 import ButtonKeyword from "../Button/components/ButtonKeyword"
 import CardButton, { CardSearchItem } from "./components/CardButton"
 import CardFigure from "./components/CardFigure"
 import CardHeader from "./components/CardHeader"
 import CardPopup from "./components/CardPopup"
+import FollowButtons from "../ArticleActions/components/FollowButtons"
 import Search from "../../forms/Search"
 import Spinner from "../../icons/Spinner"
 
@@ -111,6 +114,24 @@ export default class extends React.PureComponent {
               <ButtonGroupDivider key={i} />
             ) : null
           })}
+
+        {this.props.socialButtons && <FollowButtons />}
+
+        {this.props.subscribe && (
+          <CardButton
+            onClick={() =>
+              GA.event({
+                category: "Navigation",
+                action: "Nav.click",
+                label: "Subscribe.more"
+              })
+            }
+            to="/subscribe"
+            branded
+          >
+            {TEXT_LABELS.SUBSCRIBE}
+          </CardButton>
+        )}
       </CardPopup>
     )
   }

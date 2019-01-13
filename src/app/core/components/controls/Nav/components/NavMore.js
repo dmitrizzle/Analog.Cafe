@@ -5,7 +5,6 @@ import styled from "styled-components"
 
 import { BurgerMenu } from "./NavGeneral"
 import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
-import { TEXT_LABELS } from "../../../../constants/messages-"
 import { navActiveCss } from "./NavLinks"
 import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
@@ -63,11 +62,6 @@ const NAV_VISITOR = [
   {
     to: "/submit",
     text: "Submissions"
-  },
-  {
-    to: "/subscribe",
-    text: TEXT_LABELS.SUBSCRIBE,
-    branded: true
   }
 ]
 
@@ -95,6 +89,8 @@ export default props => {
       with={{
         info: {
           search: true,
+          socialButtons: true,
+          subscribe: props.userStatus !== "ok",
           menu: true,
           title: (
             <span>

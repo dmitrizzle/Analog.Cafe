@@ -64,7 +64,10 @@ export class Search extends React.PureComponent {
     return (
       <SearchVisibility menu={this.props.menu}>
         {!this.state.searchForm ? (
-          <CardButton inverse onClick={this.handleRevealSearchForm}>
+          <CardButton
+            style={{ background: "#dfdfdf" }}
+            onClick={this.handleRevealSearchForm}
+          >
             {TEXT_LABELS.SEARCH}
           </CardButton>
         ) : (

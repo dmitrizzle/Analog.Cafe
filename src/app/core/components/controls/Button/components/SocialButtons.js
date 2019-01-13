@@ -2,68 +2,47 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 import Facebook from "../../../icons/Social/components/Facebook"
-import Feedly from "../../../icons/Social/components/Feedly"
-import Instagram from "../../../icons/Social/components/Instagram"
 import LinkButton from "./LinkButton"
 import Twitter from "../../../icons/Social/components/Twitter"
 
 export const brandButtonStyles = css`
-  color: ${props => props.theme.color.background()} !important;
   svg {
     height: 2em;
   }
 `
-const feedlyButtonStyles = css`
-  svg {
-    margin: -1em 0.25em -1.25em -1.5em;
-    height: 2em;
-  }
-`
+// const feedlyButtonStyles = css`
+//   svg {
+//     margin: -1em 0.25em -1.25em -1.5em;
+//     height: 2em;
+//     path {
+//       fill: #2bb24c !important;
+//       stroke: transparent;
+//     }
+//   }
+// `;
 export const twitterButtonStyles = css`
-  background-color: #1da1f2;
   svg {
     margin: -1.25em 0.25em -1em -1.5em;
-  }
-`
-const facebookButtonStyles = css`
-  background-color: #3b5998;
-  svg {
-    margin: -1.25em 0 -1em -1em;
-  }
-`
-const instagramButtonStyles = css`
-  color: ${props => props.theme.color.foreground()} !important;
-  svg {
-    margin: -1.25em 0 -1em -0.25em;
-    height: 1.5em;
     path {
-      fill: ${props => props.theme.color.foreground()} !important;
+      fill: #1da1f2 !important;
     }
   }
 `
-
-const StyledFeedlyLinkButton = styled(LinkButton)`
-  ${feedlyButtonStyles};
+const facebookButtonStyles = css`
+  svg {
+    margin: -1.25em 0 -1em -1em;
+    background: #3b5998;
+    border-radius: 0.25em;
+  }
 `
+
 const StyledTwitterLinkButton = styled(
   LinkButton
 )`${brandButtonStyles}${twitterButtonStyles}`
 const StyledFacebookLinkButton = styled(
   LinkButton
 )`${brandButtonStyles}${facebookButtonStyles}`
-const StyledInstagramLinkButton = styled(
-  LinkButton
-)`${brandButtonStyles}${instagramButtonStyles}`
 
-export const FeedlyLinkButton = props => {
-  return (
-    <StyledFeedlyLinkButton {...props} inverse>
-      <Feedly />
-      &nbsp;
-      {props.children}
-    </StyledFeedlyLinkButton>
-  )
-}
 export const TwitterLinkButton = props => {
   return (
     <StyledTwitterLinkButton {...props}>
@@ -80,14 +59,5 @@ export const FacebookLinkButton = props => {
       &nbsp;
       {props.children}
     </StyledFacebookLinkButton>
-  )
-}
-export const InstagramLinkButton = props => {
-  return (
-    <StyledInstagramLinkButton {...props}>
-      <Instagram />
-      &nbsp;&nbsp;
-      {props.children}
-    </StyledInstagramLinkButton>
   )
 }

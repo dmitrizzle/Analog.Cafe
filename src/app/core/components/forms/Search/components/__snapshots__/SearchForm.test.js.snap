@@ -25,11 +25,11 @@ ShallowWrapper {
           warning={false}
 />,
         <Unknown
-          inverse={true}
+          branded={true}
           loading={undefined}
           onClick={[Function]}
 >
-          Search
+          Find »
 </Unknown>,
       ],
       "style": null,
@@ -56,13 +56,13 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "children": "Search",
-          "inverse": true,
+          "branded": true,
+          "children": "Find »",
           "loading": undefined,
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Search",
+        "rendered": "Find »",
         "type": [Function],
       },
     ],
@@ -82,11 +82,11 @@ ShallowWrapper {
             warning={false}
 />,
           <Unknown
-            inverse={true}
+            branded={true}
             loading={undefined}
             onClick={[Function]}
 >
-            Search
+            Find »
 </Unknown>,
         ],
         "style": null,
@@ -113,13 +113,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": "Search",
-            "inverse": true,
+            "branded": true,
+            "children": "Find »",
             "loading": undefined,
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Search",
+          "rendered": "Find »",
           "type": [Function],
         },
       ],

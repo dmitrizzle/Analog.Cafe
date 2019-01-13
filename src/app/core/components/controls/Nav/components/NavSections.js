@@ -2,7 +2,6 @@
 import React from "react"
 
 import { NavModal } from "./NavMore"
-import { TEXT_LABELS } from "../../../../constants/messages-"
 
 const buttons = [
   {
@@ -12,11 +11,6 @@ const buttons = [
   {
     to: "/film-photography",
     text: "Film Photography"
-  },
-  {
-    to: "/subscribe",
-    text: TEXT_LABELS.SUBSCRIBE,
-    branded: true
   }
 ]
 
@@ -27,7 +21,6 @@ export default props => {
       unmarked
       with={{
         info: {
-          search: true,
           menu: true,
           title: <span>◈ Sections</span>,
           buttons

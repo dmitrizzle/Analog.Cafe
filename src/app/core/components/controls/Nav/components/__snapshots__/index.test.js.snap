@@ -2123,14 +2123,11 @@ ShallowWrapper {
               "text": "Submissions",
               "to": "/submit",
             },
-            Object {
-              "branded": true,
-              "text": "Subscribe ❤︎",
-              "to": "/subscribe",
-            },
           ],
           "menu": true,
           "search": true,
+          "socialButtons": true,
+          "subscribe": true,
           "title": <span>
             <Unknown />
              More
@@ -2166,14 +2163,11 @@ ShallowWrapper {
                 "text": "Submissions",
                 "to": "/submit",
               },
-              Object {
-                "branded": true,
-                "text": "Subscribe ❤︎",
-                "to": "/subscribe",
-              },
             ],
             "menu": true,
             "search": true,
+            "socialButtons": true,
+            "subscribe": true,
             "title": <span>
               <Unknown />
                More

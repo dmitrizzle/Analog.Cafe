@@ -5,12 +5,7 @@ import { shallow } from "enzyme"
 import React from "react"
 
 import { APP_THEME } from "../../../../../../constants"
-import {
-  FacebookLinkButton,
-  InstagramLinkButton,
-  TwitterLinkButton,
-  FeedlyLinkButton
-} from "./SocialButtons"
+import { FacebookLinkButton, TwitterLinkButton } from "./SocialButtons"
 import Button from "./Button"
 import ButtonGroup from "./ButtonGroup"
 import ButtonGroupDivider from "./ButtonGroupDivider"
@@ -61,20 +56,12 @@ it("Render LinkButton, matches snapshot", () => {
   expect(element).toMatchSnapshot()
 })
 
-it("Render FeedlyLinkButton, matches snapshot", () => {
-  const element = shallow(<FeedlyLinkButton />)
-  expect(element).toMatchSnapshot()
-})
 it("Render TwitterLinkButton, matches snapshot", () => {
   const element = shallow(<TwitterLinkButton />)
   expect(element).toMatchSnapshot()
 })
 it("Render FacebookLinkButton, matches snapshot", () => {
   const element = shallow(<FacebookLinkButton />)
-  expect(element).toMatchSnapshot()
-})
-it("Render InstagramLinkButton, matches snapshot", () => {
-  const element = shallow(<InstagramLinkButton />)
   expect(element).toMatchSnapshot()
 })
 

@@ -13,6 +13,7 @@ export default props => {
       maxLength="600"
       warning={props.warning}
       type="search"
+      style={{ paddingLeft: "1em" }}
     />
   )
 }
