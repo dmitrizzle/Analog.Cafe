@@ -195,7 +195,7 @@ class ArticleControls extends React.PureComponent {
         </span>
         You can also{" "}
         <Link to="#delete" onClick={this.handleDelete}>
-          delte
+          delete
         </Link>{" "}
         this post.
       </Byline>

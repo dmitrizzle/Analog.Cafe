@@ -39,7 +39,7 @@ const Nav = props => {
                 props.setUserIntent({ load: "List" })
             }}
             articleTag={props.article.tag}
-            modalUrl={props.modal.requested.url}
+            modalUrl={props.modal.requested && props.modal.requested.url}
             isModalHidden={props.modal.hidden}
           />
         )}
