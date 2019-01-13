@@ -13,7 +13,8 @@ import MetaTags from "../../vignettes/MetaTags"
 import Subscribe from "../../../../user/components/forms/Subscribe"
 
 const metaTitle = "Analogue Reads"
-const metaDescription = ""
+const metaDescription =
+  "Photo essays, reviews, guides. Weekly email newsletter, delivered Tuesdays at 9AM EST."
 
 const WallPaper = styled.div`
   margin-top: 1em;
