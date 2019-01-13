@@ -214,7 +214,13 @@ class Article extends React.Component {
           metaTitle={
             this.props.article.title +
             (this.props.article.subtitle
-              ? ` (${this.props.article.subtitle})`
+              ? `${
+                  !this.props.article.title[
+                    this.props.article.title.length - 1
+                  ].match(/[.,!?:…*ʔっ)]/g)
+                    ? ":"
+                    : ""
+                } ${this.props.article.subtitle}`
               : "")
           }
           metaDescription={this.props.article.summary}
