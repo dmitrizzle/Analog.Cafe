@@ -31,8 +31,10 @@ export const twitterButtonStyles = css`
 const facebookButtonStyles = css`
   svg {
     margin: -1.25em 0 -1em -1em;
-    background: #3b5998;
     border-radius: 0.25em;
+  }
+  path {
+    fill: #3b5998 !important;
   }
 `
 

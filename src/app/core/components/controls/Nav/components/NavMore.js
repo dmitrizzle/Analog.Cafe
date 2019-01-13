@@ -89,7 +89,7 @@ export default props => {
       with={{
         info: {
           search: true,
-          socialButtons: true,
+          socialButtons: props.userStatus !== "ok",
           subscribe: props.userStatus !== "ok",
           menu: true,
           title: (
