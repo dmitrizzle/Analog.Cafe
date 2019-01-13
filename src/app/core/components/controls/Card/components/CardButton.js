@@ -7,7 +7,10 @@ export const styles = css`
   margin: 0;
   border-radius: 0;
   &:active {
-    box-shadow: 0 -1px 0 ${props => props.theme.color.foreground()};
+    ${props =>
+      !props.noDownstate &&
+      `box-shadow: 0 -1px 0 ${props.theme.color.foreground()}`};
+    ${props => props.noDownstate && `background: #dfdfdf !important`};
   }
   ${props =>
     props.mobile === "on" && props.theme.size.breakpoint.min.l`display:none;`};

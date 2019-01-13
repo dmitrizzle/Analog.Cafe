@@ -5,7 +5,7 @@ import SubtitleInput from "../../../../user/components/forms/TextInput/component
 export default props => {
   return (
     <SubtitleInput
-      placeholder="Keywords"
+      // placeholder="Keywords"
       onChange={props.onChange}
       onClick={props.onClick}
       required
@@ -13,7 +13,7 @@ export default props => {
       maxLength="600"
       warning={props.warning}
       type="search"
-      style={{ paddingLeft: "1em" }}
+      // style={{ paddingLeft: "1em" }}
     />
   )
 }

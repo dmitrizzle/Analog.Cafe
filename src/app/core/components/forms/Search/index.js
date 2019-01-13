@@ -65,7 +65,8 @@ export class Search extends React.PureComponent {
       <SearchVisibility menu={this.props.menu}>
         {!this.state.searchForm ? (
           <CardButton
-            style={{ background: "#dfdfdf" }}
+            noDownstate
+            style={{ background: "#dfdfdf", cursor: "text" }}
             onClick={this.handleRevealSearchForm}
           >
             {TEXT_LABELS.SEARCH}
