@@ -45,7 +45,7 @@ export default class extends React.Component {
           }}
           loading={this.props.loading}
         >
-          Find »
+          Search ↵
         </Button>
       </Form>
     )
