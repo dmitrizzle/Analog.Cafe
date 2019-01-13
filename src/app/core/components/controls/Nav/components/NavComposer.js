@@ -19,7 +19,7 @@ const NavLinkSend = props => {
     <Modal
       unmarked
       with={
-        props.editorStatus.id && props.userRole === "admin"
+        props.editorStatus.id
           ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
           : CARD_DIALOGUES.CONSENT
       }

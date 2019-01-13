@@ -74,36 +74,46 @@ class Upload extends React.PureComponent {
       data.append("header", JSON.stringify(header))
       data.append("textContent", textContent)
       data.append("isFullConsent", submissionConsent)
-      const keys = content.document.nodes
-        .filter(node => !!(node.data && node.data.key))
-        .map(node => node.data.key)
+      const { user } = this.props
+      data.append(
+        "editedBy",
+        JSON.stringify({
+          id: user && user.info ? user.info.id : "unknown",
+          name: user && user.info ? user.info.title : "Unknown"
+        })
+      )
+      // const keys = content.document.nodes
+      //   .filter(node => !!(node.data && node.data.key))
+      //   .map(node => node.data.key)
       const srcs = content.document.nodes
         .filter(node => !!(node.data && node.data.src))
         .map(node => node.data.src)
-      if (keys.length > 0) {
-        // localForage.getItems(keys).then(results => {
-        //   keys.forEach(k => {
-        //     data.append("images[" + k + "]", base64ToBlob(results[k]))
-        //   })
-        //   content.document.nodes
-        //     .filter(node => !!(node.data && node.data.src))
-        //     .forEach(node => (node.data.src = null))
-        //   sendSubmission(data, this.props)
-        // })
+      // keys method is for converting image DB key addresses to blobs (?)
+      //
+      // if (keys.length > 0) {
+      // localForage.getItems(keys).then(results => {
+      //   keys.forEach(k => {
+      //     data.append("images[" + k + "]", base64ToBlob(results[k]))
+      //   })
+      //   content.document.nodes
+      //     .filter(node => !!(node.data && node.data.src))
+      //     .forEach(node => (node.data.src = null))
+      //   sendSubmission(data, this.props)
+      // })
+      // } else {
+      if (srcs.length === 0) {
+        this.props.setModal(
+          {
+            status: "ok",
+            info: CARD_ERRORS.SEND_IMAGES_MISSING
+          },
+          { url: "errors/submissions" }
+        )
+        this.props.history.replace({ pathname: "/submit/compose" })
       } else {
-        if (srcs.length === 0) {
-          this.props.setModal(
-            {
-              status: "ok",
-              info: CARD_ERRORS.SEND_IMAGES_MISSING
-            },
-            { url: "errors/submissions" }
-          )
-          this.props.history.replace({ pathname: "/submit/compose" })
-        } else {
-          sendSubmission(data, this.props)
-        }
+        sendSubmission(data, this.props)
       }
+      // }
     }
   }
   componentWillReceiveProps = nextProps => {

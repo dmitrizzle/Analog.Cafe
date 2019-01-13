@@ -155,6 +155,7 @@ class ArticleControls extends React.PureComponent {
         stateAllowReject={this.state.allowReject}
         stateAllowUnpublish={this.state.allowUnpublish}
         statePublishControls={this.state.publishControls}
+        isAdmin={this.props.user.info.role === "admin"}
       />,
       <Byline
         key="ArticleControls_rejected"
@@ -167,16 +168,18 @@ class ArticleControls extends React.PureComponent {
         </span>{" "}
         This submission has been REJECTED and can not be published or edited.
       </Byline>,
-      <PublishControls
-        key="ArticleControls_publish"
-        article={this.props.article}
-        editor={this.props.editor}
-        statePublishControls={this.state.publishControls}
-        statePublishAs={this.state.publishAs}
-        stateAllowPublish={this.state.allowPublish}
-        setPublicationTag={this.handlePublishTag}
-        publishNow={this.handlePublishNow}
-      />,
+      this.props.user.info.role === "admin" ? (
+        <PublishControls
+          key="ArticleControls_publish"
+          article={this.props.article}
+          editor={this.props.editor}
+          statePublishControls={this.state.publishControls}
+          statePublishAs={this.state.publishAs}
+          stateAllowPublish={this.state.allowPublish}
+          setPublicationTag={this.handlePublishTag}
+          publishNow={this.handlePublishNow}
+        />
+      ) : null,
       <Byline
         style={{
           marginTop: "1em",
@@ -197,7 +200,7 @@ class ArticleControls extends React.PureComponent {
         <Link to="#delete" onClick={this.handleDelete}>
           delete
         </Link>{" "}
-        this post.
+        this submission.
       </Byline>
     ]
   }
@@ -206,7 +209,8 @@ class ArticleControls extends React.PureComponent {
 const mapStateToProps = state => {
   return {
     editor: state.editor,
-    article: state.article
+    article: state.article,
+    user: state.user
   }
 }
 const mapDispatchToProps = dispatch => {

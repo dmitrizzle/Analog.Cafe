@@ -28,7 +28,7 @@ export const base64ToBlob = string => {
 export const sendSubmission = (data, props) => {
   let url = ROUTE_API_SUBMISSIONS
   let method = "post"
-  if (props.editor.status.id && props.user.info.role === "admin") {
+  if (props.editor.status.id) {
     method = "put"
     if (props.editor.status.type === "unpublished")
       url += "/" + props.editor.status.id

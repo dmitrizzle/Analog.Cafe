@@ -87,9 +87,6 @@ class Article extends React.Component {
     this.unlisten = this.props.history.listen(() => this.fetchArticlePage())
     this.fetchArticlePage()
     this.makeTag(this.props)
-    this.setState({
-      adminControls: this.props.user.info.role === "admin"
-    })
     window.addEventListener("mouseup", () => {
       this.props.setArticleSelectoin({
         hidden: true
@@ -100,7 +97,6 @@ class Article extends React.Component {
     if (!nextProps.article) return
     this.makeTag(nextProps)
     this.setState({
-      adminControls: nextProps.user.info.role === "admin",
       publicationStatus: nextProps.article.status
     })
 
@@ -235,10 +231,7 @@ class Article extends React.Component {
           metaSlug={this.props.article.slug}
           metaArticleSchema
         />
-        <ArticleHeader
-          article={this.props.article}
-          stateAdminControls={this.state.adminControls}
-        />
+        <ArticleHeader article={this.props.article} user={this.props.user} />
         <ArticleSection
           articleStatus={this.props.article.status}
           onMouseUp={event => this.handleSelection(event, false)}

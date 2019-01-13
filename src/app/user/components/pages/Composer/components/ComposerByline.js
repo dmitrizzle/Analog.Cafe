@@ -7,13 +7,17 @@ import Link from "../../../../../core/components/controls/Link"
 export default props => {
   return (
     <span>
-      {props.user.info.role === "admin" && props.editor.status.id ? (
+      {props.editor && props.editor.status.id ? (
         <Byline>
-          Submission under edit: <strong>{props.editor.status.id}</strong>{" "}
-          <Link to="#unlink" onClick={props.unlinkSubmission}>
-            unlink
-          </Link>
-          .
+          {props.user.info.role === "admin" && (
+            <span>
+              Submission ID: <strong>{props.editor.status.id}</strong>{" "}
+              <Link to="#unlink" onClick={props.unlinkSubmission}>
+                unlink
+              </Link>
+              .
+            </span>
+          )}
           {props.editor.status.type === "published" ||
           props.editor.status.type === "scheduled"
             ? [
@@ -22,7 +26,7 @@ export default props => {
                   You are editing a <strong>{props.editor.status.type}</strong>{" "}
                   article.
                   {props.editor.status.type === "published" &&
-                    " You will need to publish your changes to update the magazine."}
+                    " These changes will only affect your submission draft and not the published article."}
                 </span>
               ]
             : null}

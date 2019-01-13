@@ -57,7 +57,10 @@ export default props => {
             This submission is only visible to you and the Analog.Cafe Editors.
           </Byline>
         )}
-      {props.stateAdminControls && <ArticleControls />}
+      {props.user &&
+        ((props.article.submittedBy &&
+          props.article.submittedBy.id === props.user.info.id) ||
+          props.user.info.role === "admin") && <ArticleControls />}
     </HeaderLarge>
   )
 }

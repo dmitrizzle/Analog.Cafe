@@ -9,13 +9,14 @@ export default props => {
     <ButtonStrip
       style={{
         margin: "1em auto 0",
-        width: "16em",
+        width: props.isAdmin ? "16em" : "6em",
         whiteSpace: "nowrap",
         display: props.article.status !== "rejected" ? "block" : "none"
       }}
     >
       <div>
         <ButtonStripItem
+          right={!props.isAdmin}
           left
           onClick={props.edit}
           style={{
@@ -29,7 +30,7 @@ export default props => {
           </span>{" "}
           Edit
         </ButtonStripItem>
-        {props.article.status === "published" ? (
+        {props.article.status === "published" && props.isAdmin ? (
           <ButtonStripItem
             key="ButtonStrip_Item_unpublish"
             onClick={props.unpublish}
@@ -44,7 +45,7 @@ export default props => {
           </ButtonStripItem>
         ) : (
           [
-            props.article.status !== "unpublished" ? (
+            props.article.status !== "unpublished" && props.isAdmin ? (
               <ButtonStripItem
                 key="ButtonStrip_Item_reject"
                 onClick={props.reject}
@@ -63,27 +64,31 @@ export default props => {
                 Reject
               </ButtonStripItem>
             ) : null,
-            <ButtonStripItem
-              right
-              inverse={props.statePublishControls}
-              style={
-                props.article.status === "scheduled" ? { minWidth: "8em" } : {}
-              }
-              onClick={
-                props.article.status !== "scheduled"
-                  ? props.showPublishControls
-                  : null
-              }
-              key="ButtonStrip_Item_publish"
-            >
-              {props.article.status !== "scheduled"
-                ? `${
-                    props.article.status === "unpublished"
-                      ? "Republish"
-                      : "Publish"
-                  }`
-                : "Edit Schedule"}
-            </ButtonStripItem>
+            props.isAdmin ? (
+              <ButtonStripItem
+                right
+                inverse={props.statePublishControls}
+                style={
+                  props.article.status === "scheduled"
+                    ? { minWidth: "8em" }
+                    : {}
+                }
+                onClick={
+                  props.article.status !== "scheduled"
+                    ? props.showPublishControls
+                    : null
+                }
+                key="ButtonStrip_Item_publish"
+              >
+                {props.article.status !== "scheduled"
+                  ? `${
+                      props.article.status === "unpublished"
+                        ? "Republish"
+                        : "Publish"
+                    }`
+                  : "Edit Schedule"}
+              </ButtonStripItem>
+            ) : null
           ]
         )}
       </div>

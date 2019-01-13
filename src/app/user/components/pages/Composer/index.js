@@ -35,14 +35,15 @@ const Composer = props => {
       <Modal
         style={{ marginBottom: "0.25em" }}
         with={
-          props.editor.status.id && props.user.info.role === "admin"
+          props.editor.status.id
             ? CARD_DIALOGUES_ADMIN.SAVE_EDITS
             : CARD_DIALOGUES.CONSENT
         }
         element="Button"
         branded
       >
-        Send Submission {TEXT_EMOJIS.CHECKMARK}
+        {props.editor.status.id ? "Submit Changes " : "Send Submission "}
+        {TEXT_EMOJIS.CHECKMARK}
       </Modal>
       <DraftStatusText>
         Your draft is <Modal with={CARD_ALERTS.AUTO_SAVE}>saved</Modal>.

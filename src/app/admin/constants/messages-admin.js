@@ -1,4 +1,7 @@
+import React from "react"
+
 import { TEXT_EMOJIS } from "../../constants"
+import ContactInfo from "../../core/components/vignettes/ContactInfo"
 
 const NEVERMIND_BUTTON = {
   to: "#",
@@ -9,7 +12,7 @@ export const CARD_DIALOGUES = {
   OVERWRITE_DRAFT: unlockFunction => {
     return {
       info: {
-        title: "Overwrite Warning",
+        title: "Warning",
         text:
           "Looks like you are currently editing another draft on this device. Do you want to overwrite it? This can not be undone.",
         buttons: [
@@ -50,7 +53,12 @@ export const CARD_DIALOGUES = {
     return {
       info: {
         title: "Are You Sure?",
-        text: "Once you DELETE this submission THERE IS NO GOING BACK!",
+        text: (
+          <span>
+            You can not undo this action. Note that published articles can not
+            be deleted but can be taken down by request via <ContactInfo />
+          </span>
+        ),
         buttons: [
           NEVERMIND_BUTTON,
           {
@@ -101,9 +109,14 @@ export const CARD_DIALOGUES = {
   },
   SAVE_EDITS: {
     info: {
-      title: "Notes for Editors",
-      text:
-        "All image and article authorship, and consent settings will remain as per original submission. Note that if you upload a new image (which includes making edits to original images and re-uploading them) its authorship will belog to you, the editor – this may need to be fixed before publishing event.",
+      title: "About Edits",
+      text: (
+        <span>
+          These edits will be applied to your submission only. Please notify{" "}
+          {<ContactInfo />} if you would like to apply edits to a published
+          article.
+        </span>
+      ),
       buttons: [
         {
           to: "/submit/confirm-full-consent",
@@ -118,7 +131,7 @@ export const CARD_DIALOGUES = {
 export const CARD_ALERTS = {
   REJECTED_SUCCESSFULLY: {
     info: {
-      title: "Successfuly Rejected Submission",
+      title: "Submission Rejected",
       text:
         "Done. Submission rejected. It will be marked as such in the database and the author should be receiving a notification shortly."
     },
@@ -126,14 +139,14 @@ export const CARD_ALERTS = {
   },
   DELETED_SUCCESSFULLY: {
     info: {
-      title: "Successfuly Deleted Submission",
-      text: "Done. Submission REMOVED from database."
+      title: "Submission Deleted",
+      text: "Done. Submission DELETED from your account."
     },
     id: "hints/reject-submission"
   },
   UNPUBLISHED_SUCCESSFULLY: {
     info: {
-      title: "Successfuly Unpublished Article",
+      title: "Article Unpublished",
       text: "Done. Article REMOVED from publication."
     },
     id: "hints/unpublish-submission"
