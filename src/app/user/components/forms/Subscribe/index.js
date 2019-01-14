@@ -1,6 +1,5 @@
 import React from "react"
 
-import { GA } from "../../../../utils"
 import { TEXT_LABELS } from "../../../../core/constants/messages-"
 import CardButton from "../../../../core/components/controls/Card/components/CardButton"
 import MailChimpPrefill from "./components/MailChimpPrefill"

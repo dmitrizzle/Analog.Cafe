@@ -44,7 +44,8 @@ export const fetchListPage = (request, appendItems = false) => {
       listState.requested.url === request.url &&
       listState.requested.params.page === request.params.page &&
       listState.requested.params.tag === request.params.tag &&
-      listState.requested.params.authorship === request.params.authorship
+      listState.requested.params.authorship === request.params.authorship &&
+      listState.requested.params.author === request.params.author
       // &&
       //
       // listState.requested.params.authorship === request.params.authorship &&
