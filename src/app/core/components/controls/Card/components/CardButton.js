@@ -1,3 +1,4 @@
+import React from "react"
 import styled, { css } from "styled-components"
 
 import LinkButton from "../../Button/components/LinkButton"
@@ -19,7 +20,7 @@ export const styles = css`
     props.mobile === "off" && props.theme.size.breakpoint.max.m`display:none;`};
 `
 
-export default styled(LinkButton)`
+export default styled(({ noDownstate, ...props }) => <LinkButton {...props} />)`
   ${styles};
 `
 

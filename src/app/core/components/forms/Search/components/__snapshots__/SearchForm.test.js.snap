@@ -29,7 +29,7 @@ ShallowWrapper {
           loading={undefined}
           onClick={[Function]}
 >
-          Find »
+          Search ↵
 </Unknown>,
       ],
       "style": null,
@@ -57,12 +57,12 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "branded": true,
-          "children": "Find »",
+          "children": "Search ↵",
           "loading": undefined,
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Find »",
+        "rendered": "Search ↵",
         "type": [Function],
       },
     ],
@@ -86,7 +86,7 @@ ShallowWrapper {
             loading={undefined}
             onClick={[Function]}
 >
-            Find »
+            Search ↵
 </Unknown>,
         ],
         "style": null,
@@ -114,12 +114,12 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "branded": true,
-            "children": "Find »",
+            "children": "Search ↵",
             "loading": undefined,
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Find »",
+          "rendered": "Search ↵",
           "type": [Function],
         },
       ],
