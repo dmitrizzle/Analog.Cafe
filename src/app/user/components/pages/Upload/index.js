@@ -1,4 +1,4 @@
-// import "localforage-getitems"
+import "localforage-getitems"
 
 import { connect } from "react-redux"
 import {
@@ -6,11 +6,16 @@ import {
   loadContent
 } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
+import localForage from "localforage"
 
 import { CARD_ERRORS } from "../../../constants/messages-submission"
 import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
-import { loadHeader, sendSubmission } from "../../../utils/actions-submission"
+import {
+  base64ToBlob,
+  loadHeader,
+  sendSubmission
+} from "../../../utils/actions-submission"
 import { redirectToSignIn } from "../../../utils/actions-session"
 import { resetStatus } from "../../../../admin/store/actions-editor"
 import { setModal } from "../../../../core/store/actions-modal"
@@ -82,38 +87,37 @@ class Upload extends React.PureComponent {
           name: user && user.info ? user.info.title : "Unknown"
         })
       )
-      // const keys = content.document.nodes
-      //   .filter(node => !!(node.data && node.data.key))
-      //   .map(node => node.data.key)
+      const keys = content.document.nodes
+        .filter(node => !!(node.data && node.data.key))
+        .map(node => node.data.key)
       const srcs = content.document.nodes
         .filter(node => !!(node.data && node.data.src))
         .map(node => node.data.src)
-      // keys method is for converting image DB key addresses to blobs (?)
-      //
-      // if (keys.length > 0) {
-      // localForage.getItems(keys).then(results => {
-      //   keys.forEach(k => {
-      //     data.append("images[" + k + "]", base64ToBlob(results[k]))
-      //   })
-      //   content.document.nodes
-      //     .filter(node => !!(node.data && node.data.src))
-      //     .forEach(node => (node.data.src = null))
-      //   sendSubmission(data, this.props)
-      // })
-      // } else {
-      if (srcs.length === 0) {
-        this.props.setModal(
-          {
-            status: "ok",
-            info: CARD_ERRORS.SEND_IMAGES_MISSING
-          },
-          { url: "errors/submissions" }
-        )
-        this.props.history.replace({ pathname: "/submit/compose" })
+
+      if (keys.length > 0) {
+        localForage.getItems(keys).then(results => {
+          keys.forEach(k => {
+            data.append("images[" + k + "]", base64ToBlob(results[k]))
+          })
+          content.document.nodes
+            .filter(node => !!(node.data && node.data.src))
+            .forEach(node => (node.data.src = null))
+          sendSubmission(data, this.props)
+        })
       } else {
-        sendSubmission(data, this.props)
+        if (srcs.length === 0) {
+          this.props.setModal(
+            {
+              status: "ok",
+              info: CARD_ERRORS.SEND_IMAGES_MISSING
+            },
+            { url: "errors/submissions" }
+          )
+          this.props.history.replace({ pathname: "/submit/compose" })
+        } else {
+          sendSubmission(data, this.props)
+        }
       }
-      // }
     }
   }
   componentWillReceiveProps = nextProps => {
