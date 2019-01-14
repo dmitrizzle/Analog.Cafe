@@ -22,11 +22,11 @@ export default class extends React.PureComponent {
     })
     this.props.subscribeFormCallback &&
       this.props.subscribeFormCallback(this.state.subscribeForm)
-    GA.event({
-      category: "Campaign",
-      action: "ActionsCard.quickSubscribe_open",
-      label: this.props.formLocation ? this.props.formLocation : null
-    })
+    // GA.event({
+    //   category: "Campaign",
+    //   action: "ActionsCard.quickSubscribe_open",
+    //   label: this.props.formLocation ? this.props.formLocation : null
+    // })
   }
   handleSubmitCallback = () => {
     this.setState({
