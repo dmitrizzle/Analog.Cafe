@@ -78,8 +78,7 @@ export default props => {
   return (
     <CardColumns
       style={{
-        display:
-          props.user.status !== "ok" || props.nextArticle ? undefined : "block"
+        display: props.nextArticle ? undefined : "block"
       }}
     >
       <div>

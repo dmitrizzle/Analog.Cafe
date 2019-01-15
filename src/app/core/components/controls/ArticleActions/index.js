@@ -5,6 +5,7 @@ import {
   getISODatestamp,
   getLunarDatestamp
 } from "../../../utils/messages-"
+import Link from "../Link"
 import Options from "./components/Options"
 import TimeStamp from "../../pages/Article/components/TimeStamp"
 
@@ -40,9 +41,38 @@ const DatePublished = props => {
 
 export default props => {
   return (
-    <div style={{ clear: "both" }}>
+    <div style={{ clear: "both", textAlign: "center" }}>
       {props.thisArticlePostDate && <DatePublished {...props} />}
-      <Options {...props} />
+
+      {props.user.status === "ok" &&
+        (props.user.role === "admin" ||
+          props.article.submittedBy.id === props.user.info.id) &&
+        props.article.edits &&
+        props.article.edits.length > 0 && (
+          <div style={{ lineHeight: "1em" }}>
+            <strong>Edit History</strong>
+            <br />
+            {props.article.edits.map(edit => {
+              const unix = new Date(edit.date * 1000)
+
+              return (
+                <React.Fragment key={edit.date}>
+                  <small style={{ opacity: 0.5 }}>
+                    {dateFactory(edit.date).human +
+                      " " +
+                      unix.getHours() +
+                      ":" +
+                      unix.getMinutes()}{" "}
+                    – <Link to={`/author/${edit.id}`}>{edit.name}</Link>
+                  </small>
+                  <br />
+                </React.Fragment>
+              )
+            })}
+          </div>
+        )}
+
+      {props.article.status === "published" && <Options {...props} />}
     </div>
   )
 }
