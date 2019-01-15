@@ -44,7 +44,8 @@ export default props => {
     <div style={{ clear: "both", textAlign: "center" }}>
       {props.thisArticlePostDate && <DatePublished {...props} />}
 
-      {props.user.status === "ok" &&
+      {props.user &&
+        props.user.status === "ok" &&
         (props.user.role === "admin" ||
           props.article.submittedBy.id === props.user.info.id) &&
         props.article.edits &&
@@ -72,7 +73,8 @@ export default props => {
           </div>
         )}
 
-      {props.article.status === "published" && <Options {...props} />}
+      {props.article &&
+        props.article.status === "published" && <Options {...props} />}
     </div>
   )
 }
