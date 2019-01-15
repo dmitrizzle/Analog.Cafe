@@ -74,7 +74,10 @@ export default props => {
         )}
 
       {props.article &&
-        props.article.status === "published" && <Options {...props} />}
+        props.article.status === "published" &&
+        typeof props.article.scheduledOrder === "undefined" && (
+          <Options {...props} />
+        )}
     </div>
   )
 }
