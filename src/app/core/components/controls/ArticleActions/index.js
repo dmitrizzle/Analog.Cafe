@@ -48,7 +48,7 @@ export default props => {
         props.user.status === "ok" &&
         (props.user.role === "admin" ||
           props.article.submittedBy.id === props.user.info.id) &&
-        props.article.edits &&
+        props.article.edits !== undefined &&
         props.article.edits.length > 0 && (
           <div style={{ lineHeight: "1em" }}>
             <strong>Edit History</strong>
