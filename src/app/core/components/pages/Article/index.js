@@ -188,8 +188,8 @@ class Article extends React.Component {
           text.length > 0
             ? `“${
                 text.length > maxChar
-                  ? encodeURI(text.substring(0, maxChar - 1) + "…")
-                  : encodeURI(text)
+                  ? text.substring(0, maxChar - 1) + "…"
+                  : text
               }” – ${authorName} ${url}`
             : undefined,
         hidden:
