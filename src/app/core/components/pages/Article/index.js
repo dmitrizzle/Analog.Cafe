@@ -33,6 +33,9 @@ const ArticleActions = Loadable({
   loading: () => null,
   delay: 100
 })
+
+// NOTE: 'Component' rather than 'PureComponent' is required for the
+// shouldComponentUpdate method below.
 class Article extends React.Component {
   constructor(props) {
     super(props)
@@ -121,8 +124,9 @@ class Article extends React.Component {
       nextProps.addSessionInfo({ readReceipts })
     }
 
-    if (articleId)
+    if (articleId !== this.props.article.id) {
       this.props.fetchListPage(getListMeta("/", 1, ROUTE_API_LIST).request)
+    }
   }
   componentWillUnmount = () => {
     this.unlisten()
