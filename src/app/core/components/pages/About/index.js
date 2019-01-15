@@ -124,8 +124,9 @@ class About extends React.PureComponent {
         </p>
         <h3>The editors.</h3>
         <p>
-          <Link to="/author/betty">Betty</Link> and Dmitri pick and edit every
-          article, keeping the content interesting, thoughtful, and readable.
+          Dmitri edits most of the articles, often with help from{" "}
+          <Link to="/author/betty">Betty</Link>, keeping the content
+          interesting, thoughtful, and readable.
         </p>
 
         <h3>Film Photography.</h3>
@@ -163,15 +164,17 @@ class About extends React.PureComponent {
           <Figure src="image-froth_1206996_r1CqlUwRm" />
         </Modal>
         <p>
-          Most stories and articles on Analog.Cafe are either about{" "}
-          <Link to="/film-photography">film photography</Link> or have it
-          involved in the image making. The reason is our collective passion and
-          appreciation for the analogue process and{" "}
-          <Link to="/zine/analogue-photography-98f3">technology</Link>.
+          The reason is our collective appreciation and understanding of the
+          analogue <Link to="/zine/analogue-photography-98f3">technology</Link>{" "}
+          and how it adds to the creative expression.
         </p>
         <p>
-          We believe that film photography helps us create more thoughtful,
-          beautiful, and truthful stories.
+          About half of all articles posted on Analog.Cafe are categorized under{" "}
+          <em>
+            <Link to="/film-photography">Film Photography</Link>
+          </em>{" "}
+          where we publish reviews, guides, and stores on film and analogue
+          cameras.
         </p>
 
         <h3>Photo Essays.</h3>
@@ -208,13 +211,14 @@ class About extends React.PureComponent {
           >
             offline
           </Modal>
-          , comes with many <Link to="/zine/2.0-a8nt">features</Link>{" "}
+          , and comes with many <Link to="/zine/2.0-a8nt">features</Link>{" "}
           specifically designed for readers, writers, and editors.
         </p>
 
         <p>
-          Analog.Cafe is{" "}
-          <Link to="https://github.com/roast-cms">open-source</Link>.
+          Analog.Cafe is not a theme or a builder tool. This website is
+          hand-coded from scratch and you can see all of that good work on our{" "}
+          <Link to="https://github.com/roast-cms">GitHub repository</Link>.
         </p>
 
         <h3>Contact Info.</h3>
@@ -278,11 +282,6 @@ class About extends React.PureComponent {
           Currently, Dmitri is maintaining the project from his home in{" "}
           <Link to="/zine/expat-years-6sje">Vancouver</Link>.
         </p>
-        <p>
-          <span role="img" aria-label="Country flags">
-            🇺🇸🇬🇧🇨🇦🇹🇭🇯🇵🇬🇷🇸🇰🇨🇳🇭🇰🇵🇭🇸🇬🇻🇳🇮🇪🇻🇪🇵🇹🇲🇾{" "}
-          </span>
-        </p>
 
         <h3>Thank you, project backers!</h3>
         <p>
@@ -294,8 +293,8 @@ class About extends React.PureComponent {
           <Link to="https://www.kickstarter.com/projects/dmitrizzle/analogcafe-the-remarkable-film-photography-blog">
             campaign
           </Link>
-          , we were able to build and grow into a prominent home the remarkable,
-          the beautiful, and the fascinating.
+          , we are able to build and grow into a prominent home for the
+          remarkable, the beautiful, and the fascinating.
         </p>
         <ThankYouList>
           Thayanantha Thevanayagam
