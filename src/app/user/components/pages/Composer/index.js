@@ -14,6 +14,7 @@ import DraftStatusText from "./components/DraftStatusText"
 import Editor from "./components/Editor"
 import Modal from "../../../../core/components/controls/Modal"
 import TitleCreator from "./components/TitleCreator"
+import WordCounter from "./components/WordCounter"
 
 const TITLE_PLACEHOLDER = {
   title: "Title",
@@ -46,7 +47,8 @@ const Composer = props => {
         {TEXT_EMOJIS.CHECKMARK}
       </Modal>
       <DraftStatusText>
-        Your draft is <Modal with={CARD_ALERTS.AUTO_SAVE}>saved</Modal>.
+        Your draft is <Modal with={CARD_ALERTS.AUTO_SAVE}>saved</Modal>. You’ve
+        written <WordCounter /> words.
       </DraftStatusText>
     </ComposerWrapper>
   )
