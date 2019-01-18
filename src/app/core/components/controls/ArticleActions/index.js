@@ -46,7 +46,7 @@ export default props => {
 
       {props.user &&
         props.user.status === "ok" &&
-        (props.user.role === "admin" ||
+        (props.user.info.role === "admin" ||
           props.article.submittedBy.id === props.user.info.id) &&
         props.article.edits !== undefined &&
         props.article.edits.length > 0 && (
