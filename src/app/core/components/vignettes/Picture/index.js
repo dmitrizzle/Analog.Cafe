@@ -174,7 +174,11 @@ class Picture extends React.PureComponent {
     const feature = node.data.get("feature")
 
     const nextBlock = parent.getNextBlock(node.get("key"))
-    const foldSpacer = nextBlock.get("data").get("feature") ? true : false
+    const foldSpacer = nextBlock
+      ? nextBlock.get("data").get("feature")
+        ? true
+        : false
+      : false
 
     return (
       <div
