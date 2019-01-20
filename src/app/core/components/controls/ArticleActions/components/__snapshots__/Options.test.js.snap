@@ -24,18 +24,9 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
+        false,
         <div>
           <Styled(Styled(styled.div))>
-                    <WithTheme(Component)
-                              buttons={
-                                        Array [
-                                                  0,
-                                                ]
-                              }
-                              noStar={true}
-                              stubborn={true}
-                              title="Email Newsletter"
-                    />
                     <Unknown />
                     <PureComponent
                               autoFocus={false}
@@ -49,7 +40,6 @@ ShallowWrapper {
                     />
           </Styled(Styled(styled.div))>
 </div>,
-        false,
       ],
       "style": Object {
         "display": "block",
@@ -57,22 +47,13 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      false,
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": <Styled(Styled(styled.div))>
-            <WithTheme(Component)
-                        buttons={
-                                    Array [
-                                                0,
-                                              ]
-                        }
-                        noStar={true}
-                        stubborn={true}
-                        title="Email Newsletter"
-            />
             <Unknown />
             <PureComponent
                         autoFocus={false}
@@ -93,16 +74,6 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <WithTheme(Component)
-                buttons={
-                                Array [
-                                                0,
-                                              ]
-                }
-                noStar={true}
-                stubborn={true}
-                title="Email Newsletter"
-/>,
               <Unknown />,
               <PureComponent
                 autoFocus={false}
@@ -118,22 +89,6 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "buttons": Array [
-                  0,
-                ],
-                "noStar": true,
-                "stubborn": true,
-                "title": "Email Newsletter",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
             Object {
               "instance": null,
               "key": undefined,
@@ -164,7 +119,6 @@ ShallowWrapper {
         },
         "type": "div",
       },
-      false,
     ],
     "type": [Function],
   },
@@ -175,18 +129,9 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
+          false,
           <div>
             <Styled(Styled(styled.div))>
-                        <WithTheme(Component)
-                                    buttons={
-                                                Array [
-                                                            0,
-                                                          ]
-                                    }
-                                    noStar={true}
-                                    stubborn={true}
-                                    title="Email Newsletter"
-                        />
                         <Unknown />
                         <PureComponent
                                     autoFocus={false}
@@ -200,7 +145,6 @@ ShallowWrapper {
                         />
             </Styled(Styled(styled.div))>
 </div>,
-          false,
         ],
         "style": Object {
           "display": "block",
@@ -208,22 +152,13 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        false,
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": <Styled(Styled(styled.div))>
-              <WithTheme(Component)
-                            buttons={
-                                          Array [
-                                                        0,
-                                                      ]
-                            }
-                            noStar={true}
-                            stubborn={true}
-                            title="Email Newsletter"
-              />
               <Unknown />
               <PureComponent
                             autoFocus={false}
@@ -244,16 +179,6 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                <WithTheme(Component)
-                  buttons={
-                                    Array [
-                                                      0,
-                                                    ]
-                  }
-                  noStar={true}
-                  stubborn={true}
-                  title="Email Newsletter"
-/>,
                 <Unknown />,
                 <PureComponent
                   autoFocus={false}
@@ -269,22 +194,6 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "buttons": Array [
-                    0,
-                  ],
-                  "noStar": true,
-                  "stubborn": true,
-                  "title": "Email Newsletter",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -315,7 +224,6 @@ ShallowWrapper {
           },
           "type": "div",
         },
-        false,
       ],
       "type": [Function],
     },
