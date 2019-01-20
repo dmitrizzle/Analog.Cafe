@@ -5,7 +5,7 @@ import SubtitleInput from "../TextInput/components/SubtitleInput"
 export default props => {
   return (
     <SubtitleInput
-      placeholder="Your Email"
+      placeholder="your@email"
       onChange={props.onChange}
       onClick={props.onClick}
       required

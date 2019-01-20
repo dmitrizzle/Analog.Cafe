@@ -26,7 +26,7 @@ export const subtitle = css`
   ${caution} ${warning};
 `
 export default styled(({ caution, warning, ...props }) => <input {...props} />)`
-  background-color: ${props =>
-    props.theme.color.foreground(props.theme.opacity.least / 4)};
+  box-shadow: 0 0 1.5em
+    ${props => props.theme.color.foreground(props.theme.opacity.least)} inset;
   ${subtitle};
 `

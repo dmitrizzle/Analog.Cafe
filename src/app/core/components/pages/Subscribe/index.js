@@ -30,13 +30,14 @@ const WallPaper = styled.div`
 
 export const GetYourWeekly = () => (
   <CardCaptionIntegrated>
-    Photo essays, reviews, guides. Delivered Tuesdays at 9AM EST.
+    Photo essays, reviews, guides. Every Tuesday at 9AM EST.
     <br />
-    Free. <Link to="/privacy-policy">No spam</Link>.{" "}
+    Free. <Link to="/privacy-policy">No spam</Link>.
+    {/* {" "}
     <Link to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=f8892b3a23">
       Sneak Peek
     </Link>
-    .
+    . */}
   </CardCaptionIntegrated>
 )
 
@@ -54,7 +55,7 @@ export default props => {
                 stubborn
                 buttons={[0]}
                 noStar
-                title="Weekly Email Newsletter"
+                title="💌 Weekly Email Newsletter"
               />
               <GetYourWeekly />
               <Subscribe
