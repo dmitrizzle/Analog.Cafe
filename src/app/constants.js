@@ -22,6 +22,7 @@ export const TEXT_EMOJIS = {
   CARD: "❐",
   TITLE_SEPARATOR: "—",
   CHECKMARK: "✓",
+  X: "×",
   PARAGRAPH: "❡",
 
   WARNING: "⚠️",

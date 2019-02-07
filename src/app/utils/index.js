@@ -5,7 +5,7 @@ import {
   DOCUMENT_BLANK_DOT,
   HOST_PROD,
   HOST_RUNTIME
-} from "./constants"
+} from "../constants"
 
 export const createGA = new Promise((resolve, reject) => {
   if (localStorage.getItem("ga-enabled") !== "false")

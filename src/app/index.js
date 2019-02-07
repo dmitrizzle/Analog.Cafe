@@ -78,6 +78,12 @@ class App extends React.PureComponent {
       1000
     )
 
+    if (localStorage.getItem("fullstory-enabled") !== "false") {
+      import("./utils/fullstory").then(FullStory => {
+        FullStory.default()
+      })
+    }
+
     const updateConnectionStatus = () => {
       this.props.setConnectionStatus(navigator.onLine ? "online" : "offline")
     }
