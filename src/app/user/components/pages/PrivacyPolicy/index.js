@@ -51,11 +51,10 @@ export default () => {
           domain.
         </p>
         <p>
-          Analog.Cafe uses Google Analytics, which in-turn anonymously tracks
-          your browsing behaviour and adheres to it’s own{" "}
-          <Link to="https://policies.google.com/privacy">privacy policy</Link>.
-          If you would like to opt out of Google Analytics tracking, please
-          visit{" "}
+          Analog.Cafe uses Google Analytics and FullStory, which anonymously
+          track your browsing behaviour and adhere their own privacy policies.
+          If you would like to opt out of Google Analytics and/or FullStory
+          tracking, please visit{" "}
           <strong>
             <Link to="/privacy-settings">Privacy Settings</Link>
           </strong>{" "}
