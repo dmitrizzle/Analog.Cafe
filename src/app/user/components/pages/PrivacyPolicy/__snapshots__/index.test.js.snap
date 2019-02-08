@@ -43,14 +43,7 @@ ShallowWrapper {
                      installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.
           </p>
           <p>
-                    Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
-                     
-                    <Unknown
-                              to="https://policies.google.com/privacy"
-                    >
-                              privacy policy
-                    </Unknown>
-                    . If you would like to opt out of Google Analytics tracking, please visit
+                    Analog.Cafe uses Google Analytics and FullStory, which anonymously track your browsing behaviour and adhere their own privacy policies. If you would like to opt out of Google Analytics and/or FullStory tracking, please visit
                      
                     <strong>
                               <Unknown
@@ -124,14 +117,7 @@ ShallowWrapper {
                installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.
 </p>,
             <p>
-              Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
-               
-              <Unknown
-                            to="https://policies.google.com/privacy"
-              >
-                            privacy policy
-              </Unknown>
-              . If you would like to opt out of Google Analytics tracking, please visit
+              Analog.Cafe uses Google Analytics and FullStory, which anonymously track your browsing behaviour and adhere their own privacy policies. If you would like to opt out of Google Analytics and/or FullStory tracking, please visit
                
               <strong>
                             <Unknown
@@ -235,14 +221,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own",
-                " ",
-                <Unknown
-                  to="https://policies.google.com/privacy"
->
-                  privacy policy
-</Unknown>,
-                ". If you would like to opt out of Google Analytics tracking, please visit",
+                "Analog.Cafe uses Google Analytics and FullStory, which anonymously track your browsing behaviour and adhere their own privacy policies. If you would like to opt out of Google Analytics and/or FullStory tracking, please visit",
                 " ",
                 <strong>
                   <Unknown
@@ -264,21 +243,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": "privacy policy",
-                  "to": "https://policies.google.com/privacy",
-                },
-                "ref": null,
-                "rendered": "privacy policy",
-                "type": [Function],
-              },
-              ". If you would like to opt out of Google Analytics tracking, please visit",
+              "Analog.Cafe uses Google Analytics and FullStory, which anonymously track your browsing behaviour and adhere their own privacy policies. If you would like to opt out of Google Analytics and/or FullStory tracking, please visit",
               " ",
               Object {
                 "instance": null,
@@ -383,14 +348,7 @@ ShallowWrapper {
                          installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.
             </p>
             <p>
-                        Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
-                         
-                        <Unknown
-                                    to="https://policies.google.com/privacy"
-                        >
-                                    privacy policy
-                        </Unknown>
-                        . If you would like to opt out of Google Analytics tracking, please visit
+                        Analog.Cafe uses Google Analytics and FullStory, which anonymously track your browsing behaviour and adhere their own privacy policies. If you would like to opt out of Google Analytics and/or FullStory tracking, please visit
                          
                         <strong>
                                     <Unknown
@@ -464,14 +422,7 @@ ShallowWrapper {
                  installed on Analog.Cafe, which employs cookies, however, they are not shared with any outside domain.
 </p>,
               <p>
-                Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own
-                 
-                <Unknown
-                                to="https://policies.google.com/privacy"
-                >
-                                privacy policy
-                </Unknown>
-                . If you would like to opt out of Google Analytics tracking, please visit
+                Analog.Cafe uses Google Analytics and FullStory, which anonymously track your browsing behaviour and adhere their own privacy policies. If you would like to opt out of Google Analytics and/or FullStory tracking, please visit
                  
                 <strong>
                                 <Unknown
@@ -575,14 +526,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own",
-                  " ",
-                  <Unknown
-                    to="https://policies.google.com/privacy"
->
-                    privacy policy
-</Unknown>,
-                  ". If you would like to opt out of Google Analytics tracking, please visit",
+                  "Analog.Cafe uses Google Analytics and FullStory, which anonymously track your browsing behaviour and adhere their own privacy policies. If you would like to opt out of Google Analytics and/or FullStory tracking, please visit",
                   " ",
                   <strong>
                     <Unknown
@@ -604,21 +548,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                "Analog.Cafe uses Google Analytics, which in-turn anonymously tracks your browsing behaviour and adheres to it’s own",
-                " ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "privacy policy",
-                    "to": "https://policies.google.com/privacy",
-                  },
-                  "ref": null,
-                  "rendered": "privacy policy",
-                  "type": [Function],
-                },
-                ". If you would like to opt out of Google Analytics tracking, please visit",
+                "Analog.Cafe uses Google Analytics and FullStory, which anonymously track your browsing behaviour and adhere their own privacy policies. If you would like to opt out of Google Analytics and/or FullStory tracking, please visit",
                 " ",
                 Object {
                   "instance": null,

@@ -21,10 +21,8 @@ import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import AppRoutes from "./core/components/routes/App"
 import HighlightMenu from "./core/components/controls/ArticleActions/components/HighlightMenu"
-import Link from "./core/components/controls/Link"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav"
-import Subscribe from "./core/components/controls/Nav/components/Subscribe"
 
 const ListPreloader = Loadable({
   loader: () => import("./core/components/pages/List"),
@@ -160,23 +158,23 @@ class App extends React.PureComponent {
   render = () => {
     return [
       <Nav top key="App_Nav_top" />,
-      <Subscribe
-        key="App_Essays"
-        hidden={
-          this.props.nav.view !== "VISITOR" || !this.props.nav.location.top
-        }
-        onClick={() => {
-          GA.event({
-            category: "Navigation",
-            action: "Nav.click",
-            label: "Subscribe.desktop"
-          })
-        }}
-      >
-        <Link to="/subscribe">
-          Subscribe <span style={{ fontStyle: "normal" }}>❤︎</span>
-        </Link>
-      </Subscribe>,
+      // <Subscribe
+      //   key="App_Essays"
+      //   hidden={
+      //     this.props.nav.view !== "VISITOR" || !this.props.nav.location.top
+      //   }
+      //   onClick={() => {
+      //     GA.event({
+      //       category: "Navigation",
+      //       action: "Nav.click",
+      //       label: "Subscribe.desktop"
+      //     })
+      //   }}
+      // >
+      //   <Link to="/subscribe">
+      //     Subscribe <span style={{ fontStyle: "normal" }}>❤︎</span>
+      //   </Link>
+      // </Subscribe>,
       <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
       <Nav bottom key="App_Nav_bottom" />,
       <ModalOverlay key="App_Modal" />,

@@ -81,6 +81,39 @@ export default props => {
         display: props.nextArticle ? undefined : "block"
       }}
     >
+      <div>
+        {props.nextArticle && (
+          <CardIntegratedForColumns>
+            <CardHeader stubborn buttons={[0]} noStar title="Get Published" />
+            <CardCaptionIntegrated>
+              Do you shoot film? Get your work reviewed and published on
+              Analog.Cafe.
+            </CardCaptionIntegrated>
+            <LinkButton
+              branded
+              to={props.userStatus === "ok" ? "/submit/compose" : "/submit"}
+              onClick={() => {
+                GA.event({
+                  category: "Campaign",
+                  action: "ActionsCard.submit_button"
+                })
+              }}
+              key="Options_LinkButton"
+            >
+              Write for Analog.Cafe
+            </LinkButton>
+          </CardIntegratedForColumns>
+        )}
+        {/* <CardIntegratedForColumns>
+          <GetYourWeekly />
+          <Subscribe
+            subscribeFormCallback={props.subscribeFormCallback}
+            stateOverwrite={{ subscribeForm: true }}
+            formLocation={"ArticleActions"}
+            autoFocus={false}
+          />
+        </CardIntegratedForColumns> */}
+      </div>
       {readNext.status === "ok" && (
         <CardIntegratedForColumns>
           <CardHeader
@@ -130,39 +163,6 @@ export default props => {
           </LinkButton>
         </CardIntegratedForColumns>
       )}
-      <div>
-        {/* {props.nextArticle && (
-          <CardIntegratedForColumns>
-            <CardHeader stubborn buttons={[0]} noStar title="Get Published" />
-            <CardCaptionIntegrated>
-              Do you shoot film? Get your work reviewed and published on
-              Analog.Cafe.
-            </CardCaptionIntegrated>
-            <LinkButton
-              branded
-              to={props.userStatus === "ok" ? "/submit/compose" : "/submit"}
-              onClick={() => {
-                GA.event({
-                  category: "Campaign",
-                  action: "ActionsCard.submit_button"
-                })
-              }}
-              key="Options_LinkButton"
-            >
-              Write for Analog.Cafe
-            </LinkButton>
-          </CardIntegratedForColumns>
-        )} */}
-        <CardIntegratedForColumns>
-          <GetYourWeekly />
-          <Subscribe
-            subscribeFormCallback={props.subscribeFormCallback}
-            stateOverwrite={{ subscribeForm: true }}
-            formLocation={"ArticleActions"}
-            autoFocus={false}
-          />
-        </CardIntegratedForColumns>
-      </div>
     </CardColumns>
   )
 }
