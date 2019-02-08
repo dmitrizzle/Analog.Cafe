@@ -24,22 +24,8 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
+        <div />,
         false,
-        <div>
-          <Styled(Styled(styled.div))>
-                    <Unknown />
-                    <PureComponent
-                              autoFocus={false}
-                              formLocation="ArticleActions"
-                              stateOverwrite={
-                                        Object {
-                                                  "subscribeForm": true,
-                                                }
-                              }
-                              subscribeFormCallback={undefined}
-                    />
-          </Styled(Styled(styled.div))>
-</div>,
       ],
       "style": Object {
         "display": "block",
@@ -47,78 +33,18 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
-      false,
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <Styled(Styled(styled.div))>
-            <Unknown />
-            <PureComponent
-                        autoFocus={false}
-                        formLocation="ArticleActions"
-                        stateOverwrite={
-                                    Object {
-                                                "subscribeForm": true,
-                                              }
-                        }
-                        subscribeFormCallback={undefined}
-            />
-</Styled(Styled(styled.div))>,
+          "children": undefined,
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <Unknown />,
-              <PureComponent
-                autoFocus={false}
-                formLocation="ArticleActions"
-                stateOverwrite={
-                                Object {
-                                                "subscribeForm": true,
-                                              }
-                }
-                subscribeFormCallback={undefined}
-/>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "autoFocus": false,
-                "formLocation": "ArticleActions",
-                "stateOverwrite": Object {
-                  "subscribeForm": true,
-                },
-                "subscribeFormCallback": undefined,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
+        "rendered": null,
         "type": "div",
       },
+      false,
     ],
     "type": [Function],
   },
@@ -129,22 +55,8 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
+          <div />,
           false,
-          <div>
-            <Styled(Styled(styled.div))>
-                        <Unknown />
-                        <PureComponent
-                                    autoFocus={false}
-                                    formLocation="ArticleActions"
-                                    stateOverwrite={
-                                                Object {
-                                                            "subscribeForm": true,
-                                                          }
-                                    }
-                                    subscribeFormCallback={undefined}
-                        />
-            </Styled(Styled(styled.div))>
-</div>,
         ],
         "style": Object {
           "display": "block",
@@ -152,78 +64,18 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
-        false,
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <Styled(Styled(styled.div))>
-              <Unknown />
-              <PureComponent
-                            autoFocus={false}
-                            formLocation="ArticleActions"
-                            stateOverwrite={
-                                          Object {
-                                                        "subscribeForm": true,
-                                                      }
-                            }
-                            subscribeFormCallback={undefined}
-              />
-</Styled(Styled(styled.div))>,
+            "children": undefined,
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <Unknown />,
-                <PureComponent
-                  autoFocus={false}
-                  formLocation="ArticleActions"
-                  stateOverwrite={
-                                    Object {
-                                                      "subscribeForm": true,
-                                                    }
-                  }
-                  subscribeFormCallback={undefined}
-/>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "autoFocus": false,
-                  "formLocation": "ArticleActions",
-                  "stateOverwrite": Object {
-                    "subscribeForm": true,
-                  },
-                  "subscribeFormCallback": undefined,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
+          "rendered": null,
           "type": "div",
         },
+        false,
       ],
       "type": [Function],
     },

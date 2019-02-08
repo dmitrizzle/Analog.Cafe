@@ -21,11 +21,11 @@ ShallowWrapper {
         <Unknown
           metaDescription="Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
           metaImage="https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg"
-          metaTitle="Submit"
+          metaTitle="Get Published"
 />,
         <Unknown
           pageSubtitle="Write for Analog.Cafe"
-          pageTitle="Your Submissions"
+          pageTitle="Get Published"
 />,
         <styled.section>
           <p>
@@ -91,7 +91,7 @@ ShallowWrapper {
         "props": Object {
           "metaDescription": "Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe.",
           "metaImage": "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg",
-          "metaTitle": "Submit",
+          "metaTitle": "Get Published",
         },
         "ref": null,
         "rendered": null,
@@ -103,7 +103,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "pageSubtitle": "Write for Analog.Cafe",
-          "pageTitle": "Your Submissions",
+          "pageTitle": "Get Published",
         },
         "ref": null,
         "rendered": null,
@@ -396,11 +396,11 @@ ShallowWrapper {
           <Unknown
             metaDescription="Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
             metaImage="https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg"
-            metaTitle="Submit"
+            metaTitle="Get Published"
 />,
           <Unknown
             pageSubtitle="Write for Analog.Cafe"
-            pageTitle="Your Submissions"
+            pageTitle="Get Published"
 />,
           <styled.section>
             <p>
@@ -466,7 +466,7 @@ ShallowWrapper {
           "props": Object {
             "metaDescription": "Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe.",
             "metaImage": "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg",
-            "metaTitle": "Submit",
+            "metaTitle": "Get Published",
           },
           "ref": null,
           "rendered": null,
@@ -478,7 +478,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "pageSubtitle": "Write for Analog.Cafe",
-            "pageTitle": "Your Submissions",
+            "pageTitle": "Get Published",
           },
           "ref": null,
           "rendered": null,

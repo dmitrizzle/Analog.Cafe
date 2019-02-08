@@ -102,7 +102,6 @@ ShallowWrapper {
                                tool you certify that you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
                     </strong>
           </p>
-          <Connect(Footer) />
 </styled.section>,
       ],
     },
@@ -213,7 +212,6 @@ ShallowWrapper {
                              tool you certify that you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
               </strong>
 </p>,
-            <Connect(Footer) />,
           ],
         },
         "ref": null,
@@ -560,15 +558,6 @@ ShallowWrapper {
             },
             "type": "p",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
         ],
         "type": [Function],
       },
@@ -666,7 +655,6 @@ ShallowWrapper {
                                      tool you certify that you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
                         </strong>
             </p>
-            <Connect(Footer) />
 </styled.section>,
         ],
       },
@@ -777,7 +765,6 @@ ShallowWrapper {
                                  tool you certify that you are the owner of the copyrights or have a permission to use in the context all the images, text, files or other intellectual property that you submit to Analog.Cafe, and that you agree to the above terms, conditions and benefits.
                 </strong>
 </p>,
-              <Connect(Footer) />,
             ],
           },
           "ref": null,
@@ -1123,15 +1110,6 @@ ShallowWrapper {
                 "type": "strong",
               },
               "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
             },
           ],
           "type": [Function],

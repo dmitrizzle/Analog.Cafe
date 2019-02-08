@@ -2116,18 +2116,63 @@ ShallowWrapper {
         "info": Object {
           "buttons": Array [
             Object {
-              "text": "About Analog.Cafe",
-              "to": "/about",
+              "text": <span>
+                <span
+                                style={
+                                                Object {
+                                                                "color": "#ed236e",
+                                                              }
+                                }
+                >
+                                ❤︎
+                </span>
+                 Analogue Reads
+                 
+</span>,
+              "to": "/subscribe",
             },
             Object {
-              "text": "Submissions",
+              "text": "Editorials",
+              "to": "/editorials",
+            },
+            Object {
+              "text": "Solo Projects",
+              "to": "/solo-projects",
+            },
+            Object {
+              "text": "Collaborations",
+              "to": "/collaborations",
+            },
+            Object {
+              "divider": true,
+            },
+            Object {
+              "text": "Privacy",
+              "to": "/privacy-policy",
+            },
+            Object {
+              "text": "Rules",
+              "to": "/submit/rules",
+            },
+            Object {
+              "divider": true,
+            },
+            Object {
+              "text": "Sign In",
+              "to": "/sign-in",
+            },
+            Object {
+              "text": "Get Published",
               "to": "/submit",
+            },
+            Object {
+              "text": "About",
+              "to": "/about",
             },
           ],
           "menu": true,
           "search": true,
           "socialButtons": true,
-          "subscribe": true,
           "title": <span>
             <Unknown />
              More
@@ -2156,18 +2201,63 @@ ShallowWrapper {
           "info": Object {
             "buttons": Array [
               Object {
-                "text": "About Analog.Cafe",
-                "to": "/about",
+                "text": <span>
+                  <span
+                                    style={
+                                                      Object {
+                                                                        "color": "#ed236e",
+                                                                      }
+                                    }
+                  >
+                                    ❤︎
+                  </span>
+                   Analogue Reads
+                   
+</span>,
+                "to": "/subscribe",
               },
               Object {
-                "text": "Submissions",
+                "text": "Editorials",
+                "to": "/editorials",
+              },
+              Object {
+                "text": "Solo Projects",
+                "to": "/solo-projects",
+              },
+              Object {
+                "text": "Collaborations",
+                "to": "/collaborations",
+              },
+              Object {
+                "divider": true,
+              },
+              Object {
+                "text": "Privacy",
+                "to": "/privacy-policy",
+              },
+              Object {
+                "text": "Rules",
+                "to": "/submit/rules",
+              },
+              Object {
+                "divider": true,
+              },
+              Object {
+                "text": "Sign In",
+                "to": "/sign-in",
+              },
+              Object {
+                "text": "Get Published",
                 "to": "/submit",
+              },
+              Object {
+                "text": "About",
+                "to": "/about",
               },
             ],
             "menu": true,
             "search": true,
             "socialButtons": true,
-            "subscribe": true,
             "title": <span>
               <Unknown />
                More

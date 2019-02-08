@@ -65,7 +65,6 @@ ShallowWrapper {
           <p>
                     This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
           </p>
-          <Connect(Footer) />
 </styled.section>,
       ],
     },
@@ -139,7 +138,6 @@ ShallowWrapper {
             <p>
               This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
 </p>,
-            <Connect(Footer) />,
           ],
         },
         "ref": null,
@@ -301,15 +299,6 @@ ShallowWrapper {
             "rendered": "This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.",
             "type": "p",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
         ],
         "type": [Function],
       },
@@ -370,7 +359,6 @@ ShallowWrapper {
             <p>
                         This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
             </p>
-            <Connect(Footer) />
 </styled.section>,
         ],
       },
@@ -444,7 +432,6 @@ ShallowWrapper {
               <p>
                 This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
 </p>,
-              <Connect(Footer) />,
             ],
           },
           "ref": null,
@@ -605,15 +592,6 @@ ShallowWrapper {
               "ref": null,
               "rendered": "This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.",
               "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
             },
           ],
           "type": [Function],

@@ -156,7 +156,7 @@ export default () => {
          */}
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />
-        <Route path="/subscribe" component={Subscribe} />
+        <Route path="/subscribe" render={() => <Subscribe cached />} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/privacy-settings" component={PrivacySettings} />
         <Route state={{ status: "404" }} component={NotFound} />

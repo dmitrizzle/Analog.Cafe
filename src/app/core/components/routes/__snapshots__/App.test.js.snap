@@ -169,8 +169,8 @@ ShallowWrapper {
                 path="/submit"
         />
         <Route
-                component={[Function]}
                 path="/subscribe"
+                render={[Function]}
         />
         <Route
                 component={[Function]}
@@ -355,8 +355,8 @@ ShallowWrapper {
             path="/submit"
 />,
           <Route
-            component={[Function]}
             path="/subscribe"
+            render={[Function]}
 />,
           <Route
             component={[Function]}
@@ -775,8 +775,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "component": [Function],
             "path": "/subscribe",
+            "render": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -985,8 +985,8 @@ ShallowWrapper {
                     path="/submit"
           />
           <Route
-                    component={[Function]}
                     path="/subscribe"
+                    render={[Function]}
           />
           <Route
                     component={[Function]}
@@ -1171,8 +1171,8 @@ ShallowWrapper {
               path="/submit"
 />,
             <Route
-              component={[Function]}
               path="/subscribe"
+              render={[Function]}
 />,
             <Route
               component={[Function]}
@@ -1591,8 +1591,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
               "path": "/subscribe",
+              "render": [Function],
             },
             "ref": null,
             "rendered": null,
