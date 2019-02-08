@@ -88,7 +88,7 @@ export default props => {
               Analog.Cafe.
             </CardCaptionIntegrated>
             <LinkButton
-              branded
+              inverse
               to={props.userStatus === "ok" ? "/submit/compose" : "/submit"}
               onClick={() => {
                 GA.event({

@@ -28,6 +28,7 @@ const bgList = [
   "image-froth_1500270_ryAMqwpRz"
 ]
 const bgRoulette = () => bgList[Math.floor(Math.random() * bgList.length)]
+const bgRouletteCached = bgList[Math.floor(Math.random() * bgList.length)]
 
 const WallPaper = styled.div`
   border-top: ${props => props.theme.elements.thickBorder};
@@ -35,12 +36,20 @@ const WallPaper = styled.div`
   height: 100vh;
   min-height: 670px;
   padding-top: 3em;
-  background: url(${props => makeFroth({ src: props.bg(), size: "l" }).src});
+  background: url(${props =>
+    makeFroth({
+      src: props.bgRoulette ? props.bgRoulette() : props.bgRouletteCached,
+      size: "l"
+    }).src});
   background-size: cover;
   background-position: top center;
   ${props => props.theme.size.breakpoint.max.m`
     margin-top: 0;
-    background: url(${props => makeFroth({ src: props.bg(), size: "m" }).src});
+    background: url(${props =>
+      makeFroth({
+        src: props.bgRoulette ? props.bgRoulette() : props.bgRouletteCached,
+        size: "m"
+      }).src});
   `};
 `
 
@@ -74,7 +83,10 @@ export default props => {
         </React.Fragment>
       )}
 
-      <WallPaper bg={bgRoulette}>
+      <WallPaper
+        bgRouletteCached={bgRouletteCached}
+        bgRoulette={!props.cached && bgRoulette}
+      >
         {props.embed && (
           <HeaderLarge
             pageTitle={metaTitle}
