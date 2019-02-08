@@ -18,13 +18,13 @@ const metaDescription =
   "Photo essays, reviews, guides. Weekly email newsletter, delivered Tuesdays at 9AM EST."
 
 const bgList = [
-  // "image-froth_1480456_Hk9sPRsQV",
-  //  "image-froth_1469613_Skk4VZmZE",
-  // "image-froth_1518843_B1skGpWWV",
-  //"image-froth_1508069_r1vQk9iJN",
-  //"image-froth_1206996_r1CqlUwRm",
-  //"image-froth_1491916_rk1gPcNtm",
-  //"image-froth_1557196_SJmddu5y7",
+  "image-froth_1480456_Hk9sPRsQV",
+  "image-froth_1469613_Skk4VZmZE",
+  "image-froth_1518843_B1skGpWWV",
+  "image-froth_1508069_r1vQk9iJN",
+  "image-froth_1206996_r1CqlUwRm",
+  "image-froth_1491916_rk1gPcNtm",
+  "image-froth_1557196_SJmddu5y7",
   "image-froth_1500270_ryAMqwpRz"
 ]
 const bgRoulette = () => bgList[Math.floor(Math.random() * bgList.length)]
