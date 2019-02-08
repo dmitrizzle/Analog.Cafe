@@ -34,6 +34,12 @@ const ArticleActions = Loadable({
   delay: 100
 })
 
+const Subscribe = Loadable({
+  loader: () => import("../Subscribe"),
+  loading: () => null,
+  delay: 100
+})
+
 // NOTE: 'Component' rather than 'PureComponent' is required for the
 // shouldComponentUpdate method below.
 class Article extends React.Component {
@@ -273,6 +279,9 @@ class Article extends React.Component {
               </LazyLoad>
             )}
         </ArticleSection>
+        <LazyLoad once offset={300} height={"100%"}>
+          <Subscribe embed />
+        </LazyLoad>
       </ArticleWrapper>
     )
   }

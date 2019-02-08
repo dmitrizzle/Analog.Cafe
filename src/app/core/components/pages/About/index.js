@@ -10,7 +10,6 @@ import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ContactInfo from "../../vignettes/ContactInfo"
 import Figure, { bleed } from "../../vignettes/Picture/components/Figure"
-import Footer from "../../controls/Footer"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import MetaTags from "../../vignettes/MetaTags"
@@ -398,7 +397,6 @@ class About extends React.PureComponent {
           <br />
           Ben Cairns
         </ThankYouList>
-        <Footer />
       </ArticleSection>
     </ArticleWrapper>
   )

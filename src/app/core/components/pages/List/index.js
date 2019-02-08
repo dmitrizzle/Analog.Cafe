@@ -22,7 +22,6 @@ import Button from "../../controls/Button/components/Button"
 import Byline from "../../vignettes/Byline"
 import CardButton from "../../controls/Card/components/CardButton"
 import CardCaption from "../../controls/Card/components/CardCaption"
-import Footer from "../../controls/Footer"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import ListBlock from "./components/ListBlock"
@@ -229,9 +228,6 @@ class List extends React.PureComponent {
             Load More
           </Button>
         ) : null}
-        <ArticleSection>
-          {this.props.list.items.length > 0 && <Footer />}
-        </ArticleSection>
       </div>
     )
   }

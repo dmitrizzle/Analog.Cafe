@@ -43,9 +43,22 @@ const NAV_USER = props => [
     to: "/submit/compose",
     text: props.hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
   },
+  { divider: true },
+  {
+    to: "/editorials",
+    text: "Editorials"
+  },
+  {
+    to: "/solo-projects",
+    text: "Solo Projects"
+  },
+  { to: "/collaborations", text: "Collaborations" },
+  { divider: true },
+  { to: "/privacy-policy", text: "Privacy" },
+  { to: "/submit/rules", text: "Rules" },
   {
     to: "/about",
-    text: "About Analog.Cafe"
+    text: "About"
   },
   {
     to: "/sign-out",
@@ -56,12 +69,37 @@ const NAV_USER = props => [
 
 const NAV_VISITOR = [
   {
-    to: "/about",
-    text: "About Analog.Cafe"
+    to: "/subscribe",
+    text: (
+      <span>
+        <span style={{ color: "#ed236e" }}>❤︎</span> Analogue Reads{" "}
+      </span>
+    )
+  },
+  {
+    to: "/editorials",
+    text: "Editorials"
+  },
+  {
+    to: "/solo-projects",
+    text: "Solo Projects"
+  },
+  { to: "/collaborations", text: "Collaborations" },
+  { divider: true },
+  { to: "/privacy-policy", text: "Privacy" },
+  { to: "/submit/rules", text: "Rules" },
+  { divider: true },
+  {
+    to: "/sign-in",
+    text: "Sign In"
   },
   {
     to: "/submit",
-    text: "Submissions"
+    text: "Get Published"
+  },
+  {
+    to: "/about",
+    text: "About"
   }
 ]
 
@@ -89,8 +127,7 @@ export default props => {
       with={{
         info: {
           search: true,
-          socialButtons: props.userStatus !== "ok",
-          subscribe: props.userStatus !== "ok",
+          socialButtons: true,
           menu: true,
           title: (
             <span>

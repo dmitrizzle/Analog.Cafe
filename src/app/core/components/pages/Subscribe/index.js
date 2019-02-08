@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { CardCaptionIntegrated } from "../../controls/ArticleActions/components/Options"
+import { makeFroth } from "../../../../utils"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ButtonGroup from "../../controls/Button/components/ButtonGroup"
@@ -16,23 +17,37 @@ const metaTitle = "Analogue Reads"
 const metaDescription =
   "Photo essays, reviews, guides. Weekly email newsletter, delivered Tuesdays at 9AM EST."
 
+const bgList = [
+  // "image-froth_1480456_Hk9sPRsQV",
+  //  "image-froth_1469613_Skk4VZmZE",
+  // "image-froth_1518843_B1skGpWWV",
+  //"image-froth_1508069_r1vQk9iJN",
+  //"image-froth_1206996_r1CqlUwRm",
+  //"image-froth_1491916_rk1gPcNtm",
+  //"image-froth_1557196_SJmddu5y7",
+  "image-froth_1500270_ryAMqwpRz"
+]
+const bgRoulette = () => bgList[Math.floor(Math.random() * bgList.length)]
+
 const WallPaper = styled.div`
+  border-top: ${props => props.theme.elements.thickBorder};
   margin-top: 1em;
-  ${props => props.theme.size.breakpoint.max.m`
-    margin-top: 0;
-  `} height: 100vh;
+  height: 100vh;
   min-height: 670px;
   padding-top: 3em;
-  background: url(${"https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1512027_B13cpBr2m.jpg"});
+  background: url(${props => makeFroth({ src: props.bg(), size: "l" }).src});
   background-size: cover;
   background-position: top center;
+  ${props => props.theme.size.breakpoint.max.m`
+    margin-top: 0;
+    background: url(${props => makeFroth({ src: props.bg(), size: "m" }).src});
+  `};
 `
 
 export const GetYourWeekly = () => (
   <CardCaptionIntegrated>
-    Photo essays, reviews, guides. Every Tuesday at 9AM EST.
-    <br />
-    Free. <Link to="/privacy-policy">No spam</Link>.
+    New photo essays, reviews, and guides every Tuesday at 9AM EST.{" "}
+    <Link to="/privacy-policy">No spam</Link>.
     {/* {" "}
     <Link to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=f8892b3a23">
       Sneak Peek
@@ -43,11 +58,30 @@ export const GetYourWeekly = () => (
 
 export default props => {
   return (
-    <ArticleWrapper style={{ overflow: "visible" }}>
-      <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
-      <HeaderLarge pageTitle={metaTitle} pageSubtitle="Every Tuesday Morning" />
+    <ArticleWrapper
+      style={{
+        overflow: "visible",
+        paddingTop: props.embed ? "6em" : undefined
+      }}
+    >
+      {!props.embed && (
+        <React.Fragment>
+          <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
+          <HeaderLarge
+            pageTitle={metaTitle}
+            pageSubtitle="Every Tuesday Morning"
+          />
+        </React.Fragment>
+      )}
 
-      <WallPaper>
+      <WallPaper bg={bgRoulette}>
+        {props.embed && (
+          <HeaderLarge
+            pageTitle={metaTitle}
+            pageSubtitle="Every Tuesday Morning"
+            style={{ textSshadow: "0 0 5em rgba(255, 255, 255, 0.64)" }}
+          />
+        )}
         <ArticleSection>
           <ButtonGroup>
             <CardIntegrated>
@@ -59,7 +93,7 @@ export default props => {
               />
               <GetYourWeekly />
               <Subscribe
-                autoFocus
+                autoFocus={!props.embed}
                 stateOverwrite={{ subscribeForm: true }}
                 formLocation={"Subscribe"}
               />

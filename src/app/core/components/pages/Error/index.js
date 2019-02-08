@@ -2,7 +2,6 @@ import React from "react"
 
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
-import Footer from "../../controls/Footer"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import MetaTags from "../../vignettes/MetaTags"
 
@@ -17,7 +16,6 @@ export default props => {
       />
       <ArticleSection>
         <p style={{ textAlign: "center" }}>{props.children}</p>
-        <Footer />
       </ArticleSection>
     </ArticleWrapper>
   )

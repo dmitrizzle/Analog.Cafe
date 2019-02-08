@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 import { GA, makeFroth } from "../../../../../utils"
-import { GetYourWeekly } from "../../../pages/Subscribe"
 import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
 import { isXWeeksAgo } from "../../../pages/List/components/ListBlock"
 import { preloadConstructor } from "../../../../utils/routes-article"
@@ -12,7 +11,6 @@ import CardIntegrated from "../../Card/components/CardIntegrated"
 import Link from "../../Link"
 import LinkButton from "../../Button/components/LinkButton"
 import Placeholder from "../../../vignettes/Picture/components/Placeholder"
-import Subscribe from "../../../../../user/components/forms/Subscribe"
 
 export const CardColumns = styled.div`
   display: flex;

@@ -1,8 +1,6 @@
 import React from "react"
 
-import { GA } from "../../../../utils"
 import { SEARCH_RESULTS_FEATURED } from "../../../constants/messages-search"
-import { TEXT_LABELS } from "../../../constants/messages-"
 import ButtonGroupDivider from "../Button/components/ButtonGroupDivider"
 import ButtonKeyword from "../Button/components/ButtonKeyword"
 import CardButton, { CardSearchItem } from "./components/CardButton"
@@ -117,7 +115,7 @@ export default class extends React.PureComponent {
 
         {this.props.socialButtons && <FollowButtons />}
 
-        {this.props.subscribe && (
+        {/* {this.props.subscribe && (
           <CardButton
             onClick={() =>
               GA.event({
@@ -131,7 +129,7 @@ export default class extends React.PureComponent {
           >
             {TEXT_LABELS.SUBSCRIBE}
           </CardButton>
-        )}
+        )} */}
       </CardPopup>
     )
   }
