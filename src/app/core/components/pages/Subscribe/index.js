@@ -45,7 +45,7 @@ const WallPaper = styled.div`
   background-position: top center;
   ${props => props.theme.size.breakpoint.max.m`
     margin-top: 0;
-    background: url(${props =>
+    background-image: url(${props =>
       makeFroth({
         src: props.bgRoulette ? props.bgRoulette() : props.bgRouletteCached,
         size: "m"

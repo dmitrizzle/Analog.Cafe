@@ -280,7 +280,9 @@ class Article extends React.Component {
             )}
         </ArticleSection>
         <LazyLoad once offset={300} height={"100%"}>
-          <Subscribe embed />
+          {!this.props.history.location.pathname.includes(
+            ROUTE_URL_SUBMISSIONS
+          ) && <Subscribe embed />}
         </LazyLoad>
       </ArticleWrapper>
     )
