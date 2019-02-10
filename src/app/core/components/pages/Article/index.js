@@ -3,7 +3,6 @@ import LazyLoad from "react-lazyload"
 import Loadable from "react-loadable"
 import React from "react"
 
-import { HOST_PROD, HOST_PROTOCOL } from "../../../../constants"
 import { ROUTE_API_LIST, ROUTE_TAGS } from "../../../constants/routes-list"
 import {
   ROUTE_URL_ARTICLES,
@@ -41,8 +40,8 @@ const Subscribe = Loadable({
 })
 
 // NOTE: 'Component' rather than 'PureComponent' is required for the
-// shouldComponentUpdate method below.
-class Article extends React.Component {
+// shouldComponentUpdate (for selection) method below.
+class Article extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -143,75 +142,75 @@ class Article extends React.Component {
     })
   }
 
-  handleSelection = (event, touch) => {
-    // based on https://jsfiddle.net/NFJ9r/132/
-    event.stopPropagation()
-    if (touch) {
-      this.props.setArticleSelectoin({
-        hidden: true
-      })
-      return
-    }
-    const selection = window.getSelection && window.getSelection()
-    if (!selection || selection.rangeCount <= 0) return
-    const range = selection.getRangeAt(0)
-      ? selection.getRangeAt(0).cloneRange()
-      : undefined
-    if (!range) return
-    let rects, rect, leftOffset, topOffset
-    if (range.getClientRects) {
-      range.collapse(true)
-      rects = range.getClientRects()
-      if (rects.length > 0) {
-        rect = rects[0]
-      }
-      if (!rect) return
-      leftOffset = rect.left
-      topOffset = rect.top
-    }
-    leftOffset += window.scrollX
-    topOffset += window.scrollY
-
-    const authorName = this.props.article.submittedBy.name
-    const punctuation = "“ ” – "
-    const url =
-      HOST_PROTOCOL +
-      HOST_PROD +
-      ROUTE_URL_ARTICLES +
-      "/" +
-      this.props.article.slug
-    const shortenedUrlLength = 23 // shortened URL length
-    const maxShareableChar = 800 // can't select and tweet more than this
-    const maxChar =
-      280 - shortenedUrlLength - authorName.length - punctuation.length
-
-    const text = selection.toString()
-    window.requestAnimationFrame(() => {
-      this.props.setArticleSelectoin({
-        leftOffset,
-        topOffset,
-        text:
-          text.length > 0
-            ? `“${
-                text.length > maxChar
-                  ? text.substring(0, maxChar - 1) + "…"
-                  : text
-              }” – ${authorName} ${url}`
-            : undefined,
-        hidden:
-          selection.type === "Range"
-            ? text.length < maxShareableChar && text.length > 0
-              ? false
-              : true
-            : true
-      })
-    })
-  }
-  shouldComponentUpdate = (nextProps, nextState) => {
-    if (this.props.article.selection !== nextProps.article.selection)
-      return false
-    return true
-  }
+  // handleSelection = (event, touch) => {
+  //   // based on https://jsfiddle.net/NFJ9r/132/
+  //   event.stopPropagation()
+  //   if (touch) {
+  //     this.props.setArticleSelectoin({
+  //       hidden: true
+  //     })
+  //     return
+  //   }
+  //   const selection = window.getSelection && window.getSelection()
+  //   if (!selection || selection.rangeCount <= 0) return
+  //   const range = selection.getRangeAt(0)
+  //     ? selection.getRangeAt(0).cloneRange()
+  //     : undefined
+  //   if (!range) return
+  //   let rects, rect, leftOffset, topOffset
+  //   if (range.getClientRects) {
+  //     range.collapse(true)
+  //     rects = range.getClientRects()
+  //     if (rects.length > 0) {
+  //       rect = rects[0]
+  //     }
+  //     if (!rect) return
+  //     leftOffset = rect.left
+  //     topOffset = rect.top
+  //   }
+  //   leftOffset += window.scrollX
+  //   topOffset += window.scrollY
+  //
+  //   const authorName = this.props.article.submittedBy.name
+  //   const punctuation = "“ ” – "
+  //   const url =
+  //     HOST_PROTOCOL +
+  //     HOST_PROD +
+  //     ROUTE_URL_ARTICLES +
+  //     "/" +
+  //     this.props.article.slug
+  //   const shortenedUrlLength = 23 // shortened URL length
+  //   const maxShareableChar = 800 // can't select and tweet more than this
+  //   const maxChar =
+  //     280 - shortenedUrlLength - authorName.length - punctuation.length
+  //
+  //   const text = selection.toString()
+  //   window.requestAnimationFrame(() => {
+  //     this.props.setArticleSelectoin({
+  //       leftOffset,
+  //       topOffset,
+  //       text:
+  //         text.length > 0
+  //           ? `“${
+  //               text.length > maxChar
+  //                 ? text.substring(0, maxChar - 1) + "…"
+  //                 : text
+  //             }” – ${authorName} ${url}`
+  //           : undefined,
+  //       hidden:
+  //         selection.type === "Range"
+  //           ? text.length < maxShareableChar && text.length > 0
+  //             ? false
+  //             : true
+  //           : true
+  //     })
+  //   })
+  // }
+  // shouldComponentUpdate = (nextProps, nextState) => {
+  //   if (this.props.article.selection !== nextProps.article.selection)
+  //     return false
+  //   return true
+  // }
 
   render = () => {
     return (
@@ -244,8 +243,8 @@ class Article extends React.Component {
         <ArticleHeader article={this.props.article} user={this.props.user} />
         <ArticleSection
           articleStatus={this.props.article.status}
-          onMouseUp={event => this.handleSelection(event, false)}
-          onTouchEnd={event => this.handleSelection(event, true)}
+          // onMouseUp={event => this.handleSelection(event, false)}
+          // onTouchEnd={event => this.handleSelection(event, true)}
         >
           {renderArticle(this.props.article.content.raw)}
           {this.props.article.poster &&
