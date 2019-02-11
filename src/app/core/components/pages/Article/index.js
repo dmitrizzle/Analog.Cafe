@@ -11,8 +11,7 @@ import {
 import { addSessionInfo } from "../../../../user/store/actions-user"
 import {
   fetchArticlePage,
-  setArticlePage,
-  setArticleSelectoin
+  setArticlePage
 } from "../../../store/actions-article"
 import { fetchListPage } from "../../../store/actions-list"
 import { getListMeta } from "../../../utils/messages-list"
@@ -95,11 +94,11 @@ class Article extends React.PureComponent {
     this.unlisten = this.props.history.listen(() => this.fetchArticlePage())
     this.fetchArticlePage()
     this.makeTag(this.props)
-    window.addEventListener("mouseup", () => {
-      this.props.setArticleSelectoin({
-        hidden: true
-      })
-    })
+    // window.addEventListener("mouseup", () => {
+    //   this.props.setArticleSelectoin({
+    //     hidden: true
+    //   })
+    // })
   }
   componentWillReceiveProps = nextProps => {
     if (!nextProps.article) return
@@ -278,11 +277,14 @@ class Article extends React.PureComponent {
               </LazyLoad>
             )}
         </ArticleSection>
-        <LazyLoad once offset={300} height={"100%"}>
-          {!this.props.history.location.pathname.includes(
-            ROUTE_URL_SUBMISSIONS
-          ) && <Subscribe embed />}
-        </LazyLoad>
+        {this.props.article.poster &&
+          this.props.article.submittedBy && (
+            <LazyLoad once offset={300} height={"100%"}>
+              {!this.props.history.location.pathname.includes(
+                ROUTE_URL_SUBMISSIONS
+              ) && <Subscribe embed />}
+            </LazyLoad>
+          )}
       </ArticleWrapper>
     )
   }
@@ -305,9 +307,9 @@ const mapDispatchToProps = dispatch => {
     setArticlePage: nextArticle => {
       dispatch(setArticlePage(nextArticle))
     },
-    setArticleSelectoin: selection => {
-      dispatch(setArticleSelectoin(selection))
-    },
+    // setArticleSelectoin: selection => {
+    //   dispatch(setArticleSelectoin(selection))
+    // },
     addSessionInfo: sessionInfo => {
       dispatch(addSessionInfo(sessionInfo))
     }

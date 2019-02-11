@@ -16,11 +16,9 @@ import {
   setUserIntent,
   verifyUser
 } from "./user/store/actions-user"
-import { setArticleSelectoin } from "./core/store/actions-article"
 import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import AppRoutes from "./core/components/routes/App"
-import HighlightMenu from "./core/components/controls/ArticleActions/components/HighlightMenu"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav"
 
@@ -66,7 +64,7 @@ class App extends React.PureComponent {
       function() {
         GA.initialize()
         this.setView = () => {
-          this.props.setArticleSelectoin({ hidden: true })
+          // this.props.setArticleSelectoin({ hidden: true })
           window.scrollTo(0, 0)
           GA.pageview()
         }
@@ -177,11 +175,11 @@ class App extends React.PureComponent {
       // </Subscribe>,
       <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
       <Nav bottom key="App_Nav_bottom" />,
-      <ModalOverlay key="App_Modal" />,
-      <HighlightMenu
-        key="App_HighlightMenu"
-        selection={this.props.article.selection}
-      />
+      <ModalOverlay key="App_Modal" />
+      // <HighlightMenu
+      //   key="App_HighlightMenu"
+      //   selection={this.props.article.selection}
+      // />
     ]
   }
 }
@@ -210,10 +208,10 @@ const mapDispatchToProps = dispatch => {
     },
     setModal: (info, request) => {
       dispatch(setModal(info, request))
-    },
-    setArticleSelectoin: selection => {
-      dispatch(setArticleSelectoin(selection))
     }
+    // setArticleSelectoin: selection => {
+    //   dispatch(setArticleSelectoin(selection))
+    // }
   }
 }
 const mapStateToProps = state => {

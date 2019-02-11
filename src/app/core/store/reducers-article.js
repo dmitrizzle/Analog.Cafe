@@ -10,13 +10,13 @@ const INITIAL_STATE = {
     method: "get",
     params: {},
     url: ""
-  },
-  selection: {
-    leftOffset: 0,
-    topOffset: 0,
-    text: "",
-    hidden: true
   }
+  // selection: {
+  //   leftOffset: 0,
+  //   topOffset: 0,
+  //   text: "",
+  //   hidden: true
+  // }
 }
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -38,15 +38,15 @@ export default (state = INITIAL_STATE, action) => {
         status: action.payload
       }
       break
-    case "ARTICLE.SET_SELECTION":
-      state = {
-        ...state,
-        selection: {
-          ...state.selection,
-          ...action.payload
-        }
-      }
-      break
+    // case "ARTICLE.SET_SELECTION":
+    //   state = {
+    //     ...state,
+    //     selection: {
+    //       ...state.selection,
+    //       ...action.payload
+    //     }
+    //   }
+    //   break
     default:
       return state
   }
