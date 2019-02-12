@@ -5,7 +5,7 @@ import MetaTags from "../../../../../core/components/vignettes/MetaTags"
 
 export default props => {
   return (
-    <ArticleWrapper>
+    <ArticleWrapper className="fs-block">
       <MetaTags
         metaTitle="Composer"
         metaDescription="A tool to upload, edit and submit your photo essays and stories."
