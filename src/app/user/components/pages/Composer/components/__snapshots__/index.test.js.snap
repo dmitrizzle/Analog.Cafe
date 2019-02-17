@@ -154,6 +154,7 @@ ShallowWrapper {
 />,
         undefined,
       ],
+      "className": "fs-block",
     },
     "ref": null,
     "rendered": Array [
@@ -186,6 +187,7 @@ ShallowWrapper {
 />,
           undefined,
         ],
+        "className": "fs-block",
       },
       "ref": null,
       "rendered": Array [
