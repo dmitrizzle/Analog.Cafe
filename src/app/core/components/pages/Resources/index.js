@@ -46,7 +46,7 @@ const DownloadModal = props => (
         formButtonText: "➮ Download",
         formClosedButtonText: "Download Links Sent."
       },
-      id: "modal/hints/vitessa-l"
+      id: "modal/campaign/downloads"
     }}
   >
     {props.children}
@@ -110,7 +110,7 @@ export default props => {
         </h3>
         <p>
           <strong>
-            <Link to="/zine/open-call-g99w">Write for Analog.Cafe</Link>
+            <Link to="/submit">Write for Analog.Cafe</Link>
           </strong>{" "}
           – submit your photo essays, reviews, and articles here.
         </p>

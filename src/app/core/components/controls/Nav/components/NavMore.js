@@ -5,7 +5,6 @@ import styled from "styled-components"
 
 import { BurgerMenu } from "./NavGeneral"
 import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
-import { TEXT_EMOJIS } from "../../../../../constants"
 import { navActiveCss } from "./NavLinks"
 import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"

@@ -63,6 +63,7 @@ export default class extends React.PureComponent {
                   <CardSearchItem
                     key={item.link}
                     to={item.link}
+                    onClick={item.onClick}
                     image={item.image || null}
                   >
                     <div>{item.title}</div>
