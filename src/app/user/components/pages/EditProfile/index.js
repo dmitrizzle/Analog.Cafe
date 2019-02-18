@@ -26,10 +26,6 @@ import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/com
 import ProfileCard from "./components/ProfileCard"
 import TitleTextarea from "../../forms/TextInput/components/TitleTextarea"
 
-// export {
-//   forceImageRestrictions
-// } from "@roast-cms/french-press-editor/dist/utils/actions-image";
-
 const composerPath = "/submit/compose"
 class EditProfile extends React.PureComponent {
   constructor(props) {
@@ -95,8 +91,9 @@ class EditProfile extends React.PureComponent {
   handleFileUpload = event => {
     const file = event.target.files[0]
     import("@roast-cms/french-press-editor/dist/utils/actions-image").then(
-      forceImageRestrictions => {
-        forceImageRestrictions(file.size, file.type, 5)
+      actionsImage => {
+        actionsImage
+          .forceImageRestrictions(file.size, file.type, 5)
           .then(() => this.uploadRequest(file))
           .catch(() => {
             this.props.setModal(
