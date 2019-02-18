@@ -92,7 +92,6 @@ export default class extends React.PureComponent {
             }
             return button && button.to && button.text ? (
               <CardButton
-                onClick={button.onClick}
                 to={button.to}
                 key={button.to}
                 branded={button.branded ? true : null}

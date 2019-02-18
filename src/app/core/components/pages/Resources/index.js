@@ -21,31 +21,32 @@ const DownloadsCardStyles = styled.div`
   }
 `
 
+export const info = {
+  title: "PDF Downloads",
+  subscribe: true,
+  image: "image-froth_2752266_rJ-QHbdBV",
+  text: (
+    <DownloadsCardStyles>
+      <small>
+        Get all the exclusive downloads + beautiful weekly emails.{" "}
+        <Link to="/privacy-policy">No spam</Link>.
+      </small>
+       <span>➮</span> Film Grain Reference
+      <br />
+       <span>➮</span> All Essential Guides
+      <br />
+       <span>➮</span> Select Photo Essays
+    </DownloadsCardStyles>
+  ),
+  formButtonText: "➮ Download",
+  formClosedButtonText: "Download Links Sent."
+}
 const DownloadModal = props => (
   <Modal
     unmarked
     element="a"
     with={{
-      info: {
-        title: "PDF Downloads",
-        subscribe: true,
-        image: "image-froth_2752266_rJ-QHbdBV",
-        text: (
-          <DownloadsCardStyles>
-            <small>
-              Get all the exclusive downloads + beautiful weekly emails.{" "}
-              <Link to="/privacy-policy">No spam</Link>.
-            </small>
-             <span>➮</span> Film Grain Reference
-            <br />
-             <span>➮</span> All Essential Guides
-            <br />
-             <span>➮</span> Select Photo Essays
-          </DownloadsCardStyles>
-        ),
-        formButtonText: "➮ Download",
-        formClosedButtonText: "Download Links Sent."
-      },
+      info,
       id: "modal/campaign/downloads"
     }}
   >
@@ -69,7 +70,7 @@ export default props => {
           If you’d like to <em>listen</em> to some of the articles on this
           website, subscribe on{" "}
           <strong>
-            <Link to="https://itunes.apple.com/us/podcast/analog-cafe-a-film-photography-podcast/id1452093436">
+            <Link to="https://itunes.apple.com/us/podcast/analog-cafe-a-film-photography-podcast/id1452093436?mt=2&app=podcast">
               iTunes
             </Link>
           </strong>{" "}
@@ -153,7 +154,17 @@ export default props => {
         </p>
 
         <h3>
-          <span style={{ color: "#ed236e" }}>✯</span> Select Photo Essays
+          <ResourceStar /> Select Photo Essays
+        </h3>
+        <p>
+          <strong>
+            <Link to="/zine/ghetto-paradise-cambodia-p6pr">Cambodia</Link>
+          </strong>{" "}
+          – “With La Sardinia, a Bag of Candy, and a Handful of Weed.”
+        </p>
+
+        <h3>
+          <ResourceStar /> Camera & Film Reviews
         </h3>
         <p>
           <strong>
