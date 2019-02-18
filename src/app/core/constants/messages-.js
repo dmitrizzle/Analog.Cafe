@@ -49,5 +49,5 @@ export const TEXT_LABELS = {
       Search <Search />
     </SearchType>
   ),
-  SUBMIT: "Subscribe ❤︎"
+  SUBMIT_EMAIL_ADDR: "Subscribe ❤︎"
 }

@@ -60,6 +60,12 @@ const PrivacyPolicy = Loadable({
   delay: 100
 })
 
+const Resources = Loadable({
+  loader: () => import("../pages/Resources"),
+  loading: ArticleLoader,
+  delay: 100
+})
+
 export default () => {
   return (
     <main
@@ -154,6 +160,7 @@ export default () => {
         {/**
          * static views and urls
          */}
+        <Route exact path="/resources" component={Resources} />
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />
         <Route path="/subscribe" render={() => <Subscribe cached />} />
