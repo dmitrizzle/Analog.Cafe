@@ -22,6 +22,7 @@ import { setComposerHeader } from "../../../../user/store/actions-composer"
 import { setModal } from "../../../../core/store/actions-modal"
 import { storeHeaderState } from "../../../../user/utils/actions-submission"
 import { updateArticleStatus } from "../../../../core/store/actions-article"
+import ArticleControlsWrapper from "./components/ArticleControlsWrapper"
 import Byline from "../../../../core/components/vignettes/Byline"
 import EditorialControls from "./components/EditorialControls"
 import Link from "../../../../core/components/controls/Link"
@@ -138,71 +139,73 @@ class ArticleControls extends React.PureComponent {
   }
 
   render = () => {
-    return [
-      <StatusExplanation
-        key="ArticleControls_status"
-        article={this.props.article}
-      />,
-      <EditorialControls
-        key="ArticleControls_editorial"
-        article={this.props.article}
-        editor={this.props.editor}
-        edit={this.handleEdit}
-        unpublish={this.handleUnpublish}
-        reject={this.handleRejection}
-        showPublishControls={this.handlePublishControls}
-        stateAllowOverwrite={this.state.allowOverwrite}
-        stateAllowReject={this.state.allowReject}
-        stateAllowUnpublish={this.state.allowUnpublish}
-        statePublishControls={this.state.publishControls}
-        isAdmin={this.props.user.info.role === "admin"}
-      />,
-      <Byline
-        key="ArticleControls_rejected"
-        style={{
-          display: this.props.article.status === "rejected" ? "block" : "none"
-        }}
-      >
-        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          {TEXT_EMOJIS.STOP}
-        </span>{" "}
-        This submission has been REJECTED and can not be published or edited.
-      </Byline>,
-      this.props.user.info.role === "admin" ? (
-        <PublishControls
-          key="ArticleControls_publish"
+    return (
+      <ArticleControlsWrapper>
+        <StatusExplanation
+          key="ArticleControls_status"
+          article={this.props.article}
+        />
+        <EditorialControls
+          key="ArticleControls_editorial"
           article={this.props.article}
           editor={this.props.editor}
+          edit={this.handleEdit}
+          unpublish={this.handleUnpublish}
+          reject={this.handleRejection}
+          showPublishControls={this.handlePublishControls}
+          stateAllowOverwrite={this.state.allowOverwrite}
+          stateAllowReject={this.state.allowReject}
+          stateAllowUnpublish={this.state.allowUnpublish}
           statePublishControls={this.state.publishControls}
-          statePublishAs={this.state.publishAs}
-          stateAllowPublish={this.state.allowPublish}
-          setPublicationTag={this.handlePublishTag}
-          publishNow={this.handlePublishNow}
+          isAdmin={this.props.user.info.role === "admin"}
         />
-      ) : null,
-      <Byline
-        style={{
-          marginTop: "1em",
-          display:
-            this.state.publishControls ||
-            !this.props.history.location.pathname.includes(
-              ROUTE_URL_SUBMISSIONS
-            )
-              ? "none"
-              : "block"
-        }}
-        key="ArticleControls_delete"
-      >
-        <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
-          {this.state.allowDelete ? TEXT_EMOJIS.UNLOCKED : TEXT_EMOJIS.LOCKED}
-        </span>
-        You can also{" "}
-        <Link to="#delete" onClick={this.handleDelete}>
-          delete
-        </Link>{" "}
-        this submission.
-      </Byline>
-    ]
+        <Byline
+          key="ArticleControls_rejected"
+          style={{
+            display: this.props.article.status === "rejected" ? "block" : "none"
+          }}
+        >
+          <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
+            {TEXT_EMOJIS.STOP}
+          </span>{" "}
+          This submission has been REJECTED and can not be published or edited.
+        </Byline>
+        {this.props.user.info.role === "admin" ? (
+          <PublishControls
+            key="ArticleControls_publish"
+            article={this.props.article}
+            editor={this.props.editor}
+            statePublishControls={this.state.publishControls}
+            statePublishAs={this.state.publishAs}
+            stateAllowPublish={this.state.allowPublish}
+            setPublicationTag={this.handlePublishTag}
+            publishNow={this.handlePublishNow}
+          />
+        ) : null}
+        <Byline
+          style={{
+            marginTop: "1em",
+            display:
+              this.state.publishControls ||
+              !this.props.history.location.pathname.includes(
+                ROUTE_URL_SUBMISSIONS
+              )
+                ? "none"
+                : "block"
+          }}
+          key="ArticleControls_delete"
+        >
+          <span style={{ fontStyle: "normal" }} role="img" aria-label="Notice">
+            {this.state.allowDelete ? TEXT_EMOJIS.UNLOCKED : TEXT_EMOJIS.LOCKED}
+          </span>
+          You can also{" "}
+          <Link to="#delete" onClick={this.handleDelete}>
+            delete
+          </Link>{" "}
+          this submission.
+        </Byline>
+      </ArticleControlsWrapper>
+    )
   }
 }
 

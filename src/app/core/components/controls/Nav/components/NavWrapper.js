@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
-export default styled.nav``
+export default styled.nav`
+  @media print {
+    display: none;
+  }
+`
 
 // NOTE: these CSS properties are rendered in index.html as critical path CSS
 // ${props => props.theme.size.font.auto} ${props =>

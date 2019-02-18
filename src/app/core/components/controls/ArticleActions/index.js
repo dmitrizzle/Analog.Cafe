@@ -5,6 +5,7 @@ import {
   getISODatestamp,
   getLunarDatestamp
 } from "../../../utils/messages-"
+import ArticleActionsWrapper from "./components/ArticleActionsWrapper"
 import Link from "../Link"
 import Options from "./components/Options"
 import TimeStamp from "../../pages/Article/components/TimeStamp"
@@ -41,7 +42,7 @@ const DatePublished = props => {
 
 export default props => {
   return (
-    <div style={{ clear: "both", textAlign: "center" }}>
+    <ArticleActionsWrapper>
       {props.thisArticlePostDate && <DatePublished {...props} />}
 
       {props.user &&
@@ -78,6 +79,6 @@ export default props => {
         typeof props.article.scheduledOrder === "undefined" && (
           <Options {...props} />
         )}
-    </div>
+    </ArticleActionsWrapper>
   )
 }
