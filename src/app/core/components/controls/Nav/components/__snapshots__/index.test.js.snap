@@ -2297,7 +2297,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "sc-kgoBCf kVSTZj",
+      "className": "sc-kgoBCf dtFZuI",
     },
     "ref": null,
     "rendered": null,
@@ -2309,7 +2309,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "sc-kgoBCf kVSTZj",
+        "className": "sc-kgoBCf dtFZuI",
       },
       "ref": null,
       "rendered": null,

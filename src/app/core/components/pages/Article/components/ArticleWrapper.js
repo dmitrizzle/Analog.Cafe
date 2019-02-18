@@ -8,7 +8,8 @@ export default styled.article`
     margin: 0;
     float: none;
     figure,
-    h3 {
+    h3,
+    blockquote {
       page-break-inside: avoid;
       page-break-after: avoid;
       page-break-before: avoid;

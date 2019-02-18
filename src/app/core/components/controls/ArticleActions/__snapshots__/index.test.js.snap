@@ -15,17 +15,13 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
       "children": Array [
         undefined,
         undefined,
         undefined,
       ],
-      "style": Object {
-        "clear": "both",
-        "textAlign": "center",
-      },
     },
     "ref": null,
     "rendered": Array [
@@ -33,23 +29,19 @@ ShallowWrapper {
       undefined,
       undefined,
     ],
-    "type": "div",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
           undefined,
           undefined,
           undefined,
         ],
-        "style": Object {
-          "clear": "both",
-          "textAlign": "center",
-        },
       },
       "ref": null,
       "rendered": Array [
@@ -57,7 +49,7 @@ ShallowWrapper {
         undefined,
         undefined,
       ],
-      "type": "div",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
