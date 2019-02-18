@@ -12,7 +12,6 @@ export default styled.article`
     blockquote {
       page-break-inside: avoid;
       page-break-after: avoid;
-      page-break-before: avoid;
     }
     figure {
       > div {
