@@ -45,6 +45,14 @@ const NAV_USER = props => [
   },
   { divider: true },
   {
+    to: "/photo-essays",
+    text: "Photo Essays"
+  },
+  {
+    to: "/film-photography",
+    text: "Film Photography"
+  },
+  {
     to: "/editorials",
     text: "Editorials"
   },
