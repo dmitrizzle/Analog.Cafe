@@ -32,8 +32,8 @@ const ArticleActions = Loadable({
   delay: 100
 })
 
-const Subscribe = Loadable({
-  loader: () => import("../Subscribe"),
+const Offer = Loadable({
+  loader: () => import("../Offer"),
   loading: () => null,
   delay: 100
 })
@@ -282,7 +282,7 @@ class Article extends React.PureComponent {
             <LazyLoad once offset={300} height={"100%"}>
               {!this.props.history.location.pathname.includes(
                 ROUTE_URL_SUBMISSIONS
-              ) && <Subscribe embed />}
+              ) && <Offer embed />}
             </LazyLoad>
           )}
       </ArticleWrapper>

@@ -18,12 +18,12 @@ export const SEARCH_RESULTS_FEATURED = [
     //   "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_750000_SkhbW7eNN.jpg",
     title: "35mm Film Price Guide",
     snippet: "Understand your photography costs."
-  },
-  {
-    link: "/submit",
-    // image:
-    //   "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1402564_SklPuuHRNf.jpg",
-    title: "Get Featured",
-    snippet: "Write for Analog.Cafe."
   }
+  // {
+  //   link: "/submit",
+  //   // image:
+  //   //   "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1402564_SklPuuHRNf.jpg",
+  //   title: "Get Featured",
+  //   snippet: "Write for Analog.Cafe."
+  // }
 ]

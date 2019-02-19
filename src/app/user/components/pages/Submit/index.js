@@ -10,7 +10,6 @@ import HowToSubmit from "./components/HowToSubmit"
 import Link from "../../../../core/components/controls/Link"
 import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
-import RemoteMessage from "../../../../core/components/vignettes/RemoteMessage"
 
 export const ctaTextInit = () =>
   loadTextContent().length > 0 ? "Continue With Submission" : "Submit Now"
@@ -58,7 +57,7 @@ export default () => {
           </p>
         </ButtonGroup>
 
-        <p>
+        {/* <p>
           <strong>Get £5 for film.</strong> As a small token of appreciation for
           your time, skill and talent, accepted submissions will receive an
           exclusive coupon for £5 from{" "}
@@ -67,7 +66,7 @@ export default () => {
           </Link>
           . There are <RemoteMessage from="promotions" id="coupons-left" /> left
           to give.
-        </p>
+        </p> */}
 
         <HowToSubmit />
       </ArticleSection>
