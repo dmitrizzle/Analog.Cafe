@@ -83,7 +83,15 @@ export default () => {
           exact
           path="/zine/vitessa-fzyi"
           render={() => <Redirect to="/zine/voigtlander-vitessa-l-fzyi" />}
-        />{" "}
+        />
+        <Route
+          exact
+          path="/zine/analogue-photography-98f3"
+          render={() => (
+            <Redirect to="/zine/a-beginner's-guide-to-film-photography-zq0f" />
+          )}
+        />
+        {/**/}
         <Route exact path="/author" component={NotFound} />
         <Route exact path="/zine" component={NotFound} />
         <Route exact path="/author/*" component={List} />
