@@ -1,6 +1,6 @@
 export const SEARCH_RESULTS_FEATURED = [
   {
-    link: "/zine/a-beginner's-guide-to-film-photography-zq0f",
+    link: "/zine/a-beginners-guide-to-film-photography-zq0f",
     title: "A Beginner’s Guide to Film Photography",
     snippet: "2019 Edition."
   },

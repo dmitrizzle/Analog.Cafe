@@ -88,7 +88,14 @@ export default () => {
           exact
           path="/zine/analogue-photography-98f3"
           render={() => (
-            <Redirect to="/zine/a-beginner's-guide-to-film-photography-zq0f" />
+            <Redirect to="/zine/a-beginners-guide-to-film-photography-zq0f" />
+          )}
+        />
+        <Route
+          exact
+          path="/zine/a-beginner's-guide-to-film-photography-zq0f"
+          render={() => (
+            <Redirect to="/zine/a-beginners-guide-to-film-photography-zq0f" />
           )}
         />
         {/**/}

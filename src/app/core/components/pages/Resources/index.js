@@ -131,7 +131,7 @@ export default props => {
         </h3>
         <p>
           <strong>
-            <Link to="/zine/a-beginner's-guide-to-film-photography-zq0f">
+            <Link to="/zine/a-beginners-guide-to-film-photography-zq0f">
               A Beginner’s Guide to Film Photography
             </Link>
           </strong>{" "}
