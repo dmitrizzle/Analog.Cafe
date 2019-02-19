@@ -29,6 +29,11 @@ ShallowWrapper {
                 render={[Function]}
         />
         <Route
+                exact={true}
+                path="/zine/a-beginner's-guide-to-film-photography-zq0f"
+                render={[Function]}
+        />
+        <Route
                 component={[Function]}
                 exact={true}
                 path="/author"
@@ -221,6 +226,11 @@ ShallowWrapper {
           <Route
             exact={true}
             path="/zine/analogue-photography-98f3"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/zine/a-beginner's-guide-to-film-photography-zq0f"
             render={[Function]}
 />,
           <Route
@@ -418,6 +428,19 @@ ShallowWrapper {
           "props": Object {
             "exact": true,
             "path": "/zine/analogue-photography-98f3",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/zine/a-beginner's-guide-to-film-photography-zq0f",
             "render": [Function],
           },
           "ref": null,
@@ -888,6 +911,11 @@ ShallowWrapper {
                     render={[Function]}
           />
           <Route
+                    exact={true}
+                    path="/zine/a-beginner's-guide-to-film-photography-zq0f"
+                    render={[Function]}
+          />
+          <Route
                     component={[Function]}
                     exact={true}
                     path="/author"
@@ -1080,6 +1108,11 @@ ShallowWrapper {
             <Route
               exact={true}
               path="/zine/analogue-photography-98f3"
+              render={[Function]}
+/>,
+            <Route
+              exact={true}
+              path="/zine/a-beginner's-guide-to-film-photography-zq0f"
               render={[Function]}
 />,
             <Route
@@ -1277,6 +1310,19 @@ ShallowWrapper {
             "props": Object {
               "exact": true,
               "path": "/zine/analogue-photography-98f3",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/zine/a-beginner's-guide-to-film-photography-zq0f",
               "render": [Function],
             },
             "ref": null,
