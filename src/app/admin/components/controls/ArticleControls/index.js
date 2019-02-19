@@ -87,6 +87,7 @@ class ArticleControls extends React.PureComponent {
     this.props.history.push("/submit/compose")
   }
   handleUnpublish = event => {
+    console.log(1)
     event.preventDefault()
     if (!this.state.allowUnpublish) {
       this.props.setModal(CARD_DIALOGUES.UNPUBLISH(this.handleUnlockFunction))
