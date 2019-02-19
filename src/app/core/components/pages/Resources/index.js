@@ -10,7 +10,7 @@ import Link from "../../controls/Link"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
 
-const DownloadsCardStyles = styled.div`
+export const DownloadsCardStyles = styled.div`
   small {
     font-style: normal;
     line-height: 1.25em;
@@ -42,7 +42,7 @@ export const info = {
   formButtonText: "➮ Download",
   formClosedButtonText: "Download Links Sent."
 }
-const DownloadModal = props => (
+export const DownloadModal = props => (
   <Modal
     unmarked
     element="a"
@@ -55,8 +55,8 @@ const DownloadModal = props => (
   </Modal>
 )
 
-const DownloadArrow = () => <span style={{ color: "#ed236e" }}>➮</span>
-const ResourceStar = () => <span style={{ color: "#ed236e" }}>✯</span>
+export const DownloadArrow = () => <span style={{ color: "#ed236e" }}>➮</span>
+export const ResourceStar = () => <span style={{ color: "#ed236e" }}>✯</span>
 
 export default props => {
   return (

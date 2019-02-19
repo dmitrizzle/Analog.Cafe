@@ -2,29 +2,15 @@ import React from "react"
 import styled from "styled-components"
 
 import { CardCaptionIntegrated } from "../../controls/ArticleActions/components/Options"
+import { DownloadArrow, DownloadModal, ResourceStar } from "../Resources"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
-import ButtonGroup from "../../controls/Button/components/ButtonGroup"
-import CardHeader from "../../controls/Card/components/CardHeader"
-import CardIntegrated from "../../controls/Card/components/CardIntegrated"
 import Link from "../../controls/Link"
-import Subscribe from "../../../../user/components/forms/Subscribe"
 
-export const GetYourWeekly = () => (
-  <CardCaptionIntegrated>
-    New photo essays, reviews, and guides every Tuesday at 9AM EST.{" "}
-    <Link to="/privacy-policy">No spam</Link>.
-    {/* {" "}
-    <Link to="https://us4.campaign-archive.com/?u=256339f7eafa36f2f466aca44&id=f8892b3a23">
-      Sneak Peek
-    </Link>
-    . */}
-  </CardCaptionIntegrated>
-)
-
-const SubscribeWrapper = styled(ArticleWrapper)`
-  overflow: visible;
-  padding-top: ${props => (props.embed ? "6em" : undefined)};
+const OfferWrapper = styled(ArticleWrapper)`
+  background: #f2f2f2;
+  margin: 5em 0 -1.5em;
+  padding-bottom: 3em;
   @media print {
     display: none;
   }
@@ -32,42 +18,38 @@ const SubscribeWrapper = styled(ArticleWrapper)`
 
 export default props => {
   return (
-    <SubscribeWrapper>
-      {/* {!props.embed && (
-        <React.Fragment>
-          <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
-          <HeaderLarge
-            pageTitle={metaTitle}
-            pageSubtitle="Every Tuesday Morning"
-          />
-        </React.Fragment>
-      )}
-      {props.embed && (
-        <HeaderLarge
-          pageTitle={metaTitle}
-          pageSubtitle="Every Tuesday Morning"
-          style={{ textSshadow: "0 0 5em rgba(255, 255, 255, 0.64)" }}
-        />
-      )} */}
+    <OfferWrapper>
       <ArticleSection>
-        <ButtonGroup>
-          <CardIntegrated>
-            <CardHeader
-              stubborn
-              buttons={[0]}
-              noStar
-              title="💌 Weekly Email Newsletter"
-            />
-            <GetYourWeekly />
-            <Subscribe
-              autoFocus={!props.embed}
-              stateOverwrite={{ subscribeForm: true }}
-              formLocation={"Subscribe"}
-            />
-          </CardIntegrated>
-          {/* <FollowButtons /> */}
-        </ButtonGroup>
+        <h3>
+          <ResourceStar /> Resources
+        </h3>
+        <p>
+          <strong>
+            <DownloadArrow />{" "}
+            <DownloadModal>Film Grain Reference</DownloadModal>
+          </strong>{" "}
+          – printable shortlist of nine popular emulsions, their properties, and
+          prices.
+        </p>
+        <p>
+          <strong>
+            <DownloadArrow />{" "}
+            <DownloadModal>All Essential Guides</DownloadModal>
+          </strong>{" "}
+          – downloadable collection of film photography guides.
+        </p>
+        <p>
+          <strong>
+            <DownloadArrow /> <DownloadModal>Select Photo Essays</DownloadModal>
+          </strong>{" "}
+          – some of the best photo essays on Analog.Cafe.
+        </p>
+        <p>
+          <strong>
+            <Link to="/resources">More…</Link>
+          </strong>
+        </p>
       </ArticleSection>
-    </SubscribeWrapper>
+    </OfferWrapper>
   )
 }

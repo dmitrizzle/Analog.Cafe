@@ -27,8 +27,8 @@ export default () => {
   return (
     <ArticleWrapper>
       <MetaTags
-        metaTitle="Get Published"
-        metaDescription="Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
+        metaTitle="Get Featured on Analog.Cafe"
+        metaDescription="Submit you film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
         metaImage={
           makeFroth({
             src: "image-froth_1533636_rygH__d9kQ",
@@ -37,7 +37,7 @@ export default () => {
         }
       />
       <HeaderLarge
-        pageTitle="Get Published"
+        pageTitle="Get Featured"
         pageSubtitle="Write for Analog.Cafe"
       />
       <ArticleSection>

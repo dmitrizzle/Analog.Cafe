@@ -82,7 +82,7 @@ export default props => {
       <div>
         {props.nextArticle && (
           <CardIntegratedForColumns>
-            <CardHeader stubborn buttons={[0]} noStar title="Get Published" />
+            <CardHeader stubborn buttons={[0]} noStar title="Get Featured" />
             <CardCaptionIntegrated>
               Do you shoot film? Get your work reviewed and published on
               Analog.Cafe.

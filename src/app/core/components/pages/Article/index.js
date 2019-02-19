@@ -213,70 +213,76 @@ class Article extends React.PureComponent {
 
   render = () => {
     return (
-      <ArticleWrapper>
-        <MetaTags
-          metaTitle={
-            this.props.article.title +
-            (this.props.article.subtitle
-              ? `${
-                  !this.props.article.title[
-                    this.props.article.title.length - 1
-                  ].match(/[.,!?:…*ʔっ)]/g)
-                    ? ":"
-                    : ""
-                } ${this.props.article.subtitle}`
-              : "")
-          }
-          metaDescription={this.props.article.summary}
-          metaImage={this.props.article.poster}
-          metaPostDate={
-            this.props.article.date && this.props.article.date.published
-          }
-          metaEditDate={
-            this.props.article.date && this.props.article.date.updated
-          }
-          metaAuthors={this.props.article.authors}
-          metaSlug={this.props.article.slug}
-          metaArticleSchema
-        />
-        <ArticleHeader article={this.props.article} user={this.props.user} />
-        <ArticleSection
-          articleStatus={this.props.article.status}
-          // onMouseUp={event => this.handleSelection(event, false)}
-          // onTouchEnd={event => this.handleSelection(event, true)}
-        >
-          {renderArticle(this.props.article.content.raw)}
-          {this.props.article.poster &&
-            this.props.article.submittedBy && (
-              <LazyLoad
-                once
-                offset={300}
-                height={"100%"}
-                key={`ArticleActions_${this.props.article.slug}`}
-              >
-                <ArticleActions
-                  user={this.props.user}
-                  list={this.props.list}
-                  article={this.props.article}
-                  subscribeFormCallback={this.handleSubscribeFormCallback}
-                  subscribeForm={this.state.subscribeForm}
-                  nextArticle={this.props.article.next}
-                  thisArticle={this.props.article.slug}
-                  thisArticlePostDate={
-                    this.props.article.date && this.props.article.date.published
-                  }
-                  thisArticleEditDate={
-                    this.props.article.date && this.props.article.date.updated
-                  }
-                  nextArticleHeading={nextArticleHeading =>
-                    this.props.setArticlePage(
-                      preloadConstructor(this.props.article, nextArticleHeading)
-                    )
-                  }
-                />
-              </LazyLoad>
-            )}
-        </ArticleSection>
+      <React.Fragment>
+        <ArticleWrapper>
+          <MetaTags
+            metaTitle={
+              this.props.article.title +
+              (this.props.article.subtitle
+                ? `${
+                    !this.props.article.title[
+                      this.props.article.title.length - 1
+                    ].match(/[.,!?:…*ʔっ)]/g)
+                      ? ":"
+                      : ""
+                  } ${this.props.article.subtitle}`
+                : "")
+            }
+            metaDescription={this.props.article.summary}
+            metaImage={this.props.article.poster}
+            metaPostDate={
+              this.props.article.date && this.props.article.date.published
+            }
+            metaEditDate={
+              this.props.article.date && this.props.article.date.updated
+            }
+            metaAuthors={this.props.article.authors}
+            metaSlug={this.props.article.slug}
+            metaArticleSchema
+          />
+          <ArticleHeader article={this.props.article} user={this.props.user} />
+          <ArticleSection
+            articleStatus={this.props.article.status}
+            // onMouseUp={event => this.handleSelection(event, false)}
+            // onTouchEnd={event => this.handleSelection(event, true)}
+          >
+            {renderArticle(this.props.article.content.raw)}
+            {this.props.article.poster &&
+              this.props.article.submittedBy && (
+                <LazyLoad
+                  once
+                  offset={300}
+                  height={"100%"}
+                  key={`ArticleActions_${this.props.article.slug}`}
+                >
+                  <ArticleActions
+                    user={this.props.user}
+                    list={this.props.list}
+                    article={this.props.article}
+                    subscribeFormCallback={this.handleSubscribeFormCallback}
+                    subscribeForm={this.state.subscribeForm}
+                    nextArticle={this.props.article.next}
+                    thisArticle={this.props.article.slug}
+                    thisArticlePostDate={
+                      this.props.article.date &&
+                      this.props.article.date.published
+                    }
+                    thisArticleEditDate={
+                      this.props.article.date && this.props.article.date.updated
+                    }
+                    nextArticleHeading={nextArticleHeading =>
+                      this.props.setArticlePage(
+                        preloadConstructor(
+                          this.props.article,
+                          nextArticleHeading
+                        )
+                      )
+                    }
+                  />
+                </LazyLoad>
+              )}
+          </ArticleSection>
+        </ArticleWrapper>
         {this.props.article.poster &&
           this.props.article.submittedBy && (
             <LazyLoad once offset={300} height={"100%"}>
@@ -285,7 +291,7 @@ class Article extends React.PureComponent {
               ) && <Offer embed />}
             </LazyLoad>
           )}
-      </ArticleWrapper>
+      </React.Fragment>
     )
   }
 }
