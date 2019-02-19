@@ -38,7 +38,7 @@ const WallPaper = styled.div`
   padding-top: 3em;
   background: url(${props =>
     makeFroth({
-      src: props.bgRoulette ? props.bgRoulette() : props.bgRouletteCached,
+      src: props.bgRouletteCached,
       size: "l"
     }).src});
   background-size: cover;
@@ -47,7 +47,7 @@ const WallPaper = styled.div`
     margin-top: 0;
     background-image: url(${props =>
       makeFroth({
-        src: props.bgRoulette ? props.bgRoulette() : props.bgRouletteCached,
+        src: props.bgRouletteCached,
         size: "m"
       }).src});
   `};

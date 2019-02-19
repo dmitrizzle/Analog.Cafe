@@ -228,7 +228,7 @@ class List extends React.PureComponent {
             Load More
           </Button>
         ) : null}
-        {/* <Subscribe embed cached /> */}
+        {/* <Offer embed /> */}
       </div>
     )
   }

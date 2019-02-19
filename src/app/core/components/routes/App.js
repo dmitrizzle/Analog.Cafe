@@ -60,6 +60,12 @@ const PrivacyPolicy = Loadable({
   delay: 100
 })
 
+const Resources = Loadable({
+  loader: () => import("../pages/Resources"),
+  loading: ArticleLoader,
+  delay: 100
+})
+
 export default () => {
   return (
     <main
@@ -77,7 +83,15 @@ export default () => {
           exact
           path="/zine/vitessa-fzyi"
           render={() => <Redirect to="/zine/voigtlander-vitessa-l-fzyi" />}
-        />{" "}
+        />
+        <Route
+          exact
+          path="/zine/analogue-photography-98f3"
+          render={() => (
+            <Redirect to="/zine/a-beginner's-guide-to-film-photography-zq0f" />
+          )}
+        />
+        {/**/}
         <Route exact path="/author" component={NotFound} />
         <Route exact path="/zine" component={NotFound} />
         <Route exact path="/author/*" component={List} />
@@ -154,6 +168,7 @@ export default () => {
         {/**
          * static views and urls
          */}
+        <Route exact path="/resources" component={Resources} />
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />
         <Route path="/subscribe" render={() => <Subscribe cached />} />

@@ -47,12 +47,14 @@ export default class extends React.PureComponent {
       <React.Fragment>
         {!this.state.subscribeForm ? (
           <CardButton branded onClick={this.handleRevealSubscribeForm}>
-            {TEXT_LABELS.SUBSCRIBE}
+            {this.props.formClosedButtonText || TEXT_LABELS.SUBSCRIBE}
           </CardButton>
         ) : (
           <MailChimpPrefill
             formLocation={this.props.formLocation}
-            buttonText={TEXT_LABELS.SUBMIT}
+            buttonText={
+              this.props.formButtonText || TEXT_LABELS.SUBMIT_EMAIL_ADDR
+            }
             autoFocus={
               this.props.autoFocus === false ? this.props.autoFocus : true
             }

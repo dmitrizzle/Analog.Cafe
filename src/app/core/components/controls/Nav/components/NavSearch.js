@@ -14,6 +14,7 @@ export default props => {
         info: {
           search: true,
           menu: false,
+          socialButtons: true,
           title: (
             <LabelWithSearchSVG>
               <Search /> Search

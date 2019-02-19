@@ -14,6 +14,7 @@ import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
+import Offer from "../Offer"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
@@ -74,331 +75,339 @@ class About extends React.PureComponent {
     this.props.fetchAuthorsList({ itemsPerPage: 100 })
   }
   render = () => (
-    <ArticleWrapper>
-      <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
-      <HeaderLarge
-        pageTitle="Analog.Cafe"
-        pageSubtitle="A Film Photography Magazine"
-      />
+    <React.Fragment>
+      <ArticleWrapper>
+        <MetaTags metaTitle={metaTitle} metaDescription={metaDescription} />
+        <HeaderLarge
+          pageTitle="Analog.Cafe"
+          pageSubtitle="A Film Photography Magazine"
+        />
 
-      <ArticleSection>
-        <blockquote>
-          Created by film photographers, artists, and writers of the internet.{" "}
-          <strong>
-            Published <Link to="/">online</Link>
-          </strong>{" "}
-          every Tuesday and most Thursday mornings.{" "}
-          <Link to="https://github.com/dmitrizzle/Analog.Cafe">Maintained</Link>{" "}
-          as an open-source project by{" "}
-          <Link to="/author/dmitrizzle">Dmitri</Link>.
-        </blockquote>
-        <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
-          <Authors>
-            {this.props.community.authorsList.items.map((item, index) => {
-              const image = makeFroth({ src: item.image, size: "t" }).src
+        <ArticleSection>
+          <blockquote>
+            Created by film photographers, artists, and writers of the internet.{" "}
+            <strong>
+              Published <Link to="/">online</Link>
+            </strong>{" "}
+            every Tuesday and most Thursday mornings.{" "}
+            <Link to="https://github.com/dmitrizzle/Analog.Cafe">
+              Maintained
+            </Link>{" "}
+            as an open-source project by{" "}
+            <Link to="/author/dmitrizzle">Dmitri</Link>.
+          </blockquote>
+          <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
+            <Authors>
+              {this.props.community.authorsList.items.map((item, index) => {
+                const image = makeFroth({ src: item.image, size: "t" }).src
 
-              return (
-                <AuthorIcon
-                  style={{ backgroundImage: `url(${image})` }}
-                  to={`/author/${item.id}`}
-                  key={index}
-                />
-              )
-            })}
-          </Authors>
-        </AuthorsBanner>
+                return (
+                  <AuthorIcon
+                    style={{ backgroundImage: `url(${image})` }}
+                    to={`/author/${item.id}`}
+                    key={index}
+                  />
+                )
+              })}
+            </Authors>
+          </AuthorsBanner>
 
-        <h3>The authors.</h3>
-        <p>
-          Analog.Cafe got its name in 2017 when{" "}
-          <Link to="/author/dmitrizzle">Dmitri</Link> began working on a
-          community photography/writing project. It has since grown ten-fold in
-          readership and written contributions.
-        </p>
-        <p>
-          It takes conviction to favour analogue creative processes in the age
-          of advancing digital technology. Analog.Cafe project is dedicated to
-          exhibiting and promoting the works of such people. We are{" "}
-          <Link to="/submit">always</Link> looking for new publishing members.
-        </p>
-        <h3>The editors.</h3>
-        <p>
-          Dmitri edits most of the articles, often with help from{" "}
-          <Link to="/author/betty">Betty</Link>, keeping the content
-          interesting, thoughtful, and readable.
-        </p>
+          <h3>The authors.</h3>
+          <p>
+            Analog.Cafe got its name in 2017 when{" "}
+            <Link to="/author/dmitrizzle">Dmitri</Link> began working on a
+            community photography/writing project. It has since grown ten-fold
+            in readership and written contributions.
+          </p>
+          <p>
+            It takes conviction to favour analogue creative processes in the age
+            of advancing digital technology. Analog.Cafe project is dedicated to
+            exhibiting and promoting the works of such people. We are{" "}
+            <Link to="/submit">always</Link> looking for new publishing members.
+          </p>
+          <h3>The editors.</h3>
+          <p>
+            Dmitri edits most of the articles, often with help from{" "}
+            <Link to="/author/betty">Betty</Link>, keeping the content
+            interesting, thoughtful, and readable.
+          </p>
 
-        <h3>Film Photography.</h3>
+          <h3>Film Photography.</h3>
 
-        <p>
-          Almost every image on this website has originated on a roll of film,
-          for what’s known as <em>film photography</em>.
-        </p>
-        <Modal
-          unmarked
-          element="a"
-          with={{
-            info: {
-              image: "image-froth_1206996_r1CqlUwRm",
-              title: "Voigtländer Vitessa L",
-              text: (
-                <span>
-                  <strong>Voigtländer Vitessa</strong> is a German 35mm film
-                  rangefinder camera, manufactured in the mid-1950s. The camera
-                  is uniquely-built, with a lot of thought and care put into the
-                  manufacturing process.
-                </span>
-              ),
-              buttons: [
-                {
-                  to: "/zine/vitessa-fzyi",
-                  text: "More on Vitessa",
-                  branded: true
-                }
-              ]
-            },
-            id: "modal/hints/vitessa-l"
-          }}
-        >
-          <Figure src="image-froth_1206996_r1CqlUwRm" />
-        </Modal>
-        <p>
-          The reason is our collective appreciation and understanding of the
-          analogue <Link to="/zine/analogue-photography-98f3">technology</Link>{" "}
-          and how it adds to the creative expression.
-        </p>
-        <p>
-          About half of all articles posted on Analog.Cafe are categorized under{" "}
-          <em>
-            <Link to="/film-photography">Film Photography</Link>
-          </em>{" "}
-          where we publish reviews, guides, and stores on film and analogue
-          cameras.
-        </p>
-
-        <h3>Photo Essays.</h3>
-        <p>
-          Travel, culture, thought pieces, art projects. Photography is more
-          than gear and chemicals. Analog.Cafe’s{" "}
-          <em>
-            <Link to="/photo-essays">Photo Essays</Link>
-          </em>{" "}
-          section is a collection of abstract photography, thought-provoking
-          essays, observations, travel, culture, and items of interest.
-        </p>
-
-        <h3>The Website.</h3>
-        <p>
-          Analog.Cafe respects <Link to="/privacy-policy">privacy</Link>, works{" "}
+          <p>
+            Almost every image on this website has originated on a roll of film,
+            for what’s known as <em>film photography</em>.
+          </p>
           <Modal
+            unmarked
+            element="a"
             with={{
-              ...CARD_ALERTS.AUTO_SAVE,
               info: {
-                ...CARD_ALERTS.AUTO_SAVE.info,
-                title: "Create Offline",
-                text:
-                  "If you are working on your submission to Analog.Cafe, be it a photo essay or a review, you can safely continue adding your images and text even when you have no access to the internet. All your work will be saved in your web browser automatically.",
+                image: "image-froth_1206996_r1CqlUwRm",
+                title: "Voigtländer Vitessa L",
+                text: (
+                  <span>
+                    <strong>Voigtländer Vitessa</strong> is a German 35mm film
+                    rangefinder camera, manufactured in the mid-1950s. The
+                    camera is uniquely-built, with a lot of thought and care put
+                    into the manufacturing process.
+                  </span>
+                ),
                 buttons: [
                   {
-                    to: "/submit",
-                    text: "How to Submit",
+                    to: "/zine/vitessa-fzyi",
+                    text: "More on Vitessa",
                     branded: true
                   }
                 ]
-              }
+              },
+              id: "modal/hints/vitessa-l"
             }}
           >
-            offline
+            <Figure src="image-froth_1206996_r1CqlUwRm" />
           </Modal>
-          , and comes with many <Link to="/zine/2.0-a8nt">features</Link>{" "}
-          specifically designed for readers, writers, and editors.
-        </p>
+          <p>
+            The reason is our collective appreciation and understanding of the
+            analogue{" "}
+            <Link to="/zine/analogue-photography-98f3">technology</Link> and how
+            it adds to the creative expression.
+          </p>
+          <p>
+            About half of all articles posted on Analog.Cafe are categorized
+            under{" "}
+            <em>
+              <Link to="/film-photography">Film Photography</Link>
+            </em>{" "}
+            where we publish reviews, guides, and stores on film and analogue
+            cameras.
+          </p>
 
-        <p>
-          Analog.Cafe is not a theme or a builder tool. This website is
-          hand-coded from scratch and you can see all of that good work on our{" "}
-          <Link to="https://github.com/roast-cms">GitHub repository</Link>.
-        </p>
+          <h3>Photo Essays.</h3>
+          <p>
+            Travel, culture, thought pieces, art projects. Photography is more
+            than gear and chemicals. Analog.Cafe’s{" "}
+            <em>
+              <Link to="/photo-essays">Photo Essays</Link>
+            </em>{" "}
+            section is a collection of abstract photography, thought-provoking
+            essays, observations, travel, culture, and items of interest.
+          </p>
 
-        <h3>Contact Info.</h3>
-        <Modal
-          unmarked
-          element="a"
-          with={{
-            info: {
-              image: "image-froth_663152_ByGEigckN",
-              title: "Contact Info",
-              buttons: [
-                {
-                  to: "#email-dmitri",
-                  onClick: () => window.open("mailto:d@analog.cafe"),
-                  text: "Email Dmitri"
-                },
-                {
-                  to: "https://twitter.com/analog_cafe",
-                  text: "Twitter"
-                },
-                {
-                  to: "https://www.facebook.com/analog8cafe",
-                  text: "Facebook"
-                },
-                {
-                  to: "https://instagram.com/analog_cafe",
-                  text: "Instagram"
+          <h3>The Website.</h3>
+          <p>
+            Analog.Cafe respects <Link to="/privacy-policy">privacy</Link>,
+            works{" "}
+            <Modal
+              with={{
+                ...CARD_ALERTS.AUTO_SAVE,
+                info: {
+                  ...CARD_ALERTS.AUTO_SAVE.info,
+                  title: "Create Offline",
+                  text:
+                    "If you are working on your submission to Analog.Cafe, be it a photo essay or a review, you can safely continue adding your images and text even when you have no access to the internet. All your work will be saved in your web browser automatically.",
+                  buttons: [
+                    {
+                      to: "/submit",
+                      text: "How to Submit",
+                      branded: true
+                    }
+                  ]
                 }
-              ]
-            },
-            id: "modal/hints/contact"
-          }}
-        >
-          <Figure src="image-froth_663152_ByGEigckN" caption feature>
-            {"ontouchstart" in document.documentElement ? "Tap" : "Click"} the
-            payphone.
-          </Figure>
-        </Modal>
-        <p>
-          If you have a question, suggestion or just want to chat, feel free to
-          email Dmitri via <ContactInfo />, or reach out via{" "}
-          <strong>
-            <Link to="https://twitter.com/analog_cafe">Twitter</Link>
-          </strong>
-          ,{" "}
-          <strong>
-            <Link to="https://www.facebook.com/analog8cafe">Facebook</Link>
-          </strong>
-          , or{" "}
-          <strong>
-            <Link to="https://instagram.com/analog_cafe">Instagram</Link>
-          </strong>
-          .
-        </p>
-        <p>
-          Analog.Cafe is a global project, initiated in{" "}
-          <Link to="/zine/chiang-mai-d7jy">Chiang Mai</Link>, in collaboration
-          with authors and photographers from a growing list of locations.
-        </p>
-        <p>
-          Currently, Dmitri is maintaining the project from his home in{" "}
-          <Link to="/zine/expat-years-6sje">Vancouver</Link>.
-        </p>
+              }}
+            >
+              offline
+            </Modal>
+            , and comes with many <Link to="/zine/2.0-a8nt">features</Link>{" "}
+            specifically designed for readers, writers, and editors.
+          </p>
 
-        <h3>Thank you, project backers!</h3>
-        <p>
-          Analog.Cafe began as a dream to bring together a community of writers,
-          artists and film photographers and promote the creative and
-          informative products of ambition, generosity and imagination. With the
-          financial help and moral support of the fifty-one backers on our first{" "}
-          Kickstarter{" "}
-          <Link to="https://www.kickstarter.com/projects/dmitrizzle/analogcafe-the-remarkable-film-photography-blog">
-            campaign
-          </Link>
-          , we are able to build and grow into a prominent home for the
-          remarkable, the beautiful, and the fascinating.
-        </p>
-        <ThankYouList>
-          Thayanantha Thevanayagam
-          <br />
-          Betty Dai
-          <br />
-          Kevin Kethcart
-          <br />
-          Fernando Lavin (@film.lav)
-          <br />
-          Lee Webb
-          <br />
-          Lewis Phan
-          <br />
-          Genester
-          <br />
-          Jose Altamirano (josekasek)
-          <br />
-          Marianne Oliver
-          <br />
-          Michael Jones
-          <br />
-          Tim Dobbs
-          <br />
-          James Cockroft
-          <br />
-          faultyflipflap
-          <br />
-          Jennifer Precious Finch
-          <br />
-          Denise
-          <br />
-          Frank Russo
-          <br />
-          Domenico Stefani
-          <br />
-          Stephen King
-          <br />
-          Arjun Mohan
-          <br />
-          Kevin Aungle
-          <br />
-          Jack Yu
-          <br />
-          Stephen Dowling
-          <br />
-          Anonymous
-          <br />
-          Joey Pasco
-          <br />
-          Kanoa Mulling
-          <br />
-          BVH
-          <br />
-          Jacob Michael Hanania
-          <br />
-          Rob James Davie
-          <br />
-          Joey Santiago
-          <br />
-          Danielle Cardoz
-          <br />
-          Francisco M<br />
-          Jonathan Zobro
-          <br />
-          Matthew Stollmeyer
-          <br />
-          Ishtiaq Rahman
-          <br />
-          Lu Yu
-          <br />
-          Jan Ian Chow
-          <br />
-          Olga Tcherbadji
-          <br />
-          Andreea Cojocaru
-          <br />
-          Jeff Santos
-          <br />
-          Arjan Wiertz
-          <br />
-          Stepan Cherbadzhi
-          <br />
-          Jackie Wong
-          <br />
-          Vivian Qiu
-          <br />
-          Ben Yee
-          <br />
-          Ashley Taylor
-          <br />
-          Anonymous
-          <br />
-          Anonymous
-          <br />
-          Geraldine Pontius
-          <br />
-          Larry Treadway
-          <br />
-          Hakan (@haknization)
-          <br />
-          Ben Cairns
-        </ThankYouList>
-      </ArticleSection>
-    </ArticleWrapper>
+          <p>
+            Analog.Cafe is not a theme or a builder tool. This website is
+            hand-coded from scratch and you can see all of that good work on our{" "}
+            <Link to="https://github.com/roast-cms">GitHub repository</Link>.
+          </p>
+
+          <h3>Contact Info.</h3>
+          <Modal
+            unmarked
+            element="a"
+            with={{
+              info: {
+                image: "image-froth_663152_ByGEigckN",
+                title: "Contact Info",
+                buttons: [
+                  {
+                    to: "#email-dmitri",
+                    onClick: () => window.open("mailto:d@analog.cafe"),
+                    text: "Email Dmitri"
+                  },
+                  {
+                    to: "https://twitter.com/analog_cafe",
+                    text: "Twitter"
+                  },
+                  {
+                    to: "https://www.facebook.com/analog8cafe",
+                    text: "Facebook"
+                  },
+                  {
+                    to: "https://instagram.com/analog_cafe",
+                    text: "Instagram"
+                  }
+                ]
+              },
+              id: "modal/hints/contact"
+            }}
+          >
+            <Figure src="image-froth_663152_ByGEigckN" caption feature>
+              {"ontouchstart" in document.documentElement ? "Tap" : "Click"} the
+              payphone.
+            </Figure>
+          </Modal>
+          <p>
+            If you have a question, suggestion or just want to chat, feel free
+            to email Dmitri via <ContactInfo />, or reach out via{" "}
+            <strong>
+              <Link to="https://twitter.com/analog_cafe">Twitter</Link>
+            </strong>
+            ,{" "}
+            <strong>
+              <Link to="https://www.facebook.com/analog8cafe">Facebook</Link>
+            </strong>
+            , or{" "}
+            <strong>
+              <Link to="https://instagram.com/analog_cafe">Instagram</Link>
+            </strong>
+            .
+          </p>
+          <p>
+            Analog.Cafe is a global project, initiated in{" "}
+            <Link to="/zine/chiang-mai-d7jy">Chiang Mai</Link>, in collaboration
+            with authors and photographers from a growing list of locations.
+          </p>
+          <p>
+            Currently, Dmitri is maintaining the project from his home in{" "}
+            <Link to="/zine/expat-years-6sje">Vancouver</Link>.
+          </p>
+
+          <h3>Thank you, project backers!</h3>
+          <p>
+            Analog.Cafe began as a dream to bring together a community of
+            writers, artists and film photographers and promote the creative and
+            informative products of ambition, generosity and imagination. With
+            the financial help and moral support of the fifty-one backers on our
+            first Kickstarter{" "}
+            <Link to="https://www.kickstarter.com/projects/dmitrizzle/analogcafe-the-remarkable-film-photography-blog">
+              campaign
+            </Link>
+            , we are able to build and grow into a prominent home for the
+            remarkable, the beautiful, and the fascinating.
+          </p>
+          <ThankYouList>
+            Thayanantha Thevanayagam
+            <br />
+            Betty Dai
+            <br />
+            Kevin Kethcart
+            <br />
+            Fernando Lavin (@film.lav)
+            <br />
+            Lee Webb
+            <br />
+            Lewis Phan
+            <br />
+            Genester
+            <br />
+            Jose Altamirano (josekasek)
+            <br />
+            Marianne Oliver
+            <br />
+            Michael Jones
+            <br />
+            Tim Dobbs
+            <br />
+            James Cockroft
+            <br />
+            faultyflipflap
+            <br />
+            Jennifer Precious Finch
+            <br />
+            Denise
+            <br />
+            Frank Russo
+            <br />
+            Domenico Stefani
+            <br />
+            Stephen King
+            <br />
+            Arjun Mohan
+            <br />
+            Kevin Aungle
+            <br />
+            Jack Yu
+            <br />
+            Stephen Dowling
+            <br />
+            Anonymous
+            <br />
+            Joey Pasco
+            <br />
+            Kanoa Mulling
+            <br />
+            BVH
+            <br />
+            Jacob Michael Hanania
+            <br />
+            Rob James Davie
+            <br />
+            Joey Santiago
+            <br />
+            Danielle Cardoz
+            <br />
+            Francisco M<br />
+            Jonathan Zobro
+            <br />
+            Matthew Stollmeyer
+            <br />
+            Ishtiaq Rahman
+            <br />
+            Lu Yu
+            <br />
+            Jan Ian Chow
+            <br />
+            Olga Tcherbadji
+            <br />
+            Andreea Cojocaru
+            <br />
+            Jeff Santos
+            <br />
+            Arjan Wiertz
+            <br />
+            Stepan Cherbadzhi
+            <br />
+            Jackie Wong
+            <br />
+            Vivian Qiu
+            <br />
+            Ben Yee
+            <br />
+            Ashley Taylor
+            <br />
+            Anonymous
+            <br />
+            Anonymous
+            <br />
+            Geraldine Pontius
+            <br />
+            Larry Treadway
+            <br />
+            Hakan (@haknization)
+            <br />
+            Ben Cairns
+          </ThankYouList>
+        </ArticleSection>
+      </ArticleWrapper>
+      <Offer embed />
+    </React.Fragment>
   )
 }
 

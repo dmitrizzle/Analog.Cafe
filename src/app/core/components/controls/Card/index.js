@@ -10,6 +10,7 @@ import CardPopup from "./components/CardPopup"
 import FollowButtons from "../ArticleActions/components/FollowButtons"
 import Search from "../../forms/Search"
 import Spinner from "../../icons/Spinner"
+import Subscribe from "../../../../user/components/forms/Subscribe"
 
 export default class extends React.PureComponent {
   constructor(props) {
@@ -62,6 +63,7 @@ export default class extends React.PureComponent {
                   <CardSearchItem
                     key={item.link}
                     to={item.link}
+                    onClick={item.onClick}
                     image={item.image || null}
                   >
                     <div>{item.title}</div>
@@ -90,7 +92,6 @@ export default class extends React.PureComponent {
             }
             return button && button.to && button.text ? (
               <CardButton
-                onClick={button.onClick}
                 to={button.to}
                 key={button.to}
                 branded={button.branded ? true : null}
@@ -114,6 +115,15 @@ export default class extends React.PureComponent {
           })}
 
         {this.props.socialButtons && <FollowButtons />}
+        {this.props.subscribe && (
+          <Subscribe
+            autoFocus
+            stateOverwrite={{ subscribeForm: true }}
+            formButtonText={this.props.formButtonText}
+            formClosedButtonText={this.props.formClosedButtonText}
+            formLocation={"Card"}
+          />
+        )}
 
         {/* {this.props.subscribe && (
           <CardButton

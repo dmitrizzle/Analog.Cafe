@@ -2,8 +2,10 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 import { GA } from "../../../../../utils"
+import Etsy from "../../../icons/Social/components/Etsy"
 import Feedly from "../../../icons/Social/components/Feedly"
 import Instagram from "../../../icons/Social/components/Instagram"
+import Itunes from "../../../icons/Social/components/Itunes"
 import LinkButton from "../../Button/components/LinkButton"
 import Twitter from "../../../icons/Social/components/Twitter"
 
@@ -49,6 +51,19 @@ const InstagramButton = styled(LinkButton)`
     margin: -0.4em 0 0 0.2em;
   }
 `
+const ItunesButton = styled(LinkButton)`
+  ${FollowButton} svg {
+    height: 1.4em;
+    margin: -0.4em 0 0 0.2em;
+  }
+`
+const EtsyButton = styled(LinkButton)`
+  ${FollowButton} svg {
+    height: 1.4em;
+    margin: -0.4em 0 0 0.2em;
+  }
+`
+
 // const FacebookButton = styled(LinkButton)`
 //   ${FollowButton} svg {
 //     height: 1.4em;
@@ -64,6 +79,17 @@ const InstagramButton = styled(LinkButton)`
 export default props => {
   return (
     <FollowButtons>
+      <EtsyButton
+        to="https://www.etsy.com/ca/shop/AnalogCafeShop"
+        onClick={() => {
+          GA.event({
+            category: "Campaign",
+            action: "FollowButtons.follow_etsy"
+          })
+        }}
+      >
+        <Etsy />
+      </EtsyButton>
       <FeedlyButton
         to="http://bit.ly/FeedAnalog"
         onClick={() => {
@@ -97,18 +123,17 @@ export default props => {
       >
         <Instagram />
       </InstagramButton>
-
-      {/* <FacebookButton
-        to="https://facebook.com/analog8cafe"
+      <ItunesButton
+        to="https://itunes.apple.com/us/podcast/analog-cafe-a-film-photography-podcast/id1452093436?mt=2&app=podcast"
         onClick={() => {
           GA.event({
             category: "Campaign",
-            action: "FollowButtons.follow_facebook"
-          });
+            action: "FollowButtons.follow_itunes"
+          })
         }}
       >
-        <Facebook />
-      </FacebookButton> */}
+        <Itunes />
+      </ItunesButton>
     </FollowButtons>
   )
 }

@@ -109,6 +109,16 @@ export class Search extends React.PureComponent {
                     />
                   ]
                 })}
+              {this.props.search.data.queries.request && (
+                <CardSearchItem to="/subscribe">
+                  <div>Not Found</div>
+                  <em>
+                    We publish new content every week.{" "}
+                    <strong>Subscribe</strong> to our weekly newsletter to get
+                    notified when the new articles get published.
+                  </em>
+                </CardSearchItem>
+              )}
             </div>
           ]
         )}
