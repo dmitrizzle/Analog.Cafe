@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 
-import { CardCaptionIntegrated } from "../../controls/ArticleActions/components/Options"
 import { DownloadArrow, DownloadModal, ResourceStar } from "../Resources"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
