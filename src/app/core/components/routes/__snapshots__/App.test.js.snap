@@ -23,7 +23,11 @@ ShallowWrapper {
                 path="/zine/vitessa-fzyi"
                 render={[Function]}
         />
-         
+        <Route
+                exact={true}
+                path="/zine/analogue-photography-98f3"
+                render={[Function]}
+        />
         <Route
                 component={[Function]}
                 exact={true}
@@ -162,6 +166,11 @@ ShallowWrapper {
         <Route
                 component={[Function]}
                 exact={true}
+                path="/resources"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
                 path="/about"
         />
         <Route
@@ -209,7 +218,11 @@ ShallowWrapper {
             path="/zine/vitessa-fzyi"
             render={[Function]}
 />,
-          " ",
+          <Route
+            exact={true}
+            path="/zine/analogue-photography-98f3"
+            render={[Function]}
+/>,
           <Route
             component={[Function]}
             exact={true}
@@ -348,6 +361,11 @@ ShallowWrapper {
           <Route
             component={[Function]}
             exact={true}
+            path="/resources"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
             path="/about"
 />,
           <Route
@@ -393,7 +411,19 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        " ",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/zine/analogue-photography-98f3",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -752,6 +782,19 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
+            "path": "/resources",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
             "path": "/about",
           },
           "ref": null,
@@ -839,7 +882,11 @@ ShallowWrapper {
                     path="/zine/vitessa-fzyi"
                     render={[Function]}
           />
-           
+          <Route
+                    exact={true}
+                    path="/zine/analogue-photography-98f3"
+                    render={[Function]}
+          />
           <Route
                     component={[Function]}
                     exact={true}
@@ -978,6 +1025,11 @@ ShallowWrapper {
           <Route
                     component={[Function]}
                     exact={true}
+                    path="/resources"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
                     path="/about"
           />
           <Route
@@ -1025,7 +1077,11 @@ ShallowWrapper {
               path="/zine/vitessa-fzyi"
               render={[Function]}
 />,
-            " ",
+            <Route
+              exact={true}
+              path="/zine/analogue-photography-98f3"
+              render={[Function]}
+/>,
             <Route
               component={[Function]}
               exact={true}
@@ -1164,6 +1220,11 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
+              path="/resources"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
               path="/about"
 />,
             <Route
@@ -1209,7 +1270,19 @@ ShallowWrapper {
             "rendered": null,
             "type": [Function],
           },
-          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/zine/analogue-photography-98f3",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           Object {
             "instance": null,
             "key": undefined,
@@ -1556,6 +1629,19 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/sign-out",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/resources",
             },
             "ref": null,
             "rendered": null,

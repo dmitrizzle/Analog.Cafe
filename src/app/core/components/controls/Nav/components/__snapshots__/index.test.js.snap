@@ -2124,12 +2124,47 @@ ShallowWrapper {
                                                               }
                                 }
                 >
-                                ❤︎
+                                ✯
                 </span>
-                 Analogue Reads
+                 Resources
                  
+                <span
+                                style={
+                                                Object {
+                                                                "color": "#ed236e",
+                                                              }
+                                }
+                >
+                                ✯
+                </span>
 </span>,
-              "to": "/subscribe",
+              "to": "/resources",
+            },
+            Object {
+              "text": <span>
+                <span
+                                style={
+                                                Object {
+                                                                "color": "#ed236e",
+                                                              }
+                                }
+                >
+                                Etsy
+                </span>
+                 Store
+</span>,
+              "to": "https://www.etsy.com/ca/shop/AnalogCafeShop",
+            },
+            Object {
+              "divider": true,
+            },
+            Object {
+              "text": "Photo Essays",
+              "to": "/photo-essays",
+            },
+            Object {
+              "text": "Film Photography",
+              "to": "/film-photography",
             },
             Object {
               "text": "Editorials",
@@ -2158,16 +2193,16 @@ ShallowWrapper {
               "divider": true,
             },
             Object {
+              "text": "About",
+              "to": "/about",
+            },
+            Object {
               "text": "Sign In",
               "to": "/sign-in",
             },
             Object {
               "text": "Get Published",
               "to": "/submit",
-            },
-            Object {
-              "text": "About",
-              "to": "/about",
             },
           ],
           "menu": true,
@@ -2209,12 +2244,47 @@ ShallowWrapper {
                                                                       }
                                     }
                   >
-                                    ❤︎
+                                    ✯
                   </span>
-                   Analogue Reads
+                   Resources
                    
+                  <span
+                                    style={
+                                                      Object {
+                                                                        "color": "#ed236e",
+                                                                      }
+                                    }
+                  >
+                                    ✯
+                  </span>
 </span>,
-                "to": "/subscribe",
+                "to": "/resources",
+              },
+              Object {
+                "text": <span>
+                  <span
+                                    style={
+                                                      Object {
+                                                                        "color": "#ed236e",
+                                                                      }
+                                    }
+                  >
+                                    Etsy
+                  </span>
+                   Store
+</span>,
+                "to": "https://www.etsy.com/ca/shop/AnalogCafeShop",
+              },
+              Object {
+                "divider": true,
+              },
+              Object {
+                "text": "Photo Essays",
+                "to": "/photo-essays",
+              },
+              Object {
+                "text": "Film Photography",
+                "to": "/film-photography",
               },
               Object {
                 "text": "Editorials",
@@ -2243,16 +2313,16 @@ ShallowWrapper {
                 "divider": true,
               },
               Object {
+                "text": "About",
+                "to": "/about",
+              },
+              Object {
                 "text": "Sign In",
                 "to": "/sign-in",
               },
               Object {
                 "text": "Get Published",
                 "to": "/submit",
-              },
-              Object {
-                "text": "About",
-                "to": "/about",
               },
             ],
             "menu": true,

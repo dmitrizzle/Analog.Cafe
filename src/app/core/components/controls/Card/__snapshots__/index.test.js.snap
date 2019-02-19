@@ -32,6 +32,7 @@ ShallowWrapper {
         undefined,
         undefined,
         undefined,
+        undefined,
       ],
       "id": undefined,
       "style": undefined,
@@ -68,6 +69,7 @@ ShallowWrapper {
       undefined,
       undefined,
       undefined,
+      undefined,
     ],
     "type": [Function],
   },
@@ -89,6 +91,7 @@ ShallowWrapper {
             image={undefined}
             text={undefined}
 />,
+          undefined,
           undefined,
           undefined,
           undefined,
@@ -125,6 +128,7 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        undefined,
         undefined,
         undefined,
         undefined,

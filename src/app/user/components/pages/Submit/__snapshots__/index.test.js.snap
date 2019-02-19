@@ -19,13 +19,13 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
-          metaDescription="Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
+          metaDescription="Submit you film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
           metaImage="https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg"
-          metaTitle="Get Published"
+          metaTitle="Get Featured on Analog.Cafe"
 />,
         <Unknown
           pageSubtitle="Write for Analog.Cafe"
-          pageTitle="Get Published"
+          pageTitle="Get Featured"
 />,
         <styled.section>
           <p>
@@ -60,24 +60,6 @@ ShallowWrapper {
                               if you have an account.
                     </p>
           </styled.div>
-          <p>
-                    <strong>
-                              Get £5 for film.
-                    </strong>
-                     As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from
-                     
-                    <Unknown
-                              to="https://analoguewonderland.co.uk/"
-                    >
-                              Analogue Wonderland
-                    </Unknown>
-                    . There are 
-                    <PureComponent
-                              from="promotions"
-                              id="coupons-left"
-                    />
-                     left to give.
-          </p>
           <Unknown />
 </styled.section>,
       ],
@@ -89,9 +71,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "metaDescription": "Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe.",
+          "metaDescription": "Submit you film photography essays, stories, guides, and reviews to be featured on Analog.Cafe.",
           "metaImage": "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg",
-          "metaTitle": "Get Published",
+          "metaTitle": "Get Featured on Analog.Cafe",
         },
         "ref": null,
         "rendered": null,
@@ -103,7 +85,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "pageSubtitle": "Write for Analog.Cafe",
-          "pageTitle": "Get Published",
+          "pageTitle": "Get Featured",
         },
         "ref": null,
         "rendered": null,
@@ -147,24 +129,6 @@ ShallowWrapper {
                             if you have an account.
               </p>
 </styled.div>,
-            <p>
-              <strong>
-                            Get £5 for film.
-              </strong>
-               As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from
-               
-              <Unknown
-                            to="https://analoguewonderland.co.uk/"
-              >
-                            Analogue Wonderland
-              </Unknown>
-              . There are 
-              <PureComponent
-                            from="promotions"
-                            id="coupons-left"
-              />
-               left to give.
-</p>,
             <Unknown />,
           ],
         },
@@ -306,74 +270,6 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <strong>
-                  Get £5 for film.
-</strong>,
-                " As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from",
-                " ",
-                <Unknown
-                  to="https://analoguewonderland.co.uk/"
->
-                  Analogue Wonderland
-</Unknown>,
-                ". There are ",
-                <PureComponent
-                  from="promotions"
-                  id="coupons-left"
-/>,
-                " left to give.",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Get £5 for film.",
-                },
-                "ref": null,
-                "rendered": "Get £5 for film.",
-                "type": "strong",
-              },
-              " As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": "Analogue Wonderland",
-                  "to": "https://analoguewonderland.co.uk/",
-                },
-                "ref": null,
-                "rendered": "Analogue Wonderland",
-                "type": [Function],
-              },
-              ". There are ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "from": "promotions",
-                  "id": "coupons-left",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              " left to give.",
-            ],
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
             "nodeType": "function",
             "props": Object {},
             "ref": null,
@@ -394,13 +290,13 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
-            metaDescription="Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
+            metaDescription="Submit you film photography essays, stories, guides, and reviews to be featured on Analog.Cafe."
             metaImage="https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg"
-            metaTitle="Get Published"
+            metaTitle="Get Featured on Analog.Cafe"
 />,
           <Unknown
             pageSubtitle="Write for Analog.Cafe"
-            pageTitle="Get Published"
+            pageTitle="Get Featured"
 />,
           <styled.section>
             <p>
@@ -435,24 +331,6 @@ ShallowWrapper {
                                     if you have an account.
                         </p>
             </styled.div>
-            <p>
-                        <strong>
-                                    Get £5 for film.
-                        </strong>
-                         As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from
-                         
-                        <Unknown
-                                    to="https://analoguewonderland.co.uk/"
-                        >
-                                    Analogue Wonderland
-                        </Unknown>
-                        . There are 
-                        <PureComponent
-                                    from="promotions"
-                                    id="coupons-left"
-                        />
-                         left to give.
-            </p>
             <Unknown />
 </styled.section>,
         ],
@@ -464,9 +342,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "metaDescription": "Submit film photography essays, stories, guides, and reviews to be featured on Analog.Cafe.",
+            "metaDescription": "Submit you film photography essays, stories, guides, and reviews to be featured on Analog.Cafe.",
             "metaImage": "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg",
-            "metaTitle": "Get Published",
+            "metaTitle": "Get Featured on Analog.Cafe",
           },
           "ref": null,
           "rendered": null,
@@ -478,7 +356,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "pageSubtitle": "Write for Analog.Cafe",
-            "pageTitle": "Get Published",
+            "pageTitle": "Get Featured",
           },
           "ref": null,
           "rendered": null,
@@ -522,24 +400,6 @@ ShallowWrapper {
                                 if you have an account.
                 </p>
 </styled.div>,
-              <p>
-                <strong>
-                                Get £5 for film.
-                </strong>
-                 As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from
-                 
-                <Unknown
-                                to="https://analoguewonderland.co.uk/"
-                >
-                                Analogue Wonderland
-                </Unknown>
-                . There are 
-                <PureComponent
-                                from="promotions"
-                                id="coupons-left"
-                />
-                 left to give.
-</p>,
               <Unknown />,
             ],
           },
@@ -677,74 +537,6 @@ ShallowWrapper {
                 },
               ],
               "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <strong>
-                    Get £5 for film.
-</strong>,
-                  " As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from",
-                  " ",
-                  <Unknown
-                    to="https://analoguewonderland.co.uk/"
->
-                    Analogue Wonderland
-</Unknown>,
-                  ". There are ",
-                  <PureComponent
-                    from="promotions"
-                    id="coupons-left"
-/>,
-                  " left to give.",
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Get £5 for film.",
-                  },
-                  "ref": null,
-                  "rendered": "Get £5 for film.",
-                  "type": "strong",
-                },
-                " As a small token of appreciation for your time, skill and talent, accepted submissions will receive an exclusive coupon for £5 from",
-                " ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "Analogue Wonderland",
-                    "to": "https://analoguewonderland.co.uk/",
-                  },
-                  "ref": null,
-                  "rendered": "Analogue Wonderland",
-                  "type": [Function],
-                },
-                ". There are ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "from": "promotions",
-                    "id": "coupons-left",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-                " left to give.",
-              ],
-              "type": "p",
             },
             Object {
               "instance": null,
