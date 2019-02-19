@@ -6,11 +6,17 @@ import Link from "../../../controls/Link"
 
 export default class extends React.PureComponent {
   componentWillMount = () => {
-    this.props.history.replace({
-      state: {
-        status: "404"
-      }
-    })
+    try {
+      this.props.history.replace({
+        state: {
+          status: "404"
+        }
+      })
+    } catch (exception) {
+      console.log(
+        "Couldn't push to history. You probably used two slashes instead of one in URL."
+      )
+    }
   }
   componentWillUnmount = () => {
     this.props.history.replace({
