@@ -110,7 +110,7 @@ export class Search extends React.PureComponent {
   handleClearSearch = event => {
     event.stopPropagation()
     this.props.getSearchResults("")
-    this.setState({ hideSearchResults: true, searchText: "" })
+    this.setState({ searchText: "" })
   }
   handleSearchText = text => {
     this.props.searchText(text)
@@ -164,6 +164,7 @@ export class Search extends React.PureComponent {
               }
               submitCallback={this.handleSubmitCallback}
               searchText={this.handleSearchText}
+              searhTextValue={this.state.searchText}
               loading={this.props.search.isFetching}
               key="SearchForm"
               style={{ zIndex: 1, position: "relative" }}
