@@ -10,15 +10,26 @@ import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
 
 export const NavModal = styled(Modal)`
-  &.active {
+  &.active,
+  &:active {
     ${navActiveCss};
     > div > div {
-      background: ${props => props.theme.color.background()};
+      background-color: ${props => props.theme.color.background()};
     }
     svg path {
       stroke: ${props => props.theme.color.background()};
     }
   }
+
+  ${props =>
+    props.special &&
+    `
+    padding-right: 0.25em !important;
+    box-shadow: ${props.theme.color.foreground()} 0 0 0 1px;
+    border: 3px double transparent;
+    background-clip: padding-box !important;
+    border-radius: 0.33em !important;
+  `};
 `
 
 const STANDARD_SET = [
@@ -72,16 +83,7 @@ const NAV_USER = props => [
     to: ROUTE_URL_USER_LANDING,
     text: (
       <span>
-        <NavAvatar
-          image={props.userImage}
-          style={{
-            width: "1em",
-            height: "1em",
-            marginBottom: "-.1em",
-            boxShadow: "0 0 0 1px"
-          }}
-        />{" "}
-        My Profile
+        <NavAvatar image={props.userImage} /> My Profile
       </span>
     )
   },
@@ -130,6 +132,7 @@ export default props => {
   return (
     <NavModal
       {...props}
+      special
       unmarked
       with={{
         info: {
@@ -145,7 +148,6 @@ export default props => {
         },
         id: "nav/more"
       }}
-      style={{ textDecoration: "none", paddingRight: ".25em" }}
     >
       {props.children}
     </NavModal>

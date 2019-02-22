@@ -9,9 +9,8 @@ import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
-import NavSections from "./NavSections"
-import NavSearch from "./NavSearch"
 import Search from "../../../icons/Search"
+import NavSearch from "./NavSearch"
 
 export const LabelWithSearchSVG = styled.span`
   svg {
@@ -73,16 +72,16 @@ export default props => {
 
   const a = "active"
 
-  const ve = "/photo-essay"
-  const fp = "/film-photography"
+  const re = "/resources"
+  const gf = "/submit"
 
-  const visualEssays = {
-    to: "/photo-essays",
-    className: isActiveUrl(ve) ? a : undefined
+  const resources = {
+    to: "/resources",
+    className: isActiveUrl(re) ? a : undefined
   }
-  const filmPhotography = {
-    to: fp,
-    className: isActiveUrl(fp) ? a : undefined
+  const getFeatured = {
+    to: gf,
+    className: isActiveUrl(gf) ? a : undefined
   }
   const navSections = {
     className: isActiveUrl("nav/sections", { modalUrl: true }) ? a : undefined
@@ -100,43 +99,47 @@ export default props => {
         "ontouchstart" in document.documentElement ? null : props.userIntent
       }
     >
-      <NavItem prime left mobile className="prime left mobile">
+      {/* <NavItem prime left mobile className="prime left mobile">
         <NavSections {...navSections}>
           <span>
             <Extra>Sections </Extra>◈
           </span>
         </NavSections>
-      </NavItem>
-      <NavItem>
-        <NavLink
-          {...visualEssays}
+      </NavItem> */}
+
+      <NavItem narrow prime left className="left">
+        <NavSearch
+          {...navSearch}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "PhotoEssays"
+              label: "Find"
             })
           }}
         >
-          <span className="wide">Photo </span>
-          Essays
-        </NavLink>
+          <LabelWithSearchSVG>
+            Find <Search />
+          </LabelWithSearchSVG>
+        </NavSearch>
       </NavItem>
+
       <NavItem>
         <NavLink
-          {...filmPhotography}
+          {...getFeatured}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "FilmPhotography"
+              label: "GetFeatured"
             })
           }}
         >
-          <span className="wide">Film </span>
-          Photography
+          {/* <span className="wide">Photo </span> */}
+          Get Featured ✹
         </NavLink>
       </NavItem>
+
       <NavItem prime center className="prime center">
         <NavLogoLink
           to={"/"}
@@ -152,13 +155,23 @@ export default props => {
           <NavLogo />
         </NavLogoLink>
       </NavItem>
-      <NavItem narrow prime left className="left">
-        <NavSearch {...navSearch}>
-          <LabelWithSearchSVG>
-            Search <Search />
-          </LabelWithSearchSVG>
-        </NavSearch>
+
+      <NavItem>
+        <NavLink
+          {...resources}
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "Resources"
+            })
+          }}
+        >
+          {/* <span className="wide">Photo </span> */}
+          Resources ☞
+        </NavLink>
       </NavItem>
+
       <NavItem prime right className="prime right">
         <NavMore
           userImage={props.userImage}
@@ -166,9 +179,9 @@ export default props => {
           userRole={props.userRole}
           {...navMore}
         >
-          More <BurgerMenu />
+          My Account
           <Extra>
-            {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
+            <NavAvatar image={props.userImage} />
           </Extra>
         </NavMore>
       </NavItem>

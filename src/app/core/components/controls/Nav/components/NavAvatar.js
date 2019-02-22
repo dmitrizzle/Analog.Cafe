@@ -5,13 +5,14 @@ import { makeFroth } from "../../../../../utils"
 
 const Avatar = styled.span`
   margin-left: 0.25em;
+
   width: 0.75em;
   height: 0.75em;
   border-radius: 1em;
   overflow: hidden;
   display: inline-block;
-  background: ${props =>
-    props.theme.color.foreground(props.theme.opacity.least)};
+  background: ${props => props.theme.color.brand()};
+  box-shadow: 0 0 0 2px #fff;
 
   & > img {
     width: 100%;
