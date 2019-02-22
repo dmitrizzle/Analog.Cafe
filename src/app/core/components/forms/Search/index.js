@@ -79,7 +79,7 @@ const NAV_BUTTONS = [
   {
     to: "/submit",
     text: "Write for Analog.Cafe",
-    keywords: "Get Featured,Write for Analog.Cafe,publish,guest blog"
+    keywords: "Get Featured,Write for Analog.Cafe,publish,guest blog, submit"
   }
 ]
 export class Search extends React.PureComponent {
@@ -218,15 +218,37 @@ export class Search extends React.PureComponent {
             ) : null,
             NAV_BUTTONS.map(button => {
               if (isInstantSearch) {
+                // FUZZY SEARCH
                 if (!button.keywords || !button.text) return null
+
+                // keywords in the button:
                 const titleKywords =
                   typeof button.text === "string" ? button.text : ""
-                const searchKeywords = button.keywords || ""
-                const concatKeywords = searchKeywords + titleKywords
-                if (
-                  !concatKeywords.toLowerCase().includes(this.state.searchText)
-                )
-                  return null
+                const metaKeywords = button.keywords || ""
+                const buttonKeywords = metaKeywords + titleKywords
+                const parsedButtonKeywords = buttonKeywords
+                  .toLowerCase()
+                  .split(/[ ,]+/)
+                  .filter(keyword => keyword.length > 0)
+
+                console.log(parsedButtonKeywords)
+
+                // keywords in search field
+                const parsedTypedKeywords = this.state.searchText
+                  .split(/[ ,]+/)
+                  .filter(keyword => keyword.length > 0)
+                  .slice(0, 5)
+
+                // find
+                let notFound = true
+                console.log(parsedTypedKeywords)
+                parsedTypedKeywords.forEach(typedKyword => {
+                  parsedButtonKeywords.forEach(buttonKeyword => {
+                    buttonKeyword.includes(typedKyword) && (notFound = false)
+                  })
+                })
+
+                if (notFound) return null
               }
 
               return button.divider ? (

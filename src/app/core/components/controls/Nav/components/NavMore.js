@@ -32,51 +32,7 @@ export const NavModal = styled(Modal)`
   `};
 `
 
-const STANDARD_SET = [
-  {
-    to: "/resources",
-    text: (
-      <span>
-        <span style={{ color: "#ed236e" }}>✯</span> Resources{" "}
-        <span style={{ color: "#ed236e" }}>✯</span>
-      </span>
-    )
-  },
-  {
-    to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
-    text: (
-      <span>
-        <span style={{ color: "#ed236e" }}>Etsy</span> Store
-      </span>
-    )
-  },
-  { divider: true },
-  {
-    to: "/photo-essays",
-    text: "Photo Essays"
-  },
-  {
-    to: "/film-photography",
-    text: "Film Photography"
-  },
-  {
-    to: "/editorials",
-    text: "Editorials"
-  },
-  {
-    to: "/solo-projects",
-    text: "Solo Projects"
-  },
-  { to: "/collaborations", text: "Collaborations" },
-  { divider: true },
-  { to: "/privacy-policy", text: "Privacy" },
-  { to: "/submit/rules", text: "Rules" },
-  { divider: true },
-  {
-    to: "/about",
-    text: "About"
-  }
-]
+const STANDARD_SET = []
 
 const NAV_USER = props => [
   {
