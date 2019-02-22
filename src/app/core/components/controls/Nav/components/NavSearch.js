@@ -17,7 +17,7 @@ export default props => {
           socialButtons: true,
           title: (
             <LabelWithSearchSVG>
-              <Search /> Search
+              <Search /> Find
             </LabelWithSearchSVG>
           )
         },
