@@ -15,6 +15,7 @@ export const SearchVisibility = styled.div`
   ${props => props.menu && props.theme.size.breakpoint.min.l`display:none;`};
 `
 
+// TODO: sign in sign up account instant search results
 const NAV_BUTTONS = [
   {
     to: "/about",
