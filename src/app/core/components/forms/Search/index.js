@@ -1,7 +1,9 @@
 import { connect } from "react-redux"
+import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 import styled from "styled-components"
 
+import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
 import { TEXT_LABELS } from "../../../constants/messages-"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
 import { getSearchResults } from "../../../store/actions-search"
@@ -9,25 +11,42 @@ import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivi
 import CardButton, {
   CardSearchItem
 } from "../../controls/Card/components/CardButton"
+import NavAvatar from "../../controls/Nav/components/NavAvatar"
 import SearchForm from "./components/SearchForm"
 
 export const SearchVisibility = styled.div`
   ${props => props.menu && props.theme.size.breakpoint.min.l`display:none;`};
 `
 
-// TODO: sign in sign up account instant search results
-const NAV_BUTTONS = [
-  {
-    to: "/about",
-    text: "About",
+// this function helps with refactoring
+export const buttonMaker = (to, options = {}) => {
+  let keywords = options.keywords || ""
+  const attributes = options.attributes || {}
+  if (TEXT_ROUTE_LABELS[to]) {
+    keywords =
+      TEXT_ROUTE_LABELS["/film-photography"].title +
+      TEXT_ROUTE_LABELS["/film-photography"].description
+  }
+  return {
+    to,
+    text:
+      options.text ||
+      to
+        .replace("-", " ")
+        .replace("/", "")
+        .replace(/\b\w/g, l => l.toUpperCase()),
+    keywords,
+    ...attributes
+  }
+}
+const NAV_BUTTONS = props => [
+  buttonMaker("/about", {
     keywords: "about,who,what,where,how,authors,editors,contact,backers"
-  },
-  {
-    to: "/resources",
-    text: "Resources",
+  }),
+  buttonMaker("/resources", {
     keywords:
       "photography,podcast,audio,downloads,guides,reference,price,reviews"
-  },
+  }),
   {
     to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
     text: (
@@ -38,34 +57,10 @@ const NAV_BUTTONS = [
     keywords: "etsy,store,buy,shop,camera"
   },
   { divider: true },
-  {
-    to: "/film-photography",
-    text: "Film Photography",
-    keywords:
-      TEXT_ROUTE_LABELS["/film-photography"].title +
-      TEXT_ROUTE_LABELS["/film-photography"].description
-  },
-  {
-    to: "/photo-essays",
-    text: "Photo Essays",
-    keywords:
-      TEXT_ROUTE_LABELS["/photo-essays"].title +
-      TEXT_ROUTE_LABELS["/photo-essays"].description
-  },
-  {
-    to: "/editorials",
-    text: "Editorials",
-    keywords:
-      TEXT_ROUTE_LABELS["/editorials"].title +
-      TEXT_ROUTE_LABELS["/editorials"].description
-  },
-  {
-    to: "/solo-projects",
-    text: "Solo Projects",
-    keywords:
-      TEXT_ROUTE_LABELS["/solo-projects"].title +
-      TEXT_ROUTE_LABELS["/solo-projects"].description
-  },
+  buttonMaker("/film-photography"),
+  buttonMaker("/photo-essays"),
+  buttonMaker("/editorials"),
+  buttonMaker("/solo-projects"),
   {
     to: "/collaborations",
     text: "Collaborations",
@@ -79,8 +74,40 @@ const NAV_BUTTONS = [
   {
     to: "/submit",
     text: "Write for Analog.Cafe",
-    keywords: "Get Featured,Write for Analog.Cafe,publish,guest blog, submit"
-  }
+    keywords:
+      "Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
+  },
+  buttonMaker("sign-in", {
+    keywords: "sign up, create account, password",
+    attributes: {
+      hidden: true,
+      visitorOnly: true
+    }
+  }),
+  {
+    to: "/submit/compose",
+    text: loadTextContent().length > 0 ? "✏︎ Edit Draft" : "✏︎ New Submission",
+    keywords: "compose, submit, write, upload, send, cntribute",
+    hidden: true
+  },
+  {
+    to: ROUTE_URL_USER_LANDING,
+    text: (
+      <span>
+        <NavAvatar image={props.user.info.image} /> My Profile
+      </span>
+    ),
+    keywords: "My Profile, me, account, edit, sign in, portfolio",
+    hidden: true,
+    memberOnly: true
+  },
+  buttonMaker("/sign-out", {
+    keywords: "log out, exit",
+    attributes: {
+      hidden: true,
+      memberOnly: true
+    }
+  })
 ]
 export class Search extends React.PureComponent {
   constructor(props) {
@@ -216,7 +243,7 @@ export class Search extends React.PureComponent {
             !haveSearchResults ? (
               <ButtonGroupDivider key="searchTypeDivider" />
             ) : null,
-            NAV_BUTTONS.map(button => {
+            NAV_BUTTONS(this.props).map(button => {
               if (isInstantSearch) {
                 // FUZZY SEARCH
                 if (!button.keywords || !button.text) return null
@@ -231,8 +258,6 @@ export class Search extends React.PureComponent {
                   .split(/[ ,]+/)
                   .filter(keyword => keyword.length > 0)
 
-                console.log(parsedButtonKeywords)
-
                 // keywords in search field
                 const parsedTypedKeywords = this.state.searchText
                   .split(/[ ,]+/)
@@ -241,7 +266,6 @@ export class Search extends React.PureComponent {
 
                 // find
                 let notFound = true
-                console.log(parsedTypedKeywords)
                 parsedTypedKeywords.forEach(typedKyword => {
                   parsedButtonKeywords.forEach(buttonKeyword => {
                     buttonKeyword.includes(typedKyword) && (notFound = false)
@@ -250,6 +274,17 @@ export class Search extends React.PureComponent {
 
                 if (notFound) return null
               }
+
+              // hidden buttons which appear only for fuzzy search
+              if (button.hidden && !isInstantSearch) return null
+
+              // buttons requiring logged in users aren't shown in search for visitors
+              if (button.memberOnly && this.props.user.status !== "ok")
+                return null
+
+              // buttons only for visitors/signed-out users
+              if (button.visitorOnly && this.props.user.status === "ok")
+                return null
 
               return button.divider ? (
                 <ButtonGroupDivider key={`div_${Math.random()}`} />
@@ -272,7 +307,8 @@ export class Search extends React.PureComponent {
 
 const mapStateToProps = state => {
   return {
-    search: state.search
+    search: state.search,
+    user: state.user
   }
 }
 const mapDispatchToProps = dispatch => {

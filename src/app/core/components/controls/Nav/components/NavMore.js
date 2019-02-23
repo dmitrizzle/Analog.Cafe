@@ -3,9 +3,11 @@ import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actio
 import React from "react"
 import styled from "styled-components"
 
-import { BurgerMenu } from "./NavGeneral"
+import { GA } from "../../../../../utils"
+import { NavLink, navActiveCss } from "./NavLinks"
 import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
-import { navActiveCss } from "./NavLinks"
+import { buttonMaker } from "../../../forms/Search"
+import { isActiveUrl } from "./NavGeneral"
 import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
 
@@ -32,64 +34,28 @@ export const NavModal = styled(Modal)`
   `};
 `
 
-const STANDARD_SET = []
-
 const NAV_USER = props => [
   {
     to: ROUTE_URL_USER_LANDING,
-    text: (
-      <span>
-        <NavAvatar image={props.userImage} /> My Profile
-      </span>
-    )
+    text: <span>❀ My Profile</span>
   },
   {
     to: "/submit/compose",
     text: props.hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
   },
-  { divider: true },
-  ...STANDARD_SET,
-  {
-    to: "/sign-out",
-    text: "Sign Out",
-    inverse: true
-  }
-]
-
-const NAV_VISITOR = [
-  ...STANDARD_SET,
-  {
-    to: "/sign-in",
-    text: "Sign In"
-  },
-  {
-    to: "/submit",
-    text: "Get Published"
-  }
+  buttonMaker("/sign-out"),
+  props.userRole === "admin"
+    ? buttonMaker("/admin", { attributes: { branded: true } })
+    : null
 ]
 
 export default props => {
-  let buttons =
-    props.userStatus === "ok"
-      ? NAV_USER({
-          userImage: props.userImage,
-          hasDraft: loadTextContent().length > 0
-        })
-      : NAV_VISITOR
-  if (props.userRole === "admin")
-    buttons = [
-      ...buttons,
-      {
-        to: "/admin",
-        text: "Admin",
-        branded: true
-      }
-    ]
-  return (
+  return props.userStatus === "ok" ? (
     <NavModal
       {...props}
       special
       unmarked
+      className={isActiveUrl("/profile") ? "active" : undefined}
       with={{
         info: {
           search: true,
@@ -97,15 +63,31 @@ export default props => {
           menu: true,
           title: (
             <span>
-              <BurgerMenu /> More
+              <NavAvatar image={props.userImage} /> My Account
             </span>
           ),
-          buttons
+          buttons: NAV_USER({
+            ...props,
+            hasDraft: loadTextContent().length > 0
+          })
         },
         id: "nav/more"
       }}
     >
       {props.children}
     </NavModal>
+  ) : (
+    <NavLink
+      to="/sign-in"
+      onClick={() => {
+        GA.event({
+          category: "Navigation",
+          action: "Nav.click",
+          label: "Account"
+        })
+      }}
+    >
+      {props.children}
+    </NavLink>
   )
 }

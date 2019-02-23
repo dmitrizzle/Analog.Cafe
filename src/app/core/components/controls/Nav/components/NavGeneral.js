@@ -54,22 +54,22 @@ export const BurgerMenu = () => (
   </Burger>
 )
 
-export default props => {
-  const isActiveUrl = (to, options = {}) => {
-    const currentUrl = options.modalUrl
-      ? props.modalUrl
-      : window.location.pathname
-    if (options.modalUrl && props.isModalHidden) return false
-    if (currentUrl === to) return true
-    if (
-      currentUrl &&
-      currentUrl.includes(ROUTE_URL_ARTICLES) &&
-      props.articleTag === to.replace("/", "")
-    )
-      return true
-    return false
-  }
+export const isActiveUrl = (to, options = {}, props) => {
+  const currentUrl = options.modalUrl
+    ? props.modalUrl
+    : window.location.pathname
+  if (options.modalUrl && props.isModalHidden) return false
+  if (currentUrl === to) return true
+  if (
+    currentUrl &&
+    currentUrl.includes(ROUTE_URL_ARTICLES) &&
+    props.articleTag === to.replace("/", "")
+  )
+    return true
+  return false
+}
 
+export default props => {
   const a = "active"
 
   const re = "/resources"
@@ -84,13 +84,19 @@ export default props => {
     className: isActiveUrl(gf) ? a : undefined
   }
   const navSections = {
-    className: isActiveUrl("nav/sections", { modalUrl: true }) ? a : undefined
+    className: isActiveUrl("nav/sections", { modalUrl: true }, props)
+      ? a
+      : undefined
   }
   const navMore = {
-    className: isActiveUrl("nav/more", { modalUrl: true }) ? a : undefined
+    className: isActiveUrl("nav/more", { modalUrl: true }, props)
+      ? a
+      : undefined
   }
   const navSearch = {
-    className: isActiveUrl("nav/search", { modalUrl: true }) ? a : undefined
+    className: isActiveUrl("nav/search", { modalUrl: true }, props)
+      ? a
+      : undefined
   }
 
   return (
@@ -135,7 +141,6 @@ export default props => {
             })
           }}
         >
-          {/* <span className="wide">Photo </span> */}
           Get Featured ✹
         </NavLink>
       </NavItem>

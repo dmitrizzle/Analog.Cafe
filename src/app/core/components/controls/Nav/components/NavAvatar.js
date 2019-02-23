@@ -15,7 +15,8 @@ const Avatar = styled.span`
   box-shadow: 0 0 0 2px #fff;
 
   & > img {
-    width: 100%;
+    width: 300%;
+    margin: -100%;
     display: block;
   }
 `
