@@ -24,6 +24,7 @@ export const buttonMaker = (to, options = {}) => {
   const attributes = options.attributes || {}
   if (TEXT_ROUTE_LABELS[to]) {
     keywords =
+      keywords +
       TEXT_ROUTE_LABELS["/film-photography"].title +
       TEXT_ROUTE_LABELS["/film-photography"].description
   }
@@ -57,8 +58,8 @@ const NAV_BUTTONS = props => [
     keywords: "etsy,store,buy,shop,camera"
   },
   { divider: true },
-  buttonMaker("/film-photography"),
-  buttonMaker("/photo-essays"),
+  buttonMaker("/film-photography", { keywords: "science" }),
+  buttonMaker("/photo-essays", { keywords: "art" }),
   buttonMaker("/editorials"),
   buttonMaker("/solo-projects"),
   {

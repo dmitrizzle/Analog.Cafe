@@ -9,8 +9,8 @@ import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
-import Search from "../../../icons/Search"
 import NavSearch from "./NavSearch"
+import Search from "../../../icons/Search"
 
 export const LabelWithSearchSVG = styled.span`
   svg {
@@ -25,39 +25,18 @@ export const LabelWithSearchSVG = styled.span`
   }
 `
 
-export const Burger = styled.div`
-  display: inline-block;
-  width: 1em;
-  height: 0.85em;
-  margin-left: 0.15em;
-
-  ${props => props.theme.size.breakpoint.min.m`
-  margin-bottom: -1px;
-  `} > div {
-    height: 2px;
-    margin: 3px 1px;
-    background: ${props => props.theme.color.foreground()};
-  }
-`
-
 export const Extra = styled.span`
   ${props => props.theme.size.breakpoint.max.s`
 display: none;
 `};
 `
 
-export const BurgerMenu = () => (
-  <Burger>
-    <div />
-    <div />
-    <div />
-  </Burger>
-)
-
 export const isActiveUrl = (to, options = {}, props) => {
   const currentUrl = options.modalUrl
     ? props.modalUrl
     : window.location.pathname
+  if (props) console.log(to, currentUrl)
+
   if (options.modalUrl && props.isModalHidden) return false
   if (currentUrl === to) return true
   if (
@@ -76,25 +55,25 @@ export default props => {
   const gf = "/submit"
 
   const resources = {
-    to: "/resources",
+    to: re,
     className: isActiveUrl(re) ? a : undefined
   }
   const getFeatured = {
     to: gf,
     className: isActiveUrl(gf) ? a : undefined
   }
-  const navSections = {
-    className: isActiveUrl("nav/sections", { modalUrl: true }, props)
+
+  const navSearch = {
+    className: isActiveUrl("nav/find", { modalUrl: true }, props)
       ? a
       : undefined
   }
   const navMore = {
-    className: isActiveUrl("nav/more", { modalUrl: true }, props)
-      ? a
-      : undefined
-  }
-  const navSearch = {
-    className: isActiveUrl("nav/search", { modalUrl: true }, props)
+    //isActiveUrl("/profile") ? "active" : undefined
+    className: (isActiveUrl("nav/account", { modalUrl: true }, props) ||
+    isActiveUrl("/profile")
+    ? "active"
+    : undefined)
       ? a
       : undefined
   }

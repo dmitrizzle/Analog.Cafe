@@ -7,7 +7,6 @@ import { GA } from "../../../../../utils"
 import { NavLink, navActiveCss } from "./NavLinks"
 import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
 import { buttonMaker } from "../../../forms/Search"
-import { isActiveUrl } from "./NavGeneral"
 import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
 
@@ -55,7 +54,6 @@ export default props => {
       {...props}
       special
       unmarked
-      className={isActiveUrl("/profile") ? "active" : undefined}
       with={{
         info: {
           search: true,
@@ -71,7 +69,7 @@ export default props => {
             hasDraft: loadTextContent().length > 0
           })
         },
-        id: "nav/more"
+        id: "nav/account"
       }}
     >
       {props.children}

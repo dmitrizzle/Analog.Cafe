@@ -21,7 +21,7 @@ export default props => {
             </LabelWithSearchSVG>
           )
         },
-        id: "nav/search"
+        id: "nav/find"
       }}
       style={{ textDecoration: "none", paddingRight: ".25em" }}
     >
