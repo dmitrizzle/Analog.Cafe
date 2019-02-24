@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import { GA } from "../../../../../utils"
 import { NavLink, NavLogoLink } from "./NavLinks"
-import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
@@ -35,16 +34,15 @@ export const isActiveUrl = (to, options = {}, props) => {
   const currentUrl = options.modalUrl
     ? props.modalUrl
     : window.location.pathname
-  if (props) console.log(to, currentUrl)
 
   if (options.modalUrl && props.isModalHidden) return false
   if (currentUrl === to) return true
-  if (
-    currentUrl &&
-    currentUrl.includes(ROUTE_URL_ARTICLES) &&
-    props.articleTag === to.replace("/", "")
-  )
-    return true
+  // if (
+  //   currentUrl &&
+  //   currentUrl.includes(ROUTE_URL_ARTICLES) &&
+  //   props.articleTag === to.replace("/", "")
+  // )
+  //   return true
   return false
 }
 

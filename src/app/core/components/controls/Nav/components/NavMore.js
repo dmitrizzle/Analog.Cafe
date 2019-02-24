@@ -1,7 +1,7 @@
 // NOTE: `className` props are used in index.html
 import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import { GA } from "../../../../../utils"
 import { NavLink, navActiveCss } from "./NavLinks"
@@ -10,7 +10,7 @@ import { buttonMaker } from "../../../forms/Search"
 import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
 
-export const NavModal = styled(Modal)`
+const accountCss = css`
   &.active,
   &:active {
     ${navActiveCss};
@@ -25,12 +25,18 @@ export const NavModal = styled(Modal)`
   ${props =>
     props.special &&
     `
-    padding-right: 0.25em !important;
-    box-shadow: ${props.theme.color.foreground()} 0 0 0 1px;
-    border: 3px double transparent;
-    background-clip: padding-box !important;
-    border-radius: 0.33em !important;
-  `};
+  padding-right: 0.25em !important;
+  box-shadow: ${props.theme.color.foreground()} 0 0 0 1px;
+  border: 3px double transparent;
+  background-clip: padding-box !important;
+  border-radius: 0.33em !important;
+`};
+`
+export const NavModal = styled(Modal)`
+  ${accountCss};
+`
+const NavAccountLink = styled(NavLink)`
+  ${accountCss};
 `
 
 const NAV_USER = props => [
@@ -75,7 +81,8 @@ export default props => {
       {props.children}
     </NavModal>
   ) : (
-    <NavLink
+    <NavAccountLink
+      special
       to="/sign-in"
       onClick={() => {
         GA.event({
@@ -86,6 +93,6 @@ export default props => {
       }}
     >
       {props.children}
-    </NavLink>
+    </NavAccountLink>
   )
 }
