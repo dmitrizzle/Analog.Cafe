@@ -88,17 +88,17 @@
   }
 }
 
-.appNav li.mobile .narrow {
+.appNav li .narrow {
   display: none;
 }
-@media (max-width: 930px) {
+@media (max-width: 1080px) {
   .appNav li {
     width: 8em;
   }
   .appNav li .wide {
     display: none;
   }
-  .appNav li.mobile .narrow {
+  .appNav li .narrow {
     display: inline;
   }
 }

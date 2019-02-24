@@ -24,10 +24,25 @@ export const LabelWithSearchSVG = styled.span`
   }
 `
 
-export const Extra = styled.span`
+export const NotOnMicroScreens = styled.span`
   ${props => props.theme.size.breakpoint.max.s`
-display: none;
+  display: none;
 `};
+`
+export const OnlyMicroScreens = styled.span`
+  ${props => props.theme.size.breakpoint.min.m`
+    display: none;
+  `};
+`
+export const Extra = styled.span`
+  ${props => props.theme.size.breakpoint.max.l`
+    display: none;
+  `};
+`
+export const Condensed = styled.span`
+  ${props => props.theme.size.breakpoint.min.xl`
+    display: none;
+  `};
 `
 
 export const isActiveUrl = (to, options = {}, props) => {
@@ -67,7 +82,6 @@ export default props => {
       : undefined
   }
   const navMore = {
-    //isActiveUrl("/profile") ? "active" : undefined
     className: (isActiveUrl("nav/account", { modalUrl: true }, props) ||
     isActiveUrl("/profile")
     ? "active"
@@ -90,7 +104,7 @@ export default props => {
         </NavSections>
       </NavItem> */}
 
-      <NavItem narrow prime left className="left">
+      <NavItem narrow prime left className="prime left">
         <NavSearch
           {...navSearch}
           onClick={() => {
@@ -118,7 +132,8 @@ export default props => {
             })
           }}
         >
-          Get Featured ✹
+          <Extra>Get Featured</Extra>
+          <Condensed>Write</Condensed> ✹
         </NavLink>
       </NavItem>
 
@@ -161,10 +176,10 @@ export default props => {
           userRole={props.userRole}
           {...navMore}
         >
-          My Account
-          <Extra>
-            <NavAvatar image={props.userImage} />
-          </Extra>
+          <Extra>My </Extra>
+          <NotOnMicroScreens>Account </NotOnMicroScreens>
+          <OnlyMicroScreens>Me </OnlyMicroScreens>
+          <NavAvatar image={props.userImage} />
         </NavMore>
       </NavItem>
     </ul>

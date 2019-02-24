@@ -24,13 +24,13 @@ const accountCss = css`
 
   ${props =>
     props.special &&
-    `
-  padding-right: 0.25em !important;
-  box-shadow: ${props.theme.color.foreground()} 0 0 0 1px;
-  border: 3px double transparent;
-  background-clip: padding-box !important;
-  border-radius: 0.33em !important;
-`};
+    props.theme.size.breakpoint.min.l`
+    padding-right: 0.25em !important;
+    box-shadow: ${props.theme.color.foreground()} 0 0 0 1px;
+    border: 3px double transparent;
+    background-clip: padding-box !important;
+    border-radius: 0.33em !important;
+  `};
 `
 export const NavModal = styled(Modal)`
   ${accountCss};
