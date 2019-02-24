@@ -27,7 +27,8 @@ const StyledLink = styled(Link)`
       : null};
 `
 export const NavLink = props => {
-  return <StyledLink {...props} activeClassName="active" />
+  var { special, ...other } = props
+  return <StyledLink {...other} activeClassName="active" />
 }
 export const NavLogoLink = props => {
   return <Link {...props} activeClassName="active" />
