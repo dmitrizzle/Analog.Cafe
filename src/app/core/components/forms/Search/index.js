@@ -74,7 +74,7 @@ const NAV_BUTTONS = props => [
   { to: "/privacy-policy", text: "Privacy", keywords: "privacy policy" },
   {
     to: "/submit",
-    text: "Write for Analog.Cafe",
+    text: "Submit Your Photography",
     keywords:
       "Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
   },

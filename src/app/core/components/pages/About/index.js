@@ -68,6 +68,7 @@ const AuthorIcon = styled(Link)`
   overflow: hidden;
   border-radius: ${props => props.theme.size.block.padding}em;
   background-size: cover !important;
+  background-color: ${props => props.theme.color.brand()};
 `
 
 class About extends React.PureComponent {

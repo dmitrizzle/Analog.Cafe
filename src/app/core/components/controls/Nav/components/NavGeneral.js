@@ -133,7 +133,7 @@ export default props => {
           }}
         >
           <Extra>Get Featured</Extra>
-          <Condensed>Write</Condensed> ✹
+          <Condensed>Submit</Condensed> ✹
         </NavLink>
       </NavItem>
 

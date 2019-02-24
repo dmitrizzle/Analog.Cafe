@@ -38,7 +38,7 @@ export default () => {
       />
       <HeaderLarge
         pageTitle="Get Featured"
-        pageSubtitle="Write for Analog.Cafe"
+        pageSubtitle="Get your work published on Analog.Cafe"
       />
       <ArticleSection>
         <p>

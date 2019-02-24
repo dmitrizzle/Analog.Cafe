@@ -112,7 +112,7 @@ export default props => {
         </h3>
         <p>
           <strong>
-            <Link to="/submit">Write for Analog.Cafe</Link>
+            <Link to="/submit">Open Call</Link>
           </strong>{" "}
           – submit your photo essays, reviews, and articles here.
         </p>
