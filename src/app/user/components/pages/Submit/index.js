@@ -5,6 +5,7 @@ import { makeFroth } from "../../../../utils"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
+import Figure from "../../../../core/components/vignettes/Picture/components/Figure"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import HowToSubmit from "./components/HowToSubmit"
 import Link from "../../../../core/components/controls/Link"
@@ -41,9 +42,15 @@ export default () => {
         pageSubtitle="Get your work published on Analog.Cafe"
       />
       <ArticleSection>
-        <p>
+        <Figure
+          src="image-froth_1499794_Sy-vi6yLE"
+          feature
+          alt="Call for entries. Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews."
+        />
+        <p>Analog.Cafe regularly publishes guest photo essays and articles.</p>
+        {/* <p>
           <strong>Do you shoot film?</strong> <SubmitIntro />
-        </p>
+        </p> */}
 
         <ButtonGroup style={{ paddingBottom: "1.5em" }}>
           <LinkButton to={"/submit/compose"} branded>
@@ -57,18 +64,7 @@ export default () => {
           </p>
         </ButtonGroup>
 
-        {/* <p>
-          <strong>Get £5 for film.</strong> As a small token of appreciation for
-          your time, skill and talent, accepted submissions will receive an
-          exclusive coupon for £5 from{" "}
-          <Link to="https://analoguewonderland.co.uk/">
-            Analogue Wonderland
-          </Link>
-          . There are <RemoteMessage from="promotions" id="coupons-left" /> left
-          to give.
-        </p> */}
-
-        <HowToSubmit />
+        {/* <HowToSubmit /> */}
       </ArticleSection>
     </ArticleWrapper>
   )

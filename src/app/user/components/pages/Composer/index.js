@@ -17,7 +17,7 @@ import TitleCreator from "./components/TitleCreator"
 import WordCounter from "./components/WordCounter"
 
 const TITLE_PLACEHOLDER = {
-  title: "Title",
+  title: "Write Your Title Here",
   subtitle: "Subtitle (Optional)"
 }
 const Composer = props => {
