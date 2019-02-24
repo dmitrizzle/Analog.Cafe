@@ -105,7 +105,10 @@ class SignIn extends React.PureComponent {
       return (
         <ArticleWrapper>
           <MetaTags metaTitle="Sign In" />
-          <HeaderLarge pageTitle="Sign In" pageSubtitle="Authors and Editors" />
+          <HeaderLarge
+            pageTitle="Sign In"
+            pageSubtitle="Or create new account"
+          />
           <ArticleSection>
             <SignInInfo stateSessionInfo={this.state.sessionInfo} />
 
@@ -162,7 +165,7 @@ class SignIn extends React.PureComponent {
               Your account is created automatically whenever you click either of
               the buttons above. You do not need to remember passwords. If you
               already have an account, simply use the same method to sign in as
-              you did the first time – we’ll open your existing account for you.
+              you did the first time – we’ll take you to your existing account.
               All accounts are secure and adhere to our strict{" "}
               <Link to="/privacy-policy">privacy policy</Link>.
             </p>

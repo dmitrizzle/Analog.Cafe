@@ -76,7 +76,7 @@ const NAV_BUTTONS = props => [
     to: "/submit",
     text: "Submit Your Photography",
     keywords:
-      "Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
+      "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
   },
   buttonMaker("sign-in", {
     keywords: "sign up, create account, password",

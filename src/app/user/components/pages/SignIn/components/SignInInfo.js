@@ -3,7 +3,8 @@ import React from "react"
 export default props => {
   return (
     <p style={{ textAlign: "center", marginBottom: "0" }}>
-      Sign in to send your submission or edit your profile.
+      Get <strong>free access</strong> to film photography resources and
+      exclusive content.
       <br />
       <small>
         {props.stateSessionInfo.hasLoggedIn &&
