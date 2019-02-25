@@ -167,7 +167,7 @@ class EditProfile extends React.PureComponent {
             placeholder="Your Name"
             onChange={this.handleTitleChange}
             value={this.state.title}
-            inputDesignation="title"
+            // inputDesignation="title"
             maxLength={INPUT_TITLE_LIMIT}
             autoFocus
             warning={this.state.warningTitle}
@@ -207,7 +207,7 @@ class EditProfile extends React.PureComponent {
           branded
           loading={this.state.setUserInfoPending ? true : false}
         >
-          {TEXT_EMOJIS.CHECKMARK} Save
+          {!this.state.setUserInfoPending && TEXT_EMOJIS.CHECKMARK} Done
         </Button>
       </ArticleWrapper>
     ) : (

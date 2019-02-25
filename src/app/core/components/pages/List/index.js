@@ -34,6 +34,22 @@ const PlaceholderHowToSubmit = Loadable({
   loading: () => null
 })
 
+const ProfileImage = props => (
+  <figure>
+    <Placeholder frothId={props.image}>
+      <img
+        src={
+          makeFroth({
+            src: props.image,
+            size: "s"
+          }).src
+        }
+        alt={props.title}
+      />
+    </Placeholder>
+  </figure>
+)
+
 class List extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -84,9 +100,23 @@ class List extends React.PureComponent {
       (this.props.list.filter.author && this.props.list.filter.author.name
         ? " by " + this.props.list.filter.author.name
         : "")
+    const isUserDashboard = this.props.history.location.pathname.includes(
+      ROUTE_URL_USER_LANDING
+    )
     const isProfilePage =
-      this.props.location.pathname.includes("/author/") ||
-      this.props.location.pathname.includes(ROUTE_URL_USER_LANDING)
+      this.props.location.pathname.includes("/author/") || isUserDashboard
+
+    let profileImage
+    if (this.props.list.author) {
+      profileImage =
+        this.props.list.author.image || "image-froth_1000000_SJKoyDgUV"
+      if (!isUserDashboard && !this.props.list.author.image) profileImage = null
+    }
+
+    const doesAuthorHaveLink =
+      this.props.list.author &&
+      this.props.list.author.buttons[1] &&
+      this.props.list.author.buttons[1].text
 
     return (
       <div>
@@ -125,14 +155,17 @@ class List extends React.PureComponent {
                   {this.props.list.author &&
                     this.props.user.info.id === this.props.list.author.id && (
                       <React.Fragment>
-                        {this.props.history.location.pathname.includes(
-                          ROUTE_URL_USER_LANDING
-                        ) ? (
+                        {isUserDashboard ? (
                           <React.Fragment>
                             <span style={{ fontStyle: "normal" }}>✐ </span>
                             <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
                               Edit Profile
+                            </Link>{" "}
+                            <span style={{ fontStyle: "normal" }}>|</span>{" "}
+                            <Link to={`/author/${this.props.user.info.id}`}>
+                              My Public Profile
                             </Link>
+                            <span style={{ fontStyle: "normal" }}> ☆</span>
                           </React.Fragment>
                         ) : (
                           <React.Fragment>
@@ -146,35 +179,33 @@ class List extends React.PureComponent {
                     )}
                 </Byline>
               </HeaderLarge>
-              <ArticleSection
-                style={{
-                  zIndex: 11,
-                  position: "relative"
-                }}
-              >
-                <CardColumns>
-                  {this.props.list.author &&
-                    this.props.list.author.image && (
+
+              {this.props.list.author && (
+                <ArticleSection
+                  style={{
+                    zIndex: 11,
+                    position: "relative"
+                  }}
+                >
+                  <CardColumns>
+                    {profileImage && (
                       <CardIntegratedForColumns>
-                        <figure>
-                          <Placeholder frothId={this.props.list.author.image}>
-                            <img
-                              src={
-                                makeFroth({
-                                  src: this.props.list.author.image,
-                                  size: "s"
-                                }).src
-                              }
-                              alt={this.props.list.author.title}
+                        {isUserDashboard ? (
+                          <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
+                            <ProfileImage
+                              image={profileImage}
+                              title={this.props.list.author.title}
                             />
-                          </Placeholder>
-                        </figure>
+                          </Link>
+                        ) : (
+                          <ProfileImage
+                            image={profileImage}
+                            title={this.props.list.author.title}
+                          />
+                        )}
                       </CardIntegratedForColumns>
                     )}
-                  {this.props.list.author &&
-                    (this.props.list.author.text ||
-                      (this.props.list.author.buttons[1] &&
-                        this.props.list.author.buttons[1].text)) && (
+                    {(this.props.list.author.text || doesAuthorHaveLink) && (
                       <CardIntegratedForColumns>
                         {this.props.list.author.text && (
                           <figcaption style={{ fontSize: ".8em" }}>
@@ -183,19 +214,50 @@ class List extends React.PureComponent {
                             </CardCaption>
                           </figcaption>
                         )}
-                        {this.props.list.author.buttons[1] &&
-                          this.props.list.author.buttons[1].text && (
-                            <CardButton
-                              to={this.props.list.author.buttons[1].to}
-                              branded
-                            >
-                              {this.props.list.author.buttons[1].text}
-                            </CardButton>
-                          )}
+                        {doesAuthorHaveLink && (
+                          <CardButton
+                            to={this.props.list.author.buttons[1].to}
+                            branded
+                          >
+                            {this.props.list.author.buttons[1].text}
+                          </CardButton>
+                        )}
                       </CardIntegratedForColumns>
                     )}
-                </CardColumns>
-              </ArticleSection>
+                    {isUserDashboard &&
+                      (!this.props.list.author.text || !doesAuthorHaveLink) && (
+                        <CardIntegratedForColumns>
+                          <figcaption style={{ fontSize: ".8em" }}>
+                            <CardCaption>
+                              {this.props.list.author.text || (
+                                <span>
+                                  <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
+                                    Tell the world
+                                  </Link>{" "}
+                                  abot yourself.
+                                </span>
+                              )}
+                            </CardCaption>
+                          </figcaption>
+
+                          <CardButton
+                            to={
+                              doesAuthorHaveLink
+                                ? this.props.list.author.buttons[1].to
+                                : `${ROUTE_URL_USER_LANDING}/edit`
+                            }
+                            branded
+                          >
+                            {doesAuthorHaveLink
+                              ? this.props.list.author.buttons[1].text
+                              : "Add a Link"}
+                          </CardButton>
+                        </CardIntegratedForColumns>
+                      )}
+                  </CardColumns>
+                </ArticleSection>
+              )}
+
               {this.props.user.connection.status !== "offline" &&
                 this.props.list.page["items-total"] === 0 &&
                 this.props.me && <PlaceholderHowToSubmit />}

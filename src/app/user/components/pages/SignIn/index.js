@@ -25,7 +25,7 @@ import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
 import Modal from "../../../../core/components/controls/Modal"
-import SignInInfo from "./components/SignInInfo"
+import SignInInfo, { Hint } from "./components/SignInInfo"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
 const POPUP_WINDOW = name => {
@@ -110,9 +110,9 @@ class SignIn extends React.PureComponent {
             pageSubtitle="Or create new account"
           />
           <ArticleSection>
-            <SignInInfo stateSessionInfo={this.state.sessionInfo} />
+            <SignInInfo />
 
-            <ButtonGroup>
+            <ButtonGroup style={{ padding: "0.5em 0 4em" }}>
               <TwitterLinkButton
                 to="#twitter-sign-in"
                 onClick={this.handleTwitterButton}
@@ -161,6 +161,7 @@ class SignIn extends React.PureComponent {
                 <SignInWithEmail />
               </CardIntegrated>
             </ButtonGroup>
+            <Hint stateSessionInfo={this.state.sessionInfo} />
             <p>
               Your account is created automatically whenever you click either of
               the buttons above. You do not need to remember passwords. If you
