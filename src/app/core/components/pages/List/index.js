@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import Loadable from "react-loadable"
 import React from "react"
 
@@ -156,17 +157,31 @@ class List extends React.PureComponent {
                     this.props.user.info.id === this.props.list.author.id && (
                       <React.Fragment>
                         {isUserDashboard ? (
-                          <React.Fragment>
-                            <span style={{ fontStyle: "normal" }}>✐ </span>
-                            <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
-                              Edit Profile
-                            </Link>{" "}
-                            <span style={{ fontStyle: "normal" }}>|</span>{" "}
-                            <Link to={`/author/${this.props.user.info.id}`}>
-                              My Public Profile
-                            </Link>
-                            <span style={{ fontStyle: "normal" }}> ☆</span>
-                          </React.Fragment>
+                          <div style={{ overflow: "scroll", minWidth: 320 }}>
+                            <div style={{ width: "40em" }}>
+                              <span style={{ fontStyle: "normal" }}>   ✱ </span>
+                              <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
+                                Edit Profile
+                              </Link>{" "}
+                              <span style={{ fontStyle: "normal" }}>   ❦ </span>
+                              <Link to="#favourites">Favourites</Link>{" "}
+                              <span style={{ fontStyle: "normal" }}>
+                                   ✒︎{" "}
+                              </span>
+                              <strong>
+                                <Link to="#submissions">My Submissions</Link>
+                              </strong>
+                              <span style={{ fontStyle: "normal" }}>
+                                   ✏︎{" "}
+                              </span>
+                              <Link to={`/submit/compose`}>
+                                {// NOTE: this should be refactored (lots of cases when we need this switch)
+                                loadTextContent().length > 0
+                                  ? "Edit Draft"
+                                  : "New Submission"}
+                              </Link>{" "}
+                            </div>
+                          </div>
                         ) : (
                           <React.Fragment>
                             This is a preview of your public profile. You can
