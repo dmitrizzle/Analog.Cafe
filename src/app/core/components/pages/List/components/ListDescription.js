@@ -26,14 +26,20 @@ export const Burger = styled.div`
   width: 1em;
   height: 1em;
   margin: 0 0 -0.1em 0.25em;
+  ${props => !props.inverse && `margin: 0 .25em -.15em .25em`};
+  ${props =>
+    props.inverse && props.theme.size.breakpoint.max.s`display: none;`};
   > div {
     height: 1px;
     margin: 4px 0;
-    background: ${props => props.theme.color.background()};
+    background: ${props =>
+      !props.inverse
+        ? props.theme.color.foreground()
+        : props.theme.color.background()};
   }
 `
-export const BurgerMenu = () => (
-  <Burger>
+export const BurgerMenu = props => (
+  <Burger {...props}>
     <div />
     <div />
     <div />
@@ -76,7 +82,12 @@ export default props => {
                 element="a"
                 with={{
                   info: {
-                    title: "Sections",
+                    menu: true,
+                    title: (
+                      <span>
+                        <BurgerMenu /> Sections
+                      </span>
+                    ),
                     buttons: sectionButtons.map(section =>
                       buttonMaker(section, {
                         attributes: {
@@ -88,7 +99,7 @@ export default props => {
                   id: "modal/nav/sections"
                 }}
               >
-                {props.renderedListMeta.title} <BurgerMenu />
+                {props.renderedListMeta.title} <BurgerMenu inverse />
               </DescriptionModalLink>
             </em>
           </span>

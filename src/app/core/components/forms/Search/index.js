@@ -11,7 +11,6 @@ import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivi
 import CardButton, {
   CardSearchItem
 } from "../../controls/Card/components/CardButton"
-import NavAvatar from "../../controls/Nav/components/NavAvatar"
 import SearchForm from "./components/SearchForm"
 
 export const SearchVisibility = styled.div`
