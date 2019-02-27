@@ -41,12 +41,20 @@ const NavAccountLink = styled(NavLink)`
 
 const NAV_USER = props => [
   {
+    to: "/favourites",
+    text: "❤︎ Favourites"
+  },
+  {
     to: ROUTE_URL_USER_LANDING,
-    text: <span>❀ My Profile</span>
+    text: "✒︎ Submissions"
   },
   {
     to: "/submit/compose",
     text: props.hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
+  },
+  {
+    to: `${ROUTE_URL_USER_LANDING}/edit`,
+    text: "✱ Edit Profile"
   },
   buttonMaker("/sign-out"),
   props.userRole === "admin"

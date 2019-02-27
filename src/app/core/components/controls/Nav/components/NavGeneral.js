@@ -65,15 +65,15 @@ export default props => {
   const a = "active"
 
   const re = "/resources"
-  const gf = "/submit"
+  const ab = "/about"
 
   const resources = {
     to: re,
     className: isActiveUrl(re) ? a : undefined
   }
-  const getFeatured = {
-    to: gf,
-    className: isActiveUrl(gf) ? a : undefined
+  const about = {
+    to: ab,
+    className: isActiveUrl(ab) ? a : undefined
   }
 
   const navSearch = {
@@ -104,36 +104,34 @@ export default props => {
         </NavSections>
       </NavItem> */}
 
-      <NavItem narrow prime left className="prime left">
-        <NavSearch
-          {...navSearch}
+      <NavItem>
+        <NavLink
+          {...about}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "Find"
+              label: "About"
             })
           }}
         >
-          <LabelWithSearchSVG>
-            Find <Search />
-          </LabelWithSearchSVG>
-        </NavSearch>
+          About ✹
+        </NavLink>
       </NavItem>
 
       <NavItem>
         <NavLink
-          {...getFeatured}
+          {...resources}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "GetFeatured"
+              label: "Resources"
             })
           }}
         >
-          <Extra>Get Featured</Extra>
-          <Condensed>Submit</Condensed> ✹
+          {/* <span className="wide">Photo </span> */}
+          Resources ❖
         </NavLink>
       </NavItem>
 
@@ -153,20 +151,21 @@ export default props => {
         </NavLogoLink>
       </NavItem>
 
-      <NavItem>
-        <NavLink
-          {...resources}
+      <NavItem narrow prime left className="prime left">
+        <NavSearch
+          {...navSearch}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "Resources"
+              label: "Find"
             })
           }}
         >
-          {/* <span className="wide">Photo </span> */}
-          Resources ☞
-        </NavLink>
+          <LabelWithSearchSVG>
+            Find <Search />
+          </LabelWithSearchSVG>
+        </NavSearch>
       </NavItem>
 
       <NavItem prime right className="prime right">

@@ -28,12 +28,12 @@ const ITEMS = {
   favourites: {
     label: "Favourites",
     icon: "❤︎",
-    to: "/my-favourites"
+    to: "/favourites"
   },
   submissions: {
-    label: "My Submissions",
+    label: "Submissions",
     icon: "✒︎",
-    to: "/my-submissions"
+    to: "/submissions"
   },
   composer: {
     label: loadTextContent().length > 0 ? "Edit Draft" : "New Submission",

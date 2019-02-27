@@ -93,14 +93,24 @@ const NAV_BUTTONS = props => [
   },
   {
     to: ROUTE_URL_USER_LANDING,
-    text: (
-      <span>
-        <NavAvatar image={props.user.info.image} /> My Profile
-      </span>
-    ),
-    keywords: "My Profile, me, account, edit, sign in, portfolio",
+    text: "✒︎ Submissions",
+    keywords: "my stuff, results, drafts, portfolio",
     hidden: true,
     memberOnly: true
+  },
+  {
+    to: "/favourites",
+    text: "Favourites",
+    keywords: "likes, saved",
+    hidden: true,
+    membersOnly: true
+  },
+  {
+    to: `${ROUTE_URL_USER_LANDING}/edit`,
+    text: "Edit Profile",
+    keywords: "account, avatar, link, bio",
+    hidden: true,
+    membersOnly: true
   },
   buttonMaker("/sign-out", {
     keywords: "log out, exit",

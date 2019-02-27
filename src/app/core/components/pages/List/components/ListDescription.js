@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { APP_NAME, HEADER_ERRORS } from "../../../../../constants"
-import { ROUTE_API_AUTHORS } from "../../../../constants/routes-article"
-import { getFirstNameFromFull } from "../../../../utils/messages-author"
+import { buttonMaker } from "../../../forms/Search"
 import { getTitleFromSlug } from "../../../../utils/messages-"
 import ListBrandName from "./ListBrandName"
 import ListDescriptionWrapper from "./ListDescriptionWrapper"
@@ -21,6 +20,41 @@ export const Mobile = styled.span`
     display: inline;
   }
 `
+
+export const Burger = styled.div`
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0 0 -0.1em 0.25em;
+  > div {
+    height: 1px;
+    margin: 4px 0;
+    background: ${props => props.theme.color.background()};
+  }
+`
+export const BurgerMenu = () => (
+  <Burger>
+    <div />
+    <div />
+    <div />
+  </Burger>
+)
+const DescriptionModalLink = styled(Modal)`
+  &:active {
+    background: transparent !important;
+    color: ${props => props.theme.color.background()} !important;
+  }
+  text-decoration: none;
+`
+
+const sectionButtons = [
+  "/film-photography",
+  "/photo-essays",
+  "/editorials",
+  "/solo-projects",
+  "/collaborations"
+]
+
 export default props => {
   const mobileContent =
     getTitleFromSlug(props.location.pathname).replace("/", "") || APP_NAME
@@ -35,44 +69,29 @@ export default props => {
       </ListBrandName>
       {props.user.connection.status !== "offline" ? (
         <ListHeader>
-          {props.list.filter.author ? (
-            <span>
-              <em>
-                {props.list.error
-                  ? props.list.error.title
-                  : props.renderedListMeta.title}
-                {props.list.filter.author.name ? " " : null}
-                {props.list.filter.author.name ? (
-                  <span>
-                    by{" "}
-                    <Modal
-                      with={{
-                        request: {
-                          url:
-                            ROUTE_API_AUTHORS +
-                            "/" +
-                            props.list.filter.author.id
+          <span>
+            <em>
+              <DescriptionModalLink
+                unmarked
+                element="a"
+                with={{
+                  info: {
+                    title: "Sections",
+                    buttons: sectionButtons.map(section =>
+                      buttonMaker(section, {
+                        attributes: {
+                          inverse: props.location.pathname === section
                         }
-                      }}
-                    >
-                      {getFirstNameFromFull(props.list.filter.author.name)}
-                    </Modal>
-                  </span>
-                ) : (
-                  props.location.pathname.includes("/author/") && ""
-                )}
-              </em>
-            </span>
-          ) : (
-            <span>
-              <em>{props.renderedListMeta.title}</em>
-            </span>
-          )}
-          {props.list.filter.author && props.list.filter.author.name
-            ? "."
-            : props.list.error
-              ? " " + props.list.error.emoji
-              : "."}
+                      })
+                    )
+                  },
+                  id: "modal/nav/sections"
+                }}
+              >
+                {props.renderedListMeta.title} <BurgerMenu />
+              </DescriptionModalLink>
+            </em>
+          </span>
         </ListHeader>
       ) : (
         <ListHeader>
