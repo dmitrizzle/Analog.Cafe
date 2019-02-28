@@ -26,7 +26,7 @@ const ITEMS = {
   profile: {
     label: "Edit Profile",
     icon: "✱",
-    to: `${ROUTE_URL_USER_LANDING}/edit`
+    to: `/profile/edit`
   },
   favourites: {
     label: "Favourites",

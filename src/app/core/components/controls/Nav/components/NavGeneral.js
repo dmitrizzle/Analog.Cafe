@@ -83,7 +83,8 @@ export default props => {
   }
   const navMore = {
     className: (isActiveUrl("nav/account", { modalUrl: true }, props) ||
-    isActiveUrl("/profile")
+    isActiveUrl("/submissions") ||
+    isActiveUrl("/favourites")
     ? "active"
     : undefined)
       ? a

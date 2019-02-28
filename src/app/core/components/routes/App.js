@@ -104,46 +104,6 @@ export default () => {
         <Route exact path="/author/*" component={List} />
         <Route exact path="/zine/*" component={Article} />
         <Route exact path="/articles" render={() => <Redirect to="/" />} />
-        <Route
-          exact
-          path="/stories"
-          render={() => <Redirect to="/photo-essays" />}
-        />
-        <Route
-          exact
-          path="/storys"
-          render={() => <Redirect to="/photo-essays" />}
-        />
-        <Route
-          exact
-          path="/guides"
-          render={() => <Redirect to="/film-photography" />}
-        />
-        <Route
-          exact
-          path="/reviews"
-          render={() => <Redirect to="/film-photography" />}
-        />
-        <Route
-          exact
-          path="/film-cameras"
-          render={() => <Redirect to="/film-photography" />}
-        />
-        <Route
-          exact
-          path="/places"
-          render={() => <Redirect to="/photo-essays" />}
-        />
-        <Route
-          exact
-          path="/art"
-          render={() => <Redirect to="/photo-essays" />}
-        />
-        <Route
-          exact
-          path="/photo-stories"
-          render={() => <Redirect to="/photo-essays" />}
-        />
         {/**
          * new magazine sections
          */}
@@ -158,18 +118,9 @@ export default () => {
          * auth views
          */}
         <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
-        <Route
-          exact
-          path="/my-submissions"
-          render={() => <Redirect to={ROUTE_URL_USER_LANDING} />}
-        />
         <Route exact path={`/admin`} component={Admin} />
         <Route exact path="/submissions/*" component={Article} />
-        <Route
-          exact
-          path={`${ROUTE_URL_USER_LANDING}/edit`}
-          component={EditProfile}
-        />
+        <Route exact path={`/profile/edit`} component={EditProfile} />
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-out" component={SignOut} />
         {/**
