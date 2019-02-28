@@ -30,7 +30,7 @@ export const getProfileButtons = (id = "unknown", link = "") => {
   let template
   template = [
     {
-      to: "/author/" + id,
+      to: "/is/" + id,
       text: "View Full Profile",
       branded: true
     },

@@ -94,8 +94,8 @@ class About extends React.PureComponent {
             <Link to="https://github.com/dmitrizzle/Analog.Cafe">
               Maintained
             </Link>{" "}
-            as an open-source project by{" "}
-            <Link to="/author/dmitrizzle">Dmitri</Link>.
+            as an open-source project by <Link to="/is/dmitrizzle">Dmitri</Link>
+            .
           </blockquote>
           <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
             <Authors>
@@ -105,7 +105,7 @@ class About extends React.PureComponent {
                 return (
                   <AuthorIcon
                     style={{ backgroundImage: `url(${image})` }}
-                    to={`/author/${item.id}`}
+                    to={`/is/${item.id}`}
                     key={index}
                   />
                 )
@@ -116,9 +116,9 @@ class About extends React.PureComponent {
           <h3>The authors.</h3>
           <p>
             Analog.Cafe got its name in 2017 when{" "}
-            <Link to="/author/dmitrizzle">Dmitri</Link> began working on a
-            community photography/writing project. It has since grown ten-fold
-            in readership and written contributions.
+            <Link to="/is/dmitrizzle">Dmitri</Link> began working on a community
+            photography/writing project. It has since grown ten-fold in
+            readership and written contributions.
           </p>
           <p>
             It takes conviction to favour analogue creative processes in the age
@@ -129,8 +129,8 @@ class About extends React.PureComponent {
           <h3>The editors.</h3>
           <p>
             Dmitri edits most of the articles, often with help from{" "}
-            <Link to="/author/betty">Betty</Link>, keeping the content
-            interesting, thoughtful, and readable.
+            <Link to="/is/betty">Betty</Link>, keeping the content interesting,
+            thoughtful, and readable.
           </p>
 
           <h3>Film Photography.</h3>

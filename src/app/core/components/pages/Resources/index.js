@@ -356,7 +356,7 @@ export default props => {
         <p>
           Analog.Cafe is created by film photographers, artists, and writers of
           the internet. It’s maintained as an open-source project by{" "}
-          <Link to="/author/dmitrizzle">Dmitri</Link>. You can learn more{" "}
+          <Link to="/is/dmitrizzle">Dmitri</Link>. You can learn more{" "}
           <strong>
             <Link to="/about">About Analog.Cafe</Link>
           </strong>

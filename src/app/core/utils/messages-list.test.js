@@ -15,8 +15,8 @@ it("Generate meta content for list", () =>
     }
   }))
 it("Generate meta content for list of author's works", () =>
-  expect(getListMeta("/author/dmitrizzle", 1)).toEqual({
-    meta: TEXT_ROUTE_LABELS["/author/*"],
+  expect(getListMeta("/is/dmitrizzle", 1)).toEqual({
+    meta: TEXT_ROUTE_LABELS["/is/*"],
     request: {
       params: {
         author: "dmitrizzle",

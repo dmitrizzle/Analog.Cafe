@@ -76,37 +76,27 @@ export default () => {
       }}
     >
       <Switch>
-        {/**
-         * dynamic urls and views
-         */}
-        <Route
-          exact
-          path="/zine/vitessa-fzyi"
-          render={() => <Redirect to="/zine/voigtlander-vitessa-l-fzyi" />}
+        {/* REDIRECTS */}
+        <Redirect
+          from="/zine/vitessa-fzyi"
+          to="/zine/voigtlander-vitessa-l-fzyi"
         />
-        <Route
-          exact
-          path="/zine/analogue-photography-98f3"
-          render={() => (
-            <Redirect to="/zine/a-beginners-guide-to-film-photography-zq0f" />
-          )}
+        <Redirect
+          from="/zine/analogue-photography-98f3f"
+          to="/zine/a-beginners-guide-to-film-photography-zq0f"
         />
-        <Route
-          exact
-          path="/zine/a-beginner's-guide-to-film-photography-zq0f"
-          render={() => (
-            <Redirect to="/zine/a-beginners-guide-to-film-photography-zq0f" />
-          )}
+        <Redirect
+          from="/zine/a-beginner's-guide-to-film-photography-zq0f"
+          to="/zine/a-beginners-guide-to-film-photography-zq0f"
         />
-        {/**/}
-        <Route exact path="/author" component={NotFound} />
+        <Redirect from="/author/:id" to="/is/:id" />
+        {/* DYNAMIC VIEWS */}
+        <Route exact path="/is" component={NotFound} />
         <Route exact path="/zine" component={NotFound} />
-        <Route exact path="/author/*" component={List} />
+
+        <Route exact path="/is/*" component={List} />
         <Route exact path="/zine/*" component={Article} />
-        <Route exact path="/articles" render={() => <Redirect to="/" />} />
-        {/**
-         * new magazine sections
-         */}
+        {/* MAGAZINE SECTIONS */}
         <Route exact path="/" component={List} />
         <Route exact path="/film-photography" component={List} />
         <Route exact path="/photo-essays" component={List} />
@@ -114,18 +104,14 @@ export default () => {
         <Route exact path="/unclassifieds" component={List} />
         <Route exact path="/collaborations" component={List} />
         <Route exact path="/solo-projects" component={List} />
-        {/**
-         * auth views
-         */}
+        {/* AUTH VIEWS */}
         <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
         <Route exact path={`/admin`} component={Admin} />
         <Route exact path="/submissions/*" component={Article} />
         <Route exact path={`/profile/edit`} component={EditProfile} />
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-out" component={SignOut} />
-        {/**
-         * static views and urls
-         */}
+        {/* STATIC VIEWS */}
         <Route exact path="/resources" component={Resources} />
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />

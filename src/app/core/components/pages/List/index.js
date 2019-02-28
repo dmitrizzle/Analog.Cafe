@@ -105,7 +105,7 @@ class List extends React.PureComponent {
       ROUTE_URL_USER_LANDING
     )
     const isProfilePage =
-      this.props.location.pathname.includes("/author/") || isUserDashboard
+      this.props.location.pathname.includes("/is/") || isUserDashboard
 
     let profileImage
     if (this.props.list.author) {

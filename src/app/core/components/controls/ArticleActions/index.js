@@ -65,7 +65,7 @@ export default props => {
                       unix.getHours() +
                       ":" +
                       unix.getMinutes()}{" "}
-                    – <Link to={`/author/${edit.id}`}>{edit.name}</Link>
+                    – <Link to={`/is/${edit.id}`}>{edit.name}</Link>
                   </small>
                   <br />
                 </React.Fragment>

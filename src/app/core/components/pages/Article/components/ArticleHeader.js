@@ -29,9 +29,7 @@ export default props => {
           <Byline>
             By{" "}
             {getLeadAuthorObject(props.article.authors).id ? (
-              <Link
-                to={`/author/${getLeadAuthorObject(props.article.authors).id}`}
-              >
+              <Link to={`/is/${getLeadAuthorObject(props.article.authors).id}`}>
                 {getLeadAuthorObject(props.article.authors).name}
               </Link>
             ) : (

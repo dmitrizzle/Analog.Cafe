@@ -46,7 +46,7 @@ export const getPictureInfo = src => {
                     image: src,
                     buttons: [
                       {
-                        to: `/author/${response.data.info.author.id}`,
+                        to: `/is/${response.data.info.author.id}`,
                         text: `Image by [${getFirstNameFromFull(
                           response.data.info.author.name
                         )}]`,

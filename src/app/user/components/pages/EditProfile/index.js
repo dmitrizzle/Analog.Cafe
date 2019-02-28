@@ -215,7 +215,7 @@ class EditProfile extends React.PureComponent {
           <p>
             <small>
               Your public profile lives{" "}
-              <Link to={`/author/${this.props.user.info.id}`}>here</Link>.<br />
+              <Link to={`/is/${this.props.user.info.id}`}>here</Link>.<br />
               {console.log(this.props)}
             </small>
           </p>
