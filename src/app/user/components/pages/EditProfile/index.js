@@ -19,10 +19,12 @@ import {
 } from "../../../store/actions-user"
 import { getProfileButtons } from "../../../utils/messages-profile"
 import { setModal } from "../../../../core/store/actions-modal"
+import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Button from "../../../../core/components/controls/Button/components/Button"
 import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
 import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
+import Link from "../../../../core/components/controls/Link"
 import ProfileCard from "./components/ProfileCard"
 import TitleTextarea from "../../forms/TextInput/components/TitleTextarea"
 
@@ -209,6 +211,15 @@ class EditProfile extends React.PureComponent {
         >
           {!this.state.setUserInfoPending && TEXT_EMOJIS.CHECKMARK} Done
         </Button>
+        <ArticleSection style={{ paddingTop: "3em" }}>
+          <p>
+            <small>
+              Your public profile lives{" "}
+              <Link to={`/author/${this.props.user.info.id}`}>here</Link>.<br />
+              {console.log(this.props)}
+            </small>
+          </p>
+        </ArticleSection>
       </ArticleWrapper>
     ) : (
       <Forbidden />
