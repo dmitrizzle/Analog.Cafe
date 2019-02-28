@@ -48,7 +48,7 @@ export const DownloadModal = props => (
     element="a"
     with={{
       info,
-      id: "modal/campaign/downloads"
+      id: "campaign/downloads"
     }}
   >
     {props.children}

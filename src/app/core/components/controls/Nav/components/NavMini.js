@@ -18,6 +18,9 @@ const NavMiniIcon = styled.span`
   font-style: normal;
   padding: 0 0.25em 0 1.5em;
 `
+const NavmMiniLink = styled(Link)`
+  background: ${props => props.theme.color.background()};
+`
 
 const ITEMS = {
   profile: {
@@ -48,7 +51,7 @@ export default props => (
         Object.values(ITEMS).map((item, i) => (
           <React.Fragment key={Object.keys(ITEMS)[i]}>
             <NavMiniIcon>{item.icon}</NavMiniIcon>
-            <Link
+            <NavmMiniLink
               style={{
                 fontWeight:
                   props.view === Object.keys(ITEMS)[i] ? 700 : undefined
@@ -56,7 +59,7 @@ export default props => (
               to={item.to}
             >
               {item.label}
-            </Link>
+            </NavmMiniLink>
           </React.Fragment>
         ))
       ) : (

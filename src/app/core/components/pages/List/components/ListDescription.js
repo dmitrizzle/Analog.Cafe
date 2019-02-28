@@ -96,7 +96,7 @@ export default props => {
                       })
                     )
                   },
-                  id: "modal/nav/sections"
+                  id: "nav/sections"
                 }}
               >
                 {props.renderedListMeta.title} <BurgerMenu inverse />

@@ -162,7 +162,7 @@ class About extends React.PureComponent {
                   }
                 ]
               },
-              id: "modal/hints/vitessa-l"
+              id: "hints/vitessa-l"
             }}
           >
             <Figure src="image-froth_1206996_r1CqlUwRm" />
@@ -256,7 +256,7 @@ class About extends React.PureComponent {
                   }
                 ]
               },
-              id: "modal/hints/contact"
+              id: "hints/contact"
             }}
           >
             <Figure src="image-froth_663152_ByGEigckN" caption feature>

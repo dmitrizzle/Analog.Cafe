@@ -38,7 +38,7 @@ export default props => {
               }
             ]
           },
-          id: "modal/hints/submissions"
+          id: "hints/submissions"
         }}
       >
         <Figure src="image-froth_1499794_Sy-vi6yLE" feature alt={posterText} />
