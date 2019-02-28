@@ -105,7 +105,7 @@ const NAV_BUTTONS = props => [
     membersOnly: true
   },
   {
-    to: `${ROUTE_URL_USER_LANDING}/edit`,
+    to: `/profile/edit`,
     text: "Edit Profile",
     keywords: "account, avatar, link, bio",
     hidden: true,

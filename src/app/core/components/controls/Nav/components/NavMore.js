@@ -53,7 +53,7 @@ const NAV_USER = props => [
     text: props.hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
   },
   {
-    to: `${ROUTE_URL_USER_LANDING}/edit`,
+    to: `/profile/edit`,
     text: "✱ Edit Profile"
   },
   buttonMaker("/sign-out"),

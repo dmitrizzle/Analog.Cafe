@@ -182,7 +182,7 @@ class List extends React.PureComponent {
                     {profileImage && (
                       <CardIntegratedForColumns>
                         {isUserDashboard ? (
-                          <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
+                          <Link to={`/profile/edit`}>
                             <ProfileImage
                               image={profileImage}
                               title={this.props.list.author.title}
@@ -222,7 +222,7 @@ class List extends React.PureComponent {
                             <CardCaption>
                               {this.props.list.author.text || (
                                 <span>
-                                  <Link to={`${ROUTE_URL_USER_LANDING}/edit`}>
+                                  <Link to={`/profile/edit`}>
                                     Tell the world
                                   </Link>{" "}
                                   abot yourself.
@@ -235,7 +235,7 @@ class List extends React.PureComponent {
                             to={
                               doesAuthorHaveLink
                                 ? this.props.list.author.buttons[1].to
-                                : `${ROUTE_URL_USER_LANDING}/edit`
+                                : `/profile/edit`
                             }
                             branded
                           >
