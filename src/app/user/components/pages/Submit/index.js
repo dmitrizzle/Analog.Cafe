@@ -46,12 +46,12 @@ export default props => {
       </Modal>
       <p>
         If you love shooting film and have a story to share, Analog.Cafe could
-        be the best place to get it featured.
+        be <em>the</em> place to publish it.
       </p>
       <p>
         We feature fun, beautiful, creative, educational, and entertaining
         pieces written by casual and regular contributors. Every new article is
-        an event that we celebrate on our Twitter, Instagram, and the weekly
+        an event which we celebrate on our Twitter, Instagram, and the weekly
         email newsletter. As well as <strong>the front page</strong> 👏👏👏
       </p>
       <p>
@@ -78,17 +78,23 @@ export default props => {
             Composer
           </Modal>
         </em>{" "}
-        tool. Composer lets you format your article just the way you like it. It
-        also{" "}
+        tool. It{" "}
         <Modal element="a" with={CARD_ALERTS.AUTO_SAVE}>
           saves
         </Modal>{" "}
-        your work even when you’re not connected to the internet.
+        your work and makes uploading images easy, even when you’re not
+        connected to the internet.
       </p>
       <p>
         All accepted submissions are edited for grammar and style to read well
         for years to come. We pride ourselves in the ability to bring out the
         best in even the least experienced writers.
+      </p>
+
+      <p>
+        There are no technical limitations to your submission other than 10MB or
+        smaller JPG images. You retain <Link to="/submit/rules">all</Link> of
+        the rights and ownership to the photographs and the text you submit.
       </p>
 
       <ButtonGroup style={{ paddingBottom: "1.5em" }}>
@@ -103,15 +109,15 @@ export default props => {
         </p>
       </ButtonGroup>
 
+      <Figure
+        style={{ cursor: "default" }}
+        src="image-froth_1963351_HJUmY88I4"
+      />
+
       <p>
         Best way to get accepted is to read a few articles on the website. For
         ideas on what to write about read{" "}
         <Link to="/zine/open-call-g99w">this</Link>.
-      </p>
-      <p>
-        There are no technical limitations to your submission other than 10MB,
-        or smaller, JPG images. You retain <Link to="/submit/rules">all</Link>{" "}
-        of the rights and ownership to the photographs and the text you submit.
       </p>
       <h3>Good luck!</h3>
     </ArticleSection>

@@ -82,7 +82,7 @@ export default () => {
           to="/zine/voigtlander-vitessa-l-fzyi"
         />
         <Redirect
-          from="/zine/analogue-photography-98f3f"
+          from="/zine/analogue-photography-98f3"
           to="/zine/a-beginners-guide-to-film-photography-zq0f"
         />
         <Redirect
