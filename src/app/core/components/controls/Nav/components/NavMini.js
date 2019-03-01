@@ -23,11 +23,6 @@ const NavmMiniLink = styled(Link)`
 `
 
 const ITEMS = {
-  profile: {
-    label: "Edit Profile",
-    icon: "✱",
-    to: `/profile/edit`
-  },
   favourites: {
     label: "Favourites",
     icon: "❤︎",
@@ -42,6 +37,11 @@ const ITEMS = {
     label: loadTextContent().length > 0 ? "Edit Draft" : "New Submission",
     icon: "✏︎",
     to: "/submit/compose"
+  },
+  profile: {
+    label: "Edit Profile",
+    icon: "✱",
+    to: `/profile/edit`
   }
 }
 export default props => (

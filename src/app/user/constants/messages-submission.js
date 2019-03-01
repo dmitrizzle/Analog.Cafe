@@ -84,7 +84,7 @@ export const CARD_ALERTS = {
     info: {
       title: "Never Loose Your Work!",
       text:
-        "Your text and images are saved automatically onto your device as you type. Even if you’re offline!"
+        "Your text and images are saved automatically onto your device as you type. Even if you’re offline! You can safely close your browser and turn off the device or computer. Just remember to use the same browser."
     },
     id: "hints/auto-save"
   }

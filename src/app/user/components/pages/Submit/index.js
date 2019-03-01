@@ -1,6 +1,7 @@
 import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 
+import { CARD_ALERTS } from "../../../constants/messages-submission"
 import { makeFroth } from "../../../../utils"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
@@ -45,21 +46,44 @@ export default props => {
       </Modal>
       <p>
         If you love shooting film and have a story to share, Analog.Cafe could
-        be your perfect platform!
+        be the best place to get it featured.
       </p>
       <p>
-        We publish fun, beautiful, creative, educational, and entertaining
+        We feature fun, beautiful, creative, educational, and entertaining
         pieces written by casual and regular contributors. Every new article is
-        an event that we celebrate on our Twitter, Instagram, and email channels
-        and feature prominently on <strong>the front page</strong>. 👏
+        an event that we celebrate on our Twitter, Instagram, and the weekly
+        email newsletter. As well as <strong>the front page</strong> 👏👏👏
       </p>
       <p>
-        It’s very easy to send your submission with the{" "}
+        It’s easy to send your submission with the handy{" "}
         <em>
-          <Link to="/submit/compose">Composer</Link>
+          <Modal
+            element="a"
+            with={{
+              info: {
+                image:
+                  "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
+                title: "Analog.Cafe Composer",
+                buttons: [
+                  {
+                    to: "/submit/compose",
+                    text: "Try It",
+                    branded: true
+                  }
+                ]
+              },
+              id: "hints/composer"
+            }}
+          >
+            Composer
+          </Modal>
         </em>{" "}
-        tool. Composer saves your work as you type and formats your images
-        automatically.
+        tool. Composer lets you format your article just the way you like it. It
+        also{" "}
+        <Modal element="a" with={CARD_ALERTS.AUTO_SAVE}>
+          saves
+        </Modal>{" "}
+        your work even when you’re not connected to the internet.
       </p>
       <p>
         All accepted submissions are edited for grammar and style to read well
