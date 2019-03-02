@@ -51,8 +51,8 @@ export default props => {
       <p>
         We feature fun, beautiful, creative, educational, and entertaining
         pieces written by casual and regular contributors. Every new article is
-        an event which we celebrate on our Twitter, Instagram, and the weekly
-        email newsletter. As well as <strong>the front page</strong> 👏👏👏
+        an event which we celebrate on our Twitter, Instagram, and weekly email
+        newsletter. As well as <strong>the front page</strong> 👏👏👏
       </p>
       <p>
         It’s easy to send your submission with the handy{" "}
@@ -82,8 +82,7 @@ export default props => {
         <Modal element="a" with={CARD_ALERTS.AUTO_SAVE}>
           saves
         </Modal>{" "}
-        your work and makes uploading images easy, even when you’re not
-        connected to the internet.
+        your work and makes uploading images easy.
       </p>
       <p>
         All accepted submissions are edited for grammar and style to read well

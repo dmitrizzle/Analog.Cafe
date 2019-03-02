@@ -92,7 +92,7 @@ class About extends React.PureComponent {
             cameras, too.
           </p>
           <p>
-            There are now {this.props.community.authorsList.items.length}{" "}
+            As of now, there are {this.props.community.authorsList.items.length}{" "}
             contributing authors. Some of us are prominent film photographers,
             others are writers, artists, or camera afficionados.
           </p>
@@ -125,7 +125,7 @@ class About extends React.PureComponent {
             I’m not doing this alone. My wife, <Link to="/is/betty">Betty</Link>
             , has been a tremendous help in setting the tone, quality, and
             consistency of the articles. None of this would make sense without
-            her help and the fantastic people who supported me along in this
+            her help and the fantastic people who supported me along this
             journey.
           </p>
 
