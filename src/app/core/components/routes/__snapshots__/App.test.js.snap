@@ -18,25 +18,30 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <Switch>
-        <Route
-                exact={true}
-                path="/zine/vitessa-fzyi"
-                render={[Function]}
+        <Redirect
+                from="/zine/vitessa-fzyi"
+                push={false}
+                to="/zine/voigtlander-vitessa-l-fzyi"
         />
-        <Route
-                exact={true}
-                path="/zine/analogue-photography-98f3"
-                render={[Function]}
+        <Redirect
+                from="/zine/analogue-photography-98f3"
+                push={false}
+                to="/zine/a-beginners-guide-to-film-photography-zq0f"
         />
-        <Route
-                exact={true}
-                path="/zine/a-beginner's-guide-to-film-photography-zq0f"
-                render={[Function]}
+        <Redirect
+                from="/zine/a-beginner's-guide-to-film-photography-zq0f"
+                push={false}
+                to="/zine/a-beginners-guide-to-film-photography-zq0f"
+        />
+        <Redirect
+                from="/author/:id"
+                push={false}
+                to="/is/:id"
         />
         <Route
                 component={[Function]}
                 exact={true}
-                path="/author"
+                path="/is"
         />
         <Route
                 component={[Function]}
@@ -46,57 +51,12 @@ ShallowWrapper {
         <Route
                 component={[Function]}
                 exact={true}
-                path="/author/*"
+                path="/is/*"
         />
         <Route
                 component={[Function]}
                 exact={true}
                 path="/zine/*"
-        />
-        <Route
-                exact={true}
-                path="/articles"
-                render={[Function]}
-        />
-        <Route
-                exact={true}
-                path="/stories"
-                render={[Function]}
-        />
-        <Route
-                exact={true}
-                path="/storys"
-                render={[Function]}
-        />
-        <Route
-                exact={true}
-                path="/guides"
-                render={[Function]}
-        />
-        <Route
-                exact={true}
-                path="/reviews"
-                render={[Function]}
-        />
-        <Route
-                exact={true}
-                path="/film-cameras"
-                render={[Function]}
-        />
-        <Route
-                exact={true}
-                path="/places"
-                render={[Function]}
-        />
-        <Route
-                exact={true}
-                path="/art"
-                render={[Function]}
-        />
-        <Route
-                exact={true}
-                path="/photo-stories"
-                render={[Function]}
         />
         <Route
                 component={[Function]}
@@ -136,12 +96,7 @@ ShallowWrapper {
         <Route
                 component={[Function]}
                 exact={true}
-                path="/profile"
-        />
-        <Route
-                exact={true}
-                path="/my-submissions"
-                render={[Function]}
+                path="/submissions"
         />
         <Route
                 component={[Function]}
@@ -218,25 +173,30 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Route
-            exact={true}
-            path="/zine/vitessa-fzyi"
-            render={[Function]}
+          <Redirect
+            from="/zine/vitessa-fzyi"
+            push={false}
+            to="/zine/voigtlander-vitessa-l-fzyi"
 />,
-          <Route
-            exact={true}
-            path="/zine/analogue-photography-98f3"
-            render={[Function]}
+          <Redirect
+            from="/zine/analogue-photography-98f3"
+            push={false}
+            to="/zine/a-beginners-guide-to-film-photography-zq0f"
 />,
-          <Route
-            exact={true}
-            path="/zine/a-beginner's-guide-to-film-photography-zq0f"
-            render={[Function]}
+          <Redirect
+            from="/zine/a-beginner's-guide-to-film-photography-zq0f"
+            push={false}
+            to="/zine/a-beginners-guide-to-film-photography-zq0f"
+/>,
+          <Redirect
+            from="/author/:id"
+            push={false}
+            to="/is/:id"
 />,
           <Route
             component={[Function]}
             exact={true}
-            path="/author"
+            path="/is"
 />,
           <Route
             component={[Function]}
@@ -246,57 +206,12 @@ ShallowWrapper {
           <Route
             component={[Function]}
             exact={true}
-            path="/author/*"
+            path="/is/*"
 />,
           <Route
             component={[Function]}
             exact={true}
             path="/zine/*"
-/>,
-          <Route
-            exact={true}
-            path="/articles"
-            render={[Function]}
-/>,
-          <Route
-            exact={true}
-            path="/stories"
-            render={[Function]}
-/>,
-          <Route
-            exact={true}
-            path="/storys"
-            render={[Function]}
-/>,
-          <Route
-            exact={true}
-            path="/guides"
-            render={[Function]}
-/>,
-          <Route
-            exact={true}
-            path="/reviews"
-            render={[Function]}
-/>,
-          <Route
-            exact={true}
-            path="/film-cameras"
-            render={[Function]}
-/>,
-          <Route
-            exact={true}
-            path="/places"
-            render={[Function]}
-/>,
-          <Route
-            exact={true}
-            path="/art"
-            render={[Function]}
-/>,
-          <Route
-            exact={true}
-            path="/photo-stories"
-            render={[Function]}
 />,
           <Route
             component={[Function]}
@@ -336,12 +251,7 @@ ShallowWrapper {
           <Route
             component={[Function]}
             exact={true}
-            path="/profile"
-/>,
-          <Route
-            exact={true}
-            path="/my-submissions"
-            render={[Function]}
+            path="/submissions"
 />,
           <Route
             component={[Function]}
@@ -413,9 +323,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "exact": true,
-            "path": "/zine/vitessa-fzyi",
-            "render": [Function],
+            "from": "/zine/vitessa-fzyi",
+            "push": false,
+            "to": "/zine/voigtlander-vitessa-l-fzyi",
           },
           "ref": null,
           "rendered": null,
@@ -426,9 +336,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "exact": true,
-            "path": "/zine/analogue-photography-98f3",
-            "render": [Function],
+            "from": "/zine/analogue-photography-98f3",
+            "push": false,
+            "to": "/zine/a-beginners-guide-to-film-photography-zq0f",
           },
           "ref": null,
           "rendered": null,
@@ -439,9 +349,22 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "exact": true,
-            "path": "/zine/a-beginner's-guide-to-film-photography-zq0f",
-            "render": [Function],
+            "from": "/zine/a-beginner's-guide-to-film-photography-zq0f",
+            "push": false,
+            "to": "/zine/a-beginners-guide-to-film-photography-zq0f",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "from": "/author/:id",
+            "push": false,
+            "to": "/is/:id",
           },
           "ref": null,
           "rendered": null,
@@ -454,7 +377,7 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
-            "path": "/author",
+            "path": "/is",
           },
           "ref": null,
           "rendered": null,
@@ -480,7 +403,7 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
-            "path": "/author/*",
+            "path": "/is/*",
           },
           "ref": null,
           "rendered": null,
@@ -494,123 +417,6 @@ ShallowWrapper {
             "component": [Function],
             "exact": true,
             "path": "/zine/*",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/articles",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/stories",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/storys",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/guides",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/reviews",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/film-cameras",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/places",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/art",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/photo-stories",
-            "render": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -714,20 +520,7 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
-            "path": "/profile",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/my-submissions",
-            "render": [Function],
+            "path": "/submissions",
           },
           "ref": null,
           "rendered": null,
@@ -900,25 +693,30 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <Switch>
-          <Route
-                    exact={true}
-                    path="/zine/vitessa-fzyi"
-                    render={[Function]}
+          <Redirect
+                    from="/zine/vitessa-fzyi"
+                    push={false}
+                    to="/zine/voigtlander-vitessa-l-fzyi"
           />
-          <Route
-                    exact={true}
-                    path="/zine/analogue-photography-98f3"
-                    render={[Function]}
+          <Redirect
+                    from="/zine/analogue-photography-98f3"
+                    push={false}
+                    to="/zine/a-beginners-guide-to-film-photography-zq0f"
           />
-          <Route
-                    exact={true}
-                    path="/zine/a-beginner's-guide-to-film-photography-zq0f"
-                    render={[Function]}
+          <Redirect
+                    from="/zine/a-beginner's-guide-to-film-photography-zq0f"
+                    push={false}
+                    to="/zine/a-beginners-guide-to-film-photography-zq0f"
+          />
+          <Redirect
+                    from="/author/:id"
+                    push={false}
+                    to="/is/:id"
           />
           <Route
                     component={[Function]}
                     exact={true}
-                    path="/author"
+                    path="/is"
           />
           <Route
                     component={[Function]}
@@ -928,57 +726,12 @@ ShallowWrapper {
           <Route
                     component={[Function]}
                     exact={true}
-                    path="/author/*"
+                    path="/is/*"
           />
           <Route
                     component={[Function]}
                     exact={true}
                     path="/zine/*"
-          />
-          <Route
-                    exact={true}
-                    path="/articles"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/stories"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/storys"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/guides"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/reviews"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/film-cameras"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/places"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/art"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/photo-stories"
-                    render={[Function]}
           />
           <Route
                     component={[Function]}
@@ -1018,12 +771,7 @@ ShallowWrapper {
           <Route
                     component={[Function]}
                     exact={true}
-                    path="/profile"
-          />
-          <Route
-                    exact={true}
-                    path="/my-submissions"
-                    render={[Function]}
+                    path="/submissions"
           />
           <Route
                     component={[Function]}
@@ -1100,25 +848,30 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Route
-              exact={true}
-              path="/zine/vitessa-fzyi"
-              render={[Function]}
+            <Redirect
+              from="/zine/vitessa-fzyi"
+              push={false}
+              to="/zine/voigtlander-vitessa-l-fzyi"
 />,
-            <Route
-              exact={true}
-              path="/zine/analogue-photography-98f3"
-              render={[Function]}
+            <Redirect
+              from="/zine/analogue-photography-98f3"
+              push={false}
+              to="/zine/a-beginners-guide-to-film-photography-zq0f"
 />,
-            <Route
-              exact={true}
-              path="/zine/a-beginner's-guide-to-film-photography-zq0f"
-              render={[Function]}
+            <Redirect
+              from="/zine/a-beginner's-guide-to-film-photography-zq0f"
+              push={false}
+              to="/zine/a-beginners-guide-to-film-photography-zq0f"
+/>,
+            <Redirect
+              from="/author/:id"
+              push={false}
+              to="/is/:id"
 />,
             <Route
               component={[Function]}
               exact={true}
-              path="/author"
+              path="/is"
 />,
             <Route
               component={[Function]}
@@ -1128,57 +881,12 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
-              path="/author/*"
+              path="/is/*"
 />,
             <Route
               component={[Function]}
               exact={true}
               path="/zine/*"
-/>,
-            <Route
-              exact={true}
-              path="/articles"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/stories"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/storys"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/guides"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/reviews"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/film-cameras"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/places"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/art"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/photo-stories"
-              render={[Function]}
 />,
             <Route
               component={[Function]}
@@ -1218,12 +926,7 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
-              path="/profile"
-/>,
-            <Route
-              exact={true}
-              path="/my-submissions"
-              render={[Function]}
+              path="/submissions"
 />,
             <Route
               component={[Function]}
@@ -1295,9 +998,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "exact": true,
-              "path": "/zine/vitessa-fzyi",
-              "render": [Function],
+              "from": "/zine/vitessa-fzyi",
+              "push": false,
+              "to": "/zine/voigtlander-vitessa-l-fzyi",
             },
             "ref": null,
             "rendered": null,
@@ -1308,9 +1011,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "exact": true,
-              "path": "/zine/analogue-photography-98f3",
-              "render": [Function],
+              "from": "/zine/analogue-photography-98f3",
+              "push": false,
+              "to": "/zine/a-beginners-guide-to-film-photography-zq0f",
             },
             "ref": null,
             "rendered": null,
@@ -1321,9 +1024,22 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "exact": true,
-              "path": "/zine/a-beginner's-guide-to-film-photography-zq0f",
-              "render": [Function],
+              "from": "/zine/a-beginner's-guide-to-film-photography-zq0f",
+              "push": false,
+              "to": "/zine/a-beginners-guide-to-film-photography-zq0f",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "from": "/author/:id",
+              "push": false,
+              "to": "/is/:id",
             },
             "ref": null,
             "rendered": null,
@@ -1336,7 +1052,7 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "exact": true,
-              "path": "/author",
+              "path": "/is",
             },
             "ref": null,
             "rendered": null,
@@ -1362,7 +1078,7 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "exact": true,
-              "path": "/author/*",
+              "path": "/is/*",
             },
             "ref": null,
             "rendered": null,
@@ -1376,123 +1092,6 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/zine/*",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/articles",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/stories",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/storys",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/guides",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/reviews",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/film-cameras",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/places",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/art",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/photo-stories",
-              "render": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -1596,20 +1195,7 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "exact": true,
-              "path": "/profile",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/my-submissions",
-              "render": [Function],
+              "path": "/submissions",
             },
             "ref": null,
             "rendered": null,

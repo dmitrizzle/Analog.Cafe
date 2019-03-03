@@ -22,6 +22,7 @@ ShallowWrapper {
           autoFocus={undefined}
           onChange={[Function]}
           onClick={[Function]}
+          value={undefined}
           warning={false}
 />,
         <Unknown
@@ -45,6 +46,7 @@ ShallowWrapper {
           "autoFocus": undefined,
           "onChange": [Function],
           "onClick": [Function],
+          "value": undefined,
           "warning": false,
         },
         "ref": null,
@@ -79,6 +81,7 @@ ShallowWrapper {
             autoFocus={undefined}
             onChange={[Function]}
             onClick={[Function]}
+            value={undefined}
             warning={false}
 />,
           <Unknown
@@ -102,6 +105,7 @@ ShallowWrapper {
             "autoFocus": undefined,
             "onChange": [Function],
             "onClick": [Function],
+            "value": undefined,
             "warning": false,
           },
           "ref": null,

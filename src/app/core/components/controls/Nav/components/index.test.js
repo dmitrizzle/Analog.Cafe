@@ -6,7 +6,6 @@ import React from "react"
 
 import { APP_THEME } from "../../../../../../constants"
 import { NavLink, NavLogoLink } from "./NavLinks"
-import FooterMicro from "./FooterMicro"
 import NavAvatar from "./NavAvatar"
 import NavComposer from "./NavComposer"
 import NavConnectionStatus from "./NavConnectionStatus"
@@ -15,11 +14,6 @@ import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
 import NavWrapper from "./NavWrapper"
-
-it("Render FooterMicro, matches snapshot", () => {
-  const element = shallow(<FooterMicro />)
-  expect(element).toMatchSnapshot()
-})
 
 it("Render NavAvatar, matches snapshot", () => {
   const element = shallow(<NavAvatar />)
