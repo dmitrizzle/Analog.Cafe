@@ -2,7 +2,6 @@ import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actio
 import React from "react"
 import styled from "styled-components"
 
-import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
 import Link from "../../Link"
 
 const NavMiniWrapper = styled.div`

@@ -8,7 +8,6 @@ import { withRouter } from "react-router"
 
 import { CARD_ERRORS } from "./user/constants/messages-session"
 import { GA } from "./utils"
-import { ROUTE_URL_USER_LANDING } from "./user/constants/routes-session"
 import {
   getUserInfo,
   refreshUser,
