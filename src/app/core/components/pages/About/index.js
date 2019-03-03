@@ -109,13 +109,14 @@ class About extends React.PureComponent {
           </AuthorsBanner>
           <h3>A brief history.</h3>
           <p>
-            This project was born in 2017 as an idea for a community publishing
-            platform.
+            This project got initiated in 2017 as an idea for a community
+            publishing platform.
           </p>
           <p>
-            Analog.Cafe got funded via Kickstarter on May 5<sup>th</sup> that
-            same year. Today it’s maintained by{" "}
-            <Link to="/is/dmitrizzle">Dmitri</Link> – hello! 👋
+            Analog.Cafe got funded via Kickstarter on May 5<sup>th</sup>. The
+            website went live on{" "}
+            <Link to="/zine/analog-cafe-e8tr">July 27, 2017</Link>. Today it’s
+            maintained by <Link to="/is/dmitrizzle">Dmitri</Link> – hello! 👋
           </p>
           <p>
             My wife, <Link to="/is/betty">Betty</Link>, has been a tremendous
