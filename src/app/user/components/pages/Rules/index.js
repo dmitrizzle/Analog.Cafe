@@ -18,10 +18,9 @@ export default () => {
         <h3>Submissions</h3>
         <p>
           <em>
-            By sending a <Link to="/submit">submission</Link> and using
-            Analog.Cafe website and the{" "}
-            <Link to={"/submit/compose"}>Composer</Link> tool, you are agreeing
-            to the following rules:
+            By sending a <Link to="/submit">submission</Link>, using Analog.Cafe
+            website and the <Link to={"/submit/compose"}>Composer</Link> tool,
+            you are agreeing to the following rules:
           </em>
         </p>
         <p>
@@ -50,20 +49,20 @@ export default () => {
           other social network) within other Authors’ submissions with a link to
           the first Author’s profile on Analog.Cafe when clicked on an image and
           in the title of the post. Authors are giving Analog.Cafe and the
-          Authors of Analog.Cafe to use their work in such manner (Analog.Cafe
-          will make reasonable effort to ensure that all of such actions are
-          respectful and in good faith, up to discretion of Analog.Cafe
-          editors). Authors are also granting Analog.Cafe Editors the permission
-          to modify the submissions (cropping, colour and quality adjustments as
-          well as copy editing and visual decorations). Authors are free to
-          request an immediate withdrawal of the work at any time via email (see{" "}
-          <Link to="/about">About</Link> page for contact info). We will comply
-          as soon as possible or within two weeks of request; images which are
-          used within other posts or are “suggested” images will take longer to
-          remove (up to 30 days), since we’ll be forced to make arrangements
-          that would satisfy all the Authors and Editors who have used that
-          material. Analog.Cafe also reserves the right to remove Authors’ work
-          at any time at Editors’ discretion.
+          Authors of Analog.Cafe the right to use their work in such manner
+          (Analog.Cafe will make reasonable effort to ensure that all of such
+          actions are respectful and in good faith, up to discretion of
+          Analog.Cafe editors). Authors are also granting Analog.Cafe Editors
+          the permission to modify the submissions (cropping, colour and quality
+          adjustments as well as copy editing and visual decorations). Authors
+          are free to request an immediate withdrawal of the work at any time
+          via email (see <Link to="/about">About</Link> page for contact info).
+          We will comply as soon as possible or within two weeks of request;
+          images which are used within other posts or are “suggested” images
+          will take longer to remove (up to 30 days), since we’ll be forced to
+          make arrangements that would satisfy all the Authors and Editors who
+          have used that material. Analog.Cafe also reserves the right to remove
+          Authors’ work at any time at Editors’ discretion.
         </p>
         <p>
           <strong>Exclusivity.</strong> Authors’ work is being exhibited on a
@@ -72,13 +71,12 @@ export default () => {
           that you wish.
         </p>
         <p>
-          <strong>Watermarks.</strong> If you choose to place watermarks on
-          Authors’ images their aesthetics will be considered by Analog.Cafe
-          Editor. Meaning that tasteful, well-designed (this is up to
-          Analog.Cafe Editor’s discretion) watermarks may be acceptable;
-          badly-designed, obstructive (this is up to Analog.Cafe Editor’s
-          discretion) watermarks might diminish Authors’ works’ chances to be
-          accepted.
+          <strong>Watermarks.</strong> If an Author chooses to place watermarks
+          on images, their aesthetics will be considered by Analog.Cafe Editor.
+          Meaning that tasteful, well-designed (this is up to Analog.Cafe
+          Editor’s discretion) watermarks may be acceptable; badly-designed,
+          obstructive (this is up to Analog.Cafe Editor’s discretion) watermarks
+          might diminish Authors’ works’ chances to be accepted.
         </p>
         <p>
           <strong>Admission.</strong> There are no submission fees and no
@@ -96,12 +94,22 @@ export default () => {
           limited time and resources, please keep that in mind when making
           requests.
         </p>
+        <p>
+          Submissions which have not been accepted are subject to being deleted
+          from our servers within a month of such decision. This is a manual
+          action and isn’t a rule or a guarantee.
+        </p>
+        <p>
+          Spam and any submissions deemed unacceptible or inappropriate are
+          subject to immediate deletion and the Author’s account is a subject to
+          suspension or banning.
+        </p>
 
         <h3>Terms of Use</h3>
         <p>
           <em>
             These terms of use apply to all Authors, users, and visitors to
-            Analog.Cafe website, including Authors of software that downloads
+            Analog.Cafe website, including authors of software that downloads
             and/or interprets any part of this website.
           </em>
         </p>
@@ -114,33 +122,36 @@ export default () => {
           made by the editor specifically belongs to Analog.Cafe and the editor.
           Copy edits associated with Author’s post, the brand name, font
           combinations and all design decisions regarding presenting Author’s
-          work belong to Analog.Cafe.
+          work belong to Analog.Cafe and Dmitri Tcherbadji.
         </p>
         <p>
           <strong>Links to Authors’ work.</strong> All links directed outside of
-          Analog.Cafe website will be set to &ldquo;no-follow.&rdquo;
+          Analog.Cafe website will be set to &ldquo;no-follow,&rdquo; unless
+          otherwise agreed-on.
         </p>
 
         <p>
           <strong>Guarantees and data storage.</strong> Analog.Cafe does not
-          provide any guarantee of service, it is presented to you as-is. We are
-          doing our best to keep all of the data as safe as reasonably possible,
-          but there may be cases when issues may arise, which may cause loss and
-          damage of Authors’ work. Analog.Cafe cannot take responsibility for
-          these events. Analog.Cafe reserves the right to delete irrelevant,
-          offensive content at the discretion of editors. Additionally,
-          Analog.Cafe may delete, ban, or block abusive users.
+          provide any guarantee of service, it is presented to all Authors,
+          editors, visitors, and users as-is. We are doing our best to keep all
+          of the data as safe as reasonably possible, but there may be cases
+          when issues may arise, which may cause loss and damage of Authors’
+          work or personal account holders (users who have a public or private
+          profile registered on Analog.Cafe website). Analog.Cafe cannot take
+          responsibility for these events. Analog.Cafe reserves the right to
+          delete irrelevant, offensive content at the discretion of editors.
+          Additionally, Analog.Cafe may delete, ban, or block abusive users.
         </p>
         <p>
           All Authors, users, and visitors to Analog.Cafe website, including
-          Authors of software that downloads and/or interprets any part of this
+          authors of software that downloads and/or interprets any part of this
           website must confine usage to the intended user interface, rendered by
-          your browser and without plugins, devices, tools, or software that can
-          alter its function in a way that distorts the default presentation,
-          data, sounds, or any information provided by Analog.Cafe website.
-          Prohibited use includes attempts to connect to the JSON API service
-          and attempts to alter the behaviour of the website outside of its
-          intended use for all or any users.
+          a web browser and without plugins, devices, tools, or software that
+          can alter its function in a way that distorts the presentation, data,
+          sounds, or any information provided by Analog.Cafe website. Prohibited
+          use includes attempts to connect to the JSON API service and attempts
+          to alter the behaviour of the website outside of its intended use for
+          all or any persons.
         </p>
         <p>
           For Privacy Policy please click <Link to="/privacy-policy">here</Link>
