@@ -20,15 +20,6 @@ const posterText =
   "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews."
 const getPublished = "Get your work published on Analog.Cafe"
 
-export const SubmitIntro = () => {
-  return (
-    <span>
-      Get your work published along with a growing{" "}
-      <Link to="/about">community</Link> of artists and film photographers.
-    </span>
-  )
-}
-
 export default props => {
   const Body = () => (
     <ArticleSection>
