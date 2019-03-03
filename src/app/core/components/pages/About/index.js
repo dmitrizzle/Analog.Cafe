@@ -85,11 +85,7 @@ class About extends React.PureComponent {
         <ArticleSection>
           <p>
             Here we publish weekly photo essays on art, travel, and culture.
-            Many of our articles are about{" "}
-            <Link to="/zine/a-beginners-guide-to-film-photography-zq0f">
-              analogue
-            </Link>{" "}
-            cameras, too.
+            Many of our articles are about analogue cameras, too.
           </p>
           <p>
             As of now, there are {this.props.community.authorsList.items.length}{" "}
@@ -122,23 +118,20 @@ class About extends React.PureComponent {
             <Link to="/is/dmitrizzle">Dmitri</Link> – hello! 👋
           </p>
           <p>
-            I’m not doing this alone. My wife, <Link to="/is/betty">Betty</Link>
-            , has been a tremendous help in setting the tone, quality, and
-            consistency of the articles. None of this would make sense without
-            her help and the fantastic people who supported me along this
-            journey.
+            My wife, <Link to="/is/betty">Betty</Link>, has been a tremendous
+            help in setting the tone, quality, and consistency of the articles.
+            None of this would make sense without her help and the fantastic
+            people who supported me along this journey.
           </p>
 
           <p>
-            Almost every image on this website is either shot with a film camera
-            or is about film. There could be a book written on why we haven’t
-            given up this medium. The gist: it comes with a unique look,
-            process, and memories.{" "}
+            Almost every image on this website is shot on film. There could be a
+            book written on why we haven’t given up this medium. The gist: it
+            comes with a unique look, process, and memories.{" "}
             <Link to="/zine/a-beginners-guide-to-film-photography-zq0f">
               Give it a try
             </Link>{" "}
-            if you haven’t already – it may change the way you think about
-            images.
+            if you haven’t already.
           </p>
 
           <h3>How to reach us.</h3>
@@ -179,12 +172,8 @@ class About extends React.PureComponent {
             cheese, whatever – email me at <ContactInfo />, or reach out via{" "}
             <strong>
               <Link to="https://twitter.com/analog_cafe">Twitter</Link>
-            </strong>
-            ,{" "}
-            <strong>
-              <Link to="https://www.facebook.com/analog8cafe">Facebook</Link>
-            </strong>
-            , or{" "}
+            </strong>{" "}
+            and{" "}
             <strong>
               <Link to="https://instagram.com/analog_cafe">Instagram</Link>
             </strong>
