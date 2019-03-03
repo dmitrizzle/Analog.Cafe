@@ -52,7 +52,7 @@ export default props => {
           <span className="icon">✹</span> Submit your work to get featured.
         </li>
         <li>
-          <span className="icon">☞</span> Free printables & exclusives.
+          <span className="icon">❖</span> Free printables & exclusives.
         </li>
       </AccountBenifits>
     </React.Fragment>

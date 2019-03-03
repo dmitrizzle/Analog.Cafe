@@ -64,7 +64,12 @@ export default props => (
       ) : (
         <React.Fragment>
           <NavMiniIcon>{ITEMS.submissions.icon}</NavMiniIcon>
-          <Link to={ITEMS.submissions.to}>{ITEMS.submissions.label}</Link>
+          <NavmMiniLink to={ITEMS.submissions.to}>
+            {ITEMS.submissions.label}
+          </NavmMiniLink>
+
+          <NavMiniIcon>☞</NavMiniIcon>
+          <NavmMiniLink to={"/submit"}>Help</NavmMiniLink>
         </React.Fragment>
       )}
     </div>

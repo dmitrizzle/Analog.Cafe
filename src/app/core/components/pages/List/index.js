@@ -4,52 +4,22 @@ import React from "react"
 
 import { withRouter } from "react-router"
 
-import {
-  CardColumns,
-  CardIntegratedForColumns
-} from "../../controls/ArticleActions/components/Options"
-import { GA, makeFroth } from "../../../../utils"
+import { GA } from "../../../../utils"
 import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
-import { TEXT_EMOJIS } from "../../../../constants"
 import { fetchListPage, initListPage } from "../../../store/actions-list"
 import { getListMeta } from "../../../utils/messages-list"
 import { preloadConstructor } from "../../../utils/routes-article"
 import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
-import ArticleSection from "../Article/components/ArticleSection"
-import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Button from "../../controls/Button/components/Button"
-import Byline from "../../vignettes/Byline"
-import CardButton from "../../controls/Card/components/CardButton"
-import CardCaption from "../../controls/Card/components/CardCaption"
-import HeaderLarge from "../../vignettes/HeaderLarge"
-import Link from "../../controls/Link"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
 import MetaTags from "../../vignettes/MetaTags"
-import NavMini from "../../controls/Nav/components/NavMini"
-import Placeholder from "../../vignettes/Picture/components/Placeholder"
 
-const PlaceholderHowToSubmit = Loadable({
-  loader: () => import("./components/HowToSubmit"),
+const ListProfile = Loadable({
+  loader: () => import("../../../../user/components/pages/ListProfile"),
   loading: () => null
 })
-
-const ProfileImage = props => (
-  <figure>
-    <Placeholder frothId={props.image}>
-      <img
-        src={
-          makeFroth({
-            src: props.image,
-            size: "s"
-          }).src
-        }
-        alt={props.title}
-      />
-    </Placeholder>
-  </figure>
-)
 
 class List extends React.PureComponent {
   constructor(props) {
@@ -119,6 +89,12 @@ class List extends React.PureComponent {
       this.props.list.author.buttons[1] &&
       this.props.list.author.buttons[1].text
 
+    const listProfileProps = {
+      isUserDashboard,
+      profileImage,
+      doesAuthorHaveLink
+    }
+
     return (
       <div>
         <MetaTags
@@ -135,124 +111,7 @@ class List extends React.PureComponent {
         )}
         <React.Fragment>
           {isProfilePage && (
-            <ArticleWrapper>
-              <HeaderLarge
-                style={{
-                  zIndex: 11,
-                  position: "relative"
-                }}
-                noTitleCase
-                pageTitle={
-                  (this.props.list.author && this.props.list.author.title) ||
-                  TEXT_EMOJIS.HUG_RIGHT
-                }
-                pageSubtitle={
-                  !this.props.list.author
-                    ? "Loading…"
-                    : this.props.list.author.subtitle
-                }
-              >
-                <Byline>
-                  {this.props.list.author &&
-                    this.props.user.info.id === this.props.list.author.id && (
-                      <React.Fragment>
-                        {isUserDashboard ? (
-                          <NavMini view="submissions" />
-                        ) : (
-                          <React.Fragment>
-                            This is a preview of your public profile. You can
-                            edit it along with seeing all your published and not
-                            yet published submissions{" "}
-                            <Link to={`${ROUTE_URL_USER_LANDING}`}>here</Link>.
-                          </React.Fragment>
-                        )}
-                      </React.Fragment>
-                    )}
-                </Byline>
-              </HeaderLarge>
-
-              {this.props.list.author && (
-                <ArticleSection
-                  style={{
-                    zIndex: 11,
-                    position: "relative"
-                  }}
-                >
-                  <CardColumns>
-                    {profileImage && (
-                      <CardIntegratedForColumns>
-                        {isUserDashboard ? (
-                          <Link to={`/profile/edit`}>
-                            <ProfileImage
-                              image={profileImage}
-                              title={this.props.list.author.title}
-                            />
-                          </Link>
-                        ) : (
-                          <ProfileImage
-                            image={profileImage}
-                            title={this.props.list.author.title}
-                          />
-                        )}
-                      </CardIntegratedForColumns>
-                    )}
-                    {(this.props.list.author.text || doesAuthorHaveLink) && (
-                      <CardIntegratedForColumns>
-                        {this.props.list.author.text && (
-                          <figcaption style={{ fontSize: ".8em" }}>
-                            <CardCaption>
-                              {this.props.list.author.text}
-                            </CardCaption>
-                          </figcaption>
-                        )}
-                        {doesAuthorHaveLink && (
-                          <CardButton
-                            to={this.props.list.author.buttons[1].to}
-                            branded
-                          >
-                            {this.props.list.author.buttons[1].text}
-                          </CardButton>
-                        )}
-                      </CardIntegratedForColumns>
-                    )}
-                    {isUserDashboard &&
-                      (!this.props.list.author.text || !doesAuthorHaveLink) && (
-                        <CardIntegratedForColumns>
-                          <figcaption style={{ fontSize: ".8em" }}>
-                            <CardCaption>
-                              {this.props.list.author.text || (
-                                <span>
-                                  <Link to={`/profile/edit`}>
-                                    Tell the world
-                                  </Link>{" "}
-                                  abot yourself.
-                                </span>
-                              )}
-                            </CardCaption>
-                          </figcaption>
-
-                          <CardButton
-                            to={
-                              doesAuthorHaveLink
-                                ? this.props.list.author.buttons[1].to
-                                : `/profile/edit`
-                            }
-                            branded
-                          >
-                            {doesAuthorHaveLink
-                              ? this.props.list.author.buttons[1].text
-                              : "Add a Link"}
-                          </CardButton>
-                        </CardIntegratedForColumns>
-                      )}
-                  </CardColumns>
-                </ArticleSection>
-              )}
-
-              {this.props.user.connection.status !== "offline" &&
-                this.props.list.page["items-total"] === 0 &&
-                this.props.me && <PlaceholderHowToSubmit />}
-            </ArticleWrapper>
+            <ListProfile {...this.props} {...listProfileProps} />
           )}
           <ListBlock
             status={this.props.list.status}

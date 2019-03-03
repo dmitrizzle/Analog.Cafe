@@ -134,17 +134,16 @@ class SignIn extends React.PureComponent {
                       with={{
                         info: {
                           image: "image-froth_3525424_rJ1m0e15m",
-                          title: "Sign In with Confirmation Link",
+                          title: "Secure Confirmation Links",
                           text: (
                             <span>
                               Sign in and create accounts{" "}
-                              <strong>securely and without passwords</strong>{" "}
-                              using confirmation links.
+                              <strong>securely and without passwords</strong>.
                               <br />
                               <br />
-                              Enter your email address and we’ll email you a
-                              link that expires in ten minutes. Click it –
-                              you’re now signed in!
+                              Enter your email address get a link that will
+                              either create an account or log you in –
+                              instantly.
                             </span>
                           )
                         },
