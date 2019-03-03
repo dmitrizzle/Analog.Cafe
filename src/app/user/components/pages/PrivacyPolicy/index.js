@@ -26,7 +26,7 @@ export default () => {
           having an account with Analog.Cafe. Some emails are a part of the
           system (like notificatons sent at the time of publication to all
           authors). Those emails can can only be unsubscribed from when you
-          delete your account on Analog.Cafe server.
+          delete your account from Analog.Cafe servers.
         </p>
         <p>
           You can delete your account at any time by sending a request to{" "}
@@ -42,12 +42,12 @@ export default () => {
           textual data in a variety of forms on your device that lets you store
           your submissions in your browser and resume them even when you are
           offline, as well as to provide customized experiences. Analog.Cafe
-          does not use that information to track your behaviour. Analog.Cafe can
-          not see the content of your token or any of the stored data mentioned
-          above. Analog.Cafe does not directly use cookie-tracking technology.
-          An instance of Google Analytics <em>is</em> installed on Analog.Cafe,
-          which employs cookies, however, they are not shared with any outside
-          domain.
+          does not use that information to track and/or record your behaviour.
+          Analog.Cafe can not see the content of your token or any of the stored
+          data mentioned above. Analog.Cafe does not directly use
+          cookie-tracking technology. An instance of Google Analytics and
+          FullStory softwares <em>is</em> installed on Analog.Cafe, which
+          employs cookies, however, they are not shared with any outside domain.
         </p>
         <p>
           Analog.Cafe uses Google Analytics and FullStory, which anonymously
