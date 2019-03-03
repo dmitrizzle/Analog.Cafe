@@ -239,184 +239,24 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
-      "children": Array [
-        <hr />,
-        <Unknown />,
-        <styled.div
-          style={
-                    Object {
-                              "paddingBottom": "1.5em",
-                            }
-          }
->
-          <Unknown
-                    branded={true}
-                    to="/submit/compose"
-          >
-                    Submit Now
-          </Unknown>
-</styled.div>,
-        <Unknown />,
-      ],
-      "style": Object {
-        "paddingBottom": "17.5em",
-      },
+      "embed": true,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": "hr",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": <Unknown
-            branded={true}
-            to="/submit/compose"
->
-            Submit Now
-</Unknown>,
-          "style": Object {
-            "paddingBottom": "1.5em",
-          },
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "branded": true,
-            "children": "Submit Now",
-            "to": "/submit/compose",
-          },
-          "ref": null,
-          "rendered": "Submit Now",
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
+    "rendered": null,
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
-        "children": Array [
-          <hr />,
-          <Unknown />,
-          <styled.div
-            style={
-                        Object {
-                                    "paddingBottom": "1.5em",
-                                  }
-            }
->
-            <Unknown
-                        branded={true}
-                        to="/submit/compose"
-            >
-                        Submit Now
-            </Unknown>
-</styled.div>,
-          <Unknown />,
-        ],
-        "style": Object {
-          "paddingBottom": "17.5em",
-        },
+        "embed": true,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": "hr",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <Unknown
-              branded={true}
-              to="/submit/compose"
->
-              Submit Now
-</Unknown>,
-            "style": Object {
-              "paddingBottom": "1.5em",
-            },
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "branded": true,
-              "children": "Submit Now",
-              "to": "/submit/compose",
-            },
-            "ref": null,
-            "rendered": "Submit Now",
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
+      "rendered": null,
       "type": [Function],
     },
   ],
