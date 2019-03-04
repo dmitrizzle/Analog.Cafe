@@ -32,7 +32,7 @@ ShallowWrapper {
                 <span
                         className="icon"
                 >
-                        ✹
+                        ✒︎
                 </span>
                  Submit your work to get featured.
         </li>
@@ -65,7 +65,7 @@ ShallowWrapper {
             <span
                         className="icon"
             >
-                        ✹
+                        ✒︎
             </span>
              Submit your work to get featured.
 </li>,
@@ -122,7 +122,7 @@ ShallowWrapper {
               <span
                 className="icon"
 >
-                ✹
+                ✒︎
 </span>,
               " Submit your work to get featured.",
             ],
@@ -134,11 +134,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "✹",
+                "children": "✒︎",
                 "className": "icon",
               },
               "ref": null,
-              "rendered": "✹",
+              "rendered": "✒︎",
               "type": "span",
             },
             " Submit your work to get featured.",
@@ -201,7 +201,7 @@ ShallowWrapper {
                     <span
                               className="icon"
                     >
-                              ✹
+                              ✒︎
                     </span>
                      Submit your work to get featured.
           </li>
@@ -234,7 +234,7 @@ ShallowWrapper {
               <span
                             className="icon"
               >
-                            ✹
+                            ✒︎
               </span>
                Submit your work to get featured.
 </li>,
@@ -291,7 +291,7 @@ ShallowWrapper {
                 <span
                   className="icon"
 >
-                  ✹
+                  ✒︎
 </span>,
                 " Submit your work to get featured.",
               ],
@@ -303,11 +303,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "✹",
+                  "children": "✒︎",
                   "className": "icon",
                 },
                 "ref": null,
-                "rendered": "✹",
+                "rendered": "✒︎",
                 "type": "span",
               },
               " Submit your work to get featured.",
