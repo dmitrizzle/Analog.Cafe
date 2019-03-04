@@ -18,20 +18,19 @@ export default () => {
         photo, a short bio and a link to your website or social account.
       </p>
       <p>
-        This page will become a lot more useful once you start submitting your
-        essays and articles to be published on Analog.Cafe website. It’s easy to
-        do; just follow{" "}
+        This page will fill up once you start submitting your essays and
+        articles. It’s easy to do; just follow{" "}
         <Link to="/submit">
           <strong>this link</strong>
         </Link>{" "}
         to get started.
       </p>
       <p>
-        If not, your{" "}
+        Your{" "}
         <Link to="/favourites">
-          <strong>favourites</strong>
+          <strong>Favourites</strong>
         </Link>{" "}
-        will be a very useful page. There you can store a private list of
+        can also be a very useful page. There you can store a private list of
         articles which you{" "}
         <span style={{ color: "#ed236e", fontWeight: "700" }}>❤︎</span>
         ’d.

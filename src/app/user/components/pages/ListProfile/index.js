@@ -46,7 +46,9 @@ export default props => (
       }
       noTitleCase
       pageTitle={
-        (props.list.author && props.list.author.title) || TEXT_EMOJIS.HUG_RIGHT
+        (props.list.author &&
+          (props.isUserDashboard ? "⇠" : "") + props.list.author.title) ||
+        "⇠"
       }
       pageSubtitle={
         !props.list.author ? "Loading…" : props.list.author.subtitle
@@ -60,10 +62,10 @@ export default props => (
                 <NavMini view="submissions" />
               ) : (
                 <React.Fragment>
-                  This is a preview of your public profile. You can edit it
-                  along with seeing all your published and not yet published
-                  submissions <Link to={`${ROUTE_URL_USER_LANDING}`}>here</Link>
-                  .
+                  <NavMini />
+                  This is how your profile looks to the general public{" "}
+                  <span style={{ fontStyle: "normal" }}>🌎</span>. This page is
+                  shareable.
                 </React.Fragment>
               )}
             </React.Fragment>
