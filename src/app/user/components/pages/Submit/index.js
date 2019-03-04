@@ -120,7 +120,11 @@ export default props => {
       <p>
         Best way to get accepted is to read a few articles on the website to get
         a better sense for what gets published. For further advice and ideas,
-        read <Link to="/zine/open-call-g99w">this</Link>.
+        read{" "}
+        <Link to="/zine/open-call-g99w">
+          <strong>this</strong>
+        </Link>
+        .
       </p>
       <h3>Good luck!</h3>
     </ArticleSection>

@@ -6,37 +6,31 @@ import Link from "../../../../../core/components/controls/Link"
 export default () => {
   return (
     <ArticleSection>
-      <h3>Your submissions & public profile.</h3>
-      <p>
+      <h3>Your submissions.</h3>
+      {/* <p>
         You’re now a full member of Analog.Cafe community, nice!{" "}
         <span role="img" aria-label="OK sign with fingers">
           👌
         </span>
-      </p>
+      </p> */}
       <p>
-        What you see above is your public profile. Make it beautiful with your
-        photo, a short bio and a link to your website or social account.
+        If you love shooting film and have a story to share, Analog.Cafe could
+        be the place to publish it. Submissions are now accepted for essays and
+        articles on or featuring film photography.{" "}
+        <Link to="/submit">Details</Link>.
       </p>
-      <p>
-        This page will fill up once you start submitting your essays and
-        articles. It’s easy to do; just follow{" "}
-        <Link to="/submit">
-          <strong>this link</strong>
-        </Link>{" "}
-        to get started.
-      </p>
-      <p>
-        Your{" "}
+      {/* <p>
+        Until then, your{" "}
         <Link to="/favourites">
           <strong>Favourites</strong>
         </Link>{" "}
-        can also be a very useful page. There you can store a private list of
+        well . There you can store a private list of
         articles which you{" "}
         <span style={{ color: "#ed236e", fontWeight: "700" }}>❤︎</span>
         ’d.
-      </p>
-      <p>
-        You now also have full access to the{" "}
+      </p> */}
+      {/* <p>
+        Don’t forget to checkout the{" "}
         <Link to="/resources">
           <strong>Resources</strong>
         </Link>{" "}
@@ -45,7 +39,7 @@ export default () => {
         <span role="img" aria-label="Wink, wink">
           😉
         </span>
-      </p>
+      </p> */}
     </ArticleSection>
   )
 }

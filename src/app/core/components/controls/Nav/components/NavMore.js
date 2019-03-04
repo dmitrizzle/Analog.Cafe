@@ -48,10 +48,10 @@ const NAV_USER = props => [
     to: ROUTE_URL_USER_LANDING,
     text: "✒︎ Submissions"
   },
-  {
-    to: "/submit/compose",
-    text: props.hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
-  },
+  // {
+  //   to: "/submit/compose",
+  //   text: props.hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
+  // },
   {
     to: `/profile/edit`,
     text: "✱ Edit Profile"

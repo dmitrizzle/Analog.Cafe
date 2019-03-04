@@ -1,4 +1,3 @@
-import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
 import React from "react"
 import styled from "styled-components"
 
@@ -9,13 +8,16 @@ const NavMiniWrapper = styled.div`
   min-width: 320px;
   margin: 0 -1.75em;
   > div {
-    width: 37em;
+    width: 25em;
     margin: 0 auto;
   }
 `
 const NavMiniIcon = styled.span`
   font-style: normal;
   padding: 0 0.25em 0 1.5em;
+  &:first-child {
+    padding-left: 0;
+  }
 `
 const NavmMiniLink = styled(Link)`
   background: ${props => props.theme.color.background()};
@@ -32,11 +34,11 @@ const ITEMS = {
     icon: "✒︎",
     to: "/submissions"
   },
-  composer: {
-    label: loadTextContent().length > 0 ? "Edit Draft" : "New Submission",
-    icon: "✏︎",
-    to: "/submit/compose"
-  },
+  // composer: {
+  //   label: loadTextContent().length > 0 ? "Edit Draft" : "New Submission",
+  //   icon: "✏︎",
+  //   to: "/submit/compose"
+  // },
   profile: {
     label: "Edit Profile",
     icon: "✱",

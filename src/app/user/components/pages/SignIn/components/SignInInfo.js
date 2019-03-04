@@ -49,7 +49,7 @@ export default props => {
           favourites.
         </li>
         <li>
-          <span className="icon">✹</span> Submit your work to get featured.
+          <span className="icon">✒︎</span> Submit your work to get featured.
         </li>
         <li>
           <span className="icon">❖</span> Free printables & exclusives.
