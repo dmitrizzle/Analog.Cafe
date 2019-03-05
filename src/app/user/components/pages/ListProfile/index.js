@@ -9,12 +9,14 @@ import { TEXT_EMOJIS } from "../../../../constants"
 import { makeFroth } from "../../../../utils"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
+import Button from "../../../../core/components/controls/Button/components/Button"
 import Byline from "../../../../core/components/vignettes/Byline"
 import CardButton from "../../../../core/components/controls/Card/components/CardButton"
 import CardCaption from "../../../../core/components/controls/Card/components/CardCaption"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import HowToSubmit from "./components/HowToSubmit"
 import Link from "../../../../core/components/controls/Link"
+import LinkButton from "../../../../core/components/controls/Button/components/LinkButton"
 import NavMini from "../../../../core/components/controls/Nav/components/NavMini"
 import Placeholder from "../../../../core/components/vignettes/Picture/components/Placeholder"
 
@@ -46,7 +48,7 @@ export default props => (
       pageTitle={
         props.list.author
           ? props.isUserDashboard
-            ? `Hi ${props.list.author.title}!`
+            ? `Hi ${props.list.author.title}👋`
             : props.list.author.title
           : TEXT_EMOJIS.HUG_RIGHT
       }
@@ -86,6 +88,16 @@ export default props => (
           position: "relative"
         }}
       >
+        {props.isUserDashboard && (
+          <React.Fragment>
+            <h3 style={{ display: "inline-block" }}>
+              Your author profile&nbsp;
+            </h3>
+            <em>
+              <Link to={`/profile/edit`}>(edit)</Link>.
+            </em>
+          </React.Fragment>
+        )}
         <CardColumns>
           {props.profileImage && (
             <CardIntegratedForColumns>
@@ -120,20 +132,10 @@ export default props => (
               </CardIntegratedForColumns>
             )}
           {props.isUserDashboard && (
-            <CardIntegratedForColumns
-              style={{
-                boxShadow: "none",
-                overflow: "visible",
-                background: "transparent"
-              }}
-            >
+            <CardIntegratedForColumns>
               <figcaption
                 style={{
-                  fontSize: ".8em",
-                  boxShadow: "0 0 0 1px rgba(44,44,44,0.125)",
-                  borderTopLeftRadius: ".25em",
-                  borderTopRightRadius: ".25em",
-                  background: "#fff"
+                  fontSize: ".8em"
                 }}
               >
                 <CardCaption>
@@ -153,10 +155,6 @@ export default props => (
                     : `/profile/edit`
                 }
                 branded={!props.isUserDashboard}
-                style={{
-                  borderBottomLeftRadius: ".25em",
-                  borderBottomRightRadius: ".25em"
-                }}
               >
                 {props.doesAuthorHaveLink
                   ? props.list.author.buttons[1].text
@@ -165,18 +163,6 @@ export default props => (
 
               {props.isUserDashboard && (
                 <React.Fragment>
-                  <CardButton
-                    to="/submit/compose"
-                    style={{
-                      marginTop: "1em",
-                      borderRadius: ".15em"
-                    }}
-                    branded
-                  >
-                    {loadTextContent().length > 0
-                      ? "✏︎ Edit Draft"
-                      : "✏︎ Compose New Submission"}
-                  </CardButton>
                   {props.list.page["items-total"] === 0 && (
                     <p>
                       <Link to="/submit">
@@ -190,6 +176,16 @@ export default props => (
             </CardIntegratedForColumns>
           )}
         </CardColumns>
+        {props.isUserDashboard && (
+          <React.Fragment>
+            <h3>Your submissions.</h3>
+            <LinkButton to="/submit/compose" branded>
+              {loadTextContent().length > 0
+                ? "✏︎ Edit Draft"
+                : "✏︎ Compose New Submission"}
+            </LinkButton>
+          </React.Fragment>
+        )}
       </ArticleSection>
     )}
 

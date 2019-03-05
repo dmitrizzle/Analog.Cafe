@@ -8,7 +8,7 @@ const NavMiniWrapper = styled.div`
   min-width: 320px;
   margin: 0 -1.75em;
   > div {
-    width: 25em;
+    width: 32em;
     margin: 0 auto;
   }
 `
@@ -24,6 +24,11 @@ const NavmMiniLink = styled(Link)`
 `
 
 const ITEMS = {
+  resources: {
+    label: "Resources",
+    icon: "❖",
+    to: "/resources"
+  },
   favourites: {
     label: "Favourites",
     icon: "❤︎",
@@ -65,13 +70,16 @@ export default props => (
         ))
       ) : (
         <React.Fragment>
+          <NavMiniIcon>☞</NavMiniIcon>
+          <NavmMiniLink to={"/submit"}>What is This?</NavmMiniLink>
+
+          <NavMiniIcon>☁</NavMiniIcon>
+          <NavmMiniLink to={"/zine/open-call-g99w"}>What to Write</NavmMiniLink>
+
           <NavMiniIcon>{ITEMS.submissions.icon}</NavMiniIcon>
           <NavmMiniLink to={ITEMS.submissions.to}>
             {ITEMS.submissions.label}
           </NavmMiniLink>
-
-          <NavMiniIcon>☞</NavMiniIcon>
-          <NavmMiniLink to={"/submit"}>Help</NavmMiniLink>
         </React.Fragment>
       )}
     </div>
