@@ -104,10 +104,10 @@ class SignIn extends React.PureComponent {
     if (this.props.user.status !== "ok") {
       return (
         <ArticleWrapper>
-          <MetaTags metaTitle="Sign In" />
+          <MetaTags metaTitle="Sign In" metaSubtitle="Or create free account" />
           <HeaderLarge
             pageTitle="Sign In"
-            pageSubtitle="Or create new account"
+            pageSubtitle="Or create free account"
           />
           <ArticleSection>
             <SignInInfo />

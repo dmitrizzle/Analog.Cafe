@@ -4,19 +4,20 @@ import styled from "styled-components"
 
 import { BurgerMenu, sectionButtons } from "../List/components/ListDescription"
 import { LabelWithSearchSVG } from "../../controls/Nav/components/NavGeneral"
+import { buttonMaker } from "../../forms/Search"
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { makeFroth } from "../../../../utils"
 import { setModal } from "../../../store/actions-modal"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import ContactInfo from "../../vignettes/ContactInfo"
+import Figcaption from "../../vignettes/Picture/components/Figcaption"
 import Figure, { bleed } from "../../vignettes/Picture/components/Figure"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
 import Search from "../../icons/Search"
-import { buttonMaker } from "../../forms/Search"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
@@ -92,20 +93,50 @@ class About extends React.PureComponent {
               <Link to="/">Analog.Cafe</Link>
             </strong>{" "}
             features long- and short-form photo essays on art, travel, and
-            culture.{" "}
-            <strong>Nonsensational, well edited and well illustrated.</strong>
+            culture. We strive to be{" "}
+            <strong>nonsensational, well edited, and well illustrated.</strong>
           </p>
           <p>
             We use, promote and write about{" "}
             <Link to="/zine/a-beginners-guide-to-film-photography-zq0f">
               film photography
             </Link>
-            , another central topic of this magazine.
+            : another central topic of this magazine.
           </p>
-          <p />
+          <Modal
+            unmarked
+            element="a"
+            with={{
+              info: {
+                image: "image-froth_1206996_r1CqlUwRm",
+                title: "Voigtländer Vitessa L",
+                text: (
+                  <span>
+                    <strong>Voigtländer Vitessa</strong> is a German 35mm film
+                    rangefinder camera, manufactured in the mid-1950s. The
+                    camera is uniquely-built, with a lot of thought and care put
+                    into the manufacturing process.
+                  </span>
+                ),
+                buttons: [
+                  {
+                    to: "/zine/vitessa-fzyi",
+                    text: "Learn More"
+                  }
+                ]
+              },
+              id: "hints/vitessa-l"
+            }}
+          >
+            <Figure src="image-froth_1206996_r1CqlUwRm" />
+          </Modal>
           <p>
-            The <Link to="/">front page</Link> of this website features all of
-            our newest articles. It can be filtered down into five main{" "}
+            The{" "}
+            <strong>
+              <Link to="/">front page</Link>
+            </strong>{" "}
+            of this website features all of our newest articles. It can be
+            filtered down into five main{" "}
             <Modal
               element="a"
               with={{
@@ -145,10 +176,25 @@ class About extends React.PureComponent {
             what you need.
           </p>
           <p>
-            <strong>Resources.</strong>
+            The{" "}
+            <strong>
+              <Link to="/resources">resources</Link>
+            </strong>{" "}
+            page features our growing knowledge base on art and photography. It
+            inclues guides, reviews, printables, audio, helpful links and
+            exclusive essays.
           </p>
           <p>
-            <strong>Your Account.</strong>
+            To get full access to the <em>resources</em> you will need a free{" "}
+            <strong>
+              <Link to="/sign-in">Analog.Cafe account</Link>
+            </strong>
+            . With it you can also vote for and save your{" "}
+            <span style={{ display: "inline-block" }}>
+              favourites
+              <span style={{ color: "#ed216c" }}>❤</span>
+            </span>{" "}
+            and <Link to="/submit">submit</Link> your work to get featured.
           </p>
 
           <h3>Authors, members, and editors.</h3>
@@ -157,7 +203,8 @@ class About extends React.PureComponent {
             Our content comes from guest and regular writers around the world.
             As of now, there are {this.props.community.authorsList.items.length}{" "}
             published authors. Some of us are prominent film photographers,
-            others are writers, artists, or camera afficionados.
+            others are casual and professional writers, artists, or camera
+            afficionados.
           </p>
           <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
             <Authors>
@@ -176,7 +223,7 @@ class About extends React.PureComponent {
           </AuthorsBanner>
           <h3>A brief history.</h3>
           <p>
-            This project got initiated in 2017 as an idea for a community
+            This project got initiated in 2017 as a plan for a community
             publishing platform.
           </p>
           <p>
@@ -192,44 +239,14 @@ class About extends React.PureComponent {
             people who supported me along this journey.
           </p>
 
-          <p>
-            Almost every image on this website is shot on film. There could be a
-            book written on why we haven’t given up this medium. The gist: it
-            comes with a unique look, process, and memories.{" "}
-            <Link to="/zine/a-beginners-guide-to-film-photography-zq0f">
-              Give it a try
-            </Link>{" "}
-            if you haven’t already.
-          </p>
-
           <h3>How to reach us.</h3>
-          <Modal
-            unmarked
-            element="a"
-            with={{
-              info: {
-                image: "image-froth_1206996_r1CqlUwRm",
-                title: "Voigtländer Vitessa L",
-                text: (
-                  <span>
-                    <strong>Voigtländer Vitessa</strong> is a German 35mm film
-                    rangefinder camera, manufactured in the mid-1950s. The
-                    camera is uniquely-built, with a lot of thought and care put
-                    into the manufacturing process.
-                  </span>
-                ),
-                buttons: [
-                  {
-                    to: "/zine/vitessa-fzyi",
-                    text: "Learn More"
-                  }
-                ]
-              },
-              id: "hints/vitessa-l"
-            }}
-          >
-            <Figure src="image-froth_1206996_r1CqlUwRm" />
-          </Modal>
+          <Link to="/is/dmitrizzle">
+            <Figure src="image-froth_1479844_S14eOAhIN" caption>
+              This is me, Dmitri. Writing right back via pigeon mail.
+              <br />
+              Just kidding, I’ll get back to you within 24 hours. 🙃
+            </Figure>
+          </Link>
 
           <p>
             You can usually find authors’ contact info in the bio, linked in
@@ -251,7 +268,7 @@ class About extends React.PureComponent {
             <strong>
               <Link to="/submit">Submissions</Link>
             </strong>{" "}
-            are welcome. 🙌
+            are welcome!
           </p>
 
           <h3>Thank you, project backers!</h3>
