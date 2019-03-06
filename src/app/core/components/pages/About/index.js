@@ -2,6 +2,8 @@ import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
+import { BurgerMenu, sectionButtons } from "../List/components/ListDescription"
+import { LabelWithSearchSVG } from "../../controls/Nav/components/NavGeneral"
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { makeFroth } from "../../../../utils"
 import { setModal } from "../../../store/actions-modal"
@@ -13,6 +15,8 @@ import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
+import Search from "../../icons/Search"
+import { buttonMaker } from "../../forms/Search"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
@@ -84,12 +88,75 @@ class About extends React.PureComponent {
 
         <ArticleSection>
           <p>
-            Here we publish weekly photo essays on art, travel, and culture.
-            Many of our articles are about analogue cameras, too.
+            <strong>
+              <Link to="/">Analog.Cafe</Link>
+            </strong>{" "}
+            features long- and short-form photo essays on art, travel, and
+            culture.{" "}
+            <strong>Nonsensational, well edited and well illustrated.</strong>
           </p>
           <p>
+            We use, promote and write about{" "}
+            <Link to="/zine/a-beginners-guide-to-film-photography-zq0f">
+              film photography
+            </Link>
+            , another central topic of this magazine.
+          </p>
+          <p />
+          <p>
+            The <Link to="/">front page</Link> of this website features all of
+            our newest articles. It can be filtered down into five main{" "}
+            <Modal
+              element="a"
+              with={{
+                info: {
+                  menu: true,
+                  title: (
+                    <span>
+                      <BurgerMenu /> Sections
+                    </span>
+                  ),
+                  buttons: sectionButtons.map(section => buttonMaker(section))
+                },
+                id: "about/sections"
+              }}
+            >
+              sections
+            </Modal>
+            . Or you can use search to{" "}
+            <Modal
+              element="a"
+              with={{
+                info: {
+                  search: true,
+                  menu: false,
+                  socialButtons: true,
+                  title: (
+                    <LabelWithSearchSVG>
+                      <Search /> Find
+                    </LabelWithSearchSVG>
+                  )
+                },
+                id: "nav/find"
+              }}
+            >
+              find
+            </Modal>{" "}
+            what you need.
+          </p>
+          <p>
+            <strong>Resources.</strong>
+          </p>
+          <p>
+            <strong>Your Account.</strong>
+          </p>
+
+          <h3>Authors, members, and editors.</h3>
+
+          <p>
+            Our content comes from guest and regular writers around the world.
             As of now, there are {this.props.community.authorsList.items.length}{" "}
-            contributing authors. Some of us are prominent film photographers,
+            published authors. Some of us are prominent film photographers,
             others are writers, artists, or camera afficionados.
           </p>
           <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">

@@ -52,10 +52,10 @@ const NAV_USER = props => [
     to: `/profile/edit`,
     text: "✱ Edit Profile"
   },
-  {
-    to: "/submit/compose",
-    text: props.hasDraft ? "✏︎ Edit Draft" : "✏︎ New Submission"
-  },
+  // {
+  //   to: "/submit/compose",
+  //   text: props.hasDraft ? "✏︎ Edit Submission Draft" : "✏︎ New Submission"
+  // },
   buttonMaker("/sign-out"),
   props.userRole === "admin"
     ? buttonMaker("/admin", { attributes: { branded: true } })
@@ -70,7 +70,6 @@ export default props => {
       unmarked
       with={{
         info: {
-          search: true,
           socialButtons: true,
           menu: true,
           title: (

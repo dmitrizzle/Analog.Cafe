@@ -132,10 +132,20 @@ export default props => (
               </CardIntegratedForColumns>
             )}
           {props.isUserDashboard && (
-            <CardIntegratedForColumns>
+            <CardIntegratedForColumns
+              style={{
+                boxShadow: "none",
+                overflow: "visible",
+                background: "transparent"
+              }}
+            >
               <figcaption
                 style={{
-                  fontSize: ".8em"
+                  fontSize: ".8em",
+                  boxShadow: "0 0 0 1px rgba(44,44,44,0.125)",
+                  borderTopLeftRadius: ".25em",
+                  borderTopRightRadius: ".25em",
+                  background: "#fff"
                 }}
               >
                 <CardCaption>
@@ -155,6 +165,10 @@ export default props => (
                     : `/profile/edit`
                 }
                 branded={!props.isUserDashboard}
+                style={{
+                  borderBottomLeftRadius: ".25em",
+                  borderBottomRightRadius: ".25em"
+                }}
               >
                 {props.doesAuthorHaveLink
                   ? props.list.author.buttons[1].text
@@ -179,11 +193,6 @@ export default props => (
         {props.isUserDashboard && (
           <React.Fragment>
             <h3>Your submissions.</h3>
-            <LinkButton to="/submit/compose" branded>
-              {loadTextContent().length > 0
-                ? "✏︎ Edit Draft"
-                : "✏︎ Compose New Submission"}
-            </LinkButton>
           </React.Fragment>
         )}
       </ArticleSection>
@@ -192,5 +201,17 @@ export default props => (
     {props.user.connection.status !== "offline" &&
       props.list.page["items-total"] === 0 &&
       props.me && <HowToSubmit />}
+
+    {props.isUserDashboard && (
+      <LinkButton
+        to="/submit/compose"
+        branded
+        style={{ zIndex: 10, position: "relative" }}
+      >
+        {loadTextContent().length > 0
+          ? "✏︎ Edit Submission Draft"
+          : "✏︎ Compose New Submission"}
+      </LinkButton>
+    )}
   </ArticleWrapper>
 )

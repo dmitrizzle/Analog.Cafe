@@ -16,21 +16,19 @@ export const CARD_ERRORS = {
     text: "Please include at least one photograph or illustration."
   },
   SEND_CONTENT_EMPTY: {
-    title: "Some Stuff is Missing",
-    image:
-      "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
+    title: "⚠️ Submission Failed",
+    // image:
+    //   "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
     text: (
       <span>
-        Please make sure that you’ve added:
+        One of these things is missing:
         <br />
-        <strong>– A title</strong>
         <br />
-        <strong>- Text</strong>{" "}
-        <em>
-          <Link to="/zine/open-call-g99w">What should I write?</Link>
-        </em>
+        <strong>✒︎ A title.</strong>
         <br />
-        <strong>– Image(s)</strong> <em>10MB or smaller</em>
+        <strong>✒︎ 200-word article/essay.</strong>
+        <br />
+        <strong>✒︎ Image(s)</strong> <em>JPG, 10MB or less</em>.
       </span>
     )
   },

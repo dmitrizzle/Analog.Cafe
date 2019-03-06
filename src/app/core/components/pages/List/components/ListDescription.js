@@ -53,7 +53,7 @@ const DescriptionModalLink = styled(Modal)`
   text-decoration: none;
 `
 
-const sectionButtons = [
+export const sectionButtons = [
   "/film-photography",
   "/photo-essays",
   "/editorials",

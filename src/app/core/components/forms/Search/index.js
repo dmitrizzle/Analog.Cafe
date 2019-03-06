@@ -86,7 +86,10 @@ const NAV_BUTTONS = props => [
   }),
   {
     to: "/submit/compose",
-    text: loadTextContent().length > 0 ? "✏︎ Edit Draft" : "✏︎ New Submission",
+    text:
+      loadTextContent().length > 0
+        ? "✏︎ Edit Submission Draft"
+        : "✏︎ New Submission",
     keywords: "compose, submit, write, upload, send, cntribute",
     hidden: true
   },
@@ -134,7 +137,7 @@ export class Search extends React.PureComponent {
       event.stopPropagation()
     }
 
-    this.props.searchMode(true)
+    // this.props.searchMode && this.props.searchMode(true);
 
     this.setState({
       searchForm: !this.state.searchForm
@@ -185,131 +188,132 @@ export class Search extends React.PureComponent {
 
     return (
       <SearchVisibility menu={this.props.menu}>
-        {!this.state.searchForm ? (
-          <CardButton
-            noDownstate
-            style={{ background: "#dfdfdf", cursor: "text" }}
-            onClick={this.handleRevealSearchForm}
-          >
-            {TEXT_LABELS.SEARCH}
-          </CardButton>
-        ) : (
-          [
-            <SearchForm
-              formLocation={this.props.formLocation}
-              autoFocus={
-                "ontouchstart" in document.documentElement ? false : true
-              }
-              submitCallback={this.handleSubmitCallback}
-              searchText={this.handleSearchText}
-              searhTextValue={this.state.searchText}
-              loading={this.props.search.isFetching}
-              key="SearchForm"
-              style={{ zIndex: 1, position: "relative" }}
-            />,
-            haveSearchResults || isNotFound ? (
-              <CardButton
-                key="SearchResultsReset"
-                inverse
-                onClick={this.handleClearSearch}
-              >
-                Clear ✕
-              </CardButton>
-            ) : null,
-            <div key="SearchResults">
-              {haveSearchResults &&
-                this.props.search.data.items.map(item => {
-                  return [
-                    <CardSearchItem
-                      key={item.link}
-                      to={item.link}
-                      image={
-                        item.pagemap.cse_image
-                          ? item.pagemap.cse_image[0].src
-                          : null
-                      }
-                    >
-                      <div>{item.title}</div>
-                      <em>{item.snippet}</em>
-                    </CardSearchItem>,
-                    <ButtonGroupDivider
-                      key={`div_${item.link}`}
-                      style={{ zIndex: 1, position: "relative" }}
-                    />
-                  ]
-                })}
-              {isNotFound &&
-                !this.props.search.data.items && (
-                  <CardSearchItem to="/subscribe">
-                    <div>Not Found</div>
-                    <em>
-                      We publish new content every week.{" "}
-                      <strong>Subscribe</strong> to our weekly newsletter to get
-                      notified when the new articles get published.
-                    </em>
-                  </CardSearchItem>
-                )}
-            </div>,
-            !haveSearchResults ? (
-              <ButtonGroupDivider key="searchTypeDivider" />
-            ) : null,
-            NAV_BUTTONS(this.props).map(button => {
-              if (isInstantSearch) {
-                // FUZZY SEARCH
-                if (!button.keywords || !button.text) return null
+        {//   !this.state.searchForm ? (
+        //   <CardButton
+        //     noDownstate
+        //     style={{ background: "#dfdfdf", cursor: "text" }}
+        //     onClick={this.handleRevealSearchForm}
+        //   >
+        //     {TEXT_LABELS.SEARCH}
+        //   </CardButton>
+        // ) : (
+        [
+          <SearchForm
+            formLocation={this.props.formLocation}
+            autoFocus={
+              "ontouchstart" in document.documentElement ? false : true
+            }
+            submitCallback={this.handleSubmitCallback}
+            searchText={this.handleSearchText}
+            searhTextValue={this.state.searchText}
+            loading={this.props.search.isFetching}
+            key="SearchForm"
+            style={{ zIndex: 1, position: "relative" }}
+          />,
+          haveSearchResults || isNotFound ? (
+            <CardButton
+              key="SearchResultsReset"
+              inverse
+              onClick={this.handleClearSearch}
+            >
+              Clear ✕
+            </CardButton>
+          ) : null,
+          <div key="SearchResults">
+            {haveSearchResults &&
+              this.props.search.data.items.map(item => {
+                return [
+                  <CardSearchItem
+                    key={item.link}
+                    to={item.link}
+                    image={
+                      item.pagemap.cse_image
+                        ? item.pagemap.cse_image[0].src
+                        : null
+                    }
+                  >
+                    <div>{item.title}</div>
+                    <em>{item.snippet}</em>
+                  </CardSearchItem>,
+                  <ButtonGroupDivider
+                    key={`div_${item.link}`}
+                    style={{ zIndex: 1, position: "relative" }}
+                  />
+                ]
+              })}
+            {isNotFound &&
+              !this.props.search.data.items && (
+                <CardSearchItem to="/subscribe">
+                  <div>Not Found</div>
+                  <em>
+                    We publish new content every week.{" "}
+                    <strong>Subscribe</strong> to our weekly newsletter to get
+                    notified when the new articles get published.
+                  </em>
+                </CardSearchItem>
+              )}
+          </div>,
+          !haveSearchResults ? (
+            <ButtonGroupDivider key="searchTypeDivider" />
+          ) : null,
+          NAV_BUTTONS(this.props).map(button => {
+            if (isInstantSearch) {
+              // FUZZY SEARCH
+              if (!button.keywords || !button.text) return null
 
-                // keywords in the button:
-                const titleKywords =
-                  typeof button.text === "string" ? button.text : ""
-                const metaKeywords = button.keywords || ""
-                const buttonKeywords = metaKeywords + titleKywords
-                const parsedButtonKeywords = buttonKeywords
-                  .toLowerCase()
-                  .split(/[ ,]+/)
-                  .filter(keyword => keyword.length > 0)
+              // keywords in the button:
+              const titleKywords =
+                typeof button.text === "string" ? button.text : ""
+              const metaKeywords = button.keywords || ""
+              const buttonKeywords = metaKeywords + titleKywords
+              const parsedButtonKeywords = buttonKeywords
+                .toLowerCase()
+                .split(/[ ,]+/)
+                .filter(keyword => keyword.length > 0)
 
-                // keywords in search field
-                const parsedTypedKeywords = this.state.searchText
-                  .split(/[ ,]+/)
-                  .filter(keyword => keyword.length > 0)
-                  .slice(0, 5)
+              // keywords in search field
+              const parsedTypedKeywords = this.state.searchText
+                .split(/[ ,]+/)
+                .filter(keyword => keyword.length > 0)
+                .slice(0, 5)
 
-                // find
-                let notFound = true
-                parsedTypedKeywords.forEach(typedKyword => {
-                  parsedButtonKeywords.forEach(buttonKeyword => {
-                    buttonKeyword.includes(typedKyword) && (notFound = false)
-                  })
+              // find
+              let notFound = true
+              parsedTypedKeywords.forEach(typedKyword => {
+                parsedButtonKeywords.forEach(buttonKeyword => {
+                  buttonKeyword.includes(typedKyword) && (notFound = false)
                 })
+              })
 
-                if (notFound) return null
-              }
+              if (notFound) return null
+            }
 
-              // hidden buttons which appear only for fuzzy search
-              if (button.hidden && !isInstantSearch) return null
+            // hidden buttons which appear only for fuzzy search
+            if (button.hidden && !isInstantSearch) return null
 
-              // buttons requiring logged in users aren't shown in search for visitors
-              if (button.memberOnly && this.props.user.status !== "ok")
-                return null
+            // buttons requiring logged in users aren't shown in search for visitors
+            if (button.memberOnly && this.props.user.status !== "ok")
+              return null
 
-              // buttons only for visitors/signed-out users
-              if (button.visitorOnly && this.props.user.status === "ok")
-                return null
+            // buttons only for visitors/signed-out users
+            if (button.visitorOnly && this.props.user.status === "ok")
+              return null
 
-              return button.divider ? (
-                <ButtonGroupDivider key={`div_${Math.random()}`} />
-              ) : (
-                <CardButton
-                  onClick={button.onClick}
-                  to={button.to}
-                  key={`div_${button.to || button.onClick || Math.random()}`}
-                >
-                  {button.text}
-                </CardButton>
-              )
-            })
-          ]
-        )}
+            return button.divider ? (
+              <ButtonGroupDivider key={`div_${Math.random()}`} />
+            ) : (
+              <CardButton
+                onClick={button.onClick}
+                to={button.to}
+                key={`div_${button.to || button.onClick || Math.random()}`}
+              >
+                {button.text}
+              </CardButton>
+            )
+          })
+        ]
+        //  )
+        }
       </SearchVisibility>
     )
   }

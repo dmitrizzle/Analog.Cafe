@@ -16,23 +16,23 @@ export default class extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      searchMode: false,
+      // searchMode: false,
       searchText: ""
     }
   }
-  handleSearchMode = searchMode => {
-    this.setState({
-      searchMode
-    })
-  }
+  // handleSearchMode = searchMode => {
+  //   this.setState({
+  //     searchMode
+  //   });
+  // };
   handleSearchText = searchText => {
     this.setState({ searchText })
   }
-  componentWillReceiveProps = () => {
-    this.setState({
-      searchMode: false
-    })
-  }
+  // componentWillReceiveProps = () => {
+  //   this.setState({
+  //     searchMode: false
+  //   });
+  // };
 
   render = () => {
     return (
@@ -51,13 +51,14 @@ export default class extends React.PureComponent {
           <Search
             onClick={event => event.stopPropagation()}
             formLocation={this.props.searchFormLocation}
-            searchMode={this.handleSearchMode}
-            stateOverwrite={this.state.searchMode}
+            // searchMode={this.handleSearchMode}
+            // stateOverwrite={this.state.searchMode}
             key="search"
             searchText={this.handleSearchText}
             menu={this.props.menu}
           />,
-          this.state.searchMode && !this.state.searchText
+          // this.state.searchMode &&
+          !this.state.searchText
             ? SEARCH_RESULTS_FEATURED.map(item => {
                 return [
                   <CardSearchItem
@@ -77,7 +78,7 @@ export default class extends React.PureComponent {
             : null
         ]}
         {this.props.buttons &&
-          !this.state.searchMode &&
+          // !this.state.searchMode &&
           Object.keys(this.props.buttons).length !== 0 &&
           this.props.buttons.map(function(button, i) {
             let keyword, buttonText
@@ -113,8 +114,9 @@ export default class extends React.PureComponent {
               <ButtonGroupDivider key={i} />
             ) : null
           })}
-
         {this.props.socialButtons && <FollowButtons />}
+        {/*
+          TODO: this(below) should go away along with mailchimp link forms */}
         {this.props.subscribe && (
           <Subscribe
             autoFocus
@@ -124,7 +126,6 @@ export default class extends React.PureComponent {
             formLocation={"Card"}
           />
         )}
-
         {/* {this.props.subscribe && (
           <CardButton
             onClick={() =>

@@ -40,7 +40,7 @@ const ITEMS = {
     to: "/submissions"
   },
   // composer: {
-  //   label: loadTextContent().length > 0 ? "Edit Draft" : "New Submission",
+  //   label: loadTextContent().length > 0 ? "Edit Submission Draft" : "New Submission",
   //   icon: "✏︎",
   //   to: "/submit/compose"
   // },
