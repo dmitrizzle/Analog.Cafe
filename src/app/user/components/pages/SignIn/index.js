@@ -107,6 +107,7 @@ class SignIn extends React.PureComponent {
         <ArticleWrapper>
           <MetaTags metaTitle="Sign In" metaSubtitle="Or create free account" />
           <HeaderLarge
+            id="account"
             pageTitle="Sign In"
             pageSubtitle="Or create free account"
           />
@@ -176,7 +177,9 @@ class SignIn extends React.PureComponent {
               <Link to="/privacy">No spam</Link>. Free with every account.
               Unsubscribe anytime.
             </p>
-            <Figure src="image-froth_1600000_BJRvHFlv4" feature />
+            <Link to="#account">
+              <Figure src="image-froth_1600000_BJRvHFlv4" feature />
+            </Link>
           </ArticleSection>
         </ArticleWrapper>
       )
