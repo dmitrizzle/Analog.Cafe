@@ -283,14 +283,6 @@ class Article extends React.PureComponent {
               )}
           </ArticleSection>
         </ArticleWrapper>
-        {this.props.article.poster &&
-          this.props.article.submittedBy && (
-            <LazyLoad once offset={300} height={"100%"}>
-              {!this.props.history.location.pathname.includes(
-                ROUTE_URL_SUBMISSIONS
-              ) && <Offer embed />}
-            </LazyLoad>
-          )}
       </React.Fragment>
     )
   }

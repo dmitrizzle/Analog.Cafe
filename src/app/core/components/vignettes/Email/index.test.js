@@ -3,9 +3,9 @@ import "jest-styled-components"
 import { shallow } from "enzyme"
 import React from "react"
 
-import ContactInfo from "./"
+import Email from "./"
 
-it("Render ContactInfo, matches snapshot", () => {
-  const element = shallow(<ContactInfo />)
+it("Render Email, matches snapshot", () => {
+  const element = shallow(<Email />)
   expect(element).toMatchSnapshot()
 })

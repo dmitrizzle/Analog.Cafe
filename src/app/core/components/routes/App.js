@@ -7,7 +7,6 @@ import ArticleLoader from "../pages/Article/components/ArticleLoader"
 import ListLoader from "../pages/List/components/ListLoader"
 import PrivacySettings from "../../../user/components/pages/PrivacySettings"
 import SignOut from "../../../user/components/pages/SignOut"
-import Subscribe from "../pages/Subscribe"
 
 const List = Loadable({
   loader: () => import("../pages/List"),
@@ -89,6 +88,7 @@ export default () => {
           from="/zine/a-beginner's-guide-to-film-photography-zq0f"
           to="/zine/a-beginners-guide-to-film-photography-zq0f"
         />
+        <Redirect from="/subscribe" to="/sign-in" />
         <Redirect from="/author/:id" to="/is/:id" />
         {/* DYNAMIC VIEWS */}
         <Route exact path="/is" component={NotFound} />
@@ -115,7 +115,6 @@ export default () => {
         <Route exact path="/resources" component={Resources} />
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />
-        <Route path="/subscribe" render={() => <Subscribe cached />} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/privacy-settings" component={PrivacySettings} />
         <Route state={{ status: "404" }} component={NotFound} />

@@ -2,7 +2,7 @@ import React from "react"
 
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
-import ContactInfo from "../../../../core/components/vignettes/ContactInfo"
+import Email from "../../../../core/components/vignettes/Email"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
@@ -29,10 +29,10 @@ export default () => {
           delete your account from Analog.Cafe servers.
         </p>
         <p>
-          You can delete your account at any time by sending a request to{" "}
-          <ContactInfo />. Analog.Cafe will comply with your request within a
-          week. If you want your work to be removed from Analog.Cafe website,
-          please send a separate request.
+          You can delete your account at any time by sending a request to this{" "}
+          <Email />. Analog.Cafe will comply with your request within a week. If
+          you want your work to be removed from Analog.Cafe website, please send
+          a separate request.
         </p>
         <p>
           If you are logged in to an account with Analog.Cafe, a token is stored

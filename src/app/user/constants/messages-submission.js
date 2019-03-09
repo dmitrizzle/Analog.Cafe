@@ -2,7 +2,7 @@ import React from "react"
 
 import { MIME_PICTURES_HUMAN } from "./rules-submission"
 import { TEXT_EMOJIS } from "../../constants"
-import { contactInfoString } from "../../core/components/vignettes/ContactInfo"
+import { emailString } from "../../core/components/vignettes/Email"
 import Link from "../../core/components/controls/Link"
 
 export const CARD_ERRORS = {
@@ -47,7 +47,7 @@ export const HEADER_ERRORS = {
   }
 }
 
-export const TEXT_EDITORIAL_RELEASE = `All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email ${contactInfoString}.`
+export const TEXT_EDITORIAL_RELEASE = `All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email ${emailString}.`
 export const CARD_DIALOGUES = {
   CONSENT: {
     info: {

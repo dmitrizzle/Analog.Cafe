@@ -21,6 +21,7 @@ import ArticleSection from "../../../../core/components/pages/Article/components
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import CardIntegrated from "../../../../core/components/controls/Card/components/CardIntegrated"
+import Figure from "../../../../core/components/vignettes/Picture/components/Figure"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
@@ -111,7 +112,6 @@ class SignIn extends React.PureComponent {
           />
           <ArticleSection>
             <SignInInfo />
-
             <ButtonGroup style={{ padding: "0.5em 0 4em" }}>
               <TwitterLinkButton
                 to="#twitter-sign-in"
@@ -169,6 +169,14 @@ class SignIn extends React.PureComponent {
               All accounts are secure and adhere to our strict{" "}
               <Link to="/privacy-policy">privacy policy</Link>.
             </p>
+            <h3>“Analogue Reads” Tuesdays.</h3>
+            <p>
+              <strong>A weekly email newsletter</strong> featuring a digest of
+              new photo essays, reviews, and guides. Every Tuesday at 9AM EST.{" "}
+              <Link to="/privacy">No spam</Link>. Free with every account.
+              Unsubscribe anytime.
+            </p>
+            <Figure src="image-froth_1600000_BJRvHFlv4" feature />
           </ArticleSection>
         </ArticleWrapper>
       )

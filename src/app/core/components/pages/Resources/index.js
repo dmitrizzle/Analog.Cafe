@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
-import ContactInfo from "../../vignettes/ContactInfo"
+import Email from "../../vignettes/Email"
 import Figure from "../../vignettes/Picture/components/Figure"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
@@ -363,7 +363,7 @@ export default props => {
           .
         </p>
         <p>
-          You can reach Dmitri anytime via email <ContactInfo /> or find him on{" "}
+          You can reach Dmitri anytime via <Email /> or find him on{" "}
           <Link to="https://twitter.com/analog_cafe">Twitter</Link> or{" "}
           <Link to="https://instagram.com/analog_cafe">Instagram</Link>. If you
           would like to contact any of the individual contributors on

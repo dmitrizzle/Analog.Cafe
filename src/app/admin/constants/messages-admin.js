@@ -1,7 +1,7 @@
 import React from "react"
 
 import { TEXT_EMOJIS } from "../../constants"
-import ContactInfo from "../../core/components/vignettes/ContactInfo"
+import Email from "../../core/components/vignettes/Email"
 
 const NEVERMIND_BUTTON = {
   to: "#",
@@ -56,7 +56,7 @@ export const CARD_DIALOGUES = {
         text: (
           <span>
             You can not undo this action. Note that published articles can not
-            be deleted but can be taken down by request via <ContactInfo />
+            be deleted but can be taken down by request via <Email />
           </span>
         ),
         buttons: [
@@ -112,9 +112,8 @@ export const CARD_DIALOGUES = {
       title: "About Edits",
       text: (
         <span>
-          These edits will be applied to your submission only. Please notify{" "}
-          {<ContactInfo />} if you would like to apply edits to a published
-          article.
+          These edits will be applied to your submission only. Please{" "}
+          {<Email />} if you would like to apply edits to a published article.
         </span>
       ),
       buttons: [

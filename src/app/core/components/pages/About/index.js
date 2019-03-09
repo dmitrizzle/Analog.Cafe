@@ -10,7 +10,7 @@ import { makeFroth } from "../../../../utils"
 import { setModal } from "../../../store/actions-modal"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
-import ContactInfo from "../../vignettes/ContactInfo"
+import Email from "../../vignettes/Email"
 import Figcaption from "../../vignettes/Picture/components/Figcaption"
 import Figure, { bleed } from "../../vignettes/Picture/components/Figure"
 import HeaderLarge from "../../vignettes/HeaderLarge"
@@ -254,7 +254,7 @@ class About extends React.PureComponent {
           </p>
           <p>
             If you’d like to chat with the founder, editor, developer, big
-            cheese, whatever – email me at <ContactInfo />, or reach out via{" "}
+            cheese, whatever – <Email /> me, or reach out via{" "}
             <strong>
               <Link to="https://twitter.com/analog_cafe">Twitter</Link>
             </strong>{" "}
@@ -270,7 +270,7 @@ class About extends React.PureComponent {
             </strong>{" "}
             are welcome!
           </p>
-
+          <hr />
           <h3>Thank you, project backers!</h3>
           <ThankYouList>
             Thayanantha Thevanayagam
