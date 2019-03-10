@@ -61,8 +61,8 @@ export const ResourceStar = () => <span style={{ color: "#ed236e" }}>✯</span>
 export default props => {
   return (
     <ArticleWrapper>
-      <MetaTags metaTitle="Resources" />
-      <HeaderLarge pageTitle="Resources" />
+      <MetaTags metaTitle="Compendium" />
+      <HeaderLarge pageTitle="Compendium" />
       <ArticleSection>
         <h3>
           <ResourceStar /> Analog.Cafe Podcast

@@ -64,12 +64,12 @@ export const isActiveUrl = (to, options = {}, props) => {
 export default props => {
   const a = "active"
 
-  const re = "/resources"
+  const co = "/compendium"
   const ab = "/about"
 
-  const resources = {
-    to: re,
-    className: isActiveUrl(re) ? a : undefined
+  const compendium = {
+    to: co,
+    className: isActiveUrl(co) ? a : undefined
   }
   const about = {
     to: ab,
@@ -116,23 +116,25 @@ export default props => {
             })
           }}
         >
-          About ✹
+          About
+          <Extra> ✹</Extra>
         </NavLink>
       </NavItem>
 
       <NavItem>
         <NavLink
-          {...resources}
+          {...compendium}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "Resources"
+              label: "Compendium"
             })
           }}
         >
           {/* <span className="wide">Photo </span> */}
-          Resources ❖
+          Compendium
+          <Extra> ❖</Extra>
         </NavLink>
       </NavItem>
 

@@ -24,10 +24,10 @@ const NavmMiniLink = styled(Link)`
 `
 
 const ITEMS = {
-  resources: {
-    label: "Resources",
+  compendium: {
+    label: "Compendium",
     icon: "❖",
-    to: "/resources"
+    to: "/compendium"
   },
   favourites: {
     label: "Favourites",

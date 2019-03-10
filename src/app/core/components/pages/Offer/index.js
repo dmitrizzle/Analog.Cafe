@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { DownloadArrow, DownloadModal, ResourceStar } from "../Resources"
+import { DownloadArrow, DownloadModal, ResourceStar } from "../Compendium"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Link from "../../controls/Link"
@@ -20,7 +20,7 @@ export default props => {
     <OfferWrapper>
       <ArticleSection>
         <h3>
-          <ResourceStar /> Resources
+          <ResourceStar /> Compendium
         </h3>
         <p>
           <strong>
@@ -45,7 +45,7 @@ export default props => {
         </p>
         <p>
           <strong>
-            <Link to="/resources">More…</Link>
+            <Link to="/compendium">More…</Link>
           </strong>
         </p>
       </ArticleSection>

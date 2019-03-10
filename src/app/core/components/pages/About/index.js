@@ -178,14 +178,14 @@ class About extends React.PureComponent {
           <p>
             The{" "}
             <strong>
-              <Link to="/resources">resources</Link>
+              <Link to="/compendium">compendium</Link>
             </strong>{" "}
-            page features our growing knowledge base on art and photography. It
-            inclues guides, reviews, printables, audio, helpful links and
-            exclusive essays.
+            page features our ultimate collection of resources for the people
+            interested in art and photography. It inclues guides, reviews,
+            printables, audio and links.
           </p>
           <p>
-            To get full access to the <em>resources</em> you will need a free{" "}
+            To get full access to the <em>compendium</em> you will need a free{" "}
             <strong>
               <Link to="/sign-in">Analog.Cafe account</Link>
             </strong>

@@ -43,9 +43,9 @@ const NAV_BUTTONS = props => [
   buttonMaker("/about", {
     keywords: "about,who,what,where,how,authors,editors,contact,backers"
   }),
-  buttonMaker("/resources", {
+  buttonMaker("/compendium", {
     keywords:
-      "photography,podcast,audio,downloads,guides,reference,price,reviews"
+      "photography,podcast,audio,downloads,guides,reference,price,reviews,resources"
   }),
   {
     to: "https://www.etsy.com/ca/shop/AnalogCafeShop",

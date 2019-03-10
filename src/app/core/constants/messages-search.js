@@ -5,10 +5,10 @@ export const SEARCH_RESULTS_FEATURED = [
   //   snippet: "2019 Edition."
   // },
   // {
-  //   link: "/resources",
+  //   link: "/compendium",
   //   // image:
   //   //   "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1402564_SklPuuHRNf.jpg",
-  //   title: "Resources",
+  //   title: "Compendium",
   //   snippet:
   //     "Film Grain Reference, downloads, essential guides, and select photo essays."
   // }
