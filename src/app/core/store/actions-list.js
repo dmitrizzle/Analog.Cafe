@@ -99,17 +99,17 @@ export const fetchListPage = (request, appendItems = false) => {
           return
         }
 
-        if (
-          response.data.page["items-total"] === 0 &&
-          !isSubmissions(request.url)
-        ) {
-          dispatch(
-            initListPage({
-              error: CARD_ERRORS.LIST
-            })
-          )
-          return
-        }
+        // if (
+        //   response.data.page["items-total"] === 0 &&
+        //   !isSubmissions(request.url)
+        // ) {
+        //   dispatch(
+        //     initListPage({
+        //       error: CARD_ERRORS.LIST
+        //     })
+        //   )
+        //   return
+        // }
 
         if (listAuthor) {
           dispatch(fetchListAuthor(listAuthor, payload, appendItems))
