@@ -91,10 +91,11 @@ export default props => (
         {props.isUserDashboard && (
           <React.Fragment>
             <h3 style={{ display: "inline-block" }}>
-              Your author profile&nbsp;
+              Your author profile.&nbsp;
             </h3>
             <em>
-              <Link to={`/profile/edit`}>(edit)</Link>.
+              <Link to={`/profile/edit`}>Edit</Link> &{" "}
+              <Link to={`/is/${props.list.author.id}`}>view</Link>.
             </em>
           </React.Fragment>
         )}

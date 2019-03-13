@@ -214,7 +214,7 @@ class EditProfile extends React.PureComponent {
         <ArticleSection style={{ paddingTop: "3em" }}>
           <p>
             <small>
-              Your public profile lives{" "}
+              View your public profile{" "}
               <Link to={`/is/${this.props.user.info.id}`}>here</Link>.<br />
               {console.log(this.props)}
             </small>
