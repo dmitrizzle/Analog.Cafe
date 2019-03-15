@@ -60,7 +60,7 @@ const PrivacyPolicy = Loadable({
 })
 
 const Compendium = Loadable({
-  loader: () => import("../pages/Compendium"),
+  loader: () => import("../../../user/components/pages/Compendium"),
   loading: ArticleLoader,
   delay: 100
 })

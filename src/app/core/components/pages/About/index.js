@@ -7,11 +7,9 @@ import { LabelWithSearchSVG } from "../../controls/Nav/components/NavGeneral"
 import { buttonMaker } from "../../forms/Search"
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { makeFroth } from "../../../../utils"
-import { setModal } from "../../../store/actions-modal"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Email from "../../vignettes/Email"
-import Figcaption from "../../vignettes/Picture/components/Figcaption"
 import Figure, { bleed } from "../../vignettes/Picture/components/Figure"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
@@ -384,9 +382,6 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchAuthorsList: (options, page) => {
       dispatch(fetchAuthorsList(options, page))
-    },
-    setModal: (info, request) => {
-      dispatch(setModal(info, request))
     }
   }
 }

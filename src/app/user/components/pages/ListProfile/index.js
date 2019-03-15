@@ -46,23 +46,25 @@ export default props => (
       // titleLinkTo="/profile/edit"
       noTitleCase
       pageTitle={
-        props.list.author
-          ? props.isUserDashboard
-            ? `Hi ${props.list.author.title}👋`
-            : props.list.author.title
-          : TEXT_EMOJIS.HUG_RIGHT
+        props.isUserDashboard
+          ? `Hi ${props.user.info.title}👋`
+          : props.list.author
+            ? props.list.author.title
+            : TEXT_EMOJIS.HUG_RIGHT
       }
       pageSubtitle={
-        !props.list.author ? "Loading…" : props.list.author.subtitle
+        !props.isUserDashboard &&
+        (!props.list.author ? "Loading…" : props.list.author.subtitle)
       }
     >
       <Byline>
-        {props.list.author &&
-          props.user.info.id === props.list.author.id && (
-            <React.Fragment>
-              {props.isUserDashboard ? (
-                <NavMini view="submissions" />
-              ) : (
+        {
+          <React.Fragment>
+            {props.isUserDashboard ? (
+              <NavMini view="submissions" />
+            ) : (
+              props.list.author &&
+              props.user.info.id === props.list.author.id && (
                 <React.Fragment>
                   <NavMini />
                   This is how your profile looks to the general public{" "}
@@ -75,9 +77,10 @@ export default props => (
                   </span>
                   . This page is shareable.
                 </React.Fragment>
-              )}
-            </React.Fragment>
-          )}
+              )
+            )}
+          </React.Fragment>
+        }
       </Byline>
     </HeaderLarge>
 

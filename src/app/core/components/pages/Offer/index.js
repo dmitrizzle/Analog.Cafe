@@ -1,7 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 
-import { DownloadArrow, DownloadModal, ResourceStar } from "../Compendium"
+import {
+  DownloadArrow,
+  DownloadModal
+} from "../../../../user/components/pages/Compendium/components"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Link from "../../controls/Link"
@@ -19,9 +22,7 @@ export default props => {
   return (
     <OfferWrapper>
       <ArticleSection>
-        <h3>
-          <ResourceStar /> Compendium
-        </h3>
+        <h3>❖ Compendium</h3>
         <p>
           <strong>
             <DownloadArrow />{" "}
