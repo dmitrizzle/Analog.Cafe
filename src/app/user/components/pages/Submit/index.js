@@ -28,13 +28,13 @@ export default props => {
         element="a"
         with={{
           info: {
-            image: "image-froth_1499794_SyjYGWYL4",
+            image: "image-froth_1499794_BkFUA89IV",
             title: "Call for entries.",
             text: posterText,
             buttons: [
               {
                 to:
-                  "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1800/image-froth_1499794_SyjYGWYL4.jpg",
+                  "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1800/image-froth_1499794_BkFUA89IV.jpg",
                 text: "Download This Poster"
               },
               {
@@ -47,7 +47,7 @@ export default props => {
           id: "hints/submissions"
         }}
       >
-        <Figure src="image-froth_1499794_SyjYGWYL4" feature alt={posterText} />
+        <Figure src="image-froth_1499794_BkFUA89IV" feature alt={posterText} />
       </Modal>
       <p>
         If you love shooting film and have a story to share, Analog.Cafe could
