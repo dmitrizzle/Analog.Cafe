@@ -382,7 +382,7 @@ export const Compendium = props => {
         </p>
 
         <h3>Film Camera Reviews</h3>
-        <Carousel items={COMPENDIUM_CONTENT.reviews} {...props} center />
+        <Carousel items={COMPENDIUM_CONTENT.reviews} {...props} center={1} />
         <p style={{ lineHeight: "1.2em" }}>
           <small>
             <em>
@@ -405,7 +405,7 @@ export const Compendium = props => {
         </p>
 
         <h3>Best of Photo Essays</h3>
-        <Carousel items={COMPENDIUM_CONTENT.essays} {...props} center />
+        <Carousel items={COMPENDIUM_CONTENT.essays} {...props} center={1} />
         <p style={{ lineHeight: "1.2em" }}>
           <small>
             <em>

@@ -131,20 +131,20 @@ export class Search extends React.PureComponent {
       searchText: ""
     }
   }
-  handleRevealSearchForm = event => {
-    if (event) {
-      event.preventDefault()
-      event.stopPropagation()
-    }
-
-    // this.props.searchMode && this.props.searchMode(true);
-
-    this.setState({
-      searchForm: !this.state.searchForm
-    })
-    this.props.searchFormCallback &&
-      this.props.searchFormCallback(this.state.searchForm)
-  }
+  // handleRevealSearchForm = event => {
+  //   if (event) {
+  //     event.preventDefault()
+  //     event.stopPropagation()
+  //   }
+  //
+  //   // this.props.searchMode && this.props.searchMode(true);
+  //
+  //   this.setState({
+  //     searchForm: !this.state.searchForm
+  //   })
+  //   this.props.searchFormCallback &&
+  //     this.props.searchFormCallback(this.state.searchForm)
+  // }
   handleSubmitCallback = query => {
     this.props.getSearchResults(query)
   }
@@ -159,26 +159,27 @@ export class Search extends React.PureComponent {
       ? this.setState({ hideSearchResults: true, searchText: text })
       : this.setState({ hideSearchResults: false, searchText: text })
   }
-  componentDidMount = () => {
-    !this.props.menu && this.handleRevealSearchForm()
-  }
-  componentWillReceiveProps = nextProps => {
-    !nextProps.menu && this.handleRevealSearchForm()
-
-    if (
-      nextProps.stateOverwrite === null ||
-      nextProps.stateOverwrite === undefined
-    )
-      return
-    this.setState({
-      searchForm: nextProps.stateOverwrite
-    })
-  }
+  // componentDidMount = () => {
+  //   !this.props.menu && this.handleRevealSearchForm()
+  // }
+  // componentWillReceiveProps = nextProps => {
+  //   //!nextProps.menu && this.handleRevealSearchForm()
+  //
+  //   if (
+  //     nextProps.stateOverwrite === null ||
+  //     nextProps.stateOverwrite === undefined
+  //   )
+  //     return;
+  //   this.setState({
+  //     searchForm: nextProps.stateOverwrite
+  //   });
+  // };
   render = () => {
     const haveSearchResults =
       !this.state.hideSearchResults &&
       this.props.search.data.items &&
       this.props.search.data.items.length > 0
+
     const isNotFound =
       this.props.search.data.queries.request &&
       this.props.search.data.queries.request[0].searchTerms &&
@@ -273,6 +274,7 @@ export class Search extends React.PureComponent {
 
               // keywords in search field
               const parsedTypedKeywords = this.state.searchText
+                .toLowerCase()
                 .split(/[ ,]+/)
                 .filter(keyword => keyword.length > 0)
                 .slice(0, 5)
@@ -288,6 +290,7 @@ export class Search extends React.PureComponent {
               if (notFound) return null
             }
 
+            console.log("button", button)
             // hidden buttons which appear only for fuzzy search
             if (button.hidden && !isInstantSearch) return null
 

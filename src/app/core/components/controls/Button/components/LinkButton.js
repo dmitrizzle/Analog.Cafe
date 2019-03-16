@@ -15,7 +15,7 @@ const EmailLink = props => (
 )
 
 export default props => {
-  return props.to.includes("mailto:") ? (
+  return props.to && props.to.includes("mailto:") ? (
     <EmailLink {...props} />
   ) : (
     <CommonLink {...props} />
