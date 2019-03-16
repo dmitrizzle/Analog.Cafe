@@ -35,7 +35,6 @@ export const featureImage = id => {
     }
   }
   return dispatch => {
-    console.log(id)
     axios(makeAPIRequest(request))
       .then(response => {
         response.data.status === "ok"
@@ -58,7 +57,6 @@ export const unfeatureImage = id => {
     }
   }
   return dispatch => {
-    console.log(id)
     axios(makeAPIRequest(request))
       .then(response => {
         response.data.status === "ok"

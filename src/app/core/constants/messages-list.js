@@ -44,7 +44,7 @@ export const TEXT_ROUTE_LABELS = {
   [ROUTE_URL_USER_LANDING]: {
     title: "Your submissions to Analog.Cafe"
   },
-  "/author/*": {
+  "/is/*": {
     title: "Published work",
     description:
       "All published works by the author, including images and text published in collaboration with other authors."

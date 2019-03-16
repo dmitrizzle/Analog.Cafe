@@ -1718,9 +1718,63 @@ ShallowWrapper {
 </styled.strong>,
         <styled.div>
           <span>
-                    <em />
+                    <em>
+                              <Styled(Connect(ModalLauncher))
+                                        element="a"
+                                        unmarked={true}
+                                        with={
+                                                  Object {
+                                                            "id": "nav/sections",
+                                                            "info": Object {
+                                                              "buttons": Array [
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Film Photography",
+                                                                  "to": "/film-photography",
+                                                                },
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Photo Essays",
+                                                                  "to": "/photo-essays",
+                                                                },
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Editorials",
+                                                                  "to": "/editorials",
+                                                                },
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Solo Projects",
+                                                                  "to": "/solo-projects",
+                                                                },
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Collaborations",
+                                                                  "to": "/collaborations",
+                                                                },
+                                                              ],
+                                                              "menu": true,
+                                                              "title": <span>
+                                                                <Unknown />
+                                                                 Sections
+                                                  </span>,
+                                                            },
+                                                          }
+                                        }
+                              >
+
+
+                                        <Unknown
+                                                  inverse={true}
+                                        />
+                              </Styled(Connect(ModalLauncher))>
+                    </em>
           </span>
-          .
 </styled.div>,
       ],
       "list": Object {
@@ -1792,38 +1846,269 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": Array [
-            <span>
-              <em />
+          "children": <span>
+            <em>
+                        <Styled(Connect(ModalLauncher))
+                                    element="a"
+                                    unmarked={true}
+                                    with={
+                                                Object {
+                                                            "id": "nav/sections",
+                                                            "info": Object {
+                                                              "buttons": Array [
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Film Photography",
+                                                                  "to": "/film-photography",
+                                                                },
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Photo Essays",
+                                                                  "to": "/photo-essays",
+                                                                },
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Editorials",
+                                                                  "to": "/editorials",
+                                                                },
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Solo Projects",
+                                                                  "to": "/solo-projects",
+                                                                },
+                                                                Object {
+                                                                  "inverse": false,
+                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "text": "Collaborations",
+                                                                  "to": "/collaborations",
+                                                                },
+                                                              ],
+                                                              "menu": true,
+                                                              "title": <span>
+                                                                <Unknown />
+                                                                 Sections
+                                                </span>,
+                                                            },
+                                                          }
+                                    }
+                        >
+
+
+                                    <Unknown
+                                                inverse={true}
+                                    />
+                        </Styled(Connect(ModalLauncher))>
+            </em>
 </span>,
-            ".",
-          ],
         },
         "ref": null,
-        "rendered": Array [
-          Object {
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <em>
+              <Styled(Connect(ModalLauncher))
+                            element="a"
+                            unmarked={true}
+                            with={
+                                          Object {
+                                                        "id": "nav/sections",
+                                                        "info": Object {
+                                                          "buttons": Array [
+                                                            Object {
+                                                              "inverse": false,
+                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                              "text": "Film Photography",
+                                                              "to": "/film-photography",
+                                                            },
+                                                            Object {
+                                                              "inverse": false,
+                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                              "text": "Photo Essays",
+                                                              "to": "/photo-essays",
+                                                            },
+                                                            Object {
+                                                              "inverse": false,
+                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                              "text": "Editorials",
+                                                              "to": "/editorials",
+                                                            },
+                                                            Object {
+                                                              "inverse": false,
+                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                              "text": "Solo Projects",
+                                                              "to": "/solo-projects",
+                                                            },
+                                                            Object {
+                                                              "inverse": false,
+                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                              "text": "Collaborations",
+                                                              "to": "/collaborations",
+                                                            },
+                                                          ],
+                                                          "menu": true,
+                                                          "title": <span>
+                                                            <Unknown />
+                                                             Sections
+                                          </span>,
+                                                        },
+                                                      }
+                            }
+              >
+
+
+                            <Unknown
+                                          inverse={true}
+                            />
+              </Styled(Connect(ModalLauncher))>
+</em>,
+          },
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <em />,
+              "children": <Styled(Connect(ModalLauncher))
+                element="a"
+                unmarked={true}
+                with={
+                                Object {
+                                                "id": "nav/sections",
+                                                "info": Object {
+                                                  "buttons": Array [
+                                                    Object {
+                                                      "inverse": false,
+                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                      "text": "Film Photography",
+                                                      "to": "/film-photography",
+                                                    },
+                                                    Object {
+                                                      "inverse": false,
+                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                      "text": "Photo Essays",
+                                                      "to": "/photo-essays",
+                                                    },
+                                                    Object {
+                                                      "inverse": false,
+                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                      "text": "Editorials",
+                                                      "to": "/editorials",
+                                                    },
+                                                    Object {
+                                                      "inverse": false,
+                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                      "text": "Solo Projects",
+                                                      "to": "/solo-projects",
+                                                    },
+                                                    Object {
+                                                      "inverse": false,
+                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                      "text": "Collaborations",
+                                                      "to": "/collaborations",
+                                                    },
+                                                  ],
+                                                  "menu": true,
+                                                  "title": <span>
+                                                    <Unknown />
+                                                     Sections
+                                </span>,
+                                                },
+                                              }
+                }
+>
+
+
+                <Unknown
+                                inverse={true}
+                />
+</Styled(Connect(ModalLauncher))>,
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
-                "children": "",
+                "children": Array [
+                  "",
+                  " ",
+                  <Unknown
+                    inverse={true}
+/>,
+                ],
+                "element": "a",
+                "unmarked": true,
+                "with": Object {
+                  "id": "nav/sections",
+                  "info": Object {
+                    "buttons": Array [
+                      Object {
+                        "inverse": false,
+                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                        "text": "Film Photography",
+                        "to": "/film-photography",
+                      },
+                      Object {
+                        "inverse": false,
+                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                        "text": "Photo Essays",
+                        "to": "/photo-essays",
+                      },
+                      Object {
+                        "inverse": false,
+                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                        "text": "Editorials",
+                        "to": "/editorials",
+                      },
+                      Object {
+                        "inverse": false,
+                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                        "text": "Solo Projects",
+                        "to": "/solo-projects",
+                      },
+                      Object {
+                        "inverse": false,
+                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                        "text": "Collaborations",
+                        "to": "/collaborations",
+                      },
+                    ],
+                    "menu": true,
+                    "title": <span>
+                      <Unknown />
+                       Sections
+</span>,
+                  },
+                },
               },
               "ref": null,
-              "rendered": "",
-              "type": "em",
+              "rendered": Array [
+                "",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "inverse": true,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
             },
-            "type": "span",
+            "type": "em",
           },
-          ".",
-        ],
+          "type": "span",
+        },
         "type": [Function],
       },
     ],
@@ -1853,9 +2138,63 @@ ShallowWrapper {
 </styled.strong>,
           <styled.div>
             <span>
-                        <em />
+                        <em>
+                                    <Styled(Connect(ModalLauncher))
+                                                element="a"
+                                                unmarked={true}
+                                                with={
+                                                            Object {
+                                                                        "id": "nav/sections",
+                                                                        "info": Object {
+                                                                          "buttons": Array [
+                                                                            Object {
+                                                                              "inverse": false,
+                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                              "text": "Film Photography",
+                                                                              "to": "/film-photography",
+                                                                            },
+                                                                            Object {
+                                                                              "inverse": false,
+                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                              "text": "Photo Essays",
+                                                                              "to": "/photo-essays",
+                                                                            },
+                                                                            Object {
+                                                                              "inverse": false,
+                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                              "text": "Editorials",
+                                                                              "to": "/editorials",
+                                                                            },
+                                                                            Object {
+                                                                              "inverse": false,
+                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                              "text": "Solo Projects",
+                                                                              "to": "/solo-projects",
+                                                                            },
+                                                                            Object {
+                                                                              "inverse": false,
+                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                              "text": "Collaborations",
+                                                                              "to": "/collaborations",
+                                                                            },
+                                                                          ],
+                                                                          "menu": true,
+                                                                          "title": <span>
+                                                                            <Unknown />
+                                                                             Sections
+                                                            </span>,
+                                                                        },
+                                                                      }
+                                                }
+                                    >
+
+
+                                                <Unknown
+                                                            inverse={true}
+                                                />
+                                    </Styled(Connect(ModalLauncher))>
+                        </em>
             </span>
-            .
 </styled.div>,
         ],
         "list": Object {
@@ -1927,38 +2266,269 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": Array [
-              <span>
-                <em />
+            "children": <span>
+              <em>
+                            <Styled(Connect(ModalLauncher))
+                                          element="a"
+                                          unmarked={true}
+                                          with={
+                                                        Object {
+                                                                      "id": "nav/sections",
+                                                                      "info": Object {
+                                                                        "buttons": Array [
+                                                                          Object {
+                                                                            "inverse": false,
+                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                            "text": "Film Photography",
+                                                                            "to": "/film-photography",
+                                                                          },
+                                                                          Object {
+                                                                            "inverse": false,
+                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                            "text": "Photo Essays",
+                                                                            "to": "/photo-essays",
+                                                                          },
+                                                                          Object {
+                                                                            "inverse": false,
+                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                            "text": "Editorials",
+                                                                            "to": "/editorials",
+                                                                          },
+                                                                          Object {
+                                                                            "inverse": false,
+                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                            "text": "Solo Projects",
+                                                                            "to": "/solo-projects",
+                                                                          },
+                                                                          Object {
+                                                                            "inverse": false,
+                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                            "text": "Collaborations",
+                                                                            "to": "/collaborations",
+                                                                          },
+                                                                        ],
+                                                                        "menu": true,
+                                                                        "title": <span>
+                                                                          <Unknown />
+                                                                           Sections
+                                                        </span>,
+                                                                      },
+                                                                    }
+                                          }
+                            >
+
+
+                                          <Unknown
+                                                        inverse={true}
+                                          />
+                            </Styled(Connect(ModalLauncher))>
+              </em>
 </span>,
-              ".",
-            ],
           },
           "ref": null,
-          "rendered": Array [
-            Object {
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <em>
+                <Styled(Connect(ModalLauncher))
+                                element="a"
+                                unmarked={true}
+                                with={
+                                                Object {
+                                                                "id": "nav/sections",
+                                                                "info": Object {
+                                                                  "buttons": Array [
+                                                                    Object {
+                                                                      "inverse": false,
+                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                      "text": "Film Photography",
+                                                                      "to": "/film-photography",
+                                                                    },
+                                                                    Object {
+                                                                      "inverse": false,
+                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                      "text": "Photo Essays",
+                                                                      "to": "/photo-essays",
+                                                                    },
+                                                                    Object {
+                                                                      "inverse": false,
+                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                      "text": "Editorials",
+                                                                      "to": "/editorials",
+                                                                    },
+                                                                    Object {
+                                                                      "inverse": false,
+                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                      "text": "Solo Projects",
+                                                                      "to": "/solo-projects",
+                                                                    },
+                                                                    Object {
+                                                                      "inverse": false,
+                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                      "text": "Collaborations",
+                                                                      "to": "/collaborations",
+                                                                    },
+                                                                  ],
+                                                                  "menu": true,
+                                                                  "title": <span>
+                                                                    <Unknown />
+                                                                     Sections
+                                                </span>,
+                                                                },
+                                                              }
+                                }
+                >
+
+
+                                <Unknown
+                                                inverse={true}
+                                />
+                </Styled(Connect(ModalLauncher))>
+</em>,
+            },
+            "ref": null,
+            "rendered": Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <em />,
+                "children": <Styled(Connect(ModalLauncher))
+                  element="a"
+                  unmarked={true}
+                  with={
+                                    Object {
+                                                      "id": "nav/sections",
+                                                      "info": Object {
+                                                        "buttons": Array [
+                                                          Object {
+                                                            "inverse": false,
+                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                            "text": "Film Photography",
+                                                            "to": "/film-photography",
+                                                          },
+                                                          Object {
+                                                            "inverse": false,
+                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                            "text": "Photo Essays",
+                                                            "to": "/photo-essays",
+                                                          },
+                                                          Object {
+                                                            "inverse": false,
+                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                            "text": "Editorials",
+                                                            "to": "/editorials",
+                                                          },
+                                                          Object {
+                                                            "inverse": false,
+                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                            "text": "Solo Projects",
+                                                            "to": "/solo-projects",
+                                                          },
+                                                          Object {
+                                                            "inverse": false,
+                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                            "text": "Collaborations",
+                                                            "to": "/collaborations",
+                                                          },
+                                                        ],
+                                                        "menu": true,
+                                                        "title": <span>
+                                                          <Unknown />
+                                                           Sections
+                                    </span>,
+                                                      },
+                                                    }
+                  }
+>
+
+
+                  <Unknown
+                                    inverse={true}
+                  />
+</Styled(Connect(ModalLauncher))>,
               },
               "ref": null,
               "rendered": Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": "",
+                  "children": Array [
+                    "",
+                    " ",
+                    <Unknown
+                      inverse={true}
+/>,
+                  ],
+                  "element": "a",
+                  "unmarked": true,
+                  "with": Object {
+                    "id": "nav/sections",
+                    "info": Object {
+                      "buttons": Array [
+                        Object {
+                          "inverse": false,
+                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                          "text": "Film Photography",
+                          "to": "/film-photography",
+                        },
+                        Object {
+                          "inverse": false,
+                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                          "text": "Photo Essays",
+                          "to": "/photo-essays",
+                        },
+                        Object {
+                          "inverse": false,
+                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                          "text": "Editorials",
+                          "to": "/editorials",
+                        },
+                        Object {
+                          "inverse": false,
+                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                          "text": "Solo Projects",
+                          "to": "/solo-projects",
+                        },
+                        Object {
+                          "inverse": false,
+                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                          "text": "Collaborations",
+                          "to": "/collaborations",
+                        },
+                      ],
+                      "menu": true,
+                      "title": <span>
+                        <Unknown />
+                         Sections
+</span>,
+                    },
+                  },
                 },
                 "ref": null,
-                "rendered": "",
-                "type": "em",
+                "rendered": Array [
+                  "",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "inverse": true,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
               },
-              "type": "span",
+              "type": "em",
             },
-            ".",
-          ],
+            "type": "span",
+          },
           "type": [Function],
         },
       ],
@@ -2465,7 +3035,7 @@ ShallowWrapper {
           >
                     Dec 31, 1969
           </small>
-           
+
 </Unknown>,
       ],
     },
@@ -2533,7 +3103,7 @@ ShallowWrapper {
             >
                         Dec 31, 1969
             </small>
-             
+
 </Unknown>,
         ],
       },

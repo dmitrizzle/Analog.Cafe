@@ -98,7 +98,7 @@ export default props => {
               }}
               key="Options_LinkButton"
             >
-              Write for Analog.Cafe
+              Submit Your Photography
             </LinkButton>
           </CardIntegratedForColumns>
         )}

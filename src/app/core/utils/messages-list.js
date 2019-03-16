@@ -15,11 +15,11 @@ export const getListMeta = (pathname = "/", page = 1) => {
   let meta
   page = parseInt(page, 0)
 
-  if (pathname.includes("/author/")) {
-    meta = TEXT_ROUTE_LABELS["/author/*"]
+  if (pathname.includes("/is/")) {
+    meta = TEXT_ROUTE_LABELS["/is/*"]
     request = {
       params: {
-        author: pathname.match(/\/author\/(.*)/)[1],
+        author: pathname.match(/\/is\/(.*)/)[1],
         page
       },
       url

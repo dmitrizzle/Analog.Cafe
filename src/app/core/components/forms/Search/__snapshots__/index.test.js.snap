@@ -19,6 +19,7 @@ ShallowWrapper {
     "props": Object {
       "getSearchResults": [Function],
       "search": undefined,
+      "user": undefined,
     },
     "ref": null,
     "rendered": null,
@@ -32,6 +33,7 @@ ShallowWrapper {
       "props": Object {
         "getSearchResults": [Function],
         "search": undefined,
+        "user": undefined,
       },
       "ref": null,
       "rendered": null,

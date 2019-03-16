@@ -4,12 +4,10 @@ import styled from "styled-components"
 
 import { GA } from "../../../../../utils"
 import { NavLink, NavLogoLink } from "./NavLinks"
-import { ROUTE_URL_ARTICLES } from "../../../../constants/routes-article"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
-import NavSections from "./NavSections"
 import NavSearch from "./NavSearch"
 import Search from "../../../icons/Search"
 
@@ -26,72 +24,71 @@ export const LabelWithSearchSVG = styled.span`
   }
 `
 
-export const Burger = styled.div`
-  display: inline-block;
-  width: 1em;
-  height: 0.85em;
-  margin-left: 0.15em;
-
-  ${props => props.theme.size.breakpoint.min.m`
-  margin-bottom: -1px;
-  `} > div {
-    height: 2px;
-    margin: 3px 1px;
-    background: ${props => props.theme.color.foreground()};
-  }
-`
-
-export const Extra = styled.span`
+export const NotOnMicroScreens = styled.span`
   ${props => props.theme.size.breakpoint.max.s`
-display: none;
+  display: none;
 `};
 `
+export const OnlyMicroScreens = styled.span`
+  ${props => props.theme.size.breakpoint.min.m`
+    display: none;
+  `};
+`
+export const Extra = styled.span`
+  ${props => props.theme.size.breakpoint.max.l`
+    display: none;
+  `};
+`
+export const Condensed = styled.span`
+  ${props => props.theme.size.breakpoint.min.xl`
+    display: none;
+  `};
+`
 
-export const BurgerMenu = () => (
-  <Burger>
-    <div />
-    <div />
-    <div />
-  </Burger>
-)
+export const isActiveUrl = (to, options = {}, props) => {
+  const currentUrl = options.modalUrl
+    ? props.modalUrl
+    : window.location.pathname
+
+  if (options.modalUrl && props.isModalHidden) return false
+  if (currentUrl === to) return true
+  // if (
+  //   currentUrl &&
+  //   currentUrl.includes(ROUTE_URL_ARTICLES) &&
+  //   props.articleTag === to.replace("/", "")
+  // )
+  //   return true
+  return false
+}
 
 export default props => {
-  const isActiveUrl = (to, options = {}) => {
-    const currentUrl = options.modalUrl
-      ? props.modalUrl
-      : window.location.pathname
-    if (options.modalUrl && props.isModalHidden) return false
-    if (currentUrl === to) return true
-    if (
-      currentUrl &&
-      currentUrl.includes(ROUTE_URL_ARTICLES) &&
-      props.articleTag === to.replace("/", "")
-    )
-      return true
-    return false
-  }
-
   const a = "active"
 
-  const ve = "/photo-essay"
-  const fp = "/film-photography"
+  const co = "/compendium"
+  const ab = "/about"
 
-  const visualEssays = {
-    to: "/photo-essays",
-    className: isActiveUrl(ve) ? a : undefined
+  const compendium = {
+    to: co,
+    className: isActiveUrl(co) ? a : undefined
   }
-  const filmPhotography = {
-    to: fp,
-    className: isActiveUrl(fp) ? a : undefined
+  const about = {
+    to: ab,
+    className: isActiveUrl(ab) ? a : undefined
   }
-  const navSections = {
-    className: isActiveUrl("nav/sections", { modalUrl: true }) ? a : undefined
+
+  const navSearch = {
+    className: isActiveUrl("nav/find", { modalUrl: true }, props)
+      ? a
+      : undefined
   }
   const navMore = {
-    className: isActiveUrl("nav/more", { modalUrl: true }) ? a : undefined
-  }
-  const navSearch = {
-    className: isActiveUrl("nav/search", { modalUrl: true }) ? a : undefined
+    className: (isActiveUrl("nav/account", { modalUrl: true }, props) ||
+    isActiveUrl("/submissions") ||
+    isActiveUrl("/favourites")
+    ? "active"
+    : undefined)
+      ? a
+      : undefined
   }
 
   return (
@@ -100,43 +97,47 @@ export default props => {
         "ontouchstart" in document.documentElement ? null : props.userIntent
       }
     >
-      <NavItem prime left mobile className="prime left mobile">
+      {/* <NavItem prime left mobile className="prime left mobile">
         <NavSections {...navSections}>
           <span>
             <Extra>Sections </Extra>◈
           </span>
         </NavSections>
-      </NavItem>
+      </NavItem> */}
+
       <NavItem>
         <NavLink
-          {...visualEssays}
+          {...about}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "PhotoEssays"
+              label: "About"
             })
           }}
         >
-          <span className="wide">Photo </span>
-          Essays
+          About
+          <Extra> ✹</Extra>
         </NavLink>
       </NavItem>
+
       <NavItem>
         <NavLink
-          {...filmPhotography}
+          {...compendium}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "FilmPhotography"
+              label: "Compendium"
             })
           }}
         >
-          <span className="wide">Film </span>
-          Photography
+          {/* <span className="wide">Photo </span> */}
+          Compendium
+          <Extra> ❖</Extra>
         </NavLink>
       </NavItem>
+
       <NavItem prime center className="prime center">
         <NavLogoLink
           to={"/"}
@@ -152,13 +153,24 @@ export default props => {
           <NavLogo />
         </NavLogoLink>
       </NavItem>
-      <NavItem narrow prime left className="left">
-        <NavSearch {...navSearch}>
+
+      <NavItem narrow prime left className="prime left">
+        <NavSearch
+          {...navSearch}
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "Find"
+            })
+          }}
+        >
           <LabelWithSearchSVG>
-            Search <Search />
+            Find <Search />
           </LabelWithSearchSVG>
         </NavSearch>
       </NavItem>
+
       <NavItem prime right className="prime right">
         <NavMore
           userImage={props.userImage}
@@ -166,10 +178,10 @@ export default props => {
           userRole={props.userRole}
           {...navMore}
         >
-          More <BurgerMenu />
-          <Extra>
-            {props.userStatus === "ok" && <NavAvatar image={props.userImage} />}
-          </Extra>
+          <Extra>My </Extra>
+          <NotOnMicroScreens>Account </NotOnMicroScreens>
+          <OnlyMicroScreens>Me </OnlyMicroScreens>
+          <NavAvatar image={props.userImage} />
         </NavMore>
       </NavItem>
     </ul>

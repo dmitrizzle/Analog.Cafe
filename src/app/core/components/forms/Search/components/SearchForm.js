@@ -13,7 +13,7 @@ export default class extends React.Component {
       warning: false
     }
   }
-  handleEmailChange = event => {
+  handleSearchChange = event => {
     this.setState({ query: event.target.value || "", warning: false })
     this.props.searchText(event.target.value)
   }
@@ -33,7 +33,8 @@ export default class extends React.Component {
         withinGroup={this.props.withinGroup}
       >
         <SearchInput
-          onChange={this.handleEmailChange}
+          onChange={this.handleSearchChange}
+          value={this.props.searhTextValue}
           warning={this.state.warning}
           autoFocus={this.props.autoFocus}
           onClick={this.handleInputClick}

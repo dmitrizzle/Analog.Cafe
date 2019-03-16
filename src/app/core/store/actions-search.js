@@ -37,6 +37,9 @@ export const getSearchResults = q => {
     }
   }
   return dispatch => {
+    if (q === "") {
+      dispatch(setSearchStatus(false))
+    }
     dispatch(setSearchStatus(true))
     axios(makeAPIRequest(request))
       .then(response => {

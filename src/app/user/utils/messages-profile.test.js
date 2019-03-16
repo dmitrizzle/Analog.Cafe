@@ -33,7 +33,7 @@ it("Ignore empty mistyped links", () => {
 it("Generate user profile buttons template", () => {
   expect(getProfileButtons("dmitrizzle", "https://google.com")).toEqual([
     {
-      to: "/author/dmitrizzle",
+      to: "/is/dmitrizzle",
       text: "View Full Profile",
       branded: true
     },

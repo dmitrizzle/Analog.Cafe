@@ -2,7 +2,7 @@ import React from "react"
 
 import { MIME_PICTURES_HUMAN } from "./rules-submission"
 import { TEXT_EMOJIS } from "../../constants"
-import { contactInfoString } from "../../core/components/vignettes/ContactInfo"
+import { emailString } from "../../core/components/vignettes/Email"
 import Link from "../../core/components/controls/Link"
 
 export const CARD_ERRORS = {
@@ -16,21 +16,19 @@ export const CARD_ERRORS = {
     text: "Please include at least one photograph or illustration."
   },
   SEND_CONTENT_EMPTY: {
-    title: "Some Stuff is Missing",
-    image:
-      "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
+    title: "⚠️ Submission Failed",
+    // image:
+    //   "https://res.cloudinary.com/analog-cafe/image/upload/v1528904759/image-froth_1010453_425a5704760c4879b31e008315c3047c.gif",
     text: (
       <span>
-        Please make sure that you’ve added:
+        One of these things is missing:
         <br />
-        <strong>– A title</strong>
         <br />
-        <strong>- Text</strong>{" "}
-        <em>
-          <Link to="/zine/open-call-g99w">What should I write?</Link>
-        </em>
+        <strong>✒︎ A title.</strong>
         <br />
-        <strong>– Image(s)</strong> <em>10MB or smaller</em>
+        <strong>✒︎ 200-word article/essay.</strong>
+        <br />
+        <strong>✒︎ Image(s)</strong> <em>JPG, 10MB or less</em>.
       </span>
     )
   },
@@ -49,7 +47,7 @@ export const HEADER_ERRORS = {
   }
 }
 
-export const TEXT_EDITORIAL_RELEASE = `All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email ${contactInfoString}.`
+export const TEXT_EDITORIAL_RELEASE = `All accepted submissions are edited for grammar and style. We aim to preserve the voice and the message of your work as much as possible, but can’t guarantee the published version will match your expectations. If you’d like to approve the edits or request changes, please email ${emailString}.`
 export const CARD_DIALOGUES = {
   CONSENT: {
     info: {
@@ -84,7 +82,7 @@ export const CARD_ALERTS = {
     info: {
       title: "Never Loose Your Work!",
       text:
-        "Your text and images are saved automatically onto your device as you type. Even if you’re offline!"
+        "Your text and images are saved automatically onto your device as you type. Even if you’re offline! You can safely close your browser and turn off the device or computer. Just remember to use the same browser."
     },
     id: "hints/auto-save"
   }

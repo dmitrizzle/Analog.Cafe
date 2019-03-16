@@ -26,7 +26,7 @@ export default props => {
         <figcaption>
           <ProfileCaption
             maxLength={INPUT_SUMMARY_LIMIT}
-            placeholder="Your short author bio goes here."
+            placeholder="Please introduce yourself in 30 words or less."
             onChange={event => props.changeText(event)}
             value={props.text || ""}
             warning={props.warningText}
@@ -35,7 +35,7 @@ export default props => {
         <ProfileButton
           value={props.buttonText || ""}
           branded={props.buttonText}
-          placeholder="Website"
+          placeholder="Add Your Link Here"
           maxLength={INPUT_SUMMARY_LIMIT}
           onChange={event => props.changeButton(event)}
           onFocus={props.focusButton}

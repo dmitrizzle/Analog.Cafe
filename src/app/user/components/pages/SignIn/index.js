@@ -21,11 +21,12 @@ import ArticleSection from "../../../../core/components/pages/Article/components
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import CardIntegrated from "../../../../core/components/controls/Card/components/CardIntegrated"
+import Figure from "../../../../core/components/vignettes/Picture/components/Figure"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
 import Modal from "../../../../core/components/controls/Modal"
-import SignInInfo from "./components/SignInInfo"
+import SignInInfo, { Hint } from "./components/SignInInfo"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
 const POPUP_WINDOW = name => {
@@ -104,12 +105,15 @@ class SignIn extends React.PureComponent {
     if (this.props.user.status !== "ok") {
       return (
         <ArticleWrapper>
-          <MetaTags metaTitle="Sign In" />
-          <HeaderLarge pageTitle="Sign In" pageSubtitle="Authors and Editors" />
+          <MetaTags metaTitle="Sign In" metaSubtitle="Or create free account" />
+          <HeaderLarge
+            id="account"
+            pageTitle="Sign In"
+            pageSubtitle="Or create free account"
+          />
           <ArticleSection>
-            <SignInInfo stateSessionInfo={this.state.sessionInfo} />
-
-            <ButtonGroup>
+            <SignInInfo />
+            <ButtonGroup style={{ padding: "0.5em 0 4em" }}>
               <TwitterLinkButton
                 to="#twitter-sign-in"
                 onClick={this.handleTwitterButton}
@@ -131,17 +135,16 @@ class SignIn extends React.PureComponent {
                       with={{
                         info: {
                           image: "image-froth_3525424_rJ1m0e15m",
-                          title: "Sign In with Confirmation Link",
+                          title: "Secure Confirmation Links",
                           text: (
                             <span>
                               Sign in and create accounts{" "}
-                              <strong>securely and without passwords</strong>{" "}
-                              using confirmation links.
+                              <strong>securely and without passwords</strong>.
                               <br />
                               <br />
-                              Enter your email address and we’ll email you a
-                              link that expires in ten minutes. Click it –
-                              you’re now signed in!
+                              Enter your email address get a link that will
+                              either create an account or log you in –
+                              instantly.
                             </span>
                           )
                         },
@@ -158,14 +161,25 @@ class SignIn extends React.PureComponent {
                 <SignInWithEmail />
               </CardIntegrated>
             </ButtonGroup>
+            <Hint stateSessionInfo={this.state.sessionInfo} />
             <p>
               Your account is created automatically whenever you click either of
               the buttons above. You do not need to remember passwords. If you
               already have an account, simply use the same method to sign in as
-              you did the first time – we’ll open your existing account for you.
+              you did the first time – we’ll take you to your existing account.
               All accounts are secure and adhere to our strict{" "}
               <Link to="/privacy-policy">privacy policy</Link>.
             </p>
+            <h3>“Analogue Reads” Tuesdays.</h3>
+            <p>
+              <strong>A weekly email newsletter</strong> featuring a digest of
+              new photo essays, reviews, and guides. Every Tuesday at 9AM EST.{" "}
+              <Link to="/privacy">No spam</Link>. Free with every account.
+              Unsubscribe anytime.
+            </p>
+            <Link to="#account">
+              <Figure src="image-froth_1600000_BJRvHFlv4" feature />
+            </Link>
           </ArticleSection>
         </ArticleWrapper>
       )

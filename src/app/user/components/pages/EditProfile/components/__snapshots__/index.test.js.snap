@@ -489,7 +489,7 @@ ShallowWrapper {
                     <Styled(Styled(Component))
                               maxLength={250}
                               onChange={[Function]}
-                              placeholder="Your short author bio goes here."
+                              placeholder="Please introduce yourself in 30 words or less."
                               value=""
                               warning={undefined}
                     />
@@ -500,7 +500,7 @@ ShallowWrapper {
                     onBlur={undefined}
                     onChange={[Function]}
                     onFocus={undefined}
-                    placeholder="Website"
+                    placeholder="Add Your Link Here"
                     value=""
           />
 </Styled(Styled(styled.div))>,
@@ -602,7 +602,7 @@ ShallowWrapper {
               <Styled(Styled(Component))
                             maxLength={250}
                             onChange={[Function]}
-                            placeholder="Your short author bio goes here."
+                            placeholder="Please introduce yourself in 30 words or less."
                             value=""
                             warning={undefined}
               />
@@ -613,7 +613,7 @@ ShallowWrapper {
               onBlur={undefined}
               onChange={[Function]}
               onFocus={undefined}
-              placeholder="Website"
+              placeholder="Add Your Link Here"
               value=""
 />,
           ],
@@ -628,7 +628,7 @@ ShallowWrapper {
               "children": <Styled(Styled(Component))
                 maxLength={250}
                 onChange={[Function]}
-                placeholder="Your short author bio goes here."
+                placeholder="Please introduce yourself in 30 words or less."
                 value=""
                 warning={undefined}
 />,
@@ -641,7 +641,7 @@ ShallowWrapper {
               "props": Object {
                 "maxLength": 250,
                 "onChange": [Function],
-                "placeholder": "Your short author bio goes here.",
+                "placeholder": "Please introduce yourself in 30 words or less.",
                 "value": "",
                 "warning": undefined,
               },
@@ -661,7 +661,7 @@ ShallowWrapper {
               "onBlur": undefined,
               "onChange": [Function],
               "onFocus": undefined,
-              "placeholder": "Website",
+              "placeholder": "Add Your Link Here",
               "value": "",
             },
             "ref": null,
@@ -704,7 +704,7 @@ ShallowWrapper {
                         <Styled(Styled(Component))
                                     maxLength={250}
                                     onChange={[Function]}
-                                    placeholder="Your short author bio goes here."
+                                    placeholder="Please introduce yourself in 30 words or less."
                                     value=""
                                     warning={undefined}
                         />
@@ -715,7 +715,7 @@ ShallowWrapper {
                         onBlur={undefined}
                         onChange={[Function]}
                         onFocus={undefined}
-                        placeholder="Website"
+                        placeholder="Add Your Link Here"
                         value=""
             />
 </Styled(Styled(styled.div))>,
@@ -817,7 +817,7 @@ ShallowWrapper {
                 <Styled(Styled(Component))
                                 maxLength={250}
                                 onChange={[Function]}
-                                placeholder="Your short author bio goes here."
+                                placeholder="Please introduce yourself in 30 words or less."
                                 value=""
                                 warning={undefined}
                 />
@@ -828,7 +828,7 @@ ShallowWrapper {
                 onBlur={undefined}
                 onChange={[Function]}
                 onFocus={undefined}
-                placeholder="Website"
+                placeholder="Add Your Link Here"
                 value=""
 />,
             ],
@@ -843,7 +843,7 @@ ShallowWrapper {
                 "children": <Styled(Styled(Component))
                   maxLength={250}
                   onChange={[Function]}
-                  placeholder="Your short author bio goes here."
+                  placeholder="Please introduce yourself in 30 words or less."
                   value=""
                   warning={undefined}
 />,
@@ -856,7 +856,7 @@ ShallowWrapper {
                 "props": Object {
                   "maxLength": 250,
                   "onChange": [Function],
-                  "placeholder": "Your short author bio goes here.",
+                  "placeholder": "Please introduce yourself in 30 words or less.",
                   "value": "",
                   "warning": undefined,
                 },
@@ -876,7 +876,7 @@ ShallowWrapper {
                 "onBlur": undefined,
                 "onChange": [Function],
                 "onFocus": undefined,
-                "placeholder": "Website",
+                "placeholder": "Add Your Link Here",
                 "value": "",
               },
               "ref": null,

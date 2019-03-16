@@ -15,7 +15,6 @@ import ListItemAuthorDate from "./ListItemAuthorDate"
 import ListItemStats, { Stats, readingTime } from "./ListItemStats"
 import ListLoader from "./ListLoader"
 import ListUL from "./ListUL"
-import HowToSubmit from "./HowToSubmit"
 import ZigZagPicture from "./ZigZagPicture"
 
 it("Render Bleed, matches snapshot", () => {
@@ -122,11 +121,6 @@ it("Render ListUL, matches snapshot", () => {
       <ListUL />
     </ThemeProvider>
   )
-  expect(element).toMatchSnapshot()
-})
-
-it("Render HowToSubmit, matches snapshot", () => {
-  const element = shallow(<HowToSubmit />)
   expect(element).toMatchSnapshot()
 })
 

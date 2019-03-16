@@ -1,17 +1,17 @@
 export const SEARCH_RESULTS_FEATURED = [
-  {
-    link: "/zine/a-beginners-guide-to-film-photography-zq0f",
-    title: "A Beginner’s Guide to Film Photography",
-    snippet: "2019 Edition."
-  },
-  {
-    link: "/resources",
-    // image:
-    //   "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1402564_SklPuuHRNf.jpg",
-    title: "Resources",
-    snippet:
-      "Film Grain Reference, downloads, essential guides, and select photo essays."
-  }
+  // {
+  //   link: "/zine/a-beginners-guide-to-film-photography-zq0f",
+  //   title: "A Beginner’s Guide to Film Photography",
+  //   snippet: "2019 Edition."
+  // },
+  // {
+  //   link: "/compendium",
+  //   // image:
+  //   //   "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1402564_SklPuuHRNf.jpg",
+  //   title: "Compendium",
+  //   snippet:
+  //     "Film Grain Reference, downloads, essential guides, and select photo essays."
+  // }
   // {
   //   link: "/zine/35mm-film-price-guide-6zt1",
   //   // image:

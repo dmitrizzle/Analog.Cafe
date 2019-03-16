@@ -17,11 +17,11 @@ export default props => {
           socialButtons: true,
           title: (
             <LabelWithSearchSVG>
-              <Search /> Search
+              <Search /> Find
             </LabelWithSearchSVG>
           )
         },
-        id: "nav/search"
+        id: "nav/find"
       }}
       style={{ textDecoration: "none", paddingRight: ".25em" }}
     >

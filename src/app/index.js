@@ -8,7 +8,6 @@ import { withRouter } from "react-router"
 
 import { CARD_ERRORS } from "./user/constants/messages-session"
 import { GA } from "./utils"
-import { ROUTE_URL_USER_LANDING } from "./user/constants/routes-session"
 import {
   getUserInfo,
   refreshUser,
@@ -110,8 +109,8 @@ class App extends React.PureComponent {
         this.props.setNavView("COMPOSER")
         this.props.setNavPositions({})
         break
-      case ROUTE_URL_USER_LANDING + "/edit":
-      case ROUTE_URL_USER_LANDING + "/edit/":
+      case "/profile/edit":
+      case "/profile/edit/":
         this.props.setNavPositions({ top: false })
         break
       case "/submit/confirm-full-consent":
