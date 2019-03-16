@@ -6,6 +6,7 @@ import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { makeFroth } from "../../../../utils"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
+import Email from "../../vignettes/Email"
 import Figure, { bleed } from "../../vignettes/Picture/components/Figure"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
@@ -168,7 +169,7 @@ class About extends React.PureComponent {
           </p>
           <p>
             If you’d like to chat with the founder, editor, developer, big
-            cheese, whatever – email me at <ContactInfo />, or reach out via{" "}
+            cheese, whatever – <Email /> me, or reach out via{" "}
             <strong>
               <Link to="https://twitter.com/analog_cafe">Twitter</Link>
             </strong>{" "}
