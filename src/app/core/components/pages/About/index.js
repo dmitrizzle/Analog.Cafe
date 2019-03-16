@@ -2,20 +2,15 @@ import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
-import { BurgerMenu, sectionButtons } from "../List/components/ListDescription"
-import { LabelWithSearchSVG } from "../../controls/Nav/components/NavGeneral"
-import { buttonMaker } from "../../forms/Search"
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { makeFroth } from "../../../../utils"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
-import Email from "../../vignettes/Email"
 import Figure, { bleed } from "../../vignettes/Picture/components/Figure"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import Link from "../../controls/Link"
 import MetaTags from "../../vignettes/MetaTags"
 import Modal from "../../controls/Modal"
-import Search from "../../icons/Search"
 import ThankYouList from "./components/ThankYouList"
 
 const metaTitle = "About"
@@ -87,20 +82,58 @@ class About extends React.PureComponent {
 
         <ArticleSection>
           <p>
-            <strong>
-              <Link to="/">Analog.Cafe</Link>
-            </strong>{" "}
-            features long- and short-form photo essays on art, travel, and
-            culture. We strive to be{" "}
-            <strong>nonsensational, well edited, and well illustrated.</strong>
+            Here we publish weekly photo essays on art, travel, and culture.
+            Many of our articles are about analogue cameras, too.
           </p>
           <p>
-            We use, promote and write about{" "}
-            <Link to="/zine/a-beginners-guide-to-film-photography-zq0f">
-              film photography
-            </Link>
-            : another central topic of this magazine.
+            As of now, there are {this.props.community.authorsList.items.length}{" "}
+            contributing authors. Some of us are prominent film photographers,
+            others are writers, artists, or camera afficionados.
           </p>
+          <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
+            <Authors>
+              {this.props.community.authorsList.items.map((item, index) => {
+                const image = makeFroth({ src: item.image, size: "t" }).src
+
+                return (
+                  <AuthorIcon
+                    style={{ backgroundImage: `url(${image})` }}
+                    to={`/is/${item.id}`}
+                    key={index}
+                  />
+                )
+              })}
+            </Authors>
+          </AuthorsBanner>
+          <h3>A brief history.</h3>
+          <p>
+            This project got initiated in 2017 as an idea for a community
+            publishing platform.
+          </p>
+          <p>
+            Analog.Cafe got funded via Kickstarter on May 5<sup>th</sup>. The
+            website went live on{" "}
+            <Link to="/zine/analog-cafe-e8tr">July 27, 2017</Link>. Today it’s
+            maintained by <Link to="/is/dmitrizzle">Dmitri</Link> – hello! 👋
+          </p>
+          <p>
+            My wife, <Link to="/is/betty">Betty</Link>, has been a tremendous
+            help in setting the tone, quality, and consistency of the articles.
+            None of this would make sense without her help and the fantastic
+            people who supported me along this journey.
+          </p>
+
+          <p>
+            Almost every image on this website is shot on film. There could be a
+            book written on why we haven’t given up this medium. The gist: it
+            comes with a unique look, process, and memories.{" "}
+            <Link to="/zine/a-beginners-guide-to-film-photography-zq0f">
+              Give it a try
+            </Link>{" "}
+            if you haven’t already.
+          </p>
+
+          <h3>How to reach us.</h3>
           <Modal
             unmarked
             element="a"
@@ -128,123 +161,6 @@ class About extends React.PureComponent {
           >
             <Figure src="image-froth_1206996_r1CqlUwRm" />
           </Modal>
-          <p>
-            The{" "}
-            <strong>
-              <Link to="/">front page</Link>
-            </strong>{" "}
-            of this website features all of our newest articles. It can be
-            filtered down into five main{" "}
-            <Modal
-              element="a"
-              with={{
-                info: {
-                  menu: true,
-                  title: (
-                    <span>
-                      <BurgerMenu /> Sections
-                    </span>
-                  ),
-                  buttons: sectionButtons.map(section => buttonMaker(section))
-                },
-                id: "about/sections"
-              }}
-            >
-              sections
-            </Modal>
-            . Or you can use search to{" "}
-            <Modal
-              element="a"
-              with={{
-                info: {
-                  search: true,
-                  menu: false,
-                  socialButtons: true,
-                  title: (
-                    <LabelWithSearchSVG>
-                      <Search /> Find
-                    </LabelWithSearchSVG>
-                  )
-                },
-                id: "nav/find"
-              }}
-            >
-              find
-            </Modal>{" "}
-            what you need.
-          </p>
-          <p>
-            The{" "}
-            <strong>
-              <Link to="/compendium">compendium</Link>
-            </strong>{" "}
-            page features our ultimate collection of resources for the people
-            interested in art and photography. It inclues guides, reviews,
-            printables, audio and links.
-          </p>
-          <p>
-            To get full access to the <em>compendium</em> you will need a free{" "}
-            <strong>
-              <Link to="/sign-in">Analog.Cafe account</Link>
-            </strong>
-            . With it you can also vote for and save your{" "}
-            <span style={{ display: "inline-block" }}>
-              favourites
-              <span style={{ color: "#ed216c" }}>❤</span>
-            </span>{" "}
-            and <Link to="/submit">submit</Link> your work to get featured.
-          </p>
-
-          <h3>Authors, members, and editors.</h3>
-
-          <p>
-            Our content comes from guest and regular writers around the world.
-            As of now, there are {this.props.community.authorsList.items.length}{" "}
-            published authors. Some of us are prominent film photographers,
-            others are casual and professional writers, artists, or camera
-            afficionados.
-          </p>
-          <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
-            <Authors>
-              {this.props.community.authorsList.items.map((item, index) => {
-                const image = makeFroth({ src: item.image, size: "t" }).src
-
-                return (
-                  <AuthorIcon
-                    style={{ backgroundImage: `url(${image})` }}
-                    to={`/is/${item.id}`}
-                    key={index}
-                  />
-                )
-              })}
-            </Authors>
-          </AuthorsBanner>
-          <h3>A brief history.</h3>
-          <p>
-            This project got initiated in 2017 as a plan for a community
-            publishing platform.
-          </p>
-          <p>
-            Analog.Cafe got funded via Kickstarter on May 5<sup>th</sup>. The
-            website went live on{" "}
-            <Link to="/zine/analog-cafe-e8tr">July 27, 2017</Link>. Today it’s
-            maintained by <Link to="/is/dmitrizzle">Dmitri</Link> – hello! 👋
-          </p>
-          <p>
-            My wife, <Link to="/is/betty">Betty</Link>, has been a tremendous
-            help in setting the tone, quality, and consistency of the articles.
-            None of this would make sense without her help and the fantastic
-            people who supported me along this journey.
-          </p>
-
-          <h3>How to reach us.</h3>
-          <Link to="/is/dmitrizzle">
-            <Figure src="image-froth_1479844_S14eOAhIN" caption>
-              This is me, Dmitri. Writing right back via pigeon mail.
-              <br />
-              Just kidding, I’ll get back to you within 24 hours. 🙃
-            </Figure>
-          </Link>
 
           <p>
             You can usually find authors’ contact info in the bio, linked in
@@ -252,7 +168,7 @@ class About extends React.PureComponent {
           </p>
           <p>
             If you’d like to chat with the founder, editor, developer, big
-            cheese, whatever – <Email /> me, or reach out via{" "}
+            cheese, whatever – email me at <ContactInfo />, or reach out via{" "}
             <strong>
               <Link to="https://twitter.com/analog_cafe">Twitter</Link>
             </strong>{" "}
@@ -266,7 +182,7 @@ class About extends React.PureComponent {
             <strong>
               <Link to="/submit">Submissions</Link>
             </strong>{" "}
-            are welcome!
+            are welcome. 🙌
           </p>
           <hr />
           <h3>Thank you, project backers!</h3>

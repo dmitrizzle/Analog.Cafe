@@ -28,13 +28,13 @@ export default props => {
         element="a"
         with={{
           info: {
-            image: "image-froth_1499794_BkFUA89IV",
+            image: "image-froth_1499794_SyjYGWYL4",
             title: "Call for entries.",
             text: posterText,
             buttons: [
               {
                 to:
-                  "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1800/image-froth_1499794_BkFUA89IV.jpg",
+                  "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1800/image-froth_1499794_SyjYGWYL4.jpg",
                 text: "Download This Poster"
               },
               {
@@ -47,7 +47,7 @@ export default props => {
           id: "hints/submissions"
         }}
       >
-        <Figure src="image-froth_1499794_BkFUA89IV" feature alt={posterText} />
+        <Figure src="image-froth_1499794_SyjYGWYL4" feature alt={posterText} />
       </Modal>
       <p>
         If you love shooting film and have a story to share, Analog.Cafe could
@@ -120,11 +120,7 @@ export default props => {
       <p>
         Best way to get accepted is to read a few articles on the website to get
         a better sense for what gets published. For further advice and ideas,
-        read{" "}
-        <Link to="/zine/open-call-g99w">
-          <strong>this</strong>
-        </Link>
-        .
+        read <Link to="/zine/open-call-g99w">this</Link>.
       </p>
       <h3>Good luck!</h3>
     </ArticleSection>
