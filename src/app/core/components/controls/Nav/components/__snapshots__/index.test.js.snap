@@ -766,16 +766,22 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/about"
           >
-                    About ✹
+                    About
+                    <styled.span>
+                               ✹
+                    </styled.span>
           </NavLink>
 </styled.li>,
         <styled.li>
           <NavLink
                     className={undefined}
                     onClick={[Function]}
-                    to="/resources"
+                    to="/must-reads"
           >
-                    Resources ❖
+                    Must Reads
+                    <styled.span>
+                               ❖
+                    </styled.span>
           </NavLink>
 </styled.li>,
         <styled.li
@@ -847,7 +853,10 @@ ShallowWrapper {
             onClick={[Function]}
             to="/about"
 >
-            About ✹
+            About
+            <styled.span>
+                         ✹
+            </styled.span>
 </NavLink>,
         },
         "ref": null,
@@ -856,13 +865,31 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": "About ✹",
+            "children": Array [
+              "About",
+              <styled.span>
+                 ✹
+</styled.span>,
+            ],
             "className": undefined,
             "onClick": [Function],
             "to": "/about",
           },
           "ref": null,
-          "rendered": "About ✹",
+          "rendered": Array [
+            "About",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": " ✹",
+              },
+              "ref": null,
+              "rendered": " ✹",
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
         "type": [Function],
@@ -875,9 +902,12 @@ ShallowWrapper {
           "children": <NavLink
             className={undefined}
             onClick={[Function]}
-            to="/resources"
+            to="/must-reads"
 >
-            Resources ❖
+            Must Reads
+            <styled.span>
+                         ❖
+            </styled.span>
 </NavLink>,
         },
         "ref": null,
@@ -886,13 +916,31 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": "Resources ❖",
+            "children": Array [
+              "Must Reads",
+              <styled.span>
+                 ❖
+</styled.span>,
+            ],
             "className": undefined,
             "onClick": [Function],
-            "to": "/resources",
+            "to": "/must-reads",
           },
           "ref": null,
-          "rendered": "Resources ❖",
+          "rendered": Array [
+            "Must Reads",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": " ❖",
+              },
+              "ref": null,
+              "rendered": " ❖",
+              "type": [Function],
+            },
+          ],
           "type": [Function],
         },
         "type": [Function],
@@ -1120,16 +1168,22 @@ ShallowWrapper {
                         onClick={[Function]}
                         to="/about"
             >
-                        About ✹
+                        About
+                        <styled.span>
+                                     ✹
+                        </styled.span>
             </NavLink>
 </styled.li>,
           <styled.li>
             <NavLink
                         className={undefined}
                         onClick={[Function]}
-                        to="/resources"
+                        to="/must-reads"
             >
-                        Resources ❖
+                        Must Reads
+                        <styled.span>
+                                     ❖
+                        </styled.span>
             </NavLink>
 </styled.li>,
           <styled.li
@@ -1201,7 +1255,10 @@ ShallowWrapper {
               onClick={[Function]}
               to="/about"
 >
-              About ✹
+              About
+              <styled.span>
+                             ✹
+              </styled.span>
 </NavLink>,
           },
           "ref": null,
@@ -1210,13 +1267,31 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": "About ✹",
+              "children": Array [
+                "About",
+                <styled.span>
+                   ✹
+</styled.span>,
+              ],
               "className": undefined,
               "onClick": [Function],
               "to": "/about",
             },
             "ref": null,
-            "rendered": "About ✹",
+            "rendered": Array [
+              "About",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": " ✹",
+                },
+                "ref": null,
+                "rendered": " ✹",
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
           "type": [Function],
@@ -1229,9 +1304,12 @@ ShallowWrapper {
             "children": <NavLink
               className={undefined}
               onClick={[Function]}
-              to="/resources"
+              to="/must-reads"
 >
-              Resources ❖
+              Must Reads
+              <styled.span>
+                             ❖
+              </styled.span>
 </NavLink>,
           },
           "ref": null,
@@ -1240,13 +1318,31 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": "Resources ❖",
+              "children": Array [
+                "Must Reads",
+                <styled.span>
+                   ❖
+</styled.span>,
+              ],
               "className": undefined,
               "onClick": [Function],
-              "to": "/resources",
+              "to": "/must-reads",
             },
             "ref": null,
-            "rendered": "Resources ❖",
+            "rendered": Array [
+              "Must Reads",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": " ❖",
+                },
+                "ref": null,
+                "rendered": " ❖",
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
           "type": [Function],

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render ContactInfo, matches snapshot 1`] = `
+exports[`Render Email, matches snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -17,13 +17,25 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "d/at/analog.cafe",
-      "style": Object {
-        "display": "inline-block",
-      },
+      "children": <a
+        href="mailto:d@analog.cafe"
+>
+        email
+</a>,
     },
     "ref": null,
-    "rendered": "d/at/analog.cafe",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "email",
+        "href": "mailto:d@analog.cafe",
+      },
+      "ref": null,
+      "rendered": "email",
+      "type": "a",
+    },
     "type": "strong",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -32,13 +44,25 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "d/at/analog.cafe",
-        "style": Object {
-          "display": "inline-block",
-        },
+        "children": <a
+          href="mailto:d@analog.cafe"
+>
+          email
+</a>,
       },
       "ref": null,
-      "rendered": "d/at/analog.cafe",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "email",
+          "href": "mailto:d@analog.cafe",
+        },
+        "ref": null,
+        "rendered": "email",
+        "type": "a",
+      },
       "type": "strong",
     },
   ],

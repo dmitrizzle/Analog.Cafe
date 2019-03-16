@@ -34,6 +34,16 @@ ShallowWrapper {
                 to="/zine/a-beginners-guide-to-film-photography-zq0f"
         />
         <Redirect
+                from="/subscribe"
+                push={false}
+                to="/sign-in"
+        />
+        <Redirect
+                from="/resources"
+                push={false}
+                to="/must-reads"
+        />
+        <Redirect
                 from="/author/:id"
                 push={false}
                 to="/is/:id"
@@ -126,7 +136,7 @@ ShallowWrapper {
         <Route
                 component={[Function]}
                 exact={true}
-                path="/resources"
+                path="/must-reads"
         />
         <Route
                 component={[Function]}
@@ -136,10 +146,6 @@ ShallowWrapper {
         <Route
                 component={[Function]}
                 path="/submit"
-        />
-        <Route
-                path="/subscribe"
-                render={[Function]}
         />
         <Route
                 component={[Function]}
@@ -187,6 +193,16 @@ ShallowWrapper {
             from="/zine/a-beginner's-guide-to-film-photography-zq0f"
             push={false}
             to="/zine/a-beginners-guide-to-film-photography-zq0f"
+/>,
+          <Redirect
+            from="/subscribe"
+            push={false}
+            to="/sign-in"
+/>,
+          <Redirect
+            from="/resources"
+            push={false}
+            to="/must-reads"
 />,
           <Redirect
             from="/author/:id"
@@ -281,7 +297,7 @@ ShallowWrapper {
           <Route
             component={[Function]}
             exact={true}
-            path="/resources"
+            path="/must-reads"
 />,
           <Route
             component={[Function]}
@@ -291,10 +307,6 @@ ShallowWrapper {
           <Route
             component={[Function]}
             path="/submit"
-/>,
-          <Route
-            path="/subscribe"
-            render={[Function]}
 />,
           <Route
             component={[Function]}
@@ -352,6 +364,32 @@ ShallowWrapper {
             "from": "/zine/a-beginner's-guide-to-film-photography-zq0f",
             "push": false,
             "to": "/zine/a-beginners-guide-to-film-photography-zq0f",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "from": "/subscribe",
+            "push": false,
+            "to": "/sign-in",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "from": "/resources",
+            "push": false,
+            "to": "/must-reads",
           },
           "ref": null,
           "rendered": null,
@@ -598,7 +636,7 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
-            "path": "/resources",
+            "path": "/must-reads",
           },
           "ref": null,
           "rendered": null,
@@ -624,18 +662,6 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "path": "/submit",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "path": "/subscribe",
-            "render": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -707,6 +733,16 @@ ShallowWrapper {
                     from="/zine/a-beginner's-guide-to-film-photography-zq0f"
                     push={false}
                     to="/zine/a-beginners-guide-to-film-photography-zq0f"
+          />
+          <Redirect
+                    from="/subscribe"
+                    push={false}
+                    to="/sign-in"
+          />
+          <Redirect
+                    from="/resources"
+                    push={false}
+                    to="/must-reads"
           />
           <Redirect
                     from="/author/:id"
@@ -801,7 +837,7 @@ ShallowWrapper {
           <Route
                     component={[Function]}
                     exact={true}
-                    path="/resources"
+                    path="/must-reads"
           />
           <Route
                     component={[Function]}
@@ -811,10 +847,6 @@ ShallowWrapper {
           <Route
                     component={[Function]}
                     path="/submit"
-          />
-          <Route
-                    path="/subscribe"
-                    render={[Function]}
           />
           <Route
                     component={[Function]}
@@ -862,6 +894,16 @@ ShallowWrapper {
               from="/zine/a-beginner's-guide-to-film-photography-zq0f"
               push={false}
               to="/zine/a-beginners-guide-to-film-photography-zq0f"
+/>,
+            <Redirect
+              from="/subscribe"
+              push={false}
+              to="/sign-in"
+/>,
+            <Redirect
+              from="/resources"
+              push={false}
+              to="/must-reads"
 />,
             <Redirect
               from="/author/:id"
@@ -956,7 +998,7 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
-              path="/resources"
+              path="/must-reads"
 />,
             <Route
               component={[Function]}
@@ -966,10 +1008,6 @@ ShallowWrapper {
             <Route
               component={[Function]}
               path="/submit"
-/>,
-            <Route
-              path="/subscribe"
-              render={[Function]}
 />,
             <Route
               component={[Function]}
@@ -1027,6 +1065,32 @@ ShallowWrapper {
               "from": "/zine/a-beginner's-guide-to-film-photography-zq0f",
               "push": false,
               "to": "/zine/a-beginners-guide-to-film-photography-zq0f",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "from": "/subscribe",
+              "push": false,
+              "to": "/sign-in",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "from": "/resources",
+              "push": false,
+              "to": "/must-reads",
             },
             "ref": null,
             "rendered": null,
@@ -1273,7 +1337,7 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "exact": true,
-              "path": "/resources",
+              "path": "/must-reads",
             },
             "ref": null,
             "rendered": null,
@@ -1299,18 +1363,6 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "path": "/submit",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "path": "/subscribe",
-              "render": [Function],
             },
             "ref": null,
             "rendered": null,
