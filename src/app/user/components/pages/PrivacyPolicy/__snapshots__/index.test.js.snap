@@ -30,7 +30,7 @@ ShallowWrapper {
                     Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account from Analog.Cafe servers.
           </p>
           <p>
-                    You can delete your account at any time by sending a request to
+                    You can delete your account at any time by sending a request to this
                      
                     <Unknown />
                     . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
@@ -103,7 +103,7 @@ ShallowWrapper {
               Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account from Analog.Cafe servers.
 </p>,
             <p>
-              You can delete your account at any time by sending a request to
+              You can delete your account at any time by sending a request to this
                
               <Unknown />
               . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
@@ -159,7 +159,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                "You can delete your account at any time by sending a request to",
+                "You can delete your account at any time by sending a request to this",
                 " ",
                 <Unknown />,
                 ". Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.",
@@ -167,7 +167,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "You can delete your account at any time by sending a request to",
+              "You can delete your account at any time by sending a request to this",
               " ",
               Object {
                 "instance": null,
@@ -324,7 +324,7 @@ ShallowWrapper {
                         Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account from Analog.Cafe servers.
             </p>
             <p>
-                        You can delete your account at any time by sending a request to
+                        You can delete your account at any time by sending a request to this
                          
                         <Unknown />
                         . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
@@ -397,7 +397,7 @@ ShallowWrapper {
                 Analog.Cafe does not share or sell your private information (such as e-mail) to anyone outside of editing and admin staff at Analog.Cafe. Your email will be used for communication regarding your work and occasional or scheduled company newsletters. If you are a part of an email list, you can easily unsubscribe at any time via link in the footer of the email. Being a part of the email list is not the same as having an account with Analog.Cafe. Some emails are a part of the system (like notificatons sent at the time of publication to all authors). Those emails can can only be unsubscribed from when you delete your account from Analog.Cafe servers.
 </p>,
               <p>
-                You can delete your account at any time by sending a request to
+                You can delete your account at any time by sending a request to this
                  
                 <Unknown />
                 . Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.
@@ -453,7 +453,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "You can delete your account at any time by sending a request to",
+                  "You can delete your account at any time by sending a request to this",
                   " ",
                   <Unknown />,
                   ". Analog.Cafe will comply with your request within a week. If you want your work to be removed from Analog.Cafe website, please send a separate request.",
@@ -461,7 +461,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                "You can delete your account at any time by sending a request to",
+                "You can delete your account at any time by sending a request to this",
                 " ",
                 Object {
                   "instance": null,

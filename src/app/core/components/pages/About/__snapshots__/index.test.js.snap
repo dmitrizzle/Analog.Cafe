@@ -19,7 +19,6 @@ ShallowWrapper {
     "props": Object {
       "community": undefined,
       "fetchAuthorsList": [Function],
-      "setModal": [Function],
       "user": undefined,
     },
     "ref": null,
@@ -34,7 +33,6 @@ ShallowWrapper {
       "props": Object {
         "community": undefined,
         "fetchAuthorsList": [Function],
-        "setModal": [Function],
         "user": undefined,
       },
       "ref": null,

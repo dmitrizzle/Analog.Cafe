@@ -4,7 +4,7 @@ import styled from "styled-components"
 import {
   DownloadArrow,
   DownloadModal
-} from "../../../../user/components/pages/Compendium/components"
+} from "../../../../user/components/pages/MustReads/components"
 import ArticleSection from "../Article/components/ArticleSection"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Link from "../../controls/Link"
@@ -22,7 +22,7 @@ export default props => {
   return (
     <OfferWrapper>
       <ArticleSection>
-        <h3>❖ Compendium</h3>
+        <h3>❖ Must Reads</h3>
         <p>
           <strong>
             <DownloadArrow />{" "}
@@ -46,7 +46,7 @@ export default props => {
         </p>
         <p>
           <strong>
-            <Link to="/compendium">More…</Link>
+            <Link to="/must-reads">More…</Link>
           </strong>
         </p>
       </ArticleSection>

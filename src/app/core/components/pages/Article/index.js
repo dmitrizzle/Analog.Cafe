@@ -32,12 +32,6 @@ const ArticleActions = Loadable({
   delay: 100
 })
 
-const Offer = Loadable({
-  loader: () => import("../Offer"),
-  loading: () => null,
-  delay: 100
-})
-
 // NOTE: 'Component' rather than 'PureComponent' is required for the
 // shouldComponentUpdate (for selection) method below.
 class Article extends React.PureComponent {

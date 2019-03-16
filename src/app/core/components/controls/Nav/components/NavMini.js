@@ -5,11 +5,16 @@ import Link from "../../Link"
 
 const NavMiniWrapper = styled.div`
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   min-width: 320px;
   margin: 0 -1.75em;
   > div {
     width: 32em;
     margin: 0 auto;
+    ${props => props.theme.size.breakpoint.max.m`
+      padding-left: 1em;
+      width: 33.5em;
+      `};
   }
 `
 const NavMiniIcon = styled.span`
@@ -24,10 +29,10 @@ const NavmMiniLink = styled(Link)`
 `
 
 const ITEMS = {
-  compendium: {
-    label: "Compendium",
+  mustReads: {
+    label: "Must Reads",
     icon: "❖",
-    to: "/compendium"
+    to: "/must-reads"
   },
   favourites: {
     label: "Favourites",

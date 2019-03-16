@@ -12,7 +12,7 @@ import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
 import NavMini from "../../../../core/components/controls/Nav/components/NavMini"
 
-export const COMPENDIUM_CONTENT = {
+export const MUST_READS_CONTENT = {
   downloads: [
     {
       account: true,
@@ -333,7 +333,7 @@ export const Carousel = props => (
           onClick={event => {
             GA.event({
               category: "Navigation",
-              action: "Compendium.poster",
+              action: "MustReads.poster",
               label: item.title
             })
 
@@ -349,24 +349,24 @@ export const Carousel = props => (
   </Posters>
 )
 
-export const Compendium = props => {
+export const MustReads = props => {
   return (
     <ArticleWrapper>
-      <MetaTags metaTitle="Compendium" />
-      <HeaderLarge pageTitle="Compendium">
+      <MetaTags metaTitle="Must Reads" />
+      <HeaderLarge pageTitle="Must Reads">
         <Byline>
-          <NavMini view="compendium" />
+          <NavMini view="mustReads" />
         </Byline>
       </HeaderLarge>
       <ArticleSection>
         <p>
-          <strong>Compendium</strong>{" "}
+          <strong>Must Reads</strong>{" "}
           <em>n. – A collection of concise but detailed information.</em>
           <br />
           Downloads, member resources, guides, and exclusive essays.
         </p>
         <h3>Downloads</h3>
-        <Carousel items={COMPENDIUM_CONTENT.downloads} {...props} />
+        <Carousel items={MUST_READS_CONTENT.downloads} {...props} />
         <p style={{ lineHeight: "1.2em" }}>
           <small>
             <em>
@@ -382,7 +382,7 @@ export const Compendium = props => {
         </p>
 
         <h3>Film Camera Reviews</h3>
-        <Carousel items={COMPENDIUM_CONTENT.reviews} {...props} center />
+        <Carousel items={MUST_READS_CONTENT.reviews} {...props} center={1} />
         <p style={{ lineHeight: "1.2em" }}>
           <small>
             <em>
@@ -394,7 +394,7 @@ export const Compendium = props => {
         </p>
 
         <h3>Essential Guides</h3>
-        <Carousel items={COMPENDIUM_CONTENT.guides} {...props} />
+        <Carousel items={MUST_READS_CONTENT.guides} {...props} />
         <p style={{ lineHeight: "1.2em" }}>
           <small>
             <em>
@@ -405,7 +405,7 @@ export const Compendium = props => {
         </p>
 
         <h3>Best of Photo Essays</h3>
-        <Carousel items={COMPENDIUM_CONTENT.essays} {...props} center />
+        <Carousel items={MUST_READS_CONTENT.essays} {...props} center={1} />
         <p style={{ lineHeight: "1.2em" }}>
           <small>
             <em>
@@ -434,4 +434,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Compendium)
+)(MustReads)

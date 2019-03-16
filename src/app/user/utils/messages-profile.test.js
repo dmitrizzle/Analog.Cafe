@@ -16,9 +16,7 @@ it("Assign website name to URL", () => {
   expect(linkToLabel("flickr.com/dmitrizzle")).toEqual(LINK_LABELS.flickr)
   expect(linkToLabel("500px.com/dmitrizzle")).toEqual(LINK_LABELS.px)
   expect(linkToLabel("500px.com/dmitrizzle")).toEqual(LINK_LABELS.px)
-  expect(linkToLabel("https://plus.google.com/dmitrizzle")).toEqual(
-    LINK_LABELS.gplus
-  )
+
   expect(linkToLabel("https://www.google.com")).toEqual(LINK_LABELS.website)
 })
 
