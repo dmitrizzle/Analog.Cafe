@@ -1,6 +1,10 @@
+import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
+import { GA } from "../../../../../utils"
+import { isForbidden } from "../../../../../user/utils/actions-session"
+import { setModal } from "../../../../store/actions-modal"
 import Link from "../../Link"
 
 const NavMiniWrapper = styled.div`
@@ -35,11 +39,13 @@ const ITEMS = {
     to: "/must-reads"
   },
   favourites: {
+    account: true,
     label: "Favourites",
     icon: "❤︎",
     to: "/favourites"
   },
   submissions: {
+    account: true,
     label: "Submissions",
     icon: "✒︎",
     to: "/submissions"
@@ -50,12 +56,13 @@ const ITEMS = {
   //   to: "/submit/compose"
   // },
   profile: {
+    account: true,
     label: "Edit Profile",
     icon: "✱",
     to: `/profile/edit`
   }
 }
-export default props => (
+const NavMini = props => (
   <NavMiniWrapper>
     <div>
       {props.view !== "composer" ? (
@@ -68,6 +75,19 @@ export default props => (
                   props.view === Object.keys(ITEMS)[i] ? 700 : undefined
               }}
               to={item.to}
+              onClick={event => {
+                GA.event({
+                  category: "Navigation",
+                  action: "NavMini",
+                  label: item.label
+                })
+
+                console.log(item)
+
+                item.account &&
+                  props.user.status !== "ok" &&
+                  isForbidden(event, props)
+              }}
             >
               {item.label}
             </NavmMiniLink>
@@ -90,3 +110,20 @@ export default props => (
     </div>
   </NavMiniWrapper>
 )
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
+    }
+  }
+}
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavMini)
