@@ -4,7 +4,6 @@ import React from "react"
 import styled from "styled-components"
 
 import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
-import { TEXT_LABELS } from "../../../constants/messages-"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
 import { getSearchResults } from "../../../store/actions-search"
 import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivider"
@@ -43,7 +42,7 @@ const NAV_BUTTONS = props => [
   buttonMaker("/about", {
     keywords: "about,who,what,where,how,authors,editors,contact,backers"
   }),
-  buttonMaker("/compendium", {
+  buttonMaker("/must-reads", {
     keywords:
       "photography,podcast,audio,downloads,guides,reference,price,reviews,resources"
   }),

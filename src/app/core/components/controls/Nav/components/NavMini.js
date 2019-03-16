@@ -29,10 +29,10 @@ const NavmMiniLink = styled(Link)`
 `
 
 const ITEMS = {
-  compendium: {
-    label: "Compendium",
+  mustReads: {
+    label: "Must Reads",
     icon: "❖",
-    to: "/compendium"
+    to: "/must-reads"
   },
   favourites: {
     label: "Favourites",
