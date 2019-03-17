@@ -154,7 +154,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
 
-      <NavItem narrow prime left className="prime left">
+      <NavItem narrow prime right className="prime right">
         <NavSearch
           {...navSearch}
           onClick={() => {
@@ -171,7 +171,7 @@ export default props => {
         </NavSearch>
       </NavItem>
 
-      <NavItem prime right className="prime right">
+      <NavItem prime left className="prime left">
         <NavMore
           userImage={props.userImage}
           userStatus={props.userStatus}

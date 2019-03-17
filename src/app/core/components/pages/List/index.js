@@ -5,7 +5,6 @@ import React from "react"
 import { withRouter } from "react-router"
 
 import { GA } from "../../../../utils"
-import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
 import { fetchListPage, initListPage } from "../../../store/actions-list"
 import { getListMeta } from "../../../utils/messages-list"
 import { preloadConstructor } from "../../../utils/routes-article"
@@ -71,9 +70,7 @@ class List extends React.PureComponent {
       (this.props.list.filter.author && this.props.list.filter.author.name
         ? " by " + this.props.list.filter.author.name
         : "")
-    const isUserDashboard = this.props.history.location.pathname.includes(
-      ROUTE_URL_USER_LANDING
-    )
+    const isUserDashboard = this.props.me
     const isProfilePage =
       this.props.location.pathname.includes("/is/") || isUserDashboard
 

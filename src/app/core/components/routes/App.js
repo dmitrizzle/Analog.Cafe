@@ -65,6 +65,12 @@ const MustReads = Loadable({
   delay: 100
 })
 
+const MyFavourites = Loadable({
+  loader: () => import("../../../user/components/pages/MyFavourites"),
+  loading: ArticleLoader,
+  delay: 100
+})
+
 export default () => {
   return (
     <main
@@ -107,6 +113,7 @@ export default () => {
         <Route exact path="/solo-projects" component={List} />
         {/* AUTH VIEWS */}
         <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
+        <Route exact path={"/favourites"} component={MyFavourites} />
         <Route exact path={`/admin`} component={Admin} />
         <Route exact path="/submissions/*" component={Article} />
         <Route exact path={`/profile/edit`} component={EditProfile} />

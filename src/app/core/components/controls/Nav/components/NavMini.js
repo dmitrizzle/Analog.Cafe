@@ -50,11 +50,6 @@ const ITEMS = {
     icon: "✒︎",
     to: "/submissions"
   },
-  // composer: {
-  //   label: loadTextContent().length > 0 ? "Edit Submission Draft" : "New Submission",
-  //   icon: "✏︎",
-  //   to: "/submit/compose"
-  // },
   profile: {
     account: true,
     label: "Edit Profile",

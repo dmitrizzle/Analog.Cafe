@@ -8,8 +8,6 @@ export default styled.div`
   margin: ${props => props.theme.size.block.spacing * 2}em
     ${props => props.theme.size.block.padding / 3}em
     ${props => props.theme.size.block.padding}em;
-  q {
-  }
   > span {
     background: ${props => props.theme.color.foreground()};
     color: ${props => props.theme.color.background()};
