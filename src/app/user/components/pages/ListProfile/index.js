@@ -206,15 +206,16 @@ export default props => (
       props.me && <HowToSubmit />}
 
     {props.isUserDashboard && (
-      <LinkButton
-        to="/submit/compose"
-        branded
-        style={{ zIndex: 10, position: "relative" }}
-      >
-        {loadTextContent().length > 0
-          ? "✏︎ Edit Submission Draft"
-          : "✏︎ Compose New Submission"}
-      </LinkButton>
+      <div style={{ zIndex: 10, position: "relative" }}>
+        <LinkButton to="/submit/compose" branded>
+          {loadTextContent().length > 0
+            ? "✏︎ Edit Submission Draft"
+            : "✏︎ Compose New Submission"}
+        </LinkButton>
+        <small style={{ textAlign: "center", display: "block" }}>
+          <Link to="/submit/restore">Restore</Link> previous submission.
+        </small>
+      </div>
     )}
   </ArticleWrapper>
 )
