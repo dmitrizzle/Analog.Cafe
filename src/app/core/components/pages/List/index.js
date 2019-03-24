@@ -10,14 +10,21 @@ import { getListMeta } from "../../../utils/messages-list"
 import { preloadConstructor } from "../../../utils/routes-article"
 import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
+import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Button from "../../controls/Button/components/Button"
+import Byline from "../../vignettes/Byline"
+import HeaderLarge from "../../vignettes/HeaderLarge"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
 import MetaTags from "../../vignettes/MetaTags"
 
-const ListProfile = Loadable({
-  loader: () => import("../../../../user/components/pages/ListProfile"),
-  loading: () => null
+const ListAugmented = Loadable({
+  loader: () => import("../../../../user/components/pages/ListAugmented"),
+  loading: () => (
+    <ArticleWrapper>
+      <HeaderLarge pageTitle=" " />
+    </ArticleWrapper>
+  )
 })
 
 class List extends React.PureComponent {
@@ -70,9 +77,13 @@ class List extends React.PureComponent {
       (this.props.list.filter.author && this.props.list.filter.author.name
         ? " by " + this.props.list.filter.author.name
         : "")
+
     const isUserDashboard = this.props.me
+    const isUserFavourites = this.props.favourites
     const isProfilePage =
-      this.props.location.pathname.includes("/is/") || isUserDashboard
+      this.props.location.pathname.includes("/is/") ||
+      isUserDashboard ||
+      isUserFavourites
 
     let profileImage
     if (this.props.list.author) {
@@ -86,8 +97,9 @@ class List extends React.PureComponent {
       this.props.list.author.buttons[1] &&
       this.props.list.author.buttons[1].text
 
-    const listProfileProps = {
+    const listAugmentedProps = {
       isUserDashboard,
+      isUserFavourites,
       profileImage,
       doesAuthorHaveLink
     }
@@ -108,7 +120,7 @@ class List extends React.PureComponent {
         )}
         <React.Fragment>
           {isProfilePage && (
-            <ListProfile {...this.props} {...listProfileProps} />
+            <ListAugmented {...this.props} {...listAugmentedProps} />
           )}
           <ListBlock
             status={this.props.list.status}

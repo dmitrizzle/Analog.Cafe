@@ -7,7 +7,7 @@ import List from "../../../../core/components/pages/List"
 
 const MyFavourites = props => {
   return props.user.status === "ok" ? (
-    <List private isAdmin={props.user.info.role === "admin"} me />
+    <List private isAdmin={props.user.info.role === "admin"} favourites />
   ) : (
     <Forbidden />
   )
