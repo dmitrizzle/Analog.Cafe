@@ -24,6 +24,15 @@ export const getListMeta = (pathname = "/", page = 1) => {
       },
       url
     }
+  }
+  if (pathname.includes("/favourites")) {
+    meta = ""
+    request = {
+      params: {
+        collection: "favourites"
+      },
+      url
+    }
   } else {
     meta = TEXT_ROUTE_LABELS[pathname]
       ? TEXT_ROUTE_LABELS[pathname]
