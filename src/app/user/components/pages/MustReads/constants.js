@@ -59,6 +59,26 @@ export const MUST_READS_CONTENT = {
   ],
   guides: [
     {
+      title: "A Beginner’s Guide to Film Photography",
+      poster: "image-froth_2703927_BJFAQ5r7E",
+      to: "/zine/a-beginners-guide-to-film-photography-zq0f"
+    },
+    {
+      title: "35mm Film Price Guide",
+      poster: "image-froth_750000_SkhbW7eNN",
+      to: "/zine/35mm-film-price-guide-6zt1"
+    },
+    {
+      title: "How to Get Featured on Analog.Cafe",
+      poster: "image-froth_1662577_SJAMyAO84",
+      to: "/zine/open-call-g99w"
+    },
+    {
+      title: "Film Photography Costs and Prices",
+      poster: "image-froth_1333333_rkLFrJrw4",
+      to: "/zine/film-photography-costs-and-prices-kd5j"
+    },
+    {
       title: "Building an Instax Pinhole Camera",
       poster: "image-froth_1334223_HyxkFIXsPM",
       to: "/zine/building-an-instax-pinhole-camera-ixcd"
@@ -69,29 +89,9 @@ export const MUST_READS_CONTENT = {
       to: "/zine/scarlet-summer-oyen"
     },
     {
-      title: "How to Get Featured on Analog.Cafe",
-      poster: "image-froth_1662577_SJAMyAO84",
-      to: "/zine/open-call-g99w"
-    },
-    {
-      title: "Film Photography Costs and Prices",
-      poster: "image-froth_1507950_HkBtHJBPN",
-      to: "/zine/film-photography-costs-and-prices-kd5j"
-    },
-    {
       title: "Where to Develop Film in Chiang Mai",
       poster: "image-froth_1822415_rJVLbcnUG",
       to: "/zine/where-to-develop-film-in-chiang-mai-xspe"
-    },
-    {
-      title: "A Beginner’s Guide to Film Photography",
-      poster: "image-froth_1507950_HyzuRgCKm",
-      to: "/zine/a-beginners-guide-to-film-photography-zq0f"
-    },
-    {
-      title: "35mm Film Price Guide",
-      poster: "image-froth_1518843_B1skGpWWV",
-      to: "/zine/35mm-film-price-guide-6zt1"
     },
     {
       title: "Art as an Experience",

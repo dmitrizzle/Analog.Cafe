@@ -111,22 +111,28 @@ export const MustReads = props => {
         </Byline>
       </HeaderLarge>
       <ArticleSection>
-        <h3>Downloads</h3>
-        <Carousel items={MUST_READS_CONTENT.downloads} {...props} />
+        <h3>Essential Guides</h3>
+        <Carousel items={MUST_READS_CONTENT.guides} {...props} />
         <p style={{ lineHeight: "1.2em" }}>
           <small>
             <em>
-              Download our exclusive guides and photo essays (PDF) for offline
-              reading. Formatted to be easily printed on any standard paper.
-              You’ll need a{" "}
-              <Link to="/sign-in">
-                <strong>free Analog.Cafe Account</strong>
-              </Link>
-              .
+              Understand film photography better, shop smarter, and get
+              published with this collection of articles on this topic.
             </em>
           </small>
         </p>
-
+        <h3>
+          Best of <Link to="/photo-essays">Photo Essays</Link>
+        </h3>
+        <Carousel items={MUST_READS_CONTENT.essays} {...props} center={1} />
+        <p style={{ lineHeight: "1.2em" }}>
+          <small>
+            <em>
+              Read the best-illustrated and most inspiring photo essays written
+              by our community of guest and regular contributors.
+            </em>
+          </small>
+        </p>
         <h3>Film Camera Reviews</h3>
         <Carousel items={MUST_READS_CONTENT.reviews} {...props} center={1} />
         <p style={{ lineHeight: "1.2em" }}>
@@ -138,25 +144,18 @@ export const MustReads = props => {
             </em>
           </small>
         </p>
-
-        <h3>Essential Guides</h3>
-        <Carousel items={MUST_READS_CONTENT.guides} {...props} />
+        <h3>Free PDF Downloads</h3>
+        <Carousel items={MUST_READS_CONTENT.downloads} {...props} />
         <p style={{ lineHeight: "1.2em" }}>
           <small>
             <em>
-              Understand film photography better, shop smarter, and get
-              published with this collection of articles on this topic.
-            </em>
-          </small>
-        </p>
-
-        <h3>Best of Photo Essays</h3>
-        <Carousel items={MUST_READS_CONTENT.essays} {...props} center={1} />
-        <p style={{ lineHeight: "1.2em" }}>
-          <small>
-            <em>
-              Read the best-illustrated and most inspiring photo essays written
-              by our community of guest and regular contributors.
+              Download our exclusive guides and photo essays (PDF) for offline
+              reading. Formatted to be easily printed on any standard paper.
+              You’ll need a{" "}
+              <Link to="/sign-in">
+                <strong>free Analog.Cafe Account</strong>
+              </Link>
+              .
             </em>
           </small>
         </p>
