@@ -45,12 +45,14 @@ export default props => {
           }}
         >
           {props.isUserDashboard && <UserDashboardHeading {...props} />}
-          <CardColumns>
-            {props.profileImage && <UserProfileImage {...props} />}
-            {(props.list.author.text || props.doesAuthorHaveLink) &&
-              !props.isUserDashboard && <UserProfileInfo {...props} />}
-            {props.isUserDashboard && <UserProfileGuidedInfo {...props} />}
-          </CardColumns>
+          {(props.isUserDashboard || props.isProfilePage) && (
+            <CardColumns>
+              {props.profileImage && <UserProfileImage {...props} />}
+              {(props.list.author.text || props.doesAuthorHaveLink) &&
+                !props.isUserDashboard && <UserProfileInfo {...props} />}
+              {props.isUserDashboard && <UserProfileGuidedInfo {...props} />}
+            </CardColumns>
+          )}
           {props.isUserDashboard && <h3>Your submissions.</h3>}
         </ArticleSection>
       )}

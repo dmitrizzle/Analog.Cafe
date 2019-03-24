@@ -48,6 +48,10 @@ export const TEXT_ROUTE_LABELS = {
     title: "Published work",
     description:
       "All published works by the author, including images and text published in collaboration with other authors."
+  },
+  "/favourites": {
+    title: "Your favourites",
+    description: "Articles you favourited and added to your list."
   }
 }
 
