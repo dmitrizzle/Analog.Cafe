@@ -45,6 +45,10 @@ const NAV_USER = props => [
     text: "❤︎ Favourites"
   },
   {
+    to: "/resources",
+    text: "❖ Resources"
+  },
+  {
     to: ROUTE_URL_USER_SUBMISSIONS,
     text: "✒︎ Submissions"
   },

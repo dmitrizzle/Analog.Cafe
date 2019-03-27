@@ -3,6 +3,7 @@ import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actio
 import React from "react"
 import styled from "styled-components"
 
+import { LogoSvg } from "../../icons/Logo"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../user/constants/routes-session"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
 import { getSearchResults } from "../../../store/actions-search"
@@ -14,6 +15,15 @@ import SearchForm from "./components/SearchForm"
 
 export const SearchVisibility = styled.div`
   ${props => props.menu && props.theme.size.breakpoint.min.l`display:none;`};
+`
+const LogoWrap = styled.div`
+  svg {
+    height: 0.85em;
+    ${"" /* path {
+      fill: ${props => props.theme.color.brand()};
+      stroke: ${props => props.theme.color.brand()};
+    } */};
+  }
 `
 
 // this function helps with refactoring
@@ -39,12 +49,18 @@ export const buttonMaker = (to, options = {}) => {
   }
 }
 const NAV_BUTTONS = props => [
+  {
+    to: "/",
+    text: "Analog.Cafe",
+    keywords: "about,who,what,where,how,authors,editors,contact,backers",
+    inverse: true
+  },
   buttonMaker("/about", {
     keywords: "about,who,what,where,how,authors,editors,contact,backers"
   }),
-  buttonMaker("/must-reads", {
+  buttonMaker("/resources", {
     keywords:
-      "photography,podcast,audio,downloads,guides,reference,price,reviews,resources"
+      "photography,podcast,audio,downloads,guides,reference,price,reviews,resources,must,reads"
   }),
   {
     to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
@@ -253,9 +269,6 @@ export class Search extends React.PureComponent {
                 </CardSearchItem>
               )}
           </div>,
-          !haveSearchResults ? (
-            <ButtonGroupDivider key="searchTypeDivider" />
-          ) : null,
           NAV_BUTTONS(this.props).map(button => {
             if (isInstantSearch) {
               // FUZZY SEARCH
@@ -289,7 +302,6 @@ export class Search extends React.PureComponent {
               if (notFound) return null
             }
 
-            console.log("button", button)
             // hidden buttons which appear only for fuzzy search
             if (button.hidden && !isInstantSearch) return null
 
@@ -308,6 +320,7 @@ export class Search extends React.PureComponent {
                 onClick={button.onClick}
                 to={button.to}
                 key={`div_${button.to || button.onClick || Math.random()}`}
+                inverse={button.inverse}
               >
                 {button.text}
               </CardButton>

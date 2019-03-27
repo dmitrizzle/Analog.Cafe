@@ -34,7 +34,7 @@ export default props => {
         </figcaption>
         <ProfileButton
           value={props.buttonText || ""}
-          branded={props.buttonText}
+          //branded={props.buttonText}
           placeholder="Add Your Link Here"
           maxLength={INPUT_SUMMARY_LIMIT}
           onChange={event => props.changeButton(event)}

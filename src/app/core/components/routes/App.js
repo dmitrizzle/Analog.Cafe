@@ -95,7 +95,6 @@ export default () => {
           to="/zine/a-beginners-guide-to-film-photography-zq0f"
         />
         <Redirect from="/subscribe" to="/sign-in" />
-        <Redirect from="/resources" to="/must-reads" />
         <Redirect from="/author/:id" to="/is/:id" />
         {/* DYNAMIC VIEWS */}
         <Route exact path="/is" component={NotFound} />
@@ -120,7 +119,7 @@ export default () => {
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-out" component={SignOut} />
         {/* STATIC VIEWS */}
-        <Route exact path="/must-reads" component={MustReads} />
+        <Route exact path="/resources" component={MustReads} />
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />

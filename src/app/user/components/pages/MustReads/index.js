@@ -124,8 +124,8 @@ const ExclusiveContent = props => (
 export const MustReads = props => {
   return (
     <ArticleWrapper>
-      <MetaTags metaTitle="Must Reads" />
-      <HeaderLarge pageTitle="Must Reads">
+      <MetaTags metaTitle="Resources" />
+      <HeaderLarge pageTitle="Resources">
         <Byline>
           <NavMini view="mustReads" />
         </Byline>

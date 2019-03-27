@@ -29,16 +29,16 @@ const NavmMiniLink = styled(Link)`
 `
 
 const ITEMS = {
-  mustReads: {
-    label: "Resources & Downloads",
-    icon: "❖",
-    to: "/must-reads"
-  },
   favourites: {
     account: true,
     label: "Favourites",
     icon: "❤︎",
     to: "/favourites"
+  },
+  mustReads: {
+    label: "Resources",
+    icon: "❖",
+    to: "/resources"
   },
   submissions: {
     account: true,

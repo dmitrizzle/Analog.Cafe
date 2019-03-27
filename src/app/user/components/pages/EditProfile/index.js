@@ -210,7 +210,7 @@ class EditProfile extends React.PureComponent {
           branded
           loading={this.state.setUserInfoPending ? true : false}
         >
-          {!this.state.setUserInfoPending && TEXT_EMOJIS.CHECKMARK} Done
+          {!this.state.setUserInfoPending && TEXT_EMOJIS.CHECKMARK} Save & Close
         </Button>
         <ArticleSection style={{ paddingTop: "3em" }}>
           <p>

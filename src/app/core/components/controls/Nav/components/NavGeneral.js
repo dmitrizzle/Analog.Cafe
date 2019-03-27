@@ -64,8 +64,9 @@ export const isActiveUrl = (to, options = {}, props) => {
 export default props => {
   const a = "active"
 
-  const mr = "/must-reads"
+  const mr = "/resources"
   const ab = "/about"
+  const f = "/favourites"
 
   const mustReads = {
     to: mr,
@@ -74,6 +75,10 @@ export default props => {
   const about = {
     to: ab,
     className: isActiveUrl(ab) ? a : undefined
+  }
+  const favourites = {
+    to: f,
+    className: isActiveUrl(f) ? a : undefined
   }
 
   const navSearch = {
@@ -106,19 +111,35 @@ export default props => {
       </NavItem> */}
 
       <NavItem>
-        <NavLink
-          {...about}
-          onClick={() => {
-            GA.event({
-              category: "Navigation",
-              action: "Nav.click",
-              label: "About"
-            })
-          }}
-        >
-          About
-          <Extra> ✹</Extra>
-        </NavLink>
+        {props.userStatus !== "ok" ? (
+          <NavLink
+            {...about}
+            onClick={() => {
+              GA.event({
+                category: "Navigation",
+                action: "Nav.click",
+                label: "About"
+              })
+            }}
+          >
+            About
+            <Extra> ✹</Extra>
+          </NavLink>
+        ) : (
+          <NavLink
+            {...favourites}
+            onClick={() => {
+              GA.event({
+                category: "Navigation",
+                action: "Nav.click",
+                label: "Favourites"
+              })
+            }}
+          >
+            Favourites
+            <Extra> ❤︎</Extra>
+          </NavLink>
+        )}
       </NavItem>
 
       <NavItem>
@@ -128,12 +149,12 @@ export default props => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "Must Reads"
+              label: "Resources"
             })
           }}
         >
           {/* <span className="wide">Photo </span> */}
-          Must Reads
+          Resources
           <Extra> ❖</Extra>
         </NavLink>
       </NavItem>
