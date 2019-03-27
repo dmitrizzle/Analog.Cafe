@@ -3,7 +3,6 @@ import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actio
 import React from "react"
 import styled from "styled-components"
 
-import { LogoSvg } from "../../icons/Logo"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../user/constants/routes-session"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
 import { getSearchResults } from "../../../store/actions-search"
@@ -15,15 +14,6 @@ import SearchForm from "./components/SearchForm"
 
 export const SearchVisibility = styled.div`
   ${props => props.menu && props.theme.size.breakpoint.min.l`display:none;`};
-`
-const LogoWrap = styled.div`
-  svg {
-    height: 0.85em;
-    ${"" /* path {
-      fill: ${props => props.theme.color.brand()};
-      stroke: ${props => props.theme.color.brand()};
-    } */};
-  }
 `
 
 // this function helps with refactoring

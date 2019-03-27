@@ -7,10 +7,7 @@ import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
 } from "../../../constants/rules-submission"
-import {
-  ROUTE_API_USER_PROFILE,
-  ROUTE_URL_USER_SUBMISSIONS
-} from "../../../constants/routes-session"
+import { ROUTE_API_USER_PROFILE } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
 import {
   acceptUserInfo,

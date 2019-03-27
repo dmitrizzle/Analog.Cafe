@@ -74,7 +74,9 @@ export default () => (
           })
         }}
       >
-        ☝︎
+        <span role="img" aria-label="Finger pointing up">
+          ☝︎
+        </span>
       </Link>
     </small>
   </Wrapper>

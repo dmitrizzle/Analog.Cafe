@@ -4,11 +4,9 @@ import {
   BurgerMenu,
   sectionButtons
 } from "../../../../../core/components/pages/List/components/ListDescription"
-import { LabelWithSearchSVG } from "../../../../../core/components/controls/Nav/components/NavGeneral"
 import { buttonMaker } from "../../../../../core/components/forms/Search"
 import Link from "../../../../../core/components/controls/Link"
 import Modal from "../../../../../core/components/controls/Modal"
-import Search from "../../../../../core/components/icons/Search"
 
 export const UserFavouritesCTA = props => (
   <div style={{ zIndex: 10, position: "relative" }}>
