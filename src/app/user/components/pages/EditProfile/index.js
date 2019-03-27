@@ -159,7 +159,7 @@ class EditProfile extends React.PureComponent {
   profileUpdated = () => {
     this.props.acceptUserInfo()
     this.props.history.push(
-      this.state.returnToComposer ? composerPath : ROUTE_URL_USER_SUBMISSIONS
+      this.state.returnToComposer ? composerPath : "/favourites"
     )
   }
   render = () => {

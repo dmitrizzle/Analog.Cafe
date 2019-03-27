@@ -2,8 +2,8 @@ import React from "react"
 
 import { CardColumns } from "../../../../core/components/controls/ArticleActions/components/Options"
 import { ListPageSubtitle, ListPageTitle } from "./utils"
+import { UserFavouritesCTA } from "./components/FavouritesDashboard"
 import {
-  UserDashboardHeading,
   UserProfileComposeCTA,
   UserProfileGuidedInfo,
   UserProfileImage,
@@ -62,6 +62,7 @@ export default props => {
         props.me && <HowToSubmit />}
 
       {props.isUserDashboard && <UserProfileComposeCTA {...props} />}
+      {props.isUserFavourites && <UserFavouritesCTA {...props} />}
     </ArticleWrapper>
   )
 }
