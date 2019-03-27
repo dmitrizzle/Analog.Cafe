@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import Link from "../../../../../core/components/controls/Link"
+
 export const AccountBenifits = styled.ul`
   max-width: 19em;
   margin: 1.5em auto 0 !important;
@@ -49,11 +51,28 @@ export default props => {
           favourites.
         </li>
         <li>
-          <span className="icon">✒︎</span> Submit your work to get featured.
+          <span className="icon">✒︎</span> Submit your work, get featured.
         </li>
         <li>
-          <span className="icon">❖</span> Free printables, exclusives & email
-          updates.
+          <span className="icon">❖</span> Free downloads & exclusives.
+        </li>
+        <li>
+          <span className="icon">☞</span> Weekly email{" "}
+          <Link
+            to="#analogue-reads"
+            onClick={event => {
+              event.preventDefault()
+              const element = document.getElementById("analogue-reads")
+              const y = element.getBoundingClientRect().top + window.scrollY
+              window.scroll({
+                top: y,
+                behavior: "smooth"
+              })
+            }}
+          >
+            newsletter
+          </Link>
+          .
         </li>
       </AccountBenifits>
     </React.Fragment>
