@@ -33,7 +33,7 @@ export const UserFavouritesCTA = props => (
         id: "nav/sections"
       }}
     >
-      Magazine Sections
+      Browse Magazine Sections
     </Modal>
     <small style={{ textAlign: "center", display: "block" }}>
       Visit our{" "}
