@@ -13,7 +13,7 @@ const NavMiniWrapper = styled.div`
 
 const NavmMiniLink = styled(Link)`
   display: inline-block;
-  background: ${props => props.theme.color.background()};
+  background: ${props => props.theme.color.background(0.33)};
   ::before {
     content: "${props => props.icon || ""}";
     text-decoration: none;
@@ -21,11 +21,8 @@ const NavmMiniLink = styled(Link)`
     font-style: normal;
     padding: 0 0.25em 0 0;
   }
-  ::after {
-    content: "";
-    display: inline-block;
-    width: 1em
-  }
+  margin-right: .25em;
+  padding: 0 .25em;
 `
 
 const ITEMS = {
@@ -41,10 +38,10 @@ const ITEMS = {
     to: "/resources"
   },
   submissions: {
-    account: true,
     label: "Submissions",
     icon: "✒︎",
-    to: "/submissions"
+    to: "/submissions",
+    noAccountTo: "/submit"
   },
   profile: {
     account: true,
@@ -63,7 +60,11 @@ const NavMini = props => (
           style={{
             fontWeight: props.view === Object.keys(ITEMS)[i] ? 700 : undefined
           }}
-          to={item.to}
+          to={
+            item.noAccountTo && props.user.status !== "ok"
+              ? item.noAccountTo
+              : item.to
+          }
           onClick={event => {
             GA.event({
               category: "Navigation",

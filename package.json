@@ -43,6 +43,7 @@
     "redux": "^4.0.0",
     "redux-test-utils": "^0.2.2",
     "redux-thunk": "^2.2.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^3.2.3",
     "titlecase": "^1.1.2",
     "typeface-exo-2": "^0.0.54",
