@@ -101,6 +101,26 @@ export const Carousel = props => (
   </Posters>
 )
 
+const ExclusiveContent = props => (
+  <React.Fragment>
+    <h3>Free PDF Downloads</h3>
+    <Carousel items={MUST_READS_CONTENT.downloads} {...props} />
+    <p style={{ lineHeight: "1.2em" }}>
+      <small>
+        <em>
+          Download our exclusive guides and photo essays (PDF) for offline
+          reading. Formatted to be easily printed on any standard paper. You’ll
+          need a{" "}
+          <Link to="/sign-in">
+            <strong>free Analog.Cafe Account</strong>
+          </Link>
+          .
+        </em>
+      </small>
+    </p>
+  </React.Fragment>
+)
+
 export const MustReads = props => {
   return (
     <ArticleWrapper>
@@ -111,6 +131,7 @@ export const MustReads = props => {
         </Byline>
       </HeaderLarge>
       <ArticleSection>
+        {props.user.status === "ok" && <ExclusiveContent {...props} />}
         <h3>Essential Guides</h3>
         <Carousel items={MUST_READS_CONTENT.guides} {...props} />
         <p style={{ lineHeight: "1.2em" }}>
@@ -144,21 +165,7 @@ export const MustReads = props => {
             </em>
           </small>
         </p>
-        <h3>Free PDF Downloads</h3>
-        <Carousel items={MUST_READS_CONTENT.downloads} {...props} />
-        <p style={{ lineHeight: "1.2em" }}>
-          <small>
-            <em>
-              Download our exclusive guides and photo essays (PDF) for offline
-              reading. Formatted to be easily printed on any standard paper.
-              You’ll need a{" "}
-              <Link to="/sign-in">
-                <strong>free Analog.Cafe Account</strong>
-              </Link>
-              .
-            </em>
-          </small>
-        </p>
+        {props.user.status !== "ok" && <ExclusiveContent {...props} />}
       </ArticleSection>
     </ArticleWrapper>
   )

@@ -1,9 +1,11 @@
 import {
   ROUTE_API_LIST,
   ROUTE_API_LIST_FAVOURITES,
+  ROUTE_API_LIST_SUBMISSIONS,
   ROUTE_FILTERS,
   ROUTE_TAGS
 } from "../constants/routes-list"
+import { ROUTE_URL_USER_SUBMISSIONS } from "../../user/constants/routes-session"
 import { TEXT_ROUTE_LABELS } from "../constants/messages-list"
 
 export const getListMeta = (pathname = "/", page = 1) => {
@@ -20,7 +22,9 @@ export const getListMeta = (pathname = "/", page = 1) => {
       authorship: ROUTE_FILTERS[pathname] ? ROUTE_FILTERS[pathname] : "",
       page
     },
-    url: ROUTE_API_LIST
+    url: pathname.includes(ROUTE_URL_USER_SUBMISSIONS)
+      ? ROUTE_API_LIST_SUBMISSIONS
+      : ROUTE_API_LIST
   }
 
   if (pathname.includes("/is/")) {
@@ -37,7 +41,7 @@ export const getListMeta = (pathname = "/", page = 1) => {
     meta = TEXT_ROUTE_LABELS["/favourites"]
     request = {
       params: {
-        collection: "favourites"
+        page
       },
       url: ROUTE_API_LIST_FAVOURITES
     }

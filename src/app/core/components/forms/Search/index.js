@@ -3,7 +3,7 @@ import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actio
 import React from "react"
 import styled from "styled-components"
 
-import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
+import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../user/constants/routes-session"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
 import { getSearchResults } from "../../../store/actions-search"
 import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivider"
@@ -93,7 +93,7 @@ const NAV_BUTTONS = props => [
     hidden: true
   },
   {
-    to: ROUTE_URL_USER_LANDING,
+    to: ROUTE_URL_USER_SUBMISSIONS,
     text: "✒︎ Submissions",
     keywords: "my stuff, results, drafts, portfolio",
     hidden: true,
@@ -108,7 +108,7 @@ const NAV_BUTTONS = props => [
   },
   {
     to: `/profile/edit`,
-    text: "Edit Profile",
+    text: "Profile & Settings",
     keywords: "account, avatar, link, bio",
     hidden: true,
     membersOnly: true

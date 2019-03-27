@@ -44,16 +44,16 @@ export default props => {
             position: "relative"
           }}
         >
-          {props.isUserDashboard && <UserDashboardHeading {...props} />}
-          {(props.isUserDashboard || props.isProfilePage) && (
-            <CardColumns>
-              {props.profileImage && <UserProfileImage {...props} />}
-              {(props.list.author.text || props.doesAuthorHaveLink) &&
-                !props.isUserDashboard && <UserProfileInfo {...props} />}
-              {props.isUserDashboard && <UserProfileGuidedInfo {...props} />}
-            </CardColumns>
-          )}
-          {props.isUserDashboard && <h3>Your submissions.</h3>}
+          {view !== "USER_DASHBOARD" &&
+            view !== "USER_FAVOURITES" &&
+            props.isProfilePage && (
+              <CardColumns>
+                {props.profileImage && <UserProfileImage {...props} />}
+                {(props.list.author.text || props.doesAuthorHaveLink) &&
+                  !props.isUserDashboard && <UserProfileInfo {...props} />}
+                {props.isUserDashboard && <UserProfileGuidedInfo {...props} />}
+              </CardColumns>
+            )}
         </ArticleSection>
       )}
 

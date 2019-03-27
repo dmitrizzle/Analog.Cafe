@@ -9,7 +9,7 @@ import {
 } from "../../../constants/rules-submission"
 import {
   ROUTE_API_USER_PROFILE,
-  ROUTE_URL_USER_LANDING
+  ROUTE_URL_USER_SUBMISSIONS
 } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
 import {
@@ -22,6 +22,7 @@ import { setModal } from "../../../../core/store/actions-modal"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Button from "../../../../core/components/controls/Button/components/Button"
+import Email from "../../../../core/components/vignettes/Email"
 import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
 import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
 import Link from "../../../../core/components/controls/Link"
@@ -158,7 +159,7 @@ class EditProfile extends React.PureComponent {
   profileUpdated = () => {
     this.props.acceptUserInfo()
     this.props.history.push(
-      this.state.returnToComposer ? composerPath : ROUTE_URL_USER_LANDING
+      this.state.returnToComposer ? composerPath : ROUTE_URL_USER_SUBMISSIONS
     )
   }
   render = () => {
@@ -215,8 +216,10 @@ class EditProfile extends React.PureComponent {
           <p>
             <small>
               View your public profile{" "}
-              <Link to={`/is/${this.props.user.info.id}`}>here</Link>.<br />
-              {console.log(this.props)}
+              <strong>
+                <Link to={`/is/${this.props.user.info.id}`}>here</Link>
+              </strong>
+              . If you want to delete your account, please <Email /> Dmitri.
             </small>
           </p>
         </ArticleSection>

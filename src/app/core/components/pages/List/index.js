@@ -12,7 +12,6 @@ import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
 import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Button from "../../controls/Button/components/Button"
-import Byline from "../../vignettes/Byline"
 import HeaderLarge from "../../vignettes/HeaderLarge"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
@@ -98,6 +97,7 @@ class List extends React.PureComponent {
       this.props.list.author.buttons[1].text
 
     const listAugmentedProps = {
+      isProfilePage,
       isUserDashboard,
       isUserFavourites,
       profileImage,

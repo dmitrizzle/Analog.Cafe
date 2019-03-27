@@ -9,15 +9,15 @@ import Link from "../../../../../core/components/controls/Link"
 import LinkButton from "../../../../../core/components/controls/Button/components/LinkButton"
 import Placeholder from "../../../../../core/components/vignettes/Picture/components/Placeholder"
 
-export const UserDashboardHeading = props => (
-  <React.Fragment>
-    <h3 style={{ display: "inline-block" }}>Your author profile.&nbsp;</h3>
-    <em>
-      <Link to={`/profile/edit`}>Edit</Link> &{" "}
-      <Link to={`/is/${props.list.author.id}`}>view</Link>.
-    </em>
-  </React.Fragment>
-)
+// export const UserDashboardHeading = props => (
+//   <React.Fragment>
+//     <h3 style={{ display: "inline-block" }}>Your author profile.&nbsp;</h3>
+//     <em>
+//       <Link to={`/profile/edit`}>Edit</Link> &{" "}
+//       <Link to={`/is/${props.list.author.id}`}>view</Link>.
+//     </em>
+//   </React.Fragment>
+// )
 
 export const ProfileImage = props => (
   <figure>
@@ -136,5 +136,12 @@ export const UserProfileComposeCTA = props => (
     <small style={{ textAlign: "center", display: "block" }}>
       <Link to="/submit/restore">Restore</Link> previous submission.
     </small>
+    <span style={{ textAlign: "center", display: "block" }}>
+      View your public portfoio{" "}
+      <strong>
+        <Link to={`/is/${props.user.info.id}`}>here</Link>
+      </strong>
+      .
+    </span>
   </div>
 )

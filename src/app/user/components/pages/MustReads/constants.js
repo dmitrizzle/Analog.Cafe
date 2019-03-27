@@ -3,18 +3,18 @@ export const MUST_READS_CONTENT = {
     {
       account: true,
       type: "PDF",
-      title: "A Beginner’s Guide to Film Photography",
-      poster: "image-froth_2703927_BJFAQ5r7E",
-      to:
-        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/GUIDE-a-beginners-guide-to-film-photography-2019-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
-    },
-    {
-      account: true,
-      type: "PDF",
       title: "Film Grain Reference",
       poster: "image-froth_836232_r1CTs7OvV",
       to:
         "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/REFERENCE-film-grain-reference-2019-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
+    },
+    {
+      account: true,
+      type: "PDF",
+      title: "A Beginner’s Guide to Film Photography",
+      poster: "image-froth_2703927_BJFAQ5r7E",
+      to:
+        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/GUIDE-a-beginners-guide-to-film-photography-2019-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
     },
     {
       account: true,

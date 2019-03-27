@@ -9,7 +9,7 @@ import React from "react"
 import localForage from "localforage"
 
 import { CARD_ERRORS } from "../../../constants/messages-submission"
-import { ROUTE_URL_USER_LANDING } from "../../../constants/routes-session"
+import { ROUTE_URL_USER_SUBMISSIONS } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
 import {
   base64ToBlob,
@@ -211,10 +211,10 @@ class Upload extends React.PureComponent {
               <p>
                 We’ve received your work. It’ll take a couple of minutes to
                 process the images – after that, you should be able to see it{" "}
-                <Link to={ROUTE_URL_USER_LANDING}>here</Link>.
+                <Link to={ROUTE_URL_USER_SUBMISSIONS}>here</Link>.
               </p>
               <p>Thank you so much for your contribution!</p>
-              <LinkButton branded to={ROUTE_URL_USER_LANDING}>
+              <LinkButton branded to={ROUTE_URL_USER_SUBMISSIONS}>
                 My Submissions
               </LinkButton>
             </div>

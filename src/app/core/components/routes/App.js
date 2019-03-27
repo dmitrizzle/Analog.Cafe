@@ -2,7 +2,7 @@ import { Redirect, Route, Switch } from "react-router-dom"
 import Loadable from "react-loadable"
 import React from "react"
 
-import { ROUTE_URL_USER_LANDING } from "../../../user/constants/routes-session"
+import { ROUTE_URL_USER_SUBMISSIONS } from "../../../user/constants/routes-session"
 import ArticleLoader from "../pages/Article/components/ArticleLoader"
 import ListLoader from "../pages/List/components/ListLoader"
 import PrivacySettings from "../../../user/components/pages/PrivacySettings"
@@ -112,7 +112,7 @@ export default () => {
         <Route exact path="/collaborations" component={List} />
         <Route exact path="/solo-projects" component={List} />
         {/* AUTH VIEWS */}
-        <Route exact path={ROUTE_URL_USER_LANDING} component={Me} />
+        <Route exact path={ROUTE_URL_USER_SUBMISSIONS} component={Me} />
         <Route exact path={"/favourites"} component={MyFavourites} />
         <Route exact path={`/admin`} component={Admin} />
         <Route exact path="/submissions/*" component={Article} />

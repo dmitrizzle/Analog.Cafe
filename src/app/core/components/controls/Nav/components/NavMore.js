@@ -5,7 +5,7 @@ import styled, { css } from "styled-components"
 
 import { GA } from "../../../../../utils"
 import { NavLink, navActiveCss } from "./NavLinks"
-import { ROUTE_URL_USER_LANDING } from "../../../../../user/constants/routes-session"
+import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../../user/constants/routes-session"
 import { buttonMaker } from "../../../forms/Search"
 import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
@@ -45,12 +45,12 @@ const NAV_USER = props => [
     text: "❤︎ Favourites"
   },
   {
-    to: ROUTE_URL_USER_LANDING,
+    to: ROUTE_URL_USER_SUBMISSIONS,
     text: "✒︎ Submissions"
   },
   {
     to: `/profile/edit`,
-    text: "✱ Edit Profile"
+    text: "✱ Profile & Settings"
   },
   // {
   //   to: "/submit/compose",
