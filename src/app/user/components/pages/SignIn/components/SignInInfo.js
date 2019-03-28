@@ -54,7 +54,7 @@ export default props => {
           <span className="icon">✒︎</span> Submit your work, get featured.
         </li>
         <li>
-          <span className="icon">❖</span> Free downloads & exclusives.
+          <span className="highlight icon">❖</span> Free downloads & exclusives.
         </li>
         <li>
           <span className="icon">☞</span> Weekly email{" "}

@@ -9,18 +9,12 @@ import {
 import Link from "../../../../core/components/controls/Link"
 
 export const FavouriteButton = props => {
-  const isNotUserFavourited =
-    !props.favourites[props.article.id] ||
-    (props.favourites[props.article.id] &&
-      props.favourites[props.article.id].user === 0)
-  // console.log("props.favourites", props.favourites);
-  // console.log("props.article.id", props.article.id);
-  console.log(
-    "props.favourites[props.article.id]",
-    props.favourites[props.article.id]
-  )
+  if (!props.favourites[props.article.id]) props.isFavourite(props.article.id)
+  const isFavourite =
+    props.favourites[props.article.id] &&
+    props.favourites[props.article.id].user > 0
 
-  return isNotUserFavourited ? (
+  return !isFavourite ? (
     <Link
       to="#"
       onClick={event => {
