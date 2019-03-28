@@ -136,6 +136,7 @@ class List extends React.PureComponent {
             userIntent={this.handleUserIntent}
             article={this.props.article}
             readReceipts={this.props.user.sessionInfo.readReceipts}
+            {...listAugmentedProps}
           />
         </React.Fragment>
         {parseInt(this.props.list.page.total, 0) > 1 &&

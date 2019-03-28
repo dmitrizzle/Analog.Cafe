@@ -64,7 +64,9 @@ export default props => {
               <Link
                 to={
                   item.slug &&
-                  (props.private ? ROUTE_URL_SUBMISSIONS : ROUTE_URL_ARTICLES) +
+                  (props.private && !props.isUserFavourites
+                    ? ROUTE_URL_SUBMISSIONS
+                    : ROUTE_URL_ARTICLES) +
                     "/" +
                     item.slug
                 }

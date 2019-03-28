@@ -7,6 +7,7 @@ import {
   getLeadAuthorObject
 } from "../../../../utils/messages-author"
 import Byline from "../../../vignettes/Byline"
+import Favourite from "../../../../../user/components/controls/Favourite"
 import HeaderLarge from "../../../vignettes/HeaderLarge"
 import Link from "../../../controls/Link"
 
@@ -59,6 +60,8 @@ export default props => {
         ((props.article.submittedBy &&
           props.article.submittedBy.id === props.user.info.id) ||
           props.user.info.role === "admin") && <ArticleControls />}
+      <br />
+      <Favourite />
     </HeaderLarge>
   )
 }
