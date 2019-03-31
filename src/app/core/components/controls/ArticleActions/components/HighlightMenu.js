@@ -9,7 +9,7 @@ import {
   twitterButtonStyles
 } from "../../Button/components/SocialButtons"
 import ButtonStripItem from "../../Button/components/ButtonStripItem"
-import Twitter from "../../../icons/Social/components/Twitter"
+import Twitter from "../../../icons/group-social/Twitter"
 
 export const Menu = styled(ButtonStrip)`
   display: ${props => (props.hidden ? "none" : "block")};

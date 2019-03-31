@@ -6,6 +6,7 @@ import {
   deleteFavourite,
   isFavourite
 } from "../../../store/actions-favourites"
+import Heart from "../../../../core/components/icons/group-beacons/Heart"
 import Link from "../../../../core/components/controls/Link"
 
 export const FavouriteButton = props => {
@@ -25,7 +26,7 @@ export const FavouriteButton = props => {
         })
       }}
     >
-      Like
+      <Heart />
     </Link>
   ) : (
     <Link
@@ -35,7 +36,7 @@ export const FavouriteButton = props => {
         props.deleteFavourite(props.article.id)
       }}
     >
-      Unlike
+      <Heart />
     </Link>
   )
 }

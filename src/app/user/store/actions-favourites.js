@@ -45,7 +45,7 @@ export const deleteFavourite = id => {
 }
 export const isFavourite = article => {
   return dispatch => {
-    if (!token) return
+    if (!token || !article) return
     const request = {
       url: ROUTE_API_FAVOURITE,
       headers: {
