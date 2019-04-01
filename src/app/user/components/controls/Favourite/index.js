@@ -67,8 +67,8 @@ export const FavouriteButton = props => {
           slug: props.article.slug
         })
 
-        ;(!props.user.sessionInfo.tipsViewed ||
-          !props.user.sessionInfo.tipsViewed.includes("ADD_TO_FAVOURITES")) &&
+        const tipsViewed = props.user.sessionInfo.tipsViewed || []
+        !tipsViewed.includes("ADD_TO_FAVOURITES") &&
           props.setModal({
             info: {
               title: "Added to Favourites",
@@ -96,7 +96,7 @@ export const FavouriteButton = props => {
                   onClick: event => {
                     event.preventDefault()
                     props.addSessionInfo({
-                      tipsViewed: ["ADD_TO_FAVOURITES"]
+                      tipsViewed: [...tipsViewed, "ADD_TO_FAVOURITES"]
                     })
                     window.requestAnimationFrame(() => props.getSessionInfo())
                   },
@@ -119,10 +119,8 @@ export const FavouriteButton = props => {
         event.preventDefault()
         props.deleteFavourite(props.article.id)
 
-        ;(!props.user.sessionInfo.tipsViewed ||
-          !props.user.sessionInfo.tipsViewed.includes(
-            "REMOVE_FROM_FAVOURITES"
-          )) &&
+        const tipsViewed = props.user.sessionInfo.tipsViewed || []
+        !tipsViewed.includes("REMOVE_FROM_FAVOURITES") &&
           props.setModal({
             info: {
               title: "Removed from Favourites",
@@ -137,7 +135,7 @@ export const FavouriteButton = props => {
                   onClick: event => {
                     event.preventDefault()
                     props.addSessionInfo({
-                      tipsViewed: ["REMOVE_FROM_FAVOURITES"]
+                      tipsViewed: [...tipsViewed, "REMOVE_FROM_FAVOURITES"]
                     })
                     window.requestAnimationFrame(() => props.getSessionInfo())
                   },
