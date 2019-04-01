@@ -9,16 +9,6 @@ import Link from "../../../../../core/components/controls/Link"
 import LinkButton from "../../../../../core/components/controls/Button/components/LinkButton"
 import Placeholder from "../../../../../core/components/vignettes/Picture/components/Placeholder"
 
-// export const UserDashboardHeading = props => (
-//   <React.Fragment>
-//     <h3 style={{ display: "inline-block" }}>Your author profile.&nbsp;</h3>
-//     <em>
-//       <Link to={`/profile/edit`}>Edit</Link> &{" "}
-//       <Link to={`/is/${props.list.author.id}`}>view</Link>.
-//     </em>
-//   </React.Fragment>
-// )
-
 export const ProfileImage = props => (
   <figure>
     <Placeholder frothId={props.image}>

@@ -133,7 +133,9 @@ export default props => {
               })
             }}
           >
-            Favourites
+            Fav
+            <NotOnMicroScreens>ourites </NotOnMicroScreens>
+            <OnlyMicroScreens>es</OnlyMicroScreens>
             <Extra> ❤︎</Extra>
           </NavLink>
         )}

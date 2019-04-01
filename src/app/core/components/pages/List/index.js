@@ -136,6 +136,7 @@ class List extends React.PureComponent {
             userIntent={this.handleUserIntent}
             article={this.props.article}
             readReceipts={this.props.user.sessionInfo.readReceipts}
+            noNegativeMargin={this.props.list.items.length === 0}
             {...listAugmentedProps}
           />
         </React.Fragment>

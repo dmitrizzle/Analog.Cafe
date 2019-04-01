@@ -6,7 +6,7 @@ export default styled.div`
   ${props => props.theme.size.font.auto} width: 100%;
   clear: both;
   position: relative;
-  margin-top: -17em;
+  margin-top: ${props => (props.noNegativeMargin ? 0 : "-17em")};
   ${props =>
     props.author
       ? props.theme.size.breakpoint.min.xl`margin-top: -17.5em`
