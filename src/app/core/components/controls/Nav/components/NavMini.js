@@ -22,7 +22,7 @@ const NavmMiniLink = styled(Link)`
   padding: 0 0.25em;
 `
 
-const iconStyles = { height: ".75em" }
+const iconStyles = { height: ".75em", color: "#dbdbdb" }
 const ITEMS = {
   favourites: {
     account: true,
@@ -53,31 +53,36 @@ const NavMini = props => (
     {props.view !== "composer" ? (
       Object.values(ITEMS).map((item, i) => (
         <React.Fragment key={Object.keys(ITEMS)[i]}>
-          {item.icon}
-          <NavmMiniLink
-            icon={item.icon}
-            style={{
-              fontWeight: props.view === Object.keys(ITEMS)[i] ? 700 : undefined
-            }}
-            to={
-              item.noAccountTo && props.user.status !== "ok"
-                ? item.noAccountTo
-                : item.to
-            }
-            onClick={event => {
-              GA.event({
-                category: "Navigation",
-                action: "NavMini",
-                label: item.label
-              })
+          {" "}
+          <span style={{ display: "inline-block" }}>
+            {item.icon}
+            {""}
+            <NavmMiniLink
+              icon={item.icon}
+              style={{
+                fontWeight:
+                  props.view === Object.keys(ITEMS)[i] ? 700 : undefined
+              }}
+              to={
+                item.noAccountTo && props.user.status !== "ok"
+                  ? item.noAccountTo
+                  : item.to
+              }
+              onClick={event => {
+                GA.event({
+                  category: "Navigation",
+                  action: "NavMini",
+                  label: item.label
+                })
 
-              item.account &&
-                props.user.status !== "ok" &&
-                isForbidden(event, props)
-            }}
-          >
-            {item.label}
-          </NavmMiniLink>
+                item.account &&
+                  props.user.status !== "ok" &&
+                  isForbidden(event, props)
+              }}
+            >
+              {item.label}
+            </NavmMiniLink>
+          </span>
         </React.Fragment>
       ))
     ) : (

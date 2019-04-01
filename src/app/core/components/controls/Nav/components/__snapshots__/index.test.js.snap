@@ -772,7 +772,15 @@ ShallowWrapper {
           >
                     About
                     <styled.span>
-                               ✹
+                               
+                              <Unknown
+                                        style={
+                                                  Object {
+                                                            "height": "1em",
+                                                            "paddingBottom": ".15em",
+                                                          }
+                                        }
+                              />
                     </styled.span>
           </NavLink>
 </styled.li>,
@@ -788,10 +796,18 @@ ShallowWrapper {
           >
                     Resource
                     <styled.span>
-                              s 
+                              s
                     </styled.span>
                     <styled.span>
-                              ❖
+                               
+                              <Unknown
+                                        style={
+                                                  Object {
+                                                            "height": "1em",
+                                                            "paddingBottom": ".15em",
+                                                          }
+                                        }
+                              />
                     </styled.span>
           </NavLink>
 </styled.li>,
@@ -862,7 +878,15 @@ ShallowWrapper {
 >
             About
             <styled.span>
-                         ✹
+                         
+                        <Unknown
+                                    style={
+                                                Object {
+                                                            "height": "1em",
+                                                            "paddingBottom": ".15em",
+                                                          }
+                                    }
+                        />
             </styled.span>
 </NavLink>,
           "className": null,
@@ -878,7 +902,15 @@ ShallowWrapper {
             "children": Array [
               "About",
               <styled.span>
-                 ✹
+                 
+                <Unknown
+                                style={
+                                                Object {
+                                                                "height": "1em",
+                                                                "paddingBottom": ".15em",
+                                                              }
+                                }
+                />
 </styled.span>,
             ],
             "className": undefined,
@@ -893,10 +925,36 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": " ✹",
+                "children": Array [
+                  " ",
+                  <Unknown
+                    style={
+                                        Object {
+                                                            "height": "1em",
+                                                            "paddingBottom": ".15em",
+                                                          }
+                    }
+/>,
+                ],
               },
               "ref": null,
-              "rendered": " ✹",
+              "rendered": Array [
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "style": Object {
+                      "height": "1em",
+                      "paddingBottom": ".15em",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
           ],
@@ -916,10 +974,18 @@ ShallowWrapper {
 >
             Resource
             <styled.span>
-                        s 
+                        s
             </styled.span>
             <styled.span>
-                        ❖
+                         
+                        <Unknown
+                                    style={
+                                                Object {
+                                                            "height": "1em",
+                                                            "paddingBottom": ".15em",
+                                                          }
+                                    }
+                        />
             </styled.span>
 </NavLink>,
           "className": "prime left",
@@ -935,10 +1001,18 @@ ShallowWrapper {
             "children": Array [
               "Resource",
               <styled.span>
-                s 
+                s
 </styled.span>,
               <styled.span>
-                ❖
+                 
+                <Unknown
+                                style={
+                                                Object {
+                                                                "height": "1em",
+                                                                "paddingBottom": ".15em",
+                                                              }
+                                }
+                />
 </styled.span>,
             ],
             "className": undefined,
@@ -953,10 +1027,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "s ",
+                "children": "s",
               },
               "ref": null,
-              "rendered": "s ",
+              "rendered": "s",
               "type": [Function],
             },
             Object {
@@ -964,10 +1038,36 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "❖",
+                "children": Array [
+                  " ",
+                  <Unknown
+                    style={
+                                        Object {
+                                                            "height": "1em",
+                                                            "paddingBottom": ".15em",
+                                                          }
+                    }
+/>,
+                ],
               },
               "ref": null,
-              "rendered": "❖",
+              "rendered": Array [
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "style": Object {
+                      "height": "1em",
+                      "paddingBottom": ".15em",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
           ],
@@ -1201,7 +1301,15 @@ ShallowWrapper {
             >
                         About
                         <styled.span>
-                                     ✹
+                                     
+                                    <Unknown
+                                                style={
+                                                            Object {
+                                                                        "height": "1em",
+                                                                        "paddingBottom": ".15em",
+                                                                      }
+                                                }
+                                    />
                         </styled.span>
             </NavLink>
 </styled.li>,
@@ -1217,10 +1325,18 @@ ShallowWrapper {
             >
                         Resource
                         <styled.span>
-                                    s 
+                                    s
                         </styled.span>
                         <styled.span>
-                                    ❖
+                                     
+                                    <Unknown
+                                                style={
+                                                            Object {
+                                                                        "height": "1em",
+                                                                        "paddingBottom": ".15em",
+                                                                      }
+                                                }
+                                    />
                         </styled.span>
             </NavLink>
 </styled.li>,
@@ -1291,7 +1407,15 @@ ShallowWrapper {
 >
               About
               <styled.span>
-                             ✹
+                             
+                            <Unknown
+                                          style={
+                                                        Object {
+                                                                      "height": "1em",
+                                                                      "paddingBottom": ".15em",
+                                                                    }
+                                          }
+                            />
               </styled.span>
 </NavLink>,
             "className": null,
@@ -1307,7 +1431,15 @@ ShallowWrapper {
               "children": Array [
                 "About",
                 <styled.span>
-                   ✹
+                   
+                  <Unknown
+                                    style={
+                                                      Object {
+                                                                        "height": "1em",
+                                                                        "paddingBottom": ".15em",
+                                                                      }
+                                    }
+                  />
 </styled.span>,
               ],
               "className": undefined,
@@ -1322,10 +1454,36 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": " ✹",
+                  "children": Array [
+                    " ",
+                    <Unknown
+                      style={
+                                            Object {
+                                                                  "height": "1em",
+                                                                  "paddingBottom": ".15em",
+                                                                }
+                      }
+/>,
+                  ],
                 },
                 "ref": null,
-                "rendered": " ✹",
+                "rendered": Array [
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "style": Object {
+                        "height": "1em",
+                        "paddingBottom": ".15em",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
                 "type": [Function],
               },
             ],
@@ -1345,10 +1503,18 @@ ShallowWrapper {
 >
               Resource
               <styled.span>
-                            s 
+                            s
               </styled.span>
               <styled.span>
-                            ❖
+                             
+                            <Unknown
+                                          style={
+                                                        Object {
+                                                                      "height": "1em",
+                                                                      "paddingBottom": ".15em",
+                                                                    }
+                                          }
+                            />
               </styled.span>
 </NavLink>,
             "className": "prime left",
@@ -1364,10 +1530,18 @@ ShallowWrapper {
               "children": Array [
                 "Resource",
                 <styled.span>
-                  s 
+                  s
 </styled.span>,
                 <styled.span>
-                  ❖
+                   
+                  <Unknown
+                                    style={
+                                                      Object {
+                                                                        "height": "1em",
+                                                                        "paddingBottom": ".15em",
+                                                                      }
+                                    }
+                  />
 </styled.span>,
               ],
               "className": undefined,
@@ -1382,10 +1556,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "s ",
+                  "children": "s",
                 },
                 "ref": null,
-                "rendered": "s ",
+                "rendered": "s",
                 "type": [Function],
               },
               Object {
@@ -1393,10 +1567,36 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "❖",
+                  "children": Array [
+                    " ",
+                    <Unknown
+                      style={
+                                            Object {
+                                                                  "height": "1em",
+                                                                  "paddingBottom": ".15em",
+                                                                }
+                      }
+/>,
+                  ],
                 },
                 "ref": null,
-                "rendered": "❖",
+                "rendered": Array [
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "style": Object {
+                        "height": "1em",
+                        "paddingBottom": ".15em",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
                 "type": [Function],
               },
             ],
