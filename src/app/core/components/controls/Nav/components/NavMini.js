@@ -3,9 +3,13 @@ import React from "react"
 import styled from "styled-components"
 
 import { GA } from "../../../../../utils"
+import { RHCP } from "../../../icons/group-beacons/Star"
 import { isForbidden } from "../../../../../user/utils/actions-session"
 import { setModal } from "../../../../store/actions-modal"
+import Cube from "../../../icons/group-beacons/Cube"
+import Heart from "../../../icons/group-beacons/Heart"
 import Link from "../../Link"
+import Pen from "../../../icons/group-beacons/Pen"
 
 const NavMiniWrapper = styled.div`
   margin: 0 -1.75em;
@@ -14,39 +18,33 @@ const NavMiniWrapper = styled.div`
 const NavmMiniLink = styled(Link)`
   display: inline-block;
   background: ${props => props.theme.color.background(0.33)};
-  ::before {
-    content: "${props => props.icon || ""}";
-    text-decoration: none;
-    display: inline-block;
-    font-style: normal;
-    padding: 0 0.25em 0 0;
-  }
-  margin-right: .25em;
-  padding: 0 .25em;
+  margin-right: 0.25em;
+  padding: 0 0.25em;
 `
 
+const iconStyles = { height: ".75em" }
 const ITEMS = {
   favourites: {
     account: true,
     label: "Favourites",
-    icon: "❤︎",
+    icon: <Heart style={iconStyles} />,
     to: "/favourites"
   },
   mustReads: {
     label: "Resources",
-    icon: "❖",
+    icon: <Cube style={iconStyles} />,
     to: "/resources"
   },
   submissions: {
     label: "Submissions",
-    icon: "✒︎",
+    icon: <Pen style={iconStyles} />,
     to: "/submissions",
     noAccountTo: "/submit"
   },
   profile: {
     account: true,
     label: "Profile & Settings",
-    icon: "✱",
+    icon: <RHCP style={iconStyles} />,
     to: `/profile/edit`
   }
 }
@@ -54,31 +52,33 @@ const NavMini = props => (
   <NavMiniWrapper>
     {props.view !== "composer" ? (
       Object.values(ITEMS).map((item, i) => (
-        <NavmMiniLink
-          key={Object.keys(ITEMS)[i]}
-          icon={item.icon}
-          style={{
-            fontWeight: props.view === Object.keys(ITEMS)[i] ? 700 : undefined
-          }}
-          to={
-            item.noAccountTo && props.user.status !== "ok"
-              ? item.noAccountTo
-              : item.to
-          }
-          onClick={event => {
-            GA.event({
-              category: "Navigation",
-              action: "NavMini",
-              label: item.label
-            })
+        <React.Fragment key={Object.keys(ITEMS)[i]}>
+          {item.icon}
+          <NavmMiniLink
+            icon={item.icon}
+            style={{
+              fontWeight: props.view === Object.keys(ITEMS)[i] ? 700 : undefined
+            }}
+            to={
+              item.noAccountTo && props.user.status !== "ok"
+                ? item.noAccountTo
+                : item.to
+            }
+            onClick={event => {
+              GA.event({
+                category: "Navigation",
+                action: "NavMini",
+                label: item.label
+              })
 
-            item.account &&
-              props.user.status !== "ok" &&
-              isForbidden(event, props)
-          }}
-        >
-          {item.label}
-        </NavmMiniLink>
+              item.account &&
+                props.user.status !== "ok" &&
+                isForbidden(event, props)
+            }}
+          >
+            {item.label}
+          </NavmMiniLink>
+        </React.Fragment>
       ))
     ) : (
       <React.Fragment>

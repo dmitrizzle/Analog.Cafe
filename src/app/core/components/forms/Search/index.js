@@ -61,6 +61,18 @@ const NAV_BUTTONS = props => [
     ),
     keywords: "etsy,store,buy,shop,camera"
   },
+  buttonMaker("/sign-out", {
+    keywords: "log out, exit",
+    attributes: {
+      memberOnly: true
+    }
+  }),
+  buttonMaker("/sign-in", {
+    keywords: "sign up, create account, password",
+    attributes: {
+      visitorOnly: true
+    }
+  }),
   { divider: true },
   buttonMaker("/film-photography", { keywords: "science" }),
   buttonMaker("/photo-essays", { keywords: "art" }),
@@ -82,13 +94,6 @@ const NAV_BUTTONS = props => [
     keywords:
       "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
   },
-  buttonMaker("/sign-in", {
-    keywords: "sign up, create account, password",
-    attributes: {
-      hidden: true,
-      visitorOnly: true
-    }
-  }),
   {
     to: "/submit/compose",
     text:
@@ -118,14 +123,7 @@ const NAV_BUTTONS = props => [
     keywords: "account, avatar, link, bio",
     hidden: true,
     membersOnly: true
-  },
-  buttonMaker("/sign-out", {
-    keywords: "log out, exit",
-    attributes: {
-      hidden: true,
-      memberOnly: true
-    }
-  })
+  }
 ]
 export class Search extends React.PureComponent {
   constructor(props) {

@@ -5,10 +5,14 @@ import styled, { css } from "styled-components"
 
 import { GA } from "../../../../../utils"
 import { NavLink, navActiveCss } from "./NavLinks"
+import { RHCP } from "../../../icons/group-beacons/Star"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../../user/constants/routes-session"
 import { buttonMaker } from "../../../forms/Search"
+import Cube from "../../../icons/group-beacons/Cube"
+import Heart from "../../../icons/group-beacons/Heart"
 import Modal from "../../Modal"
 import NavAvatar from "./NavAvatar"
+import Pen from "../../../icons/group-beacons/Pen"
 
 const accountCss = css`
   &.active,
@@ -39,22 +43,40 @@ const NavAccountLink = styled(NavLink)`
   ${accountCss};
 `
 
+const iconStyles = { height: ".75em", paddingBottom: ".15em" }
+
 const NAV_USER = props => [
   {
     to: "/favourites",
-    text: "❤︎ Favourites"
+    text: (
+      <span>
+        <Heart style={iconStyles} /> Favourites
+      </span>
+    )
   },
   {
     to: "/resources",
-    text: "❖ Resources"
+    text: (
+      <span>
+        <Cube style={iconStyles} /> Resources
+      </span>
+    )
   },
   {
     to: ROUTE_URL_USER_SUBMISSIONS,
-    text: "✒︎ Submissions"
+    text: (
+      <span>
+        <Pen style={iconStyles} /> Submissions
+      </span>
+    )
   },
   {
     to: `/profile/edit`,
-    text: "✱ Profile & Settings"
+    text: (
+      <span>
+        <RHCP style={iconStyles} /> Profile & Settings
+      </span>
+    )
   },
   // {
   //   to: "/submit/compose",

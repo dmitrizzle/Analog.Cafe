@@ -5,38 +5,25 @@ import { LabelWithSearchSVG } from "../../controls/Nav/components/NavGeneral"
 import ArticleSection from "../../pages/Article/components/ArticleSection"
 import Link from "../../controls/Link"
 import Modal from "../../controls/Modal"
+import Point from "../../icons/group-beacons/Point"
 import Search from "../../icons/Search"
 
 const SearchSvgWrap = styled(LabelWithSearchSVG)`
   a {
     padding: 0.5em;
-
-    svg {
-      path {
-        stroke: ${props => props.theme.color.brand()} !important;
-      }
-    }
-    :active {
-      background: transparent !important;
-      svg {
-        path {
-          stroke: ${props => props.theme.color.foreground()} !important;
-        }
-      }
-    }
   }
 `
 const Wrapper = styled(ArticleSection)`
   text-align: center;
   max-width: 100%;
   padding: 1em;
-
   a {
-    text-decoration: none;
-    color: ${props => props.theme.color.brand()} !important;
     :active {
-      color: ${props => props.theme.color.foreground()} !important;
       background: transparent !important;
+    }
+    svg path {
+      stroke: ${props => props.theme.color.brand()} !important;
+      fill: ${props => props.theme.color.brand()} !important;
     }
   }
 `
@@ -74,9 +61,7 @@ export default () => (
           })
         }}
       >
-        <span role="img" aria-label="Finger pointing up">
-          ☝︎
-        </span>
+        <Point style={{ height: "1.25em", marginTop: "-.25em" }} />
       </Link>
     </small>
   </Wrapper>

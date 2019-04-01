@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { GA } from "../../../../../utils"
 import { NavLink, NavLogoLink } from "./NavLinks"
+import Cube from "../../../icons/group-beacons/Cube"
 import Heart from "../../../icons/group-beacons/Heart"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
@@ -11,6 +12,7 @@ import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
 import NavSearch from "./NavSearch"
 import Search from "../../../icons/Search"
+import Star from "../../../icons/group-beacons/Star"
 
 export const LabelWithSearchSVG = styled.span`
   svg {
@@ -98,6 +100,8 @@ export default props => {
       : undefined
   }
 
+  const iconStyles = { height: "1em", paddingBottom: ".15em" }
+
   return (
     <ul
       onMouseOver={
@@ -121,7 +125,10 @@ export default props => {
             }}
           >
             About
-            <Extra> ✹</Extra>
+            <Extra>
+              {" "}
+              <Star style={iconStyles} />
+            </Extra>
           </NavLink>
         ) : (
           <NavLink
@@ -139,7 +146,7 @@ export default props => {
             <OnlyMicroScreens>es</OnlyMicroScreens>
             <Extra>
               {" "}
-              <Heart style={{ width: "1em" }} />
+              <Heart style={iconStyles} />
             </Extra>
           </NavLink>
         )}
@@ -161,8 +168,11 @@ export default props => {
           }}
         >
           Resource
-          <NotOnMicroScreens>s </NotOnMicroScreens>
-          <Extra>❖</Extra>
+          <NotOnMicroScreens>s</NotOnMicroScreens>
+          <Extra>
+            {" "}
+            <Cube style={iconStyles} />
+          </Extra>
         </NavLink>
       </NavItem>
 
