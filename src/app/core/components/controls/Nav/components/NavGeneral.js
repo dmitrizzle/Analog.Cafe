@@ -108,11 +108,7 @@ export default props => {
         "ontouchstart" in document.documentElement ? null : props.userIntent
       }
     >
-      <NavItem
-        prime={props.userStatus === "ok" ? null : undefined}
-        left={props.userStatus === "ok" ? null : undefined}
-        className={props.userStatus === "ok" ? "prime left" : null}
-      >
+      <NavItem>
         {props.userStatus !== "ok" ? (
           <NavLink
             {...about}
@@ -152,11 +148,7 @@ export default props => {
         )}
       </NavItem>
 
-      <NavItem
-        prime={props.userStatus !== "ok" ? null : undefined}
-        left={props.userStatus !== "ok" ? null : undefined}
-        className={props.userStatus !== "ok" ? "prime left" : null}
-      >
+      <NavItem>
         <NavLink
           {...resources}
           onClick={() => {
@@ -192,7 +184,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
 
-      <NavItem narrow prime right className="prime right">
+      <NavItem narrow prime left className="prime left">
         <NavSearch
           {...navSearch}
           onClick={() => {
@@ -209,7 +201,7 @@ export default props => {
         </NavSearch>
       </NavItem>
 
-      <NavItem>
+      <NavItem prime right className="prime right">
         <NavMore
           userImage={props.userImage}
           userStatus={props.userStatus}

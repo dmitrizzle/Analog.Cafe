@@ -59,6 +59,12 @@ const NAV_BUTTONS = props => [
       "photography,podcast,audio,downloads,guides,reference,price,reviews,resources,must,reads"
   }),
   {
+    to: "/submit",
+    text: "Submit Your Photography",
+    keywords:
+      "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
+  },
+  {
     to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
     text: (
       <span>
@@ -70,36 +76,39 @@ const NAV_BUTTONS = props => [
   buttonMaker("/sign-out", {
     keywords: "log out, exit",
     attributes: {
-      memberOnly: true
+      memberOnly: true,
+      hidden: true
     }
   }),
   buttonMaker("/sign-in", {
     keywords: "sign up, create account, password",
     attributes: {
-      visitorOnly: true
+      visitorOnly: true,
+      hidden: true
     }
   }),
   { divider: true },
-  buttonMaker("/film-photography", { keywords: "science" }),
-  buttonMaker("/photo-essays", { keywords: "art" }),
-  buttonMaker("/editorials"),
-  buttonMaker("/solo-projects"),
+  buttonMaker("/film-photography", {
+    keywords: "science",
+    attributes: { hidden: true }
+  }),
+  buttonMaker("/photo-essays", {
+    keywords: "art",
+    attributes: { hidden: true }
+  }),
+  buttonMaker("/editorials", { attributes: { hidden: true } }),
+  buttonMaker("/solo-projects", { attributes: { hidden: true } }),
   {
     to: "/collaborations",
     text: "Collaborations",
     keywords:
       TEXT_ROUTE_LABELS["/collaborations"].title +
-      TEXT_ROUTE_LABELS["/collaborations"].description
+      TEXT_ROUTE_LABELS["/collaborations"].description,
+    hidden: true
   },
-  { divider: true },
   { to: "/submit/rules", text: "Rules", keywords: "rules,terms,conditions" },
   { to: "/privacy-policy", text: "Privacy", keywords: "privacy policy" },
-  {
-    to: "/submit",
-    text: "Submit Your Photography",
-    keywords:
-      "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
-  },
+
   {
     to: "/submit/compose",
     text:
