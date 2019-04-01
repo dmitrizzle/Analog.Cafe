@@ -72,8 +72,6 @@ const NavMini = props => (
               label: item.label
             })
 
-            console.log(item)
-
             item.account &&
               props.user.status !== "ok" &&
               isForbidden(event, props)

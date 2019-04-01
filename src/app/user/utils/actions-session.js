@@ -6,12 +6,15 @@ export const redirectToSignIn = props => {
 }
 
 export const isForbidden = (event, props) => {
-  event.preventDefault()
-  event.stopPropagation()
+  if (event) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
   props.setModal({
     info: {
-      title: "Members Only Content",
-      text: "You need to create or sign in to your free Analog.Cafe account.",
+      title: "Members Only",
+      text:
+        "You need to create or sign in to your free Analog.Cafe account to use this feature.",
       buttons: [
         {
           to: `/sign-in`,

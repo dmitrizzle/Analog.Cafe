@@ -82,7 +82,7 @@ const NAV_BUTTONS = props => [
     keywords:
       "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
   },
-  buttonMaker("sign-in", {
+  buttonMaker("/sign-in", {
     keywords: "sign up, create account, password",
     attributes: {
       hidden: true,

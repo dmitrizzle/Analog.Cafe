@@ -68,7 +68,7 @@ export default props => {
   const ab = "/about"
   const f = "/favourites"
 
-  const mustReads = {
+  const resources = {
     to: mr,
     className: isActiveUrl(mr) ? a : undefined
   }
@@ -103,15 +103,11 @@ export default props => {
         "ontouchstart" in document.documentElement ? null : props.userIntent
       }
     >
-      {/* <NavItem prime left mobile className="prime left mobile">
-        <NavSections {...navSections}>
-          <span>
-            <Extra>Sections </Extra>◈
-          </span>
-        </NavSections>
-      </NavItem> */}
-
-      <NavItem>
+      <NavItem
+        prime={props.userStatus === "ok" ? null : undefined}
+        left={props.userStatus === "ok" ? null : undefined}
+        className={props.userStatus === "ok" ? "prime left" : null}
+      >
         {props.userStatus !== "ok" ? (
           <NavLink
             {...about}
@@ -143,9 +139,13 @@ export default props => {
         )}
       </NavItem>
 
-      <NavItem>
+      <NavItem
+        prime={props.userStatus !== "ok" ? null : undefined}
+        left={props.userStatus !== "ok" ? null : undefined}
+        className={props.userStatus !== "ok" ? "prime left" : null}
+      >
         <NavLink
-          {...mustReads}
+          {...resources}
           onClick={() => {
             GA.event({
               category: "Navigation",
@@ -154,9 +154,9 @@ export default props => {
             })
           }}
         >
-          {/* <span className="wide">Photo </span> */}
-          Resources
-          <Extra> ❖</Extra>
+          Resource
+          <NotOnMicroScreens>s </NotOnMicroScreens>
+          <Extra>❖</Extra>
         </NavLink>
       </NavItem>
 
@@ -193,7 +193,7 @@ export default props => {
         </NavSearch>
       </NavItem>
 
-      <NavItem prime left className="prime left">
+      <NavItem>
         <NavMore
           userImage={props.userImage}
           userStatus={props.userStatus}
