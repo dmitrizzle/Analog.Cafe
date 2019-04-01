@@ -1,11 +1,12 @@
 import { HOST_API } from "../../constants"
-import { ROUTE_URL_USER_LANDING } from "../../user/constants/routes-session"
+import { ROUTE_URL_USER_SUBMISSIONS } from "../../user/constants/routes-session"
 
 export const ROUTE_API_LIST = HOST_API + "/list"
 export const ROUTE_API_LIST_SUBMISSIONS = HOST_API + "/submissions"
+export const ROUTE_API_LIST_FAVOURITES = HOST_API + "/favourites"
 
 export const ROUTE_TAGS = {
-  [ROUTE_URL_USER_LANDING]: "",
+  [ROUTE_URL_USER_SUBMISSIONS]: "",
   "/photo-essays": "photo-essay",
   "/film-photography": "film-photography",
   "/editorials": "editorial",

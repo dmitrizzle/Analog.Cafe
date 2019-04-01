@@ -5,20 +5,25 @@ import React from "react"
 import { withRouter } from "react-router"
 
 import { GA } from "../../../../utils"
-import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
 import { fetchListPage, initListPage } from "../../../store/actions-list"
 import { getListMeta } from "../../../utils/messages-list"
 import { preloadConstructor } from "../../../utils/routes-article"
 import { setArticlePage } from "../../../store/actions-article"
 import { setUserIntent } from "../../../../user/store/actions-user"
+import ArticleWrapper from "../Article/components/ArticleWrapper"
 import Button from "../../controls/Button/components/Button"
+import HeaderLarge from "../../vignettes/HeaderLarge"
 import ListBlock from "./components/ListBlock"
 import ListDescription from "./components/ListDescription"
 import MetaTags from "../../vignettes/MetaTags"
 
-const ListProfile = Loadable({
-  loader: () => import("../../../../user/components/pages/ListProfile"),
-  loading: () => null
+const ListAugmented = Loadable({
+  loader: () => import("../../../../user/components/pages/ListAugmented"),
+  loading: () => (
+    <ArticleWrapper>
+      <HeaderLarge pageTitle=" " />
+    </ArticleWrapper>
+  )
 })
 
 class List extends React.PureComponent {
@@ -71,11 +76,13 @@ class List extends React.PureComponent {
       (this.props.list.filter.author && this.props.list.filter.author.name
         ? " by " + this.props.list.filter.author.name
         : "")
-    const isUserDashboard = this.props.history.location.pathname.includes(
-      ROUTE_URL_USER_LANDING
-    )
+
+    const isUserDashboard = this.props.me
+    const isUserFavourites = this.props.favourites
     const isProfilePage =
-      this.props.location.pathname.includes("/is/") || isUserDashboard
+      this.props.location.pathname.includes("/is/") ||
+      isUserDashboard ||
+      isUserFavourites
 
     let profileImage
     if (this.props.list.author) {
@@ -89,8 +96,10 @@ class List extends React.PureComponent {
       this.props.list.author.buttons[1] &&
       this.props.list.author.buttons[1].text
 
-    const listProfileProps = {
+    const listAugmentedProps = {
+      isProfilePage,
       isUserDashboard,
+      isUserFavourites,
       profileImage,
       doesAuthorHaveLink
     }
@@ -111,7 +120,7 @@ class List extends React.PureComponent {
         )}
         <React.Fragment>
           {isProfilePage && (
-            <ListProfile {...this.props} {...listProfileProps} />
+            <ListAugmented {...this.props} {...listAugmentedProps} />
           )}
           <ListBlock
             status={this.props.list.status}
@@ -127,6 +136,8 @@ class List extends React.PureComponent {
             userIntent={this.handleUserIntent}
             article={this.props.article}
             readReceipts={this.props.user.sessionInfo.readReceipts}
+            noNegativeMargin={this.props.list.items.length === 0}
+            {...listAugmentedProps}
           />
         </React.Fragment>
         {parseInt(this.props.list.page.total, 0) > 1 &&
@@ -140,7 +151,6 @@ class List extends React.PureComponent {
             Load More
           </Button>
         ) : null}
-        {/* <Offer embed /> */}
       </div>
     )
   }

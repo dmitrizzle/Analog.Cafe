@@ -6,6 +6,7 @@ import {
   getLunarDatestamp
 } from "../../../utils/messages-"
 import ArticleActionsWrapper from "./components/ArticleActionsWrapper"
+import Favourite from "../../../../user/components/controls/Favourite"
 import Link from "../Link"
 import Options from "./components/Options"
 import TimeStamp from "../../pages/Article/components/TimeStamp"
@@ -27,15 +28,14 @@ const DatePublished = props => {
   const datePublished = dateFactory(props.thisArticlePostDate)
   return (
     <TimeStamp>
-      <time title={`Published on ${datePublished.human}.`}>
-        {datePublished.lunar}
-      </time>
-      {dateModified && [
-        <span key="divider"> ✏︎ </span>,
-        <time key="tiemstamp" title={`Edited on on ${dateModified.human}.`}>
-          {dateModified.lunar}
-        </time>
-      ]}
+      <br />
+      Published: <time>{datePublished.human}</time>.
+      {dateModified && (
+        <React.Fragment>
+          {" "}
+          Edit: <time>{dateModified.human}</time>.
+        </React.Fragment>
+      )}
     </TimeStamp>
   )
 }
@@ -43,8 +43,7 @@ const DatePublished = props => {
 export default props => {
   return (
     <ArticleActionsWrapper>
-      {props.thisArticlePostDate && <DatePublished {...props} />}
-
+      <Favourite />
       {props.user &&
         props.user.status === "ok" &&
         (props.user.info.role === "admin" ||
@@ -79,6 +78,7 @@ export default props => {
         typeof props.article.scheduledOrder === "undefined" && (
           <Options {...props} />
         )}
+      {props.thisArticlePostDate && <DatePublished {...props} />}
     </ArticleActionsWrapper>
   )
 }

@@ -1,5 +1,5 @@
 import { APP_DESCRIPTION } from "../../constants"
-import { ROUTE_URL_USER_LANDING } from "../../user/constants/routes-session"
+import { ROUTE_URL_USER_SUBMISSIONS } from "../../user/constants/routes-session"
 
 export const TEXT_STATUS_LABELS = {
   pending: "In Queue",
@@ -41,13 +41,17 @@ export const TEXT_ROUTE_LABELS = {
     description: ""
   },
 
-  [ROUTE_URL_USER_LANDING]: {
+  [ROUTE_URL_USER_SUBMISSIONS]: {
     title: "Your submissions to Analog.Cafe"
   },
   "/is/*": {
     title: "Published work",
     description:
       "All published works by the author, including images and text published in collaboration with other authors."
+  },
+  "/favourites": {
+    title: "Your favourites",
+    description: "Articles you favourited and added to your list."
   }
 }
 

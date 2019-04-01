@@ -760,7 +760,11 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <styled.li>
+        <styled.li
+          className={null}
+          left={undefined}
+          prime={undefined}
+>
           <NavLink
                     className={undefined}
                     onClick={[Function]}
@@ -772,15 +776,22 @@ ShallowWrapper {
                     </styled.span>
           </NavLink>
 </styled.li>,
-        <styled.li>
+        <styled.li
+          className="prime left"
+          left={null}
+          prime={null}
+>
           <NavLink
                     className={undefined}
                     onClick={[Function]}
-                    to="/must-reads"
+                    to="/resources"
           >
-                    Must Reads
+                    Resource
                     <styled.span>
-                               ❖
+                              s 
+                    </styled.span>
+                    <styled.span>
+                              ❖
                     </styled.span>
           </NavLink>
 </styled.li>,
@@ -798,10 +809,10 @@ ShallowWrapper {
           </Unknown>
 </styled.li>,
         <styled.li
-          className="prime left"
-          left={true}
+          className="prime right"
           narrow={true}
           prime={true}
+          right={true}
 >
           <Unknown
                     className={undefined}
@@ -813,11 +824,7 @@ ShallowWrapper {
                     </styled.span>
           </Unknown>
 </styled.li>,
-        <styled.li
-          className="prime right"
-          prime={true}
-          right={true}
->
+        <styled.li>
           <Unknown
                     className={undefined}
                     userImage={undefined}
@@ -858,6 +865,9 @@ ShallowWrapper {
                          ✹
             </styled.span>
 </NavLink>,
+          "className": null,
+          "left": undefined,
+          "prime": undefined,
         },
         "ref": null,
         "rendered": Object {
@@ -902,13 +912,19 @@ ShallowWrapper {
           "children": <NavLink
             className={undefined}
             onClick={[Function]}
-            to="/must-reads"
+            to="/resources"
 >
-            Must Reads
+            Resource
             <styled.span>
-                         ❖
+                        s 
+            </styled.span>
+            <styled.span>
+                        ❖
             </styled.span>
 </NavLink>,
+          "className": "prime left",
+          "left": null,
+          "prime": null,
         },
         "ref": null,
         "rendered": Object {
@@ -917,27 +933,41 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              "Must Reads",
+              "Resource",
               <styled.span>
-                 ❖
+                s 
+</styled.span>,
+              <styled.span>
+                ❖
 </styled.span>,
             ],
             "className": undefined,
             "onClick": [Function],
-            "to": "/must-reads",
+            "to": "/resources",
           },
           "ref": null,
           "rendered": Array [
-            "Must Reads",
+            "Resource",
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": " ❖",
+                "children": "s ",
               },
               "ref": null,
-              "rendered": " ❖",
+              "rendered": "s ",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "❖",
+              },
+              "ref": null,
+              "rendered": "❖",
               "type": [Function],
             },
           ],
@@ -1000,10 +1030,10 @@ ShallowWrapper {
                         <Unknown />
             </styled.span>
 </Unknown>,
-          "className": "prime left",
-          "left": true,
+          "className": "prime right",
           "narrow": true,
           "prime": true,
+          "right": true,
         },
         "ref": null,
         "rendered": Object {
@@ -1072,9 +1102,6 @@ ShallowWrapper {
                         image={undefined}
             />
 </Unknown>,
-          "className": "prime right",
-          "prime": true,
-          "right": true,
         },
         "ref": null,
         "rendered": Object {
@@ -1162,7 +1189,11 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <styled.li>
+          <styled.li
+            className={null}
+            left={undefined}
+            prime={undefined}
+>
             <NavLink
                         className={undefined}
                         onClick={[Function]}
@@ -1174,15 +1205,22 @@ ShallowWrapper {
                         </styled.span>
             </NavLink>
 </styled.li>,
-          <styled.li>
+          <styled.li
+            className="prime left"
+            left={null}
+            prime={null}
+>
             <NavLink
                         className={undefined}
                         onClick={[Function]}
-                        to="/must-reads"
+                        to="/resources"
             >
-                        Must Reads
+                        Resource
                         <styled.span>
-                                     ❖
+                                    s 
+                        </styled.span>
+                        <styled.span>
+                                    ❖
                         </styled.span>
             </NavLink>
 </styled.li>,
@@ -1200,10 +1238,10 @@ ShallowWrapper {
             </Unknown>
 </styled.li>,
           <styled.li
-            className="prime left"
-            left={true}
+            className="prime right"
             narrow={true}
             prime={true}
+            right={true}
 >
             <Unknown
                         className={undefined}
@@ -1215,11 +1253,7 @@ ShallowWrapper {
                         </styled.span>
             </Unknown>
 </styled.li>,
-          <styled.li
-            className="prime right"
-            prime={true}
-            right={true}
->
+          <styled.li>
             <Unknown
                         className={undefined}
                         userImage={undefined}
@@ -1260,6 +1294,9 @@ ShallowWrapper {
                              ✹
               </styled.span>
 </NavLink>,
+            "className": null,
+            "left": undefined,
+            "prime": undefined,
           },
           "ref": null,
           "rendered": Object {
@@ -1304,13 +1341,19 @@ ShallowWrapper {
             "children": <NavLink
               className={undefined}
               onClick={[Function]}
-              to="/must-reads"
+              to="/resources"
 >
-              Must Reads
+              Resource
               <styled.span>
-                             ❖
+                            s 
+              </styled.span>
+              <styled.span>
+                            ❖
               </styled.span>
 </NavLink>,
+            "className": "prime left",
+            "left": null,
+            "prime": null,
           },
           "ref": null,
           "rendered": Object {
@@ -1319,27 +1362,41 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": Array [
-                "Must Reads",
+                "Resource",
                 <styled.span>
-                   ❖
+                  s 
+</styled.span>,
+                <styled.span>
+                  ❖
 </styled.span>,
               ],
               "className": undefined,
               "onClick": [Function],
-              "to": "/must-reads",
+              "to": "/resources",
             },
             "ref": null,
             "rendered": Array [
-              "Must Reads",
+              "Resource",
               Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": " ❖",
+                  "children": "s ",
                 },
                 "ref": null,
-                "rendered": " ❖",
+                "rendered": "s ",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "❖",
+                },
+                "ref": null,
+                "rendered": "❖",
                 "type": [Function],
               },
             ],
@@ -1402,10 +1459,10 @@ ShallowWrapper {
                             <Unknown />
               </styled.span>
 </Unknown>,
-            "className": "prime left",
-            "left": true,
+            "className": "prime right",
             "narrow": true,
             "prime": true,
+            "right": true,
           },
           "ref": null,
           "rendered": Object {
@@ -1474,9 +1531,6 @@ ShallowWrapper {
                             image={undefined}
               />
 </Unknown>,
-            "className": "prime right",
-            "prime": true,
-            "right": true,
           },
           "ref": null,
           "rendered": Object {

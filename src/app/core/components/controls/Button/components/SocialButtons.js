@@ -1,9 +1,9 @@
 import React from "react"
 import styled, { css } from "styled-components"
 
-import Facebook from "../../../icons/Social/components/Facebook"
+import Facebook from "../../../icons/group-social/Facebook"
 import LinkButton from "./LinkButton"
-import Twitter from "../../../icons/Social/components/Twitter"
+import Twitter from "../../../icons/group-social/Twitter"
 
 export const brandButtonStyles = css`
   svg {

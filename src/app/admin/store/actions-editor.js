@@ -3,7 +3,7 @@ import axios from "axios"
 import { CARD_ALERTS } from "../constants/messages-admin"
 import { ROUTE_API_ARTICLES } from "../../core/constants/routes-article"
 import { ROUTE_API_SUBMISSIONS } from "../constants/routes-admin"
-import { ROUTE_URL_USER_LANDING } from "../../user/constants/routes-session"
+import { ROUTE_URL_USER_SUBMISSIONS } from "../../user/constants/routes-session"
 import { makeAPIRequest } from "../../utils"
 import { setModal } from "../../core/store/actions-modal"
 
@@ -56,7 +56,7 @@ export const deleteSubmission = (submissionId, history) => {
     axios(makeAPIRequest(request))
       .then(response => {
         dispatch(setModal(CARD_ALERTS.DELETED_SUCCESSFULLY))
-        dispatch(history.push(ROUTE_URL_USER_LANDING))
+        dispatch(history.push(ROUTE_URL_USER_SUBMISSIONS))
       })
       .catch(error => {
         console.log(error)

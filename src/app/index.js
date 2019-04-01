@@ -18,6 +18,7 @@ import {
 import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import AppRoutes from "./core/components/routes/App"
+import Footer from "./core/components/vignettes/Footer"
 import ModalOverlay from "./core/components/controls/Modal/components/ModalOverlay"
 import Nav from "./core/components/controls/Nav"
 
@@ -174,6 +175,7 @@ class App extends React.PureComponent {
       // </Subscribe>,
       <AppRoutes userStatus={this.props.user.status} key="App_AppRoutes" />,
       <Nav bottom key="App_Nav_bottom" />,
+      <Footer key="App_Footer" />,
       <ModalOverlay key="App_Modal" />
       // <HighlightMenu
       //   key="App_HighlightMenu"

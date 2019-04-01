@@ -5,6 +5,8 @@ import { render } from "react-dom"
 import React from "react"
 import styled, { ThemeProvider } from "styled-components"
 
+import smoothscroll from "smoothscroll-polyfill"
+
 import { APP_NAME, TEXT_EMOJIS } from "./app/constants"
 import { APP_THEME } from "./constants"
 import { polyfillArrayFind, polyfillArrayIncludes } from "./app/utils"
@@ -12,6 +14,7 @@ import App from "./app"
 import registerServiceWorker from "./registerServiceWorker"
 import store from "./app/store"
 
+smoothscroll.polyfill()
 polyfillArrayIncludes()
 polyfillArrayFind()
 

@@ -1,92 +1,114 @@
+import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
+import { GA } from "../../../../../utils"
+import { isForbidden } from "../../../../../user/utils/actions-session"
+import { setModal } from "../../../../store/actions-modal"
 import Link from "../../Link"
 
 const NavMiniWrapper = styled.div`
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  min-width: 320px;
   margin: 0 -1.75em;
-  > div {
-    width: 32em;
-    margin: 0 auto;
-    ${props => props.theme.size.breakpoint.max.m`
-      padding-left: 1em;
-      width: 33.5em;
-      `};
-  }
 `
-const NavMiniIcon = styled.span`
-  font-style: normal;
-  padding: 0 0.25em 0 1.5em;
-  &:first-child {
-    padding-left: 0;
-  }
-`
+
 const NavmMiniLink = styled(Link)`
-  background: ${props => props.theme.color.background()};
+  display: inline-block;
+  background: ${props => props.theme.color.background(0.33)};
+  ::before {
+    content: "${props => props.icon || ""}";
+    text-decoration: none;
+    display: inline-block;
+    font-style: normal;
+    padding: 0 0.25em 0 0;
+  }
+  margin-right: .25em;
+  padding: 0 .25em;
 `
 
 const ITEMS = {
-  mustReads: {
-    label: "Must Reads",
-    icon: "❖",
-    to: "/must-reads"
-  },
   favourites: {
+    account: true,
     label: "Favourites",
     icon: "❤︎",
     to: "/favourites"
   },
+  mustReads: {
+    label: "Resources",
+    icon: "❖",
+    to: "/resources"
+  },
   submissions: {
     label: "Submissions",
     icon: "✒︎",
-    to: "/submissions"
+    to: "/submissions",
+    noAccountTo: "/submit"
   },
-  // composer: {
-  //   label: loadTextContent().length > 0 ? "Edit Submission Draft" : "New Submission",
-  //   icon: "✏︎",
-  //   to: "/submit/compose"
-  // },
   profile: {
-    label: "Edit Profile",
+    account: true,
+    label: "Profile & Settings",
     icon: "✱",
     to: `/profile/edit`
   }
 }
-export default props => (
+const NavMini = props => (
   <NavMiniWrapper>
-    <div>
-      {props.view !== "composer" ? (
-        Object.values(ITEMS).map((item, i) => (
-          <React.Fragment key={Object.keys(ITEMS)[i]}>
-            <NavMiniIcon>{item.icon}</NavMiniIcon>
-            <NavmMiniLink
-              style={{
-                fontWeight:
-                  props.view === Object.keys(ITEMS)[i] ? 700 : undefined
-              }}
-              to={item.to}
-            >
-              {item.label}
-            </NavmMiniLink>
-          </React.Fragment>
-        ))
-      ) : (
-        <React.Fragment>
-          <NavMiniIcon>☞</NavMiniIcon>
-          <NavmMiniLink to={"/submit"}>What is This?</NavmMiniLink>
+    {props.view !== "composer" ? (
+      Object.values(ITEMS).map((item, i) => (
+        <NavmMiniLink
+          key={Object.keys(ITEMS)[i]}
+          icon={item.icon}
+          style={{
+            fontWeight: props.view === Object.keys(ITEMS)[i] ? 700 : undefined
+          }}
+          to={
+            item.noAccountTo && props.user.status !== "ok"
+              ? item.noAccountTo
+              : item.to
+          }
+          onClick={event => {
+            GA.event({
+              category: "Navigation",
+              action: "NavMini",
+              label: item.label
+            })
 
-          <NavMiniIcon>☁</NavMiniIcon>
-          <NavmMiniLink to={"/zine/open-call-g99w"}>What to Write</NavmMiniLink>
-
-          <NavMiniIcon>{ITEMS.submissions.icon}</NavMiniIcon>
-          <NavmMiniLink to={ITEMS.submissions.to}>
-            {ITEMS.submissions.label}
-          </NavmMiniLink>
-        </React.Fragment>
-      )}
-    </div>
+            item.account &&
+              props.user.status !== "ok" &&
+              isForbidden(event, props)
+          }}
+        >
+          {item.label}
+        </NavmMiniLink>
+      ))
+    ) : (
+      <React.Fragment>
+        <NavmMiniLink icon="☞" to={"/submit"}>
+          What is This?
+        </NavmMiniLink>
+        <NavmMiniLink icon="☁" to={"/zine/open-call-g99w"}>
+          What to Write
+        </NavmMiniLink>
+        <NavmMiniLink icon={ITEMS.submissions.icon} to={ITEMS.submissions.to}>
+          {ITEMS.submissions.label}
+        </NavmMiniLink>
+      </React.Fragment>
+    )}
   </NavMiniWrapper>
 )
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
+    }
+  }
+}
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavMini)

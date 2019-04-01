@@ -170,14 +170,23 @@ class SignIn extends React.PureComponent {
               All accounts are secure and adhere to our strict{" "}
               <Link to="/privacy-policy">privacy policy</Link>.
             </p>
-            <h3>“Analogue Reads” Tuesdays.</h3>
+            <h3 id="analogue-reads">“Analogue Reads” Tuesdays.</h3>
             <p>
               <strong>A weekly email newsletter</strong> featuring a digest of
               new photo essays, reviews, and guides. Every Tuesday at 9AM EST.{" "}
               <Link to="/privacy">No spam</Link>. Free with every account.
               Unsubscribe anytime.
             </p>
-            <Link to="#account">
+            <Link
+              to="#account"
+              onClick={event => {
+                event.preventDefault()
+                window.scroll({
+                  top: 0,
+                  behavior: "smooth"
+                })
+              }}
+            >
               <Figure src="image-froth_1600000_BJRvHFlv4" feature />
             </Link>
           </ArticleSection>

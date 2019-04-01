@@ -3,7 +3,7 @@ import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actio
 import React from "react"
 import styled from "styled-components"
 
-import { ROUTE_URL_USER_LANDING } from "../../../../user/constants/routes-session"
+import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../user/constants/routes-session"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
 import { getSearchResults } from "../../../store/actions-search"
 import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivider"
@@ -39,12 +39,18 @@ export const buttonMaker = (to, options = {}) => {
   }
 }
 const NAV_BUTTONS = props => [
+  {
+    to: "/",
+    text: "Analog.Cafe",
+    keywords: "about,who,what,where,how,authors,editors,contact,backers",
+    inverse: true
+  },
   buttonMaker("/about", {
     keywords: "about,who,what,where,how,authors,editors,contact,backers"
   }),
-  buttonMaker("/must-reads", {
+  buttonMaker("/resources", {
     keywords:
-      "photography,podcast,audio,downloads,guides,reference,price,reviews,resources"
+      "photography,podcast,audio,downloads,guides,reference,price,reviews,resources,must,reads"
   }),
   {
     to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
@@ -76,7 +82,7 @@ const NAV_BUTTONS = props => [
     keywords:
       "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
   },
-  buttonMaker("sign-in", {
+  buttonMaker("/sign-in", {
     keywords: "sign up, create account, password",
     attributes: {
       hidden: true,
@@ -93,7 +99,7 @@ const NAV_BUTTONS = props => [
     hidden: true
   },
   {
-    to: ROUTE_URL_USER_LANDING,
+    to: ROUTE_URL_USER_SUBMISSIONS,
     text: "✒︎ Submissions",
     keywords: "my stuff, results, drafts, portfolio",
     hidden: true,
@@ -108,7 +114,7 @@ const NAV_BUTTONS = props => [
   },
   {
     to: `/profile/edit`,
-    text: "Edit Profile",
+    text: "Profile & Settings",
     keywords: "account, avatar, link, bio",
     hidden: true,
     membersOnly: true
@@ -253,9 +259,6 @@ export class Search extends React.PureComponent {
                 </CardSearchItem>
               )}
           </div>,
-          !haveSearchResults ? (
-            <ButtonGroupDivider key="searchTypeDivider" />
-          ) : null,
           NAV_BUTTONS(this.props).map(button => {
             if (isInstantSearch) {
               // FUZZY SEARCH
@@ -289,7 +292,6 @@ export class Search extends React.PureComponent {
               if (notFound) return null
             }
 
-            console.log("button", button)
             // hidden buttons which appear only for fuzzy search
             if (button.hidden && !isInstantSearch) return null
 
@@ -308,6 +310,7 @@ export class Search extends React.PureComponent {
                 onClick={button.onClick}
                 to={button.to}
                 key={`div_${button.to || button.onClick || Math.random()}`}
+                inverse={button.inverse}
               >
                 {button.text}
               </CardButton>

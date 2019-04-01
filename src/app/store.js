@@ -14,6 +14,7 @@ import imagelib from "./user/store/reducers-imagelib"
 import editor from "./admin/store/reducers-editor"
 import admin from "./admin/store/reducers-admin"
 import search from "./core/store/reducers-search"
+import favourites from "./user/store/reducers-favourites"
 export default createStore(
   combineReducers({
     composer,
@@ -28,7 +29,8 @@ export default createStore(
     imagelib,
     editor,
     admin,
-    search
+    search,
+    favourites
   }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(thunk)

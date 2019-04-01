@@ -17,7 +17,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "forgetUser": [Function],
+      "dispatch": [Function],
       "user": undefined,
     },
     "ref": null,
@@ -30,7 +30,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "forgetUser": [Function],
+        "dispatch": [Function],
         "user": undefined,
       },
       "ref": null,

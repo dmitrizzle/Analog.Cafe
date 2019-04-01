@@ -33,11 +33,16 @@ export const setListAuthor = author => {
 export const fetchListPage = (request, appendItems = false) => {
   return (dispatch, getState) => {
     const listState = getState().list
-    const isSubmissions = url => {
-      return url.includes(ROUTE_API_LIST_SUBMISSIONS)
+    const isAccountRequired = url => {
+      return (
+        url.includes(ROUTE_API_LIST_SUBMISSIONS) || url.includes("favourites")
+      )
     }
 
-    if (!request.url.includes(ROUTE_API_LIST) && !isSubmissions(request.url))
+    if (
+      !request.url.includes(ROUTE_API_LIST) &&
+      !isAccountRequired(request.url)
+    )
       return
 
     if (
@@ -54,11 +59,14 @@ export const fetchListPage = (request, appendItems = false) => {
     )
       return
 
-    if (isSubmissions(request.url))
+    if (isAccountRequired(request.url))
       request.headers = {
         Authorization: "JWT " + localStorage.getItem("token")
       }
-    if (isSubmissions(request.url) !== isSubmissions(listState.requested.url)) {
+    if (
+      isAccountRequired(request.url) !==
+      isAccountRequired(listState.requested.url)
+    ) {
       dispatch(initListPage())
     }
 
@@ -85,7 +93,8 @@ export const fetchListPage = (request, appendItems = false) => {
         }
 
         if (
-          isSubmissions(request.url) !== isSubmissions(listState.requested.url)
+          isAccountRequired(request.url) !==
+          isAccountRequired(listState.requested.url)
         ) {
           dispatch(initListPage())
         }
@@ -101,7 +110,7 @@ export const fetchListPage = (request, appendItems = false) => {
 
         // if (
         //   response.data.page["items-total"] === 0 &&
-        //   !isSubmissions(request.url)
+        //   !isAccountRequired(request.url)
         // ) {
         //   dispatch(
         //     initListPage({
@@ -115,7 +124,7 @@ export const fetchListPage = (request, appendItems = false) => {
           dispatch(fetchListAuthor(listAuthor, payload, appendItems))
           return
         }
-        if (isSubmissions(request.url)) {
+        if (isAccountRequired(request.url)) {
           dispatch(
             fetchListAuthor(getState().user.info.id, payload, appendItems)
           )

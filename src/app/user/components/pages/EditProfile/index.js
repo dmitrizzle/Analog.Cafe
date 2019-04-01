@@ -7,10 +7,7 @@ import {
   INPUT_SUMMARY_LIMIT,
   INPUT_TITLE_LIMIT
 } from "../../../constants/rules-submission"
-import {
-  ROUTE_API_USER_PROFILE,
-  ROUTE_URL_USER_LANDING
-} from "../../../constants/routes-session"
+import { ROUTE_API_USER_PROFILE } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
 import {
   acceptUserInfo,
@@ -22,6 +19,7 @@ import { setModal } from "../../../../core/store/actions-modal"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Button from "../../../../core/components/controls/Button/components/Button"
+import Email from "../../../../core/components/vignettes/Email"
 import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
 import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
 import Link from "../../../../core/components/controls/Link"
@@ -158,7 +156,7 @@ class EditProfile extends React.PureComponent {
   profileUpdated = () => {
     this.props.acceptUserInfo()
     this.props.history.push(
-      this.state.returnToComposer ? composerPath : ROUTE_URL_USER_LANDING
+      this.state.returnToComposer ? composerPath : "/favourites"
     )
   }
   render = () => {
@@ -209,14 +207,16 @@ class EditProfile extends React.PureComponent {
           branded
           loading={this.state.setUserInfoPending ? true : false}
         >
-          {!this.state.setUserInfoPending && TEXT_EMOJIS.CHECKMARK} Done
+          {!this.state.setUserInfoPending && TEXT_EMOJIS.CHECKMARK} Save & Close
         </Button>
         <ArticleSection style={{ paddingTop: "3em" }}>
           <p>
             <small>
               View your public profile{" "}
-              <Link to={`/is/${this.props.user.info.id}`}>here</Link>.<br />
-              {console.log(this.props)}
+              <strong>
+                <Link to={`/is/${this.props.user.info.id}`}>here</Link>
+              </strong>
+              . If you want to delete your account, please <Email /> Dmitri.
             </small>
           </p>
         </ArticleSection>

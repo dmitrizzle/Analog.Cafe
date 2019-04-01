@@ -1,7 +1,6 @@
 import { connect } from "react-redux"
 import React from "react"
 
-import { forgetUser } from "../../../store/actions-user"
 import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
 import List from "../../../../core/components/pages/List"
 
@@ -12,13 +11,7 @@ const Me = props => {
     <Forbidden />
   )
 }
-const mapDispatchToProps = dispatch => {
-  return {
-    forgetUser: () => {
-      dispatch(forgetUser())
-    }
-  }
-}
+
 const mapStateToProps = state => {
   return {
     user: state.user
@@ -26,5 +19,5 @@ const mapStateToProps = state => {
 }
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(Me)

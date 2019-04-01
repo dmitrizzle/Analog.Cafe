@@ -34,15 +34,31 @@ ShallowWrapper {
                 >
                         ✒︎
                 </span>
-                 Submit your work to get featured.
+                 Submit your work, get featured.
+        </li>
+        <li>
+                <span
+                        className="highlight icon"
+                >
+                        ❖
+                </span>
+                 Free downloads & exclusives.
         </li>
         <li>
                 <span
                         className="icon"
                 >
-                        ❖
+                        ☞
                 </span>
-                 Free printables, exclusives & email updates.
+                 Weekly email
+                 
+                <Unknown
+                        onClick={[Function]}
+                        to="#analogue-reads"
+                >
+                        newsletter
+                </Unknown>
+                .
         </li>
 </styled.ul>,
     },
@@ -67,15 +83,31 @@ ShallowWrapper {
             >
                         ✒︎
             </span>
-             Submit your work to get featured.
+             Submit your work, get featured.
+</li>,
+          <li>
+            <span
+                        className="highlight icon"
+            >
+                        ❖
+            </span>
+             Free downloads & exclusives.
 </li>,
           <li>
             <span
                         className="icon"
             >
-                        ❖
+                        ☞
             </span>
-             Free printables, exclusives & email updates.
+             Weekly email
+             
+            <Unknown
+                        onClick={[Function]}
+                        to="#analogue-reads"
+            >
+                        newsletter
+            </Unknown>
+            .
 </li>,
         ],
       },
@@ -124,7 +156,7 @@ ShallowWrapper {
 >
                 ✒︎
 </span>,
-              " Submit your work to get featured.",
+              " Submit your work, get featured.",
             ],
           },
           "ref": null,
@@ -141,7 +173,39 @@ ShallowWrapper {
               "rendered": "✒︎",
               "type": "span",
             },
-            " Submit your work to get featured.",
+            " Submit your work, get featured.",
+          ],
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="highlight icon"
+>
+                ❖
+</span>,
+              " Free downloads & exclusives.",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "❖",
+                "className": "highlight icon",
+              },
+              "ref": null,
+              "rendered": "❖",
+              "type": "span",
+            },
+            " Free downloads & exclusives.",
           ],
           "type": "li",
         },
@@ -154,9 +218,17 @@ ShallowWrapper {
               <span
                 className="icon"
 >
-                ❖
+                ☞
 </span>,
-              " Free printables, exclusives & email updates.",
+              " Weekly email",
+              " ",
+              <Unknown
+                onClick={[Function]}
+                to="#analogue-reads"
+>
+                newsletter
+</Unknown>,
+              ".",
             ],
           },
           "ref": null,
@@ -166,14 +238,29 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "❖",
+                "children": "☞",
                 "className": "icon",
               },
               "ref": null,
-              "rendered": "❖",
+              "rendered": "☞",
               "type": "span",
             },
-            " Free printables, exclusives & email updates.",
+            " Weekly email",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "newsletter",
+                "onClick": [Function],
+                "to": "#analogue-reads",
+              },
+              "ref": null,
+              "rendered": "newsletter",
+              "type": [Function],
+            },
+            ".",
           ],
           "type": "li",
         },
@@ -203,15 +290,31 @@ ShallowWrapper {
                     >
                               ✒︎
                     </span>
-                     Submit your work to get featured.
+                     Submit your work, get featured.
+          </li>
+          <li>
+                    <span
+                              className="highlight icon"
+                    >
+                              ❖
+                    </span>
+                     Free downloads & exclusives.
           </li>
           <li>
                     <span
                               className="icon"
                     >
-                              ❖
+                              ☞
                     </span>
-                     Free printables, exclusives & email updates.
+                     Weekly email
+                     
+                    <Unknown
+                              onClick={[Function]}
+                              to="#analogue-reads"
+                    >
+                              newsletter
+                    </Unknown>
+                    .
           </li>
 </styled.ul>,
       },
@@ -236,15 +339,31 @@ ShallowWrapper {
               >
                             ✒︎
               </span>
-               Submit your work to get featured.
+               Submit your work, get featured.
+</li>,
+            <li>
+              <span
+                            className="highlight icon"
+              >
+                            ❖
+              </span>
+               Free downloads & exclusives.
 </li>,
             <li>
               <span
                             className="icon"
               >
-                            ❖
+                            ☞
               </span>
-               Free printables, exclusives & email updates.
+               Weekly email
+               
+              <Unknown
+                            onClick={[Function]}
+                            to="#analogue-reads"
+              >
+                            newsletter
+              </Unknown>
+              .
 </li>,
           ],
         },
@@ -293,7 +412,7 @@ ShallowWrapper {
 >
                   ✒︎
 </span>,
-                " Submit your work to get featured.",
+                " Submit your work, get featured.",
               ],
             },
             "ref": null,
@@ -310,7 +429,39 @@ ShallowWrapper {
                 "rendered": "✒︎",
                 "type": "span",
               },
-              " Submit your work to get featured.",
+              " Submit your work, get featured.",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span
+                  className="highlight icon"
+>
+                  ❖
+</span>,
+                " Free downloads & exclusives.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "❖",
+                  "className": "highlight icon",
+                },
+                "ref": null,
+                "rendered": "❖",
+                "type": "span",
+              },
+              " Free downloads & exclusives.",
             ],
             "type": "li",
           },
@@ -323,9 +474,17 @@ ShallowWrapper {
                 <span
                   className="icon"
 >
-                  ❖
+                  ☞
 </span>,
-                " Free printables, exclusives & email updates.",
+                " Weekly email",
+                " ",
+                <Unknown
+                  onClick={[Function]}
+                  to="#analogue-reads"
+>
+                  newsletter
+</Unknown>,
+                ".",
               ],
             },
             "ref": null,
@@ -335,14 +494,29 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "❖",
+                  "children": "☞",
                   "className": "icon",
                 },
                 "ref": null,
-                "rendered": "❖",
+                "rendered": "☞",
                 "type": "span",
               },
-              " Free printables, exclusives & email updates.",
+              " Weekly email",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "newsletter",
+                  "onClick": [Function],
+                  "to": "#analogue-reads",
+                },
+                "ref": null,
+                "rendered": "newsletter",
+                "type": [Function],
+              },
+              ".",
             ],
             "type": "li",
           },

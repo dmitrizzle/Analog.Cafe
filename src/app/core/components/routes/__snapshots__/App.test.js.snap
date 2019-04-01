@@ -39,11 +39,6 @@ ShallowWrapper {
                 to="/sign-in"
         />
         <Redirect
-                from="/resources"
-                push={false}
-                to="/must-reads"
-        />
-        <Redirect
                 from="/author/:id"
                 push={false}
                 to="/is/:id"
@@ -111,6 +106,11 @@ ShallowWrapper {
         <Route
                 component={[Function]}
                 exact={true}
+                path="/favourites"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
                 path="/admin"
         />
         <Route
@@ -136,7 +136,7 @@ ShallowWrapper {
         <Route
                 component={[Function]}
                 exact={true}
-                path="/must-reads"
+                path="/resources"
         />
         <Route
                 component={[Function]}
@@ -198,11 +198,6 @@ ShallowWrapper {
             from="/subscribe"
             push={false}
             to="/sign-in"
-/>,
-          <Redirect
-            from="/resources"
-            push={false}
-            to="/must-reads"
 />,
           <Redirect
             from="/author/:id"
@@ -272,6 +267,11 @@ ShallowWrapper {
           <Route
             component={[Function]}
             exact={true}
+            path="/favourites"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
             path="/admin"
 />,
           <Route
@@ -297,7 +297,7 @@ ShallowWrapper {
           <Route
             component={[Function]}
             exact={true}
-            path="/must-reads"
+            path="/resources"
 />,
           <Route
             component={[Function]}
@@ -377,19 +377,6 @@ ShallowWrapper {
             "from": "/subscribe",
             "push": false,
             "to": "/sign-in",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "from": "/resources",
-            "push": false,
-            "to": "/must-reads",
           },
           "ref": null,
           "rendered": null,
@@ -571,6 +558,19 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
+            "path": "/favourites",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
             "path": "/admin",
           },
           "ref": null,
@@ -636,7 +636,7 @@ ShallowWrapper {
           "props": Object {
             "component": [Function],
             "exact": true,
-            "path": "/must-reads",
+            "path": "/resources",
           },
           "ref": null,
           "rendered": null,
@@ -740,11 +740,6 @@ ShallowWrapper {
                     to="/sign-in"
           />
           <Redirect
-                    from="/resources"
-                    push={false}
-                    to="/must-reads"
-          />
-          <Redirect
                     from="/author/:id"
                     push={false}
                     to="/is/:id"
@@ -812,6 +807,11 @@ ShallowWrapper {
           <Route
                     component={[Function]}
                     exact={true}
+                    path="/favourites"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
                     path="/admin"
           />
           <Route
@@ -837,7 +837,7 @@ ShallowWrapper {
           <Route
                     component={[Function]}
                     exact={true}
-                    path="/must-reads"
+                    path="/resources"
           />
           <Route
                     component={[Function]}
@@ -899,11 +899,6 @@ ShallowWrapper {
               from="/subscribe"
               push={false}
               to="/sign-in"
-/>,
-            <Redirect
-              from="/resources"
-              push={false}
-              to="/must-reads"
 />,
             <Redirect
               from="/author/:id"
@@ -973,6 +968,11 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
+              path="/favourites"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
               path="/admin"
 />,
             <Route
@@ -998,7 +998,7 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
-              path="/must-reads"
+              path="/resources"
 />,
             <Route
               component={[Function]}
@@ -1078,19 +1078,6 @@ ShallowWrapper {
               "from": "/subscribe",
               "push": false,
               "to": "/sign-in",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "from": "/resources",
-              "push": false,
-              "to": "/must-reads",
             },
             "ref": null,
             "rendered": null,
@@ -1272,6 +1259,19 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "exact": true,
+              "path": "/favourites",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
               "path": "/admin",
             },
             "ref": null,
@@ -1337,7 +1337,7 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "exact": true,
-              "path": "/must-reads",
+              "path": "/resources",
             },
             "ref": null,
             "rendered": null,

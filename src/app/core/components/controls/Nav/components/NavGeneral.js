@@ -64,16 +64,21 @@ export const isActiveUrl = (to, options = {}, props) => {
 export default props => {
   const a = "active"
 
-  const mr = "/must-reads"
+  const mr = "/resources"
   const ab = "/about"
+  const f = "/favourites"
 
-  const mustReads = {
+  const resources = {
     to: mr,
     className: isActiveUrl(mr) ? a : undefined
   }
   const about = {
     to: ab,
     className: isActiveUrl(ab) ? a : undefined
+  }
+  const favourites = {
+    to: f,
+    className: isActiveUrl(f) ? a : undefined
   }
 
   const navSearch = {
@@ -82,10 +87,11 @@ export default props => {
       : undefined
   }
   const navMore = {
-    className: (isActiveUrl("nav/account", { modalUrl: true }, props) ||
-    isActiveUrl("/submissions") ||
-    isActiveUrl("/favourites")
-    ? "active"
+    className: (isActiveUrl("nav/account", { modalUrl: true }, props)
+    ? // ||
+      // isActiveUrl("/submissions") ||
+      // isActiveUrl("/favourites")
+      "active"
     : undefined)
       ? a
       : undefined
@@ -97,44 +103,62 @@ export default props => {
         "ontouchstart" in document.documentElement ? null : props.userIntent
       }
     >
-      {/* <NavItem prime left mobile className="prime left mobile">
-        <NavSections {...navSections}>
-          <span>
-            <Extra>Sections </Extra>◈
-          </span>
-        </NavSections>
-      </NavItem> */}
-
-      <NavItem>
-        <NavLink
-          {...about}
-          onClick={() => {
-            GA.event({
-              category: "Navigation",
-              action: "Nav.click",
-              label: "About"
-            })
-          }}
-        >
-          About
-          <Extra> ✹</Extra>
-        </NavLink>
+      <NavItem
+        prime={props.userStatus === "ok" ? null : undefined}
+        left={props.userStatus === "ok" ? null : undefined}
+        className={props.userStatus === "ok" ? "prime left" : null}
+      >
+        {props.userStatus !== "ok" ? (
+          <NavLink
+            {...about}
+            onClick={() => {
+              GA.event({
+                category: "Navigation",
+                action: "Nav.click",
+                label: "About"
+              })
+            }}
+          >
+            About
+            <Extra> ✹</Extra>
+          </NavLink>
+        ) : (
+          <NavLink
+            {...favourites}
+            onClick={() => {
+              GA.event({
+                category: "Navigation",
+                action: "Nav.click",
+                label: "Favourites"
+              })
+            }}
+          >
+            Fav
+            <NotOnMicroScreens>ourites </NotOnMicroScreens>
+            <OnlyMicroScreens>es</OnlyMicroScreens>
+            <Extra> ❤︎</Extra>
+          </NavLink>
+        )}
       </NavItem>
 
-      <NavItem>
+      <NavItem
+        prime={props.userStatus !== "ok" ? null : undefined}
+        left={props.userStatus !== "ok" ? null : undefined}
+        className={props.userStatus !== "ok" ? "prime left" : null}
+      >
         <NavLink
-          {...mustReads}
+          {...resources}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "Must Reads"
+              label: "Resources"
             })
           }}
         >
-          {/* <span className="wide">Photo </span> */}
-          Must Reads
-          <Extra> ❖</Extra>
+          Resource
+          <NotOnMicroScreens>s </NotOnMicroScreens>
+          <Extra>❖</Extra>
         </NavLink>
       </NavItem>
 
@@ -154,7 +178,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
 
-      <NavItem narrow prime left className="prime left">
+      <NavItem narrow prime right className="prime right">
         <NavSearch
           {...navSearch}
           onClick={() => {
@@ -171,7 +195,7 @@ export default props => {
         </NavSearch>
       </NavItem>
 
-      <NavItem prime right className="prime right">
+      <NavItem>
         <NavMore
           userImage={props.userImage}
           userStatus={props.userStatus}

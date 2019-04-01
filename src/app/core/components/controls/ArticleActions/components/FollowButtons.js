@@ -2,12 +2,12 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 import { GA } from "../../../../../utils"
-import Etsy from "../../../icons/Social/components/Etsy"
-import Feedly from "../../../icons/Social/components/Feedly"
-import Instagram from "../../../icons/Social/components/Instagram"
-import Itunes from "../../../icons/Social/components/Itunes"
+import Etsy from "../../../icons/group-social/Etsy"
+import Feedly from "../../../icons/group-social/Feedly"
+import Instagram from "../../../icons/group-social/Instagram"
+import Itunes from "../../../icons/group-social/Itunes"
 import LinkButton from "../../Button/components/LinkButton"
-import Twitter from "../../../icons/Social/components/Twitter"
+import Twitter from "../../../icons/group-social/Twitter"
 
 export const FollowButtons = styled.div`
   text-align: center;

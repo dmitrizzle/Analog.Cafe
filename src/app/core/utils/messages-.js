@@ -17,18 +17,18 @@ export const getTitleFromSlug = (slug = "", options = {}) => {
 
 export const getHumanDatestamp = (unix, short) => {
   const m = [
-    "January",
-    "February",
-    "March",
-    "April",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
     "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec"
   ]
   let date = new Date(unix * 1000)
   let year = date.getFullYear()
@@ -46,12 +46,3 @@ export const getISODatestamp = unix => {
   let date = new Date(unix * 1000)
   return date.toISOString()
 }
-
-// export const smartGreeting = throttle(() => {
-//   if (localStorage.getItem("greeted") === "true") {
-//     return "Hello, again!"
-//   } else {
-//     localStorage.setItem("greeted", "true")
-//     return "Hello!"
-//   }
-// }, 3000)

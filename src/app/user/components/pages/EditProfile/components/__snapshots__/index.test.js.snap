@@ -495,7 +495,6 @@ ShallowWrapper {
                     />
           </figcaption>
           <styled.input
-                    branded={undefined}
                     maxLength={250}
                     onBlur={undefined}
                     onChange={[Function]}
@@ -608,7 +607,6 @@ ShallowWrapper {
               />
 </figcaption>,
             <styled.input
-              branded={undefined}
               maxLength={250}
               onBlur={undefined}
               onChange={[Function]}
@@ -656,7 +654,6 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "branded": undefined,
               "maxLength": 250,
               "onBlur": undefined,
               "onChange": [Function],
@@ -710,7 +707,6 @@ ShallowWrapper {
                         />
             </figcaption>
             <styled.input
-                        branded={undefined}
                         maxLength={250}
                         onBlur={undefined}
                         onChange={[Function]}
@@ -823,7 +819,6 @@ ShallowWrapper {
                 />
 </figcaption>,
               <styled.input
-                branded={undefined}
                 maxLength={250}
                 onBlur={undefined}
                 onChange={[Function]}
@@ -871,7 +866,6 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "branded": undefined,
                 "maxLength": 250,
                 "onBlur": undefined,
                 "onChange": [Function],
