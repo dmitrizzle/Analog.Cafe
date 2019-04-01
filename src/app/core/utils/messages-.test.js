@@ -22,7 +22,7 @@ it("Convert slug to text with no title case but capitalized first letter", () =>
   ).toEqual("Isaan on a cloud"))
 
 it("Convert UNIX time to human date", () =>
-  expect(getHumanDatestamp(1529853719)).toEqual("June 24, 2018"))
+  expect(getHumanDatestamp(1529853719)).toEqual("Jun 24, 2018"))
 it("Convert UNIX time to ISO date", () =>
   expect(getISODatestamp(1529853719)).toEqual("2018-06-24T15:21:59.000Z"))
 

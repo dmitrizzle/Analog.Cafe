@@ -12,7 +12,7 @@ it("Produces correct date format", () => {
   expect(dateFactory(1529853719)).toEqual({
     unix: 1529853719,
     iso: "2018-06-24T15:21:59.000Z",
-    human: "June 24, 2018",
+    human: "Jun 24, 2018",
     lunar: "24☾6"
   })
 })

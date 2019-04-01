@@ -323,6 +323,7 @@ ShallowWrapper {
                 </Unknown>
         </li>
 </styled.ul>,
+      "noNegativeMargin": undefined,
     },
     "ref": null,
     "rendered": Object {
@@ -890,6 +891,7 @@ ShallowWrapper {
                     </Unknown>
           </li>
 </styled.ul>,
+        "noNegativeMargin": undefined,
       },
       "ref": null,
       "rendered": Object {
