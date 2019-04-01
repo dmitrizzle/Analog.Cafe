@@ -1,6 +1,7 @@
 import React from "react"
 
 import { TEXT_EMOJIS } from "../../../../constants"
+import Heart from "../../../../core/components/icons/group-beacons/Heart"
 
 export const ListPageTitle = function(view) {
   switch (view) {
@@ -9,8 +10,7 @@ export const ListPageTitle = function(view) {
     case "USER_FAVOURITES":
       return (
         <span>
-          ❦<span style={{ color: "#ed236e" }}>❤︎</span>
-          <span style={{ color: "#ededed" }}>❧</span>
+          <Heart style={{ color: "#ed236e", height: "1em" }} />
         </span>
       )
     default:

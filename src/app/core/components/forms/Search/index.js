@@ -3,6 +3,7 @@ import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actio
 import React from "react"
 import styled from "styled-components"
 
+import { RHCP } from "../../icons/group-beacons/Star"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../user/constants/routes-session"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
 import { getSearchResults } from "../../../store/actions-search"
@@ -10,6 +11,8 @@ import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivi
 import CardButton, {
   CardSearchItem
 } from "../../controls/Card/components/CardButton"
+import Heart from "../../icons/group-beacons/Heart"
+import Pen from "../../icons/group-beacons/Pen"
 import SearchForm from "./components/SearchForm"
 
 export const SearchVisibility = styled.div`
@@ -38,6 +41,9 @@ export const buttonMaker = (to, options = {}) => {
     ...attributes
   }
 }
+
+const iconStyles = { height: ".75em", paddingBottom: ".15em" }
+
 const NAV_BUTTONS = props => [
   {
     to: "/",
@@ -97,30 +103,49 @@ const NAV_BUTTONS = props => [
   {
     to: "/submit/compose",
     text:
-      loadTextContent().length > 0
-        ? "✏︎ Edit Submission Draft"
-        : "✏︎ New Submission",
-    keywords: "compose, submit, write, upload, send, cntribute",
+      loadTextContent().length > 0 ? (
+        <span>
+          <Pen style={iconStyles} /> Edit Submission Draft
+        </span>
+      ) : (
+        <span>
+          <Pen style={iconStyles} /> New Submission
+        </span>
+      ),
+    keywords:
+      "compose, submit, write, upload, send, cntribute, edit, submission, draft",
     hidden: true
   },
   {
     to: ROUTE_URL_USER_SUBMISSIONS,
-    text: "✒︎ Submissions",
-    keywords: "my stuff, results, drafts, portfolio",
+    text: (
+      <span>
+        <Pen style={iconStyles} /> Submissions
+      </span>
+    ),
+    keywords: "my stuff, results, drafts, portfolio, submissions, submit",
     hidden: true,
     memberOnly: true
   },
   {
     to: "/favourites",
-    text: "Favourites",
-    keywords: "likes, saved",
+    text: (
+      <span>
+        <Heart style={iconStyles} /> Favourites
+      </span>
+    ),
+    keywords: "likes, saved, favourite",
     hidden: true,
     membersOnly: true
   },
   {
     to: `/profile/edit`,
-    text: "Profile & Settings",
-    keywords: "account, avatar, link, bio",
+    text: (
+      <span>
+        <RHCP style={iconStyles} /> Profile & Settings
+      </span>
+    ),
+    keywords: "account, avatar, link, bio, profile, settings",
     hidden: true,
     membersOnly: true
   }
