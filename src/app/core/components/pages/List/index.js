@@ -137,10 +137,9 @@ class List extends React.PureComponent {
             article={this.props.article}
             readReceipts={this.props.user.sessionInfo.readReceipts}
             noNegativeMargin={
-              this.props.list.items &&
-              ((this.props.list.items[0] &&
-                this.props.list.items[0].type === "placeholder") ||
-                this.props.list.items.length === 0)
+              !this.props.list.items ||
+              this.props.list.items.length === 0 ||
+              this.props.list.items[0].type === "placeholder"
             }
             {...listAugmentedProps}
           />

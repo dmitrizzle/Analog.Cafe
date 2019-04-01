@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { GA } from "../../../../../utils"
 import { NavLink, NavLogoLink } from "./NavLinks"
+import Heart from "../../../icons/group-beacons/Heart"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
@@ -136,7 +137,10 @@ export default props => {
             Fav
             <NotOnMicroScreens>ourites </NotOnMicroScreens>
             <OnlyMicroScreens>es</OnlyMicroScreens>
-            <Extra> ❤︎</Extra>
+            <Extra>
+              {" "}
+              <Heart style={{ width: "1em" }} />
+            </Extra>
           </NavLink>
         )}
       </NavItem>
