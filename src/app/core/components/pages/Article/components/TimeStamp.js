@@ -5,4 +5,5 @@ export default styled.div`
   text-align: center;
   font-size: ${props => props.theme.size.font.make.tiny}em;
   margin-top: -${props => props.theme.size.block.spacing}em;
+  opacity: 0.5;
 `

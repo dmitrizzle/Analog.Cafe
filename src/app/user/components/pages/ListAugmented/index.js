@@ -13,8 +13,8 @@ import ArticleSection from "../../../../core/components/pages/Article/components
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Byline from "../../../../core/components/vignettes/Byline"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
+import HowToFavourite from "./components/HowToFavourite"
 import HowToSubmit from "./components/HowToSubmit"
-import Link from "../../../../core/components/controls/Link"
 import ListBylineNav from "./components/ListBylineNav"
 
 export default props => {
@@ -63,23 +63,7 @@ export default props => {
 
       {props.user.connection.status !== "offline" &&
         props.list.page["items-total"] === 0 &&
-        props.isUserFavourites && (
-          <ArticleSection>
-            <p>
-              The ❤ button on Analog.Cafe is a bookmarking tool that
-              automatically builds your personal Favourites collection. Use it
-              to save articles to read or share at a later time.
-            </p>
-            <p>
-              Find your next favourite read. Browse Analog.Cafe Magazine
-              sections or visit the{" "}
-              <strong>
-                <Link to="/">the front page</Link>
-              </strong>{" "}
-              for latest articles.
-            </p>
-          </ArticleSection>
-        )}
+        props.isUserFavourites && <HowToFavourite />}
       {props.isUserDashboard && <UserProfileComposeCTA {...props} />}
       {props.isUserFavourites && <UserFavouritesCTA {...props} />}
     </ArticleWrapper>
