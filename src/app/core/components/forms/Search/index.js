@@ -1,12 +1,18 @@
 import { connect } from "react-redux"
 import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
+import { withRouter } from "react-router-dom"
 import React from "react"
 import styled from "styled-components"
 
+import {
+  BurgerMenu,
+  sectionButtons
+} from "../../pages/List/components/ListDescription"
 import { RHCP } from "../../icons/group-beacons/Star"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../user/constants/routes-session"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
 import { getSearchResults } from "../../../store/actions-search"
+import { setModal } from "../../../store/actions-modal"
 import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivider"
 import CardButton, {
   CardSearchItem
@@ -58,6 +64,34 @@ const NAV_BUTTONS = props => [
     keywords:
       "photography,podcast,audio,downloads,guides,reference,price,reviews,resources,must,reads"
   }),
+  {
+    to: "#sections",
+    onClick: event => {
+      event.preventDefault()
+      event.stopPropagation()
+      props.setModal({
+        info: {
+          menu: true,
+          title: (
+            <span>
+              <BurgerMenu /> Sections
+            </span>
+          ),
+          buttons: sectionButtons.map(section =>
+            buttonMaker(section, {
+              attributes: {
+                inverse: props.location.pathname === section
+              }
+            })
+          )
+        },
+        id: "nav/sections"
+      })
+    },
+    text: "Magazine Sections",
+    keywords:
+      "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
+  },
   {
     to: "/submit",
     text: "Submit Your Photography",
@@ -112,15 +146,7 @@ const NAV_BUTTONS = props => [
   {
     to: "/submit/compose",
     text:
-      loadTextContent().length > 0 ? (
-        <span>
-          <Pen style={iconStyles} /> Edit Submission Draft
-        </span>
-      ) : (
-        <span>
-          <Pen style={iconStyles} /> New Submission
-        </span>
-      ),
+      loadTextContent().length > 0 ? "Edit Submission Draft" : "New Submission",
     keywords:
       "compose, submit, write, upload, send, cntribute, edit, submission, draft",
     hidden: true
@@ -366,11 +392,16 @@ const mapDispatchToProps = dispatch => {
   return {
     getSearchResults: query => {
       dispatch(getSearchResults(query))
+    },
+    setModal: (info, request) => {
+      dispatch(setModal(info, request))
     }
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Search)
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Search)
+)

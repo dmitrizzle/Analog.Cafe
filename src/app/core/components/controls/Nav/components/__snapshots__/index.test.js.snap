@@ -760,17 +760,19 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <styled.li
-          className={null}
-          left={undefined}
-          prime={undefined}
->
+        <styled.li>
           <NavLink
                     className={undefined}
                     onClick={[Function]}
-                    to="/about"
+                    to="/sign-in"
           >
-                    About
+                    Fav
+                    <styled.span>
+                              ourites 
+                    </styled.span>
+                    <styled.span>
+                              es
+                    </styled.span>
                     <styled.span>
                                
                               <Unknown
@@ -784,11 +786,7 @@ ShallowWrapper {
                     </styled.span>
           </NavLink>
 </styled.li>,
-        <styled.li
-          className="prime left"
-          left={null}
-          prime={null}
->
+        <styled.li>
           <NavLink
                     className={undefined}
                     onClick={[Function]}
@@ -825,10 +823,10 @@ ShallowWrapper {
           </Unknown>
 </styled.li>,
         <styled.li
-          className="prime right"
+          className="prime left"
+          left={true}
           narrow={true}
           prime={true}
-          right={true}
 >
           <Unknown
                     className={undefined}
@@ -840,7 +838,11 @@ ShallowWrapper {
                     </styled.span>
           </Unknown>
 </styled.li>,
-        <styled.li>
+        <styled.li
+          className="prime right"
+          prime={true}
+          right={true}
+>
           <Unknown
                     className={undefined}
                     userImage={undefined}
@@ -874,9 +876,15 @@ ShallowWrapper {
           "children": <NavLink
             className={undefined}
             onClick={[Function]}
-            to="/about"
+            to="/sign-in"
 >
-            About
+            Fav
+            <styled.span>
+                        ourites 
+            </styled.span>
+            <styled.span>
+                        es
+            </styled.span>
             <styled.span>
                          
                         <Unknown
@@ -889,9 +897,6 @@ ShallowWrapper {
                         />
             </styled.span>
 </NavLink>,
-          "className": null,
-          "left": undefined,
-          "prime": undefined,
         },
         "ref": null,
         "rendered": Object {
@@ -900,7 +905,13 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              "About",
+              "Fav",
+              <styled.span>
+                ourites 
+</styled.span>,
+              <styled.span>
+                es
+</styled.span>,
               <styled.span>
                  
                 <Unknown
@@ -915,11 +926,33 @@ ShallowWrapper {
             ],
             "className": undefined,
             "onClick": [Function],
-            "to": "/about",
+            "to": "/sign-in",
           },
           "ref": null,
           "rendered": Array [
-            "About",
+            "Fav",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "ourites ",
+              },
+              "ref": null,
+              "rendered": "ourites ",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "es",
+              },
+              "ref": null,
+              "rendered": "es",
+              "type": [Function],
+            },
             Object {
               "instance": null,
               "key": undefined,
@@ -988,9 +1021,6 @@ ShallowWrapper {
                         />
             </styled.span>
 </NavLink>,
-          "className": "prime left",
-          "left": null,
-          "prime": null,
         },
         "ref": null,
         "rendered": Object {
@@ -1130,10 +1160,10 @@ ShallowWrapper {
                         <Unknown />
             </styled.span>
 </Unknown>,
-          "className": "prime right",
+          "className": "prime left",
+          "left": true,
           "narrow": true,
           "prime": true,
-          "right": true,
         },
         "ref": null,
         "rendered": Object {
@@ -1202,6 +1232,9 @@ ShallowWrapper {
                         image={undefined}
             />
 </Unknown>,
+          "className": "prime right",
+          "prime": true,
+          "right": true,
         },
         "ref": null,
         "rendered": Object {
@@ -1289,17 +1322,19 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <styled.li
-            className={null}
-            left={undefined}
-            prime={undefined}
->
+          <styled.li>
             <NavLink
                         className={undefined}
                         onClick={[Function]}
-                        to="/about"
+                        to="/sign-in"
             >
-                        About
+                        Fav
+                        <styled.span>
+                                    ourites 
+                        </styled.span>
+                        <styled.span>
+                                    es
+                        </styled.span>
                         <styled.span>
                                      
                                     <Unknown
@@ -1313,11 +1348,7 @@ ShallowWrapper {
                         </styled.span>
             </NavLink>
 </styled.li>,
-          <styled.li
-            className="prime left"
-            left={null}
-            prime={null}
->
+          <styled.li>
             <NavLink
                         className={undefined}
                         onClick={[Function]}
@@ -1354,10 +1385,10 @@ ShallowWrapper {
             </Unknown>
 </styled.li>,
           <styled.li
-            className="prime right"
+            className="prime left"
+            left={true}
             narrow={true}
             prime={true}
-            right={true}
 >
             <Unknown
                         className={undefined}
@@ -1369,7 +1400,11 @@ ShallowWrapper {
                         </styled.span>
             </Unknown>
 </styled.li>,
-          <styled.li>
+          <styled.li
+            className="prime right"
+            prime={true}
+            right={true}
+>
             <Unknown
                         className={undefined}
                         userImage={undefined}
@@ -1403,9 +1438,15 @@ ShallowWrapper {
             "children": <NavLink
               className={undefined}
               onClick={[Function]}
-              to="/about"
+              to="/sign-in"
 >
-              About
+              Fav
+              <styled.span>
+                            ourites 
+              </styled.span>
+              <styled.span>
+                            es
+              </styled.span>
               <styled.span>
                              
                             <Unknown
@@ -1418,9 +1459,6 @@ ShallowWrapper {
                             />
               </styled.span>
 </NavLink>,
-            "className": null,
-            "left": undefined,
-            "prime": undefined,
           },
           "ref": null,
           "rendered": Object {
@@ -1429,7 +1467,13 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": Array [
-                "About",
+                "Fav",
+                <styled.span>
+                  ourites 
+</styled.span>,
+                <styled.span>
+                  es
+</styled.span>,
                 <styled.span>
                    
                   <Unknown
@@ -1444,11 +1488,33 @@ ShallowWrapper {
               ],
               "className": undefined,
               "onClick": [Function],
-              "to": "/about",
+              "to": "/sign-in",
             },
             "ref": null,
             "rendered": Array [
-              "About",
+              "Fav",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "ourites ",
+                },
+                "ref": null,
+                "rendered": "ourites ",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "es",
+                },
+                "ref": null,
+                "rendered": "es",
+                "type": [Function],
+              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -1517,9 +1583,6 @@ ShallowWrapper {
                             />
               </styled.span>
 </NavLink>,
-            "className": "prime left",
-            "left": null,
-            "prime": null,
           },
           "ref": null,
           "rendered": Object {
@@ -1659,10 +1722,10 @@ ShallowWrapper {
                             <Unknown />
               </styled.span>
 </Unknown>,
-            "className": "prime right",
+            "className": "prime left",
+            "left": true,
             "narrow": true,
             "prime": true,
-            "right": true,
           },
           "ref": null,
           "rendered": Object {
@@ -1731,6 +1794,9 @@ ShallowWrapper {
                             image={undefined}
               />
 </Unknown>,
+            "className": "prime right",
+            "prime": true,
+            "right": true,
           },
           "ref": null,
           "rendered": Object {
@@ -2271,7 +2337,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "className": "sc-kEYyzF WEotD",
+      "className": "sc-brqgnP kDNvdM",
     },
     "ref": null,
     "rendered": null,
@@ -2283,7 +2349,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "className": "sc-kEYyzF WEotD",
+        "className": "sc-brqgnP kDNvdM",
       },
       "ref": null,
       "rendered": null,

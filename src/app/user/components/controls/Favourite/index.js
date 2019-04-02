@@ -8,7 +8,6 @@ import {
   isFavourite
 } from "../../../store/actions-favourites"
 import { addSessionInfo, getSessionInfo } from "../../../store/actions-user"
-import { isForbidden } from "../../../utils/actions-session"
 import { setModal } from "../../../../core/store/actions-modal"
 import Heart from "../../../../core/components/icons/group-beacons/Heart"
 import Link from "../../../../core/components/controls/Link"
@@ -54,14 +53,11 @@ export const FavouriteButton = props => {
 
   return !isFavourite ? (
     <Like
-      to="#❤︎"
+      to={props.user.status !== "ok" ? "/sign-in" : "#❤︎"}
       title="Add this article to your Favourites"
-      onClick={event => event.preventDefault()}
+      onClick={event => props.user.status === "ok" && event.preventDefault()}
       onMouseDown={event => {
-        event.preventDefault()
-
-        if (props.user.status !== "ok") return isForbidden(null, props)
-
+        if (props.user.status === "ok") event.preventDefault()
         props.addFavourite({
           id: props.article.id,
           slug: props.article.slug

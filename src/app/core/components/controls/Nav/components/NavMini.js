@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import { GA } from "../../../../../utils"
 import { RHCP } from "../../../icons/group-beacons/Star"
-import { isForbidden } from "../../../../../user/utils/actions-session"
 import { setModal } from "../../../../store/actions-modal"
 import Cube from "../../../icons/group-beacons/Cube"
 import Heart from "../../../icons/group-beacons/Heart"
@@ -28,7 +27,8 @@ const ITEMS = {
     account: true,
     label: "Favourites",
     icon: <Heart style={iconStyles} />,
-    to: "/favourites"
+    to: "/favourites",
+    noAccountTo: "/sign-in"
   },
   mustReads: {
     label: "Resources",
@@ -45,7 +45,8 @@ const ITEMS = {
     account: true,
     label: "Profile & Settings",
     icon: <RHCP style={iconStyles} />,
-    to: `/profile/edit`
+    to: `/profile/edit`,
+    noAccountTo: "/sign-in"
   }
 }
 const NavMini = props => (
@@ -75,9 +76,9 @@ const NavMini = props => (
                   label: item.label
                 })
 
-                item.account &&
-                  props.user.status !== "ok" &&
-                  isForbidden(event, props)
+                // item.account &&
+                //   props.user.status !== "ok" &&
+                //   isForbidden(event, props)
               }}
             >
               {item.label}

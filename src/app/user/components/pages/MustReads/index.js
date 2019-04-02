@@ -4,7 +4,6 @@ import styled, { css } from "styled-components"
 
 import { GA, makeFroth } from "../../../../utils"
 import { MUST_READS_CONTENT } from "./constants"
-import { isForbidden } from "../../../utils/actions-session"
 import { setModal } from "../../../../core/store/actions-modal"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
@@ -79,7 +78,7 @@ export const Carousel = props => (
             item.account
               ? props.user.status === "ok"
                 ? item.to
-                : "#forbidden"
+                : "/sign-in"
               : item.to
           }
           onClick={event => {
@@ -88,10 +87,6 @@ export const Carousel = props => (
               action: "MustReads.poster",
               label: item.title
             })
-
-            item.account &&
-              props.user.status !== "ok" &&
-              isForbidden(event, props)
           }}
         >
           <div>{item.title}</div>
@@ -131,7 +126,7 @@ export const MustReads = props => {
         </Byline>
       </HeaderLarge>
       <ArticleSection>
-        {props.user.status === "ok" && <ExclusiveContent {...props} />}
+        <ExclusiveContent {...props} />
         <h3>Essential Guides</h3>
         <Carousel items={MUST_READS_CONTENT.guides} {...props} />
         <p style={{ lineHeight: "1.2em" }}>
@@ -165,7 +160,6 @@ export const MustReads = props => {
             </em>
           </small>
         </p>
-        {props.user.status !== "ok" && <ExclusiveContent {...props} />}
       </ArticleSection>
     </ArticleWrapper>
   )

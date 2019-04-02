@@ -7,6 +7,7 @@ import CardButton from "../../../../../core/components/controls/Card/components/
 import CardCaption from "../../../../../core/components/controls/Card/components/CardCaption"
 import Link from "../../../../../core/components/controls/Link"
 import LinkButton from "../../../../../core/components/controls/Button/components/LinkButton"
+import Pen from "../../../../../core/components/icons/group-beacons/Pen"
 import Placeholder from "../../../../../core/components/vignettes/Picture/components/Placeholder"
 
 export const ProfileImage = props => (
@@ -116,12 +117,19 @@ export const UserProfileGuidedInfo = props => (
   </CardIntegratedForColumns>
 )
 
+const iconStyles = { height: ".75em", paddingBottom: ".15em" }
 export const UserProfileComposeCTA = props => (
   <div style={{ zIndex: 10, position: "relative" }}>
     <LinkButton to="/submit/compose" branded>
-      {loadTextContent().length > 0
-        ? "✏︎ Edit Submission Draft"
-        : "✏︎ Compose New Submission"}
+      {loadTextContent().length > 0 ? (
+        <span>
+          <Pen style={iconStyles} /> Edit Submission Draft
+        </span>
+      ) : (
+        <span>
+          <Pen style={iconStyles} /> Compose New Submission
+        </span>
+      )}
     </LinkButton>
     <small style={{ textAlign: "center", display: "block" }}>
       <Link to="/submit/restore">Restore</Link> previous submission.

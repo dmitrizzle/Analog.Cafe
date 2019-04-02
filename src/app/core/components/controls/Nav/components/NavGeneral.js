@@ -12,7 +12,6 @@ import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
 import NavSearch from "./NavSearch"
 import Search from "../../../icons/Search"
-import Star from "../../../icons/group-beacons/Star"
 
 export const LabelWithSearchSVG = styled.span`
   svg {
@@ -68,19 +67,18 @@ export default props => {
   const a = "active"
 
   const mr = "/resources"
-  const ab = "/about"
+  // const ab = "/about";
   const f = "/favourites"
 
   const resources = {
     to: mr,
     className: isActiveUrl(mr) ? a : undefined
   }
-  const about = {
-    to: ab,
-    className: isActiveUrl(ab) ? a : undefined
-  }
+  // const about = {
+  //   to: ab,
+  //   className: isActiveUrl(ab) ? a : undefined
+  // };
   const favourites = {
-    to: f,
     className: isActiveUrl(f) ? a : undefined
   }
 
@@ -109,7 +107,7 @@ export default props => {
       }
     >
       <NavItem>
-        {props.userStatus !== "ok" ? (
+        {/* {props.userStatus !== "ok" ? (
           <NavLink
             {...about}
             onClick={() => {
@@ -117,7 +115,7 @@ export default props => {
                 category: "Navigation",
                 action: "Nav.click",
                 label: "About"
-              })
+              });
             }}
           >
             About
@@ -126,26 +124,27 @@ export default props => {
               <Star style={iconStyles} />
             </Extra>
           </NavLink>
-        ) : (
-          <NavLink
-            {...favourites}
-            onClick={() => {
-              GA.event({
-                category: "Navigation",
-                action: "Nav.click",
-                label: "Favourites"
-              })
-            }}
-          >
-            Fav
-            <NotOnMicroScreens>ourites </NotOnMicroScreens>
-            <OnlyMicroScreens>es</OnlyMicroScreens>
-            <Extra>
-              {" "}
-              <Heart style={iconStyles} />
-            </Extra>
-          </NavLink>
-        )}
+        ) : ( */}
+        <NavLink
+          {...favourites}
+          to={props.userStatus !== "ok" ? "/sign-in" : f}
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "Favourites"
+            })
+          }}
+        >
+          Fav
+          <NotOnMicroScreens>ourites </NotOnMicroScreens>
+          <OnlyMicroScreens>es</OnlyMicroScreens>
+          <Extra>
+            {" "}
+            <Heart style={iconStyles} />
+          </Extra>
+        </NavLink>
+        {/* )} */}
       </NavItem>
 
       <NavItem>
