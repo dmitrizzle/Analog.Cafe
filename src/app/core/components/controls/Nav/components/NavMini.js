@@ -21,30 +21,30 @@ const NavmMiniLink = styled(Link)`
   padding: 0 0.25em;
 `
 
-const iconStyles = { height: ".75em", color: "#dbdbdb" }
+const iconStyles = { height: ".75em" }
 const ITEMS = {
   favourites: {
     account: true,
     label: "Favourites",
-    icon: <Heart style={iconStyles} />,
+    icon: props => <Heart style={props.style} />,
     to: "/favourites",
     noAccountTo: "/sign-in"
   },
   mustReads: {
     label: "Resources",
-    icon: <Cube style={iconStyles} />,
+    icon: props => <Cube style={props.style} />,
     to: "/resources"
   },
   submissions: {
     label: "Submissions",
-    icon: <Pen style={iconStyles} />,
+    icon: props => <Pen style={props.style} />,
     to: "/submissions",
     noAccountTo: "/submit"
   },
   profile: {
     account: true,
     label: "Profile & Settings",
-    icon: <RHCP style={iconStyles} />,
+    icon: props => <RHCP style={props.style} />,
     to: `/profile/edit`,
     noAccountTo: "/sign-in"
   }
@@ -56,10 +56,15 @@ const NavMini = props => (
         <React.Fragment key={Object.keys(ITEMS)[i]}>
           {" "}
           <span style={{ display: "inline-block" }}>
-            {item.icon}
+            <item.icon
+              style={{
+                ...iconStyles,
+                color:
+                  props.view === Object.keys(ITEMS)[i] ? "#ed226e" : "#dbdbdb"
+              }}
+            />
             {""}
             <NavmMiniLink
-              icon={item.icon}
               style={{
                 fontWeight:
                   props.view === Object.keys(ITEMS)[i] ? 700 : undefined
