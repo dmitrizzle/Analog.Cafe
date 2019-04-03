@@ -156,73 +156,73 @@ export const MUST_READS_CONTENT = {
       title: "Cambodia With La Sardinia, a Bag of Candy, and a Handful of Weed",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1480456_S1sZFN5AQ.jpg",
-      to: "http://localhost:3000/zine/ghetto-paradise-cambodia-p6pr"
+      to: "/zine/ghetto-paradise-cambodia-p6pr"
     },
     {
       title: "Brighton Beach",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_602087_670d80ef74d74f668acb97213f4f6d30.jpg",
-      to: "http://localhost:3000/zine/brighton-beach-jrwe"
+      to: "/zine/brighton-beach-jrwe"
     },
     {
       title: "Dwell",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_809568_r1-YJPxbv7.jpg",
-      to: "http://localhost:3000/zine/dwell-uw62"
+      to: "/zine/dwell-uw62"
     },
     {
       title: "Through the Green Fuse",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_795000_S1GPYbXhf.jpg",
-      to: "http://localhost:3000/zine/through-the-green-fuse-2ozf"
+      to: "/zine/through-the-green-fuse-2ozf"
     },
     {
       title: "The Body of Exile",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1500000_SJezsTHK7.jpg",
-      to: "http://localhost:3000/zine/the-body-of-exile-k9gu"
+      to: "/zine/the-body-of-exile-k9gu"
     },
     {
       title: "Resettle to Vancouver",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_713415_H1bXU_dY7.jpg",
-      to: "http://localhost:3000/zine/expat-years-6sje"
+      to: "/zine/expat-years-6sje"
     },
     {
       title: "My Love for Film",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1333333_ry6FU5ft7.jpg",
-      to: "http://localhost:3000/zine/my-love-for-film-lw88"
+      to: "/zine/my-love-for-film-lw88"
     },
     {
       title: "Hanoi",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1000000_SJAzcSggQ.jpg",
-      to: "http://localhost:3000/zine/hanoi-n8hh"
+      to: "/zine/hanoi-n8hh"
     },
     {
       title: "Isaan, on a Cloud",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_626918_Hk17qDaRG.jpg",
-      to: "http://localhost:3000/zine/isaan-on-a-cloud-ge1v"
+      to: "/zine/isaan-on-a-cloud-ge1v"
     },
     {
       title: "Soi Dogs Of Chiang Mai",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1494536_H1f8ugRBf.jpg",
-      to: "http://localhost:3000/zine/soi-dogs-w4mm"
+      to: "/zine/soi-dogs-w4mm"
     },
     {
       title: "Open Your Eyes",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1500000_SJx0vUlswf.jpg",
-      to: "http://localhost:3000/zine/open-your-eyes-tsk0"
+      to: "/zine/open-your-eyes-tsk0"
     },
     {
       title: "Loy Krathong",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1536155_SygIztNd1G.jpg",
-      to: "http://localhost:3000/zine/loy-krathong-f25c"
+      to: "/zine/loy-krathong-f25c"
     }
   ]
 }
