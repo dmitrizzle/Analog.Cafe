@@ -9,33 +9,21 @@ export const brandButtonStyles = css`
   svg {
     height: 2em;
   }
+  color: #fff !important;
 `
-// const feedlyButtonStyles = css`
-//   svg {
-//     margin: -1em 0.25em -1.25em -1.5em;
-//     height: 2em;
-//     path {
-//       fill: #2bb24c !important;
-//       stroke: transparent;
-//     }
-//   }
-// `;
+
 export const twitterButtonStyles = css`
   svg {
     margin: -1.25em 0.25em -1em -1.5em;
-    path {
-      fill: #1da1f2 !important;
-    }
   }
+  background: #1da1f2;
 `
 const facebookButtonStyles = css`
   svg {
     margin: -1.25em 0 -1em -1em;
     border-radius: 0.25em;
   }
-  path {
-    fill: #3b5998 !important;
-  }
+  background: #4267b2;
 `
 
 const StyledTwitterLinkButton = styled(
