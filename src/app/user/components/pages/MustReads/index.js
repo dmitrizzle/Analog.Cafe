@@ -16,6 +16,23 @@ import NavMini from "../../../../core/components/controls/Nav/components/NavMini
 export const Posters = styled.div`
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  width: 100vw;
+  margin-left: calc(50vh - 750px);
+
+  ${props => props.theme.size.breakpoint.min.l`
+  		margin-left:	calc(( -100vw + ${props =>
+        props.theme.size.block.column.m}px )/2 - ${props =>
+    props.theme.size.block.padding}em + ${props =>
+    props.theme.size.block.spacing * 0.5}em);
+  	`} ${props => props => props.theme.size.breakpoint.min.xxl`
+  		margin-left:	calc(( -100vw + ${props =>
+        props.theme.size.block.column.l}px )/2 - ${props =>
+  props.theme.size.block.padding}em + ${props =>
+  props.theme.size.block.spacing * 0.5}em);
+  	`}
+    ${props => props.theme.size.breakpoint.max.m`
+		margin-left: 0;
+	`}
   > div {
     display: flex;
   }
@@ -62,7 +79,7 @@ export const Poster = styled(Link)`
     bottom: 0;
     padding: ${props => props.theme.size.block.padding / 7}em;
     background: ${props =>
-      props.theme.color.foreground(props.theme.opacity.half)};
+      props.theme.color.foreground(props.theme.opacity.half / 1.5)};
   }
 `
 

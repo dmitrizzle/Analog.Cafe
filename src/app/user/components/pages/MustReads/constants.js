@@ -101,14 +101,9 @@ export const MUST_READS_CONTENT = {
   ],
   reviews: [
     {
-      title: "Voigtländer Vitessa L",
-      poster: "image-froth_1000340_S18bUcs27",
-      to: "/zine/voigtlander-vitessa-l-fzyi"
-    },
-    {
-      title: "Lomography Diana Mini",
-      poster: "image-froth_1333333_Byl1aAiE7",
-      to: "/zine/diana-mini-7p61"
+      title: "Yashica MG-1",
+      poster: "image-froth_1498127_rkyZrudwV",
+      to: "/zine/yashica-mg-1-exau"
     },
     {
       title: "Yashica Electro 35",
@@ -116,9 +111,32 @@ export const MUST_READS_CONTENT = {
       to: "/zine/electro-35-gox3"
     },
     {
+      title: "Voigtländer Vitessa L",
+      poster: "image-froth_1000340_S18bUcs27",
+      to: "/zine/voigtlander-vitessa-l-fzyi"
+    },
+    {
+      title: "Zeiss Accordion",
+      poster:
+        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_644597_SygweVnqm.jpg",
+      to: "https://www.analog.cafe/zine/on-a-roll-with-zeiss-hed2"
+    },
+    {
+      title: "Lomography Diana Mini",
+      poster: "image-froth_1333333_Byl1aAiE7",
+      to: "/zine/diana-mini-7p61"
+    },
+    {
       title: "FED 5b With Industar-61",
       poster: "image-froth_1333333_ryImqJTuG",
       to: "/zine/fed-5b-gz28"
+    },
+    {
+      title: "Olympus Supertrip",
+      poster:
+        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1484072_3da5a59cfca54a44a065728dea6e4ffa.jpg",
+      to:
+        "https://www.analog.cafe/zine/testing-the-olympus-supertrip-in-shanghai-sfd8"
     },
     {
       title: "Ricoh Caddy",
@@ -131,24 +149,11 @@ export const MUST_READS_CONTENT = {
       to: "/zine/ql25-df78"
     },
     {
-      title: "Zeiss Accordion",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_644597_SygweVnqm.jpg",
-      to: "https://www.analog.cafe/zine/on-a-roll-with-zeiss-hed2"
-    },
-    {
       title: "Canon Sure Shot AF-7",
       poster:
         "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1484058_HJcHsSFwz.jpg",
       to:
         "https://www.analog.cafe/zine/testing-the-canon-sure-shot-af-7-in-chongquing-u79w"
-    },
-    {
-      title: "Olympus Supertrip",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1484072_3da5a59cfca54a44a065728dea6e4ffa.jpg",
-      to:
-        "https://www.analog.cafe/zine/testing-the-olympus-supertrip-in-shanghai-sfd8"
     }
   ],
   essays: [

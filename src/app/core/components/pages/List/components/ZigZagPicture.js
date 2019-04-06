@@ -8,6 +8,7 @@ export default styled.div`
   background-size: cover;
   background-position: right 22%;
   margin: 0 0 0 auto;
+  box-shadow: -8px 0px 0 0px ${props => props.theme.color.foreground()} inset
   ${props =>
     props.theme.size.breakpoint.max
       .l` display: none; `} ul:first-child li:first-child & {
@@ -36,4 +37,5 @@ export default styled.div`
     );
   }
   filter: grayscale(100%);
+  
 `
