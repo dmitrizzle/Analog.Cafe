@@ -8,6 +8,7 @@ import { setModal } from "../../../../core/store/actions-modal"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import Byline from "../../../../core/components/vignettes/Byline"
+import GridButton from "../../../../admin/components/controls/Grid/components/GridButton"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
@@ -83,6 +84,15 @@ export const Poster = styled(Link)`
   }
 `
 
+export const PosterExtra = styled(GridButton)`
+  bottom: 1.33em;
+  position: absolute;
+  right: 0.15em;
+  min-height: 0;
+  width: 100%;
+  margin: 0;
+  line-height: 1em;
+`
 export const Carousel = props => (
   <Posters>
     <div>
@@ -107,6 +117,7 @@ export const Carousel = props => (
           }}
         >
           <div>{item.title}</div>
+          {item.extra && <PosterExtra label={item.extra.replace("_", " ")} />}
         </Poster>
       ))}
     </div>
@@ -127,6 +138,14 @@ const ExclusiveContent = props => (
             <strong>free Analog.Cafe Account</strong>
           </Link>
           .
+        </em>
+      </small>
+    </p>
+    <p style={{ lineHeight: "1.2em" }}>
+      <small>
+        <em>
+          <strong>Pre Releases</strong> are articles which can be read ahead of
+          their publication date. Exclusive to Analog.Cafe Account holders.
         </em>
       </small>
     </p>

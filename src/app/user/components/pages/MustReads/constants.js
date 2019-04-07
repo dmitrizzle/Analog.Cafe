@@ -2,6 +2,15 @@ export const MUST_READS_CONTENT = {
   downloads: [
     {
       account: true,
+      extra: "PRE_RELEASE",
+      type: "PDF",
+      title: "KOTD: A Vancouver Rap Battle Event",
+      poster: "image-froth_1502090_H1SzBNQF4",
+      to:
+        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/FIRST_DRAFT-a-vancouver-rap-battle-event-Analog.Cafe.pdf"
+    },
+    {
+      account: true,
       type: "PDF",
       title: "Film Grain Reference",
       poster: "image-froth_836232_r1CTs7OvV",
