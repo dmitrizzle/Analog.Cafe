@@ -1,15 +1,7 @@
-import { ROUTE_URL_USER_LANDING } from "../constants/routes-session"
-
 const getLocalSessionInfo = () =>
   localStorage.getItem("session-info")
     ? JSON.parse(localStorage.getItem("session-info"))
     : {}
-const getLocalRoutes = () =>
-  localStorage.getItem("routes")
-    ? JSON.parse(localStorage.getItem("routes"))
-    : {
-        success: ROUTE_URL_USER_LANDING
-      }
 
 const INITIAL_STATE = {
   status: "forbidden",
@@ -17,7 +9,6 @@ const INITIAL_STATE = {
     status: ""
   },
   info: {},
-  routes: getLocalRoutes(),
   intent: {},
   emailLogin: {
     timeout: 0,
@@ -98,20 +89,6 @@ export default (state = INITIAL_STATE, action) => {
       state = {
         ...state,
         intent: action.payload
-      }
-      break
-    case "USER.SET_ROUTES":
-      state = {
-        ...state,
-        routes: action.payload
-      }
-      localStorage.setItem("routes", JSON.stringify(state.routes))
-      break
-    case "USER.RESET_ROUTES":
-      localStorage.removeItem("routes")
-      state = {
-        ...state,
-        routes: INITIAL_STATE.routes
       }
       break
     case "USER.RESET_STATE":

@@ -1,8 +1,19 @@
+import { ROUTE_URL_USER_LANDING } from "../constants/routes-session"
+
 export const redirectToSignIn = props => {
-  props.setUserRoutes({ success: props.history.location.pathname })
+  props.addSessionInfo({ loginSuccess: props.history.location.pathname })
   props.history.replace({
     pathname: "/sign-in"
   })
+}
+
+export const redirectAfterSignIn = props => {
+  const loginRedirect =
+    props.user.sessionInfo.loginSuccess || ROUTE_URL_USER_LANDING
+  loginRedirect &&
+    props.history.replace({
+      pathname: loginRedirect
+    })
 }
 
 export const isForbidden = (event, props) => {

@@ -7,11 +7,7 @@ import {
   deleteFavourite,
   isFavourite
 } from "../../../store/actions-favourites"
-import {
-  addSessionInfo,
-  getSessionInfo,
-  setUserRoutes
-} from "../../../store/actions-user"
+import { addSessionInfo, getSessionInfo } from "../../../store/actions-user"
 import { setModal } from "../../../../core/store/actions-modal"
 import Heart from "../../../../core/components/icons/group-beacons/Heart"
 import Link from "../../../../core/components/controls/Link"
@@ -61,11 +57,12 @@ export const FavouriteButton = props => {
       title="Add this article to your Favourites"
       onClick={event => props.user.status === "ok" && event.preventDefault()}
       onMouseDown={event => {
-        // set return routes when user signs in
-        props.setUserRoutes({ success: `/zine/${props.article.slug}` })
-
         if (props.user.status === "ok") event.preventDefault()
-        else return
+        // set return routes when user signs in
+        else
+          return props.addSessionInfo({
+            loginSuccess: `/zine/${props.article.slug}`
+          })
 
         props.addFavourite({
           id: props.article.id,
@@ -102,11 +99,16 @@ export const FavouriteButton = props => {
     </Like>
   ) : (
     <Unlike
-      to="#❤︎"
+      to={props.user.status !== "ok" ? "/sign-in" : "#❤︎"}
       title="Remove this article from your Favourites"
-      onClick={event => event.preventDefault()}
+      onClick={event => props.user.status === "ok" && event.preventDefault()}
       onMouseDown={event => {
-        event.preventDefault()
+        if (props.user.status === "ok") event.preventDefault()
+        // set return routes when user signs in
+        else
+          return props.addSessionInfo({
+            loginSuccess: `/zine/${props.article.slug}`
+          })
         props.deleteFavourite(props.article.id)
       }}
     >
@@ -141,9 +143,6 @@ const mapDispatchToProps = dispatch => {
     },
     getSessionInfo: () => {
       dispatch(getSessionInfo())
-    },
-    setUserRoutes: routes => {
-      dispatch(setUserRoutes(routes))
     }
   }
 }

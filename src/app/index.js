@@ -15,6 +15,7 @@ import {
   setUserIntent,
   verifyUser
 } from "./user/store/actions-user"
+import { redirectAfterSignIn } from "./user/utils/actions-session"
 import { setModal } from "./core/store/actions-modal"
 import { setNavView, setNavPositions } from "./core/store/actions-nav"
 import AppRoutes from "./core/components/routes/App"
@@ -38,9 +39,9 @@ class App extends React.PureComponent {
         "token",
         queryString.parse(this.props.location.search).token
       )
-      this.props.history.replace({
-        pathname: this.props.user.routes.success
-      })
+
+      // redirect on sign in
+      redirectAfterSignIn(this.props)
     }
     if (
       queryString.parse(this.props.location.search).error &&
