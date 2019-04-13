@@ -71,6 +71,13 @@ const MyFavourites = Loadable({
   delay: 100
 })
 
+const Download = Loadable({
+  loader: () =>
+    import("../../../user/components/pages/MustReads/components/Download.js"),
+  loading: ArticleLoader,
+  delay: 100
+})
+
 export default () => {
   return (
     <main
@@ -118,6 +125,7 @@ export default () => {
         <Route exact path={`/profile/edit`} component={EditProfile} />
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-out" component={SignOut} />
+        <Route exact path="/download/*" component={Download} />
         {/* STATIC VIEWS */}
         <Route exact path="/resources" component={MustReads} />
         <Route exact path="/about" component={About} />

@@ -6,8 +6,7 @@ export const MUST_READS_CONTENT = {
       type: "PDF",
       title: "KOTD: A Vancouver Rap Battle Event",
       poster: "image-froth_1502090_H1SzBNQF4",
-      to:
-        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/FIRST_DRAFT-a-vancouver-rap-battle-event-Analog.Cafe.pdf"
+      to: "/download/FIRST_DRAFT-a-vancouver-rap-battle-event-Analog.Cafe.pdf"
     },
     {
       account: true,
@@ -15,7 +14,7 @@ export const MUST_READS_CONTENT = {
       title: "Film Grain Reference",
       poster: "image-froth_836232_r1CTs7OvV",
       to:
-        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/REFERENCE-film-grain-reference-2019-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
+        "/download/REFERENCE-film-grain-reference-2019-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
     },
     {
       account: true,
@@ -23,7 +22,7 @@ export const MUST_READS_CONTENT = {
       title: "A Beginner’s Guide to Film Photography",
       poster: "image-froth_2703927_BJFAQ5r7E",
       to:
-        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/GUIDE-a-beginners-guide-to-film-photography-2019-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
+        "/download/GUIDE-a-beginners-guide-to-film-photography-2019-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
     },
     {
       account: true,
@@ -31,7 +30,7 @@ export const MUST_READS_CONTENT = {
       title: "35mm Film Price Guide",
       poster: "image-froth_750000_SkhbW7eNN",
       to:
-        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/GUIDE-35mm-film-price-guide-2019-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
+        "/download/GUIDE-35mm-film-price-guide-2019-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
     },
     {
       account: true,
@@ -39,7 +38,7 @@ export const MUST_READS_CONTENT = {
       title: "Art as an Experience",
       poster: "image-froth_642341_HkkwT3XCQ",
       to:
-        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/GUIDE-art-as-an-experience-2018-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
+        "/download/GUIDE-art-as-an-experience-2018-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
     },
     {
       account: true,
@@ -47,7 +46,7 @@ export const MUST_READS_CONTENT = {
       title: "Loy Krathong",
       poster: "image-froth_1536155_H10rW53IG",
       to:
-        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/PHOTOESSAY-loy-krathong-and-yi-peng-festival-2018-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
+        "/download/PHOTOESSAY-loy-krathong-and-yi-peng-festival-2018-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
     },
     {
       account: true,
@@ -55,7 +54,7 @@ export const MUST_READS_CONTENT = {
       title: "Resettle to Vancouver",
       poster: "image-froth_2066116_ByaU4Lyq7",
       to:
-        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/PHOTOESSAY-resettle-to-vancouver-2018-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
+        "/download/PHOTOESSAY-resettle-to-vancouver-2018-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
     },
     {
       account: true,
@@ -63,7 +62,7 @@ export const MUST_READS_CONTENT = {
       title: "Tropical Fruits",
       poster: "image-froth_1508587_BJfdlh8HQ",
       to:
-        "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/PHOTOESSAY-tropical-fruits-and-their-secrets-2018-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
+        "/download/PHOTOESSAY-tropical-fruits-and-their-secrets-2018-Analog.Cafe.pdf?utm_source=Analog.Cafe+Weekly&utm_campaign=9a6e8ea693-RSS_EMAIL_ANALOGUE_READS_5&utm_medium=email&utm_term=0_f43e54afe2-9a6e8ea693-127381361"
     }
   ],
   guides: [

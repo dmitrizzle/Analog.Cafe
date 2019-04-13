@@ -117,7 +117,7 @@ export const Carousel = props => (
               item.account &&
                 props.user.status !== "ok" &&
                 props.addSessionInfo({
-                  loginSuccess: `/resources`
+                  loginSuccess: item.to
                 })
               GA.event({
                 category: "Navigation",
