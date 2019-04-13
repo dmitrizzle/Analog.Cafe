@@ -110,6 +110,11 @@ export const MUST_READS_CONTENT = {
   ],
   reviews: [
     {
+      title: "Lomography Super Sampler",
+      poster: "image-froth_1375171_BJ80mTaYN",
+      to: "/zine/lomography-super-sampler-l03m"
+    },
+    {
       title: "Yashica MG-1",
       poster: "image-froth_1498127_rkyZrudwV",
       to: "/zine/yashica-mg-1-exau"
