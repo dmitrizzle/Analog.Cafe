@@ -58,13 +58,19 @@ export const FavouriteButton = props => {
       onClick={event => props.user.status === "ok" && event.preventDefault()}
       onMouseDown={event => {
         if (props.user.status === "ok") event.preventDefault()
+        else return
+
         props.addFavourite({
           id: props.article.id,
           slug: props.article.slug
         })
 
         const tipsViewed = props.user.sessionInfo.tipsViewed || []
-        !tipsViewed.includes("ADD_TO_FAVOURITES") &&
+        if (!tipsViewed[0]) {
+          props.addSessionInfo({
+            tipsViewed: [...tipsViewed, "ADD_TO_FAVOURITES"]
+          })
+          // window.requestAnimationFrame(() => props.getSessionInfo());
           props.setModal({
             info: {
               title: "Added to Favourites",
@@ -79,29 +85,10 @@ export const FavouriteButton = props => {
                   </strong>{" "}
                   list.
                 </span>
-              ),
-              buttons: [
-                {
-                  branded: true,
-                  to: "/favourites",
-                  text: "See your Favourites"
-                },
-
-                {
-                  to: "#got-it",
-                  onClick: event => {
-                    event.preventDefault()
-                    props.addSessionInfo({
-                      tipsViewed: [...tipsViewed, "ADD_TO_FAVOURITES"]
-                    })
-                    window.requestAnimationFrame(() => props.getSessionInfo())
-                  },
-                  text: "Don’t Show This Again",
-                  inverse: true
-                }
-              ]
+              )
             }
           })
+        }
       }}
     >
       <Heart />
@@ -114,33 +101,6 @@ export const FavouriteButton = props => {
       onMouseDown={event => {
         event.preventDefault()
         props.deleteFavourite(props.article.id)
-
-        const tipsViewed = props.user.sessionInfo.tipsViewed || []
-        !tipsViewed.includes("REMOVE_FROM_FAVOURITES") &&
-          props.setModal({
-            info: {
-              title: "Removed from Favourites",
-              text: (
-                <span>
-                  This article has now been removed from your favourites.
-                </span>
-              ),
-              buttons: [
-                {
-                  to: "#got-it",
-                  onClick: event => {
-                    event.preventDefault()
-                    props.addSessionInfo({
-                      tipsViewed: [...tipsViewed, "REMOVE_FROM_FAVOURITES"]
-                    })
-                    window.requestAnimationFrame(() => props.getSessionInfo())
-                  },
-                  text: "Don’t Show This Again",
-                  inverse: true
-                }
-              ]
-            }
-          })
       }}
     >
       <Heart />
