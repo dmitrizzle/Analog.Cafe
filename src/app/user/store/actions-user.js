@@ -161,6 +161,7 @@ export const verifyUser = () => {
 export const forgetUser = () => {
   return dispatch => {
     localStorage.removeItem("token")
+    dispatch(resetUserRoutes())
     dispatch({
       type: "USER.RESET_STATE",
       payload: null

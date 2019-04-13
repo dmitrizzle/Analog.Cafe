@@ -64,7 +64,6 @@ class Upload extends React.PureComponent {
     if (!localStorage.getItem("token")) {
       redirectToSignIn(this.props)
     } else {
-      this.props.resetUserRoutes()
       const submissionConsent = this.props.history.location.pathname.includes(
         "full-consent"
       )
@@ -242,9 +241,6 @@ const mapDispatchToProps = dispatch => {
     },
     resetStatus: () => {
       dispatch(resetStatus())
-    },
-    setUserRoutes: routes => {
-      dispatch(setUserRoutes(routes))
     },
     resetUserRoutes: () => {
       dispatch(resetUserRoutes())

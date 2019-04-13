@@ -7,7 +7,11 @@ import {
   deleteFavourite,
   isFavourite
 } from "../../../store/actions-favourites"
-import { addSessionInfo, getSessionInfo } from "../../../store/actions-user"
+import {
+  addSessionInfo,
+  getSessionInfo,
+  setUserRoutes
+} from "../../../store/actions-user"
 import { setModal } from "../../../../core/store/actions-modal"
 import Heart from "../../../../core/components/icons/group-beacons/Heart"
 import Link from "../../../../core/components/controls/Link"
@@ -57,6 +61,9 @@ export const FavouriteButton = props => {
       title="Add this article to your Favourites"
       onClick={event => props.user.status === "ok" && event.preventDefault()}
       onMouseDown={event => {
+        // set return routes when user signs in
+        props.setUserRoutes({ success: `/zine/${props.article.slug}` })
+
         if (props.user.status === "ok") event.preventDefault()
         else return
 
@@ -134,6 +141,9 @@ const mapDispatchToProps = dispatch => {
     },
     getSessionInfo: () => {
       dispatch(getSessionInfo())
+    },
+    setUserRoutes: routes => {
+      dispatch(setUserRoutes(routes))
     }
   }
 }
