@@ -10,6 +10,7 @@ import {
   ROUTE_API_LOGIN_FACEBOOK,
   ROUTE_API_LOGIN_TWITTER
 } from "../../../constants/routes-session"
+import { redirectAfterSignIn } from "../../../utils/actions-session"
 import {
   verifyUser,
   getUserInfo,
@@ -40,9 +41,10 @@ const processSignin = (props, code, sessionInfo) => {
   localStorage.setItem("token", code.token)
   props.verifyUser()
   props.getUserInfo()
-  props.history.replace({
-    pathname: props.user.routes.success
-  })
+
+  // redirect on sign in
+  redirectAfterSignIn(props)
+
   props.addSessionInfo(sessionInfo)
 }
 class SignIn extends React.PureComponent {

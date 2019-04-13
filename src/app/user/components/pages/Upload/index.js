@@ -11,6 +11,7 @@ import localForage from "localforage"
 import { CARD_ERRORS } from "../../../constants/messages-submission"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
+import { addSessionInfo } from "../../../store/actions-user"
 import {
   base64ToBlob,
   loadHeader,
@@ -19,7 +20,6 @@ import {
 import { redirectToSignIn } from "../../../utils/actions-session"
 import { resetStatus } from "../../../../admin/store/actions-editor"
 import { setModal } from "../../../../core/store/actions-modal"
-import { setUserRoutes, resetUserRoutes } from "../../../store/actions-user"
 import {
   uploadSubmission,
   resetUploadProgress
@@ -64,7 +64,6 @@ class Upload extends React.PureComponent {
     if (!localStorage.getItem("token")) {
       redirectToSignIn(this.props)
     } else {
-      this.props.resetUserRoutes()
       const submissionConsent = this.props.history.location.pathname.includes(
         "full-consent"
       )
@@ -243,14 +242,11 @@ const mapDispatchToProps = dispatch => {
     resetStatus: () => {
       dispatch(resetStatus())
     },
-    setUserRoutes: routes => {
-      dispatch(setUserRoutes(routes))
-    },
-    resetUserRoutes: () => {
-      dispatch(resetUserRoutes())
-    },
     setModal: (info, request) => {
       dispatch(setModal(info, request))
+    },
+    addSessionInfo: sessionInfo => {
+      dispatch(addSessionInfo(sessionInfo))
     }
   }
 }

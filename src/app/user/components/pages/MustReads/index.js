@@ -4,6 +4,7 @@ import styled, { css } from "styled-components"
 
 import { GA, makeFroth } from "../../../../utils"
 import { MUST_READS_CONTENT } from "./constants"
+import { addSessionInfo } from "../../../store/actions-user"
 import { setModal } from "../../../../core/store/actions-modal"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
@@ -100,11 +101,10 @@ export const Carousel = props => (
   <Posters>
     <div>
       {props.items.map((item, num) => (
-        <React.Fragment>
+        <React.Fragment key={item.title}>
           {num === 0 && <Spacer />}
           <Poster
             src={item.poster}
-            key={item.title}
             center={props.center}
             to={
               item.account
@@ -114,6 +114,11 @@ export const Carousel = props => (
                 : item.to
             }
             onClick={event => {
+              item.account &&
+                props.user.status !== "ok" &&
+                props.addSessionInfo({
+                  loginSuccess: `/resources`
+                })
               GA.event({
                 category: "Navigation",
                 action: "MustReads.poster",
@@ -212,6 +217,9 @@ const mapDispatchToProps = dispatch => {
   return {
     setModal: (info, request) => {
       dispatch(setModal(info, request))
+    },
+    addSessionInfo: sessionInfo => {
+      dispatch(addSessionInfo(sessionInfo))
     }
   }
 }

@@ -55,17 +55,6 @@ export const acceptUserInfo = () => {
     payload: "ok"
   }
 }
-export const setUserRoutes = routes => {
-  return {
-    type: "USER.SET_ROUTES",
-    payload: routes
-  }
-}
-export const resetUserRoutes = () => {
-  return {
-    type: "USER.RESET_ROUTES"
-  }
-}
 export const setUserIntent = intent => {
   return {
     type: "USER.SET_INTENT",
@@ -155,6 +144,8 @@ export const verifyUser = () => {
         dispatch(addSessionInfo({ hasLoggedIn: true }))
         clearTimeout(delaySessionInfoConfirmation)
       }, 1000)
+      // forget login redirect routes
+      dispatch(addSessionInfo({ loginSuccess: "" }))
     }
   }
 }

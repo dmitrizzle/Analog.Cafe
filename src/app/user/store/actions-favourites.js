@@ -3,9 +3,9 @@ import axios from "axios"
 import { ROUTE_API_FAVOURITE } from "../constants/routes-favourites"
 import { makeAPIRequest } from "../../utils"
 
-const token = localStorage.getItem("token")
-
 export const addFavourite = data => {
+  const token = localStorage.getItem("token")
+
   return dispatch => {
     if (!token) return
     const request = {
@@ -26,6 +26,8 @@ export const addFavourite = data => {
 }
 
 export const deleteFavourite = id => {
+  const token = localStorage.getItem("token")
+
   return dispatch => {
     if (!token) return
     const request = {
@@ -44,6 +46,8 @@ export const deleteFavourite = id => {
   }
 }
 export const isFavourite = article => {
+  const token = localStorage.getItem("token")
+
   return dispatch => {
     if (!token || !article) return
     const request = {
