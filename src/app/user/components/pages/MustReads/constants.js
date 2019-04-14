@@ -106,7 +106,7 @@ export const MUST_READS_CONTENT = {
   reviews: [
     {
       title: "Lomography Super Sampler",
-      poster: "image-froth_1375171_BJ80mTaYN",
+      poster: "image-froth_1366928_B1pOsxg9V",
       to: "/zine/lomography-super-sampler-l03m"
     },
     {

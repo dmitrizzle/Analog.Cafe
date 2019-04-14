@@ -1,4 +1,6 @@
 import React from "react"
+import { connect } from "react-redux"
+import styled from "styled-components"
 
 import { withRouter } from "react-router"
 
@@ -12,11 +14,16 @@ import MetaTags from "../../../../../core/components/vignettes/MetaTags"
 
 const iconStyles = { height: ".75em", paddingBottom: ".15em" }
 
+export const Code = styled.code`
+  background: #f7f7f7;
+  padding: 0.25em 0.5em;
+  border-radius: 0.3em;
+`
+
 export const Download = props => {
-  const destination = props.history.location.pathname.replace(
-    "/download",
-    "https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads"
-  )
+  const filename = props.history.location.pathname.replace("/download/", "")
+  const destination = `https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/${filename}`
+
   window.open(destination)
   return (
     <ArticleWrapper>
@@ -24,15 +31,16 @@ export const Download = props => {
       <HeaderLarge pageTitle="Download" />
       <ArticleSection>
         <p>
-          Your download should start momentarily.{" "}
-          <strong>
-            <Link to={destination}>Click here</Link>
-          </strong>{" "}
-          if it doesn’t.
+          <strong>File:</strong>{" "}
+          <small>
+            <Code>
+              <Link to={destination}>{filename}</Link>
+            </Code>
+          </small>
         </p>
-        <LinkButton to="/resources" branded>
+        <LinkButton to={destination} branded>
           <span>
-            <Cube style={iconStyles} /> Return to Resources
+            <Cube style={iconStyles} /> Download Now
           </span>
         </LinkButton>
       </ArticleSection>
@@ -40,6 +48,16 @@ export const Download = props => {
   )
 }
 
-export default withRouter(Download)
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+export default withRouter(
+  connect(
+    mapStateToProps,
+    null
+  )(Download)
+)
 
 // https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads
