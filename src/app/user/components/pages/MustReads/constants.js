@@ -79,7 +79,7 @@ export const MUST_READS_CONTENT = {
     },
     {
       title: "Film Photography Costs and Prices",
-      poster: "image-froth_1507950_HyGXTrg9E",
+      poster: "image-froth_1523727_SJoQ3JD9X",
       to: "/zine/film-photography-costs-and-prices-kd5j"
     },
     {
