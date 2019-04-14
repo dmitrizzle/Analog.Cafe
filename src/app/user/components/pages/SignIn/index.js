@@ -6,6 +6,7 @@ import {
   FacebookLinkButton,
   TwitterLinkButton
 } from "../../../../core/components/controls/Button/components/SocialButtons"
+import { GA } from "../../../../utils"
 import {
   ROUTE_API_LOGIN_FACEBOOK,
   ROUTE_API_LOGIN_TWITTER
@@ -75,6 +76,11 @@ class SignIn extends React.PureComponent {
   handleTwitterButton = event => {
     event.stopPropagation()
     event.preventDefault()
+    GA.event({
+      category: "User",
+      action: "Sign In",
+      label: "Twitter"
+    })
     open(
       ROUTE_API_LOGIN_TWITTER,
       POPUP_WINDOW("Sign in with Twitter"),
@@ -90,6 +96,11 @@ class SignIn extends React.PureComponent {
   handleFacebookButton = event => {
     event.stopPropagation()
     event.preventDefault()
+    GA.event({
+      category: "User",
+      action: "Sign In",
+      label: "Facebook"
+    })
     open(
       ROUTE_API_LOGIN_FACEBOOK,
       POPUP_WINDOW("Sign in with Facebook"),

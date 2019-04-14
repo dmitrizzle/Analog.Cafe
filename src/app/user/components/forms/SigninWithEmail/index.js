@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import React from "react"
 
 import { CARD_ERRORS } from "../../../constants/messages-session"
+import { GA } from "../../../../utils"
 import { loginWithEmail } from "../../../store/actions-user"
 import { setModal } from "../../../../core/store/actions-modal"
 import { validateEmail } from "../../../utils/messages-session"
@@ -22,6 +23,11 @@ class SigninWithEmail extends React.PureComponent {
   handleSubmit = event => {
     event.stopPropagation()
     event.preventDefault()
+    GA.event({
+      category: "User",
+      action: "Sign In",
+      label: "Email"
+    })
     if (validateEmail(this.state.email)) {
       if (
         !this.props.user.emailLogin.timeout ||
