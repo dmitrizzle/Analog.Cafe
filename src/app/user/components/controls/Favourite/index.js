@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
 
+import { GA } from "../../../../utils"
 import {
   addFavourite,
   deleteFavourite,
@@ -64,6 +65,12 @@ export const FavouriteButton = props => {
             loginSuccess: `/zine/${props.article.slug}`
           })
 
+        GA.event({
+          category: "User",
+          action: "Favourite",
+          label: `/zine/${props.article.slug}`
+        })
+
         props.addFavourite({
           id: props.article.id,
           slug: props.article.slug
@@ -109,6 +116,13 @@ export const FavouriteButton = props => {
           return props.addSessionInfo({
             loginSuccess: `/zine/${props.article.slug}`
           })
+
+        GA.event({
+          category: "User",
+          action: "UnFavourite",
+          label: `/zine/${props.article.slug}`
+        })
+
         props.deleteFavourite(props.article.id)
       }}
     >
