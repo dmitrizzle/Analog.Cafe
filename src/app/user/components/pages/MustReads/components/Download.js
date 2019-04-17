@@ -73,7 +73,7 @@ export const Download = props => {
                 onClick={() => {
                   fileData &&
                     props.addSessionInfo({
-                      loginSuccess: `/downloads/${filename}`
+                      loginSuccess: `/download/${filename}`
                     })
                 }}
               >
@@ -98,7 +98,7 @@ export const Download = props => {
             onClick={() => {
               !hasPermission &&
                 props.addSessionInfo({
-                  loginSuccess: `/downloads/${filename}`
+                  loginSuccess: `/download/${filename}`
                 })
             }}
           >
