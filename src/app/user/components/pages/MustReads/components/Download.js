@@ -6,9 +6,11 @@ import { withRouter } from "react-router"
 
 import { GA } from "../../../../../utils"
 import { MUST_READS_CONTENT } from "../constants"
+import { addSessionInfo } from "../../../../store/actions-user"
 import ArticleSection from "../../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../../core/components/pages/Article/components/ArticleWrapper"
 import Cube from "../../../../../core/components/icons/group-beacons/Cube"
+import Figure from "../../../../../core/components/vignettes/Picture/components/Figure"
 import HeaderLarge from "../../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../../core/components/controls/Link"
 import LinkButton from "../../../../../core/components/controls/Button/components/LinkButton"
@@ -26,43 +28,25 @@ export const Download = props => {
   const filename = props.history.location.pathname.replace("/download/", "")
   const destination = `https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/${filename}`
 
-  // verify
-  const validFiles = MUST_READS_CONTENT.downloads.map(download => download.to)
-  const isValidRequest = validFiles.includes("/download/" + filename)
+  // get file meta
+  const fileData = MUST_READS_CONTENT.downloads.filter(
+    download => download.to === "/download/" + filename
+  )[0]
   const hasPermission = props.user.status === "ok"
+
+  // ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ
 
   return (
     <ArticleWrapper>
       <MetaTags metaTitle="Your Download is Ready" />
       <HeaderLarge
-        pageTitle={isValidRequest && hasPermission ? "Download Ready" : "Error"}
-        pageSubtitle={
-          isValidRequest && hasPermission ? "╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ" : ""
-        }
+        pageTitle={fileData ? fileData.title : "Can’t Find the Download"}
+        pageSubtitle={fileData && `${fileData.type} Download`}
       />
       <ArticleSection>
-        {isValidRequest &&
+        {fileData &&
           hasPermission && (
             <React.Fragment>
-              <p>
-                <strong>File:</strong>{" "}
-                <small>
-                  <Code>
-                    <Link
-                      to={destination}
-                      onClick={() =>
-                        GA.event({
-                          category: "Download",
-                          action: "Download.link",
-                          label: destination
-                        })
-                      }
-                    >
-                      {filename}
-                    </Link>
-                  </Code>
-                </small>
-              </p>
               <LinkButton
                 to={destination}
                 branded
@@ -80,7 +64,27 @@ export const Download = props => {
               </LinkButton>
             </React.Fragment>
           )}
-        {!isValidRequest && (
+        {!hasPermission &&
+          fileData && (
+            <React.Fragment>
+              <LinkButton
+                to="/sign-in"
+                branded
+                onClick={() => {
+                  fileData &&
+                    props.addSessionInfo({
+                      loginSuccess: destination
+                    })
+                }}
+              >
+                Sign In to Download
+              </LinkButton>{" "}
+              <p style={{ textAlign: "center" }}>
+                It only takes a minute to create a free Analog.Cafe account.
+              </p>{" "}
+            </React.Fragment>
+          )}
+        {!fileData && (
           <p>
             <strong>Could not find file</strong>{" "}
             <small>
@@ -88,20 +92,31 @@ export const Download = props => {
             </small>
           </p>
         )}
-        {!hasPermission && (
-          <p>
-            You need to{" "}
-            <strong>
-              <Link to="/sign-in">sign in</Link>
-            </strong>{" "}
-            to access this file.
-          </p>
+        {fileData && (
+          <Link
+            to={hasPermission ? destination : "/sign-in"}
+            onClick={() => {
+              !hasPermission &&
+                props.addSessionInfo({
+                  loginSuccess: destination
+                })
+            }}
+          >
+            <Figure feature src={fileData.poster} />
+          </Link>
         )}
       </ArticleSection>
     </ArticleWrapper>
   )
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    addSessionInfo: sessionInfo => {
+      dispatch(addSessionInfo(sessionInfo))
+    }
+  }
+}
 const mapStateToProps = state => {
   return {
     user: state.user
@@ -110,7 +125,7 @@ const mapStateToProps = state => {
 export default withRouter(
   connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
   )(Download)
 )
 

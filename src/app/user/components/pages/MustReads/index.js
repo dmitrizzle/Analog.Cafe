@@ -4,7 +4,6 @@ import styled, { css } from "styled-components"
 
 import { GA, makeFroth } from "../../../../utils"
 import { MUST_READS_CONTENT } from "./constants"
-import { addSessionInfo } from "../../../store/actions-user"
 import { setModal } from "../../../../core/store/actions-modal"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
@@ -106,19 +105,8 @@ export const Carousel = props => (
           <Poster
             src={item.poster}
             center={props.center}
-            to={
-              item.account
-                ? props.user.status === "ok"
-                  ? item.to
-                  : "/sign-in"
-                : item.to
-            }
+            to={item.to}
             onClick={event => {
-              item.account &&
-                props.user.status !== "ok" &&
-                props.addSessionInfo({
-                  loginSuccess: item.to
-                })
               GA.event({
                 category: "Navigation",
                 action: "MustReads.poster",
@@ -217,9 +205,6 @@ const mapDispatchToProps = dispatch => {
   return {
     setModal: (info, request) => {
       dispatch(setModal(info, request))
-    },
-    addSessionInfo: sessionInfo => {
-      dispatch(addSessionInfo(sessionInfo))
     }
   }
 }
