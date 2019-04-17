@@ -46,7 +46,7 @@ const FROTH_CONSTANTS = {
   server: "https://res.cloudinary.com/analog-cafe/image/upload/",
   transformations: "c_scale,fl_progressive",
   sizes: {
-    i: "40",
+    i: "80",
     t: "280",
     s: "520",
     m: "1268",
