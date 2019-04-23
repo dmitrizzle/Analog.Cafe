@@ -26,7 +26,14 @@ ShallowWrapper {
                 >
                         ❤
                 </span>
-                 Vote for and save your favourites.
+                 Save your
+                 
+                <Unknown
+                        to="/favourites"
+                >
+                        favourites
+                </Unknown>
+                 for later.
         </li>
         <li>
                 <span
@@ -34,7 +41,13 @@ ShallowWrapper {
                 >
                         ✒︎
                 </span>
-                 Submit your work, get featured.
+                 
+                <Unknown
+                        to="/submit"
+                >
+                        Submit
+                </Unknown>
+                 your work, get featured.
         </li>
         <li>
                 <span
@@ -42,7 +55,14 @@ ShallowWrapper {
                 >
                         ❖
                 </span>
-                 Free downloads & exclusives.
+                 Free
+                 
+                <Unknown
+                        to="/resources"
+                >
+                        downloads
+                </Unknown>
+                 & pre-releases.
         </li>
         <li>
                 <span
@@ -75,7 +95,14 @@ ShallowWrapper {
             >
                         ❤
             </span>
-             Vote for and save your favourites.
+             Save your
+             
+            <Unknown
+                        to="/favourites"
+            >
+                        favourites
+            </Unknown>
+             for later.
 </li>,
           <li>
             <span
@@ -83,7 +110,13 @@ ShallowWrapper {
             >
                         ✒︎
             </span>
-             Submit your work, get featured.
+             
+            <Unknown
+                        to="/submit"
+            >
+                        Submit
+            </Unknown>
+             your work, get featured.
 </li>,
           <li>
             <span
@@ -91,7 +124,14 @@ ShallowWrapper {
             >
                         ❖
             </span>
-             Free downloads & exclusives.
+             Free
+             
+            <Unknown
+                        to="/resources"
+            >
+                        downloads
+            </Unknown>
+             & pre-releases.
 </li>,
           <li>
             <span
@@ -124,7 +164,14 @@ ShallowWrapper {
 >
                 ❤
 </span>,
-              " Vote for and save your favourites.",
+              " Save your",
+              " ",
+              <Unknown
+                to="/favourites"
+>
+                favourites
+</Unknown>,
+              " for later.",
             ],
           },
           "ref": null,
@@ -141,7 +188,21 @@ ShallowWrapper {
               "rendered": "❤",
               "type": "span",
             },
-            " Vote for and save your favourites.",
+            " Save your",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "favourites",
+                "to": "/favourites",
+              },
+              "ref": null,
+              "rendered": "favourites",
+              "type": [Function],
+            },
+            " for later.",
           ],
           "type": "li",
         },
@@ -156,7 +217,13 @@ ShallowWrapper {
 >
                 ✒︎
 </span>,
-              " Submit your work, get featured.",
+              " ",
+              <Unknown
+                to="/submit"
+>
+                Submit
+</Unknown>,
+              " your work, get featured.",
             ],
           },
           "ref": null,
@@ -173,7 +240,20 @@ ShallowWrapper {
               "rendered": "✒︎",
               "type": "span",
             },
-            " Submit your work, get featured.",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Submit",
+                "to": "/submit",
+              },
+              "ref": null,
+              "rendered": "Submit",
+              "type": [Function],
+            },
+            " your work, get featured.",
           ],
           "type": "li",
         },
@@ -188,7 +268,14 @@ ShallowWrapper {
 >
                 ❖
 </span>,
-              " Free downloads & exclusives.",
+              " Free",
+              " ",
+              <Unknown
+                to="/resources"
+>
+                downloads
+</Unknown>,
+              " & pre-releases.",
             ],
           },
           "ref": null,
@@ -205,7 +292,21 @@ ShallowWrapper {
               "rendered": "❖",
               "type": "span",
             },
-            " Free downloads & exclusives.",
+            " Free",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "downloads",
+                "to": "/resources",
+              },
+              "ref": null,
+              "rendered": "downloads",
+              "type": [Function],
+            },
+            " & pre-releases.",
           ],
           "type": "li",
         },
@@ -282,7 +383,14 @@ ShallowWrapper {
                     >
                               ❤
                     </span>
-                     Vote for and save your favourites.
+                     Save your
+                     
+                    <Unknown
+                              to="/favourites"
+                    >
+                              favourites
+                    </Unknown>
+                     for later.
           </li>
           <li>
                     <span
@@ -290,7 +398,13 @@ ShallowWrapper {
                     >
                               ✒︎
                     </span>
-                     Submit your work, get featured.
+                     
+                    <Unknown
+                              to="/submit"
+                    >
+                              Submit
+                    </Unknown>
+                     your work, get featured.
           </li>
           <li>
                     <span
@@ -298,7 +412,14 @@ ShallowWrapper {
                     >
                               ❖
                     </span>
-                     Free downloads & exclusives.
+                     Free
+                     
+                    <Unknown
+                              to="/resources"
+                    >
+                              downloads
+                    </Unknown>
+                     & pre-releases.
           </li>
           <li>
                     <span
@@ -331,7 +452,14 @@ ShallowWrapper {
               >
                             ❤
               </span>
-               Vote for and save your favourites.
+               Save your
+               
+              <Unknown
+                            to="/favourites"
+              >
+                            favourites
+              </Unknown>
+               for later.
 </li>,
             <li>
               <span
@@ -339,7 +467,13 @@ ShallowWrapper {
               >
                             ✒︎
               </span>
-               Submit your work, get featured.
+               
+              <Unknown
+                            to="/submit"
+              >
+                            Submit
+              </Unknown>
+               your work, get featured.
 </li>,
             <li>
               <span
@@ -347,7 +481,14 @@ ShallowWrapper {
               >
                             ❖
               </span>
-               Free downloads & exclusives.
+               Free
+               
+              <Unknown
+                            to="/resources"
+              >
+                            downloads
+              </Unknown>
+               & pre-releases.
 </li>,
             <li>
               <span
@@ -380,7 +521,14 @@ ShallowWrapper {
 >
                   ❤
 </span>,
-                " Vote for and save your favourites.",
+                " Save your",
+                " ",
+                <Unknown
+                  to="/favourites"
+>
+                  favourites
+</Unknown>,
+                " for later.",
               ],
             },
             "ref": null,
@@ -397,7 +545,21 @@ ShallowWrapper {
                 "rendered": "❤",
                 "type": "span",
               },
-              " Vote for and save your favourites.",
+              " Save your",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "favourites",
+                  "to": "/favourites",
+                },
+                "ref": null,
+                "rendered": "favourites",
+                "type": [Function],
+              },
+              " for later.",
             ],
             "type": "li",
           },
@@ -412,7 +574,13 @@ ShallowWrapper {
 >
                   ✒︎
 </span>,
-                " Submit your work, get featured.",
+                " ",
+                <Unknown
+                  to="/submit"
+>
+                  Submit
+</Unknown>,
+                " your work, get featured.",
               ],
             },
             "ref": null,
@@ -429,7 +597,20 @@ ShallowWrapper {
                 "rendered": "✒︎",
                 "type": "span",
               },
-              " Submit your work, get featured.",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Submit",
+                  "to": "/submit",
+                },
+                "ref": null,
+                "rendered": "Submit",
+                "type": [Function],
+              },
+              " your work, get featured.",
             ],
             "type": "li",
           },
@@ -444,7 +625,14 @@ ShallowWrapper {
 >
                   ❖
 </span>,
-                " Free downloads & exclusives.",
+                " Free",
+                " ",
+                <Unknown
+                  to="/resources"
+>
+                  downloads
+</Unknown>,
+                " & pre-releases.",
               ],
             },
             "ref": null,
@@ -461,7 +649,21 @@ ShallowWrapper {
                 "rendered": "❖",
                 "type": "span",
               },
-              " Free downloads & exclusives.",
+              " Free",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "downloads",
+                  "to": "/resources",
+                },
+                "ref": null,
+                "rendered": "downloads",
+                "type": [Function],
+              },
+              " & pre-releases.",
             ],
             "type": "li",
           },
