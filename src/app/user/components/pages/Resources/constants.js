@@ -108,7 +108,7 @@ export const MUST_READS_CONTENT = {
       to: "/zine/what-is-art-iu4s"
     }
   ],
-  ["camera-reviews"]: [
+  "camera-reviews": [
     {
       title: "Lomography Super Sampler",
       poster: "image-froth_1366928_B1pOsxg9V",
