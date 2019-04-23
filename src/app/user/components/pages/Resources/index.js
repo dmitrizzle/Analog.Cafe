@@ -109,7 +109,7 @@ export const Carousel = props => (
             onClick={event => {
               GA.event({
                 category: "Navigation",
-                action: "MustReads.poster",
+                action: "Resources.poster",
                 label: item.title
               })
             }}
@@ -152,13 +152,13 @@ const ExclusiveContent = props => (
   </React.Fragment>
 )
 
-export const MustReads = props => {
+export const Resources = props => {
   return (
     <ArticleWrapper>
       <MetaTags metaTitle="Resources" />
       <HeaderLarge pageTitle="Resources">
         <Byline>
-          <NavMini view="mustReads" />
+          <NavMini view="resources" />
         </Byline>
       </HeaderLarge>
       <ArticleSection>
@@ -185,14 +185,28 @@ export const MustReads = props => {
             </em>
           </small>
         </p>
-        <h3>Film Camera Reviews</h3>
-        <Carousel items={MUST_READS_CONTENT.reviews} {...props} center={1} />
+        <h3>Camera Reviews</h3>
+        <Carousel
+          items={MUST_READS_CONTENT["camera-reviews"]}
+          {...props}
+          center={1}
+        />
         <p style={{ lineHeight: "1.2em" }}>
           <small>
             <em>
               Learn about the detailed, personal accounts with some of the most
               iconic film cameras and get acquainted with their triumphs and
               shortcommings.
+            </em>
+          </small>
+        </p>
+        <h3>Film and Emulsions</h3>
+        <Carousel items={MUST_READS_CONTENT.emulsions} {...props} center={1} />
+        <p style={{ lineHeight: "1.2em" }}>
+          <small>
+            <em>
+              Reviews, experiments, history and personal accounts with a
+              particular film stock.
             </em>
           </small>
         </p>
@@ -216,4 +230,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MustReads)
+)(Resources)

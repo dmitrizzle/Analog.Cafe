@@ -47,14 +47,16 @@ export default props => {
     <React.Fragment>
       <AccountBenifits>
         <li>
-          <span className="highlight icon">❤</span> Vote for and save your
-          favourites.
+          <span className="highlight icon">❤</span> Save your{" "}
+          <Link to="/favourites">favourites</Link> for later.
         </li>
         <li>
-          <span className="icon">✒︎</span> Submit your work, get featured.
+          <span className="icon">✒︎</span> <Link to="/submit">Submit</Link> your
+          work, get featured.
         </li>
         <li>
-          <span className="highlight icon">❖</span> Free downloads & exclusives.
+          <span className="highlight icon">❖</span> Free{" "}
+          <Link to="/resources">downloads</Link> & pre-releases.
         </li>
         <li>
           <span className="icon">☞</span> Weekly email{" "}

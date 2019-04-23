@@ -30,7 +30,7 @@ const ITEMS = {
     to: "/favourites",
     noAccountTo: "/sign-in"
   },
-  mustReads: {
+  resources: {
     label: "Resources",
     icon: props => <Cube style={props.style} />,
     to: "/resources"

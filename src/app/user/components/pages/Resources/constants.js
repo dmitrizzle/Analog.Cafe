@@ -83,6 +83,11 @@ export const MUST_READS_CONTENT = {
       to: "/zine/film-photography-costs-and-prices-kd5j"
     },
     {
+      title: "Polaroid Emulsion Lifts and Transparencies",
+      poster: "image-froth_1000000_rypfmD9cE",
+      to: "/zine/polaroid-emulsion-lifts-and-transparencies-5ezg"
+    },
+    {
       title: "Building an Instax Pinhole Camera",
       poster: "image-froth_1334223_HyxkFIXsPM",
       to: "/zine/building-an-instax-pinhole-camera-ixcd"
@@ -103,7 +108,7 @@ export const MUST_READS_CONTENT = {
       to: "/zine/what-is-art-iu4s"
     }
   ],
-  reviews: [
+  ["camera-reviews"]: [
     {
       title: "Lomography Super Sampler",
       poster: "image-froth_1366928_B1pOsxg9V",
@@ -126,9 +131,8 @@ export const MUST_READS_CONTENT = {
     },
     {
       title: "Zeiss Accordion",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_644597_SygweVnqm.jpg",
-      to: "https://www.analog.cafe/zine/on-a-roll-with-zeiss-hed2"
+      poster: "image-froth_644597_SygweVnqm",
+      to: "/zine/on-a-roll-with-zeiss-hed2"
     },
     {
       title: "Lomography Diana Mini",
@@ -142,10 +146,8 @@ export const MUST_READS_CONTENT = {
     },
     {
       title: "Olympus Supertrip",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1484072_3da5a59cfca54a44a065728dea6e4ffa.jpg",
-      to:
-        "https://www.analog.cafe/zine/testing-the-olympus-supertrip-in-shanghai-sfd8"
+      poster: "image-froth_1484072_3da5a59cfca54a44a065728dea6e4ffa",
+      to: "/zine/testing-the-olympus-supertrip-in-shanghai-sfd8"
     },
     {
       title: "Ricoh Caddy",
@@ -159,84 +161,137 @@ export const MUST_READS_CONTENT = {
     },
     {
       title: "Canon Sure Shot AF-7",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1484058_HJcHsSFwz.jpg",
-      to:
-        "https://www.analog.cafe/zine/testing-the-canon-sure-shot-af-7-in-chongquing-u79w"
+      poster: "image-froth_1484058_HJcHsSFwz",
+      to: "/zine/testing-the-canon-sure-shot-af-7-in-chongquing-u79w"
     }
   ],
   essays: [
     {
       title: "Cambodia With La Sardinia, a Bag of Candy, and a Handful of Weed",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1480456_S1sZFN5AQ.jpg",
+      poster: "image-froth_1480456_S1sZFN5AQ",
       to: "/zine/ghetto-paradise-cambodia-p6pr"
     },
     {
       title: "Brighton Beach",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_602087_670d80ef74d74f668acb97213f4f6d30.jpg",
+      poster: "image-froth_602087_670d80ef74d74f668acb97213f4f6d30",
       to: "/zine/brighton-beach-jrwe"
     },
     {
       title: "Dwell",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_809568_r1-YJPxbv7.jpg",
+      poster: "image-froth_809568_r1-YJPxbv7",
       to: "/zine/dwell-uw62"
     },
     {
       title: "Through the Green Fuse",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_795000_S1GPYbXhf.jpg",
+      poster: "image-froth_795000_S1GPYbXhf",
       to: "/zine/through-the-green-fuse-2ozf"
     },
     {
       title: "The Body of Exile",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1500000_SJezsTHK7.jpg",
+      poster: "image-froth_1500000_SJezsTHK7",
       to: "/zine/the-body-of-exile-k9gu"
     },
     {
       title: "Resettle to Vancouver",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_713415_H1bXU_dY7.jpg",
+      poster: "image-froth_713415_H1bXU_dY7",
       to: "/zine/expat-years-6sje"
     },
     {
       title: "My Love for Film",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1333333_ry6FU5ft7.jpg",
+      poster: "image-froth_1333333_ry6FU5ft7",
       to: "/zine/my-love-for-film-lw88"
     },
     {
       title: "Hanoi",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1000000_SJAzcSggQ.jpg",
+      poster: "image-froth_1000000_SJAzcSggQ",
       to: "/zine/hanoi-n8hh"
     },
     {
       title: "Isaan, on a Cloud",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_626918_Hk17qDaRG.jpg",
+      poster: "image-froth_626918_Hk17qDaRG",
       to: "/zine/isaan-on-a-cloud-ge1v"
     },
     {
       title: "Soi Dogs Of Chiang Mai",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1494536_H1f8ugRBf.jpg",
+      poster: "image-froth_1494536_H1f8ugRBf",
       to: "/zine/soi-dogs-w4mm"
     },
     {
       title: "Open Your Eyes",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1500000_SJx0vUlswf.jpg",
+      poster: "image-froth_1500000_SJx0vUlswf",
       to: "/zine/open-your-eyes-tsk0"
     },
     {
       title: "Loy Krathong",
-      poster:
-        "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_520/image-froth_1536155_SygIztNd1G.jpg",
+      poster: "image-froth_1536155_SygIztNd1G",
       to: "/zine/loy-krathong-f25c"
+    }
+  ],
+  emulsions: [
+    {
+      title: "Through the Green Fuse",
+      poster: "image-froth_795000_S1GPYbXhf",
+      to: "/zine/through-the-green-fuse-2ozf"
+    },
+    {
+      title: "Polaroid Emulsion Lifts and Transparencies",
+      poster: "image-froth_1000000_rypfmD9cE",
+      to: "/zine/polaroid-emulsion-lifts-and-transparencies-5ezg"
+    },
+    {
+      title: "Building an Instax Pinhole Camera",
+      poster: "image-froth_1334223_HyxkFIXsPM",
+      to: "/zine/building-an-instax-pinhole-camera-ixcd"
+    },
+    {
+      title: "Sofia on Ektar",
+      poster: "image-froth_1500000_ryLciivPE",
+      to: "/zine/sofia-on-ektar-6d3p"
+    },
+    {
+      title: "Kodak Ektachrome",
+      poster: "image-froth_1600000_ByxOKgftaX",
+      to: "/zine/kodak-ektachrome-vvyr"
+    },
+    {
+      title: "Experiments With Redscale Film and Lomography Cameras",
+      poster: "image-froth_750747_SJIlc3U8f",
+      to: "/zine/scarlet-summer-oyen"
+    },
+    {
+      title: "Going Against the Grain: CineStill800T in Broad Daylight",
+      poster: "image-froth_1507538_rkvEbPpF4",
+      to: "/zine/going-against-the-grain-482h"
+    },
+    {
+      title: "Neon Lights With CineStill 800T Film",
+      poster: "image-froth_1479655_Sy0asX-HN",
+      to: "/zine/neon-lights-with-cinestill-800t-film-uadc"
+    },
+    {
+      title: "California Desert, Polaroid Style",
+      poster: "image-froth_1150672_rkMCj9T97",
+      to: "/zine/california-desert-polaroid-style-30ss"
+    },
+    {
+      title: "Old Film and Life",
+      poster: "image-froth_1463904_SJl8acQa9X",
+      to: "/zine/old-film-and-life-5rrw"
+    },
+    {
+      title: "An Eight-Week Tryst With Black and White Film",
+      poster: "image-froth_666504_S19zaYxoX",
+      to: "/zine/an-eight-week-tryst-with-black-and-white-film-f3ss"
+    },
+    {
+      title: "Sick and Tired: Film Soup",
+      poster: "image-froth_1508434_r1BOcoxUQ",
+      to: "/zine/sick-and-tired-eyd7"
+    },
+    {
+      title: "Shooting Ilford Pan 400 in Shanghai",
+      poster: "image-froth_1485608_a196226262ec4e87a8cbf0c10bcfd836",
+      to: "/zine/shooting-ilford-pan-400-in-shanghai-udfm"
     }
   ]
 }
