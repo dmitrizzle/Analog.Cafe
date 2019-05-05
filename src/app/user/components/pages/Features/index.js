@@ -16,7 +16,7 @@ export const Posters = styled.div`
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   width: 100vw;
-  margin-left: calc(50vh - 750px);
+  padding: 1em 0 0;
   ${props => props.theme.size.breakpoint.min.l`
   		margin-left:	calc(( -100vw + ${props =>
         props.theme.size.block.column.m}px )/2 - ${props =>
@@ -35,54 +35,63 @@ export const Posters = styled.div`
   }
 `
 const posterDimensions = css`
-  width: 6.93em;
-  height: 11.7558em;
+  width: 26em;
+  height: 12em;
 `
 export const Poster = styled(Link)`
-  ${posterDimensions} ${props => props.theme.typography.title.auto}
+  ${posterDimensions}
 
   margin: 0 ${props => props.theme.size.block.spacing * 0.5}em 0 0;
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
 
-  color: ${props => props.theme.color.background()} !important;
+  background: #fafafa;
+
   text-decoration: none;
   line-height: ${props => props.theme.size.block.spacing * 1.15}em;
-  text-shadow: 1px 2px 0px ${props => props.theme.color.foreground()};
-  font-size: ${props => props.theme.size.font.make.normal * 1.15}em;
 
-  background: ${props =>
-    props.theme.color.foreground(props.theme.opacity.least)}
-    url(${props =>
-      makeFroth({
-        src: props.src,
-        size: "m"
-      }).src}) ${props => props.center && "center"}
-     !important;
-  background-size: cover !important;
+
   border-bottom: ${props => props.theme.elements.thickBorder};
   box-shadow: 0 0 0.5em
     ${props => props.theme.color.foreground(props.theme.opacity.least)};
   ${props => props.theme.size.breakpoint.max.m`
     border-radius:	${props => props.theme.effects.borderRadius.small}em;
   `};
+`
+export const PosterImage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8em;
+  bottom: 0;
+  background: ${props =>
+      props.theme.color.foreground(props.theme.opacity.least)}
+    url(${props =>
+      makeFroth({
+        src: props.src,
+        size: "m"
+      }).src})
+    ${props => props.center && "center"} !important;
+  background-size: cover !important;
+`
 
-  > div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: ${props => props.theme.size.block.padding / 7}em;
-    background: ${props =>
-      props.theme.color.foreground(props.theme.opacity.half / 1.5)};
+export const PosterInfo = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0.5em;
+  left: calc(8em + 1em);
+  bottom: 0;
+
+  h4 {
+    font-size: 1em;
   }
 `
 
 export const PosterExtra = styled(GridButton)`
   bottom: 1.33em;
   position: absolute;
+  box-shadow: none;
   right: 0.15em;
   min-height: 0;
   width: 100%;
@@ -96,13 +105,11 @@ export const Spacer = styled.div`
 `
 export const Carousel = props => (
   <Posters>
-    <div>
+    <div style={{ marginLeft: props.chop ? "1.5em" : undefined }}>
       {props.items.map((item, num) => (
         <React.Fragment key={item.title}>
           {num === 0 && <Spacer />}
           <Poster
-            src={item.poster}
-            center={props.center}
             to={item.to}
             onClick={event => {
               GA.event({
@@ -112,8 +119,18 @@ export const Carousel = props => (
               })
             }}
           >
-            <div>{item.title}</div>
-            {item.extra && <PosterExtra label={item.extra.replace("_", " ")} />}
+            <PosterImage src={item.poster} center={props.center} />
+            <PosterInfo>
+              <h4>
+                {item.type && item.type === "↯ PDF Download" && "DOWNLOAD: "}
+                {item.title}
+              </h4>
+              <small>
+                <em>{item.text}</em>
+              </small>
+            </PosterInfo>
+
+            {item.type && <PosterExtra label={item.type.replace("_", " ")} />}
           </Poster>
           {num === props.items.length - 1 && <Spacer last />}
         </React.Fragment>
@@ -122,68 +139,45 @@ export const Carousel = props => (
   </Posters>
 )
 
-const ExclusiveContent = props => (
-  <React.Fragment>
-    <h3>Free PDF Downloads</h3>
-    <Carousel items={MUST_READS_CONTENT.downloads} {...props} />
-    <p style={{ lineHeight: "1.2em" }}>
-      <small>
-        <em>
-          Download our exclusive guides and photo essays (PDF) for offline
-          reading. Formatted to be easily printed on any standard paper. You’ll
-          need a{" "}
-          <Link to="/sign-in">
-            <strong>free Analog.Cafe Account</strong>
-          </Link>
-          .
-        </em>
-      </small>
-    </p>
-    <p style={{ lineHeight: "1.2em" }}>
-      <small>
-        <em>
-          <strong>Pre Releases</strong> are articles which can be read ahead of
-          their publication date. Exclusive to Analog.Cafe Account holders.
-        </em>
-      </small>
-    </p>
-  </React.Fragment>
-)
-
 export const Features = props => {
   return (
     <ArticleWrapper>
-      <MetaTags metaTitle="Features" />
-      <HeaderLarge pageTitle="Features">
-        {/* <Byline>
-          <NavMini view="features" />
-        </Byline> */}
-      </HeaderLarge>
+      <MetaTags metaTitle="Features" metaSubtitle="The Best of Analog.Cafe" />
+      <HeaderLarge
+        pageTitle="Features"
+        pageSubtitle="The Best of Analog.Cafe"
+      />
+
       <ArticleSection>
-        <ExclusiveContent {...props} />
-        <h3>Essential Guides</h3>
+        <blockquote>
+          <strong>Essential Photography Guides</strong> are a great place to
+          start if you are you are looking to improve your film photography
+          understanding and techniques.
+        </blockquote>
         <Carousel items={MUST_READS_CONTENT.guides} {...props} />
-        <p style={{ lineHeight: "1.2em" }}>
-          <small>
-            <em>
-              Understand film photography better, shop smarter, and get
-              published with this collection of articles on this topic.
-            </em>
-          </small>
-        </p>
-        <h3>
-          Best of <Link to="/photo-essays">Photo Essays</Link>
-        </h3>
+        <Carousel
+          chop
+          items={MUST_READS_CONTENT["download-guides"]}
+          {...props}
+        />
+
+        <div style={{ height: "6em" }} />
+
+        <blockquote>
+          <strong>Photo Essays</strong> are stories told with images. Read our
+          ever-expanding collection of best-written essays on travel, art,
+          self-expression, and creative experiments.
+        </blockquote>
         <Carousel items={MUST_READS_CONTENT.essays} {...props} center={1} />
-        <p style={{ lineHeight: "1.2em" }}>
-          <small>
-            <em>
-              Read the best-illustrated and most inspiring photo essays written
-              by our community of guest and regular contributors.
-            </em>
-          </small>
-        </p>
-        <h3>Camera Reviews</h3>
+        <Carousel
+          chop
+          items={MUST_READS_CONTENT["download-essays"]}
+          {...props}
+          center={1}
+        />
+
+        <div style={{ height: "6em" }} />
+
         <Carousel
           items={MUST_READS_CONTENT["camera-reviews"]}
           {...props}
@@ -198,7 +192,7 @@ export const Features = props => {
             </em>
           </small>
         </p>
-        <h3>Film and Emulsions</h3>
+        {/* <h3>Film and Emulsions</h3> */}
         <Carousel items={MUST_READS_CONTENT.emulsions} {...props} center={1} />
         <p style={{ lineHeight: "1.2em" }}>
           <small>

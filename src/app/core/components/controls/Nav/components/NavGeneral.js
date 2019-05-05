@@ -105,8 +105,7 @@ export default props => {
             })
           }}
         >
-          Feature
-          <NotOnMicroScreens>s</NotOnMicroScreens>
+          Features
           <Extra>
             {" "}
             <Cube style={iconStyles} />

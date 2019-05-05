@@ -29,9 +29,13 @@ export const Download = props => {
   const destination = `https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/${filename}`
 
   // get file meta
-  const fileData = MUST_READS_CONTENT.downloads.filter(
+  const fileList_1 = MUST_READS_CONTENT["download-guides"]
+  const fileList_2 = MUST_READS_CONTENT["download-essays"]
+  const fileList = [...fileList_1, ...fileList_2]
+  const fileData = fileList.filter(
     download => download.to === "/download/" + filename
   )[0]
+
   const hasPermission = props.user.status === "ok"
 
   // ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ

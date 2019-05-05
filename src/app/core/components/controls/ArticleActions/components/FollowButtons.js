@@ -49,18 +49,18 @@ const InstagramButton = styled(LinkButton)`
     margin: -0.4em 0 0 0.2em;
   }
 `
-const ItunesButton = styled(LinkButton)`
-  ${FollowButton} svg {
-    height: 1.4em;
-    margin: -0.4em 0 0 0.2em;
-  }
-`
-const EtsyButton = styled(LinkButton)`
-  ${FollowButton} svg {
-    height: 1.4em;
-    margin: -0.4em 0 0 0.2em;
-  }
-`
+// const ItunesButton = styled(LinkButton)`
+//   ${FollowButton} svg {
+//     height: 1.4em;
+//     margin: -0.4em 0 0 0.2em;
+//   }
+// `
+// const EtsyButton = styled(LinkButton)`
+//   ${FollowButton} svg {
+//     height: 1.4em;
+//     margin: -0.4em 0 0 0.2em;
+//   }
+// `
 
 // const FacebookButton = styled(LinkButton)`
 //   ${FollowButton} svg {
