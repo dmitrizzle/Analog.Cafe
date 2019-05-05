@@ -1,36 +1,12 @@
 import React from "react"
 
-import {
-  BurgerMenu,
-  sectionButtons
-} from "../../../../../core/components/pages/List/components/ListDescription"
-import { buttonMaker } from "../../../../../core/components/forms/Search"
+import { magazineSections } from "../../../../../core/components/pages/List/components/ListDescription"
 import Link from "../../../../../core/components/controls/Link"
 import Modal from "../../../../../core/components/controls/Modal"
 
 export const UserFavouritesCTA = props => (
   <div style={{ zIndex: 10, position: "relative" }}>
-    <Modal
-      element="Button"
-      with={{
-        info: {
-          menu: true,
-          title: (
-            <span>
-              <BurgerMenu /> Sections
-            </span>
-          ),
-          buttons: sectionButtons.map(section =>
-            buttonMaker(section, {
-              attributes: {
-                inverse: props.location.pathname === section
-              }
-            })
-          )
-        },
-        id: "nav/sections"
-      }}
-    >
+    <Modal element="Button" with={magazineSections(props.location.pathname)}>
       Browse Magazine Sections
     </Modal>
     <small style={{ textAlign: "center", display: "block" }}>

@@ -8,6 +8,8 @@ import {
 } from "../../../../../constants"
 import { buttonMaker } from "../../../forms/Search"
 import { getTitleFromSlug } from "../../../../utils/messages-"
+import Cube from "../../../icons/group-beacons/Cube"
+import Heart from "../../../icons/group-beacons/Heart"
 import ListBrandName from "./ListBrandName"
 import ListDescriptionWrapper from "./ListDescriptionWrapper"
 import ListHeader from "./ListHeader"
@@ -64,6 +66,55 @@ export const sectionButtons = [
   "/collaborations",
   "/favourites"
 ]
+const iconStyles = { height: ".75em", paddingBottom: ".15em" }
+
+export const magazineSections = pathname => {
+  return {
+    info: {
+      menu: true,
+      title: (
+        <span>
+          <BurgerMenu /> {APP_DESCRIPTION}
+        </span>
+      ),
+      buttons: [
+        {
+          to: "/",
+          text: "Newest Articles",
+          inverse: pathname === "/"
+        },
+        ...sectionButtons.map(section =>
+          buttonMaker(section, {
+            attributes: {
+              inverse: pathname === section
+            }
+          })
+        ),
+        { divider: true },
+        {
+          to: "/features",
+          text: (
+            <span>
+              <Cube style={iconStyles} /> Features
+            </span>
+          ),
+          keywords:
+            "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads"
+        },
+        {
+          to: "/favourites",
+          text: (
+            <span>
+              <Heart style={iconStyles} /> Favourites
+            </span>
+          ),
+          keywords: "likes, saved, favourite"
+        }
+      ]
+    },
+    id: "nav/sections"
+  }
+}
 
 export default props => {
   const mobileContent =
@@ -84,32 +135,7 @@ export default props => {
               <DescriptionModalLink
                 unmarked
                 element="a"
-                with={{
-                  info: {
-                    menu: true,
-                    title: (
-                      <span>
-                        <BurgerMenu /> {APP_DESCRIPTION}
-                      </span>
-                    ),
-                    buttons: [
-                      {
-                        to: "/",
-                        text: "All Newest Articles",
-                        inverse: props.location.pathname === "/"
-                      },
-                      ...sectionButtons.map(section =>
-                        buttonMaker(section, {
-                          attributes: {
-                            inverse: props.location.pathname === section,
-                            branded: section === "/favourites"
-                          }
-                        })
-                      )
-                    ]
-                  },
-                  id: "nav/sections"
-                }}
+                with={magazineSections(props.location.pathname)}
               >
                 {props.renderedListMeta.title} <BurgerMenu inverse />
               </DescriptionModalLink>

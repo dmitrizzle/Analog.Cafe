@@ -103,6 +103,7 @@ export default () => {
         />
         <Redirect from="/subscribe" to="/sign-in" />
         <Redirect from="/author/:id" to="/is/:id" />
+        <Redirect from="/resources" to="/features" />
         {/* DYNAMIC VIEWS */}
         <Route exact path="/is" component={NotFound} />
         <Route exact path="/zine" component={NotFound} />

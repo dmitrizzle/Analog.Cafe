@@ -17,6 +17,7 @@ import ButtonGroupDivider from "../../controls/Button/components/ButtonGroupDivi
 import CardButton, {
   CardSearchItem
 } from "../../controls/Card/components/CardButton"
+import Cube from "../../icons/group-beacons/Cube"
 import Heart from "../../icons/group-beacons/Heart"
 import Pen from "../../icons/group-beacons/Pen"
 import SearchForm from "./components/SearchForm"
@@ -52,6 +53,24 @@ const iconStyles = { height: ".75em", paddingBottom: ".15em" }
 
 const NAV_BUTTONS = props => [
   {
+    to: "/submit",
+    text: "Submissions",
+    keywords: "contribute, guest, upload",
+    mobile: "on",
+    visitorOnly: true
+  },
+
+  {
+    to: "/features",
+    text: (
+      <span>
+        <Cube style={iconStyles} /> Features
+      </span>
+    ),
+    keywords:
+      "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads"
+  },
+  {
     to: ROUTE_URL_USER_SUBMISSIONS,
     text: (
       <span>
@@ -69,9 +88,7 @@ const NAV_BUTTONS = props => [
         <Heart style={iconStyles} /> Favourites
       </span>
     ),
-    keywords: "likes, saved, favourite",
-    mobile: "on",
-    memberOnly: true
+    keywords: "likes, saved, favourite"
   },
   {
     to: `/profile/edit`,
@@ -91,25 +108,6 @@ const NAV_BUTTONS = props => [
       mobile: "on",
       inverse: true
     }
-  }),
-
-  {
-    to: "/submit",
-    text: "Submissions",
-    keywords: "contribute, guest, upload",
-    mobile: "on",
-    visitorOnly: true
-  },
-
-  buttonMaker("/about", {
-    keywords: "about,who,what,where,how,authors,editors,contact,backers"
-  }),
-  buttonMaker("/features", {
-    attributes: {
-      hidden: true
-    },
-    keywords:
-      "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads"
   }),
   {
     to: "#sections",
@@ -140,6 +138,7 @@ const NAV_BUTTONS = props => [
       "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute",
     hidden: true
   },
+
   {
     to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
     text: (
@@ -149,7 +148,9 @@ const NAV_BUTTONS = props => [
     ),
     keywords: "etsy,store,buy,shop,camera"
   },
-
+  buttonMaker("/about", {
+    keywords: "about,who,what,where,how,authors,editors,contact,backers"
+  }),
   buttonMaker("/sign-in", {
     keywords: "sign up, create account, password",
     attributes: {

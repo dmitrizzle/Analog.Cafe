@@ -106,10 +106,10 @@ export default props => {
           }}
         >
           Features
-          <Extra>
+          <NotOnMicroScreens>
             {" "}
             <Cube style={iconStyles} />
-          </Extra>
+          </NotOnMicroScreens>
         </NavLink>
       </NavItem>
       <NavItem>
@@ -127,10 +127,10 @@ export default props => {
           Submi
           <NotOnMicroScreens>ssions </NotOnMicroScreens>
           <OnlyMicroScreens>t</OnlyMicroScreens>
-          <Extra>
+          {/* <Extra>
             {" "}
             <Pen style={iconStyles} />
-          </Extra>
+          </Extra> */}
         </NavLink>
         {/* )} */}
       </NavItem>
