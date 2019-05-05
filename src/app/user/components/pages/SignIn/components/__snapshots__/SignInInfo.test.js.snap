@@ -58,7 +58,7 @@ ShallowWrapper {
                  Free
                  
                 <Unknown
-                        to="/resources"
+                        to="/features"
                 >
                         downloads
                 </Unknown>
@@ -127,7 +127,7 @@ ShallowWrapper {
              Free
              
             <Unknown
-                        to="/resources"
+                        to="/features"
             >
                         downloads
             </Unknown>
@@ -271,7 +271,7 @@ ShallowWrapper {
               " Free",
               " ",
               <Unknown
-                to="/resources"
+                to="/features"
 >
                 downloads
 </Unknown>,
@@ -300,7 +300,7 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "children": "downloads",
-                "to": "/resources",
+                "to": "/features",
               },
               "ref": null,
               "rendered": "downloads",
@@ -415,7 +415,7 @@ ShallowWrapper {
                      Free
                      
                     <Unknown
-                              to="/resources"
+                              to="/features"
                     >
                               downloads
                     </Unknown>
@@ -484,7 +484,7 @@ ShallowWrapper {
                Free
                
               <Unknown
-                            to="/resources"
+                            to="/features"
               >
                             downloads
               </Unknown>
@@ -628,7 +628,7 @@ ShallowWrapper {
                 " Free",
                 " ",
                 <Unknown
-                  to="/resources"
+                  to="/features"
 >
                   downloads
 </Unknown>,
@@ -657,7 +657,7 @@ ShallowWrapper {
                 "nodeType": "function",
                 "props": Object {
                   "children": "downloads",
-                  "to": "/resources",
+                  "to": "/features",
                 },
                 "ref": null,
                 "rendered": "downloads",
