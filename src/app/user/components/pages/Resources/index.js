@@ -109,7 +109,7 @@ export const Carousel = props => (
             onClick={event => {
               GA.event({
                 category: "Navigation",
-                action: "Resources.poster",
+                action: "Features.poster",
                 label: item.title
               })
             }}
@@ -155,8 +155,8 @@ const ExclusiveContent = props => (
 export const Resources = props => {
   return (
     <ArticleWrapper>
-      <MetaTags metaTitle="Resources" />
-      <HeaderLarge pageTitle="Resources">
+      <MetaTags metaTitle="Features" />
+      <HeaderLarge pageTitle="Features">
         <Byline>
           <NavMini view="resources" />
         </Byline>
