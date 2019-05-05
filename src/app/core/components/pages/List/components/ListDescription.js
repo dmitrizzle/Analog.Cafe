@@ -1,7 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 
-import { APP_NAME, HEADER_ERRORS } from "../../../../../constants"
+import {
+  APP_DESCRIPTION,
+  APP_NAME,
+  HEADER_ERRORS
+} from "../../../../../constants"
 import { buttonMaker } from "../../../forms/Search"
 import { getTitleFromSlug } from "../../../../utils/messages-"
 import ListBrandName from "./ListBrandName"
@@ -57,7 +61,8 @@ export const sectionButtons = [
   "/photo-essays",
   "/editorials",
   "/solo-projects",
-  "/collaborations"
+  "/collaborations",
+  "/favourites"
 ]
 
 export default props => {
@@ -84,16 +89,24 @@ export default props => {
                     menu: true,
                     title: (
                       <span>
-                        <BurgerMenu /> Sections
+                        <BurgerMenu /> {APP_DESCRIPTION}
                       </span>
                     ),
-                    buttons: sectionButtons.map(section =>
-                      buttonMaker(section, {
-                        attributes: {
-                          inverse: props.location.pathname === section
-                        }
-                      })
-                    )
+                    buttons: [
+                      {
+                        to: "/",
+                        text: "All Newest Articles",
+                        inverse: props.location.pathname === "/"
+                      },
+                      ...sectionButtons.map(section =>
+                        buttonMaker(section, {
+                          attributes: {
+                            inverse: props.location.pathname === section,
+                            branded: section === "/favourites"
+                          }
+                        })
+                      )
+                    ]
                   },
                   id: "nav/sections"
                 }}
