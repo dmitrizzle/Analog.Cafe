@@ -7,8 +7,8 @@ export default () => {
   return (
     <ArticleSection>
       <p>
-        If you love shooting film and have a story to share, Analog.Cafe could
-        be the place to publish it. Submissions are now accepted for essays and
+        If you love shooting film and have a story to share, Analog.Cafe is the
+        place to publish it. Submissions are now accepted for essays and
         articles on or featuring film photography.{" "}
         <Link to="/submit">Details</Link>.
       </p>

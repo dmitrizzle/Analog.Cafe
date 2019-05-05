@@ -1,8 +1,10 @@
 import React from "react"
 
 import { GA } from "../../../../../utils"
+import { LabelWithSearchSVG } from "../../../controls/Nav/components/NavGeneral"
 import Button from "../../../controls/Button/components/Button"
 import Form from "../../../../../user/components/forms/Form"
+import Search from "../../../icons/Search"
 import SearchInput from "../../SearchInput"
 
 export default class extends React.Component {
@@ -46,7 +48,9 @@ export default class extends React.Component {
           }}
           loading={this.props.loading}
         >
-          Search ↵
+          <LabelWithSearchSVG inverse>
+            Search <Search />
+          </LabelWithSearchSVG>
         </Button>
       </Form>
     )

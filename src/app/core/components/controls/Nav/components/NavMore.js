@@ -25,16 +25,6 @@ const accountCss = css`
       stroke: ${props => props.theme.color.background()};
     }
   }
-
-  ${props =>
-    props.special &&
-    props.theme.size.breakpoint.min.l`
-    padding-right: 0.25em !important;
-    box-shadow: ${props.theme.color.foreground()} 0 0 0 1px;
-    border: 3px double transparent;
-    background-clip: padding-box !important;
-    border-radius: 0.33em !important;
-  `};
 `
 export const NavModal = styled(Modal)`
   ${accountCss};
@@ -47,26 +37,19 @@ const iconStyles = { height: ".75em", paddingBottom: ".15em" }
 
 const NAV_USER = props => [
   {
-    to: "/favourites",
-    text: (
-      <span>
-        <Heart style={iconStyles} /> Favourites
-      </span>
-    )
-  },
-  {
-    to: "/resources",
-    text: (
-      <span>
-        <Cube style={iconStyles} /> Resources
-      </span>
-    )
-  },
-  {
     to: ROUTE_URL_USER_SUBMISSIONS,
     text: (
       <span>
         <Pen style={iconStyles} /> Submissions
+      </span>
+    )
+  },
+
+  {
+    to: "/favourites",
+    text: (
+      <span>
+        <Heart style={iconStyles} /> Favourites
       </span>
     )
   },
@@ -78,10 +61,6 @@ const NAV_USER = props => [
       </span>
     )
   },
-  // {
-  //   to: "/submit/compose",
-  //   text: props.hasDraft ? "✏︎ Edit Submission Draft" : "✏︎ New Submission"
-  // },
   buttonMaker("/sign-out"),
   props.userRole === "admin"
     ? buttonMaker("/admin", { attributes: { branded: true } })
@@ -92,7 +71,6 @@ export default props => {
   return props.userStatus === "ok" ? (
     <NavModal
       {...props}
-      special
       unmarked
       with={{
         info: {
@@ -115,7 +93,6 @@ export default props => {
     </NavModal>
   ) : (
     <NavAccountLink
-      special
       to="/sign-in"
       onClick={() => {
         GA.event({

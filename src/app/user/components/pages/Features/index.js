@@ -152,13 +152,13 @@ const ExclusiveContent = props => (
   </React.Fragment>
 )
 
-export const Resources = props => {
+export const Features = props => {
   return (
     <ArticleWrapper>
       <MetaTags metaTitle="Features" />
       <HeaderLarge pageTitle="Features">
         <Byline>
-          <NavMini view="resources" />
+          <NavMini view="features" />
         </Byline>
       </HeaderLarge>
       <ArticleSection>
@@ -230,4 +230,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Resources)
+)(Features)

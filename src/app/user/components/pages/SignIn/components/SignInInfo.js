@@ -56,7 +56,7 @@ export default props => {
         </li>
         <li>
           <span className="highlight icon">❖</span> Free{" "}
-          <Link to="/resources">downloads</Link> & pre-releases.
+          <Link to="/features">downloads</Link> & pre-releases.
         </li>
         <li>
           <span className="icon">☞</span> Weekly email{" "}

@@ -23,23 +23,18 @@ const NavmMiniLink = styled(Link)`
 
 const iconStyles = { height: ".75em" }
 const ITEMS = {
+  submissions: {
+    label: "Submissions",
+    icon: props => <Pen style={props.style} />,
+    to: "/submissions",
+    noAccountTo: "/submit"
+  },
   favourites: {
     account: true,
     label: "Favourites",
     icon: props => <Heart style={props.style} />,
     to: "/favourites",
     noAccountTo: "/sign-in"
-  },
-  resources: {
-    label: "Resources",
-    icon: props => <Cube style={props.style} />,
-    to: "/resources"
-  },
-  submissions: {
-    label: "Submissions",
-    icon: props => <Pen style={props.style} />,
-    to: "/submissions",
-    noAccountTo: "/submit"
   },
   profile: {
     account: true,

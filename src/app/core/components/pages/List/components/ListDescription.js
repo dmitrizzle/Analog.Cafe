@@ -25,8 +25,7 @@ export const Burger = styled.div`
   display: inline-block;
   width: 1em;
   height: 1em;
-  margin: 0 0 -0.1em 0.25em;
-  ${props => !props.inverse && `margin: 0 .25em -.15em .25em`};
+  margin: 0 0.25em -0.15em 0.25em;
   ${props =>
     props.inverse && props.theme.size.breakpoint.max.s`display: none;`};
   > div {

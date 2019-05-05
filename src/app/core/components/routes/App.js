@@ -59,8 +59,8 @@ const PrivacyPolicy = Loadable({
   delay: 100
 })
 
-const Resources = Loadable({
-  loader: () => import("../../../user/components/pages/Resources"),
+const Features = Loadable({
+  loader: () => import("../../../user/components/pages/Features"),
   loading: ArticleLoader,
   delay: 100
 })
@@ -73,7 +73,7 @@ const MyFavourites = Loadable({
 
 const Download = Loadable({
   loader: () =>
-    import("../../../user/components/pages/Resources/components/Download.js"),
+    import("../../../user/components/pages/Features/components/Download.js"),
   loading: ArticleLoader,
   delay: 100
 })
@@ -127,7 +127,7 @@ export default () => {
         <Route exact path="/sign-out" component={SignOut} />
         <Route exact path="/download/*" component={Download} />
         {/* STATIC VIEWS */}
-        <Route exact path="/resources" component={Resources} />
+        <Route exact path="/features" component={Features} />
         <Route exact path="/about" component={About} />
         <Route path="/submit" component={Submit} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />

@@ -4,10 +4,6 @@ import { withRouter } from "react-router-dom"
 import React from "react"
 import styled from "styled-components"
 
-import {
-  BurgerMenu,
-  sectionButtons
-} from "../../pages/List/components/ListDescription"
 import { RHCP } from "../../icons/group-beacons/Star"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../user/constants/routes-session"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
@@ -60,44 +56,41 @@ const NAV_BUTTONS = props => [
   buttonMaker("/about", {
     keywords: "about,who,what,where,how,authors,editors,contact,backers"
   }),
-  buttonMaker("/resources", {
-    keywords:
-      "photography,podcast,audio,downloads,guides,reference,price,reviews,resources,must,reads"
-  }),
-  {
-    to: "#sections",
-    onClick: event => {
-      event.preventDefault()
-      event.stopPropagation()
-      props.setModal({
-        info: {
-          menu: true,
-          title: (
-            <span>
-              <BurgerMenu /> Sections
-            </span>
-          ),
-          buttons: sectionButtons.map(section =>
-            buttonMaker(section, {
-              attributes: {
-                inverse: props.location.pathname === section
-              }
-            })
-          )
-        },
-        id: "nav/sections"
-      })
+  buttonMaker("/features", {
+    attributes: {
+      hidden: true
     },
-    text: "Magazine Sections",
     keywords:
-      "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
-  },
-  {
-    to: "/submit",
-    text: "Submit Your Photography",
-    keywords:
-      "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
-  },
+      "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads"
+  }),
+  // {
+  //   to: "#sections",
+  //   onClick: event => {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //     props.setModal({
+  //       info: {
+  //         menu: true,
+  //         title: (
+  //           <span>
+  //             <BurgerMenu /> Sections
+  //           </span>
+  //         ),
+  //         buttons: sectionButtons.map(section =>
+  //           buttonMaker(section, {
+  //             attributes: {
+  //               inverse: props.location.pathname === section
+  //             }
+  //           })
+  //         )
+  //       },
+  //       id: "nav/sections"
+  //     });
+  //   },
+  //   text: "Magazine Sections",
+  //   keywords:
+  //     "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
+  // },
   {
     to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
     text: (
@@ -105,7 +98,8 @@ const NAV_BUTTONS = props => [
         <span style={{ color: "#ed236e" }}>Etsy</span> Store
       </span>
     ),
-    keywords: "etsy,store,buy,shop,camera"
+    keywords: "etsy,store,buy,shop,camera",
+    mobileOnly: true
   },
   buttonMaker("/sign-out", {
     keywords: "log out, exit",
@@ -194,20 +188,6 @@ export class Search extends React.PureComponent {
       searchText: ""
     }
   }
-  // handleRevealSearchForm = event => {
-  //   if (event) {
-  //     event.preventDefault()
-  //     event.stopPropagation()
-  //   }
-  //
-  //   // this.props.searchMode && this.props.searchMode(true);
-  //
-  //   this.setState({
-  //     searchForm: !this.state.searchForm
-  //   })
-  //   this.props.searchFormCallback &&
-  //     this.props.searchFormCallback(this.state.searchForm)
-  // }
   handleSubmitCallback = query => {
     this.props.getSearchResults(query)
   }
@@ -222,21 +202,6 @@ export class Search extends React.PureComponent {
       ? this.setState({ hideSearchResults: true, searchText: text })
       : this.setState({ hideSearchResults: false, searchText: text })
   }
-  // componentDidMount = () => {
-  //   !this.props.menu && this.handleRevealSearchForm()
-  // }
-  // componentWillReceiveProps = nextProps => {
-  //   //!nextProps.menu && this.handleRevealSearchForm()
-  //
-  //   if (
-  //     nextProps.stateOverwrite === null ||
-  //     nextProps.stateOverwrite === undefined
-  //   )
-  //     return;
-  //   this.setState({
-  //     searchForm: nextProps.stateOverwrite
-  //   });
-  // };
   render = () => {
     const haveSearchResults =
       !this.state.hideSearchResults &&
@@ -252,16 +217,7 @@ export class Search extends React.PureComponent {
 
     return (
       <SearchVisibility menu={this.props.menu}>
-        {//   !this.state.searchForm ? (
-        //   <CardButton
-        //     noDownstate
-        //     style={{ background: "#dfdfdf", cursor: "text" }}
-        //     onClick={this.handleRevealSearchForm}
-        //   >
-        //     {TEXT_LABELS.SEARCH}
-        //   </CardButton>
-        // ) : (
-        [
+        {[
           <SearchForm
             formLocation={this.props.formLocation}
             autoFocus={

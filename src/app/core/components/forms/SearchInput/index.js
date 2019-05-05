@@ -12,9 +12,8 @@ export default props => {
       autoFocus={props.autoFocus}
       maxLength="600"
       warning={props.warning}
-      type="search"
+      type="text"
       value={props.value}
-      // style={{ paddingLeft: "1em" }}
     />
   )
 }

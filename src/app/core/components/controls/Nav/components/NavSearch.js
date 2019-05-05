@@ -1,9 +1,9 @@
 // NOTE: `className` props are used in index.html
 import React from "react"
 
+import { BurgerMenu } from "../../../pages/List/components/ListDescription"
 import { LabelWithSearchSVG } from "./NavGeneral"
 import { NavModal } from "./NavMore"
-import Search from "../../../icons/Search"
 
 export default props => {
   return (
@@ -17,7 +17,7 @@ export default props => {
           socialButtons: true,
           title: (
             <LabelWithSearchSVG>
-              <Search /> Find
+              <BurgerMenu /> Menu
             </LabelWithSearchSVG>
           )
         },

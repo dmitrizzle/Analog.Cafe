@@ -2,16 +2,16 @@
 import React from "react"
 import styled from "styled-components"
 
+import { BurgerMenu } from "../../../pages/List/components/ListDescription"
 import { GA } from "../../../../../utils"
 import { NavLink, NavLogoLink } from "./NavLinks"
 import Cube from "../../../icons/group-beacons/Cube"
-import Heart from "../../../icons/group-beacons/Heart"
 import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
 import NavSearch from "./NavSearch"
-import Search from "../../../icons/Search"
+import Pen from "../../../icons/group-beacons/Pen"
 
 export const LabelWithSearchSVG = styled.span`
   svg {
@@ -20,7 +20,10 @@ export const LabelWithSearchSVG = styled.span`
     z-index: 1;
     position: relative;
     path {
-      stroke: ${props => props.theme.color.foreground()};
+      stroke: ${props =>
+        props.inverse
+          ? props.theme.color.background()
+          : props.theme.color.foreground()};
       stroke-width: 2;
     }
   }
@@ -54,32 +57,20 @@ export const isActiveUrl = (to, options = {}, props) => {
 
   if (options.modalUrl && props.isModalHidden) return false
   if (currentUrl === to) return true
-  // if (
-  //   currentUrl &&
-  //   currentUrl.includes(ROUTE_URL_ARTICLES) &&
-  //   props.articleTag === to.replace("/", "")
-  // )
-  //   return true
   return false
 }
 
 export default props => {
   const a = "active"
+  const mr = "/features"
+  const s = "/submissions"
 
-  const mr = "/resources"
-  // const ab = "/about";
-  const f = "/favourites"
-
-  const resources = {
+  const features = {
     to: mr,
     className: isActiveUrl(mr) ? a : undefined
   }
-  // const about = {
-  //   to: ab,
-  //   className: isActiveUrl(ab) ? a : undefined
-  // };
-  const favourites = {
-    className: isActiveUrl(f) ? a : undefined
+  const submit = {
+    className: isActiveUrl(s) ? a : undefined
   }
 
   const navSearch = {
@@ -89,10 +80,7 @@ export default props => {
   }
   const navMore = {
     className: (isActiveUrl("nav/account", { modalUrl: true }, props)
-    ? // ||
-      // isActiveUrl("/submissions") ||
-      // isActiveUrl("/favourites")
-      "active"
+    ? "active"
     : undefined)
       ? a
       : undefined
@@ -106,65 +94,46 @@ export default props => {
         "ontouchstart" in document.documentElement ? null : props.userIntent
       }
     >
-      <NavItem>
-        {/* {props.userStatus !== "ok" ? (
-          <NavLink
-            {...about}
-            onClick={() => {
-              GA.event({
-                category: "Navigation",
-                action: "Nav.click",
-                label: "About"
-              });
-            }}
-          >
-            About
-            <Extra>
-              {" "}
-              <Star style={iconStyles} />
-            </Extra>
-          </NavLink>
-        ) : ( */}
+      <NavItem prime left className="prime left">
         <NavLink
-          {...favourites}
-          to={props.userStatus !== "ok" ? "/sign-in" : f}
+          {...features}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "Favourites"
+              label: "Features"
             })
           }}
         >
-          Fav
-          <NotOnMicroScreens>ourites </NotOnMicroScreens>
-          <OnlyMicroScreens>es</OnlyMicroScreens>
-          <Extra>
-            {" "}
-            <Heart style={iconStyles} />
-          </Extra>
-        </NavLink>
-        {/* )} */}
-      </NavItem>
-
-      <NavItem>
-        <NavLink
-          {...resources}
-          onClick={() => {
-            GA.event({
-              category: "Navigation",
-              action: "Nav.click",
-              label: "Resources"
-            })
-          }}
-        >
-          Resource
+          Feature
           <NotOnMicroScreens>s</NotOnMicroScreens>
           <Extra>
             {" "}
             <Cube style={iconStyles} />
           </Extra>
         </NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink
+          {...submit}
+          to={props.userStatus !== "ok" ? "/submit" : s}
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "Submissions"
+            })
+          }}
+        >
+          Submi
+          <NotOnMicroScreens>ssions </NotOnMicroScreens>
+          <OnlyMicroScreens>t</OnlyMicroScreens>
+          <Extra>
+            {" "}
+            <Pen style={iconStyles} />
+          </Extra>
+        </NavLink>
+        {/* )} */}
       </NavItem>
 
       <NavItem prime center className="prime center">
@@ -183,24 +152,7 @@ export default props => {
         </NavLogoLink>
       </NavItem>
 
-      <NavItem narrow prime left className="prime left">
-        <NavSearch
-          {...navSearch}
-          onClick={() => {
-            GA.event({
-              category: "Navigation",
-              action: "Nav.click",
-              label: "Find"
-            })
-          }}
-        >
-          <LabelWithSearchSVG>
-            Find <Search />
-          </LabelWithSearchSVG>
-        </NavSearch>
-      </NavItem>
-
-      <NavItem prime right className="prime right">
+      <NavItem>
         <NavMore
           userImage={props.userImage}
           userStatus={props.userStatus}
@@ -212,6 +164,24 @@ export default props => {
           <OnlyMicroScreens>Me </OnlyMicroScreens>
           <NavAvatar image={props.userImage} />
         </NavMore>
+      </NavItem>
+
+      <NavItem narrow prime right className="prime right">
+        <NavSearch
+          {...navSearch}
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "Find"
+            })
+          }}
+        >
+          Menu{" "}
+          <BurgerMenu
+            inverse={isActiveUrl("nav/find", { modalUrl: true }, props)}
+          />{" "}
+        </NavSearch>
       </NavItem>
     </ul>
   )

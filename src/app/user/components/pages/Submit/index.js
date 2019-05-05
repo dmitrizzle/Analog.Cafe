@@ -50,8 +50,8 @@ export default props => {
         <Figure src="image-froth_1499794_BkFUA89IV" feature alt={posterText} />
       </Modal>
       <p>
-        If you love shooting film and have a story to share, Analog.Cafe could
-        be <em>the</em> place to publish it.
+        If you love shooting film and have a story to share, Analog.Cafe is{" "}
+        <em>the</em> place to publish it.
       </p>
       <p>
         We feature fun, beautiful, creative, educational, and entertaining
