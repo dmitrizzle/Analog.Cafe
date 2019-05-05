@@ -173,7 +173,6 @@ export const Features = props => {
           chop
           items={MUST_READS_CONTENT["download-essays"]}
           {...props}
-          center={1}
         />
 
         <div style={{ height: "6em" }} />

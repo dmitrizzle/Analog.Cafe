@@ -178,6 +178,8 @@ export const MUST_READS_CONTENT = {
     {
       title: "Loy Krathong",
       poster: "image-froth_1536155_SygIztNd1G",
+      text:
+        "“The festival is one of our favourite public events throughout the year. Though my wife and I spent years scouting Asia, nothing seems to compare.”",
       to: "/zine/loy-krathong-f25c"
     }
   ],
@@ -185,8 +187,9 @@ export const MUST_READS_CONTENT = {
     {
       account: true,
       type: "↯ PDF Download",
-      title: "KOTD: A Vancouver Rap Battle Event",
-      text: "A rap battle event held in Vancouver, Canada.",
+      title: "KOTD Level Up",
+      text:
+        "For print and offline reading: Photography and story from a rap battle event on Canada’s West Coast.",
       poster: "image-froth_1502090_H1SzBNQF4",
       to: "/download/FIRST_DRAFT-a-vancouver-rap-battle-event-Analog.Cafe.pdf"
     },
@@ -195,6 +198,8 @@ export const MUST_READS_CONTENT = {
       type: "↯ PDF Download",
       title: "Loy Krathong",
       poster: "image-froth_1536155_H10rW53IG",
+      text:
+        "For print and offline reading: Photography from a magical sky lantern festival, held in one place and time only; November full monn in Chiang Mai, Thailand.",
       to:
         "/download/PHOTOESSAY-loy-krathong-and-yi-peng-festival-2018-Analog.Cafe.pdf"
     },
@@ -203,6 +208,8 @@ export const MUST_READS_CONTENT = {
       type: "↯ PDF Download",
       title: "Resettle to Vancouver",
       poster: "image-froth_2066116_ByaU4Lyq7",
+      text:
+        "For print and offline reading: an essay on leaving an expat life in Thailand for the homecountry city of Vancouver.",
       to: "/download/PHOTOESSAY-resettle-to-vancouver-2018-Analog.Cafe.pdf"
     },
     {
@@ -210,6 +217,8 @@ export const MUST_READS_CONTENT = {
       type: "↯ PDF Download",
       title: "Tropical Fruits",
       poster: "image-froth_1508587_BJfdlh8HQ",
+      text:
+        "For print and offline reading: Unique for northern dwellers, common for southerners – tropical fruits. A photo essay.",
       to:
         "/download/PHOTOESSAY-tropical-fruits-and-their-secrets-2018-Analog.Cafe.pdf"
     }
