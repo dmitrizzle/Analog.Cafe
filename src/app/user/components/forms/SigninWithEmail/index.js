@@ -55,7 +55,6 @@ class SigninWithEmail extends React.PureComponent {
         <EmailInput
           onChange={this.handleEmailChange}
           warning={this.state.warning}
-          autoFocus
         />
 
         <Button

@@ -1,5 +1,5 @@
 let authorsListDefaults = []
-for (let o = 0; o < 8; o++) {
+for (let o = 0; o < 10; o++) {
   authorsListDefaults[o] = { id: o }
 }
 

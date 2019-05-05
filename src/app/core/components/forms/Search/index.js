@@ -4,6 +4,10 @@ import { withRouter } from "react-router-dom"
 import React from "react"
 import styled from "styled-components"
 
+import {
+  BurgerMenu,
+  sectionButtons
+} from "../../pages/List/components/ListDescription"
 import { RHCP } from "../../icons/group-beacons/Star"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../user/constants/routes-session"
 import { TEXT_ROUTE_LABELS } from "../../../constants/messages-list"
@@ -47,12 +51,19 @@ export const buttonMaker = (to, options = {}) => {
 const iconStyles = { height: ".75em", paddingBottom: ".15em" }
 
 const NAV_BUTTONS = props => [
-  {
-    to: "/",
-    text: "Analog.Cafe",
-    keywords: "about,who,what,where,how,authors,editors,contact,backers",
-    inverse: true
-  },
+  // {
+  //   to: "/",
+  //   text: "Analog.Cafe",
+  //   keywords: "about,who,what,where,how,authors,editors,contact,backers",
+  //   inverse: true
+  // },
+
+  buttonMaker("/sign-in", {
+    keywords: "sign up, create account, password",
+    attributes: {
+      visitorOnly: true
+    }
+  }),
   buttonMaker("/about", {
     keywords: "about,who,what,where,how,authors,editors,contact,backers"
   }),
@@ -63,34 +74,35 @@ const NAV_BUTTONS = props => [
     keywords:
       "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads"
   }),
-  // {
-  //   to: "#sections",
-  //   onClick: event => {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //     props.setModal({
-  //       info: {
-  //         menu: true,
-  //         title: (
-  //           <span>
-  //             <BurgerMenu /> Sections
-  //           </span>
-  //         ),
-  //         buttons: sectionButtons.map(section =>
-  //           buttonMaker(section, {
-  //             attributes: {
-  //               inverse: props.location.pathname === section
-  //             }
-  //           })
-  //         )
-  //       },
-  //       id: "nav/sections"
-  //     });
-  //   },
-  //   text: "Magazine Sections",
-  //   keywords:
-  //     "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
-  // },
+  {
+    to: "#sections",
+    onClick: event => {
+      event.preventDefault()
+      event.stopPropagation()
+      props.setModal({
+        info: {
+          menu: true,
+          title: (
+            <span>
+              <BurgerMenu /> Sections
+            </span>
+          ),
+          buttons: sectionButtons.map(section =>
+            buttonMaker(section, {
+              attributes: {
+                inverse: props.location.pathname === section
+              }
+            })
+          )
+        },
+        id: "nav/sections"
+      })
+    },
+    text: "Magazine Sections",
+    keywords:
+      "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute",
+    hidden: true
+  },
   {
     to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
     text: (
@@ -98,8 +110,7 @@ const NAV_BUTTONS = props => [
         <span style={{ color: "#ed236e" }}>Etsy</span> Store
       </span>
     ),
-    keywords: "etsy,store,buy,shop,camera",
-    mobileOnly: true
+    keywords: "etsy,store,buy,shop,camera"
   },
   buttonMaker("/sign-out", {
     keywords: "log out, exit",
@@ -108,20 +119,13 @@ const NAV_BUTTONS = props => [
       hidden: true
     }
   }),
-  buttonMaker("/sign-in", {
-    keywords: "sign up, create account, password",
-    attributes: {
-      visitorOnly: true,
-      hidden: true
-    }
-  }),
   { divider: true },
   buttonMaker("/film-photography", {
-    keywords: "science",
+    keywords: "science, camera, emulsion",
     attributes: { hidden: true }
   }),
   buttonMaker("/photo-essays", {
-    keywords: "art",
+    keywords: "art, photography",
     attributes: { hidden: true }
   }),
   buttonMaker("/editorials", { attributes: { hidden: true } }),

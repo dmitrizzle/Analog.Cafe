@@ -1,6 +1,7 @@
 import { connect } from "react-redux"
 import React from "react"
 import styled from "styled-components"
+import CountUp from "react-countup"
 
 import { fetchAuthorsList } from "../../../../user/store/actions-community"
 import { makeFroth } from "../../../../utils"
@@ -83,13 +84,24 @@ class About extends React.PureComponent {
 
         <ArticleSection>
           <p>
-            Here we publish weekly photo essays on art, travel, and culture.
-            Many of our articles are about analogue cameras, too.
+            Weekly photo essays on art, travel, and culture. Analogue cameras,
+            film, history, and techniques.
           </p>
           <p>
-            As of now, there are {this.props.community.authorsList.items.length}{" "}
-            contributing authors. Some of us are prominent film photographers,
-            others are writers, artists, or camera afficionados.
+            This web site is a (growing) group effort, with{" "}
+            <CountUp
+              end={this.props.community.authorsList.items.length}
+              duration={5}
+              start={Math.floor(
+                this.props.community.authorsList.items.length - 10
+              )}
+              //useEasing={false}
+              delay={2}
+            />{" "}
+            contributing authors as of now.{" "}
+            <strong>
+              <Link to="/sign-in">Join us!</Link>
+            </strong>
           </p>
           <AuthorsBanner src="image-froth_1533636_rygH__d9kQ">
             <Authors>
@@ -108,8 +120,8 @@ class About extends React.PureComponent {
           </AuthorsBanner>
           <h3>A brief history.</h3>
           <p>
-            This project got initiated in 2017 as an idea for a community
-            publishing platform.
+            This project budded in 2017 as an idea for a community publishing
+            platform.
           </p>
           <p>
             Analog.Cafe got funded via Kickstarter on May 5<sup>th</sup>. The
