@@ -2,10 +2,8 @@ import React from "react"
 import styled, { css } from "styled-components"
 
 import { GA } from "../../../../../utils"
-import Etsy from "../../../icons/group-social/Etsy"
 import Feedly from "../../../icons/group-social/Feedly"
 import Instagram from "../../../icons/group-social/Instagram"
-import Itunes from "../../../icons/group-social/Itunes"
 import LinkButton from "../../Button/components/LinkButton"
 import Twitter from "../../../icons/group-social/Twitter"
 
@@ -79,7 +77,7 @@ const EtsyButton = styled(LinkButton)`
 export default props => {
   return (
     <FollowButtons>
-      <EtsyButton
+      {/* <EtsyButton
         to="https://www.etsy.com/ca/shop/AnalogCafeShop"
         onClick={() => {
           GA.event({
@@ -89,7 +87,7 @@ export default props => {
         }}
       >
         <Etsy />
-      </EtsyButton>
+      </EtsyButton> */}
       <FeedlyButton
         to="http://bit.ly/FeedAnalog"
         onClick={() => {
@@ -123,7 +121,7 @@ export default props => {
       >
         <Instagram />
       </InstagramButton>
-      <ItunesButton
+      {/* <ItunesButton
         to="https://itunes.apple.com/us/podcast/analog-cafe-a-film-photography-podcast/id1452093436?mt=2&app=podcast"
         onClick={() => {
           GA.event({
@@ -133,7 +131,7 @@ export default props => {
         }}
       >
         <Itunes />
-      </ItunesButton>
+      </ItunesButton> */}
     </FollowButtons>
   )
 }

@@ -10,7 +10,6 @@ import CardPopup from "./components/CardPopup"
 import FollowButtons from "../ArticleActions/components/FollowButtons"
 import Search from "../../forms/Search"
 import Spinner from "../../icons/Spinner"
-import Subscribe from "../../../../user/components/forms/Subscribe"
 
 export default class extends React.PureComponent {
   constructor(props) {
@@ -115,32 +114,6 @@ export default class extends React.PureComponent {
             ) : null
           })}
         {this.props.socialButtons && <FollowButtons />}
-        {/*
-          TODO: this(below) should go away along with mailchimp link forms */}
-        {this.props.subscribe && (
-          <Subscribe
-            autoFocus
-            stateOverwrite={{ subscribeForm: true }}
-            formButtonText={this.props.formButtonText}
-            formClosedButtonText={this.props.formClosedButtonText}
-            formLocation={"Card"}
-          />
-        )}
-        {/* {this.props.subscribe && (
-          <CardButton
-            onClick={() =>
-              GA.event({
-                category: "Navigation",
-                action: "Nav.click",
-                label: "Subscribe.more"
-              })
-            }
-            to="/subscribe"
-            branded
-          >
-            {TEXT_LABELS.SUBSCRIBE}
-          </CardButton>
-        )} */}
       </CardPopup>
     )
   }

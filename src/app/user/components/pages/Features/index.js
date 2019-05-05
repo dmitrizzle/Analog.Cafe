@@ -7,12 +7,10 @@ import { MUST_READS_CONTENT } from "./constants"
 import { setModal } from "../../../../core/store/actions-modal"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
-import Byline from "../../../../core/components/vignettes/Byline"
 import GridButton from "../../../../admin/components/controls/Grid/components/GridButton"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
-import NavMini from "../../../../core/components/controls/Nav/components/NavMini"
 
 export const Posters = styled.div`
   overflow-x: scroll;
@@ -157,9 +155,9 @@ export const Features = props => {
     <ArticleWrapper>
       <MetaTags metaTitle="Features" />
       <HeaderLarge pageTitle="Features">
-        <Byline>
+        {/* <Byline>
           <NavMini view="features" />
-        </Byline>
+        </Byline> */}
       </HeaderLarge>
       <ArticleSection>
         <ExclusiveContent {...props} />

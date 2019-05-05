@@ -13,8 +13,6 @@ import Form from "../Form"
 class SigninWithEmail extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.handleEmailChange = this.handleEmailChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
     this.state = { email: "", warning: false }
   }
   handleEmailChange = event => {

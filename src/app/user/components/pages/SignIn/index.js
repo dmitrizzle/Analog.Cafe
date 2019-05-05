@@ -11,6 +11,10 @@ import {
   ROUTE_API_LOGIN_FACEBOOK,
   ROUTE_API_LOGIN_TWITTER
 } from "../../../constants/routes-session"
+import {
+  SubscribeWrapper,
+  WallPaper
+} from "../../../../core/components/pages/Subscribe"
 import { redirectAfterSignIn } from "../../../utils/actions-session"
 import {
   verifyUser,
@@ -20,14 +24,12 @@ import {
 } from "../../../store/actions-user"
 import AlreadyAuthenticated from "../Error/components/AlreadyAuthenticated"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
-import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import ButtonGroup from "../../../../core/components/controls/Button/components/ButtonGroup"
 import CardIntegrated from "../../../../core/components/controls/Card/components/CardIntegrated"
 import Figure from "../../../../core/components/vignettes/Picture/components/Figure"
 import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
 import MetaTags from "../../../../core/components/vignettes/MetaTags"
-import Modal from "../../../../core/components/controls/Modal"
 import SignInInfo, { Hint } from "./components/SignInInfo"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
@@ -117,63 +119,34 @@ class SignIn extends React.PureComponent {
   render() {
     if (this.props.user.status !== "ok") {
       return (
-        <ArticleWrapper>
+        <SubscribeWrapper>
           <MetaTags metaTitle="Sign In" metaSubtitle="Or create free account" />
-          <HeaderLarge
-            id="account"
-            pageTitle="Sign In"
-            pageSubtitle="Or create free account"
-          />
-          <ArticleSection>
-            <SignInInfo />
-            <ButtonGroup style={{ padding: "0.5em 0 4em" }}>
-              <TwitterLinkButton
-                to="#twitter-sign-in"
-                onClick={this.handleTwitterButton}
-              >
-                Continue with Twitter
-              </TwitterLinkButton>
+          <HeaderLarge id="account" pageTitle="Sign In" />
+          <WallPaper bgRouletteCached={"image-froth_1469613_Skk4VZmZE"}>
+            <ArticleSection>
+              <SignInInfo />
+              <ButtonGroup style={{ padding: "0.5em 0 4em" }}>
+                <TwitterLinkButton
+                  to="#twitter-sign-in"
+                  onClick={this.handleTwitterButton}
+                >
+                  Continue with Twitter
+                </TwitterLinkButton>
 
-              <FacebookLinkButton
-                to="#facebook-sign-in"
-                onClick={this.handleFacebookButton}
-              >
-                Continue with Facebook
-              </FacebookLinkButton>
-              <p>
-                <em>
-                  <small>
-                    <strong>OR:</strong> type your email below and get a{" "}
-                    <Modal
-                      with={{
-                        info: {
-                          image: "image-froth_3525424_rJ1m0e15m",
-                          title: "Secure Confirmation Links",
-                          text: (
-                            <span>
-                              Sign in and create accounts{" "}
-                              <strong>securely and without passwords</strong>.
-                              <br />
-                              <br />
-                              Enter your email address get a link that will
-                              either create an account or log you in –
-                              instantly.
-                            </span>
-                          )
-                        },
-                        id: "hints/disposable-links"
-                      }}
-                    >
-                      confirmation
-                    </Modal>{" "}
-                    link:
-                  </small>
-                </em>
-              </p>
-              <CardIntegrated>
-                <SignInWithEmail />
-              </CardIntegrated>
-            </ButtonGroup>
+                <FacebookLinkButton
+                  to="#facebook-sign-in"
+                  onClick={this.handleFacebookButton}
+                >
+                  Continue with Facebook
+                </FacebookLinkButton>
+
+                <CardIntegrated>
+                  <SignInWithEmail />
+                </CardIntegrated>
+              </ButtonGroup>
+            </ArticleSection>
+          </WallPaper>
+          <ArticleSection>
             <Hint stateSessionInfo={this.state.sessionInfo} />
             <p>
               Your account is created automatically whenever you click either of
@@ -203,7 +176,7 @@ class SignIn extends React.PureComponent {
               <Figure src="image-froth_1600000_BJRvHFlv4" feature />
             </Link>
           </ArticleSection>
-        </ArticleWrapper>
+        </SubscribeWrapper>
       )
     } else {
       return <AlreadyAuthenticated />

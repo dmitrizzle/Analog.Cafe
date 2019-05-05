@@ -51,19 +51,56 @@ export const buttonMaker = (to, options = {}) => {
 const iconStyles = { height: ".75em", paddingBottom: ".15em" }
 
 const NAV_BUTTONS = props => [
-  // {
-  //   to: "/",
-  //   text: "Analog.Cafe",
-  //   keywords: "about,who,what,where,how,authors,editors,contact,backers",
-  //   inverse: true
-  // },
-
-  buttonMaker("/sign-in", {
-    keywords: "sign up, create account, password",
+  {
+    to: ROUTE_URL_USER_SUBMISSIONS,
+    text: (
+      <span>
+        <Pen style={iconStyles} /> Submissions
+      </span>
+    ),
+    keywords: "my stuff, results, drafts, portfolio, submissions, submit",
+    memberOnly: true,
+    mobile: "on"
+  },
+  {
+    to: "/favourites",
+    text: (
+      <span>
+        <Heart style={iconStyles} /> Favourites
+      </span>
+    ),
+    keywords: "likes, saved, favourite",
+    mobile: "on",
+    memberOnly: true
+  },
+  {
+    to: `/profile/edit`,
+    text: (
+      <span>
+        <RHCP style={iconStyles} /> Profile & Settings
+      </span>
+    ),
+    keywords: "account, avatar, link, bio, profile, settings",
+    mobile: "on",
+    memberOnly: true
+  },
+  buttonMaker("/sign-out", {
+    keywords: "log out, exit",
     attributes: {
-      visitorOnly: true
+      memberOnly: true,
+      mobile: "on",
+      inverse: true
     }
   }),
+
+  {
+    to: "/submit",
+    text: "Submissions",
+    keywords: "contribute, guest, upload",
+    mobile: "on",
+    visitorOnly: true
+  },
+
   buttonMaker("/about", {
     keywords: "about,who,what,where,how,authors,editors,contact,backers"
   }),
@@ -112,14 +149,14 @@ const NAV_BUTTONS = props => [
     ),
     keywords: "etsy,store,buy,shop,camera"
   },
-  buttonMaker("/sign-out", {
-    keywords: "log out, exit",
+
+  buttonMaker("/sign-in", {
+    keywords: "sign up, create account, password",
     attributes: {
-      memberOnly: true,
-      hidden: true
+      visitorOnly: true,
+      inverse: true
     }
   }),
-  { divider: true },
   buttonMaker("/film-photography", {
     keywords: "science, camera, emulsion",
     attributes: { hidden: true }
@@ -148,39 +185,6 @@ const NAV_BUTTONS = props => [
     keywords:
       "compose, submit, write, upload, send, cntribute, edit, submission, draft",
     hidden: true
-  },
-  {
-    to: ROUTE_URL_USER_SUBMISSIONS,
-    text: (
-      <span>
-        <Pen style={iconStyles} /> Submissions
-      </span>
-    ),
-    keywords: "my stuff, results, drafts, portfolio, submissions, submit",
-    hidden: true,
-    memberOnly: true
-  },
-  {
-    to: "/favourites",
-    text: (
-      <span>
-        <Heart style={iconStyles} /> Favourites
-      </span>
-    ),
-    keywords: "likes, saved, favourite",
-    hidden: true,
-    membersOnly: true
-  },
-  {
-    to: `/profile/edit`,
-    text: (
-      <span>
-        <RHCP style={iconStyles} /> Profile & Settings
-      </span>
-    ),
-    keywords: "account, avatar, link, bio, profile, settings",
-    hidden: true,
-    membersOnly: true
   }
 ]
 export class Search extends React.PureComponent {
@@ -329,6 +333,7 @@ export class Search extends React.PureComponent {
                 to={button.to}
                 key={`div_${button.to || button.onClick || Math.random()}`}
                 inverse={button.inverse}
+                mobile={button.mobile}
               >
                 {button.text}
               </CardButton>

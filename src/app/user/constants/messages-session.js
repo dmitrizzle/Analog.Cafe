@@ -1,3 +1,5 @@
+import React from "react"
+
 export const CARD_ERRORS = {
   CONNECTION_OFFLINE: {
     info: {
@@ -33,8 +35,17 @@ export const CARD_ALERTS = {
   LOGIN_EMAIL: email => {
     return {
       info: {
-        title: "Email Sign In",
-        text: `Please check your ${email} inbox and click the link we just sent you.`
+        image: "image-froth_3525424_rJ1m0e15m",
+        title: "Check Your Email",
+        text: (
+          <span>
+            Please check your {email} inbox and{" "}
+            <strong style={{ fontStyle: "normal" }}>
+              click the link we just sent you
+            </strong>
+            .
+          </span>
+        )
       },
       id: "hints/check-email"
     }

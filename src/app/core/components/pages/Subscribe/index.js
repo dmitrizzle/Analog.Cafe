@@ -30,7 +30,7 @@ const bgList = [
 const bgRoulette = () => bgList[Math.floor(Math.random() * bgList.length)]
 const bgRouletteCached = bgList[Math.floor(Math.random() * bgList.length)]
 
-const WallPaper = styled.div`
+export const WallPaper = styled.div`
   border-top: ${props => props.theme.elements.thickBorder};
   margin-top: 1em;
   height: 100vh;
@@ -65,7 +65,7 @@ export const GetYourWeekly = () => (
   </CardCaptionIntegrated>
 )
 
-const SubscribeWrapper = styled(ArticleWrapper)`
+export const SubscribeWrapper = styled(ArticleWrapper)`
   overflow: visible;
   padding-top: ${props => (props.embed ? "6em" : undefined)};
   @media print {
