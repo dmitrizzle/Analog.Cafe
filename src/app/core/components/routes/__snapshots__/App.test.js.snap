@@ -43,6 +43,11 @@ ShallowWrapper {
                 push={false}
                 to="/is/:id"
         />
+        <Redirect
+                from="/resources"
+                push={false}
+                to="/features"
+        />
         <Route
                 component={[Function]}
                 exact={true}
@@ -208,6 +213,11 @@ ShallowWrapper {
             from="/author/:id"
             push={false}
             to="/is/:id"
+/>,
+          <Redirect
+            from="/resources"
+            push={false}
+            to="/features"
 />,
           <Route
             component={[Function]}
@@ -400,6 +410,19 @@ ShallowWrapper {
             "from": "/author/:id",
             "push": false,
             "to": "/is/:id",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "from": "/resources",
+            "push": false,
+            "to": "/features",
           },
           "ref": null,
           "rendered": null,
@@ -767,6 +790,11 @@ ShallowWrapper {
                     push={false}
                     to="/is/:id"
           />
+          <Redirect
+                    from="/resources"
+                    push={false}
+                    to="/features"
+          />
           <Route
                     component={[Function]}
                     exact={true}
@@ -932,6 +960,11 @@ ShallowWrapper {
               from="/author/:id"
               push={false}
               to="/is/:id"
+/>,
+            <Redirect
+              from="/resources"
+              push={false}
+              to="/features"
 />,
             <Route
               component={[Function]}
@@ -1124,6 +1157,19 @@ ShallowWrapper {
               "from": "/author/:id",
               "push": false,
               "to": "/is/:id",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "from": "/resources",
+              "push": false,
+              "to": "/features",
             },
             "ref": null,
             "rendered": null,

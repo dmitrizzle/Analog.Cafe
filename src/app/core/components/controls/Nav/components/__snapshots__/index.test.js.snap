@@ -12,59 +12,9 @@ ShallowWrapper {
     "simulateEvent": [Function],
     "unmount": [Function],
   },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": <img
-        alt="Profile avatar"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-/>,
-      "style": undefined,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "alt": "Profile avatar",
-        "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": "img",
-    },
-    "type": [Function],
-  },
+  Symbol(enzyme.__node__): null,
   Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <img
-          alt="Profile avatar"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-/>,
-        "style": undefined,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "alt": "Profile avatar",
-          "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
-      "type": [Function],
-    },
+    null,
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
@@ -770,10 +720,7 @@ ShallowWrapper {
                     onClick={[Function]}
                     to="/features"
           >
-                    Feature
-                    <styled.span>
-                              s
-                    </styled.span>
+                    Features
                     <styled.span>
                                
                               <Unknown
@@ -799,17 +746,6 @@ ShallowWrapper {
                     </styled.span>
                     <styled.span>
                               t
-                    </styled.span>
-                    <styled.span>
-                               
-                              <Unknown
-                                        style={
-                                                  Object {
-                                                            "height": "1em",
-                                                            "paddingBottom": ".15em",
-                                                          }
-                                        }
-                              />
                     </styled.span>
           </NavLink>
 </styled.li>,
@@ -880,10 +816,7 @@ ShallowWrapper {
             onClick={[Function]}
             to="/features"
 >
-            Feature
-            <styled.span>
-                        s
-            </styled.span>
+            Features
             <styled.span>
                          
                         <Unknown
@@ -907,10 +840,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "children": Array [
-              "Feature",
-              <styled.span>
-                s
-</styled.span>,
+              "Features",
               <styled.span>
                  
                 <Unknown
@@ -929,18 +859,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "Feature",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "s",
-              },
-              "ref": null,
-              "rendered": "s",
-              "type": [Function],
-            },
+            "Features",
             Object {
               "instance": null,
               "key": undefined,
@@ -1000,17 +919,6 @@ ShallowWrapper {
             <styled.span>
                         t
             </styled.span>
-            <styled.span>
-                         
-                        <Unknown
-                                    style={
-                                                Object {
-                                                            "height": "1em",
-                                                            "paddingBottom": ".15em",
-                                                          }
-                                    }
-                        />
-            </styled.span>
 </NavLink>,
         },
         "ref": null,
@@ -1026,17 +934,6 @@ ShallowWrapper {
 </styled.span>,
               <styled.span>
                 t
-</styled.span>,
-              <styled.span>
-                 
-                <Unknown
-                                style={
-                                                Object {
-                                                                "height": "1em",
-                                                                "paddingBottom": ".15em",
-                                                              }
-                                }
-                />
 </styled.span>,
             ],
             "className": undefined,
@@ -1066,43 +963,6 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "t",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  " ",
-                  <Unknown
-                    style={
-                                        Object {
-                                                            "height": "1em",
-                                                            "paddingBottom": ".15em",
-                                                          }
-                    }
-/>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                " ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "style": Object {
-                      "height": "1em",
-                      "paddingBottom": ".15em",
-                    },
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
               "type": [Function],
             },
           ],
@@ -1331,10 +1191,7 @@ ShallowWrapper {
                         onClick={[Function]}
                         to="/features"
             >
-                        Feature
-                        <styled.span>
-                                    s
-                        </styled.span>
+                        Features
                         <styled.span>
                                      
                                     <Unknown
@@ -1360,17 +1217,6 @@ ShallowWrapper {
                         </styled.span>
                         <styled.span>
                                     t
-                        </styled.span>
-                        <styled.span>
-                                     
-                                    <Unknown
-                                                style={
-                                                            Object {
-                                                                        "height": "1em",
-                                                                        "paddingBottom": ".15em",
-                                                                      }
-                                                }
-                                    />
                         </styled.span>
             </NavLink>
 </styled.li>,
@@ -1441,10 +1287,7 @@ ShallowWrapper {
               onClick={[Function]}
               to="/features"
 >
-              Feature
-              <styled.span>
-                            s
-              </styled.span>
+              Features
               <styled.span>
                              
                             <Unknown
@@ -1468,10 +1311,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "children": Array [
-                "Feature",
-                <styled.span>
-                  s
-</styled.span>,
+                "Features",
                 <styled.span>
                    
                   <Unknown
@@ -1490,18 +1330,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
-              "Feature",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "s",
-                },
-                "ref": null,
-                "rendered": "s",
-                "type": [Function],
-              },
+              "Features",
               Object {
                 "instance": null,
                 "key": undefined,
@@ -1561,17 +1390,6 @@ ShallowWrapper {
               <styled.span>
                             t
               </styled.span>
-              <styled.span>
-                             
-                            <Unknown
-                                          style={
-                                                        Object {
-                                                                      "height": "1em",
-                                                                      "paddingBottom": ".15em",
-                                                                    }
-                                          }
-                            />
-              </styled.span>
 </NavLink>,
           },
           "ref": null,
@@ -1587,17 +1405,6 @@ ShallowWrapper {
 </styled.span>,
                 <styled.span>
                   t
-</styled.span>,
-                <styled.span>
-                   
-                  <Unknown
-                                    style={
-                                                      Object {
-                                                                        "height": "1em",
-                                                                        "paddingBottom": ".15em",
-                                                                      }
-                                    }
-                  />
 </styled.span>,
               ],
               "className": undefined,
@@ -1627,43 +1434,6 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": "t",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    " ",
-                    <Unknown
-                      style={
-                                            Object {
-                                                                  "height": "1em",
-                                                                  "paddingBottom": ".15em",
-                                                                }
-                      }
-/>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  " ",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "style": Object {
-                        "height": "1em",
-                        "paddingBottom": ".15em",
-                      },
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
                 "type": [Function],
               },
             ],

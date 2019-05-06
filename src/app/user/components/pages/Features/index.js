@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import LazyLoad from "react-lazyload"
 import React from "react"
 import styled, { css } from "styled-components"
 
@@ -103,11 +104,12 @@ export const Spacer = styled.div`
   height: 11.7558em;
   flex-shrink: 0;
 `
+
 export const Carousel = props => (
   <Posters>
     <div style={{ marginLeft: props.chop ? "1.5em" : undefined }}>
       {props.items.map((item, num) => (
-        <React.Fragment key={item.title}>
+        <LazyLoad unmountIfInvisible once height="12em" key={item.title}>
           {num === 0 && <Spacer />}
           <Poster
             to={item.to}
@@ -133,7 +135,7 @@ export const Carousel = props => (
             {item.type && <PosterExtra label={item.type.replace("_", " ")} />}
           </Poster>
           {num === props.items.length - 1 && <Spacer last />}
-        </React.Fragment>
+        </LazyLoad>
       ))}
     </div>
   </Posters>
