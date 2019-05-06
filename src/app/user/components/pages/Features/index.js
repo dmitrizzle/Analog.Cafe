@@ -47,7 +47,7 @@ export const Poster = styled(Link)`
   flex-shrink: 0;
   overflow: hidden;
 
-  background: #fafafa;
+  background: #fafafa !important;
 
   text-decoration: none;
   line-height: ${props => props.theme.size.block.spacing * 1.15}em;
