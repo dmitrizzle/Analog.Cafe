@@ -195,7 +195,6 @@ export const Features = props => {
           {...props}
           center={1}
         />
-        <p>Some text about how this works.</p>
       </ArticleSection>
     </ArticleWrapper>
   )
