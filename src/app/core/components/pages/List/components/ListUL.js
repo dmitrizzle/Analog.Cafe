@@ -64,11 +64,12 @@ export default styled.ul`
 
 			&:active {
 				background: 0 0;
-				${
-          "" /* section figure {
+				section figure {
 					box-shadow:	none;
-					border-bottom-color: ${props => props.theme.color.highlight()};
-				} */
+					border-bottom-color: #000;
+				}
+        > div {
+            box-shadow: -8px 0px 0 0px #000 inset;
         }
 			}
 		}
