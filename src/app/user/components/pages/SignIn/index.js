@@ -1,6 +1,5 @@
 import { connect } from "react-redux"
 import React from "react"
-import open from "oauth-open"
 
 import {
   FacebookLinkButton,
@@ -15,7 +14,6 @@ import {
   SubscribeWrapper,
   WallPaper
 } from "../../../../core/components/pages/Subscribe"
-import { redirectAfterSignIn } from "../../../utils/actions-session"
 import {
   verifyUser,
   getUserInfo,
@@ -33,23 +31,6 @@ import MetaTags from "../../../../core/components/vignettes/MetaTags"
 import SignInInfo, { Hint } from "./components/SignInInfo"
 import SignInWithEmail from "../../forms/SigninWithEmail"
 
-const POPUP_WINDOW = name => {
-  return {
-    name,
-    width: 600,
-    height: 720
-  }
-}
-const processSignin = (props, code, sessionInfo) => {
-  localStorage.setItem("token", code.token)
-  props.verifyUser()
-  props.getUserInfo()
-
-  // redirect on sign in
-  redirectAfterSignIn(props)
-
-  props.addSessionInfo(sessionInfo)
-}
 class SignIn extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -76,44 +57,18 @@ class SignIn extends React.PureComponent {
     })
   }
   handleTwitterButton = event => {
-    event.stopPropagation()
-    event.preventDefault()
     GA.event({
       category: "User",
       action: "Sign In",
       label: "Twitter"
     })
-    open(
-      ROUTE_API_LOGIN_TWITTER,
-      POPUP_WINDOW("Sign in with Twitter"),
-      (err, code) => {
-        if (err) {
-          console.error(err)
-          return
-        }
-        processSignin(this.props, code, { loginMethod: "Twitter" })
-      }
-    )
   }
   handleFacebookButton = event => {
-    event.stopPropagation()
-    event.preventDefault()
     GA.event({
       category: "User",
       action: "Sign In",
       label: "Facebook"
     })
-    open(
-      ROUTE_API_LOGIN_FACEBOOK,
-      POPUP_WINDOW("Sign in with Facebook"),
-      (err, code) => {
-        if (err) {
-          console.error(err)
-          return
-        }
-        processSignin(this.props, code, { loginMethod: "Facebook" })
-      }
-    )
   }
 
   render() {
@@ -127,15 +82,17 @@ class SignIn extends React.PureComponent {
               <SignInInfo />
               <ButtonGroup style={{ padding: "0.5em 0 4em" }}>
                 <TwitterLinkButton
-                  to="#twitter-sign-in"
+                  to={ROUTE_API_LOGIN_TWITTER}
                   onClick={this.handleTwitterButton}
+                  target="_parent"
                 >
                   Continue with Twitter
                 </TwitterLinkButton>
 
                 <FacebookLinkButton
-                  to="#facebook-sign-in"
+                  to={ROUTE_API_LOGIN_FACEBOOK}
                   onClick={this.handleFacebookButton}
+                  target="_parent"
                 >
                   Continue with Facebook
                 </FacebookLinkButton>
