@@ -150,9 +150,9 @@ export const Features = props => {
 
       <ArticleSection>
         <blockquote>
-          <strong>Essential Photography Guides</strong> are a great place to
-          start if you are you are looking to improve your film photography
-          understanding and techniques.
+          <strong>Essential Photography Guides</strong> (below) are a great
+          place to start if you are you are looking to improve your film
+          photography understanding and techniques.
         </blockquote>
         <Carousel items={MUST_READS_CONTENT.guides} {...props} />
         <Carousel
@@ -176,31 +176,24 @@ export const Features = props => {
         />
 
         <div style={{ height: "6em" }} />
+        <blockquote>
+          <strong>Film & Cameras</strong> – reviews and guides. Understand the
+          technical advantages and limitations. Examine the images created with
+          said film or camera along with writers’ personal anecdotes.
+        </blockquote>
 
         <Carousel
           items={MUST_READS_CONTENT["camera-reviews"]}
           {...props}
           center={1}
         />
-        <p style={{ lineHeight: "1.2em" }}>
-          <small>
-            <em>
-              Learn about the detailed, personal accounts with some of the most
-              iconic film cameras and get acquainted with their triumphs and
-              shortcommings.
-            </em>
-          </small>
-        </p>
-        {/* <h3>Film and Emulsions</h3> */}
-        <Carousel items={MUST_READS_CONTENT.emulsions} {...props} center={1} />
-        <p style={{ lineHeight: "1.2em" }}>
-          <small>
-            <em>
-              Reviews, experiments, history and personal accounts with a
-              particular film stock.
-            </em>
-          </small>
-        </p>
+        <Carousel
+          chop
+          items={MUST_READS_CONTENT.emulsions}
+          {...props}
+          center={1}
+        />
+        <p>Some text about how this works.</p>
       </ArticleSection>
     </ArticleWrapper>
   )

@@ -4,7 +4,7 @@ export const MUST_READS_CONTENT = {
       title: "A Beginner’s Guide to Film Photography",
       poster: "image-froth_2703927_BJFAQ5r7E",
       text:
-        "An exhaustive guide to shooting film in 2019. Learn about 150+ year old tools and techniques and their relevance today.",
+        "An exhaustive guide to shooting film in 2019. Learn about 150+ year-old tools and techniques and their relevance today.",
       to: "/zine/a-beginners-guide-to-film-photography-zq0f"
     },
     {
@@ -25,7 +25,7 @@ export const MUST_READS_CONTENT = {
       title: "Polaroid Emulsion Lifts and Transparencies",
       poster: "image-froth_1332665_rJgD7AesV",
       text:
-        "Emulsion lifts are an incredibly technique, although it doesn’t always work as intended. This guide will demonstrate a few best practices.",
+        "Emulsion lifts are an incredible technique, although it doesn’t always work as intended. This guide will demonstrate a few best practices.",
       to: "/zine/polaroid-emulsion-lifts-and-transparencies-5ezg"
     },
     {
@@ -59,7 +59,7 @@ export const MUST_READS_CONTENT = {
       title: "Art as an Experience",
       poster: "image-froth_1524778_S1-denLSX",
       text:
-        "What is art? It may seem that this question doesn’t have a clear answer, especially in context of photography. However, there are theries to guide your understanding better, the are explained here.",
+        "What is art? It may seem that this question doesn’t have a clear answer, especially in the context of photography. However, there are theories to guide your understanding better, they are outlined here.",
       to: "/zine/what-is-art-iu4s"
     }
   ],
@@ -90,7 +90,7 @@ export const MUST_READS_CONTENT = {
       title: "Film Grain Reference",
       poster: "image-froth_836232_r1CTs7OvV",
       text:
-        "This is a single-page printable sheet of 9 popular 35mm film stocks with their respective crop previews (to help undestand films’ grain profile), prices, and descriptions.",
+        "This is a single-page printable sheet of 9 popular 35mm film stocks with their respective crop previews (to help understand films’ grain profile), prices, and descriptions.",
       to: "/download/REFERENCE-film-grain-reference-2019-Analog.Cafe.pdf"
     },
     {
@@ -99,7 +99,7 @@ export const MUST_READS_CONTENT = {
       title: "Art as an Experience",
       poster: "image-froth_642341_HkkwT3XCQ",
       text:
-        "Read offline or print the guide to major art theories of past two centuries.",
+        "Read offline or print the guide to major art theories of the past two centuries.",
       to: "/download/GUIDE-art-as-an-experience-2018-Analog.Cafe.pdf"
     }
   ],
@@ -144,7 +144,7 @@ export const MUST_READS_CONTENT = {
       title: "Resettle to Vancouver",
       poster: "image-froth_713415_H1bXU_dY7",
       text:
-        "Leaving an expat life in Thailand for the homecountry city of Vancouver.",
+        "Leaving an expat life in Thailand for the home-country city of Vancouver.",
       to: "/zine/expat-years-6sje"
     },
     {
@@ -172,7 +172,7 @@ export const MUST_READS_CONTENT = {
       title: "Open Your Eyes",
       poster: "image-froth_1500000_SJx0vUlswf",
       text:
-        "“project aimed at interacting with people and their dreams. A portraiture of calm, peace, and vulnerability.”",
+        "“project aimed at interacting with people and their dreams. Portraiture of calm, peace, and vulnerability.”",
       to: "/zine/open-your-eyes-tsk0"
     },
     {
@@ -199,7 +199,7 @@ export const MUST_READS_CONTENT = {
       title: "Loy Krathong",
       poster: "image-froth_1536155_H10rW53IG",
       text:
-        "For print and offline reading: Photography from a magical sky lantern festival, held in one place and time only; November full monn in Chiang Mai, Thailand.",
+        "For print and offline reading: Photography from a magical sky lantern festival, held in one place and time only; November full moon in Chiang Mai, Thailand.",
       to:
         "/download/PHOTOESSAY-loy-krathong-and-yi-peng-festival-2018-Analog.Cafe.pdf"
     },
@@ -209,7 +209,7 @@ export const MUST_READS_CONTENT = {
       title: "Resettle to Vancouver",
       poster: "image-froth_2066116_ByaU4Lyq7",
       text:
-        "For print and offline reading: an essay on leaving an expat life in Thailand for the homecountry city of Vancouver.",
+        "For print and offline reading: an essay on leaving an expat life in Thailand for the home-country city of Vancouver.",
       to: "/download/PHOTOESSAY-resettle-to-vancouver-2018-Analog.Cafe.pdf"
     },
     {
@@ -225,125 +225,141 @@ export const MUST_READS_CONTENT = {
   ],
   "camera-reviews": [
     {
+      title: "Yashica Electro 35",
+      poster: "image-froth_1454898_HytA81Oqf",
+      text:
+        "A fixed-lens rangefinder with 45mm 𝑓1.7 Yashinon optics, and an electronic shutter which fires in aperture-priority mode between 1/500ᵗʰ and 30 seconds.",
+      to: "/zine/electro-35-gox3"
+    },
+    {
+      title: "FED 5b With Industar-61",
+      poster: "image-froth_1333333_ryImqJTuG",
+      text:
+        "A Soviet-built rangefinder with a Leica screw mount lens base; 𝑓2.8 55mm Industar-61 L/D. Fully mechanical, it fires silk curtain shutter between 1 and 1/500th of a second.",
+      to: "/zine/fed-5b-gz28"
+    },
+
+    {
+      title: "Lomography Diana Mini",
+      poster: "image-froth_1333333_Byl1aAiE7",
+      text:
+        "A fixed-shutter, dual-aperture viewfinder camera with plastic body and lens. Fires only at 1/60th of a second, with a choice of 𝑓8 and 𝑓11 at 24mm. Toggles between half-frame and square format on 35mm film.",
+      to: "/zine/diana-mini-7p61"
+    },
+
+    {
+      title: "Voigtländer Vitessa L",
+      poster: "image-froth_1000340_S18bUcs27",
+      text:
+        "A German 35mm rangefinder with a highly-regarded 50mm foldable Ultron lens at 𝑓2-22. Its quiet, vibration-free leaf shutter fires between 1 and 1/500th of a second. L3 has a selenium meter with sensitivity ranging from 12 to 400ASA/ISO.",
+      to: "/zine/voigtlander-vitessa-l-fzyi"
+    },
+    {
+      title: "Ricoh Caddy",
+      text:
+        "a half-frame Japanese viewfinder camera with a tack-sharp 𝑓2.8 25mm lens and an uncoupled selenium exposure meter. The mechanical shutter can fire Bulb, 1/4th-1/250th of a second.",
+      poster: "image-froth_1333333_rkn1ojPTX",
+      to: "/zine/ricoh-caddy-8zf6"
+    },
+
+    {
+      title: "Canon QL25",
+      poster: "image-froth_1333333_BJYc4ZYuz",
+      text: "A Japanese rangefinder with 45mm lens that opens up to 𝑓2.5.",
+      to: "/zine/ql25-df78"
+    },
+    {
       title: "Lomography Super Sampler",
       poster: "image-froth_1366928_B1pOsxg9V",
+      text:
+        "A plastic brick with four 20mm fixed aperture 𝑓11 lenses. Its shutter fires at a fixed 1/100th of a second.",
       to: "/zine/lomography-super-sampler-l03m"
     },
     {
       title: "Yashica MG-1",
       poster: "image-froth_1498127_rkyZrudwV",
+      text:
+        "Cheaper than Yashica Electro 35, with a very similar construction and 45mm f2.8 lens.",
       to: "/zine/yashica-mg-1-exau"
     },
-    {
-      title: "Yashica Electro 35",
-      poster: "image-froth_1454898_HytA81Oqf",
-      to: "/zine/electro-35-gox3"
-    },
-    {
-      title: "Voigtländer Vitessa L",
-      poster: "image-froth_1000340_S18bUcs27",
-      to: "/zine/voigtlander-vitessa-l-fzyi"
-    },
-    {
-      title: "Zeiss Accordion",
-      poster: "image-froth_644597_SygweVnqm",
-      to: "/zine/on-a-roll-with-zeiss-hed2"
-    },
-    {
-      title: "Lomography Diana Mini",
-      poster: "image-froth_1333333_Byl1aAiE7",
-      to: "/zine/diana-mini-7p61"
-    },
-    {
-      title: "FED 5b With Industar-61",
-      poster: "image-froth_1333333_ryImqJTuG",
-      to: "/zine/fed-5b-gz28"
-    },
+
     {
       title: "Olympus Supertrip",
       poster: "image-froth_1484072_3da5a59cfca54a44a065728dea6e4ffa",
+      text:
+        "“The Olympus Supertrip is the second of two film cameras I picked up from a charity shop in Nottingham.”",
       to: "/zine/testing-the-olympus-supertrip-in-shanghai-sfd8"
-    },
-    {
-      title: "Ricoh Caddy",
-      poster: "image-froth_1333333_rkn1ojPTX",
-      to: "/zine/ricoh-caddy-8zf6"
-    },
-    {
-      title: "Canon QL25",
-      poster: "image-froth_1333333_BJYc4ZYuz",
-      to: "/zine/ql25-df78"
     },
     {
       title: "Canon Sure Shot AF-7",
       poster: "image-froth_1484058_HJcHsSFwz",
+      text:
+        "“My first time playing with the Canon Sure Shot AF-7 was pretty successful, I think, considering I didn’t know if the camera even worked.”",
       to: "/zine/testing-the-canon-sure-shot-af-7-in-chongquing-u79w"
+    },
+    {
+      title: "Zeiss Accordion",
+      poster: "image-froth_644597_SygweVnqm",
+      text:
+        "“It’s simple, no frills at all. Four shutter speeds B, 1/25, 1/50, 1/100... Zeiss Ikon Ikonta 520/2.”",
+      to: "/zine/on-a-roll-with-zeiss-hed2"
     }
   ],
   emulsions: [
     {
       title: "Through the Green Fuse",
+      text:
+        "“The actual process of imaging begins with the introduction of high frequency, high voltage electricity into the exposure matrix to create and illuminate the blue aura that emanates from the subject.”",
       poster: "image-froth_795000_S1GPYbXhf",
       to: "/zine/through-the-green-fuse-2ozf"
     },
     {
-      title: "Polaroid Emulsion Lifts and Transparencies",
-      poster: "image-froth_1000000_rypfmD9cE",
-      to: "/zine/polaroid-emulsion-lifts-and-transparencies-5ezg"
-    },
-    {
-      title: "Building an Instax Pinhole Camera",
-      poster: "image-froth_1334223_HyxkFIXsPM",
-      to: "/zine/building-an-instax-pinhole-camera-ixcd"
-    },
-    {
-      title: "Sofia on Ektar",
-      poster: "image-froth_1500000_ryLciivPE",
-      to: "/zine/sofia-on-ektar-6d3p"
+      title: "Going Against the Grain: CineStill800T in Broad Daylight",
+      poster: "image-froth_1507538_rkvEbPpF4",
+      text:
+        "I was pleasantly surprised to see vivid colors, sharp contrast, and the fine grain that CineStill film is known for. There is only a slight blue tone on several pictures, and it looks really good.",
+      to: "/zine/going-against-the-grain-482h"
     },
     {
       title: "Kodak Ektachrome",
       poster: "image-froth_1600000_ByxOKgftaX",
+      text:
+        "“In my opinion, even amongst its [reversal] peers, Ektachrome retains character, being less saturated and slightly more contrasty as compared to Fuji’s Velvia and Provia stocks.”",
       to: "/zine/kodak-ektachrome-vvyr"
     },
     {
-      title: "Experiments With Redscale Film and Lomography Cameras",
-      poster: "image-froth_750747_SJIlc3U8f",
-      to: "/zine/scarlet-summer-oyen"
-    },
-    {
-      title: "Going Against the Grain: CineStill800T in Broad Daylight",
-      poster: "image-froth_1507538_rkvEbPpF4",
-      to: "/zine/going-against-the-grain-482h"
-    },
-    {
-      title: "Neon Lights With CineStill 800T Film",
-      poster: "image-froth_1479655_Sy0asX-HN",
-      to: "/zine/neon-lights-with-cinestill-800t-film-uadc"
+      title: "Sofia on Ektar",
+      poster: "image-froth_1500000_ryLciivPE",
+      text:
+        "“Minolta XD with the Rokkor 24/2.8 MD and the Rokkor 50/1.4 MD lenses on Kodak Ektar 100.”",
+      to: "/zine/sofia-on-ektar-6d3p"
     },
     {
       title: "California Desert, Polaroid Style",
       poster: "image-froth_1150672_rkMCj9T97",
+      text:
+        "“The magic of instant film begins the moment you press the oversized shutter button on the Polaroid camera.”",
       to: "/zine/california-desert-polaroid-style-30ss"
     },
     {
       title: "Old Film and Life",
       poster: "image-froth_1463904_SJl8acQa9X",
+      text:
+        "Fotokemika’s Efke KB 100, ORWO film, Svema, Tasma and Atrivu, Kodak Panatomic-X.",
       to: "/zine/old-film-and-life-5rrw"
     },
     {
       title: "An Eight-Week Tryst With Black and White Film",
       poster: "image-froth_666504_S19zaYxoX",
+      text:
+        "“I carried my trusty Olympus OM10 with my only lens at the time (the 50mm f/1.4) in my bag. Loaded up with either HP5, Delta 400, or Tri-X.”",
       to: "/zine/an-eight-week-tryst-with-black-and-white-film-f3ss"
-    },
-    {
-      title: "Sick and Tired: Film Soup",
-      poster: "image-froth_1508434_r1BOcoxUQ",
-      to: "/zine/sick-and-tired-eyd7"
     },
     {
       title: "Shooting Ilford Pan 400 in Shanghai",
       poster: "image-froth_1485608_a196226262ec4e87a8cbf0c10bcfd836",
+      text:
+        "“Ilford Pan 400 — a film that seems common in Asia but unavailable in the US or the UK.”",
       to: "/zine/shooting-ilford-pan-400-in-shanghai-udfm"
     }
   ]
