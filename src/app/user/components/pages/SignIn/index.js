@@ -10,10 +10,7 @@ import {
   ROUTE_API_LOGIN_FACEBOOK,
   ROUTE_API_LOGIN_TWITTER
 } from "../../../constants/routes-session"
-import {
-  SubscribeWrapper,
-  WallPaper
-} from "../../../../core/components/pages/Subscribe"
+import { SubscribeWrapper } from "../../../../core/components/pages/Subscribe"
 import {
   verifyUser,
   getUserInfo,
@@ -77,42 +74,35 @@ class SignIn extends React.PureComponent {
         <SubscribeWrapper>
           <MetaTags metaTitle="Sign In" metaSubtitle="Or create free account" />
           <HeaderLarge id="account" pageTitle="Sign In" />
-          <WallPaper bgRouletteCached={"image-froth_1469613_Skk4VZmZE"}>
-            <ArticleSection>
-              <SignInInfo />
-              <ButtonGroup style={{ padding: "0.5em 0 4em" }}>
-                <TwitterLinkButton
-                  to={ROUTE_API_LOGIN_TWITTER}
-                  onClick={this.handleTwitterButton}
-                  target="_parent"
-                >
-                  Continue with Twitter
-                </TwitterLinkButton>
+          {/* <WallPaper bgRouletteCached={"image-froth_1469613_Skk4VZmZE"}> */}
+          <ArticleSection>
+            <ButtonGroup style={{ padding: "0.5em 0 0" }}>
+              <TwitterLinkButton
+                to={ROUTE_API_LOGIN_TWITTER}
+                onClick={this.handleTwitterButton}
+                target="_parent"
+              >
+                Continue with Twitter
+              </TwitterLinkButton>
 
-                <FacebookLinkButton
-                  to={ROUTE_API_LOGIN_FACEBOOK}
-                  onClick={this.handleFacebookButton}
-                  target="_parent"
-                >
-                  Continue with Facebook
-                </FacebookLinkButton>
+              <FacebookLinkButton
+                to={ROUTE_API_LOGIN_FACEBOOK}
+                onClick={this.handleFacebookButton}
+                target="_parent"
+              >
+                Continue with Facebook
+              </FacebookLinkButton>
 
-                <CardIntegrated>
-                  <SignInWithEmail />
-                </CardIntegrated>
-              </ButtonGroup>
-            </ArticleSection>
-          </WallPaper>
+              <CardIntegrated>
+                <SignInWithEmail />
+              </CardIntegrated>
+            </ButtonGroup>
+            <SignInInfo />
+          </ArticleSection>
+          {/* </WallPaper> */}
           <ArticleSection>
             <Hint stateSessionInfo={this.state.sessionInfo} />
-            <p>
-              Your account is created automatically whenever you click either of
-              the buttons above. You do not need to remember passwords. If you
-              already have an account, simply use the same method to sign in as
-              you did the first time – we’ll take you to your existing account.
-              All accounts are secure and adhere to our strict{" "}
-              <Link to="/privacy-policy">privacy policy</Link>.
-            </p>
+            {/* <hr />
             <h3 id="analogue-reads">“Analogue Reads” Tuesdays.</h3>
             <p>
               <strong>A weekly email newsletter</strong> featuring a digest of
@@ -123,15 +113,15 @@ class SignIn extends React.PureComponent {
             <Link
               to="#account"
               onClick={event => {
-                event.preventDefault()
+                event.preventDefault();
                 window.scroll({
                   top: 0,
                   behavior: "smooth"
-                })
+                });
               }}
             >
               <Figure src="image-froth_1600000_BJRvHFlv4" feature />
-            </Link>
+            </Link> */}
           </ArticleSection>
         </SubscribeWrapper>
       )

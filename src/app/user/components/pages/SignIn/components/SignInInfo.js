@@ -7,13 +7,10 @@ export const AccountBenifits = styled.ul`
   max-width: 19em;
   margin: 1.5em auto 0 !important;
   padding: 0.5em;
-  background: #2c2c2c;
-  color: #fff;
-  /* border-radius: 0.25em; */
-  /* box-shadow: 0 1px 1px rgba(44,44,44,0.25), 0 0 0 1px rgba(44,44,44,0.125); */
   font-size: 0.85em;
   font-style: italic;
   li {
+    text-align: justify;
     list-style-type: none;
     margin-bottom: 0.25em;
     padding: 0 !important;
@@ -60,21 +57,20 @@ export default props => {
         </li>
         <li>
           <span className="icon">☞</span> Weekly email{" "}
-          <Link
+          {/* <Link
             to="#analogue-reads"
             onClick={event => {
-              event.preventDefault()
-              const element = document.getElementById("analogue-reads")
-              const y = element.getBoundingClientRect().top + window.scrollY
+              event.preventDefault();
+              const element = document.getElementById("analogue-reads");
+              const y = element.getBoundingClientRect().top + window.scrollY;
               window.scroll({
                 top: y,
                 behavior: "smooth"
-              })
+              });
             }}
-          >
-            newsletter
-          </Link>
-          .
+          > */}
+          newsletter
+          {/* </Link> */}.
         </li>
       </AccountBenifits>
     </React.Fragment>
