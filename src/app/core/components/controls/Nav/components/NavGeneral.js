@@ -11,7 +11,6 @@ import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
 import NavMore from "./NavMore"
 import NavSearch from "./NavSearch"
-import Pen from "../../../icons/group-beacons/Pen"
 
 export const LabelWithSearchSVG = styled.span`
   svg {
