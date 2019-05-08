@@ -6,6 +6,7 @@ import { withRouter } from "react-router"
 
 import { GA } from "../../../../../utils"
 import { MUST_READS_CONTENT } from "../constants"
+import { Poster, PosterExtra, PosterImage, PosterInfo, Posters } from ".."
 import { addSessionInfo } from "../../../../store/actions-user"
 import ArticleSection from "../../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../../core/components/pages/Article/components/ArticleWrapper"
@@ -44,10 +45,56 @@ export const Download = props => {
     <ArticleWrapper>
       <MetaTags metaTitle="Your Download is Ready" />
       <HeaderLarge
-        pageTitle={fileData ? fileData.title : "Can’t Find the Download"}
-        pageSubtitle={fileData && `${fileData.type} Download`}
+        pageTitle={
+          fileData
+            ? hasPermission
+              ? `Your Download is ready`
+              : "Please Sign In"
+            : "Can’t Find the Download"
+        }
       />
       <ArticleSection>
+        {fileData && (
+          <Posters
+            style={{
+              margin: 0,
+              width: "100%"
+            }}
+          >
+            <div>
+              <Poster
+                style={{
+                  margin: "0 auto"
+                }}
+                to={hasPermission ? destination : "/sign-in"}
+                onClick={() => {
+                  !hasPermission &&
+                    props.addSessionInfo({
+                      loginSuccess: `/download/${filename}`
+                    })
+                }}
+              >
+                <PosterImage src={fileData.poster} />
+                <PosterInfo>
+                  <h4>
+                    {fileData.type &&
+                      fileData.type === "↯ PDF Download" &&
+                      "DOWNLOAD: "}
+                    {fileData.title}
+                  </h4>
+                  <small>
+                    <em>{fileData.text}</em>
+                  </small>
+                </PosterInfo>
+
+                {fileData.type && (
+                  <PosterExtra label={fileData.type.replace("_", " ")} />
+                )}
+              </Poster>
+            </div>
+          </Posters>
+        )}
+
         {fileData &&
           hasPermission && (
             <React.Fragment>
@@ -82,10 +129,7 @@ export const Download = props => {
                 }}
               >
                 Sign In to Download
-              </LinkButton>{" "}
-              <p style={{ textAlign: "center" }}>
-                It only takes a minute to create a free Analog.Cafe account.
-              </p>{" "}
+              </LinkButton>
             </React.Fragment>
           )}
         {!fileData && (
@@ -95,19 +139,6 @@ export const Download = props => {
               <Code>{filename}</Code>
             </small>
           </p>
-        )}
-        {fileData && (
-          <Link
-            to={hasPermission ? destination : "/sign-in"}
-            onClick={() => {
-              !hasPermission &&
-                props.addSessionInfo({
-                  loginSuccess: `/download/${filename}`
-                })
-            }}
-          >
-            <Figure feature src={fileData.poster} />
-          </Link>
         )}
       </ArticleSection>
     </ArticleWrapper>
