@@ -151,38 +151,34 @@ export const Features = props => {
       />
 
       <ArticleSection>
-        <blockquote>
-          <strong>Essential Photography Guides</strong> (below) are a great
-          place to start if you are you are looking to improve your film
-          photography understanding and techniques.
-        </blockquote>
         <Carousel items={MUST_READS_CONTENT.guides} {...props} />
         <Carousel
           chop
           items={MUST_READS_CONTENT["download-guides"]}
           {...props}
         />
+        <h3>Essential Photography Guides</h3>
+        <p>
+          ☝︎ <strong>Above:</strong> articles to help you improve your film
+          photography understanding and techniques.
+        </p>
 
         <div style={{ height: "6em" }} />
 
-        <blockquote>
-          <strong>Photo Essays</strong> are stories told with images. Read our
-          ever-expanding collection of best-written essays on travel, art,
-          self-expression, and creative experiments.
-        </blockquote>
         <Carousel items={MUST_READS_CONTENT.essays} {...props} center={1} />
         <Carousel
           chop
           items={MUST_READS_CONTENT["download-essays"]}
           {...props}
         />
+        <h3>Photo Essays</h3>
+        <p>
+          ☝︎ <strong>Above:</strong> stories told with images. Read our
+          ever-expanding collection of best-written essays on travel, art,
+          self-expression, and creative experiments.
+        </p>
 
         <div style={{ height: "6em" }} />
-        <blockquote>
-          <strong>Film & Cameras</strong> – reviews and guides. Understand the
-          technical advantages and limitations. Examine the images created with
-          said film or camera along with writers’ personal anecdotes.
-        </blockquote>
 
         <Carousel
           items={MUST_READS_CONTENT["camera-reviews"]}
@@ -195,6 +191,13 @@ export const Features = props => {
           {...props}
           center={1}
         />
+        <h3>Film & Cameras</h3>
+        <p>
+          ☝︎ <strong>Above:</strong> film photography reviews and guides. Lean
+          about the technical advantages and limitations of each tool or
+          accessory. Examine the images created with said film or camera. Get
+          the writers’ personal account on use and ownership.
+        </p>
       </ArticleSection>
     </ArticleWrapper>
   )
