@@ -38,13 +38,15 @@ export const Hint = props => (
             Help
           </Link>
         </strong>{" "}
-        |{" "}
         {props.stateSessionInfo.hasLoggedIn &&
         props.stateSessionInfo.loginMethod ? (
-          <em>
-            Hint: last time you used {props.stateSessionInfo.loginEmail}{" "}
-            {props.stateSessionInfo.loginMethod}.
-          </em>
+          <span>
+            |{" "}
+            <em>
+              Hint: last time you used {props.stateSessionInfo.loginEmail}{" "}
+              {props.stateSessionInfo.loginMethod}.
+            </em>
+          </span>
         ) : (
           <span>&nbsp;</span>
         )}
