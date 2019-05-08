@@ -34,6 +34,7 @@ class SignIn extends React.PureComponent {
     this.handleTwitterButton = this.handleTwitterButton.bind(this)
     this.handleFacebookButton = this.handleFacebookButton.bind(this)
     this.state = {
+      showHint: false,
       sessionInfo: {
         loginMethod: this.props.user.sessionInfo.loginMethod,
         loginEmail: this.props.user.sessionInfo.loginEmail,
@@ -73,7 +74,11 @@ class SignIn extends React.PureComponent {
       return (
         <SubscribeWrapper>
           <MetaTags metaTitle="Sign In" metaSubtitle="Or create free account" />
-          <HeaderLarge id="account" pageTitle="Sign In" />
+          <HeaderLarge
+            id="account"
+            pageTitle="Sign In"
+            pageSubtitle="Or Create Free Account"
+          />
           {/* <WallPaper bgRouletteCached={"image-froth_1469613_Skk4VZmZE"}> */}
           <ArticleSection>
             <ButtonGroup style={{ padding: "0.5em 0 0" }}>
@@ -97,31 +102,21 @@ class SignIn extends React.PureComponent {
                 <SignInWithEmail />
               </CardIntegrated>
             </ButtonGroup>
-            <SignInInfo />
+            <SignInInfo
+              getHint={() => {
+                this.setState({ showHint: true })
+              }}
+            />
           </ArticleSection>
           {/* </WallPaper> */}
           <ArticleSection>
-            <Hint stateSessionInfo={this.state.sessionInfo} />
-            {/* <hr />
-            <h3 id="analogue-reads">“Analogue Reads” Tuesdays.</h3>
-            <p>
-              <strong>A weekly email newsletter</strong> featuring a digest of
-              new photo essays, reviews, and guides. Every Tuesday at 9AM EST.{" "}
-              <Link to="/privacy">No spam</Link>. Free with every account.
-              Unsubscribe anytime.
-            </p>
-            <Link
-              to="#account"
-              onClick={event => {
-                event.preventDefault();
-                window.scroll({
-                  top: 0,
-                  behavior: "smooth"
-                });
+            <Hint
+              stateSessionInfo={this.state.sessionInfo}
+              getHint={() => {
+                this.setState({ showHint: !this.state.showHint })
               }}
-            >
-              <Figure src="image-froth_1600000_BJRvHFlv4" feature />
-            </Link> */}
+              showHint={this.state.showHint}
+            />
           </ArticleSection>
         </SubscribeWrapper>
       )
