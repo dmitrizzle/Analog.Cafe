@@ -1,8 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 
-import Figure from "../../../../../core/components/vignettes/Picture/components/Figure"
+import Cube from "../../../../../core/components/icons/group-beacons/Cube"
+import Heart from "../../../../../core/components/icons/group-beacons/Heart"
 import Link from "../../../../../core/components/controls/Link"
+import Modal from "../../../../../core/components/controls/Modal"
+import Pen from "../../../../../core/components/icons/group-beacons/Pen"
+import Point from "../../../../../core/components/icons/group-beacons/Point"
 
 export const AccountBenifits = styled.ul`
   max-width: 19em;
@@ -10,15 +14,18 @@ export const AccountBenifits = styled.ul`
   padding: 0.5em;
   font-size: 0.85em;
   font-style: italic;
+  color: ${props => props.theme.color.foreground(0.45)};
   li {
     list-style-type: none;
     margin-bottom: 0.25em;
     padding: 0 !important;
-    .icon {
-      font-style: normal;
+    span {
+      display: inline-block;
+      width: 1.5em;
+      color: ${props => props.theme.color.foreground(0.65)};
     }
-    .highlight {
-      color: ${props => props.theme.color.brand()};
+    svg {
+      height: 0.75em;
     }
   }
 `
@@ -61,25 +68,6 @@ export const Hint = props => (
         secure and adhere to our strict{" "}
         <Link to="/privacy-policy">privacy policy</Link>.
       </p>
-      <h3 id="analogue-reads">“Analogue Reads” Tuesdays.</h3>
-      <p>
-        <strong>A weekly email newsletter</strong> featuring a digest of new
-        photo essays, reviews, and guides. Every Tuesday at 9AM EST.{" "}
-        <Link to="/privacy">No spam</Link>. Free with every account. Unsubscribe
-        anytime.
-      </p>
-      <Link
-        to="#account"
-        onClick={event => {
-          event.preventDefault()
-          window.scroll({
-            top: 0,
-            behavior: "smooth"
-          })
-        }}
-      >
-        <Figure src="image-froth_1600000_BJRvHFlv4" feature />
-      </Link>
     </div>
   </React.Fragment>
 )
@@ -89,37 +77,104 @@ export default props => {
     <React.Fragment>
       <AccountBenifits>
         <li>
-          <span className="highlight icon">❤</span> Save your{" "}
-          <Link to="/favourites">favourites</Link> for later.
+          <span>
+            <Cube />
+          </span>{" "}
+          Free{" "}
+          <Modal
+            element="a"
+            with={{
+              info: {
+                image: "image-froth_1000000_SJ0QpHE-V",
+                title: "Free PDF Downloads",
+                text:
+                  "Download anything you like from our collection of articles and guides on film photography techniques and theory.",
+                buttons: [
+                  {
+                    to: "/features",
+                    text: "Downloads & Features"
+                  }
+                ]
+              },
+              id: "hints/downloads"
+            }}
+          >
+            downloads
+          </Modal>
+          .
         </li>
         <li>
-          <span className="icon">✒︎</span> <Link to="/submit">Submit</Link> your
-          work, get featured.
-        </li>
-        <li>
-          <span className="highlight icon">❖</span> Free{" "}
-          <Link to="/features">downloads</Link> & pre-releases.
-        </li>
-        <li>
-          <span className="icon">☞</span> Weekly email{" "}
-          <Link
-            to="#analogue-reads"
-            onClick={event => {
-              event.preventDefault()
-              props.getHint()
-              window.requestAnimationFrame(() => {
-                const element = document.getElementById("analogue-reads")
-                const y = element.getBoundingClientRect().top + window.scrollY
-                window.scroll({
-                  top: y,
-                  behavior: "smooth"
-                })
-              })
+          <span>
+            <Point style={{ transform: "rotate(90deg)", margin: "0 .25em" }} />
+          </span>{" "}
+          Weekly{" "}
+          <Modal
+            element="a"
+            with={{
+              info: {
+                image: "image-froth_1600000_BJRvHFlv4",
+                title: "“Analogue Reads” Emails",
+                text:
+                  "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam.",
+                buttons: [
+                  {
+                    to: "/privacy-policy",
+                    text: "Privacy Policy"
+                  }
+                ]
+              },
+              id: "hints/composer"
             }}
           >
             newsletter
-          </Link>
+          </Modal>
           .
+        </li>
+        <li>
+          <span>
+            <Heart />
+          </span>{" "}
+          Save your{" "}
+          <Modal
+            element="a"
+            with={{
+              info: {
+                image: "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+                title: "Favourites",
+                text: "Save your favourite articles to read later."
+              },
+              id: "hints/favourites"
+            }}
+          >
+            favourites
+          </Modal>{" "}
+          for later.
+        </li>
+        <li>
+          <span>
+            <Pen />
+          </span>{" "}
+          <Modal
+            element="a"
+            with={{
+              info: {
+                image: "image-froth_1499794_BkFUA89IV",
+                title: "Call for entries.",
+                text:
+                  "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
+                buttons: [
+                  {
+                    to: "/submit",
+                    text: "Learn More"
+                  }
+                ]
+              },
+              id: "hints/submissions"
+            }}
+          >
+            Submit
+          </Modal>{" "}
+          your work, get featured.
         </li>
       </AccountBenifits>
     </React.Fragment>

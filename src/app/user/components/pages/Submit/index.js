@@ -76,11 +76,11 @@ export default props => {
           with={{
             info: {
               image: "image-froth_1600000_BJRvHFlv4",
-              title: "“Analogue Reads” Tuesdays",
+              title: "“Analogue Reads” Emails",
               text:
                 "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam."
             },
-            id: "hints/composer"
+            id: "hints/emails"
           }}
         >
           newsletter
