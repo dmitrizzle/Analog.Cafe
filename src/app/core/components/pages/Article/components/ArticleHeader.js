@@ -6,8 +6,8 @@ import {
   getAuthorListStringFromArray,
   getLeadAuthorObject
 } from "../../../../utils/messages-author"
+import { readingTime } from "../../List/components/ListItemStats"
 import Byline from "../../../vignettes/Byline"
-import Favourite from "../../../../../user/components/controls/Favourite"
 import HeaderLarge from "../../../vignettes/HeaderLarge"
 import Link from "../../../controls/Link"
 
@@ -28,7 +28,9 @@ export default props => {
       {props.article.authors &&
         props.article.authors[0].name && (
           <Byline>
-            By{" "}
+            {props.article.stats &&
+              `${Math.ceil(readingTime(props.article.stats))} min read`}{" "}
+            by{" "}
             {getLeadAuthorObject(props.article.authors).id ? (
               <Link to={`/is/${getLeadAuthorObject(props.article.authors).id}`}>
                 {getLeadAuthorObject(props.article.authors).name}
@@ -60,7 +62,7 @@ export default props => {
         ((props.article.submittedBy &&
           props.article.submittedBy.id === props.user.info.id) ||
           props.user.info.role === "admin") && <ArticleControls />}
-      <Favourite />
+      {/* <Favourite /> */}
     </HeaderLarge>
   )
 }

@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import { GA } from "../../../../utils"
 import {
@@ -13,12 +13,20 @@ import { setModal } from "../../../../core/store/actions-modal"
 import Heart from "../../../../core/components/icons/group-beacons/Heart"
 import Link from "../../../../core/components/controls/Link"
 
-export const Like = styled(Link)`
+const buttonStyles = css`
   display: block;
   margin: 1.5em 0 0.5em;
-
+  ${props => props.theme.size.breakpoint.min.l`width: calc(100% - 1.5em)`};
   svg {
     height: 1.5em;
+    overflow: visible;
+  }
+  :active {
+    background: #fff !important;
+  }
+`
+export const Like = styled(Link)`
+  ${buttonStyles} svg {
     stroke: rgba(237, 35, 110, 1);
     stroke-width: 2px;
     overflow: visible;
@@ -26,23 +34,12 @@ export const Like = styled(Link)`
       fill: #fff;
     }
   }
-  :active {
-    background: #fff !important;
-  }
 `
 export const Unlike = styled(Link)`
-  display: block;
-  margin: 1.5em 0 0.5em;
-
-  svg {
-    height: 1.5em;
-    overflow: visible;
+  ${buttonStyles} svg {
     path {
       fill: rgba(237, 35, 110, 1);
     }
-  }
-  :active {
-    background: #fff !important;
   }
 `
 

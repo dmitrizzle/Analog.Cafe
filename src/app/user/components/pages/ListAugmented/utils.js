@@ -10,7 +10,7 @@ export const ListPageTitle = function(view) {
     case "USER_FAVOURITES":
       return (
         <span>
-          Here’s Your <Heart style={{ color: "#ed236e", height: ".75em" }} />
+          Your <Heart style={{ color: "#ed236e", height: ".75em" }} />
         </span>
       )
     default:
