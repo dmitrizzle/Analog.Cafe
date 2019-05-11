@@ -63,7 +63,7 @@ export default props => {
       </Modal>
       <p>
         If you love shooting film and have a story to share, Analog.Cafe could
-        be a good the place for it.
+        be a good place to share it.
       </p>
       <p>
         <Link to="/about">We</Link> feature fun, beautiful, creative,
