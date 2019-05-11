@@ -18,7 +18,7 @@ export const ctaTextInit = () =>
 
 const posterText =
   "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews."
-const getPublished = "Get your work published on Analog.Cafe"
+const getPublished = "Photo essays, articles, stories"
 
 export default props => {
   const Body = () => (
@@ -169,7 +169,7 @@ export default props => {
           }).src
         }
       />
-      <HeaderLarge pageTitle="Get Featured" pageSubtitle={getPublished} />
+      <HeaderLarge pageTitle="Submissions" pageSubtitle={getPublished} />
       <Body />
     </ArticleWrapper>
   ) : (
