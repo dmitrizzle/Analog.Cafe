@@ -21,11 +21,11 @@ ShallowWrapper {
         <Unknown
           metaDescription="Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews."
           metaImage="https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg"
-          metaTitle="Get your work published on Analog.Cafe"
+          metaTitle="Photo essays, articles, reviews"
 />,
         <Unknown
-          pageSubtitle="Get your work published on Analog.Cafe"
-          pageTitle="Get Featured"
+          pageSubtitle="Photo essays, articles, reviews"
+          pageTitle="Submit"
 />,
         <Body />,
       ],
@@ -39,7 +39,7 @@ ShallowWrapper {
         "props": Object {
           "metaDescription": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
           "metaImage": "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg",
-          "metaTitle": "Get your work published on Analog.Cafe",
+          "metaTitle": "Photo essays, articles, reviews",
         },
         "ref": null,
         "rendered": null,
@@ -50,8 +50,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "pageSubtitle": "Get your work published on Analog.Cafe",
-          "pageTitle": "Get Featured",
+          "pageSubtitle": "Photo essays, articles, reviews",
+          "pageTitle": "Submit",
         },
         "ref": null,
         "rendered": null,
@@ -79,11 +79,11 @@ ShallowWrapper {
           <Unknown
             metaDescription="Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews."
             metaImage="https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg"
-            metaTitle="Get your work published on Analog.Cafe"
+            metaTitle="Photo essays, articles, reviews"
 />,
           <Unknown
-            pageSubtitle="Get your work published on Analog.Cafe"
-            pageTitle="Get Featured"
+            pageSubtitle="Photo essays, articles, reviews"
+            pageTitle="Submit"
 />,
           <Body />,
         ],
@@ -97,7 +97,7 @@ ShallowWrapper {
           "props": Object {
             "metaDescription": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
             "metaImage": "https://res.cloudinary.com/analog-cafe/image/upload/c_scale,fl_progressive,w_1268/image-froth_1533636_rygH__d9kQ.jpg",
-            "metaTitle": "Get your work published on Analog.Cafe",
+            "metaTitle": "Photo essays, articles, reviews",
           },
           "ref": null,
           "rendered": null,
@@ -108,8 +108,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "pageSubtitle": "Get your work published on Analog.Cafe",
-            "pageTitle": "Get Featured",
+            "pageSubtitle": "Photo essays, articles, reviews",
+            "pageTitle": "Submit",
           },
           "ref": null,
           "rendered": null,
