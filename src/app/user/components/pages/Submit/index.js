@@ -127,16 +127,19 @@ export default props => {
         smaller JPG images. You retain <Link to="/submit/rules">all</Link> of
         the rights and ownership to the photographs and the text you submit.
       </p>
-      <h3>How to get featured.</h3>
+      <h3>How to get published.</h3>
       <Figure
         style={{ cursor: "default" }}
         src="image-froth_1963351_HJUmY88I4"
       />
 
       <p>
-        Best way to get accepted is to read a few articles on the website to get
-        a better sense for what gets published. For further advice and ideas,
-        read{" "}
+        Best way to get your work selected for publication is to read a few
+        articles on the website. This should help you get a better sense for
+        content and style.
+      </p>
+      <p>
+        For further advice and ideas, read{" "}
         <strong>
           <Link to="/zine/open-call-g99w">this guide</Link>
         </strong>
