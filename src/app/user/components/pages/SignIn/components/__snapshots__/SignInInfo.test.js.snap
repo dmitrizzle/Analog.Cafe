@@ -21,64 +21,125 @@ ShallowWrapper {
     "props": Object {
       "children": <styled.ul>
         <li>
-                <span
-                        className="highlight icon"
-                >
-                        ❤
-                </span>
-                 Save your
-                 
-                <Unknown
-                        to="/favourites"
-                >
-                        favourites
-                </Unknown>
-                 for later.
-        </li>
-        <li>
-                <span
-                        className="icon"
-                >
-                        ✒︎
+                <span>
+                        <Unknown />
                 </span>
                  
-                <Unknown
-                        to="/submit"
-                >
-                        Submit
-                </Unknown>
-                 your work, get featured.
-        </li>
-        <li>
-                <span
-                        className="highlight icon"
-                >
-                        ❖
-                </span>
-                 Free
+                Free
                  
-                <Unknown
-                        to="/features"
+                <Connect(ModalLauncher)
+                        element="a"
+                        with={
+                                Object {
+                                        "id": "hints/downloads",
+                                        "info": Object {
+                                          "buttons": Array [
+                                            Object {
+                                              "text": "Downloads & Features",
+                                              "to": "/features",
+                                            },
+                                          ],
+                                          "image": "image-froth_1000000_SJ0QpHE-V",
+                                          "text": "Download anything you like from our collection of articles and guides on film photography techniques and theory.",
+                                          "title": "Free PDF Downloads",
+                                        },
+                                      }
+                        }
                 >
                         downloads
-                </Unknown>
-                 & pre-releases.
+                </Connect(ModalLauncher)>
+                .
         </li>
         <li>
-                <span
-                        className="icon"
-                >
-                        ☞
+                <span>
+                        <Unknown
+                                style={
+                                        Object {
+                                                "margin": "0 .25em",
+                                                "transform": "rotate(90deg)",
+                                              }
+                                }
+                        />
                 </span>
-                 Weekly email
                  
-                <Unknown
-                        onClick={[Function]}
-                        to="#analogue-reads"
+                Weekly
+                 
+                <Connect(ModalLauncher)
+                        element="a"
+                        with={
+                                Object {
+                                        "id": "hints/composer",
+                                        "info": Object {
+                                          "buttons": Array [
+                                            Object {
+                                              "text": "Privacy Policy",
+                                              "to": "/privacy-policy",
+                                            },
+                                          ],
+                                          "image": "image-froth_1600000_BJRvHFlv4",
+                                          "text": "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam.",
+                                          "title": "“Analogue Reads” Emails",
+                                        },
+                                      }
+                        }
                 >
                         newsletter
-                </Unknown>
+                </Connect(ModalLauncher)>
                 .
+        </li>
+        <li>
+                <span>
+                        <Unknown />
+                </span>
+                 
+                Save your
+                 
+                <Connect(ModalLauncher)
+                        element="a"
+                        with={
+                                Object {
+                                        "id": "hints/favourites",
+                                        "info": Object {
+                                          "image": "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+                                          "text": "Save your favourite articles to read later.",
+                                          "title": "Favourites",
+                                        },
+                                      }
+                        }
+                >
+                        favourites
+                </Connect(ModalLauncher)>
+                 
+                for later.
+        </li>
+        <li>
+                <span>
+                        <Unknown />
+                </span>
+                 
+                <Connect(ModalLauncher)
+                        element="a"
+                        with={
+                                Object {
+                                        "id": "hints/submissions",
+                                        "info": Object {
+                                          "buttons": Array [
+                                            Object {
+                                              "text": "Learn More",
+                                              "to": "/submit",
+                                            },
+                                          ],
+                                          "image": "image-froth_1499794_BkFUA89IV",
+                                          "text": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
+                                          "title": "Call for entries.",
+                                        },
+                                      }
+                        }
+                >
+                        Submit
+                </Connect(ModalLauncher)>
+                 
+                your work, get featured.
         </li>
 </styled.ul>,
     },
@@ -90,64 +151,125 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <li>
-            <span
-                        className="highlight icon"
-            >
-                        ❤
-            </span>
-             Save your
-             
-            <Unknown
-                        to="/favourites"
-            >
-                        favourites
-            </Unknown>
-             for later.
-</li>,
-          <li>
-            <span
-                        className="icon"
-            >
-                        ✒︎
+            <span>
+                        <Unknown />
             </span>
              
-            <Unknown
-                        to="/submit"
-            >
-                        Submit
-            </Unknown>
-             your work, get featured.
-</li>,
-          <li>
-            <span
-                        className="highlight icon"
-            >
-                        ❖
-            </span>
-             Free
+            Free
              
-            <Unknown
-                        to="/features"
+            <Connect(ModalLauncher)
+                        element="a"
+                        with={
+                                    Object {
+                                                "id": "hints/downloads",
+                                                "info": Object {
+                                                  "buttons": Array [
+                                                    Object {
+                                                      "text": "Downloads & Features",
+                                                      "to": "/features",
+                                                    },
+                                                  ],
+                                                  "image": "image-froth_1000000_SJ0QpHE-V",
+                                                  "text": "Download anything you like from our collection of articles and guides on film photography techniques and theory.",
+                                                  "title": "Free PDF Downloads",
+                                                },
+                                              }
+                        }
             >
                         downloads
-            </Unknown>
-             & pre-releases.
+            </Connect(ModalLauncher)>
+            .
 </li>,
           <li>
-            <span
-                        className="icon"
-            >
-                        ☞
+            <span>
+                        <Unknown
+                                    style={
+                                                Object {
+                                                            "margin": "0 .25em",
+                                                            "transform": "rotate(90deg)",
+                                                          }
+                                    }
+                        />
             </span>
-             Weekly email
              
-            <Unknown
-                        onClick={[Function]}
-                        to="#analogue-reads"
+            Weekly
+             
+            <Connect(ModalLauncher)
+                        element="a"
+                        with={
+                                    Object {
+                                                "id": "hints/composer",
+                                                "info": Object {
+                                                  "buttons": Array [
+                                                    Object {
+                                                      "text": "Privacy Policy",
+                                                      "to": "/privacy-policy",
+                                                    },
+                                                  ],
+                                                  "image": "image-froth_1600000_BJRvHFlv4",
+                                                  "text": "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam.",
+                                                  "title": "“Analogue Reads” Emails",
+                                                },
+                                              }
+                        }
             >
                         newsletter
-            </Unknown>
+            </Connect(ModalLauncher)>
             .
+</li>,
+          <li>
+            <span>
+                        <Unknown />
+            </span>
+             
+            Save your
+             
+            <Connect(ModalLauncher)
+                        element="a"
+                        with={
+                                    Object {
+                                                "id": "hints/favourites",
+                                                "info": Object {
+                                                  "image": "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+                                                  "text": "Save your favourite articles to read later.",
+                                                  "title": "Favourites",
+                                                },
+                                              }
+                        }
+            >
+                        favourites
+            </Connect(ModalLauncher)>
+             
+            for later.
+</li>,
+          <li>
+            <span>
+                        <Unknown />
+            </span>
+             
+            <Connect(ModalLauncher)
+                        element="a"
+                        with={
+                                    Object {
+                                                "id": "hints/submissions",
+                                                "info": Object {
+                                                  "buttons": Array [
+                                                    Object {
+                                                      "text": "Learn More",
+                                                      "to": "/submit",
+                                                    },
+                                                  ],
+                                                  "image": "image-froth_1499794_BkFUA89IV",
+                                                  "text": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
+                                                  "title": "Call for entries.",
+                                                },
+                                              }
+                        }
+            >
+                        Submit
+            </Connect(ModalLauncher)>
+             
+            your work, get featured.
 </li>,
         ],
       },
@@ -159,176 +281,33 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <span
-                className="highlight icon"
->
-                ❤
-</span>,
-              " Save your",
-              " ",
-              <Unknown
-                to="/favourites"
->
-                favourites
-</Unknown>,
-              " for later.",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "❤",
-                "className": "highlight icon",
-              },
-              "ref": null,
-              "rendered": "❤",
-              "type": "span",
-            },
-            " Save your",
-            " ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": "favourites",
-                "to": "/favourites",
-              },
-              "ref": null,
-              "rendered": "favourites",
-              "type": [Function],
-            },
-            " for later.",
-          ],
-          "type": "li",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <span
-                className="icon"
->
-                ✒︎
+              <span>
+                <Unknown />
 </span>,
               " ",
-              <Unknown
-                to="/submit"
->
-                Submit
-</Unknown>,
-              " your work, get featured.",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "✒︎",
-                "className": "icon",
-              },
-              "ref": null,
-              "rendered": "✒︎",
-              "type": "span",
-            },
-            " ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": "Submit",
-                "to": "/submit",
-              },
-              "ref": null,
-              "rendered": "Submit",
-              "type": [Function],
-            },
-            " your work, get featured.",
-          ],
-          "type": "li",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <span
-                className="highlight icon"
->
-                ❖
-</span>,
-              " Free",
+              "Free",
               " ",
-              <Unknown
-                to="/features"
+              <Connect(ModalLauncher)
+                element="a"
+                with={
+                                Object {
+                                                "id": "hints/downloads",
+                                                "info": Object {
+                                                  "buttons": Array [
+                                                    Object {
+                                                      "text": "Downloads & Features",
+                                                      "to": "/features",
+                                                    },
+                                                  ],
+                                                  "image": "image-froth_1000000_SJ0QpHE-V",
+                                                  "text": "Download anything you like from our collection of articles and guides on film photography techniques and theory.",
+                                                  "title": "Free PDF Downloads",
+                                                },
+                                              }
+                }
 >
                 downloads
-</Unknown>,
-              " & pre-releases.",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "❖",
-                "className": "highlight icon",
-              },
-              "ref": null,
-              "rendered": "❖",
-              "type": "span",
-            },
-            " Free",
-            " ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": "downloads",
-                "to": "/features",
-              },
-              "ref": null,
-              "rendered": "downloads",
-              "type": [Function],
-            },
-            " & pre-releases.",
-          ],
-          "type": "li",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <span
-                className="icon"
->
-                ☞
-</span>,
-              " Weekly email",
-              " ",
-              <Unknown
-                onClick={[Function]}
-                to="#analogue-reads"
->
-                newsletter
-</Unknown>,
+</Connect(ModalLauncher)>,
               ".",
             ],
           },
@@ -339,29 +318,327 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "☞",
-                "className": "icon",
+                "children": <Unknown />,
               },
               "ref": null,
-              "rendered": "☞",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               "type": "span",
             },
-            " Weekly email",
+            " ",
+            "Free",
             " ",
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "class",
+              "props": Object {
+                "children": "downloads",
+                "element": "a",
+                "with": Object {
+                  "id": "hints/downloads",
+                  "info": Object {
+                    "buttons": Array [
+                      Object {
+                        "text": "Downloads & Features",
+                        "to": "/features",
+                      },
+                    ],
+                    "image": "image-froth_1000000_SJ0QpHE-V",
+                    "text": "Download anything you like from our collection of articles and guides on film photography techniques and theory.",
+                    "title": "Free PDF Downloads",
+                  },
+                },
+              },
+              "ref": null,
+              "rendered": "downloads",
+              "type": [Function],
+            },
+            ".",
+          ],
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                <Unknown
+                                style={
+                                                Object {
+                                                                "margin": "0 .25em",
+                                                                "transform": "rotate(90deg)",
+                                                              }
+                                }
+                />
+</span>,
+              " ",
+              "Weekly",
+              " ",
+              <Connect(ModalLauncher)
+                element="a"
+                with={
+                                Object {
+                                                "id": "hints/composer",
+                                                "info": Object {
+                                                  "buttons": Array [
+                                                    Object {
+                                                      "text": "Privacy Policy",
+                                                      "to": "/privacy-policy",
+                                                    },
+                                                  ],
+                                                  "image": "image-froth_1600000_BJRvHFlv4",
+                                                  "text": "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam.",
+                                                  "title": "“Analogue Reads” Emails",
+                                                },
+                                              }
+                }
+>
+                newsletter
+</Connect(ModalLauncher)>,
+              ".",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Unknown
+                  style={
+                                    Object {
+                                                      "margin": "0 .25em",
+                                                      "transform": "rotate(90deg)",
+                                                    }
+                  }
+/>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {
+                    "margin": "0 .25em",
+                    "transform": "rotate(90deg)",
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "span",
+            },
+            " ",
+            "Weekly",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
               "props": Object {
                 "children": "newsletter",
-                "onClick": [Function],
-                "to": "#analogue-reads",
+                "element": "a",
+                "with": Object {
+                  "id": "hints/composer",
+                  "info": Object {
+                    "buttons": Array [
+                      Object {
+                        "text": "Privacy Policy",
+                        "to": "/privacy-policy",
+                      },
+                    ],
+                    "image": "image-froth_1600000_BJRvHFlv4",
+                    "text": "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam.",
+                    "title": "“Analogue Reads” Emails",
+                  },
+                },
               },
               "ref": null,
               "rendered": "newsletter",
               "type": [Function],
             },
             ".",
+          ],
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                <Unknown />
+</span>,
+              " ",
+              "Save your",
+              " ",
+              <Connect(ModalLauncher)
+                element="a"
+                with={
+                                Object {
+                                                "id": "hints/favourites",
+                                                "info": Object {
+                                                  "image": "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+                                                  "text": "Save your favourite articles to read later.",
+                                                  "title": "Favourites",
+                                                },
+                                              }
+                }
+>
+                favourites
+</Connect(ModalLauncher)>,
+              " ",
+              "for later.",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Unknown />,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "span",
+            },
+            " ",
+            "Save your",
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "favourites",
+                "element": "a",
+                "with": Object {
+                  "id": "hints/favourites",
+                  "info": Object {
+                    "image": "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+                    "text": "Save your favourite articles to read later.",
+                    "title": "Favourites",
+                  },
+                },
+              },
+              "ref": null,
+              "rendered": "favourites",
+              "type": [Function],
+            },
+            " ",
+            "for later.",
+          ],
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                <Unknown />
+</span>,
+              " ",
+              <Connect(ModalLauncher)
+                element="a"
+                with={
+                                Object {
+                                                "id": "hints/submissions",
+                                                "info": Object {
+                                                  "buttons": Array [
+                                                    Object {
+                                                      "text": "Learn More",
+                                                      "to": "/submit",
+                                                    },
+                                                  ],
+                                                  "image": "image-froth_1499794_BkFUA89IV",
+                                                  "text": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
+                                                  "title": "Call for entries.",
+                                                },
+                                              }
+                }
+>
+                Submit
+</Connect(ModalLauncher)>,
+              " ",
+              "your work, get featured.",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Unknown />,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "span",
+            },
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Submit",
+                "element": "a",
+                "with": Object {
+                  "id": "hints/submissions",
+                  "info": Object {
+                    "buttons": Array [
+                      Object {
+                        "text": "Learn More",
+                        "to": "/submit",
+                      },
+                    ],
+                    "image": "image-froth_1499794_BkFUA89IV",
+                    "text": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
+                    "title": "Call for entries.",
+                  },
+                },
+              },
+              "ref": null,
+              "rendered": "Submit",
+              "type": [Function],
+            },
+            " ",
+            "your work, get featured.",
           ],
           "type": "li",
         },
@@ -378,64 +655,125 @@ ShallowWrapper {
       "props": Object {
         "children": <styled.ul>
           <li>
-                    <span
-                              className="highlight icon"
-                    >
-                              ❤
-                    </span>
-                     Save your
-                     
-                    <Unknown
-                              to="/favourites"
-                    >
-                              favourites
-                    </Unknown>
-                     for later.
-          </li>
-          <li>
-                    <span
-                              className="icon"
-                    >
-                              ✒︎
+                    <span>
+                              <Unknown />
                     </span>
                      
-                    <Unknown
-                              to="/submit"
-                    >
-                              Submit
-                    </Unknown>
-                     your work, get featured.
-          </li>
-          <li>
-                    <span
-                              className="highlight icon"
-                    >
-                              ❖
-                    </span>
-                     Free
+                    Free
                      
-                    <Unknown
-                              to="/features"
+                    <Connect(ModalLauncher)
+                              element="a"
+                              with={
+                                        Object {
+                                                  "id": "hints/downloads",
+                                                  "info": Object {
+                                                    "buttons": Array [
+                                                      Object {
+                                                        "text": "Downloads & Features",
+                                                        "to": "/features",
+                                                      },
+                                                    ],
+                                                    "image": "image-froth_1000000_SJ0QpHE-V",
+                                                    "text": "Download anything you like from our collection of articles and guides on film photography techniques and theory.",
+                                                    "title": "Free PDF Downloads",
+                                                  },
+                                                }
+                              }
                     >
                               downloads
-                    </Unknown>
-                     & pre-releases.
+                    </Connect(ModalLauncher)>
+                    .
           </li>
           <li>
-                    <span
-                              className="icon"
-                    >
-                              ☞
+                    <span>
+                              <Unknown
+                                        style={
+                                                  Object {
+                                                            "margin": "0 .25em",
+                                                            "transform": "rotate(90deg)",
+                                                          }
+                                        }
+                              />
                     </span>
-                     Weekly email
                      
-                    <Unknown
-                              onClick={[Function]}
-                              to="#analogue-reads"
+                    Weekly
+                     
+                    <Connect(ModalLauncher)
+                              element="a"
+                              with={
+                                        Object {
+                                                  "id": "hints/composer",
+                                                  "info": Object {
+                                                    "buttons": Array [
+                                                      Object {
+                                                        "text": "Privacy Policy",
+                                                        "to": "/privacy-policy",
+                                                      },
+                                                    ],
+                                                    "image": "image-froth_1600000_BJRvHFlv4",
+                                                    "text": "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam.",
+                                                    "title": "“Analogue Reads” Emails",
+                                                  },
+                                                }
+                              }
                     >
                               newsletter
-                    </Unknown>
+                    </Connect(ModalLauncher)>
                     .
+          </li>
+          <li>
+                    <span>
+                              <Unknown />
+                    </span>
+                     
+                    Save your
+                     
+                    <Connect(ModalLauncher)
+                              element="a"
+                              with={
+                                        Object {
+                                                  "id": "hints/favourites",
+                                                  "info": Object {
+                                                    "image": "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+                                                    "text": "Save your favourite articles to read later.",
+                                                    "title": "Favourites",
+                                                  },
+                                                }
+                              }
+                    >
+                              favourites
+                    </Connect(ModalLauncher)>
+                     
+                    for later.
+          </li>
+          <li>
+                    <span>
+                              <Unknown />
+                    </span>
+                     
+                    <Connect(ModalLauncher)
+                              element="a"
+                              with={
+                                        Object {
+                                                  "id": "hints/submissions",
+                                                  "info": Object {
+                                                    "buttons": Array [
+                                                      Object {
+                                                        "text": "Learn More",
+                                                        "to": "/submit",
+                                                      },
+                                                    ],
+                                                    "image": "image-froth_1499794_BkFUA89IV",
+                                                    "text": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
+                                                    "title": "Call for entries.",
+                                                  },
+                                                }
+                              }
+                    >
+                              Submit
+                    </Connect(ModalLauncher)>
+                     
+                    your work, get featured.
           </li>
 </styled.ul>,
       },
@@ -447,64 +785,125 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <li>
-              <span
-                            className="highlight icon"
-              >
-                            ❤
-              </span>
-               Save your
-               
-              <Unknown
-                            to="/favourites"
-              >
-                            favourites
-              </Unknown>
-               for later.
-</li>,
-            <li>
-              <span
-                            className="icon"
-              >
-                            ✒︎
+              <span>
+                            <Unknown />
               </span>
                
-              <Unknown
-                            to="/submit"
-              >
-                            Submit
-              </Unknown>
-               your work, get featured.
-</li>,
-            <li>
-              <span
-                            className="highlight icon"
-              >
-                            ❖
-              </span>
-               Free
+              Free
                
-              <Unknown
-                            to="/features"
+              <Connect(ModalLauncher)
+                            element="a"
+                            with={
+                                          Object {
+                                                        "id": "hints/downloads",
+                                                        "info": Object {
+                                                          "buttons": Array [
+                                                            Object {
+                                                              "text": "Downloads & Features",
+                                                              "to": "/features",
+                                                            },
+                                                          ],
+                                                          "image": "image-froth_1000000_SJ0QpHE-V",
+                                                          "text": "Download anything you like from our collection of articles and guides on film photography techniques and theory.",
+                                                          "title": "Free PDF Downloads",
+                                                        },
+                                                      }
+                            }
               >
                             downloads
-              </Unknown>
-               & pre-releases.
+              </Connect(ModalLauncher)>
+              .
 </li>,
             <li>
-              <span
-                            className="icon"
-              >
-                            ☞
+              <span>
+                            <Unknown
+                                          style={
+                                                        Object {
+                                                                      "margin": "0 .25em",
+                                                                      "transform": "rotate(90deg)",
+                                                                    }
+                                          }
+                            />
               </span>
-               Weekly email
                
-              <Unknown
-                            onClick={[Function]}
-                            to="#analogue-reads"
+              Weekly
+               
+              <Connect(ModalLauncher)
+                            element="a"
+                            with={
+                                          Object {
+                                                        "id": "hints/composer",
+                                                        "info": Object {
+                                                          "buttons": Array [
+                                                            Object {
+                                                              "text": "Privacy Policy",
+                                                              "to": "/privacy-policy",
+                                                            },
+                                                          ],
+                                                          "image": "image-froth_1600000_BJRvHFlv4",
+                                                          "text": "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam.",
+                                                          "title": "“Analogue Reads” Emails",
+                                                        },
+                                                      }
+                            }
               >
                             newsletter
-              </Unknown>
+              </Connect(ModalLauncher)>
               .
+</li>,
+            <li>
+              <span>
+                            <Unknown />
+              </span>
+               
+              Save your
+               
+              <Connect(ModalLauncher)
+                            element="a"
+                            with={
+                                          Object {
+                                                        "id": "hints/favourites",
+                                                        "info": Object {
+                                                          "image": "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+                                                          "text": "Save your favourite articles to read later.",
+                                                          "title": "Favourites",
+                                                        },
+                                                      }
+                            }
+              >
+                            favourites
+              </Connect(ModalLauncher)>
+               
+              for later.
+</li>,
+            <li>
+              <span>
+                            <Unknown />
+              </span>
+               
+              <Connect(ModalLauncher)
+                            element="a"
+                            with={
+                                          Object {
+                                                        "id": "hints/submissions",
+                                                        "info": Object {
+                                                          "buttons": Array [
+                                                            Object {
+                                                              "text": "Learn More",
+                                                              "to": "/submit",
+                                                            },
+                                                          ],
+                                                          "image": "image-froth_1499794_BkFUA89IV",
+                                                          "text": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
+                                                          "title": "Call for entries.",
+                                                        },
+                                                      }
+                            }
+              >
+                            Submit
+              </Connect(ModalLauncher)>
+               
+              your work, get featured.
 </li>,
           ],
         },
@@ -516,176 +915,33 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <span
-                  className="highlight icon"
->
-                  ❤
-</span>,
-                " Save your",
-                " ",
-                <Unknown
-                  to="/favourites"
->
-                  favourites
-</Unknown>,
-                " for later.",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "❤",
-                  "className": "highlight icon",
-                },
-                "ref": null,
-                "rendered": "❤",
-                "type": "span",
-              },
-              " Save your",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": "favourites",
-                  "to": "/favourites",
-                },
-                "ref": null,
-                "rendered": "favourites",
-                "type": [Function],
-              },
-              " for later.",
-            ],
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <span
-                  className="icon"
->
-                  ✒︎
+                <span>
+                  <Unknown />
 </span>,
                 " ",
-                <Unknown
-                  to="/submit"
->
-                  Submit
-</Unknown>,
-                " your work, get featured.",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "✒︎",
-                  "className": "icon",
-                },
-                "ref": null,
-                "rendered": "✒︎",
-                "type": "span",
-              },
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": "Submit",
-                  "to": "/submit",
-                },
-                "ref": null,
-                "rendered": "Submit",
-                "type": [Function],
-              },
-              " your work, get featured.",
-            ],
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <span
-                  className="highlight icon"
->
-                  ❖
-</span>,
-                " Free",
+                "Free",
                 " ",
-                <Unknown
-                  to="/features"
+                <Connect(ModalLauncher)
+                  element="a"
+                  with={
+                                    Object {
+                                                      "id": "hints/downloads",
+                                                      "info": Object {
+                                                        "buttons": Array [
+                                                          Object {
+                                                            "text": "Downloads & Features",
+                                                            "to": "/features",
+                                                          },
+                                                        ],
+                                                        "image": "image-froth_1000000_SJ0QpHE-V",
+                                                        "text": "Download anything you like from our collection of articles and guides on film photography techniques and theory.",
+                                                        "title": "Free PDF Downloads",
+                                                      },
+                                                    }
+                  }
 >
                   downloads
-</Unknown>,
-                " & pre-releases.",
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "❖",
-                  "className": "highlight icon",
-                },
-                "ref": null,
-                "rendered": "❖",
-                "type": "span",
-              },
-              " Free",
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": "downloads",
-                  "to": "/features",
-                },
-                "ref": null,
-                "rendered": "downloads",
-                "type": [Function],
-              },
-              " & pre-releases.",
-            ],
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <span
-                  className="icon"
->
-                  ☞
-</span>,
-                " Weekly email",
-                " ",
-                <Unknown
-                  onClick={[Function]}
-                  to="#analogue-reads"
->
-                  newsletter
-</Unknown>,
+</Connect(ModalLauncher)>,
                 ".",
               ],
             },
@@ -696,29 +952,327 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "☞",
-                  "className": "icon",
+                  "children": <Unknown />,
                 },
                 "ref": null,
-                "rendered": "☞",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
                 "type": "span",
               },
-              " Weekly email",
+              " ",
+              "Free",
               " ",
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "class",
+                "props": Object {
+                  "children": "downloads",
+                  "element": "a",
+                  "with": Object {
+                    "id": "hints/downloads",
+                    "info": Object {
+                      "buttons": Array [
+                        Object {
+                          "text": "Downloads & Features",
+                          "to": "/features",
+                        },
+                      ],
+                      "image": "image-froth_1000000_SJ0QpHE-V",
+                      "text": "Download anything you like from our collection of articles and guides on film photography techniques and theory.",
+                      "title": "Free PDF Downloads",
+                    },
+                  },
+                },
+                "ref": null,
+                "rendered": "downloads",
+                "type": [Function],
+              },
+              ".",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span>
+                  <Unknown
+                                    style={
+                                                      Object {
+                                                                        "margin": "0 .25em",
+                                                                        "transform": "rotate(90deg)",
+                                                                      }
+                                    }
+                  />
+</span>,
+                " ",
+                "Weekly",
+                " ",
+                <Connect(ModalLauncher)
+                  element="a"
+                  with={
+                                    Object {
+                                                      "id": "hints/composer",
+                                                      "info": Object {
+                                                        "buttons": Array [
+                                                          Object {
+                                                            "text": "Privacy Policy",
+                                                            "to": "/privacy-policy",
+                                                          },
+                                                        ],
+                                                        "image": "image-froth_1600000_BJRvHFlv4",
+                                                        "text": "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam.",
+                                                        "title": "“Analogue Reads” Emails",
+                                                      },
+                                                    }
+                  }
+>
+                  newsletter
+</Connect(ModalLauncher)>,
+                ".",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Unknown
+                    style={
+                                        Object {
+                                                            "margin": "0 .25em",
+                                                            "transform": "rotate(90deg)",
+                                                          }
+                    }
+/>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "style": Object {
+                      "margin": "0 .25em",
+                      "transform": "rotate(90deg)",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "span",
+              },
+              " ",
+              "Weekly",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
                 "props": Object {
                   "children": "newsletter",
-                  "onClick": [Function],
-                  "to": "#analogue-reads",
+                  "element": "a",
+                  "with": Object {
+                    "id": "hints/composer",
+                    "info": Object {
+                      "buttons": Array [
+                        Object {
+                          "text": "Privacy Policy",
+                          "to": "/privacy-policy",
+                        },
+                      ],
+                      "image": "image-froth_1600000_BJRvHFlv4",
+                      "text": "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam.",
+                      "title": "“Analogue Reads” Emails",
+                    },
+                  },
                 },
                 "ref": null,
                 "rendered": "newsletter",
                 "type": [Function],
               },
               ".",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span>
+                  <Unknown />
+</span>,
+                " ",
+                "Save your",
+                " ",
+                <Connect(ModalLauncher)
+                  element="a"
+                  with={
+                                    Object {
+                                                      "id": "hints/favourites",
+                                                      "info": Object {
+                                                        "image": "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+                                                        "text": "Save your favourite articles to read later.",
+                                                        "title": "Favourites",
+                                                      },
+                                                    }
+                  }
+>
+                  favourites
+</Connect(ModalLauncher)>,
+                " ",
+                "for later.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Unknown />,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "span",
+              },
+              " ",
+              "Save your",
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "favourites",
+                  "element": "a",
+                  "with": Object {
+                    "id": "hints/favourites",
+                    "info": Object {
+                      "image": "image-froth_915090_05378814ac7d4b9b9352b603f2d944de",
+                      "text": "Save your favourite articles to read later.",
+                      "title": "Favourites",
+                    },
+                  },
+                },
+                "ref": null,
+                "rendered": "favourites",
+                "type": [Function],
+              },
+              " ",
+              "for later.",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span>
+                  <Unknown />
+</span>,
+                " ",
+                <Connect(ModalLauncher)
+                  element="a"
+                  with={
+                                    Object {
+                                                      "id": "hints/submissions",
+                                                      "info": Object {
+                                                        "buttons": Array [
+                                                          Object {
+                                                            "text": "Learn More",
+                                                            "to": "/submit",
+                                                          },
+                                                        ],
+                                                        "image": "image-froth_1499794_BkFUA89IV",
+                                                        "text": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
+                                                        "title": "Call for entries.",
+                                                      },
+                                                    }
+                  }
+>
+                  Submit
+</Connect(ModalLauncher)>,
+                " ",
+                "your work, get featured.",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Unknown />,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": "span",
+              },
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Submit",
+                  "element": "a",
+                  "with": Object {
+                    "id": "hints/submissions",
+                    "info": Object {
+                      "buttons": Array [
+                        Object {
+                          "text": "Learn More",
+                          "to": "/submit",
+                        },
+                      ],
+                      "image": "image-froth_1499794_BkFUA89IV",
+                      "text": "Photos shot on film, 200+ words, your topic. No fees, no deadlines, easy submissions, free editorial reviews.",
+                      "title": "Call for entries.",
+                    },
+                  },
+                },
+                "ref": null,
+                "rendered": "Submit",
+                "type": [Function],
+              },
+              " ",
+              "your work, get featured.",
             ],
             "type": "li",
           },
