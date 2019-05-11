@@ -12,6 +12,7 @@ import ArticleSection from "../../../../../core/components/pages/Article/compone
 import ArticleWrapper from "../../../../../core/components/pages/Article/components/ArticleWrapper"
 import Cube from "../../../../../core/components/icons/group-beacons/Cube"
 import HeaderLarge from "../../../../../core/components/vignettes/HeaderLarge"
+import Link from "../../../../../core/components/controls/Link"
 import LinkButton from "../../../../../core/components/controls/Button/components/LinkButton"
 import MetaTags from "../../../../../core/components/vignettes/MetaTags"
 
@@ -125,9 +126,18 @@ export const Download = props => {
                       loginSuccess: `/download/${filename}`
                     })
                 }}
+                style={{ marginBottom: 0 }}
               >
                 Sign In to Download
               </LinkButton>
+              <p style={{ textAlign: "center", marginTop: 0 }}>
+                <small>
+                  <em>
+                    Free, 5 seconds to create,{" "}
+                    <Link to="/privacy-policy">no spam</Link>.
+                  </em>
+                </small>
+              </p>
             </React.Fragment>
           )}
         {!fileData && (
