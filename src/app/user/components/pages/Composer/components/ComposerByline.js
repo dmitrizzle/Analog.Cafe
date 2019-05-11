@@ -31,13 +31,9 @@ export default props => {
               ]
             : null}
         </Byline>
-      ) : props.user.status === "ok" ? (
-        <Byline>
-          <NavMini view="composer" />
-        </Byline>
       ) : (
         <Byline>
-          <Link to="/sign-in">Sign in</Link> to edit your profile.
+          <NavMini view="composer" />
         </Byline>
       )}
     </span>

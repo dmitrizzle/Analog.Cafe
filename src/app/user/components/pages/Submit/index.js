@@ -23,6 +23,18 @@ const getPublished = "Get your work published on Analog.Cafe"
 export default props => {
   const Body = () => (
     <ArticleSection>
+      <ButtonGroup style={{ paddingBottom: "1.5em" }}>
+        <LinkButton to={"/submit/compose"} branded>
+          {ctaTextInit()}
+        </LinkButton>
+        <p>
+          <Link to="/sign-in">
+            <strong>Sign in</strong>
+          </Link>{" "}
+          if you have an account.
+        </p>
+      </ButtonGroup>
+
       <Modal
         unmarked
         element="a"
@@ -50,14 +62,30 @@ export default props => {
         <Figure src="image-froth_1499794_BkFUA89IV" feature alt={posterText} />
       </Modal>
       <p>
-        If you love shooting film and have a story to share, Analog.Cafe is{" "}
-        <em>the</em> place to publish it.
+        If you love shooting film and have a story to share, Analog.Cafe could
+        be a good the place for it.
       </p>
       <p>
-        We feature fun, beautiful, creative, educational, and entertaining
-        pieces written by casual and regular contributors. Every new article is
-        an event which we celebrate on our Twitter, Instagram, and weekly email
-        newsletter. As well as <strong>the front page</strong> 👏👏👏
+        <Link to="/about">We</Link> feature fun, beautiful, creative,
+        educational, and entertaining pieces written by casual and regular
+        contributors. We celebrate every new contribution on{" "}
+        <Link to="https://twitter.com/analog_cafe">social</Link>{" "}
+        <Link to="https://instagram.com/analog_cafe">media</Link>, weekly email{" "}
+        <Modal
+          element="a"
+          with={{
+            info: {
+              image: "image-froth_1600000_BJRvHFlv4",
+              title: "“Analogue Reads” Tuesdays",
+              text:
+                "A weekly email newsletter, delivered every Tuesday to all Analog.Cafe members. No spam."
+            },
+            id: "hints/composer"
+          }}
+        >
+          newsletter
+        </Modal>
+        , and the front <Link to="/">page</Link>.
       </p>
       <p>
         It’s easy to send your submission with the handy{" "}
@@ -99,6 +127,22 @@ export default props => {
         smaller JPG images. You retain <Link to="/submit/rules">all</Link> of
         the rights and ownership to the photographs and the text you submit.
       </p>
+      <h3>How to get featured.</h3>
+      <Figure
+        style={{ cursor: "default" }}
+        src="image-froth_1963351_HJUmY88I4"
+      />
+
+      <p>
+        Best way to get accepted is to read a few articles on the website to get
+        a better sense for what gets published. For further advice and ideas,
+        read{" "}
+        <strong>
+          <Link to="/zine/open-call-g99w">this guide</Link>
+        </strong>
+        .
+      </p>
+      <div style={{ clear: "both" }} />
 
       <ButtonGroup style={{ paddingBottom: "1.5em" }}>
         <LinkButton to={"/submit/compose"} branded>
@@ -111,18 +155,6 @@ export default props => {
           if you have an account.
         </p>
       </ButtonGroup>
-
-      <Figure
-        style={{ cursor: "default" }}
-        src="image-froth_1963351_HJUmY88I4"
-      />
-
-      <p>
-        Best way to get accepted is to read a few articles on the website to get
-        a better sense for what gets published. For further advice and ideas,
-        read <Link to="/zine/open-call-g99w">this</Link>.
-      </p>
-      <h3>Good luck!</h3>
     </ArticleSection>
   )
   return !props.embed ? (
