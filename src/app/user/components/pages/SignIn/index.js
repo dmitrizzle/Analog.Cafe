@@ -52,19 +52,31 @@ class SignIn extends React.PureComponent {
       }
     })
   }
-  handleTwitterButton = event => {
+  handleTwitterButton = () => {
+    // event.preventDefault();
+    this.props.addSessionInfo({
+      loginMethod: "Twitter",
+      loginEmail: ""
+    })
     GA.event({
       category: "User",
       action: "Sign In",
       label: "Twitter"
     })
+    // window.setTimeout(() => (window.location = ROUTE_API_LOGIN_TWITTER), 100);
   }
-  handleFacebookButton = event => {
+  handleFacebookButton = () => {
+    // event.preventDefault();
+    this.props.addSessionInfo({
+      loginMethod: "Facebook",
+      loginEmail: ""
+    })
     GA.event({
       category: "User",
       action: "Sign In",
       label: "Facebook"
     })
+    // window.setTimeout(() => (window.location = ROUTE_API_LOGIN_FACEBOOK), 100);
   }
 
   render() {

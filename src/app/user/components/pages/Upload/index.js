@@ -11,7 +11,6 @@ import localForage from "localforage"
 import { CARD_ERRORS } from "../../../constants/messages-submission"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../constants/routes-session"
 import { TEXT_EMOJIS } from "../../../../constants"
-import { addSessionInfo } from "../../../store/actions-user"
 import {
   base64ToBlob,
   loadHeader,
@@ -244,9 +243,6 @@ const mapDispatchToProps = dispatch => {
     },
     setModal: (info, request) => {
       dispatch(setModal(info, request))
-    },
-    addSessionInfo: sessionInfo => {
-      dispatch(addSessionInfo(sessionInfo))
     }
   }
 }
