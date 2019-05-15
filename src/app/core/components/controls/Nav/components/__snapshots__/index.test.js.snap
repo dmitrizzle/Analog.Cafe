@@ -735,19 +735,12 @@ ShallowWrapper {
           </NavLink>
 </styled.li>,
         <styled.li>
-          <NavLink
+          <withRouter()
                     className={undefined}
                     onClick={[Function]}
-                    to="/submit"
           >
-                    Submi
-                    <styled.span>
-                              ssions 
-                    </styled.span>
-                    <styled.span>
-                              t
-                    </styled.span>
-          </NavLink>
+                    Topics
+          </withRouter()>
 </styled.li>,
         <styled.li
           center={true}
@@ -763,25 +756,13 @@ ShallowWrapper {
           </Unknown>
 </styled.li>,
         <styled.li>
-          <Unknown
+          <NavLink
                     className={undefined}
-                    userImage={undefined}
-                    userRole={undefined}
-                    userStatus={undefined}
+                    onClick={[Function]}
+                    to="/about"
           >
-                    <styled.span>
-                              My 
-                    </styled.span>
-                    <styled.span>
-                              Account 
-                    </styled.span>
-                    <styled.span>
-                              Me 
-                    </styled.span>
-                    <Unknown
-                              image={undefined}
-                    />
-          </Unknown>
+                    About
+          </NavLink>
 </styled.li>,
         <styled.li
           className="prime right"
@@ -907,19 +888,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <NavLink
+          "children": <withRouter()
             className={undefined}
             onClick={[Function]}
-            to="/submit"
 >
-            Submi
-            <styled.span>
-                        ssions 
-            </styled.span>
-            <styled.span>
-                        t
-            </styled.span>
-</NavLink>,
+            Topics
+</withRouter()>,
         },
         "ref": null,
         "rendered": Object {
@@ -927,45 +901,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": Array [
-              "Submi",
-              <styled.span>
-                ssions 
-</styled.span>,
-              <styled.span>
-                t
-</styled.span>,
-            ],
+            "children": "Topics",
             "className": undefined,
             "onClick": [Function],
-            "to": "/submit",
           },
           "ref": null,
-          "rendered": Array [
-            "Submi",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "ssions ",
-              },
-              "ref": null,
-              "rendered": "ssions ",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "t",
-              },
-              "ref": null,
-              "rendered": "t",
-              "type": [Function],
-            },
-          ],
+          "rendered": "Topics",
           "type": [Function],
         },
         "type": [Function],
@@ -1016,25 +957,13 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <Unknown
+          "children": <NavLink
             className={undefined}
-            userImage={undefined}
-            userRole={undefined}
-            userStatus={undefined}
+            onClick={[Function]}
+            to="/about"
 >
-            <styled.span>
-                        My 
-            </styled.span>
-            <styled.span>
-                        Account 
-            </styled.span>
-            <styled.span>
-                        Me 
-            </styled.span>
-            <Unknown
-                        image={undefined}
-            />
-</Unknown>,
+            About
+</NavLink>,
         },
         "ref": null,
         "rendered": Object {
@@ -1042,72 +971,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <styled.span>
-                My 
-</styled.span>,
-              <styled.span>
-                Account 
-</styled.span>,
-              <styled.span>
-                Me 
-</styled.span>,
-              <Unknown
-                image={undefined}
-/>,
-            ],
+            "children": "About",
             "className": undefined,
-            "userImage": undefined,
-            "userRole": undefined,
-            "userStatus": undefined,
+            "onClick": [Function],
+            "to": "/about",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "My ",
-              },
-              "ref": null,
-              "rendered": "My ",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "Account ",
-              },
-              "ref": null,
-              "rendered": "Account ",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "Me ",
-              },
-              "ref": null,
-              "rendered": "Me ",
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "image": undefined,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
+          "rendered": "About",
           "type": [Function],
         },
         "type": [Function],
@@ -1206,19 +1076,12 @@ ShallowWrapper {
             </NavLink>
 </styled.li>,
           <styled.li>
-            <NavLink
+            <withRouter()
                         className={undefined}
                         onClick={[Function]}
-                        to="/submit"
             >
-                        Submi
-                        <styled.span>
-                                    ssions 
-                        </styled.span>
-                        <styled.span>
-                                    t
-                        </styled.span>
-            </NavLink>
+                        Topics
+            </withRouter()>
 </styled.li>,
           <styled.li
             center={true}
@@ -1234,25 +1097,13 @@ ShallowWrapper {
             </Unknown>
 </styled.li>,
           <styled.li>
-            <Unknown
+            <NavLink
                         className={undefined}
-                        userImage={undefined}
-                        userRole={undefined}
-                        userStatus={undefined}
+                        onClick={[Function]}
+                        to="/about"
             >
-                        <styled.span>
-                                    My 
-                        </styled.span>
-                        <styled.span>
-                                    Account 
-                        </styled.span>
-                        <styled.span>
-                                    Me 
-                        </styled.span>
-                        <Unknown
-                                    image={undefined}
-                        />
-            </Unknown>
+                        About
+            </NavLink>
 </styled.li>,
           <styled.li
             className="prime right"
@@ -1378,19 +1229,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <NavLink
+            "children": <withRouter()
               className={undefined}
               onClick={[Function]}
-              to="/submit"
 >
-              Submi
-              <styled.span>
-                            ssions 
-              </styled.span>
-              <styled.span>
-                            t
-              </styled.span>
-</NavLink>,
+              Topics
+</withRouter()>,
           },
           "ref": null,
           "rendered": Object {
@@ -1398,45 +1242,12 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": Array [
-                "Submi",
-                <styled.span>
-                  ssions 
-</styled.span>,
-                <styled.span>
-                  t
-</styled.span>,
-              ],
+              "children": "Topics",
               "className": undefined,
               "onClick": [Function],
-              "to": "/submit",
             },
             "ref": null,
-            "rendered": Array [
-              "Submi",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "ssions ",
-                },
-                "ref": null,
-                "rendered": "ssions ",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "t",
-                },
-                "ref": null,
-                "rendered": "t",
-                "type": [Function],
-              },
-            ],
+            "rendered": "Topics",
             "type": [Function],
           },
           "type": [Function],
@@ -1487,25 +1298,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <Unknown
+            "children": <NavLink
               className={undefined}
-              userImage={undefined}
-              userRole={undefined}
-              userStatus={undefined}
+              onClick={[Function]}
+              to="/about"
 >
-              <styled.span>
-                            My 
-              </styled.span>
-              <styled.span>
-                            Account 
-              </styled.span>
-              <styled.span>
-                            Me 
-              </styled.span>
-              <Unknown
-                            image={undefined}
-              />
-</Unknown>,
+              About
+</NavLink>,
           },
           "ref": null,
           "rendered": Object {
@@ -1513,72 +1312,13 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "children": Array [
-                <styled.span>
-                  My 
-</styled.span>,
-                <styled.span>
-                  Account 
-</styled.span>,
-                <styled.span>
-                  Me 
-</styled.span>,
-                <Unknown
-                  image={undefined}
-/>,
-              ],
+              "children": "About",
               "className": undefined,
-              "userImage": undefined,
-              "userRole": undefined,
-              "userStatus": undefined,
+              "onClick": [Function],
+              "to": "/about",
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "My ",
-                },
-                "ref": null,
-                "rendered": "My ",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "Account ",
-                },
-                "ref": null,
-                "rendered": "Account ",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": "Me ",
-                },
-                "ref": null,
-                "rendered": "Me ",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "image": undefined,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
+            "rendered": "About",
             "type": [Function],
           },
           "type": [Function],

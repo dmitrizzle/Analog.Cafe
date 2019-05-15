@@ -1680,7 +1680,7 @@ ShallowWrapper {
                                         unmarked={true}
                                         with={
                                                   Object {
-                                                            "id": "nav/sections",
+                                                            "id": "nav/topics",
                                                             "info": Object {
                                                               "buttons": Array [
                                                                 Object {
@@ -1690,79 +1690,33 @@ ShallowWrapper {
                                                                 },
                                                                 Object {
                                                                   "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                   "text": "Film Photography",
                                                                   "to": "/film-photography",
                                                                 },
                                                                 Object {
                                                                   "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                   "text": "Photo Essays",
                                                                   "to": "/photo-essays",
                                                                 },
                                                                 Object {
                                                                   "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                   "text": "Editorials",
                                                                   "to": "/editorials",
                                                                 },
                                                                 Object {
                                                                   "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                  "text": "Solo Projects",
-                                                                  "to": "/solo-projects",
-                                                                },
-                                                                Object {
-                                                                  "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                   "text": "Collaborations",
                                                                   "to": "/collaborations",
-                                                                },
-                                                                Object {
-                                                                  "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                  "text": "Favourites",
-                                                                  "to": "/favourites",
-                                                                },
-                                                                Object {
-                                                                  "divider": true,
-                                                                },
-                                                                Object {
-                                                                  "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                                                                  "text": <span>
-                                                                    <Unknown
-                                                                                      style={
-                                                                                                        Object {
-                                                                                                                          "height": ".75em",
-                                                                                                                          "paddingBottom": ".15em",
-                                                                                                                        }
-                                                                                      }
-                                                                    />
-                                                                     Features
-                                                  </span>,
-                                                                  "to": "/features",
-                                                                },
-                                                                Object {
-                                                                  "keywords": "likes, saved, favourite",
-                                                                  "text": <span>
-                                                                    <Unknown
-                                                                                      style={
-                                                                                                        Object {
-                                                                                                                          "height": ".75em",
-                                                                                                                          "paddingBottom": ".15em",
-                                                                                                                        }
-                                                                                      }
-                                                                    />
-                                                                     Favourites
-                                                  </span>,
-                                                                  "to": "/favourites",
                                                                 },
                                                               ],
                                                               "menu": true,
                                                               "title": <span>
                                                                 <Unknown />
-                                                                 
-                                                                A Film Photography Magazine
+                                                                 Topics
                                                   </span>,
                                                             },
                                                           }
@@ -1854,7 +1808,7 @@ ShallowWrapper {
                                     unmarked={true}
                                     with={
                                                 Object {
-                                                            "id": "nav/sections",
+                                                            "id": "nav/topics",
                                                             "info": Object {
                                                               "buttons": Array [
                                                                 Object {
@@ -1864,79 +1818,33 @@ ShallowWrapper {
                                                                 },
                                                                 Object {
                                                                   "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                   "text": "Film Photography",
                                                                   "to": "/film-photography",
                                                                 },
                                                                 Object {
                                                                   "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                   "text": "Photo Essays",
                                                                   "to": "/photo-essays",
                                                                 },
                                                                 Object {
                                                                   "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                   "text": "Editorials",
                                                                   "to": "/editorials",
                                                                 },
                                                                 Object {
                                                                   "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                  "text": "Solo Projects",
-                                                                  "to": "/solo-projects",
-                                                                },
-                                                                Object {
-                                                                  "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                  "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                   "text": "Collaborations",
                                                                   "to": "/collaborations",
-                                                                },
-                                                                Object {
-                                                                  "inverse": false,
-                                                                  "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                  "text": "Favourites",
-                                                                  "to": "/favourites",
-                                                                },
-                                                                Object {
-                                                                  "divider": true,
-                                                                },
-                                                                Object {
-                                                                  "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                                                                  "text": <span>
-                                                                    <Unknown
-                                                                                        style={
-                                                                                                            Object {
-                                                                                                                                "height": ".75em",
-                                                                                                                                "paddingBottom": ".15em",
-                                                                                                                              }
-                                                                                        }
-                                                                    />
-                                                                     Features
-                                                </span>,
-                                                                  "to": "/features",
-                                                                },
-                                                                Object {
-                                                                  "keywords": "likes, saved, favourite",
-                                                                  "text": <span>
-                                                                    <Unknown
-                                                                                        style={
-                                                                                                            Object {
-                                                                                                                                "height": ".75em",
-                                                                                                                                "paddingBottom": ".15em",
-                                                                                                                              }
-                                                                                        }
-                                                                    />
-                                                                     Favourites
-                                                </span>,
-                                                                  "to": "/favourites",
                                                                 },
                                                               ],
                                                               "menu": true,
                                                               "title": <span>
                                                                 <Unknown />
-                                                                 
-                                                                A Film Photography Magazine
+                                                                 Topics
                                                 </span>,
                                                             },
                                                           }
@@ -1963,7 +1871,7 @@ ShallowWrapper {
                             unmarked={true}
                             with={
                                           Object {
-                                                        "id": "nav/sections",
+                                                        "id": "nav/topics",
                                                         "info": Object {
                                                           "buttons": Array [
                                                             Object {
@@ -1973,79 +1881,33 @@ ShallowWrapper {
                                                             },
                                                             Object {
                                                               "inverse": false,
-                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                              "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                               "text": "Film Photography",
                                                               "to": "/film-photography",
                                                             },
                                                             Object {
                                                               "inverse": false,
-                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                              "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                               "text": "Photo Essays",
                                                               "to": "/photo-essays",
                                                             },
                                                             Object {
                                                               "inverse": false,
-                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                              "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                               "text": "Editorials",
                                                               "to": "/editorials",
                                                             },
                                                             Object {
                                                               "inverse": false,
-                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                              "text": "Solo Projects",
-                                                              "to": "/solo-projects",
-                                                            },
-                                                            Object {
-                                                              "inverse": false,
-                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                              "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                               "text": "Collaborations",
                                                               "to": "/collaborations",
-                                                            },
-                                                            Object {
-                                                              "inverse": false,
-                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                              "text": "Favourites",
-                                                              "to": "/favourites",
-                                                            },
-                                                            Object {
-                                                              "divider": true,
-                                                            },
-                                                            Object {
-                                                              "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                                                              "text": <span>
-                                                                <Unknown
-                                                                                      style={
-                                                                                                            Object {
-                                                                                                                                  "height": ".75em",
-                                                                                                                                  "paddingBottom": ".15em",
-                                                                                                                                }
-                                                                                      }
-                                                                />
-                                                                 Features
-                                          </span>,
-                                                              "to": "/features",
-                                                            },
-                                                            Object {
-                                                              "keywords": "likes, saved, favourite",
-                                                              "text": <span>
-                                                                <Unknown
-                                                                                      style={
-                                                                                                            Object {
-                                                                                                                                  "height": ".75em",
-                                                                                                                                  "paddingBottom": ".15em",
-                                                                                                                                }
-                                                                                      }
-                                                                />
-                                                                 Favourites
-                                          </span>,
-                                                              "to": "/favourites",
                                                             },
                                                           ],
                                                           "menu": true,
                                                           "title": <span>
                                                             <Unknown />
-                                                             
-                                                            A Film Photography Magazine
+                                                             Topics
                                           </span>,
                                                         },
                                                       }
@@ -2070,7 +1932,7 @@ ShallowWrapper {
                 unmarked={true}
                 with={
                                 Object {
-                                                "id": "nav/sections",
+                                                "id": "nav/topics",
                                                 "info": Object {
                                                   "buttons": Array [
                                                     Object {
@@ -2080,79 +1942,33 @@ ShallowWrapper {
                                                     },
                                                     Object {
                                                       "inverse": false,
-                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                      "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                       "text": "Film Photography",
                                                       "to": "/film-photography",
                                                     },
                                                     Object {
                                                       "inverse": false,
-                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                      "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                       "text": "Photo Essays",
                                                       "to": "/photo-essays",
                                                     },
                                                     Object {
                                                       "inverse": false,
-                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                      "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                       "text": "Editorials",
                                                       "to": "/editorials",
                                                     },
                                                     Object {
                                                       "inverse": false,
-                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                      "text": "Solo Projects",
-                                                      "to": "/solo-projects",
-                                                    },
-                                                    Object {
-                                                      "inverse": false,
-                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                      "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                       "text": "Collaborations",
                                                       "to": "/collaborations",
-                                                    },
-                                                    Object {
-                                                      "inverse": false,
-                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                      "text": "Favourites",
-                                                      "to": "/favourites",
-                                                    },
-                                                    Object {
-                                                      "divider": true,
-                                                    },
-                                                    Object {
-                                                      "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                                                      "text": <span>
-                                                        <Unknown
-                                                                                style={
-                                                                                                        Object {
-                                                                                                                                "height": ".75em",
-                                                                                                                                "paddingBottom": ".15em",
-                                                                                                                              }
-                                                                                }
-                                                        />
-                                                         Features
-                                </span>,
-                                                      "to": "/features",
-                                                    },
-                                                    Object {
-                                                      "keywords": "likes, saved, favourite",
-                                                      "text": <span>
-                                                        <Unknown
-                                                                                style={
-                                                                                                        Object {
-                                                                                                                                "height": ".75em",
-                                                                                                                                "paddingBottom": ".15em",
-                                                                                                                              }
-                                                                                }
-                                                        />
-                                                         Favourites
-                                </span>,
-                                                      "to": "/favourites",
                                                     },
                                                   ],
                                                   "menu": true,
                                                   "title": <span>
                                                     <Unknown />
-                                                     
-                                                    A Film Photography Magazine
+                                                     Topics
                                 </span>,
                                                 },
                                               }
@@ -2181,7 +1997,7 @@ ShallowWrapper {
                 "element": "a",
                 "unmarked": true,
                 "with": Object {
-                  "id": "nav/sections",
+                  "id": "nav/topics",
                   "info": Object {
                     "buttons": Array [
                       Object {
@@ -2191,79 +2007,33 @@ ShallowWrapper {
                       },
                       Object {
                         "inverse": false,
-                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                        "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                         "text": "Film Photography",
                         "to": "/film-photography",
                       },
                       Object {
                         "inverse": false,
-                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                        "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                         "text": "Photo Essays",
                         "to": "/photo-essays",
                       },
                       Object {
                         "inverse": false,
-                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                        "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                         "text": "Editorials",
                         "to": "/editorials",
                       },
                       Object {
                         "inverse": false,
-                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                        "text": "Solo Projects",
-                        "to": "/solo-projects",
-                      },
-                      Object {
-                        "inverse": false,
-                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                        "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                         "text": "Collaborations",
                         "to": "/collaborations",
-                      },
-                      Object {
-                        "inverse": false,
-                        "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                        "text": "Favourites",
-                        "to": "/favourites",
-                      },
-                      Object {
-                        "divider": true,
-                      },
-                      Object {
-                        "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                        "text": <span>
-                          <Unknown
-                                                    style={
-                                                                              Object {
-                                                                                                        "height": ".75em",
-                                                                                                        "paddingBottom": ".15em",
-                                                                                                      }
-                                                    }
-                          />
-                           Features
-</span>,
-                        "to": "/features",
-                      },
-                      Object {
-                        "keywords": "likes, saved, favourite",
-                        "text": <span>
-                          <Unknown
-                                                    style={
-                                                                              Object {
-                                                                                                        "height": ".75em",
-                                                                                                        "paddingBottom": ".15em",
-                                                                                                      }
-                                                    }
-                          />
-                           Favourites
-</span>,
-                        "to": "/favourites",
                       },
                     ],
                     "menu": true,
                     "title": <span>
                       <Unknown />
-                       
-                      A Film Photography Magazine
+                       Topics
 </span>,
                   },
                 },
@@ -2325,7 +2095,7 @@ ShallowWrapper {
                                                 unmarked={true}
                                                 with={
                                                             Object {
-                                                                        "id": "nav/sections",
+                                                                        "id": "nav/topics",
                                                                         "info": Object {
                                                                           "buttons": Array [
                                                                             Object {
@@ -2335,79 +2105,33 @@ ShallowWrapper {
                                                                             },
                                                                             Object {
                                                                               "inverse": false,
-                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                              "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                               "text": "Film Photography",
                                                                               "to": "/film-photography",
                                                                             },
                                                                             Object {
                                                                               "inverse": false,
-                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                              "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                               "text": "Photo Essays",
                                                                               "to": "/photo-essays",
                                                                             },
                                                                             Object {
                                                                               "inverse": false,
-                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                              "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                               "text": "Editorials",
                                                                               "to": "/editorials",
                                                                             },
                                                                             Object {
                                                                               "inverse": false,
-                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                              "text": "Solo Projects",
-                                                                              "to": "/solo-projects",
-                                                                            },
-                                                                            Object {
-                                                                              "inverse": false,
-                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                              "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                               "text": "Collaborations",
                                                                               "to": "/collaborations",
-                                                                            },
-                                                                            Object {
-                                                                              "inverse": false,
-                                                                              "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                              "text": "Favourites",
-                                                                              "to": "/favourites",
-                                                                            },
-                                                                            Object {
-                                                                              "divider": true,
-                                                                            },
-                                                                            Object {
-                                                                              "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                                                                              "text": <span>
-                                                                                <Unknown
-                                                                                                    style={
-                                                                                                                        Object {
-                                                                                                                                            "height": ".75em",
-                                                                                                                                            "paddingBottom": ".15em",
-                                                                                                                                          }
-                                                                                                    }
-                                                                                />
-                                                                                 Features
-                                                            </span>,
-                                                                              "to": "/features",
-                                                                            },
-                                                                            Object {
-                                                                              "keywords": "likes, saved, favourite",
-                                                                              "text": <span>
-                                                                                <Unknown
-                                                                                                    style={
-                                                                                                                        Object {
-                                                                                                                                            "height": ".75em",
-                                                                                                                                            "paddingBottom": ".15em",
-                                                                                                                                          }
-                                                                                                    }
-                                                                                />
-                                                                                 Favourites
-                                                            </span>,
-                                                                              "to": "/favourites",
                                                                             },
                                                                           ],
                                                                           "menu": true,
                                                                           "title": <span>
                                                                             <Unknown />
-                                                                             
-                                                                            A Film Photography Magazine
+                                                                             Topics
                                                             </span>,
                                                                         },
                                                                       }
@@ -2499,7 +2223,7 @@ ShallowWrapper {
                                           unmarked={true}
                                           with={
                                                         Object {
-                                                                      "id": "nav/sections",
+                                                                      "id": "nav/topics",
                                                                       "info": Object {
                                                                         "buttons": Array [
                                                                           Object {
@@ -2509,79 +2233,33 @@ ShallowWrapper {
                                                                           },
                                                                           Object {
                                                                             "inverse": false,
-                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                            "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                             "text": "Film Photography",
                                                                             "to": "/film-photography",
                                                                           },
                                                                           Object {
                                                                             "inverse": false,
-                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                            "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                             "text": "Photo Essays",
                                                                             "to": "/photo-essays",
                                                                           },
                                                                           Object {
                                                                             "inverse": false,
-                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                            "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                             "text": "Editorials",
                                                                             "to": "/editorials",
                                                                           },
                                                                           Object {
                                                                             "inverse": false,
-                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                            "text": "Solo Projects",
-                                                                            "to": "/solo-projects",
-                                                                          },
-                                                                          Object {
-                                                                            "inverse": false,
-                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                            "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                             "text": "Collaborations",
                                                                             "to": "/collaborations",
-                                                                          },
-                                                                          Object {
-                                                                            "inverse": false,
-                                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                            "text": "Favourites",
-                                                                            "to": "/favourites",
-                                                                          },
-                                                                          Object {
-                                                                            "divider": true,
-                                                                          },
-                                                                          Object {
-                                                                            "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                                                                            "text": <span>
-                                                                              <Unknown
-                                                                                                    style={
-                                                                                                                          Object {
-                                                                                                                                                "height": ".75em",
-                                                                                                                                                "paddingBottom": ".15em",
-                                                                                                                                              }
-                                                                                                    }
-                                                                              />
-                                                                               Features
-                                                        </span>,
-                                                                            "to": "/features",
-                                                                          },
-                                                                          Object {
-                                                                            "keywords": "likes, saved, favourite",
-                                                                            "text": <span>
-                                                                              <Unknown
-                                                                                                    style={
-                                                                                                                          Object {
-                                                                                                                                                "height": ".75em",
-                                                                                                                                                "paddingBottom": ".15em",
-                                                                                                                                              }
-                                                                                                    }
-                                                                              />
-                                                                               Favourites
-                                                        </span>,
-                                                                            "to": "/favourites",
                                                                           },
                                                                         ],
                                                                         "menu": true,
                                                                         "title": <span>
                                                                           <Unknown />
-                                                                           
-                                                                          A Film Photography Magazine
+                                                                           Topics
                                                         </span>,
                                                                       },
                                                                     }
@@ -2608,7 +2286,7 @@ ShallowWrapper {
                                 unmarked={true}
                                 with={
                                                 Object {
-                                                                "id": "nav/sections",
+                                                                "id": "nav/topics",
                                                                 "info": Object {
                                                                   "buttons": Array [
                                                                     Object {
@@ -2618,79 +2296,33 @@ ShallowWrapper {
                                                                     },
                                                                     Object {
                                                                       "inverse": false,
-                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                      "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                       "text": "Film Photography",
                                                                       "to": "/film-photography",
                                                                     },
                                                                     Object {
                                                                       "inverse": false,
-                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                      "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                       "text": "Photo Essays",
                                                                       "to": "/photo-essays",
                                                                     },
                                                                     Object {
                                                                       "inverse": false,
-                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                      "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                       "text": "Editorials",
                                                                       "to": "/editorials",
                                                                     },
                                                                     Object {
                                                                       "inverse": false,
-                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                      "text": "Solo Projects",
-                                                                      "to": "/solo-projects",
-                                                                    },
-                                                                    Object {
-                                                                      "inverse": false,
-                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                                      "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                                       "text": "Collaborations",
                                                                       "to": "/collaborations",
-                                                                    },
-                                                                    Object {
-                                                                      "inverse": false,
-                                                                      "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                                      "text": "Favourites",
-                                                                      "to": "/favourites",
-                                                                    },
-                                                                    Object {
-                                                                      "divider": true,
-                                                                    },
-                                                                    Object {
-                                                                      "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                                                                      "text": <span>
-                                                                        <Unknown
-                                                                                                style={
-                                                                                                                        Object {
-                                                                                                                                                "height": ".75em",
-                                                                                                                                                "paddingBottom": ".15em",
-                                                                                                                                              }
-                                                                                                }
-                                                                        />
-                                                                         Features
-                                                </span>,
-                                                                      "to": "/features",
-                                                                    },
-                                                                    Object {
-                                                                      "keywords": "likes, saved, favourite",
-                                                                      "text": <span>
-                                                                        <Unknown
-                                                                                                style={
-                                                                                                                        Object {
-                                                                                                                                                "height": ".75em",
-                                                                                                                                                "paddingBottom": ".15em",
-                                                                                                                                              }
-                                                                                                }
-                                                                        />
-                                                                         Favourites
-                                                </span>,
-                                                                      "to": "/favourites",
                                                                     },
                                                                   ],
                                                                   "menu": true,
                                                                   "title": <span>
                                                                     <Unknown />
-                                                                     
-                                                                    A Film Photography Magazine
+                                                                     Topics
                                                 </span>,
                                                                 },
                                                               }
@@ -2715,7 +2347,7 @@ ShallowWrapper {
                   unmarked={true}
                   with={
                                     Object {
-                                                      "id": "nav/sections",
+                                                      "id": "nav/topics",
                                                       "info": Object {
                                                         "buttons": Array [
                                                           Object {
@@ -2725,79 +2357,33 @@ ShallowWrapper {
                                                           },
                                                           Object {
                                                             "inverse": false,
-                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                            "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                             "text": "Film Photography",
                                                             "to": "/film-photography",
                                                           },
                                                           Object {
                                                             "inverse": false,
-                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                            "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                             "text": "Photo Essays",
                                                             "to": "/photo-essays",
                                                           },
                                                           Object {
                                                             "inverse": false,
-                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                            "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                             "text": "Editorials",
                                                             "to": "/editorials",
                                                           },
                                                           Object {
                                                             "inverse": false,
-                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                            "text": "Solo Projects",
-                                                            "to": "/solo-projects",
-                                                          },
-                                                          Object {
-                                                            "inverse": false,
-                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                                                            "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                                                             "text": "Collaborations",
                                                             "to": "/collaborations",
-                                                          },
-                                                          Object {
-                                                            "inverse": false,
-                                                            "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                                                            "text": "Favourites",
-                                                            "to": "/favourites",
-                                                          },
-                                                          Object {
-                                                            "divider": true,
-                                                          },
-                                                          Object {
-                                                            "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                                                            "text": <span>
-                                                              <Unknown
-                                                                                        style={
-                                                                                                                  Object {
-                                                                                                                                            "height": ".75em",
-                                                                                                                                            "paddingBottom": ".15em",
-                                                                                                                                          }
-                                                                                        }
-                                                              />
-                                                               Features
-                                    </span>,
-                                                            "to": "/features",
-                                                          },
-                                                          Object {
-                                                            "keywords": "likes, saved, favourite",
-                                                            "text": <span>
-                                                              <Unknown
-                                                                                        style={
-                                                                                                                  Object {
-                                                                                                                                            "height": ".75em",
-                                                                                                                                            "paddingBottom": ".15em",
-                                                                                                                                          }
-                                                                                        }
-                                                              />
-                                                               Favourites
-                                    </span>,
-                                                            "to": "/favourites",
                                                           },
                                                         ],
                                                         "menu": true,
                                                         "title": <span>
                                                           <Unknown />
-                                                           
-                                                          A Film Photography Magazine
+                                                           Topics
                                     </span>,
                                                       },
                                                     }
@@ -2826,7 +2412,7 @@ ShallowWrapper {
                   "element": "a",
                   "unmarked": true,
                   "with": Object {
-                    "id": "nav/sections",
+                    "id": "nav/topics",
                     "info": Object {
                       "buttons": Array [
                         Object {
@@ -2836,79 +2422,33 @@ ShallowWrapper {
                         },
                         Object {
                           "inverse": false,
-                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                          "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                           "text": "Film Photography",
                           "to": "/film-photography",
                         },
                         Object {
                           "inverse": false,
-                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                          "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                           "text": "Photo Essays",
                           "to": "/photo-essays",
                         },
                         Object {
                           "inverse": false,
-                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                          "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                           "text": "Editorials",
                           "to": "/editorials",
                         },
                         Object {
                           "inverse": false,
-                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                          "text": "Solo Projects",
-                          "to": "/solo-projects",
-                        },
-                        Object {
-                          "inverse": false,
-                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
+                          "keywords": "Film PhotographyArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
                           "text": "Collaborations",
                           "to": "/collaborations",
-                        },
-                        Object {
-                          "inverse": false,
-                          "keywords": "Camera and film reviews, guides, and storiesArticles, reviews, and guides on film photography and the stories of its influence on art and culture.",
-                          "text": "Favourites",
-                          "to": "/favourites",
-                        },
-                        Object {
-                          "divider": true,
-                        },
-                        Object {
-                          "keywords": "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads",
-                          "text": <span>
-                            <Unknown
-                                                        style={
-                                                                                    Object {
-                                                                                                                "height": ".75em",
-                                                                                                                "paddingBottom": ".15em",
-                                                                                                              }
-                                                        }
-                            />
-                             Features
-</span>,
-                          "to": "/features",
-                        },
-                        Object {
-                          "keywords": "likes, saved, favourite",
-                          "text": <span>
-                            <Unknown
-                                                        style={
-                                                                                    Object {
-                                                                                                                "height": ".75em",
-                                                                                                                "paddingBottom": ".15em",
-                                                                                                              }
-                                                        }
-                            />
-                             Favourites
-</span>,
-                          "to": "/favourites",
                         },
                       ],
                       "menu": true,
                       "title": <span>
                         <Unknown />
-                         
-                        A Film Photography Magazine
+                         Topics
 </span>,
                     },
                   },
