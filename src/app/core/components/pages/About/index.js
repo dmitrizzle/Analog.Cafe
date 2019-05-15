@@ -98,7 +98,7 @@ class About extends React.PureComponent {
               //useEasing={false}
               delay={2}
             />{" "}
-            contributing authors as of now.{" "}
+            contributing authors.{" "}
             <strong>
               <Link to="/sign-in">Join us!</Link>
             </strong>

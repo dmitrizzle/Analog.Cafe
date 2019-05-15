@@ -6,11 +6,10 @@ import { BurgerMenu } from "../../../pages/List/components/ListDescription"
 import { GA } from "../../../../../utils"
 import { NavLink, NavLogoLink } from "./NavLinks"
 import Cube from "../../../icons/group-beacons/Cube"
-import NavAvatar from "./NavAvatar"
 import NavItem from "./NavItem"
 import NavLogo from "./NavLogo"
-import NavMore from "./NavMore"
 import NavSearch from "./NavSearch"
+import NavSections from "./NavSections"
 
 export const LabelWithSearchSVG = styled.span`
   svg {
@@ -61,15 +60,18 @@ export const isActiveUrl = (to, options = {}, props) => {
 
 export default props => {
   const a = "active"
+  const ab = "/about"
   const mr = "/features"
-  const s = "/submissions"
+  // const s = "/submissions";
 
   const features = {
     to: mr,
     className: isActiveUrl(mr) ? a : undefined
   }
-  const submit = {
-    className: isActiveUrl(s) ? a : undefined
+  const navTopics = {
+    className: isActiveUrl("nav/topics", { modalUrl: true }, props)
+      ? a
+      : undefined
   }
 
   const navSearch = {
@@ -77,12 +79,17 @@ export default props => {
       ? a
       : undefined
   }
-  const navMore = {
-    className: (isActiveUrl("nav/account", { modalUrl: true }, props)
-    ? "active"
-    : undefined)
-      ? a
-      : undefined
+  // const navMore = {
+  //   className: (isActiveUrl("nav/account", { modalUrl: true }, props)
+  //   ? "active"
+  //   : undefined)
+  //     ? a
+  //     : undefined
+  // };
+
+  const navAbout = {
+    to: ab,
+    className: isActiveUrl(ab) ? a : undefined
   }
 
   const iconStyles = { height: "1em", paddingBottom: ".15em" }
@@ -112,25 +119,22 @@ export default props => {
         </NavLink>
       </NavItem>
       <NavItem>
-        <NavLink
-          {...submit}
-          to={props.userStatus !== "ok" ? "/submit" : s}
+        <NavSections
+          {...navTopics}
           onClick={() => {
             GA.event({
               category: "Navigation",
               action: "Nav.click",
-              label: "Submissions"
+              label: "Topics"
             })
           }}
         >
-          Submi
-          <NotOnMicroScreens>ssions </NotOnMicroScreens>
-          <OnlyMicroScreens>t</OnlyMicroScreens>
+          Topics
           {/* <Extra>
             {" "}
             <Pen style={iconStyles} />
           </Extra> */}
-        </NavLink>
+        </NavSections>
         {/* )} */}
       </NavItem>
 
@@ -151,17 +155,18 @@ export default props => {
       </NavItem>
 
       <NavItem>
-        <NavMore
-          userImage={props.userImage}
-          userStatus={props.userStatus}
-          userRole={props.userRole}
-          {...navMore}
+        <NavLink
+          {...navAbout}
+          onClick={() => {
+            GA.event({
+              category: "Navigation",
+              action: "Nav.click",
+              label: "About"
+            })
+          }}
         >
-          <Extra>My </Extra>
-          <NotOnMicroScreens>Account </NotOnMicroScreens>
-          <OnlyMicroScreens>Me </OnlyMicroScreens>
-          <NavAvatar image={props.userImage} />
-        </NavMore>
+          About
+        </NavLink>
       </NavItem>
 
       <NavItem narrow prime right className="prime right">

@@ -17,7 +17,6 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "addSessionInfo": [Function],
       "composer": undefined,
       "editor": undefined,
       "resetStatus": [Function],
@@ -37,7 +36,6 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "addSessionInfo": [Function],
         "composer": undefined,
         "editor": undefined,
         "resetStatus": [Function],

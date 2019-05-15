@@ -13,7 +13,7 @@ const NavMiniWrapper = styled.div`
   margin: 0 -1.75em;
 `
 
-const NavmMiniLink = styled(Link)`
+const NavmMiniLink = styled(props => <Link {...props} icon={undefined} />)`
   display: inline-block;
   background: ${props => props.theme.color.background(0.33)};
   margin-right: 0.25em;
@@ -22,18 +22,18 @@ const NavmMiniLink = styled(Link)`
 
 const iconStyles = { height: ".75em" }
 const ITEMS = {
-  submissions: {
-    label: "Submissions",
-    icon: props => <Pen style={props.style} />,
-    to: "/submissions",
-    noAccountTo: "/submit"
-  },
   favourites: {
     account: true,
     label: "Favourites",
     icon: props => <Heart style={props.style} />,
     to: "/favourites",
     noAccountTo: "/sign-in"
+  },
+  submissions: {
+    label: "Submissions",
+    icon: props => <Pen style={props.style} />,
+    to: "/submissions",
+    noAccountTo: "/submit"
   },
   profile: {
     account: true,

@@ -10,34 +10,34 @@ export const TEXT_STATUS_LABELS = {
 }
 export const TEXT_ROUTE_LABELS = {
   "/": {
-    title: "A Film Photography Magazine",
+    title: `“${APP_DESCRIPTION}”`,
     description: `Created by film photographers, artists, and writers of the internet. Published weekly. Maintained as an open-source project by Dmitri.`,
     designation: "homepage"
   },
   default: {
-    title: APP_DESCRIPTION
+    title: `“${APP_DESCRIPTION}”`
   },
 
   "/photo-essays": {
-    title: "Travel, culture, thought pieces, art projects",
+    title: "Photo Essays",
     description:
       "A collection of abstract photography, thought-provoking essays, observations, travel, culture, and items of interest."
   },
   "/film-photography": {
-    title: "Camera and film reviews, guides, and stories",
+    title: "Film Photography",
     description:
       "Articles, reviews, and guides on film photography and the stories of its influence on art and culture."
   },
   "/editorials": {
-    title: "From the Analog.Cafe editors",
+    title: "Editorials",
     description: ""
   },
   "/collaborations": {
-    title: "Co-authored articles",
+    title: "Collaborations",
     description: ""
   },
   "/solo-projects": {
-    title: "Written and photographed by a single author",
+    title: "Solo Projects",
     description: ""
   },
 

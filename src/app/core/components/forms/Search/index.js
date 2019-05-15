@@ -5,8 +5,8 @@ import React from "react"
 import styled from "styled-components"
 
 import {
-  BurgerMenu,
-  sectionButtons
+  Burger,
+  magazineSections
 } from "../../pages/List/components/ListDescription"
 import { RHCP } from "../../icons/group-beacons/Star"
 import { ROUTE_URL_USER_SUBMISSIONS } from "../../../../user/constants/routes-session"
@@ -53,33 +53,25 @@ const iconStyles = { height: ".75em", paddingBottom: ".15em" }
 
 const NAV_BUTTONS = props => [
   {
-    to: "/submit",
-    text: "Submissions",
-    keywords: "contribute, guest, upload",
     mobile: "on",
-    visitorOnly: true
-  },
-
-  {
-    to: "/features",
+    to: "#topics",
+    onClick: event => {
+      event.preventDefault()
+      event.stopPropagation()
+      props.setModal({ ...magazineSections(props.location.pathname) })
+    },
     text: (
       <span>
-        <Cube style={iconStyles} /> Features
+        <Burger style={{ margin: "0 0 0 -0.75em", ...iconStyles }}>
+          <div />
+          <div />
+          <div />
+        </Burger>{" "}
+        Topics
       </span>
     ),
     keywords:
-      "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads"
-  },
-  {
-    to: ROUTE_URL_USER_SUBMISSIONS,
-    text: (
-      <span>
-        <Pen style={iconStyles} /> Submissions
-      </span>
-    ),
-    keywords: "my stuff, results, drafts, portfolio, submissions, submit",
-    memberOnly: true,
-    mobile: "on"
+      "sections,magazine,call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute"
   },
   {
     to: "/favourites",
@@ -91,6 +83,34 @@ const NAV_BUTTONS = props => [
     keywords: "likes, saved, favourite"
   },
   {
+    to: ROUTE_URL_USER_SUBMISSIONS,
+    text: (
+      <span>
+        <Pen style={iconStyles} /> Submissions
+      </span>
+    ),
+    keywords: "contribute, guest, upload",
+    memberOnly: true
+  },
+  {
+    to: "/submit",
+    text: (
+      <span>
+        <Pen style={iconStyles} /> Submissions
+      </span>
+    ),
+    keywords: "contribute, guest, upload",
+    visitorOnly: true
+  },
+  {
+    to: "/submit/compose",
+    text:
+      loadTextContent().length > 0 ? "Edit Submission Draft" : "New Submission",
+    keywords:
+      "compose, submit, write, upload, send, cntribute, edit, submission, draft",
+    hidden: loadTextContent().length === 0
+  },
+  {
     to: `/profile/edit`,
     text: (
       <span>
@@ -98,66 +118,40 @@ const NAV_BUTTONS = props => [
       </span>
     ),
     keywords: "account, avatar, link, bio, profile, settings",
-    mobile: "on",
     memberOnly: true
   },
+
   buttonMaker("/sign-out", {
     keywords: "log out, exit",
     attributes: {
-      memberOnly: true,
-      mobile: "on",
-      inverse: true
+      memberOnly: true
     }
   }),
-  {
-    to: "#sections",
-    onClick: event => {
-      event.preventDefault()
-      event.stopPropagation()
-      props.setModal({
-        info: {
-          menu: true,
-          title: (
-            <span>
-              <BurgerMenu /> Sections
-            </span>
-          ),
-          buttons: sectionButtons.map(section =>
-            buttonMaker(section, {
-              attributes: {
-                inverse: props.location.pathname === section
-              }
-            })
-          )
-        },
-        id: "nav/sections"
-      })
-    },
-    text: "Magazine Sections",
-    keywords:
-      "call for entries,Get Featured,Write for Analog.Cafe,publish,guest blog, submit, contribute",
-    hidden: true
-  },
 
-  {
-    to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
-    text: (
-      <span>
-        <span style={{ color: "#ed236e" }}>Etsy</span> Store
-      </span>
-    ),
-    keywords: "etsy,store,buy,shop,camera"
-  },
-  buttonMaker("/about", {
-    keywords: "about,who,what,where,how,authors,editors,contact,backers"
-  }),
   buttonMaker("/sign-in", {
     keywords: "sign up, create account, password",
     attributes: {
-      visitorOnly: true,
-      inverse: true
+      visitorOnly: true
     }
   }),
+  { divider: true },
+  {
+    to: "/features",
+    hidden: true,
+    text: (
+      <span>
+        <Cube style={iconStyles} /> Features
+      </span>
+    ),
+    keywords:
+      "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads"
+  },
+
+  buttonMaker("/about", {
+    keywords: "about,who,what,where,how,authors,editors,contact,backers",
+    attributes: { mobile: "on" }
+  }),
+
   buttonMaker("/film-photography", {
     keywords: "science, camera, emulsion",
     attributes: { hidden: true }
@@ -178,14 +172,14 @@ const NAV_BUTTONS = props => [
   },
   { to: "/submit/rules", text: "Rules", keywords: "rules,terms,conditions" },
   { to: "/privacy-policy", text: "Privacy", keywords: "privacy policy" },
-
   {
-    to: "/submit/compose",
-    text:
-      loadTextContent().length > 0 ? "Edit Submission Draft" : "New Submission",
-    keywords:
-      "compose, submit, write, upload, send, cntribute, edit, submission, draft",
-    hidden: true
+    to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
+    text: (
+      <span>
+        <span style={{ color: "#ed236e" }}>Etsy</span> Store
+      </span>
+    ),
+    keywords: "etsy,store,buy,shop,camera"
   }
 ]
 export class Search extends React.PureComponent {

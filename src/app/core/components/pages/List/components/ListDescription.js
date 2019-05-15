@@ -1,15 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 
-import {
-  APP_DESCRIPTION,
-  APP_NAME,
-  HEADER_ERRORS
-} from "../../../../../constants"
+import { APP_NAME, HEADER_ERRORS } from "../../../../../constants"
 import { buttonMaker } from "../../../forms/Search"
 import { getTitleFromSlug } from "../../../../utils/messages-"
-import Cube from "../../../icons/group-beacons/Cube"
-import Heart from "../../../icons/group-beacons/Heart"
 import ListBrandName from "./ListBrandName"
 import ListDescriptionWrapper from "./ListDescriptionWrapper"
 import ListHeader from "./ListHeader"
@@ -62,57 +56,37 @@ export const sectionButtons = [
   "/film-photography",
   "/photo-essays",
   "/editorials",
-  "/solo-projects",
-  "/collaborations",
-  "/favourites"
+  "/collaborations"
 ]
-const iconStyles = { height: ".75em", paddingBottom: ".15em" }
+export const topicsMenuModalInfo = pathname => {
+  return {
+    menu: true,
+    title: (
+      <span>
+        <BurgerMenu /> Topics
+      </span>
+    ),
+    buttons: [
+      {
+        to: "/",
+        text: "Newest Articles",
+        inverse: pathname === "/"
+      },
+      ...sectionButtons.map(section =>
+        buttonMaker(section, {
+          attributes: {
+            inverse: pathname === section
+          }
+        })
+      )
+    ]
+  }
+}
 
 export const magazineSections = pathname => {
   return {
-    info: {
-      menu: true,
-      title: (
-        <span>
-          <BurgerMenu /> {APP_DESCRIPTION}
-        </span>
-      ),
-      buttons: [
-        {
-          to: "/",
-          text: "Newest Articles",
-          inverse: pathname === "/"
-        },
-        ...sectionButtons.map(section =>
-          buttonMaker(section, {
-            attributes: {
-              inverse: pathname === section
-            }
-          })
-        ),
-        { divider: true },
-        {
-          to: "/features",
-          text: (
-            <span>
-              <Cube style={iconStyles} /> Features
-            </span>
-          ),
-          keywords:
-            "photography,podcast,audio,downloads,guides,reference,price,reviews,features,resources,must,reads"
-        },
-        {
-          to: "/favourites",
-          text: (
-            <span>
-              <Heart style={iconStyles} /> Favourites
-            </span>
-          ),
-          keywords: "likes, saved, favourite"
-        }
-      ]
-    },
-    id: "nav/sections"
+    info: topicsMenuModalInfo(pathname),
+    id: "nav/topics"
   }
 }
 

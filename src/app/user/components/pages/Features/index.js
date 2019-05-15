@@ -110,31 +110,33 @@ export const Carousel = props => (
     <div style={{ marginLeft: props.chop ? "1.5em" : undefined }}>
       {props.items.map((item, num) => (
         <LazyLoad unmountIfInvisible once height="12em" key={item.title}>
-          {num === 0 && <Spacer />}
-          <Poster
-            to={item.to}
-            onClick={event => {
-              GA.event({
-                category: "Navigation",
-                action: "Features.poster",
-                label: item.title
-              })
-            }}
-          >
-            <PosterImage src={item.poster} center={props.center} />
-            <PosterInfo>
-              <h4>
-                {item.type && item.type === "↯ PDF Download" && "DOWNLOAD: "}
-                {item.title}
-              </h4>
-              <small>
-                <em>{item.text}</em>
-              </small>
-            </PosterInfo>
+          <React.Fragment>
+            {num === 0 && <Spacer />}
+            <Poster
+              to={item.to}
+              onClick={event => {
+                GA.event({
+                  category: "Navigation",
+                  action: "Features.poster",
+                  label: item.title
+                })
+              }}
+            >
+              <PosterImage src={item.poster} center={props.center} />
+              <PosterInfo>
+                <h4>
+                  {item.type && item.type === "↯ PDF Download" && "DOWNLOAD: "}
+                  {item.title}
+                </h4>
+                <small>
+                  <em>{item.text}</em>
+                </small>
+              </PosterInfo>
 
-            {item.type && <PosterExtra label={item.type.replace("_", " ")} />}
-          </Poster>
-          {num === props.items.length - 1 && <Spacer last />}
+              {item.type && <PosterExtra label={item.type.replace("_", " ")} />}
+            </Poster>
+            {num === props.items.length - 1 && <Spacer last />}
+          </React.Fragment>
         </LazyLoad>
       ))}
     </div>
