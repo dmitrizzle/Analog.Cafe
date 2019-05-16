@@ -2,6 +2,7 @@ import { getFroth } from "@roast-cms/image-froth"
 import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-"
+import { ROUTE_API_AUTHORS } from "../constants/routes-article"
 import { ROUTE_API_IMAGES } from "../../user/constants/routes-submission"
 import { TEXT_ERRORS } from "../../constants"
 import { getFirstNameFromFull } from "../utils/messages-author"
@@ -38,21 +39,61 @@ export const getPictureInfo = src => {
     if (picturesState[id]) return
     axios(makeAPIRequest(request))
       .then(response => {
-        response.data.status === "ok"
-          ? dispatch(
+        if (response.data.status === "ok") {
+          const { author } = response.data.info
+          const authorLinkButton = {
+            to: `/is/${author.id}`,
+            text: `Image by [${getFirstNameFromFull(author.name)}]`,
+            inverse: true
+          }
+
+          // //  set basic info
+          // dispatch(
+          //   setModal(
+          //     {
+          //       info: {
+          //         image: src,
+          //         buttons: [
+          //           authorLinkButton,
+          //           {
+          //             to: "#author-link",
+          //             text: " ",
+          //             loading: true
+          //           }
+          //         ],
+          //         headless: true
+          //       },
+          //       status: response.data.status,
+          //       id
+          //     },
+          //     {
+          //       url: "hints/image-author"
+          //     }
+          //   )
+          // );
+
+          // add author's chosen link button
+          let request = {
+            url: ROUTE_API_AUTHORS + "/" + author.id
+          }
+          axios(makeAPIRequest(request)).then(response => {
+            const authorCTA =
+              response.data.status === "ok" && response.data.info.buttons[1]
+                ? {
+                    to: response.data.info.buttons[1].to,
+                    text: response.data.info.buttons[1].text
+                  }
+                : {
+                    to: "",
+                    text: ""
+                  }
+
+            dispatch(
               setModal(
                 {
                   info: {
                     image: src,
-                    buttons: [
-                      {
-                        to: `/is/${response.data.info.author.id}`,
-                        text: `Image by [${getFirstNameFromFull(
-                          response.data.info.author.name
-                        )}]`,
-                        inverse: true
-                      }
-                    ],
+                    buttons: [authorLinkButton, authorCTA],
                     headless: true
                   },
                   status: response.data.status,
@@ -63,7 +104,8 @@ export const getPictureInfo = src => {
                 }
               )
             )
-          : dispatch(UNKNOWN_AUTHOR(id))
+          })
+        } else dispatch(UNKNOWN_AUTHOR(id))
       })
       .catch(error => dispatch(UNKNOWN_AUTHOR(id, error)))
   }
