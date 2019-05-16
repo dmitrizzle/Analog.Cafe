@@ -1,11 +1,9 @@
-import { connect } from "react-redux"
 import LazyLoad from "react-lazyload"
 import React from "react"
 import styled, { css } from "styled-components"
 
 import { GA, makeFroth } from "../../../../utils"
 import { MUST_READS_CONTENT } from "./constants"
-import { setModal } from "../../../../core/store/actions-modal"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import GridButton from "../../../../admin/components/controls/Grid/components/GridButton"
@@ -143,7 +141,7 @@ export const Carousel = props => (
   </Posters>
 )
 
-export const Features = props => {
+export default props => {
   return (
     <ArticleWrapper>
       <MetaTags metaTitle="Features" metaSubtitle="The Best of Analog.Cafe" />
@@ -213,20 +211,3 @@ export const Features = props => {
     </ArticleWrapper>
   )
 }
-
-const mapDispatchToProps = dispatch => {
-  return {
-    setModal: (info, request) => {
-      dispatch(setModal(info, request))
-    }
-  }
-}
-const mapStateToProps = state => {
-  return {
-    user: state.user
-  }
-}
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Features)
