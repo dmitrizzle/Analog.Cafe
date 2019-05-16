@@ -55,35 +55,54 @@ export const getPictureInfo = src => {
           }
 
           // add author's chosen link button
-          let request = {
-            url: ROUTE_API_AUTHORS + "/" + author.id
-          }
-          axios(makeAPIRequest(request)).then(response => {
-            const authorCTA =
-              response.data.status === "ok" && response.data.info.buttons[1]
-                ? {
-                    to: response.data.info.buttons[1].to,
-                    text: response.data.info.buttons[1].text
-                      .replace("Me", "Author")
-                      .replace("My", "Author’s"),
-                    onClick: () => {
-                      GA.event({
-                        category: "Campaign",
-                        action: "Picture.author_cta"
-                      })
+          if (author.id) {
+            let request = {
+              url: ROUTE_API_AUTHORS + "/" + author.id
+            }
+            axios(makeAPIRequest(request)).then(response => {
+              const authorCTA =
+                response.data.status === "ok" && response.data.info.buttons[1]
+                  ? {
+                      to: response.data.info.buttons[1].to,
+                      text: response.data.info.buttons[1].text
+                        .replace("Me", "Author")
+                        .replace("My", "Author’s"),
+                      onClick: () => {
+                        GA.event({
+                          category: "Campaign",
+                          action: "Picture.author_cta"
+                        })
+                      }
                     }
-                  }
-                : {
-                    to: "",
-                    text: ""
-                  }
+                  : {
+                      to: "",
+                      text: ""
+                    }
 
+              dispatch(
+                setModal(
+                  {
+                    info: {
+                      image: src,
+                      buttons: [authorLinkButton, authorCTA],
+                      headless: true
+                    },
+                    status: response.data.status,
+                    id
+                  },
+                  {
+                    url: "hints/image-author"
+                  }
+                )
+              )
+            })
+          } else
             dispatch(
               setModal(
                 {
                   info: {
                     image: src,
-                    buttons: [authorLinkButton, authorCTA],
+                    buttons: [authorLinkButton],
                     headless: true
                   },
                   status: response.data.status,
@@ -94,7 +113,6 @@ export const getPictureInfo = src => {
                 }
               )
             )
-          })
         } else dispatch(UNKNOWN_AUTHOR(id))
       })
       .catch(error => dispatch(UNKNOWN_AUTHOR(id, error)))
