@@ -2,7 +2,7 @@ import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actio
 import React from "react"
 
 import { CardIntegratedForColumns } from "../../../../../core/components/controls/ArticleActions/components/Options"
-import { makeFroth } from "../../../../../utils"
+import { GA, makeFroth } from "../../../../../utils"
 import CardButton from "../../../../../core/components/controls/Card/components/CardButton"
 import CardCaption from "../../../../../core/components/controls/Card/components/CardCaption"
 import Link from "../../../../../core/components/controls/Link"
@@ -52,7 +52,16 @@ export const UserProfileInfo = props => (
       </figcaption>
     )}
     {props.doesAuthorHaveLink && (
-      <CardButton to={props.list.author.buttons[1].to} branded>
+      <CardButton
+        to={props.list.author.buttons[1].to}
+        onClick={event => {
+          GA.event({
+            category: "Campaign",
+            action: "Profile.author_cta"
+          })
+        }}
+        branded
+      >
         {props.list.author.buttons[1].text}
       </CardButton>
     )}

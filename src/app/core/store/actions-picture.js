@@ -2,11 +2,11 @@ import { getFroth } from "@roast-cms/image-froth"
 import axios from "axios"
 
 import { CARD_ERRORS } from "../constants/messages-"
+import { GA, makeAPIRequest } from "../../utils"
 import { ROUTE_API_AUTHORS } from "../constants/routes-article"
 import { ROUTE_API_IMAGES } from "../../user/constants/routes-submission"
 import { TEXT_ERRORS } from "../../constants"
 import { getFirstNameFromFull } from "../utils/messages-author"
-import { makeAPIRequest } from "../../utils"
 import { setModal } from "./actions-modal"
 
 const UNKNOWN_AUTHOR = (id, error) => {
@@ -44,33 +44,15 @@ export const getPictureInfo = src => {
           const authorLinkButton = {
             to: `/is/${author.id}`,
             text: `Image by [${getFirstNameFromFull(author.name)}]`,
-            inverse: true
+            inverse: true,
+            onClick: () => {
+              GA.event({
+                category: "Navigation",
+                action: "Picture.author_profile",
+                label: src
+              })
+            }
           }
-
-          // //  set basic info
-          // dispatch(
-          //   setModal(
-          //     {
-          //       info: {
-          //         image: src,
-          //         buttons: [
-          //           authorLinkButton,
-          //           {
-          //             to: "#author-link",
-          //             text: " ",
-          //             loading: true
-          //           }
-          //         ],
-          //         headless: true
-          //       },
-          //       status: response.data.status,
-          //       id
-          //     },
-          //     {
-          //       url: "hints/image-author"
-          //     }
-          //   )
-          // );
 
           // add author's chosen link button
           let request = {
@@ -81,7 +63,13 @@ export const getPictureInfo = src => {
               response.data.status === "ok" && response.data.info.buttons[1]
                 ? {
                     to: response.data.info.buttons[1].to,
-                    text: response.data.info.buttons[1].text
+                    text: response.data.info.buttons[1].text,
+                    onClick: () => {
+                      GA.event({
+                        category: "Campaign",
+                        action: "Picture.author_cta"
+                      })
+                    }
                   }
                 : {
                     to: "",
