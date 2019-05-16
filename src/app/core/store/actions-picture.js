@@ -63,7 +63,9 @@ export const getPictureInfo = src => {
               response.data.status === "ok" && response.data.info.buttons[1]
                 ? {
                     to: response.data.info.buttons[1].to,
-                    text: response.data.info.buttons[1].text,
+                    text: response.data.info.buttons[1].text
+                      .replace("Me", "Author")
+                      .replace("My", "Author’s"),
                     onClick: () => {
                       GA.event({
                         category: "Campaign",

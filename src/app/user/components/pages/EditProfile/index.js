@@ -23,6 +23,7 @@ import Email from "../../../../core/components/vignettes/Email"
 import Forbidden from "../../../../core/components/pages/Error/components/Forbidden"
 import HeaderWrapper from "../../../../core/components/vignettes/HeaderLarge/components/HeaderWrapper"
 import Link from "../../../../core/components/controls/Link"
+import Modal from "../../../../core/components/controls/Modal"
 import ProfileCard from "./components/ProfileCard"
 import TitleTextarea from "../../forms/TextInput/components/TitleTextarea"
 
@@ -210,15 +211,53 @@ class EditProfile extends React.PureComponent {
           {!this.state.setUserInfoPending && TEXT_EMOJIS.CHECKMARK} Save & Close
         </Button>
         <ArticleSection style={{ paddingTop: "3em" }}>
-          <p>
-            <small>
+          <ul>
+            <li>
+              <strong>Your link</strong> will on your profile and with your
+              published images. Learn more about links{" "}
+              <Modal
+                with={{
+                  info: {
+                    title: "Your Link Button",
+                    text: (
+                      <span>
+                        To help your readers find ways to contact you, follow
+                        you, or buy your work easier, we translate supported
+                        links into actionable and easy to understand buttons.
+                        <br />
+                        <br />
+                        These buttons appear on your profile and with each photo
+                        that you publish on Analog.Cafe.
+                        <br />
+                        <br />
+                        <span style={{ opacity: 0.5 }}>Supported:</span>{" "}
+                        Twitter, Instagram, Facebook, Flickr, 500px, YouTube,
+                        Etsy, email addresses.
+                        <br />
+                        <br />
+                        All other links will default to the “Visit My Website”
+                        button.
+                      </span>
+                    )
+                  },
+                  id: "hint/cta"
+                }}
+              >
+                here
+              </Modal>
+              .
+            </li>
+            <li>
               View your public profile{" "}
               <strong>
                 <Link to={`/is/${this.props.user.info.id}`}>here</Link>
               </strong>
-              . If you want to delete your account, please <Email /> Dmitri.
-            </small>
-          </p>
+              .
+            </li>
+            <li>
+              If you want to delete your account, please <Email /> Dmitri.
+            </li>
+          </ul>
         </ArticleSection>
       </ArticleWrapper>
     ) : (

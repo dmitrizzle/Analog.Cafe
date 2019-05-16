@@ -63,7 +63,7 @@ export default props => {
         ((props.article.submittedBy &&
           props.article.submittedBy.id === props.user.info.id) ||
           props.user.info.role === "admin") && <ArticleControls />}
-      {props.user.status === "ok" && <Favourite />}
+      {props.user && props.user.status === "ok" && <Favourite />}
     </HeaderLarge>
   )
 }

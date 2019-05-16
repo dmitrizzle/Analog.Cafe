@@ -176,7 +176,7 @@ const NAV_BUTTONS = props => [
     to: "https://www.etsy.com/ca/shop/AnalogCafeShop",
     text: (
       <span>
-        <span style={{ color: "#ed236e" }}>Etsy</span> Store
+        <span style={{ color: "#ed236e" }}>Etsy</span> Shop
       </span>
     ),
     keywords: "etsy,store,buy,shop,camera"

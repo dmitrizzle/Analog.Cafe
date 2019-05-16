@@ -1,18 +1,22 @@
 export const LINK_LABELS = {
-  twitter: "Follow on Twitter",
-  instagram: "Follow on Instagram",
-  facebook: "Visit My Facebook Page",
-  flickr: "Visit My Flickr",
-  px: "Visit My 500px",
+  twitter: "Find Me on Twitter",
+  instagram: "Find Me on Instagram",
+  facebook: "Find Me on Facebook",
+  flickr: "Find Me on Flickr",
+  px: "Find Me on 500px",
   website: "Visit My Website",
-  youtube: "My YouTube Channel",
-  email: "Email Me"
+  youtube: "Find Me on YouTube",
+  email: "Email Me",
+  etsy: "Visit My Etsy Shop"
 }
 
 export const isEmailSimple = email => {
   let re = /\S+@\S+\.\S+/
   return re.test(email)
 }
+
+// update list of supported domains in
+// /app/user/components/pages/EditProfile/index.js
 export const linkToLabel = link => {
   if (link.includes("twitter.com/")) return LINK_LABELS.twitter
   else if (link.includes("instagram.com/")) return LINK_LABELS.instagram
@@ -20,6 +24,7 @@ export const linkToLabel = link => {
   else if (link.includes("facebook.com/")) return LINK_LABELS.facebook
   else if (link.includes("flickr.com/")) return LINK_LABELS.flickr
   else if (link.includes("500px.com/")) return LINK_LABELS.px
+  else if (link.includes("etsy.com/")) return LINK_LABELS.etsy
   else if (isEmailSimple(link)) return LINK_LABELS.email
   else if (link === "") return ""
   else return LINK_LABELS.website

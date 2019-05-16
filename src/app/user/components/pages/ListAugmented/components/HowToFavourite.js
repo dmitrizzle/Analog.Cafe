@@ -7,16 +7,14 @@ export default () => (
   <ArticleSection>
     <p>
       The ❤ button on Analog.Cafe is a bookmarking tool that automatically
-      builds your personal Favourites collection. Use it to save articles to
-      read or share at a later time.
+      builds your personal Favourites collection.
     </p>
     <p>
-      Find your next favourite read. Browse Analog.Cafe Magazine sections or
-      visit the{" "}
+      Find your next favourite read in{" "}
       <strong>
-        <Link to="/">the front page</Link>
+        <Link to="/features">Features</Link>
       </strong>{" "}
-      for latest articles.
+      or:
     </p>
   </ArticleSection>
 )

@@ -7,11 +7,11 @@ import Modal from "../../../../../core/components/controls/Modal"
 export const UserFavouritesCTA = props => (
   <div style={{ zIndex: 10, position: "relative" }}>
     <Modal element="Button" with={magazineSections(props.location.pathname)}>
-      Browse Magazine Sections
+      Browse Everything
     </Modal>
     <small style={{ textAlign: "center", display: "block" }}>
       Visit our{" "}
-      <Link to="https://www.etsy.com/ca/shop/AnalogCafeShop">Etsy</Link> store!
+      <Link to="https://www.etsy.com/ca/shop/AnalogCafeShop">Etsy</Link> shop!
     </small>
 
     <span style={{ textAlign: "center", display: "block" }}>
