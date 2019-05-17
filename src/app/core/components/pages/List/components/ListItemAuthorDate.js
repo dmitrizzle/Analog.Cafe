@@ -23,6 +23,13 @@ export const Sticker = styled.span`
 `
 
 export default props => {
+  // const { isNew, isNewlyEdited, read } = props;
+  // console.log(props.item.title, {
+  //   isNew,
+  //   isNewlyEdited,
+  //   read,
+  //   isTrue: (props.isNew || props.isNewlyEdited) && !props.read ? 1 : 0
+  // });
   return (
     <AuthorAndDate>
       {!props.private || props.isAdmin

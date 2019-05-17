@@ -51,7 +51,8 @@ export default props => {
                     ? props.readReceipts.filter(
                         receipt =>
                           receipt.articleId === item.id &&
-                          receipt.readOn > item.date.updated
+                          (receipt.readOn > item.date.updated ||
+                            receipt.readOn > item.date.published)
                       ).length > 0
                     : null
                 }
