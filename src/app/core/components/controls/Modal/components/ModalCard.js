@@ -47,6 +47,7 @@ export default class extends React.PureComponent {
         {...this.props}
         style={{
           opacity: this.state.visible ? 1 : 0,
+          transition: "margin 150ms",
           margin: `${this.state.topOffset}px auto 90.1vh`
         }}
         id="modal-card"

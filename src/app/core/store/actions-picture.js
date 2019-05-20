@@ -72,7 +72,8 @@ export const getPictureInfo = src => {
                           category: "Campaign",
                           action: "Picture.author_cta"
                         })
-                      }
+                      },
+                      animationUnfold: true
                     }
                   : {
                       to: "",

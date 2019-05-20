@@ -1,5 +1,5 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 
 import LinkButton from "../../Button/components/LinkButton"
 
@@ -19,9 +19,27 @@ export const styles = css`
   ${props =>
     props.mobile === "off" && props.theme.size.breakpoint.max.m`display:none;`};
 `
+const animationUnfold = keyframes`
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0.8em 0;
+  }
+`
 
-export default styled(({ noDownstate, ...props }) => <LinkButton {...props} />)`
+export default styled(({ noDownstate, animationUnfold, ...props }) => (
+  <LinkButton {...props} />
+))`
   ${styles};
+  ${props =>
+    props.animationUnfold &&
+    `
+      overflow: hidden;
+      animation-fill-mode: forwards;
+      animation-delay: 100ms;
+      animation: ${animationUnfold} 250ms;
+  `};
 `
 
 export const searchTextStyles = css`

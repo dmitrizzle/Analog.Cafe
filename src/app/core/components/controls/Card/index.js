@@ -97,6 +97,7 @@ export default class extends React.PureComponent {
                 branded={button.branded ? true : null}
                 inverse={button.inverse ? true : null}
                 mobile={button.mobile ? button.mobile : null}
+                animationUnfold={button.animationUnfold}
               >
                 {button.loading && <Spinner />}
                 {buttonText}

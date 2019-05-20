@@ -21,6 +21,7 @@ ShallowWrapper {
       "style": Object {
         "margin": "0px auto 90.1vh",
         "opacity": 0,
+        "transition": "margin 150ms",
       },
     },
     "ref": null,
@@ -37,6 +38,7 @@ ShallowWrapper {
         "style": Object {
           "margin": "0px auto 90.1vh",
           "opacity": 0,
+          "transition": "margin 150ms",
         },
       },
       "ref": null,

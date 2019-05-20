@@ -485,6 +485,9 @@ ShallowWrapper {
 </figcaption>,
       ],
       "onClick": [Function],
+      "style": Object {
+        "marginBottom": "-1px",
+      },
     },
     "ref": null,
     "rendered": Array [
@@ -573,6 +576,9 @@ ShallowWrapper {
 </figcaption>,
         ],
         "onClick": [Function],
+        "style": Object {
+          "marginBottom": "-1px",
+        },
       },
       "ref": null,
       "rendered": Array [
