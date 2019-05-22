@@ -50,7 +50,7 @@ class Editor extends React.PureComponent {
   render = () => {
     return (
       <FrenchPress
-        placeholder="Add your film scans along with 200+ words here."
+        placeholder="Add your images & text here ✐"
         components={{
           Picture
         }}
