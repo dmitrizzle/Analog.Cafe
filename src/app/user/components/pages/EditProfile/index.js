@@ -91,7 +91,7 @@ class EditProfile extends React.PureComponent {
   }
   handleFileUpload = event => {
     const file = event.target.files[0]
-    import("@roast-cms/french-press-editor/dist/utils/actions-image").then(
+    import("@roast-cms/french-press-editor/dist/utils/image").then(
       actionsImage => {
         actionsImage
           .forceImageRestrictions(file.size, file.type, 5)
