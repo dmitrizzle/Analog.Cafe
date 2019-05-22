@@ -62,7 +62,7 @@ const NAV_BUTTONS = props => [
     },
     text: (
       <span>
-        <Burger style={{ margin: "0 0 0 -0.75em", ...iconStyles }}>
+        <Burger style={{ margin: "0 0 1px -0.75em", ...iconStyles }}>
           <div />
           <div />
           <div />

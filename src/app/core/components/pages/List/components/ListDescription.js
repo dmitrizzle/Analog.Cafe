@@ -29,6 +29,7 @@ export const Burger = styled.div`
   ${props =>
     props.inverse && props.theme.size.breakpoint.max.s`display: none;`};
   > div {
+    display: block;
     height: 1px;
     margin: 4px 0;
     background: ${props =>
