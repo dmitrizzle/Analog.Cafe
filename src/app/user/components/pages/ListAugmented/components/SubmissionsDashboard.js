@@ -1,4 +1,4 @@
-import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
+import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/storage"
 import React from "react"
 
 import { CardIntegratedForColumns } from "../../../../../core/components/controls/ArticleActions/components/Options"

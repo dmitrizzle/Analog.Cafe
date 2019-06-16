@@ -2,7 +2,6 @@
 
 exports[`Render ImageAdmin without crashing, matches snapshot 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
     imagelib={
@@ -31,117 +30,414 @@ ShallowWrapper {
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
-  Symbol(enzyme.__node__): Array [
-    <div
-      style={
-            Object {
-                  "padding": "0 1.5em",
-                }
-      }
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": "ImageAdmin_header",
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          Images.
+</h3>,
+        <styled.div
+          style={
+                    Object {
+                              "margin": ".5em auto",
+                              "whiteSpace": "nowrap",
+                            }
+          }
 >
-      <h3>
-            Images.
-      </h3>
-      <styled.div
-            style={
-                  Object {
-                        "margin": ".5em auto",
-                        "whiteSpace": "nowrap",
-                      }
-            }
-      >
-            <div>
-                  <Unknown
+          <div>
+                    <Unknown
+                              inverse={true}
+                              left={true}
+                              onClick={[Function]}
+                    >
+                              All
+                    </Unknown>
+                    <Unknown
+                              inverse={false}
+                              onClick={[Function]}
+                    >
+                              Open
+                    </Unknown>
+                    <Unknown
+                              inverse={false}
+                              onClick={[Function]}
+                              right={true}
+                    >
+                              Featured
+                    </Unknown>
+          </div>
+</styled.div>,
+      ],
+      "style": Object {
+        "padding": "0 1.5em",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Images.",
+        },
+        "ref": null,
+        "rendered": "Images.",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <div>
+            <Unknown
                         inverse={true}
                         left={true}
                         onClick={[Function]}
-                  >
+            >
                         All
-                  </Unknown>
-                  <Unknown
+            </Unknown>
+            <Unknown
                         inverse={false}
                         onClick={[Function]}
-                  >
+            >
                         Open
-                  </Unknown>
-                  <Unknown
+            </Unknown>
+            <Unknown
                         inverse={false}
                         onClick={[Function]}
                         right={true}
-                  >
+            >
                         Featured
-                  </Unknown>
-            </div>
-      </styled.div>
+            </Unknown>
 </div>,
-    <styled.div>
-      <styled.div>
-            
-      </styled.div>
-</styled.div>,
-    <div />,
-  ],
-  Symbol(enzyme.__nodes__): Array [
-    Array [
-      <div
-        style={
-                Object {
-                        "padding": "0 1.5em",
-                      }
-        }
+          "style": Object {
+            "margin": ".5em auto",
+            "whiteSpace": "nowrap",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Unknown
+                inverse={true}
+                left={true}
+                onClick={[Function]}
 >
-        <h3>
-                Images.
-        </h3>
-        <styled.div
-                style={
-                        Object {
-                                "margin": ".5em auto",
-                                "whiteSpace": "nowrap",
-                              }
-                }
-        >
-                <div>
-                        <Unknown
-                                inverse={true}
-                                left={true}
-                                onClick={[Function]}
-                        >
-                                All
-                        </Unknown>
-                        <Unknown
-                                inverse={false}
-                                onClick={[Function]}
-                        >
-                                Open
-                        </Unknown>
-                        <Unknown
-                                inverse={false}
-                                onClick={[Function]}
-                                right={true}
-                        >
-                                Featured
-                        </Unknown>
-                </div>
-        </styled.div>
-</div>,
-      <styled.div>
-        <styled.div>
-                
-        </styled.div>
-</styled.div>,
-      <div />,
+                All
+</Unknown>,
+              <Unknown
+                inverse={false}
+                onClick={[Function]}
+>
+                Open
+</Unknown>,
+              <Unknown
+                inverse={false}
+                onClick={[Function]}
+                right={true}
+>
+                Featured
+</Unknown>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "All",
+                "inverse": true,
+                "left": true,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "All",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Open",
+                "inverse": false,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Open",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Featured",
+                "inverse": false,
+                "onClick": [Function],
+                "right": true,
+              },
+              "ref": null,
+              "rendered": "Featured",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": [Function],
+      },
     ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": "ImageAdmin_header",
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            Images.
+</h3>,
+          <styled.div
+            style={
+                        Object {
+                                    "margin": ".5em auto",
+                                    "whiteSpace": "nowrap",
+                                  }
+            }
+>
+            <div>
+                        <Unknown
+                                    inverse={true}
+                                    left={true}
+                                    onClick={[Function]}
+                        >
+                                    All
+                        </Unknown>
+                        <Unknown
+                                    inverse={false}
+                                    onClick={[Function]}
+                        >
+                                    Open
+                        </Unknown>
+                        <Unknown
+                                    inverse={false}
+                                    onClick={[Function]}
+                                    right={true}
+                        >
+                                    Featured
+                        </Unknown>
+            </div>
+</styled.div>,
+        ],
+        "style": Object {
+          "padding": "0 1.5em",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Images.",
+          },
+          "ref": null,
+          "rendered": "Images.",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <div>
+              <Unknown
+                            inverse={true}
+                            left={true}
+                            onClick={[Function]}
+              >
+                            All
+              </Unknown>
+              <Unknown
+                            inverse={false}
+                            onClick={[Function]}
+              >
+                            Open
+              </Unknown>
+              <Unknown
+                            inverse={false}
+                            onClick={[Function]}
+                            right={true}
+              >
+                            Featured
+              </Unknown>
+</div>,
+            "style": Object {
+              "margin": ".5em auto",
+              "whiteSpace": "nowrap",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Unknown
+                  inverse={true}
+                  left={true}
+                  onClick={[Function]}
+>
+                  All
+</Unknown>,
+                <Unknown
+                  inverse={false}
+                  onClick={[Function]}
+>
+                  Open
+</Unknown>,
+                <Unknown
+                  inverse={false}
+                  onClick={[Function]}
+                  right={true}
+>
+                  Featured
+</Unknown>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "All",
+                  "inverse": true,
+                  "left": true,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "All",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Open",
+                  "inverse": false,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Open",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Featured",
+                  "inverse": false,
+                  "onClick": [Function],
+                  "right": true,
+                },
+                "ref": null,
+                "rendered": "Featured",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+    Object {
+      "instance": null,
+      "key": "ImageAdmin_grid",
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            
+</styled.div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [],
+          },
+          "ref": null,
+          "rendered": Array [],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    Object {
+      "instance": null,
+      "key": "ImageAdmin_loadmore",
+      "nodeType": "host",
+      "props": Object {
+        "children": undefined,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "div",
+    },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },
@@ -150,7 +446,6 @@ ShallowWrapper {
 
 exports[`Render UserAdmin without crashing, matches snapshot 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
     admin={
@@ -173,53 +468,115 @@ ShallowWrapper {
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
-  Symbol(enzyme.__node__): Array [
-    <div
-      style={
-            Object {
-                  "padding": "0 1.5em",
-                }
-      }
->
-      <h3>
-            Users.
-      </h3>
-</div>,
-    <styled.div>
-      <styled.div>
-            
-      </styled.div>
-</styled.div>,
-  ],
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": "UserAdmin_header",
+    "nodeType": "host",
+    "props": Object {
+      "children": <h3>
+        Users.
+</h3>,
+      "style": Object {
+        "padding": "0 1.5em",
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Users.",
+      },
+      "ref": null,
+      "rendered": "Users.",
+      "type": "h3",
+    },
+    "type": "div",
+  },
   Symbol(enzyme.__nodes__): Array [
-    Array [
-      <div
-        style={
-                Object {
-                        "padding": "0 1.5em",
-                      }
-        }
->
-        <h3>
-                Users.
-        </h3>
-</div>,
-      <styled.div>
-        <styled.div>
-                
-        </styled.div>
+    Object {
+      "instance": null,
+      "key": "UserAdmin_header",
+      "nodeType": "host",
+      "props": Object {
+        "children": <h3>
+          Users.
+</h3>,
+        "style": Object {
+          "padding": "0 1.5em",
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Users.",
+        },
+        "ref": null,
+        "rendered": "Users.",
+        "type": "h3",
+      },
+      "type": "div",
+    },
+    Object {
+      "instance": null,
+      "key": "UserAdmin_grid",
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.div>
+            
 </styled.div>,
-    ],
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [],
+          },
+          "ref": null,
+          "rendered": Array [],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },

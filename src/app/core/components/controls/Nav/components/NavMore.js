@@ -1,5 +1,5 @@
 // NOTE: `className` props are used in index.html
-import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
+import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/storage"
 import React from "react"
 import styled, { css } from "styled-components"
 

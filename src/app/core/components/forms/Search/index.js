@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/actions-storage"
+import { loadTextContent } from "@roast-cms/french-press-editor/dist/utils/storage"
 import { withRouter } from "react-router-dom"
 import React from "react"
 import styled from "styled-components"
@@ -264,17 +264,16 @@ export class Search extends React.PureComponent {
                   />
                 ]
               })}
-            {isNotFound &&
-              !this.props.search.data.items && (
-                <CardSearchItem to="/subscribe">
-                  <div>Not Found</div>
-                  <em>
-                    We publish new content every week.{" "}
-                    <strong>Subscribe</strong> to our weekly newsletter to get
-                    notified when the new articles get published.
-                  </em>
-                </CardSearchItem>
-              )}
+            {isNotFound && !this.props.search.data.items && (
+              <CardSearchItem to="/subscribe">
+                <div>Not Found</div>
+                <em>
+                  We publish new content every week. <strong>Subscribe</strong>{" "}
+                  to our weekly newsletter to get notified when the new articles
+                  get published.
+                </em>
+              </CardSearchItem>
+            )}
           </div>,
           NAV_BUTTONS(this.props).map(button => {
             if (isInstantSearch) {

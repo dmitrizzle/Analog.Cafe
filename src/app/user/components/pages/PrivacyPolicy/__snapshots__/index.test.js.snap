@@ -2,13 +2,14 @@
 
 exports[`Render PrivacyPolicy, matches snapshot 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -64,6 +65,15 @@ ShallowWrapper {
           </p>
           <p>
                     This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
+          </p>
+          <h3>
+                    Analog.Cafe Accounts Consents.
+          </h3>
+          <p>
+                    You are consenting to being identified by any of the above technologies as an individual anonymous user when you sign up for Analog.Cafe account. You are also consenting to having personally identifiable information attached to your account, securely stored and accessible to admin and the software, when you use Analog.Cafe account. You may choose to share your private information as part of your public profile (see below), however, it is not required and you can easily remove any personally identifiable information from your public account using profile editor tool.
+          </p>
+          <p>
+                    By creating and using Analog.Cafe account you also consent to making a public account with your infomation, accessible by search engines. This account can be automatically created for you from your social login data (your image, name, and short bio). You can easily edit that information at any time.
           </p>
 </styled.section>,
       ],
@@ -137,6 +147,15 @@ ShallowWrapper {
 </p>,
             <p>
               This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
+</p>,
+            <h3>
+              Analog.Cafe Accounts Consents.
+</h3>,
+            <p>
+              You are consenting to being identified by any of the above technologies as an individual anonymous user when you sign up for Analog.Cafe account. You are also consenting to having personally identifiable information attached to your account, securely stored and accessible to admin and the software, when you use Analog.Cafe account. You may choose to share your private information as part of your public profile (see below), however, it is not required and you can easily remove any personally identifiable information from your public account using profile editor tool.
+</p>,
+            <p>
+              By creating and using Analog.Cafe account you also consent to making a public account with your infomation, accessible by search engines. This account can be automatically created for you from your social login data (your image, name, and short bio). You can easily edit that information at any time.
 </p>,
           ],
         },
@@ -299,6 +318,39 @@ ShallowWrapper {
             "rendered": "This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.",
             "type": "p",
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Analog.Cafe Accounts Consents.",
+            },
+            "ref": null,
+            "rendered": "Analog.Cafe Accounts Consents.",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "You are consenting to being identified by any of the above technologies as an individual anonymous user when you sign up for Analog.Cafe account. You are also consenting to having personally identifiable information attached to your account, securely stored and accessible to admin and the software, when you use Analog.Cafe account. You may choose to share your private information as part of your public profile (see below), however, it is not required and you can easily remove any personally identifiable information from your public account using profile editor tool.",
+            },
+            "ref": null,
+            "rendered": "You are consenting to being identified by any of the above technologies as an individual anonymous user when you sign up for Analog.Cafe account. You are also consenting to having personally identifiable information attached to your account, securely stored and accessible to admin and the software, when you use Analog.Cafe account. You may choose to share your private information as part of your public profile (see below), however, it is not required and you can easily remove any personally identifiable information from your public account using profile editor tool.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "By creating and using Analog.Cafe account you also consent to making a public account with your infomation, accessible by search engines. This account can be automatically created for you from your social login data (your image, name, and short bio). You can easily edit that information at any time.",
+            },
+            "ref": null,
+            "rendered": "By creating and using Analog.Cafe account you also consent to making a public account with your infomation, accessible by search engines. This account can be automatically created for you from your social login data (your image, name, and short bio). You can easily edit that information at any time.",
+            "type": "p",
+          },
         ],
         "type": [Function],
       },
@@ -358,6 +410,15 @@ ShallowWrapper {
             </p>
             <p>
                         This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
+            </p>
+            <h3>
+                        Analog.Cafe Accounts Consents.
+            </h3>
+            <p>
+                        You are consenting to being identified by any of the above technologies as an individual anonymous user when you sign up for Analog.Cafe account. You are also consenting to having personally identifiable information attached to your account, securely stored and accessible to admin and the software, when you use Analog.Cafe account. You may choose to share your private information as part of your public profile (see below), however, it is not required and you can easily remove any personally identifiable information from your public account using profile editor tool.
+            </p>
+            <p>
+                        By creating and using Analog.Cafe account you also consent to making a public account with your infomation, accessible by search engines. This account can be automatically created for you from your social login data (your image, name, and short bio). You can easily edit that information at any time.
             </p>
 </styled.section>,
         ],
@@ -431,6 +492,15 @@ ShallowWrapper {
 </p>,
               <p>
                 This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.
+</p>,
+              <h3>
+                Analog.Cafe Accounts Consents.
+</h3>,
+              <p>
+                You are consenting to being identified by any of the above technologies as an individual anonymous user when you sign up for Analog.Cafe account. You are also consenting to having personally identifiable information attached to your account, securely stored and accessible to admin and the software, when you use Analog.Cafe account. You may choose to share your private information as part of your public profile (see below), however, it is not required and you can easily remove any personally identifiable information from your public account using profile editor tool.
+</p>,
+              <p>
+                By creating and using Analog.Cafe account you also consent to making a public account with your infomation, accessible by search engines. This account can be automatically created for you from your social login data (your image, name, and short bio). You can easily edit that information at any time.
 </p>,
             ],
           },
@@ -593,6 +663,39 @@ ShallowWrapper {
               "rendered": "This online privacy policy applies only to information collected through the website or app and not to information collected elsewhere. By using Analog.Cafe, you consent to this website’s privacy policy. This policy might be updated without notice; all changes would be posted on this page. This policy was last modified on June 14, 2018.",
               "type": "p",
             },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Analog.Cafe Accounts Consents.",
+              },
+              "ref": null,
+              "rendered": "Analog.Cafe Accounts Consents.",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "You are consenting to being identified by any of the above technologies as an individual anonymous user when you sign up for Analog.Cafe account. You are also consenting to having personally identifiable information attached to your account, securely stored and accessible to admin and the software, when you use Analog.Cafe account. You may choose to share your private information as part of your public profile (see below), however, it is not required and you can easily remove any personally identifiable information from your public account using profile editor tool.",
+              },
+              "ref": null,
+              "rendered": "You are consenting to being identified by any of the above technologies as an individual anonymous user when you sign up for Analog.Cafe account. You are also consenting to having personally identifiable information attached to your account, securely stored and accessible to admin and the software, when you use Analog.Cafe account. You may choose to share your private information as part of your public profile (see below), however, it is not required and you can easily remove any personally identifiable information from your public account using profile editor tool.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "By creating and using Analog.Cafe account you also consent to making a public account with your infomation, accessible by search engines. This account can be automatically created for you from your social login data (your image, name, and short bio). You can easily edit that information at any time.",
+              },
+              "ref": null,
+              "rendered": "By creating and using Analog.Cafe account you also consent to making a public account with your infomation, accessible by search engines. This account can be automatically created for you from your social login data (your image, name, and short bio). You can easily edit that information at any time.",
+              "type": "p",
+            },
           ],
           "type": [Function],
         },
@@ -604,6 +707,23 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },
