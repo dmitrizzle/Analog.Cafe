@@ -1,9 +1,8 @@
 import React from "react"
 
-import { SEARCH_RESULTS_FEATURED } from "../../../constants/messages-search"
 import ButtonGroupDivider from "../Button/components/ButtonGroupDivider"
 import ButtonKeyword from "../Button/components/ButtonKeyword"
-import CardButton, { CardSearchItem } from "./components/CardButton"
+import CardButton from "./components/CardButton"
 import CardFigure from "./components/CardFigure"
 import CardHeader from "./components/CardHeader"
 import CardPopup from "./components/CardPopup"
@@ -55,26 +54,7 @@ export default class extends React.PureComponent {
             key="search"
             searchText={this.handleSearchText}
             menu={this.props.menu}
-          />,
-          // this.state.searchMode &&
-          !this.state.searchText
-            ? SEARCH_RESULTS_FEATURED.map(item => {
-                return [
-                  <CardSearchItem
-                    key={item.link}
-                    to={item.link}
-                    image={item.image || null}
-                  >
-                    <div>{item.title}</div>
-                    <em>{item.snippet}</em>
-                  </CardSearchItem>,
-                  <ButtonGroupDivider
-                    key={`div_${item.link}`}
-                    style={{ zIndex: 1, position: "relative" }}
-                  />
-                ]
-              })
-            : null
+          />
         ]}
         {this.props.buttons &&
           // !this.state.searchMode &&

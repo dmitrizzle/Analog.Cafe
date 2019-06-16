@@ -69,6 +69,25 @@ export default () => {
           be posted on this page. This policy was last modified on June 14,
           2018.
         </p>
+        <h3>Analog.Cafe Accounts Consents.</h3>
+        <p>
+          You are consenting to being identified by any of the above
+          technologies as an individual anonymous user when you sign up for
+          Analog.Cafe account. You are also consenting to having personally
+          identifiable information attached to your account, securely stored and
+          accessible to admin and the software, when you use Analog.Cafe
+          account. You may choose to share your private information as part of
+          your public profile (see below), however, it is not required and you
+          can easily remove any personally identifiable information from your
+          public account using profile editor tool.
+        </p>
+        <p>
+          By creating and using Analog.Cafe account you also consent to making a
+          public account with your infomation, accessible by search engines.
+          This account can be automatically created for you from your social
+          login data (your image, name, and short bio). You can easily edit that
+          information at any time.
+        </p>
       </ArticleSection>
     </ArticleWrapper>
   )
