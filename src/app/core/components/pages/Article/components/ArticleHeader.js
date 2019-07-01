@@ -26,27 +26,26 @@ export default props => {
       pageSubtitle={props.article.subtitle}
       title={props.article.error && props.article.error}
     >
-      {props.article.authors &&
-        props.article.authors[0].name && (
-          <Byline>
-            {props.article.stats &&
-              `${Math.ceil(readingTime(props.article.stats))} min read`}{" "}
-            by{" "}
-            {getLeadAuthorObject(props.article.authors).id ? (
-              <Link to={`/is/${getLeadAuthorObject(props.article.authors).id}`}>
-                {getLeadAuthorObject(props.article.authors).name}
-              </Link>
-            ) : (
-              getLeadAuthorObject(props.article.authors).name
-            )}
-            {props.article.authors.length > 1 &&
-              ` with images by ${getAuthorListStringFromArray(
-                props.article.authors,
-                { ommitLeadAuthor: true, keepFullNames: true }
-              )}`}
-            .
-          </Byline>
-        )}
+      {props.article.authors && props.article.authors[0].title && (
+        <Byline>
+          {props.article.stats &&
+            `${Math.ceil(readingTime(props.article.stats))} min read`}{" "}
+          by{" "}
+          {getLeadAuthorObject(props.article.authors).id ? (
+            <Link to={`/is/${getLeadAuthorObject(props.article.authors).id}`}>
+              {getLeadAuthorObject(props.article.authors).title}
+            </Link>
+          ) : (
+            getLeadAuthorObject(props.article.authors).title
+          )}
+          {props.article.authors.length > 1 &&
+            ` with images by ${getAuthorListStringFromArray(
+              props.article.authors,
+              { ommitLeadAuthor: true, keepFullNames: true }
+            )}`}
+          .
+        </Byline>
+      )}
       {props.article.submittedBy &&
         props.article.status !== "published" &&
         props.article.status !== "loading" && (
