@@ -49,7 +49,8 @@
     "titlecase": "^1.1.2",
     "typeface-exo-2": "^0.0.54",
     "typeface-lora": "^0.0.54",
-    "uuid": "^3.1.0"
+    "uuid": "^3.1.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "copy": "^0.3.1",
@@ -79,7 +80,9 @@
     "lint": "node node_modules/eslint/bin/eslint.js --config node_modules/eslint-config-react-app/index.js ./src",
     "deploy": "node deploy/build && yarn lint && yarn test && node deploy && yarn version",
     "size": "size-limit",
-    "test": "npm run size && react-scripts test --env=jsdom"
+    "test": "npm run size && react-scripts test --env=jsdom",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "size-limit": [
     {
@@ -102,5 +105,6 @@
       "last 2 iOS versions",
       "last 2 Android versions"
     ]
-  }
+  },
+  "snyk": true
 }
