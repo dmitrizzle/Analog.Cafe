@@ -14,3 +14,13 @@ patch:
         patched: '2019-07-03T23:40:56.635Z'
     - enzyme > cheerio > lodash:
         patched: '2019-07-03T23:40:56.635Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-07-11T21:36:34.780Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-11T21:36:34.780Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-07-11T21:36:34.780Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-07-11T21:36:34.780Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-07-11T21:36:34.780Z'
