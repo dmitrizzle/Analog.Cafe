@@ -29,9 +29,7 @@ export const Download = props => {
   const destination = `https://s3.ca-central-1.amazonaws.com/analog.cafe/downloads/${filename}`
 
   // get file meta
-  const fileList_1 = MUST_READS_CONTENT["download-guides"]
-  const fileList_2 = MUST_READS_CONTENT["download-essays"]
-  const fileList = [...fileList_1, ...fileList_2]
+  const fileList = MUST_READS_CONTENT["download"]
   const fileData = fileList.filter(
     download => download.to === "/download/" + filename
   )[0]
@@ -94,52 +92,50 @@ export const Download = props => {
           </Posters>
         )}
 
-        {fileData &&
-          hasPermission && (
-            <React.Fragment>
-              <LinkButton
-                to={destination}
-                branded
-                onClick={() =>
-                  GA.event({
-                    category: "Download",
-                    action: "Download.button",
-                    label: destination
+        {fileData && hasPermission && (
+          <React.Fragment>
+            <LinkButton
+              to={destination}
+              branded
+              onClick={() =>
+                GA.event({
+                  category: "Download",
+                  action: "Download.button",
+                  label: destination
+                })
+              }
+            >
+              <span>
+                <Cube style={iconStyles} /> Download Now
+              </span>
+            </LinkButton>
+          </React.Fragment>
+        )}
+        {!hasPermission && fileData && (
+          <React.Fragment>
+            <LinkButton
+              to="/sign-in"
+              branded
+              onClick={() => {
+                fileData &&
+                  props.addSessionInfo({
+                    loginSuccess: `/download/${filename}`
                   })
-                }
-              >
-                <span>
-                  <Cube style={iconStyles} /> Download Now
-                </span>
-              </LinkButton>
-            </React.Fragment>
-          )}
-        {!hasPermission &&
-          fileData && (
-            <React.Fragment>
-              <LinkButton
-                to="/sign-in"
-                branded
-                onClick={() => {
-                  fileData &&
-                    props.addSessionInfo({
-                      loginSuccess: `/download/${filename}`
-                    })
-                }}
-                style={{ marginBottom: 0 }}
-              >
-                Sign In to Download
-              </LinkButton>
-              <p style={{ textAlign: "center", marginTop: 0 }}>
-                <small>
-                  <em>
-                    Free, 5 seconds to create,{" "}
-                    <Link to="/privacy-policy">no spam</Link>.
-                  </em>
-                </small>
-              </p>
-            </React.Fragment>
-          )}
+              }}
+              style={{ marginBottom: 0 }}
+            >
+              Sign In to Download
+            </LinkButton>
+            <p style={{ textAlign: "center", marginTop: 0 }}>
+              <small>
+                <em>
+                  Free, 5 seconds to create,{" "}
+                  <Link to="/privacy-policy">no spam</Link>.
+                </em>
+              </small>
+            </p>
+          </React.Fragment>
+        )}
         {!fileData && (
           <p>
             <strong>Could not find file</strong>{" "}

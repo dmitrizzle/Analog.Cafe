@@ -7,9 +7,13 @@ import { MUST_READS_CONTENT } from "./constants"
 import ArticleSection from "../../../../core/components/pages/Article/components/ArticleSection"
 import ArticleWrapper from "../../../../core/components/pages/Article/components/ArticleWrapper"
 import GridButton from "../../../../admin/components/controls/Grid/components/GridButton"
-import HeaderLarge from "../../../../core/components/vignettes/HeaderLarge"
 import Link from "../../../../core/components/controls/Link"
-import MetaTags from "../../../../core/components/vignettes/MetaTags"
+
+export const SolidDivider = styled.div`
+  width: 100%;
+  height: 8px;
+  background: ${props => props.theme.color.foreground()};
+`
 
 export const Posters = styled.div`
   overflow-x: scroll;
@@ -144,69 +148,75 @@ export const Carousel = props => (
 export default props => {
   return (
     <ArticleWrapper>
-      <MetaTags metaTitle="Features" metaSubtitle="The Best of Analog.Cafe" />
-      <HeaderLarge
-        pageTitle="Features"
-        pageSubtitle="The Best of Analog.Cafe"
-      />
-
       <ArticleSection>
-        <Carousel items={MUST_READS_CONTENT.guides} {...props} />
-        <Carousel
-          chop
-          items={MUST_READS_CONTENT["download-guides"]}
-          {...props}
-        />
         <h3>Essential Photography Guides</h3>
-        <p>
-          <span role="img" aria-label="Point up">
-            ☝︎
-          </span>{" "}
-          <strong>Above:</strong> articles to help you improve your film
-          photography understanding and techniques.
-        </p>
+        <SolidDivider />
+
+        <Carousel items={MUST_READS_CONTENT.guides.slice(0, 5)} {...props} />
+        <Carousel
+          chop
+          items={MUST_READS_CONTENT.guides.slice(5, 15)}
+          {...props}
+        />
 
         <div style={{ height: "6em" }} />
 
-        <Carousel items={MUST_READS_CONTENT.essays} {...props} center={1} />
+        <h3>Film Cameras</h3>
+        <SolidDivider />
+        <Carousel
+          items={MUST_READS_CONTENT["camera-reviews"].slice(0, 5)}
+          {...props}
+          center={1}
+        />
         <Carousel
           chop
-          items={MUST_READS_CONTENT["download-essays"]}
+          items={MUST_READS_CONTENT["camera-reviews"].slice(5, 15)}
           {...props}
+          center={1}
         />
+
+        <div style={{ height: "6em" }} />
+
+        <h3>Film & Chemistry</h3>
+        <SolidDivider />
+        <Carousel
+          items={MUST_READS_CONTENT.emulsions.slice(0, 5)}
+          {...props}
+          center={1}
+        />
+        <Carousel
+          chop
+          items={MUST_READS_CONTENT.emulsions.slice(5, 15)}
+          {...props}
+          center={1}
+        />
+
+        <div style={{ height: "6em" }} />
+
         <h3>Photo Essays</h3>
-        <p>
-          <span role="img" aria-label="Point up">
-            ☝︎
-          </span>{" "}
-          <strong>Above:</strong> stories told with images. Read our
-          ever-expanding collection of best-written essays on travel, art,
-          self-expression, and creative experiments.
-        </p>
-
-        <div style={{ height: "6em" }} />
-
+        <SolidDivider />
         <Carousel
-          items={MUST_READS_CONTENT["camera-reviews"]}
+          items={MUST_READS_CONTENT.essays.slice(0, 5)}
           {...props}
           center={1}
         />
         <Carousel
           chop
-          items={MUST_READS_CONTENT.emulsions}
+          items={MUST_READS_CONTENT.essays.slice(5, 15)}
           {...props}
           center={1}
         />
-        <h3>Film & Cameras</h3>
-        <p>
-          <span role="img" aria-label="Point up">
-            ☝︎
-          </span>{" "}
-          <strong>Above:</strong> film photography reviews and guides. Lean
-          about the technical advantages and limitations of each tool or
-          accessory. Examine the images created with said film or camera. Get
-          the writers’ personal account on use and ownership.
-        </p>
+
+        <div style={{ height: "6em" }} />
+
+        <h3>Download & Print</h3>
+        <SolidDivider />
+        <Carousel items={MUST_READS_CONTENT.download.slice(0, 5)} {...props} />
+        <Carousel
+          chop
+          items={MUST_READS_CONTENT.download.slice(5, 15)}
+          {...props}
+        />
       </ArticleSection>
     </ArticleWrapper>
   )
