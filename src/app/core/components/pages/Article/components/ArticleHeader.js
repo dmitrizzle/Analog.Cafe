@@ -20,6 +20,11 @@ const ArticleControls = Loadable({
 })
 
 export default props => {
+  const authorNames = getAuthorListStringFromArray(props.article.authors, {
+    ommitLeadAuthor: true,
+    keepFullNames: true
+  })
+
   return (
     <HeaderLarge
       pageTitle={props.article.title}
@@ -39,10 +44,8 @@ export default props => {
             getLeadAuthorObject(props.article.authors).title
           )}
           {props.article.authors.length > 1 &&
-            ` with images by ${getAuthorListStringFromArray(
-              props.article.authors,
-              { ommitLeadAuthor: true, keepFullNames: true }
-            )}`}
+            authorNames !== "" &&
+            ` with images by ${authorNames}`}
           .
         </Byline>
       )}

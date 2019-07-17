@@ -24,9 +24,10 @@ export const getAuthorListStringFromArray = (authors, options = {}) => {
   let compiledNameList = ""
 
   authors.forEach(object => {
-    if (object.authorship === "article")
-      leadAuthorName = nameFormat(object.name)
-    else if (!options.onlyLeadAuthor) names.push(nameFormat(object.name))
+    const name = nameFormat(object.name)
+    if (!name) namesTotal--
+    if (object.authorship === "article") leadAuthorName = name
+    else if (!options.onlyLeadAuthor && name) names.push(name)
   })
   if (!options.ommitLeadAuthor) names.unshift(leadAuthorName)
   if (options.onlyLeadAuthor) namesTotal = 1
